@@ -1,9 +1,9 @@
 ---
 title: NodeParameter 예제
-author: cotes
-date: 2025-10-14 00:34:00 +0800
+author: ayaysir
+date: 2025-05-05 18:20:00 +0900
 categories: [StudyLog, AudioKit]
-tags: [favicon]
+tags: [AudioKit, 음향이론]
 ---
 
 # NodeParameter 예제
