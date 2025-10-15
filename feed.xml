@@ -1,366 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2025-10-15T22:11:15+09:00</updated><id>/feed.xml</id><title type="html">BGSMM</title><subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle><entry><title type="html"></title><link href="/posts/2025-05-01-kMIDINotPermitted-%EB%AC%B8%EC%A0%9C/" rel="alternate" type="text/html" title="" /><published>2025-10-15T22:11:15+09:00</published><updated>2025-10-15T22:11:15+09:00</updated><id>/posts/2025-05-01-kMIDINotPermitted%20%EB%AC%B8%EC%A0%9C</id><content type="html" xml:base="/posts/2025-05-01-kMIDINotPermitted-%EB%AC%B8%EC%A0%9C/"><![CDATA[<h1 id="kmidinotpermitted-문제">kMIDINotPermitted 문제</h1>
-
-<h2 id="요약">요약</h2>
-
-<p><strong>iOS 앱에서 Background Modes의 “Audio, AirPlay, and Picture in Picture” 옵션을 활성화하지 않으면 MIDI 권한이 제한되어</strong>, <code class="language-plaintext highlighter-rouge">MIDISampler</code>나 <code class="language-plaintext highlighter-rouge">MIDICallbackInstrument</code>와 같은 <strong>실시간 MIDI 관련 기능이 제대로 작동하지 않습니다.</strong></p>
-
-<hr />
-
-<h2 id="-오류-메시지-해석">✅ 오류 메시지 해석</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>CheckError.swift:CheckError(_:):176:kMIDINotPermitted:
-Have you enabled the audio background mode in your ios app?
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">kMIDINotPermitted</code>는 <strong>MIDI 권한 부족</strong>을 나타냅니다.</li>
-  <li>“Have you enabled the audio background mode…?”라는 메시지 자체가 해결 방법을 알려주고 있습니다:
-→ 즉, <strong>“Background Modes &gt; Audio”를 활성화해야 MIDI 기능이 허용됨</strong>을 뜻합니다.</li>
-</ul>
-
-<hr />
-
-<h2 id="-왜-이런-문제가-발생하는가">🧠 왜 이런 문제가 발생하는가?</h2>
-
-<p>iOS는 <strong>에너지 절약과 보안을 이유로</strong>, 백그라운드 또는 오디오 처리 관련 기능을 <strong>명시적으로 허용하지 않으면 일부 오디오/MIDI 기능을 제한</strong>합니다.</p>
-
-<p>특히 다음 경우:</p>
-
-<ul>
-  <li>AudioKit의 <code class="language-plaintext highlighter-rouge">MIDISampler</code>, <code class="language-plaintext highlighter-rouge">AppleSequencer</code>, <code class="language-plaintext highlighter-rouge">MIDICallbackInstrument</code> 등은
-<strong>Core MIDI 또는 AVAudioEngine의 실시간 처리 권한</strong>이 필요합니다.</li>
-  <li>하지만 <code class="language-plaintext highlighter-rouge">Info.plist</code> 또는 Build 설정에 <strong>Background Modes &gt; Audio</strong>가 설정되지 않으면,
-iOS는 <strong>이 앱이 오디오 기반 앱이 아니라고 판단</strong>하고,
-→ MIDI 처리를 차단합니다.</li>
-</ul>
-
-<hr />
-
-<h2 id="-해결-방법">✅ 해결 방법</h2>
-
-<h3 id="1-xcode에서-설정">1. Xcode에서 설정</h3>
-
-<ul>
-  <li>프로젝트 설정 &gt; <code class="language-plaintext highlighter-rouge">Signing &amp; Capabilities</code> 탭</li>
-  <li><code class="language-plaintext highlighter-rouge">+ Capability</code> 버튼 클릭 → <code class="language-plaintext highlighter-rouge">Background Modes</code> 추가</li>
-  <li><code class="language-plaintext highlighter-rouge">Audio, AirPlay, and Picture in Picture</code> 체크 ✅</li>
-</ul>
-
-<h3 id="2-infoplist에-자동으로-추가되는-키">2. <code class="language-plaintext highlighter-rouge">Info.plist</code>에 자동으로 추가되는 키</h3>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="nt">&lt;key&gt;</span>UIBackgroundModes<span class="nt">&lt;/key&gt;</span>
-<span class="nt">&lt;array&gt;</span>
-  <span class="nt">&lt;string&gt;</span>audio<span class="nt">&lt;/string&gt;</span>
-<span class="nt">&lt;/array&gt;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<hr />
-
-<h2 id="-정리">📌 정리</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>항목</th>
-      <th>설명</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>문제</td>
-      <td><code class="language-plaintext highlighter-rouge">MIDISampler</code> 사용 시 MIDI 권한 부족으로 드럼 소리가 나지 않음</td>
-    </tr>
-    <tr>
-      <td>원인</td>
-      <td>Background Modes &gt; Audio 옵션이 꺼져 있어서 iOS가 오디오/MIDI 권한 차단</td>
-    </tr>
-    <tr>
-      <td>해결</td>
-      <td>Xcode &gt; Signing &amp; Capabilities &gt; Background Modes &gt; Audio 항목 체크</td>
-    </tr>
-    <tr>
-      <td>효과</td>
-      <td>실시간 MIDI 입력, AudioKit 샘플러 및 시퀀서 정상 동작</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />]]></content><author><name></name></author></entry><entry><title type="html"></title><link href="/posts/2025-06-23-%EB%AF%B8%EB%94%94_%ED%8A%B8%EB%9E%99%EC%A4%91%EA%B0%84_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%B2%B4%EC%9D%B8%EC%A7%80_%EB%8C%80%EC%9D%91%EB%B2%95/" rel="alternate" type="text/html" title="" /><published>2025-10-15T22:11:15+09:00</published><updated>2025-10-15T22:11:15+09:00</updated><id>/posts/2025-06-23-%EB%AF%B8%EB%94%94_%ED%8A%B8%EB%9E%99%EC%A4%91%EA%B0%84_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%B2%B4%EC%9D%B8%EC%A7%80_%EB%8C%80%EC%9D%91%EB%B2%95</id><content type="html" xml:base="/posts/2025-06-23-%EB%AF%B8%EB%94%94_%ED%8A%B8%EB%9E%99%EC%A4%91%EA%B0%84_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%B2%B4%EC%9D%B8%EC%A7%80_%EB%8C%80%EC%9D%91%EB%B2%95/"><![CDATA[<h1 id="midisamplerapplesequencer를-이용한-미디-멀티트랙-재생-중-트랙-중간에-프로그램-체인지가-있는-경우-대응-방법">MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h1>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre>track 2: [
-  AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),
-  AudioKit.MIDIProgramChangeEvent(time: 64.0, channel: 2, number: 60),
-  AudioKit.MIDIProgramChangeEvent(time: 119.98697916666667, channel: 2, number: 57)
-]
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">track 2</code>처럼 <strong>트랙 중간에 Program Change 메시지로 악기가 바뀌는 경우</strong>,
-AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</code>와 <code class="language-plaintext highlighter-rouge">MIDISampler</code> 조합만으로는 <strong>정확한 사운드 전환을 구현하기 어렵습니다.</strong></p>
-
-<p>기본적으로 <code class="language-plaintext highlighter-rouge">track.setMIDIOutput(sampler.midiIn)</code>으로 연결된 <code class="language-plaintext highlighter-rouge">MIDISampler</code>는 <strong>트랙 전체를 하나의 악기로만 재생</strong>합니다.
-중간에 악기를 바꾸는 기능은 직접 처리해주지 않으면 반영되지 않습니다.</p>
-
-<hr />
-
-<h2 id="-문제-상황-요약">✅ 문제 상황 요약</h2>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="n">track</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span>
-  <span class="kt">ProgramChange</span><span class="p">(</span><span class="nv">channel</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">number</span><span class="p">:</span> <span class="mi">57</span><span class="p">)</span> <span class="c1">// 시작 시</span>
-  <span class="kt">ProgramChange</span><span class="p">(</span><span class="nv">channel</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">number</span><span class="p">:</span> <span class="mi">60</span><span class="p">)</span> <span class="c1">// 64초쯤</span>
-  <span class="kt">ProgramChange</span><span class="p">(</span><span class="nv">channel</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">number</span><span class="p">:</span> <span class="mi">57</span><span class="p">)</span> <span class="c1">// 120초쯤 복귀</span>
-<span class="p">]</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li>표준 MIDI에서는 이런 식으로 Program Change 메시지를 트랙 내에 삽입하여 <strong>동일 채널에 악기 전환</strong>을 수행</li>
-  <li>AudioKit의 기본 Sequencer 처리 방식에서는 이를 자동 인식하거나 대응하지 않음</li>
-</ul>
-
-<hr />
-
-<h2 id="-해결-방향">🎯 해결 방향</h2>
-
-<h3 id="-program-change-이벤트를-파싱해서">① Program Change 이벤트를 파싱해서</h3>
-
-<ul>
-  <li>시점별로 <strong>악기(프리셋) 변경 정보</strong>를 추출</li>
-</ul>
-
-<h3 id="-해당-채널의-midi-이벤트를-악기-구간별로-나눠서">② 해당 채널의 MIDI 이벤트를 <strong>악기 구간별로 나눠서</strong></h3>
-
-<ul>
-  <li><strong>구간별 <code class="language-plaintext highlighter-rouge">MIDISampler</code>를 생성</strong>하거나</li>
-  <li>하나의 Sampler에 <strong>프리셋을 실시간으로 변경 요청</strong>
-(단, 대부분의 <code class="language-plaintext highlighter-rouge">MIDISampler</code>는 실행 중 preset 변경을 안정적으로 지원하지 않음)</li>
-</ul>
-
-<hr />
-
-<h2 id="-실현-가능한-접근-방법">✅ 실현 가능한 접근 방법</h2>
-
-<h3 id="-방법-a-트랙을-구간별로-분할하여-각각-sampler에-할당">✅ 방법 A: 트랙을 구간별로 분할하여 각각 sampler에 할당</h3>
-
-<blockquote>
-  <p>1개 트랙을 Program Change 기준으로 여러 개로 나누고,
-구간마다 MIDISampler와 연결 → Mixer에 병합</p>
-</blockquote>
-
-<p>단점:</p>
-
-<ul>
-  <li>구현 복잡도 있음</li>
-  <li>MIDI 이벤트 재구성이 필요</li>
-</ul>
-
-<h3 id="-방법-b-programchange-메시지-수신-시-sampler의-preset을-변경">✅ 방법 B: ProgramChange 메시지 수신 시 sampler의 preset을 변경</h3>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">case</span> <span class="kd">let</span> <span class="o">.</span><span class="nf">programChange</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span> <span class="o">=</span> <span class="n">event</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="n">channel</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">{</span>
-    <span class="k">try</span><span class="p">?</span> <span class="n">sampler</span><span class="o">.</span><span class="nf">loadSoundFont</span><span class="p">(</span><span class="s">"CT8MGM"</span><span class="p">,</span> <span class="nv">preset</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="nv">bank</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li>MIDI 이벤트를 수신하는 커스텀 <code class="language-plaintext highlighter-rouge">MIDIListener</code> 구현 필요</li>
-  <li>실행 중 preset을 바꾸면 버퍼 끊김이나 글리치 발생 가능</li>
-</ul>
-
-<blockquote>
-  <p>⚠️ <strong>실행 중 preset 변경은 대부분 권장되지 않음</strong></p>
-</blockquote>
-
-<hr />
-
-<h2 id="-권장-방식-현실적-대안">✅ 권장 방식 (현실적 대안)</h2>
-
-<h3 id="-트랙-중간에-program-change가-있는-경우">🎯 트랙 중간에 Program Change가 있는 경우:</h3>
-
-<ol>
-  <li><strong>MIDI 파일을 외부에서 미리 분할</strong>하거나</li>
-  <li><strong>DAW에서 동일 채널에 Program Change를 쓰지 않도록 재구성</strong></li>
-  <li>또는 <strong>AudioKit으로 다룰 경우, 중간 ProgramChange를 무시하고 시작 preset만 사용</strong></li>
-</ol>
-
-<hr />
-
-<h2 id="-요약">✅ 요약</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>상황</th>
-      <th>설명</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>트랙에 ProgramChange가 여러 개 있음</td>
-      <td>MIDI 채널의 악기가 재생 중에 바뀜</td>
-    </tr>
-    <tr>
-      <td>AudioKit <code class="language-plaintext highlighter-rouge">AppleSequencer</code></td>
-      <td>한 트랙당 하나의 sampler만 연결됨</td>
-    </tr>
-    <tr>
-      <td>실시간 preset 변경</td>
-      <td>가능은 하지만 glitch 발생 가능</td>
-    </tr>
-    <tr>
-      <td>현실적인 방법</td>
-      <td>ProgramChange 기준으로 트랙을 사전 분할 또는 첫 preset만 사용</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<p>필요하시면:</p>
-
-<ul>
-  <li>해당 트랙을 ProgramChange 기준으로 구간 분할하는 MIDI parser 예제</li>
-  <li>MIDISampler 여러 개 동적으로 운용하는 구조도 함께 도와드릴 수 있습니다.</li>
-</ul>]]></content><author><name></name></author></entry><entry><title type="html"></title><link href="/posts/2025-04-29-Observable-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/" rel="alternate" type="text/html" title="" /><published>2025-10-15T22:11:15+09:00</published><updated>2025-10-15T22:11:15+09:00</updated><id>/posts/2025-04-29-Observable%20%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC</id><content type="html" xml:base="/posts/2025-04-29-Observable-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/"><![CDATA[<h1 id="observable-동작-원리">Observable 동작 원리</h1>
-<pre><code class="language-plain">viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유? @Observable 클래스 AudioKit3DViewModel에서 참조하는  각 클래스 AudioEngine3DConductor, SceneCoordinator에 @Observable을 붙이지 않아도 동작하는 이유?
-</code></pre>
-
-<h2 id="답변">답변</h2>
-
-<h3 id="1-viewmodel에서-state를-붙이지-않아도-코드가-동작하는-이유">1. <code class="language-plaintext highlighter-rouge">viewModel</code>에서 <code class="language-plaintext highlighter-rouge">@State</code>를 붙이지 않아도 코드가 동작하는 이유</h3>
-
-<p><code class="language-plaintext highlighter-rouge">@State</code>는 SwiftUI 뷰 내부에서 값 타입(보통 구조체)을 <strong>직접 소유</strong>하고 변경할 때 사용됩니다. 그러나 <code class="language-plaintext highlighter-rouge">viewModel</code>은 클래스(<code class="language-plaintext highlighter-rouge">AudioKit3DViewModel</code>) 타입이며, 해당 클래스는 SwiftUI 뷰 외부에서 생성되어 참조됩니다. 이 경우 SwiftUI에서 값의 변경을 감지하려면 <code class="language-plaintext highlighter-rouge">@ObservedObject</code>, <code class="language-plaintext highlighter-rouge">@StateObject</code>, <code class="language-plaintext highlighter-rouge">@EnvironmentObject</code> 등의 속성이 필요합니다.</p>
-
-<p>하지만 해당 코드에서는 <code class="language-plaintext highlighter-rouge">@Observable</code> 속성이 붙어 있는 것으로 보입니다.</p>
-
-<p>Swift 5.9 이상 (또는 Xcode 15 이상)에서는 SwiftUI의 <strong>Observation 프레임워크</strong>를 기반으로 하는 <code class="language-plaintext highlighter-rouge">@Observable</code> 프로토콜이 도입되었으며, 이 프로토콜을 채택한 객체는 SwiftUI에서 자동으로 상태를 관찰할 수 있습니다. 이를 통해 <code class="language-plaintext highlighter-rouge">@StateObject</code>나 <code class="language-plaintext highlighter-rouge">@ObservedObject</code> 없이도 <strong>값의 변경이 뷰에 반영됩니다</strong>.</p>
-
-<p>다시 말해, <code class="language-plaintext highlighter-rouge">viewModel</code>이 <code class="language-plaintext highlighter-rouge">@Observable</code>을 따르고 있고, SwiftUI가 이를 알 수 있기 때문에 별도의 속성 래퍼가 필요 없습니다. 단, 이 기능은 Swift의 Observation이 제대로 적용되는 환경(Xcode 15 이상, Swift 5.9 이상, iOS 17 이상 등)에서만 가능합니다.</p>
-
-<hr />
-
-<h3 id="2-audioengine3dconductor-scenecoordinator에-observable을-붙이지-않아도-되는-이유">2. <code class="language-plaintext highlighter-rouge">AudioEngine3DConductor</code>, <code class="language-plaintext highlighter-rouge">SceneCoordinator</code>에 <code class="language-plaintext highlighter-rouge">@Observable</code>을 붙이지 않아도 되는 이유</h3>
-
-<p><code class="language-plaintext highlighter-rouge">@Observable</code>은 SwiftUI가 <strong>뷰에서 참조할 값이 변경될 때 UI를 자동 갱신하기 위해 사용하는 것</strong>입니다.</p>
-
-<p>하지만 <code class="language-plaintext highlighter-rouge">AudioEngine3DConductor</code>와 <code class="language-plaintext highlighter-rouge">SceneCoordinator</code>는 뷰에서 직접 사용하는 것이 아니라, <code class="language-plaintext highlighter-rouge">AudioKit3DViewModel</code> 내부에서 사용됩니다. 그리고 이 클래스들은 값의 변경이 SwiftUI 뷰에 <strong>직접적인 영향을 주지 않기 때문에</strong> <code class="language-plaintext highlighter-rouge">@Observable</code>을 붙일 필요가 없습니다.</p>
-
-<p>즉, 다음과 같은 구조입니다:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">AudioKit3DView</code>는 <code class="language-plaintext highlighter-rouge">viewModel: AudioKit3DViewModel</code>을 소유함</li>
-  <li><code class="language-plaintext highlighter-rouge">AudioKit3DViewModel</code>은 <code class="language-plaintext highlighter-rouge">@Observable</code>이라서 값의 변경을 SwiftUI가 감지할 수 있음</li>
-  <li><code class="language-plaintext highlighter-rouge">viewModel</code> 내부에서 사용하는 <code class="language-plaintext highlighter-rouge">conductor</code>, <code class="language-plaintext highlighter-rouge">coordinator</code>는 뷰에 <strong>직접 바인딩된 값이 아님</strong></li>
-  <li>따라서 그 내부 클래스에 <code class="language-plaintext highlighter-rouge">@Observable</code>을 붙일 필요가 없음</li>
-</ul>
-
-<p>단, 만약 <code class="language-plaintext highlighter-rouge">AudioEngine3DConductor</code>나 <code class="language-plaintext highlighter-rouge">SceneCoordinator</code>의 속성을 뷰에서 <strong>직접 바인딩하거나 관찰</strong>해야 할 경우, 그때는 해당 클래스에도 <code class="language-plaintext highlighter-rouge">@Observable</code>이나 <code class="language-plaintext highlighter-rouge">@Published</code> 등을 적용해야 합니다.</p>
-
-<hr />
-
-<h3 id="요약">요약</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>항목</th>
-      <th>이유</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">viewModel</code>에 <code class="language-plaintext highlighter-rouge">@State</code> 없음</td>
-      <td><code class="language-plaintext highlighter-rouge">@Observable</code>을 통해 SwiftUI가 자동 관찰하므로 별도 속성 래퍼 불필요</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">conductor</code>, <code class="language-plaintext highlighter-rouge">coordinator</code>에 <code class="language-plaintext highlighter-rouge">@Observable</code> 없음</td>
-      <td>뷰에서 직접 사용하지 않으며 뷰에 상태 영향을 주지 않기 때문</td>
-    </tr>
-  </tbody>
-</table>]]></content><author><name></name></author></entry><entry><title type="html"></title><link href="/posts/2025-05-14-%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/" rel="alternate" type="text/html" title="" /><published>2025-10-15T22:11:15+09:00</published><updated>2025-10-15T22:11:15+09:00</updated><id>/posts/2025-05-14-%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C</id><content type="html" xml:base="/posts/2025-05-14-%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/"><![CDATA[<h1 id="swiftui에서-binding을-지원하지-않는-뷰의-강제-리프레시">SwiftUI에서 @Binding을 지원하지 않는 뷰의 강제 리프레시</h1>
-
-<p><code class="language-plaintext highlighter-rouge">parameters</code>와 <code class="language-plaintext highlighter-rouge">ParameterRow</code>가 바인딩(<code class="language-plaintext highlighter-rouge">Binding</code>)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(<code class="language-plaintext highlighter-rouge">HStack</code>)를 자동으로 업데이트하지 않습니다. 따라서 <code class="language-plaintext highlighter-rouge">Randomize</code> 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생합니다.</p>
-
-<h3 id="-해결-방법-id-값을-바꿔서-뷰-강제-갱신">✅ 해결 방법: <code class="language-plaintext highlighter-rouge">id</code> 값을 바꿔서 뷰 강제 갱신</h3>
-
-<p><code class="language-plaintext highlighter-rouge">HStack</code> 전체에 <code class="language-plaintext highlighter-rouge">.id(...)</code>를 주어 SwiftUI가 해당 뷰를 다른 것으로 인식하도록 하면 <strong>뷰 전체가 강제로 다시 그려집니다.</strong></p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">refreshID</span> <span class="o">=</span> <span class="kt">UUID</span><span class="p">()</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>그 다음, <code class="language-plaintext highlighter-rouge">HStack</code>에 <code class="language-plaintext highlighter-rouge">.id(refreshID)</code>를 적용합니다:</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="rouge-code"><pre><span class="kt">HStack</span> <span class="p">{</span>
-  <span class="kt">ForEach</span><span class="p">(</span><span class="n">conductor</span><span class="o">.</span><span class="n">voc</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">ParameterRow</span><span class="p">(</span><span class="nv">param</span><span class="p">:</span> <span class="n">conductor</span><span class="o">.</span><span class="n">voc</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="nv">$0</span><span class="p">])</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="o">.</span><span class="nf">id</span><span class="p">(</span><span class="n">refreshID</span><span class="p">)</span> <span class="c1">// &lt;- 이게 핵심</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>그리고 <code class="language-plaintext highlighter-rouge">Randomize</code> 버튼에서 <code class="language-plaintext highlighter-rouge">refreshID</code>를 갱신해주면 SwiftUI는 뷰 전체를 새로 렌더링합니다:</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre><span class="kt">Button</span><span class="p">(</span><span class="s">"Randomize"</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">conductor</span><span class="o">.</span><span class="n">voc</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="kt">AUValue</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">0</span><span class="o">...</span><span class="mi">2000</span><span class="p">)</span>
-  <span class="n">conductor</span><span class="o">.</span><span class="n">voc</span><span class="o">.</span><span class="n">tonguePosition</span> <span class="o">=</span> <span class="kt">AUValue</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">0</span><span class="o">...</span><span class="mi">1</span><span class="p">)</span>
-  <span class="n">conductor</span><span class="o">.</span><span class="n">voc</span><span class="o">.</span><span class="n">tongueDiameter</span> <span class="o">=</span> <span class="kt">AUValue</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">0</span><span class="o">...</span><span class="mi">1</span><span class="p">)</span>
-  <span class="n">conductor</span><span class="o">.</span><span class="n">voc</span><span class="o">.</span><span class="n">tenseness</span> <span class="o">=</span> <span class="kt">AUValue</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">0</span><span class="o">...</span><span class="mi">1</span><span class="p">)</span>
-  <span class="n">conductor</span><span class="o">.</span><span class="n">voc</span><span class="o">.</span><span class="n">nasality</span> <span class="o">=</span> <span class="kt">AUValue</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">0</span><span class="o">...</span><span class="mi">1</span><span class="p">)</span>
-  <span class="n">refreshID</span> <span class="o">=</span> <span class="kt">UUID</span><span class="p">()</span> <span class="c1">// 강제 갱신 트리거</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<hr />
-
-<h3 id="-대안-권장-binding을-지원하도록-구조-수정">🔁 대안 (권장): <code class="language-plaintext highlighter-rouge">Binding</code>을 지원하도록 구조 수정</h3>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">VocalTract.parameters</code>가 <code class="language-plaintext highlighter-rouge">@Published var</code> 배열이면 <code class="language-plaintext highlighter-rouge">@Binding</code>으로 넘길 수 있습니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">ParameterRow(param: Binding&lt;NodeParameter&gt;)</code>처럼 정의하고, 수정 가능하게 만들 수도 있습니다.</li>
-</ul>
-
-<p>하지만 외부 라이브러리이거나 구조를 못 바꾸는 경우에는 <code class="language-plaintext highlighter-rouge">.id(UUID())</code> 방식이 가장 확실하고 간단한 방법입니다.</p>
-
-<hr />
-
-<h3 id="-결론">✅ 결론</h3>
-
-<p><code class="language-plaintext highlighter-rouge">parameters</code>가 <code class="language-plaintext highlighter-rouge">Binding</code>을 지원하지 않더라도 <code class="language-plaintext highlighter-rouge">HStack</code>에 <code class="language-plaintext highlighter-rouge">.id(refreshID)</code>를 설정하고 <code class="language-plaintext highlighter-rouge">UUID()</code>를 변경하는 방식으로 뷰를 강제로 새로 그리게 만들 수 있습니다.</p>]]></content><author><name></name></author></entry><entry><title type="html">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</title><link href="/posts/MultiTrackMIDIPlayer/" rel="alternate" type="text/html" title="AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)" /><published>2025-06-23T17:16:31+09:00</published><updated>2025-06-23T17:16:31+09:00</updated><id>/posts/MultiTrackMIDIPlayer</id><content type="html" xml:base="/posts/MultiTrackMIDIPlayer/"><![CDATA[<h1 id="multitrack-midi-player">Multitrack MIDI Player</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2025-10-16T01:44:53+09:00</updated><id>/feed.xml</id><title type="html">BGSMM</title><subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle><entry><title type="html">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</title><link href="/posts/MultiTrackMIDIPlayer/" rel="alternate" type="text/html" title="AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)" /><published>2025-06-23T17:16:31+09:00</published><updated>2025-06-23T17:16:31+09:00</updated><id>/posts/MultiTrackMIDIPlayer</id><content type="html" xml:base="/posts/MultiTrackMIDIPlayer/"><![CDATA[<h1 id="multitrack-midi-player">Multitrack MIDI Player</h1>
 
 <p>이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 <strong>MIDI 파일을 재생할 수 있는 SwiftUI 기반의 멀티트랙 MIDI 플레이어</strong>입니다.
 구성은 크게 <code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerConductor</code>(오디오 및 MIDI 처리 로직)와 <code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerView</code>(UI)로 나뉘며, 아래와 같이 작동합니다.</p>
@@ -575,7 +213,157 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 <ul>
   <li>트랙별 볼륨/음소거 슬라이더 추가</li>
   <li>ProgramChange 다중 처리 (중간 악기 변경)</li>
-</ul>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Multitrack MIDI Player]]></summary></entry><entry><title type="html">AudioKit의 MIDIPortTest</title><link href="/posts/MIDIPortTest/" rel="alternate" type="text/html" title="AudioKit의 MIDIPortTest" /><published>2025-06-23T00:42:28+09:00</published><updated>2025-06-23T00:42:28+09:00</updated><id>/posts/MIDIPortTest</id><content type="html" xml:base="/posts/MIDIPortTest/"><![CDATA[<h1 id="midi-port-test-virtual-midi-host-포함">MIDI Port Test (Virtual MIDI Host 포함)</h1>
+</ul>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Multitrack MIDI Player]]></summary></entry><entry><title type="html">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</title><link href="/posts/%EB%AF%B8%EB%94%94_%ED%8A%B8%EB%9E%99%EC%A4%91%EA%B0%84_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%B2%B4%EC%9D%B8%EC%A7%80_%EB%8C%80%EC%9D%91%EB%B2%95/" rel="alternate" type="text/html" title="AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법" /><published>2025-06-23T15:22:38+09:00</published><updated>2025-06-23T15:22:38+09:00</updated><id>/posts/%EB%AF%B8%EB%94%94_%ED%8A%B8%EB%9E%99%EC%A4%91%EA%B0%84_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%B2%B4%EC%9D%B8%EC%A7%80_%EB%8C%80%EC%9D%91%EB%B2%95</id><content type="html" xml:base="/posts/%EB%AF%B8%EB%94%94_%ED%8A%B8%EB%9E%99%EC%A4%91%EA%B0%84_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%B2%B4%EC%9D%B8%EC%A7%80_%EB%8C%80%EC%9D%91%EB%B2%95/"><![CDATA[<h1 id="midisamplerapplesequencer를-이용한-미디-멀티트랙-재생-중-트랙-중간에-프로그램-체인지가-있는-경우-대응-방법">MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h1>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>track 2: [
+  AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),
+  AudioKit.MIDIProgramChangeEvent(time: 64.0, channel: 2, number: 60),
+  AudioKit.MIDIProgramChangeEvent(time: 119.98697916666667, channel: 2, number: 57)
+]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">track 2</code>처럼 <strong>트랙 중간에 Program Change 메시지로 악기가 바뀌는 경우</strong>,
+AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</code>와 <code class="language-plaintext highlighter-rouge">MIDISampler</code> 조합만으로는 <strong>정확한 사운드 전환을 구현하기 어렵습니다.</strong></p>
+
+<p>기본적으로 <code class="language-plaintext highlighter-rouge">track.setMIDIOutput(sampler.midiIn)</code>으로 연결된 <code class="language-plaintext highlighter-rouge">MIDISampler</code>는 <strong>트랙 전체를 하나의 악기로만 재생</strong>합니다.
+중간에 악기를 바꾸는 기능은 직접 처리해주지 않으면 반영되지 않습니다.</p>
+
+<hr />
+
+<h2 id="-문제-상황-요약">✅ 문제 상황 요약</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="n">track</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span>
+  <span class="kt">ProgramChange</span><span class="p">(</span><span class="nv">channel</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">number</span><span class="p">:</span> <span class="mi">57</span><span class="p">)</span> <span class="c1">// 시작 시</span>
+  <span class="kt">ProgramChange</span><span class="p">(</span><span class="nv">channel</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">number</span><span class="p">:</span> <span class="mi">60</span><span class="p">)</span> <span class="c1">// 64초쯤</span>
+  <span class="kt">ProgramChange</span><span class="p">(</span><span class="nv">channel</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">number</span><span class="p">:</span> <span class="mi">57</span><span class="p">)</span> <span class="c1">// 120초쯤 복귀</span>
+<span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>표준 MIDI에서는 이런 식으로 Program Change 메시지를 트랙 내에 삽입하여 <strong>동일 채널에 악기 전환</strong>을 수행</li>
+  <li>AudioKit의 기본 Sequencer 처리 방식에서는 이를 자동 인식하거나 대응하지 않음</li>
+</ul>
+
+<hr />
+
+<h2 id="-해결-방향">🎯 해결 방향</h2>
+
+<h3 id="-program-change-이벤트를-파싱해서">① Program Change 이벤트를 파싱해서</h3>
+
+<ul>
+  <li>시점별로 <strong>악기(프리셋) 변경 정보</strong>를 추출</li>
+</ul>
+
+<h3 id="-해당-채널의-midi-이벤트를-악기-구간별로-나눠서">② 해당 채널의 MIDI 이벤트를 <strong>악기 구간별로 나눠서</strong></h3>
+
+<ul>
+  <li><strong>구간별 <code class="language-plaintext highlighter-rouge">MIDISampler</code>를 생성</strong>하거나</li>
+  <li>하나의 Sampler에 <strong>프리셋을 실시간으로 변경 요청</strong>
+(단, 대부분의 <code class="language-plaintext highlighter-rouge">MIDISampler</code>는 실행 중 preset 변경을 안정적으로 지원하지 않음)</li>
+</ul>
+
+<hr />
+
+<h2 id="-실현-가능한-접근-방법">✅ 실현 가능한 접근 방법</h2>
+
+<h3 id="-방법-a-트랙을-구간별로-분할하여-각각-sampler에-할당">✅ 방법 A: 트랙을 구간별로 분할하여 각각 sampler에 할당</h3>
+
+<blockquote>
+  <p>1개 트랙을 Program Change 기준으로 여러 개로 나누고,
+구간마다 MIDISampler와 연결 → Mixer에 병합</p>
+</blockquote>
+
+<p>단점:</p>
+
+<ul>
+  <li>구현 복잡도 있음</li>
+  <li>MIDI 이벤트 재구성이 필요</li>
+</ul>
+
+<h3 id="-방법-b-programchange-메시지-수신-시-sampler의-preset을-변경">✅ 방법 B: ProgramChange 메시지 수신 시 sampler의 preset을 변경</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">case</span> <span class="kd">let</span> <span class="o">.</span><span class="nf">programChange</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span> <span class="o">=</span> <span class="n">event</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="n">channel</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">{</span>
+    <span class="k">try</span><span class="p">?</span> <span class="n">sampler</span><span class="o">.</span><span class="nf">loadSoundFont</span><span class="p">(</span><span class="s">"CT8MGM"</span><span class="p">,</span> <span class="nv">preset</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="nv">bank</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>MIDI 이벤트를 수신하는 커스텀 <code class="language-plaintext highlighter-rouge">MIDIListener</code> 구현 필요</li>
+  <li>실행 중 preset을 바꾸면 버퍼 끊김이나 글리치 발생 가능</li>
+</ul>
+
+<blockquote>
+  <p>⚠️ <strong>실행 중 preset 변경은 대부분 권장되지 않음</strong></p>
+</blockquote>
+
+<hr />
+
+<h2 id="-권장-방식-현실적-대안">✅ 권장 방식 (현실적 대안)</h2>
+
+<h3 id="-트랙-중간에-program-change가-있는-경우">🎯 트랙 중간에 Program Change가 있는 경우:</h3>
+
+<ol>
+  <li><strong>MIDI 파일을 외부에서 미리 분할</strong>하거나</li>
+  <li><strong>DAW에서 동일 채널에 Program Change를 쓰지 않도록 재구성</strong></li>
+  <li>또는 <strong>AudioKit으로 다룰 경우, 중간 ProgramChange를 무시하고 시작 preset만 사용</strong></li>
+</ol>
+
+<hr />
+
+<h2 id="-요약">✅ 요약</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>상황</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>트랙에 ProgramChange가 여러 개 있음</td>
+      <td>MIDI 채널의 악기가 재생 중에 바뀜</td>
+    </tr>
+    <tr>
+      <td>AudioKit <code class="language-plaintext highlighter-rouge">AppleSequencer</code></td>
+      <td>한 트랙당 하나의 sampler만 연결됨</td>
+    </tr>
+    <tr>
+      <td>실시간 preset 변경</td>
+      <td>가능은 하지만 glitch 발생 가능</td>
+    </tr>
+    <tr>
+      <td>현실적인 방법</td>
+      <td>ProgramChange 기준으로 트랙을 사전 분할 또는 첫 preset만 사용</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>필요하시면:</p>
+
+<ul>
+  <li>해당 트랙을 ProgramChange 기준으로 구간 분할하는 MIDI parser 예제</li>
+  <li>MIDISampler 여러 개 동적으로 운용하는 구조도 함께 도와드릴 수 있습니다.</li>
+</ul>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법]]></summary></entry><entry><title type="html">AudioKit의 MIDIPortTest</title><link href="/posts/MIDIPortTest/" rel="alternate" type="text/html" title="AudioKit의 MIDIPortTest" /><published>2025-06-23T00:42:28+09:00</published><updated>2025-06-23T00:42:28+09:00</updated><id>/posts/MIDIPortTest</id><content type="html" xml:base="/posts/MIDIPortTest/"><![CDATA[<h1 id="midi-port-test-virtual-midi-host-포함">MIDI Port Test (Virtual MIDI Host 포함)</h1>
 
 <hr />
 
@@ -1675,4 +1463,604 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <blockquote>
   <p>SwiftUI와 함께 사용할 때 매우 직관적인 신디사이저 앱이나 교육용 악기 UI를 구성하는 데 적합합니다.</p>
-</blockquote>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Dunne Synth]]></summary></entry></feed>
+</blockquote>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Dunne Synth]]></summary></entry><entry><title type="html">AudioKit의 InputDeviceDemo+ChannelRouting</title><link href="/posts/InputDeviceDemo+ChannelRouting/" rel="alternate" type="text/html" title="AudioKit의 InputDeviceDemo+ChannelRouting" /><published>2025-06-22T15:36:36+09:00</published><updated>2025-06-22T15:36:36+09:00</updated><id>/posts/InputDeviceDemo+ChannelRouting</id><content type="html" xml:base="/posts/InputDeviceDemo+ChannelRouting/"><![CDATA[<h1 id="input-device-demo">Input Device Demo</h1>
+
+<p>이 SwiftUI + AudioKit 코드의 목적은 <strong>입력 장치(마이크)를 선택하고 오디오 입력을 시작/정지하는 UI를 제공하는 것</strong>입니다.
+즉, 여러 마이크 장치가 연결된 환경에서 사용자가 원하는 입력을 선택하고, 마이크 버튼을 눌러 오디오 입력을 켜거나 끌 수 있게 합니다.</p>
+
+<blockquote>
+  <p>Channel/Device Routing 예제와 거의 동일</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-클래스-inputdevicedemoconductor">🔧 클래스: <code class="language-plaintext highlighter-rouge">InputDeviceDemoConductor</code></h2>
+
+<h3 id="-역할-오디오-입력-장치-관리--audiokit-엔진-제어">✅ 역할: 오디오 입력 장치 관리 + AudioKit 엔진 제어</h3>
+
+<h4 id="주요-속성">주요 속성</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>변수</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">engine</code></td>
+      <td>AudioKit의 <code class="language-plaintext highlighter-rouge">AudioEngine</code> 인스턴스</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mic</code></td>
+      <td>현재 연결된 오디오 입력 노드 (<code class="language-plaintext highlighter-rouge">engine.input</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mixer</code></td>
+      <td>입력을 오디오 엔진의 출력으로 연결하기 위한 믹서 노드</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">inputDevices</code></td>
+      <td><code class="language-plaintext highlighter-rouge">AVAudioSession</code>에서 얻은 사용 가능한 오디오 입력 장치 목록</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">inputDeviceList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Picker</code>에 표시할 장치 이름 목록 (portName 배열)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="init"><code class="language-plaintext highlighter-rouge">init()</code></h4>
+
+<ul>
+  <li>오디오 입력 노드가 있을 경우 <code class="language-plaintext highlighter-rouge">mic</code>에 할당하고 <code class="language-plaintext highlighter-rouge">Mixer(input)</code>으로 연결</li>
+  <li>입력 장치 목록(<code class="language-plaintext highlighter-rouge">inputDevices</code>)을 불러와 <code class="language-plaintext highlighter-rouge">portName</code>을 <code class="language-plaintext highlighter-rouge">inputDeviceList</code>에 저장</li>
+  <li><code class="language-plaintext highlighter-rouge">engine.output = mixer</code>를 통해 믹서를 엔진의 출력으로 설정</li>
+</ul>
+
+<h4 id="switchinputnumber"><code class="language-plaintext highlighter-rouge">switchInput(number:)</code></h4>
+
+<ul>
+  <li>선택된 입력 장치를 <code class="language-plaintext highlighter-rouge">setPreferredInput(...)</code>으로 변경</li>
+  <li>변경 전에는 <code class="language-plaintext highlighter-rouge">stop()</code> 호출로 엔진을 멈춤</li>
+</ul>
+
+<hr />
+
+<h2 id="️-view-inputdevicedemoview">🖼️ View: <code class="language-plaintext highlighter-rouge">InputDeviceDemoView</code></h2>
+
+<h3 id="-역할-ui를-통해-입력-장치-선택-및-오디오-입력-시작정지">✅ 역할: UI를 통해 입력 장치 선택 및 오디오 입력 시작/정지</h3>
+
+<h4 id="주요-상태-변수">주요 상태 변수</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>변수</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">isPlaying</code></td>
+      <td>오디오 입력이 현재 켜져 있는지 여부</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">inputDevice</code></td>
+      <td>현재 선택된 입력 장치의 인덱스 (<code class="language-plaintext highlighter-rouge">Picker</code>에서 선택됨)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="-뷰-구조-설명">✅ 뷰 구조 설명</h3>
+
+<h4 id="-안내-텍스트">📍 안내 텍스트</h4>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kt">Text</span><span class="p">(</span><span class="s">"Please plug in headphones"</span><span class="p">)</span>
+<span class="kt">Text</span><span class="p">(</span><span class="s">"to avoid a feedback loop."</span><span class="p">)</span>
+<span class="kt">Text</span><span class="p">(</span><span class="s">"Then, select a device to start!"</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>피드백(하울링)을 피하기 위해 이어폰 사용을 권장</li>
+</ul>
+
+<hr />
+
+<h4 id="-입력-장치-선택-picker">🎛 입력 장치 선택 Picker</h4>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kt">Picker</span><span class="p">(</span><span class="s">"Input Device"</span><span class="p">,</span> <span class="nv">selection</span><span class="p">:</span> <span class="n">$inputDevice</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">ForEach</span><span class="p">(</span><span class="n">conductor</span><span class="o">.</span><span class="n">inputDeviceList</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">i</span> <span class="k">in</span>
+    <span class="kt">Text</span><span class="p">(</span><span class="n">conductor</span><span class="o">.</span><span class="n">inputDeviceList</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="o">.</span><span class="nf">tag</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">conductor.inputDeviceList</code>에 저장된 장치 이름을 기반으로 Picker 구성</li>
+  <li>선택이 변경되면 <code class="language-plaintext highlighter-rouge">.onChange(of: inputDevice)</code>를 통해 <code class="language-plaintext highlighter-rouge">switchInput(...)</code> 호출</li>
+</ul>
+
+<hr />
+
+<h4 id="-마이크-onoff-버튼">🎤 마이크 on/off 버튼</h4>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kt">Button</span> <span class="p">{</span>
+  <span class="n">isPlaying</span> <span class="p">?</span> <span class="n">conductor</span><span class="o">.</span><span class="nf">stop</span><span class="p">()</span> <span class="p">:</span> <span class="n">conductor</span><span class="o">.</span><span class="nf">start</span><span class="p">()</span>
+  <span class="n">isPlaying</span><span class="o">.</span><span class="nf">toggle</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>클릭 시 마이크 입력이 시작되거나 종료</li>
+  <li>버튼의 아이콘은 <code class="language-plaintext highlighter-rouge">isPlaying</code> 상태에 따라 <code class="language-plaintext highlighter-rouge">"mic.circle"</code> 또는 <code class="language-plaintext highlighter-rouge">"mic.circle.fill"</code>로 바뀜</li>
+  <li><code class="language-plaintext highlighter-rouge">.resizable()</code> + <code class="language-plaintext highlighter-rouge">.frame(...)</code>으로 크기와 정렬 지정</li>
+</ul>
+
+<hr />
+
+<h4 id="-종료-시-동작">📤 종료 시 동작</h4>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="o">.</span><span class="n">onDisappear</span> <span class="p">{</span>
+  <span class="n">conductor</span><span class="o">.</span><span class="nf">stop</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>뷰가 사라질 때 자동으로 오디오 입력 종료</li>
+</ul>
+
+<hr />
+
+<h2 id="-전체-동작-요약">✅ 전체 동작 요약</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>상황</th>
+      <th>동작</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>앱 시작</td>
+      <td>AudioKit 엔진 초기화 + 사용 가능한 입력 장치 목록 확보</td>
+    </tr>
+    <tr>
+      <td>장치 선택</td>
+      <td>선택된 장치로 입력 전환 (<code class="language-plaintext highlighter-rouge">switchInput</code>)</td>
+    </tr>
+    <tr>
+      <td>버튼 클릭</td>
+      <td>오디오 입력 시작/정지 (<code class="language-plaintext highlighter-rouge">start()</code> / <code class="language-plaintext highlighter-rouge">stop()</code>)</td>
+    </tr>
+    <tr>
+      <td>뷰 종료</td>
+      <td>입력 강제 종료</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-확장-가능성">✅ 확장 가능성</h2>
+
+<ul>
+  <li>입력 장치별 채널 수 확인</li>
+  <li>입력을 파일로 녹음</li>
+  <li>출력 장치 설정도 추가 가능</li>
+</ul>
+
+<hr />
+
+<p>이 코드는 AudioKit을 활용한 <strong>기초 오디오 입출력 제어 구조</strong>를 익히기에 적절한 예제입니다.</p>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Input Device Demo]]></summary></entry><entry><title type="html">AudioKit의 BaseTapForSpeechRecognition</title><link href="/posts/BaseTapForSpeechRecognition/" rel="alternate" type="text/html" title="AudioKit의 BaseTapForSpeechRecognition" /><published>2025-06-21T22:06:46+09:00</published><updated>2025-06-21T22:06:46+09:00</updated><id>/posts/BaseTapForSpeechRecognition</id><content type="html" xml:base="/posts/BaseTapForSpeechRecognition/"><![CDATA[<h1 id="base-tap-for-speech-recognition">Base Tap for Speech Recognition</h1>
+
+<p>현재 코드에서의 <code class="language-plaintext highlighter-rouge">SpeechRecognitionTap</code>과 <code class="language-plaintext highlighter-rouge">BaseTapForSpeechRecognitionConductor</code>는 <strong>AudioKit</strong>과 <strong>Speech Framework</strong>를 연결하여 실시간으로 마이크 입력을 받아 <strong>음성 인식 결과를 텍스트로 출력</strong>하는 역할을 수행합니다.
+변경된 코드 기준으로 두 클래스의 구성과 동작을 자세히 설명드리겠습니다.</p>
+
+<hr />
+
+<h2 id="-speechrecognitiontap-마이크-오디오-버퍼를-음성-인식기로-전달">✅ <code class="language-plaintext highlighter-rouge">SpeechRecognitionTap</code>: 마이크 오디오 버퍼를 음성 인식기로 전달</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">SpeechRecognitionTap</span><span class="p">:</span> <span class="kt">BaseTap</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">BaseTap</code>은 AudioKit에서 입력을 분석하기 위한 탭(Tap)을 구현할 때 사용하는 기본 클래스입니다. <code class="language-plaintext highlighter-rouge">SpeechRecognitionTap</code>은 이를 상속받아 Apple의 <code class="language-plaintext highlighter-rouge">Speech</code> 프레임워크와 연결하는 데 초점을 둡니다.</p>
+
+<h3 id="-주요-프로퍼티">🔧 주요 프로퍼티</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로퍼티</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">recognitionRequest</code></td>
+      <td>오디오 버퍼를 지속적으로 전달받는 객체 (<code class="language-plaintext highlighter-rouge">SFSpeechAudioBufferRecognitionRequest</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">analyzer</code></td>
+      <td>언어별 음성 인식기 (<code class="language-plaintext highlighter-rouge">SFSpeechRecognizer</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">reconitionTask</code></td>
+      <td>실제 인식 작업을 수행하는 비동기 작업 (<code class="language-plaintext highlighter-rouge">SFSpeechRecognitionTask</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="-메서드-설명">🔨 메서드 설명</h3>
+
+<h4 id="setuprecognitionlocale"><code class="language-plaintext highlighter-rouge">setupRecognition(locale:)</code></h4>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">setupRecognition</span><span class="p">(</span><span class="nv">locale</span><span class="p">:</span> <span class="kt">Locale</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>선택한 언어(<code class="language-plaintext highlighter-rouge">Locale</code>)에 맞는 <code class="language-plaintext highlighter-rouge">SFSpeechRecognizer</code> 인스턴스를 생성</li>
+  <li>실시간 스트리밍 인식을 위한 <code class="language-plaintext highlighter-rouge">SFSpeechAudioBufferRecognitionRequest</code> 초기화</li>
+  <li><code class="language-plaintext highlighter-rouge">recognitionRequest.shouldReportPartialResults = true</code> 설정으로 중간 결과도 실시간 전달 가능</li>
+</ul>
+
+<h4 id="stoprecognition"><code class="language-plaintext highlighter-rouge">stopRecognition()</code></h4>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">stopRecognition</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>음성 인식 세션을 종료하고 관련 객체를 초기화하여 해제</li>
+</ul>
+
+<h4 id="dohandletapblockbufferat"><code class="language-plaintext highlighter-rouge">doHandleTapBlock(buffer:at:)</code></h4>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">doHandleTapBlock</span><span class="p">(</span><span class="nv">buffer</span><span class="p">:</span> <span class="kt">AVAudioPCMBuffer</span><span class="p">,</span> <span class="n">at</span> <span class="nv">time</span><span class="p">:</span> <span class="kt">AVAudioTime</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>AudioKit에서 자동으로 호출되는 메서드</li>
+  <li>마이크 입력 버퍼를 <code class="language-plaintext highlighter-rouge">recognitionRequest</code>에 전달하여 음성 인식기가 실시간으로 처리하게 함</li>
+</ul>
+
+<hr />
+
+<h2 id="-basetapforspeechrecognitionconductor-음성-인식과-오디오-경로를-통합-관리">✅ <code class="language-plaintext highlighter-rouge">BaseTapForSpeechRecognitionConductor</code>: 음성 인식과 오디오 경로를 통합 관리</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">BaseTapForSpeechRecognitionConductor</span><span class="p">:</span> <span class="kt">ObservableObject</span><span class="p">,</span> <span class="kt">HasAudioEngine</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="-주요-프로퍼티-1">🔧 주요 프로퍼티</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로퍼티</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">textString</code></td>
+      <td>인식된 텍스트 결과</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">languageCode</code></td>
+      <td>선택된 언어 코드 (<code class="language-plaintext highlighter-rouge">en-US</code>, <code class="language-plaintext highlighter-rouge">ko-KR</code>, <code class="language-plaintext highlighter-rouge">ja-JP</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">srTap</code></td>
+      <td><code class="language-plaintext highlighter-rouge">SpeechRecognitionTap</code> 인스턴스</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">engine</code>, <code class="language-plaintext highlighter-rouge">mic</code>, <code class="language-plaintext highlighter-rouge">outputMixer</code>, <code class="language-plaintext highlighter-rouge">silencer</code></td>
+      <td>AudioKit의 오디오 라우팅 구성 요소</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">recognitionTask</code></td>
+      <td>음성 인식 작업 참조용</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="-주요-로직">🔨 주요 로직</h3>
+
+<h4 id="init"><code class="language-plaintext highlighter-rouge">init()</code></h4>
+
+<ul>
+  <li>오디오 엔진과 마이크 입력 초기화</li>
+  <li>AudioKit의 <code class="language-plaintext highlighter-rouge">output = silencer</code>로 출력 경로 설정 (실제 소리는 꺼둔 상태)</li>
+  <li><code class="language-plaintext highlighter-rouge">srTap.start()</code>로 마이크 데이터 수집 시작</li>
+  <li><code class="language-plaintext highlighter-rouge">setLanguage(code:)</code>를 호출하여 기본 언어로 음성 인식 시작</li>
+</ul>
+
+<h4 id="setlanguagecode"><code class="language-plaintext highlighter-rouge">setLanguage(code:)</code></h4>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">setLanguage</span><span class="p">(</span><span class="nv">code</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>현재 음성 인식 세션을 중단 (<code class="language-plaintext highlighter-rouge">stopRecognition</code>, <code class="language-plaintext highlighter-rouge">stop</code>)</li>
+  <li>오디오 엔진을 재시작</li>
+  <li>새로운 언어로 <code class="language-plaintext highlighter-rouge">SFSpeechRecognizer</code>를 초기화하고 <code class="language-plaintext highlighter-rouge">recognitionRequest</code>를 설정</li>
+  <li><code class="language-plaintext highlighter-rouge">recognitionTask</code>를 새로 만들어 <code class="language-plaintext highlighter-rouge">textString</code>에 실시간 결과를 반영</li>
+</ul>
+
+<blockquote>
+  <p><strong>핵심</strong>: 언어가 바뀔 때 <code class="language-plaintext highlighter-rouge">engine</code>, <code class="language-plaintext highlighter-rouge">tap</code>, <code class="language-plaintext highlighter-rouge">recognizer</code>를 모두 재시작해서 새로운 인식 환경을 구성</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-흐름-요약">🧠 흐름 요약</h2>
+
+<ol>
+  <li>뷰가 나타남 → <code class="language-plaintext highlighter-rouge">init()</code>에서 오디오 및 인식기 설정</li>
+  <li>사용자가 언어를 선택 → <code class="language-plaintext highlighter-rouge">languageCode.didSet → setLanguage(...)</code></li>
+  <li>마이크 입력 → <code class="language-plaintext highlighter-rouge">doHandleTapBlock</code> → <code class="language-plaintext highlighter-rouge">recognitionRequest.append(...)</code></li>
+  <li>Apple 음성 인식기에서 처리된 결과가 <code class="language-plaintext highlighter-rouge">textString</code>에 실시간 업데이트됨</li>
+  <li>뷰는 <code class="language-plaintext highlighter-rouge">ScrollView</code>를 통해 자동 스크롤하며 결과를 출력</li>
+</ol>
+
+<hr />
+
+<h2 id="-정리">📌 정리</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>클래스</th>
+      <th>역할</th>
+      <th>핵심 기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SpeechRecognitionTap</code></td>
+      <td>오디오 → SpeechFramework 전달</td>
+      <td>마이크 입력 버퍼를 <code class="language-plaintext highlighter-rouge">recognitionRequest</code>에 지속 전달</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">BaseTapForSpeechRecognitionConductor</code></td>
+      <td>오디오 엔진 + 언어 변경 + 인식기 관리</td>
+      <td>언어 변경 시 자동 재설정, 실시간 결과 처리</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Base Tap for Speech Recognition]]></summary></entry><entry><title type="html">Tables</title><link href="/posts/Tables/" rel="alternate" type="text/html" title="Tables" /><published>2025-06-21T20:11:40+09:00</published><updated>2025-06-21T20:11:40+09:00</updated><id>/posts/Tables</id><content type="html" xml:base="/posts/Tables/"><![CDATA[<h1 id="tables">Tables</h1>
+
+<p>이 코드는 <code class="language-plaintext highlighter-rouge">AudioKit</code>의 <code class="language-plaintext highlighter-rouge">Table</code> 객체들을 생성하고 시각화하는 SwiftUI 뷰입니다.
+특히 생성자(<code class="language-plaintext highlighter-rouge">init()</code>)에서는 다양한 방식으로 **파형 테이블(Table)**을 생성하여 오실레이터 등에서 사용할 수 있도록 준비합니다.
+이 Table들은 사인파, 정사각파, 사용자 정의 파형 등의 <strong>루프 가능한 단일 사이클 웨이브폼</strong>입니다.</p>
+
+<hr />
+
+<h2 id="-클래스-개요-tableconductor">✅ 클래스 개요: <code class="language-plaintext highlighter-rouge">TableConductor</code></h2>
+
+<p>이 클래스는 <code class="language-plaintext highlighter-rouge">ObservableObject</code>로, UI에서 이 객체의 <code class="language-plaintext highlighter-rouge">@Published</code> 값을 관찰할 수 있도록 구성되어 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">TableConductor</span><span class="p">:</span> <span class="kt">ObservableObject</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="-속성-목록">📌 속성 목록</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>속성 이름</th>
+      <th>역할</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">square</code></td>
+      <td>정사각형 파형 테이블 (Square Wave)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">triangle</code></td>
+      <td>삼각형 파형 테이블 (Triangle Wave)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sine</code></td>
+      <td>사인파 테이블 (Sine Wave)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sineHarmonic</code></td>
+      <td>하모닉(배음) 기반의 사인파</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fileTable</code></td>
+      <td>오디오 파일 기반 파형</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">custom</code></td>
+      <td>사용자 정의 파형 (난수 + 인덱스 기반)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-생성자-설명-init">🧠 생성자 설명: <code class="language-plaintext highlighter-rouge">init()</code></h2>
+
+<h3 id="-1-기본-파형-테이블-생성">🔹 1. 기본 파형 테이블 생성</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">square</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">128</span><span class="p">)</span>
+<span class="n">triangle</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="o">.</span><span class="n">triangle</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">128</span><span class="p">)</span>
+<span class="n">sine</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="o">.</span><span class="n">sine</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">256</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.init(_:count:)</code>는 해당 파형 유형의 테이블을 지정된 크기만큼 생성</li>
+  <li><code class="language-plaintext highlighter-rouge">count</code>는 <strong>테이블 길이 (샘플 수)</strong>, 2의 제곱수로 설정하는 것이 일반적 (FFT 등 성능에 영향)</li>
+</ul>
+
+<hr />
+
+<h3 id="-2-오디오-파일-기반-파형-생성">🔹 2. 오디오 파일 기반 파형 생성</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">GlobalSource</span><span class="o">.</span><span class="n">piano</span><span class="o">.</span><span class="n">url</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">file</span> <span class="o">=</span> <span class="k">try!</span> <span class="kt">AVAudioFile</span><span class="p">(</span><span class="nv">forReading</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+<span class="n">fileTable</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">file</span><span class="p">:</span> <span class="n">file</span><span class="p">)</span><span class="o">!</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.sfz</code> 또는 <code class="language-plaintext highlighter-rouge">.wav</code> 등의 오디오 파일을 읽어 들여 파형 테이블로 변환</li>
+  <li><code class="language-plaintext highlighter-rouge">fileTable</code>은 실제 음성 데이터를 기반으로 한 루프 테이블이 됨</li>
+</ul>
+
+<p>주의:</p>
+<ul>
+  <li>파일 로딩은 오래 걸릴 수 있으므로 생성자에서 직접 하지 말고 <code class="language-plaintext highlighter-rouge">task</code> 등을 통해 비동기적으로 실행</li>
+</ul>
+
+<hr />
+
+<h3 id="-3-하모닉-오버톤-기반-테이블-생성">🔹 3. 하모닉 오버톤 기반 테이블 생성</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">harmonicOvertoneAmplitudes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.016</span><span class="p">,</span> <span class="mf">0.301</span>
+<span class="p">]</span>
+<span class="n">sineHarmonic</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="o">.</span><span class="nf">harmonic</span><span class="p">(</span><span class="n">harmonicOvertoneAmplitudes</span><span class="p">),</span> <span class="nv">phase</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">AudioKit.TableType.harmonic(_)</code>은 **기본파 + 배음(amplitudes)**으로 구성된 파형 생성</li>
+  <li><code class="language-plaintext highlighter-rouge">harmonicOvertoneAmplitudes[n]</code>은 <strong>(n+1)번째 고조파의 세기</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">phase: 0.75</code>는 <strong>위상 오프셋</strong>으로, 시작 지점을 오른쪽으로 75%만큼 이동</li>
+</ul>
+
+<p>예:
+배음 = <code class="language-plaintext highlighter-rouge">[0.0, 0.0, 0.016, 0.301]</code>
+→ 기본파 없음, 3번째와 4번째 고조파만 있는 파형</p>
+
+<hr />
+
+<h3 id="-4-사용자-정의-파형-생성">🔹 4. 사용자 정의 파형 생성</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">custom</span> <span class="o">=</span> <span class="kt">Table</span><span class="p">(</span><span class="o">.</span><span class="n">sine</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">256</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">custom</span><span class="o">.</span><span class="n">indices</span> <span class="p">{</span>
+  <span class="n">custom</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="kt">Float</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.5</span><span class="o">...</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="kt">Float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2048.0</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>먼저 사인파 테이블을 생성한 뒤, 각 샘플에 <strong>무작위 값 + 인덱스 기반 값</strong>을 더함</li>
+  <li>이는 <strong>잡음 성분이 섞인 사인파 또는 변형된 파형</strong>을 만들기 위한 목적</li>
+</ul>
+
+<p>예:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Float.random(in: -0.5...0.5)</code> → 랜덤 노이즈</li>
+  <li><code class="language-plaintext highlighter-rouge">Float(i) / 2048.0</code> → 위치에 따라 증가하는 값</li>
+</ul>
+
+<hr />
+
+<h2 id="️-테이블-시각화-뷰-tabledataview">🖼️ 테이블 시각화 뷰 (<code class="language-plaintext highlighter-rouge">TableDataView</code>)</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">TableDataView</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>AudioKit에서 제공하는 <code class="language-plaintext highlighter-rouge">TableView</code>를 UIKit 기반으로 감싸 SwiftUI에서 사용 가능하게 함</li>
+  <li><code class="language-plaintext highlighter-rouge">table</code>을 주입받아 <code class="language-plaintext highlighter-rouge">makeUIView</code>에서 그려줌</li>
+</ul>
+
+<hr />
+
+<h2 id="-swiftui-구성-tablerecipeview">📱 SwiftUI 구성 (<code class="language-plaintext highlighter-rouge">TableRecipeView</code>)</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kt">VStack</span> <span class="p">{</span>
+  <span class="kt">Text</span><span class="p">(</span><span class="s">"Square"</span><span class="p">)</span>
+  <span class="kt">TableDataView</span><span class="p">(</span><span class="nv">table</span><span class="p">:</span> <span class="n">conductor</span><span class="o">.</span><span class="n">square</span><span class="p">)</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>각 Table을 <code class="language-plaintext highlighter-rouge">Text</code>와 함께 나열하여 시각적으로 비교 가능</li>
+</ul>
+
+<hr />
+
+<h2 id="-요약">✅ 요약</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>생성 방식</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.init(.sine, count: N)</code></td>
+      <td>기본형 파형 생성</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.init(file:)</code></td>
+      <td>오디오 파일 기반 파형</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.init(.harmonic, phase:)</code></td>
+      <td>배음 기반 사용자 정의 파형</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.init</code> + 인덱스 수식</td>
+      <td>완전 커스텀 파형</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Tables]]></summary></entry></feed>

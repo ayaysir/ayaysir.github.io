@@ -1,48 +1,21 @@
 [
   
   {
-    "title": null,
-    "url": "/posts/2025-05-14-%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/",
-    "categories": "",
-    "tags": "",
-    "date": "2025-10-15 22:11:15 +0900",
-    "content": "SwiftUI에서 @Binding을 지원하지 않는 뷰의 강제 리프레시  parameters와 ParameterRow가 바인딩(Binding)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(HStack)를 자동으로 업데이트하지 않습니다. 따라서 Randomize 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생합니다.  ✅ 해결 방법: id 값을 바꿔서 뷰 강제 갱신  HStack 전체에 .id(...)를 주어 SwiftUI가 해당 뷰를 다른 것으로 인식하도록 하면 뷰 전체가 강제로 다시 그려집니다.  @State private var refreshID = UUID()   그 다음, HStack에 .id(refreshID)를 적용합니다:  HStack {   ForEach(conductor.voc.parameters.indices, id: \\.self) {     ParameterRow(param: conductor.voc.parameters[$0])   } } .id(refreshID) // &lt;- 이게 핵심   그리고 Randomize 버튼에서 refreshID를 갱신해주면 SwiftUI는 뷰 전체를 새로 렌더링합니다:  Button(\"Randomize\") {   conductor.voc.frequency = AUValue.random(in: 0...2000)   conductor.voc.tonguePosition = AUValue.random(in: 0...1)   conductor.voc.tongueDiameter = AUValue.random(in: 0...1)   conductor.voc.tenseness = AUValue.random(in: 0...1)   conductor.voc.nasality = AUValue.random(in: 0...1)   refreshID = UUID() // 강제 갱신 트리거 }     🔁 대안 (권장): Binding을 지원하도록 구조 수정     VocalTract.parameters가 @Published var 배열이면 @Binding으로 넘길 수 있습니다.   ParameterRow(param: Binding&lt;NodeParameter&gt;)처럼 정의하고, 수정 가능하게 만들 수도 있습니다.   하지만 외부 라이브러리이거나 구조를 못 바꾸는 경우에는 .id(UUID()) 방식이 가장 확실하고 간단한 방법입니다.    ✅ 결론  parameters가 Binding을 지원하지 않더라도 HStack에 .id(refreshID)를 설정하고 UUID()를 변경하는 방식으로 뷰를 강제로 새로 그리게 만들 수 있습니다. "
-  },
-  
-  {
-    "title": null,
-    "url": "/posts/2025-04-29-Observable-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/",
-    "categories": "",
-    "tags": "",
-    "date": "2025-10-15 22:11:15 +0900",
-    "content": "Observable 동작 원리 viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유? @Observable 클래스 AudioKit3DViewModel에서 참조하는  각 클래스 AudioEngine3DConductor, SceneCoordinator에 @Observable을 붙이지 않아도 동작하는 이유?   답변  1. viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유  @State는 SwiftUI 뷰 내부에서 값 타입(보통 구조체)을 직접 소유하고 변경할 때 사용됩니다. 그러나 viewModel은 클래스(AudioKit3DViewModel) 타입이며, 해당 클래스는 SwiftUI 뷰 외부에서 생성되어 참조됩니다. 이 경우 SwiftUI에서 값의 변경을 감지하려면 @ObservedObject, @StateObject, @EnvironmentObject 등의 속성이 필요합니다.  하지만 해당 코드에서는 @Observable 속성이 붙어 있는 것으로 보입니다.  Swift 5.9 이상 (또는 Xcode 15 이상)에서는 SwiftUI의 Observation 프레임워크를 기반으로 하는 @Observable 프로토콜이 도입되었으며, 이 프로토콜을 채택한 객체는 SwiftUI에서 자동으로 상태를 관찰할 수 있습니다. 이를 통해 @StateObject나 @ObservedObject 없이도 값의 변경이 뷰에 반영됩니다.  다시 말해, viewModel이 @Observable을 따르고 있고, SwiftUI가 이를 알 수 있기 때문에 별도의 속성 래퍼가 필요 없습니다. 단, 이 기능은 Swift의 Observation이 제대로 적용되는 환경(Xcode 15 이상, Swift 5.9 이상, iOS 17 이상 등)에서만 가능합니다.    2. AudioEngine3DConductor, SceneCoordinator에 @Observable을 붙이지 않아도 되는 이유  @Observable은 SwiftUI가 뷰에서 참조할 값이 변경될 때 UI를 자동 갱신하기 위해 사용하는 것입니다.  하지만 AudioEngine3DConductor와 SceneCoordinator는 뷰에서 직접 사용하는 것이 아니라, AudioKit3DViewModel 내부에서 사용됩니다. 그리고 이 클래스들은 값의 변경이 SwiftUI 뷰에 직접적인 영향을 주지 않기 때문에 @Observable을 붙일 필요가 없습니다.  즉, 다음과 같은 구조입니다:     AudioKit3DView는 viewModel: AudioKit3DViewModel을 소유함   AudioKit3DViewModel은 @Observable이라서 값의 변경을 SwiftUI가 감지할 수 있음   viewModel 내부에서 사용하는 conductor, coordinator는 뷰에 직접 바인딩된 값이 아님   따라서 그 내부 클래스에 @Observable을 붙일 필요가 없음   단, 만약 AudioEngine3DConductor나 SceneCoordinator의 속성을 뷰에서 직접 바인딩하거나 관찰해야 할 경우, 그때는 해당 클래스에도 @Observable이나 @Published 등을 적용해야 합니다.    요약                 항목       이유                       viewModel에 @State 없음       @Observable을 통해 SwiftUI가 자동 관찰하므로 별도 속성 래퍼 불필요                 conductor, coordinator에 @Observable 없음       뷰에서 직접 사용하지 않으며 뷰에 상태 영향을 주지 않기 때문          "
-  },
-  
-  {
-    "title": null,
-    "url": "/posts/2025-06-23-%EB%AF%B8%EB%94%94_%ED%8A%B8%EB%9E%99%EC%A4%91%EA%B0%84_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%B2%B4%EC%9D%B8%EC%A7%80_%EB%8C%80%EC%9D%91%EB%B2%95/",
-    "categories": "",
-    "tags": "",
-    "date": "2025-10-15 22:11:15 +0900",
-    "content": "MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEvent(time: 64.0, channel: 2, number: 60),   AudioKit.MIDIProgramChangeEvent(time: 119.98697916666667, channel: 2, number: 57) ]   track 2처럼 트랙 중간에 Program Change 메시지로 악기가 바뀌는 경우, AudioKit의 AppleSequencer와 MIDISampler 조합만으로는 정확한 사운드 전환을 구현하기 어렵습니다.  기본적으로 track.setMIDIOutput(sampler.midiIn)으로 연결된 MIDISampler는 트랙 전체를 하나의 악기로만 재생합니다. 중간에 악기를 바꾸는 기능은 직접 처리해주지 않으면 반영되지 않습니다.    ✅ 문제 상황 요약  track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ]      표준 MIDI에서는 이런 식으로 Program Change 메시지를 트랙 내에 삽입하여 동일 채널에 악기 전환을 수행   AudioKit의 기본 Sequencer 처리 방식에서는 이를 자동 인식하거나 대응하지 않음     🎯 해결 방향  ① Program Change 이벤트를 파싱해서     시점별로 악기(프리셋) 변경 정보를 추출   ② 해당 채널의 MIDI 이벤트를 악기 구간별로 나눠서     구간별 MIDISampler를 생성하거나   하나의 Sampler에 프리셋을 실시간으로 변경 요청 (단, 대부분의 MIDISampler는 실행 중 preset 변경을 안정적으로 지원하지 않음)     ✅ 실현 가능한 접근 방법  ✅ 방법 A: 트랙을 구간별로 분할하여 각각 sampler에 할당     1개 트랙을 Program Change 기준으로 여러 개로 나누고, 구간마다 MIDISampler와 연결 → Mixer에 병합   단점:     구현 복잡도 있음   MIDI 이벤트 재구성이 필요   ✅ 방법 B: ProgramChange 메시지 수신 시 sampler의 preset을 변경  if case let .programChange(channel, number) = event {   if channel == 2 {     try? sampler.loadSoundFont(\"CT8MGM\", preset: number, bank: 0)   } }      MIDI 이벤트를 수신하는 커스텀 MIDIListener 구현 필요   실행 중 preset을 바꾸면 버퍼 끊김이나 글리치 발생 가능      ⚠️ 실행 중 preset 변경은 대부분 권장되지 않음     ✅ 권장 방식 (현실적 대안)  🎯 트랙 중간에 Program Change가 있는 경우:     MIDI 파일을 외부에서 미리 분할하거나   DAW에서 동일 채널에 Program Change를 쓰지 않도록 재구성   또는 AudioKit으로 다룰 경우, 중간 ProgramChange를 무시하고 시작 preset만 사용     ✅ 요약                 상황       설명                       트랙에 ProgramChange가 여러 개 있음       MIDI 채널의 악기가 재생 중에 바뀜                 AudioKit AppleSequencer       한 트랙당 하나의 sampler만 연결됨                 실시간 preset 변경       가능은 하지만 glitch 발생 가능                 현실적인 방법       ProgramChange 기준으로 트랙을 사전 분할 또는 첫 preset만 사용             필요하시면:     해당 트랙을 ProgramChange 기준으로 구간 분할하는 MIDI parser 예제   MIDISampler 여러 개 동적으로 운용하는 구조도 함께 도와드릴 수 있습니다.  "
-  },
-  
-  {
-    "title": null,
-    "url": "/posts/2025-05-01-kMIDINotPermitted-%EB%AC%B8%EC%A0%9C/",
-    "categories": "",
-    "tags": "",
-    "date": "2025-10-15 22:11:15 +0900",
-    "content": "kMIDINotPermitted 문제  요약  iOS 앱에서 Background Modes의 “Audio, AirPlay, and Picture in Picture” 옵션을 활성화하지 않으면 MIDI 권한이 제한되어, MIDISampler나 MIDICallbackInstrument와 같은 실시간 MIDI 관련 기능이 제대로 작동하지 않습니다.    ✅ 오류 메시지 해석  CheckError.swift:CheckError(_:):176:kMIDINotPermitted: Have you enabled the audio background mode in your ios app?      kMIDINotPermitted는 MIDI 권한 부족을 나타냅니다.   “Have you enabled the audio background mode…?”라는 메시지 자체가 해결 방법을 알려주고 있습니다: → 즉, “Background Modes &gt; Audio”를 활성화해야 MIDI 기능이 허용됨을 뜻합니다.     🧠 왜 이런 문제가 발생하는가?  iOS는 에너지 절약과 보안을 이유로, 백그라운드 또는 오디오 처리 관련 기능을 명시적으로 허용하지 않으면 일부 오디오/MIDI 기능을 제한합니다.  특히 다음 경우:     AudioKit의 MIDISampler, AppleSequencer, MIDICallbackInstrument 등은 Core MIDI 또는 AVAudioEngine의 실시간 처리 권한이 필요합니다.   하지만 Info.plist 또는 Build 설정에 Background Modes &gt; Audio가 설정되지 않으면, iOS는 이 앱이 오디오 기반 앱이 아니라고 판단하고, → MIDI 처리를 차단합니다.     ✅ 해결 방법  1. Xcode에서 설정     프로젝트 설정 &gt; Signing &amp; Capabilities 탭   + Capability 버튼 클릭 → Background Modes 추가   Audio, AirPlay, and Picture in Picture 체크 ✅   2. Info.plist에 자동으로 추가되는 키  &lt;key&gt;UIBackgroundModes&lt;/key&gt; &lt;array&gt;   &lt;string&gt;audio&lt;/string&gt; &lt;/array&gt;     📌 정리                 항목       설명                       문제       MIDISampler 사용 시 MIDI 권한 부족으로 드럼 소리가 나지 않음                 원인       Background Modes &gt; Audio 옵션이 꺼져 있어서 iOS가 오디오/MIDI 권한 차단                 해결       Xcode &gt; Signing &amp; Capabilities &gt; Background Modes &gt; Audio 항목 체크                 효과       실시간 MIDI 입력, AudioKit 샘플러 및 시퀀서 정상 동작            "
-  },
-  
-  {
     "title": "AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)",
     "url": "/posts/MultiTrackMIDIPlayer/",
     "categories": "StudyLog, AudioKit",
     "tags": "AudioKit, 음향이론",
     "date": "2025-06-23 17:16:31 +0900",
     "content": "Multitrack MIDI Player  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 MIDI 파일을 재생할 수 있는 SwiftUI 기반의 멀티트랙 MIDI 플레이어입니다. 구성은 크게 MultitrackMIDIPlayerConductor(오디오 및 MIDI 처리 로직)와 MultitrackMIDIPlayerView(UI)로 나뉘며, 아래와 같이 작동합니다.    🎼 MultitrackMIDIPlayerConductor: 오디오 및 MIDI 제어 클래스  🔹 주요 프로퍼티  let engine = AudioEngine() let sampler = MIDISampler() let sequencer = AppleSequencer() var samplers: [MIDISampler] = [] var mixer: Mixer!      AudioEngine: 오디오 출력의 핵심 객체   AppleSequencer: MIDI 트랙을 다루기 위한 시퀀서   samplers: 트랙별 악기(MIDISampler) 배열   mixer: 여러 sampler를 하나로 합쳐 출력     🔹 init()  sequencer.loadMIDIFile(\"MIDI Files/Horde3\") setTracks() setMixerOutput()   앱 시작 시 기본 MIDI 파일(Horde3)을 불러오고, 트랙 구성 및 믹서 설정을 실행합니다.    🔹 loadMIDIFile(url:)  sequencer.loadMIDIFile(fromURL: url) samplers.removeAll() setTracks() setMixerOutput()      .fileImporter를 통해 선택한 MIDI 파일을 로드   새로운 MIDI 트랙에 맞게 sampler를 재구성하고 믹서도 다시 설정   ※ engine.output = mixer가 setMixerOutput() 안에서 설정되므로 이 라인 이후 오디오 출력이 재설정됨    🔹 setTracks()  let tracks = sequencer.tracks ... let sampler = MIDISampler() try sampler.loadSoundFont(...) track.setMIDIOutput(sampler.midiIn)   각 트랙에 대해:     channel == 9인지 판단하여 드럼인지 구분   bank 값을 일반(0) 또는 드럼용(128)으로 설정   programChangeEvents에서 preset 번호 추출   해당 사운드폰트 로딩   트랙과 sampler 연결 → track.setMIDIOutput(...)   로그는 conductor.midiLog에 텍스트로 기록됨    🔹 sequencerPlay() / sequencerStop()  sequencer.play() sequencer.stop()   플레이/스톱 버튼에 대응하여 시퀀서를 재생 또는 정지합니다.    🎛 MultitrackMIDIPlayerView: 사용자 인터페이스  🔹 상태 바인딩  @StateObject private var conductor = MultitrackMIDIPlayerConductor() @State private var showFileImporter = false      conductor: 로직을 담당하는 ViewModel   showFileImporter: 파일 가져오기 창 제어용     🔹 UI 구성 요약     MIDI 파일명 표시   [Load MIDI File], [PLAY / STOP] 버튼   MIDI 분석 로그 스크롤 출력   Text(conductor.fileName) ... ScrollView {   Text(conductor.midiLog) }     🔹 파일 가져오기 (.midi)  .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.midi]) { result in   ...   conductor.loadMIDIFile(url: url) }   유저가 파일을 선택하면 MIDI 파일을 Conductor에 전달하여 새롭게 로드합니다. 보안 스코프 리소스 접근 권한도 자동으로 획득함 (startAccessingSecurityScopedResource())    🔹 오디오 엔진 관리  .onAppear { conductor.start() } .onDisappear { conductor.stop() }   뷰가 등장할 때 AudioKit 엔진 시작, 사라질 때 정지    ✅ 핵심 특징 요약                 기능       구현 방식                       트랙별 악기 설정       programChangeEvents 기반으로 MIDISampler 생성 및 연결                 퍼커션 채널 감지       channel == 9이면 bank: 128로 로딩                 MIDI 분석 출력       로그 텍스트를 ScrollView에 표시                 파일 가져오기       .fileImporter를 통해 .mid 파일 로딩                 실시간 재생 제어       sequencer.play() / sequencer.stop() 호출             📦 확장 아이디어     트랙별 볼륨/음소거 슬라이더 추가   ProgramChange 다중 처리 (중간 악기 변경)  "
+  },
+  
+  {
+    "title": "AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법",
+    "url": "/posts/%EB%AF%B8%EB%94%94_%ED%8A%B8%EB%9E%99%EC%A4%91%EA%B0%84_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%B2%B4%EC%9D%B8%EC%A7%80_%EB%8C%80%EC%9D%91%EB%B2%95/",
+    "categories": "StudyLog, AudioKit",
+    "tags": "AudioKit, 음향이론",
+    "date": "2025-06-23 15:22:38 +0900",
+    "content": "MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEvent(time: 64.0, channel: 2, number: 60),   AudioKit.MIDIProgramChangeEvent(time: 119.98697916666667, channel: 2, number: 57) ]   track 2처럼 트랙 중간에 Program Change 메시지로 악기가 바뀌는 경우, AudioKit의 AppleSequencer와 MIDISampler 조합만으로는 정확한 사운드 전환을 구현하기 어렵습니다.  기본적으로 track.setMIDIOutput(sampler.midiIn)으로 연결된 MIDISampler는 트랙 전체를 하나의 악기로만 재생합니다. 중간에 악기를 바꾸는 기능은 직접 처리해주지 않으면 반영되지 않습니다.    ✅ 문제 상황 요약  track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ]      표준 MIDI에서는 이런 식으로 Program Change 메시지를 트랙 내에 삽입하여 동일 채널에 악기 전환을 수행   AudioKit의 기본 Sequencer 처리 방식에서는 이를 자동 인식하거나 대응하지 않음     🎯 해결 방향  ① Program Change 이벤트를 파싱해서     시점별로 악기(프리셋) 변경 정보를 추출   ② 해당 채널의 MIDI 이벤트를 악기 구간별로 나눠서     구간별 MIDISampler를 생성하거나   하나의 Sampler에 프리셋을 실시간으로 변경 요청 (단, 대부분의 MIDISampler는 실행 중 preset 변경을 안정적으로 지원하지 않음)     ✅ 실현 가능한 접근 방법  ✅ 방법 A: 트랙을 구간별로 분할하여 각각 sampler에 할당     1개 트랙을 Program Change 기준으로 여러 개로 나누고, 구간마다 MIDISampler와 연결 → Mixer에 병합   단점:     구현 복잡도 있음   MIDI 이벤트 재구성이 필요   ✅ 방법 B: ProgramChange 메시지 수신 시 sampler의 preset을 변경  if case let .programChange(channel, number) = event {   if channel == 2 {     try? sampler.loadSoundFont(\"CT8MGM\", preset: number, bank: 0)   } }      MIDI 이벤트를 수신하는 커스텀 MIDIListener 구현 필요   실행 중 preset을 바꾸면 버퍼 끊김이나 글리치 발생 가능      ⚠️ 실행 중 preset 변경은 대부분 권장되지 않음     ✅ 권장 방식 (현실적 대안)  🎯 트랙 중간에 Program Change가 있는 경우:     MIDI 파일을 외부에서 미리 분할하거나   DAW에서 동일 채널에 Program Change를 쓰지 않도록 재구성   또는 AudioKit으로 다룰 경우, 중간 ProgramChange를 무시하고 시작 preset만 사용     ✅ 요약                 상황       설명                       트랙에 ProgramChange가 여러 개 있음       MIDI 채널의 악기가 재생 중에 바뀜                 AudioKit AppleSequencer       한 트랙당 하나의 sampler만 연결됨                 실시간 preset 변경       가능은 하지만 glitch 발생 가능                 현실적인 방법       ProgramChange 기준으로 트랙을 사전 분할 또는 첫 preset만 사용             필요하시면:     해당 트랙을 ProgramChange 기준으로 구간 분할하는 MIDI parser 예제   MIDISampler 여러 개 동적으로 운용하는 구조도 함께 도와드릴 수 있습니다.  "
   },
   
   {
@@ -469,7 +442,7 @@
   },
   
   {
-    "title": "딜레이(Delay)란?",
+    "title": "음향: 딜레이(Delay)란?",
     "url": "/posts/Delay/",
     "categories": "StudyLog, AudioKit",
     "tags": "AudioKit, 음향이론",
@@ -478,7 +451,7 @@
   },
   
   {
-    "title": "데시벨(db)이란?",
+    "title": "음향: 데시벨(db)이란?",
     "url": "/posts/Decibel/",
     "categories": "StudyLog, AudioKit",
     "tags": "AudioKit, 음향이론",
@@ -532,7 +505,7 @@
   },
   
   {
-    "title": "컴프레서(Compressor)란 무엇인가?",
+    "title": "음향: 컴프레서(Compressor)란 무엇인가?",
     "url": "/posts/%EC%BB%B4%ED%94%84%EB%A0%88%EC%84%9C(Compressor)/",
     "categories": "StudyLog, AudioKit",
     "tags": "AudioKit, 음향이론",
@@ -559,7 +532,7 @@
   },
   
   {
-    "title": "AudioKit의 오실레이터(Oscillator)",
+    "title": "음향에서 오실레이터(Oscillator)",
     "url": "/posts/%EC%98%A4%EC%8B%A4%EB%A0%88%EC%9D%B4%ED%84%B0(Oscillator)/",
     "categories": "StudyLog, AudioKit",
     "tags": "AudioKit, 음향이론",
@@ -586,7 +559,7 @@
   },
   
   {
-    "title": "AudioKit의 피드백(Feedback)",
+    "title": "음향: 피드백(Feedback)",
     "url": "/posts/%ED%94%BC%EB%93%9C%EB%B0%B1(Feedback)/",
     "categories": "StudyLog, AudioKit",
     "tags": "AudioKit, 음향이론",
@@ -721,6 +694,15 @@
   },
   
   {
+    "title": "SwiftUI: @Binding을 지원하지 않는 뷰의 강제 리프레시",
+    "url": "/posts/%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/",
+    "categories": "개발, Swift, SwiftUI",
+    "tags": "SwiftUI",
+    "date": "2025-05-14 18:04:00 +0900",
+    "content": "SwiftUI에서 @Binding을 지원하지 않는 뷰의 강제 리프레시  parameters와 ParameterRow가 바인딩(Binding)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(HStack)를 자동으로 업데이트하지 않습니다. 따라서 Randomize 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생합니다.  ✅ 해결 방법: id 값을 바꿔서 뷰 강제 갱신  HStack 전체에 .id(...)를 주어 SwiftUI가 해당 뷰를 다른 것으로 인식하도록 하면 뷰 전체가 강제로 다시 그려집니다.  @State private var refreshID = UUID()   그 다음, HStack에 .id(refreshID)를 적용합니다:  HStack {   ForEach(conductor.voc.parameters.indices, id: \\.self) {     ParameterRow(param: conductor.voc.parameters[$0])   } } .id(refreshID) // &lt;- 이게 핵심   그리고 Randomize 버튼에서 refreshID를 갱신해주면 SwiftUI는 뷰 전체를 새로 렌더링합니다:  Button(\"Randomize\") {   conductor.voc.frequency = AUValue.random(in: 0...2000)   conductor.voc.tonguePosition = AUValue.random(in: 0...1)   conductor.voc.tongueDiameter = AUValue.random(in: 0...1)   conductor.voc.tenseness = AUValue.random(in: 0...1)   conductor.voc.nasality = AUValue.random(in: 0...1)   refreshID = UUID() // 강제 갱신 트리거 }     🔁 대안 (권장): Binding을 지원하도록 구조 수정     VocalTract.parameters가 @Published var 배열이면 @Binding으로 넘길 수 있습니다.   ParameterRow(param: Binding&lt;NodeParameter&gt;)처럼 정의하고, 수정 가능하게 만들 수도 있습니다.   하지만 외부 라이브러리이거나 구조를 못 바꾸는 경우에는 .id(UUID()) 방식이 가장 확실하고 간단한 방법입니다.    ✅ 결론  parameters가 Binding을 지원하지 않더라도 HStack에 .id(refreshID)를 설정하고 UUID()를 변경하는 방식으로 뷰를 강제로 새로 그리게 만들 수 있습니다. "
+  },
+  
+  {
     "title": "AudioKit의 VocalTract",
     "url": "/posts/VocalTract/",
     "categories": "StudyLog, AudioKit",
@@ -820,7 +802,7 @@
   },
   
   {
-    "title": "SFZ 포맷이란?",
+    "title": "MIDI에서 SFZ 포맷이란?",
     "url": "/posts/SFZ_%ED%8F%AC%EB%A7%B7/",
     "categories": "StudyLog, AudioKit",
     "tags": "AudioKit, 음향이론",
@@ -829,7 +811,7 @@
   },
   
   {
-    "title": "EQ(이퀄라이저) 중심주파수 대역폭",
+    "title": "음향: EQ(이퀄라이저), 중심 주파수 및 대역폭의 의미",
     "url": "/posts/EQ-%EC%A4%91%EC%8B%AC%EC%A3%BC%ED%8C%8C%EC%88%98_%EB%8C%80%EC%97%AD%ED%8F%AD/",
     "categories": "StudyLog, AudioKit",
     "tags": "AudioKit, 음향이론",
@@ -865,12 +847,30 @@
   },
   
   {
+    "title": "CoreAudio: kMIDINotPermitted 문제",
+    "url": "/posts/kMIDINotPermitted-%EB%AC%B8%EC%A0%9C/",
+    "categories": "StudyLog, AudioKit",
+    "tags": "AudioKit, 음향이론",
+    "date": "2025-05-01 18:47:55 +0900",
+    "content": "kMIDINotPermitted 문제  요약  iOS 앱에서 Background Modes의 “Audio, AirPlay, and Picture in Picture” 옵션을 활성화하지 않으면 MIDI 권한이 제한되어, MIDISampler나 MIDICallbackInstrument와 같은 실시간 MIDI 관련 기능이 제대로 작동하지 않습니다.    ✅ 오류 메시지 해석  CheckError.swift:CheckError(_:):176:kMIDINotPermitted: Have you enabled the audio background mode in your ios app?      kMIDINotPermitted는 MIDI 권한 부족을 나타냅니다.   “Have you enabled the audio background mode…?”라는 메시지 자체가 해결 방법을 알려주고 있습니다: → 즉, “Background Modes &gt; Audio”를 활성화해야 MIDI 기능이 허용됨을 뜻합니다.     🧠 왜 이런 문제가 발생하는가?  iOS는 에너지 절약과 보안을 이유로, 백그라운드 또는 오디오 처리 관련 기능을 명시적으로 허용하지 않으면 일부 오디오/MIDI 기능을 제한합니다.  특히 다음 경우:     AudioKit의 MIDISampler, AppleSequencer, MIDICallbackInstrument 등은 Core MIDI 또는 AVAudioEngine의 실시간 처리 권한이 필요합니다.   하지만 Info.plist 또는 Build 설정에 Background Modes &gt; Audio가 설정되지 않으면, iOS는 이 앱이 오디오 기반 앱이 아니라고 판단하고, → MIDI 처리를 차단합니다.     ✅ 해결 방법  1. Xcode에서 설정     프로젝트 설정 &gt; Signing &amp; Capabilities 탭   + Capability 버튼 클릭 → Background Modes 추가   Audio, AirPlay, and Picture in Picture 체크 ✅   2. Info.plist에 자동으로 추가되는 키  &lt;key&gt;UIBackgroundModes&lt;/key&gt; &lt;array&gt;   &lt;string&gt;audio&lt;/string&gt; &lt;/array&gt;     📌 정리                 항목       설명                       문제       MIDISampler 사용 시 MIDI 권한 부족으로 드럼 소리가 나지 않음                 원인       Background Modes &gt; Audio 옵션이 꺼져 있어서 iOS가 오디오/MIDI 권한 차단                 해결       Xcode &gt; Signing &amp; Capabilities &gt; Background Modes &gt; Audio 항목 체크                 효과       실시간 MIDI 입력, AudioKit 샘플러 및 시퀀서 정상 동작            "
+  },
+  
+  {
     "title": "AudioKit의 Drums",
     "url": "/posts/Drums/",
     "categories": "StudyLog, AudioKit",
     "tags": "AudioKit, 음향이론",
     "date": "2025-04-30 15:55:38 +0900",
     "content": "Drums  이 코드는 AudioKit을 활용한 드럼 패드 앱의 핵심 구조를 보여주는 예제입니다. 사용자가 UI 상에서 패드를 누르면 대응되는 드럼 사운드가 재생됩니다. 코드 전체는 다음 3가지 주요 구성 요소로 나뉩니다:    1. DrumSample – 드럼 사운드 데이터 모델  struct DrumSample {   var name: String        // 화면에 표시될 이름   var fileName: String    // 번들 내 오디오 파일 이름   var midiNote: Int       // MIDI 노트 번호   var audioFile: AVAudioFile?   var color: UIColor = .red }      각 드럼 패드의 정보를 담는 구조체입니다.   초기화 시 번들에서 오디오 파일을 불러와 AVAudioFile로 저장합니다.   색상(color) 속성도 포함되어 있어 시각적 효과에 활용됩니다.     2. DrumsConductor – 오디오 처리 및 패드 재생 로직 (ViewModel 역할)  class DrumsConductor: HasAudioEngine      AudioKit의 AppleSampler를 사용하여 8개의 드럼 샘플을 로드하고 재생합니다.   playPad(padNumber:) 함수는 해당 패드의 MIDI 노트를 통해 소리를 재생합니다.   @Observable을 통해 SwiftUI에서 상태 관찰이 가능합니다.   초기화 시 샘플 오디오들을 drums.loadAudioFiles(...)로 등록합니다.     3. SwiftUI 뷰: DrumsView, PadsView  ▶ DrumsView struct DrumsView: View     상위 뷰이며 PadsView를 렌더링합니다.   .onAppear / .onDisappear를 통해 AudioKit 엔진을 시작/정지합니다.     ▶ PadsView struct PadsView: View   주요 기능:     2x4 드럼 패드 UI를 구성   각 패드는 Rectangle 뷰로 시각화   패드 ID는 row * 4 + column 계산식을 사용해 1차원 배열처럼 관리   드래그 제스처로 패드를 눌렀을 때:            padId가 downPads에 없다면 → padsAction(padId) 실행 + downPads에 추가       손을 뗄 때(.onEnded) → 해당 padId를 downPads에서 제거           제스처 처리:  .onChanged {   if padId not in downPads {     padsAction(padId)     downPads.append(padId)   } } .onEnded {   downPads.remove(padId) }   이 구조를 통해 UI 반응성과 상태 변경 처리가 동시에 이루어집니다.    🎨 시각적 상태 처리  padColor(padId:) 함수     downPads에 포함된 padId라면 .gray로 색상 처리   아니면 해당 드럼 샘플에 정의된 색상(sample.color) 사용     🧠 정리                 구성 요소       역할                       DrumSample       드럼 하나의 데이터 구조 (이름, 파일명, 색상 등)                 DrumsConductor       오디오 엔진 및 샘플 로드, 패드 재생 제어                 DrumsView       상위 SwiftUI 뷰, 오디오 엔진 생명주기 제어                 PadsView       패드 레이아웃, 제스처 입력 처리, 상태 UI 반영            "
+  },
+  
+  {
+    "title": "SwiftUI: @Observable 동작원리",
+    "url": "/posts/Observable-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/",
+    "categories": "개발, Swift, SwiftUI",
+    "tags": "SwiftUI",
+    "date": "2025-04-29 16:25:40 +0900",
+    "content": "Observable 동작 원리 viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유? @Observable 클래스 AudioKit3DViewModel에서 참조하는  각 클래스 AudioEngine3DConductor, SceneCoordinator에 @Observable을 붙이지 않아도 동작하는 이유?   답변  1. viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유  @State는 SwiftUI 뷰 내부에서 값 타입(보통 구조체)을 직접 소유하고 변경할 때 사용됩니다. 그러나 viewModel은 클래스(AudioKit3DViewModel) 타입이며, 해당 클래스는 SwiftUI 뷰 외부에서 생성되어 참조됩니다. 이 경우 SwiftUI에서 값의 변경을 감지하려면 @ObservedObject, @StateObject, @EnvironmentObject 등의 속성이 필요합니다.  하지만 해당 코드에서는 @Observable 속성이 붙어 있는 것으로 보입니다.  Swift 5.9 이상 (또는 Xcode 15 이상)에서는 SwiftUI의 Observation 프레임워크를 기반으로 하는 @Observable 프로토콜이 도입되었으며, 이 프로토콜을 채택한 객체는 SwiftUI에서 자동으로 상태를 관찰할 수 있습니다. 이를 통해 @StateObject나 @ObservedObject 없이도 값의 변경이 뷰에 반영됩니다.  다시 말해, viewModel이 @Observable을 따르고 있고, SwiftUI가 이를 알 수 있기 때문에 별도의 속성 래퍼가 필요 없습니다. 단, 이 기능은 Swift의 Observation이 제대로 적용되는 환경(Xcode 15 이상, Swift 5.9 이상, iOS 17 이상 등)에서만 가능합니다.    2. AudioEngine3DConductor, SceneCoordinator에 @Observable을 붙이지 않아도 되는 이유  @Observable은 SwiftUI가 뷰에서 참조할 값이 변경될 때 UI를 자동 갱신하기 위해 사용하는 것입니다.  하지만 AudioEngine3DConductor와 SceneCoordinator는 뷰에서 직접 사용하는 것이 아니라, AudioKit3DViewModel 내부에서 사용됩니다. 그리고 이 클래스들은 값의 변경이 SwiftUI 뷰에 직접적인 영향을 주지 않기 때문에 @Observable을 붙일 필요가 없습니다.  즉, 다음과 같은 구조입니다:     AudioKit3DView는 viewModel: AudioKit3DViewModel을 소유함   AudioKit3DViewModel은 @Observable이라서 값의 변경을 SwiftUI가 감지할 수 있음   viewModel 내부에서 사용하는 conductor, coordinator는 뷰에 직접 바인딩된 값이 아님   따라서 그 내부 클래스에 @Observable을 붙일 필요가 없음   단, 만약 AudioEngine3DConductor나 SceneCoordinator의 속성을 뷰에서 직접 바인딩하거나 관찰해야 할 경우, 그때는 해당 클래스에도 @Observable이나 @Published 등을 적용해야 합니다.    요약                 항목       이유                       viewModel에 @State 없음       @Observable을 통해 SwiftUI가 자동 관찰하므로 별도 속성 래퍼 불필요                 conductor, coordinator에 @Observable 없음       뷰에서 직접 사용하지 않으며 뷰에 상태 영향을 주지 않기 때문          "
   },
   
   {
