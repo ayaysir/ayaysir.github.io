@@ -1,5 +1,5 @@
 ---
-title: AudioKit의 오실레이터(Oscillator)
+title: 음향에서 오실레이터(Oscillator)
 author: ayaysir
 date: 2025-05-29 13:08:10 +0900
 categories: [StudyLog, AudioKit]

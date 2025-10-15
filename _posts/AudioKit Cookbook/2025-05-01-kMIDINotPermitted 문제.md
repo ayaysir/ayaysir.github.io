@@ -1,5 +1,5 @@
 ---
-title: CoreAudio: kMIDINotPermitted 문제
+title: "CoreAudio: kMIDINotPermitted 문제"
 author: ayaysir
 date: 2025-05-01 18:47:55 +0900
 categories: [StudyLog, AudioKit]

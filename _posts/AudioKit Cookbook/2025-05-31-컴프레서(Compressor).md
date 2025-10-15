@@ -1,6 +1,6 @@
 ---
-title: 컴프레서(Compressor)란 무엇인가?
-author: ayaysir
+title: "음향: 컴프레서(Compressor)란 무엇인가?"
+author: "ayaysir"
 date: 2025-05-31 15:19:22 +0900
 categories: [StudyLog, AudioKit]
 tags: [AudioKit, 음향이론]
