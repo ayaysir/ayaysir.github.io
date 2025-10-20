@@ -8,6 +8,8 @@ tags: [AudioKit, 음향이론]
 
 # Sprite Kit Audio
 
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/MiniApps/SpriteKitAudio.swift)
+
 이 코드는 **SpriteKit과 AudioKit을 결합한 인터랙티브 사운드 예제**입니다. 사용자가 화면을 터치하면 공이 생성되고, 플랫폼에 부딪히면 소리가 나는 구조입니다. 주요 구성요소별로 설명드리겠습니다.
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: "CoreAudio: kMIDINotPermitted 문제"
+title: "CoreAudio: kMIDINotPermitted 문제 (백그라운드 오디오 관련)"
 author: ayaysir
 date: 2025-05-01 18:47:55 +0900
 categories: [StudyLog, AudioKit]

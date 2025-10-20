@@ -8,6 +8,8 @@ tags: [AudioKit, 음향이론]
 
 # Multi Tap Delay
 
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Effects/MultiTapDelay.swift)
+
 `MultiTapDelayConductor` 클래스는 AudioKit을 사용하여 **멀티탭 딜레이(Multi-Tap Delay)** 효과를 구현하는 Swift 클래스입니다. 여러 개의 지연된 복사본을 입력 신호에 섞어 리듬감 있는 반복 효과나 리버브와 유사한 풍부한 공간감을 만들어냅니다.
 
 ---

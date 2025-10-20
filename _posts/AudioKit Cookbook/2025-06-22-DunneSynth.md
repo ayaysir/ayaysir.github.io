@@ -8,12 +8,14 @@ tags: [AudioKit, 음향이론]
 
 # Dunne Synth
 
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/DunneSynth.swift)
+
 `DunneSynthConductor`는 AudioKit의 `Synth` (정확히는 `DunneAudioKit`의 Dunne Synthesizer)를 제어하는 **오디오 신스 컨덕터 클래스**입니다.
 SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재생, 피크 리미팅, 팝 제거 등 다양한 오디오 처리 제어를 담당합니다.
 
 ---
 
-## ✅ 클래스 개요
+## 클래스 개요
 
 ```swift
 class DunneSynthConductor: ObservableObject, HasAudioEngine
@@ -25,20 +27,20 @@ class DunneSynthConductor: ObservableObject, HasAudioEngine
 
 ---
 
-## ✅ 주요 구성 요소
+## 주요 구성 요소
 
-### 🔹 `let engine = AudioEngine()`
+### `let engine = AudioEngine()`
 
 * AudioKit의 핵심 오디오 처리 엔진
 
-### 🔹 `var instrument = Synth()`
+### `var instrument = Synth()`
 
 * DunneAudioKit의 **폴리포닉 신스**
 * 매핑된 파라미터들을 실시간으로 제어 가능
 
 ---
 
-## ✅ noteOn / noteOff
+## noteOn / noteOff
 
 ### `func noteOn(pitch: Pitch, point _: CGPoint)`
 
@@ -58,16 +60,16 @@ instrument.stop(noteNumber: ..., channel: 0)
 
 ---
 
-## ✅ 초기화: `init()`
+## 초기화: `init()`
 
-### 🔸 1. `engine.output = PeakLimiter(...)`
+### 1. `engine.output = PeakLimiter(...)`
 
 * 출력단에 `PeakLimiter` 삽입 → 소리의 **과도한 피크 방지**
 * `attackTime = 0.001`: 피크 감지 후 빠르게 제한
 * `decayTime = 0.001`: 제한 해제도 즉시
 * `preGain = 0`: 입력 게인을 증폭하지 않음
 
-### 🔸 2. 팝 노이즈 제거 설정
+### 2. 팝 노이즈 제거 설정
 
 ```swift
 instrument.releaseDuration = 0.01
@@ -81,9 +83,9 @@ instrument.filterStrength = 40.0
 
 ---
 
-## 🧪 파라미터 목록
+## 파라미터 목록
 
-### 🎛 일반 음성 파라미터
+### 일반 음성 파라미터
 
 | 파라미터               | 기본값    | 범위             | 설명                 |
 | ------------------ | ------ | -------------- | ------------------ |
@@ -96,7 +98,7 @@ instrument.filterStrength = 40.0
 
 ---
 
-### 🎛 앰플리튜드 ADSR (Amplitude Envelope)
+### 앰플리튜드 ADSR (Amplitude Envelope)
 
 | 파라미터               | 기본값    | 범위           | 설명                      |
 | ------------------ | ------ | ------------ | ----------------------- |
@@ -107,7 +109,7 @@ instrument.filterStrength = 40.0
 
 ---
 
-### 🎛 필터 ADSR (Filter Envelope)
+### 필터 ADSR (Filter Envelope)
 
 | 파라미터                      | 기본값    | 범위           | 설명                    |
 | ------------------------- | ------ | ------------ | --------------------- |
@@ -118,7 +120,7 @@ instrument.filterStrength = 40.0
 
 ---
 
-## ✅ 콘솔 출력
+## 콘솔 출력
 
 ```swift
 instrument.parameters.forEach {
@@ -131,7 +133,7 @@ instrument.parameters.forEach {
 
 ---
 
-## ✅ 요약
+## 요약
 
 `DunneSynthConductor`는:
 

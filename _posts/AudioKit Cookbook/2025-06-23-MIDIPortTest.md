@@ -1,5 +1,5 @@
 ---
-title: AudioKit의 MIDIPortTest
+title: AudioKit의 MID Port Test
 author: ayaysir
 date: 2025-06-23 00:42:28 +0900
 categories: [StudyLog, AudioKit]
@@ -8,15 +8,13 @@ tags: [AudioKit, 음향이론]
 
 # MIDI Port Test (Virtual MIDI Host 포함)
 
----
-
-# MIDIPortTestConductor
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)
 
 `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI 포트를 테스트하거나 MIDI 이벤트를 수신/전송할 수 있도록 설계된 **MIDI 테스트 도구의 핵심 로직 클래스**입니다. 가상 포트를 생성하고, 외부 장치와 통신하며, MIDI 로그를 저장하고, 포트 정보를 조회하는 기능을 포함합니다.
 
 ---
 
-## ✅ 주요 목적
+## 주요 목적
 
 * 가상 MIDI 입/출력 포트 생성 및 관리
 * 외부 MIDI 장치 연결 및 포트 열기/닫기
@@ -26,9 +24,9 @@ tags: [AudioKit, 음향이론]
 
 ---
 
-## ✅ 주요 구성요소 설명
+## 주요 구성요소 설명
 
-### 📌 고정 UID 정의
+### 고정 UID 정의
 
 ```swift
 let inputUIDDevelop: Int32 = 1_200_000
@@ -42,7 +40,7 @@ let outputUIDMain: Int32 = 2_500_000
 
 ---
 
-### 📌 `@Published` 속성
+### `@Published` 속성
 
 ```swift
 @Published var log = [MIDIEvent]()
@@ -56,7 +54,7 @@ let outputUIDMain: Int32 = 2_500_000
 
 ---
 
-### 📌 MIDI 초기화
+### MIDI 초기화
 
 ```swift
 midi.destroyAllVirtualPorts()
@@ -70,7 +68,7 @@ midi.addListener(self)
 
 ---
 
-### 📌 로그 버퍼링 및 Timer 처리
+### 로그 버퍼링 및 Timer 처리
 
 ```swift
 private var logBuffer = [MIDIEvent]()
@@ -82,7 +80,7 @@ private var logTimer: Timer?
 
 ---
 
-### 📌 포트 설명 캐싱
+### 포트 설명 캐싱
 
 ```swift
 private var portDescriptionCache: [MIDIUniqueID : PortDescription]
@@ -93,7 +91,7 @@ private var portDescriptionCache: [MIDIUniqueID : PortDescription]
 
 ---
 
-### 📌 포트 열기 및 닫기
+### 포트 열기 및 닫기
 
 ```swift
 func didSetOutputIsOpen() { ... }
@@ -106,7 +104,7 @@ func start() / stop()
 
 ---
 
-### 📌 이벤트 전송
+### 이벤트 전송
 
 ```swift
 func sendEvent(eventToSend:event, portIDs:[MIDIUniqueID]?)
@@ -121,7 +119,7 @@ func sendEvent(eventToSend:event, portIDs:[MIDIUniqueID]?)
 
 ---
 
-### 📌 포트 스왑 기능
+### 포트 스왑 기능
 
 ```swift
 func swapVirtualInputPort(...)
@@ -133,7 +131,7 @@ func swapVirtualOutputPorts(...)
 
 ---
 
-### 📌 MIDIListener 구현
+### MIDIListener 구현
 
 ```swift
 receivedMIDINoteOn(...)
@@ -147,7 +145,7 @@ receivedMIDIController(...)
 
 ---
 
-## ✅ 요약
+## 요약
 
 | 기능          | 설명                                        |
 | ----------- | ----------------------------------------- |
@@ -169,7 +167,7 @@ receivedMIDIController(...)
 
 ---
 
-## ✅ 전체 구조 요약
+## 전체 구조 요약
 
 ```swift
 MIDIPortTestView
@@ -186,9 +184,9 @@ MIDIPortTestView
 
 ---
 
-## 🧩 주요 구성 요소 설명
+## 주요 구성 요소 설명
 
-### 📌 `HeaderArea`
+### `HeaderArea`
 
 ```swift
 HeaderCell(...) // 4칸
@@ -198,7 +196,7 @@ HeaderCell(...) // 4칸
 
 ---
 
-### 📌 `TabView` + `Port1/2SelectArea`
+### `TabView` + `Port1/2SelectArea`
 
 ```swift
 TabView { VStack { Port1SelectArea ... } }
@@ -210,7 +208,7 @@ TabView { VStack { Port1SelectArea ... } }
 
 ---
 
-### 📌 `PortEventArea(portID:)`
+### `PortEventArea(portID:)`
 
 ```swift
 MIDIEventButton(eventToSend: .noteOn / .noteOff ...)
@@ -222,13 +220,13 @@ MIDIEventButton(eventToSend: .noteOn / .noteOff ...)
 
 ---
 
-### 📌 로그 관련 UI
+### 로그 관련 UI
 
-#### ▸ `LogHeaderArea`
+#### `LogHeaderArea`
 
 * 상태, 채널, 데이터1\~2, 포트 UID, 장치명, 제조사명 등 컬럼 헤더 출력
 
-#### ▸ `LogDataArea`
+#### `LogDataArea`
 
 ```swift
 ForEach(conductor.log.indices) { i in ... }
@@ -240,7 +238,7 @@ ForEach(conductor.log.indices) { i in ... }
 
 ---
 
-### 📌 포트 상태 전환 토글
+### 포트 상태 전환 토글
 
 ```swift
 Toggle(isOn: $conductor.outputIsOpen) { ... }
@@ -255,7 +253,7 @@ Toggle(isOn: $conductor.outputPortIsSwapped) { ... }
 
 ---
 
-## 🎛️ 기능 요약
+## 기능 요약
 
 | 기능          | 설명                               |
 | ----------- | -------------------------------- |
@@ -267,7 +265,7 @@ Toggle(isOn: $conductor.outputPortIsSwapped) { ... }
 
 ---
 
-## ⚠️ 주의/개선 포인트
+## 주의/개선 포인트
 
 * `LogDataArea`에서 `inputPortDescription()`은 성능 병목 → 캐싱 또는 비동기 평가 필요
 * 포트 수가 많을 경우 Picker나 log 처리 성능 저하 발생 가능
@@ -275,7 +273,7 @@ Toggle(isOn: $conductor.outputPortIsSwapped) { ... }
 
 ---
 
-## ✅ 요약
+## 요약
 
 `MIDIPortTestView`는:
 

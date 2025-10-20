@@ -8,14 +8,16 @@ tags: [AudioKit, 음향이론]
 
 # Multitrack MIDI Player
 
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)
+
 이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 **MIDI 파일을 재생할 수 있는 SwiftUI 기반의 멀티트랙 MIDI 플레이어**입니다.
 구성은 크게 `MultitrackMIDIPlayerConductor`(오디오 및 MIDI 처리 로직)와 `MultitrackMIDIPlayerView`(UI)로 나뉘며, 아래와 같이 작동합니다.
 
 ---
 
-## 🎼 `MultitrackMIDIPlayerConductor`: 오디오 및 MIDI 제어 클래스
+## `MultitrackMIDIPlayerConductor`: 오디오 및 MIDI 제어 클래스
 
-### 🔹 주요 프로퍼티
+### 주요 프로퍼티
 
 ```swift
 let engine = AudioEngine()
@@ -32,7 +34,7 @@ var mixer: Mixer!
 
 ---
 
-### 🔹 `init()`
+### `init()`
 
 ```swift
 sequencer.loadMIDIFile("MIDI Files/Horde3")
@@ -44,7 +46,7 @@ setMixerOutput()
 
 ---
 
-### 🔹 `loadMIDIFile(url:)`
+### `loadMIDIFile(url:)`
 
 ```swift
 sequencer.loadMIDIFile(fromURL: url)
@@ -60,7 +62,7 @@ setMixerOutput()
 
 ---
 
-### 🔹 `setTracks()`
+### `setTracks()`
 
 ```swift
 let tracks = sequencer.tracks
@@ -82,7 +84,7 @@ track.setMIDIOutput(sampler.midiIn)
 
 ---
 
-### 🔹 `sequencerPlay()` / `sequencerStop()`
+### `sequencerPlay()` / `sequencerStop()`
 
 ```swift
 sequencer.play()
@@ -93,9 +95,9 @@ sequencer.stop()
 
 ---
 
-## 🎛 `MultitrackMIDIPlayerView`: 사용자 인터페이스
+## `MultitrackMIDIPlayerView`: 사용자 인터페이스
 
-### 🔹 상태 바인딩
+### 상태 바인딩
 
 ```swift
 @StateObject private var conductor = MultitrackMIDIPlayerConductor()
@@ -107,7 +109,7 @@ sequencer.stop()
 
 ---
 
-### 🔹 UI 구성 요약
+### UI 구성 요약
 
 * MIDI 파일명 표시
 * \[Load MIDI File], \[PLAY / STOP] 버튼
@@ -123,7 +125,7 @@ ScrollView {
 
 ---
 
-### 🔹 파일 가져오기 (.midi)
+### 파일 가져오기 (.midi)
 
 ```swift
 .fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.midi]) { result in
@@ -137,7 +139,7 @@ ScrollView {
 
 ---
 
-### 🔹 오디오 엔진 관리
+### 오디오 엔진 관리
 
 ```swift
 .onAppear { conductor.start() }

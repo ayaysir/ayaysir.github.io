@@ -8,6 +8,8 @@ tags: [AudioKit, 음향이론]
 
 # Synthesis Toolkit (STK)
 
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/AdditionalPackages/SynthesisToolkitView.swift)
+
 이 코드는 **AudioKit**, **STKAudioKit**, **SwiftUI**를 활용하여 구현된 **셰이커(Shaker) 기반 메트로놈 데모 앱**입니다. 사용자는 템포, 박자, 음색, 벨로시티 등을 조절할 수 있으며, 시각적인 피드백도 함께 제공합니다.
 아래는 구조를 전체적으로 설명한 뒤, 구성 요소별로 자세하게 해석해드립니다.
 
@@ -17,7 +19,7 @@ tags: [AudioKit, 음향이론]
 
 * **`STKView`**: 사용자 인터페이스를 담당하는 SwiftUI 뷰
 * **`ShakerConductor`**: AudioKit 엔진을 설정하고 Sequencer 및 Shaker를 관리하는 오디오 컨트롤러
-* \*\*`SynthesisToolkitView.swift`\*\*는 `STKAudioKit` 기반의 샘플 기반 악기인 `Shaker`를 사용한 오디오 타이머/메트로놈 구현입니다.
+* `SynthesisToolkitView.swift`는 `STKAudioKit` 기반의 샘플 기반 악기인 `Shaker`를 사용한 오디오 타이머/메트로놈 구현입니다.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: AudioKit의 LowPassCutoff
+title: 음향에서 Low Pass Cutoff 란?
 author: ayaysir
 date: 2025-06-02 14:36:36 +0900
 categories: [StudyLog, AudioKit]
@@ -8,11 +8,11 @@ tags: [AudioKit, 음향이론]
 
 # Low Pass Cutoff
 
-`Low Pass Cutoff`는 오디오 필터에서 \*\*저역 통과 필터(Low-Pass Filter, LPF)\*\*의 핵심 설정값입니다. 아래에서 LPF의 개념과 `cutoff frequency`가 실제로 어떤 영향을 주는지 자세히 설명드리겠습니다.
+`Low Pass Cutoff`는 오디오 필터에서 저역 통과 필터(Low-Pass Filter, LPF)의 핵심 설정값입니다. 아래에서 LPF의 개념과 `cutoff frequency`가 실제로 어떤 영향을 주는지 자세히 설명드리겠습니다.
 
 ---
 
-## 🎛 Low-Pass Filter (저역 통과 필터)란?
+## Low-Pass Filter (저역 통과 필터)란?
 
 > **저주파수(낮은 소리)는 통과시키고, 고주파수(높은 소리)는 차단**하는 필터
 
@@ -21,7 +21,7 @@ tags: [AudioKit, 음향이론]
 
 ---
 
-## 🔧 Cutoff Frequency (컷오프 주파수)
+## Cutoff Frequency (컷오프 주파수)
 
 > "어디까지를 **통과**시키고, 그 이상부터는 **감쇄**시킬지"를 결정하는 경계점
 
@@ -37,7 +37,7 @@ tags: [AudioKit, 음향이론]
 
 ---
 
-## 📉 시각적 비유 (간단한 ASCII 그래프)
+## 시각적 비유 (간단한 ASCII 그래프)
 
 ```
 출력 레벨
@@ -54,7 +54,7 @@ tags: [AudioKit, 음향이론]
 
 ---
 
-## 🔊 AudioKit의 `Delay`에서의 역할
+## AudioKit의 `Delay`에서의 역할
 
 AudioKit의 `Delay` 노드는 내부적으로 딜레이된 신호가 **점점 줄어들며 반복**되는데,
 여기서 **고주파 성분이 계속 남아 있으면 날카로운 잔향**이 생깁니다.
@@ -67,7 +67,7 @@ AudioKit의 `Delay` 노드는 내부적으로 딜레이된 신호가 **점점 �
 
 ---
 
-## ✅ 요약
+## 요약
 
 | 용어               | 설명                                                 |
 | ---------------- | -------------------------------------------------- |
@@ -77,7 +77,7 @@ AudioKit의 `Delay` 노드는 내부적으로 딜레이된 신호가 **점점 �
 
 ---
 
-### 🎧 실용 팁:
+### 실용 팁:
 
 * 보컬 딜레이 → `cutoff ≈ 8000~12000Hz` : 선명하면서 자연스러움
 * 기타 앰비언트 → `cutoff ≈ 4000~6000Hz` : 부드럽고 깊이감 있음

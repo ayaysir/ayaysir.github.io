@@ -8,6 +8,8 @@ tags: [AudioKit, 음향이론]
 
 # MultiSegment Player
 
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/AudioPlayer/MultiSegmentPlayer.swift)
+
 이 코드는 **AudioKit**을 기반으로 여러 오디오 파일을 연속 재생하며, 실시간 RMS 기반 시각화와 플레이헤드를 포함한 타임라인 UI를 보여주는 **멀티 세그먼트 오디오 플레이어** 구현입니다.
 
 `MultiSegmentPlayerConductor`는 오디오 제어 로직을 담당하고, `MultiSegmentPlayerView`는 이를 화면에 표시합니다.

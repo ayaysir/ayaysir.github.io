@@ -8,6 +8,8 @@ tags: [AudioKit, 음향이론]
 
 # Input Device Demo
 
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/InputDeviceDemo.swift)
+
 이 SwiftUI + AudioKit 코드의 목적은 **입력 장치(마이크)를 선택하고 오디오 입력을 시작/정지하는 UI를 제공하는 것**입니다.
 즉, 여러 마이크 장치가 연결된 환경에서 사용자가 원하는 입력을 선택하고, 마이크 버튼을 눌러 오디오 입력을 켜거나 끌 수 있게 합니다.
 

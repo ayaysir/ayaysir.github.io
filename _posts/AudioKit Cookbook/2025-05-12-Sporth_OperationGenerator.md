@@ -8,7 +8,7 @@ tags: [AudioKit, 음향이론]
 
 # Sporth
 
-**Sporth**는 \*\*"Small Portable Real-Time Sound Language"\*\*의 줄임말로, **경량 텍스트 기반 오디오 DSP 언어**입니다. C 기반 오디오 라이브러리인 **Soundpipe**의 일부로 개발되었으며, AudioKit에서도 내장되어 있습니다.
+**Sporth**는 "Small Portable Real-Time Sound Language"의 줄임말로, **경량 텍스트 기반 오디오 DSP 언어**입니다. C 기반 오디오 라이브러리인 **Soundpipe**의 일부로 개발되었으며, AudioKit에서도 내장되어 있습니다.
 
 ---
 
@@ -174,7 +174,7 @@ generator.trigger()
 
 ---
 
-## 🎯 요약
+## 요약
 
 | 요소             | 설명                                   |
 | -------------- | ------------------------------------ |

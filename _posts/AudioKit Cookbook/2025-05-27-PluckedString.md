@@ -8,11 +8,13 @@ tags: [AudioKit, 음향이론]
 
 # Plucked String
 
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/PhysicalModels/PluckedString.swift)
+
 이 코드는 **AudioKit**과 **SoundpipeAudioKit**을 사용하여 *플럭 현악기(plucked string)* 소리를 자동 생성하고, 여기에 **딜레이**와 **리버브** 효과를 적용하는 구조입니다. 아래에 각 구성요소별로 자세히 설명드리겠습니다.
 
 ---
 
-## 🔧 주요 구성 요소 설명
+## 주요 구성 요소 설명
 
 ### `let pluckedString = PluckedString()`
 
@@ -29,7 +31,7 @@ tags: [AudioKit, 음향이론]
 
 ---
 
-## 🎼 `init()` – 노드 연결 및 효과 설정
+## `init()` – 노드 연결 및 효과 설정
 
 1. `DryWetMixer(pluckedString, pluckedString2)`
 
@@ -53,7 +55,7 @@ tags: [AudioKit, 음향이론]
 
 ---
 
-## 🔁 `loop = CallbackLoop(frequency: playRate)`
+## `loop = CallbackLoop(frequency: playRate)`
 
 * 1초에 3번 반복하는 콜백 루프
 * 콜백 안에서는 다음이 실행됩니다:
@@ -85,13 +87,13 @@ if AUValue.random(...) > 15 {
 
 ---
 
-## ✅ `@Published var isRunning`
+## `@Published var isRunning`
 
 * SwiftUI와 바인딩되어 있으며, 사용자가 ON/OFF 조작 시 `loop.start()` 또는 `loop.stop()`을 실행
 
 ---
 
-## 🧠 요약
+## 요약
 
 | 구성 요소             | 설명                    |
 | ----------------- | --------------------- |

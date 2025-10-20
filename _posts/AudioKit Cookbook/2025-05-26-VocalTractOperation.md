@@ -8,7 +8,9 @@ tags: [AudioKit, 음향이론]
 
 # Vocal Tract Operation
 
-이 코드는 AudioKit의 `OperationGenerator`를 사용해 **인간의 음성을 물리적으로 모델링한 음향 합성기**를 구성합니다. `vocalTract`는 \*\*성도(목구멍\~입)\*\*의 구조를 모사한 음향 모델이며, 다양한 인자에 따라 음색이 변합니다. 아래는 주요 변수와 연산자의 역할을 중점적으로 설명합니다.
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Operations/VocalTractOperation.swift)
+
+이 코드는 AudioKit의 `OperationGenerator`를 사용해 **인간의 음성을 물리적으로 모델링한 음향 합성기**를 구성합니다. `vocalTract`는 성도(목구멍\~입)의 구조를 모사한 음향 모델이며, 다양한 인자에 따라 음색이 변합니다. 아래는 주요 변수와 연산자의 역할을 중점적으로 설명합니다.
 
 ---
 

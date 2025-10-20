@@ -8,15 +8,17 @@ tags: [AudioKit, 음향이론]
 
 # Polyphonic STK + MIDIKit
 
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/PolyphonicSTK%2BMIDIKit.swift)
+
 이 코드는 AudioKit과 [**MIDIKit**](https://github.com/orchetect/MIDIKit)을 함께 사용하여,
 가상 또는 외부 MIDI 장치로부터 들어오는 MIDI 이벤트를 수신하고,
 `RhodesPianoKey`(SoundpipeAudioKit) 기반으로 폴리포닉 연주를 가능하게 하는 구조입니다.
 
 ---
 
-## ✅ MIDIKit 관련 설명
+## MIDIKit 관련 설명
 
-### 🔹 MIDIManager 생성
+### MIDIManager 생성
 
 ```swift
 let midiManager = MIDIManager(
@@ -32,7 +34,7 @@ let midiManager = MIDIManager(
 
 ---
 
-### 🔹 MIDI 연결 설정: `MIDIConnect()`
+### MIDI 연결 설정: `MIDIConnect()`
 
 #### 1. MIDI 서비스 시작
 
@@ -59,7 +61,7 @@ try midiManager.addInputConnection(
 
 ---
 
-### 🔹 이벤트 수신 핸들러
+### 이벤트 수신 핸들러
 
 ```swift
 receiver: .events { [weak self] events, timeStamp, source in
@@ -79,7 +81,7 @@ receiver: .events { [weak self] events, timeStamp, source in
 
 ---
 
-### 🔹 수신된 MIDI 이벤트 처리
+### 수신된 MIDI 이벤트 처리
 
 ```swift
 private func received(midiEvent: MIDIEvent) { ... }
@@ -99,7 +101,7 @@ private func received(midiEvent: MIDIEvent) { ... }
 
 ---
 
-## 🎹 AudioKit 관련 (간단 요약)
+## AudioKit 관련 (간단 요약)
 
 * `RhodesPianoKey` → 기본 오실레이터
 * `AmplitudeEnvelope`으로 각각 음의 게이트 제어
@@ -119,7 +121,7 @@ private func received(midiEvent: MIDIEvent) { ... }
 
 ---
 
-## ✅ 사용 예
+## 사용 예
 
 * 외부 MIDI 장치, 가상 MIDI 장치, DAW 등에서 이 앱으로 노트 전송 가능
 * SwiftUI UI에서 `MIDIKItKeyboard`로 직접 연주도 가능

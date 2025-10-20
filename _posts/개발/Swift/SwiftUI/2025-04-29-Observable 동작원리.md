@@ -8,7 +8,11 @@ tags: [SwiftUI]
 
 # Observable 동작 원리
 ```plain
-viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유? @Observable 클래스 AudioKit3DViewModel에서 참조하는  각 클래스 AudioEngine3DConductor, SceneCoordinator에 @Observable을 붙이지 않아도 동작하는 이유?
+Q.
+viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유? 
+@Observable 클래스 AudioKit3DViewModel에서 참조하는  
+각 클래스 AudioEngine3DConductor, SceneCoordinator에 
+@Observable을 붙이지 않아도 동작하는 이유?
 ```
 
 ## 답변

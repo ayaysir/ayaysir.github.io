@@ -1,5 +1,5 @@
 ---
-title: CallbackMIDIInstrument
+title: "AudioKit 예제: Callback MIDI Instrument"
 author: ayaysir
 date: 2025-06-21 17:59:52 +0900
 categories: [StudyLog, AudioKit]
@@ -8,7 +8,9 @@ tags: [AudioKit, 음향이론]
 
 # Callback MIDI Instrument
 
-이 코드는 **AudioKit + SwiftUI**를 이용해 MIDI 시퀀서 이벤트를 감지하고 사운드폰트로 소리를 재생하며, 동시에 이벤트 로그를 실시간으로 출력하는 **학습용 인터랙티브 도구**입니다.
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/UncategorizedDemos/CallbackInstrument.swift)
+
+이 코드는 **AudioKit + SwiftUI**를 이용해 MIDI 시퀀서 이벤트를 감지하고 사운드폰트로 소리를 재생하며, 동시에 이벤트 로그를 실시간으로 출력합니다.
 핵심 개념은 다음 세 가지입니다:
 
 * `MIDICallbackInstrument`: MIDI 이벤트를 **실시간으로 감지**하여 로그 출력
@@ -17,9 +19,9 @@ tags: [AudioKit, 음향이론]
 
 ---
 
-## 📦 클래스 구성: `CallbackInstrumentConductor`
+## 클래스 구성: `CallbackInstrumentConductor`
 
-### 🔧 주요 변수
+### 주요 변수
 
 | 변수           | 설명                                   |
 | ------------ | ------------------------------------ |
@@ -33,7 +35,7 @@ tags: [AudioKit, 음향이론]
 
 ---
 
-## 🔁 초기화 흐름
+## 초기화 흐름
 
 ```swift
 init() {
@@ -49,7 +51,7 @@ init() {
 
 ---
 
-## 🧱 `createClickTrack()`: 실제 트랙 생성
+## `createClickTrack()`: 실제 트랙 생성
 
 * `division` 만큼 루프를 돌면서 노트를 삽입
 * `clickTrack`: `callbacker`에게 MIDI를 보내 이벤트 로그를 남김
@@ -67,7 +69,7 @@ soundTrack.setMIDIOutput(sampler.midiIn)
 
 ---
 
-## 🎯 `setCallback()`: 콜백 로직
+## `setCallback()`: 콜백 로직
 
 ```swift
 self.callbacker = MIDICallbackInstrument { ... }
@@ -105,7 +107,7 @@ Start Note 61 at 0.5000
 
 ---
 
-## 🧪 Preview
+## Preview
 
 ```swift
 #Preview {
@@ -117,7 +119,7 @@ Xcode의 canvas에서 인터랙티브 미리보기 지원
 
 ---
 
-## ✅ 요약
+## 요약
 
 | 기능         | 구현 방식                       |
 | ---------- | --------------------------- |
@@ -128,7 +130,7 @@ Xcode의 canvas에서 인터랙티브 미리보기 지원
 
 ---
 
-## 🔧 확장 아이디어
+## 확장 아이디어
 
 * 각 노트에 따라 다른 소리/색상 출력
 * 외부 MIDI 입력과 연동

@@ -1,5 +1,5 @@
 ---
-title: AudioKit의 BaseTapForSpeechRecognition
+title: AudioKit에서 BaseTapForSpeechRecognition을 사용한 음성인식 예제
 author: ayaysir
 date: 2025-06-21 22:06:46 +0900
 categories: [StudyLog, AudioKit]
@@ -7,6 +7,8 @@ tags: [AudioKit, 음향이론]
 ---
 
 # Base Tap for Speech Recognition
+
+- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/BaseTapDemo.swift) 
 
 현재 코드에서의 `SpeechRecognitionTap`과 `BaseTapForSpeechRecognitionConductor`는 **AudioKit**과 **Speech Framework**를 연결하여 실시간으로 마이크 입력을 받아 **음성 인식 결과를 텍스트로 출력**하는 역할을 수행합니다.
 변경된 코드 기준으로 두 클래스의 구성과 동작을 자세히 설명드리겠습니다.
