@@ -1,13 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2025-10-20T20:38:00+09:00</updated><id>/feed.xml</id><title type="html">BGSMM</title><subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle><entry><title type="html">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</title><link href="/posts/MultiTrackMIDIPlayer/" rel="alternate" type="text/html" title="AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)" /><published>2025-06-23T17:16:31+09:00</published><updated>2025-06-23T17:16:31+09:00</updated><id>/posts/MultiTrackMIDIPlayer</id><content type="html" xml:base="/posts/MultiTrackMIDIPlayer/"><![CDATA[<h1 id="multitrack-midi-player">Multitrack MIDI Player</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="ko" /><updated>2025-10-20T20:43:08+09:00</updated><id>/feed.xml</id><title type="html">BGSMM</title><subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle><entry><title type="html">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</title><link href="/posts/MultiTrackMIDIPlayer/" rel="alternate" type="text/html" title="AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)" /><published>2025-06-23T17:16:31+09:00</published><updated>2025-06-23T17:16:31+09:00</updated><id>/posts/MultiTrackMIDIPlayer</id><content type="html" xml:base="/posts/MultiTrackMIDIPlayer/"><![CDATA[<h1 id="multitrack-midi-player">Multitrack MIDI Player</h1>
+
+<ul>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift">코드 보기</a></li>
+</ul>
 
 <p>이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 <strong>MIDI 파일을 재생할 수 있는 SwiftUI 기반의 멀티트랙 MIDI 플레이어</strong>입니다.
 구성은 크게 <code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerConductor</code>(오디오 및 MIDI 처리 로직)와 <code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerView</code>(UI)로 나뉘며, 아래와 같이 작동합니다.</p>
 
 <hr />
 
-<h2 id="-multitrackmidiplayerconductor-오디오-및-midi-제어-클래스">🎼 <code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerConductor</code>: 오디오 및 MIDI 제어 클래스</h2>
+<h2 id="multitrackmidiplayerconductor-오디오-및-midi-제어-클래스"><code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerConductor</code>: 오디오 및 MIDI 제어 클래스</h2>
 
-<h3 id="-주요-프로퍼티">🔹 주요 프로퍼티</h3>
+<h3 id="주요-프로퍼티">주요 프로퍼티</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -30,7 +34,7 @@
 
 <hr />
 
-<h3 id="-init">🔹 <code class="language-plaintext highlighter-rouge">init()</code></h3>
+<h3 id="init"><code class="language-plaintext highlighter-rouge">init()</code></h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -44,7 +48,7 @@
 
 <hr />
 
-<h3 id="-loadmidifileurl">🔹 <code class="language-plaintext highlighter-rouge">loadMIDIFile(url:)</code></h3>
+<h3 id="loadmidifileurl"><code class="language-plaintext highlighter-rouge">loadMIDIFile(url:)</code></h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -65,7 +69,7 @@
 
 <hr />
 
-<h3 id="-settracks">🔹 <code class="language-plaintext highlighter-rouge">setTracks()</code></h3>
+<h3 id="settracks"><code class="language-plaintext highlighter-rouge">setTracks()</code></h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -93,7 +97,7 @@
 
 <hr />
 
-<h3 id="-sequencerplay--sequencerstop">🔹 <code class="language-plaintext highlighter-rouge">sequencerPlay()</code> / <code class="language-plaintext highlighter-rouge">sequencerStop()</code></h3>
+<h3 id="sequencerplay--sequencerstop"><code class="language-plaintext highlighter-rouge">sequencerPlay()</code> / <code class="language-plaintext highlighter-rouge">sequencerStop()</code></h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -105,9 +109,9 @@
 
 <hr />
 
-<h2 id="-multitrackmidiplayerview-사용자-인터페이스">🎛 <code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerView</code>: 사용자 인터페이스</h2>
+<h2 id="multitrackmidiplayerview-사용자-인터페이스"><code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerView</code>: 사용자 인터페이스</h2>
 
-<h3 id="-상태-바인딩">🔹 상태 바인딩</h3>
+<h3 id="상태-바인딩">상태 바인딩</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -122,7 +126,7 @@
 
 <hr />
 
-<h3 id="-ui-구성-요약">🔹 UI 구성 요약</h3>
+<h3 id="ui-구성-요약">UI 구성 요약</h3>
 
 <ul>
   <li>MIDI 파일명 표시</li>
@@ -144,7 +148,7 @@
 
 <hr />
 
-<h3 id="-파일-가져오기-midi">🔹 파일 가져오기 (.midi)</h3>
+<h3 id="파일-가져오기-midi">파일 가져오기 (.midi)</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -161,7 +165,7 @@
 
 <hr />
 
-<h3 id="-오디오-엔진-관리">🔹 오디오 엔진 관리</h3>
+<h3 id="오디오-엔진-관리">오디오 엔진 관리</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -235,7 +239,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="-문제-상황-요약">✅ 문제 상황 요약</h2>
+<h2 id="문제-상황-요약">문제 상황 요약</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -274,9 +278,9 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="-실현-가능한-접근-방법">✅ 실현 가능한 접근 방법</h2>
+<h2 id="실현-가능한-접근-방법">실현 가능한 접근 방법</h2>
 
-<h3 id="-방법-a-트랙을-구간별로-분할하여-각각-sampler에-할당">✅ 방법 A: 트랙을 구간별로 분할하여 각각 sampler에 할당</h3>
+<h3 id="방법-a-트랙을-구간별로-분할하여-각각-sampler에-할당">방법 A: 트랙을 구간별로 분할하여 각각 sampler에 할당</h3>
 
 <blockquote>
   <p>1개 트랙을 Program Change 기준으로 여러 개로 나누고,
@@ -290,7 +294,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
   <li>MIDI 이벤트 재구성이 필요</li>
 </ul>
 
-<h3 id="-방법-b-programchange-메시지-수신-시-sampler의-preset을-변경">✅ 방법 B: ProgramChange 메시지 수신 시 sampler의 preset을 변경</h3>
+<h3 id="방법-b-programchange-메시지-수신-시-sampler의-preset을-변경">방법 B: ProgramChange 메시지 수신 시 sampler의 preset을 변경</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -310,12 +314,12 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 </ul>
 
 <blockquote>
-  <p>⚠️ <strong>실행 중 preset 변경은 대부분 권장되지 않음</strong></p>
+  <p><strong>실행 중 preset 변경은 대부분 권장되지 않음</strong></p>
 </blockquote>
 
 <hr />
 
-<h2 id="-권장-방식-현실적-대안">✅ 권장 방식 (현실적 대안)</h2>
+<h2 id="권장-방식-현실적-대안">권장 방식 (현실적 대안)</h2>
 
 <h3 id="-트랙-중간에-program-change가-있는-경우">🎯 트랙 중간에 Program Change가 있는 경우:</h3>
 
@@ -327,7 +331,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="-요약">✅ 요약</h2>
+<h2 id="요약">요약</h2>
 
 <table>
   <thead>
@@ -354,26 +358,17 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
       <td>ProgramChange 기준으로 트랙을 사전 분할 또는 첫 preset만 사용</td>
     </tr>
   </tbody>
-</table>
-
-<hr />
-
-<p>필요하시면:</p>
+</table>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법]]></summary></entry><entry><title type="html">AudioKit의 MID Port Test</title><link href="/posts/MIDIPortTest/" rel="alternate" type="text/html" title="AudioKit의 MID Port Test" /><published>2025-06-23T00:42:28+09:00</published><updated>2025-06-23T00:42:28+09:00</updated><id>/posts/MIDIPortTest</id><content type="html" xml:base="/posts/MIDIPortTest/"><![CDATA[<h1 id="midi-port-test-virtual-midi-host-포함">MIDI Port Test (Virtual MIDI Host 포함)</h1>
 
 <ul>
-  <li>해당 트랙을 ProgramChange 기준으로 구간 분할하는 MIDI parser 예제</li>
-  <li>MIDISampler 여러 개 동적으로 운용하는 구조도 함께 도와드릴 수 있습니다.</li>
-</ul>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법]]></summary></entry><entry><title type="html">AudioKit의 MIDIPortTest</title><link href="/posts/MIDIPortTest/" rel="alternate" type="text/html" title="AudioKit의 MIDIPortTest" /><published>2025-06-23T00:42:28+09:00</published><updated>2025-06-23T00:42:28+09:00</updated><id>/posts/MIDIPortTest</id><content type="html" xml:base="/posts/MIDIPortTest/"><![CDATA[<h1 id="midi-port-test-virtual-midi-host-포함">MIDI Port Test (Virtual MIDI Host 포함)</h1>
-
-<hr />
-
-<h1 id="midiporttestconductor">MIDIPortTestConductor</h1>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest">코드 보기</a></li>
+</ul>
 
 <p><code class="language-plaintext highlighter-rouge">MIDIPortTestConductor</code>는 AudioKit과 MIDIKit을 이용해 MIDI 포트를 테스트하거나 MIDI 이벤트를 수신/전송할 수 있도록 설계된 <strong>MIDI 테스트 도구의 핵심 로직 클래스</strong>입니다. 가상 포트를 생성하고, 외부 장치와 통신하며, MIDI 로그를 저장하고, 포트 정보를 조회하는 기능을 포함합니다.</p>
 
 <hr />
 
-<h2 id="-주요-목적">✅ 주요 목적</h2>
+<h2 id="주요-목적">주요 목적</h2>
 
 <ul>
   <li>가상 MIDI 입/출력 포트 생성 및 관리</li>
@@ -385,9 +380,9 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="-주요-구성요소-설명">✅ 주요 구성요소 설명</h2>
+<h2 id="주요-구성요소-설명">주요 구성요소 설명</h2>
 
-<h3 id="-고정-uid-정의">📌 고정 UID 정의</h3>
+<h3 id="고정-uid-정의">고정 UID 정의</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -406,7 +401,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-published-속성">📌 <code class="language-plaintext highlighter-rouge">@Published</code> 속성</h3>
+<h3 id="published-속성"><code class="language-plaintext highlighter-rouge">@Published</code> 속성</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -425,7 +420,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-midi-초기화">📌 MIDI 초기화</h3>
+<h3 id="midi-초기화">MIDI 초기화</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -444,7 +439,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-로그-버퍼링-및-timer-처리">📌 로그 버퍼링 및 Timer 처리</h3>
+<h3 id="로그-버퍼링-및-timer-처리">로그 버퍼링 및 Timer 처리</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -459,7 +454,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-포트-설명-캐싱">📌 포트 설명 캐싱</h3>
+<h3 id="포트-설명-캐싱">포트 설명 캐싱</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="k">var</span> <span class="nv">portDescriptionCache</span><span class="p">:</span> <span class="p">[</span><span class="kt">MIDIUniqueID</span> <span class="p">:</span> <span class="kt">PortDescription</span><span class="p">]</span>
@@ -472,7 +467,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-포트-열기-및-닫기">📌 포트 열기 및 닫기</h3>
+<h3 id="포트-열기-및-닫기">포트 열기 및 닫기</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -489,7 +484,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-이벤트-전송">📌 이벤트 전송</h3>
+<h3 id="이벤트-전송">이벤트 전송</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">sendEvent</span><span class="p">(</span><span class="nv">eventToSend</span><span class="p">:</span><span class="n">event</span><span class="p">,</span> <span class="nv">portIDs</span><span class="p">:[</span><span class="kt">MIDIUniqueID</span><span class="p">]?)</span>
@@ -512,7 +507,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-포트-스왑-기능">📌 포트 스왑 기능</h3>
+<h3 id="포트-스왑-기능">포트 스왑 기능</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -527,7 +522,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-midilistener-구현">📌 MIDIListener 구현</h3>
+<h3 id="midilistener-구현">MIDIListener 구현</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -545,7 +540,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="-요약">✅ 요약</h2>
+<h2 id="요약">요약</h2>
 
 <table>
   <thead>
@@ -596,7 +591,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="-전체-구조-요약">✅ 전체 구조 요약</h2>
+<h2 id="전체-구조-요약">전체 구조 요약</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -622,9 +617,9 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="-주요-구성-요소-설명">🧩 주요 구성 요소 설명</h2>
+<h2 id="주요-구성-요소-설명">주요 구성 요소 설명</h2>
 
-<h3 id="-headerarea">📌 <code class="language-plaintext highlighter-rouge">HeaderArea</code></h3>
+<h3 id="headerarea"><code class="language-plaintext highlighter-rouge">HeaderArea</code></h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kt">HeaderCell</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="c1">// 4칸</span>
@@ -636,7 +631,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-tabview--port12selectarea">📌 <code class="language-plaintext highlighter-rouge">TabView</code> + <code class="language-plaintext highlighter-rouge">Port1/2SelectArea</code></h3>
+<h3 id="tabview--port12selectarea"><code class="language-plaintext highlighter-rouge">TabView</code> + <code class="language-plaintext highlighter-rouge">Port1/2SelectArea</code></h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kt">TabView</span> <span class="p">{</span> <span class="kt">VStack</span> <span class="p">{</span> <span class="kt">Port1SelectArea</span> <span class="o">...</span> <span class="p">}</span> <span class="p">}</span>
@@ -650,7 +645,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-porteventareaportid">📌 <code class="language-plaintext highlighter-rouge">PortEventArea(portID:)</code></h3>
+<h3 id="porteventareaportid"><code class="language-plaintext highlighter-rouge">PortEventArea(portID:)</code></h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kt">MIDIEventButton</span><span class="p">(</span><span class="nv">eventToSend</span><span class="p">:</span> <span class="o">.</span><span class="n">noteOn</span> <span class="o">/</span> <span class="o">.</span><span class="n">noteOff</span> <span class="o">...</span><span class="p">)</span>
@@ -664,15 +659,15 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-로그-관련-ui">📌 로그 관련 UI</h3>
+<h3 id="로그-관련-ui">로그 관련 UI</h3>
 
-<h4 id="-logheaderarea">▸ <code class="language-plaintext highlighter-rouge">LogHeaderArea</code></h4>
+<h4 id="logheaderarea"><code class="language-plaintext highlighter-rouge">LogHeaderArea</code></h4>
 
 <ul>
   <li>상태, 채널, 데이터1~2, 포트 UID, 장치명, 제조사명 등 컬럼 헤더 출력</li>
 </ul>
 
-<h4 id="-logdataarea">▸ <code class="language-plaintext highlighter-rouge">LogDataArea</code></h4>
+<h4 id="logdataarea"><code class="language-plaintext highlighter-rouge">LogDataArea</code></h4>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kt">ForEach</span><span class="p">(</span><span class="n">conductor</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span> <span class="p">{</span> <span class="n">i</span> <span class="k">in</span> <span class="o">...</span> <span class="p">}</span>
@@ -686,7 +681,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-포트-상태-전환-토글">📌 포트 상태 전환 토글</h3>
+<h3 id="포트-상태-전환-토글">포트 상태 전환 토글</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -705,7 +700,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="️-기능-요약">🎛️ 기능 요약</h2>
+<h2 id="기능-요약">기능 요약</h2>
 
 <table>
   <thead>
@@ -740,7 +735,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="️-주의개선-포인트">⚠️ 주의/개선 포인트</h2>
+<h2 id="주의개선-포인트">주의/개선 포인트</h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">LogDataArea</code>에서 <code class="language-plaintext highlighter-rouge">inputPortDescription()</code>은 성능 병목 → 캐싱 또는 비동기 평가 필요</li>
@@ -750,7 +745,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="-요약-1">✅ 요약</h2>
+<h2 id="요약-1">요약</h2>
 
 <p><code class="language-plaintext highlighter-rouge">MIDIPortTestView</code>는:</p>
 
@@ -764,15 +759,19 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[MIDI Port Test (Virtual MIDI Host 포함)]]></summary></entry><entry><title type="html">AudioKit의 PolyphonicSTK+MIDIKit</title><link href="/posts/PolyphonicSTK+MIDIKit/" rel="alternate" type="text/html" title="AudioKit의 PolyphonicSTK+MIDIKit" /><published>2025-06-22T19:03:37+09:00</published><updated>2025-06-22T19:03:37+09:00</updated><id>/posts/PolyphonicSTK+MIDIKit</id><content type="html" xml:base="/posts/PolyphonicSTK+MIDIKit/"><![CDATA[<h1 id="polyphonic-stk--midikit">Polyphonic STK + MIDIKit</h1>
 
+<ul>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/PolyphonicSTK%2BMIDIKit.swift">코드 보기</a></li>
+</ul>
+
 <p>이 코드는 AudioKit과 <a href="https://github.com/orchetect/MIDIKit"><strong>MIDIKit</strong></a>을 함께 사용하여,
 가상 또는 외부 MIDI 장치로부터 들어오는 MIDI 이벤트를 수신하고,
 <code class="language-plaintext highlighter-rouge">RhodesPianoKey</code>(SoundpipeAudioKit) 기반으로 폴리포닉 연주를 가능하게 하는 구조입니다.</p>
 
 <hr />
 
-<h2 id="-midikit-관련-설명">✅ MIDIKit 관련 설명</h2>
+<h2 id="midikit-관련-설명">MIDIKit 관련 설명</h2>
 
-<h3 id="-midimanager-생성">🔹 MIDIManager 생성</h3>
+<h3 id="midimanager-생성">MIDIManager 생성</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -794,7 +793,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-midi-연결-설정-midiconnect">🔹 MIDI 연결 설정: <code class="language-plaintext highlighter-rouge">MIDIConnect()</code></h3>
+<h3 id="midi-연결-설정-midiconnect">MIDI 연결 설정: <code class="language-plaintext highlighter-rouge">MIDIConnect()</code></h3>
 
 <h4 id="1-midi-서비스-시작">1. MIDI 서비스 시작</h4>
 
@@ -830,7 +829,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-이벤트-수신-핸들러">🔹 이벤트 수신 핸들러</h3>
+<h3 id="이벤트-수신-핸들러">이벤트 수신 핸들러</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -860,7 +859,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h3 id="-수신된-midi-이벤트-처리">🔹 수신된 MIDI 이벤트 처리</h3>
+<h3 id="수신된-midi-이벤트-처리">수신된 MIDI 이벤트 처리</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="kd">func</span> <span class="nf">received</span><span class="p">(</span><span class="nv">midiEvent</span><span class="p">:</span> <span class="kt">MIDIEvent</span><span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
@@ -907,7 +906,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="-audiokit-관련-간단-요약">🎹 AudioKit 관련 (간단 요약)</h2>
+<h2 id="audiokit-관련-간단-요약">AudioKit 관련 (간단 요약)</h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">RhodesPianoKey</code> → 기본 오실레이터</li>
@@ -931,7 +930,7 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 
 <hr />
 
-<h2 id="-사용-예">✅ 사용 예</h2>
+<h2 id="사용-예">사용 예</h2>
 
 <ul>
   <li>외부 MIDI 장치, 가상 MIDI 장치, DAW 등에서 이 앱으로 노트 전송 가능</li>
@@ -942,18 +941,18 @@ AudioKit의 <code class="language-plaintext highlighter-rouge">AppleSequencer</c
 <hr />]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Polyphonic STK + MIDIKit]]></summary></entry><entry><title type="html">AudioKit의 Roland TB303 Filter</title><link href="/posts/Roland_TB303_Filter/" rel="alternate" type="text/html" title="AudioKit의 Roland TB303 Filter" /><published>2025-06-22T17:36:28+09:00</published><updated>2025-06-22T17:36:28+09:00</updated><id>/posts/Roland_TB303_Filter</id><content type="html" xml:base="/posts/Roland_TB303_Filter/"><![CDATA[<h1 id="roland-tb-303-filter">Roland TB-303 Filter</h1>
 
 <p><code class="language-plaintext highlighter-rouge">RolandTB303Filter</code>는 Roland의 전설적인 베이스 신시사이저 <strong>TB-303</strong>의 필터 사운드를 모방한 <strong>레조넌트 로우패스 필터</strong>입니다.
-TB-303은 1980년대에 등장한 아날로그 신스 베이스 머신으로, **애시드 하우스(acid house)**와 전자 음악 장르에서 매우 유명한 독특한 필터 사운드를 제공합니다.</p>
+TB-303은 1980년대에 등장한 아날로그 신스 베이스 머신으로, 애시드 하우스(acid house)와 전자 음악 장르에서 매우 유명한 독특한 필터 사운드를 제공합니다.</p>
 
 <hr />
 
 <h2 id="️-roland-tb-303-filter란">🎛️ Roland TB-303 Filter란?</h2>
 
 <ul>
-  <li>**1-pole 혹은 4-pole 저역 통과 필터(Low-Pass Filter)**로
+  <li><strong>1-pole</strong> 혹은 <strong>4-pole 저역 통과 필터</strong>(Low-Pass Filter)로
 고주파수를 잘라내고 저역만 통과시킵니다.</li>
   <li><strong>자극적이고 공격적인 레조넌스</strong> 특성으로 유명하며,
 <strong>레조넌스를 극단적으로 높일 때 오실레이터처럼 자가 발진(self-oscillate)</strong> 하는 특성도 있음.</li>
-  <li><code class="language-plaintext highlighter-rouge">SoundpipeAudioKit</code>에 구현된 <code class="language-plaintext highlighter-rouge">RolandTB303Filter</code>는 이 클래식한 아날로그 필터의 **사운드 특성과 비선형 동작(디스토션, 비대칭성)**을 디지털로 복제한 것입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">SoundpipeAudioKit</code>에 구현된 <code class="language-plaintext highlighter-rouge">RolandTB303Filter</code>는 이 클래식한 아날로그 필터의 사운드 특성과 비선형 동작(디스토션, 비대칭성)을 디지털로 복제한 것입니다.</li>
 </ul>
 
 <hr />
@@ -1080,18 +1079,18 @@ TB-303은 1980년대에 등장한 아날로그 신스 베이스 머신으로, **
   <li><strong>Cutoff + Resonance</strong>의 조합이 사운드 캐릭터의 중심</li>
   <li><strong>Distortion</strong>은 날카로운 빈티지 톤을 더함</li>
   <li><strong>Resonance Asymmetry</strong>는 필터의 비선형성을 미세하게 조절함</li>
+</ul>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Roland TB-303 Filter]]></summary></entry><entry><title type="html">AudioKit의 DunneSynth</title><link href="/posts/DunneSynth/" rel="alternate" type="text/html" title="AudioKit의 DunneSynth" /><published>2025-06-22T15:58:34+09:00</published><updated>2025-06-22T15:58:34+09:00</updated><id>/posts/DunneSynth</id><content type="html" xml:base="/posts/DunneSynth/"><![CDATA[<h1 id="dunne-synth">Dunne Synth</h1>
+
+<ul>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/DunneSynth.swift">코드 보기</a></li>
 </ul>
-
-<hr />
-
-<p>필요하시면 SwiftUI UI 슬라이더와 함께 실시간 제어 가능한 데모 코드도 제공해 드릴 수 있습니다.</p>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Roland TB-303 Filter]]></summary></entry><entry><title type="html">AudioKit의 DunneSynth</title><link href="/posts/DunneSynth/" rel="alternate" type="text/html" title="AudioKit의 DunneSynth" /><published>2025-06-22T15:58:34+09:00</published><updated>2025-06-22T15:58:34+09:00</updated><id>/posts/DunneSynth</id><content type="html" xml:base="/posts/DunneSynth/"><![CDATA[<h1 id="dunne-synth">Dunne Synth</h1>
 
 <p><code class="language-plaintext highlighter-rouge">DunneSynthConductor</code>는 AudioKit의 <code class="language-plaintext highlighter-rouge">Synth</code> (정확히는 <code class="language-plaintext highlighter-rouge">DunneAudioKit</code>의 Dunne Synthesizer)를 제어하는 <strong>오디오 신스 컨덕터 클래스</strong>입니다.
 SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재생, 피크 리미팅, 팝 제거 등 다양한 오디오 처리 제어를 담당합니다.</p>
 
 <hr />
 
-<h2 id="-클래스-개요">✅ 클래스 개요</h2>
+<h2 id="클래스-개요">클래스 개요</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">DunneSynthConductor</span><span class="p">:</span> <span class="kt">ObservableObject</span><span class="p">,</span> <span class="kt">HasAudioEngine</span>
@@ -1105,15 +1104,15 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-주요-구성-요소">✅ 주요 구성 요소</h2>
+<h2 id="주요-구성-요소">주요 구성 요소</h2>
 
-<h3 id="-let-engine--audioengine">🔹 <code class="language-plaintext highlighter-rouge">let engine = AudioEngine()</code></h3>
+<h3 id="let-engine--audioengine"><code class="language-plaintext highlighter-rouge">let engine = AudioEngine()</code></h3>
 
 <ul>
   <li>AudioKit의 핵심 오디오 처리 엔진</li>
 </ul>
 
-<h3 id="-var-instrument--synth">🔹 <code class="language-plaintext highlighter-rouge">var instrument = Synth()</code></h3>
+<h3 id="var-instrument--synth"><code class="language-plaintext highlighter-rouge">var instrument = Synth()</code></h3>
 
 <ul>
   <li>DunneAudioKit의 <strong>폴리포닉 신스</strong></li>
@@ -1122,7 +1121,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-noteon--noteoff">✅ noteOn / noteOff</h2>
+<h2 id="noteon--noteoff">noteOn / noteOff</h2>
 
 <h3 id="func-noteonpitch-pitch-point-_-cgpoint"><code class="language-plaintext highlighter-rouge">func noteOn(pitch: Pitch, point _: CGPoint)</code></h3>
 
@@ -1146,9 +1145,9 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-초기화-init">✅ 초기화: <code class="language-plaintext highlighter-rouge">init()</code></h2>
+<h2 id="초기화-init">초기화: <code class="language-plaintext highlighter-rouge">init()</code></h2>
 
-<h3 id="-1-engineoutput--peaklimiter">🔸 1. <code class="language-plaintext highlighter-rouge">engine.output = PeakLimiter(...)</code></h3>
+<h3 id="1-engineoutput--peaklimiter">1. <code class="language-plaintext highlighter-rouge">engine.output = PeakLimiter(...)</code></h3>
 
 <ul>
   <li>출력단에 <code class="language-plaintext highlighter-rouge">PeakLimiter</code> 삽입 → 소리의 <strong>과도한 피크 방지</strong></li>
@@ -1157,7 +1156,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
   <li><code class="language-plaintext highlighter-rouge">preGain = 0</code>: 입력 게인을 증폭하지 않음</li>
 </ul>
 
-<h3 id="-2-팝-노이즈-제거-설정">🔸 2. 팝 노이즈 제거 설정</h3>
+<h3 id="2-팝-노이즈-제거-설정">2. 팝 노이즈 제거 설정</h3>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1175,9 +1174,9 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-파라미터-목록">🧪 파라미터 목록</h2>
+<h2 id="파라미터-목록">파라미터 목록</h2>
 
-<h3 id="-일반-음성-파라미터">🎛 일반 음성 파라미터</h3>
+<h3 id="일반-음성-파라미터">일반 음성 파라미터</h3>
 
 <table>
   <thead>
@@ -1230,7 +1229,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h3 id="-앰플리튜드-adsr-amplitude-envelope">🎛 앰플리튜드 ADSR (Amplitude Envelope)</h3>
+<h3 id="앰플리튜드-adsr-amplitude-envelope">앰플리튜드 ADSR (Amplitude Envelope)</h3>
 
 <table>
   <thead>
@@ -1271,7 +1270,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h3 id="-필터-adsr-filter-envelope">🎛 필터 ADSR (Filter Envelope)</h3>
+<h3 id="필터-adsr-filter-envelope">필터 ADSR (Filter Envelope)</h3>
 
 <table>
   <thead>
@@ -1312,7 +1311,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-콘솔-출력">✅ 콘솔 출력</h2>
+<h2 id="콘솔-출력">콘솔 출력</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1329,7 +1328,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-요약">✅ 요약</h2>
+<h2 id="요약">요약</h2>
 
 <p><code class="language-plaintext highlighter-rouge">DunneSynthConductor</code>는:</p>
 
@@ -1342,6 +1341,10 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 <blockquote>
   <p>SwiftUI와 함께 사용할 때 매우 직관적인 신디사이저 앱이나 교육용 악기 UI를 구성하는 데 적합합니다.</p>
 </blockquote>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Dunne Synth]]></summary></entry><entry><title type="html">AudioKit의 InputDeviceDemo+ChannelRouting</title><link href="/posts/InputDeviceDemo+ChannelRouting/" rel="alternate" type="text/html" title="AudioKit의 InputDeviceDemo+ChannelRouting" /><published>2025-06-22T15:36:36+09:00</published><updated>2025-06-22T15:36:36+09:00</updated><id>/posts/InputDeviceDemo+ChannelRouting</id><content type="html" xml:base="/posts/InputDeviceDemo+ChannelRouting/"><![CDATA[<h1 id="input-device-demo">Input Device Demo</h1>
+
+<ul>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/InputDeviceDemo.swift">코드 보기</a></li>
+</ul>
 
 <p>이 SwiftUI + AudioKit 코드의 목적은 <strong>입력 장치(마이크)를 선택하고 오디오 입력을 시작/정지하는 UI를 제공하는 것</strong>입니다.
 즉, 여러 마이크 장치가 연결된 환경에서 사용자가 원하는 입력을 선택하고, 마이크 버튼을 눌러 오디오 입력을 켜거나 끌 수 있게 합니다.</p>
@@ -1551,7 +1554,11 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<p>이 코드는 AudioKit을 활용한 <strong>기초 오디오 입출력 제어 구조</strong>를 익히기에 적절한 예제입니다.</p>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Input Device Demo]]></summary></entry><entry><title type="html">AudioKit의 BaseTapForSpeechRecognition</title><link href="/posts/BaseTapForSpeechRecognition/" rel="alternate" type="text/html" title="AudioKit의 BaseTapForSpeechRecognition" /><published>2025-06-21T22:06:46+09:00</published><updated>2025-06-21T22:06:46+09:00</updated><id>/posts/BaseTapForSpeechRecognition</id><content type="html" xml:base="/posts/BaseTapForSpeechRecognition/"><![CDATA[<h1 id="base-tap-for-speech-recognition">Base Tap for Speech Recognition</h1>
+<p>이 코드는 AudioKit을 활용한 <strong>기초 오디오 입출력 제어 구조</strong>를 익히기에 적절한 예제입니다.</p>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Input Device Demo]]></summary></entry><entry><title type="html">AudioKit에서 BaseTapForSpeechRecognition을 사용한 음성인식 예제</title><link href="/posts/BaseTapForSpeechRecognition/" rel="alternate" type="text/html" title="AudioKit에서 BaseTapForSpeechRecognition을 사용한 음성인식 예제" /><published>2025-06-21T22:06:46+09:00</published><updated>2025-06-21T22:06:46+09:00</updated><id>/posts/BaseTapForSpeechRecognition</id><content type="html" xml:base="/posts/BaseTapForSpeechRecognition/"><![CDATA[<h1 id="base-tap-for-speech-recognition">Base Tap for Speech Recognition</h1>
+
+<ul>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/BaseTapDemo.swift">코드 보기</a></li>
+</ul>
 
 <p>현재 코드에서의 <code class="language-plaintext highlighter-rouge">SpeechRecognitionTap</code>과 <code class="language-plaintext highlighter-rouge">BaseTapForSpeechRecognitionConductor</code>는 <strong>AudioKit</strong>과 <strong>Speech Framework</strong>를 연결하여 실시간으로 마이크 입력을 받아 <strong>음성 인식 결과를 텍스트로 출력</strong>하는 역할을 수행합니다.
 변경된 코드 기준으로 두 클래스의 구성과 동작을 자세히 설명드리겠습니다.</p>
@@ -1733,9 +1740,225 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
   </tbody>
 </table>
 
-<hr />]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Base Tap for Speech Recognition]]></summary></entry><entry><title type="html">CallbackMIDIInstrument</title><link href="/posts/CallbackMIDIInstrument/" rel="alternate" type="text/html" title="CallbackMIDIInstrument" /><published>2025-06-21T17:59:52+09:00</published><updated>2025-06-21T17:59:52+09:00</updated><id>/posts/CallbackMIDIInstrument</id><content type="html" xml:base="/posts/CallbackMIDIInstrument/"><![CDATA[<h1 id="callback-midi-instrument">Callback MIDI Instrument</h1>
+<hr />]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Base Tap for Speech Recognition]]></summary></entry><entry><title type="html">Tables</title><link href="/posts/Tables/" rel="alternate" type="text/html" title="Tables" /><published>2025-06-21T20:11:40+09:00</published><updated>2025-06-21T20:11:40+09:00</updated><id>/posts/Tables</id><content type="html" xml:base="/posts/Tables/"><![CDATA[<h1 id="tables">Tables</h1>
 
-<p>이 코드는 <strong>AudioKit + SwiftUI</strong>를 이용해 MIDI 시퀀서 이벤트를 감지하고 사운드폰트로 소리를 재생하며, 동시에 이벤트 로그를 실시간으로 출력하는 <strong>학습용 인터랙티브 도구</strong>입니다.
+<ul>
+  <li><a href="">코드 보기</a></li>
+</ul>
+
+<p>이 코드는 <code class="language-plaintext highlighter-rouge">AudioKit</code>의 <code class="language-plaintext highlighter-rouge">Table</code> 객체들을 생성하고 시각화하는 SwiftUI 뷰입니다.
+특히 생성자(<code class="language-plaintext highlighter-rouge">init()</code>)에서는 다양한 방식으로 **파형 테이블(Table)**을 생성하여 오실레이터 등에서 사용할 수 있도록 준비합니다.
+이 Table들은 사인파, 정사각파, 사용자 정의 파형 등의 <strong>루프 가능한 단일 사이클 웨이브폼</strong>입니다.</p>
+
+<hr />
+
+<h2 id="-클래스-개요-tableconductor">✅ 클래스 개요: <code class="language-plaintext highlighter-rouge">TableConductor</code></h2>
+
+<p>이 클래스는 <code class="language-plaintext highlighter-rouge">ObservableObject</code>로, UI에서 이 객체의 <code class="language-plaintext highlighter-rouge">@Published</code> 값을 관찰할 수 있도록 구성되어 있습니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">TableConductor</span><span class="p">:</span> <span class="kt">ObservableObject</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="-속성-목록">📌 속성 목록</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>속성 이름</th>
+      <th>역할</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">square</code></td>
+      <td>정사각형 파형 테이블 (Square Wave)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">triangle</code></td>
+      <td>삼각형 파형 테이블 (Triangle Wave)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sine</code></td>
+      <td>사인파 테이블 (Sine Wave)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sineHarmonic</code></td>
+      <td>하모닉(배음) 기반의 사인파</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fileTable</code></td>
+      <td>오디오 파일 기반 파형</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">custom</code></td>
+      <td>사용자 정의 파형 (난수 + 인덱스 기반)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-생성자-설명-init">🧠 생성자 설명: <code class="language-plaintext highlighter-rouge">init()</code></h2>
+
+<h3 id="-1-기본-파형-테이블-생성">🔹 1. 기본 파형 테이블 생성</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">square</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="o">.</span><span class="n">square</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">128</span><span class="p">)</span>
+<span class="n">triangle</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="o">.</span><span class="n">triangle</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">128</span><span class="p">)</span>
+<span class="n">sine</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="o">.</span><span class="n">sine</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">256</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.init(_:count:)</code>는 해당 파형 유형의 테이블을 지정된 크기만큼 생성</li>
+  <li><code class="language-plaintext highlighter-rouge">count</code>는 <strong>테이블 길이 (샘플 수)</strong>, 2의 제곱수로 설정하는 것이 일반적 (FFT 등 성능에 영향)</li>
+</ul>
+
+<hr />
+
+<h3 id="-2-오디오-파일-기반-파형-생성">🔹 2. 오디오 파일 기반 파형 생성</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">GlobalSource</span><span class="o">.</span><span class="n">piano</span><span class="o">.</span><span class="n">url</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">file</span> <span class="o">=</span> <span class="k">try!</span> <span class="kt">AVAudioFile</span><span class="p">(</span><span class="nv">forReading</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+<span class="n">fileTable</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">file</span><span class="p">:</span> <span class="n">file</span><span class="p">)</span><span class="o">!</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.sfz</code> 또는 <code class="language-plaintext highlighter-rouge">.wav</code> 등의 오디오 파일을 읽어 들여 파형 테이블로 변환</li>
+  <li><code class="language-plaintext highlighter-rouge">fileTable</code>은 실제 음성 데이터를 기반으로 한 루프 테이블이 됨</li>
+</ul>
+
+<p>주의:</p>
+<ul>
+  <li>파일 로딩은 오래 걸릴 수 있으므로 생성자에서 직접 하지 말고 <code class="language-plaintext highlighter-rouge">task</code> 등을 통해 비동기적으로 실행</li>
+</ul>
+
+<hr />
+
+<h3 id="-3-하모닉-오버톤-기반-테이블-생성">🔹 3. 하모닉 오버톤 기반 테이블 생성</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">harmonicOvertoneAmplitudes</span><span class="p">:</span> <span class="p">[</span><span class="kt">Float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.016</span><span class="p">,</span> <span class="mf">0.301</span>
+<span class="p">]</span>
+<span class="n">sineHarmonic</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="o">.</span><span class="nf">harmonic</span><span class="p">(</span><span class="n">harmonicOvertoneAmplitudes</span><span class="p">),</span> <span class="nv">phase</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">AudioKit.TableType.harmonic(_)</code>은 **기본파 + 배음(amplitudes)**으로 구성된 파형 생성</li>
+  <li><code class="language-plaintext highlighter-rouge">harmonicOvertoneAmplitudes[n]</code>은 <strong>(n+1)번째 고조파의 세기</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">phase: 0.75</code>는 <strong>위상 오프셋</strong>으로, 시작 지점을 오른쪽으로 75%만큼 이동</li>
+</ul>
+
+<p>예:
+배음 = <code class="language-plaintext highlighter-rouge">[0.0, 0.0, 0.016, 0.301]</code>
+→ 기본파 없음, 3번째와 4번째 고조파만 있는 파형</p>
+
+<hr />
+
+<h3 id="-4-사용자-정의-파형-생성">🔹 4. 사용자 정의 파형 생성</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">custom</span> <span class="o">=</span> <span class="kt">Table</span><span class="p">(</span><span class="o">.</span><span class="n">sine</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">256</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">custom</span><span class="o">.</span><span class="n">indices</span> <span class="p">{</span>
+  <span class="n">custom</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="kt">Float</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.5</span><span class="o">...</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="kt">Float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2048.0</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>먼저 사인파 테이블을 생성한 뒤, 각 샘플에 <strong>무작위 값 + 인덱스 기반 값</strong>을 더함</li>
+  <li>이는 <strong>잡음 성분이 섞인 사인파 또는 변형된 파형</strong>을 만들기 위한 목적</li>
+</ul>
+
+<p>예:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Float.random(in: -0.5...0.5)</code> → 랜덤 노이즈</li>
+  <li><code class="language-plaintext highlighter-rouge">Float(i) / 2048.0</code> → 위치에 따라 증가하는 값</li>
+</ul>
+
+<hr />
+
+<h2 id="️-테이블-시각화-뷰-tabledataview">🖼️ 테이블 시각화 뷰 (<code class="language-plaintext highlighter-rouge">TableDataView</code>)</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">TableDataView</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>AudioKit에서 제공하는 <code class="language-plaintext highlighter-rouge">TableView</code>를 UIKit 기반으로 감싸 SwiftUI에서 사용 가능하게 함</li>
+  <li><code class="language-plaintext highlighter-rouge">table</code>을 주입받아 <code class="language-plaintext highlighter-rouge">makeUIView</code>에서 그려줌</li>
+</ul>
+
+<hr />
+
+<h2 id="-swiftui-구성-tablerecipeview">📱 SwiftUI 구성 (<code class="language-plaintext highlighter-rouge">TableRecipeView</code>)</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kt">VStack</span> <span class="p">{</span>
+  <span class="kt">Text</span><span class="p">(</span><span class="s">"Square"</span><span class="p">)</span>
+  <span class="kt">TableDataView</span><span class="p">(</span><span class="nv">table</span><span class="p">:</span> <span class="n">conductor</span><span class="o">.</span><span class="n">square</span><span class="p">)</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>각 Table을 <code class="language-plaintext highlighter-rouge">Text</code>와 함께 나열하여 시각적으로 비교 가능</li>
+</ul>
+
+<hr />
+
+<h2 id="-요약">✅ 요약</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>생성 방식</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.init(.sine, count: N)</code></td>
+      <td>기본형 파형 생성</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.init(file:)</code></td>
+      <td>오디오 파일 기반 파형</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.init(.harmonic, phase:)</code></td>
+      <td>배음 기반 사용자 정의 파형</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.init</code> + 인덱스 수식</td>
+      <td>완전 커스텀 파형</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Tables]]></summary></entry><entry><title type="html">AudioKit 예제: Callback MIDI Instrument</title><link href="/posts/CallbackMIDIInstrument/" rel="alternate" type="text/html" title="AudioKit 예제: Callback MIDI Instrument" /><published>2025-06-21T17:59:52+09:00</published><updated>2025-06-21T17:59:52+09:00</updated><id>/posts/CallbackMIDIInstrument</id><content type="html" xml:base="/posts/CallbackMIDIInstrument/"><![CDATA[<h1 id="callback-midi-instrument">Callback MIDI Instrument</h1>
+
+<ul>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/UncategorizedDemos/CallbackInstrument.swift">코드 보기</a></li>
+</ul>
+
+<p>이 코드는 <strong>AudioKit + SwiftUI</strong>를 이용해 MIDI 시퀀서 이벤트를 감지하고 사운드폰트로 소리를 재생하며, 동시에 이벤트 로그를 실시간으로 출력합니다.
 핵심 개념은 다음 세 가지입니다:</p>
 
 <ul>
@@ -1746,9 +1969,9 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-클래스-구성-callbackinstrumentconductor">📦 클래스 구성: <code class="language-plaintext highlighter-rouge">CallbackInstrumentConductor</code></h2>
+<h2 id="클래스-구성-callbackinstrumentconductor">클래스 구성: <code class="language-plaintext highlighter-rouge">CallbackInstrumentConductor</code></h2>
 
-<h3 id="-주요-변수">🔧 주요 변수</h3>
+<h3 id="주요-변수">주요 변수</h3>
 
 <table>
   <thead>
@@ -1791,7 +2014,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-초기화-흐름">🔁 초기화 흐름</h2>
+<h2 id="초기화-흐름">초기화 흐름</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1815,7 +2038,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-createclicktrack-실제-트랙-생성">🧱 <code class="language-plaintext highlighter-rouge">createClickTrack()</code>: 실제 트랙 생성</h2>
+<h2 id="createclicktrack-실제-트랙-생성"><code class="language-plaintext highlighter-rouge">createClickTrack()</code>: 실제 트랙 생성</h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">division</code> 만큼 루프를 돌면서 노트를 삽입</li>
@@ -1838,7 +2061,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-setcallback-콜백-로직">🎯 <code class="language-plaintext highlighter-rouge">setCallback()</code>: 콜백 로직</h2>
+<h2 id="setcallback-콜백-로직"><code class="language-plaintext highlighter-rouge">setCallback()</code>: 콜백 로직</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="k">self</span><span class="o">.</span><span class="n">callbacker</span> <span class="o">=</span> <span class="kt">MIDICallbackInstrument</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
@@ -1908,7 +2131,7 @@ Start Note 61 at 0.5000
 
 <hr />
 
-<h2 id="-preview">🧪 Preview</h2>
+<h2 id="preview">Preview</h2>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1922,7 +2145,7 @@ Start Note 61 at 0.5000
 
 <hr />
 
-<h2 id="-요약">✅ 요약</h2>
+<h2 id="요약">요약</h2>
 
 <table>
   <thead>
@@ -1953,288 +2176,11 @@ Start Note 61 at 0.5000
 
 <hr />
 
-<h2 id="-확장-아이디어">🔧 확장 아이디어</h2>
+<h2 id="확장-아이디어">확장 아이디어</h2>
 
 <ul>
   <li>각 노트에 따라 다른 소리/색상 출력</li>
   <li>외부 MIDI 입력과 연동</li>
   <li>division이나 템포 변경 시 실시간 반영</li>
   <li><code class="language-plaintext highlighter-rouge">.noteOff</code>도 감지해 note duration 분석</li>
-</ul>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Callback MIDI Instrument]]></summary></entry><entry><title type="html">AudioKit의 Waveform</title><link href="/posts/Waveform/" rel="alternate" type="text/html" title="AudioKit의 Waveform" /><published>2025-06-20T20:10:19+09:00</published><updated>2025-06-20T20:10:19+09:00</updated><id>/posts/Waveform</id><content type="html" xml:base="/posts/Waveform/"><![CDATA[<h1 id="waveform">Waveform</h1>
-
-<p>이 코드는 SwiftUI와 AudioKit, WaveformKit을 활용하여 <strong>오디오 파형을 시각화하고</strong>, 사용자가 <strong>드래그로 재생 범위(start ~ length)를 지정</strong>할 수 있는 인터랙티브한 Waveform 플레이어입니다.
-각 구성요소에 대해 <strong>역할과 동작 방식</strong>을 중심으로 자세히 설명드리겠습니다.</p>
-
-<hr />
-
-<h1 id="-1-waveformconductor">✅ 1. <code class="language-plaintext highlighter-rouge">WaveformConductor</code></h1>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">WaveformConductor</span><span class="p">:</span> <span class="kt">ObservableObject</span><span class="p">,</span> <span class="kt">ProcessesPlayerInput</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="-역할">🔹 역할</h3>
-
-<ul>
-  <li>오디오 재생을 담당하는 AudioKit 기반 오디오 컨트롤러</li>
-  <li><code class="language-plaintext highlighter-rouge">AudioPlayer</code>, <code class="language-plaintext highlighter-rouge">SampleBuffer</code>를 설정하고 제공</li>
-  <li>UI와 바인딩될 수 있도록 <code class="language-plaintext highlighter-rouge">@Published</code>를 통해 <code class="language-plaintext highlighter-rouge">samples</code> 공개</li>
-</ul>
-
-<h3 id="-내부-구성">🔹 내부 구성</h3>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">AudioEngine</code>을 통해 오디오 재생 환경 설정</li>
-  <li><code class="language-plaintext highlighter-rouge">player</code>는 <code class="language-plaintext highlighter-rouge">AudioPlayer</code>, <code class="language-plaintext highlighter-rouge">.buffer</code>에 <code class="language-plaintext highlighter-rouge">Cookbook.sourceBuffer(source: .piano)</code> 를 설정해 <code class="language-plaintext highlighter-rouge">.piano</code> 샘플을 사용</li>
-  <li><code class="language-plaintext highlighter-rouge">player.isLooping = true</code> → 오디오 무한 반복</li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">createSampleBuffer()</code>:</p>
-
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">AudioBuffer</code>를 <code class="language-plaintext highlighter-rouge">Float</code> 배열로 변환해 시각화를 위한 <code class="language-plaintext highlighter-rouge">SampleBuffer</code> 생성</li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h1 id="-2-waveformview">✅ 2. <code class="language-plaintext highlighter-rouge">WaveformView</code></h1>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">WaveformView</span><span class="p">:</span> <span class="kt">View</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="-역할-1">🔹 역할</h3>
-
-<ul>
-  <li>파형 시각화 및 드래그 UI 포함</li>
-  <li><code class="language-plaintext highlighter-rouge">start</code>와 <code class="language-plaintext highlighter-rouge">length</code>를 조절해서 재생 범위 지정</li>
-  <li>실제 오디오 재생은 <code class="language-plaintext highlighter-rouge">conductor</code>를 통해 수행됨</li>
-</ul>
-
-<h3 id="-구성-상태-변수">🔹 구성 상태 변수</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>변수</th>
-      <th>설명</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">conductor</code></td>
-      <td>오디오 재생 관리</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">start</code></td>
-      <td>선택된 구간의 시작 위치 (0.0 ~ 1.0)</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">length</code></td>
-      <td>선택된 구간의 길이 (0.0 ~ 1.0)</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">formatter</code></td>
-      <td>숫자 표시용 포맷터</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<h3 id="-내부-뷰-구성">🔸 내부 뷰 구성</h3>
-
-<h4 id="-파라미터-표시">① 파라미터 표시</h4>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kt">Text</span><span class="p">(</span><span class="s">"start: </span><span class="se">\(</span><span class="n">start</span><span class="se">)</span><span class="s">, length: </span><span class="se">\(</span><span class="n">length</span><span class="se">)</span><span class="s">, end: </span><span class="se">\(</span><span class="n">start</span> <span class="o">+</span> <span class="n">length</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li>현재 재생 범위 (0.0 ~ 1.0 단위) 표시</li>
-</ul>
-
-<h4 id="-playercontrolsii">② <code class="language-plaintext highlighter-rouge">PlayerControlsII</code></h4>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kt">PlayerControlsII</span><span class="p">(</span><span class="nv">conductor</span><span class="p">:</span> <span class="n">conductor</span><span class="p">,</span> <span class="nv">source</span><span class="p">:</span> <span class="o">.</span><span class="n">piano</span><span class="p">)</span> <span class="p">{</span> <span class="n">conductor</span><span class="o">.</span><span class="nf">createSampleBuffer</span><span class="p">()</span> <span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li>AudioKit Cookbook에서 제공하는 제어용 컨트롤 뷰</li>
-  <li><code class="language-plaintext highlighter-rouge">.piano</code> 소스를 재생하며, 리셋 버튼 누르면 <code class="language-plaintext highlighter-rouge">createSampleBuffer()</code> 호출</li>
-</ul>
-
-<h4 id="-waveform-파형-시각화-1-큰-화면">③ Waveform 파형 시각화 1 (큰 화면)</h4>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="kt">ZStack</span> <span class="p">{</span>
-  <span class="kt">Waveform</span><span class="p">(</span><span class="nv">samples</span><span class="p">:</span> <span class="n">conductor</span><span class="o">.</span><span class="n">samples</span><span class="p">)</span>
-  <span class="kt">MinimapView</span><span class="p">(</span><span class="nv">start</span><span class="p">:</span> <span class="n">$start</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="n">$length</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li>파형 위에 투명한 사각형(<code class="language-plaintext highlighter-rouge">MinimapView</code>)을 덮어 드래그 영역 지정 가능</li>
-</ul>
-
-<h4 id="-waveform-파형-시각화-2-선택-영역만-강조">④ Waveform 파형 시각화 2 (선택 영역만 강조)</h4>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="kt">Waveform</span><span class="p">(</span>
-  <span class="nv">samples</span><span class="p">:</span> <span class="n">conductor</span><span class="o">.</span><span class="n">samples</span><span class="p">,</span>
-  <span class="nv">start</span><span class="p">:</span> <span class="kt">Int</span><span class="p">(</span><span class="n">start</span> <span class="o">*</span> <span class="n">sampleRangeLength</span><span class="p">),</span>
-  <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="n">sampleRangeLength</span><span class="p">)</span>
-<span class="p">)</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li>위에서 선택된 <code class="language-plaintext highlighter-rouge">start</code> ~ <code class="language-plaintext highlighter-rouge">length</code> 범위만 강조해서 보여줌</li>
-</ul>
-
-<h4 id="-라이프사이클">⑤ 라이프사이클</h4>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="o">.</span><span class="nf">onAppear</span><span class="p">(</span><span class="nv">perform</span><span class="p">:</span> <span class="n">conductor</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
-<span class="o">.</span><span class="nf">onDisappear</span><span class="p">(</span><span class="nv">perform</span><span class="p">:</span> <span class="n">conductor</span><span class="o">.</span><span class="n">stop</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li>뷰가 등장하면 오디오 재생 시작, 사라지면 정지</li>
-</ul>
-
-<hr />
-
-<h1 id="-3-minimapview">✅ 3. <code class="language-plaintext highlighter-rouge">MinimapView</code></h1>
-
-<h3 id="-역할-2">🔹 역할</h3>
-
-<ul>
-  <li>사용자가 <strong>드래그로 재생 범위를 선택할 수 있도록</strong> 하는 뷰</li>
-  <li>
-    <p>두 개의 <code class="language-plaintext highlighter-rouge">RoundedRectangle</code>이 있고:</p>
-
-    <ul>
-      <li>하나는 <strong>선택된 영역</strong></li>
-      <li>하나는 <strong>우측 경계 조절 핸들</strong></li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h3 id="-주요-상태">🔸 주요 상태</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>변수</th>
-      <th>설명</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">@Binding var start</code></td>
-      <td>시작 위치 (WaveformView에서 바인딩)</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">@Binding var length</code></td>
-      <td>길이</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">@GestureState</code></td>
-      <td>드래그 시작 시 기준값 저장용 상태 변수</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<h3 id="-내부-구성-1">🔸 내부 구성</h3>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="kt">GeometryReader</span> <span class="p">{</span> <span class="n">geometry</span> <span class="k">in</span>
-  <span class="kt">RoundedRectangle</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="c1">// 선택 영역</span>
-  <span class="kt">RoundedRectangle</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="c1">// 우측 조절 핸들</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h4 id="드래그-동작-처리">드래그 동작 처리</h4>
-
-<p>각 사각형에 <code class="language-plaintext highlighter-rouge">.gesture(dragGesture(...))</code>를 추가하여 아래와 같이 처리합니다:</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">dragGesture</span><span class="p">(</span><span class="n">of</span> <span class="nv">mode</span><span class="p">:</span> <span class="kt">DragMode</span><span class="p">,</span> <span class="n">geometryProxy</span> <span class="nv">geometry</span><span class="p">:</span> <span class="kt">GeometryProxy</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">Gesture</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<table>
-  <thead>
-    <tr>
-      <th>DragMode</th>
-      <th>동작</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">.selectedArea</code></td>
-      <td>사각형 전체를 좌우로 이동 (start 변경)</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">.handle</code></td>
-      <td>우측만 드래그 → length 조절</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>드래그 비율 계산:</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="n">drag</span><span class="o">.</span><span class="n">translation</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="n">geometry</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">clamped(to:)</code>로 <code class="language-plaintext highlighter-rouge">start + length ≤ 1.0</code> 제약 유지</p>
-
-<hr />
-
-<h2 id="-실제-파형-재생-제어는">🔎 실제 파형 재생 제어는?</h2>
-
-<p>현재 <code class="language-plaintext highlighter-rouge">WaveformView</code>에서 <code class="language-plaintext highlighter-rouge">.onAppear(perform: conductor.start)</code>로 전체 오디오가 루프 재생되며,
-선택된 구간만 <strong>재생하도록 확장하려면</strong> <code class="language-plaintext highlighter-rouge">player.play(from:to:)</code> 메서드로 <code class="language-plaintext highlighter-rouge">start</code>와 <code class="language-plaintext highlighter-rouge">length</code> 기반 구간 재생을 구현해야 합니다 (이전 답변 참고).</p>
-
-<hr />
-
-<h2 id="-전체-흐름-요약">✅ 전체 흐름 요약</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre>AudioPlayer.loadBuffer(.piano)
-        ↓
-SampleBuffer 생성 → WaveformView에 연결
-        ↓
-Waveform 시각화 + 드래그 제스처로 start/length 조절
-        ↓
-하단에 선택된 영역 Waveform 강조 표시
-        ↓
-(.onAppear 시 전체 루프 재생)
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<hr />]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Waveform]]></summary></entry></feed>
+</ul>]]></content><author><name>ayaysir(BGSMM)</name><email>your-email@example.com</email></author><category term="StudyLog" /><category term="AudioKit" /><category term="AudioKit" /><category term="음향이론" /><summary type="html"><![CDATA[Callback MIDI Instrument]]></summary></entry></feed>

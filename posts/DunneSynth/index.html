@@ -826,7 +826,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="848 words"
+  title="838 words"
 >
   <em>4 min</em> read</span>
 
@@ -862,12 +862,16 @@
   <div class="content">
     <h1 id="dunne-synth">Dunne Synth</h1>
 
+<ul>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/DunneSynth.swift">코드 보기</a></li>
+</ul>
+
 <p><code class="language-plaintext highlighter-rouge">DunneSynthConductor</code>는 AudioKit의 <code class="language-plaintext highlighter-rouge">Synth</code> (정확히는 <code class="language-plaintext highlighter-rouge">DunneAudioKit</code>의 Dunne Synthesizer)를 제어하는 <strong>오디오 신스 컨덕터 클래스</strong>입니다.
 SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재생, 피크 리미팅, 팝 제거 등 다양한 오디오 처리 제어를 담당합니다.</p>
 
 <hr />
 
-<h2 id="-클래스-개요"><span class="me-2">✅ 클래스 개요</span><a href="#-클래스-개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="클래스-개요"><span class="me-2">클래스 개요</span><a href="#클래스-개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -883,15 +887,15 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-주요-구성-요소"><span class="me-2">✅ 주요 구성 요소</span><a href="#-주요-구성-요소" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="주요-구성-요소"><span class="me-2">주요 구성 요소</span><a href="#주요-구성-요소" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="-let-engine--audioengine"><span class="me-2">🔹 <code class="language-plaintext highlighter-rouge">let engine = AudioEngine()</code></span><a href="#-let-engine--audioengine" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="let-engine--audioengine"><span class="me-2"><code class="language-plaintext highlighter-rouge">let engine = AudioEngine()</code></span><a href="#let-engine--audioengine" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>AudioKit의 핵심 오디오 처리 엔진</li>
 </ul>
 
-<h3 id="-var-instrument--synth"><span class="me-2">🔹 <code class="language-plaintext highlighter-rouge">var instrument = Synth()</code></span><a href="#-var-instrument--synth" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="var-instrument--synth"><span class="me-2"><code class="language-plaintext highlighter-rouge">var instrument = Synth()</code></span><a href="#var-instrument--synth" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>DunneAudioKit의 <strong>폴리포닉 신스</strong></li>
@@ -900,7 +904,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-noteon--noteoff"><span class="me-2">✅ noteOn / noteOff</span><a href="#-noteon--noteoff" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="noteon--noteoff"><span class="me-2">noteOn / noteOff</span><a href="#noteon--noteoff" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="func-noteonpitch-pitch-point-_-cgpoint"><span class="me-2"><code class="language-plaintext highlighter-rouge">func noteOn(pitch: Pitch, point _: CGPoint)</code></span><a href="#func-noteonpitch-pitch-point-_-cgpoint" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -928,9 +932,9 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-초기화-init"><span class="me-2">✅ 초기화: <code class="language-plaintext highlighter-rouge">init()</code></span><a href="#-초기화-init" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="초기화-init"><span class="me-2">초기화: <code class="language-plaintext highlighter-rouge">init()</code></span><a href="#초기화-init" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="-1-engineoutput--peaklimiter"><span class="me-2">🔸 1. <code class="language-plaintext highlighter-rouge">engine.output = PeakLimiter(...)</code></span><a href="#-1-engineoutput--peaklimiter" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="1-engineoutput--peaklimiter"><span class="me-2">1. <code class="language-plaintext highlighter-rouge">engine.output = PeakLimiter(...)</code></span><a href="#1-engineoutput--peaklimiter" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>출력단에 <code class="language-plaintext highlighter-rouge">PeakLimiter</code> 삽입 → 소리의 <strong>과도한 피크 방지</strong></li>
@@ -939,7 +943,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
   <li><code class="language-plaintext highlighter-rouge">preGain = 0</code>: 입력 게인을 증폭하지 않음</li>
 </ul>
 
-<h3 id="-2-팝-노이즈-제거-설정"><span class="me-2">🔸 2. 팝 노이즈 제거 설정</span><a href="#-2-팝-노이즈-제거-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="2-팝-노이즈-제거-설정"><span class="me-2">2. 팝 노이즈 제거 설정</span><a href="#2-팝-노이즈-제거-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -959,9 +963,9 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-파라미터-목록"><span class="me-2">🧪 파라미터 목록</span><a href="#-파라미터-목록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="파라미터-목록"><span class="me-2">파라미터 목록</span><a href="#파라미터-목록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="-일반-음성-파라미터"><span class="me-2">🎛 일반 음성 파라미터</span><a href="#-일반-음성-파라미터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="일반-음성-파라미터"><span class="me-2">일반 음성 파라미터</span><a href="#일반-음성-파라미터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1014,7 +1018,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h3 id="-앰플리튜드-adsr-amplitude-envelope"><span class="me-2">🎛 앰플리튜드 ADSR (Amplitude Envelope)</span><a href="#-앰플리튜드-adsr-amplitude-envelope" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="앰플리튜드-adsr-amplitude-envelope"><span class="me-2">앰플리튜드 ADSR (Amplitude Envelope)</span><a href="#앰플리튜드-adsr-amplitude-envelope" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1055,7 +1059,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h3 id="-필터-adsr-filter-envelope"><span class="me-2">🎛 필터 ADSR (Filter Envelope)</span><a href="#-필터-adsr-filter-envelope" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="필터-adsr-filter-envelope"><span class="me-2">필터 ADSR (Filter Envelope)</span><a href="#필터-adsr-filter-envelope" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1096,7 +1100,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-콘솔-출력"><span class="me-2">✅ 콘솔 출력</span><a href="#-콘솔-출력" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="콘솔-출력"><span class="me-2">콘솔 출력</span><a href="#콘솔-출력" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1115,7 +1119,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
 <hr />
 
-<h2 id="-요약"><span class="me-2">✅ 요약</span><a href="#-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">DunneSynthConductor</code>는:</p>
 
@@ -1274,7 +1278,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/MIDIPortTest/">AudioKit의 MIDIPortTest</a>
+          <a href="/posts/MIDIPortTest/">AudioKit의 MID Port Test</a>
         </li>
       
         
@@ -1874,6 +1878,42 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1950,34 +1990,6 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/PluckedString/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1748327734"
-  data-df="ll"
-  
->
-  May 27, 2025
-</time>
-
-              <h4 class="pt-0 my-2">AudioKit의 PluckedString</h4>
-              <div class="text-muted">
-                <p>Plucked String  이 코드는 AudioKit과 SoundpipeAudioKit을 사용하여 플럭 현악기(plucked string) 소리를 자동 생성하고, 여기에 딜레이와 리버브 효과를 적용하는 구조입니다. 아래에 각 구성요소별로 자세히 설명드리겠습니다.    🔧 주요 구성 요소 설명  let pluckedString = PluckedStri...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/VocalTractOperation/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1999,7 +2011,7 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
               <h4 class="pt-0 my-2">AudioKit의 VocalTractOperation</h4>
               <div class="text-muted">
-                <p>Vocal Tract Operation  이 코드는 AudioKit의 OperationGenerator를 사용해 인간의 음성을 물리적으로 모델링한 음향 합성기를 구성합니다. vocalTract는 **성도(목구멍~입)**의 구조를 모사한 음향 모델이며, 다양한 인자에 따라 음색이 변합니다. 아래는 주요 변수와 연산자의 역할을 중점적으로 설명합니다.   ...</p>
+                <p>Vocal Tract Operation     코드 보기   이 코드는 AudioKit의 OperationGenerator를 사용해 인간의 음성을 물리적으로 모델링한 음향 합성기를 구성합니다. vocalTract는 성도(목구멍~입)의 구조를 모사한 음향 모델이며, 다양한 인자에 따라 음색이 변합니다. 아래는 주요 변수와 연산자의 역할을 중점적으로 설명...</p>
               </div>
             </div>
           </a>
@@ -2027,7 +2039,35 @@ SwiftUI 기반의 UI와 연동하여 신스의 파라미터 조정, 노트 재�
 
               <h4 class="pt-0 my-2">AudioKit의 VocalTract</h4>
               <div class="text-muted">
-                <p>VocalTract  용어설명  ✅ 성도 (Vocal Tract, 聲道)     정의: 인간의 발성 기관 중, 성문부터 입술까지의 공기 통로를 의미합니다.   구성: 인두(pharynx), 구강(oral cavity), 비강(nasal cavity) 등 포함.   역할: 이 통로의 형태와 크기를 조절함으로써 소리의 공명을 변화시켜 다양한 **말소리(모...</p>
+                <p>VocalTract     코드 보기   용어설명  성도 (Vocal Tract, 聲道)     정의: 인간의 발성 기관 중, 성문부터 입술까지의 공기 통로를 의미합니다.   구성: 인두(pharynx), 구강(oral cavity), 비강(nasal cavity) 등 포함.   역할: 이 통로의 형태와 크기를 조절함으로써 소리의 공명을 변화시켜 다양...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/Sporth_OperationGenerator/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1747030784"
+  data-df="ll"
+  
+>
+  May 12, 2025
+</time>
+
+              <h4 class="pt-0 my-2">AudioKit의 Sporth OperationGenerator</h4>
+              <div class="text-muted">
+                <p>Sporth  Sporth는 “Small Portable Real-Time Sound Language”의 줄임말로, 경량 텍스트 기반 오디오 DSP 언어입니다. C 기반 오디오 라이브러리인 Soundpipe의 일부로 개발되었으며, AudioKit에서도 내장되어 있습니다.    ✅ Sporth란?     목적: 실시간 오디오 신호 처리를 빠르고 간단하게...</p>
               </div>
             </div>
           </a>

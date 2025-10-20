@@ -30,7 +30,7 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="CallbackMIDIInstrument" />
+<meta property="og:title" content="AudioKit 예제: Callback MIDI Instrument" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
 <meta name="description" content="Callback MIDI Instrument" />
@@ -41,15 +41,15 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-06-21T17:59:52+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="CallbackMIDIInstrument" />
+<meta property="twitter:title" content="AudioKit 예제: Callback MIDI Instrument" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="twitter:creator" content="@ayaysir(BGSMM)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-21T17:59:52+09:00","datePublished":"2025-06-21T17:59:52+09:00","description":"Callback MIDI Instrument","headline":"CallbackMIDIInstrument","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CallbackMIDIInstrument/"},"url":"/posts/CallbackMIDIInstrument/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-21T17:59:52+09:00","datePublished":"2025-06-21T17:59:52+09:00","description":"Callback MIDI Instrument","headline":"AudioKit 예제: Callback MIDI Instrument","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CallbackMIDIInstrument/"},"url":"/posts/CallbackMIDIInstrument/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>CallbackMIDIInstrument | BGSMM
+  <title>AudioKit 예제: Callback MIDI Instrument | BGSMM
   </title>
 
   <!--
@@ -440,7 +440,7 @@
         
           
             
-              <span>CallbackMIDIInstrument</span>
+              <span>AudioKit 예제: Callback MIDI Instrument</span>
             
 
           
@@ -696,7 +696,7 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>CallbackMIDIInstrument</h1>
+    <h1 data-toc-skip>AudioKit 예제: Callback MIDI Instrument</h1>
     
 
     <div class="post-meta text-muted">
@@ -771,7 +771,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="689 words"
+  title="673 words"
 >
   <em>3 min</em> read</span>
 
@@ -782,7 +782,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">CallbackMIDIInstrument</span>
+      <span class="label text-truncate">AudioKit 예제: Callback MIDI Instrument</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -795,7 +795,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">CallbackMIDIInstrument</div>
+        <div class="label text-truncate py-2 ms-4">AudioKit 예제: Callback MIDI Instrument</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -807,7 +807,11 @@
   <div class="content">
     <h1 id="callback-midi-instrument">Callback MIDI Instrument</h1>
 
-<p>이 코드는 <strong>AudioKit + SwiftUI</strong>를 이용해 MIDI 시퀀서 이벤트를 감지하고 사운드폰트로 소리를 재생하며, 동시에 이벤트 로그를 실시간으로 출력하는 <strong>학습용 인터랙티브 도구</strong>입니다.
+<ul>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/UncategorizedDemos/CallbackInstrument.swift">코드 보기</a></li>
+</ul>
+
+<p>이 코드는 <strong>AudioKit + SwiftUI</strong>를 이용해 MIDI 시퀀서 이벤트를 감지하고 사운드폰트로 소리를 재생하며, 동시에 이벤트 로그를 실시간으로 출력합니다.
 핵심 개념은 다음 세 가지입니다:</p>
 
 <ul>
@@ -818,9 +822,9 @@
 
 <hr />
 
-<h2 id="-클래스-구성-callbackinstrumentconductor"><span class="me-2">📦 클래스 구성: <code class="language-plaintext highlighter-rouge">CallbackInstrumentConductor</code></span><a href="#-클래스-구성-callbackinstrumentconductor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="클래스-구성-callbackinstrumentconductor"><span class="me-2">클래스 구성: <code class="language-plaintext highlighter-rouge">CallbackInstrumentConductor</code></span><a href="#클래스-구성-callbackinstrumentconductor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="-주요-변수"><span class="me-2">🔧 주요 변수</span><a href="#-주요-변수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="주요-변수"><span class="me-2">주요 변수</span><a href="#주요-변수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -863,7 +867,7 @@
 
 <hr />
 
-<h2 id="-초기화-흐름"><span class="me-2">🔁 초기화 흐름</span><a href="#-초기화-흐름" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="초기화-흐름"><span class="me-2">초기화 흐름</span><a href="#초기화-흐름" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -889,7 +893,7 @@
 
 <hr />
 
-<h2 id="-createclicktrack-실제-트랙-생성"><span class="me-2">🧱 <code class="language-plaintext highlighter-rouge">createClickTrack()</code>: 실제 트랙 생성</span><a href="#-createclicktrack-실제-트랙-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="createclicktrack-실제-트랙-생성"><span class="me-2"><code class="language-plaintext highlighter-rouge">createClickTrack()</code>: 실제 트랙 생성</span><a href="#createclicktrack-실제-트랙-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">division</code> 만큼 루프를 돌면서 노트를 삽입</li>
@@ -914,7 +918,7 @@
 
 <hr />
 
-<h2 id="-setcallback-콜백-로직"><span class="me-2">🎯 <code class="language-plaintext highlighter-rouge">setCallback()</code>: 콜백 로직</span><a href="#-setcallback-콜백-로직" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="setcallback-콜백-로직"><span class="me-2"><code class="language-plaintext highlighter-rouge">setCallback()</code>: 콜백 로직</span><a href="#setcallback-콜백-로직" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -988,7 +992,7 @@ Start Note 61 at 0.5000
 
 <hr />
 
-<h2 id="-preview"><span class="me-2">🧪 Preview</span><a href="#-preview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="preview"><span class="me-2">Preview</span><a href="#preview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1004,7 +1008,7 @@ Start Note 61 at 0.5000
 
 <hr />
 
-<h2 id="-요약"><span class="me-2">✅ 요약</span><a href="#-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1035,7 +1039,7 @@ Start Note 61 at 0.5000
 
 <hr />
 
-<h2 id="-확장-아이디어"><span class="me-2">🔧 확장 아이디어</span><a href="#-확장-아이디어" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="확장-아이디어"><span class="me-2">확장 아이디어</span><a href="#확장-아이디어" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>각 노트에 따라 다른 소리/색상 출력</li>
@@ -1106,21 +1110,21 @@ Start Note 61 at 0.5000
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=CallbackMIDIInstrument%20-%20BGSMM&url=%2Fposts%2FCallbackMIDIInstrument%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=AudioKit%20%EC%98%88%EC%A0%9C:%20Callback%20MIDI%20Instrument%20-%20BGSMM&url=%2Fposts%2FCallbackMIDIInstrument%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=CallbackMIDIInstrument%20-%20BGSMM&u=%2Fposts%2FCallbackMIDIInstrument%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=AudioKit%20%EC%98%88%EC%A0%9C:%20Callback%20MIDI%20Instrument%20-%20BGSMM&u=%2Fposts%2FCallbackMIDIInstrument%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=%2Fposts%2FCallbackMIDIInstrument%2F&text=CallbackMIDIInstrument%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=%2Fposts%2FCallbackMIDIInstrument%2F&text=AudioKit%20%EC%98%88%EC%A0%9C:%20Callback%20MIDI%20Instrument%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1189,7 +1193,7 @@ Start Note 61 at 0.5000
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/MIDIPortTest/">AudioKit의 MIDIPortTest</a>
+          <a href="/posts/MIDIPortTest/">AudioKit의 MID Port Test</a>
         </li>
       
         
@@ -1753,7 +1757,43 @@ Start Note 61 at 0.5000
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1865,34 +1905,6 @@ Start Note 61 at 0.5000
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/PluckedString/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1748327734"
-  data-df="ll"
-  
->
-  May 27, 2025
-</time>
-
-              <h4 class="pt-0 my-2">AudioKit의 PluckedString</h4>
-              <div class="text-muted">
-                <p>Plucked String  이 코드는 AudioKit과 SoundpipeAudioKit을 사용하여 플럭 현악기(plucked string) 소리를 자동 생성하고, 여기에 딜레이와 리버브 효과를 적용하는 구조입니다. 아래에 각 구성요소별로 자세히 설명드리겠습니다.    🔧 주요 구성 요소 설명  let pluckedString = PluckedStri...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/VocalTractOperation/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1914,7 +1926,7 @@ Start Note 61 at 0.5000
 
               <h4 class="pt-0 my-2">AudioKit의 VocalTractOperation</h4>
               <div class="text-muted">
-                <p>Vocal Tract Operation  이 코드는 AudioKit의 OperationGenerator를 사용해 인간의 음성을 물리적으로 모델링한 음향 합성기를 구성합니다. vocalTract는 **성도(목구멍~입)**의 구조를 모사한 음향 모델이며, 다양한 인자에 따라 음색이 변합니다. 아래는 주요 변수와 연산자의 역할을 중점적으로 설명합니다.   ...</p>
+                <p>Vocal Tract Operation     코드 보기   이 코드는 AudioKit의 OperationGenerator를 사용해 인간의 음성을 물리적으로 모델링한 음향 합성기를 구성합니다. vocalTract는 성도(목구멍~입)의 구조를 모사한 음향 모델이며, 다양한 인자에 따라 음색이 변합니다. 아래는 주요 변수와 연산자의 역할을 중점적으로 설명...</p>
               </div>
             </div>
           </a>
@@ -1942,7 +1954,35 @@ Start Note 61 at 0.5000
 
               <h4 class="pt-0 my-2">AudioKit의 VocalTract</h4>
               <div class="text-muted">
-                <p>VocalTract  용어설명  ✅ 성도 (Vocal Tract, 聲道)     정의: 인간의 발성 기관 중, 성문부터 입술까지의 공기 통로를 의미합니다.   구성: 인두(pharynx), 구강(oral cavity), 비강(nasal cavity) 등 포함.   역할: 이 통로의 형태와 크기를 조절함으로써 소리의 공명을 변화시켜 다양한 **말소리(모...</p>
+                <p>VocalTract     코드 보기   용어설명  성도 (Vocal Tract, 聲道)     정의: 인간의 발성 기관 중, 성문부터 입술까지의 공기 통로를 의미합니다.   구성: 인두(pharynx), 구강(oral cavity), 비강(nasal cavity) 등 포함.   역할: 이 통로의 형태와 크기를 조절함으로써 소리의 공명을 변화시켜 다양...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/Sporth_OperationGenerator/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1747030784"
+  data-df="ll"
+  
+>
+  May 12, 2025
+</time>
+
+              <h4 class="pt-0 my-2">AudioKit의 Sporth OperationGenerator</h4>
+              <div class="text-muted">
+                <p>Sporth  Sporth는 “Small Portable Real-Time Sound Language”의 줄임말로, 경량 텍스트 기반 오디오 DSP 언어입니다. C 기반 오디오 라이브러리인 Soundpipe의 일부로 개발되었으며, AudioKit에서도 내장되어 있습니다.    ✅ Sporth란?     목적: 실시간 오디오 신호 처리를 빠르고 간단하게...</p>
               </div>
             </div>
           </a>
@@ -1973,11 +2013,11 @@ Start Note 61 at 0.5000
 
   
     <a
-      href="/posts/BaseTapForSpeechRecognition/"
+      href="/posts/Tables/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>AudioKit의 BaseTapForSpeechRecognition</p>
+      <p>Tables</p>
     </a>
   
 </nav>

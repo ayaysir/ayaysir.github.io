@@ -793,7 +793,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="757 words"
+  title="751 words"
 >
   <em>4 min</em> read</span>
 
@@ -829,15 +829,20 @@
   <div class="content">
     <h1 id="stk-ensemble">STK Ensemble</h1>
 
+<!-- 예제 앱 영상 -->
 <p>https://github.com/user-attachments/assets/fcab9142-670f-4026-a257-19ec9dce263e</p>
+
+<ul>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/PhysicalModels/STKEnsemble.swift">코드 보기</a></li>
+</ul>
 
 <p>이 코드는 <strong>AudioKit</strong>, <strong>STKAudioKit</strong>, 그리고 SwiftUI를 활용하여 세 개의 가상 악기(Flute, Clarinet, Tubular Bells)를 조합한 **음악 합주 시스템(Ensemble Generator)**입니다. 주기적으로 음을 무작위로 선택하여 세 악기가 연주되며, 각 악기의 볼륨을 조절하고, 스케일(Scale)과 전조(Transpose)를 실시간으로 반영할 수 있습니다.</p>
 
 <hr />
 
-<h2 id="-주요-구성-요소"><span class="me-2">🔧 주요 구성 요소</span><a href="#-주요-구성-요소" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="주요-구성-요소"><span class="me-2">주요 구성 요소</span><a href="#주요-구성-요소" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="-stk-악기"><span class="me-2">🧩 STK 악기</span><a href="#-stk-악기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="stk-악기"><span class="me-2">STK 악기</span><a href="#stk-악기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Flute</code>, <code class="language-plaintext highlighter-rouge">Clarinet</code>, <code class="language-plaintext highlighter-rouge">TubularBells</code>: STKAudioKit의 물리 기반 모델링 악기</li>
@@ -845,7 +850,7 @@
   <li><code class="language-plaintext highlighter-rouge">stop()</code>: 악기의 소리를 끈다</li>
 </ul>
 
-<h3 id="-fader"><span class="me-2">🔈 Fader</span><a href="#-fader" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="fader"><span class="me-2">Fader</span><a href="#fader" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>각 악기에 대한 볼륨 조절</li>
@@ -853,14 +858,14 @@
   <li><code class="language-plaintext highlighter-rouge">.gain</code>을 통해 실시간 볼륨 조절 가능</li>
 </ul>
 
-<h3 id="-mixer-및-audioengine"><span class="me-2">🎛 Mixer 및 AudioEngine</span><a href="#-mixer-및-audioengine" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="mixer-및-audioengine"><span class="me-2">Mixer 및 AudioEngine</span><a href="#mixer-및-audioengine" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Mixer(fluteFader, clarinetFader, bellsFader)</code>로 세 악기 음원을 혼합</li>
   <li><code class="language-plaintext highlighter-rouge">engine.output = mixer</code>를 통해 최종 출력 연결</li>
 </ul>
 
-<h3 id="-callbackloop"><span class="me-2">🔁 CallbackLoop</span><a href="#-callbackloop" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="callbackloop"><span class="me-2">CallbackLoop</span><a href="#callbackloop" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">loop = CallbackLoop(frequency:)</code>는 지정된 주기(Hz)마다 클로저를 실행</li>
@@ -870,7 +875,7 @@
 
 <hr />
 
-<h2 id="-음원-생성-로직"><span class="me-2">🎶 음원 생성 로직</span><a href="#-음원-생성-로직" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="음원-생성-로직"><span class="me-2">음원 생성 로직</span><a href="#음원-생성-로직" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -907,7 +912,7 @@
 
 <hr />
 
-<h2 id="-상태-변수"><span class="me-2">📌 상태 변수</span><a href="#-상태-변수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="상태-변수"><span class="me-2">상태 변수</span><a href="#상태-변수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -950,7 +955,7 @@
 
 <hr />
 
-<h2 id="-주요-함수"><span class="me-2">📝 주요 함수</span><a href="#-주요-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="주요-함수"><span class="me-2">주요 함수</span><a href="#주요-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="random_-probability-double---bool"><span class="me-2"><code class="language-plaintext highlighter-rouge">random(_ probability: Double) -&gt; Bool</code></span><a href="#random_-probability-double---bool" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -974,7 +979,7 @@
 
 <hr />
 
-<h2 id="-활용-예시"><span class="me-2">🎯 활용 예시</span><a href="#-활용-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="활용-예시"><span class="me-2">활용 예시</span><a href="#활용-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 클래스를 SwiftUI에서 사용하면,</p>
 
@@ -995,7 +1000,7 @@
 
 <hr />
 
-<h2 id="-정리"><span class="me-2">✅ 정리</span><a href="#-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="정리"><span class="me-2">정리</span><a href="#정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">STKEnsembleConductor</code>는 오디오 합성을 위한 <strong>재생 루프</strong>, <strong>확률 기반 음 선택</strong>, <strong>실시간 볼륨 조절</strong>, <strong>스케일 조작</strong>, <strong>STK 악기 연주</strong>를 모두 포함한 오디오 합주 클래스입니다.
 음향적으로도, 무작위성과 악기 간의 주파수 분산이 혼합되어 자연스럽고 흥미로운 합주 효과를 만들어 냅니다.</p>
@@ -1145,7 +1150,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/MIDIPortTest/">AudioKit의 MIDIPortTest</a>
+          <a href="/posts/MIDIPortTest/">AudioKit의 MID Port Test</a>
         </li>
       
         
@@ -1445,7 +1450,43 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1821,34 +1862,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/PluckedString/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1748327734"
-  data-df="ll"
-  
->
-  May 27, 2025
-</time>
-
-              <h4 class="pt-0 my-2">AudioKit의 PluckedString</h4>
-              <div class="text-muted">
-                <p>Plucked String  이 코드는 AudioKit과 SoundpipeAudioKit을 사용하여 플럭 현악기(plucked string) 소리를 자동 생성하고, 여기에 딜레이와 리버브 효과를 적용하는 구조입니다. 아래에 각 구성요소별로 자세히 설명드리겠습니다.    🔧 주요 구성 요소 설명  let pluckedString = PluckedStri...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/VocalTractOperation/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -1870,7 +1883,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 VocalTractOperation</h4>
               <div class="text-muted">
-                <p>Vocal Tract Operation  이 코드는 AudioKit의 OperationGenerator를 사용해 인간의 음성을 물리적으로 모델링한 음향 합성기를 구성합니다. vocalTract는 **성도(목구멍~입)**의 구조를 모사한 음향 모델이며, 다양한 인자에 따라 음색이 변합니다. 아래는 주요 변수와 연산자의 역할을 중점적으로 설명합니다.   ...</p>
+                <p>Vocal Tract Operation     코드 보기   이 코드는 AudioKit의 OperationGenerator를 사용해 인간의 음성을 물리적으로 모델링한 음향 합성기를 구성합니다. vocalTract는 성도(목구멍~입)의 구조를 모사한 음향 모델이며, 다양한 인자에 따라 음색이 변합니다. 아래는 주요 변수와 연산자의 역할을 중점적으로 설명...</p>
               </div>
             </div>
           </a>
@@ -1898,7 +1911,35 @@
 
               <h4 class="pt-0 my-2">AudioKit의 VocalTract</h4>
               <div class="text-muted">
-                <p>VocalTract  용어설명  ✅ 성도 (Vocal Tract, 聲道)     정의: 인간의 발성 기관 중, 성문부터 입술까지의 공기 통로를 의미합니다.   구성: 인두(pharynx), 구강(oral cavity), 비강(nasal cavity) 등 포함.   역할: 이 통로의 형태와 크기를 조절함으로써 소리의 공명을 변화시켜 다양한 **말소리(모...</p>
+                <p>VocalTract     코드 보기   용어설명  성도 (Vocal Tract, 聲道)     정의: 인간의 발성 기관 중, 성문부터 입술까지의 공기 통로를 의미합니다.   구성: 인두(pharynx), 구강(oral cavity), 비강(nasal cavity) 등 포함.   역할: 이 통로의 형태와 크기를 조절함으로써 소리의 공명을 변화시켜 다양...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/Sporth_OperationGenerator/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1747030784"
+  data-df="ll"
+  
+>
+  May 12, 2025
+</time>
+
+              <h4 class="pt-0 my-2">AudioKit의 Sporth OperationGenerator</h4>
+              <div class="text-muted">
+                <p>Sporth  Sporth는 “Small Portable Real-Time Sound Language”의 줄임말로, 경량 텍스트 기반 오디오 DSP 언어입니다. C 기반 오디오 라이브러리인 Soundpipe의 일부로 개발되었으며, AudioKit에서도 내장되어 있습니다.    ✅ Sporth란?     목적: 실시간 오디오 신호 처리를 빠르고 간단하게...</p>
               </div>
             </div>
           </a>
