@@ -2,7 +2,9 @@
 title: "SwiftUI: @Observable 동작원리"
 author: ayaysir
 date: 2025-04-29 16:25:40 +0900
-categories: [개발, Swift, SwiftUI]
+categories: 
+  - "DevLog"
+  - "SwiftUI"
 tags: [SwiftUI]
 ---
 
