@@ -4,7 +4,6 @@ date: 2022-10-01
 categories: 
   - "DevLog"
   - "PHP"
-  - "frontend"
 ---
 
 ##### **참고**
