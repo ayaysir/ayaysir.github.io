@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,42 +498,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -567,8 +538,34 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -585,7 +582,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift UIKit: 최상위 Top View Controller (현재 화면의 VC) 찾기 / 예제: SwiftUI에서 빠른 Alert 띄우기</h1>
     
@@ -659,7 +656,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="457 words"
+  title="510 words"
 >
   <em>2 min</em> read</span>
 
@@ -669,12 +666,34 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift UIKit: 최상위 Top View Controller (현재 화면의 VC) 찾기 / 예제: SwiftUI에서 빠른 Alert 띄우기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift UIKit: 최상위 Top View Controller (현재 화면의 VC) 찾기 / 예제: SwiftUI에서 빠른 Alert 띄우기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h5 id="1-uiapplication의-keywindow-대체"><span class="me-2"><strong>1. UIApplication의 KeyWindow 대체</strong></span><a href="#1-uiapplication의-keywindow-대체" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <h2 id="1-uiapplication의-keywindow-대체"><span class="me-2"><strong>1. UIApplication의 KeyWindow 대체</strong></span><a href="#1-uiapplication의-keywindow-대체" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -685,26 +704,25 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-extension UIApplication {
-  var keyWindow: UIWindow? {
-    connectedScenes
-      .compactMap { $0 as? UIWindowScene }
-      .flatMap { $0.windows }
-      .first { $0.isKeyWindow }
-  }
-}
+<span class="kd">extension</span> <span class="kt">UIApplication</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">keyWindow</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span> <span class="p">{</span>
+    <span class="n">connectedScenes</span>
+      <span class="o">.</span><span class="n">compactMap</span> <span class="p">{</span> <span class="nv">$0</span> <span class="k">as?</span> <span class="kt">UIWindowScene</span> <span class="p">}</span>
+      <span class="o">.</span><span class="n">flatMap</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">windows</span> <span class="p">}</span>
+      <span class="o">.</span><span class="n">first</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">isKeyWindow</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><em>‘keyWindow’ was deprecated in iOS 13.0: Should not be used for applications that support multiple scenes as it returns a key window across all connected scenes</em> 에러를 방지하기 위함입니다.</p>
 
 <p> </p>
+<h2 id="2-뷰-컨트롤러에서-최상위-뷰-컨트롤러를-반환하는-함수-작성"><span class="me-2"><strong>2. 뷰 컨트롤러에서 최상위 뷰 컨트롤러를 반환하는 함수 작성</strong></span><a href="#2-뷰-컨트롤러에서-최상위-뷰-컨트롤러를-반환하는-함수-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="2-뷰-컨트롤러에서-최상위-뷰-컨트롤러를-반환하는-함수-작성"><span class="me-2"><strong>2. 뷰 컨트롤러에서 최상위 뷰 컨트롤러를 반환하는 함수 작성</strong></span><a href="#2-뷰-컨트롤러에서-최상위-뷰-컨트롤러를-반환하는-함수-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -721,46 +739,70 @@ extension UIApplication {
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-extension UIViewController {
-  /// 현재 표시된 최상위 뷰 컨트롤러 반환
-  func getTopMostViewController() -&gt; UIViewController {
-    if let presentedViewController = self.presentedViewController {
-      return presentedViewController.getTopMostViewController()
-    } else if let navigationController = self as? UINavigationController {
-      return navigationController.visibleViewController?.getTopMostViewController() ?? navigationController
-    } else if let tabBarController = self as? UITabBarController {
-      return tabBarController.selectedViewController?.getTopMostViewController() ?? tabBarController
-    } else {
-      return self
-    }
-  }
-}
+<span class="kd">extension</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+  <span class="c1">/// 현재 표시된 최상위 뷰 컨트롤러 반환</span>
+  <span class="kd">func</span> <span class="nf">getTopMostViewController</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">presentedViewController</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">presentedViewController</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">presentedViewController</span><span class="o">.</span><span class="nf">getTopMostViewController</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">navigationController</span> <span class="o">=</span> <span class="k">self</span> <span class="k">as?</span> <span class="kt">UINavigationController</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">navigationController</span><span class="o">.</span><span class="n">visibleViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">getTopMostViewController</span><span class="p">()</span> <span class="p">??</span> <span class="n">navigationController</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">tabBarController</span> <span class="o">=</span> <span class="k">self</span> <span class="k">as?</span> <span class="kt">UITabBarController</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">tabBarController</span><span class="o">.</span><span class="n">selectedViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">getTopMostViewController</span><span class="p">()</span> <span class="p">??</span> <span class="n">tabBarController</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">self</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="3-뷰-컨트롤러-오브젝트에서-다음과-같이-gettopmostviewcontroller-사용"><span class="me-2"><strong>3. 뷰 컨트롤러 오브젝트에서 다음과 같이 .getTopMostViewController() 사용</strong></span><a href="#3-뷰-컨트롤러-오브젝트에서-다음과-같이-gettopmostviewcontroller-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="3-뷰-컨트롤러-오브젝트에서-다음과-같이-gettopmostviewcontroller-사용"><span class="me-2"><strong>3. 뷰 컨트롤러 오브젝트에서 다음과 같이 .getTopMostViewController() 사용</strong></span><a href="#3-뷰-컨트롤러-오브젝트에서-다음과-같이-gettopmostviewcontroller-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>if let topViewController = UIApplication.shared.keyWindow?.rootViewController?.getTopMostViewController() {
-    // ...
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">let</span> <span class="nv">topViewController</span> <span class="o">=</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">keyWindow</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">getTopMostViewController</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>현재 키 윈도우에 있는 <code class="language-plaintext highlighter-rouge">rootViewController</code>의 최상위 뷰 컨트롤러를 반환합니다.</p>
 
-<p> </p>
+<p>또는 아래와 같이 <code class="language-plaintext highlighter-rouge">UIViewController</code>에서 바로 <code class="language-plaintext highlighter-rouge">getTopMostViewController()</code>를 불러올 수 있도록 합니다.</p>
 
-<h4 id="예제-swiftui에서-빠른-alert-띄우기"><span class="me-2"><strong>예제: SwiftUI에서 빠른 Alert 띄우기</strong></span><a href="#예제-swiftui에서-빠른-alert-띄우기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getTopMostViewController</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">keyWindow</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">getTopMostViewController</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">let</span> <span class="nv">topViewController</span> <span class="o">=</span> <span class="kt">UIViewController</span><span class="o">.</span><span class="nf">getTopMostViewController</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="예제-swiftui에서-빠른-alert-띄우기"><span class="me-2"><strong>예제: SwiftUI에서 빠른 Alert 띄우기</strong></span><a href="#예제-swiftui에서-빠른-alert-띄우기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -790,34 +832,34 @@ extension UIViewController {
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-struct QuickAlert {
-  static func show(
-    _ title: String,
-    message: String? = nil,
-    preferredStyle: UIAlertController.Style = .alert,
-    completionHandler: ((UIAlertAction) -&gt; Void)? = nil
-  ) {
-    let alert = UIAlertController(
-      title: title,
-      message: message,
-      preferredStyle: .alert
-    )
-    let alertAction = UIAlertAction(
-      title: "확인",
-      style: .default,
-      handler: completionHandler
-    )
-    alert.addAction(alertAction)
+<span class="kd">struct</span> <span class="kt">QuickAlert</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="kd">func</span> <span class="nf">show</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">preferredStyle</span><span class="p">:</span> <span class="kt">UIAlertController</span><span class="o">.</span><span class="kt">Style</span> <span class="o">=</span> <span class="o">.</span><span class="n">alert</span><span class="p">,</span>
+    <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="kt">UIAlertAction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span>
+      <span class="nv">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+      <span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span>
+      <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span>
+    <span class="p">)</span>
+    <span class="k">let</span> <span class="nv">alertAction</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span>
+      <span class="nv">title</span><span class="p">:</span> <span class="s">"확인"</span><span class="p">,</span>
+      <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span>
+      <span class="nv">handler</span><span class="p">:</span> <span class="n">completionHandler</span>
+    <span class="p">)</span>
+    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">alertAction</span><span class="p">)</span>
     
-    DispatchQueue.main.async {
-      if let topViewController = UIApplication.shared.keyWindow?.rootViewController?.getTopMostViewController() {
-        topViewController.present(alert, animated: true, completion: nil)
-      }
-    }
-  }
-}
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">topViewController</span> <span class="o">=</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">keyWindow</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">getTopMostViewController</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">topViewController</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -827,8 +869,8 @@ struct QuickAlert {
 
 <p>UIKit에서도 사용할 수 있고, 아래 코드처럼 SwiftUI에서도 원하는 곳에서 바로 사용할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -837,14 +879,14 @@ struct QuickAlert {
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>.onChange(of: isReminderOn) { newValue in
-      QuickAlert.show(
-        "no_alert_permission_title",
-        message: "no_alert_permission_detail"
-      ) { _ in
-        // 컴플리션 핸들러 작업
-      }
-}
+</pre></td><td class="rouge-code"><pre><span class="o">.</span><span class="nf">onChange</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">isReminderOn</span><span class="p">)</span> <span class="p">{</span> <span class="n">newValue</span> <span class="k">in</span>
+  <span class="kt">QuickAlert</span><span class="o">.</span><span class="nf">show</span><span class="p">(</span>
+  <span class="s">"no_alert_permission_title"</span><span class="p">,</span>
+    <span class="nv">message</span><span class="p">:</span> <span class="s">"no_alert_permission_detail"</span>
+  <span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+    <span class="c1">// 컴플리션 핸들러 작업</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -3993,6 +4035,12 @@ struct QuickAlert {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -4026,6 +4074,18 @@ struct QuickAlert {
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

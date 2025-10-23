@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -826,42 +833,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -926,6 +897,21 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -942,7 +928,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</h1>
     
@@ -1016,7 +1002,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="733 words"
+  title="724 words"
 >
   <em>4 min</em> read</span>
 
@@ -1026,40 +1012,62 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="xcode-프로젝트에-코코아팟cocoapods-설치-및-디펜던시-추가"><span class="me-2"><strong>Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가</strong></span><a href="#xcode-프로젝트에-코코아팟cocoapods-설치-및-디펜던시-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h1 id="xcode-프로젝트에-코코아팟cocoapods-설치-및-디펜던시-추가"><strong>Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가</strong></h1>
 
 <p>Xcode를 이용해서 iOS 프로젝트 등을 개발할 때 서드파티 라이브러리를 사용할 일이 많은데, 대다수 라이브러리들이 <code class="language-plaintext highlighter-rouge">CocoaPods</code>(코코아팟)라는 디펜던시 관리자를 이용해 프로젝트 내에 설치해야 합니다.</p>
 
 <p> </p>
 
-<h5 id="1-cocoapods가-설치되지-않았다면-터미널-실행-후-아래-커맨드를-이용해-설치합니다"><span class="me-2"><strong>1. CocoaPods가 설치되지 않았다면 터미널 실행 후 아래 커맨드를 이용해 설치합니다.</strong></span><a href="#1-cocoapods가-설치되지-않았다면-터미널-실행-후-아래-커맨드를-이용해-설치합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="1-cocoapods가-설치되지-않았다면-터미널-실행-후-아래-커맨드를-이용해-설치합니다"><span class="me-2"><strong>1. CocoaPods가 설치되지 않았다면 터미널 실행 후 아래 커맨드를 이용해 설치합니다.</strong></span><a href="#1-cocoapods가-설치되지-않았다면-터미널-실행-후-아래-커맨드를-이용해-설치합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><strong>인텔(Intel) CPU가 설치된 맥</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>sudo gem install cocoapods
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>gem <span class="nb">install </span>cocoapods
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p><strong>애플 실리콘 (M 시리즈) CPU가 설치된 맥 (<a href="https://brew.sh/index_ko">Homebrew</a>를 통한 설치가 가능한 환경이어야 함)</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>brew install cocoapods
+</pre></td><td class="rouge-code"><pre>brew <span class="nb">install </span>cocoapods
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="2-터미널을-실행한-뒤-xcode-프로젝트의-루트-폴더로-이동한-다음-cocoapods-초기화를-진행합니다"><span class="me-2"><strong>2. 터미널을 실행한 뒤, Xcode 프로젝트의 루트 폴더로 이동한 다음, CocoaPods 초기화를 진행합니다.</strong></span><a href="#2-터미널을-실행한-뒤-xcode-프로젝트의-루트-폴더로-이동한-다음-cocoapods-초기화를-진행합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="2-터미널을-실행한-뒤-xcode-프로젝트의-루트-폴더로-이동한-다음-cocoapods-초기화를-진행합니다"><span class="me-2"><strong>2. 터미널을 실행한 뒤, Xcode 프로젝트의 루트 폴더로 이동한 다음, CocoaPods 초기화를 진행합니다.</strong></span><a href="#2-터미널을-실행한-뒤-xcode-프로젝트의-루트-폴더로-이동한-다음-cocoapods-초기화를-진행합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>pod init
 </pre></td></tr></tbody></table></code></div></div>
@@ -1068,26 +1076,30 @@
 
 <p>참고로 터미널을 통해 루트 폴더로 이동하는 방법은 다음과 같습니다.</p>
 
-<p>[caption id=”attachment_4458” align=”alignnone” width=”422”]<a href="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.02.16.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.02.16.jpg" alt="" loading="lazy"></a> 프로젝트 마우스 오른쪽 클릭 후 <code class="language-plaintext highlighter-rouge">[Show in Finder]</code>[/caption] </p>
+<ul>
+  <li>
+    <p>프로젝트 마우스 오른쪽 클릭 후 <code class="language-plaintext highlighter-rouge">[Show in Finder]</code><br />
+<a href="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.02.16.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.02.16.jpg" alt="" loading="lazy"></a><br /><br /></p>
+  </li>
+  <li>
+    <p>프로젝트 폴더 오른쪽 클릭 후 <code class="language-plaintext highlighter-rouge">[정보 가져오기]</code><br /> 
+<a href="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.24.52.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.24.52.jpg" alt="" loading="lazy"></a><br /><br /></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">[위치]</code> 에서 마우스 오른쪽 버튼 클릭 후 <code class="language-plaintext highlighter-rouge">[경로 이름으로 복사]</code><br /><br />
+<a href="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.26.11.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.26.11.jpg" alt="" loading="lazy"></a><br /><br /></p>
+  </li>
+  <li>
+    <p>터미널 열고 <code class="language-plaintext highlighter-rouge">cd "[붙여넣은 경로]"</code><br />
+<a href="/./assets/img/wp-content/uploads/2022/05/-2022-05-10-오후-11.26.45-e1652193524782.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2022/05/-2022-05-10-오후-11.26.45-e1652193524782.jpg" alt="" loading="lazy"></a><br /><br /></p>
+  </li>
+</ul>
 
 <p> </p>
+<h2 id="3-초기화가-완료되면-프로젝트-루트-폴더에-podfile이라는-파일이-생성됩니다-텍스트-편집기로-해당-파일을-연-뒤-다음과-같이-추가합니다"><span class="me-2"><strong>3. 초기화가 완료되면, 프로젝트 루트 폴더에 <code class="language-plaintext highlighter-rouge">Podfile</code>이라는 파일이 생성됩니다. 텍스트 편집기로 해당 파일을 연 뒤, 다음과 같이 추가합니다.</strong></span><a href="#3-초기화가-완료되면-프로젝트-루트-폴더에-podfile이라는-파일이-생성됩니다-텍스트-편집기로-해당-파일을-연-뒤-다음과-같이-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>[caption id=”attachment_4462” align=”alignnone” width=”315”]<a href="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.24.52.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.24.52.jpg" alt="" loading="lazy"></a> 프로젝트 폴더 오른쪽 클릭 후 <code class="language-plaintext highlighter-rouge">[정보 가져오기]</code>[/caption] </p>
-
-<p> </p>
-
-<p>[caption id=”attachment_4464” align=”alignnone” width=”257”]<a href="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.26.11.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.26.11.jpg" alt="" loading="lazy"></a> <code class="language-plaintext highlighter-rouge">[위치]</code> 에서 마우스 오른쪽 버튼 클릭 후 <code class="language-plaintext highlighter-rouge">[경로 이름으로 복사]</code>[/caption] </p>
-
-<p> </p>
-
-<p>[caption id=”attachment_4463” align=”alignnone” width=”597”]<a href="/./assets/img/wp-content/uploads/2022/05/-2022-05-10-오후-11.26.45-e1652193524782.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2022/05/-2022-05-10-오후-11.26.45-e1652193524782.jpg" alt="" loading="lazy"></a> 터미널 열고 <code class="language-plaintext highlighter-rouge">cd "[붙여넣은 경로]"</code> 입력[/caption] </p>
-
-<p> </p>
-
-<h5 id="3-초기화가-완료되면-프로젝트-루트-폴더에-podfile이라는-파일이-생성됩니다-텍스트-편집기로-해당-파일을-연-뒤-아래-하이라이트-부분을-추가합니다"><span class="me-2"><strong>3. 초기화가 완료되면, 프로젝트 루트 폴더에 <code class="language-plaintext highlighter-rouge">Podfile</code>이라는 파일이 생성됩니다. 텍스트 편집기로 해당 파일을 연 뒤, 아래 하이라이트 부분을 추가합니다.</strong></span><a href="#3-초기화가-완료되면-프로젝트-루트-폴더에-podfile이라는-파일이-생성됩니다-텍스트-편집기로-해당-파일을-연-뒤-아래-하이라이트-부분을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-ruby highlighter-rouge"><div class="code-header">
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1120,38 +1132,42 @@
 30
 31
 32
-</pre></td><td class="rouge-code"><pre># Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+33
+34
+</pre></td><td class="rouge-code"><pre><span class="c1"># Uncomment the next line to define a global platform for your project</span>
+<span class="c1"># platform :ios, '9.0'</span>
 
-target 'ExampleProject' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+<span class="n">target</span> <span class="s1">'ExampleProject'</span> <span class="k">do</span>
+  <span class="c1"># Comment the next line if you don't want to use dynamic frameworks</span>
+  <span class="n">use_frameworks!</span>
 
-  # Pods for ExampleProject
-  # add the Firebase pod for Google Analytics
-  pod 'Firebase/Analytics'
-  # or pod ‘Firebase/AnalyticsWithoutAdIdSupport’
-  # for Analytics without IDFA collection capability
+  <span class="c1"># Pods for ExampleProject</span>
+  <span class="c1"># add the Firebase pod for Google Analytics</span>
 
-  # add pods for any other desired Firebase products
-  # https://firebase.google.com/docs/ios/setup#available-pods
+  <span class="c1"># 아래와 같이 pod '패키지이름'으로</span>
+  <span class="n">pod</span> <span class="s1">'Firebase/Analytics'</span>
+  <span class="c1"># or pod ‘Firebase/AnalyticsWithoutAdIdSupport’</span>
+  <span class="c1"># for Analytics without IDFA collection capability</span>
 
-  # Add the pods for any other Firebase products you want to use in your app
-  # For example, to use Firebase Authentication and Cloud Firestore
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
-  pod 'Firebase/Database'
+  <span class="c1"># add pods for any other desired Firebase products</span>
+  <span class="c1"># https://firebase.google.com/docs/ios/setup#available-pods</span>
 
-  target 'ExampleProjectTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  <span class="c1"># Add the pods for any other Firebase products you want to use in your app</span>
+  <span class="c1"># For example, to use Firebase Authentication and Cloud Firestore</span>
+  <span class="n">pod</span> <span class="s1">'Firebase/Auth'</span>
+  <span class="n">pod</span> <span class="s1">'Firebase/Firestore'</span>
+  <span class="n">pod</span> <span class="s1">'Firebase/Database'</span>
 
-  target 'ExampleProjectUITests' do
-    # Pods for testing
-  end
+  <span class="n">target</span> <span class="s1">'ExampleProjectTests'</span> <span class="k">do</span>
+    <span class="n">inherit!</span> <span class="ss">:search_paths</span>
+    <span class="c1"># Pods for testing</span>
+  <span class="k">end</span>
 
-end
+  <span class="n">target</span> <span class="s1">'ExampleProjectUITests'</span> <span class="k">do</span>
+    <span class="c1"># Pods for testing</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1162,17 +1178,17 @@ end
 
 <p> </p>
 
-<h5 id="4-터미널로-돌아간-뒤-프로젝트-루트-위치에서-아래-명령을-실행합니다"><span class="me-2"><strong>4. 터미널로 돌아간 뒤, 프로젝트 루트 위치에서 아래 명령을 실행합니다.</strong></span><a href="#4-터미널로-돌아간-뒤-프로젝트-루트-위치에서-아래-명령을-실행합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="4-터미널로-돌아간-뒤-프로젝트-루트-위치에서-아래-명령을-실행합니다"><span class="me-2"><strong>4. 터미널로 돌아간 뒤, 프로젝트 루트 위치에서 아래 명령을 실행합니다.</strong></span><a href="#4-터미널로-돌아간-뒤-프로젝트-루트-위치에서-아래-명령을-실행합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>pod install
+</pre></td><td class="rouge-code"><pre>pod <span class="nb">install</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="5-설치가-완료되면-프로젝트-루트-폴더에-프로젝트명xcworkspace-라는-파일이-생성됩니다-이후-프로젝트의-모든-작업은-이-워크스페이스-파일을-열어-진행해야-합니다"><span class="me-2"><strong>5. 설치가 완료되면 프로젝트 루트 폴더에 <code class="language-plaintext highlighter-rouge">[프로젝트명].xcworkspace</code> 라는 파일이 생성됩니다. 이후 프로젝트의 모든 작업은 이 워크스페이스 파일을 열어 진행해야 합니다.</strong></span><a href="#5-설치가-완료되면-프로젝트-루트-폴더에-프로젝트명xcworkspace-라는-파일이-생성됩니다-이후-프로젝트의-모든-작업은-이-워크스페이스-파일을-열어-진행해야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="5-설치가-완료되면-프로젝트-루트-폴더에-프로젝트명xcworkspace-라는-파일이-생성됩니다-이후-프로젝트의-모든-작업은-이-워크스페이스-파일을-열어-진행해야-합니다"><span class="me-2"><strong>5. 설치가 완료되면 프로젝트 루트 폴더에 <code class="language-plaintext highlighter-rouge">[프로젝트명].xcworkspace</code> 라는 파일이 생성됩니다. 이후 프로젝트의 모든 작업은 이 워크스페이스 파일을 열어 진행해야 합니다.</strong></span><a href="#5-설치가-완료되면-프로젝트-루트-폴더에-프로젝트명xcworkspace-라는-파일이-생성됩니다-이후-프로젝트의-모든-작업은-이-워크스페이스-파일을-열어-진행해야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.33.46.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.33.46.jpg" alt="" loading="lazy"></a></p>
 
@@ -4322,6 +4338,12 @@ end
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -4355,6 +4377,18 @@ end
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
