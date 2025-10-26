@@ -8,8 +8,6 @@ categories:
 tags: [SwiftUI]
 ---
 
-# Swift: ActionExtension으로 사진을 내 앱으로 전송하기
-
 “Action Extension으로 사진을 내 앱에 넘기는 방법”은 Share Extension과 비슷하지만,
 Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에서 바로 실행되는 확장(App Extension) 입니다.
 즉, 사용자가 사진 앱, 파일 앱 등에서 “공유” 메뉴 대신 “작업(Action)” 메뉴에서 내 앱을 실행할 수 있게 해줍니다.
@@ -21,13 +19,14 @@ Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에�
 ## 방법
 
 ### 1) Action Extension Target 생성
-	1.	Xcode → File → New → Target…
-	2.	iOS → Application Extension → Action Extension 선택
-	3.	이름 예: ImageTranslatorActionExtension
-	4.	“Include UI Extension” 선택
-	5.	완료 후, ActionViewController.swift 파일이 자동 생성됩니다.
 
-⸻
+ 1.	Xcode → File → New → Target…
+ 2.	iOS → Application Extension → Action Extension 선택
+ 3.	이름 예: ImageTranslatorActionExtension
+ 4.	“Activate ...” 선택
+ 5.	완료 후, ActionViewController.swift 파일이 자동 생성됩니다.
+
+![target 생성]()
 
 ### 2) Info.plist 설정 (Action Extension 프로젝트에)
 
@@ -52,6 +51,10 @@ Action Extension이 어떤 타입의 콘텐츠를 받을지 지정해야 합니�
   <string>$(PRODUCT_MODULE_NAME).ActionViewController</string>
 </dict>
 ```
+
+Property View에서 보면 다음과 같이 보입니다.
+![Property View]()
+
 
 
 ### 3) ActionViewController.swift 구현 (Action Extension 프로젝트에)
@@ -147,7 +150,10 @@ func loadSharedImageFromAction() -> UIImage? {
 앱이 실행될 때 이 함수를 호출하면,
 Action Extension에서 전달된 이미지를 바로 가져올 수 있습니다.
 
-⸻
+
+### 6) 빌드 후 아무 앱에서 이미지 공유 메뉴를 열고 Action Extension이 추가되었는지 확인
+
+---
 
 ## 요약
 
