@@ -33,8 +33,8 @@
 <meta property="og:title" content="SwiftUI: 번역 기능 (Translation) 사용하기 (iOS 18 이상)" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Swift: Translation" />
-<meta property="og:description" content="Swift: Translation" />
+<meta name="description" content="iOS Translation 프레임워크는 iOS 17.4부터 도입된 기능으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스텀된 번역 기능을 구현할 수 있게 되었습니다." />
+<meta property="og:description" content="iOS Translation 프레임워크는 iOS 17.4부터 도입된 기능으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스텀된 번역 기능을 구현할 수 있게 되었습니다." />
 <link rel="canonical" href="/posts/swift-translation/" />
 <meta property="og:url" content="/posts/swift-translation/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="SwiftUI: 번역 기능 (Translation) 사용하기 (iOS 18 이상)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-10-25T01:59:00+09:00","datePublished":"2025-10-25T01:59:00+09:00","description":"Swift: Translation","headline":"SwiftUI: 번역 기능 (Translation) 사용하기 (iOS 18 이상)","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/swift-translation/"},"url":"/posts/swift-translation/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-10-25T01:59:00+09:00","datePublished":"2025-10-25T01:59:00+09:00","description":"iOS Translation 프레임워크는 iOS 17.4부터 도입된 기능으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스텀된 번역 기능을 구현할 수 있게 되었습니다.","headline":"SwiftUI: 번역 기능 (Translation) 사용하기 (iOS 18 이상)","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/swift-translation/"},"url":"/posts/swift-translation/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -257,7 +257,7 @@
     <a href="/" id="avatar" class="rounded-circle"><img src="/./assets/img/favicons/mstile-150x150.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <a class="site-title d-block" href="/">BGSMM</a>
-    <p class="site-subtitle fst-italic mb-0">음악, 레트로 테크 좋아함</p>
+    <p class="site-subtitle fst-italic mb-0">음악, 레트로테크 좋아함</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -1027,7 +1027,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1897 words"
+  title="1966 words"
 >
   <em>10 min</em> read</span>
 
@@ -1061,9 +1061,7 @@
   
 
   <div class="content">
-    <h1 id="swift-translation">Swift: Translation</h1>
-
-<p>iOS <code class="language-plaintext highlighter-rouge">Translation</code> 프레임워크는 iOS 17.4부터 도입된 기능으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스텀된 번역 기능을 구현할 수 있게 되었습니다.</p>
+    <p>iOS <code class="language-plaintext highlighter-rouge">Translation</code> 프레임워크는 iOS 17.4부터 도입된 기능으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스텀된 번역 기능을 구현할 수 있게 되었습니다.</p>
 
 <h2 id="주요-특징"><span class="me-2">주요 특징</span><a href="#주요-특징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
@@ -1230,8 +1228,15 @@
 
 <h3 id="3-translationtask를-이용한-커스텀-구현-下---configuration-을-trigger하여-실행"><span class="me-2">3. translationTask를 이용한 커스텀 구현 (下) - configuration 을 trigger하여 실행</span><a href="#3-translationtask를-이용한-커스텀-구현-下---configuration-을-trigger하여-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<p><code class="language-plaintext highlighter-rouge">translationTask</code>에 <code class="language-plaintext highlighter-rouge">configuration</code>을 설정한 뒤 특정 요건을 만족하면 트리거되면서 번역 작업을 시작합니다.</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">TranslationSession.Configuration</code> 이 <code class="language-plaintext highlighter-rouge">nil</code> 상태였다가 초기화하거나, 또는 source/target 언어가 변경된 경우 <code class="language-plaintext highlighter-rouge">action</code> 클로저가 트리거됩니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">TranslationSession.Configuration</code> 이 <code class="language-plaintext highlighter-rouge">nil</code> 상태였다가 초기화합니다.</li>
+  <li>동일한 source/target 언어에서 <code class="language-plaintext highlighter-rouge">invalidate()</code>를 실행합니다.
+    <ul>
+      <li>해당 방법을 사용하여 여러번 translationTask를 소환하는 방법에 대한 <a href="https://github.com/ayaysir/Swift-Playgrounds/blob/a679d5b074f9faebf552a627f53b24cc1d1a9de7/SwiftPM/study-Translation.swiftpm/CustomTranslationAdvancedView.swift">깃허브 코드 예제</a></li>
+    </ul>
+  </li>
+  <li>또는 source/target 언어가 변경된 경우 <code class="language-plaintext highlighter-rouge">action</code> 클로저가 트리거됩니다.</li>
 </ul>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -1331,10 +1336,6 @@
 93
 94
 95
-96
-97
-98
-99
 </pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 <span class="kd">import</span> <span class="kt">Translation</span>
 
@@ -1380,12 +1381,11 @@
         <span class="p">}</span>
       <span class="p">}</span>
 
-      <span class="k">if</span> <span class="k">#available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">18.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">HStack</span> <span class="p">{</span>
+      <span class="kt">HStack</span> <span class="p">{</span>
           <span class="kt">Button</span> <span class="p">{</span>
             <span class="k">let</span> <span class="nv">targetLanguage</span> <span class="o">=</span> <span class="kt">Locale</span><span class="o">.</span><span class="kt">Language</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="n">selectedLanguageCode</span><span class="p">)</span>
             <span class="c1">// 여기서 configruation 트리거</span>
-            <span class="c1">// source, target 언어가 동일하면 트리거가 안됨</span>
+            <span class="c1">// source, target 언어가 동일하면 트리거가 안됨 =&gt; configuration.invalidate()를 사용하여 재트리거</span>
             <span class="c1">// 둘 중 하나가 이전과 다르면 재 트리거됨</span>
             <span class="n">configuration</span> <span class="o">=</span> <span class="kt">TranslationSession</span><span class="o">.</span><span class="kt">Configuration</span><span class="p">(</span>
               <span class="nv">source</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
@@ -1428,9 +1428,6 @@
             <span class="p">}</span>
           <span class="p">}</span>
         <span class="p">}</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="kt">Text</span><span class="p">(</span><span class="s">"iOS 18 이상 필요"</span><span class="p">)</span>
-      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -10754,7 +10751,7 @@
 
               <h4 class="pt-0 my-2">Swift: Action Extension에서 extensionContext가 iOS 18에서 작동하지 않는 문제</h4>
               <div class="text-muted">
-                <p>소개  iOS 18부터 Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제 (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  원문 링크    Stack Overflow     문제 개요          개발자가 만든 앱(Voicepaper)의 Action Extension에서 extens...</p>
+                <p>iOS 18부터 Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제 (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  원문 링크    Stack Overflow     문제 개요          개발자가 만든 앱(Voicepaper)의 Action Extension에서 extensionC...</p>
               </div>
             </div>
           </a>

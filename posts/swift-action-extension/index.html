@@ -257,7 +257,7 @@
     <a href="/" id="avatar" class="rounded-circle"><img src="/./assets/img/favicons/mstile-150x150.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <a class="site-title d-block" href="/">BGSMM</a>
-    <p class="site-subtitle fst-italic mb-0">음악, 레트로 테크 좋아함</p>
+    <p class="site-subtitle fst-italic mb-0">음악, 레트로테크 좋아함</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -491,6 +491,136 @@
     
       
       
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
     
 
     
@@ -930,9 +1060,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="973 words"
+  title="1080 words"
 >
-  <em>5 min</em> read</span>
+  <em>6 min</em> read</span>
 
         </div>
       </div>
@@ -970,7 +1100,15 @@ Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에�
 
 <p>아래는 사진 앱에서 이미지를 선택 → 내 앱의 Action Extension 실행 → 원본 앱으로 이미지 전달하는 전체 흐름과 코드 예시입니다.</p>
 
-<hr />
+<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ol>
+  <li>Action Extension Target 생성</li>
+  <li>Info.plist에 이미지 수신 설정</li>
+  <li>ActionViewController에서 이미지 수신 후 App Group에 저장</li>
+  <li>App Group 설정 (앱 간 공유)</li>
+  <li>메인 앱에서 이미지 파일 읽기</li>
+</ol>
 
 <h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -979,12 +1117,18 @@ Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에�
 <ol>
   <li>Xcode → File → New → Target…</li>
   <li>iOS → Application Extension → Action Extension 선택</li>
-  <li>이름 예: ImageTranslatorActionExtension</li>
-  <li>“Activate …” 선택</li>
+  <li>이름 예: ImageTranslatorActionExtension<br /><a href="/assets/img/DevLog/swift-action-extension/1%20target%20생성%20스크린샷%202025-10-25%20오후%2011.38.40%20복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/1%20target%20생성%20스크린샷%202025-10-25%20오후%2011.38.40%20복사본.jpg" alt="target 생성" loading="lazy"></a>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">ActionType</code></li>
+    </ul>
+    <ul>
+      <li>Present UI: 액션 확장에서 시트 등 보이는 UI를 표시합니다. 이번 포스트에서는 Present UI 의 경우만 다룹니다.</li>
+      <li>No Present UI: UI를 표시하지 않습니다.</li>
+    </ul>
+  </li>
+  <li>“Activate …” 선택<br /><a href="/assets/img/DevLog/swift-action-extension/2%20activate%20스크린샷%202025-10-25%20오후%2011.38.58%20복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/2%20activate%20스크린샷%202025-10-25%20오후%2011.38.58%20복사본.jpg" alt="Activate 창" loading="lazy"></a></li>
   <li>완료 후, ActionViewController.swift 파일이 자동 생성됩니다.</li>
 </ol>
-
-<p><a href="/src" class="popup img-link shimmer"><img src="/" alt="target 생성" loading="lazy"></a></p>
 
 <h3 id="2-infoplist-설정-action-extension-프로젝트에"><span class="me-2">2) Info.plist 설정 (Action Extension 프로젝트에)</span><a href="#2-infoplist-설정-action-extension-프로젝트에" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1027,8 +1171,8 @@ Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에�
 <span class="nt">&lt;/dict&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Property View에서 보면 다음과 같이 보입니다.
-<a href="/src" class="popup img-link shimmer"><img src="/" alt="Property View" loading="lazy"></a></p>
+<p>Property View에서 보면 다음과 같이 보입니다.<br />
+<a href="/assets/img/DevLog/swift-action-extension/3%20property%20view%20스크린샷%202025-10-25%20오후%209.24.22%20복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/3%20property%20view%20스크린샷%202025-10-25%20오후%209.24.22%20복사본.jpg" alt="Property View" loading="lazy"></a></p>
 
 <h3 id="3-actionviewcontrollerswift-구현-action-extension-프로젝트에"><span class="me-2">3) ActionViewController.swift 구현 (Action Extension 프로젝트에)</span><a href="#3-actionviewcontrollerswift-구현-action-extension-프로젝트에" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1150,18 +1294,18 @@ Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에�
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="4--app-group-설정"><span class="me-2">4)  App Group 설정</span><a href="#4--app-group-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre>1.	메인 앱과 Action Extension 두 타깃 모두 `Signing &amp; Capabilities → + Capability → App Groups` 추가
-2.	동일한 그룹 ID 생성: `group.com.yourcompany.imagetranslator`
-3.	위 코드에서 동일한 ID 사용.
-</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>완료 후 <code class="language-plaintext highlighter-rouge">URLScheme</code>를 이용하여 내가 만든 앱으로 이동하게 하는 방법은 <a href="/posts/swift-urlscheme">이 포스트</a>를 참조합니다.</li>
+</ul>
 
-<p><a href="/src" class="popup img-link shimmer"><img src="/" alt="App Group 설정" loading="lazy"></a></p>
+<h3 id="4--app-group-설정"><span class="me-2">4)  App Group 설정</span><a href="#4--app-group-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ol>
+  <li>메인 앱과 Action Extension 두 타깃 모두 <code class="language-plaintext highlighter-rouge">Signing &amp; Capabilities → + Capability → App Groups</code> 추가</li>
+  <li>동일한 그룹 ID 생성: <code class="language-plaintext highlighter-rouge">group.com.yourcompany.imagetranslator</code></li>
+  <li>위 코드에서 동일한 ID 사용.</li>
+</ol>
+
+<p><a href="/assets/img/DevLog/swift-action-extension/4%20app%20group%20스크린샷%202025-10-25%20오후%209.24.54%20복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/4%20app%20group%20스크린샷%202025-10-25%20오후%209.24.54%20복사본.jpg" alt="App Group 설정" loading="lazy"></a></p>
 
 <h3 id="5-메인-앱에서-이미지-불러오기"><span class="me-2">5) 메인 앱에서 이미지 불러오기</span><a href="#5-메인-앱에서-이미지-불러오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1179,7 +1323,9 @@ Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에�
 8
 9
 10
+11
 </pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">loadSharedImageFromAction</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
+  <span class="c1">// 파일 매니저를 통해 앱 그룹의 contiainerURL 받아옴</span>
   <span class="k">if</span> <span class="k">let</span> <span class="nv">containerURL</span> <span class="o">=</span> <span class="kt">FileManager</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">containerURL</span><span class="p">(</span><span class="nv">forSecurityApplicationGroupIdentifier</span><span class="p">:</span> <span class="s">"group.com.yourcompany.imagetranslator"</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">fileURL</span> <span class="o">=</span> <span class="n">containerURL</span><span class="o">.</span><span class="nf">appendingPathComponent</span><span class="p">(</span><span class="s">"action_shared_image.png"</span><span class="p">)</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">fileURL</span><span class="p">),</span>
@@ -1195,19 +1341,11 @@ Action Extension에서 전달된 이미지를 바로 가져올 수 있습니다.
 
 <h3 id="6-빌드-후-아무-앱에서-이미지-공유-메뉴를-열고-action-extension이-추가되었는지-확인"><span class="me-2">6) 빌드 후 아무 앱에서 이미지 공유 메뉴를 열고 Action Extension이 추가되었는지 확인</span><a href="#6-빌드-후-아무-앱에서-이미지-공유-메뉴를-열고-action-extension이-추가되었는지-확인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<p><a href="/assets/img/DevLog/swift-action-extension/5%20example%20IMG_6715.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/5%20example%20IMG_6715.jpg" alt="ActionExtension 추가됨" loading="lazy"></a></p>
+
 <hr />
 
-<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ol>
-  <li>Action Extension Target 생성</li>
-  <li>Info.plist에 이미지 수신 설정</li>
-  <li>ActionViewController에서 이미지 수신 후 App Group에 저장</li>
-  <li>App Group 설정 (앱 간 공유)</li>
-  <li>메인 앱에서 이미지 파일 읽기</li>
-</ol>
-
-<h2 id="동작-방식-비교"><span class="me-2">동작 방식 비교</span><a href="#동작-방식-비교" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="share-extension과-동작-방식-비교"><span class="me-2">Share Extension과 동작 방식 비교</span><a href="#share-extension과-동작-방식-비교" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1251,6 +1389,11 @@ Action Extension에서 전달된 이미지를 바로 가져올 수 있습니다.
     
       <div class="post-tags">
         <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/swift/"
+            class="post-tag no-text-decoration"
+          >Swift</a>
         
           <a
             href="/tags/swiftui/"
@@ -10455,6 +10598,34 @@ Action Extension에서 전달된 이미지를 바로 가져올 수 있습니다.
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
+          <a href="/posts/swift-urlscheme/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1761365460"
+  data-df="ll"
+  
+>
+  Oct 25, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Swift: iOS에서 Custom URL Scheme 등록해서 url로 앱 열기</h4>
+              <div class="text-muted">
+                <p>iOS에서 Custom URL Scheme를 등록하는 방법입니다.  ---  ## 1. 메인 앱에 URL Scheme 등록  먼저 ImageTranslator 앱의 Info.plist에 다음을 추가하세요.  ```xml CFBundleURLTypes         CFBundleURLSchemes            imagetranslator    ...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/swift-extensioncontext-error-ios18/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -10476,14 +10647,14 @@ Action Extension에서 전달된 이미지를 바로 가져올 수 있습니다.
 
               <h4 class="pt-0 my-2">Swift: Action Extension에서 extensionContext가 iOS 18에서 작동하지 않는 문제</h4>
               <div class="text-muted">
-                <p># 소개  iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  ### 원문 링크 - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-o...</p>
+                <p>iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  ### 원문 링크 - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-open-ma...</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/posts/swift-translation/" class="post-preview card h-100">
+          <a href="/posts/xcode-where-is-infoplist/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -10495,44 +10666,16 @@ Action Extension에서 전달된 이미지를 바로 가져올 수 있습니다.
 
 <time
   
-  data-ts="1761325140"
+  data-ts="1761365520"
   data-df="ll"
   
 >
   Oct 25, 2025
 </time>
 
-              <h4 class="pt-0 my-2">SwiftUI: 번역 기능 (Translation) 사용하기 (iOS 18 이상)</h4>
+              <h4 class="pt-0 my-2">Xcode 에서 Info.plist 파일이 없을 때</h4>
               <div class="text-muted">
-                <p># Swift: Translation  iOS `Translation` 프레임워크는 iOS 17.4부터 도입된 기능으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1747213440"
-  data-df="ll"
-  
->
-  May 14, 2025
-</time>
-
-              <h4 class="pt-0 my-2">SwiftUI: @Binding을 지원하지 않는 뷰의 강제 리프레시</h4>
-              <div class="text-muted">
-                <p>SwiftUI에서 @Binding을 지원하지 않는 뷰의 강제 리프레시  parameters와 ParameterRow가 바인딩(Binding)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(HStack)를 자동으로 업데이트하지 않습니다. 따라서 Randomize 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생합니다.  해결 방법:...</p>
+                <p>Xcode 13부터 새로운 프로젝트에는 **Info.plist** 파일이 기본적으로 생성되지 않습니다. 대신 프로젝트 네비게이터에서 Target > Info 탭을 통해 설정할 수 있습니다.  Info.plist 파일이 사라진 것이 아니라 빌드 파일로 통합되었기 때문이며, 필요한 경우 새 Info.plist 파일을 생성하거나 기존 프로젝트에서 파일의 위...</p>
               </div>
             </div>
           </a>
