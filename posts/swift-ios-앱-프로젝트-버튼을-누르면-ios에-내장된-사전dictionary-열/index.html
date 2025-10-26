@@ -10393,7 +10393,7 @@ struct DictionaryView: View {
 
               <h4 class="pt-0 my-2">Swift: Action Extension으로 사진을 내 앱으로 전송하기</h4>
               <div class="text-muted">
-                <p># Swift: ActionExtension으로 사진을 내 앱으로 전송하기  “Action Extension으로 사진을 내 앱에 넘기는 방법”은 Share Extension과 비슷하지만, Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에서 바로 실행되는 확장(App Extension) 입니다. 즉, 사용자가 사진 앱, 파일 앱...</p>
+                <p>“Action Extension으로 사진을 내 앱에 넘기는 방법”은 Share Extension과 비슷하지만, Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에서 바로 실행되는 확장(App Extension) 입니다. 즉, 사용자가 사진 앱, 파일 앱 등에서 “공유” 메뉴 대신 “작업(Action)” 메뉴에서 내 앱을 실행할 ...</p>
               </div>
             </div>
           </a>
@@ -13541,6 +13541,62 @@ struct DictionaryView: View {
     
       
       <!-- The comments switcher -->
+
+  
+  <!-- https://giscus.app/ -->
+<script>
+  (function () {
+    const themeMapper = Theme.getThemeMapper('light', 'dark_dimmed');
+    const initTheme = themeMapper[Theme.visualState];
+
+    let lang = 'en';if (lang.length > 2 && !lang.startsWith('zh')) {
+      lang = lang.slice(0, 2);
+    }
+
+    let giscusAttributes = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'ayaysir/ayaysir.github.io',
+      'data-repo-id': 'R_kgDOOurl2w',
+      'data-category': 'General',
+      'data-category-id': 'DIC_kwDOOurl284CxFIa',
+      'data-mapping': 'pathname',
+      'data-strict' : '0',
+      'data-reactions-enabled': '1',
+      'data-emit-metadata': '0',
+      'data-theme': initTheme,
+      'data-input-position': 'bottom',
+      'data-lang': lang,
+      'data-loading': 'lazy',
+      crossorigin: 'anonymous',
+      async: ''
+    };
+
+    let giscusNode = document.createElement('script');
+    Object.entries(giscusAttributes).forEach(([key, value]) =>
+      giscusNode.setAttribute(key, value)
+    );
+
+    const $footer = document.querySelector('footer');
+    $footer.insertAdjacentElement("beforebegin", giscusNode);
+
+    addEventListener('message', (event) => {
+      if (event.source === window && event.data && event.data.id === Theme.ID) {
+        const newTheme = themeMapper[Theme.visualState];
+
+        const message = {
+          setConfig: {
+            theme: newTheme
+          }
+        };
+
+        const giscus =
+          document.getElementsByClassName('giscus-frame')[0].contentWindow;
+        giscus.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+    });
+  })();
+</script>
+
 
 
     
