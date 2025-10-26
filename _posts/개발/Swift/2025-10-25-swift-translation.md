@@ -8,8 +8,6 @@ categories:
 tags: [SwiftUI]
 ---
 
-# Swift: Translation
-
 iOS `Translation` 프레임워크는 iOS 17.4부터 도입된 기능으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스텀된 번역 기능을 구현할 수 있게 되었습니다. 
 
 
@@ -114,7 +112,11 @@ struct CustomTranslationView: View {
 
 ### 3. translationTask를 이용한 커스텀 구현 (下) - configuration 을 trigger하여 실행
 
-- `TranslationSession.Configuration` 이 `nil` 상태였다가 초기화하거나, 또는 source/target 언어가 변경된 경우 `action` 클로저가 트리거됩니다.
+`translationTask`에 `configuration`을 설정한 뒤 특정 요건을 만족하면 트리거되면서 번역 작업을 시작합니다.
+- `TranslationSession.Configuration` 이 `nil` 상태였다가 초기화합니다.
+- 동일한 source/target 언어에서 `invalidate()`를 실행합니다.
+  - 해당 방법을 사용하여 여러번 translationTask를 소환하는 방법에 대한 [깃허브 코드 예제](https://github.com/ayaysir/Swift-Playgrounds/blob/a679d5b074f9faebf552a627f53b24cc1d1a9de7/SwiftPM/study-Translation.swiftpm/CustomTranslationAdvancedView.swift)
+- 또는 source/target 언어가 변경된 경우 `action` 클로저가 트리거됩니다.
 
 ```swift
 import SwiftUI
@@ -162,12 +164,11 @@ struct CustomTranslationTriggerStartView: View {
         }
       }
 
-      if #available(iOS 18.0, *) {
-        HStack {
+      HStack {
           Button {
             let targetLanguage = Locale.Language(identifier: selectedLanguageCode)
             // 여기서 configruation 트리거
-            // source, target 언어가 동일하면 트리거가 안됨
+            // source, target 언어가 동일하면 트리거가 안됨 => configuration.invalidate()를 사용하여 재트리거
             // 둘 중 하나가 이전과 다르면 재 트리거됨
             configuration = TranslationSession.Configuration(
               source: nil,
@@ -210,9 +211,6 @@ struct CustomTranslationTriggerStartView: View {
             }
           }
         }
-      } else {
-        Text("iOS 18 이상 필요")
-      }
     }
   }
 }

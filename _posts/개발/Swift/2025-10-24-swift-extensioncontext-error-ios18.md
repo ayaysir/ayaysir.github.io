@@ -8,8 +8,6 @@ categories:
 tags: [SwiftUI]
 ---
 
-# 소개
-
 iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.
 
 ### 원문 링크

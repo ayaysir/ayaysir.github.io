@@ -8,8 +8,6 @@ categories:
 tags: [Swift]
 ---
 
-# iOS에서 Custom URL Scheme 등록해서 url로 앱 열기
-
 iOS에서 Custom URL Scheme를 등록하는 방법입니다.
 
 ---

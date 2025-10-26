@@ -8,8 +8,6 @@ categories:
 tags: [Swift]
 ---
 
-# Xcode 에서 Info.plist 파일이 없을 때
-
 Xcode 13부터 새로운 프로젝트에는 **Info.plist** 파일이 기본적으로 생성되지 않습니다. 대신 프로젝트 네비게이터에서 Target > Info 탭을 통해 설정할 수 있습니다. 
 Info.plist 파일이 사라진 것이 아니라 빌드 파일로 통합되었기 때문이며, 필요한 경우 새 Info.plist 파일을 생성하거나 기존 프로젝트에서 파일의 위치를 찾아서 확인할 수 있습니다. 
 
