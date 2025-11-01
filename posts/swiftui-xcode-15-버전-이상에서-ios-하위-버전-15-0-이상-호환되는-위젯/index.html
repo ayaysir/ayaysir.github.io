@@ -1505,13 +1505,13 @@
 
 <p>Xcode 15에서 작업하다가 위젯을 추가하고 싶어서 _<strong>Widget Extension</strong>_을 추가하였는데, 위젯의 최소 배포 타깃(Minimum Deployments Target) 버전을 <code class="language-plaintext highlighter-rouge">15.0</code> 이상으로 잡고 진행하고 싶은 경우가 있을 것입니다.</p>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.29.07.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.29.07.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.29.07.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.29.07.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>그래서 버전을 바꾸면 어떻게 될까요? 기본으로 제공하는 코드가 아래와 같이 <code class="language-plaintext highlighter-rouge">iOS 17.0</code> 이상을 요구하는 부분들이 많기 때문에 하위 호환성이 떨어지고 처리해야 할 분기 작업이 매우 많아집니다.</p>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.23.08.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.23.08.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.23.08.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.23.08.jpg" alt="" loading="lazy"></a></p>
 
 <p>따라서, 이번 포스트에서는 Xcode 15에서 기본으로 제공되는 코드들을 제거하고 <code class="language-plaintext highlighter-rouge">15.0 이상</code>에서 위젯이 호환되도록 바꾸는 작업을 다룰 것입니다.</p>
 
@@ -1529,7 +1529,7 @@
   <li>Xcode -&gt; File -&gt; Target</li>
 </ul>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.21.01.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.21.01.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.21.01.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.21.01.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1543,7 +1543,7 @@
   </li>
 </ul>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.22.16.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.22.16.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.22.16.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.22.16.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1555,27 +1555,27 @@
 
 <p>위젯 프로젝트에서 <code class="language-plaintext highlighter-rouge">File &gt; New</code>를 선택해 <code class="language-plaintext highlighter-rouge">SiriKit Intent Definition</code>를 추가 (확장자 <code class="language-plaintext highlighter-rouge">*.intentdefinition</code>) 합니다.</p>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오전-1.12.28.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오전-1.12.28.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오전-1.12.28.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오전-1.12.28.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>생성된 파일을 열면 편집기가 나오는데 이름을 <code class="language-plaintext highlighter-rouge">Configuration</code>으로 설정하고, 아래 빨간 박스들을 체크합니다.</p>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오전-1.15.26.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오전-1.15.26.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오전-1.15.26.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오전-1.15.26.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>Intent 파일의 <code class="language-plaintext highlighter-rouge">Target Membership</code>에서 위젯 프로젝트를 체크합니다.</p>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오후-8.47.26.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오후-8.47.26.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오후-8.47.26.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-11-오후-8.47.26.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>빌드를 합니다. 빌드는 _<strong>반드시 성공</strong>_해야 아래와 같이 자동 생성 클래스가 추가됩니다.</p>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.44.50.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.44.50.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.44.50.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.44.50.jpg" alt="" loading="lazy"></a></p>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.45.23.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.45.23.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.45.23.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/스크린샷-2024-06-12-오전-1.45.23.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1941,7 +1941,7 @@ struct StaticWidget1Bundle: WidgetBundle {
 
 <p>위젯의 최소 배포 타깃을 <code class="language-plaintext highlighter-rouge">15.0</code>으로 변경하고 빌드 및 실행합니다.<a href="https://ios-development.tistory.com/1131"></a></p>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/다운로드-1.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/다운로드-1.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/다운로드-1.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/다운로드-1.jpg" alt="" loading="lazy"></a></p>
 
 <p>시뮬레이터에서</p>
 
@@ -1960,7 +1960,7 @@ struct StaticWidget1Bundle: WidgetBundle {
   <li><strong>위젯 설명 출처:</strong> <a href="https://ios-development.tistory.com/1131">[iOS - SwiftUI] 1. 위젯 Widget 사용 방법 개념 (WidgetKit, WidgetFamily)</a></li>
 </ul>
 
-<p><a href="/./assets/img/wp-content/uploads/2024/06/widget.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2024/06/widget.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/06/widget.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/06/widget.jpg" alt="" loading="lazy"></a></p>
 
   </div>
 

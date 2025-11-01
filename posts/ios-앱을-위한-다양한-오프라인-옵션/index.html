@@ -928,7 +928,7 @@
 
 <p>그러나 <code class="language-plaintext highlighter-rouge">Author</code> 개체가 중첩 개체(nested object)로 데이터베이스에 두 번 삽입되었음을 알 수 있습니다. 즉, <code class="language-plaintext highlighter-rouge">id=3</code>인 기사를 업데이트된 <code class="language-plaintext highlighter-rouge">Author</code> 개체로 업데이트하면 다음에 <code class="language-plaintext highlighter-rouge">id=42</code>인 기사를 읽을 때 업데이트 전의 <code class="language-plaintext highlighter-rouge">Author</code>를 얻게 됩니다. 이러한 유형의 일관성이 중요한 경우 데이터를 캐시하기 전에 ‘정규화’하는 것을 고려할 수 있습니다. 이는 트리를 하위 모델로 분리하고 각 모델을 고유한 ID로 캐싱하는 것을 의미합니다. 예:</p>
 
-<p><a href="/./assets/img/wp-content/uploads/2021/07/1_VNsJF55KogRf34_WNWK_Bw.png" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2021/07/1_VNsJF55KogRf34_WNWK_Bw.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/07/1_VNsJF55KogRf34_WNWK_Bw.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/1_VNsJF55KogRf34_WNWK_Bw.png" alt="" loading="lazy"></a></p>
 
 <p>이것은 데이터베이스가 아님을 알아야 합니다! 각 항목은 여전히 ​​ID로 키가 지정된 구조화되지 않은 데이터의 blob(덩어리)입니다. 즉, 모델의 변경과 제거가 간단해지므로 마이그레이션이 필요하지 않습니다. 그러나 모델을 재구성하고 각 하위 모델에 대해 고유한 ID를 갖는 로직도 작성해야 하므로 이 시스템을 구현하는 것은 간단하지 않습니다.</p>
 
