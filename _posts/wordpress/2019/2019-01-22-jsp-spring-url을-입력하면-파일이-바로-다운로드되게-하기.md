@@ -10,4 +10,4 @@ categories:
 
 https://gist.github.com/ayaysir/eccfa88d92a8a34e7efac85f2ce1a1a4
 
-![](./assets/img/wp-content/uploads/2019/01/urldownload-e1565237795574.png)
+ ![](/assets/img/wp-content/uploads/2019/01/urldownload-e1565237795574.png)

@@ -125,7 +125,7 @@ let trigger = UNCalendarNotificationTrigger(
 
 알림을 테스트한 결과 Google Keep이 원격 푸시 알림(Push Notification)이 아닌 로컬 알림(Local Notification)을 사용하고 있음을 확인하였습니다. 비행기 모드에서도 여전히 알림을 받을 수 있기 때문입니다.
 
-![](./assets/img/wp-content/uploads/2022/11/2ZaOQ.jpeg)
+ ![](/assets/img/wp-content/uploads/2022/11/2ZaOQ.jpeg)
 
  
 

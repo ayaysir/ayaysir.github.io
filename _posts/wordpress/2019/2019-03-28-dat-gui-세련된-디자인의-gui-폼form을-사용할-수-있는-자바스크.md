@@ -12,7 +12,7 @@ categories:
 
  
 
-[![](./assets/img/wp-content/uploads/2019/03/datgui.png)](http://yoonbumtae.com/?attachment_id=943)
+[ ![](/assets/img/wp-content/uploads/2019/03/datgui.png)](http://yoonbumtae.com/?attachment_id=943)
 
  
 
@@ -83,7 +83,7 @@ gui.add(text, 'message', [ 'pizza', 'chrome', 'hooray' ] );
 gui.add(text, 'speed', { Stopped: 0, Slow: 0.1, Fast: 5 } );
 ```
 
-[![](./assets/img/wp-content/uploads/2019/03/dg2.png)](http://yoonbumtae.com/?attachment_id=944)
+[ ![](/assets/img/wp-content/uploads/2019/03/dg2.png)](http://yoonbumtae.com/?attachment_id=944)
 
  
 
@@ -106,7 +106,7 @@ f2.add(text, 'message');
 f2.open();
 ```
 
-[![](./assets/img/wp-content/uploads/2019/03/dg3.png)](http://yoonbumtae.com/?attachment_id=945)
+[ ![](/assets/img/wp-content/uploads/2019/03/dg3.png)](http://yoonbumtae.com/?attachment_id=945)
 
  
 
@@ -141,7 +141,7 @@ window.onload = function() {
 
 dat.GUI는 초기 값으로 정의 된 형식으로 색상을 수정합니다. (참고: "red", "green" 같은 색상명을 사용하면 오류가 발생합니다.)
 
-[![](./assets/img/wp-content/uploads/2019/03/dg4.png)](http://yoonbumtae.com/?attachment_id=947)
+[ ![](/assets/img/wp-content/uploads/2019/03/dg4.png)](http://yoonbumtae.com/?attachment_id=947)
 
  
 
@@ -169,7 +169,7 @@ gui.remember(fizzyText);
 // Add controllers ...
 ```
 
-[![](./assets/img/wp-content/uploads/2019/03/dg5.png)](http://yoonbumtae.com/?attachment_id=946)
+[ ![](/assets/img/wp-content/uploads/2019/03/dg5.png)](http://yoonbumtae.com/?attachment_id=946)
 
  
 
@@ -190,7 +190,7 @@ var gui = new dat.GUI({
 
 `JSON 저장 오브젝트`를 소스에 자주 붙여 넣으십시오. `localStorage`를 사용하여 프리셋을 저장하면 탐색 데이터를 지우거나 브라우저를 변경하거나 작업중인 페이지의 URL을 변경하면 설정을 금방 잃어 버릴 수 있습니다.
 
-[![](./assets/img/wp-content/uploads/2019/03/dg6.png)](http://yoonbumtae.com/?attachment_id=948)
+[ ![](/assets/img/wp-content/uploads/2019/03/dg6.png)](http://yoonbumtae.com/?attachment_id=948)
 
  
 

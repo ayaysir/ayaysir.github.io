@@ -28,9 +28,9 @@ Spring Boot의 기본 기능(Thymeleaf, 시큐리티 포함)을 이용해서 전
 
 #### **프로젝트의 구조 (일부)**
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.21.49.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.21.49.png)
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.22.00.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.22.00.png)
 
 - **SimpleBoardController**: 게시판 관련 컨트롤러
 - **SimpleBoardDAO**: 게시판 테이블 DAO, 작업 편의상 서비스, DTO는 따로 작성하지 않았습니다. DTO 대신 `Map`을 사용합니다.
@@ -39,9 +39,9 @@ Spring Boot의 기본 기능(Thymeleaf, 시큐리티 포함)을 이용해서 전
 
 #### **데이터베이스 구조**
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.30.43.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.30.43.png)
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.31.56.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.31.56.png)
 
 데이터베이스 설정하는 방법은 [Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)](http://yoonbumtae.com/?p=658)를 참고하세요.
 
@@ -55,19 +55,19 @@ https://gist.github.com/ayaysir/5ee2ccb6efd8063a568e2d5944ffd21c
 
 #### **동작 내용**
 
-\[caption id="attachment\_1854" align="alignnone" width="474"\]![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.00.57.png) 메인 화면 (로그인한 경우)\[/caption\]
+\[caption id="attachment\_1854" align="alignnone" width="474"\] ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.00.57.png) 메인 화면 (로그인한 경우)\[/caption\]
 
  
 
-\[caption id="attachment\_1856" align="alignnone" width="454"\]![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.10.16.png) 메인 화면 (로그인하지 않은 경우)\[/caption\]
+\[caption id="attachment\_1856" align="alignnone" width="454"\] ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.10.16.png) 메인 화면 (로그인하지 않은 경우)\[/caption\]
 
  
 
-\[caption id="attachment\_1863" align="alignnone" width="387"\]![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.37.28.png) 게시글 보기 (내 글)\[/caption\]
+\[caption id="attachment\_1863" align="alignnone" width="387"\] ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.37.28.png) 게시글 보기 (내 글)\[/caption\]
 
  
 
-\[caption id="attachment\_1855" align="alignnone" width="383"\]![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.09.12.png) 게시글 보기 (다른 사람의 글)\[/caption\]
+\[caption id="attachment\_1855" align="alignnone" width="383"\] ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.09.12.png) 게시글 보기 (다른 사람의 글)\[/caption\]
 
  
 

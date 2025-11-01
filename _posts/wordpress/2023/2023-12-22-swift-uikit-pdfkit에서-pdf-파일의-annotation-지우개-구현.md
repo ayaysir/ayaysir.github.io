@@ -20,11 +20,11 @@ categories:
 - `Bar Button Item`의 텍스트를 `Eraser`로 변경하고 `Assistant` 에디터를 열어 `DocumentDrawingViewController`의 `changeDrawingTool(sender:)`에 연결합니다.
 - tag는 기본값인 `0`번으로 되어있는데 지우개의 태그값이 `0`이므로 그대로 놔둡니다.
 
-![](./assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-22-오후-11.29.58-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-22-오후-11.29.58-복사본.jpg)
 
-![](./assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-22-오후-11.33.20-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-22-오후-11.33.20-복사본.jpg)
 
-![](./assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-22-오후-11.33.27-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-22-오후-11.33.27-복사본.jpg)
 
  
 
@@ -48,7 +48,7 @@ private func removeAnnotationAtPoint(point: CGPoint, page: PDFPage) {
 
  
 
-##### **Step 3: PDFPage+Selection.swift 파일의 annotationWithHitTest(at:) 변경**
+##### **Step 3: PDFPage+Selection.swift 파일의 annotationWithHitTest(at:) 변경**
 
 ```
 import UIKit

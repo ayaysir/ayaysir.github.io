@@ -48,7 +48,7 @@ public class ThrowableTest1 {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2019/02/ex1.png)
+ ![](/assets/img/wp-content/uploads/2019/02/ex1.png)
 
 스택오버플로우는 에러(error)이므로 다음과 같은 예외처리(handling Exception)는 아무런 변화를 주지 못함
 
@@ -70,7 +70,7 @@ try {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2019/02/ex2.png)
+ ![](/assets/img/wp-content/uploads/2019/02/ex2.png)
 
  
 
@@ -118,11 +118,11 @@ try를 단독으로 쓰는것은 불가능하며, 그 외의 경우라면 다양
 
 그러나 `NumberFormatException`은 예외처리가 강제되지 않으며 직접 예외를 발생시켜 봐야지만 어떤 에러가 발생하는지 알 수 있는데 이것을 `uncatched` 예외라 한다. `Integer ~ Scanner` 부분에서 Number어쩌구 예외가 발생하는 것을 직접 프로그램을 실행시키면서 예외를 유발시킨 결과 겨우  알 수 있었다.
 
-![](./assets/img/wp-content/uploads/2019/02/ex3.png)
+ ![](/assets/img/wp-content/uploads/2019/02/ex3.png)
 
 4를 입력하면 정상동작하나
 
-![](./assets/img/wp-content/uploads/2019/02/ex4.png)
+ ![](/assets/img/wp-content/uploads/2019/02/ex4.png)
 
 로마자 숫자 Ⅳ를 입력하면 예외가 발생한다.
 

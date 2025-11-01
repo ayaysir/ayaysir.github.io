@@ -78,7 +78,7 @@ import Photos
 
 아래 사진과 같이 이미지 뷰(`UIImageView`), 버튼(`UIButton`) 두 개를 회원가입 폼에 추가합니다.
 
-![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-9.06.27.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-9.06.27.jpg)
 
  
 
@@ -239,13 +239,13 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
 
 파이어베이스 웹 콘솔 왼쪽에 `Storage`라는 메뉴가 있습니다. Storage가 생성되지 않았다면 먼저 시작하기 버튼을 눌러 새로 생성해야 합니다.
 
-![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-9.58.22.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-9.58.22.jpg)
 
  
 
 폴더 만들기 버튼을 눌러 `images/users` 하위 폴더를 생성합니다. 이 폴더에 프로필 사진이 `uid` 로 구분되어 저장될 것입니다.
 
-![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-19-오후-9.42.51.jpg) ![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-19-오후-9.43.14.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-19-오후-9.42.51.jpg)  ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-19-오후-9.43.14.jpg)
 
  
 
@@ -507,19 +507,19 @@ func startUploading(images: [ImageWithName], completion: @escaping FileCompletio
 
  
 
-\[caption id="attachment\_4116" align="alignnone" width="428"\]![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-10.39.49.jpg) 라이브러리 버튼을 눌렀을 때\[/caption\]
+\[caption id="attachment\_4116" align="alignnone" width="428"\] ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-10.39.49.jpg) 라이브러리 버튼을 눌렀을 때\[/caption\]
 
  
 
-\[caption id="attachment\_4117" align="alignnone" width="401"\]![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-10.40.10.jpg) 사진 미리보기\[/caption\]
+\[caption id="attachment\_4117" align="alignnone" width="401"\] ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-10.40.10.jpg) 사진 미리보기\[/caption\]
 
  
 
-\[caption id="attachment\_4118" align="alignnone" width="416"\]![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-10.43.17.jpg) 회원가입 완료\[/caption\]
+\[caption id="attachment\_4118" align="alignnone" width="416"\] ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-10.43.17.jpg) 회원가입 완료\[/caption\]
 
  
 
-![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-10.44.50.jpg) ![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-10.45.45.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-10.44.50.jpg)  ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-20-오후-10.45.45.jpg)
 
  
 

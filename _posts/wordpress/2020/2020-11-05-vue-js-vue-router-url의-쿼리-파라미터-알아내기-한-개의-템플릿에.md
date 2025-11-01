@@ -10,7 +10,7 @@ categories:
 
 URL의 쿼리 파라미터란 아래 빨간색 박스처럼 `?` 뒤에 지정하는 파라미터를 뜻합니다. 여러 개를 연결할 때는 `&` 를 씁니다.
 
-![](./assets/img/wp-content/uploads/2020/11/스크린샷-2020-11-05-오후-10.32.15.png)
+ ![](/assets/img/wp-content/uploads/2020/11/스크린샷-2020-11-05-오후-10.32.15.png)
 
 여기서 `uwasaKeyword` 의 쿼리 파라미터는 무슨 값을 가지고 있는지 알고 싶다면 다음과 같이 입력합니다.
 
@@ -53,9 +53,9 @@ export default new Router({
 
  
 
-![](./assets/img/wp-content/uploads/2020/11/스크린샷-2020-11-05-오후-10.38.47.png)
+ ![](/assets/img/wp-content/uploads/2020/11/스크린샷-2020-11-05-오후-10.38.47.png)
 
-![](./assets/img/wp-content/uploads/2020/11/스크린샷-2020-11-05-오후-10.39.39.png)
+ ![](/assets/img/wp-content/uploads/2020/11/스크린샷-2020-11-05-오후-10.39.39.png)
 
  
 

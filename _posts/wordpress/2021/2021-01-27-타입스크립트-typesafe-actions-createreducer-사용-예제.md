@@ -124,7 +124,7 @@ export const FETCH_LIST = "codeGroup/FETCH_LIST"
 
  
 
-![](./assets/img/wp-content/uploads/2021/01/-2021-01-28-오전-12.34.05-e1611761666127.png)
+ ![](/assets/img/wp-content/uploads/2021/01/-2021-01-28-오전-12.34.05-e1611761666127.png)
 
  
 

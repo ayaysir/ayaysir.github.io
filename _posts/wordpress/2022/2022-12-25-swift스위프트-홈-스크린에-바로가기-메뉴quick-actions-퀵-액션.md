@@ -21,11 +21,11 @@ categories:
 
 아래는 모 음악 앱의 퀵 액션 메뉴인데 첫 번째 `[검색하기]`는 어느 상황에서도 검색 메뉴로 이동하므로 Static 퀵 액션이며, 그 아래 3개 메뉴는 최근 감상한 음악에 따라 키워드에 따라 이름과 이동 페이지가 달라지므로 Dynamic 퀵 액션입니다.
 
-\[caption id="attachment\_5172" align="alignnone" width="407"\]![](./assets/img/wp-content/uploads/2022/12/IMG_9678.jpg) 퀵 액션 (홈 스크린 바로가기 메뉴)\[/caption\]
+\[caption id="attachment\_5172" align="alignnone" width="407"\] ![](/assets/img/wp-content/uploads/2022/12/IMG_9678.jpg) 퀵 액션 (홈 스크린 바로가기 메뉴)\[/caption\]
 
  
 
-\[caption id="attachment\_5171" align="alignnone" width="413"\]![](./assets/img/wp-content/uploads/2022/12/IMG_9679.jpg) 최근 감상 이력이 있는 \[Johan de Meij: ...\] 메뉴를 클릭한 경우 해당 앨범의 페이지로 이동 (Dynamic Quick Action)\[/caption\] 
+\[caption id="attachment\_5171" align="alignnone" width="413"\] ![](/assets/img/wp-content/uploads/2022/12/IMG_9679.jpg) 최근 감상 이력이 있는 \[Johan de Meij: ...\] 메뉴를 클릭한 경우 해당 앨범의 페이지로 이동 (Dynamic Quick Action)\[/caption\] 
 
 퀵 액션은 Static과 Dynamic을 합쳐 **최대 4개까지 추가**할 수 있습니다.
 
@@ -35,7 +35,7 @@ categories:
 
 새로운 iOS App 프로젝트를 생성합니다. 이 포스트는 스토리보드(Interface Builder)를 기준으로 설명합니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.16.22.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.16.22.jpg)
 
  
 
@@ -45,7 +45,7 @@ Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, `inf
 
 `info.plist` 파일을 열고 아래와 같이 트리를 구성합니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.22.37.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.22.37.jpg)
 
 - **UIApplicationShortcutItemType (필수) - Icon Type** 
     - 퀵 액션을 식별하는 고유한 문자열입니다.
@@ -74,11 +74,11 @@ Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, `inf
 > 
 > **1) info.plist 파일을 마우스 오른쪽 클릭한 후 Open As > Source Code를 선택해 소스 편집기로 엽니다.**
 > 
-> ![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.20.36.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.20.36.jpg)
 > 
 > **2) 아래 XML 코드를 `<dict>` 아래에 복붙합니다.**
 > 
-> ![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.21.34.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.21.34.jpg)
 > 
 > ```
 > <key>UIApplicationShortcutItems</key>
@@ -116,13 +116,13 @@ Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, `inf
 > 
 > 아래와 같이 구성되었는지 확인합니다.
 > 
-> ![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.22.12.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.22.12.jpg)
 > 
 > **3) Property List로 다시 열어 Home Screen Shorcut Items가 추가되었는지 확인합니다.**
 > 
-> ![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.22.19.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.22.19.jpg)
 > 
-> ![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-25-오후-2.34.32.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-25-오후-2.34.32.jpg)
 
  
 
@@ -205,7 +205,7 @@ func setDynamicQuickActions(_ value: Int) {
 
 _**SceneDelegate.swift**_ 파일을 열고 `SceneDelegate` 클래스의 하단에 `windowScene(...perfomActionFor...)`를 추가합니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.36.00.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.36.00.jpg)
 
  
 
@@ -260,13 +260,13 @@ func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UI
 
 `[New Message]` 퀵 액션을 클릭해서 열면 다음과 같이 경고창이 표시됩니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.40.18.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.40.18.jpg)
 
  
 
 또한 임의로 만든 Dynamic 퀵 액션을 클릭해서 열면 콘솔에 다음과 같이 표시됩니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-25-오후-3.02.03.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-25-오후-3.02.03.jpg)
 
  
 

@@ -18,19 +18,19 @@ https://youtu.be/iXm0CAjUzmM
 
 ##### 1\. 소프트웨어 인스트러먼트(Software Instruments) 트랙을 추가한 다음 Orchestral > Percussion 경로로 이동하여 Crotales 악기로 변경합니다.
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오전-11.53.06.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오전-11.53.06.png)
 
  
 
 ##### 2\. 이 악기 트랙에서 마우스 오른쪽 버튼을 클릭한 다음 Summing 트랙 스택을 생성합니다.
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오전-11.52.35.png)![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오전-11.57.13.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오전-11.52.35.png) ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오전-11.57.13.png)
 
  
 
 ##### 3\. Summing 스택 안에 Crotales 트랙을 하나 더 생성합니다.
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오전-11.58.57.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오전-11.58.57.png)
 
  
 
@@ -38,11 +38,11 @@ https://youtu.be/iXm0CAjUzmM
 
 **왼쪽 크로테일의 설정값**
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.00.11.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.00.11.png)
 
 **오른쪽 크로테일의 설정값**
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.02.35.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.02.35.png)
 
  
 
@@ -50,11 +50,11 @@ https://youtu.be/iXm0CAjUzmM
 
 **왼쪽 트랙의 피아노 롤 예시**
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.06.07.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.06.07.png)
 
 **오른쪽 트랙의 피아노 롤 예시**
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.06.57.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.06.57.png)
 
 추가적으로 미디 트랜스폼(MIDI Transform) 기능을 이용하여 노트의 피치, 벨로시티 등을 랜더마이징 하는 것도 고려할 수 있습니다.
 
@@ -62,8 +62,8 @@ https://youtu.be/iXm0CAjUzmM
 
 ##### 6\. 크로테일을 모은 Summing 트랙에 리버브 효과(ChromaVerb)를 입힙니다.
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.09.49.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.09.49.png)
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.10.41.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-11-오후-12.10.41.png)
 
 저는 위의 사진과 같이 로직에서 기본으로 제공하는 리버브 효과 ChromaVerb의 Empty Hall 을 적용하였는데, 여기에 정해진 답은 없으므로 더 자연스러운 효과가 있다면 그것을 사용하는 것이 좋겠습니다.

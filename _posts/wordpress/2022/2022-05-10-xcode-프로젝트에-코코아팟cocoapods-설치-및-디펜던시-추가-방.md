@@ -41,19 +41,19 @@ pod init
 참고로 터미널을 통해 루트 폴더로 이동하는 방법은 다음과 같습니다. 
 
 - 프로젝트 마우스 오른쪽 클릭 후 `[Show in Finder]`<br>
-![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.02.16.jpg)<br><br>
+ ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.02.16.jpg)<br><br>
 
 
 - 프로젝트 폴더 오른쪽 클릭 후 `[정보 가져오기]`<br> 
-![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.24.52.jpg)<br><br>
+ ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.24.52.jpg)<br><br>
 
 
 - `[위치]` 에서 마우스 오른쪽 버튼 클릭 후 `[경로 이름으로 복사]`<br>  
-![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.26.11.jpg)<br><br>
+ ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.26.11.jpg)<br><br>
 
 
 - 터미널 열고 `cd "[붙여넣은 경로]"`<br>
-![](./assets/img/wp-content/uploads/2022/05/-2022-05-10-오후-11.26.45-e1652193524782.jpg)<br><br>
+ ![](/assets/img/wp-content/uploads/2022/05/-2022-05-10-오후-11.26.45-e1652193524782.jpg)<br><br>
 
 
  
@@ -112,4 +112,4 @@ pod install
 
 ## **5\. 설치가 완료되면 프로젝트 루트 폴더에 `[프로젝트명].xcworkspace` 라는 파일이 생성됩니다. 이후 프로젝트의 모든 작업은 이 워크스페이스 파일을 열어 진행해야 합니다.**
 
-![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.33.46.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-10-오후-11.33.46.jpg)

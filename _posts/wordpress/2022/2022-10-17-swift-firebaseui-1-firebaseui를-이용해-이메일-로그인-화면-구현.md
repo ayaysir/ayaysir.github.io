@@ -104,7 +104,7 @@ override func viewDidAppear(_ animated: Bool) {
 
 이렇게 하면 실제 로그인이 됩니다. 그리고 비밀번호가 틀렸거나 이메일 형식이 맞지 않는 경우 등 유효성 검사도 저절로 체크하도록 이미 기능이 구현되어 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-03.03.57-복사본.jpg) ![](./assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-03.04.12-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-03.03.57-복사본.jpg)  ![](/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-03.04.12-복사본.jpg)
 
 하지만 시각적으로 로그인이 되었다는 것을 확인할 방법이 없습니다.
 
@@ -112,7 +112,7 @@ override func viewDidAppear(_ animated: Bool) {
 
 #### **추가 구현 1: 로그인 여부 표시 및 현재 유저의 이메일 표시**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오전-3.07.28.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오전-3.07.28.jpg)
 
  
 
@@ -171,7 +171,7 @@ override func viewWillAppear(_ animated: Bool) {
 
 로그인 화면 첫 화면을 보면 하면이 너무 휑하다는 것을 알 수 있습니다.
 
-\[caption id="attachment\_4960" align="alignnone" width="305"\]![](./assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-02.53.26.png) 첫 화면\[/caption\]
+\[caption id="attachment\_4960" align="alignnone" width="305"\] ![](/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-02.53.26.png) 첫 화면\[/caption\]
 
 나중에 구글이나 애플 인증 버튼이 추가되면 약간 나아지지만, 아무 사진도 설명도 없는 화면은 혼란을 야기할 수 있습니다. 이 화면을 커스터마이징 해보겠습니다.
 

@@ -24,9 +24,9 @@ import AVFoundation
 
 **2) 소리 파일을 드래그 앤 드롭으로 프로젝트 내에 추가합니다.**
 
-![](./assets/img/wp-content/uploads/2022/09/mosiac-스크린샷-2022-09-08-오후-6.04.04.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/mosiac-스크린샷-2022-09-08-오후-6.04.04.jpg)
 
-\[caption id="attachment\_4739" align="alignnone" width="746"\]![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-08-오후-6.03.40.jpg) Finish 버튼 클릭\[/caption\]
+\[caption id="attachment\_4739" align="alignnone" width="746"\] ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-08-오후-6.03.40.jpg) Finish 버튼 클릭\[/caption\]
 
  
 

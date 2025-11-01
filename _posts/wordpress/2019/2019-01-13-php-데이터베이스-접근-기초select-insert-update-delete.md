@@ -178,7 +178,7 @@ $seq = $_POST['seq'];
 
  
 
-[![](./assets/img/wp-content/uploads/2019/01/스크린샷_2018-09-10_오후_6.28.43.png)](http://www.yoonbumtae.com/phpex)
+[ ![](/assets/img/wp-content/uploads/2019/01/스크린샷_2018-09-10_오후_6.28.43.png)](http://www.yoonbumtae.com/phpex)
 
 [사이트에서 직접 보기](http://yoonbumtae.com/phpex)
 
@@ -190,7 +190,7 @@ $seq = $_POST['seq'];
 
 ##### **데이터베이스 구조**
 
-![](./assets/img/wp-content/uploads/2019/01/-2021-02-17-오후-12.20.39-e1613532613329.png)
+ ![](/assets/img/wp-content/uploads/2019/01/-2021-02-17-오후-12.20.39-e1613532613329.png)
 
 ```
 --

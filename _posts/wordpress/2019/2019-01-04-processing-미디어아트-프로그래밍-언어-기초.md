@@ -56,7 +56,7 @@ void draw() {
 
 `colorMode(HSB, 1)`은 색상 정보를 RGB 대신 HSB(Hue: 색조, Saturation: 채도, Brightness: 휘도) 를 사용하고, 최대값을 1로 합니다. 만약 1 대신 100이라면 0 ~ 100 내에서 설정합니다. 위의 예제 중 `color(0.5, 1, 192, 1)` 부분의 192는 최대값 1을 한참 벗어나는데 이렇게 작성해도 오류는 나지 않고 192는 최대값인 1로 취급되어 실행됩니다.
 
-![](./assets/img/wp-content/uploads/2019/01/line-000002.png)
+ ![](/assets/img/wp-content/uploads/2019/01/line-000002.png)
 
 #### **2\. draw() 메소드**
 

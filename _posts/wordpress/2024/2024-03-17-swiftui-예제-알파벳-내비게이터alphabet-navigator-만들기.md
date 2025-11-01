@@ -64,7 +64,7 @@ struct ContentView: View {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-17-오후-7.21.25-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-17-오후-7.21.25-복사본.jpg)
 
  
 
@@ -108,7 +108,7 @@ ForEach(alphabet, id: \.self) { letter in
 - `ForEach`를 통해 알파벳 문자마다 섹션을 만들고, 헤더 텍스트와 `id`를 해당 알파벳으로 지정합니다.
 - `id`는 나중에 알파벳 내비게이터에서 버튼을 눌렀을 때 스크롤 위치를 지정하기 위한 역할입니다.
 
-![](./assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-17-오후-7.33.27-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-17-오후-7.33.27-복사본.jpg)
 
  
 
@@ -134,7 +134,7 @@ ForEach(alphabet, id: \.self) { letter in
 
  
 
-![](./assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-17-오후-7.36.17-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-17-오후-7.36.17-복사본.jpg)
 
  
 

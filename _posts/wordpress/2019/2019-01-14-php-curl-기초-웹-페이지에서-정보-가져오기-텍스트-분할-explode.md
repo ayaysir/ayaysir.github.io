@@ -56,4 +56,4 @@ curl_close($ch);
 ?>
 ```
 
-![](./assets/img/wp-content/uploads/2019/01/스크린샷_2018-11-05_오전_1.41.15.png)
+ ![](/assets/img/wp-content/uploads/2019/01/스크린샷_2018-11-05_오전_1.41.15.png)

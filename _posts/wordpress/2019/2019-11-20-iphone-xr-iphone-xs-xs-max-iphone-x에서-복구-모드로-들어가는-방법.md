@@ -22,7 +22,7 @@ categories:
 
 iTunes (또는 Finder)는 iPhone이 복구 모드에서 발견되었다는 경고를 표시합니다.
 
-![](./assets/img/wp-content/uploads/2019/11/iphone-xr-xs-x-xs-max-recovery-mode.jpg) 복구 모드로 들어가면 iPhone XR, XS, XS Max, X를 사용 가능한 최신 iOS 버전으로 업데이트 하거나 백업 또는 장치를 다음과 같이 설정하여 평소대로 iTunes (또는 Finder)로 복원 할 수 있습니다.
+ ![](/assets/img/wp-content/uploads/2019/11/iphone-xr-xs-x-xs-max-recovery-mode.jpg) 복구 모드로 들어가면 iPhone XR, XS, XS Max, X를 사용 가능한 최신 iOS 버전으로 업데이트 하거나 백업 또는 장치를 다음과 같이 설정하여 평소대로 iTunes (또는 Finder)로 복원 할 수 있습니다.
 
 IPSW 파일이 Apple에 의해 활성화된 상태이고, 특정 iPhone XR, XS, XS Max, X 모델과 일치하는 한, 필요한 경우 IPSW를 사용하여 복구 모드의 iPhone을 복원 할 수도 있습니다. 최신 iOS 버전의 iOS IPSW 파일은 [여기](http://ipsw.me)에서 찾을 수 있습니다.
 

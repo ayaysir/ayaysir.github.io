@@ -25,8 +25,8 @@ https://gist.github.com/ayaysir/9efdcf4be5fbbdc30421e9695bdb0819
 
  
 
-![](./assets/img/wp-content/uploads/2019/05/seri1.png)
+ ![](/assets/img/wp-content/uploads/2019/05/seri1.png)
 
 껐다 켜도 내용이 그대로 남아있다.
 
-![](./assets/img/wp-content/uploads/2019/05/seri2.png)
+ ![](/assets/img/wp-content/uploads/2019/05/seri2.png)

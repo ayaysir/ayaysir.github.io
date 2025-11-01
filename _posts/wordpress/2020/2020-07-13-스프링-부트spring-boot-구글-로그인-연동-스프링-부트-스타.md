@@ -36,9 +36,9 @@ categories:
 
 #### **프로젝트 구조**
 
-![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-5.55.34.png)
+ ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-5.55.34.png)
 
-![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-6.42.36.png)
+ ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-6.42.36.png)
 
  
 
@@ -178,7 +178,7 @@ public class User extends BaseTimeEntity {
 
 ```
 
-\[caption id="attachment\_2660" align="alignnone" width="465"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-6.27.12.png) User 엔티티 클래스를 통해 테이블을 만들었습니다.\[/caption\]
+\[caption id="attachment\_2660" align="alignnone" width="465"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-6.27.12.png) User 엔티티 클래스를 통해 테이블을 만들었습니다.\[/caption\]
 
  
 
@@ -547,15 +547,15 @@ public class IndexController {
 
 #### **결과**
 
-\[caption id="attachment\_2657" align="alignnone" width="1864"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-6.20.24.png) 로그인 전 화면\[/caption\]
+\[caption id="attachment\_2657" align="alignnone" width="1864"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-6.20.24.png) 로그인 전 화면\[/caption\]
 
  
 
-\[caption id="attachment\_2658" align="alignnone" width="408"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-6.21.15.png) Google Login 버튼을 클릭하면 위와 같은 화면이 나옵니다.\[/caption\]
+\[caption id="attachment\_2658" align="alignnone" width="408"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-6.21.15.png) Google Login 버튼을 클릭하면 위와 같은 화면이 나옵니다.\[/caption\]
 
  
 
-\[caption id="attachment\_2659" align="alignnone" width="1890"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-6.23.36.png) 로그인이 정상적으로 되었습니다.\[/caption\]
+\[caption id="attachment\_2659" align="alignnone" width="1890"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-6.23.36.png) 로그인이 정상적으로 되었습니다.\[/caption\]
 
  
 
@@ -653,6 +653,6 @@ public class OAuthAttributes {
 
  
 
-![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-7.49.53.png)
+ ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-7.49.53.png)
 
-![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-7.48.56.png)
+ ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-13-오후-7.48.56.png)

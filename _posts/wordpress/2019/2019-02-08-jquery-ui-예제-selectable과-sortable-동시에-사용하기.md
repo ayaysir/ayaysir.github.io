@@ -121,4 +121,4 @@ JQuery UI (일반 JQuery와는 별개인 파생 프로젝트, [https://jqueryui.
 
 ```
 
-![](./assets/img/wp-content/uploads/2019/02/reverse.gif)
+ ![](/assets/img/wp-content/uploads/2019/02/reverse.gif)

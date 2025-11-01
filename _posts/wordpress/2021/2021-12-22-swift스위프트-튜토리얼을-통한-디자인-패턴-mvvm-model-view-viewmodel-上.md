@@ -34,7 +34,7 @@ MVVM(Model-View-ViewModel)은 오브젝트를 세 개의 개별 그룹으로 분
 
  
 
-![](./assets/img/wp-content/uploads/2021/12/MVVM_Diagram-650x266-1.png)
+ ![](/assets/img/wp-content/uploads/2021/12/MVVM_Diagram-650x266-1.png)
 
 이 패턴이 친숙한가요? Model-View-Controller(MVC)와 매우 유사합니다. 이 페이지 상단의 클래스 다이어그램에는 뷰 컨트롤러가 포함되어 있습니다. 뷰 컨트롤러는 MVVM에 존재하지만 그 역할은 최소화됩니다.
 
@@ -48,7 +48,7 @@ MVVM(Model-View-ViewModel)은 오브젝트를 세 개의 개별 그룹으로 분
 
 이를 통해 개발자들이 농담으로 "MVC: Massive View Controller"라고 부르는 것에 대해 알 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2021/12/MVC_Suitcase.png)
+ ![](/assets/img/wp-content/uploads/2021/12/MVC_Suitcase.png)
 
  
 
@@ -56,7 +56,7 @@ MVVM(Model-View-ViewModel)은 오브젝트를 세 개의 개별 그룹으로 분
 
 Xcode에서 새로운 플레이그라운드를 생성합니다.
 
-![](./assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-22-오후-11.27.10.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-22-오후-11.27.10.jpg)
 
  
 
@@ -204,9 +204,9 @@ public class PetView: UIView {
 
 그 전에 플레이그라운드의 `resource`에 아래 이미지를 `stuart`라는 이름으로 추가합니다.
 
-![](./assets/img/wp-content/uploads/2021/12/stuart.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/stuart.jpg)
 
-![](./assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-22-오후-11.52.55.png)
+ ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-22-오후-11.52.55.png)
 
  
 
@@ -247,7 +247,7 @@ PlaygroundPage.current.liveView = view
 
 이를 실제로 보려면 **View ▸ Assistant Editor ▸ Show Assistant Editor**를 선택하여 렌더링된 뷰를 확인합니다.
 
-![](./assets/img/wp-content/uploads/2021/12/PetView_Stuart-357x500-1.png)
+ ![](/assets/img/wp-content/uploads/2021/12/PetView_Stuart-357x500-1.png)
 
 Stuart는 정확히 어떤 종류의 애완 동물입니까? 그는 물론 쿠키 몬스터입니다! 그들은 매우 드뭅니다(very rare).
 

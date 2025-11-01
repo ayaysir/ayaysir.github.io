@@ -8,9 +8,9 @@ categories:
 
 이 예제는 아래와 같이 게시판 등에서 글을 작성할 때 유튜브 주소를 추가하면, 해당 주소에서 유튜브 동영상 ID를 추출한 후 `iframe` 플레이어 형태로 변환합니다.
 
-![](./assets/img/wp-content/uploads/2021/06/스크린샷-2021-06-04-오후-9.10.35.png)
+ ![](/assets/img/wp-content/uploads/2021/06/스크린샷-2021-06-04-오후-9.10.35.png)
 
-![](./assets/img/wp-content/uploads/2021/06/스크린샷-2021-06-04-오후-9.11.11.jpg)
+ ![](/assets/img/wp-content/uploads/2021/06/스크린샷-2021-06-04-오후-9.11.11.jpg)
 
  
 
@@ -23,7 +23,7 @@ const youtubeUrl = /(http:|https:)?(\/\/)?(www\.)?(youtube.com|youtu.be)\/(watch
 
 이렇게 하면 아래와 같이 유튜브 주소를 찾을 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2021/06/스크린샷-2021-06-04-오후-10.01.56.jpg)
+ ![](/assets/img/wp-content/uploads/2021/06/스크린샷-2021-06-04-오후-10.01.56.jpg)
 
  
 
@@ -78,7 +78,7 @@ function youtubeParser(url, ...groups) {
 
  
 
-![](./assets/img/wp-content/uploads/2021/06/스크린샷-2021-06-04-오후-10.14.12.jpg)
+ ![](/assets/img/wp-content/uploads/2021/06/스크린샷-2021-06-04-오후-10.14.12.jpg)
 
  
 

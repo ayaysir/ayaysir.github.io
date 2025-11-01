@@ -16,7 +16,7 @@ tags:
 
  
 
-![](./assets/img/wp-content/uploads/2019/01/마방진.png)
+ ![](/assets/img/wp-content/uploads/2019/01/마방진.png)
 
  
 

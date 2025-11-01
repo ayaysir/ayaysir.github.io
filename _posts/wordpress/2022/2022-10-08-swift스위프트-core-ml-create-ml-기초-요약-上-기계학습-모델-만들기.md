@@ -92,31 +92,31 @@ categories:
 
 **1: Xcode를 열고 상단 `Xcode > Open Developer Tool > Create ML`을 클릭합니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.22.02.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.22.02.jpg)
 
  
 
 **2: 파일 선택 창이 열리는데 하단의 `New Document` 버튼을 클릭합니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.22.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.22.52.jpg)
 
  
 
 **3: 다양한 예제가 있는데, 여기서는 이미지 분석(`Image Classification`) 프로젝트를 생성합니다. 해당 아이콘을 클릭하고 하단의 Next 버튼을 클릭합니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.23.24.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.23.24.jpg)
 
  
 
 **4: 프로젝트 이름, 저자, 설명 등을 작성합니다. 하단의 `Next` 버튼을 클릭합니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.24.26.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.24.26.jpg)
 
  
 
 **5: 파일 창이 뜨는데 `Create` 버튼을 누르면 프로젝트가 생성됩니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.24.48.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.24.48.jpg)
 
 #### **학습 진행하기**
 
@@ -135,17 +135,17 @@ categories:
 
 **1: Training Data를 추가합니다. 학습 데이터 박스에 있는 `Select...` 버튼을 클릭합니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.26.51.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.26.51.jpg)
 
 파일 창이 뜨는데, 상위 폴더를 기준으로 각각 클래스(카테고리)를 폴더로 구분하여 정리한 후 해당 상위 폴더를 선택합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.27.06.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.27.06.jpg)
 
  
 
 보다 자세한 폴더 구조는 다음과 같습니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-08-오후-11.11.37.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-08-오후-11.11.37.jpg)
 
 사진 수는 많을 수록 좋지만, 반드시 많은 사진 학습 수가 모델의 구분 성능을 좌우하지는 않습니다. (사진 수가 많은데 오히려 Precison & Recall 수치가 떨어지는 경우도 있음) 이 글에서는 각 클래스당 200개씩 사진을 준비했습니다.
 
@@ -170,7 +170,7 @@ Training Data와 Testing Data가 준비되었다면 상단의 `Train` 버튼을 
 
  
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.27.55.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.27.55.jpg)
 
  
 
@@ -178,7 +178,7 @@ Training Data와 Testing Data가 준비되었다면 상단의 `Train` 버튼을 
 
 학습이 완료되면 Evaluation 탭 란에 결과가 표시됩니다. Precision과 Recall 두 수치를 이용해 모델의 성능을 평가합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.29.37.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.29.37.jpg)
 
  
 
@@ -186,7 +186,7 @@ Training Data와 Testing Data가 준비되었다면 상단의 `Train` 버튼을 
 > 
 > 모델을 평가하는 요소는 결국, 모델이 내놓은 답과 실제 정답의 관계로써 정의를 내릴 수 있습니다. 정답이 True와 False로 나누어져있고, 분류 모델 또한 True False의 답을 내놓습니다. 그렇게 하면, 아래와 같이 2x2 matrix로 case를 나누어볼 수 있겠네요.
 > 
-> ![](./assets/img/wp-content/uploads/2022/10/다운로드.png)
+>  ![](/assets/img/wp-content/uploads/2022/10/다운로드.png)
 > 
 > - True Positive(`TP`) : 실제 True인 정답을 True라고 예측 (**정답**)
 > - False Positive(`FP`) : 실제 False인 정답을 True라고 예측 (오답)
@@ -212,21 +212,21 @@ Training Data와 Testing Data가 준비되었다면 상단의 `Train` 버튼을 
 
 Preview 탭을 클릭한 뒤, 여러 동물들의 사진을 드래그 앤 드롭으로 왼쪽의 파일 선택 창에 추가합니다. 다음 사진을 클릭해 보면 모델이 어떻게 분류하는지 미리 볼 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-08-오후-11.40.10.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-08-오후-11.40.10.jpg)
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-08-오후-11.40.33.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-08-오후-11.40.33.jpg)
 
 Create ML로 만든 이미지 분류기의 단점은 사진의 두 종이 복수로 있을 경우는 잘 구분하지 못한다는 점에 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.42.17.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-11.42.17.jpg)
 
 **6: 완성된 모델을 파일로 추출하기**
 
 Precision과 Recall을 고려하여 선택된 모델을 파일로 추출합니다. `Output` 탭을 클릭한 뒤 `Get` 버튼을 누르고 .mlmodel 파일로 저장합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-08-오전-12.43.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-08-오전-12.43.52.jpg)
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-08-오후-11.47.01.png)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-08-오후-11.47.01.png)
 
  
 

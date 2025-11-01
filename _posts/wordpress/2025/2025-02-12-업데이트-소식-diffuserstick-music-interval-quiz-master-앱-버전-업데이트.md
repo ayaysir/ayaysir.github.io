@@ -19,7 +19,7 @@ categories:
 
 디퓨저 목록을 스와이프해서 상세 페이지에 들어가지 않고도 바로 교체할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2025/02/스크린샷-2025-02-13-오전-12.15.32.jpeg)
+ ![](/assets/img/wp-content/uploads/2025/02/스크린샷-2025-02-13-오전-12.15.32.jpeg)
 
 <iframe width="372" height="480" src="https://giphy.com/embed/zkJbXIwUANCbqeKUV6" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
 
@@ -45,7 +45,7 @@ categories:
 
 이 기능을 사용하면 하루에 한 번씩 학습을 유도하는 푸시 알림(Local Notification)을 받게 됩니다. 단순한 푸시 알림이 아니라 알림에서도 음정을 학습할 수 있도록 "오늘의 음정"을 제공합니다!
 
-![](./assets/img/wp-content/uploads/2025/02/Simulator-Screenshot-iPhone-16-Pro-Max-2025-02-13-at-00.24.04-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2025/02/Simulator-Screenshot-iPhone-16-Pro-Max-2025-02-13-at-00.24.04-복사본.jpg)
 
 <iframe width="220" height="480" src="https://giphy.com/embed/XDUrumnLI5l4gYA3fN" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
 

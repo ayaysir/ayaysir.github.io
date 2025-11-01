@@ -27,7 +27,7 @@ const gen1 = generator1()
 console.log(gen1.next(), gen1.next(), gen1.next())
 ```
 
-![](./assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-03-오후-11.53.58.png)
+ ![](/assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-03-오후-11.53.58.png)
 
 위에 보이는 객체는 `IteratorResult` 타입의 객체이며, `value`는 `yield` 값이고, `done`은 제너레이터 순회가 종료되었는지를 나타내는 변수입니다. 지금은 명시적으로 제너레이터 순회 종료를 하지 않았으므로 `done`이 모두 `false`가 됩니다.
 
@@ -40,7 +40,7 @@ for(let num of generator1()) {
 
 ```
 
-![](./assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-04-오전-12.00.42.png)
+ ![](/assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-04-오전-12.00.42.png)
 
  
 
@@ -53,7 +53,7 @@ const gen1 = generator1()
 console.log(gen1.next(), gen1.return(-Infinity), gen1.next())
 ```
 
-![](./assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-04-오전-12.02.17.png)
+ ![](/assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-04-오전-12.02.17.png)
 
 두 번째에 `.next()` 대신 `.return()`을 사용하면 제너레이터가 강제 종료되며, `done` 도 `true`로 바뀝니다. 이후에는 다시 `.next()`를 호출해도 `3`이 나오지 않습니다. `.return()`의 괄호 안에 값을 넣으면 해당 값이 `value`에 강제 배정되며, 아무것도 넣지 않으면 `value`는 `undefined`가 할당됩니다.
 
@@ -104,7 +104,7 @@ console.log(gen2.next(), gen2.next())
 console.log(gen2.throw("err"), gen2.next())
 ```
 
-![](./assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-04-오전-12.17.51.png)
+ ![](/assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-04-오전-12.17.51.png)
 
 `throw` 블록에서 `return` 대신 `yield`를 사용할 수도 있으며, 이 경우 `.next()`가 계속 진행됩니다.
 
@@ -127,7 +127,7 @@ for(let chr of generator3()) {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-04-오전-12.20.23.png)
+ ![](/assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-04-오전-12.20.23.png)
 
 중간의 `["C", "D", "E"]` 배열을 `yield*` 키워드로 배정하면 각 원소 순서대로 `"C"`, `"D"`, `"E"`가 `.next()`를 통해 호출될 수 있음을 알 수 있습니다.
 

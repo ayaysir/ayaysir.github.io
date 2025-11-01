@@ -19,7 +19,7 @@ tags:
 
 1\. 처음 스타트 [프로젝트 생성](http://yoonbumtae.com/?p=1018) 시 디펜던시에서 **Security**를 선택합니다.
 
-![](./assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-4.49.36.png)
+ ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-4.49.36.png)
 
 나중에 수동으로 추가할 경우에는 아래를 `pom.xml`의 `<dependencies>` 내에 추가합니다.
 
@@ -40,7 +40,7 @@ tags:
 
 2\. 프로젝트를 생성하고 서버를 가동하면 어떤 URL에 접속해도 기본 로그인 화면만 나오게 됩니다. 기본 로그인 화면이 뜨지 않게 하기 위해 초기 세팅을 합니다.
 
-\[caption id="attachment\_1514" align="alignnone" width="296"\]![](./assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.02.54.png) 기본 로그인 화면\[/caption\]
+\[caption id="attachment\_1514" align="alignnone" width="296"\] ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.02.54.png) 기본 로그인 화면\[/caption\]
 
  
 
@@ -98,7 +98,7 @@ public class TestController {
 
 ```
 
-![](./assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.11.48.png)
+ ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.11.48.png)
 
  
 
@@ -206,23 +206,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
  
 
-\[caption id="attachment\_1517" align="alignnone" width="264"\]![](./assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.37.40.png) 첫 페이지\[/caption\]
+\[caption id="attachment\_1517" align="alignnone" width="264"\] ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.37.40.png) 첫 페이지\[/caption\]
 
  
 
-\[caption id="attachment\_1518" align="alignnone" width="418"\]![](./assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.38.01.png) 운영자(admin)으로 로그인 한 경우\[/caption\]
+\[caption id="attachment\_1518" align="alignnone" width="418"\] ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.38.01.png) 운영자(admin)으로 로그인 한 경우\[/caption\]
 
  
 
-\[caption id="attachment\_1519" align="alignnone" width="315"\]![](./assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.38.18.png) 운영자가 전용 페이지에 접근했을 때\[/caption\]
+\[caption id="attachment\_1519" align="alignnone" width="315"\] ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.38.18.png) 운영자가 전용 페이지에 접근했을 때\[/caption\]
 
  
 
-\[caption id="attachment\_1520" align="alignnone" width="396"\]![](./assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.38.35.png) 손님(guest)으로 로그인한 경우\[/caption\]
+\[caption id="attachment\_1520" align="alignnone" width="396"\] ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.38.35.png) 손님(guest)으로 로그인한 경우\[/caption\]
 
  
 
-\[caption id="attachment\_1521" align="alignnone" width="393"\]![](./assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.38.56.png) 손님이 운영자 전용 페이지에 접속하려고 할 때\[/caption\]
+\[caption id="attachment\_1521" align="alignnone" width="393"\] ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.38.56.png) 손님이 운영자 전용 페이지에 접속하려고 할 때\[/caption\]
 
  
 

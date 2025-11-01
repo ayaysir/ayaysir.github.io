@@ -61,4 +61,4 @@ editor.session.setMode("ace/mode/javascript");
 
 ## dev 서버 실행 후 결과 확인
 
-![](./assets/img/wp-content/uploads/2019/02/ace.png)
+ ![](/assets/img/wp-content/uploads/2019/02/ace.png)

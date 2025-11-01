@@ -8,13 +8,13 @@ categories:
 
 일반적인 스토리보드(Storyboard) 하의 개발환경에서 UI 작업에 대한 결과물을 보려면 매번 빌드하는 과정을 거쳐야 하는 불편함이 있었습니다. 보완책으로 스토리보드에서 미리보기가 가능한 `@IBDesignable`이라는 어노테이션이 있지만 아래와 같이 없는것만 못한 쓰레기 기능입니다.
 
-\[caption id="attachment\_4046" align="alignnone" width="409"\]![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-07-오후-9.12.15.jpg) 오류가 잦아 사용이 불가능한 `@IBDesignable`\[/caption\]
+\[caption id="attachment\_4046" align="alignnone" width="409"\] ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-07-오후-9.12.15.jpg) 오류가 잦아 사용이 불가능한 `@IBDesignable`\[/caption\]
 
  
 
 이번 예제는 실시간 프리뷰 기능이 도입된 `SwiftUI`를 간접적으로 이용하여 @IBDesignable 대신에 사용할 수 있는 미리보기입니다. 이 글에서는 `UIView에` 대한 미리보기를 만들겠습니다.
 
-![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-07-오후-9.40.39.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-07-오후-9.40.39.jpg)
 
  
 
@@ -127,19 +127,19 @@ struct ExampleView_Preview: PreviewProvider {
 
 ##### **4\. `Editor` 메뉴 > `Canvas`를 체크합니다.**
 
-![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-07-오후-9.20.46.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-07-오후-9.20.46.jpg)
 
  
 
 ##### **5\. `Canvas`가 실행되면 코드 창 오른쪽에 프리뷰 창이 나타나는데 만약 업데이트가 paused된 상태라면 `resume`을 클릭합니다.**
 
-![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-07-오후-9.21.40.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-07-오후-9.21.40.jpg)
 
  
 
 ##### **6\. 일반적인 환경에서 버전 오류가 발생하지 않지만 만약 실행이 되지 않는다면 프로젝트 세팅 창의 애플리케이션 `TARGETS`에서 `Deployment Info`의 버전을 iOS 13 이상으로 설정합니다.**
 
-![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-07-오후-9.11.04.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-07-오후-9.11.04.jpg)
 
  
 

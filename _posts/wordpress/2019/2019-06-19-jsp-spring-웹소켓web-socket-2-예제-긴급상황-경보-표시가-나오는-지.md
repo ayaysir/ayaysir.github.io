@@ -350,7 +350,7 @@ source.on('addfeature', function(e) {
 
 지도 예제를 참조해서 만들며 좌표 담당이 아닌 다른 사람들이 메시지를 보내면 가만히 있다가 좌표 담당이 긴급 상황 신호와 좌표를 보내면 그 좌표를 바탕으로 빨간색 원을 확대하면서 깜빡거린다.
 
-![](./assets/img/wp-content/uploads/2019/06/alert1.png) ![](./assets/img/wp-content/uploads/2019/06/alert2.png)
+ ![](/assets/img/wp-content/uploads/2019/06/alert1.png)  ![](/assets/img/wp-content/uploads/2019/06/alert2.png)
 
 <iframe width="480" height="217" src="https://giphy.com/embed/WRL92eyXWV6FSiJvTZ" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
 

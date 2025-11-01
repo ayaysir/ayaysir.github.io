@@ -30,7 +30,7 @@ categories:
 
  
 
-![](./assets/img/wp-content/uploads/2022/03/600px-Mozart_k545_opening.svg_.png)
+ ![](/assets/img/wp-content/uploads/2022/03/600px-Mozart_k545_opening.svg_.png)
 
 \[audio ogg="https://upload.wikimedia.org/wikipedia/commons/3/38/Wolfgang\_Amadeus\_Mozart\_-\_sonata\_no.\_16\_in\_c\_major%2C\_k.545\_%27sonata\_facile%27\_-\_i.\_allegro.ogg"\]\[/audio\]
 
@@ -38,7 +38,7 @@ _볼프강 아마데우스 모차르트의 피아노 소나타 K.545 1악장의 
 
  
 
-![](./assets/img/wp-content/uploads/2022/03/2880px-Alberti_bass_4-4_and_3-4_equivalents.png)
+ ![](/assets/img/wp-content/uploads/2022/03/2880px-Alberti_bass_4-4_and_3-4_equivalents.png)
 
 \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2022/03/Alberti\_bass\_4-4\_and\_3-4\_equivalents\_4-4.mp3"\]\[/audio\]
 
@@ -50,7 +50,7 @@ _동일한 화음의 4/4 박자(위)와 3/4 박자(아래) 알베르티 베이�
 
  
 
-![](./assets/img/wp-content/uploads/2022/03/2880px-Alberti_bass_V7_variants.png)
+ ![](/assets/img/wp-content/uploads/2022/03/2880px-Alberti_bass_V7_variants.png)
 
 _V7 화음의 알베르티 베이스_
 
@@ -58,7 +58,7 @@ _V7 화음의 알베르티 베이스_
 
  
 
-![](./assets/img/wp-content/uploads/2022/03/2880px-Alberti_bass_in_Thomas_Attwoods_Sonatina_in_G_Major_opening.png)
+ ![](/assets/img/wp-content/uploads/2022/03/2880px-Alberti_bass_in_Thomas_Attwoods_Sonatina_in_G_Major_opening.png)
 
 \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2022/03/Alberti\_bass\_in\_Thomas\_Attwoods\_Sonatina\_in\_G\_Major\_opening.mp3"\]\[/audio\]
 
@@ -68,7 +68,7 @@ _토마스 애트우드(Thomas Attwood; 1765–1838)의 G장조 소나티네 도
 
  
 
-![](./assets/img/wp-content/uploads/2022/03/2880px-Alberti_bass_in_Clementi_Opus_36_No._2_opening.png)
+ ![](/assets/img/wp-content/uploads/2022/03/2880px-Alberti_bass_in_Clementi_Opus_36_No._2_opening.png)
 
 \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2022/03/Alberti\_bass\_in\_Clementi\_Opus\_36\_No.mp3"\]\[/audio\]
 
@@ -78,7 +78,7 @@ _무치오 클라네티(Muzio Clementi)의 소나티네 G장조 Op. 36, No. 2(17
 
  
 
-![](./assets/img/wp-content/uploads/2022/03/2880px-Alberti_bass_in_Beethoven_WoO_78_Variation_V_opening.png)
+ ![](/assets/img/wp-content/uploads/2022/03/2880px-Alberti_bass_in_Beethoven_WoO_78_Variation_V_opening.png)
 
 \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2022/03/Alberti\_bass\_in\_Beethoven\_WoO\_78\_Variation\_V\_opening.mp3"\]\[/audio\]
 
@@ -88,7 +88,7 @@ _베토벤의 영국 국가(God Save the King)에 의한 7개 변주곡에서 5�
 
  
 
-![](./assets/img/wp-content/uploads/2022/03/pipline.png)
+ ![](/assets/img/wp-content/uploads/2022/03/pipline.png)
 
 https://youtu.be/w7c2ZKamzS4
 
@@ -98,7 +98,7 @@ _The Chantays - Pipeline_
 
  
 
-![](./assets/img/wp-content/uploads/2022/03/스크린샷-2022-03-23-오후-7.41.49.jpg)
+ ![](/assets/img/wp-content/uploads/2022/03/스크린샷-2022-03-23-오후-7.41.49.jpg)
 
 https://youtu.be/9GB8SSIK0sQ?t=33
 

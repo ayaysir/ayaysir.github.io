@@ -11,7 +11,7 @@ categories:
 
 #### **프로젝트 구조**
 
-![](./assets/img/wp-content/uploads/2020/02/스크린샷-2020-02-25-오후-7.14.53.png)
+ ![](/assets/img/wp-content/uploads/2020/02/스크린샷-2020-02-25-오후-7.14.53.png)
 
 #### **1\. Spring Boot 프로젝트 생성**
 
@@ -299,4 +299,4 @@ public class WebController {
 
  
 
-![](./assets/img/wp-content/uploads/2020/02/스크린샷-2020-02-25-오후-7.26.50.png)
+ ![](/assets/img/wp-content/uploads/2020/02/스크린샷-2020-02-25-오후-7.26.50.png)

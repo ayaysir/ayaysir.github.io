@@ -33,7 +33,7 @@ console.log(xmlHeader)
 
 XML을 다루는 과정을 간략화한 위 코드는 크롬에서는 아무런 문제가 없는데 익스플로러에서는 다음 오류가 발생한다.
 
-[![](./assets/img/wp-content/uploads/2019/05/wde1.png)](http://yoonbumtae.com/?attachment_id=1136)
+[ ![](/assets/img/wp-content/uploads/2019/05/wde1.png)](http://yoonbumtae.com/?attachment_id=1136)
 
 원인은 xmlHeader의 XML 요소들은 자바스크립트에서 자체적으로 생성된 `document`의 소유인데 `$.parseXML`로 변환한 XML 요소는 기존 브라우저의 `window` 내의 기본 `document`에서 생성된 것으로 보기 때문에 서로 소유한 `document`가 달라서 발생하는 문제, 원래는 익스플로러처럼 서로 대조하는게 맞는 방법이라고는 한다. 그런데 익스 빼고는 다 아무 에러가 없는게..
 
@@ -65,4 +65,4 @@ console.log(xmlHeader)
 </script>
 ```
 
-[![](./assets/img/wp-content/uploads/2019/05/wde2.png)](http://yoonbumtae.com/?attachment_id=1138)
+[ ![](/assets/img/wp-content/uploads/2019/05/wde2.png)](http://yoonbumtae.com/?attachment_id=1138)

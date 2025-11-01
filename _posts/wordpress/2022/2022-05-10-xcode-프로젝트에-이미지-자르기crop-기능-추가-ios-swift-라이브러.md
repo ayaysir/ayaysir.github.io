@@ -16,7 +16,7 @@ categories:
 
 직접 구현하려면 매우 어려운 기능이지만 다행히 [Mantis](https://github.com/guoyingtao/Mantis)라는 외부 라이브러리가 있어 크롭 기능을 손쉽게 추가할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/05/simulator_screenshot_EA4D4834-5F52-474A-BD22-CC588AC2B261.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/simulator_screenshot_EA4D4834-5F52-474A-BD22-CC588AC2B261.jpg)
 
  
 

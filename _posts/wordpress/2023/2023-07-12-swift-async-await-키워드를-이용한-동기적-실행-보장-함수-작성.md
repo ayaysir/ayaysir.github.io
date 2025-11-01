@@ -14,7 +14,7 @@ categories:
 
 > **콜백 지옥(Callback Hell)**
 > 
-> 콜백 지옥은 JavaScript를 이용한 비동기 프로그래밍시 발생하는 문제로서, **함수의 매개 변수로 넘겨지는 콜백 함수가 반복되어 코드의 들여쓰기 수준이 감당하기 힘들 정도로 깊어지는 현상**을 말한다. ![](./assets/img/wp-content/uploads/2023/07/image.jpg)
+> 콜백 지옥은 JavaScript를 이용한 비동기 프로그래밍시 발생하는 문제로서, **함수의 매개 변수로 넘겨지는 콜백 함수가 반복되어 코드의 들여쓰기 수준이 감당하기 힘들 정도로 깊어지는 현상**을 말한다.  ![](/assets/img/wp-content/uploads/2023/07/image.jpg)
 
  
 

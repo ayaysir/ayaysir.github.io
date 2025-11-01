@@ -14,7 +14,7 @@ tags:
 
 ##### **1\. [webjars.org](https://webjars.org)를 접속한 다음 Popular WebJars 에서 Build Tool: Maven을 선택합니다.**
 
-##### ![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.02.35.png)
+#####  ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.02.35.png)
 
  
 
@@ -42,7 +42,7 @@ tags:
 
 ##### **4\. 뷰 페이지에 라이브러리를 추가합니다.**
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.06.28.png)사용할 경로는 위 1번 홈페이지에서 `Files`를 클릭하면 경로가 나옵니다. `META-INF/resources` 부분은 제외하고 나머지 부분(**`/webjars/...`**)을 경로로 사용합니다.
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.06.28.png)사용할 경로는 위 1번 홈페이지에서 `Files`를 클릭하면 경로가 나옵니다. `META-INF/resources` 부분은 제외하고 나머지 부분(**`/webjars/...`**)을 경로로 사용합니다.
 
 ```
 <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}">
@@ -81,4 +81,4 @@ tags:
 
  
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.19.02.png)
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.19.02.png)

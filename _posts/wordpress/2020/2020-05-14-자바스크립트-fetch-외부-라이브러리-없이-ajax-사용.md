@@ -34,7 +34,7 @@ fetch("https://reqres.in/api/users?page=2", {
 })
 ```
 
-![](./assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-14-오후-12.38.45.jpg)
+ ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-14-오후-12.38.45.jpg)
 
  
 
@@ -65,7 +65,7 @@ const postTest = (name, job) => {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-14-오후-12.44.42.png)
+ ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-14-오후-12.44.42.png)
 
 `GET`과 사용방법이 비슷합니다. 속성 객체의 `body` 부분에 서버로 전송할 객체를 입력하며 `JSON.stringify`로 스트링 변환한 뒤 보내는 것이 좋습니다. 참고로 `header` 부분을 설정하지 않으면 리퀘스트가 안될 수도 있습니다.
 

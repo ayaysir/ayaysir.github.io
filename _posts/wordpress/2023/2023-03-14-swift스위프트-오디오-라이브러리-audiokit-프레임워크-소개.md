@@ -27,7 +27,7 @@ AudioKit은 개발 동기를 부여하는 몇 가지 기본 목표를 가지고 
 
 ### **패키지 목록 / 레이어 다이어그램**
 
-![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-14-오후-11.09.54-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-14-오후-11.09.54-복사본.jpg)
 
 AudioKit 레이어 자체에는 import 할 수 있는 세 가지 프레임워크가 포함되어 있습니다.
 
@@ -77,7 +77,7 @@ AudioKit 레이어 자체에는 import 할 수 있는 세 가지 프레임워크
 설명법 링크 - [https://github.com/AudioKit/AudioKit/](https://github.com/AudioKit/AudioKit/)
 
 1. (Xcode의 프로젝트에서) `File -> Add Packages...`를 선택합니다.
-2. 왼쪽 컬렉션 사이드바의 왼쪽 하단에 있는 `+` 아이콘을 클릭합니다. ![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-14-오후-11.31.53-복사본.jpg)
+2. 왼쪽 컬렉션 사이드바의 왼쪽 하단에 있는 `+` 아이콘을 클릭합니다.  ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-14-오후-11.31.53-복사본.jpg)
 3. 팝업 메뉴에서 `Add Package Collection` 를 선택합니다.
 4. 패키지 컬렉션 추가 대화 상자에서 [https://swiftpackageindex.com/AudioKit/collection.json](https://swiftpackageindex.com/AudioKit/collection.json) 을 URL로 입력하고 `Load` 버튼을 클릭합니다.
 5. 만약 컬렉션이 서명되지 않았음을 경고한다면 "서명되지 않은 컬렉션 추가"를 클릭하십시오.
@@ -138,11 +138,11 @@ import AudioKit
 }
 ```
 
-\[caption id="attachment\_5365" align="alignnone" width="341"\]![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-14-오후-11.57.24-복사본.jpg) 앱 실행 전 (변환 전) 원래 파일 (`oldURL`)\[/caption\]
+\[caption id="attachment\_5365" align="alignnone" width="341"\] ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-14-오후-11.57.24-복사본.jpg) 앱 실행 전 (변환 전) 원래 파일 (`oldURL`)\[/caption\]
 
  
 
-\[caption id="attachment\_5364" align="alignnone" width="565"\]![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-14-오후-11.57.42-복사본.jpg) 앱 실행 후 (변환 후) 파일 (`newURL`)\[/caption\]
+\[caption id="attachment\_5364" align="alignnone" width="565"\] ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-14-오후-11.57.42-복사본.jpg) 앱 실행 후 (변환 후) 파일 (`newURL`)\[/caption\]
 
  
 

@@ -24,7 +24,7 @@ Redux의 상태관리 기법을 리액트 컴포넌트에 그대로 사용하게
 
 React Redux는 이러한 상황에서 컨테이너와 컴포넌트의 분리를 편리하게 해주는 리액트 커뮤니티에서 개발된 라이브러리입니다. 컨테이너 작성 부분을 간단하게 해주며, `props`의 구성 변경에 대해서도 신경쓸 필요가 없게 됩니다.
 
-\[caption id="attachment\_3263" align="alignnone" width="2396"\]![](./assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-08-오후-9.36.23.png) 왼쪽은 Redux만 있고 React Redux 없을 때 구현한 컨테이너 코드입니다.\[/caption\]
+\[caption id="attachment\_3263" align="alignnone" width="2396"\] ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-08-오후-9.36.23.png) 왼쪽은 Redux만 있고 React Redux 없을 때 구현한 컨테이너 코드입니다.\[/caption\]
 
  
 
@@ -34,7 +34,7 @@ React Redux는 이러한 상황에서 컨테이너와 컴포넌트의 분리를 
 
 하지만 Redux를 이용하면 중앙에서 상태 관리를 하는 저장소(`store`)가 있고, 변경 내용이 이 저장소를 통해 `dispatch`(변경 내용이 저장소에 저장, 갱신됨)되고, 그 내용을 참고하는 다른 컴포넌트들이 `subscribe`(변경 내용을 감지해 컴포넌트의 스테이트를 갱신) 하는 방식으로 `props` 패턴을 사용하지 않고도 편리하게 상태 관리를 할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-08-오후-8.13.05.png)
+ ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-08-오후-8.13.05.png)
 
  
 
@@ -287,9 +287,9 @@ export default connect(state => {
 - `mapDispatchToProps` - 함수 형태의 변수로, `Redux의 Dispatch`를 `React의 Props`로 내보냅니다. 하위 컴포넌트에서 중앙 컴포넌트의 값을 변경할 필요가 있을 때 필요한 함수들을 주로 정의합니다. return을 객체로 내보내면 하위 컴포넌트에서 `this.props.***` 로 사용할 수 있습니다.
 - 여기서 `dispatch`란 하위 컴포넌트에서 중앙 저장소에 저장된 값을 변경할 때 사용하는 명령어를 뜻합니다.
 - `dispatch(객체)`는 `connect` 함수 내부에 정의되어 있기 때문에 별도의 `store`를 임포트할 필요가 없습니다. 객체에는 일반적으로 `type`이 정의되어야 하며 이 타입을 바탕으로 `store.js`에서 취할 액션을 찾은 다음(`action.type`) 나머지 변수들을 `action.***`을 처리하는 방식으로 진행합니다.
-- 이 코드에서는 `dispatch`의 타입은 `'UPDATE_PROCESS'`로 정의되어 있습니다. `store.js`의 코드를 보시면 `reducer` 함수에서 `action.type`을 읽어 `action.type`이 `UPDATE_PROCESS` 일때 처리하는 부분이 다음과 같이 있습니다. (위의 `store.js` 코드 설명 참고) ![](./assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-08-오후-8.55.21.png)
-- (참고) React Redux가 없을 때 `store.dispatch` 사용법은 일반적으로 다음과 같습니다. ![](./assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-08-오후-8.45.06.png)
-- (참고) React Redux가 없을 떄 `mapStateToProps` 의 기능을 대신하는 `store.subscribe` 의 사용법은 다음과 같습니다. ![](./assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-08-오후-9.27.23.png)
+- 이 코드에서는 `dispatch`의 타입은 `'UPDATE_PROCESS'`로 정의되어 있습니다. `store.js`의 코드를 보시면 `reducer` 함수에서 `action.type`을 읽어 `action.type`이 `UPDATE_PROCESS` 일때 처리하는 부분이 다음과 같이 있습니다. (위의 `store.js` 코드 설명 참고)  ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-08-오후-8.55.21.png)
+- (참고) React Redux가 없을 때 `store.dispatch` 사용법은 일반적으로 다음과 같습니다.  ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-08-오후-8.45.06.png)
+- (참고) React Redux가 없을 떄 `mapStateToProps` 의 기능을 대신하는 `store.subscribe` 의 사용법은 다음과 같습니다.  ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-08-오후-9.27.23.png)
 
  
 

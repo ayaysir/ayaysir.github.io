@@ -30,9 +30,9 @@ tags:
 - `setup_osx.command` 를 실행하여 설치, 최초 설치 후 qb 에디터가 실행됨
 - 이후에는 `qb64_start_osx.command` 를 실행하면 됨
 
-![](/assets/img/wp-content/uploads/2019/11/qbasic/1-1-qbasic.png)
+![](/assets/img/DevLog/qbasic/1-1-qbasic.png)
 
-![](/assets/img/wp-content/uploads/2019/11/qbasic/1-2-install_qbasic.png)
+![](/assets/img/DevLog/qbasic/1-2-install_qbasic.png)
 
  
 
@@ -40,7 +40,7 @@ tags:
 
 (1) 가운데 부분은 코드를 입력하는 부분입니다. 기초적인 출력 코드를 입력해 보겠습니다.
 
-```
+```vb
 PRINT "HELL WORLD"
 ```
 
@@ -50,11 +50,12 @@ QBasic 언어는 모든 코드를 대문자로 쓰는 것이 전통(convention)�
 
 (2) 위의 메뉴에서 **RUN > Start** 를 클릭하면 실행 파일이 만들어지면서 실행이 됩니다.
 
-![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-09-오전-1.38.06.png) ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-09-오전-1.38.21.png)
+![](/assets/img/DevLog/qbasic/1-3-qb64window.png) 
+![](/assets/img/DevLog/qbasic/1-4-hellworld.png)
 
 (3) 저장은 **File > Save (또는 Save as)**를 클릭합니다. 전체적으로 윈도우의 메뉴 인터페이스를 따르고 있어서 익숙하다면 적응이 쉽습니다.
 
-![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-09-오전-1.40.53.png)
+![](/assets/img/DevLog/qbasic/1-5-saveas.png)
 
  
 
@@ -114,7 +115,7 @@ QBasic 언어는 모든 코드를 대문자로 쓰는 것이 전통(convention)�
 - `!`: 단정도(Single Precision)
 - `#`: 배정도(Double Precision)
 
-```
+```vb
 RADIUS = 10
 '접미어가 없을 경우 Integer 형 입력이 가능합니다.
 
@@ -127,13 +128,13 @@ PRINT PROMPT$
 '변수 이름 뒤에 접미어를 포함해야 합니다.
 ```
 
-![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-09-오전-2.18.35.png)
+![](/assets/img/DevLog/qbasic/1-6-prompt.png)
 
 ###### **(2) DIM 표현을 이용해 선언**
 
 `DIM`이라는 용어에는 다양한 의미가 있지만, 일반적으로 '**Declare In Memory**'라는 의미로 기억하는 것이 편리합니다. `DIM 변수이름 AS 자료형` 의 형태로 선언하고, 나중에 값을 할당합니다. 변수 이름 뒤에 접미어를 붙이지 않아도 특정 타입의 변수를 선언할 수 있습니다.
 
-```
+```vb
 DIM NUM1 AS INTEGER, YOURNAME AS STRING, AGE AS INTEGER
 
 '변수에 값 할당

@@ -22,10 +22,10 @@ tags:
 - 왼쪽 자식 노드 인덱스 번호 (left child node's index) = 부모 노드 인덱스 번호 (parent node's index) \* 2
 - 오른쪽 자식 노드 인덱스 번호 (right child node's index) = 부모 노드 인덱스 번호 (parent node's index) \* 2 + 1
 
-![](./assets/img/wp-content/uploads/2020/04/heap_array.png)
+ ![](/assets/img/wp-content/uploads/2020/04/heap_array.png)
 
  
 
 https://gist.github.com/ayaysir/f5d8a90eb056432cdc67e44284ef3d9c
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-23-오후-8.26.45.png) ![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-23-오후-8.50.22.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-23-오후-8.26.45.png)  ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-23-오후-8.50.22.png)

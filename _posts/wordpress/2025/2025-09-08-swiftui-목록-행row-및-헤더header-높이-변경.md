@@ -56,7 +56,7 @@ var body: some View {
 
 #### **추가: iOS 16 이하 버전에서 리스트 섹션 간 간격 조절**
 
-![](./assets/img/wp-content/uploads/2025/09/스크린샷-2025-09-09-오전-1.07.11.png)
+ ![](/assets/img/wp-content/uploads/2025/09/스크린샷-2025-09-09-오전-1.07.11.png)
 
 ```
 import SwiftUI

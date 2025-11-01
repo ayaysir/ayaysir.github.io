@@ -50,4 +50,4 @@ public class FileDownload {
 파일 다운로드되었음
 ```
 
-![](./assets/img/wp-content/uploads/2019/01/fileDownload-e1568811595888.png)
+ ![](/assets/img/wp-content/uploads/2019/01/fileDownload-e1568811595888.png)

@@ -24,7 +24,7 @@ categories:
 
 실행 가능한 알림(Actionable Notifications)을 사용하면 알림 자체에 사용자 정의 버튼을 추가할 수 있습니다. 이메일 알림이나 트윗에서 그 자리에서 "답장" 또는 "즐겨찾기"를 하는 것을 본 적이 있을 것입니다.
 
-![](./assets/img/wp-content/uploads/2022/09/IMG_34874A837FD8-1.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/IMG_34874A837FD8-1.jpg)
 
  
 
@@ -103,7 +103,7 @@ UNUserNotificationCenter.current().setNotificationCategories([newsCategory])
 
 알림이 표시되면 알림을 아래로 당기거나 또는 길게 눌러서 Actionable Notifications를 표시합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-12.23.30.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-12.23.30.jpg)
 
 버튼을 탭하면 앱이 시작되지만 아직 아무 작업도 수행되지 않습니다. 뉴스 항목을 표시하도록 하려면 대리자(delegate)에서 더 많은 이벤트 처리를 핸들링해야 합니다.
 
@@ -202,9 +202,9 @@ NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:))
 }
 ```
 
-\[caption id="attachment\_4722" align="alignnone" width="386"\]![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-12.52.43.jpg) `[보기]` 버튼을 클릭하면\[/caption\]
+\[caption id="attachment\_4722" align="alignnone" width="386"\] ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-12.52.43.jpg) `[보기]` 버튼을 클릭하면\[/caption\]
 
-\[caption id="attachment\_4723" align="alignnone" width="419"\]![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-12.53.29.jpg) 페이로드에 첨부한 `URL`로 접속됨 (`SFSafariViewController` 사용)\[/caption\]
+\[caption id="attachment\_4723" align="alignnone" width="419"\] ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-12.53.29.jpg) 페이로드에 첨부한 `URL`로 접속됨 (`SFSafariViewController` 사용)\[/caption\]
 
  
 
@@ -216,27 +216,27 @@ NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:))
 
 푸시 알림을 보내려면 인증 키가 필요합니다. **Certificates, Identifiers & Profiles**을 선택한 다음 왼쪽 창에서 `Key`를 찾습니다. 키 제목의 오른쪽에는 `+` 버튼이 있습니다. 클릭합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-1.07.05.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-1.07.05.jpg)
 
 적절한 키 이름을 지정합니다. Key Service에서 `Apple Push Notifications service(APNs)`을 선택합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-1.07.28.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-1.07.28.jpg)
 
  
 
 `Continue`를 클릭하고 다음 화면에서 `Register`를 클릭하여 새 키를 만듭니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-1.07.47.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-1.07.47.jpg)
 
 `Download`를 클릭합니다. 다운로드한 파일의 이름은 `AuthKey_4SVKWF966R.p8`의 형태와 같습니다. 이 파일을 보관하세요. 알림을 보내려면 이 파일이 필요합니다. 파일 이름의 `4SVKWF966R` 부분은 Key ID입니다. 이것도 필요합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-1.07.58.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-1.07.58.jpg)
 
 필요한 마지막 조각은 Team ID입니다. 회원 센터의 [Membership 페이지](https://developer.apple.com/account/#!/membership)로 이동합니다. Team ID를 메모합니다.
 
  
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-1.17.38.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-06-오전-1.17.38.jpg)
 
  
 
@@ -244,13 +244,13 @@ NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:))
 
 실제 기기에서 앱을 실행하고 디버거 콘솔에서 장치 토큰을 복사하여 메모합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/Device-Token.png)
+ ![](/assets/img/wp-content/uploads/2022/09/Device-Token.png)
 
  
 
 PushNotifications 유틸리티를 시작하고 다음 단계를 완료합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/scr-2022-09-06-오전-1.21.58.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/scr-2022-09-06-오전-1.21.58.jpg)
 
 1. `Authentication`에서 `Token`을 선택합니다.
 2. `Select P8` 버튼을 클릭하고 이전 섹션의 `.p8` 파일을 선택합니다.
@@ -275,7 +275,7 @@ PushNotifications 유틸리티를 시작하고 다음 단계를 완료합니다.
 
 아래 스크린샷과 같은 푸시 알림을 받아야 합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/IMG_9135.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/IMG_9135.jpg)
 
  
 
@@ -296,7 +296,7 @@ PushNotifications 유틸리티를 시작하고 다음 단계를 완료합니다.
 
 시작하려면 프로젝트 설정의 `TARGETS` 메뉴로 이동합니다. 이제 `Signing & Capabilities` 탭을 클릭하고 `Background Modes capability`를 추가합니다. 그런 다음 `Remote notifications` 옵션을 체크합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/Background-modes-remote-notifications-1.png)
+ ![](/assets/img/wp-content/uploads/2022/09/Background-modes-remote-notifications-1.png)
 
 참고로 시뮬레이터 + simctl은 조용한 푸시 보내기 기능에 버그가 있기 때문에 실제 기기 기준으로만 설명하겠습니다.
 
@@ -349,7 +349,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 
 포어그라운드/백그라운드/종료 상태 각각에서 테스트 해봅니다. 알림 메시지가 표시되지 않으면서 각종 작업을 수행하고 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/09/IMG_8D368DFDB571-1.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/IMG_8D368DFDB571-1.jpg)
 
  
 

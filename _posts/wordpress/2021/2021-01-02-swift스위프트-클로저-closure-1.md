@@ -55,7 +55,7 @@ var reversedNames = names.sorted(by: backward)
 
 #### **기본 형태**
 
-![](./assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-02-오후-4.12.00.png)
+ ![](/assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-02-오후-4.12.00.png)
 
 아래 예제 `backward(_:_:)`는 위 의 함수 의 클로저 표현식 버전을 보여줍니다 .
 

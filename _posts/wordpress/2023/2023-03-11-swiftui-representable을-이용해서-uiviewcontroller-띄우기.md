@@ -113,7 +113,7 @@ struct ContentView: View {
 ```
 
 - **sheet(isPresented: $isOpenMusicPickerView)**
-    - `sheet`란 아래와 같이 화면이 완전히 겹쳐지지 않고 일부분만 겹친 형태의 팝업을 말합니다. ![](./assets/img/wp-content/uploads/2023/03/Sheets-in-SwiftUI.jpg)
+    - `sheet`란 아래와 같이 화면이 완전히 겹쳐지지 않고 일부분만 겹친 형태의 팝업을 말합니다.  ![](/assets/img/wp-content/uploads/2023/03/Sheets-in-SwiftUI.jpg)
     - `@State` 변수인 `isOpenMusicPickerView`가 `true`가 되면 뷰 컨트롤러가 팝업됩니다.
 
  

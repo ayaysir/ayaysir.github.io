@@ -17,13 +17,13 @@ https://www.youtube.com/watch?v=bSlgAOBr7VA
 
 월광 소나타가 유명해진 이유는 모두가 알고 있기 때문만은 아닙니다. 모든 사람들이 이 작품에 대해 자세히 알고 있다는 것입니다.
 
-\[caption id="attachment\_5596" align="alignnone" width="480"\]![](./assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0002-복사본.jpg) 1악장\[/caption\]
+\[caption id="attachment\_5596" align="alignnone" width="480"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0002-복사본.jpg) 1악장\[/caption\]
 
 이 느린 악장은 모두 같은 소리여서 기본적으로 어떤 부분을 던지더라도 여러분은 아마도 고개를 끄덕이고 "월광 소나타"라고 말할 것입니다.
 
  
 
-\[caption id="attachment\_5597" align="alignnone" width="480"\]![](./assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0003-복사본.jpg) 3악장\[/caption\]
+\[caption id="attachment\_5597" align="alignnone" width="480"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0003-복사본.jpg) 3악장\[/caption\]
 
 (월광 소나타 3악장) 그런 다음 바로 인식할 수 있는 빠른 악장은 기본적으로 약간의 자랑을 하고 싶어하는 피아니스트들에게 인기가 있습니다. 제가 자랑을 하거나 뭐 그런 것을 하는 것은 아니지만, 이 채널에서 꽤 멋진 녹음이 있다고 들었습니다.
 
@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=bSlgAOBr7VA
 
 월광 소나타에는 실제로 세 개의 악장이 있고 우리는 그 중 느린 첫 번째 악장과 빠른 세 번째 악장만 다루었습니다.
 
-\[caption id="attachment\_5598" align="alignnone" width="576"\]![](./assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0004.jpg) 2악장???\[/caption\]
+\[caption id="attachment\_5598" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0004.jpg) 2악장???\[/caption\]
 
  
 
@@ -53,13 +53,13 @@ https://www.youtube.com/watch?v=bSlgAOBr7VA
 
 분명히 부실한 설명이지만 소나타는 하이든과 모차르트의 고전 시대에 도래되었을 것입니다.
 
-\[caption id="attachment\_5599" align="alignnone" width="576"\]![](./assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0005.jpg) 하이든과 모차르트\[/caption\]
+\[caption id="attachment\_5599" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0005.jpg) 하이든과 모차르트\[/caption\]
 
  
 
 소나타라는 단어는 더 복잡한 의미를 갖기 시작합니다. 기악이 점점 더 많은 주목을 받고 있기 때문에 이제 소나타는 다양성을 위해 `빠르게 - 느리게 - 빠르게`의 템포로 변화하는 세 가지 악장으로 구성된 작품으로 성장했습니다.
 
-\[caption id="attachment\_5600" align="alignnone" width="576"\]![](./assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0006.jpg) 빠르게 - 느리게 - 빠르게\\\[/caption\]
+\[caption id="attachment\_5600" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0006.jpg) 빠르게 - 느리게 - 빠르게\\\[/caption\]
 
  
 
@@ -73,7 +73,7 @@ https://www.youtube.com/watch?v=bSlgAOBr7VA
 
 사실 대부분의 경우 세 번째 악장은 웅장한 피날레가 아니라 미뉴에트와 트리오와 같은 짧은 `ABA` 댄스 악장에 가깝습니다.
 
-\[caption id="attachment\_5601" align="alignnone" width="576"\]![](./assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0007.jpg) 1악장의 내부가 소나타 형식으로 발전\[/caption\]
+\[caption id="attachment\_5601" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0007.jpg) 1악장의 내부가 소나타 형식으로 발전\[/caption\]
 
  
 
@@ -95,7 +95,7 @@ https://www.youtube.com/watch?v=bSlgAOBr7VA
 
 2악장부터 3악장, 4악장까지 이르는 템포의 가속을 볼 수 있는데, 이는 전체 소나타의 추진력이 피날레로 이어지고 있음을 보여줍니다.
 
-\[caption id="attachment\_5612" align="alignnone" width="576"\]![](./assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0010.jpg) 2악장부터 3악장, 4악장까지 이르는 템포의 가속\[/caption\]
+\[caption id="attachment\_5612" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0010.jpg) 2악장부터 3악장, 4악장까지 이르는 템포의 가속\[/caption\]
 
 이 4악장 구조는 이후 거의 새로운 표준이 되었으며 대부분의 사람들은 클래식 음악의 가장 중요한 장르 중 하나에 대한 새로운 표준을 만드는 것으로 충분하지만 베토벤은 거기서 멈추지 않았습니다.
 
@@ -107,7 +107,7 @@ https://www.youtube.com/watch?v=bSlgAOBr7VA
 
 그는 본질적으로 4악장 소나타 구조를 취하지만 여기에서 1악장을 완전히 잘라냅니다.
 
-\[caption id="attachment\_5613" align="alignnone" width="576"\]![](./assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0011.jpg) 1악장 삭제됨\[/caption\]
+\[caption id="attachment\_5613" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0011.jpg) 1악장 삭제됨\[/caption\]
 
  
 
@@ -123,13 +123,13 @@ https://www.youtube.com/watch?v=bSlgAOBr7VA
 
 그래서 구조적으로 월광 소나타의 2악장은 약간의 호흡, 전환, 음악적 쉼표(musical comma)에 불과합니다. 스포트라이트를 받으려는 의도가 결코 아닙니다. 사실 나쁜 악장은 아니지만 간주(interlude)라는 의도된 목적에 거의 완벽합니다.
 
-\[caption id="attachment\_5614" align="alignnone" width="576"\]![](./assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0013.jpg) 1악장과 3악장을 위해 희생된 2악장\[/caption\]
+\[caption id="attachment\_5614" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0013.jpg) 1악장과 3악장을 위해 희생된 2악장\[/caption\]
 
  
 
 따라서 월광 소나타의 2악장이 다른 악장만큼 유명하지 않은 이유를 묻는 것은, Billy Eilish가 투명 치아 교정기(Invisalign)을 꺼내는 13초 인트로 트랙이 **_Bad Guy_**만큼 유명하지 않은 이유를 묻는 것과 같습니다.
 
-\[caption id="attachment\_5602" align="alignnone" width="576"\]![](./assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0014.jpg) Billie Eilish의 앨범\[/caption\]
+\[caption id="attachment\_5602" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0014.jpg) Billie Eilish의 앨범\[/caption\]
 
  
 
@@ -159,41 +159,41 @@ https://youtu.be/bSlgAOBr7VA?t=382
 > 
 >  
 > 
-> ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.01.50-복사본.jpg) 놀랍게도 이것은 `ABA` 형식의 댄스 동작입니다. `3/4`박자에 따라 진행되는 미뉴에트로 시작하여 여기에 몇 개의 레이어가 추가되어 살이 붙습니다 :)
+>  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.01.50-복사본.jpg) 놀랍게도 이것은 `ABA` 형식의 댄스 동작입니다. `3/4`박자에 따라 진행되는 미뉴에트로 시작하여 여기에 몇 개의 레이어가 추가되어 살이 붙습니다 :)
 > 
 >  
 > 
-> ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6-1.02.07-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6-1.02.07-복사본.jpg)
 > 
 > 이제 우리는 같은 것을 두 번 듣습니다. 다른 음높이(higher/lower)에서 그 작은 트릭은 '시퀀스'로 알려져 있습니다.
 > 
 >  
 > 
-> ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.07.27-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.07.27-복사본.jpg)
 > 
 > 이 구식 악장에 어울리는 아주 전통적인 트릭입니다. 이 악장의 대부분은 여기처럼 짧은 반복 패턴을 기반으로 합니다.
 > 
 >  
 > 
-> ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.09.50-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.09.50-복사본.jpg)
 > 
 > 이러한 댄스 악장은 종종 매우 단일 구간을 반복합니다... ...전통적 팝송에 가깝습니다 :D
 > 
 >  
 > 
-> ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.11.04-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.11.04-복사본.jpg)
 > 
 > 반복이 많다 보니 이런 동작은 '서사'가 부족합니다. 그들은 단지 몇 분 동안 당신에게 좋은 바이브를 줄 것입니다. (사실 그 바이브가 너무 좋긴 합니다)
 > 
 >  
 > 
-> ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.12.44-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.12.44-복사본.jpg)
 > 
 > 이제 `ABA`의 `B` 섹션인 트리오가 있습니다. 좋은 점은 멜로디가 너무 offbeat(박자가 정박에 나오지 않음)하다는 것... 거의 모든 멜로디 음표는 소절의 \*마지막\* 박자에 있습니다. 베토벤은 이러한 배경 동작에서도 약간 허세를 부려야(edgy) 했습니다!
 > 
 >  
 > 
-> ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.19.12-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.19.12-복사본.jpg)
 > 
 > (나는 여기서 왼손의 하강 코드를 좋아합니다.)
 > 
@@ -201,7 +201,7 @@ https://youtu.be/bSlgAOBr7VA?t=382
 > 
 >  
 > 
-> ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.17.03-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.17.03-복사본.jpg)
 > 
 > 전체 트리오는 매력적인 방식으로 아주 약간 괴짜(kooky)입니다. 여기는 왼손과 오른손이 시간이 완전히 어긋난 것 같습니다!
 > 
@@ -209,7 +209,7 @@ https://youtu.be/bSlgAOBr7VA?t=382
 > 
 >  
 > 
-> ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.01.50-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-06-오후-6.01.50-복사본.jpg)
 > 
 > 우리는 모든 것을 다시 시작하기 위해 오프닝 미뉴에트로 돌아갑니다 :,)
 > 

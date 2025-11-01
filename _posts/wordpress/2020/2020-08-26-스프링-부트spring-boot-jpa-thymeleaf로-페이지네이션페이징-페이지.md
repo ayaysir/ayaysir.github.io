@@ -174,12 +174,12 @@ public class IndexController {
 
 #### **결과 화면**
 
-![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.47.43.png)
+ ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.47.43.png)
 
-![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.49.02.png)
+ ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.49.02.png)
 
 \[the\_ad id="1804"\]
 
-![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.49.27.png)
+ ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.49.27.png)
 
-![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.49.50.png)
+ ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.49.50.png)

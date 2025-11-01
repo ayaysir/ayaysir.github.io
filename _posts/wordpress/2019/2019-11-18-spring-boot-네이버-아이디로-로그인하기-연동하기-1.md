@@ -19,11 +19,11 @@ categories:
 
 네이버로 로그인한 후, 개발자 센터의 [애플리케이션 신청 페이지](https://developers.naver.com/apps/#/register)에 가서 애플리케이션을 신청합니다.
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-19-오전-3.20.53.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-19-오전-3.20.53.png)
 
 애플리케이션 이름을 입력한 뒤 사용 API를 네아로 (네이버 아이디로 로그인) 을 선택하고, 제공 정보 선택에 사용할 정보를 선택합니다.
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-19-오전-3.21.25.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-19-오전-3.21.25.png)
 
 서비스 환경에서 PC웹 또는 모바일 웹을 선택하고 서비스 URL에 메인 페이지 주소를, Callback URL에 콜백에 사용할 URL을 등록합니다. URL은 수정 가능하므로 아직 정해지지 않았더라도 형식에 맞게 입력하면 됩니다.
 
@@ -31,7 +31,7 @@ categories:
 
 #### **2\. 애플리케이션 정보의 클라이언트 아이디 확인**
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-19-오전-3.25.23.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-19-오전-3.25.23.png)
 
 등록되었으면 내 애플리케이션 정보 메뉴에서 클라이언트 아이디와 비밀 키를 확인합니다. 네아로 검수요청은 정식 서비스를 개시할 때 필요하고 개발단계에서는 아직 진행하지 않아도 됩니다.
 
@@ -45,7 +45,7 @@ categories:
 - 네이버에서 클라이언트 키와 콜백 URL이 유효함을 확인하면 네이버에서 접근 토큰, 갱신 토큰, 유효 시간 정보를 전송(response)함
 - 네이버에서 받은 접근 토큰을 이용해 회원 정보를 요청하는 API를 이용하여 회원정보를 가져옴
 
-![](./assets/img/wp-content/uploads/2019/11/615FC658-A847-4A35-8A54-64E28B2AF3D1.png)
+ ![](/assets/img/wp-content/uploads/2019/11/615FC658-A847-4A35-8A54-64E28B2AF3D1.png)
 
 ```
 package com.springboot.security;
@@ -344,23 +344,23 @@ public class NaverLoginController {
 
 #### **5\. 테스트**
 
-\[caption id="attachment\_1825" align="alignnone" width="325"\]![](./assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-4.09.13-e1574104916922.png) 로그인 전의 첫화면입니다.\[/caption\]
+\[caption id="attachment\_1825" align="alignnone" width="325"\] ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-4.09.13-e1574104916922.png) 로그인 전의 첫화면입니다.\[/caption\]
 
  
 
-\[caption id="attachment\_1827" align="alignnone" width="513"\]![](./assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-2.27.44-1-e1574105015629.png) 이전에 연동한 적이 없다면 연동 동의 여부를 묻는 화면이 뜹니다. 이미 연동된 경우, 로그인됩니다.\[/caption\]
+\[caption id="attachment\_1827" align="alignnone" width="513"\] ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-2.27.44-1-e1574105015629.png) 이전에 연동한 적이 없다면 연동 동의 여부를 묻는 화면이 뜹니다. 이미 연동된 경우, 로그인됩니다.\[/caption\]
 
  
 
-\[caption id="attachment\_1823" align="alignnone" width="399"\]![](./assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-3.01.36-e1574105130632.png) API에서 설정한 콜백 페이지입니다.\[/caption\]
+\[caption id="attachment\_1823" align="alignnone" width="399"\] ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-3.01.36-e1574105130632.png) API에서 설정한 콜백 페이지입니다.\[/caption\]
 
  
 
-\[caption id="attachment\_1826" align="alignnone" width="599"\]![](./assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-4.09.36-e1574105191467.png) 로그인 후 첫화면입니다.\[/caption\]
+\[caption id="attachment\_1826" align="alignnone" width="599"\] ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-4.09.36-e1574105191467.png) 로그인 후 첫화면입니다.\[/caption\]
 
  
 
-\[caption id="attachment\_1824" align="alignnone" width="729"\]![](./assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-3.02.37-e1574105247529.png) 회원정보를 가져오는 화면입니다. 여기서 `id`가 회원의 고유값입니다.\[/caption\]
+\[caption id="attachment\_1824" align="alignnone" width="729"\] ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-3.02.37-e1574105247529.png) 회원정보를 가져오는 화면입니다. 여기서 `id`가 회원의 고유값입니다.\[/caption\]
 
  
 

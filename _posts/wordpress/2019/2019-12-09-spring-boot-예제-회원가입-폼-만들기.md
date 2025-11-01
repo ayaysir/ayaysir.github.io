@@ -23,26 +23,26 @@ https://gist.github.com/ayaysir/6478d1a7a6ba167589cd6569acf6506c
 
  
 
-\[caption id="attachment\_1925" align="alignnone" width="1752"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.48.23.png) 기존에 존재하는 아이디로 회원가입을 시도\[/caption\]
+\[caption id="attachment\_1925" align="alignnone" width="1752"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.48.23.png) 기존에 존재하는 아이디로 회원가입을 시도\[/caption\]
 
-\[caption id="attachment\_1926" align="alignnone" width="600"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.48.32.png) 기존에 존재하는 아이디로 회원가입을 시도 결과\[/caption\]
-
- 
-
-\[caption id="attachment\_1927" align="alignnone" width="1728"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.48.52.png) 유효하지 않은 입력 정보로 가입 시도\[/caption\]
-
-\[caption id="attachment\_1928" align="alignnone" width="521"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.49.00.png) 유효하지 않은 입력 정보로 가입 시도 결과\[/caption\]
+\[caption id="attachment\_1926" align="alignnone" width="600"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.48.32.png) 기존에 존재하는 아이디로 회원가입을 시도 결과\[/caption\]
 
  
 
-\[caption id="attachment\_1929" align="alignnone" width="1766"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.49.49.png) 정상적인 입력 정보로 회원 가입 시도\[/caption\]
+\[caption id="attachment\_1927" align="alignnone" width="1728"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.48.52.png) 유효하지 않은 입력 정보로 가입 시도\[/caption\]
 
-\[caption id="attachment\_1930" align="alignnone" width="393"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.49.57.png) 정상적인 입력 정보로 회원 가입 결과\[/caption\]
-
- 
-
-\[caption id="attachment\_1931" align="alignnone" width="1582"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-2.11.21.png) 입력 정보 확인\[/caption\]
+\[caption id="attachment\_1928" align="alignnone" width="521"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.49.00.png) 유효하지 않은 입력 정보로 가입 시도 결과\[/caption\]
 
  
 
-\[caption id="attachment\_1932" align="alignnone" width="535"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-2.13.20.png) 로그인 후 게시판([Spring Boot 예제: 초간단 게시판](http://yoonbumtae.com/?p=1853))에 글 작성\[/caption\]
+\[caption id="attachment\_1929" align="alignnone" width="1766"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.49.49.png) 정상적인 입력 정보로 회원 가입 시도\[/caption\]
+
+\[caption id="attachment\_1930" align="alignnone" width="393"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-1.49.57.png) 정상적인 입력 정보로 회원 가입 결과\[/caption\]
+
+ 
+
+\[caption id="attachment\_1931" align="alignnone" width="1582"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-2.11.21.png) 입력 정보 확인\[/caption\]
+
+ 
+
+\[caption id="attachment\_1932" align="alignnone" width="535"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-2.13.20.png) 로그인 후 게시판([Spring Boot 예제: 초간단 게시판](http://yoonbumtae.com/?p=1853))에 글 작성\[/caption\]

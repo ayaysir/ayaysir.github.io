@@ -14,7 +14,7 @@ categories:
 
  
 
-\[caption id="attachment\_6860" align="alignnone" width="314"\]![](./assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-30-오후-11.26.22-복사본.jpg) 구분선이 있는 컨텍스트 메뉴\[/caption\]
+\[caption id="attachment\_6860" align="alignnone" width="314"\] ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-30-오후-11.26.22-복사본.jpg) 구분선이 있는 컨텍스트 메뉴\[/caption\]
 
  
 

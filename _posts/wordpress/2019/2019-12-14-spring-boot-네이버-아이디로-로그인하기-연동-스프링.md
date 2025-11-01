@@ -42,7 +42,7 @@ categories:
 
 ##### 외부 로그인 연동 테이블(_users\_oauth_)
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-10.50.04.png)
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-10.50.04.png)
 
 `username`은 외래키로 회원 테이블의 키와 연결됩니다. `provider`는 제공사 이름으로, “_naver_“, “_google_” 등이 입력됩니다. `unique_id`에는 회원을 구분하는 고유값이 입력됩니다.
 
@@ -282,23 +282,23 @@ public String home(Model model, HttpSession session) throws Exception {
 
 #### **4\. 테스트**
 
-\[caption id="attachment\_1961" align="alignnone" width="529"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.28.35.png) 처음에는 테이블이 비어있습니다. (연동 전)\[/caption\]
+\[caption id="attachment\_1961" align="alignnone" width="529"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.28.35.png) 처음에는 테이블이 비어있습니다. (연동 전)\[/caption\]
 
  
 
-\[caption id="attachment\_1962" align="alignnone" width="647"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.29.37.png) _**guest1**_ 아이디로 로그인하면 네이버 연동 여부를 묻는 부분이 나타납니다.\[/caption\]
+\[caption id="attachment\_1962" align="alignnone" width="647"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.29.37.png) _**guest1**_ 아이디로 로그인하면 네이버 연동 여부를 묻는 부분이 나타납니다.\[/caption\]
 
  
 
 \[the\_ad id="1804"\]
 
-\[caption id="attachment\_1963" align="alignnone" width="707"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.30.51.png) 빨간 네모박스로 연동 여부를 물어봅니다.\[/caption\]
+\[caption id="attachment\_1963" align="alignnone" width="707"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.30.51.png) 빨간 네모박스로 연동 여부를 물어봅니다.\[/caption\]
 
  
 
-\[caption id="attachment\_1967" align="alignnone" width="626"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.33.42-1.png) \[YES\] 버튼을 누르면 연동 작업이 진행됩니다. 테이블에 연동 정보가 추가되었습니다.\[/caption\] 
+\[caption id="attachment\_1967" align="alignnone" width="626"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.33.42-1.png) \[YES\] 버튼을 누르면 연동 작업이 진행됩니다. 테이블에 연동 정보가 추가되었습니다.\[/caption\] 
 
-\[caption id="attachment\_1964" align="alignnone" width="500"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.33.14.png) 네이버 계정과 연동되었으므로 아까 그 부분은 더 이상 나오지 않습니다.\[/caption\]
+\[caption id="attachment\_1964" align="alignnone" width="500"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.33.14.png) 네이버 계정과 연동되었으므로 아까 그 부분은 더 이상 나오지 않습니다.\[/caption\]
 
 \[the\_ad id="1804"\]
 

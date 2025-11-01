@@ -12,7 +12,7 @@ tags:
 
 출처 [링크](https://www.acmicpc.net/problem/1991)
 
-![](./assets/img/wp-content/uploads/2020/05/trtr.png)
+ ![](/assets/img/wp-content/uploads/2020/05/trtr.png)
 
 예를 들어 위와 같은 이진 트리가 입력되면,
 
@@ -87,4 +87,4 @@ function traverseTree(inputStr) {
 console.log(traverseTree(input1))
 ```
 
-![](./assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-08-오후-8.12.09.png)
+ ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-08-오후-8.12.09.png)

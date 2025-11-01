@@ -175,8 +175,8 @@ async function sendData() {
 
 Request JSON 일부
 
-![](./assets/img/wp-content/uploads/2020/08/-2020-08-24-오후-10.41.54-e1598276591919.png)
+ ![](/assets/img/wp-content/uploads/2020/08/-2020-08-24-오후-10.41.54-e1598276591919.png)
 
 서버로부터 응답 결과
 
-![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-24-오후-10.44.02.png)
+ ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-24-오후-10.44.02.png)

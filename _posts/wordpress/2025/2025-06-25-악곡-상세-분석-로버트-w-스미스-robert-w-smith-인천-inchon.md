@@ -6,7 +6,7 @@ categories:
   - "Band Music"
 ---
 
-\[caption id="attachment\_7133" align="aligncenter" width="484"\]![](./assets/img/wp-content/uploads/2025/06/inchoen_ayaysir0.jpg) 로버트 W 스미스 Robert W. Smith - 인천 Inchon (2001)\[/caption\]
+\[caption id="attachment\_7133" align="aligncenter" width="484"\] ![](/assets/img/wp-content/uploads/2025/06/inchoen_ayaysir0.jpg) 로버트 W 스미스 Robert W. Smith - 인천 Inchon (2001)\[/caption\]
 
 > 작곡가 로버트 스미스의 아버지는 한국 625 전쟁에 참가한 참전용사라고 합니다. 이 음악은 한국전쟁 당시 인천 상륙 작전을 묘사하고 있으며, 음악 곳곳에 한국적인 요소들이 들어있습니다. 중간의 헬리콥터 소리는 헬리콥터 실제 소리가 아닌 타악기로 헬리콥터 소리를 흉내를 낸 것입니다. \[작곡가의 코멘트 중\]
 
@@ -24,7 +24,7 @@ https://www.youtube.com/watch?v=9n8byjQ2ku4
 
 헬리콥터 효과는 6명의 무대 밖 타악기 연주자를 추가로 배치할 때 가장 효과적으로 구현됩니다. 이들은 공연장 곳곳에 흩어져 배치되어야 하며, 각 위치는 다음과 같이 설정합니다 (도면 참조).
 
-![](./assets/img/wp-content/uploads/2025/06/Inchon-Percussion-Cue.png)
+ ![](/assets/img/wp-content/uploads/2025/06/Inchon-Percussion-Cue.png)
 
 - 스테이션 1: 공연장 뒤쪽 구석, 가능하면 발코니 구역에 1명 배치
 - 스테이션 2: 스테이션 1과 대각선 방향으로 15~20피트(약 4.5~6미터) 전방, 반대편 발코니 쪽에 1명 배치

@@ -18,7 +18,7 @@ categories:
 
 기존의 프로젝트 코드를 기반으로 롱 프레스 터치(길게 터치하기) 작업을 추가하고, 롱 프레스 시에 셀이 살짝 작아졌다 놓으면 다시 원상 복귀하는 애니메이션이 추가되도록 만들어 보겠습니다.
 
-\[caption id="attachment\_4421" align="alignnone" width="384"\]![](./assets/img/wp-content/uploads/2022/05/Simulator-Screen-Shot-iPhone-13-Pro-2022-05-04-at-23.03.04.jpg) 기존 프로젝트의 기기 스크린샷\[/caption\]
+\[caption id="attachment\_4421" align="alignnone" width="384"\] ![](/assets/img/wp-content/uploads/2022/05/Simulator-Screen-Shot-iPhone-13-Pro-2022-05-04-at-23.03.04.jpg) 기존 프로젝트의 기기 스크린샷\[/caption\]
 
  
 
@@ -129,19 +129,19 @@ class ImageViewModel {
 
  
 
-\[caption id="attachment\_4422" align="alignnone" width="948"\]![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-04-오후-11.07.56.jpg) 컬렉션 뷰 @IBOutlet 연결\[/caption\]
+\[caption id="attachment\_4422" align="alignnone" width="948"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-04-오후-11.07.56.jpg) 컬렉션 뷰 @IBOutlet 연결\[/caption\]
 
  
 
  
 
-\[caption id="attachment\_4419" align="alignnone" width="821"\]![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-04-오후-10.58.13.jpg) 셀 요소 @IBOutlet 연결\[/caption\]
+\[caption id="attachment\_4419" align="alignnone" width="821"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-04-오후-10.58.13.jpg) 셀 요소 @IBOutlet 연결\[/caption\]
 
  
 
  
 
-\[caption id="attachment\_4420" align="alignnone" width="969"\]![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-04-오후-10.59.14.jpg) asset에 이미지 추가\[/caption\]
+\[caption id="attachment\_4420" align="alignnone" width="969"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-04-오후-10.59.14.jpg) asset에 이미지 추가\[/caption\]
 
  
 

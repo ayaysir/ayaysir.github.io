@@ -161,9 +161,9 @@ public String loginForm() {
 
  
 
-![](./assets/img/wp-content/uploads/2019/06/clogin1.png)
+ ![](/assets/img/wp-content/uploads/2019/06/clogin1.png)
 
-![](./assets/img/wp-content/uploads/2019/06/clogin2.png)
+ ![](/assets/img/wp-content/uploads/2019/06/clogin2.png)
 
  
 

@@ -79,7 +79,7 @@ while((result = regex.exec(text)) != null) {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-29-오후-10.06.36.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-29-오후-10.06.36.png)
 
 해당 부분의 텍스트는 배열 0번에 담겨 있으므로, 위 코드의 result를 `result[0]`으로 바꾸면 됩니다.
 
@@ -317,7 +317,7 @@ console.log(resultArray)
 
 ```
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-29-오후-10.17.50.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-29-오후-10.17.50.png)
 
  
 
@@ -394,7 +394,7 @@ fd.onkeydown = function() {
 
 ```
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-29-오후-10.23.10.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-29-오후-10.23.10.png)
 
  
 
@@ -415,7 +415,7 @@ var result = dirtyText.replace(regex, '')
 console.log(result)
 ```
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-29-오후-10.27.17.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-29-오후-10.27.17.png)
 
  
 
@@ -440,7 +440,7 @@ addrf.onkeyup = function() {
 
 ```
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-29-오후-10.35.18.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-29-오후-10.35.18.png)
 
  
 

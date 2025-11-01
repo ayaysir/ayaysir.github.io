@@ -51,7 +51,7 @@ private var browserVC: MCBrowserViewController!
 
 info.plist에 아래 항목들을 추가합니다. 아래 두 항목은 필수로 입력해야 멀티피어 통신이 가능합니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2023-01-10-오전-2.21.31.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2023-01-10-오전-2.21.31.jpg)
 
 - **Privacy - Local Network Usage Description**
     - `NSLocalNetworkUsageDescription`
@@ -335,7 +335,7 @@ extension ViewController: MCBrowserViewControllerDelegate {
 
 스토리보드에 버튼(`UIButton`)과 스위치(`UISwitch`)를 추가하고, `@IBAction`으로 연결한 뒤 아래 코드를 작성합니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2023-01-10-오전-1.36.56.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2023-01-10-오전-1.36.56.jpg)
 
 ```
 @IBAction func btnActShowBrowserVC(_ sender: Any) {
@@ -362,7 +362,7 @@ extension ViewController: MCBrowserViewControllerDelegate {
 
 https://giphy.com/gifs/2DElddPef27Dd8zVWS
 
-\[caption id="attachment\_5200" align="alignnone" width="264"\]![](./assets/img/wp-content/uploads/2022/12/스크린샷-2023-01-10-오전-1.34.02.jpg) YES를 누르면 연결됩니다.\[/caption\]
+\[caption id="attachment\_5200" align="alignnone" width="264"\] ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2023-01-10-오전-1.34.02.jpg) YES를 누르면 연결됩니다.\[/caption\]
 
  
 
@@ -464,9 +464,9 @@ private var chatList: [String] = [] {
 
 스토리보드에 텍스트 뷰, 텍스트 필드 및 버튼을 추가하고, `@IBAction`으로 연결한 뒤 아래 코드를 작성합니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2023-01-10-오전-2.09.33.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2023-01-10-오전-2.09.33.jpg)
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2023-01-10-오전-2.10.21.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2023-01-10-오전-2.10.21.jpg)
 
 ```
 @IBOutlet weak var txfMessage: UITextField!

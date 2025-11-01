@@ -10,7 +10,7 @@ categories:
 
 앨 스미스 만찬 (Al Smith Dinner)는 미국에서 매년 열리는 자선 행사로, 공식 명칭은 **“Alfred E. Smith Memorial Foundation Dinner”**입니다. 이 행사는 뉴욕 가톨릭 대교구가 주최하며, 주요 목적은 가톨릭 자선단체를 위한 기금 모금입니다.
 
-![](./assets/img/wp-content/uploads/2024/11/IMG_3409.jpeg)
+ ![](/assets/img/wp-content/uploads/2024/11/IMG_3409.jpeg)
 
  
 

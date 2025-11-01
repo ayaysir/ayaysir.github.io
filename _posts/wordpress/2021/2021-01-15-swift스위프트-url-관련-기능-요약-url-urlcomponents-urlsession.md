@@ -66,7 +66,7 @@ urlComponents.string
 urlComponents.queryItems // 밑에
 ```
 
-![](./assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-15-오후-8.36.48.png)
+ ![](/assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-15-오후-8.36.48.png)
 
  
 
@@ -231,4 +231,4 @@ dataTask.resume()
 
  
 
-![](./assets/img/wp-content/uploads/2021/01/-2021-01-15-오후-9.11.37-e1610712716355.png)
+ ![](/assets/img/wp-content/uploads/2021/01/-2021-01-15-오후-9.11.37-e1610712716355.png)

@@ -54,13 +54,13 @@ CocoaPods 프로젝트에서 Build Phase의 Run Script를 이용해 패치 넘�
 
 ##### **Step 1: 워크스페이스에서 Pods 프로젝트를 클릭한 뒤 Target > Build Phase > \[+\] 버튼을 눌러 Run Script를 추가합니다.**
 
-\[caption id="attachment\_6991" align="alignnone" width="336"\]![](./assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.11.11-복사본.jpg) Pods 클릭\[/caption\]
+\[caption id="attachment\_6991" align="alignnone" width="336"\] ![](/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.11.11-복사본.jpg) Pods 클릭\[/caption\]
 
-\[caption id="attachment\_6992" align="alignnone" width="721"\]![](./assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.18.22-복사본.jpg) 상단의 `[+]` 버튼을 눌러 `Run Script` 추가\[/caption\] 
+\[caption id="attachment\_6992" align="alignnone" width="721"\] ![](/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.18.22-복사본.jpg) 상단의 `[+]` 버튼을 눌러 `Run Script` 추가\[/caption\] 
 
 ##### **Step 2: 호환성을 위해 Shell을 / b i n / b a s h로 설정**
 
-\[caption id="attachment\_6993" align="alignnone" width="753"\]![](./assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.00.59-복사본.jpg) Shell 변경\[/caption\]
+\[caption id="attachment\_6993" align="alignnone" width="753"\] ![](/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.00.59-복사본.jpg) Shell 변경\[/caption\]
 
 나머지 옵션은 그대로 둡니다.
 

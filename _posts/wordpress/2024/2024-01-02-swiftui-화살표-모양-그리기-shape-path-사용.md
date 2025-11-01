@@ -60,7 +60,7 @@ struct ArrowShape: Shape {
 
  
 
-![](./assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-02-오후-9.17.14-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-02-오후-9.17.14-복사본.jpg)
 
  
 
@@ -83,7 +83,7 @@ struct ContentView: View {
 
  
 
-![](./assets/img/wp-content/uploads/2024/01/swiftui-arrow-shape.webp)
+ ![](/assets/img/wp-content/uploads/2024/01/swiftui-arrow-shape.webp)
 
  
 
@@ -105,7 +105,7 @@ struct ContentView: View {
 
 `.rotationEffect` 변경자는 파라미터로 각도(degrees 또는 radian)를 받고 해당 각도만큼 회전시킵니다. `.degrees(90)` 를 사용하면 오른쪽으로 90도 회전합니다.
 
-![](./assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-02-오후-9.38.58.png)
+ ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-02-오후-9.38.58.png)
 
  
 

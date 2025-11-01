@@ -16,15 +16,15 @@ Create ML로 만든 모델 파일을 이용해 이미지 분류 앱을 제작합
 
 ##### **1: 모델 파일(\*.mlmodel)을 프로젝트에 추가합니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-10-오전-1.56.12.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-10-오전-1.56.12.jpg)
 
  
 
 ##### **2: 메인 스토리보드에서 뷰 컨트롤러에 UI 요소를 추가합니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-10-오전-1.57.01.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-10-오전-1.57.01.jpg)
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-10-오전-1.58.57.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-10-오전-1.58.57.jpg)
 
  
 
@@ -257,7 +257,7 @@ lazy var classificationRequest: VNCoreMLRequest = {
 
 앞서 1단계에서 모델 파일을 프로젝트에 추가했는데, 모델 파일을 추가하면 자동으로 해당 파일 이름과 똑같은 이름의 클래스가 자동으로 생성됩니다. 파일 이름을 바꾸면 클래스 이름도 자동으로 바뀝니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-10-오전-2.48.31.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-10-오전-2.48.31.jpg)
 
 자동 생성된 `LivestocksClassifier` 클래스를 사용할 것입니다.
 

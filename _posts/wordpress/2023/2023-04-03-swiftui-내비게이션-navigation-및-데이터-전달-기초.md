@@ -78,7 +78,7 @@ NavigationStack {
 - `NavigationLink`의 첫 번째 파라미터는 버튼(링크) 이름, 두 번째 `value:` 파라미터는 다음으로 이동하는 View에 전달할 값을 입력합니다. 다양한 타입의 값을 입력하는 것이 가능합니다.
     - 위의 예제에서는 `Color` 타입의 값을 전달합니다.
 
-\[caption id="attachment\_5426" align="alignnone" width="193"\]![](./assets/img/wp-content/uploads/2023/04/스크린샷-2023-04-03-오후-7.25.10-복사본.jpg) `List`와 `NavigationLink`\[/caption\]
+\[caption id="attachment\_5426" align="alignnone" width="193"\] ![](/assets/img/wp-content/uploads/2023/04/스크린샷-2023-04-03-오후-7.25.10-복사본.jpg) `List`와 `NavigationLink`\[/caption\]
 
  
 
@@ -109,7 +109,7 @@ List {
 
 `[동대문]` 버튼을 누르면 `Color.mint` 값이 전달되며 다음 뷰로 넘어갑니다.
 
-![](./assets/img/wp-content/uploads/2023/04/스크린샷-2023-04-03-오후-7.33.58-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/04/스크린샷-2023-04-03-오후-7.33.58-복사본.jpg)
 
  
 
@@ -156,7 +156,7 @@ struct ColorDetail: View {
 - **NavigationLink**
     - `JacobDetail` 뷰(후술, 3번째 화면)으로 이동합니다.
 
-![](./assets/img/wp-content/uploads/2023/04/스크린샷-2023-04-03-오후-7.43.16.png)
+ ![](/assets/img/wp-content/uploads/2023/04/스크린샷-2023-04-03-오후-7.43.16.png)
 
 ##### **JacobDetail.swift**
 

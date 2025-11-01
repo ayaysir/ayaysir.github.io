@@ -94,7 +94,7 @@ iPhone/iPad에서 뮤직박스가 다시 태어났습니다. 나만의 오르골
 
 #### **스크린샷**
 
-![](./assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.57.27.jpg) ![](./assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.57.34.jpg) ![](./assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.57.40.jpg) ![](./assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.57.54.jpg) ![](./assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.58.02.jpg) ![](./assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.58.11.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.57.27.jpg)  ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.57.34.jpg)  ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.57.40.jpg)  ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.57.54.jpg)  ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.58.02.jpg)  ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-05-오전-12.58.11.jpg)
 
  
 

@@ -16,4 +16,4 @@ Nocturne No. 2, Op. 9 in E-flat
 
  
 
-![](./assets/img/wp-content/uploads/2021/11/스크린샷-2021-11-25-오후-11.03.11.jpg)
+ ![](/assets/img/wp-content/uploads/2021/11/스크린샷-2021-11-25-오후-11.03.11.jpg)

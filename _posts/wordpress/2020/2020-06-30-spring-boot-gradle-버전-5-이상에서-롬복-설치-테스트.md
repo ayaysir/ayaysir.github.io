@@ -11,7 +11,7 @@ categories:
 
 ##### **1\. Gradle 버전 확인**
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-6.10.03.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-6.10.03.png)
 
 Gradle 버전이 5 이상인 경우 아래와 같이 진행하고, 4 이하라면 다른 방법으로 진행해야 합니다.
 
@@ -36,9 +36,9 @@ dependencies {
 
 ##### **3\. 롬복 플러그인 설치 (인텔리제이 아이디어 기준)**
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-7.06.48.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-7.06.48.png)
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-7.07.13.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-7.07.13.png)
 
  
 
@@ -67,7 +67,7 @@ public class BasicControllerDTO {
 
 ##### **5\. 테스트 코드 작성**
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-6.14.29.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-6.14.29.png)
 
 ```
 package com.example.awsboard.web.dto;
@@ -110,7 +110,7 @@ dependencies {
 
 위 스크린샷에서 `롬복_기능_테스트()` 옆에 있는 재생버튼(`Run Test`) 클릭
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-6.16.00.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-6.16.00.png)
 
  
 

@@ -45,7 +45,7 @@ echo date("Y");
 
 예를 들어 오늘이 12월 24일인 경우, 주(week)의 범위는 12월 21일 월요일(`$monday`)부터 12월 27일 일요일(`$sunday`)까지입니다.
 
-![](./assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-24-오후-8.24.29.png)
+ ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-24-오후-8.24.29.png)
 
 ```
 $monday = strtotime('last monday', strtotime('tomorrow'));

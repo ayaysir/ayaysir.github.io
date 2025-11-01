@@ -14,7 +14,7 @@ categories:
 
 Local notification(로컬 노티피케이션) 흔히 푸시 알람, 푸시 메시지로 일컫는 기기 메시지의 형태인데 외부 네트워크를 거치는 형태가 아닌 기기 내부에서 발신하는 오프라인 푸시 알람입니다.
 
-\[caption id="attachment\_3905" align="alignnone" width="331"\]![](./assets/img/wp-content/uploads/2021/08/IMG_3480-e1629469919284.jpg) Local Notification\[/caption\]
+\[caption id="attachment\_3905" align="alignnone" width="331"\] ![](/assets/img/wp-content/uploads/2021/08/IMG_3480-e1629469919284.jpg) Local Notification\[/caption\]
 
 위 스크린샷은 로컬 노티피케이션의 예제로 제목과, 메시지 및 사진 섬네일이 첨부되어 있습니다.
 
@@ -47,7 +47,7 @@ userNotiCenter.requestAuthorization(options: notiAuthOptions) { (success, error)
 
 `arrayLiteral:`에 들어갈 수 있는 카테고리는 다음과 같습니다.
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-10-오후-10.11.59.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-10-오후-10.11.59.jpg)
 
 [애플 UnauthorizationOptions 문서](https://developer.apple.com/documentation/usernotifications/unauthorizationoptions)
 
@@ -59,7 +59,7 @@ userNotiCenter.requestAuthorization(options: notiAuthOptions) { (success, error)
 
 ##### **제목과 내용 (title & body)**
 
-![](./assets/img/wp-content/uploads/2021/08/IMG_3480-e1629469919284.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/IMG_3480-e1629469919284.jpg)
 
 - `title` - 제목으로 예제에서 굵은 글씨의 "창문 앞의 디퓨저" 입니다.
 - `body` - 내용으로 예제에서 제목 밑에 있는 설명문입니다.
@@ -105,7 +105,7 @@ do {
 
 비디오 파일은 섬네일이 임의로 표시되며 움직이지 않습니다.
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-10-오후-10.35.16.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-10-오후-10.35.16.jpg)
 
 ##### **재생 소리 설정**
 
@@ -131,7 +131,7 @@ notiContent.badge = (newNumber) as NSNumber
 
 `0` 이하의 숫자를 등록하면 배지가 표시되지 않으며, `1` 이상의 값을 등록할 경우 아래와 같이 표시됩니다.
 
-![](./assets/img/wp-content/uploads/2022/08/Simulator-Screen-Shot-iPhone-11-2022-08-10-at-23.47.11.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/Simulator-Screen-Shot-iPhone-11-2022-08-10-at-23.47.11.jpg)
 
 참고로 앱 아무곳에서 배지 숫자를 설정하는 방법은 다음과 같습니다. (`0` 이하는 배지 표시 안함, `1` 이상은 배지 표시함)
 
@@ -260,7 +260,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
  
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-11-오전-12.08.06.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-11-오전-12.08.06.jpg)
 
 위 코드가 동작하지 않을 경우
 

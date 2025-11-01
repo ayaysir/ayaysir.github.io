@@ -12,7 +12,7 @@ categories:
 
 Xcode를 사용하다 보면 좁은 모니터 환경에서 **Navigator (왼쪽 패널)**와 **Inspector (오른쪽 패널)**를 상황에 따라 동시에 숨기거나 나타내고 싶을 때가 많습니다. 하지만 기본 단축키만으로는 이 둘을 **동시에 제어할 수 있는 방법은 제공되지 않습니다.**
 
-\[caption id="attachment\_7020" align="alignnone" width="716"\]![](./assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-30-오후-7.35.52-복사본.jpg) 내비게이터(Navigator)와 인스펙터(Inspector)\[/caption\]
+\[caption id="attachment\_7020" align="alignnone" width="716"\] ![](/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-30-오후-7.35.52-복사본.jpg) 내비게이터(Navigator)와 인스펙터(Inspector)\[/caption\]
 
  
 
@@ -79,7 +79,7 @@ Xcode 자체에서는 **Navigator와 Inspector를 동시에 제어하는 단축�
 
 Karabiner-Elements 설치 후 Function Keys 탭으로 이동합니다.
 
-\[caption id="attachment\_7021" align="alignnone" width="658"\]![](./assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-30-오후-7.44.36-복사본.jpg) Function Keys 탭\[/caption\]
+\[caption id="attachment\_7021" align="alignnone" width="658"\] ![](/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-30-오후-7.44.36-복사본.jpg) Function Keys 탭\[/caption\]
 
 제 컴퓨터에서는 어째서인지 F6만 맥북의 기본 기능 없이 자유롭게 쓸 수 있었고, 나머지 Function 키들은 밝기, 재생 등으로 할당되어 있었습니다. 그래서 F6 키를 눌렀을 때 Navigator와 Inspector가 동시에 토글되도록 설정했습니다. 각자의 상황에 맞춰 다른 단축키를 써도 됩니다.
 
@@ -144,11 +144,11 @@ Karabiner-Elements 설치 후 Function Keys 탭으로 이동합니다.
 2. `Complex Modifications` 탭을 클릭 > `Add predefined rule` 버튼 클
 3. 하단의 **Xcode toggle Navigator + Inspector** 추가 후 목록에 나타나는지 확인
 
-\[caption id="attachment\_7022" align="alignnone" width="643"\]![](./assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-30-오후-7.51.10-복사본.jpg) Complex Modifications 탭을 클릭 > Add predefined rule 버튼 클릭\[/caption\]
+\[caption id="attachment\_7022" align="alignnone" width="643"\] ![](/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-30-오후-7.51.10-복사본.jpg) Complex Modifications 탭을 클릭 > Add predefined rule 버튼 클릭\[/caption\]
 
  
 
-\[caption id="attachment\_7023" align="alignnone" width="654"\]![](./assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-30-오후-7.52.05-복사본.jpg) 하단의 Xcode toggle Navigator + Inspector 추가 후 목록에 나타나는지 확인\[/caption\]
+\[caption id="attachment\_7023" align="alignnone" width="654"\] ![](/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-30-오후-7.52.05-복사본.jpg) 하단의 Xcode toggle Navigator + Inspector 추가 후 목록에 나타나는지 확인\[/caption\]
 
  
 

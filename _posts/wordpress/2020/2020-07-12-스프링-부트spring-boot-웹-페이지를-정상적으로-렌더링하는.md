@@ -15,7 +15,7 @@ categories:
 
 #### **참고: 프로젝트 구조, View 파일, 컨트롤러**
 
-![](./assets/img/wp-content/uploads/2020/07/-2020-07-12-오후-1.54.15-e1594529695675.png)
+ ![](/assets/img/wp-content/uploads/2020/07/-2020-07-12-오후-1.54.15-e1594529695675.png)
 
 ##### **IndexController.java**
 
@@ -58,7 +58,7 @@ public class IndexController {
 
 참고: [Spring Boot: JUnit 단위 테스트 기초 (GetMapping 테스트, 인텔리제이 기준)](http://yoonbumtae.com/?p=2532)
 
-![](./assets/img/wp-content/uploads/2020/07/-2020-07-12-오후-1.58.23-e1594529998974.png)
+ ![](/assets/img/wp-content/uploads/2020/07/-2020-07-12-오후-1.58.23-e1594529998974.png)
 
 ##### **IndexControllerTest.java**
 
@@ -99,7 +99,7 @@ public class IndexControllerTest {
 
 ##### **케이스 1: contains("AWS Board");**
 
-![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-12-오후-2.17.28.png)
+ ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-12-오후-2.17.28.png)
 
 index.html에 `"AWS Board"`라는 문구가 있으므로 정상 통과합니다.
 
@@ -107,6 +107,6 @@ index.html에 `"AWS Board"`라는 문구가 있으므로 정상 통과합니다.
 
 ##### **케이스 2: contains("SWA Board");**
 
-![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-12-오후-2.19.12.png)
+ ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-12-오후-2.19.12.png)
 
 index.html에 `"SWA Board"`라는 문구가 없으므로 테스트 실패했습니다.

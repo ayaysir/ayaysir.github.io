@@ -14,13 +14,13 @@ categories:
 
 #### **소식 1: 튜너 앱 Tuner XR 글로벌 다운로드 수 1000회 돌파**
 
-\[caption id="attachment\_4563" align="aligncenter" width="158"\][![](./assets/img/wp-content/uploads/2022/06/icon-TunerXR.png)](https://apps.apple.com/kr/app/tuner-xr/id1581803256) 앱 스토어에서 무료 다운로드\[/caption\]
+\[caption id="attachment\_4563" align="aligncenter" width="158"\][ ![](/assets/img/wp-content/uploads/2022/06/icon-TunerXR.png)](https://apps.apple.com/kr/app/tuner-xr/id1581803256) 앱 스토어에서 무료 다운로드\[/caption\]
 
 음악가들을 위한 튜너 앱 _**Tuner XR**_이
 
 출시 이후 글로벌 다운로드 수 1000회를 돌파하였습니다~  🎉🎉🎉🎉
 
-![](./assets/img/wp-content/uploads/2022/12/-파티-Congratulations-Party-e1670488300470.jpeg)
+ ![](/assets/img/wp-content/uploads/2022/12/-파티-Congratulations-Party-e1670488300470.jpeg)
 
 이전에 500회 다운로드 기념으로 해당 앱에 대해 소개해드린 적이 있는데요
 
@@ -34,7 +34,7 @@ categories:
 
 #### **소식 2: 음악 스케일 학습 앱 UltimateScale 신규 기능 업데이트**
 
-\[caption id="attachment\_4564" align="aligncenter" width="158"\][![](./assets/img/wp-content/uploads/2022/06/icon-UltimateScale.png)](https://apps.apple.com/kr/app/ultimatescale/id1631310626) 앱 스토어에서 무료 다운로드\[/caption\]
+\[caption id="attachment\_4564" align="aligncenter" width="158"\][ ![](/assets/img/wp-content/uploads/2022/06/icon-UltimateScale.png)](https://apps.apple.com/kr/app/ultimatescale/id1631310626) 앱 스토어에서 무료 다운로드\[/caption\]
 
 음악 스케일 학습 앱 _**UltimateScale**_이 1.3.1 버전으로 업데이트 되면서
 
@@ -48,7 +48,7 @@ categories:
 
 스케일을 비교해가면서 정보를 열람할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/12/2.-iPhone-6-Plus.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/2.-iPhone-6-Plus.jpg)
 
 구성음이 유사한 스케일이 많아 헷갈린다면
 
@@ -94,9 +94,9 @@ CSV 파일로 내보낼 수 있습니다.
 
 추가될 예정이라고 하네요
 
-![](./assets/img/wp-content/uploads/2022/12/IMG_3B5897304303-1.jpeg)
+ ![](/assets/img/wp-content/uploads/2022/12/IMG_3B5897304303-1.jpeg)
 
-\[caption id="attachment\_5111" align="aligncenter" width="750"\]![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-08-오후-6.11.01-복사본.jpg) CSV 파일\[/caption\]
+\[caption id="attachment\_5111" align="aligncenter" width="750"\] ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-08-오후-6.11.01-복사본.jpg) CSV 파일\[/caption\]
 
  
 
@@ -118,7 +118,7 @@ CSV 파일로 내보낼 수 있습니다.
 
 나오도록 변경되었답니다.
 
-![](./assets/img/wp-content/uploads/2022/12/IMG_0FE52EA76447-1.jpeg)
+ ![](/assets/img/wp-content/uploads/2022/12/IMG_0FE52EA76447-1.jpeg)
 
 이상으로 앱 스토어 소식 소개를 마치겠습니다.
 

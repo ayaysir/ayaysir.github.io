@@ -40,7 +40,7 @@ https://www.youtube.com/watch?v=ZqUtpc7yEYQ
 
 #### **사용 기술** 
 
-![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-19-오후-5.47.28.png)
+ ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-19-오후-5.47.28.png)
 
  
 
@@ -65,34 +65,34 @@ https://www.youtube.com/watch?v=ZqUtpc7yEYQ
 
 #### **스크린샷**
 
-\[caption id="attachment\_2934" align="alignnone" width="2784"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-19-오후-5.50.41.png) 메인 화면\[/caption\]
+\[caption id="attachment\_2934" align="alignnone" width="2784"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-19-오후-5.50.41.png) 메인 화면\[/caption\]
 
-\[caption id="attachment\_3963" align="alignnone" width="2560"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2021-08-29-오후-7.29.59-scaled.jpg) 새로운 디자인 적용\[/caption\]
-
- 
-
-\[caption id="attachment\_2937" align="alignnone" width="2784"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-19-오후-5.56.38.png) 파일 업로드 화면\[/caption\]
+\[caption id="attachment\_3963" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2021-08-29-오후-7.29.59-scaled.jpg) 새로운 디자인 적용\[/caption\]
 
  
 
-\[caption id="attachment\_2936" align="alignnone" width="2784"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-19-오후-5.53.50.png) 정보 업데이트 화면\[/caption\]
+\[caption id="attachment\_2937" align="alignnone" width="2784"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-19-오후-5.56.38.png) 파일 업로드 화면\[/caption\]
 
  
 
-\[caption id="attachment\_2938" align="alignnone" width="422"\]![](./assets/img/wp-content/uploads/2020/08/IMG_11462A79DFCE-1.jpeg) 스마트폰에서의 메인 화면\[/caption\]
+\[caption id="attachment\_2936" align="alignnone" width="2784"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-19-오후-5.53.50.png) 정보 업데이트 화면\[/caption\]
 
  
 
-\[caption id="attachment\_3964" align="alignnone" width="2560"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2021-08-29-오후-7.30.24-scaled.jpg) 검색 기능\[/caption\]
+\[caption id="attachment\_2938" align="alignnone" width="422"\] ![](/assets/img/wp-content/uploads/2020/08/IMG_11462A79DFCE-1.jpeg) 스마트폰에서의 메인 화면\[/caption\]
 
  
 
- 
-
-\[caption id="attachment\_3965" align="alignnone" width="2560"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2021-08-29-오후-7.30.33-scaled.jpg) 퍼가기 기능\[/caption\]
+\[caption id="attachment\_3964" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2021-08-29-오후-7.30.24-scaled.jpg) 검색 기능\[/caption\]
 
  
 
  
 
-\[caption id="attachment\_3966" align="alignnone" width="470"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2021-08-29-오후-7.32.10.jpg) 퍼가기 기능으로 블로그, 게시판 등에 플레이어 붙여넣기\[/caption\]
+\[caption id="attachment\_3965" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2021-08-29-오후-7.30.33-scaled.jpg) 퍼가기 기능\[/caption\]
+
+ 
+
+ 
+
+\[caption id="attachment\_3966" align="alignnone" width="470"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2021-08-29-오후-7.32.10.jpg) 퍼가기 기능으로 블로그, 게시판 등에 플레이어 붙여넣기\[/caption\]

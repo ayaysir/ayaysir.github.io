@@ -73,7 +73,7 @@ struct ButtonDebounce: View {
 ```
 
 - `debounce(... for:)` - Debounce가 실행될 범위(interval)을 정합니다.
-    - 사용할 수 있는 시간 종류는 다음과 같습니다. ![](./assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-05-오후-10.20.02-복사본.jpg)
+    - 사용할 수 있는 시간 종류는 다음과 같습니다.  ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-05-오후-10.20.02-복사본.jpg)
 - `debounce(... scheduler:)` - 어느 스레드에서 실행할 지 정합니다. UI와 관련되었으므로 `RunLoop.main`을 사용합니다.
 
  

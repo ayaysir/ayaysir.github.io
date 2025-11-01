@@ -44,9 +44,9 @@ CocoaPods로도 추가할 수는 있지만 `pod 'ENSwiftSideMenu'`
 
 **1) Navigation Controller를 추가하고, 원래 뷰 컨트롤러를 Root View Controller로 연결합니다**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.21.05.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.21.05.jpg)
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.23.42.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.23.42.jpg)
 
 해당 내비게이션 컨트롤러가 반드시 Initial View Controller가 되게 합니다. (Attribute Inspector에서 `Is Initial View Controller` 체크박스 선택)
 
@@ -54,7 +54,7 @@ CocoaPods로도 추가할 수는 있지만 `pod 'ENSwiftSideMenu'`
 
 **2) 사이드 메뉴가 될 뷰 컨트롤러를 생성하고, Storyboard ID를 부여합니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.27.29.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.27.29.jpg)
 
 테이블 뷰로 메뉴를 만들며, 각 메뉴를 클릭하면 해당 페이지로 이동합니다. Custom Class에도 뷰 컨트롤러 클래스를 연결합니다.
 
@@ -133,7 +133,7 @@ extension MenuNavigationController: ENSideMenuDelegate {
 
 **4) Navigation Controller의 커스텀 클래스로 3번 섹션에서 만든 `MenuNavigationController`를 추가합니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.37.06.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.37.06.jpg)
 
  
 

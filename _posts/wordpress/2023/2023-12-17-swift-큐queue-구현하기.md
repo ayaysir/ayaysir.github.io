@@ -11,7 +11,7 @@ categories:
 
 [큐(queue)](https://ko.wikipedia.org/wiki/%ED%81%90_\(%EC%9E%90%EB%A3%8C_%EA%B5%AC%EC%A1%B0\))는 기본적인 자료 구조의 한가지로, 먼저 집어 넣은 데이터가 먼저 나오는 `FIFO`(First In First Out)구조로 저장하는 형식을 말합니다. 나중에 집어 넣은 데이터가 먼저 나오는 스택과는 반대되는 개념입니다. 프린터의 출력 처리나 운영체제의 메시지 처리기, 프로세스 관리 등 데이터가 입력된 시간 순서대로 처리해야 할 필요가 있는 상황에 이용됩니다.
 
-![](./assets/img/wp-content/uploads/2023/12/큐.jpg)
+ ![](/assets/img/wp-content/uploads/2023/12/큐.jpg)
 
  
 
@@ -95,8 +95,8 @@ struct Queue<T> {
     - 헤드 노드와 테일 노드는 같은 노드를 가리킬 수 잇습니다.
 - 기본적인 기능인 `enqueue`, `dequeue`와 큐가 비어있는지 여부를 알려주는 `isEmpty`가 있습니다.
 - **enqueue(\_:)**
-    - `head`가 비어있다면(`nil`) `head`, `tail`에 새로 입력한 값 노드를 대입합니다. ![](./assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-18-오전-2.03.48-복사본.jpg)
-    - `head`가 이미 존재한다면 기존 `tail`의 `next`에 새 값 노드를 지정하고, 이 새 값 노드를 새로운 `tail`로 지정합니다. ![](./assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-18-오전-2.08.52-복사본.jpg)
+    - `head`가 비어있다면(`nil`) `head`, `tail`에 새로 입력한 값 노드를 대입합니다.  ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-18-오전-2.03.48-복사본.jpg)
+    - `head`가 이미 존재한다면 기존 `tail`의 `next`에 새 값 노드를 지정하고, 이 새 값 노드를 새로운 `tail`로 지정합니다.  ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-18-오전-2.08.52-복사본.jpg)
 - **dequeue()**
     - `head` 노드의 값을 가져온 뒤 `next` 노드르 헤드를 옮깁니다.
         - 이 때 `next` 노드가 없다면 큐가 비어있는 것이므로 `head`, `tail` 모두 `nil`로 만듭니다.
@@ -126,4 +126,4 @@ gptQueue.isEmpty // true
 
 #### **대용량 자료 처리시 시간 차이 분석**
 
-#### ![](./assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-18-오전-2.26.20-복사본.jpg)
+####  ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-18-오전-2.26.20-복사본.jpg)

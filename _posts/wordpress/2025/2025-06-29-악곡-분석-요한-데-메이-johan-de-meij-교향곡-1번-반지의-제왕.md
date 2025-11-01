@@ -72,11 +72,11 @@ Amsterdam Wind Orchestra, 지휘 Arie van Beek 연주 전악장
 
 https://www.youtube.com/watch?v=9MAf3K0SYfs&pp=ygUYam9oYW4gZGUgbWVpaiBzeW1waG9ueSAx
 
-![](./assets/img/wp-content/uploads/2025/06/gandalf.jpeg)
+ ![](/assets/img/wp-content/uploads/2025/06/gandalf.jpeg)
 
 - **설명**: 이 악장은 [간달프](https://ko.wikipedia.org/wiki/%EA%B0%84%EB%8B%AC%ED%94%84)의 음악적 초상화로, 그의 지혜롭고 고귀한 성격을 표현하기 위해 장엄한 모티프가 사용됩니다. 이 모티프는 4악장과 5악장에서도 재등장하며, 교향곡의 구조적 통일성을 강화합니다. 악장은 "풍부하며 장엄한 테마"로 시작하며, 간달프의 강인한 성격을 보여줍니다. 이후 "섀도우팍스(Shadowfax)" 위에서의 야생적인 달리기를 묘사하는 부분이 이어집니다.
     
-    \[caption id="attachment\_7145" align="alignnone" width="346"\]![](./assets/img/wp-content/uploads/2025/06/shadowfax.jpeg) 영화에 등장하는 Shadowfax\[/caption\]
+    \[caption id="attachment\_7145" align="alignnone" width="346"\] ![](/assets/img/wp-content/uploads/2025/06/shadowfax.jpeg) 영화에 등장하는 Shadowfax\[/caption\]
 - 간달프는 지혜롭고 강력한 지도자로, 반지 원정대 (Fellowship)라 불리는 그룹의 여정을 이끌며 마법과 지혜를 구사하는 핵심 인물입니다.
 - 간달프의 성격은 장엄한 모티프를 통해 표현되며, 이는 금관악기의 팬파레로 시작됩니다. Allegro vivace 부분은 그의 활발하고 예측 불가능한 면을 음악적으로 구현한 것으로, 빠른 템포와 복잡한 리듬이 특징입니다. 이 악장은 간달프의 마법사로서의 위대함과 동시에 그의 인간적인 면을 동시에 담고 있습니다. [Symphony no. 1 “Lord of the Rings” by Johan de Meij](https://windliterature.org/2010/10/19/symphony-no-1-lord-of-the-rings-by-johan-de-meij/)에 따르면, 이 악장은 그의 지도적 역할과 동료들에 대한 헌신을 강조합니다.
 
@@ -86,7 +86,7 @@ https://www.youtube.com/watch?v=9MAf3K0SYfs&pp=ygUYam9oYW4gZGUgbWVpaiBzeW1waG9ue
 
 https://www.youtube.com/watch?v=060j5MQgv4Y
 
-![](./assets/img/wp-content/uploads/2025/06/ae051076b6e3469e98152f9bf2d832af83e77696_hq.jpg)
+ ![](/assets/img/wp-content/uploads/2025/06/ae051076b6e3469e98152f9bf2d832af83e77696_hq.jpg)
 
 - **설명**: 로스로리엔의 분위기를 음악적으로 표현한 악장으로, 나무, 식물, 그리고 이국적인 새들의 소리로 가득 찬 엘프의 숲을 묘사합니다. 로스로리엔은 반지 원정대가 잠시 쉬고 회복하는 안전한 장소로, 엘프의 숲, 엘프의 영역으로 묘사됩니다.
 - Allegretto 부분은 프로도가 갈라드리엘 여왕을 만나는 장면을 담고 있으며, 갈라드리엘의 거울에서 보는 세 가지 비전, 그중에서도 마지막으로 나타나는 거대한 섬뜩한 눈(사우론의 눈)이 프로도를 혼란스럽게 만드는 장면으로 마무리됩니다.
@@ -98,7 +98,7 @@ https://www.youtube.com/watch?v=060j5MQgv4Y
 
 https://www.youtube.com/watch?v=jbptS62Az\_c
 
-![](./assets/img/wp-content/uploads/2025/06/Gollum_s_journey_commences_by_Frederic_Bennett_detail.jpg)
+ ![](/assets/img/wp-content/uploads/2025/06/Gollum_s_journey_commences_by_Frederic_Bennett_detail.jpg)
 
 - **설명**: [골룸](https://ko.wikipedia.org/wiki/%EA%B3%A8%EB%A3%B8)의 음악적 표현으로, 그의 비굴하고 사악한 성격을 담고 있습니다. 골룸은 반지의 이전 소유자로, 반지의 힘에 사로잡혀 스메아골(그의 이중 인격)과 골룸의 갈등을 가진 슬픈 존재입니다. 이 악장은 그의 괴물 같은 본성을 소프라노 색소폰을 통해 표현됩니다.
 - 골룸은 소프라노 색소폰으로 표현되며, 중얼거림, 쉿거림, 울음, 그리고 히죽거림 등 다양한 음색을 통해 그의 복잡한 성격을 묘사합니다. 그는 항상 반지를 찾는 모습으로 그려집니다.
@@ -110,7 +110,7 @@ https://www.youtube.com/watch?v=jbptS62Az\_c
 
 https://www.youtube.com/watch?v=gzyV1sJjDis
 
-![](./assets/img/wp-content/uploads/2025/06/images.jpeg)
+ ![](/assets/img/wp-content/uploads/2025/06/images.jpeg)
 
 - **설명**: [모리아 광산](https://en.wikipedia.org/wiki/Moria,_Middle-earth)(Mines of Moria)을 통과하는 동료들의 위험한 여정을 묘사한 악장입니다.  시간대의 표현이 애매모호한 다른 악장과 달리 확실한 시간대와 사건을 묘사하고 있는 것이 특징입니다.
 - 하위 악장 a - 모리아 광산, b - 카자드 둠 다리 로 나뉘어져 있습니다. 모리아 광산은 반지 원정대가 겪는 가장 위험한 장소입니다.
@@ -123,7 +123,7 @@ https://www.youtube.com/watch?v=gzyV1sJjDis
 
 https://www.youtube.com/watch?v=W0KLTU5vrxw
 
-![](./assets/img/wp-content/uploads/2025/06/dara-kostromova-unicorngunter-razvorot-gnomy2-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2025/06/dara-kostromova-unicorngunter-razvorot-gnomy2-복사본.jpg)
 
 - **설명**: 호빗들의 천진난만하고 낙관적인 성격을 표현한 악장으로, 행복한 민속춤으로 시작됩니다. 이후 찬송가 같은 부분이 등장하며, 호빗들의 결의와 고귀함을 보여줍니다. 악장은 "회색 항구(The Grey Havens)"의 분위기를 반영하며, 프로도와 간달프가 배를 타고 떠나는 평화로운 장면으로 마무리됩니다.
 - [Learn About the Hobbits Through de Meij’s Famous Symphony](https://tonaldiversions.com/2014/07/31/sym1-mvt5-hobbits-demeij/)에 따르면, 이 악장은 호빗들의 삶을 "일상(slice of life)"으로 묘사하며, 1악장 간달프의 테마가 금관악기의 호른 콜과 팡파레의 형태를 통해 다시 시작됩니다.
@@ -135,7 +135,7 @@ https://www.youtube.com/watch?v=W0KLTU5vrxw
 
 이 교향곡은 관악 합주단을 위한 작품으로, 관악기의 다양한 음색과 표현력을 활용해 톨킨의 세계를 생생하게 묘사합니다. 각 악장은 독립적이지만, 간달프의 모티프와 같은 연결된 테마를 통해 통일성을 유지합니다. 예를 들어 1악장의 간달프의 테마는 4, 5악장에서 재등장하며 교향곡의 서사적 통일성을 강화합니다.
 
-\[caption id="attachment\_7151" align="alignnone" width="980"\]![](./assets/img/wp-content/uploads/2025/06/스크린샷-2025-06-29-오후-10.45.24.png) 1악장 "The Gandalf" 테마의 일부\[/caption\]
+\[caption id="attachment\_7151" align="alignnone" width="980"\] ![](/assets/img/wp-content/uploads/2025/06/스크린샷-2025-06-29-오후-10.45.24.png) 1악장 "The Gandalf" 테마의 일부\[/caption\]
 
 반지의 제왕의 세계관과 서사를 묘사한 것이 특징이지만 악장의 순서는 반드시 소설의 순서와 일치하지는 않습니다. 4악장의 경우를 제외하면 구체적인 시간대와 사건에 대한 묘사보다는 인물이나 장소의 묘사에 중점을 두고 있습니다.
 

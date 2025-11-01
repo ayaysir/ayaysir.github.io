@@ -128,7 +128,7 @@ JSP(뷰 페이지)에서는 다음과 같이 사용합니다.
 </html>
 ```
 
-[![](./assets/img/wp-content/uploads/2019/04/jstl1.png)](http://yoonbumtae.com/?attachment_id=1081)
+[ ![](/assets/img/wp-content/uploads/2019/04/jstl1.png)](http://yoonbumtae.com/?attachment_id=1081)
 
  
 
@@ -227,4 +227,4 @@ mav.addObject("vege", vege);
 </html>
 ```
 
-[![](./assets/img/wp-content/uploads/2019/04/jstl2.png)](http://yoonbumtae.com/?attachment_id=1082)
+[ ![](/assets/img/wp-content/uploads/2019/04/jstl2.png)](http://yoonbumtae.com/?attachment_id=1082)

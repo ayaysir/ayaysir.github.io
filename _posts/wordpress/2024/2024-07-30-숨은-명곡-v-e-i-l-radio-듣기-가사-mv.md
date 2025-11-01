@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=VNFS8DPezUM
 
 > **락 밴드 V.E.I.L**
 > 
-> \[caption id="attachment\_6656" align="alignnone" width="467"\]![](./assets/img/wp-content/uploads/2024/07/DVSCM0KH3M7HWNGVrXzbASjQkwQGFZR6DKg1I664QOA-dwOdx4RDswWyPVDG_PevbANU0WdC6DP-S-esbGO8mDq39cg3UNlPVy_OMO41uW5jwHFE7lOXvFcmthJRHfNpnrs67byHBiWdHreFieKB5w.webp) 위: 김구, 정한종 / 아래: ND, 김원준, 강선우\[/caption\]
+> \[caption id="attachment\_6656" align="alignnone" width="467"\] ![](/assets/img/wp-content/uploads/2024/07/DVSCM0KH3M7HWNGVrXzbASjQkwQGFZR6DKg1I664QOA-dwOdx4RDswWyPVDG_PevbANU0WdC6DP-S-esbGO8mDq39cg3UNlPVy_OMO41uW5jwHFE7lOXvFcmthJRHfNpnrs67byHBiWdHreFieKB5w.webp) 위: 김구, 정한종 / 아래: ND, 김원준, 강선우\[/caption\]
 > 
 >  
 > 

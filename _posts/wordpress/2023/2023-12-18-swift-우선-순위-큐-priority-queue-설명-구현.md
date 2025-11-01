@@ -21,13 +21,13 @@ categories:
 
 힙은 최댓값 및 최솟값을 찾아내는 연산을 빠르게 하기 위해 고안된 완전이진트리(complete binary tree)를 기본으로 한 자료구조(tree-based structure)입니다. 힙의 속성으로는 A가 B의 부모노드(parent node) 이면, A의 키(key)값과 B의 키값 사이에는 대소(크거나 작은)관계가 성립합니다.
 
-\[caption id="attachment\_5975" align="alignnone" width="440"\]![](./assets/img/wp-content/uploads/2023/12/Max-Heap.svg_.png) 최대 힙 (Max Heap)\[/caption\]
+\[caption id="attachment\_5975" align="alignnone" width="440"\] ![](/assets/img/wp-content/uploads/2023/12/Max-Heap.svg_.png) 최대 힙 (Max Heap)\[/caption\]
 
  
 
 힙에는 두가지 종류가 있으며, 부모노드의 키값이 자식노드의 키 값보다 항상 큰 힙을 **'최대 힙(max heap)'**, 부모노드의 키 값이 자식노드의 키 값보다 항상 작은 힙을 **'최소 힙(min heap)'**이라고 부릅니다.
 
-![](./assets/img/wp-content/uploads/2023/12/MinHeapAndMaxHeap1.png)
+ ![](/assets/img/wp-content/uploads/2023/12/MinHeapAndMaxHeap1.png)
 
 우선순위 큐를 구현하는 방법은 여러 가지가 있는데 그 중 힙을 이용한 구현방법이 많이 사용됩니다.
 
@@ -37,11 +37,11 @@ categories:
 
 우선순위 큐(Priority queue)란 일반적인 큐(또는 스택일 수도 있음)에서 우선 순위가 부여된 자료형을 뜻합니다. 일반적인 큐와 달리 각 원소들은 우선순위를 갖고 있습니다. 우선순위 큐에서, 높은 우선순위를 가진 원소는 낮은 우선순위를 가진 원소보다 먼저 처리됩니다. 일반 큐에서는 `dequeue`를 하면 가장 먼저 삽입된 원소가 반환되지만 우선순위 큐에서는 `dequeue`를 하면 우선순위가 가장 높은 원소가 반환됩니다. 만약 두 원소가 같은 우선순위를 가진다면 그들은 큐에서 그들의 순서(선입선출)에 의해 처리됩니다.
 
-![](./assets/img/wp-content/uploads/2023/12/38733128.jpg)
+ ![](/assets/img/wp-content/uploads/2023/12/38733128.jpg)
 
 우선순위 큐는 이름과 달리 선형 구조가 아닌 트리(tree)구조로 생각하는 것이 더 합리적입니다. 이러한 특성으로 우선순위가 가장 높은 값을 찾을 수 있는 완전이진트리인 힙을 이용해 구현할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2023/12/heapq.png)
+ ![](/assets/img/wp-content/uploads/2023/12/heapq.png)
 
 우선순위 큐는 다양한 곳에서 사용될 수 있는데, 가장 대표적인 사용 예로 다익스트라 알고리즘(Dijkstra Algorithm)에서 우선순위 큐를 사용하고 있습니다.
 

@@ -20,7 +20,7 @@ After 11 years, Eddy Chen and Brett Yang are moving on from their beloved, enorm
 
 Dec. 5, 2024 2024년 12월 5일
 
-![](./assets/img/wp-content/uploads/2024/12/05TWOSET-01-wjbh-cover-jumbo-v3.jpg)
+ ![](/assets/img/wp-content/uploads/2024/12/05TWOSET-01-wjbh-cover-jumbo-v3.jpg)
 
 The violinists Eddy Chen and Brett Yang arrived in the suburbs of Bangkok recently on a mischievous mission. 바이올리니스트 에디 첸(Eddy Chen)과 브렛 양(Brett Yang)은 최근 방콕 교외에 약간의 장난스러운 미션을 위해 도착했다.
 
@@ -50,7 +50,7 @@ Over the past 11 years, they have galvanized a younger generation of musicians a
 
  
 
-![](./assets/img/wp-content/uploads/2024/12/05twoset-23-plbt-mobileMasterAt3x.webp)
+ ![](/assets/img/wp-content/uploads/2024/12/05twoset-23-plbt-mobileMasterAt3x.webp)
 
 _Filming crews working with Eddy Chen, left, dressed as Bach, and Brett Yang, dressed as Shostakovich._ _왼쪽에서 바흐로 분장한 에디 첸과 쇼스타코비치로 분장한 브렛 양과 작업 중인 촬영팀._
 
@@ -92,7 +92,7 @@ The post garnered more than 330,000 likes, with many fans in disbelief. 그 게�
 
  
 
-![](./assets/img/wp-content/uploads/2024/12/05TWOSET-hwjp-cover-jumbo-v2.jpg)
+ ![](/assets/img/wp-content/uploads/2024/12/05TWOSET-hwjp-cover-jumbo-v2.jpg)
 
  
 
@@ -140,7 +140,7 @@ As part of their farewell, Chen and Yang are planning to release six videos in w
 
  
 
-![](./assets/img/wp-content/uploads/2024/12/05twoset-13-plbt-mobileMasterAt3x.webp)
+ ![](/assets/img/wp-content/uploads/2024/12/05twoset-13-plbt-mobileMasterAt3x.webp)
 
 _Yang, right, as Shostakovich during the filming of the music video “My Testament” in Bangkok._ _방콕에서 뮤직비디오 ‘My Testament’ 촬영 중 쇼스타코비치로 분장한 양(오른쪽)._
 
@@ -174,7 +174,7 @@ Chen described the videos as a final gift to fans: “our blood, sweat and tears
 
  
 
-\[caption id="attachment\_6917" align="alignnone" width="1800"\]![](./assets/img/wp-content/uploads/2024/12/05twoset-11-plbt-mobileMasterAt3x.webp) As part of their farewell, Chen and Yang are planning to release six videos in which they play members of a band of composers called B²TSM.\[/caption\]
+\[caption id="attachment\_6917" align="alignnone" width="1800"\] ![](/assets/img/wp-content/uploads/2024/12/05twoset-11-plbt-mobileMasterAt3x.webp) As part of their farewell, Chen and Yang are planning to release six videos in which they play members of a band of composers called B²TSM.\[/caption\]
 
  
 
@@ -244,7 +244,7 @@ They quickly became friends. 그들은 곧 친구가 되었다.
 
  
 
-![](./assets/img/wp-content/uploads/2024/12/05twoset-06-plbt-mobileMasterAt3x.webp)
+ ![](/assets/img/wp-content/uploads/2024/12/05twoset-06-plbt-mobileMasterAt3x.webp)
 
 _Yang filming “My Testament,” one of the farewell videos he and Chen are making because, he said, “I would much rather give all of you our best in these music videos than give you a nice, kind, seems-authentic video.”_ _양은 “My Testament”을 촬영하고 있는데, 이 영상은 그와 첸이 제작하는 작별 영상 중 하나이다. 양은 “그럴듯하고 진심 같아 보이는 영상 하나를 올리기보다는, 이런 음악 영상들에 우리의 최선을 다하고 싶습니다.”라고 말했다._
 
@@ -290,7 +290,7 @@ And she had to reverse her usual bearing — putting the bow into her left hand 
 
  
 
-![](./assets/img/wp-content/uploads/2024/12/05twoset-05-plbt-mobileMasterAt3x.webp)
+ ![](/assets/img/wp-content/uploads/2024/12/05twoset-05-plbt-mobileMasterAt3x.webp)
 
 _Pimmada Wit, left, one of the directors working on the B²TSM videos, with Yang._ _B²TSM 영상 작업에 참여한 감독 중 한 명인 피마다 윗(왼쪽)이 양과 함께 있다._
 
@@ -330,7 +330,7 @@ In October, back at home in Singapore, they removed most of their more than 1,50
 
  
 
-![](./assets/img/wp-content/uploads/2024/12/05TWOSET-gzkj-cover-jumbo-v2.jpg)
+ ![](/assets/img/wp-content/uploads/2024/12/05TWOSET-gzkj-cover-jumbo-v2.jpg)
 
 In their farewell post, they wrote: 작별 게시물에서 그들은 이렇게 적었다.
 
@@ -374,7 +374,7 @@ They did not want to post a trite video explaining their decision, they said, an
 
  
 
-![](./assets/img/wp-content/uploads/2024/12/05TWOSET-gzwf-mobileMasterAt3x.webp)
+ ![](/assets/img/wp-content/uploads/2024/12/05TWOSET-gzwf-mobileMasterAt3x.webp)
 
 _The B²TSM videos were filmed in Hong Kong, Thailand and Austria._ _B²TSM 영상은 홍콩, 태국, 오스트리아에서 촬영되었다._
 

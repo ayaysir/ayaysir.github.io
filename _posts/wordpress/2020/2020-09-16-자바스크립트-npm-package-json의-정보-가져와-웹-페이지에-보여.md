@@ -37,4 +37,4 @@ const Home = () => {
 export default Home
 ```
 
-![](./assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-16-오후-9.54.44.png)
+ ![](/assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-16-오후-9.54.44.png)

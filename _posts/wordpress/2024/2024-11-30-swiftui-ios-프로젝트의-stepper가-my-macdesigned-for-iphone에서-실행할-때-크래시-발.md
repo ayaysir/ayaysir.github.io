@@ -12,7 +12,7 @@ categories:
 
 최근, iOS 앱을 macOS에서 실행할 때 `Stepper` UI 요소가 충돌하는 문제를 겪었습니다. 이 문제는 주로 Apple Silicon Mac에서 발생하며, 특히 iOS 앱을 “Mac (Designed for iPhone)” 타겟으로 실행할 때 발생합니다. Stepper는 iOS에서 잘 작동하지만, macOS에서는 크래시가 발생하는 현상이 있었습니다. 이 문제는 SwiftUI의 호환성 문제로 보였고, 이를 해결하기 위한 과정을 공유하려고 합니다.
 
-\[caption id="attachment\_6898" align="alignnone" width="351"\]![](./assets/img/wp-content/uploads/2024/11/스크린샷-2024-11-30-오후-3.38.31.jpeg) iOS에서 Stepper\[/caption\]
+\[caption id="attachment\_6898" align="alignnone" width="351"\] ![](/assets/img/wp-content/uploads/2024/11/스크린샷-2024-11-30-오후-3.38.31.jpeg) iOS에서 Stepper\[/caption\]
 
  
 
@@ -106,7 +106,7 @@ Section {
 
 이제 위의 코드를 통해, Stepper가 macOS에서 충돌하는 문제를 해결할 수 있습니다. ForMacStepper는 iOS 앱이 Mac에서 실행될 때 발생하는 충돌을 방지하고, iOS와 macOS에서 모두 정상적으로 동작할 수 있도록 했습니다. 결과적으로, Stepper가 iOS 및 macOS 모두에서 안정적으로 작동하는 앱을 만들 수 있게 되었습니다.
 
-\[caption id="attachment\_6899" align="alignnone" width="275"\]![](./assets/img/wp-content/uploads/2024/11/스크린샷-2024-11-30-오후-3.41.17-복사본.jpg) macOS에서 커스텀 타이머\[/caption\]
+\[caption id="attachment\_6899" align="alignnone" width="275"\] ![](/assets/img/wp-content/uploads/2024/11/스크린샷-2024-11-30-오후-3.41.17-복사본.jpg) macOS에서 커스텀 타이머\[/caption\]
 
  
 

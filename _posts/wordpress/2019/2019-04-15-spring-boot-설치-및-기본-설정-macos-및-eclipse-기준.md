@@ -20,15 +20,15 @@ tags:
 
 이클립스에서 File > New... > Spring Starter Project 를 선택합니다. Group, Artifact, Package 등은 임의로 설정합니다.
 
-[![](./assets/img/wp-content/uploads/2019/04/1.png)](http://yoonbumtae.com/?attachment_id=1019)
+[ ![](/assets/img/wp-content/uploads/2019/04/1.png)](http://yoonbumtae.com/?attachment_id=1019)
 
  
 
 #### 3\. Next 버튼 누른 뒤, 사용하고자 하는 디펜던시를 추가
 
-[![](./assets/img/wp-content/uploads/2019/04/2.png)](http://yoonbumtae.com/?attachment_id=1020)
+[ ![](/assets/img/wp-content/uploads/2019/04/2.png)](http://yoonbumtae.com/?attachment_id=1020)
 
-[![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.41.55.png)](http://yoonbumtae.com/?attachment_id=1021)
+[ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.41.55.png)](http://yoonbumtae.com/?attachment_id=1021)
 
 search란에서 `DevTools` 를 검색하신 뒤 추가해주세요. 이 도구는 필수요소로 맨 밑에서 설명합니다.
 
@@ -36,7 +36,7 @@ search란에서 `DevTools` 를 검색하신 뒤 추가해주세요. 이 도구�
 
 #### 4\. Finish 버튼 클릭
 
-[![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.31.30.png)](http://yoonbumtae.com/?attachment_id=1022)
+[ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.31.30.png)](http://yoonbumtae.com/?attachment_id=1022)
 
 이 부분은 마법사의 내용을 바탕으로 새로운 프로젝트 파일들을 인터넷에서 다운로드할 때 필요한 URL을 확인하는 절차로 대부분 이상이 없으니 Finish를 누르시면 됩니다.
 
@@ -44,13 +44,13 @@ search란에서 `DevTools` 를 검색하신 뒤 추가해주세요. 이 도구�
 
 #### 5\. 프로젝트 다운로드가 진행되는데, 프로젝트 화면이 아래가 될 때까지(다운로드가 끝날 때까지) 대기
 
-[![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.43.13.png)](http://yoonbumtae.com/?attachment_id=1023)
+[ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.43.13.png)](http://yoonbumtae.com/?attachment_id=1023)
 
 #### 6\. src/main/java 패키지 밑에 데모 애플리케이션이라는게 있는데, 이 부분이 스프링 부트의 핵심
 
 `Demo(프로젝트 이름)Application.java` 클래스를 실행합니다. 실행시 `Spring Boot App`으로 실행합니다.
 
-[![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.45.26.png)](http://yoonbumtae.com/?attachment_id=1024)
+[ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.45.26.png)](http://yoonbumtae.com/?attachment_id=1024)
 
 그러면 콘솔에 뭔가 뜨면서 실행이 될텐데, 에러가 발생할 수 있습니다.
 
@@ -78,7 +78,7 @@ public class DemoApplication {
 
 `src/main/resources/static` 폴더에 추가합니다. 예제로 `index.html` 파일을 작성해서 실행해보겠습니다.
 
-[![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_4.54.05.png)](http://yoonbumtae.com/?attachment_id=1025) [![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_4.55.40.png)](http://yoonbumtae.com/?attachment_id=1026)
+[ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_4.54.05.png)](http://yoonbumtae.com/?attachment_id=1025) [ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_4.55.40.png)](http://yoonbumtae.com/?attachment_id=1026)
 
 #### 8\. 컨트롤러 만들기
 
@@ -104,7 +104,7 @@ public class DemoController {
 
 `@ResponseBody`는 다른 주소나 페이지로 포워딩을 하지 않고 리스폰스를 스트링 그대로 내보내는 기능입니다.
 
-[![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_4.55.53.png)](http://yoonbumtae.com/?attachment_id=1027)
+[ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_4.55.53.png)](http://yoonbumtae.com/?attachment_id=1027)
 
 #### 9\. JSP 뷰 사용하기
 
@@ -135,7 +135,7 @@ spring.mvc.view.suffix=.jsp
 
 (3) 톰캣과의 호환성을 위해 `src/main` 폴더 밑에 `webapp/WEB-INF/views` 폴더를 생성합니다.
 
-[![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.55.37.png)](http://yoonbumtae.com/?attachment_id=1028) [![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_4.01.46.png)](http://yoonbumtae.com/?attachment_id=1029)
+[ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.55.37.png)](http://yoonbumtae.com/?attachment_id=1028) [ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_4.01.46.png)](http://yoonbumtae.com/?attachment_id=1029)
 
 (4) `views` 폴더에 `demo.jsp` 를 만들고, 컨트롤러에 다음과 같이 추가합니다.
 
@@ -165,11 +165,11 @@ public String demoJsp() {
 }
 ```
 
-[![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_4.55.59.png)](http://yoonbumtae.com/?attachment_id=1030)
+[ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_4.55.59.png)](http://yoonbumtae.com/?attachment_id=1030)
 
 참고로 컨트롤러를 찾지 못했을 때 메인 애플리케이션의 어노테이션으로 `@ComponentScan`을 추가하면 해결할 수 있습니다.
 
-[![](./assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.59.49.png)](http://yoonbumtae.com/?attachment_id=1031)
+[ ![](/assets/img/wp-content/uploads/2019/04/스크린샷_2018-09-20_오후_3.59.49.png)](http://yoonbumtae.com/?attachment_id=1031)
 
 ```
 @ComponentScan(basePackgages = "[패키지 경로]")

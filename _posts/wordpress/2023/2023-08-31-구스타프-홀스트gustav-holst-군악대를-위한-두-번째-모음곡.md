@@ -75,7 +75,7 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 ##### **악장 I: "행진곡: 모리스의 춤, 스완지 마을, 클로디 강 둑"** **(March: Morris dance, Swansea Town, Claudy Banks)**
 
-![](./assets/img/wp-content/uploads/2023/08/qco6ccld.png)
+ ![](/assets/img/wp-content/uploads/2023/08/qco6ccld.png)
 
 \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2023/08/HolstSecondSuite-Piano-1-.mp3"\]\[/audio\]
 
@@ -83,11 +83,11 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 짧은 클라이맥스 이후 두 번째 변주는 모음곡 "Swansea Town"의 두 번째 민요를 연주하는 유포니엄 독주로 시작됩니다.
 
-![](./assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-4.54.47-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-4.54.47-복사본.jpg)
 
-테마는 트리오가 되기 전에 전체 밴드에 의해 반복됩니다. 트리오의 경우 홀스트는 B♭(내림나) 단조의 파격적인 서브도미넌트 단조로 변조하고 박자를 6/8로 변박합니다. 일반적으로는 전통적인 행진곡 형식에서 서브도미넌트 장조로 변조됩니다. _**행진곡의 왕**_으로 알려진 [J. P. 수자(J . P. Sousa)](https://ko.wikipedia.org/wiki/%EC%A1%B4_%ED%95%84%EB%A6%BD_%EC%88%98%EC%9E%90)는 때때로 트리오의 박자표를 변경했지만 (특히 "El Capitán"에서) 이는 흔한 일이 아니었습니다. "클로디 강 둑(Claudy Banks)"라고 불리는 세 번째 주제는 표준 행진곡 오케스트레이션과 마찬가지로 낮은 목관 악기의 솔리(soli)로 연주됩니다.![](./assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-5.00.03-복사본.jpg)
+테마는 트리오가 되기 전에 전체 밴드에 의해 반복됩니다. 트리오의 경우 홀스트는 B♭(내림나) 단조의 파격적인 서브도미넌트 단조로 변조하고 박자를 6/8로 변박합니다. 일반적으로는 전통적인 행진곡 형식에서 서브도미넌트 장조로 변조됩니다. _**행진곡의 왕**_으로 알려진 [J. P. 수자(J . P. Sousa)](https://ko.wikipedia.org/wiki/%EC%A1%B4_%ED%95%84%EB%A6%BD_%EC%88%98%EC%9E%90)는 때때로 트리오의 박자표를 변경했지만 (특히 "El Capitán"에서) 이는 흔한 일이 아니었습니다. "클로디 강 둑(Claudy Banks)"라고 불리는 세 번째 주제는 표준 행진곡 오케스트레이션과 마찬가지로 낮은 목관 악기의 솔리(soli)로 연주됩니다. ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-5.00.03-복사본.jpg)
 
-![](./assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-5.00.17-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-5.00.17-복사본.jpg)
 
 그 후, 처음 두 곡이 다 카포(da capo)로 반복됩니다.
 
@@ -95,19 +95,19 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 ##### **악장 II: 무언가(無言歌) '나는 내 사랑을 사랑하겠어'**  **(Song Without Words, 'I'll Love My Love')**
 
-![](./assets/img/wp-content/uploads/2023/08/9nly78h1.png)
+ ![](/assets/img/wp-content/uploads/2023/08/9nly78h1.png)
 
 \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2023/08/Holst-2.mp3"\]\[/audio\]
 
 홀스트는 네 번째 민요인 "I'll Love My Love"를 첫 번째 악장과 극명한 대조를 이루는 위치에 배치했습니다. 악장은 프렌치 호른의 화음으로 시작하여 F Dorian(바 도리안 스케일)의 흐르는 반주 위에서 오보에와 함께 클라리넷 독주로 이어집니다. 그런 다음 솔로는 트럼펫으로 반복되어 강렬의 원호(arc of intensity)를 형성합니다. 작품의 클라이막스는 32마디의 페르마타이고, 이어서 작품의 마지막 마디에 트럼펫 픽업이 이어집니다.
 
-\[caption id="attachment\_5852" align="alignnone" width="581"\]![](./assets/img/wp-content/uploads/2023/08/f-dorian-mode-on-treble-clef.png) F Dorian Mode\[/caption\]
+\[caption id="attachment\_5852" align="alignnone" width="581"\] ![](/assets/img/wp-content/uploads/2023/08/f-dorian-mode-on-treble-clef.png) F Dorian Mode\[/caption\]
 
  
 
 ##### **악장 III: 대장장이의 노래** **(Song of the Blacksmith)**
 
-![](./assets/img/wp-content/uploads/2023/08/h0ti7bv4.png)
+ ![](/assets/img/wp-content/uploads/2023/08/h0ti7bv4.png)
 
 \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2023/08/h0ti7bv4.mp3"\]\[/audio\]
 
@@ -117,19 +117,19 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 > 단조(鍛造): 금속(金屬)을 불에 달구어 불려서 일정(一定)한 형체(形體)로 만드는 일.
 
-\[caption id="attachment\_5847" align="alignnone" width="241"\]![](./assets/img/wp-content/uploads/2023/08/anvil.png) 앤빌 (Anvil)\[/caption\]
+\[caption id="attachment\_5847" align="alignnone" width="241"\] ![](/assets/img/wp-content/uploads/2023/08/anvil.png) 앤빌 (Anvil)\[/caption\]
 
  
 
 마지막 D(라) 장조 코드는 마지막 악장의 길을 여는 영광과 천상의 사운드를 가지고 있습니다. 이 화음은 예상치 못한 채 등장하기 때문에 매우 효과적으로 작동합니다. 음악이 갑자기 상대 단조(relative minor)의 장조로 이동하고 전체 악장은 F(바) 장조가 됩니다.
 
-\[caption id="attachment\_5854" align="alignnone" width="198"\]![](./assets/img/wp-content/uploads/2023/08/-2023-08-31-오후-5.20.19-복사본-e1693470117581.jpg) 3악장 B♭ 코넷(Cornet) 1, 2 파트와 B♭ 트럼펫(Trumpet)의 마지막 두 마디\[/caption\]
+\[caption id="attachment\_5854" align="alignnone" width="198"\] ![](/assets/img/wp-content/uploads/2023/08/-2023-08-31-오후-5.20.19-복사본-e1693470117581.jpg) 3악장 B♭ 코넷(Cornet) 1, 2 파트와 B♭ 트럼펫(Trumpet)의 마지막 두 마디\[/caption\]
 
  
 
 ##### **악장 IV: "다가슨 환상곡"** **(Fantasia on the Dargason)**
 
-![](./assets/img/wp-content/uploads/2023/08/m2mkoh36.png)
+ ![](/assets/img/wp-content/uploads/2023/08/m2mkoh36.png)
 
 \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2023/08/Holst-4.mp3"\]\[/audio\]
 
@@ -137,13 +137,13 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 모음곡의 피날레는 The Dancing Master 초판에 포함된 16세기 영국 춤곡 "다가슨(Dargason)"을 기반으로 한 알토 색소폰 솔로로 시작됩니다. 환상곡(fantasia)은 밴드의 모든 역량을 포괄하는 여러 변주를 통해 계속됩니다. 마지막 민요인 "Greensleeves"는 헤미올라(hemiolas; 중세 음악에서 완전 5도)를 사용하여 교묘하게 엮여 있으며 "Dargason"은 6/8박자이고 "Greensleeves"는 3/4박자입니다.
 
-![](./assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-5.34.34-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-5.34.34-복사본.jpg)
 
 악장의 클라이막스에서 두 개의 경쟁적 주제가 경쟁적 섹션에 배치됩니다. 악장이 멈춤에 따라 튜바와 피콜로 듀엣은 저음역과 고음역의 경쟁을 통해 모음곡의 시작 부분으로 돌아가는 호출을 형성합니다.
 
 다르가슨(Dargason)이라는 이름은 아마도 큰 곰을 닮은 괴물에 대해 이야기하는 아일랜드 전설에서 유래했을 수 있습니다(비록 생물에 대한 설명의 대부분은 시간이 지남에 따라 사라졌지만). 다르가슨은 아일랜드 시골을 괴롭혔습니다. 18세기 후반 아일랜드 봉기 당시 다르가손은 영국군 진영을 공격해 많은 군인을 죽인 것으로 추정됩니다. 이 이야기를 토대로 다르가슨은 난쟁이나 요정을 의미하는 고대 영어 단어에서 파생되었을 가능성이 높으며, 이 곡은 적어도 16세기부터 영어(또는 웨일스어)로 간주되었습니다. "Sedony"(또는 Sedany) 또는 "Welsh Sedony"라고도 합니다.
 
-\[caption id="attachment\_5864" align="alignnone" width="221"\]![](./assets/img/wp-content/uploads/2023/08/IMG_1776.jpeg) 큰 곰을 닮은 괴물 (추정)\[/caption\]
+\[caption id="attachment\_5864" align="alignnone" width="221"\] ![](/assets/img/wp-content/uploads/2023/08/IMG_1776.jpeg) 큰 곰을 닮은 괴물 (추정)\[/caption\]
 
  
 

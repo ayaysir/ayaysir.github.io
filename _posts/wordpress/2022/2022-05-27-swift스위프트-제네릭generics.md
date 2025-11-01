@@ -122,7 +122,7 @@ print(someDouble, ":", anotherDouble)
 
 제네릭 타입 관련 내용은 사용자 정의의 스택(Stack)을 구현하면서 관련 내용이 진행됩니다.
 
-![](./assets/img/wp-content/uploads/2022/05/stackPushPop_2x.png)
+ ![](/assets/img/wp-content/uploads/2022/05/stackPushPop_2x.png)
 
 1. 현재 스택에는 세 개의 값이 있습니다.
 2. 네 번째 값은 스택의 맨 위에 푸시(push)됩니다.
@@ -219,11 +219,11 @@ stackOfStrings.items
 
  
 
-\[caption id="attachment\_4507" align="alignnone" width="1520"\]![](./assets/img/wp-content/uploads/2022/05/stackPushedFourStrings_2x.png) 최초 스택에 push하는 과정\[/caption\]
+\[caption id="attachment\_4507" align="alignnone" width="1520"\] ![](/assets/img/wp-content/uploads/2022/05/stackPushedFourStrings_2x.png) 최초 스택에 push하는 과정\[/caption\]
 
  
 
-\[caption id="attachment\_4508" align="alignnone" width="904"\]![](./assets/img/wp-content/uploads/2022/05/stackPoppedOneString_2x.png) 스택 최상단의 값 "cuatro"를 pop 하는 과정\[/caption\]
+\[caption id="attachment\_4508" align="alignnone" width="904"\] ![](/assets/img/wp-content/uploads/2022/05/stackPoppedOneString_2x.png) 스택 최상단의 값 "cuatro"를 pop 하는 과정\[/caption\]
 
  
 
@@ -511,7 +511,7 @@ let suffix = stackOfInts.suffix(2)
 
 ##### **where Suffix.Item == Item의 의미**
 
-![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-27-오전-9.20.03.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-27-오전-9.20.03.jpg)
 
 `where Suffix.Item == Item`의 의미는 다음과 같습니다. `SuffixableContainer`를 구현하는 `DoubleStack`이라는 구조체를 만들었습니다. `Container`에 정의되어 있는 `append(_:)` 메서드와 `subscript`에 모두 `Double` 타입을 지정하였습니다. 앞서 언급한 컴파일러의 추론 기능으로 인해 `DoubleStack`의 연관 타입 `Item`은 `Double`로 추론이 된 상태입니다.
 

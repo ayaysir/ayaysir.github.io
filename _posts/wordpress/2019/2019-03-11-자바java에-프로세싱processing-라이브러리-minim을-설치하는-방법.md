@@ -140,7 +140,7 @@ https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c
 
  
 
-![](./assets/img/wp-content/uploads/2019/03/스크린샷_2018-11-11_오후_10.32.56.png)
+ ![](/assets/img/wp-content/uploads/2019/03/스크린샷_2018-11-11_오후_10.32.56.png)
 
 지금은 각 과정이 전부 따로 진행되고 있지만, 만약 실제로 서비스할 수 있는(사운드클라우드와 비슷한) 오디오 플레이어를 **전통적 MVC 웹 서비스 형태**로 제작한다고 한다면
 

@@ -132,4 +132,4 @@ window.onload = function() {
 
  
 
-![](./assets/img/wp-content/uploads/2019/04/pathr1.gif)              ![](./assets/img/wp-content/uploads/2019/04/pathr2.gif)
+ ![](/assets/img/wp-content/uploads/2019/04/pathr1.gif)               ![](/assets/img/wp-content/uploads/2019/04/pathr2.gif)

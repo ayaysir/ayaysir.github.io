@@ -58,4 +58,4 @@ var max = Math.max.apply(null, numbers);
 
 https://gist.github.com/ayaysir/68d058c0ce62f3406573eb2bcef0c3c0
 
-![](./assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-09-오전-1.42.04-563x1024.png)
+ ![](/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-09-오전-1.42.04-563x1024.png)

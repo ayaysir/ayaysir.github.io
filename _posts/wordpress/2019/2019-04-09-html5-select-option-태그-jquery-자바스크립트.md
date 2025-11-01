@@ -18,7 +18,7 @@ categories:
 </body>
 ```
 
-[![](./assets/img/wp-content/uploads/2019/04/select1.png)](http://yoonbumtae.com/?attachment_id=1003)
+[ ![](/assets/img/wp-content/uploads/2019/04/select1.png)](http://yoonbumtae.com/?attachment_id=1003)
 
  
 

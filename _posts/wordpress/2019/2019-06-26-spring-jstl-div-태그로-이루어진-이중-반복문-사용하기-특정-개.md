@@ -10,7 +10,7 @@ tags:
 
 예를 들어 15개마다 줄바꿈이 되는 이런 모양의 웹 페이지를 만들고 싶은데, 사용 태그가 `div`라면
 
-![](./assets/img/wp-content/uploads/2019/06/per15.png)
+ ![](/assets/img/wp-content/uploads/2019/06/per15.png)
 
 HTML 페이지는 이런 형태가 될 것입니다.
 

@@ -51,7 +51,7 @@ public class RecursiveExample {
 
 `n`이 `0`인 경우 `2`를 리턴하고 밑으로는 더 이상 진행되지 않습니다.
 
-![](./assets/img/wp-content/uploads/2019/01/recursive.png)
+ ![](/assets/img/wp-content/uploads/2019/01/recursive.png)
 
 #### **예제 2: 팩토리얼**
 
@@ -78,7 +78,7 @@ public class FactorialExample {
 
 ```
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-4.08.34.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-4.08.34.png)
 
  
 
@@ -119,7 +119,7 @@ public class SumOfArray {
 
 ```
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-4.37.52.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-4.37.52.png)
 
  
 
@@ -127,7 +127,7 @@ public class SumOfArray {
 
 회문(palindrome; 回文: madam이나 nurses run처럼 앞에서부터 읽으나 뒤에서부터 읽으나 동일한 단어나 구)을 판별할 수 있는 프로그램입니다.
 
-![](./assets/img/wp-content/uploads/2020/04/palindrome.png)
+ ![](/assets/img/wp-content/uploads/2020/04/palindrome.png)
 
 ```
 package blog.recursive;
@@ -156,7 +156,7 @@ public class Palindrome {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-4.54.56.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-4.54.56.png)
 
  
 
@@ -191,4 +191,4 @@ public class Pattern {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-5.04.57.png)
+ ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-5.04.57.png)

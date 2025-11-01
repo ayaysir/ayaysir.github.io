@@ -95,7 +95,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
 
 - 시뮬레이터에서 아이폰 디바이스와 워치 모델을 연결시켜야 합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-23-오후-10.02.38.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-23-오후-10.02.38.jpg)
 
  
 
@@ -103,7 +103,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
 
 - 먼저 애플 워치를 고려하지 않고 아이폰 단독 앱을 개발합니다. 스토리보드 구조는 아래와 같습니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-28-오전-12.09.37.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-28-오전-12.09.37.jpg)
 
  
 
@@ -122,7 +122,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
     - `Interfaces`는 앱을 열었을 때 바로 첫 화면을 표시하는 부분입니다.
     - 여기서 UI 컴포넌트를 추가하고, 연동 작업은 WatchKit Extension의 **_InterfaceController.swift_**에서 작성합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-28-오전-12.16.11.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-28-오전-12.16.11.jpg)
 
  
 
@@ -749,7 +749,7 @@ extension InterfaceController: WCSessionDelegate {
 
  
 
-\[caption id="attachment\_4851" align="alignnone" width="1038"\]![](./assets/img/wp-content/uploads/2022/09/timeline-1.png) 컴플리케이션의 타임라인 예시. 5분 간격으로 업데이트할 정보를 미리 등록합니다.\[/caption\]
+\[caption id="attachment\_4851" align="alignnone" width="1038"\] ![](/assets/img/wp-content/uploads/2022/09/timeline-1.png) 컴플리케이션의 타임라인 예시. 5분 간격으로 업데이트할 정보를 미리 등록합니다.\[/caption\]
 
  
 

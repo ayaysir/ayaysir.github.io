@@ -171,7 +171,7 @@ let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sha
 > }
 > ```
 > 
-> ![](./assets/img/wp-content/uploads/2022/12/IMG_6AB6B4BF90EB-1.jpeg)
+>  ![](/assets/img/wp-content/uploads/2022/12/IMG_6AB6B4BF90EB-1.jpeg)
 
  
 
@@ -386,7 +386,7 @@ private var customHaptics: CustomHaptics?
 
 테스트하려면 **실제 햅틱이 지원되는 아이폰에서 빌드 및 실행**합니다. 아래 스크린샷은 이전 글의 예제와 결합하여 만든 앱 화면입니다. 버튼을 누르면 각종 진동이 울립니다.
 
-![](./assets/img/wp-content/uploads/2022/12/IMG_78AE96F87B22-1.jpeg)
+ ![](/assets/img/wp-content/uploads/2022/12/IMG_78AE96F87B22-1.jpeg)
 
  
 

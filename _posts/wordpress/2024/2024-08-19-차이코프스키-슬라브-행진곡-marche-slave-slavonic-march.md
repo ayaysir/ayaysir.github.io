@@ -10,7 +10,7 @@ categories:
 
 슬라브 행진곡, Marche Slave(프랑스어: \[maʁʃ(ə) slav\]), Op. 31, 내림 나단조는 [표트르 일리치 차이코프스키](https://ko.wikipedia.org/wiki/%EC%B0%A8%EC%9D%B4%EC%BD%A5%EC%8A%A4%ED%82%A4)가 1876년에 발표한 관현악 교향시입니다. 이 작품은 러시아가 세르비아-오스만 전쟁에 개입한 것을 기념하기 위해 작곡되었습니다.
 
-![](./assets/img/wp-content/uploads/2024/08/죄송합니다.jpeg)
+ ![](/assets/img/wp-content/uploads/2024/08/죄송합니다.jpeg)
 
  
 
@@ -42,7 +42,7 @@ categories:
 
 https://www.youtube.com/watch?v=CO0E5kJyS5w
 
-![](./assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.11.14.jpg)
+ ![](/assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.11.14.jpg)
 
  
 
@@ -50,7 +50,7 @@ https://www.youtube.com/watch?v=CO0E5kJyS5w
 
 https://www.youtube.com/watch?v=7BqtjPHaXqk
 
-![](./assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.32.54.jpg)
+ ![](/assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.32.54.jpg)
 
  
 
@@ -58,13 +58,13 @@ https://www.youtube.com/watch?v=7BqtjPHaXqk
 
 https://www.youtube.com/watch?v=yWxBDwX57bE
 
-![](./assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.42.30.jpg)
+ ![](/assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.42.30.jpg)
 
  
 
 세 번째 부분은 첫 번째 부분의 격렬한 오케스트라 클라이맥스를 반복하여, 세르비아의 도움 요청을 다시 한 번 강조합니다. 네 번째이자 마지막 부분은 세르비아를 돕기 위해 전쟁터로 향하는 러시아 자원병들의 행진을 묘사합니다. 이 부분에서는 이번에는 내림 나장조의 주요 조성으로 전환된 러시아 민요가 사용되며, 다시 한 번 "황제를 지켜주소서"가 힘차게 연주되면서 슬라브 민족이 오스만 제국을 이길 것이라는 예언적인 느낌을 줍니다. 이 서곡은 전체 관현악단을 위한 화려한 코다로 마무리됩니다.
 
-\[caption id="attachment\_6698" align="alignnone" width="818"\]![](./assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.49.10.jpg) Screenshot\[/caption\]
+\[caption id="attachment\_6698" align="alignnone" width="818"\] ![](/assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.49.10.jpg) Screenshot\[/caption\]
 
  
 

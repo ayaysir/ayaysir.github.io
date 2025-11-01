@@ -16,7 +16,7 @@ iOS로 된 전자책이나 앨범 등을 만들 때 이미지를 좌우로 스�
 
 먼저 스토리보드에서 페이지 뷰 컨트롤러를 생성합니다.
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.26.34.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.26.34.jpg)
 
  
 
@@ -28,13 +28,13 @@ iOS로 된 전자책이나 앨범 등을 만들 때 이미지를 좌우로 스�
 
 스토리보드에서 뷰 컨트롤러를 페이지 개수만큼 생성합니다.
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.29.50.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.29.50.jpg)
 
  
 
 각각 뷰 컨트롤러를 선택 후, `Identity Inspector`에서 스토리보드 아이디(`Storyboard ID`)를 설정합니다.
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.31.40.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.31.40.jpg)
 
  
 
@@ -54,25 +54,25 @@ class PageViewController: UIPageViewController {
 
 이 소스코드를 아까 생성한 스토리뷰의 페이지 뷰 컨트롤러에 연결합니다. 마찬가지로 `Identity Inspector`를 사용합니다.
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.36.26.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.36.26.jpg)
 
  
 
 그 다음에는 가장 첫 화면에 이 페이지 뷰 컨트롤러를 표시할 부분을 만들어야 합니다. 뷰 안에 다른 뷰 컨트롤러를 포함하여 표시하려면 `Container View`를 사용하면 됩니다.
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.38.10.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.38.10.jpg)
 
  
 
 해당 컨테이너 뷰로부터 페이지 뷰 컨트롤러로 드래그한 다음, 연결 방식으로 `embed`를 선택합니다.
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.39.48.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.39.48.jpg)
 
  
 
 여기까지 마치면 메인 뷰 컨트롤러 안에 페이지 뷰 컨트롤러가 `embed`로 포함됩니다. 최종적으로 다음과 같은 형태로 스토리보드가 구성됩니다.
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.40.49.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-26-오후-11.40.49.jpg)
 
  
 

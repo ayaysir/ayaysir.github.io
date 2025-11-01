@@ -14,21 +14,21 @@ categories:
 
 ##### **구조 및 제약(Constraints)**
 
-\[caption id="attachment\_7041" align="alignnone" width="202"\]![](./assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.12-복사본.jpg) 테이블 뷰 섹션 > 셀 > 콘텐트 뷰 > 텍스트 뷰\[/caption\]
+\[caption id="attachment\_7041" align="alignnone" width="202"\] ![](/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.12-복사본.jpg) 테이블 뷰 섹션 > 셀 > 콘텐트 뷰 > 텍스트 뷰\[/caption\]
 
  
 
-\[caption id="attachment\_7042" align="alignnone" width="250"\]![](./assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.23-복사본.jpg) 제약: 컨텐트 뷰(상위 뷰)에 맞춤\[/caption\]
+\[caption id="attachment\_7042" align="alignnone" width="250"\] ![](/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.23-복사본.jpg) 제약: 컨텐트 뷰(상위 뷰)에 맞춤\[/caption\]
 
  
 
-![](./assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.39-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.39-복사본.jpg)
 
  
 
 ##### **1) 텍스트 뷰(UITextView)를 선택한 뒤 Indicator > Scroll View > Scrolling Enabled 해제**
 
-![](./assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-12-오후-11.28.13-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-12-오후-11.28.13-복사본.jpg)
 
 또는 코드에서 직접 설정합니다.
 

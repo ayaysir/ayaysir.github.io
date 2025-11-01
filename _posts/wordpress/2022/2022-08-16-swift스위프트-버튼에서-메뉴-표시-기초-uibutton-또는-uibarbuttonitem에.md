@@ -10,7 +10,7 @@ categories:
 
  
 
-![](./assets/img/wp-content/uploads/2022/08/tjRqjl.jpeg)
+ ![](/assets/img/wp-content/uploads/2022/08/tjRqjl.jpeg)
 
 iOS 14에서는 UIBarButtons 및 UIButtons에서 메뉴를 표시할 수 있습니다. (14버전 이후부터 가능)
 

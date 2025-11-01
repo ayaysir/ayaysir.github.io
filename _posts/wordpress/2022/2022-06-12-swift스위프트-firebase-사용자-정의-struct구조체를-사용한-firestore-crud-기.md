@@ -9,7 +9,7 @@ categories:
 
 ### **Swift(스위프트) + Firebase: 사용자 정의 struct(구조체)를 사용한 Firestore CRUD 기초**
 
- 
+
 
 #### **실시간 데이터베이스 vs Cloud Firstore 비교**
 
@@ -21,11 +21,11 @@ Firebase에서는 두 가지 형태의 데이터베이스를 제공합니다 이
 
 #### **Firestore에서 자료를 저장하는 일반적인 형태**
 
-\[caption id="attachment\_4536" align="alignnone" width="1011"\]![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.32.03.jpg) 컬렉션 - 문서 - 필드\[/caption\]
+![컬렉션 - 문서 - 필드](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.32.03.jpg) *컬렉션 - 문서 - 필드*
 
  
 
-\[caption id="attachment\_4537" align="alignnone" width="1035"\]![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.32.30.jpg) 문서 내부에 컬랙션 생성\[/caption\]
+![문서 내부에 컬랙션 생성](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.32.30.jpg) *문서 내부에 컬랙션 생성*
 
  
 
@@ -99,7 +99,7 @@ class FirebasePractice {
 
 파이어베이스 콘솔에서 익명 인증 절차를 추가합니다.
 
-![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.40.49.jpg)
+![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.40.49.jpg)
 
  
 
@@ -125,7 +125,7 @@ func signInAnonymously(completionHandler: @escaping (_ user: User) -> ()) {
 위 메서드의 사용예는 다음과 같습니다. (뷰 컨트롤러의 `ViewDidLoad(_:)`등과 같이 실행 가능한 영역에 추가)
 
 ```
-FirebasePractice.shared.signInAnonymously { user in
+FirebasePractice.shared.signInAnonymously { user in
     
     // ... 작업 추가 ... //
 }
@@ -137,7 +137,7 @@ func signInAnonymously(completionHandler: @escaping (_ user: User) -> ()) {
 
 익명 로그인으로 권한을 획득한 사람만 접근 가능하도록 보안 규칙을 추가합니다. 읽기는 외부인도 모두 가능하도록 하되, 나머지 Create, Update, Delete는 익명 유저만 가능하게 하겠습니다.
 
-![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.59.13.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.59.13.jpg)
 
 ```
 rules_version = '2';
@@ -320,7 +320,7 @@ func read(documentID: String, completionHandler: ((_ person: Person) -> ())?) {
 - 문서 레퍼런스 `personsRef.document(documentID)`에서 `.getDocument(...)`를 실행하면 한 개의 문서 정보를 가져올 수 있습니다.
 - `if if let person = try? document.data(as: Person.self) {...}`
     - Firestore에서 가져온 데이터를 `Person` 타입으로 가공한 뒤 해당 인스턴스를 `person`에 저장합니다.
-    - 더 필요한 작업이 있다면 `completionHandler` 클로저를 실행합니다.
+    - 더 필요한 작업이 있다면 `completionHandler` 클로저를 실행합니다.
 
 이 글에서는 이 메서드 외에는 `completionHandler`와 같은 클로저 핸들러가 없지만, 다른 메서드에서도 이와 같은 핸들러를 추가해 사용할 수 있습니다.
 
@@ -404,23 +404,23 @@ override func viewDidLoad() {
 
 ##### **Create**
 
-![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-5.14.23.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-5.14.23.jpg)
 
  
 
 ##### **Read(한 개) & Update**
 
-\[caption id="attachment\_4545" align="alignnone" width="745"\]![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.07.27.jpg) 업데이트 전\[/caption\]
+\[caption id="attachment\_4545" align="alignnone" width="745"\] ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.07.27.jpg) 업데이트 전\[/caption\]
 
  
 
-\[caption id="attachment\_4546" align="alignnone" width="764"\]![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.08.16.jpg) 업데이트 후\[/caption\]
+\[caption id="attachment\_4546" align="alignnone" width="764"\] ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.08.16.jpg) 업데이트 후\[/caption\]
 
  
 
 ##### **Read(컬렉션 내 전체 문서)**
 
-![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.35.29.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.35.29.jpg)
 
 참고: [Firestore timestamp getting null](https://stackoverflow.com/questions/47771044/firestore-timestamp-getting-null)
 
@@ -428,11 +428,11 @@ override func viewDidLoad() {
 
 ##### **Delete**
 
-![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.19.38.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.19.38.jpg)
 
-![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.20.54.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.20.54.jpg)
 
-![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.21.18.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.21.18.jpg)
 
  
 

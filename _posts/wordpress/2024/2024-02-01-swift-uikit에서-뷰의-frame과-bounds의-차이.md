@@ -37,7 +37,7 @@ override func loadView() {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-01-오후-8.10.13-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-01-오후-8.10.13-복사본.jpg)
 
 - subview의 `frame` 위치가 `x: 100, y: 100`인 경우, superview의 시작점 위치로부터 해당 거리만큼 떨어진 곳에 위치하게 됩니다.
 
@@ -68,7 +68,7 @@ grandChildView.frame = .init(x: 0, y: 0, width: 200, height: 150)
 subview1.addSubview(grandChildView)
 ```
 
-![](./assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-01-오후-8.24.49-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-01-오후-8.24.49-복사본.jpg)
 
 처음에는 `bounds`의 위치를 따로 지정하지 않았으므로 `bounds.origin`은 `(0, 0)`인 상태에서 하위뷰의 `frame.origin`도 `(0, 0)`이므로 두 뷰의 시작점은 똑같습니다.
 
@@ -81,7 +81,7 @@ grandChildView.layer.compositingFilter = "multiplyBlendMode"
 
 아래와 같이 하위 뷰(하늘색)의 시작점이 이동하는 것을 볼 수 있습니다. (편의를 위해 겹치는 부분의 색을 섞었습니다.)
 
-![](./assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-01-오후-8.35.12-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-01-오후-8.35.12-복사본.jpg)
 
 - superview(노란색)의 `bounds.origin`을 `(30, 30)`으로 바꾸면 하위 뷰들은 화면에 표시된 노란색의 시작점을 `(0, 0)`이 아닌 `(30, 30)`이라고 인식하게 됩니다.
 - 그런데 subview(하늘색)의 `frame.origin`은 `(0, 0)`으로 바뀌지 않았습니다.
@@ -91,7 +91,7 @@ grandChildView.layer.compositingFilter = "multiplyBlendMode"
 
 노란색 상위뷰 시작점을 따라가고 싶다면 상위뷰의 `bounds.origin`처럼 하위뷰의 `frame.origin`을 `(30, 30)`으로 지정하면 의도한 대로 됩니다. 아래 그림은 상위뷰의 `bounds`가 `(30, 30)`인 상태에서 하위뷰의 `frame` 위치가 `(0, 0)`, `(30, 30)`, `(60, 60)`, `(90, 90)`인 경우의 위치를 나타낸 그림입니다.
 
-![](./assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-01-오후-8.51.08-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-01-오후-8.51.08-복사본.jpg)
 
 - `bounds` 위치가 `(30, 30)`인 상태에서 `frame`의 위치도 `(30, 30)`이라면 위치가 겹치게 됩니다.
 
@@ -120,7 +120,7 @@ print(grandChildView.frame, grandChildView.bounds)
 // frame, bounds 정보
 ```
 
-![](./assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-01-오후-9.04.47-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-01-오후-9.04.47-복사본.jpg)
 
 - 하위 뷰(하늘색)을 50도 회전시켰을 때: 원래 변형전 `frame(bounds).size`는 `(0, 0, 200, 150)`
     - `frame`은 변형된 위치와 크기로 재계산됩니다. 이 때, 위 그림의 빨간색 박스와 같이 회전되면서 남은 빈 영역까지 포함한 사각형 `CGRect`로 표현됩니다.(말로 설명이 어렵네요;;)  따라서 새로운 위치는 `(-16, -24, 232, 197)`로 바뀝니다.

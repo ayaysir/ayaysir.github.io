@@ -6,7 +6,7 @@ categories:
 
 ---
 
-[![](./assets/img/wp-content/uploads/2020/01/noname.png)](https://drive.google.com/open?id=1Kv20DEKKSeVxai6LDYXuPDqCXJeIKA8u)
+[ ![](/assets/img/wp-content/uploads/2020/01/noname.png)](https://drive.google.com/open?id=1Kv20DEKKSeVxai6LDYXuPDqCXJeIKA8u)
 
 유튜브, 스트리밍, 홈페이지나 앱 제작 등에서 사용할 수 있는 무료 배경음악을 나눔합니다.
 
@@ -22,7 +22,7 @@ categories:
 
  
 
-![](./assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-01-오후-9.51.26.png)
+ ![](/assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-01-오후-9.51.26.png)
 
 또한 **\[전체 다운로드\]**를 클릭하면 모든 음악들을 압축 파일 형태로 컴퓨터에 다운로드 할 수 있습니다.
 

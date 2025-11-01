@@ -44,13 +44,13 @@ struct CustomMusicSliderView_Previews: PreviewProvider {
 
 저는 아래 스크린샷과 같은 음악 플레이어를 구현하기 위해 [Custom-Slider-Control](https://github.com/pratikg29/Custom-Slider-Control)이라는 SwiftUI로 작성된 예제 코드를 인터넷에서 퍼온 뒤 이를 바탕으로 `CustomMusicSliderView`의 코드를 작성했습니다. 본문 내용은 분량상 생략하며 자세한 구현 방법은 위의 링크를 참고해주세요.
 
-\[caption id="attachment\_5707" align="alignnone" width="390"\]![](./assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-11-오후-10.26.07-복사본.jpg) 빨간색 박스 부분이 SwiftUI로 만들어진 `View`입니다.\[/caption\]
+\[caption id="attachment\_5707" align="alignnone" width="390"\] ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-11-오후-10.26.07-복사본.jpg) 빨간색 박스 부분이 SwiftUI로 만들어진 `View`입니다.\[/caption\]
 
  
 
 ##### **2) 스토리보드에 View 부분 추가**
 
-![](./assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-11-오후-10.28.58-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-11-오후-10.28.58-복사본.jpg)
 
 `SwiftUI View`를 삽입할 공간을 마련하기 위해 `스토리보드`에서 적절한 위치에 `UIKit View`를 삽입합니다.
 
@@ -58,7 +58,7 @@ struct CustomMusicSliderView_Previews: PreviewProvider {
 
 ##### **3) @IBOutlet으로 View을 뷰 컨트롤러 코드와 연결**
 
-![](./assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-11-오후-10.31.35-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-11-오후-10.31.35-복사본.jpg)
 
 `viewCustomSlider`는 `UIHostingController`로부터 만들어진 `View(for UIKit)`를 `Subview`로 포함할 일종의 부모 뷰입니다.
 
@@ -130,7 +130,7 @@ sliderVC.didMove(toParent: self)
 
 이렇게 하면 SwiftUI로 만들어진 뮤직 슬라이더 뷰가 UIKit 안에 들어간 것을 확인할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-11-오후-11.03.46-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-11-오후-11.03.46-복사본.jpg)
 
  
 

@@ -12,8 +12,8 @@ categories:
 
 참고로 여기서 Swift Playgrounds App이란 다음과 같이 Xcode에서
 
-- `File > New > Project...` ![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-29-오후-11.51.49-복사본.jpg)
-- `iOS > Swift Playgrounds App` ![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-29-오후-11.51.59-복사본.jpg)
+- `File > New > Project...`  ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-29-오후-11.51.49-복사본.jpg)
+- `iOS > Swift Playgrounds App`  ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-29-오후-11.51.59-복사본.jpg)
 
 으로 생성한 프로젝트 및 앱을 뜻합니다.
 
@@ -27,13 +27,13 @@ categories:
 
 새로 생성할 때 반드시 임의로 생성하지 말고 .m4a 등의 파일을 드래그해서 저절로 생성되는 Resources 폴더를 이용해야 합니다.
 
-![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-30-오후-5.27.00-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-30-오후-5.27.00-복사본.jpg)
 
-![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-30-오후-5.27.10-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-30-오후-5.27.10-복사본.jpg)
 
 위 방법으로 생성된 Resources 파일 밑에 커스텀 폰트 파일을 드래그해서 추가합니다.
 
-![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-29-오후-11.55.30-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-29-오후-11.55.30-복사본.jpg)
 
 모든 외부 추가 파일은 **반드시 `Resources` 폴더 안에 추가**해야 `Bundle.main`으로 읽어들일 수 있습니다.
 
@@ -41,7 +41,7 @@ categories:
 > 
 > 빌드 후 앱이 설치된 시뮬레이터의 폴더로 이동하면 앱 패키지 내에 해당 파일이 추가된 것을 알 수 있습니다.
 > 
-> ![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-30-오전-12.11.48-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-30-오전-12.11.48-복사본.jpg)
 
  
 
@@ -114,4 +114,4 @@ Text("ENTER YOUR TEXTS HERE")
 
 - `.font(.custom("커스텀_폰트_이름"), size: 30))`
 
-![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-30-오전-12.08.34-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-30-오전-12.08.34-복사본.jpg)

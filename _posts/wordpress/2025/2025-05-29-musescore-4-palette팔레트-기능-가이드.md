@@ -16,7 +16,7 @@ MuseScore 4의 Palette 기능을 사용하면 자주 사용하는 음악 기호�
 
 Palettes 패널에서 마우스 오른쪽 버튼을 클릭한 후 **"Insert New Palette"**를 선택하여 새 팔레트를 만들 수 있습니다. 생성된 팔레트에는 원하는 이름을 지정하여 용도별로 구분할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-29-오후-2.43.29-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-29-오후-2.43.29-복사본.jpg)
 
  
 
@@ -30,7 +30,7 @@ Palettes 패널에서 마우스 오른쪽 버튼을 클릭한 후 **"Insert New 
 
 팔레트 상단의 **"More"** 버튼을 클릭하면 다양한 음악 기호와 표현이 표시됩니다. 필요한 요소를 선택하여 팔레트 안으로 드래그하면 해당 요소가 팔레트에 추가됩니다.
 
-![](./assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-29-오후-2.46.49-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-29-오후-2.46.49-복사본.jpg)
 
 <iframe width="293" height="480" src="https://giphy.com/embed/7OXxxSkjjRzjMwIUKW" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
 
@@ -46,7 +46,7 @@ Palettes 패널에서 마우스 오른쪽 버튼을 클릭한 후 **"Insert New 
 
 **MuseScore Studio > Preferences**를 선택하거나 **Command + ,** 단축키를 사용하여 환경설정 창을 엽니다. **Shortcuts** 탭에서 검색창에 "palette"를 입력하면 팔레트 관련 기능을 확인할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-29-오후-2.54.28-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-29-오후-2.54.28-복사본.jpg)
 
  
 

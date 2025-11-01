@@ -18,7 +18,7 @@ categories:
 
 ##### **1: 프로젝트에 사운드폰트 및 예제 미디파일 추가**
 
-![](./assets/img/wp-content/uploads/2023/10/스크린샷-2023-10-16-오후-6.05.59-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/10/스크린샷-2023-10-16-오후-6.05.59-복사본.jpg)
 
  
 
@@ -34,7 +34,7 @@ https://gist.github.com/ayaysir/715b2a9bde0a498a17390d648cd8d6f0
 
  
 
-![](./assets/img/wp-content/uploads/2023/10/스크린샷-2023-10-16-오후-6.11.45-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/10/스크린샷-2023-10-16-오후-6.11.45-복사본.jpg)
 
  
 

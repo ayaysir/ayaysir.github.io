@@ -225,6 +225,6 @@ throws Exception {
 </html>
 ```
 
-![](./assets/img/wp-content/uploads/2019/02/iu1-e1572710217705.png)
+ ![](/assets/img/wp-content/uploads/2019/02/iu1-e1572710217705.png)
 
-![](./assets/img/wp-content/uploads/2019/02/iu22.png)
+ ![](/assets/img/wp-content/uploads/2019/02/iu22.png)

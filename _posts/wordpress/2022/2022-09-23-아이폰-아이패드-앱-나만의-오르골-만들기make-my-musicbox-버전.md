@@ -18,7 +18,7 @@ categories:
 
 #### [**나만의 오르골 만들기 앱 무료 다운로드(아이폰/아이패드)**](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920)
 
-\[caption id="attachment\_4562" align="alignnone" width="256"\][![](./assets/img/wp-content/uploads/2022/06/icon-MusicBox.png)](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920) 나만의 오르골 만들기 앱 아이콘\[/caption\]
+\[caption id="attachment\_4562" align="alignnone" width="256"\][ ![](/assets/img/wp-content/uploads/2022/06/icon-MusicBox.png)](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920) 나만의 오르골 만들기 앱 아이콘\[/caption\]
 
  
 
@@ -50,7 +50,7 @@ https://www.youtube.com/watch?v=9v\_IF9MCACA
 
 ##### **2\. 인터넷 자료실(아카이브) 비회원도 목록 조회, 다운로드 및 '좋아요' 가능**
 
-![](./assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-13-Pro-2022-09-23-at-18.18.34.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-13-Pro-2022-09-23-at-18.18.34.jpg)
 
 원래는 회원 가입을 해야만 자료실을 이용할 수 있었지만,
 

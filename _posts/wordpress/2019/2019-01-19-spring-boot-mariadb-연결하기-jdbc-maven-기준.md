@@ -96,4 +96,4 @@ public class TestController {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-19-오후-10.28.49.png)
+ ![](/assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-19-오후-10.28.49.png)

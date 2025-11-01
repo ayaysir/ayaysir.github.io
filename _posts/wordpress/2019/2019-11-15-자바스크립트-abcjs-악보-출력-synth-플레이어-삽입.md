@@ -43,7 +43,7 @@ synthControl.load("#audio", null, {displayRestart: true, displayPlay: true, disp
 synthControl.setTune(visualObj, false);
 ```
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.13.08.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.13.08.png)
 
 ```
 X: 1
@@ -70,13 +70,13 @@ eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
 
  
 
-##### **음높이**![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.19.27.png)
+##### **음높이** ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.19.27.png)
 
  
 
 ##### **박자**
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.24.16.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.24.16.png)
 
  
 
@@ -84,4 +84,4 @@ eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
 
 https://gist.github.com/ayaysir/411afca4581eb066c5d5a7a94b76903c
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.27.51.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.27.51.png)

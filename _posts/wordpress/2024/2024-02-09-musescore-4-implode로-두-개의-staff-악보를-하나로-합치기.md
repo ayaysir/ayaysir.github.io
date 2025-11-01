@@ -15,9 +15,9 @@ categories:
 - `Implode` 기능과 특별한 선택 두 기능을 사용해서 호른 두 파트를 아래 Trombone 1 처럼 합칠 수 있습니다.
     - implode 뜻: 자체적으로 파열되다, 폭파하여 안쪽으로 붕괴하다; (문화 따위가) 한 점에 집중하다, 통합되다
 
-\[caption id="attachment\_6271" align="alignnone" width="565"\]![](./assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-09-오후-10.20.35-복사본.jpg) 두 파트를 하나의 보이스로 합쳐서\[/caption\]
+\[caption id="attachment\_6271" align="alignnone" width="565"\] ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-09-오후-10.20.35-복사본.jpg) 두 파트를 하나의 보이스로 합쳐서\[/caption\]
 
-\[caption id="attachment\_6272" align="alignnone" width="563"\]![](./assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-09-오후-10.48.05-복사본.jpg) 악보를 생성\[/caption\]
+\[caption id="attachment\_6272" align="alignnone" width="563"\] ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-09-오후-10.48.05-복사본.jpg) 악보를 생성\[/caption\]
 
  
 

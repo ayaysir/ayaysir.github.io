@@ -13,7 +13,7 @@ categories:
 var graphPoints = [4, 2, 6, 4, 5, 8, 3]
 ```
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-29-오후-10.44.18.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-29-오후-10.44.18.jpg)
 
 이 그래프 디자인 특징으로는 그래프 선 아래에 새로운 그라데이션이 있고, 각 그래프의 일정 범위마다 수치가 큰 크기의 점(원)으로 그려져있다는 점입니다.
 
@@ -164,7 +164,7 @@ class GraphView: UIView {
 
 여기까지 완성된 `UIView`입니다.
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-29-오후-11.27.14.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-29-오후-11.27.14.jpg)
 
  
 
@@ -189,9 +189,9 @@ for i in 0..<graphPoints.count {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-29-오후-10.52.46.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-29-오후-10.52.46.jpg)
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-29-오후-10.52.54.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-29-오후-10.52.54.jpg)
 
  
 
@@ -203,13 +203,13 @@ for i in 0..<graphPoints.count {
 
 이 명령은 `clippingPath`의 범위로 클립을 자른 뒤, 컨텍스트를 해당 영역으로 한정시키는 역할을 합니다. 다음 초록색으로 표시된 클리핑 영역 밖으로는 컨텍스트가 그릴 수 있는 범위가 아니며, 따라서 클리핑 영역을 벗어난 바깥에는 점이 그려지지 않는 것입니다.
 
-![](./assets/img/wp-content/uploads/2021/08/-2021-08-29-오후-10.58.15-e1630247368787.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/-2021-08-29-오후-10.58.15-e1630247368787.jpg)
 
  
 
 그렇다면 점을 `clippingPath`보다 미리 그리면 되지 않을까요?
 
-![](./assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-29-오후-11.00.56.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-29-오후-11.00.56.jpg)
 
 점을 `clippingPath`보다 먼저 그리면 반대로 클리핑 영역에서 점이 표시되지 않습니다. 이 문제를 해결하려면 그래픽 상태의 통칭인 `GState`(graphics state) 라는 개념이 필요합니다.
 

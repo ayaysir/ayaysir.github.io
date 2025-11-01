@@ -33,11 +33,11 @@ SPM, CocoaPods 양 디펜던시 관리 시스템 간 통합 배포가 가능합�
 
 ##### **Step 1: Xcode에서 Swift Package Manager에 대응하는 Package를 만들고 코드를 구현합니다.**
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-12.33.25.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-12.33.25.jpg)
 
 '패키지를 생성하면 기본 파일 구조는 아래와 같습니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-26-오전-2.05.37.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-26-오전-2.05.37.jpg)
 
  
 
@@ -141,7 +141,7 @@ Would you like to do view based testing? [ Yes / No ]
 
 입력하면 아래와 같은 폴더가 생성됩니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-1.25.31.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-1.25.31.jpg)
 
 여기에서 하이라이트 된 파일 3개와 README.md 파일을 선택해 복사한 뒤 SPM 프로젝트가 있는 폴더로 붙여넣기합니다.
 
@@ -236,7 +236,7 @@ end
 
 완료 후 `.xcworkspace` 파일을 열면 아래와 같은 작업 환경이 나타납니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-26-오전-2.29.01.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-26-오전-2.29.01.jpg)
 
 위 구조에서 `Development Pods` 그룹에 SPM에서 사용하는 `Sources`폴더 내 파일들이 나타나며, 앞으로 라이브러리를 개발할 때 이 파일들을 클릭 후 열어서 코드를 작성하면 됩니다.
 
@@ -395,15 +395,15 @@ extension UIWindow {
 
 원격 레퍼지토리에 접속한 뒤 태그 및 릴리즈를 생성합니다. 아래 빨간색 박스 부분을 클릭합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-1.54.35.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-1.54.35.jpg)
 
 `[Create a new release]` 초록색 버튼을 누릅니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-1.55.05.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-1.55.05.jpg)
 
 왼쪽 상단에 태그 추가 버튼이 있는데 눌러서 추가합니다. 스크린샷에는 잘못 찍혔는데 버전 앞에 v를 입력하지 않고 `1.0.0` **숫자만 입력**합니다. (v가 추가되면 CocoaPods로 배포할 수 없음)
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-1.56.16.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-1.56.16.jpg)
 
 그리고 제목과 내용 및 나머지 부분도 입력하여 릴리즈로 추가합니다.
 
@@ -411,7 +411,7 @@ extension UIWindow {
 
 새로운 태그 및 릴리즈가 추가되면 아래 화면과 같이 목록에 나옵니다. 태그 버전은 CocoaPods에서 사용하므로 메모해둡니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-26-오전-2.40.30.png)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-26-오전-2.40.30.png)
 
 CocoaPods를 사용하지 않고 SPM 단계에서 코드도 작성하고 테스트하였다면 여기서 바로 배포해서 사용할 수 있습니다. CocoaPods에서도 사용 가능하게 하려면 추가 단계가 필요합니다.
 
@@ -429,13 +429,13 @@ CocoaPods를 사용하지 않고 SPM 단계에서 코드도 작성하고 테스�
 
 얼마 후 이메일이 도착하는데 링크를 클릭해 이메일을 인증합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/-2022-10-25-오전-2.03.39-e1666721817945.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/-2022-10-25-오전-2.03.39-e1666721817945.jpg)
 
  
 
 링크를 클릭하면 웹 브라우저에 아래와 같은 화면이 나옵니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.04.32.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.04.32.jpg)
 
  
 
@@ -450,7 +450,7 @@ CocoaPods를 사용하지 않고 SPM 단계에서 코드도 작성하고 테스�
 1. `summary` 부분이 무의미하다. (기본 상태에서 변경하지 않았음)
 2. Swift 버전이 불명확하다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.06.13.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.06.13.jpg)
 
 `.podspec` 파일을 열어 해당 부분을 수정합니다.
 
@@ -459,17 +459,17 @@ CocoaPods를 사용하지 않고 SPM 단계에서 코드도 작성하고 테스�
 - `s.swift_version`
     - SPM에서 5.0 이상만 사용하도록 설정했으므로 여기도 5.0으로 지정합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.09.16.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.09.16.jpg)
 
 문제점을 보완하고 재검사를 받아 성공하면 아래와 같이 초록색 문자로 **passed validation**.이라고 뜹니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.11.01.jpg) ![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.12.16.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.11.01.jpg)  ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.12.16.jpg)
 
  
 
 `.podspec` 파일을 열어 버전을 GitHub에 등록된 태그 버전과 맞춥니다. GitHub의 최신 릴리즈의 버전 `1.0.1`이라면 아래 `s,version` 도 `s.version = '1.0.1'`로 변경합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.09.16.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.09.16.jpg)
 
  
 
@@ -481,7 +481,7 @@ CocoaPods를 사용하지 않고 SPM 단계에서 코드도 작성하고 테스�
 
 업로드에 성공하면 맨 아래와 같이 이모티콘과 함께 _**Congrats**_ 라는 메시지가 뜹니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.42.48.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.42.48.jpg)
 
  
 
@@ -491,11 +491,11 @@ CocoaPods를 사용하지 않고 SPM 단계에서 코드도 작성하고 테스�
 
 다른 프로젝트를 열고 `Add Packages...`에서 깃허브 주소를 입력하여 등록합니다.
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-29-오전-2.14.31.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-29-오전-2.14.31.jpg)
 
 라이브러리에 대한 README 가 뜨는 것을 볼 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.33.14.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.33.14.jpg)
 
 ```
 import BGSMM_DevKit
@@ -505,7 +505,7 @@ import BGSMM_DevKit
 SimpleAlert.present(message: "..........", title: "Test From SPM")
 ```
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.36.17.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.36.17.jpg)
 
  
 
@@ -528,13 +528,13 @@ end
 
 설치가 진행되면 아래와 같이 초록색으로 글자가 나타납니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.55.23.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.55.23.jpg)
 
 ```
 SimpleAlert.present(message: ",,,,,", title: "Test from CocoaPods")
 ```
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.56.51.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-25-오전-2.56.51.jpg)
 
  
 

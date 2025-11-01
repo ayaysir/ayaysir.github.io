@@ -150,8 +150,8 @@ public class PrintArray extends JFrame {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-09-오후-9.14.39.png)
+ ![](/assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-09-오후-9.14.39.png)
 
 아래는 정보처리기사 실기에서 나오는 배열 예제(모래시계 배열)입니다.
 
-![](./assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-09-오후-9.14.53.png)
+ ![](/assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-09-오후-9.14.53.png)

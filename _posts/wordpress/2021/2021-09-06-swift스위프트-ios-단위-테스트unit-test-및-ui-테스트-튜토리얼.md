@@ -37,7 +37,7 @@ iOS 단위 테스트는 거창하지 않지만 테스트를 통해 앱이 버그
 
 [프로젝트 자료(구글 드라이브)](https://drive.google.com/file/d/1BL97B3HpompHuXZS7Tq4hdOujVXpwqWW/view?usp=sharing)를 다운로드하세요. 여기에는 [UIKit Apprentice](https://store.raywenderlich.com/products/ios-apprentice)의 샘플 앱을 기반으로 하는 프로젝트 BullsEye가 포함됩니다. 이것은 간단한 운빨 게임입니다. 게임의 로직은 이 튜토리얼에서 테스트할 BullsEyeGame 클래스에 있습니다.
 
-![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-06-오후-5.17.27.jpg) ![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-06-오후-5.19.53.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-06-오후-5.17.27.jpg)  ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-06-오후-5.19.53.jpg)
 
 시작하기 전에 이 게임 앱에 대한 이해가 필요합니다. 첫 번째 모드(slide)만 설명하면, 랜덤으로 1부터 100 사이의 랜덤 숫자가 제공됩니다. 이 숫자가 어디쯤 위치할 지 추측해서 해당 숫자의 위치로 슬라이드 버튼을 움직입니다. 결과를 확인해서 해당 숫자와 완전히 일치하면 100점, 그 외에 최대한 가까울수록 높은 점수를 받는 시스템입니다.
 
@@ -164,15 +164,15 @@ FIRST 원칙을 따르면 테스트가 앱의 장애물이 되는 것이 아니�
 
 왼쪽 하단 모서리에서 `+`를 클릭한 다음 메뉴에서 `New Unit Test Target...`을 선택합니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_1_Introduction_NewUnitTestTarget_annotated-1-356x500-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_1_Introduction_NewUnitTestTarget_annotated-1-356x500-1.png)
 
-![](./assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-06-오후-5.36.50.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-06-오후-5.36.50.jpg)
 
  
 
 기본 이름인 `BullsEyeTests`를 수락하고 프로젝트 조직 식별자를 입력합니다. 테스트 내비게이터에 테스트 번들이 나타나면 펼침 삼각형을 클릭하여 확장하고 `BullsEyeTests`를 클릭하여 편집기에서 엽니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_2_Introduction_TestFile_annotated-650x260-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_2_Introduction_TestFile_annotated-650x260-1.png)
 
  
 
@@ -188,7 +188,7 @@ FIRST 원칙을 따르면 테스트가 앱의 장애물이 되는 것이 아니�
 
  
 
-![](./assets/img/wp-content/uploads/2021/09/tests_3_Introduction_RunningTest_annotated-650x169-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_3_Introduction_RunningTest_annotated-650x169-1.png)
 
 샘플 테스트는 아직 아무 작업도 수행하지 않으므로 매우 빠르게 실행됩니다!
 
@@ -196,7 +196,7 @@ FIRST 원칙을 따르면 테스트가 앱의 장애물이 되는 것이 아니�
 
  
 
-![](./assets/img/wp-content/uploads/2021/09/tests_4_Intorduction_PerformanceTest-650x247-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_4_Intorduction_PerformanceTest-650x247-1.png)
 
  
 
@@ -278,7 +278,7 @@ func testScoreIsComputedWhenGuessIsHigherThanTarget() throws {
 
 코드라인 부분 또는 테스트 탐색기에서 다이아몬드 아이콘을 클릭하여 테스트를 실행합니다.이렇게 하면 앱이 빌드되고 실행되며 다이아몬드 아이콘이 녹색 체크 표시로 바뀝니다! 또한 다음과 같은 성공을 나타내는 일시적 팝업이 Xcode 위에 표시되는 것을 볼 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_5_FirstTest_Success-319x320-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_5_FirstTest_Success-319x320-1.png)
 
 > XCTestAssertions의 전체 목록을 보려면 Apple의 [Assertions Listed by Category](https://developer.apple.com/documentation/xctest#2870839)로 이동하세요.
 
@@ -308,19 +308,19 @@ func testScoreIsComputedWhenGuessIsLowerThanTarget() {
 
 Breakpoint navigator(단축키 `command-8`)에서 테스트 실패 중단점(breakpoint)을 추가합니다. 이것은 테스트 메소드가 실패 어서션(Failure Assertion)을 보낼 때 테스트 실행을 중지합니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_6_Debugging_Breakpoint_annotated-356x500-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_6_Debugging_Breakpoint_annotated-356x500-1.png)
 
 테스트를 실행하면 테스트 실패와 함께 `XCTAssertEqual` 라인에서 중지되어야 합니다.
 
 디버그 콘솔에서 `sut` 및 `guess`를 검사합니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_7_Debugging_Console_annotated-650x391-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_7_Debugging_Console_annotated-650x391-1.png)
 
 `guess`는 `targetValue - 5`이지만 `scoreRound`는 `95`가 아니라 `105`입니다!
 
 더 자세히 조사하려면 일반 디버깅 프로세스를 사용하세요. `when` 문에 중단점을 설정하고 `check(guess:)` 내부의 `BullsEyeGame.swift`에도 중단점을 설정합니다. 여기서 차이(`difference`)가 발생합니다. 그런 다음 테스트를 다시 실행하고 `let difference` 문을 단계별로 실행하여 앱의 `difference` 값을 검사합니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_8_Debugging_Console2_annotated-589x500-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_8_Debugging_Console2_annotated-589x500-1.png)
 
 문제는 `difference`가 음수이므로 점수가 `100 - (-5)`라는 것입니다. 이를 수정하려면 `difference`의 절대값을 사용해야 합니다. `check(guess:)`에서 올바른 줄의 주석을 제거하고 잘못된 줄을 삭제하십시오.
 
@@ -482,7 +482,7 @@ try XCTSkipUnless(
 
 `XCTskipUnless(_:_:)`는 연결할 수 있는 네트워크가 없을 때 테스트를 건너뜁니다. 네트워크 연결을 비활성화하고 테스트를 실행하여 이를 확인하세요. 테스트 옆의 여백에 테스트가 통과하거나 실패하지 않았음을 나타내는 새 아이콘이 표시됩니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_9_Skipping-650x84-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_9_Skipping-650x84-1.png)
 
 네트워크 연결을 다시 활성화하고 테스트를 다시 실행하여 정상적인 조건에서 여전히 성공하는지 확인하세요. `testApiCallCompletes()`의 시작 부분에 동일한 코드를 추가합니다.
 
@@ -508,7 +508,7 @@ try XCTSkipUnless(
 
 테스트 탐색기(`command-6`)로 이동하여 `+`를 클릭하고 `New Unit Test Class…`를 선택합니다. 이름을 `BullsEyeFakeTests`로 지정하고 `BullsEyeTests` 디렉토리에 저장하고 대상을 `BullsEyeTests`로 설정하세요.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_10_Stub_NewTestClass_annotated-424x500-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_10_Stub_NewTestClass_annotated-424x500-1.png)
 
 `import` 문 바로 아래에 있는 `BullsEye` 앱 모듈을 가져옵니다.
 
@@ -689,7 +689,7 @@ UI 테스트를 통해 사용자 인터페이스와의 상호 작용을 테스�
 
 테스트 내비게이터(`command-6`)에서 `New UI Test Target`을 추가하세요. 테스트할 대상이 `BullsEye`인지 확인한 다음 기본 이름인 `BullsEyeUITests`를 수락합니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_11_UITests_NewUITestTarget_annotated-345x500-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_11_UITests_NewUITestTarget_annotated-345x500-1.png)
 
  
 
@@ -724,7 +724,7 @@ func testGameStyleSwitch() {
 
 `testGameStyleSwitch()`에서 새 줄을 열고 편집기 창 하단에 있는 빨간색 기록 버튼을 클릭합니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_12_UITests_Record_annotated-650x235-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_12_UITests_Record_annotated-650x235-1.png)
 
 그러면 상호 작용을 테스트 명령으로 기록하는 모드로 시뮬레이터에서 앱이 열립니다. 앱이 로드되면 게임 스타일 스위치(세그먼티드 컨트롤)의 Slide와 상단 레이블을 탭합니다. Xcode 기록 버튼을 다시 클릭하여 기록을 중지합니다.
 
@@ -745,7 +745,7 @@ app.staticTexts["Get as close as you can to: "].tap()
 
 첫 번째 줄은 `setUpWithError()`에서 만든 속성을 복제하므로 해당 줄을 삭제합니다. 아직 아무 것도 탭할 필요가 없으므로 2행과 3행 끝에 있는 `.tap()`도 삭제합니다. 이제 `["Slide"]` 옆에 있는 작은 메뉴를 열고 `segmentedControls.buttons["Slide"]`를 선택합니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_13_UITests_ChangeRecording-650x145-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_13_UITests_ChangeRecording-650x145-1.png)
 
  
 
@@ -824,7 +824,7 @@ func testScoreIsComputedPerformance() {
 
 테스트를 실행한 다음 `measure()`의 트레일링 클로저의 시작 부분 옆에 나타나는 아이콘을 클릭하여 통계를 확인합니다. 메트릭 옆에 있는 선택한 메트릭을 변경할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_14_2_PerformanceTests_Result_annotated-650x246-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_14_2_PerformanceTests_Result_annotated-650x246-1.png)
 
  
 
@@ -848,19 +848,19 @@ func testScoreIsComputedPerformance() {
 
 (`Product` 메뉴 > `Scheme` > `Edit Scheme...` (단축키 `command + shift + <` )
 
-![](./assets/img/wp-content/uploads/2021/09/tests_15_Coverage_GatherCoverage_annotated-650x351-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_15_Coverage_GatherCoverage_annotated-650x351-1.png)
 
  
 
 `command-U`로 모든 테스트를 실행한 다음 `command-9`로 보고서 탐색기를 엽니다. 해당 목록의 맨 위 항목 아래에 있는 `Coverage`를 선택합니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_16_Coverage_Log_annotated-650x159-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_16_Coverage_Log_annotated-650x159-1.png)
 
  
 
 `BullsEyeGame.swift`의 메서드 및 클로저 목록을 보려면 펼침 삼각형을 클릭하세요.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_17_Coverage_Details-650x220-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_17_Coverage_Details-650x220-1.png)
 
  
 
@@ -868,7 +868,7 @@ func testScoreIsComputedPerformance() {
 
 이 함수의 화살표 버튼을 클릭하여 함수에 대한 소스 파일을 엽니다. 오른쪽 사이드바에 있는 커버리지 어노테이션(coverage annotations) 위로 마우스를 가져가면 코드 섹션이 녹색 또는 빨간색으로 강조 표시됩니다.
 
-![](./assets/img/wp-content/uploads/2021/09/tests_18_Coverage_Code-650x384-1.png)
+ ![](/assets/img/wp-content/uploads/2021/09/tests_18_Coverage_Code-650x384-1.png)
 
 커버리지 어노테이션은 테스트가 각 코드 섹션에 몇 번이나 적중했는지 보여줍니다. 호출되지 않은 섹션은 빨간색으로 강조 표시됩니다.
 

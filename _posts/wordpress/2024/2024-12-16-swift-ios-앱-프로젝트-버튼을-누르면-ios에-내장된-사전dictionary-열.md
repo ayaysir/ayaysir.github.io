@@ -113,9 +113,9 @@ struct DictionaryView: View {
 
 ```
 
-![](./assets/img/wp-content/uploads/2024/12/IMG_4686.jpg)
+ ![](/assets/img/wp-content/uploads/2024/12/IMG_4686.jpg)
 
-![](./assets/img/wp-content/uploads/2024/12/IMG_4687.jpg)
+ ![](/assets/img/wp-content/uploads/2024/12/IMG_4687.jpg)
 
 ##### **설명**
 

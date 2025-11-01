@@ -46,11 +46,11 @@ inputImage.addEventListener("change", e => {
 })
 ```
 
-\[caption id="attachment\_3305" align="alignnone" width="479"\]![](./assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-19-오후-1.09.58.png) 초기 화면\[/caption\]
+\[caption id="attachment\_3305" align="alignnone" width="479"\] ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-19-오후-1.09.58.png) 초기 화면\[/caption\]
 
  
 
-\[caption id="attachment\_3306" align="alignnone" width="534"\]![](./assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-19-오후-1.10.31.png) 이미지 파일을 선택한 경우\[/caption\]
+\[caption id="attachment\_3306" align="alignnone" width="534"\] ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-19-오후-1.10.31.png) 이미지 파일을 선택한 경우\[/caption\]
 
  
 
@@ -151,4 +151,4 @@ inputMultipleImage.addEventListener("change", e => {
 })
 ```
 
-![](./assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-19-오후-2.47.17.jpg)
+ ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-19-오후-2.47.17.jpg)

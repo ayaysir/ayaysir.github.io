@@ -184,4 +184,4 @@ Thymeleaf에서는 표시하고자 하는 내용을 메시지 프로퍼티에서
  <h1><spring:message code="greeting" text="default"/></h1>
 ```
 
-![](./assets/img/wp-content/uploads/2019/01/international-e1565670523298.png)
+ ![](/assets/img/wp-content/uploads/2019/01/international-e1565670523298.png)

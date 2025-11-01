@@ -16,9 +16,9 @@ categories:
 
 ### **Vapor를 사용하여 iOS에서 웹 서버 실행**
 
-![](./assets/img/wp-content/uploads/2022/08/simulator_screenshot_CE6B8D15-1746-4467-AB71-2011072FC37D-e1661872266956.png)
+ ![](/assets/img/wp-content/uploads/2022/08/simulator_screenshot_CE6B8D15-1746-4467-AB71-2011072FC37D-e1661872266956.png)
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-31-오전-12.24.44.png)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-31-오전-12.24.44.png)
 
  
 
@@ -44,9 +44,9 @@ Xcode를 연 후 `Swift Package Manager`에서 이러한 패키지의 최신 버
 
 `File > Add Packages...` 를 클릭하고 좌측 상단의 `Recently Used` 버튼 클릭, 우측 상단의 검색창에 git 주소 입력 후 `Add Pacakage` 버튼을 눌러 설치합니다.
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-29-오전-2.14.31.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-29-오전-2.14.31.jpg)
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-29-오전-2.14.54.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-29-오전-2.14.54.jpg)
 
  
 
@@ -176,13 +176,13 @@ class ViewController: UIViewController {
 
 콘솔을 보면 다음과 같이 표시됩니다.
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-29-오전-2.41.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-29-오전-2.41.52.jpg)
 
  
 
 동일한 컴퓨터의 웹 브라우저에서 `localhost:8080`으로 이동하면 다음 오류 메시지가 표시됩니다.
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-29-오전-2.42.08.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-29-오전-2.42.08.jpg)
 
 이것은 해당 경로에서 서비스를 제공할 수 있는 것들을 아무것도 찾을 수 없다는 서버의 응답입니다. 아직 경로를 생성하지 않았기 때문에 예상되는 결과였고 위 메시지를 받았다면 성공입니다.
 
@@ -344,7 +344,7 @@ try app.register(collection: FileWebRouteCollection())
 
 빌드 및 실행합니다. 웹 브라우저에서 `localhost:8080`을 열면 두 개의 버튼이 보일 것입니다.
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-9.50.32.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-9.50.32.jpg)
 
  
 
@@ -420,7 +420,7 @@ routes.post(use: uploadFilePostHandler)
 
 빌드 및 실행합니다. 웹 브라우저에서 `localhost:8080`으로 이동하여 파일을 업로드합니다.
 
-![](./assets/img/wp-content/uploads/2022/08/Screen-Shot-2022-03-17-at-4.23.46-pm.png)
+ ![](/assets/img/wp-content/uploads/2022/08/Screen-Shot-2022-03-17-at-4.23.46-pm.png)
 
 `Delete`(삭제)는 아직 작동하지 않지만 이제 웹 브라우저를 통해 iOS 기기로 파일을 보낼 수 있으므로 파일 내용을 미리 볼 수 있는 방법을 만들어야 합니다.
 
@@ -480,19 +480,19 @@ override func viewDidLoad() {
 
 다음 뷰 컨트롤러 안에 테이블 뷰를 추가하고, 업로드된 파일 목록이 나타나도록 합니다.
 
-\[caption id="attachment\_4681" align="alignnone" width="600"\]![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-10.21.08.jpg) 뷰 컨트롤러 안에 Table View(`UITableView`)를 추가합니다.\[/caption\]
+\[caption id="attachment\_4681" align="alignnone" width="600"\] ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-10.21.08.jpg) 뷰 컨트롤러 안에 Table View(`UITableView`)를 추가합니다.\[/caption\]
 
  
 
-\[caption id="attachment\_4682" align="alignnone" width="652"\]![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-10.22.09.jpg) 테이블 뷰를 ViewController.swift 파일과 `@IBOutlet`으로 연결합니다.\[/caption\]
+\[caption id="attachment\_4682" align="alignnone" width="652"\] ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-10.22.09.jpg) 테이블 뷰를 ViewController.swift 파일과 `@IBOutlet`으로 연결합니다.\[/caption\]
 
  
 
-\[caption id="attachment\_4683" align="alignnone" width="361"\]![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-10.23.28.jpg) `viewDidLoad` 안에 `delegate`, `dataSource`를 `self`와 연결합니다.\[/caption\]
+\[caption id="attachment\_4683" align="alignnone" width="361"\] ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-10.23.28.jpg) `viewDidLoad` 안에 `delegate`, `dataSource`를 `self`와 연결합니다.\[/caption\]
 
  
 
-\[caption id="attachment\_4684" align="alignnone" width="466"\]![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-10.26.26.jpg) 테이블 뷰에 Prototype Cell을 1개 추가하고, Style을 Basic으로, identifier를 `FileNameCell`로 지정합니다.\[/caption\]
+\[caption id="attachment\_4684" align="alignnone" width="466"\] ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-10.26.26.jpg) 테이블 뷰에 Prototype Cell을 1개 추가하고, Style을 Basic으로, identifier를 `FileNameCell`로 지정합니다.\[/caption\]
 
  
 
@@ -520,7 +520,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
 빌드 및 실행합니다.
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-10.40.17.png)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-10.40.17.png)
 
 업로드한 파일에 따라 위의 스크린샷과 유사한 내용이 표시됩니다. 파일이 표시되지 않으면 브라우저를 통해 파일을 업로드해 보세요.
 
@@ -679,7 +679,7 @@ routes.get(":filename", use: downloadFileHandler)
 
 다시 빌드하고 실행합니다. 이번에는 웹 브라우저에서 서버로 이동하여 파일을 클릭합니다. (또는 URL을 직접 입력합니다.)
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-11.42.23.png)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-30-오후-11.42.23.png)
 
  
 
@@ -764,7 +764,7 @@ http://www.giphy.com/gifs/uIYXg99raC80l9uBv2
 
 #### **서버 제목 표시하기**
 
-![](./assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-31-오전-12.05.23.png)
+ ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-31-오전-12.05.23.png)
 
 ```
 lblTitle.text = ProcessInfo().hostName + ":\(server.port)"

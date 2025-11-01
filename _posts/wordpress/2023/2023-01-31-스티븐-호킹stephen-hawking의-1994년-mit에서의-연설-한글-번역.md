@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=b-2GV0T5Zpc&ab\_channel=MITVideoProductions
 
  
 
-> ![](./assets/img/wp-content/uploads/2023/01/Stephen_Hawking.StarChild.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/01/Stephen_Hawking.StarChild.jpg)
 > 
 > **스티븐 윌리엄 호킹**(영어: Stephen William Hawking, CH, CBE, FRS, 1942년 1월 8일 ~ 2018년 3월 14일)은 영국의 이론물리학자이다. 그는(특히, 블랙홀이 있는 상황에서의) 우주론과 양자 중력의 연구에 크게 기여했으며, 자신의 이론 및 일반적인 우주론을 다룬 여러 대중 과학 서적을 저술했다. 그 중에서도 시간의 역사는 영국 런던 선데이 타임즈 베스트셀러 목록에 최고 기록인 237주 동안이나 실려서 화제가 된 적도 있다. 2009년까지 케임브리지 대학교 루커스 수학 석좌 교수로 재직하였다.
 > 
@@ -71,7 +71,7 @@ However, many people who can't speak also have other disabilities, like me, and 
 
 Instead, they have to use one or more switches operated by a head or hand movement. 대신 머리나 손의 움직임으로 작동되는 하나 이상의 스위치를 사용해야 합니다.
 
-This is where the information flow problem really confronts one. 이것은 정보 흐름의문제가 실제로 한 사람에게 맞닥뜨리는 곳입니다.
+This is where the information flow problem really confronts one. 이것은 정보 흐름의 문제가 실제로 한 사람에게 맞닥뜨리는 곳입니다.
 
 One might be able to operate a switch two or three times a second. 한 사람은 1초에 2~3번 스위치를 작동할 수 있습니다.
 
@@ -153,7 +153,7 @@ Not only does one want to be understood, but also one doesn't want to sound like
 
 > Dalek은 드라마 "Doctor Who"에서 등장하는 외계인이다.
 > 
-> ![](./assets/img/wp-content/uploads/2023/01/달렉.jpeg)
+>  ![](/assets/img/wp-content/uploads/2023/01/달렉.jpeg)
 
  
 

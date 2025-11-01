@@ -10,13 +10,13 @@ categories:
 
 Static Cell 모드란 아래와 같이 content mode가 `Static Cells`로 지정된 경우로 데이터 모델에 따라 셀의 개수등이 변동하는 일반적인 테이블 뷰와 달리 셀의 개수, 위치 등이 고정되어 있는 경우를 말합니다. 이 경우 코드 작성 대신 스토리보드에서 셀 개수, 섹션 개수를 설정하게 됩니다.
 
-![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-10-오전-2.15.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-10-오전-2.15.52.jpg)
 
  
 
 예제에서 6개의 섹션이 있는데, 마지막은 배너 광고를 표시하는 섹션으로 광고 표시 여부를 설정 여부에 따라 보이거나 숨기게 하고 싶을 때 사용할 수 있는 방법은 다음과 같습니다.
 
-![](./assets/img/wp-content/uploads/2022/06/-2022-06-10-오전-2.24.05-e1654797567600.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/-2022-06-10-오전-2.24.05-e1654797567600.jpg)
 
  
 
@@ -30,7 +30,7 @@ private let showBanner = false
 - `row`, `section` 모두 0부터 시작합니다.
 - `showBanner` - 해당 섹션 표시 여부를 지정합니다.
 
-![](./assets/img/wp-content/uploads/2022/06/-2022-06-10-오전-2.24.05-e1654797567600.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/-2022-06-10-오전-2.24.05-e1654797567600.jpg)
 
 파란색 박스 아이콘이 `section`, 회색 아이콘이 해당 섹션의 `row` 입니다.
 
@@ -104,15 +104,15 @@ override func tableView(_ tableView: UITableView, titleForHeaderInSection sectio
 
  
 
-\[caption id="attachment\_4525" align="alignnone" width="406"\]![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-10-오전-2.43.17.jpg) 섹션 숨김 1\[/caption\]
+\[caption id="attachment\_4525" align="alignnone" width="406"\] ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-10-오전-2.43.17.jpg) 섹션 숨김 1\[/caption\]
 
  
 
-\[caption id="attachment\_4526" align="alignnone" width="399"\]![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-10-오전-2.52.47.jpg) 섹션 숨김 2\[/caption\]
+\[caption id="attachment\_4526" align="alignnone" width="399"\] ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-10-오전-2.52.47.jpg) 섹션 숨김 2\[/caption\]
 
  
 
-\[caption id="attachment\_4527" align="alignnone" width="393"\]![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-10-오전-2.53.16.jpg) 배너 광고 표시됨: 빨간 글씨는 잘못 삽입된것으로 `showBanner = true` 입니다.\[/caption\]
+\[caption id="attachment\_4527" align="alignnone" width="393"\] ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-10-오전-2.53.16.jpg) 배너 광고 표시됨: 빨간 글씨는 잘못 삽입된것으로 `showBanner = true` 입니다.\[/caption\]
 
  
 
@@ -132,7 +132,7 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
 
  
 
-![](./assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-10-오전-2.55.24.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-10-오전-2.55.24.jpg)
 
  
 

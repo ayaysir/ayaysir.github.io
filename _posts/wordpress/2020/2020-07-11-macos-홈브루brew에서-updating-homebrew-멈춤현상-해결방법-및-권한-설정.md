@@ -32,7 +32,7 @@ Error: The following directories are not writable by your user:
 
 터미널에서 나오는 두 문장을 그대로 복사한 후 붙여넣기 엔터 하면 됩니다.
 
-![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-11-오후-6.00.13.png)
+ ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-11-오후-6.00.13.png)
 
 ```
 sudo chown -R $(whoami) /usr/local/share/man/man5 /usr/local/share/man/man7

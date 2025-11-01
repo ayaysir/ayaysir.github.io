@@ -78,7 +78,7 @@ http://www.giphy.com/gifs/M1YL5UJsNSlK1PKdWq
 #### **뷰를 띄우는 방법**
 
 - `sheet`
-    - 새로운 뷰가 화면 전체를 덮지 않고 카드처럼 겹쳐있는 형태![](./assets/img/wp-content/uploads/2023/03/Sheets-in-SwiftUI.jpg)
+    - 새로운 뷰가 화면 전체를 덮지 않고 카드처럼 겹쳐있는 형태 ![](/assets/img/wp-content/uploads/2023/03/Sheets-in-SwiftUI.jpg)
 - `fullScreen`
     - 새로운 뷰가 화면 전체를 덮는 형태
 

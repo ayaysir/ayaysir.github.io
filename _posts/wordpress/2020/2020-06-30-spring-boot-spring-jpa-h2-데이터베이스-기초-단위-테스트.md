@@ -56,7 +56,7 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 
 ##### **3\. 도메인 패키지를 생성하고 안에 데이터베이스 테이블과 연결되는 특수한 Getter 생성**
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-9.43.04.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-9.43.04.png)
 
 엔티티 클래스와 Repository 인터페이스로 구분되며, 엔티티 클래스의 이름은 테이블의 이름으로 합니다. 여기서는 `posts`라는 테이블이 있는것으로 가정해 `Post`라고 지었습니다.
 
@@ -173,7 +173,7 @@ public class PostsRepositoryTest {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-9.48.28.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-9.48.28.png)
 
 JpaRepository를 상속받은 PostRepository에서 사용 가능한 메소드
 

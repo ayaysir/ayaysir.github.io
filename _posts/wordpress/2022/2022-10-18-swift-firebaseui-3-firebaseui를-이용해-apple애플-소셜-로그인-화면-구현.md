@@ -16,7 +16,7 @@ categories:
 
 2020년 4월 이후로 소셜 로그인을 지원하는 앱은 무조건 애플 로그인 (Sign in with Apple)을 추가해야 한다고 합니다. 저는 애플 소셜 로그인을 사용한 앱을 제출해본 경험은 아직 없지만 제가 사용하는 소셜 로그인을 지원하는 대부분의 앱이 애플 로그인 버튼이 있는 것으로 봐선 반드시 추가해야 할 사항으로 보입니다.
 
-![](./assets/img/wp-content/uploads/2022/10/apple-login-policy.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/apple-login-policy.jpg)
 
  
 
@@ -31,13 +31,13 @@ categories:
 
 [Firebase 콘솔](https://console.firebase.google.com/)에 접속해서 좌측의 `빌드 > Authentication > Sigin-in Method` 페이지로 들어갑니다. `[새 제공업체 추가]` 버튼을 눌러서 _**Apple**_을 추가합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.12.41.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.12.41.jpg)
 
  
 
 다음 단게에서 `서비스 ID`는 아무 값을 입력하고 `[저장]` 버튼을 누릅니다. Apple이 제공 업체 목록에 추가됩니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.13.56.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.13.56.jpg)
 
  
 
@@ -45,7 +45,7 @@ categories:
 
 애플 개발자 사이트의 [Certificates, Identifiers & Profiles(인증서, 식별자, 프로필)](https://developer.apple.com/account/resources)에 접속합니다 왼쪽 메뉴에서 `Services` 버튼을 클릭한 뒤 _**Sign in with Apple for Email Communication**_ 섹션에 있는 `Configure` 버튼을 클릭합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.05.28.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.05.28.jpg)
 
  
 
@@ -54,13 +54,13 @@ categories:
 - `noreply@YOUR_FIREBASE_PROJECT_ID.firebaseapp.com`
     - `YOUR_FIREBASE_PROJECT_ID`는 프로젝트의 ID를 입력합니다. (참고 란 참조)
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.26.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.26.52.jpg)
 
 > **참고: 프로젝트 ID 확인**
 > 
 > `프로젝트 설정` (좌측 상단의 톱니바퀴 버튼 클릭) > `일반` 탭에서 확인
 > 
-> ![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.27.48.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.27.48.jpg)
 
  
 
@@ -68,7 +68,7 @@ categories:
 
 프로젝트 설정을 클릭하고 `Signing & Capabilities` 탭에 있는 `+` 버튼을 클릭한 뒤 Sign in with Apple를 추가합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.14.48.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-2.14.48.jpg)
 
  
 
@@ -104,13 +104,13 @@ authUI.providers = providers
 
 앱을 실행하면 Sign in with Apple 버튼이 추가된 것을 볼 수 있습니다.
 
-\[caption id="attachment\_5004" align="alignnone" width="408"\]![](./assets/img/wp-content/uploads/2022/10/IMG_A1F1CBDAD507-1.jpg) Sign in with Apple 버튼 추가됨\[/caption\]
+\[caption id="attachment\_5004" align="alignnone" width="408"\] ![](/assets/img/wp-content/uploads/2022/10/IMG_A1F1CBDAD507-1.jpg) Sign in with Apple 버튼 추가됨\[/caption\]
 
  
 
 애플 아이디로 로그인은 이메일 공개(나의 이메일 공유하기) 또는 나의 이메일 가리기 두 가지 방식으로 선택할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-3.02.49.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-3.02.49.jpg)
 
  
 
@@ -118,9 +118,9 @@ authUI.providers = providers
 
 먼저 이메일 가리기로 가입한 경우 임의로 생성된 문자열의 이름을 가진`***@privaterelay...com` 형식의 애플 이메일로 가입이 됩니다. 파이어베이스 콘솔의 인증된 사용자 목록에도 해당 애플 이메일이 표시됩니다.
 
-![](./assets/img/wp-content/uploads/2022/10/IMG_17DBE821DFCC-1.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/IMG_17DBE821DFCC-1.jpg)
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-3.03.53.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-3.03.53.jpg)
 
  
 
@@ -128,9 +128,9 @@ authUI.providers = providers
 
 탈퇴 후 이메일을 공개하여 다시 가입한 경우 내가 공개한 이메일로 표시가 되며 파이어베이스 콘솔에서도 해당 이메일이 표시됩니다.
 
-![](./assets/img/wp-content/uploads/2022/10/IMG_9398.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/IMG_9398.jpg)
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-3.21.39.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-19-오전-3.21.39.jpg)
 
  
 

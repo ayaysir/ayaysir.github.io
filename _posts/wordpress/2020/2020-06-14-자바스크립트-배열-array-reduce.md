@@ -69,7 +69,7 @@ console.log(sum) // 6
 console.log(sum2) // 16
 ```
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-10.39.18.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-10.39.18.png)
 
  
 
@@ -81,7 +81,7 @@ const flattend = [[0, 4], ["x", "y"], ["zz"]].reduce((acc, v) => {
 })
 ```
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-10.42.06.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-10.42.06.png)
 
  
 
@@ -98,7 +98,7 @@ const count = names.reduce((allNames, name) => {
 }, {}) // allNames 초기값을 객체로 설정
 ```
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-10.51.42.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-10.51.42.png)
 
  
 
@@ -132,7 +132,7 @@ function groupBy(people, prop) {
 console.log(groupBy(people, "age"))
 ```
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-10.58.40.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-10.58.40.png)
 
  
 
@@ -160,7 +160,7 @@ const books = friends.reduce((acc, v) => {
 }, [])
 ```
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-11.17.19.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-11.17.19.png)
 
 #### **예제 6: 배열의 중복 제거**
 
@@ -179,7 +179,7 @@ const result = dArr.sort().reduce((acc, v) => {
 console.log(result)
 ```
 
-![](./assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-11.08.12.png)
+ ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-14-오후-11.08.12.png)
 
 ##### 참고: `Array.from` 과 `Set`을 이용한 중복제거
 

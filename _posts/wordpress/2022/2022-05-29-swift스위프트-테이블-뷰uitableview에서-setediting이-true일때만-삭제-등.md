@@ -16,7 +16,7 @@ categories:
 
 제목이 대체 무슨 말인가 하면
 
-아래 화면과 같이 `Edit` 버튼이 있어 에디트 모드가 따로 있는 예제 앱이 있습니다. 테이블 뷰의 에디트 모드가 모든 열(`row`)에 활성화되어 있는 상태입니다. ![](./assets/img/wp-content/uploads/2022/05/-2022-05-30-오전-3.30.50-e1653849960422.jpg)
+아래 화면과 같이 `Edit` 버튼이 있어 에디트 모드가 따로 있는 예제 앱이 있습니다. 테이블 뷰의 에디트 모드가 모든 열(`row`)에 활성화되어 있는 상태입니다.  ![](/assets/img/wp-content/uploads/2022/05/-2022-05-30-오전-3.30.50-e1653849960422.jpg)
 
 ```
 // Override to support conditional editing of the table view.
@@ -48,7 +48,7 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 
 `tableView.setEditing(_:animated:)` 를 통해 Edit Mode를 `true`로 하면 아래와 같은 화면이 나옵니다.
 
-![](./assets/img/wp-content/uploads/2022/05/-2022-05-30-오전-3.31.16-e1653849999668.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/-2022-05-30-오전-3.31.16-e1653849999668.jpg)
 
  
 

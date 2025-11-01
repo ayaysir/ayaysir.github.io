@@ -48,4 +48,4 @@ function stop() {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2021/03/스크린샷-2021-03-04-오후-9.43.06.png)
+ ![](/assets/img/wp-content/uploads/2021/03/스크린샷-2021-03-04-오후-9.43.06.png)

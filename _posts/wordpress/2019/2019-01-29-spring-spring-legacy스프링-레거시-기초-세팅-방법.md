@@ -16,7 +16,7 @@ _여기에 나오는 내용은 현 시점에서 굉장히 오래된 내용들이
 
 설치: 이클립스에서 Help > Marketplace... > STS 검색 후 설치
 
-![](./assets/img/wp-content/uploads/2019/01/spring-sts.png)
+ ![](/assets/img/wp-content/uploads/2019/01/spring-sts.png)
 
 또는 스프링 ([https://spring.io/tools](https://spring.io/tools)) 사이트에서 STS standalone(STS가 포함된 이클립스)를 다운로드
 
@@ -32,7 +32,7 @@ Perspective 변경: Open Perspective > Spring으로 변경
 
 프로젝트 Properties > Facet > 자바 버전 최신으로 적절히 변경
 
-![](./assets/img/wp-content/uploads/2019/01/spring-facet.png)
+ ![](/assets/img/wp-content/uploads/2019/01/spring-facet.png)
 
 pom.xml 파일에서
 

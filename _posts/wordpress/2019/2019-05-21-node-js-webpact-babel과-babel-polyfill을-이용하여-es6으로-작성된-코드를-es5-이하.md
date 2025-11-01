@@ -38,7 +38,7 @@ msgAfterTimeout("First", "James", 100).then((msg) =>
 
 예를 들어 위와 같이 자바스크립트 코드를 ES6 문법으로 작성해서 Webpack으로 내보내면 크롬에서는 정상적으로 실행되지만 인터넷 익스플로러같은 브라우저에서 다음과 같은 오류가 발생합니다.
 
-[![](./assets/img/wp-content/uploads/2019/05/babel1.png)](http://yoonbumtae.com/?attachment_id=1141)
+[ ![](/assets/img/wp-content/uploads/2019/05/babel1.png)](http://yoonbumtae.com/?attachment_id=1141)
 
 ES6 문법의 두 가지가 있는데 위에 있는 화살표 문법은 **Babel**을 설치하는 것으로 해결할 수 있고, 아래 `Promise`는 Babel 단독으로는 할 수 없고 **Babel/polyfill**이라는 것을 이용해야 합니다.
 
@@ -109,7 +109,7 @@ module.exports = {
 
 rules 배열의 첫 번째 원소는 지난번에 다루었던 css 관련 부분이고, 두 번째 원소가 새로 추가되는 부분입니다.  Webpack의  `dist` 관련 파일 생성 시 Babel을 적용하도록 하는 부분입니다.
 
-[![](./assets/img/wp-content/uploads/2019/05/babel2.png)](http://yoonbumtae.com/?attachment_id=1142)
+[ ![](/assets/img/wp-content/uploads/2019/05/babel2.png)](http://yoonbumtae.com/?attachment_id=1142)
 
 이렇게 하면 앞의 화살표 함수까지는 IE에서도 실행이 됩니다. 그러나 `Promise` 부분은 일부 구형 브라우저에서는 지원 자체가 되지 않기 때문에 Babel만으로는 해결할 수 없습니다. 이런 경우처럼 babel 만으로 적용할 수 없는 ES6 이상의 일부 코드들은 **babel/polyfill**로 해결합니다.
 
@@ -143,6 +143,6 @@ entry에서 작성한 js파일보다 폴리필을 먼저 로드시켜 작성한 
 
 ##### 6\. webpack dev server 가 켜져 있다면 끈 다음 재컴파일해서 IE에서 동작하는지 확인합니다.
 
-[![](./assets/img/wp-content/uploads/2019/05/babel3.png)](http://yoonbumtae.com/?attachment_id=1143)
+[ ![](/assets/img/wp-content/uploads/2019/05/babel3.png)](http://yoonbumtae.com/?attachment_id=1143)
 
 IE에서도 ES6 코드들이 정상적으로 동작하는 것을 볼 수 있네요. 하지만 시대가 어느때인데.. 인터넷 익스플로러는 그냥 빨리 없어졌으면 좋겠습니다.

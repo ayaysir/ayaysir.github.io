@@ -18,7 +18,7 @@ tags:
 
  
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-08-오후-11.47.18.png)
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-08-오후-11.47.18.png)
 
  
 
@@ -62,9 +62,9 @@ public String everybodyOK() {
 
 ##### **1\. 데이터베이스에서 테이블 생성 및 URL, 권한정보를  입력합니다.**
 
-![](./assets/img/wp-content/uploads/2019/12/-2019-12-08-오후-11.50.09-e1575817106884.png)
+ ![](/assets/img/wp-content/uploads/2019/12/-2019-12-08-오후-11.50.09-e1575817106884.png)
 
-![](./assets/img/wp-content/uploads/2019/12/-2019-12-08-오후-11.57.38-e1575817176644.png)
+ ![](/assets/img/wp-content/uploads/2019/12/-2019-12-08-오후-11.57.38-e1575817176644.png)
 
 프로젝트에 연결되어 있는 DB를 이용해 정보를 입력하면 됩니다. 여기서는 **mariadb**를 사용하였습니다.
 
@@ -176,23 +176,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 **운영자(`ROLE_ADMIN`)로 접속한 경우**
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.16.32.png)
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.16.32.png)
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.17.03.png)
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.17.03.png)
 
  
 
 **손님(`ROLE_GUEST`)로 접속한 경우**
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.17.52.png)
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.17.52.png)
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.18.35.png)
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.18.35.png)
 
 **로그인하지 않고 접속하는 경우**
 
-\[caption id="attachment\_1909" align="alignnone" width="365"\]![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.19.22.png) 모든 페이지 접속 시도 시 로그인 화면으로 리다이렉트됨\[/caption\]
+\[caption id="attachment\_1909" align="alignnone" width="365"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.19.22.png) 모든 페이지 접속 시도 시 로그인 화면으로 리다이렉트됨\[/caption\]
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.20.20.png)
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.20.20.png)
 
  
 

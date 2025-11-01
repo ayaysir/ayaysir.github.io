@@ -38,11 +38,11 @@ categories:
 
 `DispatchWorkItem`이란 `DispatchQueue` 등 비동기 작업을 할 때 사용하는 클로저 함수를 클래스 형태로 한 번 더 캡슐화 한 것을 말합니다. 메인 스레드에서 비동기 작업을 실행할 때 자주 사용하는 아래와 같은 예제 코드를 보면 트레일링 클로저를 사용하여 비동기 작업을 실행하는 것을 알 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-12-오후-11.43.59.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-12-오후-11.43.59.jpg)
 
 여기서 트레일링 클로저 부분을 `DispatchWorkItem`이라는 클래스로 한번 더 감싸면 동일한 작업을 할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-12-오후-11.47.33.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-12-오후-11.47.33.jpg)
 
 위의 두 코드는 사실상 동일하다고 볼 수 있습니다.
 
@@ -87,7 +87,7 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 
 `workItem`을 5회 실행하고자 의도했지만 `cancel()`로 인해 실제로 실행된 횟수는 3회만 이루어집니다. `cancel()` 부분을 지우면 5회 전부 실행됩니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-12-오후-11.53.11.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-12-오후-11.53.11.jpg)
 
 Debounce와 Throttle은 `DispatchWorkItem`의 `cancel()` 작업을 이용해 구현합니다.
 
@@ -199,7 +199,7 @@ class Throttle: DelayWork {
 
 버튼을 빠르게 반복 클릭하면 Debounce 및 Throttle 이 적용되는 예제입니다.
 
-![](./assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-13-오전-12.15.55.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-13-오전-12.15.55.jpg)
 
 ```
 import UIKit

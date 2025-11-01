@@ -181,7 +181,7 @@ module.exports = {
 
 참고로 프로젝트 폴더 구조는 다음과 같습니다.
 
-![](./assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-12-오후-7.31.53.png)
+ ![](/assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-12-오후-7.31.53.png)
 
 **index.ts**
 
@@ -241,7 +241,7 @@ export default function App() {
 
  
 
-![](./assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-12-오후-7.36.52.png)
+ ![](/assets/img/wp-content/uploads/2021/01/스크린샷-2021-01-12-오후-7.36.52.png)
 
  
 

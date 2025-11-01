@@ -18,7 +18,7 @@ categories:
 
 I recently acquired a new MIDI controller to augment my little home studio: a _**AKAI MPK mini3**_. While I am, overall, satisfied with it, some issues are worth mentioning. 저는 최근 저의 작은 홈 스튜디오를 확장하기 위해 새로운 MIDI 컨트롤러인 _**AKAI MPK mini3**_를 구입했습니다. 전반적으로 만족스럽기는 하지만 몇 가지 언급할 만한 문제가 있습니다.
 
-![](./assets/img/wp-content/uploads/2024/01/mpk-mini-mk3-sl-orthoK.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/mpk-mini-mk3-sl-orthoK.jpg)
 
  
 
@@ -56,7 +56,7 @@ I believe the v1 to v4 parameters represent the Y coordinates of 4 control point
 
  
 
-![](./assets/img/wp-content/uploads/2024/01/akai-mpk-velocity-linear-curve.png)
+ ![](/assets/img/wp-content/uploads/2024/01/akai-mpk-velocity-linear-curve.png)
 
 _**Figure 1.** A velocity response curve. The X axis represents the pressure applied to the keys. The Y axis represents the velocity of the Note On events emitted in response to the pressure of a key. Here, the curve is actually a straight line, meaning the output velocity is directly and simply proportional to the input pressure. The red dots represent the 4 parameters that allow to reshape the curve._ _**그림 1.** 벨로시티 응답 곡선. `X`축은 키에 가해지는 압력을 나타냅니다. `Y`축은 건반을 누르는 것에 반응하여 방출되는 Note On 이벤트의 벨로시티를 나타냅니다. 여기서 곡선은 실제로 직선입니다. 즉, 출력 벨로시티가 입력 압력에 직접적으로 비례한다는 의미입니다. 빨간색 점은 곡선의 모양을 변경할 수 있는 4가지 매개변수를 나타냅니다._
 
@@ -64,7 +64,7 @@ To better understand the effect of these parameters, a simple test is to set the
 
  
 
-![](./assets/img/wp-content/uploads/2024/01/akai-mpk-velocity-minmax-curves.png)
+ ![](/assets/img/wp-content/uploads/2024/01/akai-mpk-velocity-minmax-curves.png)
 
 _**Figure 2.** Maximal and minimal response curves. Left, the response curve produced by setting all parameters at their maximal values. Most key presses, except those applied with the faintest force, will hit the plateau at the top of the output range and will therefore constantly emit the highest velocity values. Right, the response curve produced by setting all parameters at their minimal values. Most key presses, except those applied with the greatest force, will hit the plateau at the bottom of the output range and will therefore constantly emit the lowest velocity values._ _**그림 2.** 최대 및 최소 응답 곡선. 왼쪽은 모든 매개변수를 최대값으로 설정하여 생성된 응답 곡선입니다. 가장 약한 힘을 가한 키를 제외한 대부분의 키 누름은 출력 범위의 상단에 도달하므로 지속적으로 가장 높은 벨로시티 값을 방출합니다. 오른쪽은 모든 매개변수를 최소값으로 설정하여 생성된 응답 곡선입니다. 가장 큰 힘을 가하는 키를 제외한 대부분의 키 누르기는 출력 범위의 맨 아래에 있는 플래토(plateau)에 도달하므로 지속적으로 가장 낮은 벨로시티 값을 방출합니다._
 
@@ -74,7 +74,7 @@ With that in mind, you can shape the response curve to get the kind of answer yo
 
  
 
-![](./assets/img/wp-content/uploads/2024/01/akai-mpk-velocity-orignew-curves.png)
+ ![](/assets/img/wp-content/uploads/2024/01/akai-mpk-velocity-orignew-curves.png)
 
 Figure 3. Practical response curves. Left, the response curve as it was on the device out of the box. Right, the response curve that I have set for myself. 그림 3. 실제 반응 곡선입니다. 왼쪽은 디바이스의 반응 곡선 초기값입니다. 오른쪽은 제가 직접 설정한 반응 곡선입니다.
 

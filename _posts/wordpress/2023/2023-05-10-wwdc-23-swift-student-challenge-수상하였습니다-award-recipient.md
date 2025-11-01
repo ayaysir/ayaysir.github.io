@@ -10,7 +10,7 @@ categories:
 
 이번에 애플에서 주최한 [WWDC23 Swift Student Challenge](https://developer.apple.com/kr/wwdc23/swift-student-challenge/)(스위프트 스튜던트 챌린지)에 응모하였는데 운이 좋아서 수상하였습니다. 영어로 Award Recipient라고 나와있는데 비공식 용어로는 Winner로 일컫기도 합니다.
 
-![](./assets/img/wp-content/uploads/2023/05/IMG_0523-e1683714538993.jpeg)
+ ![](/assets/img/wp-content/uploads/2023/05/IMG_0523-e1683714538993.jpeg)
 
 사실 작년까지는 이런 공모전이 있는지도 몰랐는데 올해 어떻게 정보를 알게되어 응모하게 되었습니다. Student Challenge에 대한 자세한 내용은 [https://developer.apple.com/kr/wwdc23/swift-student-challenge/](https://developer.apple.com/kr/wwdc23/swift-student-challenge/) 에서 볼 수 있습니다.
 
@@ -44,7 +44,7 @@ https://www.youtube.com/watch?v=GmwB2KxOwjs
 
 #### **튜토리얼/매뉴얼**
 
-![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.04-복사본.jpg) ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.10-복사본.jpg) ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.14-복사본.jpg) ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.22-복사본.jpg) ![](./assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.28-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.04-복사본.jpg)  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.10-복사본.jpg)  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.14-복사본.jpg)  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.22-복사본.jpg)  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.28-복사본.jpg)
 
  
 

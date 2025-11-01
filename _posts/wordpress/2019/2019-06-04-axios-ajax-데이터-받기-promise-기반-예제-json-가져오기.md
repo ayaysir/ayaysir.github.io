@@ -109,4 +109,4 @@ axios.get('/user', {
 
 Vue.js에서 `filter`로 선언한 부분은 `{{variableName | filterName}}` 으로 사용합니다. `created` 안의 부분은 컴포넌트 라이프사이클에서 created 되었을 때 실행합니다.
 
-[![](./assets/img/wp-content/uploads/2019/06/quiz.png)](http://yoonbumtae.com/?attachment_id=1165)
+[ ![](/assets/img/wp-content/uploads/2019/06/quiz.png)](http://yoonbumtae.com/?attachment_id=1165)

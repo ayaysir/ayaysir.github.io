@@ -35,15 +35,15 @@ https://www.youtube.com/watch?v=XixY9AajbMY&list=PL5s035z2WFoaf61q09\_UH0iM2HYwo
 
 [Abbreviations](https://www.boosey.com/downloads/BH_StandardAbbreviations_New.pdf) (PDF)
 
-\[caption id="attachment\_5739" align="alignnone" width="358"\]![](./assets/img/wp-content/uploads/2023/07/Musical_instruments_on_display_at_the_MIM_14351816715.jpg) 코비즈 (Kobyz)\[/caption\]
+\[caption id="attachment\_5739" align="alignnone" width="358"\] ![](/assets/img/wp-content/uploads/2023/07/Musical_instruments_on_display_at_the_MIM_14351816715.jpg) 코비즈 (Kobyz)\[/caption\]
 
  
 
-\[caption id="attachment\_5740" align="alignnone" width="294"\]![](./assets/img/wp-content/uploads/2023/07/294px-Kazakh_Dombra2.png) 돔브라 (Dombra)\[/caption\]
+\[caption id="attachment\_5740" align="alignnone" width="294"\] ![](/assets/img/wp-content/uploads/2023/07/294px-Kazakh_Dombra2.png) 돔브라 (Dombra)\[/caption\]
 
  
 
-\[caption id="attachment\_5738" align="alignnone" width="500"\]![](./assets/img/wp-content/uploads/2023/07/500px-Jews_harp.jpg) 주즈하프 (Jew's Harp)\[/caption\]
+\[caption id="attachment\_5738" align="alignnone" width="500"\] ![](/assets/img/wp-content/uploads/2023/07/500px-Jews_harp.jpg) 주즈하프 (Jew's Harp)\[/caption\]
 
  
 
@@ -70,7 +70,7 @@ Tlep은 카자흐스탄의 저명한 박애주의자이며 예술 후원자이�
 
 > **Tlep Aspantaiuly (1757-1820)**
 > 
-> ![](./assets/img/wp-content/uploads/2023/07/13179288_990708160984542_5521026096320190133_n.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/07/13179288_990708160984542_5521026096320190133_n.jpg)
 > 
 > Tlep은 Torgai에 거주하였고 그는 뛰어난 코비즈 연주자였을 뿐만 아니라 매우 재능 있는 작곡가입니다. 그의 후손들의 회상에 따르면, Tlep의 음악 작곡에는 종종 다음과 같은 'kuyis'를 포함한 구절이 수반되었습니다. 'Tolgau'는 본질적으로 철학적이며 'Allamzhar'와 'Baksy'는 종교적 내용을 기반으로 합니다.
 

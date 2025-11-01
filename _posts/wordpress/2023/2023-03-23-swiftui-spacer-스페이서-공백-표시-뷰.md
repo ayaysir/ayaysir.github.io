@@ -28,9 +28,9 @@ SwiftUI에서, 스페이서(`Spacer`)는 공백을 표시하는 `View`입니다.
 > }
 > ```
 > 
-> ![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.01.04.png)
+>  ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.01.04.png)
 > 
-> ![](./assets/img/wp-content/uploads/2023/03/다운로드.png)
+>  ![](/assets/img/wp-content/uploads/2023/03/다운로드.png)
 
  
 
@@ -44,12 +44,12 @@ HStack {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.02.22-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.02.22-복사본.jpg)
 
 - `Spacer()`는 `View`의 한 종류로 취급되므로 뷰처럼 사용하면 됩니다.
 - 현재 공간에서 사용할 수 있는 최대한의 공백을 띄워줍니다.
 - `Text`와 `Image`간 `Spacer`를 사용하면 텍스트, 이미지 부분을 제외한 나머지 영역 전부를 `Spacer`가 차지하게 됩니다.
-- 다음과 같이 여러 `Spacer`를 사용할 수 있습니다. ![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.14.03-복사본.jpg)
+- 다음과 같이 여러 `Spacer`를 사용할 수 있습니다.  ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.14.03-복사본.jpg)
     
     ```
     HStack {
@@ -68,7 +68,7 @@ HStack {
 
 > **참고)** `Spacer` 또한 `View`이기 때문에 스택 당 최대 뷰의 개수 `10개`를 초과하면 오류가 발생합니다.
 > 
-> ![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.08.17-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.08.17-복사본.jpg)
 
  
 
@@ -90,11 +90,11 @@ HStack {
 }
 ```
 
-\[caption id="attachment\_5391" align="alignnone" width="430"\]![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.16.15-복사본-1.jpg) `minLength`를 지정한 경우\[/caption\]
+\[caption id="attachment\_5391" align="alignnone" width="430"\] ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.16.15-복사본-1.jpg) `minLength`를 지정한 경우\[/caption\]
 
  
 
-\[caption id="attachment\_5389" align="alignnone" width="434"\]![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.14.03-복사본.jpg) `minLength`가 없는 경우\[/caption\]
+\[caption id="attachment\_5389" align="alignnone" width="434"\] ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.14.03-복사본.jpg) `minLength`가 없는 경우\[/caption\]
 
  
 
@@ -117,13 +117,13 @@ HStack {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.21.04-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.21.04-복사본.jpg)
 
  
 
 **VStack(세로 스택)은 height**
 
-![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.24.06-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.24.06-복사본.jpg)
 
  
 
@@ -140,4 +140,4 @@ VStack(spacing: 50) {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.29.45-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-23-오후-10.29.45-복사본.jpg)

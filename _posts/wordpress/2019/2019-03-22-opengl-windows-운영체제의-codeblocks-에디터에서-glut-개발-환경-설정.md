@@ -19,7 +19,7 @@ CodeBlocks 설치는 [이 링크](http://yoonbumtae.com/?p=884) 를 참조한�
 
 코드블록 에디터의 인스톨러 버전으로 설치했다면 그림의 경로이다.
 
-[![](./assets/img/wp-content/uploads/2019/03/cb1-1.png)](http://yoonbumtae.com/?attachment_id=903)
+[ ![](/assets/img/wp-content/uploads/2019/03/cb1-1.png)](http://yoonbumtae.com/?attachment_id=903)
 
 맨 위에 있는 압축 파일에서,
 
@@ -31,11 +31,11 @@ CodeBlocks 설치는 [이 링크](http://yoonbumtae.com/?p=884) 를 참조한�
 
 코드블록 에디터를 실행한 다음 `File → New → Project...` 에서 `GLUT project`를 선택한다.
 
-[![](./assets/img/wp-content/uploads/2019/03/cb2.png)](http://yoonbumtae.com/?attachment_id=897)
+[ ![](/assets/img/wp-content/uploads/2019/03/cb2.png)](http://yoonbumtae.com/?attachment_id=897)
 
 쭉 다음을 누르다가, 다음 창이 뜨면 경로를 좀전에 GLUT 파일들이 들어간 MinGW 컴파일러의 경로를 입력한다.
 
-[![](./assets/img/wp-content/uploads/2019/03/cb3.png)](http://yoonbumtae.com/?attachment_id=898)
+[ ![](/assets/img/wp-content/uploads/2019/03/cb3.png)](http://yoonbumtae.com/?attachment_id=898)
 
 새 프로젝트를 만드면 `main.cpp` 라는 예제파일이 생기는데, 지금 쓰고 있는 개똥컴에서는 무슨 이유인지 모르겠는데 컴파일이 되지 않는다. `undefined reference to ...` 에러가 생기면서 컴파일이 되지 않는다면 코드의 맨 위 인클루드 선언 부분에 `#include <windows.h>` 를 삽입하면 컴파일이 된다.
 
@@ -43,4 +43,4 @@ CodeBlocks 설치는 [이 링크](http://yoonbumtae.com/?p=884) 를 참조한�
 
 코드블록 에디터에서 프로젝트에 파일을 추가하는 방법이 좀 이상한데 메뉴에서 `File → New → File...` 에서 empty file 을 선택한 다음 add file to active project 옵션을 선택하면 추가된다.
 
-[![](./assets/img/wp-content/uploads/2019/03/cb4.png)](http://yoonbumtae.com/?attachment_id=899)
+[ ![](/assets/img/wp-content/uploads/2019/03/cb4.png)](http://yoonbumtae.com/?attachment_id=899)

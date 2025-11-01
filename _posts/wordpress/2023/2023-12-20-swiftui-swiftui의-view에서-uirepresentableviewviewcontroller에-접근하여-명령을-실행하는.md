@@ -108,7 +108,7 @@ struct WebContentView: View {
     3. 새로운 뷰 클래스의 `self`를 `Controller` 안의 `provider`와 연결합니다.
 5. SwiftUI의 뷰에서 뷰모델 클래스를 초기화(initializaiton)하고, 해당 뷰모델 변수를 통해 원하는 작업을 실행합니다.
 
-![](./assets/img/wp-content/uploads/2023/12/스크린샷-2024-01-23-오후-8.29.30-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2024-01-23-오후-8.29.30-복사본.jpg)
 
  
 

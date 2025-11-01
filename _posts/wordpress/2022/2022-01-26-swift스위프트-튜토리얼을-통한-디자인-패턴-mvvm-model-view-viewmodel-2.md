@@ -14,7 +14,7 @@ categories:
 
  
 
-![](./assets/img/wp-content/uploads/2022/01/1_pFVk0tVSIkeSYD7RZ2sVaw.png)
+ ![](/assets/img/wp-content/uploads/2022/01/1_pFVk0tVSIkeSYD7RZ2sVaw.png)
 
 새 애플리케이션을 구축할 때마다 항상 새 프로젝트에 어떤 아키텍처 패턴을 선택해야 하는지에 궁금할 수 있습니다. iOS에서 가장 많이 사용되는 아키텍처 패턴은 MVC입니다. 대부분의 개발자는 프로젝트에 MVC 패턴을 사용합니다. 소규모 프로젝트에는 MVC가 잘 작동하지만 프로젝트 크기가 증가하기 시작하면 소스 코드가 지저분해지기 시작합니다.
 
@@ -32,7 +32,7 @@ categories:
 
 이것은 구현을 완료시 예상되는 앱의 출력 화면입니다.
 
-![](./assets/img/wp-content/uploads/2022/01/1_f6oVGW9hytmcYJfwTk-VAg-e1642951051586.png)
+ ![](/assets/img/wp-content/uploads/2022/01/1_f6oVGW9hytmcYJfwTk-VAg-e1642951051586.png)
 
  
 
@@ -52,7 +52,7 @@ categories:
 
 코드를 구성하고 해당 그룹에 필요한 파일을 생성해 보겠습니다. 각 그룹(Models, ViewModels, API Service)에 하나씩 3개의 새 파일을 만들었습니다.
 
-![](./assets/img/wp-content/uploads/2022/01/1_eBCALKsqlQzihmJMayDxdw-e1642951849734.png)
+ ![](/assets/img/wp-content/uploads/2022/01/1_eBCALKsqlQzihmJMayDxdw-e1642951849734.png)
 
  
 
@@ -94,7 +94,7 @@ struct EmployeeData: Codable {
 
 이제 소스 코드를 순서대로 작성합니다. 먼저 뷰 컨트롤러가 호출되고 뷰 컨트롤러에서 뷰모델 클래스(`EmployeesViewModel`)를 호출합니다. 지금 둘 사이를 바인딩을 하지 않고 나중에 할 것입니다.
 
-![](./assets/img/wp-content/uploads/2022/01/1_HccY4GnopV4Dg-oQkGERPQ-e1642952581923.png)
+ ![](/assets/img/wp-content/uploads/2022/01/1_HccY4GnopV4Dg-oQkGERPQ-e1642952581923.png)
 
  
 
@@ -104,7 +104,7 @@ struct EmployeeData: Codable {
 
 뷰모델(`EmployeesViewModel`)에서 `APIService` 클래스를 호출하여 서버에서 데이터를 가져옵니다.
 
-![](./assets/img/wp-content/uploads/2022/01/1_5JmqmJnowCuBs4wJMHqlFQ-e1642952809116.png)
+ ![](/assets/img/wp-content/uploads/2022/01/1_5JmqmJnowCuBs4wJMHqlFQ-e1642952809116.png)
 
 뷰모델 클래스에 이 코드를 작성하면 `APIService` 클래스를 구현하지 않았기 때문에 오류가 발생합니다. 이제 `APIService` 클래스를 구현해 보겠습니다.
 

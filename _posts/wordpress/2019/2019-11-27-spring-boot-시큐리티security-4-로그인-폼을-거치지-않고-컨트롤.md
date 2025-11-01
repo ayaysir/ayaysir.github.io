@@ -51,7 +51,7 @@ public String loginWithoutForm(@PathVariable(value="username") String username) 
 
 ##### 아래 테이블(`simple_users`)은 회원 목록입니다.
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-27-오후-11.57.06.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-27-오후-11.57.06.png)
 
  
 
@@ -128,9 +128,9 @@ public class SimpleUserDAO {
 
 결과 화면입니다. url (`/loginWithoutForm/아이디`)를 입력하면 로그인이 됩니다.
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오전-12.00.10.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오전-12.00.10.png)
 
-![](./assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오전-12.07.08.png)
+ ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오전-12.07.08.png)
 
  
 

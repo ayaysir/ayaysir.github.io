@@ -20,7 +20,7 @@ https://www.youtube.com/watch?v=G0ljnXV-q40
 
 #### **Everyday Summertime**
 
-![](./assets/img/wp-content/uploads/2024/04/600x600bb.jpg)
+ ![](/assets/img/wp-content/uploads/2024/04/600x600bb.jpg)
 
 - **Artist:** [NIKI](https://en.wikipedia.org/wiki/Niki_\(singer\))
 - **Producers:** Niki, johan lenox & Jacob Ray

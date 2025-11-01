@@ -6,7 +6,7 @@ categories:
   - "Database"
 ---
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-8.32.40.png) ![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-8.35.41.png)
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-8.32.40.png)  ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-8.35.41.png)
 
 1. **\[구조\]** 버튼을 클릭합니다.
 2. **\[릴레이션 뷰\]** 버튼을 클릭합니다.
@@ -18,4 +18,4 @@ categories:
 
  
 
-![](./assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-8.41.15.png)
+ ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-8.41.15.png)

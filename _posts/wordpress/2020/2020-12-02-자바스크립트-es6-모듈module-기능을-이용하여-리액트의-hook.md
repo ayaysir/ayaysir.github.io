@@ -8,7 +8,7 @@ categories:
 
 예전에 어느 프론트엔드 과제 테스트에서 아래와 같은 요구사항을 제시한 적이 있습니다.
 
-![](./assets/img/wp-content/uploads/2020/12/문제.jpg)
+ ![](/assets/img/wp-content/uploads/2020/12/문제.jpg)
 
  
 

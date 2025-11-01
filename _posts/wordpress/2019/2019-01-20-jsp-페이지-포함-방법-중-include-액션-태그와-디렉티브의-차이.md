@@ -113,7 +113,7 @@ JSP: 페이지 포함 방법 중 `include` 액션 태그와 디렉티브의 차�
 <c:set var="customInnerVariable2" value="EXODUS from Directive" />
 ```
 
-![](./assets/img/wp-content/uploads/2019/01/sibe.png)
+ ![](/assets/img/wp-content/uploads/2019/01/sibe.png)
 
 액션 태그와 디렉티브를 비교하는 예제입니다. 두 부분 모두 이름, 반복문, 임의의 변수(`customVariable`)의 네ㅐ용을 표시하는 것을 목적으로 합니다. 결과를 보니 디렉티브는 모든 내용이 정상적으로 표시되는 반면 액션 태그는 뭔가 잘 실행이 안된 모양이며 심지어 파라미터를 다시 설정하지 않으면 컴파일 에러까지 발생합니다.
 

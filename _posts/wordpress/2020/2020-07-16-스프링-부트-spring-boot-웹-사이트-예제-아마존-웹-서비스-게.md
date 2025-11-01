@@ -29,9 +29,9 @@ OAuth 2.0을 적용해 게시판은 구글 로그인과 네이버 아이디로 �
 
 #### **프로젝트 구조**
 
-![](./assets/img/wp-content/uploads/2020/07/-2020-07-16-오후-6.26.16-e1594891697165.png)
+ ![](/assets/img/wp-content/uploads/2020/07/-2020-07-16-오후-6.26.16-e1594891697165.png)
 
-![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.27.11.png)
+ ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.27.11.png)
 
  
 
@@ -55,42 +55,42 @@ https://www.youtube.com/watch?v=CYBIZrykaro
 
 #### **동작 내용**
 
-\[caption id="attachment\_3970" align="alignnone" width="2560"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2021-08-29-오후-7.26.37-scaled.jpg) 메인 화면\[/caption\]
+\[caption id="attachment\_3970" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2021-08-29-오후-7.26.37-scaled.jpg) 메인 화면\[/caption\]
 
  
 
-\[caption id="attachment\_2694" align="alignnone" width="2528"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.39.10.png) 구글 계정으로 로그인한 경우 (초기 디자인)\[/caption\]
+\[caption id="attachment\_2694" align="alignnone" width="2528"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.39.10.png) 구글 계정으로 로그인한 경우 (초기 디자인)\[/caption\]
 
  
 
-\[caption id="attachment\_2695" align="alignnone" width="2528"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.40.08.png) 글쓰기 화면\[/caption\]
+\[caption id="attachment\_2695" align="alignnone" width="2528"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.40.08.png) 글쓰기 화면\[/caption\]
 
  
 
-\[caption id="attachment\_2696" align="alignnone" width="2528"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.40.49.png) 새로운 글 목록 출력\[/caption\]
+\[caption id="attachment\_2696" align="alignnone" width="2528"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.40.49.png) 새로운 글 목록 출력\[/caption\]
 
  
 
-\[caption id="attachment\_2697" align="alignnone" width="2528"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.41.28.png) 새로운 글 읽기 페이지, 내가 쓴 글인 경우 \[수정\], \[삭제\] 버튼 표시됨\[/caption\]
+\[caption id="attachment\_2697" align="alignnone" width="2528"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.41.28.png) 새로운 글 읽기 페이지, 내가 쓴 글인 경우 \[수정\], \[삭제\] 버튼 표시됨\[/caption\]
 
-\[caption id="attachment\_2698" align="alignnone" width="2528"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.42.41.png) 내가 쓴 글이 아닌 경우, 글 읽기만 가능하고 수정, 삭제 버튼은 활성화되지 않음\[/caption\]
-
- 
-
-\[caption id="attachment\_2699" align="alignnone" width="2440"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.43.43.png) 네이버로 로그인한 경우\[/caption\]
+\[caption id="attachment\_2698" align="alignnone" width="2528"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.42.41.png) 내가 쓴 글이 아닌 경우, 글 읽기만 가능하고 수정, 삭제 버튼은 활성화되지 않음\[/caption\]
 
  
 
-\[caption id="attachment\_3971" align="alignnone" width="2560"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2021-08-29-오후-7.26.49-scaled.jpg) 웹 페이지 주소를 적으면 자동으로 링크를 걸어주는 기능\[/caption\]
+\[caption id="attachment\_2699" align="alignnone" width="2440"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-16-오후-6.43.43.png) 네이버로 로그인한 경우\[/caption\]
 
  
 
-\[caption id="attachment\_3972" align="alignnone" width="2560"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2021-08-29-오후-7.26.57-scaled.jpg) 공지사항\[/caption\]
+\[caption id="attachment\_3971" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2021-08-29-오후-7.26.49-scaled.jpg) 웹 페이지 주소를 적으면 자동으로 링크를 걸어주는 기능\[/caption\]
 
  
 
-\[caption id="attachment\_3973" align="alignnone" width="2560"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2021-08-29-오후-7.27.19-scaled.jpg) 유튜브 주소를 적으면 자동으로 플레이어를 embed 하는 기능\[/caption\]
+\[caption id="attachment\_3972" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2021-08-29-오후-7.26.57-scaled.jpg) 공지사항\[/caption\]
 
  
 
-\[caption id="attachment\_3974" align="alignnone" width="2560"\]![](./assets/img/wp-content/uploads/2020/07/스크린샷-2021-08-29-오후-7.28.01-scaled.jpg) 페이지 내비게이션 기능\[/caption\]
+\[caption id="attachment\_3973" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2021-08-29-오후-7.27.19-scaled.jpg) 유튜브 주소를 적으면 자동으로 플레이어를 embed 하는 기능\[/caption\]
+
+ 
+
+\[caption id="attachment\_3974" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2021-08-29-오후-7.28.01-scaled.jpg) 페이지 내비게이션 기능\[/caption\]

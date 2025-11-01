@@ -46,4 +46,4 @@ https://gist.github.com/ayaysir/438888a48809a8cb138ff2bbb923b0a4
 
  
 
-![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-08-01-오후-3.31.52.png)![](./assets/img/wp-content/uploads/2020/07/스크린샷-2020-08-01-오후-3.32.09.png)
+ ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-08-01-오후-3.31.52.png) ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-08-01-오후-3.32.09.png)

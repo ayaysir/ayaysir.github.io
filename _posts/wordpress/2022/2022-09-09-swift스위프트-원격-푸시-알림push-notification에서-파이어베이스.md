@@ -35,15 +35,15 @@ categories:
 
 Firebase에서 프로젝트를 생성합니다. 프로젝트 생성 과정 중 `GoogleService-Info.plist`를 iOS앱 프로젝트 내에 추가하라고 하는데 파일을 드래그해 추가해줍니다. 그 후 Firebase 프로젝트 내에 iOS 앱을 추가합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.11.51.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.11.51.jpg)
 
  
 
 #### **2: 프로젝트 설정 > 클라우드 메시징 탭에 APN 인증 키 추가**
 
-다음 프로젝트 `설정`(위 스크린샷의 톱니바퀴 모양 버튼)에 들어간 뒤 개발자 센터에서 발급받은 iOS 푸시 알림의 키의 `.p8` 파일을 업로드하고 ID 정보를 입력합니다. ![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.14.58.jpg)
+다음 프로젝트 `설정`(위 스크린샷의 톱니바퀴 모양 버튼)에 들어간 뒤 개발자 센터에서 발급받은 iOS 푸시 알림의 키의 `.p8` 파일을 업로드하고 ID 정보를 입력합니다.  ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.14.58.jpg)
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.11.11.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.11.11.jpg)
 
  
 
@@ -55,33 +55,33 @@ Firebase에서 프로젝트를 생성합니다. 프로젝트 생성 과정 중 `
 > 
 > **Certificates, Identifiers & Profiles**을 선택한 다음 왼쪽 창에서`Key`를 찾습니다. 키 제목의 오른쪽에는`+`버튼을 클릭합니다.
 > 
-> ![](./assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.05.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.05.jpg)
 > 
 > 적절한 키 이름을 지정합니다. Key Service에서`Apple Push Notifications service(APNs)`을 선택합니다.
 > 
-> ![](./assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.28.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.28.jpg)
 > 
 >  
 > 
 > `Continue`를 클릭하고 다음 화면에서`Register`를 클릭하여 새 키를 만듭니다.
 > 
-> ![](./assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.47.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.47.jpg)
 > 
 > `Download`를 클릭합니다. 다운로드한 파일의 이름은`AuthKey_4SVKWF966R.p8`의 형태와 같습니다. 이 파일을 보관하세요. 알림을 보내려면 이 파일이 필요합니다. 파일 이름의`4SVKWF966R`부분은 Key ID입니다. 이것도 필요합니다.
 > 
-> ![](./assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.58.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.58.jpg)
 > 
 > 회원 센터의[Membership 페이지](https://developer.apple.com/account/#!/membership)로 이동합니다. Team ID를 메모합니다.
 > 
 >  
 > 
-> ![](./assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.17.38.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.17.38.jpg)
 
  
 
 업로드 및 정보 입력을 마치면 아래와 같이 인증 키 목록이 추가됩니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.15.35.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.15.35.jpg)
 
  
 
@@ -324,7 +324,7 @@ func receivePushNotiNews(title: String, body: String, linkURL: String) {
 
 콘솔에 아래와 같은 메시지를 확인하였다면 성공입니다. 디바이스 토큰을 복사합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.23.51.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.23.51.jpg)
 
  
 
@@ -332,27 +332,27 @@ func receivePushNotiNews(title: String, body: String, linkURL: String) {
 
 이제 [Firebase 콘솔 페이지](https://console.firebase.google.com/)로 이동하여 `제품 카테고리 > 빌드 > Cloud Messaging`을 선택합니다. `Send your first message` 버튼을 클릭합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.24.41.jpg) ![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.25.09.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.24.41.jpg)  ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.25.09.jpg)
 
  
 
 아래와 같은 화면이 나타납니다. 실제 메시지를 보내기 전에 미리 테스트를 진행할 수 있습니다. 기본 내용을 입력 후 `[테스트 메시지 전송]`을 클릭합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.27.04.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.27.04.jpg)
 
  
 
 위에서 복사했던 디바이스 토큰 값을 붙어넣기 한 뒤 추가합니다. 그리고 `[테스트]` 버튼을 클릭하면 테스트 메시지가 디바이스 토큰을 통해 내 기기로 전송됩니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.27.10.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.27.10.jpg)
 
  
 
 메시지가 전송된 것을 확인할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/09/IMG_9191.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/IMG_9191.jpg)
 
-![](./assets/img/wp-content/uploads/2022/09/IMG_9192.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/IMG_9192.jpg)
 
  
 
@@ -360,7 +360,7 @@ func receivePushNotiNews(title: String, body: String, linkURL: String) {
 
 동일한 페이지에서 실제 메시지를 전송할 수 있습니다. 먼저 시간대를 설정합니다. 3번 메뉴의 `예약`을 클릭합니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.45.51.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.45.51.jpg)
 
 최초 설정은 '지금'이라고 표시되어 있어도 서버의 시간대가 다르기 때문에(미국 LA 기준) 메시지가 제 시간에 전송되지 않는 경우가 있습니다. 시간대를 반드시 대한민국 시간대로 변경 후 설정합니다.
 
@@ -368,19 +368,19 @@ func receivePushNotiNews(title: String, body: String, linkURL: String) {
 
 다음 5번 메뉴의 `추가 옵션(선택사항)` 메뉴에서 `맞춤 데이터`를 설정합니다. 이 부분은 위 `AppDelegate.swift` 코드의 `link_url`과 같이 `userInfo`에 저장되는 부분입니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.46.17.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.46.17.jpg)
 
  
 
 모든 설정을 마친 후 `[검토]` 버튼을 클릭하면 아래와 같은 창이 뜹니다. `[게시]` 버튼을 클릭하면 메시지가 전송됩니다.
 
-![](./assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.46.26.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-09-오후-10.46.26.jpg)
 
  
 
 오후 10:50분에 보내도록 설정했는데 실제로 10:50분에 메시지가 도착했습니다. URL도 맞춤 설정에서 입력한 URL로 도착한 것을 확인할 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/09/IMG_9193.jpg) ![](./assets/img/wp-content/uploads/2022/09/IMG_9194.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/IMG_9193.jpg)  ![](/assets/img/wp-content/uploads/2022/09/IMG_9194.jpg)
 
  
 

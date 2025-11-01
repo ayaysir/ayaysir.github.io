@@ -13,4 +13,4 @@ categories:
 
 https://gist.github.com/ayaysir/e3b81dde9639496272cf679a6403ad6a
 
-![](./assets/img/wp-content/uploads/2019/01/upanddown-cropped.gif)
+ ![](/assets/img/wp-content/uploads/2019/01/upanddown-cropped.gif)

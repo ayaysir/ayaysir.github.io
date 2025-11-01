@@ -10,7 +10,7 @@ categories:
 
 아이폰 손전등에는 다음 3가지 기능이 필요합니다.
 
-1. 아이폰 후면 카메라에 달려있는 플래시(Swift에서는 `torch`라고 함)의 밝기 조절 ![](./assets/img/wp-content/uploads/2023/08/how-to-turn-on-camera-flash-on-iphone.jpg)
+1. 아이폰 후면 카메라에 달려있는 플래시(Swift에서는 `torch`라고 함)의 밝기 조절  ![](/assets/img/wp-content/uploads/2023/08/how-to-turn-on-camera-flash-on-iphone.jpg)
 2. (옵션) 디스플레이 전면의 화면 밝기 조정
 3. (옵션) `scenePhase`를 통한 백그라운드 시 화면 밝기 원래대로 돌려놓기
 
@@ -20,7 +20,7 @@ categories:
 
 > **참고)** 손전등 앱(정확히 말하면 손전등 기능만 있는 앱)은 최신 [앱 스토어 심사 지침](https://developer.apple.com/kr/app-store/review/guidelines#spam)에서 스팸 앱으로 분류됩니다.
 > 
-> ![](./assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-09-오전-12.13.55-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-09-오전-12.13.55-복사본.jpg)
 
  
 

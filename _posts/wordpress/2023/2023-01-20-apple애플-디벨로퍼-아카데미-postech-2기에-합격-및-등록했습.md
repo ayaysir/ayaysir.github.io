@@ -6,7 +6,7 @@ categories:
   - "diary.dev"
 ---
 
-1. ![](./assets/img/wp-content/uploads/2023/01/IMG_9780.jpg)
+1.  ![](/assets/img/wp-content/uploads/2023/01/IMG_9780.jpg)
 
 Apple(애플)사에서 주관하는 [Apple Developer Academy @ POSTECH](https://developeracademy.postech.ac.kr/) 2기에 지원해서 최종 합격했습니다. 합격자 대상 사전 설문조사에서도 아카데미 2기에 참여하겠다고 선택했습니다.
 

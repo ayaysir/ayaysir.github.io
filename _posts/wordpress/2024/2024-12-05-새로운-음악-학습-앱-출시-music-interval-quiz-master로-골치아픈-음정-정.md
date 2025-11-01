@@ -10,7 +10,7 @@ categories:
 
 ### **Music Interval Quiz Master**
 
-![](./assets/img/wp-content/uploads/2024/12/스크린샷-2024-12-05-오후-9.40.35-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/12/스크린샷-2024-12-05-오후-9.40.35-복사본.jpg)
 
 ##### **[여기를 눌러 설치](https://apps.apple.com/kr/app/music-interval-quiz-master/id6738980588) (아이폰, 아이패드, 맥 등 애플 기기 대응)**
 
@@ -52,7 +52,7 @@ categories:
 
 ##### **통계 기능**
 
-![](./assets/img/wp-content/uploads/2024/12/ko_5_stats.jpg)
+ ![](/assets/img/wp-content/uploads/2024/12/ko_5_stats.jpg)
 
 통계 기능을 이용해 나의 학습 성취도를 그래프로 확인이 가능하고 계획적인 학습이 가능해요 정답률 및 문제 풀이에 걸린 시간을 볼 수 있고 음정의 성질(quality), 도수(degree), 정답여부 등 다양한 필터링 기능이 있어요
 
@@ -82,4 +82,4 @@ categories:
 
 > 안녕히세요! 이 포스트를 읽어주셔서 감사합니다. 이 포스트만의 특전으로 음정 학습이 필요하신 3분께 이 앱의 프로모션 리딤 코드를 제공하도록 하겠습니다. App Store에서 아래 리딤 코드를 사용하시면 1100원 상당의 유료 앱 Music Interval Quiz Master을 무료로 설치할 수 있습니다! (한 줄당 리딤코드 한 개입니다. 이 앱을 사용하기 위해서는 음악 이론 중 음정 Interval에 대한 사전 지식이 필요합니다.)
 > 
-> ![](./assets/img/wp-content/uploads/2024/12/스크린샷-2025-02-13-오전-12.03.59.png)
+>  ![](/assets/img/wp-content/uploads/2024/12/스크린샷-2025-02-13-오전-12.03.59.png)

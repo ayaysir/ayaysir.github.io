@@ -16,7 +16,7 @@ tags:
 
 - File > New > Project > iOS > Single App View
 
-![](./assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-9.42.06.png)
+ ![](/assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-9.42.06.png)
 
 User Interface에서 SwiftUI를 선택합니다.
 
@@ -24,7 +24,7 @@ User Interface에서 SwiftUI를 선택합니다.
 
 Swift UI에서 주요 내용은 ContentView.swift 에서 진행됩니다. 근거는 SceneDelegate.swift 에 있습니다.
 
-![](./assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-9.43.59.png)
+ ![](/assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-9.43.59.png)
 
  
 
@@ -67,9 +67,9 @@ Inspector에서 조정 가능합니다.
 
 #### 새로운 Swift UI 파일 생성
 
-![](./assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-9.49.39.png)
+ ![](/assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-9.49.39.png)
 
-![](./assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-9.50.06.png)
+ ![](/assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-9.50.06.png)
 
  
 
@@ -77,7 +77,7 @@ Inspector에서 조정 가능합니다.
 
 Assets.xcassets에 드래그해서 추가합니다.
 
-![](./assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-9.51.56.png)
+ ![](/assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-9.51.56.png)
 
  
 
@@ -185,6 +185,6 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-10.00.43.png)
+ ![](/assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-10.00.43.png)
 
 https://www.youtube.com/watch?v=IIDiqgdn2yo

@@ -125,7 +125,7 @@ cube.rotation.y += 0.01;
 
 이제 첫 번째 three.js 응용 프로그램을 완료했습니다.
 
-[![](./assets/img/wp-content/uploads/2019/04/tex1.gif)](http://yoonbumtae.com/?attachment_id=1050)
+[ ![](/assets/img/wp-content/uploads/2019/04/tex1.gif)](http://yoonbumtae.com/?attachment_id=1050)
 
 전체 코드는 아래에서 볼 수 있습니다. 그것이 어떻게 작동하는지 더 잘 이해하기 위해 코드를 잘 살펴보십시오.
 

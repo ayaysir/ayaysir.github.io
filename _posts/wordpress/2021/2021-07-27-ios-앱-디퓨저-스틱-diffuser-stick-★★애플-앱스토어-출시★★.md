@@ -73,9 +73,9 @@ DiffuserStick 앱은 디퓨저의 사진과 함께 디퓨저 스틱을 꽂은 �
 
 #### **스크린샷**
 
-![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-27-오후-6.44.52.png)
+ ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-27-오후-6.44.52.png)
 
-\[caption id="attachment\_3905" align="alignnone" width="313"\]![](./assets/img/wp-content/uploads/2021/08/IMG_3480-e1629469919284.jpg) 교체일이 되면 로컬 푸시 메시지를 통해 알려줍니다.\[/caption\]
+\[caption id="attachment\_3905" align="alignnone" width="313"\] ![](/assets/img/wp-content/uploads/2021/08/IMG_3480-e1629469919284.jpg) 교체일이 되면 로컬 푸시 메시지를 통해 알려줍니다.\[/caption\]
 
  
 

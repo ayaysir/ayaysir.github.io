@@ -32,7 +32,7 @@ JWT의 구조는 헤더, 페이로드 및 서명  세 가지를 포함하는 �
 
 다음은 클라이언트 요청을 기반으로 반환되는 인코딩된 전체 `access_token` 입니다.
 
-![](./assets/img/wp-content/uploads/2021/01/encoded-jwt3.png)
+ ![](/assets/img/wp-content/uploads/2021/01/encoded-jwt3.png)
 
  
 

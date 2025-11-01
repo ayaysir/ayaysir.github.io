@@ -22,7 +22,7 @@ tags:
  npm install webpack --save-dev
 ```
 
-![](./assets/img/wp-content/uploads/2019/02/1-1-e1566830166750.png)
+ ![](/assets/img/wp-content/uploads/2019/02/1-1-e1566830166750.png)
 
 옵션에서 `--save-dev`는 로컬 폴더에만 (위 예제에서는 d:\\dev\\nodejs\\ 폴더 내에서만) 설치하는 것이며 `-g` 옵션은 모든 node.js 구동영역에 설치하는 전역 옵션인데 위 화면은 로컬에서 설치하였습니다.
 
@@ -91,11 +91,11 @@ console.log(currentTime())
 
 **5\. npm 번들링 작업 실행: `npm run dev`**
 
-![](./assets/img/wp-content/uploads/2019/02/2-1-e1566830655485.png)
+ ![](/assets/img/wp-content/uploads/2019/02/2-1-e1566830655485.png)
 
 원래 `webpack-cli` 라는 것도 설치했어야 하는데 안했으므로 추가 설치 여부를 물어보는 장면입니다. `yes`를 키보드로 입력해 추가로 설치합니다.
 
-![](./assets/img/wp-content/uploads/2019/02/3-e1566830742967.png)
+ ![](/assets/img/wp-content/uploads/2019/02/3-e1566830742967.png)
 
 추가 설치해서 위 화면처럼 나오면 정상적으로 `app.bundle.js` 가 `dist` 폴더에 생성됩니다.
 
@@ -105,7 +105,7 @@ console.log(currentTime())
 
 **6\. 해당 번들 파일 테스트**
 
-![](./assets/img/wp-content/uploads/2019/02/4-e1566831404176.png)
+ ![](/assets/img/wp-content/uploads/2019/02/4-e1566831404176.png)
 
 watch 옵션이 실행중이므로 위에서 사용하던 터미널 창은 사용할 수 없을 것입니다. 다른 터미널 창을 띄워서 테스트하면 됩니다.
 

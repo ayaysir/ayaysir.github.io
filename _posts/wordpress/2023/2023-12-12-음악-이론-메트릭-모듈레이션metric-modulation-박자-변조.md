@@ -16,7 +16,7 @@ categories:
 
 가장 간단한 예로, J.S. 바흐의 작품의 ([![sixteenth note](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Figure_rythmique_double_croche_hampe_haut.svg/10px-Figure_rythmique_double_croche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_double_croche_hampe_haut.svg "sixteenth note") = [![eighth note](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Figure_rythmique_croche_hampe_haut.svg/10px-Figure_rythmique_croche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_croche_hampe_haut.svg "eighth note"))를 들 수 있습니다. (악보에는 표기되어 있지 않음)  느린 도입(introduction) 뒤에 두 배의 템포로 알레그로(Allegro)로 변경됩니다.. 이전 템포의 16분 음표는 새로운 템포의 8분 음표와 동일한 길이입니다.
 
-![](./assets/img/wp-content/uploads/2022/10/Metric_modulation_Bach.png)
+ ![](/assets/img/wp-content/uploads/2022/10/Metric_modulation_Bach.png)
 
 \[audio ogg="http://yoonbumtae.com/wp-content/uploads/2022/10/Metric\_modulation\_Bach.mid.ogg"\]\[/audio\]
 
@@ -26,31 +26,31 @@ categories:
 
 https://www.youtube.com/watch?v=wy9gt\_3gmjM
 
-> #### **![](./assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-13-오전-1.39.26-복사본.jpg)**
+> #### ** ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-13-오전-1.39.26-복사본.jpg)**
 
 #### **새로운 템포의 결정**
 
 다음 공식은 메트릭 모듈레이션 전후에 템포를 결정하는 방법과 전후에 각 소절에 관련 음표 값이 몇 개 있는지를 결정하는 방법을 보여줍니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-7.48.19.png)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-7.48.19.png)
 
  
 
 ##### **예제 1**
 
-![](./assets/img/wp-content/uploads/2022/10/Metric_modulation_23.png)
+ ![](/assets/img/wp-content/uploads/2022/10/Metric_modulation_23.png)
 
  
 
 ♩ = 84 (4분음표 = 84)의 템포에서 4/4박자의 2분음표 2개가 새로운 템포의 3분음표 2개와 동일한 길이로 연주되려면 해당 템포는 다음과 같이 구합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/-2023-12-13-오전-1.06.00-e1702397269159.png)
+ ![](/assets/img/wp-content/uploads/2022/10/-2023-12-13-오전-1.06.00-e1702397269159.png)
 
 왼쪽은 이전 템포 ♩ = 84에서의 2분음표를 뜻하고 오른쪽 점 2분음표는 새롭게 계산할 부분으로, 앞으로 진행되는 마디에서 점 2분음표 (4분음표 \* 3)는 ♩ = 84에서 2분음표(4분음표 \*2)와 동일한 빠르기를 지닌다는 뜻입니다.
 
 다음 구하고자 하는 새로운 템포를 x로 두고, x 값을 구합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-8.08.48.png)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-8.08.48.png)
 
 ♩ = 126 (4분음표 = 126)인 이 템포는 (([![half note](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Figure_rythmique_blanche_hampe_haut.svg/6px-Figure_rythmique_blanche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_blanche_hampe_haut.svg "half note") = [![dotted half note](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Figure_rythmique_blanche_hampe_haut.svg/6px-Figure_rythmique_blanche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_blanche_hampe_haut.svg "dotted half note").) = ([![quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "quarter note") = [![dotted quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "dotted quarter note").)). 과 동일합니다. (84 \* 3) / 2 대신 (84 \* 1.5) / 1로 계산해도 126이라는 동일한 수치가 나옵니다. 
 
@@ -76,13 +76,13 @@ https://www.youtube.com/watch?v=Xbcez9PnEXM
 
 박자 변조는 일반적으로 `'음표 길이' = '음표 길이'`으로 표시됩니다. 예를 들어,
 
-![](./assets/img/wp-content/uploads/2023/12/4-5_Metric_Modulation.jpeg)
+ ![](/assets/img/wp-content/uploads/2023/12/4-5_Metric_Modulation.jpeg)
 
 이 표기법 뒤에는 일반적으로 괄호 안에 새로운 템포가 표시됩니다.
 
 현대적인 개념과 미터법 변조 표기법이 나오기 전에 작곡가들은 두 배 속도와 절반 속도에 대해 _doppio piu mosso_(두 배 빠르게) 및 _doppio piu lento_(두 배 느리게)라는 용어를 사용했으며 나중에는 다음과 같은 표시를 사용했습니다.
 
-![](./assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-13-오전-1.31.37.png)
+ ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-13-오전-1.31.37.png)
 
 현대에는 다음과 같이 표기될 수 있습니다.  [![eighth note](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Figure_rythmique_croche_hampe_haut.svg/10px-Figure_rythmique_croche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_croche_hampe_haut.svg "eighth note")\= [![quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "quarter note")
 

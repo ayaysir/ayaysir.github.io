@@ -22,7 +22,7 @@ categories:
 
 MySQL 데이터베이스를 사용하여 사용자 정보를 저장하겠습니다.
 
-![](./assets/img/wp-content/uploads/2020/08/spring-boot-oauth2-social-login-facebook-google-github.jpg)
+ ![](/assets/img/wp-content/uploads/2020/08/spring-boot-oauth2-social-login-facebook-google-github.jpg)
 
 > 코드만 원한다면, [Github](https://github.com/callicoder/spring-boot-react-oauth2-social-login-demo)를 방문하세요.
 
@@ -43,7 +43,7 @@ Spring Initializr를 사용하여 프로젝트를 생성해 보겠습니다. [ht
 
 다음은 참고용으로 전체 프로젝트의 디렉토리 구조입니다. 모든 클래스와 인터페이스를 하나씩 만들고 세부 사항을 알아봅니다.
 
-![](./assets/img/wp-content/uploads/2020/08/spring-boot-oauth2-social-login-project-directory-structure.jpg)
+ ![](/assets/img/wp-content/uploads/2020/08/spring-boot-oauth2-social-login-project-directory-structure.jpg)
 
  
 

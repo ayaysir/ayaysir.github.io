@@ -33,7 +33,7 @@ categories:
 
 - [ResReq.api 사이트로 빠르고 편리하게 Restful API 테스트하기](http://yoonbumtae.com/?p=3725)
 
-![](./assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-29-오전-1.39.34.jpg)
+ ![](/assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-29-오전-1.39.34.jpg)
 
  
 
@@ -45,7 +45,7 @@ categories:
 
 예제에서 이용하는 JSON을 보면 어떤 페이지를 불러오더라도 무조건 페이지당 6개의 아이템만 불러오고, 아이템에는 사진 주소, 이름, 이메일 주소 등이 있다는 것을 알 수 있습니다. 이를 통해 최초에 페이지가 오픈될 시점에 레이아웃 상으로는 6개의 아이템에 대한 레이아웃이 보이도록 합니다.
 
-[![](./assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-29-오전-1.44.44.jpg)](http://yoonbumtae.com/?p=3725)
+[ ![](/assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-29-오전-1.44.44.jpg)](http://yoonbumtae.com/?p=3725)
 
 아이템의 정보를 표시할 HTML을 작성합니다.
 
@@ -84,7 +84,7 @@ for(let i = 1; i < 6; i++) {
 
 여기까지 진행하면 아래와 같이 6개의 아이템 구역이 생성됩니다.
 
-![](./assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-29-오전-1.54.55.jpg)
+ ![](/assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-29-오전-1.54.55.jpg)
 
  
 
@@ -156,7 +156,7 @@ for(let i = 1; i < 6; i++) {
 
 CSS 를 적용했다면 아래와 같이 스켈레톤이 적용된 모습을 볼 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-29-오전-2.32.38.jpg)
+ ![](/assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-29-오전-2.32.38.jpg)
 
  
 

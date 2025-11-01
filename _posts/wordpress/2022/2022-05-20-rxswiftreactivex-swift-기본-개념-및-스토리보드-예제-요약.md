@@ -91,7 +91,7 @@ let eventStream = ["1", "2", "abc", "3", "4", "cdg", "6", 기타등등...]
 
 let result = eventStream.map {
     // Step 1: 맵 내부에서 배열 요소를 분석하여 Int로 변환 가능한 요소들을 Int의 호환 타입으로 변환합니다.
-}.filter {
+}.filter {
     // Step 2: 1단계에서 걸러내지 못한 Int가 아닌 요소들을 걸러내고 순수 Int 배열로 만듭니다.
     // Step 3: 2단계 배열의 모든 요소들을 더한 값을 반환합니다.
 }.reduce(0, +)
@@ -99,7 +99,7 @@ let result = eventStream.map {
 
  
 
-\[caption id="attachment\_4480" align="alignnone" width="808"\]![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-20-오후-7.29.16.jpg) 이벤트 스트림의 흐름을 그림으로 나타낸것을 마블 다이어그램(Marble Diagram)이라고 합니다. 동그라미 모양이 이벤트 발생, X 표시는 에러의 발생, 세로 막대기는 이벤트 스트림의 완료를 의미합니다.\[/caption\]
+\[caption id="attachment\_4480" align="alignnone" width="808"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-20-오후-7.29.16.jpg) 이벤트 스트림의 흐름을 그림으로 나타낸것을 마블 다이어그램(Marble Diagram)이라고 합니다. 동그라미 모양이 이벤트 발생, X 표시는 에러의 발생, 세로 막대기는 이벤트 스트림의 완료를 의미합니다.\[/caption\]
 
 #### **상태 (State)**
 
@@ -130,7 +130,7 @@ let result = eventStream.map {
     - 변수형 데이터 타입인 경우, 멀티스레드 환경에서 각각 스레드가 실행될 때마다 내부 내용이 계속 변하고 이러한 결과가 최종적으로 잘못되거나 오염된 정보의 반환으로 이어질 수 있습니다.
     - 이를 방지하기 위해 스레드마다 상수형 데이터타입으로 복사(copy)하고 복사한 데이터를 바탕으로 작업을 수행해 원래 데이터의 변조를 막는 것이 좋습니다.
 
-![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-20-오후-8.11.47.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-20-오후-8.11.47.jpg)
 
  
 
@@ -201,7 +201,7 @@ let result = eventStream.map {
 
 예를 들면 아래 다이어그램과 같이 사용자의 정보를 업데이트하는 케이스가 있다고 가정합니다.
 
-![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-20-오후-9.24.55.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-20-오후-9.24.55.jpg)
 
  
 
@@ -209,27 +209,27 @@ let result = eventStream.map {
 
 그리고 이러한 복잡한 작업이 아무 에러 없이 성공하면 매우 좋겠지만 현실은 수많은 에러들이 각 과정들 사이에 발생할 수 있다는 점입니다.
 
-![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-20-오후-9.27.47.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-20-오후-9.27.47.jpg)
 
  
 
 이러한 에러를 예외 처리의 방식으로 프로그램 내에 구현한다면 코드는 매우 지저분해질 것입니다. 예를 들어 API 호출에 실패한 경우, 응답  분석에 실패한 경우 다음 단계로 이어지지 않고 즉시 에러를 반환시키며 이러한 에러에 전부 대응하면 코드도 지저분해질 뿐더러 관리도 힘들어집니다.
 
-![](./assets/img/wp-content/uploads/2022/05/무제-2.001.jpeg)
+ ![](/assets/img/wp-content/uploads/2022/05/무제-2.001.jpeg)
 
  
 
 Railway-oriented Programming은 이러한 문제점에 대한 대안으로 제시된 것으로, 함수를 순수함수로 구현한 뒤 하나의 입력에 하나의 결과만 반환하거나(이상적 케이스), 에러를 예외처리 대상이 아닌 단순 타입으로 취급해 성공적 결과와 실패 결과 두 개만을 내보내는 투 트랙 전략을 사용하자는 것입니다.
 
-![](./assets/img/wp-content/uploads/2022/05/무제-2.002.jpeg)
+ ![](/assets/img/wp-content/uploads/2022/05/무제-2.002.jpeg)
 
  
 
 이렇게 하면 일일히 예외 처리를 하지 않아도 성공 결과와 실패 결과를 한꺼번에 처리할 수 있고, 출력 결과는 반드시 두 개만 존재하기 떄문에 이러한 출력 결과들을 또 다른 순수함수로 연결하면, 기찻길이 연결된 것처럼 거대한 규모의 케이스도 깔끔하게 조작할 수 있다는 것이 Railway-oriented Programming이 추구하는 이점입니다.
 
-![](./assets/img/wp-content/uploads/2022/05/Recipe_Railway_Parallel.png)
+ ![](/assets/img/wp-content/uploads/2022/05/Recipe_Railway_Parallel.png)
 
-![](./assets/img/wp-content/uploads/2022/05/1_p0FFfWMHtFK9sUvFT0Mz8g.png)
+ ![](/assets/img/wp-content/uploads/2022/05/1_p0FFfWMHtFK9sUvFT0Mz8g.png)
 
  
 
@@ -237,9 +237,9 @@ Railway-oriented Programming은 이러한 문제점에 대한 대안으로 제�
 
 RxSwift의 기본 개념을 이용한 사용자 이름 필드와 패스워드 필드의 글자 수가 모두 4자인 이상인 경우에만 로그인 버튼이 활성화되는 예제입니다. 텍스트 필드에 값이 입력될때마다 실시간으로 구독자에게 해당 조건이 만족하는지 전송되며 구독자는 필드에 값이 입력되는 대로 정보를 받아 조건이 만족하는대로 로그인 버튼의 활성화할 수 있습니다.
 
-
 
-\[caption id="attachment\_4484" align="alignnone" width="856"\]![](./assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-20-오후-11.12.41.jpg) `@IBOutlet` 연결\[/caption\]
+
+\[caption id="attachment\_4484" align="alignnone" width="856"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-20-오후-11.12.41.jpg) `@IBOutlet` 연결\[/caption\]
 
 ##### **LoginViewModel.swift**
 
@@ -269,7 +269,7 @@ struct LoginViewModel {
 - `Observable.combineLatest` - BehaviorRelay에서 이벤트가 발생할 때마다 각 시퀀스의 가장 최근의 값들을 결합해서 다룰 수 있게 합니다. 파라미터로 `username`, `password`의 `asObservable()`을 사용했습니다.
     - `asObservable` - 해당 `BehaviorRelay`를 `Observable` 타입으로 접근 및 사용하도록 지정합니다.
 
-\[caption id="attachment\_4477" align="alignnone" width="580"\]![](./assets/img/wp-content/uploads/2022/05/99361F4A5B47841627.png) 참고: `combineLatest`\[/caption\]
+\[caption id="attachment\_4477" align="alignnone" width="580"\] ![](/assets/img/wp-content/uploads/2022/05/99361F4A5B47841627.png) 참고: `combineLatest`\[/caption\]
 
  
 

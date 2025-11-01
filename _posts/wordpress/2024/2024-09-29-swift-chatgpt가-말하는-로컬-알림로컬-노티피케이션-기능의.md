@@ -18,7 +18,7 @@ ChatGPT에게 아래 글을 읽고 구체적인 이유와 해결 방안을 제�
 
 ### **해결 방안 (ChatGPT의 답변)**
 
-\[caption id="attachment\_6856" align="alignnone" width="570"\]![](./assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-29-오후-3.05.20-복사본.jpg) 복잡한 알람 스케줄의 예시\[/caption\]
+\[caption id="attachment\_6856" align="alignnone" width="570"\] ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-29-오후-3.05.20-복사본.jpg) 복잡한 알람 스케줄의 예시\[/caption\]
 
  
 

@@ -22,7 +22,7 @@ Core Data를 통해 iOS, macOS 등의 애플리케이션 내에 오프라인으�
 
 아직 프로젝트를 생성하지 않았다면 App 생성시 아래 사항만 체크하면 Core Data 프로젝트를 만들 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.18.03.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.18.03.jpg)
 
  
 
@@ -82,7 +82,7 @@ func saveContext () {
 
 프로젝트에 새 파일을 추가 메뉴를 열고, Core Data의 `Data Model`을 추가합니다. 이름은 위에서 지정한 이름을 사용합니다.
 
-![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.27.59.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.27.59.jpg)
 
 여기서는 이름과 메일 주소를 저장하고 테이블 뷰를 통해 정보들을 표시하는 앱을 만든다고 가정합니다.
 
@@ -90,27 +90,27 @@ func saveContext () {
 
 2\. 다음 `CoreDataExample.xcdatamodeld` 파일을 열면 에디터가 나타납니다. 하단에 있는 Add Entity 버튼을 눌러 `Entity`를 추가합니다. `Entity`는 데이터베이스의 테이블과 비슷한 개념입니다.
 
-![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.31.18.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.31.18.jpg)
 
-![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-8.39.59.png)
+ ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-8.39.59.png)
 
  
 
 3\. 다음 `Attribute`를 추가합니다. `Attribute`는 데이터베이스의 컬럼, 필드와 비슷한 개념입니다. 이름과 메일 주소, 그리고 ID를 생성합니다. Core Data는 한 객체가 영속성(persistence)를 지니기 때문에 각 개체가 고유한 특성을 지닙니다. 따라서 원론적으로 ID를 특별히 만들 필요는 없지만, 저처럼 초보 단계에서는 ID를 만드는게 편하다고 생각했기 때문에 ID attribute를 추가하도록 하겠습니다.
 
-![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.35.04.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.35.04.jpg)
 
  
 
 `Attirbute`는 다음과 같은 다양한 타입의 값들을 가질 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.36.54.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.36.54.jpg)
 
  
 
 4\. 위의 설정을 마쳤다면, App의 기본 UI를 생성합니다.
 
-![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.46.05.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-6.46.05.jpg)
 
 Navigation Bar, Bar Button Item, Table View, Table View Cell을 이용해 UI를 생성했습니다.
 
@@ -219,7 +219,7 @@ override func viewDidLoad() {
 
 아래와 같이 정상 작동하는 모습을 볼 수 있습니다.
 
-![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-7.22.14.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-7.22.14.jpg)
 
  
 
@@ -446,4 +446,4 @@ class ListCell: UITableViewCell {
 
 여기서는 add 할 때 결과 배열을 다시 불러오는 작업을 하고 있지만 `saveCoreData()`에서 객체 자체를 리턴하도록 하고 그 객체를 배열에 더하는게 좋아보입니다.
 
-![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-8.26.36.jpg) ![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-8.26.41.jpg) ![](./assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-8.26.48.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-8.26.36.jpg)  ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-8.26.41.jpg)  ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-30-오후-8.26.48.jpg)

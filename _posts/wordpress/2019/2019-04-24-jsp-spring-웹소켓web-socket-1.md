@@ -157,4 +157,4 @@ HTML 코드
 
 `[서버의 절대 주소]`에는 외부에서 자신의 서버에 접속할 수 있는 절대 주소를 입력한다. localhost, 127.0.0.1 이런 주소가 아니라 ISP에 할당된 주소를 입력해야 한다.
 
-[![](./assets/img/wp-content/uploads/2019/04/websocket1.png)](http://yoonbumtae.com/?attachment_id=1069)
+[ ![](/assets/img/wp-content/uploads/2019/04/websocket1.png)](http://yoonbumtae.com/?attachment_id=1069)

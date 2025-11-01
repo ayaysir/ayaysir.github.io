@@ -15,7 +15,7 @@ var nestedOptionalString: String?? = "이중 옵셔널은 왜 있음?"
 print(nestedOptionalString)
 ```
 
-![](./assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-14-오후-4.02.06.png)
+ ![](/assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-14-오후-4.02.06.png)
 
 처음에는 Xcode 오류인가 싶었는데, 이러한 자료형은 실제로 사용되는 자료형이었고 무려 iOS 공식 프레임워크(`UIKit`, `MapKit`) 등에서 여러 차례 등장합니다. 검색 시 `swift double optional` 등으로 관련 내용을 찾아볼 수 있으며 공식 명칭은 _Nested Optional_입니다.
 

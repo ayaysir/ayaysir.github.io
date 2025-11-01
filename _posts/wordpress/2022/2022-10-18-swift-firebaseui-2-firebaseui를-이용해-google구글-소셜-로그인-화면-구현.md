@@ -18,11 +18,11 @@ categories:
 
 [Firebase 콘솔](https://console.firebase.google.com/)에 접속해서 좌측의 `빌드 > Authentication > Sigin-in Method` 페이지로 들어갑니다. `[새 제공업체 추가]` 버튼을 눌러서 _**Google**_을 추가합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.19.56.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.19.56.jpg)
 
 추가 정보를 입력하는 창이 나오는데, 기본값은 이미 입력되어 있으므로 그대로 진행하면 구글이 제공 업체 목록에 추가됩니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.39.47.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.39.47.jpg)
 
  
 
@@ -30,13 +30,13 @@ categories:
 
 _**GoogleService-Info.plist**_ 파일에서 `REVERSED_CLIENT_ID` 값을 복사합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.24.22.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.24.22.jpg)
 
  
 
 프로젝트 설정에서 `Info` 탭으로 들어가면 맨 아래 `URL Types` 란이 있습니다. `+` 버튼을 눌러 새로운 URL Type을 추가하고 `URL Schemes` 란에 `REVERSED_CLIENT_ID` 값을 붙여넣기합니다.
 
-![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.25.20.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.25.20.jpg)
 
 #### **3) 코드 작성**
 
@@ -78,15 +78,15 @@ authUI.providers = providers
 
  
 
-\[caption id="attachment\_4976" align="alignnone" width="406"\]![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.47.27.jpg) Sign In with Google 버튼 추가됨\[/caption\]
+\[caption id="attachment\_4976" align="alignnone" width="406"\] ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.47.27.jpg) Sign In with Google 버튼 추가됨\[/caption\]
 
  
 
-\[caption id="attachment\_4977" align="alignnone" width="406"\]![](./assets/img/wp-content/uploads/2022/10/mosaic-스크린샷-2022-10-18-오후-11.47.44.jpg) 구글 계정 선택\[/caption\]
+\[caption id="attachment\_4977" align="alignnone" width="406"\] ![](/assets/img/wp-content/uploads/2022/10/mosaic-스크린샷-2022-10-18-오후-11.47.44.jpg) 구글 계정 선택\[/caption\]
 
  
 
-\[caption id="attachment\_4974" align="alignnone" width="303"\]![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.47.53.jpg) 해당 구글 계정으로 로그인됨\[/caption\]
+\[caption id="attachment\_4974" align="alignnone" width="303"\] ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오후-11.47.53.jpg) 해당 구글 계정으로 로그인됨\[/caption\]
 
  
 
@@ -97,16 +97,16 @@ authUI.providers = providers
 
  
 
-\[caption id="attachment\_4984" align="alignnone" width="400"\]![](./assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-오후-11.53.38.jpg) 1. 이메일 계정으로 구글 지메일을 사용해 가입\[/caption\]
+\[caption id="attachment\_4984" align="alignnone" width="400"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-오후-11.53.38.jpg) 1. 이메일 계정으로 구글 지메일을 사용해 가입\[/caption\]
 
  
 
-\[caption id="attachment\_4983" align="alignnone" width="824"\]![](./assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-오후-11.55.30.jpg) 2. 가입한 후 계정 상태, 제공업체는 이메일\[/caption\]
+\[caption id="attachment\_4983" align="alignnone" width="824"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-오후-11.55.30.jpg) 2. 가입한 후 계정 상태, 제공업체는 이메일\[/caption\]
 
  
 
-\[caption id="attachment\_4982" align="alignnone" width="855"\]![](./assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-오후-11.56.05.jpg) 3.동일한 구글 아이디의 계정으로 로그인하면 제공 업체가 구글로 바뀌며, UID는 그대로\[/caption\]
+\[caption id="attachment\_4982" align="alignnone" width="855"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-오후-11.56.05.jpg) 3.동일한 구글 아이디의 계정으로 로그인하면 제공 업체가 구글로 바뀌며, UID는 그대로\[/caption\]
 
  
 
-\[caption id="attachment\_4985" align="alignnone" width="316"\]![](./assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-오후-11.56.24.jpg) 4. 제공업체가 구글인 상태에서 이메일 계정 로그인을 시도하면 구글로 로그인하라는 경고창이 뜸\[/caption\]
+\[caption id="attachment\_4985" align="alignnone" width="316"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-오후-11.56.24.jpg) 4. 제공업체가 구글인 상태에서 이메일 계정 로그인을 시도하면 구글로 로그인하라는 경고창이 뜸\[/caption\]

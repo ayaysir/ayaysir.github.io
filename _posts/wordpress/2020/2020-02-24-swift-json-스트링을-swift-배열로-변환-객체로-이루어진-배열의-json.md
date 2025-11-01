@@ -44,6 +44,6 @@ for item in decoded {
 }
 ```
 
-![](./assets/img/wp-content/uploads/2020/02/스크린샷-2020-02-24-오후-10.05.37.png)
+ ![](/assets/img/wp-content/uploads/2020/02/스크린샷-2020-02-24-오후-10.05.37.png)
 
-![](./assets/img/wp-content/uploads/2020/02/스크린샷-2020-02-24-오후-10.06.29.png)
+ ![](/assets/img/wp-content/uploads/2020/02/스크린샷-2020-02-24-오후-10.06.29.png)

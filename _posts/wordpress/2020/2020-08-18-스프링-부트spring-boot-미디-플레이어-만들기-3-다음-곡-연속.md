@@ -156,28 +156,28 @@ public Long deleteMidi(@PathVariable Long id,
 
  
 
-\[caption id="attachment\_2909" align="alignnone" width="2232"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.05.16.png) 지오디 노래 정보를 지오디 - 거짓말로 변경합니다. 업데이트 아이콘을 누르면\[/caption\]
+\[caption id="attachment\_2909" align="alignnone" width="2232"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.05.16.png) 지오디 노래 정보를 지오디 - 거짓말로 변경합니다. 업데이트 아이콘을 누르면\[/caption\]
 
  
 
-\[caption id="attachment\_2910" align="alignnone" width="476"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.05.32.png) 정보가 변경됩니다.\[/caption\]
+\[caption id="attachment\_2910" align="alignnone" width="476"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.05.32.png) 정보가 변경됩니다.\[/caption\]
 
  
 
-\[caption id="attachment\_2911" align="alignnone" width="2238"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.06.06.png) 목록에 정상적으로 반영되었습니다.\[/caption\]
+\[caption id="attachment\_2911" align="alignnone" width="2238"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.06.06.png) 목록에 정상적으로 반영되었습니다.\[/caption\]
 
  
 
-\[caption id="attachment\_2912" align="alignnone" width="713"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.06.58.png) 236번부터 239 까지 파일을 삭제하려고 합니다.\[/caption\]
+\[caption id="attachment\_2912" align="alignnone" width="713"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.06.58.png) 236번부터 239 까지 파일을 삭제하려고 합니다.\[/caption\]
 
  
 
-\[caption id="attachment\_2913" align="alignnone" width="465"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.07.31.png) 삭제가 완료되면 삭제 완료 메시지가 표시됩니다.\[/caption\]
+\[caption id="attachment\_2913" align="alignnone" width="465"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.07.31.png) 삭제가 완료되면 삭제 완료 메시지가 표시됩니다.\[/caption\]
 
  
 
-\[caption id="attachment\_2914" align="alignnone" width="2030"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.08.04.png) 삭제 내역이 반영되었습니다.\[/caption\]
+\[caption id="attachment\_2914" align="alignnone" width="2030"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-18-오후-11.08.04.png) 삭제 내역이 반영되었습니다.\[/caption\]
 
  
 
-\[caption id="attachment\_2915" align="alignnone" width="2420"\]![](./assets/img/wp-content/uploads/2020/08/-2020-08-18-오후-11.32.01-e1597761384907.png) 운영자는 모든 파일에 대한 정보를 수정/삭제할 수 있고, 일반 회원은 자신의 업로드 내역만 업데이트 할 수 있습니다. 4번 아이디로 로그인하면 4번이 업로드한 미디 파일만 변경할 수 잇습니다.\[/caption\]
+\[caption id="attachment\_2915" align="alignnone" width="2420"\] ![](/assets/img/wp-content/uploads/2020/08/-2020-08-18-오후-11.32.01-e1597761384907.png) 운영자는 모든 파일에 대한 정보를 수정/삭제할 수 있고, 일반 회원은 자신의 업로드 내역만 업데이트 할 수 있습니다. 4번 아이디로 로그인하면 4번이 업로드한 미디 파일만 변경할 수 잇습니다.\[/caption\]

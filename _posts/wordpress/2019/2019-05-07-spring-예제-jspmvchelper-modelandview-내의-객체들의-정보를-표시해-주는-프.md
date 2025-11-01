@@ -76,7 +76,7 @@ mav.addObject("instruction",  new JspMvcHelper(mav, true));
 
 출력결과는 다음과 같습니다.
 
-[![](./assets/img/wp-content/uploads/2019/05/jspMvcHelper.png)](http://yoonbumtae.com/?attachment_id=1094)
+[ ![](/assets/img/wp-content/uploads/2019/05/jspMvcHelper.png)](http://yoonbumtae.com/?attachment_id=1094)
 
 제네릭 타입은 실제 제네릭 타입을 찾아 표시하는게 아니라 리스트 등에서 모든 원소의 타입이 동일할 것이라는 가정 하에 첫 번째 원소의 객체를 읽어 그 객체의 타입에 관한 정보를 읽어들이는 약간은 편법적인 방식입니다. 만약 제너릭 타입이 `Object` 또는 `Superclass`인 경우는 정확한 하위 클래스를 판별할 수 없습니다. 아래에서 `set1` 에서 제너릭 타입은 `Object`으로 지정하였지만, 첫 번째 원소가 `Integer`인 관계로 `Integer`인 것처럼 표시되었다.
 

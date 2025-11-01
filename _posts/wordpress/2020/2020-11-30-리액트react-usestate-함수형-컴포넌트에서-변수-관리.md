@@ -10,7 +10,7 @@ categories:
 
 리액트의 함수 컴포넌트 체제에서 변수 등의 상태들을 관리할 수 있는 방법이 여러 가지 있는데 `useState`는 상태 관리의 아주 기초적인 형태입니다. 통상적인 변수 대신 설정하는 것이라고 생각하면 됩니다.
 
-![](./assets/img/wp-content/uploads/2020/11/carbon-1.png)
+ ![](/assets/img/wp-content/uploads/2020/11/carbon-1.png)
 
 - `import React, {useState} from 'react'` - `useState`를 사용하려면 먼저 임포트 해야합니다.
 - `const [todos, setTodos] = useState([])` - `setState` 의 기본 형태입니다. 변수 선언시 배열의 [비구조화 할당](https://learnjs.vlpt.us/useful/06-destructuring.html) 기법을 이용해 두 개의 변수를 선언합니다. 첫 번째는 사용할 변수 이름이고, 두 번째는 변수 이름 앞에 `set***`을 붙여 setter 형태의 이름을 짓습니다.
@@ -30,4 +30,4 @@ setTodos(els => [...els, newTodo])
 
  
 
-![](./assets/img/wp-content/uploads/2020/11/스크린샷-2020-11-30-오후-7.25.50.png)
+ ![](/assets/img/wp-content/uploads/2020/11/스크린샷-2020-11-30-오후-7.25.50.png)

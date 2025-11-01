@@ -26,7 +26,7 @@ tags:
 
 먼저 데이터베이스에 임의의 테이블을 만들고 사용자 정보를 입력합니다. 지금은 회원가입 절차가 없으므로 DB에 `insert`문으로 직접 입력하겠습니다.
 
-![](./assets/img/wp-content/uploads/2019/06/스크린샷-2019-09-22-오후-6.34.26.png)
+ ![](/assets/img/wp-content/uploads/2019/06/스크린샷-2019-09-22-오후-6.34.26.png)
 
 참고로 현재 시큐리티 암호 인코딩은 `Bcrypt`로 기본 설정되어 있습니다. 이것에 맞춰 암호를 미리 인코딩합니다. (원문: 1234, round: 12)
 
@@ -92,7 +92,7 @@ select username, replace(password, '$2y', '$2a'), true from users where username
 
  
 
-\[caption id="attachment\_1520" align="alignnone" width="360"\]![](./assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.38.35.png) 손님(guest)으로 로그인한 경우\[/caption\]
+\[caption id="attachment\_1520" align="alignnone" width="360"\] ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-09-22-오후-5.38.35.png) 손님(guest)으로 로그인한 경우\[/caption\]
 
  
 

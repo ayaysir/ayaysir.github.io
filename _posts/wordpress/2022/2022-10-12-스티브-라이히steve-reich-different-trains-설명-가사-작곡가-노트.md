@@ -20,7 +20,7 @@ https://www.youtube.com/watch?v=qcGqVynCPaw&ab\_channel=BoilerRoom
 
 Different Trains는 1988년 Steve Reich(스티브 라이히)가 작곡한 현악 4중주와 테이프를 위한 3악장 작품입니다. 이 작품은 크로노스 콰르텟(Kronos Quartet)의 멤버 Betty Freeman이 위촉하여 작곡되었습니다.
 
-\[caption id="attachment\_4922" align="alignnone" width="520"\]![](./assets/img/wp-content/uploads/2022/10/520px-Steve_Reich_Ensemble_playing_Different_Trains.jpeg) Different Trains를 연주하는 스티브 라이히 앙상블(The Steve Reich Ensemble).\[/caption\]
+\[caption id="attachment\_4922" align="alignnone" width="520"\] ![](/assets/img/wp-content/uploads/2022/10/520px-Steve_Reich_Ensemble_playing_Different_Trains.jpeg) Different Trains를 연주하는 스티브 라이히 앙상블(The Steve Reich Ensemble).\[/caption\]
 
 - **장르** - 현대 클래식 음악
 - **언어** - 영어
@@ -37,7 +37,7 @@ Different Trains는 1988년 Steve Reich(스티브 라이히)가 작곡한 현악
 
 > **참고: 스티브 라이히 (Steve Reich)**
 > 
-> ![](./assets/img/wp-content/uploads/2022/10/Steve_Reich2.jpeg)
+>  ![](/assets/img/wp-content/uploads/2022/10/Steve_Reich2.jpeg)
 > 
 > 스티븐 마이클 라이히(Stephen Michael Reich, 1936년 10월 3일 ~ )는 1960년대 중반에서 후반의 미니멀리즘 음악의 발달에 기여한 것으로 알려진 미국의 작곡가이다.
 > 
@@ -53,7 +53,7 @@ Different Trains는 1988년 Steve Reich(스티브 라이히)가 작곡한 현악
 
 스티브 라이히의 초기 작품은 테이프를 자주 사용하고 반복하고 다른 속도로 재생하는 방식이었습니다. 그러나 Different Trains는 녹음된 음성을 멜로디의 소스로 사용하는 참신한 실험이었습니다.
 
-\[caption id="attachment\_4925" align="alignnone" width="387"\]![](./assets/img/wp-content/uploads/2022/10/IMG_8C57B9F1BC66-1.jpg) 작중 음성 녹음의 대사 중 하나인 "from Chicago to New York"이 멜로디로 변환된 형태\[/caption\]
+\[caption id="attachment\_4925" align="alignnone" width="387"\] ![](/assets/img/wp-content/uploads/2022/10/IMG_8C57B9F1BC66-1.jpg) 작중 음성 녹음의 대사 중 하나인 "from Chicago to New York"이 멜로디로 변환된 형태\[/caption\]
 
  
 
@@ -71,7 +71,7 @@ Different Trains는 다음과 같은 제목을 가진 세 악장으로 구성됩
 
 현악 4중주를 위한 음악인만큼 드럼을 치는 대신 현악기가 피치를 번갈아 가며 파라디들(parariddle) 리듬을 광범위하게 사용합니다.
 
-\[caption id="attachment\_4926" align="alignnone" width="606"\]![](./assets/img/wp-content/uploads/2022/10/IMG_262C7AA213EB-1.jpg) 현악기로 Paradiddle을 연주\[/caption\]
+\[caption id="attachment\_4926" align="alignnone" width="606"\] ![](/assets/img/wp-content/uploads/2022/10/IMG_262C7AA213EB-1.jpg) 현악기로 Paradiddle을 연주\[/caption\]
 
  
 
@@ -79,7 +79,7 @@ Different Trains는 다음과 같은 제목을 가진 세 악장으로 구성됩
 > 
 > L-R-L-L 또는 R-L-R-R의 순서로 연주되는 4개의 짝수 스트로크로 구성된 드럼의 기본 패턴 중 하나.
 > 
-> ![](./assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-12-오후-8.42.31.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-12-오후-8.42.31.jpg)
 
  
 
@@ -111,7 +111,7 @@ Different Trains의 기초가 되는 음성 녹음은 제2차 세계 대전이 �
 
 스티브 라이히는 자신의 음성 녹음을 디지털 샘플링 키보드(Casio FZ-1)로 전송하여 이러한 작품을 만들었습니다. _City Life_는 연주에 샘플링 키보드를 사용했으며(백킹 테이프를 사용하지 않고) 샘플은 기존 악기와 정확히 동일한 방식으로 기보 및 연주됩니다.
 
-\[caption id="attachment\_4924" align="alignnone" width="1024"\]![](./assets/img/wp-content/uploads/2022/10/Casio_FZ-1_32572726307.jpg) Casio FZ-1\[/caption\]
+\[caption id="attachment\_4924" align="alignnone" width="1024"\] ![](/assets/img/wp-content/uploads/2022/10/Casio_FZ-1_32572726307.jpg) Casio FZ-1\[/caption\]
 
  
 

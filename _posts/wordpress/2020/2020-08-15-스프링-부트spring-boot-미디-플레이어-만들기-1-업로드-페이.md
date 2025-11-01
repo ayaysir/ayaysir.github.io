@@ -676,13 +676,13 @@ JS, CSS는 추후 기능 보강이 되고 안정화되면 분리할 예정입니
 
  
 
-![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-1.08.23.png)
+ ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-1.08.23.png)
 
 업로드에서 미디 파일을 여러 개 선택하면 위 그림처럼 리스트가 뜹니다. 워크래프트 2 배경음악 파일이라서 카테고리를 "Warcraft II" 로 일괄 변경하였습니다. 업로드 버튼을 누르면 버튼에 로딩 이미지가 추가됩니다. 업로드가 완료되면 결과창이 나옵니다.
 
-![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-1.10.09.png)
+ ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-1.10.09.png)
 
-\[caption id="attachment\_2881" align="alignnone" width="588"\]![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-1.10.28.png) 업로드 결과를 JSON 으로 반환\[/caption\]
+\[caption id="attachment\_2881" align="alignnone" width="588"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-1.10.28.png) 업로드 결과를 JSON 으로 반환\[/caption\]
 
  
 
@@ -814,7 +814,7 @@ JS, CSS는 추후 기능 보강이 되고 안정화되면 분리할 예정입니
 
 일단 '재생 기능만 구현'이라는 목적 하에 만들었습니다. 제목을 클릭하면 업로드된 노래가 재생이 됩니다.
 
-![](./assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-5.21.35.png)
+ ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-5.21.35.png)
 
 https://www.youtube.com/watch?v=xUl4sOQkBno
 
