@@ -34,15 +34,15 @@
 <meta property="og:locale" content="ko" />
 <meta name="description" content="폴더(디렉토리) 표시용 모델 생성" />
 <meta property="og:description" content="폴더(디렉토리) 표시용 모델 생성" />
-<link rel="canonical" href="/posts/swiftui-%EB%AC%B8%EC%84%9C-%ED%8F%B4%EB%8D%94document-directory-%EB%82%B4%EB%B6%80%EC%9D%98-%EC%A0%84%EC%B2%B4-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0tree-%ED%91%9C%EC%8B%9C-%EC%9E%AC%EA%B7%80/" />
-<meta property="og:url" content="/posts/swiftui-%EB%AC%B8%EC%84%9C-%ED%8F%B4%EB%8D%94document-directory-%EB%82%B4%EB%B6%80%EC%9D%98-%EC%A0%84%EC%B2%B4-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0tree-%ED%91%9C%EC%8B%9C-%EC%9E%AC%EA%B7%80/" />
+<link rel="canonical" href="https://ayaysir.github.io/posts/swiftui-%EB%AC%B8%EC%84%9C-%ED%8F%B4%EB%8D%94document-directory-%EB%82%B4%EB%B6%80%EC%9D%98-%EC%A0%84%EC%B2%B4-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0tree-%ED%91%9C%EC%8B%9C-%EC%9E%AC%EA%B7%80/" />
+<meta property="og:url" content="https://ayaysir.github.io/posts/swiftui-%EB%AC%B8%EC%84%9C-%ED%8F%B4%EB%8D%94document-directory-%EB%82%B4%EB%B6%80%EC%9D%98-%EC%A0%84%EC%B2%B4-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0tree-%ED%91%9C%EC%8B%9C-%EC%9E%AC%EA%B7%80/" />
 <meta property="og:site_name" content="BGSMM" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-11-18T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="SwiftUI: 문서 폴더(Document Directory) 내부의 전체 폴더 구조(tree) 표시 (재귀 사용)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-18T00:00:00+09:00","datePublished":"2023-11-18T00:00:00+09:00","description":"폴더(디렉토리) 표시용 모델 생성","headline":"SwiftUI: 문서 폴더(Document Directory) 내부의 전체 폴더 구조(tree) 표시 (재귀 사용)","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/swiftui-%EB%AC%B8%EC%84%9C-%ED%8F%B4%EB%8D%94document-directory-%EB%82%B4%EB%B6%80%EC%9D%98-%EC%A0%84%EC%B2%B4-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0tree-%ED%91%9C%EC%8B%9C-%EC%9E%AC%EA%B7%80/"},"url":"/posts/swiftui-%EB%AC%B8%EC%84%9C-%ED%8F%B4%EB%8D%94document-directory-%EB%82%B4%EB%B6%80%EC%9D%98-%EC%A0%84%EC%B2%B4-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0tree-%ED%91%9C%EC%8B%9C-%EC%9E%AC%EA%B7%80/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-11-18T00:00:00+09:00","datePublished":"2023-11-18T00:00:00+09:00","description":"폴더(디렉토리) 표시용 모델 생성","headline":"SwiftUI: 문서 폴더(Document Directory) 내부의 전체 폴더 구조(tree) 표시 (재귀 사용)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/swiftui-%EB%AC%B8%EC%84%9C-%ED%8F%B4%EB%8D%94document-directory-%EB%82%B4%EB%B6%80%EC%9D%98-%EC%A0%84%EC%B2%B4-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0tree-%ED%91%9C%EC%8B%9C-%EC%9E%AC%EA%B7%80/"},"url":"https://ayaysir.github.io/posts/swiftui-%EB%AC%B8%EC%84%9C-%ED%8F%B4%EB%8D%94document-directory-%EB%82%B4%EB%B6%80%EC%9D%98-%EC%A0%84%EC%B2%B4-%ED%8F%B4%EB%8D%94-%EA%B5%AC%EC%A1%B0tree-%ED%91%9C%EC%8B%9C-%EC%9E%AC%EA%B7%80/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1079,21 +1079,21 @@ class SelectFolderViewModel: ObservableObject {
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=SwiftUI:%20%EB%AC%B8%EC%84%9C%20%ED%8F%B4%EB%8D%94(Document%20Directory)%20%EB%82%B4%EB%B6%80%EC%9D%98%20%EC%A0%84%EC%B2%B4%20%ED%8F%B4%EB%8D%94%20%EA%B5%AC%EC%A1%B0(tree)%20%ED%91%9C%EC%8B%9C%20(%EC%9E%AC%EA%B7%80%20%EC%82%AC%EC%9A%A9)%20-%20BGSMM&url=%2Fposts%2Fswiftui-%25EB%25AC%25B8%25EC%2584%259C-%25ED%258F%25B4%25EB%258D%2594document-directory-%25EB%2582%25B4%25EB%25B6%2580%25EC%259D%2598-%25EC%25A0%2584%25EC%25B2%25B4-%25ED%258F%25B4%25EB%258D%2594-%25EA%25B5%25AC%25EC%25A1%25B0tree-%25ED%2591%259C%25EC%258B%259C-%25EC%259E%25AC%25EA%25B7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=SwiftUI:%20%EB%AC%B8%EC%84%9C%20%ED%8F%B4%EB%8D%94(Document%20Directory)%20%EB%82%B4%EB%B6%80%EC%9D%98%20%EC%A0%84%EC%B2%B4%20%ED%8F%B4%EB%8D%94%20%EA%B5%AC%EC%A1%B0(tree)%20%ED%91%9C%EC%8B%9C%20(%EC%9E%AC%EA%B7%80%20%EC%82%AC%EC%9A%A9)%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2Fswiftui-%25EB%25AC%25B8%25EC%2584%259C-%25ED%258F%25B4%25EB%258D%2594document-directory-%25EB%2582%25B4%25EB%25B6%2580%25EC%259D%2598-%25EC%25A0%2584%25EC%25B2%25B4-%25ED%258F%25B4%25EB%258D%2594-%25EA%25B5%25AC%25EC%25A1%25B0tree-%25ED%2591%259C%25EC%258B%259C-%25EC%259E%25AC%25EA%25B7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=SwiftUI:%20%EB%AC%B8%EC%84%9C%20%ED%8F%B4%EB%8D%94(Document%20Directory)%20%EB%82%B4%EB%B6%80%EC%9D%98%20%EC%A0%84%EC%B2%B4%20%ED%8F%B4%EB%8D%94%20%EA%B5%AC%EC%A1%B0(tree)%20%ED%91%9C%EC%8B%9C%20(%EC%9E%AC%EA%B7%80%20%EC%82%AC%EC%9A%A9)%20-%20BGSMM&u=%2Fposts%2Fswiftui-%25EB%25AC%25B8%25EC%2584%259C-%25ED%258F%25B4%25EB%258D%2594document-directory-%25EB%2582%25B4%25EB%25B6%2580%25EC%259D%2598-%25EC%25A0%2584%25EC%25B2%25B4-%25ED%258F%25B4%25EB%258D%2594-%25EA%25B5%25AC%25EC%25A1%25B0tree-%25ED%2591%259C%25EC%258B%259C-%25EC%259E%25AC%25EA%25B7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=SwiftUI:%20%EB%AC%B8%EC%84%9C%20%ED%8F%B4%EB%8D%94(Document%20Directory)%20%EB%82%B4%EB%B6%80%EC%9D%98%20%EC%A0%84%EC%B2%B4%20%ED%8F%B4%EB%8D%94%20%EA%B5%AC%EC%A1%B0(tree)%20%ED%91%9C%EC%8B%9C%20(%EC%9E%AC%EA%B7%80%20%EC%82%AC%EC%9A%A9)%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2Fswiftui-%25EB%25AC%25B8%25EC%2584%259C-%25ED%258F%25B4%25EB%258D%2594document-directory-%25EB%2582%25B4%25EB%25B6%2580%25EC%259D%2598-%25EC%25A0%2584%25EC%25B2%25B4-%25ED%258F%25B4%25EB%258D%2594-%25EA%25B5%25AC%25EC%25A1%25B0tree-%25ED%2591%259C%25EC%258B%259C-%25EC%259E%25AC%25EA%25B7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=%2Fposts%2Fswiftui-%25EB%25AC%25B8%25EC%2584%259C-%25ED%258F%25B4%25EB%258D%2594document-directory-%25EB%2582%25B4%25EB%25B6%2580%25EC%259D%2598-%25EC%25A0%2584%25EC%25B2%25B4-%25ED%258F%25B4%25EB%258D%2594-%25EA%25B5%25AC%25EC%25A1%25B0tree-%25ED%2591%259C%25EC%258B%259C-%25EC%259E%25AC%25EA%25B7%2580%2F&text=SwiftUI:%20%EB%AC%B8%EC%84%9C%20%ED%8F%B4%EB%8D%94(Document%20Directory)%20%EB%82%B4%EB%B6%80%EC%9D%98%20%EC%A0%84%EC%B2%B4%20%ED%8F%B4%EB%8D%94%20%EA%B5%AC%EC%A1%B0(tree)%20%ED%91%9C%EC%8B%9C%20(%EC%9E%AC%EA%B7%80%20%EC%82%AC%EC%9A%A9)%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2Fswiftui-%25EB%25AC%25B8%25EC%2584%259C-%25ED%258F%25B4%25EB%258D%2594document-directory-%25EB%2582%25B4%25EB%25B6%2580%25EC%259D%2598-%25EC%25A0%2584%25EC%25B2%25B4-%25ED%258F%25B4%25EB%258D%2594-%25EA%25B5%25AC%25EC%25A1%25B0tree-%25ED%2591%259C%25EC%258B%259C-%25EC%259E%25AC%25EA%25B7%2580%2F&text=SwiftUI:%20%EB%AC%B8%EC%84%9C%20%ED%8F%B4%EB%8D%94(Document%20Directory)%20%EB%82%B4%EB%B6%80%EC%9D%98%20%EC%A0%84%EC%B2%B4%20%ED%8F%B4%EB%8D%94%20%EA%B5%AC%EC%A1%B0(tree)%20%ED%91%9C%EC%8B%9C%20(%EC%9E%AC%EA%B7%80%20%EC%82%AC%EC%9A%A9)%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     

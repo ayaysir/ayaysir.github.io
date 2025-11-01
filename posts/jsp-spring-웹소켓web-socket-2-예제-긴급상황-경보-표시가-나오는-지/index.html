@@ -34,15 +34,15 @@
 <meta property="og:locale" content="ko" />
 <meta name="description" content="이전 글: JSP, Spring: 웹소켓(Web Socket) 1 참조" />
 <meta property="og:description" content="이전 글: JSP, Spring: 웹소켓(Web Socket) 1 참조" />
-<link rel="canonical" href="/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-2-%EC%98%88%EC%A0%9C-%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9-%EA%B2%BD%EB%B3%B4-%ED%91%9C%EC%8B%9C%EA%B0%80-%EB%82%98%EC%98%A4%EB%8A%94-%EC%A7%80/" />
-<meta property="og:url" content="/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-2-%EC%98%88%EC%A0%9C-%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9-%EA%B2%BD%EB%B3%B4-%ED%91%9C%EC%8B%9C%EA%B0%80-%EB%82%98%EC%98%A4%EB%8A%94-%EC%A7%80/" />
+<link rel="canonical" href="https://ayaysir.github.io/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-2-%EC%98%88%EC%A0%9C-%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9-%EA%B2%BD%EB%B3%B4-%ED%91%9C%EC%8B%9C%EA%B0%80-%EB%82%98%EC%98%A4%EB%8A%94-%EC%A7%80/" />
+<meta property="og:url" content="https://ayaysir.github.io/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-2-%EC%98%88%EC%A0%9C-%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9-%EA%B2%BD%EB%B3%B4-%ED%91%9C%EC%8B%9C%EA%B0%80-%EB%82%98%EC%98%A4%EB%8A%94-%EC%A7%80/" />
 <meta property="og:site_name" content="BGSMM" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-06-19T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="JSP, Spring: 웹소켓(Web Socket) 2 + 예제: 긴급상황 경보 표시가 나오는 지도" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-06-19T00:00:00+09:00","datePublished":"2019-06-19T00:00:00+09:00","description":"이전 글: JSP, Spring: 웹소켓(Web Socket) 1 참조","headline":"JSP, Spring: 웹소켓(Web Socket) 2 + 예제: 긴급상황 경보 표시가 나오는 지도","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-2-%EC%98%88%EC%A0%9C-%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9-%EA%B2%BD%EB%B3%B4-%ED%91%9C%EC%8B%9C%EA%B0%80-%EB%82%98%EC%98%A4%EB%8A%94-%EC%A7%80/"},"url":"/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-2-%EC%98%88%EC%A0%9C-%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9-%EA%B2%BD%EB%B3%B4-%ED%91%9C%EC%8B%9C%EA%B0%80-%EB%82%98%EC%98%A4%EB%8A%94-%EC%A7%80/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-06-19T00:00:00+09:00","datePublished":"2019-06-19T00:00:00+09:00","description":"이전 글: JSP, Spring: 웹소켓(Web Socket) 1 참조","headline":"JSP, Spring: 웹소켓(Web Socket) 2 + 예제: 긴급상황 경보 표시가 나오는 지도","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-2-%EC%98%88%EC%A0%9C-%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9-%EA%B2%BD%EB%B3%B4-%ED%91%9C%EC%8B%9C%EA%B0%80-%EB%82%98%EC%98%A4%EB%8A%94-%EC%A7%80/"},"url":"https://ayaysir.github.io/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-2-%EC%98%88%EC%A0%9C-%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9-%EA%B2%BD%EB%B3%B4-%ED%91%9C%EC%8B%9C%EA%B0%80-%EB%82%98%EC%98%A4%EB%8A%94-%EC%A7%80/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1502,21 +1502,21 @@ source.on('addfeature', function(e) {
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=JSP,%20Spring:%20%EC%9B%B9%EC%86%8C%EC%BC%93(Web%20Socket)%202%20+%20%EC%98%88%EC%A0%9C:%20%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9%20%EA%B2%BD%EB%B3%B4%20%ED%91%9C%EC%8B%9C%EA%B0%80%20%EB%82%98%EC%98%A4%EB%8A%94%20%EC%A7%80%EB%8F%84%20-%20BGSMM&url=%2Fposts%2Fjsp-spring-%25EC%259B%25B9%25EC%2586%258C%25EC%25BC%2593web-socket-2-%25EC%2598%2588%25EC%25A0%259C-%25EA%25B8%25B4%25EA%25B8%2589%25EC%2583%2581%25ED%2599%25A9-%25EA%25B2%25BD%25EB%25B3%25B4-%25ED%2591%259C%25EC%258B%259C%25EA%25B0%2580-%25EB%2582%2598%25EC%2598%25A4%25EB%258A%2594-%25EC%25A7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=JSP,%20Spring:%20%EC%9B%B9%EC%86%8C%EC%BC%93(Web%20Socket)%202%20+%20%EC%98%88%EC%A0%9C:%20%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9%20%EA%B2%BD%EB%B3%B4%20%ED%91%9C%EC%8B%9C%EA%B0%80%20%EB%82%98%EC%98%A4%EB%8A%94%20%EC%A7%80%EB%8F%84%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2Fjsp-spring-%25EC%259B%25B9%25EC%2586%258C%25EC%25BC%2593web-socket-2-%25EC%2598%2588%25EC%25A0%259C-%25EA%25B8%25B4%25EA%25B8%2589%25EC%2583%2581%25ED%2599%25A9-%25EA%25B2%25BD%25EB%25B3%25B4-%25ED%2591%259C%25EC%258B%259C%25EA%25B0%2580-%25EB%2582%2598%25EC%2598%25A4%25EB%258A%2594-%25EC%25A7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=JSP,%20Spring:%20%EC%9B%B9%EC%86%8C%EC%BC%93(Web%20Socket)%202%20+%20%EC%98%88%EC%A0%9C:%20%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9%20%EA%B2%BD%EB%B3%B4%20%ED%91%9C%EC%8B%9C%EA%B0%80%20%EB%82%98%EC%98%A4%EB%8A%94%20%EC%A7%80%EB%8F%84%20-%20BGSMM&u=%2Fposts%2Fjsp-spring-%25EC%259B%25B9%25EC%2586%258C%25EC%25BC%2593web-socket-2-%25EC%2598%2588%25EC%25A0%259C-%25EA%25B8%25B4%25EA%25B8%2589%25EC%2583%2581%25ED%2599%25A9-%25EA%25B2%25BD%25EB%25B3%25B4-%25ED%2591%259C%25EC%258B%259C%25EA%25B0%2580-%25EB%2582%2598%25EC%2598%25A4%25EB%258A%2594-%25EC%25A7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=JSP,%20Spring:%20%EC%9B%B9%EC%86%8C%EC%BC%93(Web%20Socket)%202%20+%20%EC%98%88%EC%A0%9C:%20%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9%20%EA%B2%BD%EB%B3%B4%20%ED%91%9C%EC%8B%9C%EA%B0%80%20%EB%82%98%EC%98%A4%EB%8A%94%20%EC%A7%80%EB%8F%84%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2Fjsp-spring-%25EC%259B%25B9%25EC%2586%258C%25EC%25BC%2593web-socket-2-%25EC%2598%2588%25EC%25A0%259C-%25EA%25B8%25B4%25EA%25B8%2589%25EC%2583%2581%25ED%2599%25A9-%25EA%25B2%25BD%25EB%25B3%25B4-%25ED%2591%259C%25EC%258B%259C%25EA%25B0%2580-%25EB%2582%2598%25EC%2598%25A4%25EB%258A%2594-%25EC%25A7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=%2Fposts%2Fjsp-spring-%25EC%259B%25B9%25EC%2586%258C%25EC%25BC%2593web-socket-2-%25EC%2598%2588%25EC%25A0%259C-%25EA%25B8%25B4%25EA%25B8%2589%25EC%2583%2581%25ED%2599%25A9-%25EA%25B2%25BD%25EB%25B3%25B4-%25ED%2591%259C%25EC%258B%259C%25EA%25B0%2580-%25EB%2582%2598%25EC%2598%25A4%25EB%258A%2594-%25EC%25A7%2580%2F&text=JSP,%20Spring:%20%EC%9B%B9%EC%86%8C%EC%BC%93(Web%20Socket)%202%20+%20%EC%98%88%EC%A0%9C:%20%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9%20%EA%B2%BD%EB%B3%B4%20%ED%91%9C%EC%8B%9C%EA%B0%80%20%EB%82%98%EC%98%A4%EB%8A%94%20%EC%A7%80%EB%8F%84%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2Fjsp-spring-%25EC%259B%25B9%25EC%2586%258C%25EC%25BC%2593web-socket-2-%25EC%2598%2588%25EC%25A0%259C-%25EA%25B8%25B4%25EA%25B8%2589%25EC%2583%2581%25ED%2599%25A9-%25EA%25B2%25BD%25EB%25B3%25B4-%25ED%2591%259C%25EC%258B%259C%25EA%25B0%2580-%25EB%2582%2598%25EC%2598%25A4%25EB%258A%2594-%25EC%25A7%2580%2F&text=JSP,%20Spring:%20%EC%9B%B9%EC%86%8C%EC%BC%93(Web%20Socket)%202%20+%20%EC%98%88%EC%A0%9C:%20%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9%20%EA%B2%BD%EB%B3%B4%20%ED%91%9C%EC%8B%9C%EA%B0%80%20%EB%82%98%EC%98%A4%EB%8A%94%20%EC%A7%80%EB%8F%84%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     

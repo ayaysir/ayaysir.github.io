@@ -34,15 +34,15 @@
 <meta property="og:locale" content="ko" />
 <meta name="description" content="Webpack으로 타입스크립트를 이용한 HTML 개발환경을 구축하는 방법은 다음과 같습니다." />
 <meta property="og:description" content="Webpack으로 타입스크립트를 이용한 HTML 개발환경을 구축하는 방법은 다음과 같습니다." />
-<link rel="canonical" href="/posts/%EC%9B%B9%ED%8C%A9webpack%EC%9C%BC%EB%A1%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-html-loader-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/" />
-<meta property="og:url" content="/posts/%EC%9B%B9%ED%8C%A9webpack%EC%9C%BC%EB%A1%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-html-loader-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/" />
+<link rel="canonical" href="https://ayaysir.github.io/posts/%EC%9B%B9%ED%8C%A9webpack%EC%9C%BC%EB%A1%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-html-loader-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/" />
+<meta property="og:url" content="https://ayaysir.github.io/posts/%EC%9B%B9%ED%8C%A9webpack%EC%9C%BC%EB%A1%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-html-loader-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/" />
 <meta property="og:site_name" content="BGSMM" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-01-12T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="웹팩(Webpack)으로 타입스크립트 &amp; HTML Loader 환경 설정" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-01-12T00:00:00+09:00","datePublished":"2021-01-12T00:00:00+09:00","description":"Webpack으로 타입스크립트를 이용한 HTML 개발환경을 구축하는 방법은 다음과 같습니다.","headline":"웹팩(Webpack)으로 타입스크립트 &amp; HTML Loader 환경 설정","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/%EC%9B%B9%ED%8C%A9webpack%EC%9C%BC%EB%A1%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-html-loader-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/"},"url":"/posts/%EC%9B%B9%ED%8C%A9webpack%EC%9C%BC%EB%A1%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-html-loader-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-01-12T00:00:00+09:00","datePublished":"2021-01-12T00:00:00+09:00","description":"Webpack으로 타입스크립트를 이용한 HTML 개발환경을 구축하는 방법은 다음과 같습니다.","headline":"웹팩(Webpack)으로 타입스크립트 &amp; HTML Loader 환경 설정","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9B%B9%ED%8C%A9webpack%EC%9C%BC%EB%A1%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-html-loader-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/"},"url":"https://ayaysir.github.io/posts/%EC%9B%B9%ED%8C%A9webpack%EC%9C%BC%EB%A1%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-html-loader-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1292,21 +1292,21 @@ document.getElementById("app")!.appendChild(App())
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%EC%9B%B9%ED%8C%A9(Webpack)%EC%9C%BC%EB%A1%9C%20%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20&%20HTML%20Loader%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%20-%20BGSMM&url=%2Fposts%2F%25EC%259B%25B9%25ED%258C%25A9webpack%25EC%259C%25BC%25EB%25A1%259C-%25ED%2583%2580%25EC%259E%2585%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-html-loader-%25ED%2599%2598%25EA%25B2%25BD-%25EC%2584%25A4%25EC%25A0%2595%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%EC%9B%B9%ED%8C%A9(Webpack)%EC%9C%BC%EB%A1%9C%20%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20&%20HTML%20Loader%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2F%25EC%259B%25B9%25ED%258C%25A9webpack%25EC%259C%25BC%25EB%25A1%259C-%25ED%2583%2580%25EC%259E%2585%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-html-loader-%25ED%2599%2598%25EA%25B2%25BD-%25EC%2584%25A4%25EC%25A0%2595%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%9B%B9%ED%8C%A9(Webpack)%EC%9C%BC%EB%A1%9C%20%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20&%20HTML%20Loader%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%20-%20BGSMM&u=%2Fposts%2F%25EC%259B%25B9%25ED%258C%25A9webpack%25EC%259C%25BC%25EB%25A1%259C-%25ED%2583%2580%25EC%259E%2585%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-html-loader-%25ED%2599%2598%25EA%25B2%25BD-%25EC%2584%25A4%25EC%25A0%2595%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%9B%B9%ED%8C%A9(Webpack)%EC%9C%BC%EB%A1%9C%20%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20&%20HTML%20Loader%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2F%25EC%259B%25B9%25ED%258C%25A9webpack%25EC%259C%25BC%25EB%25A1%259C-%25ED%2583%2580%25EC%259E%2585%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-html-loader-%25ED%2599%2598%25EA%25B2%25BD-%25EC%2584%25A4%25EC%25A0%2595%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=%2Fposts%2F%25EC%259B%25B9%25ED%258C%25A9webpack%25EC%259C%25BC%25EB%25A1%259C-%25ED%2583%2580%25EC%259E%2585%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-html-loader-%25ED%2599%2598%25EA%25B2%25BD-%25EC%2584%25A4%25EC%25A0%2595%2F&text=%EC%9B%B9%ED%8C%A9(Webpack)%EC%9C%BC%EB%A1%9C%20%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20&%20HTML%20Loader%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2F%25EC%259B%25B9%25ED%258C%25A9webpack%25EC%259C%25BC%25EB%25A1%259C-%25ED%2583%2580%25EC%259E%2585%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-html-loader-%25ED%2599%2598%25EA%25B2%25BD-%25EC%2584%25A4%25EC%25A0%2595%2F&text=%EC%9B%B9%ED%8C%A9(Webpack)%EC%9C%BC%EB%A1%9C%20%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20&%20HTML%20Loader%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
