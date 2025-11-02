@@ -7,7 +7,7 @@ categories:
 
 ---
 
-"https://www.youtube.com/embed/C3IDifq4IYg"
+{% youtube "https://www.youtube.com/embed/C3IDifq4IYg" %}
  
 
-연주영상입니다.
+연주영상입니다. (정확히는 촬영 실수로 오디오만 녹음되었습니다.)
