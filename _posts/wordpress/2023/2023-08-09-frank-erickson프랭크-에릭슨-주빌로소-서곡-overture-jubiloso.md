@@ -12,7 +12,7 @@ categories:
 
 1978년 출판된 취주악(관악) 밴드를 위한 서곡입니다. **_jubiloso_**는 스페인어, 포르투갈어 등 다양한 언어에 존재하는 단어이며 매우 기뻐하는, 환희하는 (gleeful)이라는 뜻입니다. 제목에서는 일반적으로 연상되지 않는 독특한 멜로디와 화성 진행을 바탕으로 진행되는 것이 특징이며, 이러한 특성으로 인해 좋은 의미에서 다른 서곡들과는 이질적인 분위기를 자아냅니다. 혹자는 게임 음악을 연상하기도 합니다.
 
-https://youtu.be/HWs0lBePRnI
+{% youtube "https://youtu.be/HWs0lBePRnI" %}
 
 ## 반응
 
@@ -36,7 +36,7 @@ https://youtu.be/HWs0lBePRnI
 
  
 
-https://www.youtube.com/watch?v=yzi72tF\_4LU
+{% youtube "https://www.youtube.com/watch?v=yzi72tF_4LU" %}
 
 ## 작품의 배경 및 특징
 
@@ -64,10 +64,10 @@ Overture Jubiloso라는 제목에서 알 수 있듯 “기쁨(jubiloso)”을 �
 
 ## **브라스밴드 버전**
 
-https://youtu.be/i13TBzryp2Y
+{% youtube "https://youtu.be/i13TBzryp2Y" %}
 
  
 
 ## **파트별 분석**
 
-https://youtu.be/pAbEvGaqZHw
+{% youtube "https://youtu.be/pAbEvGaqZHw" %}

@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-https://www.youtube.com/watch?v=LqxbsADqDI4
+{% youtube "https://www.youtube.com/watch?v=LqxbsADqDI4" %}
 
 2024\. 6. 12.
 

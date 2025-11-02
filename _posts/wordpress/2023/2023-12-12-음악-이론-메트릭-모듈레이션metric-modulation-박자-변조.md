@@ -24,7 +24,7 @@ categories:
 
 미터법 변조는 Richard Franko Goldman이 Elliott Carter 의 첼로 소나타를 검토하면서 처음 으로 설명했는데 , 그는 이를 Metric Modulation라고 부르는 것을 선호했습니다 . 또 다른 동의어는 비례 템포(Proportional Tempi) 입니다.
 
-https://www.youtube.com/watch?v=wy9gt\_3gmjM
+{% youtube "https://www.youtube.com/watch?v=wy9gt_3gmjM" %}
 
 > #### ** ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-13-오전-1.39.26-복사본.jpg)**
 
@@ -68,7 +68,7 @@ https://www.youtube.com/watch?v=wy9gt\_3gmjM
 
  
 
-https://www.youtube.com/watch?v=Xbcez9PnEXM
+{% youtube "https://www.youtube.com/watch?v=Xbcez9PnEXM" %}
 
  
 

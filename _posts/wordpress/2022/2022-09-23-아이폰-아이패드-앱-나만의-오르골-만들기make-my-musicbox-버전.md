@@ -24,7 +24,7 @@ categories:
 
 #### **유튜브 쇼츠로 만든 프로모션 영상**
 
-https://www.youtube.com/watch?v=9v\_IF9MCACA
+{% youtube "https://www.youtube.com/watch?v=9v_IF9MCACA" %}
 
 버전 업데이트 기념으로 유튜브 쇼츠 홍보 영상을 만들어봤습니다. 유명한 크리스마스 캐롤 '고요한 밤 거룩한 밤(Silent Night)'를 오르골 버전으로 앱 제작자가 직접 만들었어요
 

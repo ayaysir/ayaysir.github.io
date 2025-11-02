@@ -9,7 +9,7 @@ categories:
 
 ### **Barcarolle \[Barkarola\] for String Quartet in d minor**
 
-https://youtu.be/yks\_vscFTQ8
+{% youtube "https://youtu.be/yks_vscFTQ8" %}
 
  
 
@@ -17,7 +17,7 @@ https://youtu.be/yks\_vscFTQ8
 
 작곡가는 후기 낭만파 시대의 작곡가 요제프 수크이며 이전에 한 번 이 작곡가에 대해 올림픽 은메달을 수상한 작곡가로 언급한 적이 있습니다.  ([바로가기](http://yoonbumtae.com/?p=1242)) 이 곡에 대한 정보는 아무리 찾아도 나오지 않습니다. 그나마 찾은 정보는 수크가 1888년(13세) 때 작곡했던 곡을 1923년에 개정한 게 이 곡이라는 것이 전부입니다.  어린 나이에 이런 아름다운 명곡을 만들었다는게 대단하네요.
 
-https://youtu.be/RkNzEn8GAMk
+{% youtube "https://youtu.be/RkNzEn8GAMk" %}
 
 이 영상은 클래식 곡의 악보는 재작년에 만들었는데 당시 악보를 찾아보려 해도 도저히 찾아볼 수 없어서 일단 들리는대로 옮겨적은 결과입니다. 실제 악보는 아니고 그냥 참고용으로만 봐주세요. 보통 [imslp](http://imslp.org) 라는 사이트에서 다양한 클래식 악보들을 찾을 수 있는데, 이 곡은 유명 게임에 나온 음악임에도 불구하고 마이너한 작품인건지 악보는 찾을 수 없었습니다.
 

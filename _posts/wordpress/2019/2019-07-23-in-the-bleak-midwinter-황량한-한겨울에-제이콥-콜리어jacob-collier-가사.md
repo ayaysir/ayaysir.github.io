@@ -8,7 +8,7 @@ categories:
 
 영국의 크리스티나 로제티(Christina Rossetti)의 시 'In the Bleak Midwinter' (1872년 출판)를 바탕으로 구스타프 홀스트, 헤롤드 다케 등이 곡을 붙인 것이 원곡이며, 이 버전은 헤롤드 다케의 곡을 바탕으로 제이콥 콜리어가 아카펠라로 편곡한 버전이다.
 
-https://youtu.be/mPZn4x3uOac
+{% youtube "https://youtu.be/mPZn4x3uOac" %}
 
 In the bleak mid-winter 황량한 한겨울에
 
@@ -62,7 +62,7 @@ Cherubim and seraphim 케루빔과 치품천사들이
 
 Thronged the air; 공기를 강타했다.
 
-https://youtu.be/7-nRv0uQvH0
+{% youtube "https://youtu.be/7-nRv0uQvH0" %}
 
 But only His Mother 그러나 오직 그의 어머니
 

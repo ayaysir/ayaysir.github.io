@@ -14,7 +14,7 @@ categories:
 
 #### **프로모션 영상**
 
-https://youtu.be/RzUoYL\_RKKg
+{% youtube "https://youtu.be/RzUoYL_RKKg" %}
 
  
 

@@ -14,7 +14,7 @@ tags:
   - "전자"
 ---
 
-https://www.youtube.com/watch?v=K9UMux63dtA
+{% youtube "https://www.youtube.com/watch?v=K9UMux63dtA" %}
 
 다운로드:  soundcloud 로고 밑의 화살표(↓)를 누르시면 됩니다.
 

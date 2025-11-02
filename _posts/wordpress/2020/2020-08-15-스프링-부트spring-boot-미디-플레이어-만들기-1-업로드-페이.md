@@ -16,7 +16,7 @@ categories:
 
 이 서비스는 AWS 프리티어 기간 만료로 인해 폐쇄하였습니다.서비스 당시 모습을 영상 기록으로 확인할 수 있습니다.
 
-https://www.youtube.com/watch?v=ZqUtpc7yEYQ
+{% youtube "https://www.youtube.com/watch?v=ZqUtpc7yEYQ" %}
 
  
 
@@ -816,7 +816,7 @@ JS, CSS는 추후 기능 보강이 되고 안정화되면 분리할 예정입니
 
  ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-5.21.35.png)
 
-https://www.youtube.com/watch?v=xUl4sOQkBno
+{% youtube "https://www.youtube.com/watch?v=xUl4sOQkBno" %}
 
 아이폰에서도 정상 재생되며 백그라운드에서도 정상 동작 합니다. 제가 예전에 만들었던 라이브러리를 사용한 [미디 플레이어](http://yoonbumtae.com/music/midi/)는 백그라운드 재생이 안되었는데, 이 점은 해결된 것 같습니다.
 

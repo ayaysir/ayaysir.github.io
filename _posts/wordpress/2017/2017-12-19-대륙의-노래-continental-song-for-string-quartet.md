@@ -16,7 +16,7 @@ tags:
 
 대륙의 노래 (Continental Song)
 
-https://www.youtube.com/watch?v=2pfJhoT\_Za4
+{% youtube "https://www.youtube.com/watch?v=2pfJhoT_Za4" %}
 
 제작연도: 2012 코멘트: 현악 4중주 편성의 곡입니다.
 

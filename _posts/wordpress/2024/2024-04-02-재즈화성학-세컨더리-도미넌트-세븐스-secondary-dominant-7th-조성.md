@@ -74,7 +74,7 @@ categories:
 
 \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2024/04/Elvis-Presley-Love-Me-Tender-Official-Lyric-Video-02.mp3"\]\[/audio\]
 
-https://www.youtube.com/watch?v=-9dtQzg7gDM
+{% youtube "https://www.youtube.com/watch?v=-9dtQzg7gDM" %}
 
  
 

@@ -8,7 +8,7 @@ categories:
 
 ### **소개**
 
-https://www.youtube.com/watch?v=TMSgWhIENSk&pp=ygUIbGEgdmFsc2U%3D
+{% youtube "https://www.youtube.com/watch?v=TMSgWhIENSk&pp=ygUIbGEgdmFsc2U%3D" %}
 
 _**La valse**_, _poème chorégraphique pour orchestre_ (오케스트라를 위한 무용 시)는 1919년 2월부터 1920년 사이에 [모리스 라벨](https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%A6%AC%EC%8A%A4_%EB%9D%BC%EB%B2%A8)([Maurice Ravel](https://en.wikipedia.org/wiki/Maurice_Ravel))이 쓴 작품입니다. 1920년 12월 12일 파리에서 초연되었습니다. 처음에는 발레 작품으로 알려졌지만 지금은 콘서트 작품으로 더 자주 공연됩니다.
 
@@ -36,7 +36,7 @@ _**La valse**_, _poème chorégraphique pour orchestre_ (오케스트라를 위
 
 라벨의 작곡 활동 중에서 "La valse"의 전조는 그의 1911년 작품인 "Valses nobles et sentimentales"입니다. 이 작품에는 라벨이 나중에 후속 작품에서 재사용한 모티프가 포함되어 있습니다.
 
-https://www.youtube.com/watch?v=jXhHjfHRDnk
+{% youtube "https://www.youtube.com/watch?v=jXhHjfHRDnk" %}
 
 프랑스 군에서 복무한 후, 라벨은 자신의 초기 아이디어인 교향시적 시나리오 'Wien'으로 돌아왔습니다. 라벨은 "La valse"을 쓰면서 자신의 왈츠 리듬에 대한 매력을 다음과 같이 설명했습니다. 이는 Jean Marnold에게 전해진 것입니다.
 
@@ -58,7 +58,7 @@ https://www.youtube.com/watch?v=jXhHjfHRDnk
 
 #### **설명**
 
-https://www.youtube.com/watch?v=YDk2RUaoEJQ&pp=ygUIbGEgdmFsc2U%3D
+{% youtube "https://www.youtube.com/watch?v=YDk2RUaoEJQ&pp=ygUIbGEgdmFsc2U%3D" %}
 
 시작은 조용히 시작되며(안개) 더블 베이스와 첼로, 하프가 뒤이어 합류합니다. 조용하고 점진적으로 악기는 조각난 멜로디를 연주하며 점차적으로 바순과 비올라의 차분한 곡조(subdued tune)를 만들어냅니다. 마침내, 하프의 신호를 바탕으로 악기들이 우아한 선율로 정점을 이루는 시작을 알립니다. 바이올린이 이끄는 오케스트라는 작품의 주요 왈츠 주제로 폭발합니다.
 
@@ -91,7 +91,7 @@ https://www.youtube.com/watch?v=YDk2RUaoEJQ&pp=ygUIbGEgdmFsc2U%3D
 
 먼저 공개적으로 연주된 라벨과 알프레도 카셀라(Alfredo Casella)의 두 대의 피아노 편곡 외에도 라벨은 이 작품을 한 대의 피아노 독주로 편곡하기도 했습니다. 피아노 독주 편곡은 난이도 때문에 자주 연주되지 않습니다. 특히 피아노 독주판은 기법면으로나 음악면으로 매우 어려워 오케스트라나 두 대의 피아노를 위한 연주판보다 녹음 수가 적습니다.
 
-https://www.youtube.com/watch?v=ghY2ak8YoBM&pp=ygUIbGEgdmFsc2U%3D
+{% youtube "https://www.youtube.com/watch?v=ghY2ak8YoBM&pp=ygUIbGEgdmFsc2U%3D" %}
 
 _솔로 피아노 버전 연주와 악보: 조성진 연주_
 
@@ -101,7 +101,7 @@ Lucien Garban은 1920년에 4개의 손을 위한  피아노 편곡을 제작�
 
 2005년에는 Don Patterson이 미국 해병대 밴드(United States Marine Band)를 위해 취주악 버전으로 편곡했으며 Michael J. Colburn이 지휘한 Symphonic Dances 앨범에 녹음되었습니다.
 
-https://www.youtube.com/watch?v=Wa1Azt7\_ndI
+{% youtube "https://www.youtube.com/watch?v=Wa1Azt7_ndI" %}
 
 2020년 La Valse 탄생 100주년을 기념하여(파리 초연은 1920년에 이루어짐), 벨기에 작곡가 Tim Mulleman이 Philippe Graffin and Friends를 위해 현약 구중주(string nonet, 4 바이올린, 2 비올라, 2 첼로, 1 콘트라베이스)용으로 편곡했습니다. 해당 공연은 Lars Konings에 의해 촬영되었습니다.
 

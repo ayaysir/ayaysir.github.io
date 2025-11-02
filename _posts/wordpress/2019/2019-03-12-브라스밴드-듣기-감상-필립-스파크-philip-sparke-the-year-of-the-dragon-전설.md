@@ -14,7 +14,7 @@ categories:
 
 지나가는 이야기로, 2악장의 트롬본 솔로 주자는 당시 19살이었다고 합니다.
 
-https://www.youtube.com/watch?v=WCq2\_wS4wzU
+{% youtube "https://www.youtube.com/watch?v=WCq2_wS4wzU" %}
 
 ##### **용의 해(The Year of the Dragon)**
 

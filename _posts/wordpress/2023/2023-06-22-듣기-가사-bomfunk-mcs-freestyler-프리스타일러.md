@@ -19,7 +19,7 @@ categories:
 
 #### **공식 뮤직비디오**
 
-https://www.youtube.com/watch?v=ymNFyxvIdaM
+{% youtube "https://www.youtube.com/watch?v=ymNFyxvIdaM" %}
 
  
 
@@ -165,7 +165,7 @@ Daily Record는 "Freestyler"를 "최고의 올드스쿨 트랙(cracking old-skoo
 
 #### **뮤직 비디오**
 
-https://www.youtube.com/watch?v=ymNFyxvIdaM
+{% youtube "https://www.youtube.com/watch?v=ymNFyxvIdaM" %}
 
 이 노래의 뮤직 비디오는 주로 하카니에미 지하철역에서 촬영되었습니다. 하카니에미 역은 핀란드 헬싱키 지하철 노선의 지하역이자 플랫폼이 해발 21m 아래에 있습니다. 비디오에 등장하는 "어린 소년"은 핀란드 모델이자 뮤지션인 Marlo Snellman으로 나중에 "Dust"라는 자신의 싱글을 발표하고 'Hipsters', 'Okta' 등 자신의 프로젝트에서 프로듀서로 활동했습니다. 촬영 당시 15세였으며 그의 어머니인 핀란드 모델계 거물 Laila Snellman을 통해 역할을 맡게 되었습니다.
 
@@ -191,7 +191,7 @@ https://www.youtube.com/watch?v=ymNFyxvIdaM
 
 만화가 김성모의 밈들은 지금도 매우 유명하지만 2000년대 초반에도 이미 한 차례 메가히트를 쳤던 적이 있습니다. 이로 인해 여러 패러디물이 나오게 되었는데, 그 중 길엔이라는 닉네임을 가진 아티스트가 프리스타일 곡에 김성모의 밈을 이용해 개사한 음원을 배포한 것이 인기를 끌게 되었습니다. 너무 오래 전의 일이기 때문에 지금은 기억하는 사람이 거의 없지만 당시에는 컬트적인 인기를 끌었었죠.
 
-https://www.youtube.com/watch?v=ggLmQCZZoLw
+{% youtube "https://www.youtube.com/watch?v=ggLmQCZZoLw" %}
 
 주요 가사로는 "너의 공격 패턴을 알아냈다 그것은 강약약 강강강약 강중약이다"와 간주 부분에 맞춘 "깊은 산속 옹달샘 누가와서 먹나요" 등이 있습니다.
 

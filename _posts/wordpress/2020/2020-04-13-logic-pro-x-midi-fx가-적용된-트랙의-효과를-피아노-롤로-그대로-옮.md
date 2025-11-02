@@ -10,7 +10,7 @@ tags:
 
  
 
-https://www.youtube.com/watch?v=-JOZCITL-Og
+{% youtube "https://www.youtube.com/watch?v=-JOZCITL-Og" %}
 
 참고 동영상 (영어)
 

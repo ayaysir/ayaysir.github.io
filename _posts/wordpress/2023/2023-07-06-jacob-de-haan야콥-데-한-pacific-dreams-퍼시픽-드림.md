@@ -12,7 +12,7 @@ categories:
 - **등급**: 4 _(\*연주 난이도에 대한 등급이며, 높을수록 어려우며 일반적으로 6이 최대치)_
 - **편성**: 콘서트 밴드 등
 
-https://www.youtube.com/watch?v=urOAoLktKMQ
+{% youtube "https://www.youtube.com/watch?v=urOAoLktKMQ" %}
 
  
 
@@ -51,6 +51,6 @@ Pacific Dreams(퍼시픽 드림)는 스페인 출신으로 여행중인 작곡�
 
 #### **다른 연주 영상**
 
-https://www.youtube.com/watch?v=W9a3-LTx1bQ
+{% youtube "https://www.youtube.com/watch?v=W9a3-LTx1bQ" %}
 
-https://www.youtube.com/watch?v=a1SfSgJt-Sk
+{% youtube "https://www.youtube.com/watch?v=a1SfSgJt-Sk" %}

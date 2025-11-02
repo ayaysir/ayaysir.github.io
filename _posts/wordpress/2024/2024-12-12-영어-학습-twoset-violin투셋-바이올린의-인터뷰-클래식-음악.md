@@ -148,7 +148,7 @@ _Yang, right, as Shostakovich during the filming of the music video “My Testam
 
 In the first video, titled “I’m Bach,” released on Thursday, Chen, as Bach, finds himself dismayed by modern music. He raps: 목요일에 공개된 첫 번째 영상 ‘I’m Bach’에서 바흐로 분장한 첸은 현대 음악에 실망하는 모습을 보여준다. 그는 이렇게 랩한다:
 
-https://www.youtube.com/watch?v=jExn6TXxenM
+{% youtube "https://www.youtube.com/watch?v=jExn6TXxenM" %}
 
  
 
@@ -224,7 +224,7 @@ They did not shy from controversy, calling out the K-pop band Blackpink in 2022 
 
 In a video called “Sell Out,” Chen played Paganini. ‘Sell Out’이라는 영상에서 첸은 파가니니 역할을 맡았다.
 
-https://www.youtube.com/watch?v=klmvaVvv\_0c
+{% youtube "https://www.youtube.com/watch?v=klmvaVvv_0c" %}
 
  
 
@@ -392,7 +392,7 @@ They worked with Hong Kong Ballet to record a video about Tchaikovsky. 그들은
 
 In Austria, they produced “Papa Wolfgang Style,” a Mozart-themed video, at the Eckartsau palace. 오스트리아에서는 에카르차우 궁전에서 모차르트를 주제로 한 영상 “Papa Wolfgang Style”을 제작했다.
 
-https://www.youtube.com/watch?v=gnwoNdq3hGY
+{% youtube "https://www.youtube.com/watch?v=gnwoNdq3hGY" %}
 
  
 

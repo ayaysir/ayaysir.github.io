@@ -30,7 +30,7 @@ We then return to the march theme in a slightly altered construction. The orient
 
  
 
-https://www.youtube.com/watch?v=S0AXjisVtGA
+{% youtube "https://www.youtube.com/watch?v=S0AXjisVtGA" %}
 
 제이콥 드 게는 호주 브란덴부르크에서 열린 "세인트 피터스 바람 교향곡"에 의해 이 콘서트 작품을 작곡하도록 위촉되었다. "로스 로이"는 세인트 피터스 루터 대학이 1945년 설립된 기념비적인 19세기 별장이다. 그 별장은 항상 학교 상징으로 남아 있었다. 이 작문에서, 제이콥 드 게는 '로스 로이'를 학교에서 보낸 세월 동안 학교에서 보낸 세월을 상징하는 것으로 보고 있다. 그래서, 예술가가 로스 로이 테마를 부르는 주제가 처음에는 기념비적인 특징을 가지고 있습니다.
 

@@ -6,7 +6,7 @@ categories:
   - "Band Music"
 ---
 
-https://www.youtube.com/watch?v=y3knijOK4fc
+{% youtube "https://www.youtube.com/watch?v=y3knijOK4fc" %}
 
 _**“The Black Horse Troop”**_은 미국의 유명한 작곡가 [**존 필립 수자(John Philip Sousa)**](https://ko.wikipedia.org/wiki/%EC%A1%B4_%ED%95%84%EB%A6%BD_%EC%88%98%EC%9E%90)가 1924년에 작곡하고 1925년에 출판한 군대 행진곡입니다. 수자는 ‘행진곡의 왕(March King)’으로 불리며, 이 곡은 그의 대표적인 행진곡 중 하나로 꼽힙니다. 이 곡은 오하이오 주 클리블랜드의 주 방위군 부대인 **제107 기병대** **Troop A(현재 107th Cavalry Regiment)**에 헌정되었으며, 이 부대가 사용하는 검은 말에서 영감을 받아 제목이 붙여졌습니다.[\[출처\]](https://en.wikipedia.org/wiki/The_Black_Horse_Troop)
 
@@ -25,7 +25,7 @@ _**“The Black Horse Troop”**_은 미국의 유명한 작곡가 [**존 필립
 
  
 
-https://www.youtube.com/watch?v=A2PUs4LdrHo
+{% youtube "https://www.youtube.com/watch?v=A2PUs4LdrHo" %}
 
  
 

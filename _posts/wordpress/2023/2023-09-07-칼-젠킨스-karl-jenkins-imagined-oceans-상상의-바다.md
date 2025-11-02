@@ -8,7 +8,7 @@ categories:
 
 ### **Imagined Oceans (1998) - 상상의 바다**
 
-https://www.youtube.com/watch?v=J522V\_itsmw&list=PL72BMHo9m5d2RuHb\_-aGKNhDdAO62Vwjk
+{% youtube "https://www.youtube.com/watch?v=J522V_itsmw&list=PL72BMHo9m5d2RuHb_-aGKNhDdAO62Vwjk" %}
 
 전체 트랙 리스트. 유튜브 영상의 버튼으로 트랙별로 이동할 수 있습니다.
 

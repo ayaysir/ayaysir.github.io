@@ -90,7 +90,7 @@ _베토벤의 영국 국가(God Save the King)에 의한 7개 변주곡에서 5�
 
  ![](/assets/img/wp-content/uploads/2022/03/pipline.png)
 
-https://youtu.be/w7c2ZKamzS4
+{% youtube "https://youtu.be/w7c2ZKamzS4" %}
 
 _The Chantays - Pipeline_
 
@@ -100,6 +100,6 @@ _The Chantays - Pipeline_
 
  ![](/assets/img/wp-content/uploads/2022/03/스크린샷-2022-03-23-오후-7.41.49.jpg)
 
-https://youtu.be/9GB8SSIK0sQ?t=33
+{% youtube "https://youtu.be/9GB8SSIK0sQ?t=33" %}
 
 _Nintendo's Super Mario Bros. 2 엔딩 테마_

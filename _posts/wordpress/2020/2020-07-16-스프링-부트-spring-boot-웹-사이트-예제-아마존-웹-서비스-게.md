@@ -49,7 +49,7 @@ http://awsboard.yoonbumtae.com:9090/
 
 아래 유튜브 영상으로 서비스 당시 모습을 볼 수 있습니다.
 
-https://www.youtube.com/watch?v=CYBIZrykaro
+{% youtube "https://www.youtube.com/watch?v=CYBIZrykaro" %}
 
  
 

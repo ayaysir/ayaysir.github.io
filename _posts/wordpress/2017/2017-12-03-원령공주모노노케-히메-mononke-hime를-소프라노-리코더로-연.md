@@ -7,8 +7,7 @@ categories:
 
 ---
 
-<iframe src="https://www.youtube.com/embed/C3IDifq4IYg" width="854" height="480" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-
+"https://www.youtube.com/embed/C3IDifq4IYg"
  
 
 연주영상입니다.

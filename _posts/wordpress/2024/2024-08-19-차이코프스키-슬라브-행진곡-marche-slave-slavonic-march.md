@@ -40,7 +40,7 @@ categories:
 
 ##### **밝은 태양이여, 너는 고르게 비추지 않네 (Sunce jarko, ne sijaš jednako)**
 
-https://www.youtube.com/watch?v=CO0E5kJyS5w
+{% youtube "https://www.youtube.com/watch?v=CO0E5kJyS5w" %}
 
  ![](/assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.11.14.jpg)
 
@@ -48,7 +48,7 @@ https://www.youtube.com/watch?v=CO0E5kJyS5w
 
 ##### **세르비아인은 기꺼이 군인이 된다 (Rado ide srbin u vojnike)**
 
-https://www.youtube.com/watch?v=7BqtjPHaXqk
+{% youtube "https://www.youtube.com/watch?v=7BqtjPHaXqk" %}
 
  ![](/assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.32.54.jpg)
 
@@ -56,7 +56,7 @@ https://www.youtube.com/watch?v=7BqtjPHaXqk
 
 이 곡은 점차 내림 라장조(A♭ Major)로 전환되며, 세르비아를 돕기 위해 결집하는 러시아인들을 묘사합니다. 이 부분에서는 소박한 춤곡의 성격을 지닌 단순한 멜로디가 관현악단 전체에서 연주되다가, 마침내 러시아 제국의 국가 "[황제를 지켜주소서 (God Save the Tsar)](https://ko.wikipedia.org/wiki/%EB%9F%AC%EC%8B%9C%EC%95%84_%EC%A0%9C%EA%B5%AD%EC%9D%98_%EA%B5%AD%EA%B0%80)"의 엄숙한 연주로 이어집니다.
 
-https://www.youtube.com/watch?v=yWxBDwX57bE
+{% youtube "https://www.youtube.com/watch?v=yWxBDwX57bE" %}
 
  ![](/assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-19-오후-3.42.30.jpg)
 
@@ -119,7 +119,7 @@ https://www.youtube.com/watch?v=yWxBDwX57bE
 - [Eugene Ormandy](https://en.wikipedia.org/wiki/Eugene_Ormandy "Eugene Ormandy") conducting the [Philadelphia Orchestra](https://en.wikipedia.org/wiki/Philadelphia_Orchestra "Philadelphia Orchestra")
 - [Gennady Rozhdestvensky](https://en.wikipedia.org/wiki/Gennady_Rozhdestvensky "Gennady Rozhdestvensky") conducting the [London Symphony Orchestra](https://en.wikipedia.org/wiki/London_Symphony_Orchestra "London Symphony Orchestra")
 
-https://www.youtube.com/watch?v=WS2ansGSxMM
+{% youtube "https://www.youtube.com/watch?v=WS2ansGSxMM" %}
 
 - [Yuri Temirkanov](https://en.wikipedia.org/wiki/Yuri_Temirkanov "Yuri Temirkanov") conducting the [Royal Philharmonic Orchestra](https://en.wikipedia.org/wiki/Royal_Philharmonic_Orchestra "Royal Philharmonic Orchestra")
 - [Valery Gergiev](https://en.wikipedia.org/wiki/Valery_Gergiev "Valery Gergiev") conducting the [Mariinsky Theatre Orchestra](https://en.wikipedia.org/wiki/Mariinsky_Theatre_Orchestra "Mariinsky Theatre Orchestra")

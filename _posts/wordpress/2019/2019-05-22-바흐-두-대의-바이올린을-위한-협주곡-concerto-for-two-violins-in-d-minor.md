@@ -6,7 +6,7 @@ categories:
   - "Classical"
 ---
 
-https://www.youtube.com/watch?v=DJh6i-t\_I1Q
+{% youtube "https://www.youtube.com/watch?v=DJh6i-t_I1Q" %}
 
 「_두 대의 바이올린을 위한 협주곡 D 단조 BWV1043_」 (Concerto for Two Violins in D minor)는 요한 제바스티안 바흐가 작곡 한 2대의 바이올린을 위한 협주곡에서 그의 남긴 3곡의 바이올린 협주곡 중 1곡에 해당한다. 대위법을 정확하게 도입한 작품으로, 두 대의 바이올린과 합주에 의한 "소리의 직물을 엮었다" 같은 구성이다.
 
@@ -20,7 +20,7 @@ https://www.youtube.com/watch?v=DJh6i-t\_I1Q
 
  
 
-https://www.youtube.com/watch?v=4Z4yn6-dY\_8
+{% youtube "https://www.youtube.com/watch?v=4Z4yn6-dY_8" %}
 
 **제 1 악장: 비바체 (Vivace)**
 
@@ -30,7 +30,7 @@ https://www.youtube.com/watch?v=4Z4yn6-dY\_8
 
  
 
-https://www.youtube.com/watch?v=3v0B1HFa4mI
+{% youtube "https://www.youtube.com/watch?v=3v0B1HFa4mI" %}
 
 **제 2 악장: 라르고 마 논 탄토 (Largo ma non tanto)**
 
@@ -38,7 +38,7 @@ https://www.youtube.com/watch?v=3v0B1HFa4mI
 
  
 
-https://www.youtube.com/watch?v=JJuTRlG\_I1o
+{% youtube "https://www.youtube.com/watch?v=JJuTRlG_I1o" %}
 
 **제 3악장: 알레그로 (Allegro)**
 

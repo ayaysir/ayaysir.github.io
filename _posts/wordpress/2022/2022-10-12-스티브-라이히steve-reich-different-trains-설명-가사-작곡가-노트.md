@@ -12,7 +12,7 @@ categories:
 
  
 
-https://www.youtube.com/watch?v=qcGqVynCPaw&ab\_channel=BoilerRoom
+{% youtube "https://www.youtube.com/watch?v=qcGqVynCPaw&ab_channel=BoilerRoom" %}
 
  
 

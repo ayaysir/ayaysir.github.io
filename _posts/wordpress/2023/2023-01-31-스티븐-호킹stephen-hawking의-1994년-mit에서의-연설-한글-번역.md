@@ -5,7 +5,7 @@ categories:
   - "StudyLog"
 ---
 
-https://www.youtube.com/watch?v=b-2GV0T5Zpc&ab\_channel=MITVideoProductions
+{% youtube "https://www.youtube.com/watch?v=b-2GV0T5Zpc&ab_channel=MITVideoProductions" %}
 
  
 

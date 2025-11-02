@@ -10,13 +10,13 @@ categories:
 
 **원곡 동영상**
 
-https://www.youtube.com/watch?v=lzkOFJMI5i8
+{% youtube "https://www.youtube.com/watch?v=lzkOFJMI5i8" %}
 
  
 
 **데모 동영상**
 
-https://www.youtube.com/watch?v=CISrmq7jSbQ
+{% youtube "https://www.youtube.com/watch?v=CISrmq7jSbQ" %}
 
 생각보다 배치가 어려워서 연습을 많이 해야할 것 같습니다.
 

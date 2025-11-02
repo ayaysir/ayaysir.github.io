@@ -187,4 +187,4 @@ struct ContentView_Previews: PreviewProvider {
 
  ![](/assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-21-오후-10.00.43.png)
 
-https://www.youtube.com/watch?v=IIDiqgdn2yo
+{% youtube "https://www.youtube.com/watch?v=IIDiqgdn2yo" %}

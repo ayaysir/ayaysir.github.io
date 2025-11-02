@@ -8,7 +8,7 @@ categories:
 
 ### **ClariS (클라리스) - STEP (2014)**
 
-https://www.youtube.com/watch?v=Yqz\_G25CjrE
+{% youtube "https://www.youtube.com/watch?v=Yqz_G25CjrE" %}
 
 - 노래: [ClariS](https://ko.wikipedia.org/wiki/ClariS)
 - 작사, 작곡, 편곡: [kz](https://ko.wikipedia.org/wiki/Livetune)

@@ -6,7 +6,7 @@ categories:
   - "영어"
 ---
 
-https://youtu.be/ge\_j31Yx\_yk?si=xOw8K976vPyY4Yga
+{% youtube "https://youtu.be/ge_j31Yx_yk?si=xOw8K976vPyY4Yga" %}
 
  
 

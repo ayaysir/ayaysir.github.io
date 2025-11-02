@@ -340,4 +340,4 @@ MMD Loader는 three.js 마스터 소스에 기본적으로 내장되어 있으�
 
 ```
 
-https://www.youtube.com/watch?v=kreu\_DfWPO8
+{% youtube "https://www.youtube.com/watch?v=kreu_DfWPO8" %}

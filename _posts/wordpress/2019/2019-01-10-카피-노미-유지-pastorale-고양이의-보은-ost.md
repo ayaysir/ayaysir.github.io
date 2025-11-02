@@ -7,7 +7,7 @@ categories:
 
 ---
 
-https://www.youtube.com/watch?v=1Cb7wrBs0VE
+{% youtube "https://www.youtube.com/watch?v=1Cb7wrBs0VE" %}
 
 개인적으로 정말 좋아하는 곡을 카피해 봤음
 

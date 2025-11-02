@@ -6,7 +6,7 @@ categories:
   - "Classical"
 ---
 
-https://www.youtube.com/watch?v=obv33I2Kf10
+{% youtube "https://www.youtube.com/watch?v=obv33I2Kf10" %}
 
 I. Nuages 0:00 II. Fêtes 7:28 III. Sirènes 13:44
 

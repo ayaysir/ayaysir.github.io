@@ -188,7 +188,7 @@ export default {
 
 #### **결과**
 
-https://www.youtube.com/watch?v=0rgryiHlwjk
+{% youtube "https://www.youtube.com/watch?v=0rgryiHlwjk" %}
 
 [예제 사이트에서 보기](http://dere.yoonbumtae.com/) (개발중인 사이트이므로 나중에 변경될 수 있습니다.)
 

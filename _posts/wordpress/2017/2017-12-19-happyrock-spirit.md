@@ -16,7 +16,7 @@ tags:
 
 ### Happyrock spirit
 
-https://www.youtube.com/watch?v=5dGrJeybSm4
+{% youtube "https://www.youtube.com/watch?v=5dGrJeybSm4" %}
 
 제작연도: 2012 코멘트: 피아노 선율과 기타 사운드가 배경에 깔린 음악입니다.
 

@@ -26,7 +26,7 @@ http://awsboard.yoonbumtae.com:9090/midi
 
 사이트는 AWS 프리티어 기간이 만료되어 폐쇄했습니다. 영상 기록으로 대신 확인 가능합니다.
 
-https://www.youtube.com/watch?v=ZqUtpc7yEYQ
+{% youtube "https://www.youtube.com/watch?v=ZqUtpc7yEYQ" %}
 
  
 

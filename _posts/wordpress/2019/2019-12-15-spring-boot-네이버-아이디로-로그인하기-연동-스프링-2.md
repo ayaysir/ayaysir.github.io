@@ -549,4 +549,4 @@ public class LoginSuccessForOAauthHandler implements AuthenticationSuccessHandle
 
 #### **4\. 테스트**
 
-https://www.youtube.com/watch?v=mazs3a40S44
+{% youtube "https://www.youtube.com/watch?v=mazs3a40S44" %}

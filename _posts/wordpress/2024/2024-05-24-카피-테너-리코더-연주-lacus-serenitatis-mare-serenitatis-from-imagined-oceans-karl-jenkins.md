@@ -7,7 +7,7 @@ categories:
 
 ---
 
-https://www.youtube.com/watch?v=QkXoX1B0dCQ
+{% youtube "https://www.youtube.com/watch?v=QkXoX1B0dCQ" %}
 
  
 

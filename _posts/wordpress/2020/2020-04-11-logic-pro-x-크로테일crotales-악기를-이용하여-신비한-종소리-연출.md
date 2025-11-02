@@ -8,7 +8,7 @@ tags:
   - "logic-pro-x"
 ---
 
-https://youtu.be/iXm0CAjUzmM
+{% youtube "https://youtu.be/iXm0CAjUzmM" %}
 
  
 

@@ -14,7 +14,7 @@ categories:
 
 뚜렷한 기교적 어려움이 없는 작품으로, 교회 합창단과 전문가들이 종종 교회 봉헌식을 축하하기 위해 연주해 왔습니다.
 
-https://youtu.be/8TbOqM\_lsoU?si=RzsRUHpIXauTnSG6
+{% youtube "https://youtu.be/8TbOqM_lsoU?si=RzsRUHpIXauTnSG6" %}
 
  
 

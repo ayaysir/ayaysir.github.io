@@ -12,7 +12,7 @@ _**백조 고기를 굽는 사나이**_(Der Schwanendreher)는 파울 힌데미�
 
 1939년까지 그는 이 곡을 유럽과 미국에서 저명한 지휘자들과 함께 매번 성공을 거두며 연주했고, 1939년에는 미국에서 음반에 녹음했다. 독일에서는 한 번도 연주하지 않았고, 제2차 세계 대전 후에도 베를린에서(1962) 이 곡을 단 한번만 지휘했다.
 
-https://www.youtube.com/watch?v=wPgmUji\_bBM
+{% youtube "https://www.youtube.com/watch?v=wPgmUji_bBM" %}
 
 - [유튜브 라이브 영상 링크](https://www.youtube.com/watch?v=NkFbrUEhSCc) (외부 공유가 금지됨)
 

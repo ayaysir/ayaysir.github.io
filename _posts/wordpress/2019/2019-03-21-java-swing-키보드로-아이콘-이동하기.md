@@ -194,6 +194,6 @@ public class Keyboard1 extends JFrame{
 
 ```
 
-https://youtu.be/XfArE4XsuAw
+{% youtube "https://youtu.be/XfArE4XsuAw" %}
 
 [https://gist.github.com/ayaysir/8e98e66f8f6190165fbd7167e5c1c1ad](https://gist.github.com/ayaysir/8e98e66f8f6190165fbd7167e5c1c1ad)

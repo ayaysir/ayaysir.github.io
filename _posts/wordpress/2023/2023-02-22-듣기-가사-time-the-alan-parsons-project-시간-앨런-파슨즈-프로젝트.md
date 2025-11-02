@@ -6,7 +6,7 @@ categories:
   - "가사"
 ---
 
-https://youtu.be/zhRzORqNa0E
+{% youtube "https://youtu.be/zhRzORqNa0E" %}
 
 #### **가사**
 
@@ -76,7 +76,7 @@ Forevermore, forevermore 영원토록, 영원토록
 
  
 
-https://youtu.be/jhSTEJ89V4M
+{% youtube "https://youtu.be/jhSTEJ89V4M" %}
 
  
 

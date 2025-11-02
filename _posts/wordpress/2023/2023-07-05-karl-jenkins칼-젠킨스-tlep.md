@@ -8,7 +8,7 @@ categories:
 
 ### **Tlep**
 
-https://www.youtube.com/watch?v=XixY9AajbMY&list=PL5s035z2WFoaf61q09\_UH0iM2HYwoiBVl&index=1
+{% youtube "https://www.youtube.com/watch?v=XixY9AajbMY&list=PL5s035z2WFoaf61q09_UH0iM2HYwoiBVl&index=1" %}
 
 - _5명의 솔리스트, 여성 합창단, 4명의 타악기 연주자 및 심포니 오케스트라를 위한 작품_
 - 연주 시간: 60분

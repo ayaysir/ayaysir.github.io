@@ -7,7 +7,7 @@ categories:
   - "음악이론"
 ---
 
-https://www.youtube.com/watch?v=bSlgAOBr7VA
+{% youtube "https://www.youtube.com/watch?v=bSlgAOBr7VA" %}
 
  
 
@@ -149,7 +149,7 @@ https://www.youtube.com/watch?v=bSlgAOBr7VA
 
 ### **월광 소나타 2악장 연주**
 
-https://youtu.be/bSlgAOBr7VA?t=382
+{% youtube "https://youtu.be/bSlgAOBr7VA?t=382" %}
 
 영상의 6:22부터 시작합니다.
 

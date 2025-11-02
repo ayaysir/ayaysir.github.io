@@ -56,7 +56,7 @@ categories:
 
 차이점을 바로 알 수 있어서 도움이 많이 됩니다
 
-https://www.youtube.com/watch?v=oq6no3jHR0Y
+{% youtube "https://www.youtube.com/watch?v=oq6no3jHR0Y" %}
 
  
 
@@ -68,7 +68,7 @@ https://www.youtube.com/watch?v=oq6no3jHR0Y
 
 모든 음을 동시에 재생합니다.
 
-https://www.youtube.com/watch?v=lfELc17FV8w&ab\_channel=BGSMMII
+{% youtube "https://www.youtube.com/watch?v=lfELc17FV8w&ab_channel=BGSMMII" %}
 
 스케일이 코드를 이룬다면 어떤 느낌인지
 

@@ -6,7 +6,7 @@ categories:
   - "가사"
 ---
 
-https://www.youtube.com/watch?v=OXtZfPZIex4
+{% youtube "https://www.youtube.com/watch?v=OXtZfPZIex4" %}
 
 > 니키(NIKI, 1999년 1월 24일 ~ )는 인도네시아의 싱어송라이터, 음악 프로듀서입니다. 가수 활동 이전에는 유튜브에 커버 영상을 올리면서 이름을 알려나갔습니다. 2017년 88라이징과 계약을 맺어 소속 아티스트가 되었으며, 2018년 데뷔 EP Zephyr를 발매했습니다.
 > 
@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=OXtZfPZIex4
 > 
 > 2023년 5월 31일, NIKI는 NPR의 Tiny Desk Concerts 시리즈에 데뷔하여 Nicole의 3곡과 "Every Summertime"을 공연했습니다. NPR 작가이자 편집자인 스티븐 톰슨(Stephen Thompson)은 세트장에서 그가 “큰 희망에 젖어 흔들리고 기절하며 헤엄치는” 모습을 보였다고 썼습니다.
 
-https://www.youtube.com/watch?v=G0ljnXV-q40
+{% youtube "https://www.youtube.com/watch?v=G0ljnXV-q40" %}
 
  
 
@@ -97,4 +97,4 @@ Every day is summertime with you 너와 함께라면 매일이 여름이야
 
  
 
-https://www.youtube.com/watch?v=cYX2QATF98U
+{% youtube "https://www.youtube.com/watch?v=cYX2QATF98U" %}

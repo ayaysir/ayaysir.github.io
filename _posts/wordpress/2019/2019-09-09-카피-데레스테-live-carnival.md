@@ -6,7 +6,7 @@ categories:
   - "Performance"
 ---
 
-https://youtu.be/RH2mJQhP8Lc
+{% youtube "https://youtu.be/RH2mJQhP8Lc" %}
 
 와! 서커스 같다!
 

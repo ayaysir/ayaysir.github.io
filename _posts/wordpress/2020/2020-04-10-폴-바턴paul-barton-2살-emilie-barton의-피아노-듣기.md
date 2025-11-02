@@ -5,7 +5,7 @@ categories:
   - "StudyLog"
 ---
 
-https://www.youtube.com/watch?v=IYPXeaGuEko
+{% youtube "https://www.youtube.com/watch?v=IYPXeaGuEko" %}
 
 비디오 및 코멘트의 원문은 위 유튜브 링크에 있습니다.
 

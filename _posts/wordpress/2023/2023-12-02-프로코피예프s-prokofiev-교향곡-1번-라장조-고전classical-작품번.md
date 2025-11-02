@@ -6,7 +6,7 @@ categories:
   - "Classical"
 ---
 
-https://www.youtube.com/watch?v=WLT55kPIFCo
+{% youtube "https://www.youtube.com/watch?v=WLT55kPIFCo" %}
 
 ### **교향곡 1번 '고전' (프로코피예프)**
 
@@ -28,7 +28,7 @@ https://www.youtube.com/watch?v=WLT55kPIFCo
 
  
 
-https://www.youtube.com/watch?v=5W18N6GipdE
+{% youtube "https://www.youtube.com/watch?v=5W18N6GipdE" %}
 
  
 
@@ -65,7 +65,7 @@ https://www.youtube.com/watch?v=5W18N6GipdE
 
 교향곡은 플루트 2대, 오보에 2대, 클라리넷 2대, 바순 2대, 호른 2대, 트럼펫 2대, 팀파니 및 현악기로 구성된 고전 시대 규모의 오케스트라를 위해 작곡되었습니다.
 
-https://www.youtube.com/watch?v=uOerZ-ewUcA
+{% youtube "https://www.youtube.com/watch?v=uOerZ-ewUcA" %}
 
  
 

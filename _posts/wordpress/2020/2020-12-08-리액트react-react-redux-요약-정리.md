@@ -6,9 +6,9 @@ categories:
   - "React.js"
 ---
 
-https://www.youtube.com/watch?v=fkNdsUVBksw&list=PLuHgQVnccGMDuVdsGtH1\_452MtRxALb\_7
+{% youtube "https://www.youtube.com/watch?v=fkNdsUVBksw&list=PLuHgQVnccGMDuVdsGtH1_452MtRxALb_7" %}
 
-https://www.youtube.com/watch?v=Cwwsv\_OaWhM
+{% youtube "https://www.youtube.com/watch?v=Cwwsv_OaWhM" %}
 
 이 글은 위 동영상 강의들을 요약 정리한 것입니다.
 
@@ -342,4 +342,4 @@ export default connect(
 
  
 
-https://www.youtube.com/watch?v=1U7\_D5\_scaE
+{% youtube "https://www.youtube.com/watch?v=1U7_D5_scaE" %}

@@ -6,7 +6,7 @@ categories:
   - "가사"
 ---
 
-https://www.youtube.com/watch?v=VNFS8DPezUM
+{% youtube "https://www.youtube.com/watch?v=VNFS8DPezUM" %}
 
 2007년 6월 발매한 VEIL 1,5집 EP "Lesson 01"의 Title 곡 "Radio"의 M/V
 

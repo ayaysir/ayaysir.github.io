@@ -8,13 +8,13 @@ categories:
 
 #### **원본 영상**
 
-https://www.youtube.com/watch?v=Xd54l8gfi7M
+{% youtube "https://www.youtube.com/watch?v=Xd54l8gfi7M" %}
 
  
 
 #### **In the Bleak Midwinter - Jacob Collier**
 
-https://www.youtube.com/watch?v=mPZn4x3uOac
+{% youtube "https://www.youtube.com/watch?v=mPZn4x3uOac" %}
 
  
 
@@ -22,7 +22,7 @@ https://www.youtube.com/watch?v=mPZn4x3uOac
 
 이 영상은 microtonality(미분음성)의 독특함에 대해 다룹니다. 이 영상에서 다루는 곡은 크리스마스 캐럴 In the Bleak Midwinter의 Jacob Collier(제이콥 콜리어)의 편곡으로, 어느 시점에서 그는 E 메이저(마장조)에서 G와 G♯ 사이의 중간 지점에서 G 하프 샤프 메이저(반올림사장조; Gｷ major)로 전조했습니다. 이것은 음악 작품을 만들 때 음률(temperament)이 얼마나 변하는지 생각해 볼 수 있다는 뜻이에요.
 
-https://youtu.be/MnFbqIVTXjw
+{% youtube "https://youtu.be/MnFbqIVTXjw" %}
 
  
 
@@ -42,7 +42,7 @@ https://youtu.be/MnFbqIVTXjw
 
  
 
-https://youtu.be/hUuXy5zjJI4
+{% youtube "https://youtu.be/hUuXy5zjJI4" %}
 
 _(네 개의 마법 코드)_
 
@@ -66,13 +66,13 @@ _(네 개의 마법 코드)_
 
 내가 예제(Three Blind Mice)를 들려드릴 것입니다. 사분음으로 올라가는 지점을 찾을 수 있는지 확인해 보세요.
 
-https://youtu.be/CJeKpj0JUG4
+{% youtube "https://youtu.be/CJeKpj0JUG4" %}
 
 여기서 알아채는 것은 매우 쉽습니다.
 
 이것에 대해 조사해 보면 일반적으로 인간이 인식하지 못하는 한계는 약 5센트이므로 여기에는 동일한 곡을 5센트만 변경해 보겠습니다.
 
-https://youtu.be/FhveQYgXP78
+{% youtube "https://youtu.be/FhveQYgXP78" %}
 
  
 
@@ -96,7 +96,7 @@ https://youtu.be/FhveQYgXP78
 
 Jacob의 작품에서 그도 마찬가지로 4개의 코드만 사용하고 어쩐지 변화가 잘 들리지 않기 때문에 어떻게 거슬리는 부분 없이 (사분음 위로) 진행할 수 있는지가 궁금해집니다.
 
-https://youtu.be/loXakzgCgOM
+{% youtube "https://youtu.be/loXakzgCgOM" %}
 
  
 
@@ -156,7 +156,7 @@ https://youtu.be/loXakzgCgOM
 
  ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-11.20.22-복사본.jpg)
 
-https://youtu.be/UYXRGXoSOrc
+{% youtube "https://youtu.be/UYXRGXoSOrc" %}
 
 여기서 그가 할 수 있는 것은 전체 코드의 아랫 부분을 14센트 차이만큼 약간 위로 가져오는 것입니다. 전체 코드가 14센트 위로 이동했지만 조율이 어긋난 게 아니라 실제로는 평소보다 더 조율이 잘 된 상태입니다.
 
@@ -178,7 +178,7 @@ https://youtu.be/UYXRGXoSOrc
 
  
 
-https://youtu.be/loXakzgCgOM
+{% youtube "https://youtu.be/loXakzgCgOM" %}
 
 이런 식으로 여러분은 이런 종류의 놀랍도록 교활하고 기술적으로 뛰어난 움직임이 어떻게 이루어지는지 볼 수 있습니다. 그는 아주 짧은 시간 안에 어떤 지점에서도 눈에 띄게 튜닝이 어긋나지 않는 곡을 만들었습니다. 하지만 클립에서 보여주듯 놀랍게도 피아노와 비교해보면 피아노 튜닝에서 끔찍하게 어긋나는 소리로 바뀌었습니다.
 

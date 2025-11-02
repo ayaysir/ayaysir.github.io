@@ -93,7 +93,7 @@ let boxAnchor = try! Drum.load장면()
 
 앱을 실제 기기에서 실행하면 다음과 같이 나옵니다.
 
-https://youtu.be/zOrYaC8WRW4
+{% youtube "https://youtu.be/zOrYaC8WRW4" %}
 
  
 

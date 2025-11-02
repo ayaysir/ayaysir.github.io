@@ -17,7 +17,7 @@ tags:
 
 ### Titanium overriding (원제: bpm156)
 
-https://www.youtube.com/watch?v=s92pTwuLboM
+{% youtube "https://www.youtube.com/watch?v=s92pTwuLboM" %}
 
 제작연도: 2009 코멘트: 기계적 느낌의 드럼 앤 베이스 사운드가 특징인 전자음악입니다.
 

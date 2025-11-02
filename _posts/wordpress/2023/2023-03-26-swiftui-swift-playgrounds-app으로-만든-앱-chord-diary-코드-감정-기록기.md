@@ -84,7 +84,7 @@ CRUD의 모든 과정은 `UserDefaults`를 사용해 관리되며 실제로 동�
 
  ![](/assets/img/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-02.08.38-복사본.jpg)
 
-https://www.youtube.com/watch?v=mutCONP3c0Q
+{% youtube "https://www.youtube.com/watch?v=mutCONP3c0Q" %}
 
 - 제목, 코드, 코멘트가 표시됩니다.
 - 플레이 버튼을 누르면 `코드`에 해당하는 음을 재생할 수 있고, 해당 코드와 관련된 인터넷 페이지를 보여줍니다.

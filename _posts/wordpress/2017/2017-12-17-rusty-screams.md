@@ -15,7 +15,7 @@ tags:
 
 ### RUSTY SCREAMS
 
-https://www.youtube.com/watch?v=d0Nw4FqXL30
+{% youtube "https://www.youtube.com/watch?v=d0Nw4FqXL30" %}
 
 제작연도: 2009 코멘트: 정체불명의 신디사이저 음이 독특한 음을 연주하는 전자 댄스음악입니다. 
 

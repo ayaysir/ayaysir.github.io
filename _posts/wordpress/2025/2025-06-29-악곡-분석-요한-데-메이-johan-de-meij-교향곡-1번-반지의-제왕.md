@@ -8,7 +8,7 @@ categories:
 
 ### **요한 데 메이(Johan de Meij)의 교향곡 1번 “반지의 제왕”** **Symphony No.1 "The Lord of the Rings"**
 
-https://www.youtube.com/watch?v=nLmA42rH7wo
+{% youtube "https://www.youtube.com/watch?v=nLmA42rH7wo" %}
 
 Amsterdam Wind Orchestra, 지휘 Arie van Beek 연주 전악장
 
@@ -70,7 +70,7 @@ Amsterdam Wind Orchestra, 지휘 Arie van Beek 연주 전악장
 
 ##### **I. GANDALF (The Wizard) - 마법사 간달프** 
 
-https://www.youtube.com/watch?v=9MAf3K0SYfs&pp=ygUYam9oYW4gZGUgbWVpaiBzeW1waG9ueSAx
+{% youtube "https://www.youtube.com/watch?v=9MAf3K0SYfs&pp=ygUYam9oYW4gZGUgbWVpaiBzeW1waG9ueSAx" %}
 
  ![](/assets/img/wp-content/uploads/2025/06/gandalf.jpeg)
 
@@ -84,7 +84,7 @@ https://www.youtube.com/watch?v=9MAf3K0SYfs&pp=ygUYam9oYW4gZGUgbWVpaiBzeW1waG9ue
 
 ##### **II. LOTHLORIEN (The Elvenwood) - 엘프의 숲 로스로리엔**
 
-https://www.youtube.com/watch?v=060j5MQgv4Y
+{% youtube "https://www.youtube.com/watch?v=060j5MQgv4Y" %}
 
  ![](/assets/img/wp-content/uploads/2025/06/ae051076b6e3469e98152f9bf2d832af83e77696_hq.jpg)
 
@@ -96,7 +96,7 @@ https://www.youtube.com/watch?v=060j5MQgv4Y
 
 ##### **III. GOLLUM (Sméagol) - 골룸 (스메아골, 스미골)**
 
-https://www.youtube.com/watch?v=jbptS62Az\_c
+{% youtube "https://www.youtube.com/watch?v=jbptS62Az_c" %}
 
  ![](/assets/img/wp-content/uploads/2025/06/Gollum_s_journey_commences_by_Frederic_Bennett_detail.jpg)
 
@@ -108,7 +108,7 @@ https://www.youtube.com/watch?v=jbptS62Az\_c
 
 ##### **IV. JOURNEY IN THE DARK - 어둠 속의 여정**
 
-https://www.youtube.com/watch?v=gzyV1sJjDis
+{% youtube "https://www.youtube.com/watch?v=gzyV1sJjDis" %}
 
  ![](/assets/img/wp-content/uploads/2025/06/images.jpeg)
 
@@ -121,7 +121,7 @@ https://www.youtube.com/watch?v=gzyV1sJjDis
 
 ##### **V. HOBBITS (호빗들)**
 
-https://www.youtube.com/watch?v=W0KLTU5vrxw
+{% youtube "https://www.youtube.com/watch?v=W0KLTU5vrxw" %}
 
  ![](/assets/img/wp-content/uploads/2025/06/dara-kostromova-unicorngunter-razvorot-gnomy2-복사본.jpg)
 

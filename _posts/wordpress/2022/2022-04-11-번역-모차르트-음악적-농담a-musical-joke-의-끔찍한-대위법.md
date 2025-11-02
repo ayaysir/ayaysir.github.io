@@ -9,7 +9,7 @@ categories:
 
 #### **원본 영상**
 
-https://youtu.be/df3dr3cDOfo
+{% youtube "https://youtu.be/df3dr3cDOfo" %}
 
 ### **개요**
 
@@ -73,7 +73,7 @@ https://youtu.be/df3dr3cDOfo
 
 이제 모차르트로 돌아와서, 이 첫 번째 악장에서 내가 가장 좋아하는 악절은 두 번째 주제가 되돌아올 때의 재현부(recapitulation) 섹션의 끝입니다.
 
-https://www.youtube.com/watch?v=uxgeoMiM5j4
+{% youtube "https://www.youtube.com/watch?v=uxgeoMiM5j4" %}
 
  
 
@@ -113,7 +113,7 @@ https://www.youtube.com/watch?v=uxgeoMiM5j4
 
 ![](https://github.com/ayaysir/js-ds-alg/raw/master/TerribleCounterpoint/Terrible%20Counterpoint%20in%20Mozart's%20_A%20Musical%20Joke_%20(_Ein%20Musikalischer%20Spa%C3%9F_)_0017.jpg) ![](https://github.com/ayaysir/js-ds-alg/raw/master/TerribleCounterpoint/Terrible%20Counterpoint%20in%20Mozart's%20_A%20Musical%20Joke_%20(_Ein%20Musikalischer%20Spa%C3%9F_)_0019.jpg)
 
-https://www.youtube.com/watch?v=tkINrpVVlLw
+{% youtube "https://www.youtube.com/watch?v=tkINrpVVlLw" %}
 
  
 
@@ -131,7 +131,7 @@ https://www.youtube.com/watch?v=tkINrpVVlLw
 
 ![](https://github.com/ayaysir/js-ds-alg/raw/master/TerribleCounterpoint/Terrible%20Counterpoint%20in%20Mozart's%20_A%20Musical%20Joke_%20(_Ein%20Musikalischer%20Spa%C3%9F_)_0023.jpg)
 
-https://youtu.be/GjnYM-LCesU
+{% youtube "https://youtu.be/GjnYM-LCesU" %}
 
  
 
@@ -167,7 +167,7 @@ https://youtu.be/GjnYM-LCesU
 
 이 슬랩스틱 호른 악절은 준비가 덜 된 호른 연주자가 실수로 잘못된 크룩스를 부착했을 때 일어날 일을 시뮬레이션하는 것으로 생각됩니다.
 
-https://youtu.be/FVE36ZGqj70
+{% youtube "https://youtu.be/FVE36ZGqj70" %}
 
  
 
@@ -189,7 +189,7 @@ https://youtu.be/FVE36ZGqj70
 
   
 
-https://youtu.be/aSBGezZly7I
+{% youtube "https://youtu.be/aSBGezZly7I" %}
 
  
 
@@ -213,7 +213,7 @@ https://youtu.be/aSBGezZly7I
 
 ![](https://github.com/ayaysir/js-ds-alg/raw/master/TerribleCounterpoint/Terrible%20Counterpoint%20in%20Mozart's%20_A%20Musical%20Joke_%20(_Ein%20Musikalischer%20Spa%C3%9F_)_0038.jpg)
 
-https://youtu.be/lFESTZQsIoc
+{% youtube "https://youtu.be/lFESTZQsIoc" %}
 
  
 
@@ -221,7 +221,7 @@ https://youtu.be/lFESTZQsIoc
 
 ![](https://github.com/ayaysir/js-ds-alg/raw/master/TerribleCounterpoint/Terrible%20Counterpoint%20in%20Mozart's%20_A%20Musical%20Joke_%20(_Ein%20Musikalischer%20Spa%C3%9F_)_0041.jpg) ![](https://github.com/ayaysir/js-ds-alg/raw/master/TerribleCounterpoint/Terrible%20Counterpoint%20in%20Mozart's%20_A%20Musical%20Joke_%20(_Ein%20Musikalischer%20Spa%C3%9F_)_0042.jpg)
 
-https://youtu.be/ujOHLiCiHdE
+{% youtube "https://youtu.be/ujOHLiCiHdE" %}
 
  
 
@@ -241,7 +241,7 @@ https://youtu.be/ujOHLiCiHdE
 
 ![](https://github.com/ayaysir/js-ds-alg/raw/master/TerribleCounterpoint/Terrible%20Counterpoint%20in%20Mozart's%20_A%20Musical%20Joke_%20(_Ein%20Musikalischer%20Spa%C3%9F_)_0044.jpg) ![](https://github.com/ayaysir/js-ds-alg/raw/master/TerribleCounterpoint/Terrible%20Counterpoint%20in%20Mozart's%20_A%20Musical%20Joke_%20(_Ein%20Musikalischer%20Spa%C3%9F_)_0045.jpg) ![](https://github.com/ayaysir/js-ds-alg/raw/master/TerribleCounterpoint/Terrible%20Counterpoint%20in%20Mozart's%20_A%20Musical%20Joke_%20(_Ein%20Musikalischer%20Spa%C3%9F_)_0046.jpg)
 
-https://youtu.be/kQsA6\_4seuQ
+{% youtube "https://youtu.be/kQsA6_4seuQ" %}
 
  
 
@@ -261,7 +261,7 @@ https://youtu.be/kQsA6\_4seuQ
 
  
 
-https://www.youtube.com/watch?v=9HrheqiA7R4
+{% youtube "https://www.youtube.com/watch?v=9HrheqiA7R4" %}
 
  
 
@@ -317,7 +317,7 @@ https://www.youtube.com/watch?v=9HrheqiA7R4
 
  
 
-https://youtu.be/6aN9oUSJgAc
+{% youtube "https://youtu.be/6aN9oUSJgAc" %}
 
  
 
@@ -347,7 +347,7 @@ https://youtu.be/6aN9oUSJgAc
 
  
 
-https://youtu.be/eSBhBsJK42U
+{% youtube "https://youtu.be/eSBhBsJK42U" %}
 
  
 
@@ -381,7 +381,7 @@ https://youtu.be/eSBhBsJK42U
 
 이제 모테트의 알렐루야 주제를 먼저 듣고 이 악절과 비교해 보십시오.
 
-https://youtu.be/M7lOMtMpq-I
+{% youtube "https://youtu.be/M7lOMtMpq-I" %}
 
  
 
@@ -401,7 +401,7 @@ https://youtu.be/M7lOMtMpq-I
 
  
 
-https://youtu.be/HlShD0x1LRw
+{% youtube "https://youtu.be/HlShD0x1LRw" %}
 
  
 
@@ -437,7 +437,7 @@ https://youtu.be/HlShD0x1LRw
 
 ![](https://github.com/ayaysir/js-ds-alg/raw/master/TerribleCounterpoint/Terrible%20Counterpoint%20in%20Mozart's%20_A%20Musical%20Joke_%20(_Ein%20Musikalischer%20Spa%C3%9F_)_0084.jpg)
 
-https://youtu.be/7cuFU7DKxOA
+{% youtube "https://youtu.be/7cuFU7DKxOA" %}
 
  
 
@@ -461,7 +461,7 @@ https://youtu.be/7cuFU7DKxOA
 
  
 
-https://youtu.be/rme02S9H2Sk
+{% youtube "https://youtu.be/rme02S9H2Sk" %}
 
  
 
@@ -495,7 +495,7 @@ https://youtu.be/rme02S9H2Sk
 
  
 
-https://youtu.be/nqj425ZHWJA
+{% youtube "https://youtu.be/nqj425ZHWJA" %}
 
  
 
@@ -511,7 +511,7 @@ https://youtu.be/nqj425ZHWJA
 
  
 
-https://youtu.be/qA-uD\_i9WJk
+{% youtube "https://youtu.be/qA-uD_i9WJk" %}
 
  
 
@@ -573,4 +573,4 @@ https://youtu.be/\_d0nrNGtLR4
 
 이제 모차르트의 만우절 명곡의 전체 코다 부분을 들어보세요!
 
-https://youtu.be/qyAu-9R\_gDk
+{% youtube "https://youtu.be/qyAu-9R_gDk" %}

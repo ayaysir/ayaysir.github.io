@@ -12,7 +12,7 @@ categories:
 > 
 > 출처 : (교향곡 제 2번) 오디세이 Symphony No.2 "The Odyssey" - 로버트 W. 스미스
 
-https://www.youtube.com/watch?v=051BGEIJRa8
+{% youtube "https://www.youtube.com/watch?v=051BGEIJRa8" %}
 
 #### **곡목 해설 (Program Notes)**
 
@@ -24,7 +24,7 @@ https://www.youtube.com/watch?v=051BGEIJRa8
 
 ‘포세이돈의 바람(The Winds of Poseidon)’은 피터 로엘 분섀프트 박사와 호프스트라 대학 교향악단이 제작 의뢰하여, 그들에게 헌정된 작품이다. 이 악장은 오디세이의 두 번째 곡(2번 교향곡)으로서 1997년 11월에 완성되었으며, 재능이 뛰어난 이 교향악단에 의해 1998년 12월에 초연되었다.
 
-https://www.youtube.com/watch?v=upswpd79HuY
+{% youtube "https://www.youtube.com/watch?v=upswpd79HuY" %}
 
 #### 지휘자에게
 

@@ -15,7 +15,7 @@ tags:
 
 Mechanical Obligation (BPM 111)
 
-https://www.youtube.com/watch?v=h3YXhJQ4iwM
+{% youtube "https://www.youtube.com/watch?v=h3YXhJQ4iwM" %}
 
 제작연도: 2009 코멘트: 기계, 전투적 느낌의 전자 음악입니다.
 

@@ -6,7 +6,7 @@ categories:
   - "App News"
 ---
 
-https://www.youtube.com/watch?v=RzUoYL\_RKKg
+{% youtube "https://www.youtube.com/watch?v=RzUoYL_RKKg" %}
 
 Nocturne No. 2, Op. 9 in E-flat
 

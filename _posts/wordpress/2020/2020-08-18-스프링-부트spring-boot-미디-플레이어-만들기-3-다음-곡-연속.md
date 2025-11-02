@@ -19,7 +19,7 @@ categories:
 
 이 서비스는 AWS 프리티어 기간 만료로 인해 폐쇄하였습니다.서비스 당시 모습을 영상 기록으로 확인할 수 있습니다.
 
-https://www.youtube.com/watch?v=ZqUtpc7yEYQ
+{% youtube "https://www.youtube.com/watch?v=ZqUtpc7yEYQ" %}
 
 ##### **다음 곡 연속 재생 기능**
 

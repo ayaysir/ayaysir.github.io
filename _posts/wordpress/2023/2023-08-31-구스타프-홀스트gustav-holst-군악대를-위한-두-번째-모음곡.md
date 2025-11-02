@@ -8,7 +8,7 @@ categories:
 
 ### **Second Suite in F for Military Band** **군악대를 위한 바장조 두 번째 모음곡**
 
-https://www.youtube.com/watch?v=04U-PQuDq-s
+{% youtube "https://www.youtube.com/watch?v=04U-PQuDq-s" %}
 
 군악대를 위한 바장조 두 번째 모음곡(Op. 28, No. 2)은 [구스타프 홀스트](https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%8A%A4%ED%83%80%EB%B8%8C_%ED%99%80%EC%8A%A4%ED%8A%B8)의 콘서트 밴드(Concert Band)를 위한 두 개의 모음곡 중 하나입니다. E♭(내림 마장조)의 첫 번째 모음곡에 뒤를 이은 콘서트 밴드 레퍼토리의 주요 연주곡입니다. 1911년에 작곡되어 1922년에 처음 출판된 두 번째 모음곡은 James Causley Windram에게 헌정되었으며 첫 번째 모음곡보다 곡 길이가 길고 연주하기가 더 어렵다고 알려져 있습니다.
 
@@ -16,7 +16,7 @@ https://www.youtube.com/watch?v=04U-PQuDq-s
 
 이 작품은 여러 버전이 있었는데, 가장 최근에는 Boosey & Hawkes(1984, Colin Mathews가 편집)와 Ludwig/Masters(2006, Frederick Fennell이 편집)가 있었습니다. 1940년대에 고든 제이콥(Gordon Jacob)은 이 곡을 햄프셔 모음곡(A Hampshire Suite)라는 제목으로 전체 오케스트라용으로 편곡했습니다.
 
-https://www.youtube.com/watch?v=ovqFe9KhMj8
+{% youtube "https://www.youtube.com/watch?v=ovqFe9KhMj8" %}
 
  
 
@@ -149,7 +149,7 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 홀스트는 나중에 이 악장을 현악 오케스트라를 위해 재편곡하여 세인트 폴 여학교(Saint Paul's Girls' School)의 음악 학도들을 위해 작곡한 세인트 폴 모음곡(1912; St. Paul's Suite)의 마지막 악장으로 채택했습니다.
 
-https://www.youtube.com/watch?v=gIAV4eUO7C0
+{% youtube "https://www.youtube.com/watch?v=gIAV4eUO7C0" %}
 
  
 

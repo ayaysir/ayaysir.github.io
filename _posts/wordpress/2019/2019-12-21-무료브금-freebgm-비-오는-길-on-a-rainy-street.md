@@ -14,7 +14,7 @@ tags:
   - "풍경"
 ---
 
-\[embed\]https://soundcloud.com/yoonbumtae/on-a-rainy-street\[/embed\]
+https://soundcloud.com/yoonbumtae/on-a-rainy-street
 
 #### **비 오는 길**
 
@@ -26,4 +26,4 @@ _제작연도: 2019_
 
 파일 다운로드는 사운드 클라우드 플레이어의 오른쪽 위에 있습니다.
 
-https://www.youtube.com/watch?v=-JaMF8MC5f0
+{% youtube "https://www.youtube.com/watch?v=-JaMF8MC5f0" %}

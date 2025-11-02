@@ -28,7 +28,7 @@ categories:
 
 이하 자세한 내용은 생략하고 스크린샷 등으로 대체하겠습니다. 나중에 여유가 된다면 더 자세한 소개와 앱이 동작하는 유튜브 영상도 올리도록 하겠습니다.
 
-https://www.youtube.com/watch?v=GmwB2KxOwjs
+{% youtube "https://www.youtube.com/watch?v=GmwB2KxOwjs" %}
 
 다만 한 가지 굉장히 신경을 쓴 기능이 있는데 그것만 설명하자면 `View Detail` 페이지입니다. 어떠한 음정을 View Detail 버튼을 누르면 해당 음정이 어떤 과정으로 도출되는지에 대한 설명이 나오는데, 겉보기는 일반적인 보고서 형식이지만 실제로는 모든 음정의 경우에 대응하여 해당 음정에 맞는 설명이 문장 형식으로 나오도록 프로그래밍 하였습니다.
 

@@ -15,7 +15,7 @@ tags:
 
 INTOXICATING EUPHORIA (원제: bpm167)
 
-https://www.youtube.com/watch?v=Ta0p6tD7C94
+{% youtube "https://www.youtube.com/watch?v=Ta0p6tD7C94" %}
 
 제작연도: 2009 코멘트: 빠른 템포에 과도하게 느껴질 정도로 고조된 편곡이 특징인 게임 음악풍의 전자 댄스곡입니다.
 

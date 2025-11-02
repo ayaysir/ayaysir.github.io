@@ -6,7 +6,7 @@ categories:
   - "Music Performance"
 ---
 
-https://www.youtube.com/watch?v=RU16FH\_ACDo
+{% youtube "https://www.youtube.com/watch?v=RU16FH_ACDo" %}
 
 아이패드 프로그램으로 원본 악보를 그대로 옮긴 후 연주했습니다. 
 

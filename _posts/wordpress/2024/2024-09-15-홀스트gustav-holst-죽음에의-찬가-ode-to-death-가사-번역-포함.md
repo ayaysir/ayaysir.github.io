@@ -8,7 +8,7 @@ categories:
 
 ### **작품 소개**
 
-https://youtu.be/73rX1AfaHz0?si=AeBYAUCgnengY7sx
+{% youtube "https://youtu.be/73rX1AfaHz0?si=AeBYAUCgnengY7sx" %}
 
 **[죽음에의 찬가](https://en.m.wikipedia.org/wiki/Ode_to_Death)**(Ode to Death; H. 144, Op. 38)는 영국 작곡가 [구스타브 홀스트](https://ko.wikipedia.org/wiki/%EA%B5%AC%EC%8A%A4%ED%83%80%EB%B8%8C_%ED%99%80%EC%8A%A4%ED%8A%B8)(1874–1934)가 1919년에 작곡한 합창과 오케스트라를 위한 음악 작품입니다. 이 곡은 미국의 시인 [월트 휘트먼](https://ko.m.wikipedia.org/wiki/월트_휘트먼)이 1865년에 미국 대통령 [에이브러햄 링컨](https://ko.wikipedia.org/wiki/에이브러햄_링컨)의 죽음을 애도하며 쓴 애가 "[보랏빛 라일락이 문간에 필 때](https://en.m.wikipedia.org/wiki/When_Lilacs_Last_in_the_Dooryard_Bloom%27d)" (When Lilacs Last in the Dooryard Bloom'd) 의 한 구절을 바탕으로 하고 있습니다.
 
@@ -16,7 +16,7 @@ https://youtu.be/73rX1AfaHz0?si=AeBYAUCgnengY7sx
 
 "죽음에의 찬가"에서 조용하고 체념한 분위기는 매튜스에 의해 찬송가의 생명력 넘치는 영성 이후 "갑작스러운 급변"으로 여겨집니다. 홀스트의 딸인 [이모겐 홀스트](https://ko.m.wikipedia.org/wiki/%EC%9D%B4%EB%AA%A8%EA%B2%90_%ED%99%80%EC%8A%A4%ED%8A%B8)는 이 곡이 홀스트의 죽음에 대한 사적인 태도를 표현한다고 믿었습니다. 동료 작곡가 [레이프 본 윌리엄스](https://ko.wikipedia.org/wiki/%EB%9E%84%ED%94%84_%EB%B3%B8_%EC%9C%8C%EB%A6%AC%EC%97%84%EC%8A%A4)와 어니스트 워커에 따르면, 이 곡은 홀스트의 가장 아름다운 합창 작품으로 여겨집니다.
 
-https://youtu.be/oVY6C7NOjdY?si=yHHj\_PmpwsV5tN8x
+{% youtube "https://youtu.be/oVY6C7NOjdY?si=yHHj_PmpwsV5tN8x" %}
 
  
 

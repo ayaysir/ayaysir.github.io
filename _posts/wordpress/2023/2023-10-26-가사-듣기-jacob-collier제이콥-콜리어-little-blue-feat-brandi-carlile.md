@@ -6,7 +6,7 @@ categories:
   - "가사"
 ---
 
-https://www.youtube.com/watch?v=Z2zLSkhANSY
+{% youtube "https://www.youtube.com/watch?v=Z2zLSkhANSY" %}
 
 **\[Verse 1: Jacob Collier\]**
 
@@ -56,7 +56,7 @@ You're gonna find a way home 길을 찾을 거야
 
  
 
-https://www.youtube.com/watch?v=IQvzX0Z3HE4
+{% youtube "https://www.youtube.com/watch?v=IQvzX0Z3HE4" %}
 
  
 

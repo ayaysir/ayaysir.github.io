@@ -12,7 +12,7 @@ categories:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/37VxcASEASo" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
-https://www.youtube.com/watch?v=9n8byjQ2ku4
+{% youtube "https://www.youtube.com/watch?v=9n8byjQ2ku4" %}
 
  
 
@@ -52,7 +52,7 @@ https://www.youtube.com/watch?v=9n8byjQ2ku4
 - 보다 현실적인 헬리콥터 음색을 위해, 6명의 타악기 연주자 중 3명은 드럼헤드를 대형 행진용 베이스드럼 위에 올려놓고 연주하는 방식이 효과적이었습니다.
 -  드럼헤드 위에 타월을 덮어 종이 같은 얇은 소리를 방지하는 실험도 했지만, 소리가 지나치게 뭉개지지 않도록 주의해야 합니다.
 
-https://www.youtube.com/watch?v=U-G-Dkw0SGA
+{% youtube "https://www.youtube.com/watch?v=U-G-Dkw0SGA" %}
 
 ##### **악곡 초반부 - 헬리콥터의 등장**
 
@@ -97,7 +97,7 @@ https://www.youtube.com/watch?v=U-G-Dkw0SGA
 
 _토드 맨슨 (Todd Manson)_ _수석 타악기 주자 / 팀파니스트_ _트로이 주립대학교 (Troy State University)_ _앨라배마, 트로이_ _2000년 11월_
 
-https://www.youtube.com/watch?v=abalX-ozTFw
+{% youtube "https://www.youtube.com/watch?v=abalX-ozTFw" %}
 
 ### **악곡 분석**
 
@@ -123,7 +123,7 @@ https://www.youtube.com/watch?v=abalX-ozTFw
 
 다양한 밴드, 예를 들어 중부 텍사스 주립대학교와 포르투갈 해군 밴드에서 공연되었으며, 교육적 레퍼토리로 높이 평가받고 있습니다. 초연 시 큰 찬사를 받았으며, 존 W. 슈미트 대령(미 해군 예비역)의 서문이 포함되어 있습니다.
 
-https://www.youtube.com/watch?v=5DcGatw9qO0
+{% youtube "https://www.youtube.com/watch?v=5DcGatw9qO0" %}
 
  
 
@@ -189,7 +189,7 @@ https://www.youtube.com/watch?v=5DcGatw9qO0
 
  
 
-https://www.youtube.com/watch?v=YU3rdGWw2Yw&pp=ygUWaW5jaGVvbiByb2JlcnQgdyBzbWl0aA%3D%3D
+{% youtube "https://www.youtube.com/watch?v=YU3rdGWw2Yw&pp=ygUWaW5jaGVvbiByb2JlcnQgdyBzbWl0aA%3D%3D" %}
 
  
 

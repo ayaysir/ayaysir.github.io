@@ -6,7 +6,7 @@ categories:
   - "Classical"
 ---
 
-https://youtu.be/cmKqSQhF6Gc
+{% youtube "https://youtu.be/cmKqSQhF6Gc" %}
 
 #### Josef Suk
 
@@ -28,7 +28,7 @@ https://youtu.be/cmKqSQhF6Gc
 
  
 
-https://youtu.be/rruD198FwAU
+{% youtube "https://youtu.be/rruD198FwAU" %}
 
 #### Art competitions at the Summer Olympics
 

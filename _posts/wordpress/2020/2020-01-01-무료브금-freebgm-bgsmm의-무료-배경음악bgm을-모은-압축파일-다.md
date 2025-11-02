@@ -36,4 +36,4 @@ categories:
 
 아래 유튜브 플레이리스트에서 일부 음악들의 미리보기를 할 수 있으며 구글 드라이브에는 아래 리스트에 없는 음악 파일들도 포함되어 있습니다.
 
-https://youtu.be/-JaMF8MC5f0?list=PLQDo1x3yVlaOKfNJ4vQS9E\_m4A2oeBoKr
+- [플레이리스트](https://youtu.be/-JaMF8MC5f0?list=PLQDo1x3yVlaOKfNJ4vQS9E_m4A2oeBoKr)
