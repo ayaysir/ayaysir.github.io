@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,6 +498,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -521,7 +560,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바(Java): 람다식 (Lambda Expression) 기초 (Java 8 이상)</h1>
     
@@ -595,7 +634,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="829 words"
+  title="836 words"
 >
   <em>4 min</em> read</span>
 
@@ -605,26 +644,50 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바(Java): 람다식 (Lambda Expression) 기초 (Java 8 이상)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바(Java): 람다식 (Lambda Expression) 기초 (Java 8 이상)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>람다식은 <strong>함수형 인터페이스(Functional Interface)</strong>을 쉽게 사용할 수 있도록 지원합니다. 함수형 인터페이스는 메소드가 한 개만 있는 인터페이스를 의미하며, 보통의 인터페이스에 메소드를 한 개만 만들면 자동으로 함수형 인터페이스가 됩니다.</p>
+    <p>람다식은 <strong>함수형 인터페이스</strong>(Functional Interface)을 쉽게 사용할 수 있도록 지원합니다. 함수형 인터페이스는 메소드가 한 개만 있는 인터페이스를 의미하며, 보통의 인터페이스에 메소드를 한 개만 만들면 자동으로 함수형 인터페이스가 됩니다.</p>
 
 <p>컴파일러 단계에서 함수형 인터페이스를 명시하고 싶다면 <code class="language-plaintext highlighter-rouge">@FunctionalInterface</code> 를 이용합니다. 이것을 사용할 경우 인터페이스 내에 메소드가 2개 이상인 경우 컴파일시 오류가 발생하여 강제적으로 메소드를 1개만 만들게 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="사용-방법"><span class="me-2">사용 방법</span><a href="#사용-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>@FunctionalInterface
-public interface Calculator {    
+</pre></td><td class="rouge-code"><pre><span class="nd">@FunctionalInterface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Calculator</span> <span class="o">{</span>    
     
-    public int calc(int num1, int num2); 
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">calc</span><span class="o">(</span><span class="kt">int</span> <span class="n">num1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">num2</span><span class="o">);</span> 
  
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>람다식은 다음과 같이 사용합니다.</p>
@@ -634,16 +697,19 @@ public interface Calculator {
   <li>매개변수가 있는 경우: <code class="language-plaintext highlighter-rouge">(변수1, 변수2, ...) -&gt; { return x; }</code> 또는 <code class="language-plaintext highlighter-rouge">(변수1, 변수2, ...) -&gt; [단일 식];</code></li>
 </ol>
 
-<p><code class="language-plaintext highlighter-rouge">[단일 식]</code>이란 예제의 <code class="language-plaintext highlighter-rouge">n1 + n2</code> 같이 연산으로 인해 어떠한 결과가 반환되는 한 줄의 코드를 뜻합니다. <code class="language-plaintext highlighter-rouge">n1 + n2</code>를 통해 숫자든 아니면 그 외 무엇의 형태이든 어떠한 값이 나올 것이라 예상되므로 그 자체가 <code class="language-plaintext highlighter-rouge">return</code>과 동일하기 때문에 단일 식에서는 별도의 <code class="language-plaintext highlighter-rouge">return</code>을 명시할 필요가 없습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">[단일 식]</code> (expression)이란 예제의 <code class="language-plaintext highlighter-rouge">n1 + n2</code> 같이 연산으로 인해 어떠한 결과가 반환되는 한 줄의 코드를 뜻합니다. <code class="language-plaintext highlighter-rouge">n1 + n2</code>를 통해 숫자든 아니면 그 외 무엇의 형태이든 어떠한 값이 나올 것이라 예상되므로 그 자체가 <code class="language-plaintext highlighter-rouge">return</code>과 동일하기 때문에 단일 식에서는 별도의 <code class="language-plaintext highlighter-rouge">return</code>을 명시할 필요가 없습니다.</p>
 
 <p>메소드의 반환값이 <code class="language-plaintext highlighter-rouge">void</code>인 경우 중괄호 안에 <code class="language-plaintext highlighter-rouge">return</code>을 명시할 수 없습니다. void인 경우 리턴값을 받지 않으므로 <code class="language-plaintext highlighter-rouge">[단일 식]</code>은 사용할 수 없습니다.</p>
 
 <p>참고로 <code class="language-plaintext highlighter-rouge">System.out::println</code> 은 <code class="language-plaintext highlighter-rouge">x -&gt; System.out.println(x)</code>를 간단하게 축약해서 사용할 수 있도록 한 슈가 신택스(sugar syntax)입니다.</p>
 
-<p>람다식을 통해 함수 인터페이스에서 기존에 장황했던 코드들을 축약해서 나타낼 수 있습니다. 아래 예제에서 Thread 부분의 람다식을 적용하기 이전의 문법과 람다식을 적용한 문법을 비교해 주세요.</p>
+<p>람다식을 통해 함수 인터페이스에서 기존에 장황했던 코드들을 축약해서 나타낼 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="예제"><span class="me-2">예제</span><a href="#예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>아래 예제에서 Thread 부분의 람다식을 적용하기 이전의 문법과 람다식을 적용한 문법을 비교해 주세요.</p>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -704,70 +770,70 @@ public interface Calculator {
 58
 59
 60
-</pre></td><td class="rouge-code"><pre>public class ViewLambda {
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ViewLambda</span> <span class="o">{</span>
     
-    public static void test(int n1, int n2, Calculator c) {
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(</span><span class="kt">int</span> <span class="n">n1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n2</span><span class="o">,</span> <span class="nc">Calculator</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span>
         
-        System.out.println(c.calc(n1, n2));        
-    }
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">calc</span><span class="o">(</span><span class="n">n1</span><span class="o">,</span> <span class="n">n2</span><span class="o">));</span>        
+    <span class="o">}</span>
     
-    public static void main(String[] args) {
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         
-        Calculator c = (n1, n2) -&gt; n1 + n2;
-        System.out.println(c.calc(10, 20));
+        <span class="nc">Calculator</span> <span class="n">c</span> <span class="o">=</span> <span class="o">(</span><span class="n">n1</span><span class="o">,</span> <span class="n">n2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">calc</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">20</span><span class="o">));</span>
         
-        c = (n1, n2) -&gt; n1 - n2;
-        System.out.println(c.calc(10, 20));
+        <span class="n">c</span> <span class="o">=</span> <span class="o">(</span><span class="n">n1</span><span class="o">,</span> <span class="n">n2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">n1</span> <span class="o">-</span> <span class="n">n2</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">calc</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">20</span><span class="o">));</span>
         
-        c = (n1, n2) -&gt; n1 * n2;
-        System.out.println(c.calc(10, 20));
+        <span class="n">c</span> <span class="o">=</span> <span class="o">(</span><span class="n">n1</span><span class="o">,</span> <span class="n">n2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">n1</span> <span class="o">*</span> <span class="n">n2</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">calc</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">20</span><span class="o">));</span>
         
-        c = (n1, n2) -&gt; n1 / n2;
-        System.out.println(c.calc(10, 20));
+        <span class="n">c</span> <span class="o">=</span> <span class="o">(</span><span class="n">n1</span><span class="o">,</span> <span class="n">n2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">n1</span> <span class="o">/</span> <span class="n">n2</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">calc</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">20</span><span class="o">));</span>
         
-        c = (n1, n2) -&gt; {
+        <span class="n">c</span> <span class="o">=</span> <span class="o">(</span><span class="n">n1</span><span class="o">,</span> <span class="n">n2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
             
-            System.out.println("xxx");
-            int n3 = n1 * n1 * n1;
-            int n4 = n2 * n2 * n2;
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"xxx"</span><span class="o">);</span>
+            <span class="kt">int</span> <span class="n">n3</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">*</span> <span class="n">n1</span> <span class="o">*</span> <span class="n">n1</span><span class="o">;</span>
+            <span class="kt">int</span> <span class="n">n4</span> <span class="o">=</span> <span class="n">n2</span> <span class="o">*</span> <span class="n">n2</span> <span class="o">*</span> <span class="n">n2</span><span class="o">;</span>
             
-            return n3 - n4;
-        };
-        System.out.println(c.calc(10, 20));
+            <span class="k">return</span> <span class="n">n3</span> <span class="o">-</span> <span class="n">n4</span><span class="o">;</span>
+        <span class="o">};</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">calc</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">20</span><span class="o">));</span>
         
-        test(30, 50, (n1, n2) -&gt; n1 + n2);
-        test(50, 30, (no1, no2) -&gt; {
-            System.out.println("xxx"); 
-            return no1 - no2;
-        });
+        <span class="n">test</span><span class="o">(</span><span class="mi">30</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="o">(</span><span class="n">n1</span><span class="o">,</span> <span class="n">n2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="o">);</span>
+        <span class="n">test</span><span class="o">(</span><span class="mi">50</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="o">(</span><span class="n">no1</span><span class="o">,</span> <span class="n">no2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"xxx"</span><span class="o">);</span> 
+            <span class="k">return</span> <span class="n">no1</span> <span class="o">-</span> <span class="n">no2</span><span class="o">;</span>
+        <span class="o">});</span>
         
  
-        List&lt;Integer&gt; numbers = Arrays.asList(1,2,3,4,5,6);
-        numbers.forEach(x -&gt; System.out.print(x + " "));
-        numbers.forEach(System.out::print);
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">numbers</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">,</span><span class="mi">6</span><span class="o">);</span>
+        <span class="n">numbers</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="s">" "</span><span class="o">));</span>
+        <span class="n">numbers</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">print</span><span class="o">);</span>
         
-        System.out.println();
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
 
-        // *** Thread ** //
+        <span class="c1">// *** Thread ** //</span>
         
-        new Thread() {
-            @Override
-            public void run() {
-                System.out.println("스레드: old");
-            }
-        }.start();
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"스레드: old"</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}.</span><span class="na">start</span><span class="o">();</span>
         
-        new Thread(()-&gt;{
-            System.out.println("스레드: new");
-        }).start();
+        <span class="k">new</span> <span class="nf">Thread</span><span class="o">(()-&gt;{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"스레드: new"</span><span class="o">);</span>
+        <span class="o">}).</span><span class="na">start</span><span class="o">();</span>
         
-    }    
+    <span class="o">}</span>    
  
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -782,11 +848,11 @@ public interface Calculator {
 12
 13
 </pre></td><td class="rouge-code"><pre>30
--10
+<span class="nt">-10</span>
 200
 0
 xxx
--7000
+<span class="nt">-7000</span>
 80
 xxx
 20
@@ -2006,6 +2072,12 @@ xxx
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -8009,18 +8081,6 @@ xxx
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -8057,7 +8117,7 @@ xxx
 
               <h4 class="pt-0 my-2">Java 예제: 가위바위보 (공식 이용법 추가)</h4>
               <div class="text-muted">
-                <p>컴퓨터와 가위바위보를 하는 게임입니다. 컴퓨터는 난수를 이용해 낼 패를 결정합니다. 가위바위보 스트링을 만드는 부분이 번거롭기 때문에 `gbbStr` 이라는 별도의 메소드로 분리해 해당 작업을 처리하도록 히겠습니다. 이 예제는 [자바 계산기](http://yoonbumtae.com/?p=486)의 내용과 이어집니다.  ``` import java.ut...</p>
+                <p>컴퓨터와 가위바위보를 하는 게임입니다. 컴퓨터는 난수를 이용해 낼 패를 결정합니다. 가위바위보 스트링을 만드는 부분이 번거롭기 때문에 `gbbStr` 이라는 별도의 메소드로 분리해 해당 작업을 처리하도록 히겠습니다. 이 예제는 [자바 계산기](/posts/예제-간이-계산기-1)의 내용과 이어집니다.  ## 방법 1  ```java import java...</p>
               </div>
             </div>
           </a>

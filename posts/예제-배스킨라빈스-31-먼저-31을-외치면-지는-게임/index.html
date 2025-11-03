@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,6 +573,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -596,7 +635,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Java 예제: 배스킨라빈스 31 (먼저 31을 외치면 지는 게임)</h1>
     
@@ -670,9 +709,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="717 words"
+  title="723 words"
 >
-  <em>3 min</em> read</span>
+  <em>4 min</em> read</span>
 
         </div>
       </div>
@@ -680,12 +719,36 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Java 예제: 배스킨라빈스 31 (먼저 31을 외치면 지는 게임)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Java 예제: 배스킨라빈스 31 (먼저 31을 외치면 지는 게임)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>저는 뼛속까지 아싸라 배스킨라빈스라는 게임이 뭔지 몰랐었는데요.. 두 사람이서 번갈아가면서 1에서 3까지를 말하다가 어떤 사람이 31을 말하게 되면 그 사람이 지는 게임이라고 합니다. <a href="http://yoonbumtae.com/?p=553">Java 예제: 업앤다운(Up and Down)</a> 과 유사한 구조입니다. 여기서 유사 인공지능을 구현하는데 컴퓨터가 지고 있는 게임을 하면 안되기 때문에 28 이상의 수에서 턴이 돌아온다면 컴퓨터가 무조건 이기는 판단을 하도록 합시다.</p>
+    <p>저는 뼛속까지 아싸라 배스킨라빈스라는 게임이 뭔지 몰랐었는데요.. 두 사람이서 번갈아가면서 1에서 3까지를 말하다가 어떤 사람이 31을 말하게 되면 그 사람이 지는 게임이라고 합니다. <a href="/posts/예제-업앤다운up-and-down">Java 예제: 업앤다운(Up and Down)</a> 과 유사한 구조입니다. 여기서 유사 인공지능을 구현하는데 컴퓨터가 지고 있는 게임을 하면 안되기 때문에 28 이상의 수에서 턴이 돌아온다면 컴퓨터가 무조건 이기는 판단을 하도록 합시다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -805,126 +868,128 @@
 117
 118
 119
-</pre></td><td class="rouge-code"><pre>import java.util.Scanner;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
  
-public class BaskinRobbins {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BaskinRobbins</span> <span class="o">{</span>
     
-    static Scanner s = new Scanner(System.in);
-    static int meWin = 0;
-    static int comWin = 0;
+    <span class="kd">static</span> <span class="nc">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">meWin</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">comWin</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
  
-    public static void main(String[] args) {
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         
-        while(true)
-        {
-            System.out.println("==== Baskin Robbins31 Game ====");
-            System.out.println();
-            System.out.println("1. Game Start");
-            System.out.println("2. Game Score");
-            System.out.println("3. End Game");
-            System.out.print("\n&gt; ");
+        <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"==== Baskin Robbins31 Game ===="</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"1. Game Start"</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"2. Game Score"</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"3. End Game"</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"\n&gt; "</span><span class="o">);</span>
             
-            int menuSelect = s.nextInt();
+            <span class="kt">int</span> <span class="n">menuSelect</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
             
-            if(menuSelect == 1) {
-            	game();
-            } else if(menuSelect == 2) {
-                System.out.println("\n=== SCORE ====\n");    
-                System.out.println("Me Win: " + meWin);
-                System.out.println("Com Win: " + comWin);
-                if (meWin == 0 &amp;&amp; comWin == 0)
-                    System.out.println("아직 게임을 시작하지 않으셨군요? 게임을 먼저 해보세요!");
-                System.out.println();
-            } else if(menuSelect == 3) {
-                System.out.println("\nThank you for playing!");
-                System.exit(0);
-            }
-            else {
-                System.out.println("Enter correct number please! (1~3)\n");
-            }                        
-        }
+            <span class="k">if</span><span class="o">(</span><span class="n">menuSelect</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            	<span class="n">game</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">menuSelect</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n=== SCORE ====\n"</span><span class="o">);</span>    
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Me Win: "</span> <span class="o">+</span> <span class="n">meWin</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Com Win: "</span> <span class="o">+</span> <span class="n">comWin</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">meWin</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">comWin</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"아직 게임을 시작하지 않으셨군요? 게임을 먼저 해보세요!"</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">menuSelect</span> <span class="o">==</span> <span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\nThank you for playing!"</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">else</span> <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Enter correct number please! (1~3)\n"</span><span class="o">);</span>
+            <span class="o">}</span>                        
+        <span class="o">}</span>
  
-    }
+    <span class="o">}</span>
     
-    public static void game()
-    {
-        System.out.println();
-        System.out.println("&lt;&lt; Game Start &gt;&gt;");
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">game</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;&lt; Game Start &gt;&gt;"</span><span class="o">);</span>
         
-        int lastNum = 0;        
+        <span class="kt">int</span> <span class="n">lastNum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>        
         
-        while(true) {    
+        <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>    
             
-            // =======사용자 턴=========
-            int userNum = 1;
-            while(true) {
+            <span class="c1">// =======사용자 턴=========</span>
+            <span class="kt">int</span> <span class="n">userNum</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
                 
-                System.out.print("Input Number(1~3) &gt;&gt; ");
-                userNum = s.nextInt();
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Input Number(1~3) &gt;&gt; "</span><span class="o">);</span>
+                <span class="n">userNum</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
                 
-                if (1 &lt;= userNum &amp;&amp; userNum &lt;= 3)
-                    break;
-                else
-                    System.out.println("숫자를 제대로 입력하세요. (1~3)\n");
-            }                
+                <span class="k">if</span> <span class="o">(</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">userNum</span> <span class="o">&amp;&amp;</span> <span class="n">userNum</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="o">)</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="k">else</span>
+                    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"숫자를 제대로 입력하세요. (1~3)\n"</span><span class="o">);</span>
+            <span class="o">}</span>                
             
-            // 숫자 외치기(사람)
-            for(int i = (lastNum + 1); i &lt;= lastNum + userNum; i++) {
+            <span class="c1">// 숫자 외치기(사람)</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="n">lastNum</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">lastNum</span> <span class="o">+</span> <span class="n">userNum</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
                 
-                if ( i &gt; 31 ) {
-                    break;
-                }
-                System.out.println(i + " " + "!");                 
-            }
+                <span class="k">if</span> <span class="o">(</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">31</span> <span class="o">)</span> <span class="o">{</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="s">"!"</span><span class="o">);</span>                 
+            <span class="o">}</span>
             
-            lastNum += userNum;
+            <span class="n">lastNum</span> <span class="o">+=</span> <span class="n">userNum</span><span class="o">;</span>
 
-            if (lastNum &gt;= 31) {
-                //System.out.println(lastNum);
-                System.out.println("\n너의 패배입니다. 컴퓨터의 승리입니다.\n");
-                comWin++;
-                break;
-            }
+            <span class="k">if</span> <span class="o">(</span><span class="n">lastNum</span> <span class="o">&gt;=</span> <span class="mi">31</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">//System.out.println(lastNum);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n너의 패배입니다. 컴퓨터의 승리입니다.\n"</span><span class="o">);</span>
+                <span class="n">comWin</span><span class="o">++;</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
                 
-            System.out.println();
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
                 
-            // =======컴퓨터 턴=========           
-            System.out.println("컴퓨터 턴!");
+            <span class="c1">// =======컴퓨터 턴=========           </span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"컴퓨터 턴!"</span><span class="o">);</span>
             
-            int comNum = 0;
+            <span class="kt">int</span> <span class="n">comNum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
             
-            if ( lastNum == 27 )    // lasNum이 27일때 무조건 3(28, 29, 30)
-                comNum = 3;
-            else if ( lastNum == 28 )    // lasNum이 28일때 무조건 2(29, 30)
-                comNum = 2;
-            else if ( lastNum == 29 )    // lasNum이 29일때 무조건 1(30)
-                comNum = 1;
-            else
-                comNum = (int)( Math.random() * (3 - 1 + 1)  + 1 );    // 1~3
+            <span class="k">if</span> <span class="o">(</span> <span class="n">lastNum</span> <span class="o">==</span> <span class="mi">27</span> <span class="o">)</span>    <span class="c1">// lasNum이 27일때 무조건 3(28, 29, 30)</span>
+                <span class="n">comNum</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span> <span class="n">lastNum</span> <span class="o">==</span> <span class="mi">28</span> <span class="o">)</span>    <span class="c1">// lasNum이 28일때 무조건 2(29, 30)</span>
+                <span class="n">comNum</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span> <span class="n">lastNum</span> <span class="o">==</span> <span class="mi">29</span> <span class="o">)</span>    <span class="c1">// lasNum이 29일때 무조건 1(30)</span>
+                <span class="n">comNum</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="k">else</span>
+                <span class="n">comNum</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)(</span> <span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="o">(</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>  <span class="o">+</span> <span class="mi">1</span> <span class="o">);</span>    <span class="c1">// 1~3</span>
             
-            // 숫자 외치기(컴)
-            for(int i = (lastNum + 1); i &lt;= lastNum + comNum; i++) {
+            <span class="c1">// 숫자 외치기(컴)</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="n">lastNum</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">lastNum</span> <span class="o">+</span> <span class="n">comNum</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
                         
-                if ( i &gt; 31 ) {
-                    break;
-                }
-                System.out.println(i + " " + "!");      
-            }
+                <span class="k">if</span> <span class="o">(</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">31</span> <span class="o">)</span> <span class="o">{</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="s">"!"</span><span class="o">);</span>      
+            <span class="o">}</span>
             
-            lastNum += comNum;
+            <span class="n">lastNum</span> <span class="o">+=</span> <span class="n">comNum</span><span class="o">;</span>
             
-            if (lastNum &gt;= 31) {
-                System.out.println("\n컴퓨터의 패배입니다. 너의 승리입니다.\n");
-                meWin++;
-                break;
-            }
+            <span class="k">if</span> <span class="o">(</span><span class="n">lastNum</span> <span class="o">&gt;=</span> <span class="mi">31</span><span class="o">)</span> <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n컴퓨터의 패배입니다. 너의 승리입니다.\n"</span><span class="o">);</span>
+                <span class="n">meWin</span><span class="o">++;</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
                 
-            System.out.println();
-        }
-    }
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
  
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="동작-화면"><span class="me-2">동작 화면</span><a href="#동작-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2019/01/bask-cropped.gif" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/bask-cropped.gif" alt="" loading="lazy"></a></p>
 
@@ -2139,6 +2204,12 @@ public class BaskinRobbins {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2172,18 +2243,6 @@ public class BaskinRobbins {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8189,7 +8248,7 @@ public class BaskinRobbins {
 
               <h4 class="pt-0 my-2">Java 예제: 가위바위보 (공식 이용법 추가)</h4>
               <div class="text-muted">
-                <p>컴퓨터와 가위바위보를 하는 게임입니다. 컴퓨터는 난수를 이용해 낼 패를 결정합니다. 가위바위보 스트링을 만드는 부분이 번거롭기 때문에 gbbStr 이라는 별도의 메소드로 분리해 해당 작업을 처리하도록 히겠습니다. 이 예제는 자바 계산기의 내용과 이어집니다.  import java.util.Scanner;  public class Random03 {  ...</p>
+                <p>컴퓨터와 가위바위보를 하는 게임입니다. 컴퓨터는 난수를 이용해 낼 패를 결정합니다. 가위바위보 스트링을 만드는 부분이 번거롭기 때문에 gbbStr 이라는 별도의 메소드로 분리해 해당 작업을 처리하도록 히겠습니다. 이 예제는 자바 계산기의 내용과 이어집니다.  방법 1  import java.util.Scanner;  public class Random...</p>
               </div>
             </div>
           </a>
@@ -8224,7 +8283,7 @@ public class BaskinRobbins {
         </article>
       
         <article class="col">
-          <a href="/posts/java-swing-%ED%82%A4%EB%B3%B4%EB%93%9C%EB%A1%9C-%EC%95%84%EC%9D%B4%EC%BD%98-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0/" class="post-preview card h-100">
+          <a href="/posts/%EC%9E%90%EB%B0%94-%EB%9E%8C%EB%8B%A4%EC%8B%9D-lambda-expression/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -8236,16 +8295,16 @@ public class BaskinRobbins {
 
 <time
   
-  data-ts="1553094000"
+  data-ts="1546700400"
   data-df="ll"
   
 >
-  Mar 21, 2019
+  Jan  6, 2019
 </time>
 
-              <h4 class="pt-0 my-2">Java Swing: 키보드로 아이콘 이동하기</h4>
+              <h4 class="pt-0 my-2">자바(Java): 람다식 (Lambda Expression) 기초 (Java 8 이상)</h4>
               <div class="text-muted">
-                <p>Java 로 그림 움직이기  난 그냥 그림 하나만 움직이고 싶었을 뿐인데.. 왜이렇게 어려워..  ``` package blog.gui;  import java.awt.Cursor; import java.awt.EventQueue; import java.awt.Image; import java.awt.Toolkit; import java.awt.eve...</p>
+                <p>람다식은 함수형 인터페이스(Functional Interface)을 쉽게 사용할 수 있도록 지원합니다. 함수형 인터페이스는 메소드가 한 개만 있는 인터페이스를 의미하며, 보통의 인터페이스에 메소드를 한 개만 만들면 자동으로 함수형 인터페이스가 됩니다.  컴파일러 단계에서 함수형 인터페이스를 명시하고 싶다면 @FunctionalInterface 를 이용...</p>
               </div>
             </div>
           </a>
@@ -8266,11 +8325,11 @@ public class BaskinRobbins {
 
   
     <a
-      href="/posts/%EC%98%88%EC%A0%9C-%EB%9E%9C%EB%8D%A4%EB%B0%95%EC%8A%A4/"
+      href="/posts/%EC%98%88%EC%A0%9C-%EA%B0%80%EC%9C%84%EB%B0%94%EC%9C%84%EB%B3%B4/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Java 예제: 랜덤박스 (Math.random 이용)</p>
+      <p>Java 예제: 가위바위보 (공식 이용법 추가)</p>
     </a>
   
 
