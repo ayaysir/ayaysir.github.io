@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="일본어 가사를 quizlet 포맷으로 변환해준다.">
+	<meta name="subject" content="일본어 가사를 Quizlet으로 공부하자!">
+	<meta name="classification" content="유틸리티">
+	<meta name="keywords" content="www,web,world wide web,html,css,javascript,Japan,lyric,j-pop">
+	<meta name="robots" content="ALL">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>일본어 가사를 Quizlet으로 공부하자!</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+
+        }
+
+        #inputArea,
+        #outputArea {
+            width: 48%;
+            float: left;
+        }
+
+        #inputArea textarea {
+            width: 95%;
+        }
+    </style>
+
+</head>
+
+<body>
+   <div> 
+   <h1>일본어 가사를 Quizlet으로 공부하자!</h1>
+   <div id=adArea>            
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- ads3 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6364767349592629"
+                 data-ad-slot="3802096603"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+   </div>
+    <div id=inputArea>
+        <input id=chkDeleteOneLine type="checkbox"><label for=chkDeleteOneLine>공백 두 줄을 한 줄로 대체 (\n\n을 \n으로 대체)</label>
+		<input id=btnClearArea type="button" value="내용 삭제">
+        <textarea id=innerInputArea rows=40></textarea>
+    </div>
+    <div id=outputArea>
+        <button id=btnConvert type="button">☞ Quizlet Format으로 변환하기</button>
+        <a href="https://quizlet.com/create-set" target="_blank">Quizlet 카드 생성 페이지로 바로가기(로그인 되어있어야 함)</a>
+        <div id=innerOutputArea></div>
+        
+    </div>
+
+
+    <script>
+
+        document.getElementById('btnConvert').addEventListener("click", function() {
+            
+            function copyToClipboard(val) {
+              var t = document.createElement("textarea");
+              document.body.appendChild(t);
+              t.value = val;
+              t.select();
+              document.execCommand('copy');
+              document.body.removeChild(t);
+            }
+                // String regex = "\\[([a-zA-Z0-9ㄱ-힣]*)\\]";
+            var check1 = document.getElementById('chkDeleteOneLine');
+            var bracketRegex = /\[([a-zA-Z0-9ㄱ-힣]*)\]/g
+            var textArr
+            if (check1.checked) {
+                var text = document.getElementById('innerInputArea').value
+                var refinedText = text.replace(/(?:\r\n|\r|\n)/g, '\n').replace(/(?:\n\n)/g, '\n').replace(bracketRegex, '')
+                // console.log(refinedText)
+                textArr = refinedText.split("\n")
+            } else {
+                 textArr = document.getElementById('innerInputArea').value.replace(bracketRegex, '').split("\n")
+            }
+
+            console.log(textArr)
+            textArr.push("")
+
+            
+            var arrangedText = "";
+            var errorText = ""
+            var tempLineCount = 0
+            for (i in textArr) {
+                if (textArr[i] == "" || textArr[i].match(/[0-9]절/) ) {
+                    // console.log(i, tempLineCount)
+                    if (tempLineCount == 3) {
+                        
+                        arrangedText += textArr[i - 3] + "\t" + textArr[i - 1] + " （" + textArr[i - 2] + "）\n"
+                    } else if (tempLineCount % 3 == 0){
+                        
+                            // console.log(i, textArr[i], textArr[i+2], textArr[i+1])
+                            // arrangedText += textArr[i - tempLineCount.length - 1 + j] + "\t" + textArr[i - tempLineCount.length - 1 + ] + " [" + textArr[i - tempLineCount.length] + "]\n"
+                            
+                            var divi = tempLineCount / 3;
+							for(x = divi; x > 0; x--) {
+								// subSb.append(cha.get(i - (3*x)).trim().replaceAll(regex, "") + "\t");
+								// subSb.append(cha.get(i - (3*x-2)).trim().replaceAll(regex, "") + " [" + cha.get(i - (3*x-1)).trim().replaceAll(regex, "") + "]\n");
+                                console.log(i, textArr[i - (3 * x)], textArr[i - (3 * x - 2)], textArr[i - (3*x-1)])
+                                arrangedText += textArr[i - (3 * x)] + "\t" + textArr[i - (3 * x - 2)] + " [" + textArr[i - (3*x-1)] + "]\n"
+							}
+                        
+                    } else {
+                        // errorText = "에러: \n"
+                        for(x = tempLineCount; x > 0; x--) {
+								// subSb.append(cha.get(i - x).trim().replaceAll(regex, "") + "\n");
+                                errorText += textArr[i - x] + "\n"
+				        }
+                    }
+
+                    tempLineCount = 0
+                } else {
+
+                    tempLineCount++
+                }
+            }
+            // console.log(arrangedText)
+            document.getElementById('innerOutputArea').innerHTML = ""
+            if(arrangedText != ""){
+                 document.getElementById('innerOutputArea').innerHTML 
+                     = "<pre>" + arrangedText + "</pre>"
+                if(errorText != ""){
+                    console.error(errorText)
+                }
+                copyToClipboard(arrangedText)
+                alert('클립보드에 복사되었습니다.')
+            } else {
+                alert('결과가 나오지 않는다면 올바른 가사 텍스트를 넣거나 또는 공백 옵션을 체크해보시기 바랍니다.')
+                console.error(errorText)
+            }
+           
+            
+        })
+		
+		document.getElementById('btnClearArea').onclick = function(){
+			document.getElementById('innerInputArea').value = ""
+		}
+    </script>
+</body>
+</html>

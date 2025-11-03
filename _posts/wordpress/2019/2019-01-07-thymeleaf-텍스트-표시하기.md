@@ -7,22 +7,21 @@ categories:
 tags: 
   - "thymeleaf"
 ---
-
-#### 소개
+# 소개
 
 [Thymeleaf](https://www.thymeleaf.org/)는 Spring Boot에서 밀어주고 있는 View 템플릿 엔진입니다. 기존 View 템플릿들과의 차이점이라면 HTML 태그의 속성을 이용한 페이지 제작이 가능해서 Thymeleaf 문법으로 페이지를 만들면 서버의 도움 없이도 온전한 프로토타입의 HTML 페이지를 살펴볼 수 있다는 점이 장점이라고 합니다.
 
-예를 들어, 기존의 JSTL을 이용한 JSP 페이지에서는 WAS가 구동되지 않으면 페이지를 온전히 표시할 방법은 없으나 ,Thymeleaf로 만들면 WAS가 구동되지 않는 환경에서도 프론트엔드 프로그래머 또는 웹 디자이너가 원하는 모양의 페이지를 프로토타입 형식으로 볼 수 있어 MVC 패턴의 업무 분할이 더욱 명확해질 수 있다고 Thymeleaf 측에서는 주장하고 있습니다.
+예를 들어, 기존의 JSTL을 이용한 JSP 페이지에서는 WAS(Web Application Server)가 구동되지 않으면 페이지를 온전히 표시할 방법은 없으나, Thymeleaf로 만들면 WAS가 구동되지 않는 환경에서도 프론트엔드 프로그래머 또는 웹 디자이너가 원하는 모양의 페이지를 프로토타입 형식으로 볼 수 있어 MVC 패턴의 업무 분할이 더욱 명확해질 수 있다고 Thymeleaf 측에서는 주장하고 있습니다.
 
-물론 데이터는 서버에서 받아와야하므로 실제 데이터를 포함한 페이지는 무리겠지만 프로토타입이므로 별로 상관없을까요? 그리고 JSP를 쓸 수 없는 일반 HTML 에디터나 드림위버같은 고급툴을 사용할 수 있어 좀 더 편하게 작업할 수 있습니다.
+물론 데이터는 서버에서 받아와야하므로 실제 데이터를 포함한 페이지는 무리겠지만 프로토타입이므로 별로 상관없을까요?
 
  
 
-#### 기본 환경 세팅
+## 기본 환경 세팅
 
 예제를 보면 다음과 같습니다. 컨트롤러와 페이지 2개입니다.
 
-```
+```java
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,9 +72,9 @@ public class TestController {
 
  
 
-#### 기본 문법
+## 기본 문법
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,9 +106,9 @@ Thymeleaf는 값을 넣거나 조작하고자 하는 HTML 태그 속성란에 `
 
  
 
-#### 텍스트 표시
+### 텍스트 표시
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -124,4 +123,5 @@ Thymeleaf는 값을 넣거나 조작하고자 하는 HTML 태그 속성란에 `
 
 요소에 텍스트를 표시하고 싶다면 `data-th-text` 속성을 이용합니다. 서버를 통하지 않는 일반 웹 페이지 방식으로 보면 \[_사용자 이름_\]으로 표시되지만 서버를 통해 실행하면 \[_사용자 이름_\]이라는 텍스트는 서버 렌더링 과정에서 사라지고 `${session.name}`을 표시합니다.
 
-![운영자손님](./assets/img/wp-content/uploads/2019/01/운영자손님.png)
+![운영자손님](/assets/img/wp-content/uploads/2019/01/thymeleaf-admin-user.png)
+
