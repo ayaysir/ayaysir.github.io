@@ -26,7 +26,7 @@ iTunes (또는 Finder)는 iPhone이 복구 모드에서 발견되었다는 경�
 
 IPSW 파일이 Apple에 의해 활성화된 상태이고, 특정 iPhone XR, XS, XS Max, X 모델과 일치하는 한, 필요한 경우 IPSW를 사용하여 복구 모드의 iPhone을 복원 할 수도 있습니다. 최신 iOS 버전의 iOS IPSW 파일은 [여기](http://ipsw.me)에서 찾을 수 있습니다.
 
-\[the\_ad id="1804"\]
+
 
 ##### **iPhone XR, XS, XS Max, X에서 복구 모드를 종료하는 방법**
 

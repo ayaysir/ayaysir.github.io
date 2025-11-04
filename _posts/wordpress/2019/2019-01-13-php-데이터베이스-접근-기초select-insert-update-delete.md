@@ -9,7 +9,9 @@ tags:
   - "php"
 ---
 
-#### **1\. SELECT**
+## PHP 코드 부분
+
+### **1\. SELECT**
 
 - php의 코드는 일반 텍스트와 구분하여 `<?php [...코드...] ?>`를 사용합니다. 또는 `<?[...코드...] ?>도` 가능합니다.
 - HTML 코드 내에서 변수 등을 단순히 출력하고자 할 때는 `<?=[변수 이름 등]?>` 의 형태로 사용합니다.
@@ -20,7 +22,7 @@ tags:
 - 데이터베이스 쿼리를 읽어들이는 코드는 `$res=$mysqli-> query([sql 구문]);` 입니다.
 - 문장 끝에 세미콜론( `;` )은 반드시 붙여야 합니다.
 
-```
+```php
 <div class=container>
         <div class=row>
             <div class=col-12>
@@ -77,7 +79,7 @@ tags:
 
  
 
-#### **2\. INSERT**
+### **2\. INSERT**
 
 - 한글이 깨지지 않도록 하려면 맨 위에 `header('Content-Type: text/html; charset=utf-8'``);`를 추가합니다.
 - 매개변수(Parameter)를 받을 때는 `$_GET[이름]` 또는 `$_POST[이름]`으로 적고, 이름에는 따옴표를 넣지 않습니다.
@@ -85,7 +87,7 @@ tags:
 - sql 구문 php 변수를 넣는 방법은 sql 구문 안에 홑따옴표(`'  '`)를 친 뒤 `$변수명` 같은 방식으로 입력합니다.
 - 아래 예제에서는 리다이렉트 방식으로 자바스크립트를 이용하였습니다.
 
-```
+```php
 <?php
  
     header('Content-Type: text/html; charset=utf-8');
@@ -121,9 +123,9 @@ tags:
 
  
 
-#### **3\. UPDATE**
+### **3\. UPDATE**
 
-```
+```php
 <?php
  
     header('Content-Type: text/html; charset=utf-8');
@@ -155,9 +157,9 @@ tags:
 
  
 
-#### **4\. DELETE**
+### **4\. DELETE**
 
-```
+```php
 <?php
  
 header('Content-Type: text/html; charset=utf-8');
@@ -176,23 +178,26 @@ $seq = $_POST['seq'];
 
 ```
 
+### 동작화면
  
 
-[ ![](/assets/img/wp-content/uploads/2019/01/스크린샷_2018-09-10_오후_6.28.43.png)](http://www.yoonbumtae.com/phpex)
+<!-- [ ](http://www.yoonbumtae.com/phpex) -->
+![](/assets/img/wp-content/uploads/2019/01/php-example-1.png)
 
-[사이트에서 직접 보기](http://yoonbumtae.com/phpex)
+<!-- [사이트에서 직접 보기](http://yoonbumtae.com/phpex) -->
 
  
+### 참고: sql 에러 표시
 
 참고로 sql 관련 에러를 표시하는 방법은 다음과 같습니다 - `echo mysqli_error($mysqli);`
 
 * * *
 
-##### **데이터베이스 구조**
+## **데이터베이스 구조**
 
  ![](/assets/img/wp-content/uploads/2019/01/-2021-02-17-오후-12.20.39-e1613532613329.png)
 
-```
+```sql
 --
 -- 테이블 구조 `messages`
 --

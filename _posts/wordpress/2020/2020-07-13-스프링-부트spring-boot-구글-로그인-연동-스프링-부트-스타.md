@@ -58,7 +58,7 @@ implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
  
 
-\[the\_ad id="1804"\]
+
 
  
 
@@ -116,7 +116,7 @@ public enum Role {
 
  
 
-\[the\_ad id="1804"\]
+
 
  
 
@@ -310,7 +310,7 @@ public class OAuthAttributes {
 
  
 
-\[the\_ad id="1804"\]
+
 
  
 
@@ -472,7 +472,7 @@ public class SessionUser implements Serializable {
 
  
 
-\[the\_ad id="1804"\]
+
 
  
 
@@ -559,7 +559,7 @@ public class IndexController {
 
  
 
-\[the\_ad id="1804"\]
+
 
  
 

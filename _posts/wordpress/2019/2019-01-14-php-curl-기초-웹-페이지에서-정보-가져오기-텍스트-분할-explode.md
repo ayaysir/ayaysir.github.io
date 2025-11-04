@@ -10,7 +10,9 @@ tags:
 
 웹사이트에서 POST를 통한 로그인을 한 뒤 정보를 가져오는 예제입니다. 만약 로그인이 필요한 웹 페이지라면, 로그인 정보를 POST로 보내고 쿠키로 저장하는 과정이 추가로 필요합니다.
 
-```
+## 코드
+
+```php
 <?php
  
 $html_brand = "[리퀘스트를 보낼 주소]";
@@ -56,4 +58,6 @@ curl_close($ch);
 ?>
 ```
 
- ![](/assets/img/wp-content/uploads/2019/01/스크린샷_2018-11-05_오전_1.41.15.png)
+## 동작화면
+
+ ![](/assets/img/wp-content/uploads/2019/01/curl-example-1.png)

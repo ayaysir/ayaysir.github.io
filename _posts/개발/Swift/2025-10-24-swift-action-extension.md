@@ -5,7 +5,7 @@ date: 2025-10-24 21:11:00 +0900
 categories: 
   - "DevLog"
   - "Swift"
-tags: [Swift, SwiftUI]
+tags: [swift, SwiftUI]
 ---
 
 “Action Extension으로 사진을 내 앱에 넘기는 방법”은 Share Extension과 비슷하지만,

@@ -57,7 +57,7 @@ public List<UwasaEntityDTO> getUwasaByPageRequest(@PathVariable Integer pageNum)
 
 참고로 `<template>`의 전체 코드는 다음과 같습니다.
 
-\[the\_ad id="1804"\]
+
 
 ```
 <template>
@@ -136,7 +136,7 @@ export default {
 
  
 
-\[the\_ad id="1804"\]
+
 
 #### **6) methods에 infiniteHandler 구현**
 

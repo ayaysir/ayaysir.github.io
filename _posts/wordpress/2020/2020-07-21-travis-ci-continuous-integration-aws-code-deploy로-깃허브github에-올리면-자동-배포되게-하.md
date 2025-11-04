@@ -39,7 +39,7 @@ categories:
 
 [https://console.aws.amazon.com/](https://console.aws.amazon.com/)에서 IAM 선택
 
-\[caption id="attachment\_2740" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.37.07.png) 액세스 유형에서 `[프로그래밍 방식 액세스]` 선택\[/caption\]\[caption id="attachment\_2741" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.38.06.png) 권한 설정에서 `[기존 정책 직접 연결]`을 선택하고 `[AmazonS3FullAccess]` 및,\[/caption\]\[the\_ad id="1804"\]
+\[caption id="attachment\_2740" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.37.07.png) 액세스 유형에서 `[프로그래밍 방식 액세스]` 선택\[/caption\]\[caption id="attachment\_2741" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.38.06.png) 권한 설정에서 `[기존 정책 직접 연결]`을 선택하고 `[AmazonS3FullAccess]` 및,\[/caption\]
 
 \[caption id="attachment\_2742" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.38.41-1.png) `[AWSCodeDeployFullAccess]`를 선택합니다.\[/caption\]
 
@@ -53,7 +53,7 @@ categories:
 
  
 
-\[the\_ad id="1804"\]
+
 
 ##### **4\. S3 버킷 생성**
 
@@ -63,7 +63,7 @@ AWS S3은 파일을 저장할 수 있는 공간(버킷)을 제공하는 서비�
 
 \[caption id="attachment\_2747" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.42.25.png) 버킷 이름 입력\[/caption\]
 
-\[caption id="attachment\_2748" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.42.31.png) `[다음]` 버튼 클릭\[/caption\]\[the\_ad id="1804"\]
+\[caption id="attachment\_2748" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.42.31.png) `[다음]` 버튼 클릭\[/caption\]
 
 \[caption id="attachment\_2749" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.42.39.png) 반드시 `[모든 퍼블릭 액세스 차단]`을 선택하고 버킷 생성\[/caption\] 
 
@@ -71,11 +71,11 @@ AWS S3은 파일을 저장할 수 있는 공간(버킷)을 제공하는 서비�
 
 ##### **5\. IAM에서 EC2에 연동되는 코드 디플로이 역할(Role) 생성 후 EC2에 연동**
 
-\[caption id="attachment\_2750" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.43.50.png) `[역할 만들기]` 선택\[/caption\]\[caption id="attachment\_2751" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.43.57.png) 신뢰할 수 있는 유형의 개체 선택에서 `[AWS 서비스]`를 선택하고 사용 사례로 `[EC2]` 선택\[/caption\]\[caption id="attachment\_2752" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.44.35.png) `[AmazonEC2RoleforAWSCodeDeploy]` 체크\[/caption\]\[the\_ad id="1804"\]
+\[caption id="attachment\_2750" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.43.50.png) `[역할 만들기]` 선택\[/caption\]\[caption id="attachment\_2751" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.43.57.png) 신뢰할 수 있는 유형의 개체 선택에서 `[AWS 서비스]`를 선택하고 사용 사례로 `[EC2]` 선택\[/caption\]\[caption id="attachment\_2752" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.44.35.png) `[AmazonEC2RoleforAWSCodeDeploy]` 체크\[/caption\]
 
 \[caption id="attachment\_2753" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.44.54.png) 태그 추가\[/caption\]
 
-\[caption id="attachment\_2754" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.45.14.png) `역할 이름`을 입력합니다. 기존 역할 이름과 중복되면 안됩니다. `[역할 만들기]` 버튼을 클릭하면 역할이 만들어집니다.\[/caption\]\[caption id="attachment\_2755" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.46.10.png) `EC2` 서비스 페이지로 가서 `인스턴스 > 작업 > 인스턴스 실행 > [IAM 역할 연결바꾸기]` 버튼을 클릭합니다.\[/caption\]\[the\_ad id="1804"\]
+\[caption id="attachment\_2754" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.45.14.png) `역할 이름`을 입력합니다. 기존 역할 이름과 중복되면 안됩니다. `[역할 만들기]` 버튼을 클릭하면 역할이 만들어집니다.\[/caption\]\[caption id="attachment\_2755" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.46.10.png) `EC2` 서비스 페이지로 가서 `인스턴스 > 작업 > 인스턴스 실행 > [IAM 역할 연결바꾸기]` 버튼을 클릭합니다.\[/caption\]
 
 \[caption id="attachment\_2756" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.46.37.png) 방금 만들었던 역할을 선택합니다. 선택할 수 있는 역할이 표시되고 이 중 하나를 선택하면 됩니다.\[/caption\]
 
@@ -89,11 +89,11 @@ AWS S3은 파일을 저장할 수 있는 공간(버킷)을 제공하는 서비�
 
 \[caption id="attachment\_2758" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.49.57.png) 역할이 하나밖에 없어서 다음으로 넘어갑니다.\[/caption\]
 
-\[the\_ad id="1804"\]
+
 
 \[caption id="attachment\_2759" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.50.20.png) 태그를 입력합니다.\[/caption\]
 
-\[caption id="attachment\_2760" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.50.36.png) 역할 이름을 입력하고 `[역할 만들기]` 버튼을 클릭하면 역할이 만들어집니다.\[/caption\]\[caption id="attachment\_2761" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.51.05.png) 다음 `CodeDeploy` 페이지로 가서, `[애플리케이션]` 메뉴를 선택한 후 \[애플리케이션 생성\] 버튼을 클릭합니다.\[/caption\]\[the\_ad id="1804"\]
+\[caption id="attachment\_2760" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.50.36.png) 역할 이름을 입력하고 `[역할 만들기]` 버튼을 클릭하면 역할이 만들어집니다.\[/caption\]\[caption id="attachment\_2761" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.51.05.png) 다음 `CodeDeploy` 페이지로 가서, `[애플리케이션]` 메뉴를 선택한 후 \[애플리케이션 생성\] 버튼을 클릭합니다.\[/caption\]
 
 \[caption id="attachment\_2762" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.51.26.png) 애플리케이션 이름을 입력하고, 컴퓨팅 플랫폼으로 `[EC2/온프레미스]`를 선택합니다.\[/caption\]\[caption id="attachment\_2763" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.51.45.png) 애플리케이션 생성이 완료되었으면 \[배포 그룹 생성\] 버튼을 클릭합니다.\[/caption\]
 
@@ -101,7 +101,7 @@ AWS S3은 파일을 저장할 수 있는 공간(버킷)을 제공하는 서비�
 
 \[caption id="attachment\_2765" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.52.34.png) 빨간색 부분대로 선택합니다.\[/caption\]
 
-\[caption id="attachment\_2766" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.54.30.png) 이 부분이 중요합니다. 여기서 환경 구성을 `[Amazon EC2 인스턴스]`를 선택한 후, 태그 그룹 부분을 위와 같이 입력합니다. 키를 `Name`으로 지정한 다음, 클릭하면 목록이 나오는데 **현재 서비스중인 EC2 목록**이 나옵니다. 이 목록 중에서 실제 빌드 및 배포가 진행될 EC2 인스턴스를 선택합니다.\[/caption\]\[the\_ad id="1804"\]
+\[caption id="attachment\_2766" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.54.30.png) 이 부분이 중요합니다. 여기서 환경 구성을 `[Amazon EC2 인스턴스]`를 선택한 후, 태그 그룹 부분을 위와 같이 입력합니다. 키를 `Name`으로 지정한 다음, 클릭하면 목록이 나오는데 **현재 서비스중인 EC2 목록**이 나옵니다. 이 목록 중에서 실제 빌드 및 배포가 진행될 EC2 인스턴스를 선택합니다.\[/caption\]
 
 \[caption id="attachment\_2767" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-10.56.48.png) 빨간색처럼 설정 후 `[배포 그룹 생성]` 버튼을 클릭하면 배포 그룹이 생성됩니다.\[/caption\] 
 
@@ -165,7 +165,7 @@ The AWS CodeDeploy agent is running as PID *******
 
 \[caption id="attachment\_2769" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-11.50.23.png) 레퍼지토리 페이지에서 오른쪽 상단의 `More options > Settings`를 클릭합니다.\[/caption\]
 
-\[the\_ad id="1804"\]
+
 
 \[caption id="attachment\_2770" align="alignnone" width="1094"\] ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-21-오후-11.50.45.png) 변수명으로 사용할 이름을 입력하고 위에서 발급받은 `액세스 키`, `비밀 키`를 입력합니다. 이 변수들은 `.travis.yml`에서 `$[변수명]`으로 사용할 수 있습니다.\[/caption\]
 
@@ -229,7 +229,7 @@ deploy:
 
 트래비스 빌드가 안되는 이유는 첫째, 확장자가 `yml`이어야 합니다. (`yaml`인 경우 동작이 안됐습니다) 둘째, **문법에 맞지 않으면** 설정 파일을 인식하지 못하고 빌드가 되지 않습니다. 불편한 점은 설정 파일의 어디가 잘못되었는지 알려주지 않기 때문에 직접 찾아야 한다는 점입니다.
 
-\[the\_ad id="1804"\]
+
 
  
 

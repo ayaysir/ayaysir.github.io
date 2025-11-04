@@ -348,7 +348,7 @@ public class LoginController {
 
 대부분의 네아로 관련 액션은 콜백 부분에서 처리될 것입니다. 네아로 주소 가져오는 작업을 `getNaverOAuthURI` 이라는 메소드로 별도로 분리했습니다.
 
-\[the\_ad id="1804"\]
+
 
  
 
@@ -491,7 +491,7 @@ https://gist.github.com/ayaysir/efad25b1b3cd43c80b3964d24fae2bef
 
  
 
-\[the\_ad id="1804"\]
+
 
  
 

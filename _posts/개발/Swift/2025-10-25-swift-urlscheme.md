@@ -5,7 +5,7 @@ date: 2025-10-25 13:11:00 +0900
 categories: 
   - "DevLog"
   - "Swift"
-tags: [Swift]
+tags: [swift]
 ---
 
 iOS에서 Custom URL Scheme를 등록하는 방법입니다.

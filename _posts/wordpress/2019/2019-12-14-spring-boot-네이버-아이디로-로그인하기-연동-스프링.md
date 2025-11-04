@@ -161,7 +161,7 @@ public String addRowToOAuthTableForNaver(HttpSession session, Authentication aut
 
  
 
-\[the\_ad id="1804"\]
+
 
  
 
@@ -251,7 +251,7 @@ public String home(Model model, HttpSession session) throws Exception {
 
  
 
-\[the\_ad id="1804"\]
+
 
 ##### test-naver-callback.html (네이버 콜백 페이지)
 
@@ -290,7 +290,7 @@ public String home(Model model, HttpSession session) throws Exception {
 
  
 
-\[the\_ad id="1804"\]
+
 
 \[caption id="attachment\_1963" align="alignnone" width="707"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.30.51.png) 빨간 네모박스로 연동 여부를 물어봅니다.\[/caption\]
 
@@ -300,7 +300,7 @@ public String home(Model model, HttpSession session) throws Exception {
 
 \[caption id="attachment\_1964" align="alignnone" width="500"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.33.14.png) 네이버 계정과 연동되었으므로 아까 그 부분은 더 이상 나오지 않습니다.\[/caption\]
 
-\[the\_ad id="1804"\]
+
 
  
 

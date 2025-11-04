@@ -441,7 +441,7 @@ categories:
 
  
 
-\[the\_ad id="1804"\]
+
 
  
 

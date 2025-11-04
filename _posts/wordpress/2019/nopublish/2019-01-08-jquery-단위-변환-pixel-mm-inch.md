@@ -1,4 +1,5 @@
 ---
+published: false
 title: "JQuery: 단위 변환 (pixel - mm - inch)"
 date: 2019-01-08
 categories: 

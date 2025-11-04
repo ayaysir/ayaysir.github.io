@@ -7,14 +7,16 @@ categories:
 
 ---
 
-Swing의 기초 코드와 요소 반복 예제입니다. Swing 코드 작성 순서는 대략 다음과 같습니다.
+Java Swing의 기초 코드와 요소 반복 예제입니다. Swing 코드 작성 순서는 대략 다음과 같습니다.
 
 1. javax.swing.JFrame 클래스를 상속받는 클래스를 생성
 2. 라벨, 박스, 패널 등 컴포넌트 요소들을 private으로 선언
 3. 프레임의 초기 설정을 생성자 또는 적당한 위치에서 선언
 4. 컴포넌트 요소들을 프레임에 배치하는 메소드를 작성
 
-```
+## 코드
+
+```java
 package com.apple.hangeul;
 
 import java.awt.Color;
@@ -150,8 +152,10 @@ public class PrintArray extends JFrame {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-09-오후-9.14.39.png)
+## 동작화면
+
+![](/assets/img/wp-content/uploads/2019/01/java-array-visualization.png)
 
 아래는 정보처리기사 실기에서 나오는 배열 예제(모래시계 배열)입니다.
 
- ![](/assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-09-오후-9.14.53.png)
+![](/assets/img/wp-content/uploads/2019/01/java-array-visualization-1.png)

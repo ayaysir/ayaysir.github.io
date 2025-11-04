@@ -5,7 +5,7 @@ date: 2025-10-25 13:12:00 +0900
 categories: 
   - "DevLog"
   - "Xcode/iOS기타"
-tags: [Swift]
+tags: [swift]
 ---
 
 Xcode 13부터 새로운 프로젝트에는 **Info.plist** 파일이 기본적으로 생성되지 않습니다. 대신 프로젝트 네비게이터에서 Target > Info 탭을 통해 설정할 수 있습니다. 

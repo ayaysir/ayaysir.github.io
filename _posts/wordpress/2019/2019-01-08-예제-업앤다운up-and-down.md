@@ -11,6 +11,11 @@ categories:
 
 이 예제는 나 홀로 사람이며, 상대방과 중재자는 모두 컴퓨터입니다. 초기 화면에서 게임을 진행하거나 현재 스코어를 볼 수 있습니다. 현재 스코어는 프로그램이 켜져 있는 동안엔 항상 저장되어 있어야 하므로 main 메소드 밖에서 멤버 필드로 선언합니다. 112번 라인 이후를 보면 현재 상황을 if문으로 판단하고 Math.random과 Thread.sleep을 사용해 매우 기초적인 수준의 인공지능을 흉내내고 있는 부분입니다.
 
-https://gist.github.com/ayaysir/e3b81dde9639496272cf679a6403ad6a
+## 코드
+
+<!-- https://gist.github.com/ayaysir/e3b81dde9639496272cf679a6403ad6a -->
+{% gist "e3b81dde9639496272cf679a6403ad6a" %}
+
+## 동작화면
 
  ![](/assets/img/wp-content/uploads/2019/01/upanddown-cropped.gif)

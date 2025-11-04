@@ -145,7 +145,7 @@ public class IndexController {
 
  
 
-\[the\_ad id="1804"\]
+
 
 #### **3) 뷰 페이지(index.html) 의 페이지 블록 부분 작성**
 
@@ -178,7 +178,7 @@ public class IndexController {
 
  ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.49.02.png)
 
-\[the\_ad id="1804"\]
+
 
  ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.49.27.png)
 
