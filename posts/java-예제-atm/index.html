@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -239,7 +246,6 @@
   <!-- A placeholder to allow defining custom metadata -->
 
 </head>
-
 
   <body>
     <!-- The Side Bar -->
@@ -566,6 +572,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -596,7 +634,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Java 예제: ATM</h1>
     
@@ -670,7 +708,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="513 words"
+  title="519 words"
 >
   <em>2 min</em> read</span>
 
@@ -680,12 +718,36 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Java 예제: ATM</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Java 예제: ATM</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p><code class="language-plaintext highlighter-rouge">scanner</code>, <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">while</code>, <code class="language-plaintext highlighter-rouge">switch</code> ~ <code class="language-plaintext highlighter-rouge">case</code> 문 등의 기초 문법을 활용한 간단한 ATM 프로그램입니다. 어린이들이 은행 놀이 할 때 사용하면 좋겠네요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -784,105 +846,107 @@
 96
 97
 98
-</pre></td><td class="rouge-code"><pre>import java.util.Scanner;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 
-public class ATM {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ATM</span> <span class="o">{</span>
 
-  public static void main(String[] args) {
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
-    long deposit = 0;
+    <span class="kt">long</span> <span class="n">deposit</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
-    while(true) {
-      System.out.println("&lt;&lt; ATM &gt;&gt;");
-      System.out.println("1. 입금");
-      System.out.println("2. 출금");
-      System.out.println("3. 조회");
-      System.out.println("4. 종료");
-      System.out.print("&gt;&gt; ");
+    <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"&lt;&lt; ATM &gt;&gt;"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"1. 입금"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"2. 출금"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"3. 조회"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"4. 종료"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"&gt;&gt; "</span><span class="o">);</span>
 
-      Scanner s = new Scanner(System.in);
+      <span class="nc">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
 
-      int select = s.nextInt();
-      // 단위: 원
+      <span class="kt">int</span> <span class="n">select</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+      <span class="c1">// 단위: 원</span>
 
-      switch(select){
-      case 1:                
-        while(true) {
-          System.out.print( "\n입금할 금액을 입력하세요: ");
-          long currentDeposit = s.nextLong();
-          if (currentDeposit &gt;= 1)
-          {
-            deposit += currentDeposit;
-            break;
-          }                        
-          else
-            System.out.println( "(경고) 1원 이상의 금액을 입력하세요.\n");
-        }                
+      <span class="k">switch</span><span class="o">(</span><span class="n">select</span><span class="o">){</span>
+      <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>                
+        <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span> <span class="s">"\n입금할 금액을 입력하세요: "</span><span class="o">);</span>
+          <span class="kt">long</span> <span class="n">currentDeposit</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">nextLong</span><span class="o">();</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">currentDeposit</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="o">)</span>
+          <span class="o">{</span>
+            <span class="n">deposit</span> <span class="o">+=</span> <span class="n">currentDeposit</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+          <span class="o">}</span>                        
+          <span class="k">else</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="s">"(경고) 1원 이상의 금액을 입력하세요.\n"</span><span class="o">);</span>
+        <span class="o">}</span>                
 
-        System.out.println("입금이 완료되었습니다.");
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"입금이 완료되었습니다."</span><span class="o">);</span>
 
-        // 현재 잔액 표시
-        System.out.println("\n현재 잔액: ￦" + deposit + "\n");                
-        break;
+        <span class="c1">// 현재 잔액 표시</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n현재 잔액: ￦"</span> <span class="o">+</span> <span class="n">deposit</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>                
+        <span class="k">break</span><span class="o">;</span>
 
-      case 2:
-        System.out.println("\n현재 잔액: ￦" + deposit + "\n");                    
+      <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n현재 잔액: ￦"</span> <span class="o">+</span> <span class="n">deposit</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>                    
 
-        // 잔액이 없을 시
-        if ( deposit == 0) {
-          System.out.println("(경고) 잔액이 없습니다.\n");
-        }
-        else
-        {
+        <span class="c1">// 잔액이 없을 시</span>
+        <span class="k">if</span> <span class="o">(</span> <span class="n">deposit</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"(경고) 잔액이 없습니다.\n"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
 
-          while(true) {
+          <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
 
-            System.out.print( "\n출금할 금액을 입력하세요 (0: 빠져나가기): ");
-            long currentWithdraw = s.nextLong();
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span> <span class="s">"\n출금할 금액을 입력하세요 (0: 빠져나가기): "</span><span class="o">);</span>
+            <span class="kt">long</span> <span class="n">currentWithdraw</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">nextLong</span><span class="o">();</span>
 
-            if( currentWithdraw &lt; 0 )
-              System.out.println("(경고) 마이너스 단위는 출금할 수 없습니다.\n");
-            else if( currentWithdraw == 0)
-            {
-              System.out.println("(경고) 출금 절차를 종료합니다.\n");
-              break;
-            }
-            else if ( currentWithdraw &gt; deposit)
-              System.out.println("(경고) 잔액보다 많은 액수를 출금할 수 없습니다.\n");
-            else
-            {
-              deposit -= currentWithdraw;
-              System.out.println("출금이 완료되었습니다.");
+            <span class="k">if</span><span class="o">(</span> <span class="n">currentWithdraw</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">)</span>
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"(경고) 마이너스 단위는 출금할 수 없습니다.\n"</span><span class="o">);</span>
+            <span class="k">else</span> <span class="nf">if</span><span class="o">(</span> <span class="n">currentWithdraw</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+            <span class="o">{</span>
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"(경고) 출금 절차를 종료합니다.\n"</span><span class="o">);</span>
+              <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span> <span class="n">currentWithdraw</span> <span class="o">&gt;</span> <span class="n">deposit</span><span class="o">)</span>
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"(경고) 잔액보다 많은 액수를 출금할 수 없습니다.\n"</span><span class="o">);</span>
+            <span class="k">else</span>
+            <span class="o">{</span>
+              <span class="n">deposit</span> <span class="o">-=</span> <span class="n">currentWithdraw</span><span class="o">;</span>
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"출금이 완료되었습니다."</span><span class="o">);</span>
 
-              System.out.println("\n현재 잔액: ￦" + deposit + "\n");    
-              break;
-            }
-          } // while 끝
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n현재 잔액: ￦"</span> <span class="o">+</span> <span class="n">deposit</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>    
+              <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+          <span class="o">}</span> <span class="c1">// while 끝</span>
 
-        }
+        <span class="o">}</span>
 
-        break;
+        <span class="k">break</span><span class="o">;</span>
 
-      case 3:
-        System.out.println("\n현재 잔액: ￦" + deposit + "\n");    
-        break;
+      <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n현재 잔액: ￦"</span> <span class="o">+</span> <span class="n">deposit</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>    
+        <span class="k">break</span><span class="o">;</span>
 
-      case 4:
-        System.out.println("\nATM을 종료합니다.");
-        System.exit(0);
-        break;
+      <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\nATM을 종료합니다."</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+        <span class="k">break</span><span class="o">;</span>
 
-      default:
-        System.out.println("올바른 메뉴 번호를 입력하세요. (1~4)");
+      <span class="k">default</span><span class="o">:</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"올바른 메뉴 번호를 입력하세요. (1~4)"</span><span class="o">);</span>
 
-      }
+      <span class="o">}</span>
 
-    }
+    <span class="o">}</span>
 
-  }
+  <span class="o">}</span>
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="동작화면"><span class="me-2">동작화면</span><a href="#동작화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2019/01/atm-cropped.gif" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/atm-cropped.gif" alt="" loading="lazy"></a></p>
 
@@ -1153,11 +1217,6 @@ public class ATM {
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -1400,41 +1459,6 @@ public class ATM {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1659,6 +1683,149 @@ public class ATM {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1755,225 +1922,7 @@ public class ATM {
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -2097,6 +2046,12 @@ public class ATM {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2130,18 +2085,6 @@ public class ATM {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8392,11 +8335,6 @@ public class ATM {
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -8639,41 +8577,6 @@ public class ATM {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -8898,6 +8801,149 @@ public class ATM {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8994,225 +9040,7 @@ public class ATM {
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     

@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, 재귀함수)" />
+<meta property="og:title" content="자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, let 사용, 재귀함수)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="만약에 var ducks = [&quot;첫째 오리&quot;, &quot;둘째 오리&quot;, &quot;셋째 오리&quot;, &quot;넷째 오리&quot;, &quot;다섯째 오리&quot;] 이런 배열이 있고 이걸 1초 간격으로 하나씩 화면에 뿌리는 페이지를 만드는 상황이라고 가정합니다." />
-<meta property="og:description" content="만약에 var ducks = [&quot;첫째 오리&quot;, &quot;둘째 오리&quot;, &quot;셋째 오리&quot;, &quot;넷째 오리&quot;, &quot;다섯째 오리&quot;] 이런 배열이 있고 이걸 1초 간격으로 하나씩 화면에 뿌리는 페이지를 만드는 상황이라고 가정합니다." />
+<meta name="description" content="어떤 상황?" />
+<meta property="og:description" content="어떤 상황?" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-for%EB%AC%B8-%EC%95%88%EC%97%90-settimeout-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-iife-%EC%9E%AC%EA%B7%80/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-for%EB%AC%B8-%EC%95%88%EC%97%90-settimeout-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-iife-%EC%9E%AC%EA%B7%80/" />
 <meta property="og:site_name" content="BGSMM" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-01-17T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, 재귀함수)" />
+<meta property="twitter:title" content="자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, let 사용, 재귀함수)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-01-17T00:00:00+09:00","datePublished":"2019-01-17T00:00:00+09:00","description":"만약에 var ducks = [&quot;첫째 오리&quot;, &quot;둘째 오리&quot;, &quot;셋째 오리&quot;, &quot;넷째 오리&quot;, &quot;다섯째 오리&quot;] 이런 배열이 있고 이걸 1초 간격으로 하나씩 화면에 뿌리는 페이지를 만드는 상황이라고 가정합니다.","headline":"자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, 재귀함수)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-for%EB%AC%B8-%EC%95%88%EC%97%90-settimeout-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-iife-%EC%9E%AC%EA%B7%80/"},"url":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-for%EB%AC%B8-%EC%95%88%EC%97%90-settimeout-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-iife-%EC%9E%AC%EA%B7%80/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-01-17T00:00:00+09:00","datePublished":"2019-01-17T00:00:00+09:00","description":"어떤 상황?","headline":"자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, let 사용, 재귀함수)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-for%EB%AC%B8-%EC%95%88%EC%97%90-settimeout-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-iife-%EC%9E%AC%EA%B7%80/"},"url":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-for%EB%AC%B8-%EC%95%88%EC%97%90-settimeout-%ED%95%A8%EC%88%98-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-iife-%EC%9E%AC%EA%B7%80/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, 재귀함수) | BGSMM
+  <title>자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, let 사용, 재귀함수) | BGSMM
   </title>
 
   <!--
@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -239,7 +246,6 @@
   <!-- A placeholder to allow defining custom metadata -->
 
 </head>
-
 
   <body>
     <!-- The Side Bar -->
@@ -408,7 +414,7 @@
         
           
             
-              <span>자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, 재귀함수)</span>
+              <span>자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, let 사용, 재귀함수)</span>
             
 
           
@@ -566,10 +572,107 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -596,9 +699,9 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, 재귀함수)</h1>
+    <h1 data-toc-skip>자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, let 사용, 재귀함수)</h1>
     
 
     <div class="post-meta text-muted">
@@ -670,7 +773,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1589 words"
+  title="1571 words"
 >
   <em>8 min</em> read</span>
 
@@ -680,14 +783,40 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, let 사용, 재귀함수)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: for문 안에 setTimeout 함수 사용하는 방법 (IIFE, let 사용, 재귀함수)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>만약에 <code class="language-plaintext highlighter-rouge">var ducks = ["첫째 오리", "둘째 오리", "셋째 오리", "넷째 오리", "다섯째 오리"]</code> 이런 배열이 있고 이걸 1초 간격으로 하나씩 화면에 뿌리는 페이지를 만드는 상황이라고 가정합니다.</p>
+    <h2 id="어떤-상황"><span class="me-2">어떤 상황?</span><a href="#어떤-상황" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>시간을 지연시키는 함수로 <code class="language-plaintext highlighter-rouge">setTimeout(function(){...}, delayMillisecond)</code>가 있습니다. 콜백 함수와 지연할 시간을 밀리세컨드 단위로 입력해서 사용합니다. 1초 간격으로 반복하고 싶다면 이 기능을 <code class="language-plaintext highlighter-rouge">for</code>문으로 돌리면 될까요?</p>
+<p>만약에 <code class="language-plaintext highlighter-rouge">var ducks = ["첫째 오리", "둘째 오리", "셋째 오리", "넷째 오리", "다섯째 오리"]</code> 이런 배열이 있고 이걸 1초 간격으로 하나씩 화면에 뿌리는 페이지를 만드는 상황이라고 가정합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<p>시간을 지연시키는 함수로 <code class="language-plaintext highlighter-rouge">setTimeout(function(){...}, delayMillisecond)</code>가 있습니다.</p>
+
+<p>콜백 함수와 지연할 시간을 밀리세컨드 단위로 입력해서 사용합니다. 1초 간격으로 반복하고 싶다면 이 기능을 <code class="language-plaintext highlighter-rouge">for</code>문으로 돌리면 될까요?</p>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -697,31 +826,47 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>var ducks = ["첫째 오리", "둘째 오리", "셋째 오리", "넷째 오리", "다섯째 오리"]
-var delaySec = 1000;
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">ducks</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">첫째 오리</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">둘째 오리</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">셋째 오리</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">넷째 오리</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">다섯째 오리</span><span class="dl">"</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nx">delaySec</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
 
-/* 1: IIFE를 적용하지 않은 일반적인 코드 */
-for (i in ducks) {
-    setTimeout(() =&gt; {
-       console.log(ducks[i])
-    }, i == 0 ? 0 : delaySec)
-}
+<span class="cm">/* 1: IIFE를 적용하지 않은 일반적인 코드 */</span>
+<span class="k">for </span><span class="p">(</span><span class="nx">i</span> <span class="k">in</span> <span class="nx">ducks</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">ducks</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+    <span class="p">},</span> <span class="nx">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="nx">delaySec</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 코드는 일반적인 생각대로 실행되지 않습니다. 결과는 1초 뒤에 한꺼번에 ‘다섯째 오리’만 다섯 마리 복제되며 나머지 오리들은 등장하지도 않습니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2019/01/ducks.gif" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/ducks.gif" alt="" loading="lazy"></a></p>
 
-<p>원인은 자바스크립트의 비동기 관련 문제입니다. 말하자면 for문은 <code class="language-plaintext highlighter-rouge">setTimeout</code>의 파라미터로 지정된 함수(콜백 함수라 부르며 지금은 특정 작업이 완료된 이후 실행되는 함수라고 이해하시면 됩니다.)이 실행될때까지 기다리지 않고 ‘1초 뒤에 실행시킬 것이다’ 라고 예약만 걸어버린 다음 한 순간에 자신의 작업(반복문)을 완료합니다. 이 for문이 반복되는 시간은 정말 찰나의 시간이며 <code class="language-plaintext highlighter-rouge">setTimeout</code> 내부의 콜백 함수들이 실행될 시간은 for문이 끝나고도 한참 뒤의 시간이기 때문에 for문이 가리키는 <code class="language-plaintext highlighter-rouge">i</code>의 값은 <code class="language-plaintext highlighter-rouge">4</code>(배열의 5번째 주소)입니다. 그렇기 때문에 5개의 <code class="language-plaintext highlighter-rouge">setTimeout</code>이 실질적으로 실행될 시점에는 콜백 함수들은 전부 <code class="language-plaintext highlighter-rouge">i</code>는 <code class="language-plaintext highlighter-rouge">4</code> 를 참조하고 있으므로 마지막 배열만 출력되는 것이며 실행 시점도 의도한 바와 다르게 1초 뒤에 일괄적으로 실행되는 것입니다.</p>
+<h2 id="원인"><span class="me-2">원인</span><a href="#원인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>[the_ad id=”1804”]</p>
+<p>원인은 자바스크립트의 비동기 관련 문제입니다.</p>
 
-<p> </p>
+<p>말하자면 for문은 <code class="language-plaintext highlighter-rouge">setTimeout</code>의 파라미터로 지정된 함수(콜백 함수라 부르며 지금은 특정 작업이 완료된 이후 실행되는 함수라고 이해하시면 됩니다.)이 실행될때까지 기다리지 않고 ‘1초 뒤에 실행시킬 것이다’ 라고 예약만 걸어버린 다음 한 순간에 자신의 작업(반복문)을 완료합니다.</p>
 
-<p>이 문제를 해결하는 전통적인 방법으로 <strong>IIFE(</strong><strong>Immediately-Invoked Function Expression; 즉시 실행 함수 표현)</strong>이라는 것이 있습니다.  말 그대로 선언된 시점에 바로 실행하는는 것입니다.  표현식은 <code class="language-plaintext highlighter-rouge">(function () { // TODO  })();</code> 으로 작성됩니다. 보기 쉽게 함수 부분을 임의의 변수로 치환한다면 <code class="language-plaintext highlighter-rouge">(변수)();</code>의 꼴이라고 볼 수 있습니다. 익명의 함수를 작성했는데 작성하자마자 바로 실행한 것과 같은 효과가 생깁니다. 위의 코드에서 IIFE 를 적용하면 다음과 같습니다.</p>
+<p>이 for문이 반복되는 시간은 정말 찰나의 시간이며 <code class="language-plaintext highlighter-rouge">setTimeout</code> 내부의 콜백 함수들이 실행될 시간은 for문이 끝나고도 한참 뒤의 시간이기 때문에 for문이 가리키는 <code class="language-plaintext highlighter-rouge">i</code>의 값은 <code class="language-plaintext highlighter-rouge">4</code>(배열의 5번째 주소)입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<p>그렇기 때문에 5개의 <code class="language-plaintext highlighter-rouge">setTimeout</code>이 실질적으로 실행될 시점에는 콜백 함수들은 전부 <code class="language-plaintext highlighter-rouge">i</code>는 <code class="language-plaintext highlighter-rouge">4</code> 를 참조하고 있으므로 마지막 배열만 출력되는 것이며 실행 시점도 의도한 바와 다르게 1초 뒤에 일괄적으로 실행되는 것입니다.</p>
+
+<h2 id="해결방법"><span class="me-2">해결방법</span><a href="#해결방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>이 문제를 해결하는 전통적인 방법으로 <strong>IIFE(</strong><strong>Immediately-Invoked Function Expression; 즉시 실행 함수 표현)</strong>이라는 것이 있습니다. </p>
+
+<p>말 그대로 선언된 시점에 바로 실행하는는 것입니다. 표현식은 <code class="language-plaintext highlighter-rouge">(function () { // TODO  })();</code> 으로 작성됩니다.</p>
+
+<p>보기 쉽게 함수 부분을 임의의 변수로 치환한다면 <code class="language-plaintext highlighter-rouge">(변수)();</code>의 꼴이라고 볼 수 있습니다.</p>
+
+<p>익명의 함수를 작성했는데 작성하자마자 바로 실행한 것과 같은 효과가 생깁니다.</p>
+
+<p>위의 코드에서 IIFE 를 적용하면 다음과 같습니다.</p>
+
+<h3 id="iife-적용-1"><span class="me-2">IIFE 적용 1</span><a href="#iife-적용-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -730,20 +875,28 @@ for (i in ducks) {
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>/* 2: IIFE를 적용한 코드 */
-for (i in ducks) {
-    (function(ii) {
-        setTimeout(() =&gt; {
-            console.log(ducks[ii])
-        }, ii * delaySec)
-    })(i);
-}
+</pre></td><td class="rouge-code"><pre><span class="cm">/* 2: IIFE를 적용한 코드 */</span>
+<span class="k">for </span><span class="p">(</span><span class="nx">i</span> <span class="k">in</span> <span class="nx">ducks</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">ii</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">ducks</span><span class="p">[</span><span class="nx">ii</span><span class="p">])</span>
+        <span class="p">},</span> <span class="nx">ii</span> <span class="o">*</span> <span class="nx">delaySec</span><span class="p">)</span>
+    <span class="p">})(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">setTimeout</code>문을 IIFE 로 한 번 감싼 다음 파라미터로 끝에 <code class="language-plaintext highlighter-rouge">(i)</code>를 부여했습니다.  IIFE를 사용하지 않은 코드는 지연 실행된 콜백 변수들이 모두 변수 <code class="language-plaintext highlighter-rouge">i</code>를 가리키지만, IIFE를 사용한 코드는 반복이 실행될 때마다 <code class="language-plaintext highlighter-rouge">setTimeout</code>을 감싼 익명 함수가 변수처럼 취급되어 실행되고, 익명 함수 내부의 변수 <code class="language-plaintext highlighter-rouge">ii</code>가 가리키는 곳은 각각 함수 내에서 파라미터로 부여받은 지역 변수입니다. 좀 더 이해하기 쉬운 예는 다음과 같고 결과 및 동작원리는 동일합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">setTimeout</code>문을 IIFE 로 한 번 감싼 다음 파라미터로 끝에 <code class="language-plaintext highlighter-rouge">(i)</code>를 부여했습니다. </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<p>IIFE를 사용하지 않은 코드는 지연 실행된 콜백 변수들이 모두 변수 <code class="language-plaintext highlighter-rouge">i</code>를 가리키지만, IIFE를 사용한 코드는 반복이 실행될 때마다 <code class="language-plaintext highlighter-rouge">setTimeout</code>을 감싼 익명 함수가 변수처럼 취급되어 실행되고,</p>
+
+<p>익명 함수 내부의 변수 <code class="language-plaintext highlighter-rouge">ii</code>가 가리키는 곳은 각각 함수 내에서 파라미터로 부여받은 지역 변수입니다.</p>
+
+<h3 id="iife-적용-2"><span class="me-2">IIFE 적용 2</span><a href="#iife-적용-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>좀 더 이해하기 쉬운 예는 다음과 같고 결과 및 동작원리는 동일합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -753,45 +906,56 @@ for (i in ducks) {
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>/* 2: IIFE를 적용한 코드 */
-for (i in ducks) {
-    var anonFunc = function(ii) {
-        setTimeout(() =&gt; {
-            console.log(ducks[ii])
-        }, ii * delaySec)
-    }
-    anonFunc(i);
-}
+</pre></td><td class="rouge-code"><pre><span class="cm">/* 2: IIFE를 적용한 코드 */</span>
+<span class="k">for </span><span class="p">(</span><span class="nx">i</span> <span class="k">in</span> <span class="nx">ducks</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">anonFunc</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ii</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">ducks</span><span class="p">[</span><span class="nx">ii</span><span class="p">])</span>
+        <span class="p">},</span> <span class="nx">ii</span> <span class="o">*</span> <span class="nx">delaySec</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nf">anonFunc</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>인덱스 문제는 해결되었지만 <code class="language-plaintext highlighter-rouge">delaySec</code>을 고정된 수로 입력하면 여전히 동시에 실행될 것입니다. 실행 시점은 여전히 찰나의 순간이며 모든 익명 함수들이 1초 이후에 실행되도록 설정되어있기 때문입니다. 이것을 <code class="language-plaintext highlighter-rouge">delaySec</code>에 for문의 <code class="language-plaintext highlighter-rouge">ii</code>를 곱해 그 시간만큼 순차적으로 이어진 효과를 내도록 바꿨습니다. 배열의 주소는 0부터 시작하므로 처음에는 500 * 0 = 0 초, 그 다음에는 500 * 1 = 500 … 이런식으로 진행됩니다.</p>
+<p>인덱스 문제는 해결되었지만 <code class="language-plaintext highlighter-rouge">delaySec</code>을 고정된 수로 입력하면 여전히 동시에 실행될 것입니다.</p>
 
-<p>(2020년 6월 7일 추가: 이 문제는 ES6 이전의 <code class="language-plaintext highlighter-rouge">var</code> 변수의 함수 스코프와 연관이 있으며, ES6로 개발 가능한 환경인 경우 ES6에 추가된 <code class="language-plaintext highlighter-rouge">let</code> 키워드를 사용하면 IIFE 기법을 사용하지 않아도 됩니다. <code class="language-plaintext highlighter-rouge">let</code>은 블록 스코프(<code class="language-plaintext highlighter-rouge">{...}</code>)이기 때문입니다. 이 글 작성 당시 ES6 스펙과 새롭게 추가된 <code class="language-plaintext highlighter-rouge">let</code>, <code class="language-plaintext highlighter-rouge">const</code>에 대한 스코프에 대한 이해도가 낮아 잘 알지 못했습니다. <a href="https://poiemaweb.com/es6-block-scope">변수의 스코프에 관한 글 링크</a>)</p>
+<p>실행 시점은 여전히 찰나의 순간이며 모든 익명 함수들이 1초 이후에 실행되도록 설정되어있기 때문입니다.</p>
 
-<p>[the_ad id=”1804”]</p>
+<p>이것을 <code class="language-plaintext highlighter-rouge">delaySec</code>에 for문의 <code class="language-plaintext highlighter-rouge">ii</code>를 곱해 그 시간만큼 순차적으로 이어진 효과를 내도록 바꿨습니다.</p>
 
-<p>(또한 IIFE는 함수 스코프인 <code class="language-plaintext highlighter-rouge">for</code>문의 <code class="language-plaintext highlighter-rouge">i</code>(var 키워드 또는 전역변수로 선언된 경우) 변수를 함수 내에 고정시키기 위한 클로저 기법의 대표적인 예 중 하나입니다.)</p>
+<p>배열의 주소는 0부터 시작하므로 처음에는 500 * 0 = 0 초, 그 다음에는 500 * 1 = 500 … 이런식으로 진행됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="let-적용"><span class="me-2">LET 적용</span><a href="#let-적용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p>2020년 6월 7일 추가: 이 문제는 ES6 이전의 <code class="language-plaintext highlighter-rouge">var</code> 변수의 함수 스코프와 연관이 있으며, ES6로 개발 가능한 환경인 경우 ES6에 추가된 <code class="language-plaintext highlighter-rouge">let</code> 키워드를 사용하면 IIFE 기법을 사용하지 않아도 됩니다. <code class="language-plaintext highlighter-rouge">let</code>은 블록 스코프(<code class="language-plaintext highlighter-rouge">{...}</code>)이기 때문입니다.<br /> <a href="https://poiemaweb.com/es6-block-scope">변수의 스코프에 관한 글 링크</a></p>
+</blockquote>
+
+<blockquote>
+  <p>또한 IIFE는 함수 스코프인 <code class="language-plaintext highlighter-rouge">for</code>문의 <code class="language-plaintext highlighter-rouge">i</code>(var 키워드 또는 전역변수로 선언된 경우) 변수를 함수 내에 고정시키기 위한 클로저 기법의 대표적인 예 중 하나입니다.</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>for (let i in ducks) {
-    setTimeout(() =&gt; {
-        console.log(ducks[i])
-    }, i * delaySec)
-}
+</pre></td><td class="rouge-code"><pre><span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">ducks</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">ducks</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+    <span class="p">},</span> <span class="nx">i</span> <span class="o">*</span> <span class="nx">delaySec</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="심화-재귀함수-이용"><span class="me-2">[심화] 재귀함수 이용</span><a href="#심화-재귀함수-이용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>다른 방법으로 재귀함수를 이용한 방법이 있다고 합니다. (<a href="https://gigglehd.com/gg/soft/252878">https://gigglehd.com/gg/soft/252878</a>)</p>
+<p>다른 방법으로 재귀함수를 이용한 방법이 있다고 합니다. 
+(<a href="https://gigglehd.com/gg/soft/252878">https://gigglehd.com/gg/soft/252878</a>)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -807,24 +971,26 @@ for (i in ducks) {
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>/* 3: [심화] 재귀함수를 이용한 방법 */
-function recursive(i) {
+</pre></td><td class="rouge-code"><pre><span class="cm">/* 3: [심화] 재귀함수를 이용한 방법 */</span>
+<span class="kd">function</span> <span class="nf">recursive</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
 
-    if (i &lt; ducks.length) {
+    <span class="k">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">ducks</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
 
-        setTimeout(function() {
-            console.log(ducks[i])
-            i++;
-            recursive(i) // 여기에 i++를 적으면 무한 루프에 빠진다 (++i 사용)
-        }, i == 0 ? 0 : delaySec)
+        <span class="nf">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">ducks</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+            <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="nf">recursive</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="c1">// 여기에 i++를 적으면 무한 루프에 빠진다 (++i 사용)</span>
+        <span class="p">},</span> <span class="nx">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="nx">delaySec</span><span class="p">)</span>
 
-    }
+    <span class="p">}</span>
 
-}
-recursive(0)
+<span class="p">}</span>
+<span class="nf">recursive</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>이러한 자바스크립트의 비동기 문제를 해결하는 다른 방법으로 콜백, <code class="language-plaintext highlighter-rouge">Promise</code>, <code class="language-plaintext highlighter-rouge">async ~ await</code> 등이 있습니다. 관련 글 <a href="http://yoonbumtae.com/?p=1071">자바스크립트: 콜백, Promise, async ~ await 기초</a> 을 참고해주세요.</p>
+<p>이러한 자바스크립트의 비동기 문제를 해결하는 다른 방법으로 콜백, <code class="language-plaintext highlighter-rouge">Promise</code>, <code class="language-plaintext highlighter-rouge">async ~ await</code> 등이 있습니다.</p>
+
+<p>관련 글 <a href="/posts/2019-04-26-자바스크립트-콜백-promise-async-await-기초">자바스크립트: 콜백, Promise, async ~ await 기초</a> 을 참고해주세요.</p>
 
   </div>
 
@@ -883,21 +1049,21 @@ recursive(0)
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8:%20for%EB%AC%B8%20%EC%95%88%EC%97%90%20setTimeout%20%ED%95%A8%EC%88%98%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95%20(IIFE,%20%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98)%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2F%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-for%25EB%25AC%25B8-%25EC%2595%2588%25EC%2597%2590-settimeout-%25ED%2595%25A8%25EC%2588%2598-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%2598%25EB%258A%2594-%25EB%25B0%25A9%25EB%25B2%2595-iife-%25EC%259E%25AC%25EA%25B7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8:%20for%EB%AC%B8%20%EC%95%88%EC%97%90%20setTimeout%20%ED%95%A8%EC%88%98%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95%20(IIFE,%20let%20%EC%82%AC%EC%9A%A9,%20%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98)%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2F%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-for%25EB%25AC%25B8-%25EC%2595%2588%25EC%2597%2590-settimeout-%25ED%2595%25A8%25EC%2588%2598-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%2598%25EB%258A%2594-%25EB%25B0%25A9%25EB%25B2%2595-iife-%25EC%259E%25AC%25EA%25B7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8:%20for%EB%AC%B8%20%EC%95%88%EC%97%90%20setTimeout%20%ED%95%A8%EC%88%98%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95%20(IIFE,%20%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98)%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2F%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-for%25EB%25AC%25B8-%25EC%2595%2588%25EC%2597%2590-settimeout-%25ED%2595%25A8%25EC%2588%2598-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%2598%25EB%258A%2594-%25EB%25B0%25A9%25EB%25B2%2595-iife-%25EC%259E%25AC%25EA%25B7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8:%20for%EB%AC%B8%20%EC%95%88%EC%97%90%20setTimeout%20%ED%95%A8%EC%88%98%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95%20(IIFE,%20let%20%EC%82%AC%EC%9A%A9,%20%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98)%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2F%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-for%25EB%25AC%25B8-%25EC%2595%2588%25EC%2597%2590-settimeout-%25ED%2595%25A8%25EC%2588%2598-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%2598%25EB%258A%2594-%25EB%25B0%25A9%25EB%25B2%2595-iife-%25EC%259E%25AC%25EA%25B7%2580%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2F%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-for%25EB%25AC%25B8-%25EC%2595%2588%25EC%2597%2590-settimeout-%25ED%2595%25A8%25EC%2588%2598-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%2598%25EB%258A%2594-%25EB%25B0%25A9%25EB%25B2%2595-iife-%25EC%259E%25AC%25EA%25B7%2580%2F&text=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8:%20for%EB%AC%B8%20%EC%95%88%EC%97%90%20setTimeout%20%ED%95%A8%EC%88%98%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95%20(IIFE,%20%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98)%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2F%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8-for%25EB%25AC%25B8-%25EC%2595%2588%25EC%2597%2590-settimeout-%25ED%2595%25A8%25EC%2588%2598-%25EC%2582%25AC%25EC%259A%25A9%25ED%2595%2598%25EB%258A%2594-%25EB%25B0%25A9%25EB%25B2%2595-iife-%25EC%259E%25AC%25EA%25B7%2580%2F&text=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8:%20for%EB%AC%B8%20%EC%95%88%EC%97%90%20setTimeout%20%ED%95%A8%EC%88%98%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95%20(IIFE,%20let%20%EC%82%AC%EC%9A%A9,%20%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98)%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1103,11 +1269,6 @@ recursive(0)
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -1350,41 +1511,6 @@ recursive(0)
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1609,6 +1735,149 @@ recursive(0)
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1705,225 +1974,7 @@ recursive(0)
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -2047,6 +2098,12 @@ recursive(0)
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2080,18 +2137,6 @@ recursive(0)
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8064,34 +8109,6 @@ recursive(0)
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%98%EC%86%94-%EB%A1%9C%EA%B7%B8%EC%97%90-css-%EC%A0%81%EC%9A%A9-%EA%B7%B8%EB%A3%B9%ED%99%94-%ED%95%98%EA%B8%B0/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1547132400"
-  data-df="ll"
-  
->
-  Jan 11, 2019
-</time>
-
-              <h4 class="pt-0 my-2">자바스크립트: 콘솔 로그(console.log) 사용법, 로그에 CSS 적용, 로그 그룹화 하기</h4>
-              <div class="text-muted">
-                <p>콘솔 로그는 다음과 같이 사용합니다.  console.log(obj1 [, obj2, ..., objN]); console.log(msg [, subst1, ..., substN]);   콘솔 레벨에 따라 log 대신 warn, error 등을 사용할 수도 있습니다.  warn은 경고의 의미로 주황색으로 표시되며, error는 에러의 의미로 빨간색으로...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-ttstext-to-speech-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%97%86%EC%9D%B4/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -8114,6 +8131,34 @@ recursive(0)
               <h4 class="pt-0 my-2">자바스크립트: TTS(Text-to-Speech) 라이브러리 없이</h4>
               <div class="text-muted">
                 <p>자바스크립트에서 TTS 기능을 사용하는 방법입니다. TTS(Text-to-Speech)는 텍스트를 음성 합성을 통해 컴퓨터가 읽어주는 것으로 트위치 영상등에 있는 음성 도네이션이 TTS 를 사용합니다.  음성합성으로 읽을 내용, 언어, 음성의 속도 높낮이 등을 `new SpeechSynthesisUtterance(``)` 로 설정하고 재생은 `spee...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%98%EC%86%94-%EB%A1%9C%EA%B7%B8%EC%97%90-css-%EC%A0%81%EC%9A%A9-%EA%B7%B8%EB%A3%B9%ED%99%94-%ED%95%98%EA%B8%B0/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1547132400"
+  data-df="ll"
+  
+>
+  Jan 11, 2019
+</time>
+
+              <h4 class="pt-0 my-2">자바스크립트: 콘솔 로그(console.log) 사용법, 로그에 CSS 적용, 로그 그룹화 하기</h4>
+              <div class="text-muted">
+                <p>사용법  콘솔 로그는 다음과 같이 사용합니다.  console.log(obj1 [, obj2, ..., objN]); console.log(msg [, subst1, ..., substN]);   콘솔 레벨에 따라 log 대신 warn, error 등을 사용할 수도 있습니다.  warn은 경고의 의미로 주황색으로 표시되며, error는 에러의 의미로 ...</p>
               </div>
             </div>
           </a>
@@ -8342,11 +8387,6 @@ recursive(0)
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -8589,41 +8629,6 @@ recursive(0)
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -8848,6 +8853,149 @@ recursive(0)
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8944,225 +9092,7 @@ recursive(0)
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     

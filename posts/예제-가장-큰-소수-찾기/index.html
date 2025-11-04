@@ -240,7 +240,6 @@
 
 </head>
 
-
   <body>
     <!-- The Side Bar -->
 
@@ -609,8 +608,8 @@
   <div class="content">
     <p>여기서 소수의 정의는 1과 자기 자신만으로 나누어 떨어지는 1보다 큰 양의 정수를 뜻합니다. 특정 수를 1부터 그 자신의 수까지 쭉 나눠봤을 때 <strong>나머지가 0인 경우가 두 번 뿐</strong>이라면 그 수는 소수라고 볼 수 있을 것입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -640,35 +639,35 @@
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>import java.util.Scanner;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 
-public class PrimeNumber {
-    public static void main(String[] args) {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PrimeNumber</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     	
-        Scanner s = new Scanner(System.in);
-        System.out.print("숫자를 입력하세요. (1~2,147,483,647) &gt;&gt; ");
-        int num = s.nextInt();
-        int maxPrimeNum = 0;
+        <span class="nc">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"숫자를 입력하세요. (1~2,147,483,647) &gt;&gt; "</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">maxPrimeNum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
                 
-        for (int i = 1; i &lt;= num; i++ )
-        {
-            int modZero = 0;
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="o">;</span> <span class="n">i</span><span class="o">++</span> <span class="o">)</span>
+        <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">modZero</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
             
-            if (i == 1)    //1은 소수가 아니라고 한다.
-                continue;
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span>    <span class="c1">//1은 소수가 아니라고 한다.</span>
+                <span class="k">continue</span><span class="o">;</span>
             
-            for (int j = 1; j &lt;= i; j++)
-            {                
-                if ( i % j == 0 )	modZero++;
-            }    
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
+            <span class="o">{</span>                
+                <span class="k">if</span> <span class="o">(</span> <span class="n">i</span> <span class="o">%</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">)</span>	<span class="n">modZero</span><span class="o">++;</span>
+            <span class="o">}</span>    
             
-            if (modZero == 2)	maxPrimeNum = i;
-        }
+            <span class="k">if</span> <span class="o">(</span><span class="n">modZero</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span>	<span class="n">maxPrimeNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+        <span class="o">}</span>
         
-        System.out.println("가장 큰 소수: " + maxPrimeNum);    
-        s.close();
-    }
-}
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"가장 큰 소수: "</span> <span class="o">+</span> <span class="n">maxPrimeNum</span><span class="o">);</span>    
+        <span class="n">s</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -968,11 +967,6 @@ public class PrimeNumber {
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -1215,41 +1209,6 @@ public class PrimeNumber {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1474,6 +1433,149 @@ public class PrimeNumber {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1570,225 +1672,7 @@ public class PrimeNumber {
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -1945,18 +1829,6 @@ public class PrimeNumber {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8207,11 +8079,6 @@ public class PrimeNumber {
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -8454,41 +8321,6 @@ public class PrimeNumber {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -8713,6 +8545,149 @@ public class PrimeNumber {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8809,225 +8784,7 @@ public class PrimeNumber {
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     

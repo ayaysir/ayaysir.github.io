@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -239,7 +246,6 @@
   <!-- A placeholder to allow defining custom metadata -->
 
 </head>
-
 
   <body>
     <!-- The Side Bar -->
@@ -566,6 +572,27 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -596,7 +623,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Java 예제: 모래시계 모양 배열 만들기</h1>
     
@@ -670,7 +697,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="799 words"
+  title="801 words"
 >
   <em>4 min</em> read</span>
 
@@ -680,12 +707,36 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Java 예제: 모래시계 모양 배열 만들기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Java 예제: 모래시계 모양 배열 만들기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>모래시계 모양으로 배열을 만드는 예제입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -740,67 +791,71 @@
 52
 53
 54
-</pre></td><td class="rouge-code"><pre>import blog.gui.PrintArray;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">blog.gui.PrintArray</span><span class="o">;</span>
 
-public class Sandglass {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sandglass</span> <span class="o">{</span>
  
-    public static void main(String[] args) {
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         
-        int[][] array = new int[5][5];
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">][</span><span class="mi">5</span><span class="o">];</span>
         
-        int value = 1;	// 배열 각 칸마다 들어갈 값. 1씩 증가한다.
+        <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>	<span class="c1">// 배열 각 칸마다 들어갈 값. 1씩 증가한다.</span>
         
-        int mid = (int) Math.ceil((double)array.length / 2);
-        // ceil(올림) 내의 값은 double이어야 한다. array.length는 int형이다.
-        // mid: 배열에서 세로(열)의 중간값. 5/2 = 3(☞2.5)
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="nc">Math</span><span class="o">.</span><span class="na">ceil</span><span class="o">((</span><span class="kt">double</span><span class="o">)</span><span class="n">array</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="mi">2</span><span class="o">);</span>
+        <span class="c1">// ceil(올림) 내의 값은 double이어야 한다. array.length는 int형이다.</span>
+        <span class="c1">// mid: 배열에서 세로(열)의 중간값. 5/2 = 3(☞2.5)</span>
         
-        // 상단 (첫 줄부터 mid까지)
-        for(int row = 0; row &lt; mid; row++)    // 행 0, 1, 2
-        {
-            // 0, .. &lt; (5-0) → 0, 1, 2, 3, 4
-            // 열 (0, 1, 2, 3, 4)(1, 2, 3)(2) 
+        <span class="c1">// 상단 (첫 줄부터 mid까지)</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">mid</span><span class="o">;</span> <span class="n">row</span><span class="o">++)</span>    <span class="c1">// 행 0, 1, 2</span>
+        <span class="o">{</span>
+            <span class="c1">// 0, .. &lt; (5-0) → 0, 1, 2, 3, 4</span>
+            <span class="c1">// 열 (0, 1, 2, 3, 4)(1, 2, 3)(2) </span>
         	
-            for(int col = row; col &lt; (array.length - row); col++ )
-            {            	
-                array[row][col] = value;
-                arrayLog(row, col, array.length, value);
-                value++;
-            }
-        }
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="n">row</span><span class="o">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="o">(</span><span class="n">array</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">row</span><span class="o">);</span> <span class="n">col</span><span class="o">++</span> <span class="o">)</span>
+            <span class="o">{</span>            	
+                <span class="n">array</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+                <span class="n">arrayLog</span><span class="o">(</span><span class="n">row</span><span class="o">,</span> <span class="n">col</span><span class="o">,</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+                <span class="n">value</span><span class="o">++;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
         
-        System.out.println(" ");
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
         
-        // 하단
-        for(int row = mid; row &lt; array.length; row++)    // 행 3, 4
-        {
-            for(int col = (array.length - 1) - row; col &lt;= row; col++ )    
-			// 열 (1, 2, 3)(0, 1, 2, 3, 4)
-            {
-                array[row][col] = value;
-                arrayLog(row, col, array.length, value);
-                value++;
-            }
+        <span class="c1">// 하단</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">mid</span><span class="o">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">row</span><span class="o">++)</span>    <span class="c1">// 행 3, 4</span>
+        <span class="o">{</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="o">(</span><span class="n">array</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">-</span> <span class="n">row</span><span class="o">;</span> <span class="n">col</span> <span class="o">&lt;=</span> <span class="n">row</span><span class="o">;</span> <span class="n">col</span><span class="o">++</span> <span class="o">)</span>    
+			<span class="c1">// 열 (1, 2, 3)(0, 1, 2, 3, 4)</span>
+            <span class="o">{</span>
+                <span class="n">array</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+                <span class="n">arrayLog</span><span class="o">(</span><span class="n">row</span><span class="o">,</span> <span class="n">col</span><span class="o">,</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+                <span class="n">value</span><span class="o">++;</span>
+            <span class="o">}</span>
             
-        }    
+        <span class="o">}</span>    
         
-        // 표시
-        new PrintArray(array);        
+        <span class="c1">// 표시</span>
+        <span class="k">new</span> <span class="nf">PrintArray</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>        
         
-    }
+    <span class="o">}</span>
     
-    private static void arrayLog(int row, int col, int arrayLength, int value) {
-    	System.out.println("row: " + row + " | (array.length - row): " 
-        		+ (arrayLength - row) + " | col: " + col + " | value: " + value );
-    }
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">arrayLog</span><span class="o">(</span><span class="kt">int</span> <span class="n">row</span><span class="o">,</span> <span class="kt">int</span> <span class="n">col</span><span class="o">,</span> <span class="kt">int</span> <span class="n">arrayLength</span><span class="o">,</span> <span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"row: "</span> <span class="o">+</span> <span class="n">row</span> <span class="o">+</span> <span class="s">" | (array.length - row): "</span> 
+        		<span class="o">+</span> <span class="o">(</span><span class="n">arrayLength</span> <span class="o">-</span> <span class="n">row</span><span class="o">)</span> <span class="o">+</span> <span class="s">" | col: "</span> <span class="o">+</span> <span class="n">col</span> <span class="o">+</span> <span class="s">" | value: "</span> <span class="o">+</span> <span class="n">value</span> <span class="o">);</span>
+    <span class="o">}</span>
  
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>PrintArray는 <a href="http://yoonbumtae.com/?p=588">Java Swing 예제: 다차원 배열 표시하기 (기초 설정 방법, for문으로 swing 요소 반복 등)</a>을 참고해주세요.</p>
+<p>PrintArray는 <a href="/posts/java-swing-예제-다차원-배열-표시하기-기초-설정-방법-for문으">Java Swing 예제: 다차원 배열 표시하기 (기초 설정 방법, for문으로 swing 요소 반복 등)</a>을 참고해주세요.</p>
 
-<p>순서도 상에서 <code class="language-plaintext highlighter-rouge">col = 6 - row</code>인 값이 실제 프로그래밍시 <code class="language-plaintext highlighter-rouge">col = 4 - row</code>가 되는데 왜 5가 아니라 4일까요? 순서도에서 6을 5로 바꾸면 <code class="language-plaintext highlighter-rouge">(1,2,3)(0,1,2,3,4)</code>가 되는데 프로그래밍에서는 행도 0부터 시작하기 때문에 <code class="language-plaintext highlighter-rouge">5-3=2</code>, <code class="language-plaintext highlighter-rouge">5-4=1</code>가 되어 프로그래밍상 배열과 맞지 않게 됩니다. 그러므로 프로그래밍에서는 행과 열 모두를 고려하여 <code class="language-plaintext highlighter-rouge">2</code>를 뺀 <code class="language-plaintext highlighter-rouge">4</code>가 되어야 합니다. 현재 <code class="language-plaintext highlighter-rouge">row</code> 번호가 <code class="language-plaintext highlighter-rouge">0</code>부터 시작하므로 순서도에서 <code class="language-plaintext highlighter-rouge">6 - 1 = 5</code>이나 프로그래밍상에서는 <code class="language-plaintext highlighter-rouge">(6-1-1) - (5-1) = 0</code>이 되어야 하는 것이죠.</p>
+<p>순서도 상에서 <code class="language-plaintext highlighter-rouge">col = 6 - row</code>인 값이 실제 프로그래밍시 <code class="language-plaintext highlighter-rouge">col = 4 - row</code>가 되는데 왜 5가 아니라 4일까요?</p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-09-오후-9.14.53.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-09-오후-9.14.53.png" alt="" loading="lazy"></a></p>
+<p>순서도에서 6을 5로 바꾸면 <code class="language-plaintext highlighter-rouge">(1,2,3)(0,1,2,3,4)</code>가 되는데 프로그래밍에서는 행도 0부터 시작하기 때문에 <code class="language-plaintext highlighter-rouge">5-3=2</code>, <code class="language-plaintext highlighter-rouge">5-4=1</code>가 되어 프로그래밍상 배열과 맞지 않게 됩니다. 그러므로 프로그래밍에서는 행과 열 모두를 고려하여 <code class="language-plaintext highlighter-rouge">2</code>를 뺀 <code class="language-plaintext highlighter-rouge">4</code>가 되어야 합니다. </p>
+
+<p>현재 <code class="language-plaintext highlighter-rouge">row</code> 번호가 <code class="language-plaintext highlighter-rouge">0</code>부터 시작하므로 순서도에서 <code class="language-plaintext highlighter-rouge">6 - 1 = 5</code>이나 프로그래밍상에서는 <code class="language-plaintext highlighter-rouge">(6-1-1) - (5-1) = 0</code>이 되어야 하는 것이죠.</p>
+
+<p><a href="/assets/img/wp-content/uploads/2019/01/java-array-visualization-1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/java-array-visualization-1.png" alt="" loading="lazy"></a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1119,11 +1174,6 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -1366,41 +1416,6 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1625,6 +1640,149 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1721,225 +1879,7 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -2063,6 +2003,12 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2096,18 +2042,6 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8192,7 +8126,7 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>[카피] 노미 유지 - Pastorale (고양이의 보은 OST)</p>
+      <p>[카피] 노미 유지(野見祐二) - Pastorale (고양이의 보은 OST)</p>
     </a>
   
 </nav>
@@ -8358,11 +8292,6 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -8605,41 +8534,6 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -8864,6 +8758,149 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8960,225 +8997,7 @@ row: 4 | (array.length - row): 1 | col: 4 | value: 17
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     

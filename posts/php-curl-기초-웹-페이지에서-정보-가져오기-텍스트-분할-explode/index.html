@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -239,7 +246,6 @@
   <!-- A placeholder to allow defining custom metadata -->
 
 </head>
-
 
   <body>
     <!-- The Side Bar -->
@@ -566,6 +572,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -596,7 +634,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>PHP: cURL 기초 (정적 웹 페이지에서 정보 가져오기)</h1>
     
@@ -670,7 +708,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="411 words"
+  title="417 words"
 >
   <em>2 min</em> read</span>
 
@@ -680,12 +718,36 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">PHP: cURL 기초 (정적 웹 페이지에서 정보 가져오기)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">PHP: cURL 기초 (정적 웹 페이지에서 정보 가져오기)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>웹사이트에서 POST를 통한 로그인을 한 뒤 정보를 가져오는 예제입니다. 만약 로그인이 필요한 웹 페이지라면, 로그인 정보를 POST로 보내고 쿠키로 저장하는 과정이 추가로 필요합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -729,52 +791,54 @@
 41
 42
 43
-</pre></td><td class="rouge-code"><pre>&lt;?php
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
  
-$html_brand = "[리퀘스트를 보낼 주소]";
+<span class="nv">$html_brand</span> <span class="o">=</span> <span class="s2">"[리퀘스트를 보낼 주소]"</span><span class="p">;</span>
     
-$ch = curl_init();    // cURL 생성
-$options = array(
-    CURLOPT_URL            =&gt; $html_brand,
-    CURLOPT_POSTFIELDS     =&gt; "param1=value1&amp;param2=value2&amp;...", // Post로 보낼 값들을 Get 방식처럼 적는다.
-    CURLOPT_COOKIEJAR =&gt; "cookies.txt",
-    CURLOPT_COOKIEFILE =&gt; "cookies.txt",
-    CURLOPT_COOKIE     =&gt; "cookiename=cookievalue",    // 쿠키가 필요한 사이트는 COOKIEJAR부터 여기까지 세 줄을 삽입한다.
-    CURLOPT_RETURNTRANSFER =&gt; true,    // 반환값을 받을 것인가?
-    CURLOPT_HEADER         =&gt; true,    // 헤더를 표시할 것인가?
-    CURLOPT_FOLLOWLOCATION =&gt; true,    
-    CURLOPT_ENCODING       =&gt; "",    
-    CURLOPT_AUTOREFERER    =&gt; true,    
-    CURLOPT_CONNECTTIMEOUT =&gt; 120, 
-    CURLOPT_TIMEOUT        =&gt; 120,
-    CURLOPT_MAXREDIRS      =&gt; 10,    
-);
-curl_setopt_array( $ch, $options );    // 옵션 설정
-$response = curl_exec($ch); // 실행시키고 반환값은 $response에 저장
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>    <span class="c1">// cURL 생성</span>
+<span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="no">CURLOPT_URL</span>            <span class="o">=&gt;</span> <span class="nv">$html_brand</span><span class="p">,</span>
+    <span class="no">CURLOPT_POSTFIELDS</span>     <span class="o">=&gt;</span> <span class="s2">"param1=value1&amp;param2=value2&amp;..."</span><span class="p">,</span> <span class="c1">// Post로 보낼 값들을 Get 방식처럼 적는다.</span>
+    <span class="no">CURLOPT_COOKIEJAR</span> <span class="o">=&gt;</span> <span class="s2">"cookies.txt"</span><span class="p">,</span>
+    <span class="no">CURLOPT_COOKIEFILE</span> <span class="o">=&gt;</span> <span class="s2">"cookies.txt"</span><span class="p">,</span>
+    <span class="no">CURLOPT_COOKIE</span>     <span class="o">=&gt;</span> <span class="s2">"cookiename=cookievalue"</span><span class="p">,</span>    <span class="c1">// 쿠키가 필요한 사이트는 COOKIEJAR부터 여기까지 세 줄을 삽입한다.</span>
+    <span class="no">CURLOPT_RETURNTRANSFER</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>    <span class="c1">// 반환값을 받을 것인가?</span>
+    <span class="no">CURLOPT_HEADER</span>         <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>    <span class="c1">// 헤더를 표시할 것인가?</span>
+    <span class="no">CURLOPT_FOLLOWLOCATION</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>    
+    <span class="no">CURLOPT_ENCODING</span>       <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>    
+    <span class="no">CURLOPT_AUTOREFERER</span>    <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>    
+    <span class="no">CURLOPT_CONNECTTIMEOUT</span> <span class="o">=&gt;</span> <span class="mi">120</span><span class="p">,</span> 
+    <span class="no">CURLOPT_TIMEOUT</span>        <span class="o">=&gt;</span> <span class="mi">120</span><span class="p">,</span>
+    <span class="no">CURLOPT_MAXREDIRS</span>      <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>    
+<span class="p">);</span>
+<span class="nb">curl_setopt_array</span><span class="p">(</span> <span class="nv">$ch</span><span class="p">,</span> <span class="nv">$options</span> <span class="p">);</span>    <span class="c1">// 옵션 설정</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// 실행시키고 반환값은 $response에 저장</span>
+<span class="nv">$httpCode</span> <span class="o">=</span> <span class="nb">curl_getinfo</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="no">CURLINFO_HTTP_CODE</span><span class="p">);</span>
  
-if ( $httpCode != 200 ){
-    echo "Return code is {$httpCode} \n"
-        .curl_error($ch);
-} else {    // 200을 받으면 정상 동작한 것
-    $pieces = explode('&amp;lt;div class=&amp;quot;tbl1&amp;quot;&amp;gt;', htmlspecialchars($response));
-    // explode(쪼개야 하는 값, 쪼갤 대상 스트링) -&gt; split과 동일
-    // htmlspecialchars -&gt; 괄호, 따옴표 등을 &amp;lt; 이스케이프 문자로 대체
-    $output_str = preg_replace( "/\r|\n|\t/", "", 
-        htmlspecialchars_decode($pieces[1], ENT_NOQUOTES));
-    // preg_replace -&gt; 정규식을 통한 대체
-    // htmlspecialchars_decode -&gt; htmlspecialchars로 변형된 텍스트를 다시 원상복구, 
-    // ENT_NOQUOTES는 따옴표는 변환하지 않는 옵션
+<span class="k">if</span> <span class="p">(</span> <span class="nv">$httpCode</span> <span class="o">!=</span> <span class="mi">200</span> <span class="p">){</span>
+    <span class="k">echo</span> <span class="s2">"Return code is </span><span class="si">{</span><span class="nv">$httpCode</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">"</span>
+        <span class="mf">.</span><span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>    <span class="c1">// 200을 받으면 정상 동작한 것</span>
+    <span class="nv">$pieces</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">'&amp;lt;div class=&amp;quot;tbl1&amp;quot;&amp;gt;'</span><span class="p">,</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$response</span><span class="p">));</span>
+    <span class="c1">// explode(쪼개야 하는 값, 쪼갤 대상 스트링) -&gt; split과 동일</span>
+    <span class="c1">// htmlspecialchars -&gt; 괄호, 따옴표 등을 &amp;lt; 이스케이프 문자로 대체</span>
+    <span class="nv">$output_str</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span> <span class="s2">"/</span><span class="se">\r</span><span class="s2">|</span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">/"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> 
+        <span class="nb">htmlspecialchars_decode</span><span class="p">(</span><span class="nv">$pieces</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="no">ENT_NOQUOTES</span><span class="p">));</span>
+    <span class="c1">// preg_replace -&gt; 정규식을 통한 대체</span>
+    <span class="c1">// htmlspecialchars_decode -&gt; htmlspecialchars로 변형된 텍스트를 다시 원상복구, </span>
+    <span class="c1">// ENT_NOQUOTES는 따옴표는 변환하지 않는 옵션</span>
  
-    echo $output_str;
-}
+    <span class="k">echo</span> <span class="nv">$output_str</span><span class="p">;</span>
+<span class="p">}</span>
  
-curl_close($ch);
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
  
-?&gt;
+<span class="cp">?&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/01/스크린샷_2018-11-05_오전_1.41.15.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/스크린샷_2018-11-05_오전_1.41.15.png" alt="" loading="lazy"></a></p>
+<h2 id="동작화면"><span class="me-2">동작화면</span><a href="#동작화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="/assets/img/wp-content/uploads/2019/01/curl-example-1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/curl-example-1.png" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -1053,11 +1117,6 @@ curl_close($ch);
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -1300,41 +1359,6 @@ curl_close($ch);
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1559,6 +1583,149 @@ curl_close($ch);
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1655,225 +1822,7 @@ curl_close($ch);
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -1997,6 +1946,12 @@ curl_close($ch);
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2030,18 +1985,6 @@ curl_close($ch);
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8035,7 +7978,7 @@ curl_close($ch);
 
               <h4 class="pt-0 my-2">PHP: 배열 생성 / 배열을 JSON으로 만들기</h4>
               <div class="text-muted">
-                <p>배열을 JSON으로 변환하려면 다음 함수를 사용합니다.  ``` json_encode($배열) ```     빈 배열을 생성하려면 `array()`를 사용합니다.  ``` $arr = array();  ```     원소가 있는 배열을 생성하는 방법입니다.  ``` $arr2 = array("A", "B", "C");  ```     연관 배열(ass...</p>
+                <p>## 배열을 JSON 으로 변환  배열을 JSON으로 변환하려면 다음 함수를 사용합니다.  ```php json_encode($배열) ```  ## 빈 배열 생성  빈 배열을 생성하려면 `array()`를 사용합니다.  ```php $arr = array(); ```  ## 원소가 있는 배열 생성  원소가 있는 배열을 생성하는 방법입니다.  ```ph...</p>
               </div>
             </div>
           </a>
@@ -8063,7 +8006,7 @@ curl_close($ch);
 
               <h4 class="pt-0 my-2">PHP: 데이터베이스 접근 기초(SELECT, INSERT, UPDATE, DELETE)</h4>
               <div class="text-muted">
-                <p>1. SELECT     php의 코드는 일반 텍스트와 구분하여 &lt;?php [...코드...] ?&gt;를 사용합니다. 또는 &lt;?[...코드...] ?&gt;도 가능합니다.   HTML 코드 내에서 변수 등을 단순히 출력하고자 할 때는 &lt;?=[변수 이름 등]?&gt; 의 형태로 사용합니다.   브라우저에 출력하는 코드는 echo [내용...</p>
+                <p>PHP 코드 부분  1. SELECT     php의 코드는 일반 텍스트와 구분하여 &lt;?php [...코드...] ?&gt;를 사용합니다. 또는 &lt;?[...코드...] ?&gt;도 가능합니다.   HTML 코드 내에서 변수 등을 단순히 출력하고자 할 때는 &lt;?=[변수 이름 등]?&gt; 의 형태로 사용합니다.   브라우저에 출력하는 코...</p>
               </div>
             </div>
           </a>
@@ -8292,11 +8235,6 @@ curl_close($ch);
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -8539,41 +8477,6 @@ curl_close($ch);
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -8798,6 +8701,149 @@ curl_close($ch);
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8894,225 +8940,7 @@ curl_close($ch);
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     

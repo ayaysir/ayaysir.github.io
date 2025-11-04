@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -239,7 +246,6 @@
   <!-- A placeholder to allow defining custom metadata -->
 
 </head>
-
 
   <body>
     <!-- The Side Bar -->
@@ -548,71 +554,6 @@
     <!-- combine -->
     
   
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
 
   
 
@@ -631,16 +572,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -661,6 +592,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -682,7 +623,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Java 예제: 로또 (중복없이 배열에서 값 추출, 배열 원소 스왑) + HashSet 이용</h1>
     
@@ -756,9 +697,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1305 words"
+  title="1228 words"
 >
-  <em>7 min</em> read</span>
+  <em>6 min</em> read</span>
 
         </div>
       </div>
@@ -766,14 +707,36 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Java 예제: 로또 (중복없이 배열에서 값 추출, 배열 원소 스왑) + HashSet 이용</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Java 예제: 로또 (중복없이 배열에서 값 추출, 배열 원소 스왑) + HashSet 이용</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="hashset-이용-2020년-4월-24일-추가"><span class="me-2"><strong>HashSet 이용 (2020년 4월 24일 추가)</strong></span><a href="#hashset-이용-2020년-4월-24일-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="hashset-이용-2020년-4월-24일-추가"><span class="me-2"><strong>HashSet 이용 (2020년 4월 24일 추가)</strong></span><a href="#hashset-이용-2020년-4월-24일-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Set 자료형은 중복을 허용하지 않는다는 특성을 이용한 코드입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -821,97 +784,72 @@
 45
 46
 47
-</pre></td><td class="rouge-code"><pre>import java.util.HashSet;
-import java.util.Set;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
 
-public class SetTest {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SetTest</span> <span class="o">{</span>
 
-  public static void main(String[] args) {
-    Set&lt;Integer&gt; lotto = new HashSet&lt;&gt;();
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">lotto</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span>
 
-    while(lotto.size() &lt; 6) {
-      lotto.add((int)(Math.random() * 45 + 1));
-    }
+    <span class="k">while</span><span class="o">(</span><span class="n">lotto</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">lotto</span><span class="o">.</span><span class="na">add</span><span class="o">((</span><span class="kt">int</span><span class="o">)(</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="mi">45</span> <span class="o">+</span> <span class="mi">1</span><span class="o">));</span>
+    <span class="o">}</span>
 
-    System.out.println(lotto);
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">lotto</span><span class="o">);</span>
 
-    // Optional: Set to array
-    Integer[] lottoArr = new Integer[6];
-    lotto.toArray(lottoArr);
-    bubbleSort(lottoArr);
+    <span class="c1">// Optional: Set to array</span>
+    <span class="nc">Integer</span><span class="o">[]</span> <span class="n">lottoArr</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Integer</span><span class="o">[</span><span class="mi">6</span><span class="o">];</span>
+    <span class="n">lotto</span><span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="n">lottoArr</span><span class="o">);</span>
+    <span class="n">bubbleSort</span><span class="o">(</span><span class="n">lottoArr</span><span class="o">);</span>
 
-    for(int i : lottoArr) {
-      System.out.print(i + "\t");
-    }
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">lottoArr</span><span class="o">)</span> <span class="o">{</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">"\t"</span><span class="o">);</span>
+    <span class="o">}</span>
 
-  }
+  <span class="o">}</span>
 
-  private static void bubbleSort(Integer[] array) {
-    // 버블정렬
-    boolean isContinue = false;
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">bubbleSort</span><span class="o">(</span><span class="nc">Integer</span><span class="o">[]</span> <span class="n">array</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// 버블정렬</span>
+    <span class="kt">boolean</span> <span class="n">isContinue</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
     
-    int tempNum;
-    for (int i = 0; i &lt; (array.length - 1); i++) {            
-      for (int j = 0; j &lt; (array.length - i - 1); j++) {
-        if (array[j] &gt; array[j + 1]) {
-          tempNum = array[j];
-          array[j] = array[j + 1];
-          array[j + 1] = tempNum;
-          isContinue = true;
-        }
-      }
-      if (!isContinue) {
-        break;
-      }
-    }
-  }
+    <span class="kt">int</span> <span class="n">tempNum</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="o">(</span><span class="n">array</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>            
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="o">(</span><span class="n">array</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">])</span> <span class="o">{</span>
+          <span class="n">tempNum</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+          <span class="n">array</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+          <span class="n">array</span><span class="o">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">tempNum</span><span class="o">;</span>
+          <span class="n">isContinue</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="k">if</span> <span class="o">(!</span><span class="n">isContinue</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">break</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
 
-}
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/01/스크린샷-2020-04-24-오후-2.48.59.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/스크린샷-2020-04-24-오후-2.48.59.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/01/java-lotto-1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/java-lotto-1.png" alt="" loading="lazy"></a></p>
 
-<p>이 방법이 제일 간단합니다. 밑의 내용은 보지마세요.</p>
+<details>
+<summary>👉 이전 작성 내용보기 </summary>
 
-<hr />
+## 이전 작성 내용
 
-<p>랜덤값을 뽑는 게 어려운 건 아니지만 중복없이 랜덤을 뽑는건 상당히 까다로운 작업입니다. 스트레이트로 접근하려고 하면 매우 지저분한 코드가 나올 수 있습니다. 프로그래밍 알고리즘 중에 <strong>카드뽑기(shuffle)</strong> 기법이라는 게 있는데요, 아래와 같은 순서로 진행됩니다.</p>
+랜덤값을 뽑는 게 어려운 건 아니지만 중복없이 랜덤을 뽑는건 상당히 까다로운 작업입니다. 스트레이트로 접근하려고 하면 매우 지저분한 코드가 나올 수 있습니다. 프로그래밍 알고리즘 중에 **카드뽑기(shuffle)** 기법이라는 게 있는데요, 아래와 같은 순서로 진행됩니다.
 
-<ol>
-  <li>배열 내에서 임의의 두 값을 선택한 뒤 스왑(swap)한다.</li>
-  <li>충분한 수 만큼 반복한다.</li>
-  <li>충분한 수 만큼 반복했다면 배열 내 원소들은 임의의 순서대로 섞여있을 것이며 여기서 원하는 갯수만큼 앞에서든 뒤에서든 추출한다.</li>
-</ol>
+1. 배열 내에서 임의의 두 값을 선택한 뒤 스왑(swap)한다.
+2. 충분한 수 만큼 반복한다.
+3. 충분한 수 만큼 반복했다면 배열 내 원소들은 임의의 순서대로 섞여있을 것이며 여기서 원하는 갯수만큼 앞에서든 뒤에서든 추출한다.
 
-<p>카드뽑기 알고리즘을 사용하려면 먼저 스왑에 대해 알아볼 필요가 있습니다. <strong>스왑(swap)</strong> 기법은 배열 등에서 앞과 뒤를 교환하는 알고리즘으로, 배열의 정렬 등에서 사용하며 정보처리기사에서도 단골로 출제되는 문제입니다. 아래는 스왑 예제입니다.</p>
+카드뽑기 알고리즘을 사용하려면 먼저 스왑에 대해 알아볼 필요가 있습니다. **스왑(swap)** 기법은 배열 등에서 앞과 뒤를 교환하는 알고리즘으로, 배열의 정렬 등에서 사용하며 정보처리기사에서도 단골로 출제되는 문제입니다. 아래는 스왑 예제입니다.
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-</pre></td><td class="rouge-code"><pre>public class ArraySwap {
+```java
+public class ArraySwap {
     
     public static void main(String[] args) {
         char[] A = new char[2];
@@ -934,76 +872,16 @@ public class SetTest {
     }
  
 }
-</pre></td></tr></tbody></table></code></div></div>
+```
 
-<p><strong><em>위의 코드에 나오는 가수의 이름은?</em></strong></p>
+**_위의 코드에 나오는 가수의 이름은?_**
 
-<p> </p>
+ 
 
-<p>카드뽑기를 할건데 주제가 로또이므로 숫자 6개를 추출합니다. 반복할 횟수는 시스템의 성능과 알고리즘 시간 등을 고려하여 정하는데 천단위 경우일 경우에는 생각처럼 잘 안섞여서 만단위 이상으로 충분히 진행하는 것이 좋겠습니다.</p>
+카드뽑기를 할건데 주제가 로또이므로 숫자 6개를 추출합니다. 반복할 횟수는 시스템의 성능과 알고리즘 시간 등을 고려하여 정하는데 천단위 경우일 경우에는 생각처럼 잘 안섞여서 만단위 이상으로 충분히 진행하는 것이 좋겠습니다.
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-</pre></td><td class="rouge-code"><pre>import blog.gui.PrintArray;
+```java
+import blog.gui.PrintArray;
 
 public class Lotto {
   
@@ -1062,45 +940,16 @@ public class Lotto {
 
     }
 }
-</pre></td></tr></tbody></table></code></div></div>
+```
 
-<p><code class="language-plaintext highlighter-rouge">new PrintArray()</code>는 <a href="http://yoonbumtae.com/?p=588">Java Swing 예제: 다차원 배열 표시하기 (기초 설정 방법, for문으로 swing 요소 반복 등)</a> 에 있습니다.</p>
+`new PrintArray()`는 [Java Swing 예제: 다차원 배열 표시하기 (기초 설정 방법, for문으로 swing 요소 반복 등)](/posts/java-swing-예제-다차원-배열-표시하기-기초-설정-방법-for문으) 에 있습니다.
 
-<p> </p>
+ 
 
-<p>자바 8 이상에서 사용할 수 있는 <strong>Collections</strong>를 사용한 고급 기법에 대해 알아보겠습니다. <code class="language-plaintext highlighter-rouge">Collections.shuffle(List&lt;?&gt; list);</code> 를 사용하면 카드뽑기를 훨씬 간편하게 할 수 있습니다.</p>
+자바 8 이상에서 사용할 수 있는 **Collections**를 사용한 고급 기법에 대해 알아보겠습니다. `Collections.shuffle(List&lt;?&gt; list);` 를 사용하면 카드뽑기를 훨씬 간편하게 할 수 있습니다.
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-</pre></td><td class="rouge-code"><pre>import java.util.Arrays;
+```java
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -1119,20 +968,22 @@ public class LottoShuffle {
             lotto[i] =  i + 1;
         }
         
-        List&lt;Integer&gt; list = Arrays.stream( lotto ).boxed().collect( Collectors.toList() );
+        List<Integer> list = Arrays.stream( lotto ).boxed().collect( Collectors.toList() );
         Collections.shuffle(list);	// 섞기
-        List&lt;Integer&gt; selection = list.subList(0, 6);	// 6개 추출
+        List<Integer> selection = list.subList(0, 6);	// 6개 추출
         Collections.sort(selection); // 추출한 6개 정렬 
         // selection.forEach(System.out::println);
         
         new PrintArray("로또 번호 뽑기", selection);
   }
 }
-</pre></td></tr></tbody></table></code></div></div>
+```
 
-<p>참고로 <code class="language-plaintext highlighter-rouge">Collections</code>의 <code class="language-plaintext highlighter-rouge">shuffle</code>과 <code class="language-plaintext highlighter-rouge">sort</code>는 리턴형이 <code class="language-plaintext highlighter-rouge">void</code>이며, 배열이 아니라 리스트 등의 <code class="language-plaintext highlighter-rouge">Collection</code>자료형에서 사용 가능한 옵션이므로 배열을 리스트로 바꿔줘야 합니다. 20라인의 <code class="language-plaintext highlighter-rouge">Arrays.stream</code>이 그 역할을 합니다. <code class="language-plaintext highlighter-rouge">int[]</code> 형 배열은 스트림으로 변환하는 것이 Wrapper-object 관련 문제를 방지하는 데 도움이 됩니다.</p>
+참고로 `Collections`의 `shuffle`과 `sort`는 리턴형이 `void`이며, 배열이 아니라 리스트 등의 `Collection`자료형에서 사용 가능한 옵션이므로 배열을 리스트로 바꿔줘야 합니다. 20라인의 `Arrays.stream`이 그 역할을 합니다. `int[]` 형 배열은 스트림으로 변환하는 것이 Wrapper-object 관련 문제를 방지하는 데 도움이 됩니다.
 
-<p><a href="/assets/img/wp-content/uploads/2019/01/collection.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/collection.png" alt="" loading="lazy"></a></p>
+ ![](/assets/img/wp-content/uploads/2019/01/collection.png)
+&lt;/detail&gt;
+</Integer></Integer></details>
 
   </div>
 
@@ -1416,11 +1267,6 @@ public class LottoShuffle {
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -1663,41 +1509,6 @@ public class LottoShuffle {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1922,6 +1733,149 @@ public class LottoShuffle {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2018,225 +1972,7 @@ public class LottoShuffle {
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -2360,6 +2096,12 @@ public class LottoShuffle {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2393,18 +2135,6 @@ public class LottoShuffle {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8655,11 +8385,6 @@ public class LottoShuffle {
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -8902,41 +8627,6 @@ public class LottoShuffle {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -9161,6 +8851,149 @@ public class LottoShuffle {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -9257,225 +9090,7 @@ public class LottoShuffle {
     
     
     
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
