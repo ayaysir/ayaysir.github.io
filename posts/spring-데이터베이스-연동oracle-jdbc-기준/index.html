@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Spring: 데이터베이스 연동(Oracle-JDBC 기준), Spring JDBC" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="XML 선언" />
-<meta property="og:description" content="XML 선언" />
+<meta name="description" content="Spring: 데이터베이스 연동(Oracle-JDBC 기준) 방법입니다." />
+<meta property="og:description" content="Spring: 데이터베이스 연동(Oracle-JDBC 기준) 방법입니다." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/spring-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EB%8F%99oracle-jdbc-%EA%B8%B0%EC%A4%80/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/spring-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EB%8F%99oracle-jdbc-%EA%B8%B0%EC%A4%80/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Spring: 데이터베이스 연동(Oracle-JDBC 기준), Spring JDBC" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-01-29T00:00:00+09:00","datePublished":"2019-01-29T00:00:00+09:00","description":"XML 선언","headline":"Spring: 데이터베이스 연동(Oracle-JDBC 기준), Spring JDBC","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/spring-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EB%8F%99oracle-jdbc-%EA%B8%B0%EC%A4%80/"},"url":"https://ayaysir.github.io/posts/spring-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EB%8F%99oracle-jdbc-%EA%B8%B0%EC%A4%80/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-01-29T00:00:00+09:00","datePublished":"2019-01-29T00:00:00+09:00","description":"Spring: 데이터베이스 연동(Oracle-JDBC 기준) 방법입니다.","headline":"Spring: 데이터베이스 연동(Oracle-JDBC 기준), Spring JDBC","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/spring-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EB%8F%99oracle-jdbc-%EA%B8%B0%EC%A4%80/"},"url":"https://ayaysir.github.io/posts/spring-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EB%8F%99oracle-jdbc-%EA%B8%B0%EC%A4%80/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -490,16 +497,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -623,6 +620,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -639,7 +646,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Spring: 데이터베이스 연동(Oracle-JDBC 기준), Spring JDBC</h1>
     
@@ -713,7 +720,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1541 words"
+  title="1493 words"
 >
   <em>8 min</em> read</span>
 
@@ -723,34 +730,58 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Spring: 데이터베이스 연동(Oracle-JDBC 기준), Spring JDBC</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Spring: 데이터베이스 연동(Oracle-JDBC 기준), Spring JDBC</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="xml-선언"><span class="me-2"><strong>XML 선언</strong></span><a href="#xml-선언" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <p>Spring: 데이터베이스 연동(Oracle-JDBC 기준) 방법입니다.</p>
 
-<p>이 부분은 데이터베이스의 종류, 사용하는 플랫폼에 따라 달라지므로 사용 환경에 맞는지 확인해봐야 합니다. Spring Boot의 마리아DB(mariadb)기준은 <a href="http://yoonbumtae.com/?p=658">이 글</a>을 참고해주세요.</p>
+<h2 id="xml-선언"><span class="me-2"><strong>XML 선언</strong></span><a href="#xml-선언" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<!-- 이 부분은 데이터베이스의 종류, 사용하는 플랫폼에 따라 달라지므로 사용 환경에 맞는지 확인해봐야 합니다. Spring Boot의 마리아DB(mariadb)기준은 [이 글](http://yoonbumtae.com/?p=658)을 참고해주세요. -->
 
 <p>이 부분은 <code class="language-plaintext highlighter-rouge">properties</code> 태그와 <code class="language-plaintext highlighter-rouge">dependencies</code> 태그 사이에 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>&lt;repositories&gt;
-  &lt;repository&gt;
-    &lt;id&gt;oracle&lt;/id&gt;
-    &lt;url&gt;http://maven.jahia.org/maven2&lt;/url&gt;
-  &lt;/repository&gt;
-&lt;/repositories&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;repositories&gt;</span>
+  <span class="nt">&lt;repository&gt;</span>
+    <span class="nt">&lt;id&gt;</span>oracle<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;url&gt;</span>http://maven.jahia.org/maven2<span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 부분은 <code class="language-plaintext highlighter-rouge">dependencies</code> 태그 쌍 내에 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -768,29 +799,29 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>        &lt;dependency&gt;
-            &lt;groupId&gt;com.oracle&lt;/groupId&gt;
-            &lt;artifactId&gt;ojdbc6&lt;/artifactId&gt;
-            &lt;version&gt;12.1.0.2&lt;/version&gt;
-        &lt;/dependency&gt;
+</pre></td><td class="rouge-code"><pre>        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>com.oracle<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>ojdbc6<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>12.1.0.2<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
  
-        &lt;dependency&gt;
-            &lt;groupId&gt;commons-dbcp&lt;/groupId&gt;
-            &lt;artifactId&gt;commons-dbcp&lt;/artifactId&gt;
-            &lt;version&gt;1.4&lt;/version&gt;
-        &lt;/dependency&gt;
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>commons-dbcp<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>commons-dbcp<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>1.4<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
  
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
-            &lt;version&gt;${org.springframework-version}&lt;/version&gt;
-        &lt;/dependency&gt;
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.springframework<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-jdbc<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>${org.springframework-version}<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>아래 내용은 <code class="language-plaintext highlighter-rouge">context.xml</code>에 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -802,29 +833,29 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>    &lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"&gt;
-        &lt;property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"&gt;&lt;/property&gt;
-        &lt;property name="url" value="[DB주소: jdbc:oracle:thin:@localhost:1521:xe]"&gt;&lt;/property&gt;
-        &lt;property name="username" value="[아이디]" /&gt;
-        &lt;property name="password" value="[비밀번호]" /&gt;
-    &lt;/bean&gt;
+</pre></td><td class="rouge-code"><pre>    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"dataSource"</span> <span class="na">class=</span><span class="s">"org.apache.commons.dbcp.BasicDataSource"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"driverClassName"</span> <span class="na">value=</span><span class="s">"oracle.jdbc.driver.OracleDriver"</span><span class="nt">&gt;&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">value=</span><span class="s">"[DB주소: jdbc:oracle:thin:@localhost:1521:xe]"</span><span class="nt">&gt;&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">value=</span><span class="s">"[아이디]"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">value=</span><span class="s">"[비밀번호]"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
     
-    &lt;bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"&gt;
-        &lt;property name="dataSource" ref="dataSource" /&gt;
-    &lt;/bean&gt;
+    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"jdbcTemplate"</span> <span class="na">class=</span><span class="s">"org.springframework.jdbc.core.JdbcTemplate"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"dataSource"</span> <span class="na">ref=</span><span class="s">"dataSource"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="jdbc"><span class="me-2"><strong>JDBC</strong></span><a href="#jdbc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="jdbc"><span class="me-2"><strong>JDBC</strong></span><a href="#jdbc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>먼저 비교를 위해 일반적인 방식(JDBC) 으로 클래스 파일을 작성해 보겠습니다.</p>
 
-<h5 id="dao"><span class="me-2"><strong>DAO</strong></span><a href="#dao" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="dao"><span class="me-2"><strong>DAO</strong></span><a href="#dao" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -890,79 +921,79 @@
 63
 64
 65
-</pre></td><td class="rouge-code"><pre>@Repository
-public class MessagesDAOImpl implements MessagesDAO {
+</pre></td><td class="rouge-code"><pre><span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessagesDAOImpl</span> <span class="kd">implements</span> <span class="nc">MessagesDAO</span> <span class="o">{</span>
  
-    public MessagesDAOImpl() {
+    <span class="kd">public</span> <span class="nf">MessagesDAOImpl</span><span class="o">()</span> <span class="o">{</span>
  
-    }
+    <span class="o">}</span>
  
-    @Override
-    public int insert(Connection con, Message msg) throws SQLException, NamingException {
-        String sql = "insert into messages values(msg_seq.nextval, ?, ?)";
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">insert</span><span class="o">(</span><span class="nc">Connection</span> <span class="n">con</span><span class="o">,</span> <span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"insert into messages values(msg_seq.nextval, ?, ?)"</span><span class="o">;</span>
  
-        PreparedStatement ps = con.prepareStatement(sql);
+        <span class="nc">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
  
-        ps.setString(1, msg.getWriter());
-        ps.setString(2, msg.getMessage());
+        <span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">msg</span><span class="o">.</span><span class="na">getWriter</span><span class="o">());</span>
+        <span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">msg</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
  
-        int result = ps.executeUpdate();            
+        <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>            
  
-        return result;        
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>        
  
-    }
+    <span class="o">}</span>
  
-    @Override
-    public List&lt;Message&gt; getAllData(Connection con) throws SQLException, NamingException {
-        String sql = "select * from messages";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Message</span><span class="o">&gt;</span> <span class="nf">getAllData</span><span class="o">(</span><span class="nc">Connection</span> <span class="n">con</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"select * from messages"</span><span class="o">;</span>
+        <span class="nc">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+        <span class="nc">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">();</span>
  
-        List&lt;Message&gt; list = new ArrayList&lt;&gt;();
-        while(rs.next()) {
-            Message msg = new Message();
-            msg.setSeq(rs.getInt(1));
-            msg.setWriter(rs.getString(2));
-            msg.setMessage(rs.getString(3));
-            list.add(msg);
-        }
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Message</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">Message</span> <span class="n">msg</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Message</span><span class="o">();</span>
+            <span class="n">msg</span><span class="o">.</span><span class="na">setSeq</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+            <span class="n">msg</span><span class="o">.</span><span class="na">setWriter</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+            <span class="n">msg</span><span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>
+            <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+        <span class="o">}</span>
  
-        return list;
-    }
+        <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+    <span class="o">}</span>
  
-    @Override
-    public int update(Connection con, Message msg) throws SQLException, NamingException {
-        String sql = "update messages set writer = ?, message = ? where seq = ?";
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">update</span><span class="o">(</span><span class="nc">Connection</span> <span class="n">con</span><span class="o">,</span> <span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"update messages set writer = ?, message = ? where seq = ?"</span><span class="o">;</span>
  
-        PreparedStatement ps = con.prepareStatement(sql);
+        <span class="nc">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
         
-        ps.setString(1, msg.getWriter());
-        ps.setString(2, msg.getMessage());
-        ps.setInt(3, msg.getSeq());    
+        <span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">msg</span><span class="o">.</span><span class="na">getWriter</span><span class="o">());</span>
+        <span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">msg</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="n">ps</span><span class="o">.</span><span class="na">setInt</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="n">msg</span><span class="o">.</span><span class="na">getSeq</span><span class="o">());</span>    
         
-        return ps.executeUpdate();
-    }
+        <span class="k">return</span> <span class="n">ps</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+    <span class="o">}</span>
  
-    @Override
-    public int delete(Connection con, int seq) throws SQLException, NamingException {
-        String sql = "delete from messages where seq = ?";
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">delete</span><span class="o">(</span><span class="nc">Connection</span> <span class="n">con</span><span class="o">,</span> <span class="kt">int</span> <span class="n">seq</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"delete from messages where seq = ?"</span><span class="o">;</span>
         
-        PreparedStatement ps = con.prepareStatement(sql);
+        <span class="nc">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
         
-        ps.setInt(1, seq);
+        <span class="n">ps</span><span class="o">.</span><span class="na">setInt</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">seq</span><span class="o">);</span>
         
-        return ps.executeUpdate();        
-    }
+        <span class="k">return</span> <span class="n">ps</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>        
+    <span class="o">}</span>
  
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="service"><span class="me-2"><strong>Service</strong></span><a href="#service" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="service"><span class="me-2"><strong>Service</strong></span><a href="#service" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1032,85 +1063,83 @@ public class MessagesDAOImpl implements MessagesDAO {
 67
 68
 69
-70
-</pre></td><td class="rouge-code"><pre> 
-@Service 
-public class MessagesServiceImpl implements MessagesService {
+</pre></td><td class="rouge-code"><pre><span class="nd">@Service</span> 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessagesServiceImpl</span> <span class="kd">implements</span> <span class="nc">MessagesService</span> <span class="o">{</span>
     
-    @Autowired
-    private MessagesDAO mdao;
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="nc">MessagesDAO</span> <span class="n">mdao</span><span class="o">;</span>
     
-    @Autowired
-    private DataSource ds;
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="nc">DataSource</span> <span class="n">ds</span><span class="o">;</span>
     
-    @Override
-    public int insert(Message msg) throws SQLException, NamingException {
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">insert</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
         
-        Connection con = ds.getConnection();
-        try {
-            int result = this.mdao.insert(con, msg);
-            return result;
-        } catch (SQLException e) {
-            con.rollback();
-            throw e;
-        } finally {
-            con.commit();
-            con.close();
-        }
+        <span class="nc">Connection</span> <span class="n">con</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="na">getConnection</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">mdao</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">con</span><span class="o">,</span> <span class="n">msg</span><span class="o">);</span>
+            <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">con</span><span class="o">.</span><span class="na">rollback</span><span class="o">();</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">con</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+            <span class="n">con</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
  
-    }
+    <span class="o">}</span>
     
-    @Override
-    public List&lt;Message&gt; getAllData() throws SQLException, NamingException {
-        Connection con = ds.getConnection();
-        List&lt;Message&gt; list = this.mdao.getAllData(con);
-        con.close();
-        return list;
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Message</span><span class="o">&gt;</span> <span class="nf">getAllData</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">con</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="na">getConnection</span><span class="o">();</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Message</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">mdao</span><span class="o">.</span><span class="na">getAllData</span><span class="o">(</span><span class="n">con</span><span class="o">);</span>
+        <span class="n">con</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+    <span class="o">}</span>
     
-    @Override
-    public int update(Message msg) throws SQLException, NamingException {
-        Connection con = ds.getConnection();
-        try {
-            int result = mdao.update(con, msg);
-            return result;
-        } catch(SQLException | NamingException e) {
-            con.rollback();
-            throw e;
-        } finally {
-            con.commit();
-            con.close();
-        }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">update</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">con</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="na">getConnection</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">mdao</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">con</span><span class="o">,</span> <span class="n">msg</span><span class="o">);</span>
+            <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">SQLException</span> <span class="o">|</span> <span class="nc">NamingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">con</span><span class="o">.</span><span class="na">rollback</span><span class="o">();</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">con</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+            <span class="n">con</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
         
-    }
+    <span class="o">}</span>
     
-    @Override
-    public int delete(int seq) throws SQLException, NamingException {
-        Connection con = ds.getConnection();
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">delete</span><span class="o">(</span><span class="kt">int</span> <span class="n">seq</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="nc">Connection</span> <span class="n">con</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="na">getConnection</span><span class="o">();</span>
         
-        try {
-            int result = this.mdao.delete(con, seq);
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">mdao</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">con</span><span class="o">,</span> <span class="n">seq</span><span class="o">);</span>
  
-            return result;
+            <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
             
-        } catch (SQLException e) {
-            con.rollback();
-            throw e;
-        } finally {
-            con.commit();
-            con.close();
-        }
-    }
-}
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">con</span><span class="o">.</span><span class="na">rollback</span><span class="o">();</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="n">con</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+            <span class="n">con</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="메인-클래스"><span class="me-2"><strong>메인 클래스</strong></span><a href="#메인-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="메인-클래스"><span class="me-2"><strong>메인 클래스</strong></span><a href="#메인-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1129,38 +1158,38 @@ public class MessagesServiceImpl implements MessagesService {
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>public static void main(String[] args) {
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
  
-        AbstractApplicationContext x = new GenericXmlApplicationContext("appContext.xml");
+        <span class="nc">AbstractApplicationContext</span> <span class="n">x</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GenericXmlApplicationContext</span><span class="o">(</span><span class="s">"appContext.xml"</span><span class="o">);</span>
  
-        // 컨트롤러와 맞대응하는 것은 서비스 레이어 -&gt; ServiceImpl
-        MessagesService ms = (MessagesServiceImpl) x.getBean("messagesServiceImpl");
+        <span class="c1">// 컨트롤러와 맞대응하는 것은 서비스 레이어 -&gt; ServiceImpl</span>
+        <span class="nc">MessagesService</span> <span class="n">ms</span> <span class="o">=</span> <span class="o">(</span><span class="nc">MessagesServiceImpl</span><span class="o">)</span> <span class="n">x</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"messagesServiceImpl"</span><span class="o">);</span>
  
-        try {
-            List&lt;Message&gt; list = ms.getAllData();
-            for(Message msg : list) {
-                System.out.println(msg);
-            }
-        } catch (SQLException | NamingException e) {
-            e.printStackTrace();
-        }
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Message</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="na">getAllData</span><span class="o">();</span>
+            <span class="k">for</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">SQLException</span> <span class="o">|</span> <span class="nc">NamingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
  
-        x.close();
-    }
+        <span class="n">x</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="스프링-jdbc"><span class="me-2"><strong>스프링 JDBC</strong></span><a href="#스프링-jdbc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="스프링-jdbc"><span class="me-2"><strong>스프링 JDBC</strong></span><a href="#스프링-jdbc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><strong>Spring JDBC</strong>는 JDBC를 더 쉽게 쓸 수 있도록 가공한 것으로, <code class="language-plaintext highlighter-rouge">update</code> 관련 기능은 sql문을 변수로 저장하는 것만으로 실행할 수 있어 일반 JDBC보다 간편하게 이용할 수 있습니다. JDBC의 일종이기 때문에 SQL안에 <code class="language-plaintext highlighter-rouge">?</code>가 들어간다든가(PreparedStatement) <code class="language-plaintext highlighter-rouge">RowMapper</code> 클래스를 이용하는 것 등 많은 점이 기존 JDBC와 유사합니다.</p>
 
 <p> </p>
 
-<h5 id="dao-1"><span class="me-2"><strong>DAO</strong></span><a href="#dao-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="dao-1"><span class="me-2"><strong>DAO</strong></span><a href="#dao-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1215,68 +1244,68 @@ public class MessagesServiceImpl implements MessagesService {
 52
 53
 54
-</pre></td><td class="rouge-code"><pre>@Repository
-public class MessagesDAOImpl implements MessagesDAO {
+</pre></td><td class="rouge-code"><pre><span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessagesDAOImpl</span> <span class="kd">implements</span> <span class="nc">MessagesDAO</span> <span class="o">{</span>
     
-    @Autowired
-    private JdbcTemplate template;
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="nc">JdbcTemplate</span> <span class="n">template</span><span class="o">;</span>
  
-    public MessagesDAOImpl() {
+    <span class="kd">public</span> <span class="nf">MessagesDAOImpl</span><span class="o">()</span> <span class="o">{</span>
  
-    }
+    <span class="o">}</span>
  
-    @Override
-    public int insert(Message msg) throws SQLException, NamingException {
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">insert</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
         
-        String sql = "insert into messages values(msg_seq.nextval, ?, ?)";
-        return template.update(sql, msg.getWriter(), msg.getMessage());
-    }
+        <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"insert into messages values(msg_seq.nextval, ?, ?)"</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">template</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">sql</span><span class="o">,</span> <span class="n">msg</span><span class="o">.</span><span class="na">getWriter</span><span class="o">(),</span> <span class="n">msg</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+    <span class="o">}</span>
  
-    @Override
-    public List&lt;Message&gt; getAllData() throws SQLException, NamingException {
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Message</span><span class="o">&gt;</span> <span class="nf">getAllData</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
         
-        String sql = "select * from messages";
+        <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"select * from messages"</span><span class="o">;</span>
         
-        return template.query(sql, (rs, rowNum) -&gt; {
-            Message msg = new Message();
-            msg.setSeq(rs.getInt(1));
-            msg.setWriter(rs.getString(2));
-            msg.setMessage(rs.getString(3));
-            return msg;
-        });
+        <span class="k">return</span> <span class="n">template</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">sql</span><span class="o">,</span> <span class="o">(</span><span class="n">rs</span><span class="o">,</span> <span class="n">rowNum</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="nc">Message</span> <span class="n">msg</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Message</span><span class="o">();</span>
+            <span class="n">msg</span><span class="o">.</span><span class="na">setSeq</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+            <span class="n">msg</span><span class="o">.</span><span class="na">setWriter</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+            <span class="n">msg</span><span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>
+            <span class="k">return</span> <span class="n">msg</span><span class="o">;</span>
+        <span class="o">});</span>
         
-        /* 람다식의 원래 형태:
+        <span class="cm">/* 람다식의 원래 형태:
          * new RowMapper&lt;X&gt;() {
          *     @Override
          *     public X mapRow(ResultSet rs, int rowNum) throws SQLException {... return X;}
-         */
+         */</span>
         
-    }
+    <span class="o">}</span>
  
-    @Override
-    public int update(Message msg) throws SQLException, NamingException {
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">update</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
         
-        String sql = "update messages set writer = ?, message = ? where seq = ?";
-        return template.update(sql, msg.getWriter(), msg.getMessage(), msg.getSeq());
-    }
+        <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"update messages set writer = ?, message = ? where seq = ?"</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">template</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">sql</span><span class="o">,</span> <span class="n">msg</span><span class="o">.</span><span class="na">getWriter</span><span class="o">(),</span> <span class="n">msg</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span> <span class="n">msg</span><span class="o">.</span><span class="na">getSeq</span><span class="o">());</span>
+    <span class="o">}</span>
  
-    @Override
-    public int delete(int seq) throws SQLException, NamingException {
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">delete</span><span class="o">(</span><span class="kt">int</span> <span class="n">seq</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
         
-        String sql = "delete from messages where seq = ?";
-        return template.update(sql, seq);
-    }
+        <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"delete from messages where seq = ?"</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">template</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">sql</span><span class="o">,</span> <span class="n">seq</span><span class="o">);</span>
+    <span class="o">}</span>
  
-}
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="service-1"><span class="me-2"><strong>Service</strong></span><a href="#service-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="service-1"><span class="me-2"><strong>Service</strong></span><a href="#service-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1303,32 +1332,32 @@ public class MessagesDAOImpl implements MessagesDAO {
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>@Service
-public class MessagesServiceImpl implements MessagesService {
+</pre></td><td class="rouge-code"><pre><span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessagesServiceImpl</span> <span class="kd">implements</span> <span class="nc">MessagesService</span> <span class="o">{</span>
     
-    @Autowired
-    private MessagesDAO mdao;
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="nc">MessagesDAO</span> <span class="n">mdao</span><span class="o">;</span>
     
-    @Override
-    public int insert(Message msg) throws SQLException, NamingException {
-        return mdao.insert(msg);
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">insert</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mdao</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+    <span class="o">}</span>
     
-    @Override
-    public List&lt;Message&gt; getAllData() throws SQLException, NamingException {
-        return mdao.getAllData();
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Message</span><span class="o">&gt;</span> <span class="nf">getAllData</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mdao</span><span class="o">.</span><span class="na">getAllData</span><span class="o">();</span>
+    <span class="o">}</span>
     
-    @Override
-    public int update(Message msg) throws SQLException, NamingException {
-        return mdao.update(msg);
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">update</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mdao</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+    <span class="o">}</span>
     
-    @Override
-    public int delete(int seq) throws SQLException, NamingException {
-        return mdao.delete(seq);
-    }
-}
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">delete</span><span class="o">(</span><span class="kt">int</span> <span class="n">seq</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">,</span> <span class="nc">NamingException</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mdao</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">seq</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1371,12 +1400,12 @@ public Message selectBySeq(int seq) {
 
 <p> </p>
 
-<h4 id="트랜잭션-처리"><span class="me-2"><strong>트랜잭션 처리</strong></span><a href="#트랜잭션-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="트랜잭션-처리"><span class="me-2"><strong>트랜잭션 처리</strong></span><a href="#트랜잭션-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>쿼리 중 트랜잭션 처리가 필요할 수도 있습니다. 트랜잭션 처리(annotation-driven 형식)가 필요하다면 아래 부분을 <code class="language-plaintext highlighter-rouge">context.xml</code>에 추가하고 네임스페이스 선언도 <code class="language-plaintext highlighter-rouge">tx</code>를 인식할 수 있도록 수정합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1389,22 +1418,22 @@ public Message selectBySeq(int seq) {
 10
 </pre></td><td class="rouge-code"><pre>namespace 부분에 xmlns:tx="http://www.springframework.org/schema/tx" 추가
 
-&lt;!-- 데이터베이스 트랜잭션: commit, rollback --&gt;
-&lt;bean id="transactionManager" 
-    class="org.springframework.jdbc.datasource.DataSourceTransactionManager"&gt;
-    &lt;property name="dataSource" ref="dataSource" /&gt;
-&lt;/bean&gt;
+<span class="c">&lt;!-- 데이터베이스 트랜잭션: commit, rollback --&gt;</span>
+<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"transactionManager"</span> 
+    <span class="na">class=</span><span class="s">"org.springframework.jdbc.datasource.DataSourceTransactionManager"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"dataSource"</span> <span class="na">ref=</span><span class="s">"dataSource"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/bean&gt;</span>
 
-&lt;!-- 트랜잭션 지정 방식으로 annotation 선택 --&gt;
-&lt;tx:annotation-driven/&gt;
+<span class="c">&lt;!-- 트랜잭션 지정 방식으로 annotation 선택 --&gt;</span>
+<span class="nt">&lt;tx:annotation-driven/&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>사용 방법은 서비스(<code class="language-plaintext highlighter-rouge">@Service</code>) 레이어의 메소드 중 트랜잭션(<code class="language-plaintext highlighter-rouge">commit</code>, <code class="language-plaintext highlighter-rouge">rollback</code>)이 필요한 곳에 <code class="language-plaintext highlighter-rouge">@Transactional</code> 어노테이션을 부착합니다. 오류를 방지하기 위해 아래와 같이 작성하면 좋습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre> @Transactional("transactionManager") // bean으로 만든 트랜잭션 매니저의 아이디와 같도록
+</pre></td><td class="rouge-code"><pre> <span class="nd">@Transactional</span><span class="o">(</span><span class="s">"transactionManager"</span><span class="o">)</span> <span class="c1">// bean으로 만든 트랜잭션 매니저의 아이디와 같도록</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -1807,6 +1836,8 @@ public Message selectBySeq(int seq) {
     
     
     
+      
+    
   
     
     
@@ -2342,122 +2373,6 @@ public Message selectBySeq(int seq) {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2507,7 +2422,7 @@ public Message selectBySeq(int seq) {
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>
@@ -2523,6 +2438,12 @@ public Message selectBySeq(int seq) {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -2981,79 +2902,7 @@ public Message selectBySeq(int seq) {
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8550,7 +8399,7 @@ public Message selectBySeq(int seq) {
 
               <h4 class="pt-0 my-2">Spring Boot: 시큐리티(Security) - 1</h4>
               <div class="text-muted">
-                <p>\[rcblock id="3197"\]     스프링에서 로그인, 권한별 접근 기능 등을 구현하고 싶다면 **스프링 시큐리티(Spring Security)**를 사용해야 합니다.  1\. 처음 스타트 [프로젝트 생성](http://yoonbumtae.com/?p=1018) 시 디펜던시에서 **Security**를 선택합니다.   ![](/assets/...</p>
+                <p>   스프링에서 로그인, 권한별 접근 기능 등을 구현하고 싶다면 **스프링 시큐리티**(Spring Security)를 사용해야 합니다.  ## 절차  ### 1. 프로젝트 생성: 디펜더시에서 Security 선택  처음 스타트 [프로젝트 생성](http://yoonbumtae.com/?p=1018) 시 디펜던시에서 **Security**를 선택합니다...</p>
               </div>
             </div>
           </a>
@@ -8578,7 +8427,7 @@ public Message selectBySeq(int seq) {
 
               <h4 class="pt-0 my-2">Spring: 스프링의 어노테이션(Annotations) 사용법</h4>
               <div class="text-muted">
-                <p>스프링(Spring)에서 **어노테이션**은 `@[어노테이션이름]` 이라는 형식으로 특정 클래스, 메소드, 변수의 맨 위에 붙여 쓰며 일반적으로 해당 구역의 기능을 확장하는 역할을 합니다.  **@Component**: Bean을 생성하며(클래스의 인스턴스화), 클래스 코드 바로 위에 붙여 사용합니다. 멤버 필드 내 값은 지정되지 않습니다. 사용 시 ...</p>
+                <p>스프링(Spring)에서 **어노테이션**은 `@[어노테이션이름]` 이라는 형식으로 특정 클래스, 메소드, 변수의 맨 위에 붙여 쓰며 일반적으로 해당 구역의 기능을 확장하는 역할을 합니다.  ## 종류  ### **@Component**  Bean을 생성하며(클래스의 인스턴스화), 클래스 코드 바로 위에 붙여 사용합니다. 멤버 필드 내 값은 지정되지 ...</p>
               </div>
             </div>
           </a>
@@ -8627,11 +8476,11 @@ public Message selectBySeq(int seq) {
 
   
     <a
-      href="/posts/%EC%9E%90%EB%B0%94-swing-for%EB%AC%B8%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90-%EC%A0%91%EA%B7%BC-%EC%98%88%EC%A0%9C-%ED%8B%B1%ED%83%9D%ED%86%A0tic-tac-t/"
+      href="/posts/%EB%84%A5%EC%82%AC%ED%81%AC%EB%A1%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%97%90-%EC%9D%BD%EA%B3%A0-%EC%93%B0%EA%B8%B0-%EB%B0%8F-%EA%B8%B0%ED%83%80/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>자바 Swing: for문으로 만든 컴포넌트에 접근 + 예제: 틱택토(Tic Tac Toe)</p>
+      <p>넥사크로(Nexacro): 데이터베이스에 읽고 쓰기 및 기타</p>
     </a>
   
 
@@ -8919,6 +8768,8 @@ public Message selectBySeq(int seq) {
     
     
     
+      
+    
   
     
     
@@ -9454,122 +9305,6 @@ public Message selectBySeq(int seq) {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -9619,7 +9354,7 @@ public Message selectBySeq(int seq) {
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>

@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -565,15 +572,26 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+
+    
   
 
   
@@ -622,6 +640,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -638,7 +666,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)</h1>
     
@@ -712,7 +740,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="300 words"
+  title="302 words"
 >
   <em>1 min</em> read</span>
 
@@ -722,14 +750,38 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>Spring Boot에 JDBC를 통해 mariadb(mysql) 연결하는 방법입니다.</p>
 
-<h5 id="1-pomxml의-dependencies에-다음을-추가합니다"><span class="me-2">1. <code class="language-plaintext highlighter-rouge">pom.xml</code>의 <code class="language-plaintext highlighter-rouge">&lt;dependencies&gt;</code>에 다음을 추가합니다.</span><a href="#1-pomxml의-dependencies에-다음을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="1-pomxml의-dependencies에-다음을-추가합니다"><span class="me-2">1. <code class="language-plaintext highlighter-rouge">pom.xml</code>의 <code class="language-plaintext highlighter-rouge">&lt;dependencies&gt;</code>에 다음을 추가합니다.</span><a href="#1-pomxml의-dependencies에-다음을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -740,42 +792,42 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>&lt;!-- mariaDb --&gt;
-      &lt;dependency&gt;
-          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-          &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
-      &lt;/dependency&gt;
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- mariaDb --&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+          <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+          <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-jdbc<span class="nt">&lt;/artifactId&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
            
-      &lt;dependency&gt;
-          &lt;groupId&gt;org.mariadb.jdbc&lt;/groupId&gt;
-          &lt;artifactId&gt;mariadb-java-client&lt;/artifactId&gt;
-      &lt;/dependency&gt;
+      <span class="nt">&lt;dependency&gt;</span>
+          <span class="nt">&lt;groupId&gt;</span>org.mariadb.jdbc<span class="nt">&lt;/groupId&gt;</span>
+          <span class="nt">&lt;artifactId&gt;</span>mariadb-java-client<span class="nt">&lt;/artifactId&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>혹시 디펜던시 목록에 다른  <code class="language-plaintext highlighter-rouge">mysql</code>, <code class="language-plaintext highlighter-rouge">Jdbc</code> 과 관련된 게 있다면 충돌이 발생하므로 삭제하는 것이 좋습니다.</p>
 
 <p> </p>
 
-<h5 id="2-applicationsproperties-또는-기타-프로퍼티-파일에-다음을-추가합니다"><span class="me-2">2. <code class="language-plaintext highlighter-rouge">applications.properties</code> (또는 기타 프로퍼티 파일)에 다음을 추가합니다.</span><a href="#2-applicationsproperties-또는-기타-프로퍼티-파일에-다음을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-applicationsproperties-또는-기타-프로퍼티-파일에-다음을-추가합니다"><span class="me-2">2. <code class="language-plaintext highlighter-rouge">applications.properties</code> (또는 기타 프로퍼티 파일)에 다음을 추가합니다.</span><a href="#2-applicationsproperties-또는-기타-프로퍼티-파일에-다음을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-conf highlighter-rouge"><div class="code-header">
+        <span data-label-text="Conf"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>spring.datasource.driverClassName=org.mariadb.jdbc.Driver
-spring.datasource.url=jdbc:mariadb://127.0.0.1:3306/test (본인 컴퓨터 주소 입력)
-spring.datasource.username=아이디 입력
-spring.datasource.password=비밀번호 입력
+</pre></td><td class="rouge-code"><pre><span class="n">spring</span>.<span class="n">datasource</span>.<span class="n">driverClassName</span>=<span class="n">org</span>.<span class="n">mariadb</span>.<span class="n">jdbc</span>.<span class="n">Driver</span>
+<span class="n">spring</span>.<span class="n">datasource</span>.<span class="n">url</span>=<span class="n">jdbc</span>:<span class="n">mariadb</span>://<span class="m">127</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">1</span>:<span class="m">3306</span>/<span class="n">test</span> (본인 컴퓨터 주소 입력)
+<span class="n">spring</span>.<span class="n">datasource</span>.<span class="n">username</span>=아이디 입력
+<span class="n">spring</span>.<span class="n">datasource</span>.<span class="n">password</span>=비밀번호 입력
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="3-dao-테스트-코드를-작성하고-테스트합니다"><span class="me-2">3. DAO 테스트 코드를 작성하고 테스트합니다.</span><a href="#3-dao-테스트-코드를-작성하고-테스트합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-dao-테스트-코드를-작성하고-테스트합니다"><span class="me-2">3. DAO 테스트 코드를 작성하고 테스트합니다.</span><a href="#3-dao-테스트-코드를-작성하고-테스트합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -802,36 +854,36 @@ spring.datasource.password=비밀번호 입력
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>package com.springboot.iroiro.dao;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.springboot.iroiro.dao</span><span class="o">;</span>
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.jdbc.core.JdbcTemplate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Repository</span><span class="o">;</span>
 
-@Repository
-public class SimpleMessageDAO {
-  @Autowired JdbcTemplate jt;
+<span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleMessageDAO</span> <span class="o">{</span>
+  <span class="nd">@Autowired</span> <span class="nc">JdbcTemplate</span> <span class="n">jt</span><span class="o">;</span>
   
-  public List&lt;Map&lt;String, ?&gt;&gt; selectAll() {
+  <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="o">?&gt;&gt;</span> <span class="n">selectAll</span><span class="o">()</span> <span class="o">{</span>
     
-    return jt.query("select * from simple_message", (rs, rowNum) -&gt; {
-      Map&lt;String, Object&gt; mss = new HashMap&lt;&gt;();
-      mss.put("seq", rs.getInt(1));
-      mss.put("user", rs.getString(2));
-      mss.put("message", rs.getString(3));
-      return mss;
-    });
-  }
-}
+    <span class="k">return</span> <span class="n">jt</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="s">"select * from simple_message"</span><span class="o">,</span> <span class="o">(</span><span class="n">rs</span><span class="o">,</span> <span class="n">rowNum</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+      <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="n">mss</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+      <span class="n">mss</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"seq"</span><span class="o">,</span> <span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+      <span class="n">mss</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"user"</span><span class="o">,</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+      <span class="n">mss</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"message"</span><span class="o">,</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>
+      <span class="k">return</span> <span class="n">mss</span><span class="o">;</span>
+    <span class="o">});</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -852,29 +904,29 @@ public class SimpleMessageDAO {
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>package com.springboot.iroiro;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.springboot.iroiro</span><span class="o">;</span>
 
-import java.util.List;
-import java.util.Map;
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
 
-import com.springboot.iroiro.dao.SimpleMessageDAO;
+<span class="kn">import</span> <span class="nn">com.springboot.iroiro.dao.SimpleMessageDAO</span><span class="o">;</span>
 
-@RestController
-public class TestController {
-  @Autowired SimpleMessageDAO smd;
+<span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestController</span> <span class="o">{</span>
+  <span class="nd">@Autowired</span> <span class="nc">SimpleMessageDAO</span> <span class="n">smd</span><span class="o">;</span>
   
-  @RequestMapping("/select")
-  public List&lt;Map&lt;String, ?&gt;&gt; getMessages() {
-    return smd.selectAll();
-  }
-}
+  <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/select"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="o">?&gt;&gt;</span> <span class="n">getMessages</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">smd</span><span class="o">.</span><span class="na">selectAll</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-19-오후-10.28.49.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-19-오후-10.28.49.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/01/mariadb-1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/mariadb-1.png" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -1271,6 +1323,8 @@ public class TestController {
     
     
     
+      
+    
   
     
     
@@ -1806,122 +1860,6 @@ public class TestController {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1971,7 +1909,7 @@ public class TestController {
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>
@@ -1987,6 +1925,12 @@ public class TestController {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -2338,78 +2282,6 @@ public class TestController {
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8383,6 +8255,8 @@ public class TestController {
     
     
     
+      
+    
   
     
     
@@ -8918,122 +8792,6 @@ public class TestController {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -9083,7 +8841,7 @@ public class TestController {
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>

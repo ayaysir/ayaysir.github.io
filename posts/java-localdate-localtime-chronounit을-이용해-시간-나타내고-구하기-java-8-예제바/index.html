@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -490,10 +497,107 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -520,7 +624,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Java: LocalDate, LocalTime, ChronoUnit을 이용해 시간 나타내고 구하기 (Java 8) + 예제(바이오리듬)</h1>
     
@@ -594,9 +698,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1996 words"
+  title="1972 words"
 >
-  <em>11 min</em> read</span>
+  <em>10 min</em> read</span>
 
         </div>
       </div>
@@ -604,14 +708,38 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Java: LocalDate, LocalTime, ChronoUnit을 이용해 시간 나타내고 구하기 (Java 8) + 예제(바이오리듬)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Java: LocalDate, LocalTime, ChronoUnit을 이용해 시간 나타내고 구하기 (Java 8) + 예제(바이오리듬)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p><strong>JDK 8</strong>에서 등장한 새로운 <code class="language-plaintext highlighter-rouge">LocalDate</code>, <code class="language-plaintext highlighter-rouge">LocalTime</code>, <code class="language-plaintext highlighter-rouge">ChronoUnit</code>을 이용해 시간을 나타내고 계산을 해보겠습니다. 이전에는 <code class="language-plaintext highlighter-rouge">Date</code>, <code class="language-plaintext highlighter-rouge">Calendar</code> 이런 애들이 쓰였는데요, 자바 초기에 등장한 것이라 문제가 많았다고 합니다. 여러 문제를 다 열거할 수 없지만 가장 큰 문제는 <code class="language-plaintext highlighter-rouge">Calendar</code>는 특이하게 월을 0 ~ 11로 기록해야 한다는 점이었습니다. 혹시 이런 점을 모르고 일반적인 상식으로 코드를 작성했다가 대형 사고로까지 이어질 수 있겠네요. 새로 등장한 기능들은 그런 여러 문제들을 해결한 것입니다.</p>
+    <p><strong>JDK 8</strong>에서 등장한 새로운 <code class="language-plaintext highlighter-rouge">LocalDate</code>, <code class="language-plaintext highlighter-rouge">LocalTime</code>, <code class="language-plaintext highlighter-rouge">ChronoUnit</code>을 이용해 시간을 나타내고 계산을 해보겠습니다. 이전에는 <code class="language-plaintext highlighter-rouge">Date</code>, <code class="language-plaintext highlighter-rouge">Calendar</code> 이런 애들이 쓰였는데요, 자바 초기에 등장한 것이라 문제가 많았다고 합니다. 여러 문제를 다 열거할 수 없지만 가장 큰 문제는 <code class="language-plaintext highlighter-rouge">Calendar</code>는 특이하게 월을 <code class="language-plaintext highlighter-rouge">0 ~ 11</code>로 기록해야 한다는 점이었습니다. 혹시 이런 점을 모르고 일반적인 상식으로 코드를 작성했다가 대형 사고로까지 이어질 수 있겠네요. 새로 등장한 기능들은 그런 여러 문제들을 해결한 것입니다.</p>
+
+<h2 id="기본-사용방법"><span class="me-2">기본 사용방법</span><a href="#기본-사용방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>기초 코드는 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -627,116 +755,117 @@
 13
 14
 15
-16
-17
-18
-</pre></td><td class="rouge-code"><pre>package com.apple.biorhythm;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.apple.biorhythm</span><span class="o">;</span>
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
+<span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.temporal.ChronoUnit</span><span class="o">;</span>
 
-public class CalculateDates {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CalculateDates</span> <span class="o">{</span>
   
-  private static void p(Object o) {
-    System.out.println(o);
-  }
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">p</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">o</span><span class="o">);</span>
+  <span class="o">}</span>
   
-  public static void main(String[] args) {
-    
-  
-  }
-}
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="localdate"><span class="me-2">LocalDate</span><a href="#localdate" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">LocalDate</code>는 연, 월, 일을 다룰 때 쓰입니다. 오늘 날짜를 구하려면 <code class="language-plaintext highlighter-rouge">now()</code>를 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>LocalDate today = LocalDate.now();   // 오늘 날짜
-p(today);   // 2019-01-20
+</pre></td><td class="rouge-code"><pre><span class="nc">LocalDate</span> <span class="n">today</span> <span class="o">=</span> <span class="nc">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>   <span class="c1">// 오늘 날짜</span>
+<span class="n">p</span><span class="o">(</span><span class="n">today</span><span class="o">);</span>   <span class="c1">// 2019-01-20</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>두 개의 특정 날짜 사이의 차이를 연, 월, 일로 구하려면 다음과 같이 사용합니다. 아래 코드에서 월(month) 자리에 사용된 3은 말 그대로 3월을 뜻합니다. 특정 날짜를 수동으로 입력하려면 <code class="language-plaintext highlighter-rouge">LocalDate.of(연, 월, 일)</code>을 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>LocalDate targetDate1 = LocalDate.of(1980, 3, 12);
-p(today.until(targetDate1));  // P-38Y-10M-8D
+</pre></td><td class="rouge-code"><pre><span class="nc">LocalDate</span> <span class="n">targetDate1</span> <span class="o">=</span> <span class="nc">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1980</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">12</span><span class="o">);</span>
+<span class="n">p</span><span class="o">(</span><span class="n">today</span><span class="o">.</span><span class="na">until</span><span class="o">(</span><span class="n">targetDate1</span><span class="o">));</span>  <span class="c1">// P-38Y-10M-8D</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="두-개-날짜의-차이-일수-구하기"><span class="me-2">두 개 날짜의 차이 일수 구하기</span><a href="#두-개-날짜의-차이-일수-구하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p> </p>
 
 <p>두 개의 특정 날짜 사이의 차이를 일수(days)로 구하려면 <code class="language-plaintext highlighter-rouge">ChronoUnit.DAYS.between(a, b)</code>를 사용합니다. <code class="language-plaintext highlighter-rouge">between</code> 파라미터의 순서는 반드시 <strong>이른 시간이 앞에, 늦은 시간이 뒤에</strong> 위치해야 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>long day1 = ChronoUnit.DAYS.between(today, targetDate1);
-p(day1); // -14193
-long day2 = ChronoUnit.DAYS.between(today, LocalDate.of(2020, 3, 12));
-p(day2); // 417
+</pre></td><td class="rouge-code"><pre><span class="kt">long</span> <span class="n">day1</span> <span class="o">=</span> <span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">DAYS</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">today</span><span class="o">,</span> <span class="n">targetDate1</span><span class="o">);</span>
+<span class="n">p</span><span class="o">(</span><span class="n">day1</span><span class="o">);</span> <span class="c1">// -14193</span>
+<span class="kt">long</span> <span class="n">day2</span> <span class="o">=</span> <span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">DAYS</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">today</span><span class="o">,</span> <span class="nc">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">2020</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">12</span><span class="o">));</span>
+<span class="n">p</span><span class="o">(</span><span class="n">day2</span><span class="o">);</span> <span class="c1">// 417</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>만약 특정 날짜의 100일 전/후는 언제인지 알고 싶다면, <code class="language-plaintext highlighter-rouge">ChronoUnit.DAYS.between(date, longAmount)</code>를 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>p(ChronoUnit.DAYS.addTo(today, 100)); // 2019-04-30
-p(ChronoUnit.DAYS.addTo(today, -100)); // 2018-10-12
-p(ChronoUnit.DAYS.addTo(LocalDate.of(1976, 1, 4), 10000)); // 2023-05-22
+</pre></td><td class="rouge-code"><pre><span class="n">p</span><span class="o">(</span><span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">DAYS</span><span class="o">.</span><span class="na">addTo</span><span class="o">(</span><span class="n">today</span><span class="o">,</span> <span class="mi">100</span><span class="o">));</span> <span class="c1">// 2019-04-30</span>
+<span class="n">p</span><span class="o">(</span><span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">DAYS</span><span class="o">.</span><span class="na">addTo</span><span class="o">(</span><span class="n">today</span><span class="o">,</span> <span class="o">-</span><span class="mi">100</span><span class="o">));</span> <span class="c1">// 2018-10-12</span>
+<span class="n">p</span><span class="o">(</span><span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">DAYS</span><span class="o">.</span><span class="na">addTo</span><span class="o">(</span><span class="nc">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1976</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">4</span><span class="o">),</span> <span class="mi">10000</span><span class="o">));</span> <span class="c1">// 2023-05-22</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="응용-특정-날짜에서-oo기간-전후-구하기"><span class="me-2">응용: 특정 날짜에서 oo기간 전후 구하기</span><a href="#응용-특정-날짜에서-oo기간-전후-구하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><code class="language-plaintext highlighter-rouge">ChronoUnit</code>을 응용해 보겠습니다. 첫 번째는 특정 날짜에서 몇 세기(<code class="language-plaintext highlighter-rouge">CENTURIES.addTo</code>) 전후를 구합니다. 두 번째는 특정 날짜에서 몇 달 전후(<code class="language-plaintext highlighter-rouge">MONTHS.addTo</code>)를 구합니다. 세 번째는 두 날짜 사이는 몇 년(<code class="language-plaintext highlighter-rouge">YEARS.between</code>)인지 구합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">ChronoUnit</code>을 응용해 보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<ol>
+  <li>첫 번째는 특정 날짜에서 몇 세기(<code class="language-plaintext highlighter-rouge">CENTURIES.addTo</code>) 전후를 구합니다.</li>
+  <li>두 번째는 특정 날짜에서 몇 달 전후(<code class="language-plaintext highlighter-rouge">MONTHS.addTo</code>)를 구합니다.</li>
+  <li>세 번째는 두 날짜 사이는 몇 년(<code class="language-plaintext highlighter-rouge">YEARS.between</code>)인지 구합니다.</li>
+</ol>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>p(ChronoUnit.CENTURIES.addTo(today, -1)); // 1919-01-20
-p(ChronoUnit.MONTHS.addTo(today, 10));	// 2019-11-20
-p(ChronoUnit.YEARS.between(today, targetDate1)); // -38
+</pre></td><td class="rouge-code"><pre><span class="n">p</span><span class="o">(</span><span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">CENTURIES</span><span class="o">.</span><span class="na">addTo</span><span class="o">(</span><span class="n">today</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">));</span> <span class="c1">// 1919-01-20</span>
+<span class="n">p</span><span class="o">(</span><span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">MONTHS</span><span class="o">.</span><span class="na">addTo</span><span class="o">(</span><span class="n">today</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>	<span class="c1">// 2019-11-20</span>
+<span class="n">p</span><span class="o">(</span><span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">YEARS</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">today</span><span class="o">,</span> <span class="n">targetDate1</span><span class="o">));</span> <span class="c1">// -38</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="localtime-localdatetime"><span class="me-2">LocalTime, LocalDateTime</span><a href="#localtime-localdatetime" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다른 날짜 포맷에 대해서도 알아보겠습니다. <code class="language-plaintext highlighter-rouge">LocalTime</code>은 시, 분 초를 표시하며 초 단위는 millisecond까지 소수점으로 표시하는 포맷입니다. <strong><code class="language-plaintext highlighter-rouge">LocalDateTime</code></strong>은 <code class="language-plaintext highlighter-rouge">LocalDate</code>와 <code class="language-plaintext highlighter-rouge">LocalTime</code>이 합쳐진 포맷입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>LocalTime currentTime = LocalTime.now();
-p(currentTime);	// 19:05:31.397
+</pre></td><td class="rouge-code"><pre><span class="nc">LocalTime</span> <span class="n">currentTime</span> <span class="o">=</span> <span class="nc">LocalTime</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+<span class="n">p</span><span class="o">(</span><span class="n">currentTime</span><span class="o">);</span>	<span class="c1">// 19:05:31.397</span>
 
-LocalDateTime currentDateTime = LocalDateTime.now();
-p(currentDateTime);	// 2019-01-20T19:06:15.909
+<span class="nc">LocalDateTime</span> <span class="n">currentDateTime</span> <span class="o">=</span> <span class="nc">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+<span class="n">p</span><span class="o">(</span><span class="n">currentDateTime</span><span class="o">);</span>	<span class="c1">// 2019-01-20T19:06:15.909</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="타입-변환"><span class="me-2">타입 변환</span><a href="#타입-변환" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">LocalDateTime</code>과 <code class="language-plaintext highlighter-rouge">LocalDate</code>를 서로 계산하려고 하면 예외가 발생합니다. 두 포맷의 타입을 일치시켜야 합니다. 여기서는 <code class="language-plaintext highlighter-rouge">LocalDateTime</code>을 <code class="language-plaintext highlighter-rouge">LocalDate</code>로 바꾸는 방법에 대해 알아보겠습니다.</p>
 
@@ -748,14 +877,14 @@ p(currentDateTime);	// 2019-01-20T19:06:15.909
 p(ChronoUnit.HOURS.between(LocalTime.of(12, 11), currentTime)); // 7
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="예제-바이오리듬"><span class="me-2">예제: 바이오리듬</span><a href="#예제-바이오리듬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<hr />
+<p>예제로 <strong>바이오리듬</strong> 프로그램을 만들어보겠습니다. 바이오리듬은 제가 어렸을 때 유행했던 운세의 일종인데요 자세한 설명은 <a href="https://thewiki.kr/w/바이오리듬">여기</a>에서 볼 수 있습니다. 여기에 따르면 지금은 과학적 근거는 전혀 없고 유행도 지난것 같지만 프로그래밍 연습에는 좋은 예제입니다.</p>
 
-<p>예제로 <strong>바이오리듬</strong> 프로그램을 만들어보겠습니다. 바이오리듬은 제가 어렸을 때 유행했던 운세의 일종인데요 자세한 설명은 <a href="https://thewiki.kr/w/바이오리듬">여기</a>에서 볼 수 있습니다. 여기에 따르면 지금은 과학적 근거는 전혀 없고 유행도 지난것 같지만 프로그래밍 연습에는 좋은 예제입니다. 다음에는 <a href="http://www.60gabja.com/bio/013_modujobio.php3">벤치마킹 사이트</a>를 참고해 웹 페이지로 바이오리듬을 구현해보려 합니다. 벤치마킹 사이트의 확장자 <code class="language-plaintext highlighter-rouge">php3</code>에서 알 수 있듯이 굉장히 옛날 사이트입니다.</p>
+<!-- 다음에는 [벤치마킹 사이트](http://www.60gabja.com/bio/013_modujobio.php3)를 참고해 웹 페이지로 바이오리듬을 구현해보려 합니다. 벤치마킹 사이트의 확장자 `php3`에서 알 수 있듯이 굉장히 옛날 사이트입니다. -->
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -851,14 +980,14 @@ p(ChronoUnit.HOURS.between(LocalTime.of(12, 11), currentTime)); // 7
 93
 94
 95
-</pre></td><td class="rouge-code"><pre>import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.Scanner;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.temporal.ChronoUnit</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 
-public class BioRhythm {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BioRhythm</span> <span class="o">{</span>
 
-  public static void main(String[] args) {
-    /*
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="cm">/*
      * 바이오리듬 공식: -100 to 100
      * 신체(23일) : sin(2πt/23)
      * 감성(28일) : sin(2πt/28)
@@ -867,84 +996,84 @@ public class BioRhythm {
      * 위험일 0 ~ -15
      * 고조기 1 ~ 100
      * 저조기 -16 ~ -100
-     */
+     */</span>
     
-    LocalDate birthday;
-    LocalDate today = LocalDate.now();
+    <span class="nc">LocalDate</span> <span class="n">birthday</span><span class="o">;</span>
+    <span class="nc">LocalDate</span> <span class="n">today</span> <span class="o">=</span> <span class="nc">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
     
-    try(Scanner s = new Scanner(System.in)){
-      System.out.println("바이오리듬: 오늘 날짜는 " + today + " 입니다.");
-      System.out.print("생년월일을 입력하세요.(예: 19700123) &gt;&gt; ");
+    <span class="k">try</span><span class="o">(</span><span class="nc">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">)){</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"바이오리듬: 오늘 날짜는 "</span> <span class="o">+</span> <span class="n">today</span> <span class="o">+</span> <span class="s">" 입니다."</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"생년월일을 입력하세요.(예: 19700123) &gt;&gt; "</span><span class="o">);</span>
       
-      String input = s.nextLine();
+      <span class="nc">String</span> <span class="n">input</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
       
-      int year = Integer.parseInt(input.substring(0, 4));
-      // System.out.println(year);
-      int month = Integer.parseInt(input.substring(4, 6));
-      int dayOfMonth = Integer.parseInt(input.substring(6, 8));
-      birthday = LocalDate.of(year, month, dayOfMonth);
+      <span class="kt">int</span> <span class="n">year</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">input</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">4</span><span class="o">));</span>
+      <span class="c1">// System.out.println(year);</span>
+      <span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">input</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">6</span><span class="o">));</span>
+      <span class="kt">int</span> <span class="n">dayOfMonth</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">input</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="mi">8</span><span class="o">));</span>
+      <span class="n">birthday</span> <span class="o">=</span> <span class="nc">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">year</span><span class="o">,</span> <span class="n">month</span><span class="o">,</span> <span class="n">dayOfMonth</span><span class="o">);</span>
       
-      long betweenDays = ChronoUnit.DAYS.between(birthday, today);
-      System.out.println();
-      System.out.println("생년월일로부터 오늘까지의 경과일수: " + betweenDays);
+      <span class="kt">long</span> <span class="n">betweenDays</span> <span class="o">=</span> <span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">DAYS</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">birthday</span><span class="o">,</span> <span class="n">today</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"생년월일로부터 오늘까지의 경과일수: "</span> <span class="o">+</span> <span class="n">betweenDays</span><span class="o">);</span>
       
-      double body = Math.sin( (2 * Math.PI * betweenDays) / 23 );
-      double emotion = Math.sin( (2 * Math.PI * betweenDays) / 28 );
-      double intelligence = Math.sin( (2 * Math.PI * betweenDays) / 33 );
+      <span class="kt">double</span> <span class="n">body</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span> <span class="o">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nc">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">betweenDays</span><span class="o">)</span> <span class="o">/</span> <span class="mi">23</span> <span class="o">);</span>
+      <span class="kt">double</span> <span class="n">emotion</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span> <span class="o">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nc">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">betweenDays</span><span class="o">)</span> <span class="o">/</span> <span class="mi">28</span> <span class="o">);</span>
+      <span class="kt">double</span> <span class="n">intelligence</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span> <span class="o">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nc">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">betweenDays</span><span class="o">)</span> <span class="o">/</span> <span class="mi">33</span> <span class="o">);</span>
       
-      System.out.println();
-      System.out.println("======== 결 과 ========");
-      System.out.println("신체리듬: " + getPercentage(body) + " (" + getCurrentState(body) + ")");
-      System.out.println("감성리듬: " + getPercentage(emotion) + " (" + getCurrentState(emotion) + ")");
-      System.out.println("지성리듬: " + getPercentage(intelligence) + " (" + getCurrentState(intelligence) + ")");
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"======== 결 과 ========"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"신체리듬: "</span> <span class="o">+</span> <span class="n">getPercentage</span><span class="o">(</span><span class="n">body</span><span class="o">)</span> <span class="o">+</span> <span class="s">" ("</span> <span class="o">+</span> <span class="n">getCurrentState</span><span class="o">(</span><span class="n">body</span><span class="o">)</span> <span class="o">+</span> <span class="s">")"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"감성리듬: "</span> <span class="o">+</span> <span class="n">getPercentage</span><span class="o">(</span><span class="n">emotion</span><span class="o">)</span> <span class="o">+</span> <span class="s">" ("</span> <span class="o">+</span> <span class="n">getCurrentState</span><span class="o">(</span><span class="n">emotion</span><span class="o">)</span> <span class="o">+</span> <span class="s">")"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"지성리듬: "</span> <span class="o">+</span> <span class="n">getPercentage</span><span class="o">(</span><span class="n">intelligence</span><span class="o">)</span> <span class="o">+</span> <span class="s">" ("</span> <span class="o">+</span> <span class="n">getCurrentState</span><span class="o">(</span><span class="n">intelligence</span><span class="o">)</span> <span class="o">+</span> <span class="s">")"</span><span class="o">);</span>
       
-      System.out.println();
-      System.out.println("======== 해 석 ========");
-      System.out.println(getTotalInterpretation(body, emotion, intelligence));
-    }
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"======== 해 석 ========"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">getTotalInterpretation</span><span class="o">(</span><span class="n">body</span><span class="o">,</span> <span class="n">emotion</span><span class="o">,</span> <span class="n">intelligence</span><span class="o">));</span>
+    <span class="o">}</span>
     
-  }
+  <span class="o">}</span>
   
-  private static int getPercentage(double num) {
-    return (int)(num * 100);
-  }
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getPercentage</span><span class="o">(</span><span class="kt">double</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="o">(</span><span class="kt">int</span><span class="o">)(</span><span class="n">num</span> <span class="o">*</span> <span class="mi">100</span><span class="o">);</span>
+  <span class="o">}</span>
   
-  private static String getCurrentState(double num) {
-    int perc = getPercentage(num);
-    if(perc &lt;= 0 &amp;&amp; perc &gt;= -15) {
-      return "위험";
-    } else if(perc &lt;= -16) {
-      return "저조기";
-    } else {
-      return "고조기";
-    }
-  }
+  <span class="kd">private</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">getCurrentState</span><span class="o">(</span><span class="kt">double</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">perc</span> <span class="o">=</span> <span class="n">getPercentage</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">perc</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">perc</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mi">15</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">"위험"</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">perc</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mi">16</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">"저조기"</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">"고조기"</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
   
-  // total 27 (=3*3*3)
-  private static String getTotalInterpretation(double body, double emotion, double intelligence) {
-    String bodyStat = getCurrentState(body);
-    String emotStat = getCurrentState(emotion);
-    String intelStat = getCurrentState(intelligence);
+  <span class="c1">// total 27 (=3*3*3)</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">getTotalInterpretation</span><span class="o">(</span><span class="kt">double</span> <span class="n">body</span><span class="o">,</span> <span class="kt">double</span> <span class="n">emotion</span><span class="o">,</span> <span class="kt">double</span> <span class="n">intelligence</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="n">bodyStat</span> <span class="o">=</span> <span class="n">getCurrentState</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
+    <span class="nc">String</span> <span class="n">emotStat</span> <span class="o">=</span> <span class="n">getCurrentState</span><span class="o">(</span><span class="n">emotion</span><span class="o">);</span>
+    <span class="nc">String</span> <span class="n">intelStat</span> <span class="o">=</span> <span class="n">getCurrentState</span><span class="o">(</span><span class="n">intelligence</span><span class="o">);</span>
     
-    if(bodyStat.equals("위험") &amp;&amp; emotStat.equals("위험") &amp;&amp; intelStat.equals("위험")) {
-      return "오늘은 굉장히 위험한 날입니다. \n외출을 삼가시고 중요한 사업적 판단을 자제해 주십시오.";
-    } else if(bodyStat.equals("고조기") &amp;&amp; emotStat.equals("고조기") &amp;&amp; intelStat.equals("저조기")) {
-      return "신체리듬과 감성리듬이 고조기이므로 야외활동에서 좋은 성과가 있을 것입니다. \n"
-          + "단 지성 리듬이 저조기이므로 지나치게 감성적인 판단이 나올 수 있으므로 \n이성이 필요한 판단은 삼가해주십시오.";
-    } else if(bodyStat.equals("고조기") &amp;&amp; emotStat.equals("저조기") &amp;&amp; intelStat.equals("저조기")) {
-      return "신체리듬이 고조기이므로 신체활동 컨디션이 좋고 성과가 나올 수 있습니다만, \n감성리듬과 지성리듬은 저조기이므로"
-          + " 결과에 지나치게 낙담할 수 있고 \n그에 따른 비이성적인 판단이 나올 수 있으므로 조심하십시오.";
-    } else if(bodyStat.equals("고조기") &amp;&amp; emotStat.equals("저조기") &amp;&amp; intelStat.equals("고조기")) {
-      return "신체리듬과 지성리듬이 고조기이므로 과업에서 좋은 성과가 나올 수 있습니다.\n"
-          + "다만 감성리듬이 저조기이므로 성과에 비해 그릇된 감성판단을 할 수 있으나 \n이에 연연하지 마십시오.";
-    }
+    <span class="k">if</span><span class="o">(</span><span class="n">bodyStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"위험"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">emotStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"위험"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">intelStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"위험"</span><span class="o">))</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">"오늘은 굉장히 위험한 날입니다. \n외출을 삼가시고 중요한 사업적 판단을 자제해 주십시오."</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">bodyStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"고조기"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">emotStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"고조기"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">intelStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"저조기"</span><span class="o">))</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">"신체리듬과 감성리듬이 고조기이므로 야외활동에서 좋은 성과가 있을 것입니다. \n"</span>
+          <span class="o">+</span> <span class="s">"단 지성 리듬이 저조기이므로 지나치게 감성적인 판단이 나올 수 있으므로 \n이성이 필요한 판단은 삼가해주십시오."</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">bodyStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"고조기"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">emotStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"저조기"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">intelStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"저조기"</span><span class="o">))</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">"신체리듬이 고조기이므로 신체활동 컨디션이 좋고 성과가 나올 수 있습니다만, \n감성리듬과 지성리듬은 저조기이므로"</span>
+          <span class="o">+</span> <span class="s">" 결과에 지나치게 낙담할 수 있고 \n그에 따른 비이성적인 판단이 나올 수 있으므로 조심하십시오."</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">bodyStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"고조기"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">emotStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"저조기"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">intelStat</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"고조기"</span><span class="o">))</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">"신체리듬과 지성리듬이 고조기이므로 과업에서 좋은 성과가 나올 수 있습니다.\n"</span>
+          <span class="o">+</span> <span class="s">"다만 감성리듬이 저조기이므로 성과에 비해 그릇된 감성판단을 할 수 있으나 \n이에 연연하지 마십시오."</span><span class="o">;</span>
+    <span class="o">}</span>
     
-    return "ㅈㅅ 나중에..";
-  }
+    <span class="k">return</span> <span class="s">"ㅈㅅ 나중에.."</span><span class="o">;</span>
+  <span class="o">}</span>
   
   
 
-}
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1369,6 +1498,8 @@ public class BioRhythm {
     
     
     
+      
+    
   
     
     
@@ -1904,122 +2035,6 @@ public class BioRhythm {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2069,7 +2084,7 @@ public class BioRhythm {
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>
@@ -2085,6 +2100,12 @@ public class BioRhythm {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -8004,78 +8025,6 @@ public class BioRhythm {
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -8089,34 +8038,6 @@ public class BioRhythm {
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
-      
-        <article class="col">
-          <a href="/posts/java-%EC%A3%BC%EC%86%8C%EC%97%90-%EC%9D%98%ED%95%9C-%EC%B0%B8%EC%A1%B0call-by-reference/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1547996400"
-  data-df="ll"
-  
->
-  Jan 21, 2019
-</time>
-
-              <h4 class="pt-0 my-2">Java: 주소에 의한 참조(Call-by-reference)</h4>
-              <div class="text-muted">
-                <p>**_주소에 의한 참조_**는 무슨 말일까요? 메모리에 어떤 값을 저장했다면 그 값이 담긴 방(room)과 그 방을 가리키는 주소가 있습니다. **Call-by-reference**는 주소를 **참조**(reference)해서 값들을 조작합니다. 메소드 간 통신(값이나 주소를 주고받는 행위)을 한다고 할 때 주소만 넘겨서 서로 주소를 공유하고 값들을 ...</p>
-              </div>
-            </div>
-          </a>
-        </article>
       
         <article class="col">
           <a href="/posts/java-%EC%98%88%EC%A0%9C-%ED%8C%8C%EC%9D%BC-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9Creadablebytechannel-%EC%9D%B4%EC%9A%A9/" class="post-preview card h-100">
@@ -8140,7 +8061,7 @@ public class BioRhythm {
 
               <h4 class="pt-0 my-2">Java 예제: URL로부터 파일 다운로드(ReadableByteChannel 이용)</h4>
               <div class="text-muted">
-                <p>웹브라우저를 통하지 않고 자바 자체에서 파일 다운로드를 하는 예제입니다. `Channels`는 유틸리티 메소드로 `Channel`과 `Stream`에 필요한 작업들을 제공합니다. `new Channel(InputStream in)`은 인풋스트림(`InputStream`)을 새로운 `ReadableByteChannel`(채널)로 만들어주는데, **`Ch...</p>
+                <p>웹브라우저를 통하지 않고 자바 자체에서 파일 다운로드를 하는 예제입니다.   `Channels`는 유틸리티 메소드로 `Channel`과 `Stream`에 필요한 작업들을 제공합니다.   `new Channel(InputStream in)`은 인풋스트림(`InputStream`)을 새로운 `ReadableByteChannel`(채널)로 만들어주는데,  ...</p>
               </div>
             </div>
           </a>
@@ -8169,6 +8090,34 @@ public class BioRhythm {
               <h4 class="pt-0 my-2">Java 예제: 마방진(Magic Square)</h4>
               <div class="text-muted">
                 <p>마방진의 정의  마방진의 정의는 다음과 같습니다.     마방진(魔方陣)은 n2개의 수를 가로, 세로, 대각선 방향의 수를 더하면 모두 같은 값이 나오도록 n × n 행렬에 배열한 것이다. (…) n이 홀수일 때에는 마방진을 간단한 방법으로 만들 수 있다. 첫 번째 행의 가운데 칸에 1을 넣는다. 이어서 다음과 같은 규칙으로 숫자를 채운다. 다음 숫자...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/java-%EC%98%88%EC%A0%9C-%EB%A1%9C%EB%98%90-%EC%A4%91%EB%B3%B5%EC%97%86%EC%9D%B4-%EB%B0%B0%EC%97%B4%EC%97%90%EC%84%9C-%EA%B0%92-%EC%B6%94%EC%B6%9C-%EB%B0%B0%EC%97%B4-%EC%9B%90%EC%86%8C-%EC%8A%A4/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1547391600"
+  data-df="ll"
+  
+>
+  Jan 14, 2019
+</time>
+
+              <h4 class="pt-0 my-2">Java 예제: 로또 (중복없이 배열에서 값 추출, 배열 원소 스왑) + HashSet 이용</h4>
+              <div class="text-muted">
+                <p>HashSet 이용 (2020년 4월 24일 추가)  Set 자료형은 중복을 허용하지 않는다는 특성을 이용한 코드입니다.  import java.util.HashSet; import java.util.Set;  public class SetTest {    public static void main(String[] args) {     Set&lt;I...</p>
               </div>
             </div>
           </a>
@@ -8481,6 +8430,8 @@ public class BioRhythm {
     
     
     
+      
+    
   
     
     
@@ -9016,122 +8967,6 @@ public class BioRhythm {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -9181,7 +9016,7 @@ public class BioRhythm {
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>

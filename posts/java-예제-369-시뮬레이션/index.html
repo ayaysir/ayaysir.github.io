@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -490,6 +497,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -520,7 +559,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Java 예제: 369 시뮬레이션</h1>
     
@@ -594,7 +633,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="631 words"
+  title="637 words"
 >
   <em>3 min</em> read</span>
 
@@ -604,12 +643,36 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Java 예제: 369 시뮬레이션</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Java 예제: 369 시뮬레이션</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>3.6.9 게임 시 언제 ‘짝’(박수)을 쳐야되는지 알아보는 시뮬레이션 프로그램</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -667,64 +730,66 @@
 55
 56
 57
-</pre></td><td class="rouge-code"><pre>import java.util.Scanner;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 
-public class Samyukgu {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Samyukgu</span> <span class="o">{</span>
 
-  public static void main(String[] args) {
-    // 3, 6, 9가 포함된 숫자는 다 '짝'으로 표시
-    // 33: 짝짝
-    try(Scanner s = new Scanner(System.in);){
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// 3, 6, 9가 포함된 숫자는 다 '짝'으로 표시</span>
+    <span class="c1">// 33: 짝짝</span>
+    <span class="k">try</span><span class="o">(</span><span class="nc">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);){</span>
 
-      String[] players = {"철수", "영희", "길동", "한무", "두루",
-          "갑자", "하나", "을동", "길수", "애리"};
+      <span class="nc">String</span><span class="o">[]</span> <span class="n">players</span> <span class="o">=</span> <span class="o">{</span><span class="s">"철수"</span><span class="o">,</span> <span class="s">"영희"</span><span class="o">,</span> <span class="s">"길동"</span><span class="o">,</span> <span class="s">"한무"</span><span class="o">,</span> <span class="s">"두루"</span><span class="o">,</span>
+          <span class="s">"갑자"</span><span class="o">,</span> <span class="s">"하나"</span><span class="o">,</span> <span class="s">"을동"</span><span class="o">,</span> <span class="s">"길수"</span><span class="o">,</span> <span class="s">"애리"</span><span class="o">};</span>
 
-      System.out.print("☞ 3 6 9 시뮬레이션, 총 몇 번까지? &gt;&gt; ");
-      int totalNum = Integer.parseInt(s.nextLine());
-      System.out.print("☞ 게임에 참여하는 인원수? (10명까지 가능) &gt;&gt; ");
-      int totalPlayerNum = Integer.parseInt(s.nextLine());
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"☞ 3 6 9 시뮬레이션, 총 몇 번까지? &gt;&gt; "</span><span class="o">);</span>
+      <span class="kt">int</span> <span class="n">totalNum</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"☞ 게임에 참여하는 인원수? (10명까지 가능) &gt;&gt; "</span><span class="o">);</span>
+      <span class="kt">int</span> <span class="n">totalPlayerNum</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
 
-      if(totalPlayerNum &lt;= 0 || totalPlayerNum &gt;= 11) {
-        System.err.println("인원수는 1 ~ 10 사이에서 입력해주세요.");
-        System.exit(1);
-      }
+      <span class="k">if</span><span class="o">(</span><span class="n">totalPlayerNum</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">totalPlayerNum</span> <span class="o">&gt;=</span> <span class="mi">11</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"인원수는 1 ~ 10 사이에서 입력해주세요."</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+      <span class="o">}</span>
 
-      int playerCount = 0;
-      for(int i=1; i &lt;= totalNum; i++ ) {
-        char[] tempArray = String.valueOf(i).toCharArray();    
-        // 숫자를 쪼개 char 배열에 저장
-        int sygCount = 0;
+      <span class="kt">int</span> <span class="n">playerCount</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">totalNum</span><span class="o">;</span> <span class="n">i</span><span class="o">++</span> <span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">tempArray</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">toCharArray</span><span class="o">();</span>    
+        <span class="c1">// 숫자를 쪼개 char 배열에 저장</span>
+        <span class="kt">int</span> <span class="n">sygCount</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 
-        for(int j=0; j &lt; tempArray.length; j++) {
-          if(tempArray[j] == '3' || tempArray[j] == '6'
-              || tempArray[j] == '9') {
-            sygCount++;    // 쪼갠 숫자 각각에 3, 6, 9가 있는 경우 그 개수를 카운트
-          }                
-        }
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">tempArray</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">tempArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="sc">'3'</span> <span class="o">||</span> <span class="n">tempArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="sc">'6'</span>
+              <span class="o">||</span> <span class="n">tempArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="sc">'9'</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">sygCount</span><span class="o">++;</span>    <span class="c1">// 쪼갠 숫자 각각에 3, 6, 9가 있는 경우 그 개수를 카운트</span>
+          <span class="o">}</span>                
+        <span class="o">}</span>
 
-        if(playerCount == totalPlayerNum) {
-          playerCount = 0;					
-        }
-        System.out.print(players[playerCount++] + ": ");
+        <span class="k">if</span><span class="o">(</span><span class="n">playerCount</span> <span class="o">==</span> <span class="n">totalPlayerNum</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">playerCount</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>					
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">players</span><span class="o">[</span><span class="n">playerCount</span><span class="o">++]</span> <span class="o">+</span> <span class="s">": "</span><span class="o">);</span>
 
-        if (sygCount == 0) {
+        <span class="k">if</span> <span class="o">(</span><span class="n">sygCount</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
 
-          System.out.println(i);
-        } else {
-          for(int k=1; k &lt;= sygCount; k++)    
-            // i에 3, 6, 9가 있는 경우 그 개수만큼 '짝'을 표시함
-            System.out.print("짝");
-          System.out.println();
-        }
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+          <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">sygCount</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span>    
+            <span class="c1">// i에 3, 6, 9가 있는 경우 그 개수만큼 '짝'을 표시함</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"짝"</span><span class="o">);</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+        <span class="o">}</span>
 
-      }
-    }catch(Exception e) {
-      e.printStackTrace();
-    }
+      <span class="o">}</span>
+    <span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
 
-  }
-}
+  <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="실행결과"><span class="me-2">실행결과</span><a href="#실행결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1193,6 +1258,8 @@ public class Samyukgu {
     
     
     
+      
+    
   
     
     
@@ -1728,122 +1795,6 @@ public class Samyukgu {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1893,7 +1844,7 @@ public class Samyukgu {
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>
@@ -1909,6 +1860,12 @@ public class Samyukgu {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -2319,79 +2276,7 @@ public class Samyukgu {
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8305,6 +8190,8 @@ public class Samyukgu {
     
     
     
+      
+    
   
     
     
@@ -8840,122 +8727,6 @@ public class Samyukgu {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -9005,7 +8776,7 @@ public class Samyukgu {
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>

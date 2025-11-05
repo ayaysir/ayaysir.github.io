@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -760,16 +767,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -832,8 +829,72 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
 
   
@@ -855,7 +916,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>넥사크로(Nexacro): 데이터베이스에 읽고 쓰기 및 기타</h1>
     
@@ -929,7 +990,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="971 words"
+  title="987 words"
 >
   <em>5 min</em> read</span>
 
@@ -939,56 +1000,74 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">넥사크로(Nexacro): 데이터베이스에 읽고 쓰기 및 기타</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">넥사크로(Nexacro): 데이터베이스에 읽고 쓰기 및 기타</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="deploy-수행"><span class="me-2"><strong>Deploy 수행</strong></span><a href="#deploy-수행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="deploy-수행"><span class="me-2"><strong>Deploy 수행</strong></span><a href="#deploy-수행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><strong>Build &gt; Deploy… &gt; Deploy Application &gt;</strong>  을 클릭한 다음 경로는 이클립스 동적 웹 프로젝트 폴더의 <code class="language-plaintext highlighter-rouge">WebContents</code> 폴더로 설정합니다.</p>
 
-<hr />
-
-<h4 id="프로젝트에-폼-설정"><span class="me-2"><strong>프로젝트에 폼 설정</strong></span><a href="#프로젝트에-폼-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="프로젝트에-폼-설정"><span class="me-2"><strong>프로젝트에 폼 설정</strong></span><a href="#프로젝트에-폼-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2019/01/nex1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/nex1.png" alt="" loading="lazy"></a></p>
 
 <p><code class="language-plaintext highlighter-rouge">childframe</code>으로 이동 후 <code class="language-plaintext highlighter-rouge">Appearance</code>의 <code class="language-plaintext highlighter-rouge">formurl</code>에서 설정합니다.</p>
 
-<hr />
+<h2 id="폼-간-이동"><span class="me-2"><strong>폼 간 이동</strong></span><a href="#폼-간-이동" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="폼-간-이동"><span class="me-2"><strong>폼 간 이동</strong></span><a href="#폼-간-이동" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>this.toFrmTest_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
-{
-    this.go("Base::FrmPortal.xfdl");
-}
+</pre></td><td class="rouge-code"><pre><span class="k">this</span><span class="p">.</span><span class="nx">toFrmTest_onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">:</span><span class="nx">Button</span><span class="p">,</span>  <span class="nx">e</span><span class="p">:</span><span class="nx">nexacro</span><span class="p">.</span><span class="nx">ClickEventInfo</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">go</span><span class="p">(</span><span class="dl">"</span><span class="s2">Base::FrmPortal.xfdl</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">Base</code> 폴더 밑의 <code class="language-plaintext highlighter-rouge">FrmPortal.xfdl</code> 파일명의 폼으로 이동합니다.</p>
 
-<hr />
+<h2 id="전역-변수-사용"><span class="me-2"><strong>전역 변수 사용</strong></span><a href="#전역-변수-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="전역-변수-사용"><span class="me-2"><strong>전역 변수 사용</strong></span><a href="#전역-변수-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nf">alert</span><span class="p">(</span><span class="nx">application</span><span class="p">.[</span><span class="nx">전역</span> <span class="nx">변수</span> <span class="nx">이름</span><span class="p">]);</span>
+</pre></td></tr></tbody></table></code></div></div>
 
-<p> <code class="language-plaintext highlighter-rouge">alert(application.[전역 변수 이름]);</code></p>
-
-<hr />
-
-<h4 id="클라이언트서버-구축"><span class="me-2"><strong>클라이언트/서버 구축</strong></span><a href="#클라이언트서버-구축" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="클라이언트서버-구축"><span class="me-2"><strong>클라이언트/서버 구축</strong></span><a href="#클라이언트서버-구축" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>폼으로 writer와 message를 보내고 처리 결과를 받는 코드입니다.</p>
 
-<p><strong>(1) 클라이언트(넥사크로 프로젝트) 쪽 코드 (input):</strong></p>
+<h3 id="1-클라이언트넥사크로-프로젝트-쪽-코드-input"><span class="me-2"><strong>(1) 클라이언트(넥사크로 프로젝트) 쪽 코드 (input):</strong></span><a href="#1-클라이언트넥사크로-프로젝트-쪽-코드-input" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1029,50 +1108,50 @@
 38
 39
 40
-</pre></td><td class="rouge-code"><pre>this.btnBack_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
-{
-    this.go("Base::FrmPortal.xfdl");
-}
+</pre></td><td class="rouge-code"><pre><span class="k">this</span><span class="p">.</span><span class="nx">btnBack_onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">:</span><span class="nx">Button</span><span class="p">,</span>  <span class="nx">e</span><span class="p">:</span><span class="nx">nexacro</span><span class="p">.</span><span class="nx">ClickEventInfo</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">go</span><span class="p">(</span><span class="dl">"</span><span class="s2">Base::FrmPortal.xfdl</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
  
-this.btnSubmit_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
-{
-    var writer = this.writer.value;
-    var message = this.message.value;
+<span class="k">this</span><span class="p">.</span><span class="nx">btnSubmit_onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">:</span><span class="nx">Button</span><span class="p">,</span>  <span class="nx">e</span><span class="p">:</span><span class="nx">nexacro</span><span class="p">.</span><span class="nx">ClickEventInfo</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">writer</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">writer</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
     
-    // 비어 있는 행 추가
-    var row = this.DatasetRequest.addRow(); // 숫자 리턴
-    this.DatasetRequest.setColumn(row, "id", 0);
-    this.DatasetRequest.setColumn(row, "writer", writer);
-    this.DatasetRequest.setColumn(row, "message", message);
+    <span class="c1">// 비어 있는 행 추가</span>
+    <span class="kd">var</span> <span class="nx">row</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">DatasetRequest</span><span class="p">.</span><span class="nf">addRow</span><span class="p">();</span> <span class="c1">// 숫자 리턴</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">DatasetRequest</span><span class="p">.</span><span class="nf">setColumn</span><span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">DatasetRequest</span><span class="p">.</span><span class="nf">setColumn</span><span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="dl">"</span><span class="s2">writer</span><span class="dl">"</span><span class="p">,</span> <span class="nx">writer</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">DatasetRequest</span><span class="p">.</span><span class="nf">setColumn</span><span class="p">(</span><span class="nx">row</span><span class="p">,</span> <span class="dl">"</span><span class="s2">message</span><span class="dl">"</span><span class="p">,</span> <span class="nx">message</span><span class="p">);</span>
     
-    var id = "request";
-    var url = "../input.msg";
-    var reqDs = "request=DatasetRequest"; // DatasetRequest를 리퀘스트에 담아 보낸다.
-    var respDs = "DatasetResponse=response"; // 서버가 response라는 이름으로 DatasetResponse를 보낸다.
-                                            // 왼쪽 자리에는 데이터를 받아올 데이터셋의 아이디를 입력
-    var args = "";
-    // var args = "writer=" + writer + " message=" + message;
-    var callback = "afterComplete"; // 작업이 끝난 후 할 작업을 적는다. 함수의 이름을 문자열로 적는다.
+    <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">request</span><span class="dl">"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">../input.msg</span><span class="dl">"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">reqDs</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">request=DatasetRequest</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// DatasetRequest를 리퀘스트에 담아 보낸다.</span>
+    <span class="kd">var</span> <span class="nx">respDs</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">DatasetResponse=response</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 서버가 response라는 이름으로 DatasetResponse를 보낸다.</span>
+                                            <span class="c1">// 왼쪽 자리에는 데이터를 받아올 데이터셋의 아이디를 입력</span>
+    <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="c1">// var args = "writer=" + writer + " message=" + message;</span>
+    <span class="kd">var</span> <span class="nx">callback</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">afterComplete</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 작업이 끝난 후 할 작업을 적는다. 함수의 이름을 문자열로 적는다.</span>
     
-    // 데이터를 보내는 방식
-    // 1. DS(request dataset)에 보냄
-    // 2. arguments에 보냄 (간단한 자료)
+    <span class="c1">// 데이터를 보내는 방식</span>
+    <span class="c1">// 1. DS(request dataset)에 보냄</span>
+    <span class="c1">// 2. arguments에 보냄 (간단한 자료)</span>
     
-    this.transaction(id, url, reqDs, respDs, args, callback);
+    <span class="k">this</span><span class="p">.</span><span class="nf">transaction</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">reqDs</span><span class="p">,</span> <span class="nx">respDs</span><span class="p">,</span> <span class="nx">args</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
     
-    // alert(writer + message);
-}
+    <span class="c1">// alert(writer + message);</span>
+<span class="p">}</span>
  
-this.afterComplete = function(id, code, msg){
-    //alert(this.DatasetResponse.getColumn(0, "forward"));
-    alert(this.DatasetResponse.getColumn(0, "resultMessage"));
-    this.go(this.DatasetResponse.getColumn(0, "forward"));
-}
+<span class="k">this</span><span class="p">.</span><span class="nx">afterComplete</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">code</span><span class="p">,</span> <span class="nx">msg</span><span class="p">){</span>
+    <span class="c1">//alert(this.DatasetResponse.getColumn(0, "forward"));</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">DatasetResponse</span><span class="p">.</span><span class="nf">getColumn</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">resultMessage</span><span class="dl">"</span><span class="p">));</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">go</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">DatasetResponse</span><span class="p">.</span><span class="nf">getColumn</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="dl">"</span><span class="s2">forward</span><span class="dl">"</span><span class="p">));</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1096,35 +1175,35 @@ this.afterComplete = function(id, code, msg){
 21
 22
 23
-</pre></td><td class="rouge-code"><pre>this.btnBack_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
-{
-    this.go("Base::FrmPortal.xfdl");
-}
+</pre></td><td class="rouge-code"><pre><span class="k">this</span><span class="p">.</span><span class="nx">btnBack_onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">:</span><span class="nx">Button</span><span class="p">,</span>  <span class="nx">e</span><span class="p">:</span><span class="nx">nexacro</span><span class="p">.</span><span class="nx">ClickEventInfo</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nf">go</span><span class="p">(</span><span class="dl">"</span><span class="s2">Base::FrmPortal.xfdl</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
  
-// 폼의 onload시 불러올 이벤트
-this.loadData = function() {
-    var id = "outputProc";
-    var url = "../output.msg";
-    var reqDs = "";
-    var respDs = "DatasetMessages=response";
-    var args = "";
-    var callback = "received";
+<span class="c1">// 폼의 onload시 불러올 이벤트</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">loadData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">outputProc</span><span class="dl">"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">../output.msg</span><span class="dl">"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">reqDs</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">respDs</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">DatasetMessages=response</span><span class="dl">"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">callback</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">received</span><span class="dl">"</span><span class="p">;</span>
     
-    this.transaction(id, url, reqDs, respDs, args, callback);
-}
+    <span class="k">this</span><span class="p">.</span><span class="nf">transaction</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">reqDs</span><span class="p">,</span> <span class="nx">respDs</span><span class="p">,</span> <span class="nx">args</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="p">}</span>
  
  
-this.received = function() {
-    alert("통신완료");
-}
+<span class="k">this</span><span class="p">.</span><span class="nx">received</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">통신완료</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
  
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>(2) 서버(자바 서블릿) 쪽 코드:</strong></p>
+<h3 id="2-서버자바-서블릿-쪽-코드"><span class="me-2"><strong>(2) 서버(자바 서블릿) 쪽 코드:</strong></span><a href="#2-서버자바-서블릿-쪽-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1227,111 +1306,120 @@ this.received = function() {
 100
 101
 102
-</pre></td><td class="rouge-code"><pre>protected void doGet(HttpServletRequest request, HttpServletResponse response) 
-                                            throws ServletException, IOException {
-        System.out.println("요청 확인");
+</pre></td><td class="rouge-code"><pre><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> 
+                                            <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"요청 확인"</span><span class="o">);</span>
  
-        request.setCharacterEncoding("UTF8");
-        // PrintWriter를 꺼내기 전에 response의 인코딩을 설정
-        response.setCharacterEncoding("UTF8");    
+        <span class="n">request</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF8"</span><span class="o">);</span>
+        <span class="c1">// PrintWriter를 꺼내기 전에 response의 인코딩을 설정</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF8"</span><span class="o">);</span>    
  
-        // 넥사크로 XML 파싱
-        // HTTP Platform Request
-        HttpPlatformRequest hpRequest = new HttpPlatformRequest(request);
-        try {
-            // URL 패턴 획득
-            String requestURI = request.getRequestURI();
-            String contextPath = request.getContextPath();
+        <span class="c1">// 넥사크로 XML 파싱</span>
+        <span class="c1">// HTTP Platform Request</span>
+        <span class="nc">HttpPlatformRequest</span> <span class="n">hpRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HttpPlatformRequest</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">// URL 패턴 획득</span>
+            <span class="nc">String</span> <span class="n">requestURI</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getRequestURI</span><span class="o">();</span>
+            <span class="nc">String</span> <span class="n">contextPath</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getContextPath</span><span class="o">();</span>
  
-            System.out.println("@RequestURI: " + requestURI);
-            System.out.println("@ContextPath: " + contextPath);
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"@RequestURI: "</span> <span class="o">+</span> <span class="n">requestURI</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"@ContextPath: "</span> <span class="o">+</span> <span class="n">contextPath</span><span class="o">);</span>
  
-            String command = requestURI.substring(contextPath.length());
-            System.out.println("@Command: " + command);
+            <span class="nc">String</span> <span class="n">command</span> <span class="o">=</span> <span class="n">requestURI</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">contextPath</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"@Command: "</span> <span class="o">+</span> <span class="n">command</span><span class="o">);</span>
  
-            // DAO: 공용 영역에 만들어 놓음
-            MessagesDAO mdao = new MessagesDAO();
+            <span class="c1">// DAO: 공용 영역에 만들어 놓음</span>
+            <span class="nc">MessagesDAO</span> <span class="n">mdao</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MessagesDAO</span><span class="o">();</span>
  
-            if(command.equals("/input.msg")) {
-                hpRequest.receiveData(); // 일단 뭔가 받음
-                PlatformData inputData = hpRequest.getData();
-                DataSet ds = inputData.getDataSet("request"); 
-                                    // request=DatasetRequest에서 받는 쪽의 이름은 request이다.
-                int row = ds.getRowCount();
-                String writer = ds.getString(row - 1, 1);
-                String message = ds.getString(row - 1, 2);
-                System.out.println(writer + " : " + message);
+            <span class="k">if</span><span class="o">(</span><span class="n">command</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"/input.msg"</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">hpRequest</span><span class="o">.</span><span class="na">receiveData</span><span class="o">();</span> <span class="c1">// 일단 뭔가 받음</span>
+                <span class="nc">PlatformData</span> <span class="n">inputData</span> <span class="o">=</span> <span class="n">hpRequest</span><span class="o">.</span><span class="na">getData</span><span class="o">();</span>
+                <span class="nc">DataSet</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">inputData</span><span class="o">.</span><span class="na">getDataSet</span><span class="o">(</span><span class="s">"request"</span><span class="o">);</span> 
+                                    <span class="c1">// request=DatasetRequest에서 받는 쪽의 이름은 request이다.</span>
+                <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="na">getRowCount</span><span class="o">();</span>
+                <span class="nc">String</span> <span class="n">writer</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+                <span class="nc">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">writer</span> <span class="o">+</span> <span class="s">" : "</span> <span class="o">+</span> <span class="n">message</span><span class="o">);</span>
  
-                // response로 다시 보냄
-                // DAO 작업
+                <span class="c1">// response로 다시 보냄</span>
+                <span class="c1">// DAO 작업</span>
  
-                int result = mdao.insertAnMessage(new Message(0, writer, message));
+                <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">mdao</span><span class="o">.</span><span class="na">insertAnMessage</span><span class="o">(</span><span class="k">new</span> <span class="nc">Message</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">writer</span><span class="o">,</span> <span class="n">message</span><span class="o">));</span>
  
-                String resultMessage = result &gt; 0 ? "입력 성공" : "입력 실패";
+                <span class="nc">String</span> <span class="n">resultMessage</span> <span class="o">=</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="s">"입력 성공"</span> <span class="o">:</span> <span class="s">"입력 실패"</span><span class="o">;</span>
  
-                PlatformData outputData = new PlatformData();
+                <span class="nc">PlatformData</span> <span class="n">outputData</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlatformData</span><span class="o">();</span>
  
-                DataSet respDataset = new DataSet("response");
-                respDataset.addColumn("forward", DataTypes.STRING, 256);
-                respDataset.addColumn("resultMessage", DataTypes.STRING, 256); 
-                                                        // resultMessge 컬럼 추가            
+                <span class="nc">DataSet</span> <span class="n">respDataset</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DataSet</span><span class="o">(</span><span class="s">"response"</span><span class="o">);</span>
+                <span class="n">respDataset</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="s">"forward"</span><span class="o">,</span> <span class="nc">DataTypes</span><span class="o">.</span><span class="na">STRING</span><span class="o">,</span> <span class="mi">256</span><span class="o">);</span>
+                <span class="n">respDataset</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="s">"resultMessage"</span><span class="o">,</span> <span class="nc">DataTypes</span><span class="o">.</span><span class="na">STRING</span><span class="o">,</span> <span class="mi">256</span><span class="o">);</span> 
+                                                        <span class="c1">// resultMessge 컬럼 추가            </span>
  
-                int row2 = respDataset.newRow();
-                respDataset.set(row2, "forward", "Base::FrmMain.xfdl");
-                respDataset.set(row2, "resultMessage", resultMessage); 
-                                                        // resultMessage 메시지 추가
-                outputData.addDataSet(respDataset);
+                <span class="kt">int</span> <span class="n">row2</span> <span class="o">=</span> <span class="n">respDataset</span><span class="o">.</span><span class="na">newRow</span><span class="o">();</span>
+                <span class="n">respDataset</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">row2</span><span class="o">,</span> <span class="s">"forward"</span><span class="o">,</span> <span class="s">"Base::FrmMain.xfdl"</span><span class="o">);</span>
+                <span class="n">respDataset</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">row2</span><span class="o">,</span> <span class="s">"resultMessage"</span><span class="o">,</span> <span class="n">resultMessage</span><span class="o">);</span> 
+                                                        <span class="c1">// resultMessage 메시지 추가</span>
+                <span class="n">outputData</span><span class="o">.</span><span class="na">addDataSet</span><span class="o">(</span><span class="n">respDataset</span><span class="o">);</span>
  
-                HttpPlatformResponse respData = new HttpPlatformResponse(response, 
-                                                PlatformType.CONTENT_TYPE_XML, "UTF-8");
-                respData.setData(outputData);
-                respData.sendData();
+                <span class="nc">HttpPlatformResponse</span> <span class="n">respData</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HttpPlatformResponse</span><span class="o">(</span><span class="n">response</span><span class="o">,</span> 
+                                                <span class="nc">PlatformType</span><span class="o">.</span><span class="na">CONTENT_TYPE_XML</span><span class="o">,</span> <span class="s">"UTF-8"</span><span class="o">);</span>
+                <span class="n">respData</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">outputData</span><span class="o">);</span>
+                <span class="n">respData</span><span class="o">.</span><span class="na">sendData</span><span class="o">();</span>
                 
-            } else if(command.equals("/output.msg")) {
-                hpRequest.receiveData(); // 일단 뭔가 받음
-                PlatformData inputData = hpRequest.getData();
-                DataSet ds = inputData.getDataSet("request"); 
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">command</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"/output.msg"</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">hpRequest</span><span class="o">.</span><span class="na">receiveData</span><span class="o">();</span> <span class="c1">// 일단 뭔가 받음</span>
+                <span class="nc">PlatformData</span> <span class="n">inputData</span> <span class="o">=</span> <span class="n">hpRequest</span><span class="o">.</span><span class="na">getData</span><span class="o">();</span>
+                <span class="nc">DataSet</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">inputData</span><span class="o">.</span><span class="na">getDataSet</span><span class="o">(</span><span class="s">"request"</span><span class="o">);</span> 
                 
-                List&lt;Message&gt; outputList = mdao.getAllMessages();
+                <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Message</span><span class="o">&gt;</span> <span class="n">outputList</span> <span class="o">=</span> <span class="n">mdao</span><span class="o">.</span><span class="na">getAllMessages</span><span class="o">();</span>
                 
-                PlatformData outputData = new PlatformData();
+                <span class="nc">PlatformData</span> <span class="n">outputData</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlatformData</span><span class="o">();</span>
                 
-                DataSet respDataset = new DataSet("response");
+                <span class="nc">DataSet</span> <span class="n">respDataset</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DataSet</span><span class="o">(</span><span class="s">"response"</span><span class="o">);</span>
                 
-                respDataset.addColumn("seq", DataTypes.INT, 4);
-                respDataset.addColumn("writer", DataTypes.STRING, 20);
-                respDataset.addColumn("message", DataTypes.STRING, 300);
+                <span class="n">respDataset</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="s">"seq"</span><span class="o">,</span> <span class="nc">DataTypes</span><span class="o">.</span><span class="na">INT</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
+                <span class="n">respDataset</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="s">"writer"</span><span class="o">,</span> <span class="nc">DataTypes</span><span class="o">.</span><span class="na">STRING</span><span class="o">,</span> <span class="mi">20</span><span class="o">);</span>
+                <span class="n">respDataset</span><span class="o">.</span><span class="na">addColumn</span><span class="o">(</span><span class="s">"message"</span><span class="o">,</span> <span class="nc">DataTypes</span><span class="o">.</span><span class="na">STRING</span><span class="o">,</span> <span class="mi">300</span><span class="o">);</span>
                 
-                for(Message m : outputList) {
-                    int row = respDataset.newRow();
-                    respDataset.set(row, "seq", m.getId());
-                    respDataset.set(row, "writer", m.getWriter());
-                    respDataset.set(row, "message", m.getMessage());                     
-                }
+                <span class="k">for</span><span class="o">(</span><span class="nc">Message</span> <span class="n">m</span> <span class="o">:</span> <span class="n">outputList</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">respDataset</span><span class="o">.</span><span class="na">newRow</span><span class="o">();</span>
+                    <span class="n">respDataset</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">row</span><span class="o">,</span> <span class="s">"seq"</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+                    <span class="n">respDataset</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">row</span><span class="o">,</span> <span class="s">"writer"</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">getWriter</span><span class="o">());</span>
+                    <span class="n">respDataset</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">row</span><span class="o">,</span> <span class="s">"message"</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>                     
+                <span class="o">}</span>
                 
-                outputData.addDataSet(respDataset);
+                <span class="n">outputData</span><span class="o">.</span><span class="na">addDataSet</span><span class="o">(</span><span class="n">respDataset</span><span class="o">);</span>
                 
-                HttpPlatformResponse respData = new HttpPlatformResponse(response, 
-                                                PlatformType.CONTENT_TYPE_XML, "UTF-8");
-                respData.setData(outputData);
-                respData.sendData();
+                <span class="nc">HttpPlatformResponse</span> <span class="n">respData</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HttpPlatformResponse</span><span class="o">(</span><span class="n">response</span><span class="o">,</span> 
+                                                <span class="nc">PlatformType</span><span class="o">.</span><span class="na">CONTENT_TYPE_XML</span><span class="o">,</span> <span class="s">"UTF-8"</span><span class="o">);</span>
+                <span class="n">respData</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">outputData</span><span class="o">);</span>
+                <span class="n">respData</span><span class="o">.</span><span class="na">sendData</span><span class="o">();</span>
                                 
-            }        
+            <span class="o">}</span>        
  
  
-        } catch (PlatformException e) {
-            e.printStackTrace();
-        } catch (NamingException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } 
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">PlatformException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">NamingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">SQLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span> 
  
-    }
+    <span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/01/nxc1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/nxc1.png" alt="" loading="lazy"></a>  <a href="/assets/img/wp-content/uploads/2019/01/nxc2.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/nxc2.png" alt="" loading="lazy"></a>  <a href="/assets/img/wp-content/uploads/2019/01/nxc3.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/nxc3.png" alt="" loading="lazy"></a></p>
+<h2 id="실행화면"><span class="me-2">실행화면</span><a href="#실행화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="/assets/img/wp-content/uploads/2019/01/nxc1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/nxc1.png" alt="" loading="lazy"></a> 
+ <a href="/assets/img/wp-content/uploads/2019/01/nxc2.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/nxc2.png" alt="" loading="lazy"></a><br />
+ <a href="/assets/img/wp-content/uploads/2019/01/nxc3.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/nxc3.png" alt="" loading="lazy"></a></p>
+
+<h2 id="github-에서-코드-보기"><span class="me-2">GitHub 에서 코드 보기</span><a href="#github-에서-코드-보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li><a href="https://github.com/ayaysir/nexacro-crud">바로가기</a></li>
+</ul>
 
   </div>
 
@@ -1712,6 +1800,8 @@ this.received = function() {
     
     
     
+      
+    
   
     
     
@@ -2247,122 +2337,6 @@ this.received = function() {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2412,7 +2386,7 @@ this.received = function() {
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>
@@ -2428,6 +2402,12 @@ this.received = function() {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -2874,79 +2854,7 @@ this.received = function() {
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8462,6 +8370,34 @@ this.received = function() {
         </article>
       
         <article class="col">
+          <a href="/posts/%ED%8E%8C-%EB%B2%88%EC%97%AD-apple%EC%9D%98-liquid-glass-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%B2%A0%ED%83%80%EC%97%90-%EB%8C%80%ED%95%9C-%ED%94%BC%EB%93%9C%EB%B0%B1/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1749567600"
+  data-df="ll"
+  
+>
+  Jun 11, 2025
+</time>
+
+              <h4 class="pt-0 my-2">[펌/번역] Apple의 Liquid Glass 디자인 베타에 대한 피드백</h4>
+              <div class="text-muted">
+                <p>#### **소개**  이번 WWDC25에서 새로운 컨셉의 Liquid Glass 디자인이 발표되었지만, 저는 아무래도 나이가 들어서인지 새로운 디자인이 잘 눈에 들어오지 않고 좋은 디자인이 아닌것 같다고 느꼈습니다. 여러 곳의 반응을 보니, 이렇게 생각하는건 저뿐만은 아니었던것 같습니다. 이번 새로운 디자인 컨셉에 대한 비판글이 여럿 있었고, 그 중...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/%EC%9C%A0%EB%8B%89%EC%8A%A4-%EB%A6%AC%EB%88%85%EC%8A%A4-%EA%B8%B0%EC%B4%88-%EB%AA%85%EB%A0%B9%EC%96%B4-dir-cd-pwd-tar-sh-mv-ps/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -8484,34 +8420,6 @@ this.received = function() {
               <h4 class="pt-0 my-2">유닉스/리눅스 기초 명령어 (dir, cd, pwd, tar, sh, mv, ps)</h4>
               <div class="text-muted">
                 <p>`dir`: 디렉토리/파일 목록 표시  `cd ..` : 이전 디렉토리로 이동 (cd 다음에 \[**공백\]** .. 이므로 주의. 공백 없는 `cd..`는 작동하지 않음. 윈도우 cmd와의 차이점이므로 주의.)  `pwd`: 현재 어디에 있는지 전체 경로로 표시  `mv [이동 대상 파일] [이동할 디렉토리]`: 파일 이동 `mv [원래 파일/디렉토...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/jmeter-%EC%84%9C%EB%B2%84-%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EA%B8%B0%EC%B4%88-%EC%82%AC%EC%9A%A9%EB%B2%95/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1551711600"
-  data-df="ll"
-  
->
-  Mar  5, 2019
-</time>
-
-              <h4 class="pt-0 my-2">JMeter: 서버 부하 테스트 프로그램 (기초 사용법)</h4>
-              <div class="text-muted">
-                <p>다운로드: [https://jmeter.apache.org/download\_jmeter.cgi](https://jmeter.apache.org/download_jmeter.cgi) (자바 8 이상 필요합니다)  윈도우 기준으로 압축을 푼 후 `bin/ApacheJMeter.jar` (또는 `jmeter.bat`) 실행합니다.  로그인 등의 과정이 없...</p>
               </div>
             </div>
           </a>
@@ -8542,11 +8450,11 @@ this.received = function() {
 
   
     <a
-      href="/posts/%EC%9E%90%EB%B0%94-swing-for%EB%AC%B8%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90-%EC%A0%91%EA%B7%BC-%EC%98%88%EC%A0%9C-%ED%8B%B1%ED%83%9D%ED%86%A0tic-tac-t/"
+      href="/posts/spring-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EB%8F%99oracle-jdbc-%EA%B8%B0%EC%A4%80/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>자바 Swing: for문으로 만든 컴포넌트에 접근 + 예제: 틱택토(Tic Tac Toe)</p>
+      <p>Spring: 데이터베이스 연동(Oracle-JDBC 기준), Spring JDBC</p>
     </a>
   
 </nav>
@@ -8824,6 +8732,8 @@ this.received = function() {
     
     
     
+      
+    
   
     
     
@@ -9359,122 +9269,6 @@ this.received = function() {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -9524,7 +9318,7 @@ this.received = function() {
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>

@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -565,10 +572,70 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -617,6 +684,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -638,7 +710,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>JSP: 페이지 포함 방법 중 include 액션 태그와 디렉티브의 차이점</h1>
     
@@ -712,7 +784,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1197 words"
+  title="1200 words"
 >
   <em>6 min</em> read</span>
 
@@ -722,54 +794,78 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">JSP: 페이지 포함 방법 중 include 액션 태그와 디렉티브의 차이점</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">JSP: 페이지 포함 방법 중 include 액션 태그와 디렉티브의 차이점</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>JSP: 페이지 포함 방법 중 <code class="language-plaintext highlighter-rouge">include</code> 액션 태그와 디렉티브의 차이점 비교</p>
 
-<h4 id="1-액션-태그"><span class="me-2"><strong>1. 액션 태그</strong></span><a href="#1-액션-태그" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="1-액션-태그"><span class="me-2"><strong>1. 액션 태그</strong></span><a href="#1-액션-태그" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>사용법:</p>
+<h3 id="사용법"><span class="me-2">사용법</span><a href="#사용법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>&lt;jsp:include page="페이지 주소" flush="false&gt;
-  &lt;jsp:param name="변수 이름" value="변수 값"&gt;&lt;/jsp:param&gt;
-&lt;/jsp:include&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;jsp:include </span><span class="na">page=</span><span class="s">"페이지 주소"</span><span class="na"> flush=</span><span class="s">"false&gt;
+  &lt;jsp:param name="</span>변수 이름" value="변수 값"<span class="nt">&gt;&lt;/jsp:param&gt;</span>
+<span class="nt">&lt;/jsp:include&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>액션 태그는 독립된 모듈을 구성할 때 사용합니다. 컴파일 시 클래스 파일이 별도로 생성되며 포함되는 페이지와 포함하는 페이지와는 별개로 취급됩니다.. 리퀘스트 값들은 전달되지 않으며 파라미터도 별도로 설정해야 합니다.</p>
+<p>액션 태그는 독립된 모듈을 구성할 때 사용합니다. 컴파일 시 클래스 파일이 별도로 생성되며 포함되는 페이지와 포함하는 페이지와는 별개로 취급됩니다. 리퀘스트 값들은 전달되지 않으며 파라미터도 별도로 설정해야 합니다.</p>
 
 <p> </p>
 
-<h4 id="2-디렉티브"><span class="me-2"><strong>2. 디렉티브</strong></span><a href="#2-디렉티브" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="2-디렉티브"><span class="me-2"><strong>2. 디렉티브</strong></span><a href="#2-디렉티브" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>사용법:</p>
+<h3 id="사용법-1"><span class="me-2">사용법</span><a href="#사용법-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;%@ include file="include-inner-directive.jsp" %&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;%@ include </span><span class="na">file=</span><span class="s">"include-inner-directive.jsp"</span> <span class="nt">%&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>디렉티브는 액션 태그와는 다르게 코드를 복붙하는 기능이라고 볼 수 있습니다. 클래스 파일이 별도로 생성되지 않으며 포함하는 페이지에 텍스트 코드만 삽입되어 컴파일됩니다. 애초에 페이지의 부분으로 취급되므로 리퀘스트 값도 그대로 사용할 수 있으며 파라미터 값을 따로 넘기지 않아도 된다. php의 include와 성격이 비슷합니다.</p>
+<p>디렉티브는 액션 태그와는 다르게 코드를 복붙하는 기능이라고 볼 수 있습니다. 클래스 파일이 별도로 생성되지 않으며 포함하는 페이지에 텍스트 코드만 삽입되어 컴파일됩니다. 애초에 페이지의 부분으로 취급되므로 리퀘스트 값도 그대로 사용할 수 있으며 파라미터 값을 따로 넘기지 않아도 됩니다. PHP의 <code class="language-plaintext highlighter-rouge">include</code>와 성격이 비슷합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na"> pageEncoding=</span><span class="s">"UTF-8"</span> <span class="nt">%&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>다만 디렉티브라도 페이지의 첫 부분에 위의 코드를 입력해야 한글이 깨지지 않습니다. 또한 위 선언문이 상위 JSP의 선언문과 맞지 않으면 오류가 발생합니다. 예를 들어 상위 JSP의 contentType이 <code class="language-plaintext highlighter-rouge">text/html; charset=UTF-8</code>인데 자식 JSP의 contentType이 <code class="language-plaintext highlighter-rouge">text/html; charset=utf-8</code>이라면 대소문자가 같지 않다는 이유만으로 오류가 발생합니다.</p>
+<p>다만 디렉티브라도 페이지의 첫 부분에 위의 코드를 입력해야 한글이 깨지지 않습니다. 또한 위 선언문이 상위 JSP의 선언문과 맞지 않으면 오류가 발생합니다.</p>
 
-<hr />
+<p>예를 들어 상위 JSP의 contentType이 <code class="language-plaintext highlighter-rouge">text/html; charset=UTF-8</code>인데 자식 JSP의 contentType이 <code class="language-plaintext highlighter-rouge">text/html; charset=utf-8</code>이라면 대소문자가 같지 않다는 이유만으로 오류가 발생합니다.</p>
 
-<h4 id="예제"><span class="me-2">예제</span><a href="#예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제"><span class="me-2">예제</span><a href="#예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="메인-jsp-파일"><span class="me-2">메인 JSP 파일</span><a href="#메인-jsp-파일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-jsp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -811,53 +907,53 @@
 39
 40
 41
-</pre></td><td class="rouge-code"><pre>&lt;%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%&gt;
-&lt;%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
-&lt;title&gt;Include: Action Tag&lt;/title&gt;
-&lt;c:set var="customVariable" value="KAK" /&gt;
-&lt;style&gt;
-    div {margin-top: 10px}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        (1) 메인 JSP 파일: ${ param.name }, ${ message }&lt;br&gt;
-        &lt;c:forEach begin="1" end="10" var="i"&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na">
+    pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+<span class="nt">&lt;%@ taglib </span><span class="na">prefix=</span><span class="s">"c"</span><span class="na"> uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span> <span class="nt">%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>Include: Action Tag<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;c:set </span><span class="na">var=</span><span class="s">"customVariable"</span><span class="na"> value=</span><span class="s">"KAK"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+    <span class="nt">div</span> <span class="p">{</span><span class="nl">margin-top</span><span class="p">:</span> <span class="m">10px</span><span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        (1) 메인 JSP 파일: ${ param.name }, ${ message }<span class="nt">&lt;br&gt;</span>
+        <span class="nt">&lt;c:forEach </span><span class="na">begin=</span><span class="s">"1"</span><span class="na"> end=</span><span class="s">"10"</span><span class="na"> var=</span><span class="s">"i"</span><span class="nt">&gt;</span>
             ${ i }
-        &lt;/c:forEach&gt;
-        &lt;c:out value="${ customVariable }" /&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;jsp:include page="include-inner-action.jsp"&gt;
-            &lt;jsp:param name="name" value="fake name"&gt;&lt;/jsp:param&gt; 
-        &lt;/jsp:include&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;jsp:include page="include-inner-action.jsp"&gt;
-            &lt;jsp:param name="name" value="${ param.name }"&gt;&lt;/jsp:param&gt; 
-        &lt;/jsp:include&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;%@ include file="include-inner-directive.jsp" %&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;p&gt;${ customInnerVariable1 }&lt;/p&gt;
-        &lt;p&gt;${ customInnerVariable2 }&lt;/p&gt;
-    &lt;/div&gt;
+        <span class="nt">&lt;/c:forEach&gt;</span>
+        <span class="nt">&lt;c:out </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span> <span class="n">customVariable</span> <span class="si">}</span><span class="s">"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;jsp:include </span><span class="na">page=</span><span class="s">"include-inner-action.jsp"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;jsp:param </span><span class="na">name=</span><span class="s">"name"</span><span class="na"> value=</span><span class="s">"fake name"</span><span class="nt">&gt;&lt;/jsp:param&gt;</span> 
+        <span class="nt">&lt;/jsp:include&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;jsp:include </span><span class="na">page=</span><span class="s">"include-inner-action.jsp"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;jsp:param </span><span class="na">name=</span><span class="s">"name"</span><span class="na"> value=</span><span class="s">"</span><span class="si">${</span> <span class="n">param</span><span class="o">.</span><span class="na">name</span> <span class="si">}</span><span class="s">"</span><span class="nt">&gt;&lt;/jsp:param&gt;</span> 
+        <span class="nt">&lt;/jsp:include&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;%@ include </span><span class="na">file=</span><span class="s">"include-inner-directive.jsp"</span> <span class="nt">%&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;p&gt;</span>${ customInnerVariable1 }<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>${ customInnerVariable2 }<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
     
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>include-inner-action.jsp</strong></p>
+<h2 id="include-inner-actionjsp"><span class="me-2">include-inner-action.jsp</span><a href="#include-inner-actionjsp" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -867,21 +963,21 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>&lt;%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na">
+    pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
 
-(2) 액션 태그: ${ param.name }, ${ message }&lt;br&gt;
-&lt;c:forEach begin="1" end="10" var="i"&gt;
+(2) 액션 태그: ${ param.name }, ${ message }<span class="nt">&lt;br&gt;</span>
+<span class="nt">&lt;c:forEach </span><span class="na">begin=</span><span class="s">"1"</span><span class="na"> end=</span><span class="s">"10"</span><span class="na"> var=</span><span class="s">"i"</span><span class="nt">&gt;</span>
     ${ i }
-&lt;/c:forEach&gt;
-&lt;c:out value="${ customVariable }" /&gt;
-&lt;c:set var="customInnerVariable1" value="EXODUS from Action Tag" /&gt;
+<span class="nt">&lt;/c:forEach&gt;</span>
+<span class="nt">&lt;c:out </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span> <span class="n">customVariable</span> <span class="si">}</span><span class="s">"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;c:set </span><span class="na">var=</span><span class="s">"customInnerVariable1"</span><span class="na"> value=</span><span class="s">"EXODUS from Action Tag"</span> <span class="nt">/&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>include-inner-directive.jsp</strong></p>
+<h2 id="include-inner-directivejsp"><span class="me-2">include-inner-directive.jsp</span><a href="#include-inner-directivejsp" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -890,24 +986,24 @@
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>&lt;%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%&gt;
-(3) 디렉티브 (지시자): ${ param.name }, ${ message }&lt;br&gt;
-&lt;c:forEach begin="1" end="10" var="i"&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na">
+    pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+(3) 디렉티브 (지시자): ${ param.name }, ${ message }<span class="nt">&lt;br&gt;</span>
+<span class="nt">&lt;c:forEach </span><span class="na">begin=</span><span class="s">"1"</span><span class="na"> end=</span><span class="s">"10"</span><span class="na"> var=</span><span class="s">"i"</span><span class="nt">&gt;</span>
     ${ i }
-&lt;/c:forEach&gt;
-&lt;c:out value="${ customVariable }" /&gt;
-&lt;c:set var="customInnerVariable2" value="EXODUS from Directive" /&gt;
+<span class="nt">&lt;/c:forEach&gt;</span>
+<span class="nt">&lt;c:out </span><span class="na">value=</span><span class="s">"</span><span class="si">${</span> <span class="n">customVariable</span> <span class="si">}</span><span class="s">"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;c:set </span><span class="na">var=</span><span class="s">"customInnerVariable2"</span><span class="na"> value=</span><span class="s">"EXODUS from Directive"</span> <span class="nt">/&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/01/sibe.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/sibe.png" alt="" loading="lazy"></a></p>
 
-<p>액션 태그와 디렉티브를 비교하는 예제입니다. 두 부분 모두 이름, 반복문, 임의의 변수(<code class="language-plaintext highlighter-rouge">customVariable</code>)의 네ㅐ용을 표시하는 것을 목적으로 합니다. 결과를 보니 디렉티브는 모든 내용이 정상적으로 표시되는 반면 액션 태그는 뭔가 잘 실행이 안된 모양이며 심지어 파라미터를 다시 설정하지 않으면 컴파일 에러까지 발생합니다.</p>
+<p>액션 태그와 디렉티브를 비교하는 예제입니다. 두 부분 모두 이름, 반복문, 임의의 변수(<code class="language-plaintext highlighter-rouge">customVariable</code>)의 내용을 표시하는 것을 목적으로 합니다. 결과를 보니 디렉티브는 모든 내용이 정상적으로 표시되는 반면 액션 태그는 뭔가 잘 실행이 안된 모양이며 심지어 파라미터를 다시 설정하지 않으면 컴파일 에러까지 발생합니다.</p>
 
 <p>렌더링된 HTML 소스를 보면 액션 태그로 지정된 부분은 흉물스럽게 jstl 태그가 그대로 보이는 것을 알 수 있습니다. 원래 jstl 선언을 했다면 렌더링 후 이 태그들은 최종 결과물에서 절대 보이지 말아야 했습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -997,19 +1093,19 @@
 87
 88
 89
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
-&lt;title&gt;Include: Action Tag&lt;/title&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>Include: Action Tag<span class="nt">&lt;/title&gt;</span>
  
-&lt;style&gt;
-    div {margin-top: 10px}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        (1) 메인 JSP 파일: Sibe, Can you hear me?&lt;br&gt;
+<span class="nt">&lt;style&gt;</span>
+    <span class="nt">div</span> <span class="p">{</span><span class="nl">margin-top</span><span class="p">:</span> <span class="m">10px</span><span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        (1) 메인 JSP 파일: Sibe, Can you hear me?<span class="nt">&lt;br&gt;</span>
         
             1
         
@@ -1032,28 +1128,28 @@
             10
         
         KAK
-    &lt;/div&gt;
-    &lt;div&gt;
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
         
-    (2) 액션 태그: fake name, Can you hear me?&lt;br&gt;
-    &lt;c:forEach begin="1" end="10" var="i"&gt;
+    (2) 액션 태그: fake name, Can you hear me?<span class="nt">&lt;br&gt;</span>
+    <span class="nt">&lt;c:forEach</span> <span class="na">begin=</span><span class="s">"1"</span> <span class="na">end=</span><span class="s">"10"</span> <span class="na">var=</span><span class="s">"i"</span><span class="nt">&gt;</span>
         
-    &lt;/c:forEach&gt;
-    &lt;c:out value="" /&gt;
-    &lt;c:set var="customInnerVariable1" value="EXODUS from Action Tag" /&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
+    <span class="nt">&lt;/c:forEach&gt;</span>
+    <span class="nt">&lt;c:out</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;c:set</span> <span class="na">var=</span><span class="s">"customInnerVariable1"</span> <span class="na">value=</span><span class="s">"EXODUS from Action Tag"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
         
-    (2) 액션 태그: Sibe, Can you hear me?&lt;br&gt;
-    &lt;c:forEach begin="1" end="10" var="i"&gt;
+    (2) 액션 태그: Sibe, Can you hear me?<span class="nt">&lt;br&gt;</span>
+    <span class="nt">&lt;c:forEach</span> <span class="na">begin=</span><span class="s">"1"</span> <span class="na">end=</span><span class="s">"10"</span> <span class="na">var=</span><span class="s">"i"</span><span class="nt">&gt;</span>
         
-    &lt;/c:forEach&gt;
-    &lt;c:out value="" /&gt;
-    &lt;c:set var="customInnerVariable1" value="EXODUS from Action Tag" /&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
+    <span class="nt">&lt;/c:forEach&gt;</span>
+    <span class="nt">&lt;c:out</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;c:set</span> <span class="na">var=</span><span class="s">"customInnerVariable1"</span> <span class="na">value=</span><span class="s">"EXODUS from Action Tag"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
         
-    (3) 디렉티브 (지시자): Sibe, Can you hear me?&lt;br&gt;
+    (3) 디렉티브 (지시자): Sibe, Can you hear me?<span class="nt">&lt;br&gt;</span>
     
         1
     
@@ -1077,18 +1173,18 @@
     
     KAK
     
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;p&gt;&lt;/p&gt;
-        &lt;p&gt;EXODUS from Directive&lt;/p&gt;
-    &lt;/div&gt;
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>EXODUS from Directive<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
     
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 Colored by Color Scripter
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>액션 태그로 포함한 내용에 JSTL을 사용하고 싶다면 포함되는 파일에도 JSTL 선언을 다시 하면 됩니다. 이렇게 하면<code class="language-plaintext highlighter-rouge">include-inner-action.jsp</code> 페이지의 <code class="language-plaintext highlighter-rouge">forEach</code> 문은 정상적으로 작동합니다. 다만 그 안에서 선언된 변수 <code class="language-plaintext highlighter-rouge">customInnerVariable1</code>은 페이지 밖을 빠져나가지 못합니다.</p>
+<p>액션 태그로 포함한 내용에 JSTL을 사용하고 싶다면 포함되는 파일에도 JSTL 선언을 다시 하면 됩니다. 이렇게 하면 <code class="language-plaintext highlighter-rouge">include-inner-action.jsp</code> 페이지의 <code class="language-plaintext highlighter-rouge">forEach</code> 문은 정상적으로 작동합니다. 다만 그 안에서 선언된 변수 <code class="language-plaintext highlighter-rouge">customInnerVariable1</code>은 페이지 밖을 빠져나가지 못합니다.</p>
 
   </div>
 
@@ -1469,6 +1565,8 @@ Colored by Color Scripter
     
     
     
+      
+    
   
     
     
@@ -2004,122 +2102,6 @@ Colored by Color Scripter
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2169,7 +2151,7 @@ Colored by Color Scripter
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>
@@ -2185,6 +2167,12 @@ Colored by Color Scripter
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -2560,78 +2548,6 @@ Colored by Color Scripter
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8581,6 +8497,8 @@ Colored by Color Scripter
     
     
     
+      
+    
   
     
     
@@ -9116,122 +9034,6 @@ Colored by Color Scripter
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -9281,7 +9083,7 @@ Colored by Color Scripter
         <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9E%90%EB%B0%94/">자바</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
       
     </div>
   </section>
