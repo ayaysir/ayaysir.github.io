@@ -16,12 +16,14 @@ categories:
 
 이 작품은 다바 소벨(Dava Sobel)의 저서 Longitude 에 생생히 그려진 이 위대한 이야기를 음악적으로 되새깁니다. 음악의 많은 부분은 기계적인 색채를 띠며, 정밀한 수학적·박자적 구조로 구성되어 있습니다. 그러나 작품의 중심에는 인간적인 면모가 있습니다. 2만 파운드의 상금이 해리슨의 동기였다고 흔히 이야기되지만, 수많은 생명이 이 문제의 해결에 달려 있었다는 사실이 그를 괴롭혔습니다. 음악의 정서적 핵심은 바로 이 점, 특히 1707년 10월 22일 저녁의 비극적인 순간을 반영합니다.
 
-피터 그레이엄
-체셔, 2000년 7월
+<div align=right>
+<i>피터 그레이엄<br>
+체셔, 2000년 7월</i>
+</div>
 
 ---
 
-### 편성:
+### 편성
  - 영국식 브라스 밴드
  - 타악기 (3인):
    - 팀파니 (템플 블록 3개, 베이스 드럼)
@@ -42,9 +44,16 @@ For carpenter and self-taught clockmaker John Harrison, this was the beginning o
 
 This work reflects on aspects of this epic tale, brilliantly brought to life in Dava Sobel's book Longitude. Much of the music is mechanistic in tone and is constructed along precise mathematical and metrical lines. The heart of the work however is human - the attraction of the ₤20,000 prize is often cited as Harrison's motivation. However, the realisation that countless lives depended on a solution was one which haunted Harrison. The emotional core of the music reflects on this, and in particular the evening of 22nd October 1707.
 
-Peter Graham Cheshire July 2000
+<div align=right>
+<i>
+Peter Graham<br>
+Cheshire July 2000
+</i>
+</div>
 
-## Instrumentation British Brass Band Percussion (3 players): 
+## Instrumentation
+- British Brass Band 
+- Percussion (3 players)
   - Timpani (3 Temple blocks, Bass drum) 
   - Percussion 1 (Bass drum, Snare drum, Bongo, Wood block, Vibraphone, Tam-tam, Glockenspiel 
   - Percussion 2 (Wood block, Suspended cymbal, Vibraphone, Snare drum, Tam-tam, Xylophone, Bass drum, Tubular bells)

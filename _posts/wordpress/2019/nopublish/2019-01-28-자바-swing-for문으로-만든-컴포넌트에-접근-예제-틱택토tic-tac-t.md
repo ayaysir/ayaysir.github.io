@@ -1,4 +1,5 @@
 ---
+published: false
 title: "자바 Swing: for문으로 만든 컴포넌트에 접근 + 예제: 틱택토(Tic Tac Toe)"
 date: 2019-01-28
 categories: 

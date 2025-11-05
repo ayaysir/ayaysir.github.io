@@ -9,11 +9,13 @@ tags:
   - "java"
 ---
 
-**JDK 8**에서 등장한 새로운 `LocalDate`, `LocalTime`, `ChronoUnit`을 이용해 시간을 나타내고 계산을 해보겠습니다. 이전에는 `Date`, `Calendar` 이런 애들이 쓰였는데요, 자바 초기에 등장한 것이라 문제가 많았다고 합니다. 여러 문제를 다 열거할 수 없지만 가장 큰 문제는 `Calendar`는 특이하게 월을 0 ~ 11로 기록해야 한다는 점이었습니다. 혹시 이런 점을 모르고 일반적인 상식으로 코드를 작성했다가 대형 사고로까지 이어질 수 있겠네요. 새로 등장한 기능들은 그런 여러 문제들을 해결한 것입니다.
+**JDK 8**에서 등장한 새로운 `LocalDate`, `LocalTime`, `ChronoUnit`을 이용해 시간을 나타내고 계산을 해보겠습니다. 이전에는 `Date`, `Calendar` 이런 애들이 쓰였는데요, 자바 초기에 등장한 것이라 문제가 많았다고 합니다. 여러 문제를 다 열거할 수 없지만 가장 큰 문제는 `Calendar`는 특이하게 월을 `0 ~ 11`로 기록해야 한다는 점이었습니다. 혹시 이런 점을 모르고 일반적인 상식으로 코드를 작성했다가 대형 사고로까지 이어질 수 있겠네요. 새로 등장한 기능들은 그런 여러 문제들을 해결한 것입니다.
+
+## 기본 사용방법
 
 기초 코드는 다음과 같습니다.
 
-```
+```java
 package com.apple.biorhythm;
 
 import java.time.LocalDate;
@@ -27,18 +29,15 @@ public class CalculateDates {
     System.out.println(o);
   }
   
-  public static void main(String[] args) {
-    
-  
-  }
+  public static void main(String[] args) { }
 }
 ```
 
- 
+### LocalDate
 
 `LocalDate`는 연, 월, 일을 다룰 때 쓰입니다. 오늘 날짜를 구하려면 `now()`를 사용합니다.
 
-```
+```java
 LocalDate today = LocalDate.now();   // 오늘 날짜
 p(today);   // 2019-01-20
 ```
@@ -47,16 +46,17 @@ p(today);   // 2019-01-20
 
 두 개의 특정 날짜 사이의 차이를 연, 월, 일로 구하려면 다음과 같이 사용합니다. 아래 코드에서 월(month) 자리에 사용된 3은 말 그대로 3월을 뜻합니다. 특정 날짜를 수동으로 입력하려면 `LocalDate.of(연, 월, 일)`을 사용합니다.
 
-```
+```java
 LocalDate targetDate1 = LocalDate.of(1980, 3, 12);
 p(today.until(targetDate1));  // P-38Y-10M-8D
 ```
 
+## 두 개 날짜의 차이 일수 구하기  
  
 
 두 개의 특정 날짜 사이의 차이를 일수(days)로 구하려면 `ChronoUnit.DAYS.between(a, b)`를 사용합니다. `between` 파라미터의 순서는 반드시 **이른 시간이 앞에, 늦은 시간이 뒤에** 위치해야 합니다.
 
-```
+```java
 long day1 = ChronoUnit.DAYS.between(today, targetDate1);
 p(day1); // -14193
 long day2 = ChronoUnit.DAYS.between(today, LocalDate.of(2020, 3, 12));
@@ -67,27 +67,31 @@ p(day2); // 417
 
 만약 특정 날짜의 100일 전/후는 언제인지 알고 싶다면, `ChronoUnit.DAYS.between(date, longAmount)`를 사용합니다.
 
-```
+```java
 p(ChronoUnit.DAYS.addTo(today, 100)); // 2019-04-30
 p(ChronoUnit.DAYS.addTo(today, -100)); // 2018-10-12
 p(ChronoUnit.DAYS.addTo(LocalDate.of(1976, 1, 4), 10000)); // 2023-05-22
 ```
 
- 
+### 응용: 특정 날짜에서 oo기간 전후 구하기
 
-`ChronoUnit`을 응용해 보겠습니다. 첫 번째는 특정 날짜에서 몇 세기(`CENTURIES.addTo`) 전후를 구합니다. 두 번째는 특정 날짜에서 몇 달 전후(`MONTHS.addTo`)를 구합니다. 세 번째는 두 날짜 사이는 몇 년(`YEARS.between`)인지 구합니다.
+`ChronoUnit`을 응용해 보겠습니다. 
 
-```
+1. 첫 번째는 특정 날짜에서 몇 세기(`CENTURIES.addTo`) 전후를 구합니다. 
+2. 두 번째는 특정 날짜에서 몇 달 전후(`MONTHS.addTo`)를 구합니다. 
+3. 세 번째는 두 날짜 사이는 몇 년(`YEARS.between`)인지 구합니다.
+
+```java
 p(ChronoUnit.CENTURIES.addTo(today, -1)); // 1919-01-20
 p(ChronoUnit.MONTHS.addTo(today, 10));	// 2019-11-20
 p(ChronoUnit.YEARS.between(today, targetDate1)); // -38
 ```
 
- 
+## LocalTime, LocalDateTime
 
 다른 날짜 포맷에 대해서도 알아보겠습니다. `LocalTime`은 시, 분 초를 표시하며 초 단위는 millisecond까지 소수점으로 표시하는 포맷입니다. **`LocalDateTime`**은 `LocalDate`와 `LocalTime`이 합쳐진 포맷입니다.
 
-```
+```java
 LocalTime currentTime = LocalTime.now();
 p(currentTime);	// 19:05:31.397
 
@@ -95,7 +99,7 @@ LocalDateTime currentDateTime = LocalDateTime.now();
 p(currentDateTime);	// 2019-01-20T19:06:15.909
 ```
 
- 
+## 타입 변환
 
 `LocalDateTime`과 `LocalDate`를 서로 계산하려고 하면 예외가 발생합니다. 두 포맷의 타입을 일치시켜야 합니다. 여기서는 `LocalDateTime`을 `LocalDate`로 바꾸는 방법에 대해 알아보겠습니다.
 
@@ -104,13 +108,13 @@ p(ChronoUnit.DAYS.between(currentDateTime.toLocalDate(), targetDate1));	// -1419
 p(ChronoUnit.HOURS.between(LocalTime.of(12, 11), currentTime)); // 7
 ```
 
- 
+## 예제: 바이오리듬
 
-* * *
+예제로 **바이오리듬** 프로그램을 만들어보겠습니다. 바이오리듬은 제가 어렸을 때 유행했던 운세의 일종인데요 자세한 설명은 [여기](https://thewiki.kr/w/바이오리듬)에서 볼 수 있습니다. 여기에 따르면 지금은 과학적 근거는 전혀 없고 유행도 지난것 같지만 프로그래밍 연습에는 좋은 예제입니다. 
 
-예제로 **바이오리듬** 프로그램을 만들어보겠습니다. 바이오리듬은 제가 어렸을 때 유행했던 운세의 일종인데요 자세한 설명은 [여기](https://thewiki.kr/w/바이오리듬)에서 볼 수 있습니다. 여기에 따르면 지금은 과학적 근거는 전혀 없고 유행도 지난것 같지만 프로그래밍 연습에는 좋은 예제입니다. 다음에는 [벤치마킹 사이트](http://www.60gabja.com/bio/013_modujobio.php3)를 참고해 웹 페이지로 바이오리듬을 구현해보려 합니다. 벤치마킹 사이트의 확장자 `php3`에서 알 수 있듯이 굉장히 옛날 사이트입니다.
+<!-- 다음에는 [벤치마킹 사이트](http://www.60gabja.com/bio/013_modujobio.php3)를 참고해 웹 페이지로 바이오리듬을 구현해보려 합니다. 벤치마킹 사이트의 확장자 `php3`에서 알 수 있듯이 굉장히 옛날 사이트입니다. -->
 
-```
+```java
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;

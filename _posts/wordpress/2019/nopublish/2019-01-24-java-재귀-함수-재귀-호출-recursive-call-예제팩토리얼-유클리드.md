@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Java: 재귀 함수, 재귀 호출 (recursive call) + 예제(팩토리얼, 유클리드 호제법, 파일 폴더 탐색)"
 date: 2019-01-24
 categories: 

@@ -12,9 +12,11 @@ tags:
 
 Spring Boot에 JDBC를 통해 mariadb(mysql) 연결하는 방법입니다.
 
-##### 1\. `pom.xml`의 `<dependencies>`에 다음을 추가합니다.
+## 방법
 
-```
+### 1\. `pom.xml`의 `<dependencies>`에 다음을 추가합니다.
+
+```xml
 <!-- mariaDb -->
       <dependency>
           <groupId>org.springframework.boot</groupId>
@@ -31,9 +33,9 @@ Spring Boot에 JDBC를 통해 mariadb(mysql) 연결하는 방법입니다.
 
  
 
-##### 2\. `applications.properties` (또는 기타 프로퍼티 파일)에 다음을 추가합니다.
+### 2\. `applications.properties` (또는 기타 프로퍼티 파일)에 다음을 추가합니다.
 
-```
+```conf
 spring.datasource.driverClassName=org.mariadb.jdbc.Driver
 spring.datasource.url=jdbc:mariadb://127.0.0.1:3306/test (본인 컴퓨터 주소 입력)
 spring.datasource.username=아이디 입력
@@ -42,9 +44,9 @@ spring.datasource.password=비밀번호 입력
 
  
 
-##### 3\. DAO 테스트 코드를 작성하고 테스트합니다.
+### 3\. DAO 테스트 코드를 작성하고 테스트합니다.
 
-```
+```java
 package com.springboot.iroiro.dao;
 
 import java.util.HashMap;
@@ -73,7 +75,7 @@ public class SimpleMessageDAO {
 
 ```
 
-```
+```java
 package com.springboot.iroiro;
 
 import java.util.List;
@@ -96,4 +98,4 @@ public class TestController {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2019/01/스크린샷-2019-01-19-오후-10.28.49.png)
+ ![](/assets/img/wp-content/uploads/2019/01/mariadb-1.png)

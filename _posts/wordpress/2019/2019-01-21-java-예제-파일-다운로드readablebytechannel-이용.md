@@ -9,11 +9,21 @@ tags:
   - "java"
 ---
 
-웹브라우저를 통하지 않고 자바 자체에서 파일 다운로드를 하는 예제입니다. `Channels`는 유틸리티 메소드로 `Channel`과 `Stream`에 필요한 작업들을 제공합니다. `new Channel(InputStream in)`은 인풋스트림(`InputStream`)을 새로운 `ReadableByteChannel`(채널)로 만들어주는데, **`Channel`**이란 하드웨어 장치, 파일, 네트워크 소켓 또는 하나 이상의 고유 한 I/O 작업을 수행 할 수 있는 프로그램 구성 요소와 같은 엔터티에 대한 열린 연결을 나타내는 것이라고 합니다. 파일을 주고받기 위한 일종의 통로(nexus)로 해석하면 되겠습니다. 파일 작성을 위한 스트림인 `FileOutputStream`에서 채널을 받은 다음(`getChannel()`, `FileChannel` 타입 반환) 채널의 `transferForm` 메소드를 사용해 파일을 rbc 채널로부터 읽어 FOS로 전송합니다.
+웹브라우저를 통하지 않고 자바 자체에서 파일 다운로드를 하는 예제입니다. 
 
-참고: [Channel](https://docs.oracle.com/javase/7/docs/api/java/nio/channels/Channel.html), [ReadableByteChannel](https://docs.oracle.com/javase/7/docs/api/java/nio/channels/ReadableByteChannel.html), [Channels](https://docs.oracle.com/javase/7/docs/api/java/nio/channels/Channels.html)
+`Channels`는 유틸리티 메소드로 `Channel`과 `Stream`에 필요한 작업들을 제공합니다.
 
-```
+ `new Channel(InputStream in)`은 인풋스트림(`InputStream`)을 새로운 `ReadableByteChannel`(채널)로 만들어주는데,  
+ 
+ `Channel`이란 하드웨어 장치, 파일, 네트워크 소켓 또는 하나 이상의 고유 한 I/O 작업을 수행 할 수 있는 프로그램 구성 요소와 같은 엔터티에 대한 열린 연결을 나타내는 것이라고 합니다. 
+ 
+ 파일 작성을 위한 스트림인 `FileOutputStream`에서 채널을 받은 다음(`getChannel()`, `FileChannel` 타입 반환) 채널의 `transferForm` 메소드를 사용해 파일을 rbc 채널로부터 읽어 FOS로 전송합니다.
+
+ - 참고: [Channel](https://docs.oracle.com/javase/7/docs/api/java/nio/channels/Channel.html), [ReadableByteChannel](https://docs.oracle.com/javase/7/docs/api/java/nio/channels/ReadableByteChannel.html), [Channels](https://docs.oracle.com/javase/7/docs/api/java/nio/channels/Channels.html)
+
+## 코드
+
+```java
 import java.io.FileOutputStream;
 import java.net.URL;
 import java.nio.channels.Channels;

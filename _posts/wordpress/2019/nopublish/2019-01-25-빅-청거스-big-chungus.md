@@ -1,33 +1,34 @@
 ---
+published: false
 title: "빅 청거스 (Big Chungus)"
 date: 2019-01-25
 categories: 
   - "Blog"
   - "정보글"
+---
 
 [https://knowyourmeme.com/memes/big-chungus](https://knowyourmeme.com/memes/big-chungus)
 
  
 
-**Big Chungus**는 만화 캐릭터 Bugs Bunny의 이미지를 말하며 대개 Big Chungus라는 문구가 붙어 [PlayStation 4](https://knowyourmeme.com/memes/subcultures/playstation) 콘솔용 게임으로 제시됩니다 .  "chungus"라는 단어는 [비디오 게임](https://knowyourmeme.com/memes/cultures/gaming) 기자인 [짐 스털링 (Jim Sterling)](https://knowyourmeme.com/memes/people/jim-sterling)이 [밈](https://knowyourmeme.com/memes/memes)이 인기있게 되기 몇 년 전에 만들어졌습니다.
+**Big Chungus**는 만화 캐릭터 Bugs Bunny의 이미지를 말하며 대개 Big Chungus라는 문구가 붙어 [PlayStation 4](https://knowyourmeme.com/memes/subcultures/playstation) 콘솔용 게임으로 제시됩니다.  "chungus"라는 단어는 [비디오 게임](https://knowyourmeme.com/memes/cultures/gaming) 기자인 [짐 스털링 (Jim Sterling)](https://knowyourmeme.com/memes/people/jim-sterling)이 [밈](https://knowyourmeme.com/memes/memes)이 인기있게 되기 몇 년 전에 만들어졌습니다.
 
 ## 유래
 
-#### 뚱뚱한 벅스 버니 (Fat Bugs Bunny)
+### 뚱뚱한 벅스 버니 (Fat Bugs Bunny)
 
-Bugs Bunny의 이미지는 1941 년 12 월 20 일에 처음 공개 된 _[Merrie Melodies](https://knowyourmeme.com/memes/subcultures/looney-tunes)_ 만화 _Wabbit Twouble_에 나타납니다. 간단히 말해서, 벅스는 엘머 푸드를 조롱하고 있습니다. 그는 이 만화에서 그의 이전 작품보다 훨씬 더 상징적인 디자인으로 만들어졌습니다. (아래 클립 참조)
+Bugs Bunny의 이미지는 1941 년 12 월 20 일에 처음 공개 된 [Merrie Melodies](https://knowyourmeme.com/memes/subcultures/looney-tunes) 만화 ***Wabbit Twouble***에 나타납니다. 간단히 말해서, 벅스는 엘머 푸드를 조롱하고 있습니다. 그는 이 만화에서 그의 이전 작품보다 훨씬 더 상징적인 디자인으로 만들어졌습니다. (아래 클립 참조)
 
-<iframe width="420" height="236" src="https://www.youtube.com/embed/iMcQC6_pFo0?start=118" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" data-mce-fragment="1"></iframe>
-
+<!-- <iframe width="420" height="236" src="https://www.youtube.com/embed/iMcQC6_pFo0?start=118" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" data-mce-fragment="1"></iframe> -->
+{% youtube "https://www.youtube.com/watch?v=iMcQC6_pFo0&source_ve_path=MTc4NDI0" %}
  
 
 2017 년 5 월 27 일, 익명의 [4chan](https://knowyourmeme.com/memes/sites/4chan) 사용자가 뚱뚱한 Bugs Bunny의 이미지를 [/ lit /](https://knowyourmeme.com/memes/sites/int) board에 게시했습니다 (아래 왼쪽 상단). 4chan의 다음 이미지는 2017년 7월 19일(아래 그림, 오른쪽 위 참조)까지 추적할 수 있으며, 그 해 말에 더 많은 게시물이 포함되어 있습니다.
 
-[![Anonymous Sat May 27 18:12:21 2017 No.9559798 파일 : 249 KB, 248x459, 1489615524698.png [iqdb] [saucenao] [google] [report Quoted by :> 95598189559928 >> ​​9559930 9559962 시작해야합니다. 나는 철학에 배경 지식이 없기 때문에 토지와 가속주의의 역사적 사상과 OF의 에세이가 내 땅을 처음 읽는 것이라고 생각합니다. 처음 몇 단락에 대해 저를 처음 쳤을 때 가장 먼저 떠오르는 점 중 하나는 점점 더 자아 인식력이 있고, 최소한으로 지능적인 기생충이 번성하며 그림자가 번져 있다는 그의 생각과 Colin Wilsons의 소설 "The Mind Parasites"사이의 유사성이었습니다. 윌슨의 책에서 주인공은 문명의 시작부터 기생적인 "유기체" 동시에 인간 마음의 깊은 잠재 의식을 감염시키는 동안 숫자가 커졌습니다. 기생충의 목표는 피할 수없는 고통의 불행을 씻어 내리기 위해 인간의 노력을 과도하고 부끄럽게 만드는 것입니다. 위대한 책이고 윌슨은 아이디어를 개발하는 데 큰 역할을하지만 자본주의가 자각하고 있다는 환상적인 개념을 받아 들일 수 있을지 확신하지 못합니다. 나는 땅이 다른 어떤 것보다 문학적이고 은유 적이라는 느낌이 들었다.](https://i.kym-cdn.com/photos/images/newsfeed/001/442/743/6a4.jpg "나는 철학에 대한 배경이 정말로 없다.")](https://knowyourmeme.com/photos/1442743) [![loggle deleted replies 파일 : 249 KB, 248x459, 1499490578802.png [동일보기] ligdb] [saucenao] [google] [신고] O 익명의 물 7 월 19 일 02:33:28 2017 번 9774657 대답 [원본] 인용구 : >> 9774660 >> 9774666 >> 9774669 >> 9774677 >> 9774743 >> 775251 >> 9777747 >> 9778227 9778645 >> 9778784 >> 9779464 >> 9779770 >> 9780955 >> 9780994 >> 9781137 >> 9781327> 9781445> > 9781665 >> 9783318 >> 9783716 >> 9787484 >> 9787912 >> 9787933 >> 9787960 열차를 읽는 것 더 많은 관심을 끌고있는 뭔가가 있습니까? 익명 수요일 Jul 19 02:34:48 2017 No.9774660 OP 기차를 왜 지정 하시겠습니까?](https://i.kym-cdn.com/photos/images/newsfeed/001/442/741/f4e.jpg "기차에서 읽기")](https://knowyourmeme.com/photos/1442741)  [![익명 금요일 04 8 월 2017 05:03:42 No.85860354 [125/38] 답글보기 원본 보고서 인용구 : >> 85860442 >> 85860491 >> 85860501 >> 85860576 >> 85860711 >> 85861053 >> 85861180 >> 85861285> > 85861376> 8586148885861577 >> 85861960 >> 85862031 >> 85862338 >> 85862432 >> 85862454 >> 85862461 >> 85862541 >> 85862694 >> 85863898 >> 85864042 >> 85864215 >> 85864236 >> 85865955 어떻게 멈추게합니까? 24KiB, 237x441, bugs.jpg](https://i.kym-cdn.com/photos/images/newsfeed/001/442/316/f19.jpg "우리는 어떻게 그를 멈추게합니까?")](https://knowyourmeme.com/photos/1442316) [![](https://i.kym-cdn.com/photos/images/newsfeed/001/442/325/f1e.jpg "결혼까지 기다렸습니다.")](https://knowyourmeme.com/photos/1442325)
+> [![Anonymous Sat May 27 18:12:21 2017 No.9559798 파일 : 249 KB, 248x459, 1489615524698.png [iqdb] [saucenao] [google] [report Quoted by :> 95598189559928 >> ​​9559930 9559962 시작해야합니다. 나는 철학에 배경 지식이 없기 때문에 토지와 가속주의의 역사적 사상과 OF의 에세이가 내 땅을 처음 읽는 것이라고 생각합니다. 처음 몇 단락에 대해 저를 처음 쳤을 때 가장 먼저 떠오르는 점 중 하나는 점점 더 자아 인식력이 있고, 최소한으로 지능적인 기생충이 번성하며 그림자가 번져 있다는 그의 생각과 Colin Wilsons의 소설 "The Mind Parasites"사이의 유사성이었습니다. 윌슨의 책에서 주인공은 문명의 시작부터 기생적인 "유기체" 동시에 인간 마음의 깊은 잠재 의식을 감염시키는 동안 숫자가 커졌습니다. 기생충의 목표는 피할 수없는 고통의 불행을 씻어 내리기 위해 인간의 노력을 과도하고 부끄럽게 만드는 것입니다. 위대한 책이고 윌슨은 아이디어를 개발하는 데 큰 역할을하지만 자본주의가 자각하고 있다는 환상적인 개념을 받아 들일 수 있을지 확신하지 못합니다. 나는 땅이 다른 어떤 것보다 문학적이고 은유 적이라는 느낌이 들었다.](https://i.kym-cdn.com/photos/images/newsfeed/001/442/743/6a4.jpg "나는 철학에 대한 배경이 정말로 없다.")](https://knowyourmeme.com/photos/1442743) [![loggle deleted replies 파일 : 249 KB, 248x459, 1499490578802.png [동일보기] ligdb] [saucenao] [google] [신고] O 익명의 물 7 월 19 일 02:33:28 2017 번 9774657 대답 [원본] 인용구 : >> 9774660 >> 9774666 >> 9774669 >> 9774677 >> 9774743 >> 775251 >> 9777747 >> 9778227 9778645 >> 9778784 >> 9779464 >> 9779770 >> 9780955 >> 9780994 >> 9781137 >> 9781327> 9781445> > 9781665 >> 9783318 >> 9783716 >> 9787484 >> 9787912 >> 9787933 >> 9787960 열차를 읽는 것 더 많은 관심을 끌고있는 뭔가가 있습니까? 익명 수요일 Jul 19 02:34:48 2017 No.9774660 OP 기차를 왜 지정 하시겠습니까?](https://i.kym-cdn.com/photos/images/newsfeed/001/442/741/f4e.jpg "기차에서 읽기")](https://knowyourmeme.com/photos/1442741)  [![익명 금요일 04 8 월 2017 05:03:42 No.85860354 [125/38] 답글보기 원본 보고서 인용구 : >> 85860442 >> 85860491 >> 85860501 >> 85860576 >> 85860711 >> 85861053 >> 85861180 >> 85861285> > 85861376> 8586148885861577 >> 85861960 >> 85862031 >> 85862338 >> 85862432 >> 85862454 >> 85862461 >> 85862541 >> 85862694 >> 85863898 >> 85864042 >> 85864215 >> 85864236 >> 85865955 어떻게 멈추게합니까? 24KiB, 237x441, bugs.jpg](https://i.kym-cdn.com/photos/images/newsfeed/001/442/316/f19.jpg "우리는 어떻게 그를 멈추게합니까?")](https://knowyourmeme.com/photos/1442316) [![](https://i.kym-cdn.com/photos/images/newsfeed/001/442/325/f1e.jpg "결혼까지 기다렸습니다.")](https://knowyourmeme.com/photos/1442325)
 
  
-
-2017 년 7 월 21 일 [Redditor](https://knowyourmeme.com/memes/sites/reddit)  hollerbravo가 / r / 4Chan 하위 태그에 이미지가 포함 된 4chan 스레드의 스크린 캡을 업로드했습니다. 2017년 7월 27일, Eclectic Memes [Facebook](https://knowyourmeme.com/memes/sites/facebook) 그룹 에서 뚱뚱한 벅스 버니의 자막 이미지를 게시했습니다. 게시물은 이후 삭제되었으며, 사본은 [Me.me](https://knowyourmeme.com/memes/sites/meme) 및 Onsizzle에[](https://knowyourmeme.com/memes/big-chungus#fn9) 의해 크롤링되었습니다.
+2017년 7월 21일 [Redditor](https://knowyourmeme.com/memes/sites/reddit)  hollerbravo가 / r / 4Chan 하위 태그에 이미지가 포함 된 4chan 스레드의 스크린 캡을 업로드했습니다. 2017년 7월 27일, Eclectic Memes [Facebook](https://knowyourmeme.com/memes/sites/facebook) 그룹에서 뚱뚱한 벅스 버니의 자막 이미지를 게시했습니다. 게시물은 이후 삭제되었으며, 사본은 [Me.me](https://knowyourmeme.com/memes/sites/meme) 및 [Onsizzle](https://knowyourmeme.com/memes/big-chungus#fn9) 의해 크롤링되었습니다.
 
 #### 청거스 (Chungus)
 

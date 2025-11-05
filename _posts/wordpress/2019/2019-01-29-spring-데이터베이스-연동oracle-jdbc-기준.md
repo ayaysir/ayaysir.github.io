@@ -11,13 +11,15 @@ tags:
   - "스프링"
 ---
 
-#### **XML 선언**
+Spring: 데이터베이스 연동(Oracle-JDBC 기준) 방법입니다.
 
-이 부분은 데이터베이스의 종류, 사용하는 플랫폼에 따라 달라지므로 사용 환경에 맞는지 확인해봐야 합니다. Spring Boot의 마리아DB(mariadb)기준은 [이 글](http://yoonbumtae.com/?p=658)을 참고해주세요.
+## **XML 선언**
+
+<!-- 이 부분은 데이터베이스의 종류, 사용하는 플랫폼에 따라 달라지므로 사용 환경에 맞는지 확인해봐야 합니다. Spring Boot의 마리아DB(mariadb)기준은 [이 글](http://yoonbumtae.com/?p=658)을 참고해주세요. -->
 
 이 부분은 `properties` 태그와 `dependencies` 태그 사이에 추가합니다.
 
-```
+```xml
 <repositories>
   <repository>
     <id>oracle</id>
@@ -28,7 +30,7 @@ tags:
 
 이 부분은 `dependencies` 태그 쌍 내에 추가합니다.
 
-```
+```xml
         <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc6</artifactId>
@@ -50,7 +52,7 @@ tags:
 
 아래 내용은 `context.xml`에 추가합니다.
 
-```
+```xml
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
         <property name="url" value="[DB주소: jdbc:oracle:thin:@localhost:1521:xe]"></property>
@@ -66,13 +68,14 @@ tags:
 
  
 
-#### **JDBC**
+## **JDBC**
 
 먼저 비교를 위해 일반적인 방식(JDBC) 으로 클래스 파일을 작성해 보겠습니다.
 
-##### **DAO**
 
-```
+### **DAO**
+
+```java
 @Repository
 public class MessagesDAOImpl implements MessagesDAO {
  
@@ -142,10 +145,9 @@ public class MessagesDAOImpl implements MessagesDAO {
 
  
 
-##### **Service**
+### **Service**
 
-```
- 
+```java
 @Service 
 public class MessagesServiceImpl implements MessagesService {
     
@@ -219,9 +221,9 @@ public class MessagesServiceImpl implements MessagesService {
 
  
 
-##### **메인 클래스**
+### **메인 클래스**
 
-```
+```java
 public static void main(String[] args) {
  
         AbstractApplicationContext x = new GenericXmlApplicationContext("appContext.xml");
@@ -244,15 +246,15 @@ public static void main(String[] args) {
 
  
 
-#### **스프링 JDBC**
+## **스프링 JDBC**
 
 **Spring JDBC**는 JDBC를 더 쉽게 쓸 수 있도록 가공한 것으로, `update` 관련 기능은 sql문을 변수로 저장하는 것만으로 실행할 수 있어 일반 JDBC보다 간편하게 이용할 수 있습니다. JDBC의 일종이기 때문에 SQL안에 `?`가 들어간다든가(PreparedStatement) `RowMapper` 클래스를 이용하는 것 등 많은 점이 기존 JDBC와 유사합니다.
 
  
 
-##### **DAO**
+### **DAO**
 
-```
+```java
 @Repository
 public class MessagesDAOImpl implements MessagesDAO {
     
@@ -311,9 +313,9 @@ public class MessagesDAOImpl implements MessagesDAO {
 
  
 
-##### **Service**
+### **Service**
 
-```
+```java
 @Service
 public class MessagesServiceImpl implements MessagesService {
     
@@ -366,11 +368,11 @@ public Message selectBySeq(int seq) {
 
  
 
-#### **트랜잭션 처리**
+## **트랜잭션 처리**
 
 쿼리 중 트랜잭션 처리가 필요할 수도 있습니다. 트랜잭션 처리(annotation-driven 형식)가 필요하다면 아래 부분을 `context.xml`에 추가하고 네임스페이스 선언도 `tx`를 인식할 수 있도록 수정합니다.
 
-```
+```xml
 namespace 부분에 xmlns:tx="http://www.springframework.org/schema/tx" 추가
 
 <!-- 데이터베이스 트랜잭션: commit, rollback -->
@@ -385,6 +387,6 @@ namespace 부분에 xmlns:tx="http://www.springframework.org/schema/tx" 추가
 
 사용 방법은 서비스(`@Service`) 레이어의 메소드 중 트랜잭션(`commit`, `rollback`)이 필요한 곳에 `@Transactional` 어노테이션을 부착합니다. 오류를 방지하기 위해 아래와 같이 작성하면 좋습니다.
 
-```
+```java
  @Transactional("transactionManager") // bean으로 만든 트랜잭션 매니저의 아이디와 같도록
 ```

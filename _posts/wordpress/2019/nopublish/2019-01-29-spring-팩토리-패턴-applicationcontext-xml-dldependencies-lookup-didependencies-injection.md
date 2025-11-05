@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Spring: 팩토리 패턴/ applicationContext.xml / DL(Dependencies Lookup) / DI(Dependencies Injection)"
 date: 2019-01-29
 categories: 
