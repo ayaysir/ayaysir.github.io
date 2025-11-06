@@ -6,21 +6,28 @@ categories:
   - "Node.js"
 ---
 
-### 참고 사이트[](https://github.com/ajaxorg/ace/blob/master/demo/webpack/demo.js#L12)
+**참고 사이트**
+ - [데모 1](https://github.com/ajaxorg/ace/blob/master/demo/webpack/demo.js#L12)
+ - [데모 2](https://github.com/ajaxorg/ace/blob/master/demo/webpack/demo.js#L12) 
+ - [https://ace.c9.io/#nav=embedding](https://ace.c9.io/#nav=embedding)
 
-[https://github.com/ajaxorg/ace/blob/master/demo/webpack/demo.js#L12](https://github.com/ajaxorg/ace/blob/master/demo/webpack/demo.js#L12) [https://ace.c9.io/#nav=embedding](https://ace.c9.io/#nav=embedding)
 
- 
+## 절차
 
-## npm 설치하기
+### npm 설치하기
 
-`npm i ace-builds --save-dev` `npm install @types/ace --save-dev` `npm i file-loader --save-dev`
-
- 
-
-## 메인 js 파일 작성
-
+```sh
+# 셋 중 하나 선택
+npm i ace-builds --save-dev
+npm install @types/ace --save-dev
+npm i file-loader --save-dev
 ```
+
+ 
+
+### 메인 js 파일 작성
+
+```js
 require('./dist/test.css') // CSS 로딩 방법
 
 import ace from 'ace-builds/src-noconflict/ace'
@@ -33,9 +40,9 @@ editor.session.setMode("ace/mode/javascript");
 
  
 
-## 템플릿 HTML 작성
+### 템플릿 HTML 작성
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -59,6 +66,6 @@ editor.session.setMode("ace/mode/javascript");
 
  
 
-## dev 서버 실행 후 결과 확인
+### dev 서버 실행 후 결과 확인
 
  ![](/assets/img/wp-content/uploads/2019/02/ace.png)

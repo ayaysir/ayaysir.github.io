@@ -7,20 +7,20 @@ categories:
   - "Processing"
 ---
 
-노래 파일을 불러와 500 구간으로 쪼갠 뒤 각각 구간의 평균 주파수를 리스트에 삽입해 **_사운드클라우드_**의 플레이어 비슷한 효과를 내는 예제입니다. 이 기능을 사용하려면 Minim이라는 Processing기반의 라이브러리가 필요합니다. (참고: [Processing: 미디어아트 프로그래밍 언어 기초](http://yoonbumtae.com/?p=500))
+노래 파일을 불러와 500 구간으로 쪼갠 뒤 각각 구간의 평균 주파수를 리스트에 삽입해 **사운드클라우드**의 플레이어 비슷한 효과를 내는 예제입니다. 이 기능을 사용하려면 Minim이라는 Processing기반의 라이브러리가 필요합니다. (참고: [Processing: 미디어아트 프로그래밍 언어 기초](/posts/processing-미디어아트-프로그래밍-언어-기초))
 
  
 
-### Minim을 사용해 음악 파일의 주파수를 분석
+## Minim을 사용해 음악 파일의 주파수를 분석
 
 -  주파수 분석은 고속 푸리에 변환(FFT) 방식.
 -  **Minim**은 음악 재생, 분석과 관련하여 다양한 기능을 제공하는 외부 라이브러리로 원래 **Processing** 언어의 라이브러리인데 프로세싱 언어 자체가 JVM 기반이므로 자바에서도 사용 가능.
 
 Minim은 원래 자바의 라이브러리가 아니었기 때문에 사용은 가능하더라도 별도의 설정 과정을 거쳐야 합니다.
 
-#### 1\. Maven Dependency(혹은 외부 jar 파일) 추가
+### 1\. Maven Dependency(혹은 외부 jar 파일) 추가
 
-```
+```xml
 <repositories>
     <repository>
         <id>clojars-repository</id>
@@ -41,26 +41,28 @@ Minim은 원래 자바의 라이브러리가 아니었기 때문에 사용은 �
 
  
 
-#### 2\. MP3 파일의 주파수를 분석하는 코드 작성.
+### 2\. MP3 파일의 주파수를 분석하는 코드 작성
 
-**코드**: [https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67](https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67)
+#### **코드**
+<!-- [https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67](https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67)
 
-https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67
-
+https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67 -->
+{% gist "09d47421dd3f72e94262a715e6cb2f67" %}
  
 
 대략적인 과정은
 
-- MP3 파일을 읽고 파일의 정보를 바탕으로 `ddf.minim.analysis.FFT` 객체를 생성하는데, `timeSize`(버퍼 사이즈) 설정시 **2의 제곱의 수만 가능**하므로 제곱의 수와 제일 근접한 `timeSize`를 설정할 수 있도록 하였습니다. 500으로 나눈 이유는 그래프의 x축 개수를 500개로 정했기 때문입니다.
+- MP3 파일을 읽고 파일의 정보를 바탕으로 `ddf.minim.analysis.FFT` 객체를 생성하는데, `timeSize`(버퍼 사이즈) 설정시 **2의 제곱의 수만 가능**하므로 제곱의 수와 제일 근접한 `timeSize`를 설정할 수 있도록 하였습니다.  
+500으로 나눈 이유는 그래프의 x축 개수를 500개로 정했기 때문입니다.
 - 음악 파일의 전체 스펙트럼을 2차원 배열로 내보낸 뒤 2차원 배열의 `timeSize`당 부분을 평균을 산출해 단일 배열로 옮깁니다.
 - `min`, `max` 정보는 오디오 플레이어에서 그래프를 그리는 기준을 잡는 데 사용합니다.
-- Minim을 사용하려면 복잡한 과정을 거쳐야되는데 **MinimImpl**이라는 클래스에서 `getInstance`로 간단하게 줄일 수 있다. ([https://github.com/ddf/Minim/issues/48](https://github.com/ddf/Minim/issues/48))
+- Minim을 사용하려면 복잡한 과정을 거쳐야되는데 **MinimImpl**이라는 클래스에서 `getInstance`로 간단하게 줄일 수 있습니다. ([https://github.com/ddf/Minim/issues/48](https://github.com/ddf/Minim/issues/48))
 
  
 
 **MinimImpl**을 패키지 내에 위치시킨 후 임포트해서 다음과 같이 사용합니다. `Minim minim = MinimImpl.getMinimInstance();`
 
-```
+```java
 import ddf.minim.Minim;
 import java.io.File;
 import java.io.FileInputStream;
@@ -130,17 +132,21 @@ public final class MinimImpl {
 }
 ```
 
-#### 3\. 만들어진 주파수 정보를 바탕으로 오디오 플레이어(자바스크립트) 제작
+### 3\. 만들어진 주파수 정보를 바탕으로 오디오 플레이어(자바스크립트) 제작
 
-**코드**: [https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c](https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c)
+#### **코드**
 
-**결과**: [http://yoonbumtae.com/music/pastorale/](http://yoonbumtae.com/music/pastorale/)
+<!-- [https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c](https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c) -->
+{% gist "30c05be68e9201bcf6a9c56d9231741c" %}
 
-https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c
+#### **결과**: 
+<!-- [http://yoonbumtae.com/music/pastorale/](http://yoonbumtae.com/music/pastorale/) -->
+
+<!-- https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c -->
 
  
 
- ![](/assets/img/wp-content/uploads/2019/03/스크린샷_2018-11-11_오후_10.32.56.png)
+ ![](/assets/img/wp-content/uploads/2019/03/processing-pastorale-page-1.png)
 
 지금은 각 과정이 전부 따로 진행되고 있지만, 만약 실제로 서비스할 수 있는(사운드클라우드와 비슷한) 오디오 플레이어를 **전통적 MVC 웹 서비스 형태**로 제작한다고 한다면
 

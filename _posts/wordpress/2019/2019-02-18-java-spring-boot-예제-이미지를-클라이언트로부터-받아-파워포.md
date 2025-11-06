@@ -9,7 +9,7 @@ tags:
   - "spring-boot"
 ---
 
-#### 작업순서는 다음과 같습니다.
+## 작업순서 요약
 
 1. 사용자(클라이언트, 크롬 등 웹브라우저 이용하는 사람)는 이미지파일을 브라우저에서 업로드한다.
 2. 서버에서 그 이미지를 받아서 파워포인트 파일에 삽입한다.
@@ -19,7 +19,7 @@ tags:
 
 파워포인트는 `org.apache.poi` 라는 라이브러리를 사용해 만들 수 있으며 `depency`는 다음과 같습니다.
 
-```
+```xml
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi</artifactId>
@@ -32,9 +32,13 @@ tags:
 </dependency>
 ```
 
-코드는 다음과 같습니다. 이미지 업로드 과정 일부는 예전 글([링크](http://yoonbumtae.com/?p=684))에서 설명하고 있으니 참고해주세요. PPT 관련 부분은 `createPptx` 메소드에 있습니다.
+## 코드
 
-```
+### 컨트롤러
+
+코드는 다음과 같습니다. 이미지 업로드 과정 일부는 예전 글([링크](/posts/2019-01-22-jsp-spring-url을-입력하면-파일이-바로-다운로드되게-하기.md))에서 설명하고 있으니 참고해주세요. PPT 관련 부분은 `createPptx` 메소드에 있습니다.
+
+```java
 package com.example.thymeleaf;
 
 import java.awt.geom.Rectangle2D;
@@ -191,11 +195,11 @@ throws Exception {
 
 ```
 
- 
+### 업로드 뷰
 
 **스프링 부트**에서는 프론트엔드 측에서 `form`의 `enctype`을 `multipart/form-data` 로 지정하고, 받는 쪽 컨트롤러에서 `MultipartFile[]`로 지정하면 간편하게 파일을 업로드할 수 있습니다.
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -225,6 +229,6 @@ throws Exception {
 </html>
 ```
 
- ![](/assets/img/wp-content/uploads/2019/02/iu1-e1572710217705.png)
+ ![](/assets/img/wp-content/uploads/2019/02/spring-img-to-ppt-1.png)
 
- ![](/assets/img/wp-content/uploads/2019/02/iu22.png)
+ ![](/assets/img/wp-content/uploads/2019/02/spring-img-to-ppt-2.png)

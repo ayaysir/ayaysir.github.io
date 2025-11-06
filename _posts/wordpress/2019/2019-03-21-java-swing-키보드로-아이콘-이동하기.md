@@ -11,7 +11,16 @@ Java 로 그림 움직이기
 
 난 그냥 그림 하나만 움직이고 싶었을 뿐인데.. 왜이렇게 어려워..
 
-```
+
+{% youtube "https://youtu.be/XfArE4XsuAw" %}
+
+## Gist 에서 보기
+
+[https://gist.github.com/ayaysir/8e98e66f8f6190165fbd7167e5c1c1ad](https://gist.github.com/ayaysir/8e98e66f8f6190165fbd7167e5c1c1ad)
+
+## 코드
+
+```java
 package blog.gui;
 
 import java.awt.Cursor;
@@ -194,6 +203,3 @@ public class Keyboard1 extends JFrame{
 
 ```
 
-{% youtube "https://youtu.be/XfArE4XsuAw" %}
-
-[https://gist.github.com/ayaysir/8e98e66f8f6190165fbd7167e5c1c1ad](https://gist.github.com/ayaysir/8e98e66f8f6190165fbd7167e5c1c1ad)

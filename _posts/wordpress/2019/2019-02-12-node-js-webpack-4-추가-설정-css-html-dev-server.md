@@ -8,11 +8,18 @@ tags:
   - "node-js"
 ---
 
-[Node.js: 설치, 코드 실행 (Windows 기준)](http://yoonbumtae.com/?p=772) [Node.js: Webpack 설치하기 (Webpack 4 버전 기준)](http://yoonbumtae.com/?p=784)
+**이전 글**
 
-##### **1\. 아래 명령어들을 터미널에 입력합니다.**
+- [Node.js: 설치, 코드 실행 (Windows 기준)](/posts/node-js-설치-코드-실행-windows-기준)
+- [Node.js: Webpack 설치하기 (Webpack 4 버전 기준)](/posts/node-js-webpack-설치하기-webpack-4-버전-기준)
 
-```
+---
+
+## 절차
+
+### **1\. 아래 명령어들을 터미널에 입력합니다.**
+
+```sh
 npm install --save-dev html-webpack-plugin
 npm install --save-dev css-loader
 npm install --save-dev style-loader
@@ -23,9 +30,9 @@ npm install --save-dev webpack-dev-server
 
  
 
-##### **2\. `webpack.config.js` 파일을 다음과 같이 작성합니다.**
+### **2\. `webpack.config.js` 파일을 다음과 같이 작성합니다.**
 
-```
+```js
 // webpack.config.js
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
@@ -68,13 +75,13 @@ module.exports = {
 
  
 
-##### **3\. `package.json`에서 `scripts` 부분의 `dev` 명령을 아래와 같이 수정합니다.**
+### **3\. `package.json`에서 `scripts` 부분의 `dev` 명령을 아래와 같이 수정합니다.**
 
-```
+```sh
 webpack-dev-server --hot --inline
 ```
 
-```
+```json
 {
     "name": "nodejs",
     "version": "1.0.0",
@@ -102,9 +109,9 @@ webpack-dev-server --hot --inline
 
  
 
-##### **4\. test.js, html, css 파일을 작성합니다.**
+### **4\. test.js, html, css 파일을 작성합니다.**
 
-```
+```js
 require('./static/test.css') // CSS 로딩 방법
 
 function currentTime(){
@@ -117,7 +124,7 @@ setInterval(()=>{
 
 ```
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -133,7 +140,7 @@ html 파일에서 css와 js 선언 부분을 나중에 동작할 것입니다. �
 
  
 
-```
+```js
 html{
     background-color: black;
 }
@@ -146,7 +153,7 @@ html{
 
  
 
-##### **5\. `npm run dev` 로 결과를 확인합니다. 기본 포트는 `9000`입니다.**
+### **5\. `npm run dev` 로 결과를 확인합니다. 기본 포트는 `9000`입니다.**
 
  ![](/assets/img/wp-content/uploads/2019/02/time1.gif)
 
@@ -154,22 +161,22 @@ css가 자바스크립트 파일에 들어가서 적용되었습니다. 다음�
 
  
 
-##### **6\. `package.json`에 아래 부분을 추가한 후 터미널에서 `npm run build`를 실행합니다.**
+### **6\. `package.json`에 아래 부분을 추가한 후 터미널에서 `npm run build`를 실행합니다.**
 
-```
+```json
  "build": "webpack --mode production"
 ```
 
 아래와 같은 화면이 나왔다면 정상적으로 빌드된 것입니다. `dist` 폴더에서 `app.bundle.js`와 `index.html` 파일이 있는지 확인합니다.
 
- ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-08-28-오전-12.14.12.png)
+ ![](/assets/img/wp-content/uploads/2019/02/webpack-additional-setting-1.png)
 
- ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-08-28-오전-12.16.21.png)
+ ![](/assets/img/wp-content/uploads/2019/02/webpack-additional-setting-2.png)
 
 이제 배포를 해보겠습니다. `dist` 폴더 내의 파일들을 웹서버의 영향이 없는 곳으로 복붙합니다. 다음 `index.html` 파일을 클릭하여 독립된 환경에서도 정상 동작이 되는지 확인합니다. 또 소스 보기를 실행하여 `html` 파일 및 스크립트 파일이 어떻게 minified 되었는지도 확인합니다.
 
-```
+```html
 <!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>hh</title></head><body><p id="current-time-area"></p><script type="text/javascript" src="./app.bundle.js?4e6bb8aa27715b45f757"></script></body></html>
 ```
 
- ![](/assets/img/wp-content/uploads/2019/02/스크린샷-2019-08-28-오전-12.19.48.png)
+ ![](/assets/img/wp-content/uploads/2019/02/webpack-additional-setting-3.png)
