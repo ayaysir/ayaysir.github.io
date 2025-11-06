@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -490,6 +497,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -520,7 +559,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Java Swing: 키보드로 아이콘 이동하기</h1>
     
@@ -594,7 +633,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="849 words"
+  title="856 words"
 >
   <em>4 min</em> read</span>
 
@@ -604,14 +643,45 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Java Swing: 키보드로 아이콘 이동하기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Java Swing: 키보드로 아이콘 이동하기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>Java 로 그림 움직이기</p>
 
 <p>난 그냥 그림 하나만 움직이고 싶었을 뿐인데.. 왜이렇게 어려워..</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/XfArE4XsuAw" frameborder="0" allowfullscreen=""></iframe></div>
+
+<h2 id="gist-에서-보기"><span class="me-2">Gist 에서 보기</span><a href="#gist-에서-보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="https://gist.github.com/ayaysir/8e98e66f8f6190165fbd7167e5c1c1ad">https://gist.github.com/ayaysir/8e98e66f8f6190165fbd7167e5c1c1ad</a></p>
+
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -792,192 +862,188 @@
 178
 179
 180
-</pre></td><td class="rouge-code"><pre>package blog.gui;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">blog.gui</span><span class="o">;</span>
 
-import java.awt.Cursor;
-import java.awt.EventQueue;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+<span class="kn">import</span> <span class="nn">java.awt.Cursor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.EventQueue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.Image</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.Toolkit</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.event.KeyEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.event.KeyListener</span><span class="o">;</span>
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+<span class="kn">import</span> <span class="nn">javax.swing.ImageIcon</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JButton</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JFrame</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JLabel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JPanel</span><span class="o">;</span>
 
-public class Keyboard1 extends JFrame{
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Keyboard1</span> <span class="kd">extends</span> <span class="nc">JFrame</span><span class="o">{</span>
 
-  static final long serialVersionUID = 4982848;
+  <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">4982848</span><span class="o">;</span>
 
-  private ImageIcon human = new ImageIcon("human.jpg");	
+  <span class="kd">private</span> <span class="nc">ImageIcon</span> <span class="n">human</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ImageIcon</span><span class="o">(</span><span class="s">"human.jpg"</span><span class="o">);</span>	
   
-  private final int STEP_NUM = 20;
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">STEP_NUM</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
 
-  private JLabel background = new JLabel(new ImageIcon("background.jpg"));
-  private JButton buttonHuman = new JButton();
+  <span class="kd">private</span> <span class="nc">JLabel</span> <span class="n">background</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JLabel</span><span class="o">(</span><span class="k">new</span> <span class="nc">ImageIcon</span><span class="o">(</span><span class="s">"background.jpg"</span><span class="o">));</span>
+  <span class="kd">private</span> <span class="nc">JButton</span> <span class="n">buttonHuman</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JButton</span><span class="o">();</span>
 
-  public Keyboard1() {
+  <span class="kd">public</span> <span class="nf">Keyboard1</span><span class="o">()</span> <span class="o">{</span>
 
-    super("키보드 이동");
+    <span class="kd">super</span><span class="o">(</span><span class="s">"키보드 이동"</span><span class="o">);</span>
 
-    this.setSize(1280, 720);
-    this.setLocationRelativeTo(null);
-    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    <span class="k">this</span><span class="o">.</span><span class="na">setSize</span><span class="o">(</span><span class="mi">1280</span><span class="o">,</span> <span class="mi">720</span><span class="o">);</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">setLocationRelativeTo</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">setDefaultCloseOperation</span><span class="o">(</span><span class="no">EXIT_ON_CLOSE</span><span class="o">);</span>
 
-    this.setLayout(null);
-    this.setResizable(false);
+    <span class="k">this</span><span class="o">.</span><span class="na">setLayout</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">setResizable</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
 
-    background.setSize(1280, 720);    
+    <span class="n">background</span><span class="o">.</span><span class="na">setSize</span><span class="o">(</span><span class="mi">1280</span><span class="o">,</span> <span class="mi">720</span><span class="o">);</span>    
 
-    Toolkit tk = Toolkit.getDefaultToolkit();
-    super.setIconImage(tk.getImage("human.jpg"));
+    <span class="nc">Toolkit</span> <span class="n">tk</span> <span class="o">=</span> <span class="nc">Toolkit</span><span class="o">.</span><span class="na">getDefaultToolkit</span><span class="o">();</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">setIconImage</span><span class="o">(</span><span class="n">tk</span><span class="o">.</span><span class="na">getImage</span><span class="o">(</span><span class="s">"human.jpg"</span><span class="o">));</span>
 
-    this.start();
+    <span class="k">this</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
 
-    this.setVisible(true);
+    <span class="k">this</span><span class="o">.</span><span class="na">setVisible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
 
-  }
+  <span class="o">}</span>
 
-  public void start() {        
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">()</span> <span class="o">{</span>        
 
-    this.buttonHuman.setBounds(520, 360, 100, 100);        
+    <span class="k">this</span><span class="o">.</span><span class="na">buttonHuman</span><span class="o">.</span><span class="na">setBounds</span><span class="o">(</span><span class="mi">520</span><span class="o">,</span> <span class="mi">360</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span>        
 
-    // 이미지 추출 후 사이즈 변환
-    Image img = human.getImage()
-        .getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-    // 변환된 이미지를 다시 아이콘으로 치환
-    human = new ImageIcon(img);
+    <span class="c1">// 이미지 추출 후 사이즈 변환</span>
+    <span class="nc">Image</span> <span class="n">img</span> <span class="o">=</span> <span class="n">human</span><span class="o">.</span><span class="na">getImage</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">getScaledInstance</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="nc">Image</span><span class="o">.</span><span class="na">SCALE_SMOOTH</span><span class="o">);</span>
+    <span class="c1">// 변환된 이미지를 다시 아이콘으로 치환</span>
+    <span class="n">human</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ImageIcon</span><span class="o">(</span><span class="n">img</span><span class="o">);</span>
 
-    buttonHuman.setIcon(human);
-    buttonHuman.setContentAreaFilled(false);	// 버튼 색상 제거
-    buttonHuman.setBorderPainted(false);	// 경계선 제거
-    buttonHuman.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    <span class="n">buttonHuman</span><span class="o">.</span><span class="na">setIcon</span><span class="o">(</span><span class="n">human</span><span class="o">);</span>
+    <span class="n">buttonHuman</span><span class="o">.</span><span class="na">setContentAreaFilled</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>	<span class="c1">// 버튼 색상 제거</span>
+    <span class="n">buttonHuman</span><span class="o">.</span><span class="na">setBorderPainted</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>	<span class="c1">// 경계선 제거</span>
+    <span class="n">buttonHuman</span><span class="o">.</span><span class="na">setCursor</span><span class="o">(</span><span class="k">new</span> <span class="nc">Cursor</span><span class="o">(</span><span class="nc">Cursor</span><span class="o">.</span><span class="na">HAND_CURSOR</span><span class="o">));</span>
 
-    this.add(buttonHuman);
-    this.add(background);
+    <span class="k">this</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">buttonHuman</span><span class="o">);</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">background</span><span class="o">);</span>
 
-    this.buttonHuman.addKeyListener(new KeyListener() {
+    <span class="k">this</span><span class="o">.</span><span class="na">buttonHuman</span><span class="o">.</span><span class="na">addKeyListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">KeyListener</span><span class="o">()</span> <span class="o">{</span>
 
-      @Override	// 키보드 방향키 이벤트 부여
-      public void keyPressed(KeyEvent e) {
-        int key = e.getKeyCode();
+      <span class="nd">@Override</span>	<span class="c1">// 키보드 방향키 이벤트 부여</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">keyPressed</span><span class="o">(</span><span class="nc">KeyEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">getKeyCode</span><span class="o">();</span>
 
-        if (key == KeyEvent.VK_LEFT) {
-          move(buttonHuman, -STEP_NUM, 0);
-        }
+        <span class="k">if</span> <span class="o">(</span><span class="n">key</span> <span class="o">==</span> <span class="nc">KeyEvent</span><span class="o">.</span><span class="na">VK_LEFT</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">move</span><span class="o">(</span><span class="n">buttonHuman</span><span class="o">,</span> <span class="o">-</span><span class="no">STEP_NUM</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+        <span class="o">}</span>
 
-        if (key == KeyEvent.VK_RIGHT) {
-          move(buttonHuman, STEP_NUM, 0);
-        }
+        <span class="k">if</span> <span class="o">(</span><span class="n">key</span> <span class="o">==</span> <span class="nc">KeyEvent</span><span class="o">.</span><span class="na">VK_RIGHT</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">move</span><span class="o">(</span><span class="n">buttonHuman</span><span class="o">,</span> <span class="no">STEP_NUM</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+        <span class="o">}</span>
 
-        if (key == KeyEvent.VK_UP) {
-          move(buttonHuman, 0, -STEP_NUM);
-        }
+        <span class="k">if</span> <span class="o">(</span><span class="n">key</span> <span class="o">==</span> <span class="nc">KeyEvent</span><span class="o">.</span><span class="na">VK_UP</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">move</span><span class="o">(</span><span class="n">buttonHuman</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="o">-</span><span class="no">STEP_NUM</span><span class="o">);</span>
+        <span class="o">}</span>
 
-        if (key == KeyEvent.VK_DOWN) {
-          move(buttonHuman, 0, STEP_NUM);
-        }
+        <span class="k">if</span> <span class="o">(</span><span class="n">key</span> <span class="o">==</span> <span class="nc">KeyEvent</span><span class="o">.</span><span class="na">VK_DOWN</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">move</span><span class="o">(</span><span class="n">buttonHuman</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="no">STEP_NUM</span><span class="o">);</span>
+        <span class="o">}</span>
         
-      }
+      <span class="o">}</span>
 
-      @Override
-      public void keyReleased(KeyEvent e) {            
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">keyReleased</span><span class="o">(</span><span class="nc">KeyEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>            
 
-      }            
+      <span class="o">}</span>            
 
-      @Override
-      public void keyTyped(KeyEvent e) {
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">keyTyped</span><span class="o">(</span><span class="nc">KeyEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
 
-      }
-    });
+      <span class="o">}</span>
+    <span class="o">});</span>
 
-  }
+  <span class="o">}</span>
 
-  private void move(JButton buttonHuman, int x, int y) {
-    int currentX = buttonHuman.getX();
-    int currentY = buttonHuman.getY();
-    JPanel parentPanel = null;
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">(</span><span class="nc">JButton</span> <span class="n">buttonHuman</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">currentX</span> <span class="o">=</span> <span class="n">buttonHuman</span><span class="o">.</span><span class="na">getX</span><span class="o">();</span>
+    <span class="kt">int</span> <span class="n">currentY</span> <span class="o">=</span> <span class="n">buttonHuman</span><span class="o">.</span><span class="na">getY</span><span class="o">();</span>
+    <span class="nc">JPanel</span> <span class="n">parentPanel</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
-    if(buttonHuman.getParent() instanceof JPanel) {
-      parentPanel = (JPanel) buttonHuman.getParent();
-    }
+    <span class="k">if</span><span class="o">(</span><span class="n">buttonHuman</span><span class="o">.</span><span class="na">getParent</span><span class="o">()</span> <span class="k">instanceof</span> <span class="nc">JPanel</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">parentPanel</span> <span class="o">=</span> <span class="o">(</span><span class="nc">JPanel</span><span class="o">)</span> <span class="n">buttonHuman</span><span class="o">.</span><span class="na">getParent</span><span class="o">();</span>
+    <span class="o">}</span>
 
-    // 부모 패널의 가로세로, 버튼의 가로세로 길이 
-    int parentWidth = parentPanel.getWidth();
-    int parentHeight = parentPanel.getHeight();   
-    int buttonWidth = buttonHuman.getWidth();
-    int buttonHeight = buttonHuman.getHeight();
+    <span class="c1">// 부모 패널의 가로세로, 버튼의 가로세로 길이 </span>
+    <span class="kt">int</span> <span class="n">parentWidth</span> <span class="o">=</span> <span class="n">parentPanel</span><span class="o">.</span><span class="na">getWidth</span><span class="o">();</span>
+    <span class="kt">int</span> <span class="n">parentHeight</span> <span class="o">=</span> <span class="n">parentPanel</span><span class="o">.</span><span class="na">getHeight</span><span class="o">();</span>   
+    <span class="kt">int</span> <span class="n">buttonWidth</span> <span class="o">=</span> <span class="n">buttonHuman</span><span class="o">.</span><span class="na">getWidth</span><span class="o">();</span>
+    <span class="kt">int</span> <span class="n">buttonHeight</span> <span class="o">=</span> <span class="n">buttonHuman</span><span class="o">.</span><span class="na">getHeight</span><span class="o">();</span>
     
-    System.out.println(parentWidth + ", " + parentHeight 
-        + " : " + currentX + ", " + currentY
-        + " : " + (currentX + buttonWidth) + ", " + (currentY + buttonHeight));
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">parentWidth</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="n">parentHeight</span> 
+        <span class="o">+</span> <span class="s">" : "</span> <span class="o">+</span> <span class="n">currentX</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="n">currentY</span>
+        <span class="o">+</span> <span class="s">" : "</span> <span class="o">+</span> <span class="o">(</span><span class="n">currentX</span> <span class="o">+</span> <span class="n">buttonWidth</span><span class="o">)</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="o">(</span><span class="n">currentY</span> <span class="o">+</span> <span class="n">buttonHeight</span><span class="o">));</span>
 
-    // 현재 X의 좌표가 마이너스인데 x 입력값도 마이너스이거나,
-    // 현재 (X 좌표 + 버튼 가로 길이)의 값이 부모 패널의 길이보다 크면 더 이상 움직이지 않는다.
-    if(currentX &lt;= 0 + -x / 4  &amp;&amp; x &lt; 0 || currentY &lt;= 0 + -y / 4 &amp;&amp; y &lt; 0 
-        || (currentX + buttonWidth + x / 4) &gt;= parentWidth &amp;&amp; x &gt; 0
-        || (currentY + buttonHeight + y / 4) &gt;= parentHeight &amp;&amp; y &gt; 0) {
-      return;
+    <span class="c1">// 현재 X의 좌표가 마이너스인데 x 입력값도 마이너스이거나,</span>
+    <span class="c1">// 현재 (X 좌표 + 버튼 가로 길이)의 값이 부모 패널의 길이보다 크면 더 이상 움직이지 않는다.</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">currentX</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">+</span> <span class="o">-</span><span class="n">x</span> <span class="o">/</span> <span class="mi">4</span>  <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">currentY</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">+</span> <span class="o">-</span><span class="n">y</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> 
+        <span class="o">||</span> <span class="o">(</span><span class="n">currentX</span> <span class="o">+</span> <span class="n">buttonWidth</span> <span class="o">+</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">4</span><span class="o">)</span> <span class="o">&gt;=</span> <span class="n">parentWidth</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="o">||</span> <span class="o">(</span><span class="n">currentY</span> <span class="o">+</span> <span class="n">buttonHeight</span> <span class="o">+</span> <span class="n">y</span> <span class="o">/</span> <span class="mi">4</span><span class="o">)</span> <span class="o">&gt;=</span> <span class="n">parentHeight</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span><span class="o">;</span>
       
-    } else {
-      // Jdk 8 이상
-      new Thread(() -&gt; {		
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+      <span class="c1">// Jdk 8 이상</span>
+      <span class="k">new</span> <span class="nf">Thread</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>		
 
-        int ix = x &gt; 0 ? 1 : -1;
-        int iy = y &gt; 0 ? 1 : -1;
-        while(true) {
+        <span class="kt">int</span> <span class="n">ix</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">iy</span> <span class="o">=</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
           
-          int xChunk = 0;	// 움직일 값 (1 또는 -1)
-          int yChunk = 0;
-          boolean condition = false;
+          <span class="kt">int</span> <span class="n">xChunk</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>	<span class="c1">// 움직일 값 (1 또는 -1)</span>
+          <span class="kt">int</span> <span class="n">yChunk</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+          <span class="kt">boolean</span> <span class="n">condition</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
           
-          if(x != 0 &amp;&amp; y == 0) {
-            xChunk = (ix &gt; 0 ? ix++ : ix--);
-            condition = (ix == x);
-          } else if(x == 0 &amp;&amp; y != 0) {
-            yChunk = (iy &gt; 0 ? iy++ : iy--);
-            condition = (iy == y);
-          } 
+          <span class="k">if</span><span class="o">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">xChunk</span> <span class="o">=</span> <span class="o">(</span><span class="n">ix</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">ix</span><span class="o">++</span> <span class="o">:</span> <span class="n">ix</span><span class="o">--);</span>
+            <span class="n">condition</span> <span class="o">=</span> <span class="o">(</span><span class="n">ix</span> <span class="o">==</span> <span class="n">x</span><span class="o">);</span>
+          <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">yChunk</span> <span class="o">=</span> <span class="o">(</span><span class="n">iy</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="n">iy</span><span class="o">++</span> <span class="o">:</span> <span class="n">iy</span><span class="o">--);</span>
+            <span class="n">condition</span> <span class="o">=</span> <span class="o">(</span><span class="n">iy</span> <span class="o">==</span> <span class="n">y</span><span class="o">);</span>
+          <span class="o">}</span> 
           
-          buttonHuman.setLocation(currentX + xChunk, currentY + yChunk);
+          <span class="n">buttonHuman</span><span class="o">.</span><span class="na">setLocation</span><span class="o">(</span><span class="n">currentX</span> <span class="o">+</span> <span class="n">xChunk</span><span class="o">,</span> <span class="n">currentY</span> <span class="o">+</span> <span class="n">yChunk</span><span class="o">);</span>
           
-          // 컨디션을 만족하면 종료한다.
-          if(condition) {
-            break;
-          }
+          <span class="c1">// 컨디션을 만족하면 종료한다.</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">condition</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">break</span><span class="o">;</span>
+          <span class="o">}</span>
           
-          // 최소 1ms 이상을 슬립해 이동 모션을 부드럽게 한다. 
-          try {
-            Thread.sleep(2, 500);
-          } catch (InterruptedException e) {
-            e.printStackTrace();
-          }
-        }
+          <span class="c1">// 최소 1ms 이상을 슬립해 이동 모션을 부드럽게 한다. </span>
+          <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">500</span><span class="o">);</span>
+          <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+          <span class="o">}</span>
+        <span class="o">}</span>
 
-      } ).start();
+      <span class="o">}</span> <span class="o">).</span><span class="na">start</span><span class="o">();</span>
 
-    }
-  }
+    <span class="o">}</span>
+  <span class="o">}</span>
 
-  public static void main(String[] args) {
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     
-    EventQueue.invokeLater(new Runnable () {
-      public void run()
-      {
-        new Keyboard1();
-      }
-    });
-  }
-}
+    <span class="nc">EventQueue</span><span class="o">.</span><span class="na">invokeLater</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">()</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span>
+      <span class="o">{</span>
+        <span class="k">new</span> <span class="nf">Keyboard1</span><span class="o">();</span>
+      <span class="o">}</span>
+    <span class="o">});</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-<div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/XfArE4XsuAw" frameborder="0" allowfullscreen=""></iframe></div>
-
-<p><a href="https://gist.github.com/ayaysir/8e98e66f8f6190165fbd7167e5c1c1ad">https://gist.github.com/ayaysir/8e98e66f8f6190165fbd7167e5c1c1ad</a></p>
 
   </div>
 
@@ -1961,6 +2027,12 @@ public class Keyboard1 extends JFrame{
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1994,30 +2066,6 @@ public class Keyboard1 extends JFrame{
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -7894,6 +7942,34 @@ public class Keyboard1 extends JFrame{
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
+          <a href="/posts/%EC%9E%90%EB%B0%94-%EC%98%88%EC%A0%9C-%ED%8A%B9%EC%A0%95-%EC%A3%BC%ED%8C%8C%EC%88%98%EC%9D%98-%EC%86%8C%EB%A6%AC-%EC%9E%AC%EC%83%9D/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1572620400"
+  data-df="ll"
+  
+>
+  Nov  2, 2019
+</time>
+
+              <h4 class="pt-0 my-2">자바 예제: 특정 주파수의 소리 재생</h4>
+              <div class="text-muted">
+                <p>특정 주파수의 음을 사인파(Sine Wave)로 재생하고 싶다면, `javax.sound.sampled.*` 라이브러리를 사용합니다. **javax** 시리즈는 자바에서 기본 제공됩니다.     ##### **1) `new AudioFormat`으로 새로운 오디오 형식 생성**  ``` public AudioFormat(float sampleRate:...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/%EC%98%88%EC%A0%9C-%EA%B0%80%EC%9C%84%EB%B0%94%EC%9C%84%EB%B3%B4/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -7944,34 +8020,6 @@ public class Keyboard1 extends JFrame{
               <h4 class="pt-0 my-2">자바: 직렬화 (Serialization) + 예제 - 게시판 비슷한 것</h4>
               <div class="text-muted">
                 <p>**직렬화**란 자바의 객체를 네트워크 상에서 주고받게 하기 위하여 메모리에 저장된 객체를 바이너리 형식으로 변환하는 것을 뜻합니다. 역직렬화는 당연히 반대의 과정입니다.  이렇게 변환된 직렬화된 객체는 하드디스크에 저장하거나 네트워크 상으로 전송하여 다른 컴퓨터에서 사용하도록 할 수 있습니다.  직렬화를 하려면 대상 클래스가 `Serializable...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/%EC%9E%90%EB%B0%94-%EB%9E%8C%EB%8B%A4%EC%8B%9D-lambda-expression/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1546700400"
-  data-df="ll"
-  
->
-  Jan  6, 2019
-</time>
-
-              <h4 class="pt-0 my-2">자바(Java): 람다식 (Lambda Expression) 기초 (Java 8 이상)</h4>
-              <div class="text-muted">
-                <p>람다식은 함수형 인터페이스(Functional Interface)을 쉽게 사용할 수 있도록 지원합니다. 함수형 인터페이스는 메소드가 한 개만 있는 인터페이스를 의미하며, 보통의 인터페이스에 메소드를 한 개만 만들면 자동으로 함수형 인터페이스가 됩니다.  컴파일러 단계에서 함수형 인터페이스를 명시하고 싶다면 @FunctionalInterface 를 이용...</p>
               </div>
             </div>
           </a>

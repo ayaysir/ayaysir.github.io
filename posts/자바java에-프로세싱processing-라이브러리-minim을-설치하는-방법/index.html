@@ -572,6 +572,27 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -584,6 +605,28 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -740,7 +783,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1207 words"
+  title="1208 words"
 >
   <em>6 min</em> read</span>
 
@@ -774,11 +817,11 @@
   
 
   <div class="content">
-    <p>노래 파일을 불러와 500 구간으로 쪼갠 뒤 각각 구간의 평균 주파수를 리스트에 삽입해 <strong><em>사운드클라우드</em></strong>의 플레이어 비슷한 효과를 내는 예제입니다. 이 기능을 사용하려면 Minim이라는 Processing기반의 라이브러리가 필요합니다. (참고: <a href="http://yoonbumtae.com/?p=500">Processing: 미디어아트 프로그래밍 언어 기초</a>)</p>
+    <p>노래 파일을 불러와 500 구간으로 쪼갠 뒤 각각 구간의 평균 주파수를 리스트에 삽입해 <strong>사운드클라우드</strong>의 플레이어 비슷한 효과를 내는 예제입니다. 이 기능을 사용하려면 Minim이라는 Processing기반의 라이브러리가 필요합니다. (참고: <a href="/posts/processing-미디어아트-프로그래밍-언어-기초">Processing: 미디어아트 프로그래밍 언어 기초</a>)</p>
 
 <p> </p>
 
-<h3 id="minim을-사용해-음악-파일의-주파수를-분석"><span class="me-2">Minim을 사용해 음악 파일의 주파수를 분석</span><a href="#minim을-사용해-음악-파일의-주파수를-분석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="minim을-사용해-음악-파일의-주파수를-분석"><span class="me-2">Minim을 사용해 음악 파일의 주파수를 분석</span><a href="#minim을-사용해-음악-파일의-주파수를-분석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li> 주파수 분석은 고속 푸리에 변환(FFT) 방식.</li>
@@ -787,10 +830,10 @@
 
 <p>Minim은 원래 자바의 라이브러리가 아니었기 때문에 사용은 가능하더라도 별도의 설정 과정을 거쳐야 합니다.</p>
 
-<h4 id="1-maven-dependency혹은-외부-jar-파일-추가"><span class="me-2">1. Maven Dependency(혹은 외부 jar 파일) 추가</span><a href="#1-maven-dependency혹은-외부-jar-파일-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="1-maven-dependency혹은-외부-jar-파일-추가"><span class="me-2">1. Maven Dependency(혹은 외부 jar 파일) 추가</span><a href="#1-maven-dependency혹은-외부-jar-파일-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -805,49 +848,53 @@
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>&lt;repositories&gt;
-    &lt;repository&gt;
-        &lt;id&gt;clojars-repository&lt;/id&gt;
-        &lt;name&gt;Clojars Repository&lt;/name&gt;
-        &lt;url&gt;http://clojars.org/repo/&lt;/url&gt;
-    &lt;/repository&gt;
-&lt;/repositories&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;repositories&gt;</span>
+    <span class="nt">&lt;repository&gt;</span>
+        <span class="nt">&lt;id&gt;</span>clojars-repository<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Clojars Repository<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;url&gt;</span>http://clojars.org/repo/<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span>
  
-    &lt;!-- https://mvnrepository.com/artifact/ddf.minim/ddf.minim --&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;ddf.minim&lt;/groupId&gt;
-        &lt;artifactId&gt;ddf.minim&lt;/artifactId&gt;
-        &lt;version&gt;2.2.0&lt;/version&gt;
-    &lt;/dependency&gt;
+    <span class="c">&lt;!-- https://mvnrepository.com/artifact/ddf.minim/ddf.minim --&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>ddf.minim<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>ddf.minim<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>2.2.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="https://mvnrepository.com/artifact/ddf.minim/ddf.minim/2.2.0">https://mvnrepository.com/artifact/ddf.minim/ddf.minim/2.2.0</a></p>
 
 <p> </p>
 
-<h4 id="2-mp3-파일의-주파수를-분석하는-코드-작성"><span class="me-2">2. MP3 파일의 주파수를 분석하는 코드 작성.</span><a href="#2-mp3-파일의-주파수를-분석하는-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="2-mp3-파일의-주파수를-분석하는-코드-작성"><span class="me-2">2. MP3 파일의 주파수를 분석하는 코드 작성</span><a href="#2-mp3-파일의-주파수를-분석하는-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><strong>코드</strong>: <a href="https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67">https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67</a></p>
+<h4 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<!-- [https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67](https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67)
 
-<p>https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67</p>
+https://gist.github.com/ayaysir/09d47421dd3f72e94262a715e6cb2f67 -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/09d47421dd3f72e94262a715e6cb2f67.js"> </script>
 
 <p> </p>
 
 <p>대략적인 과정은</p>
 
 <ul>
-  <li>MP3 파일을 읽고 파일의 정보를 바탕으로 <code class="language-plaintext highlighter-rouge">ddf.minim.analysis.FFT</code> 객체를 생성하는데, <code class="language-plaintext highlighter-rouge">timeSize</code>(버퍼 사이즈) 설정시 <strong>2의 제곱의 수만 가능</strong>하므로 제곱의 수와 제일 근접한 <code class="language-plaintext highlighter-rouge">timeSize</code>를 설정할 수 있도록 하였습니다. 500으로 나눈 이유는 그래프의 x축 개수를 500개로 정했기 때문입니다.</li>
+  <li>MP3 파일을 읽고 파일의 정보를 바탕으로 <code class="language-plaintext highlighter-rouge">ddf.minim.analysis.FFT</code> 객체를 생성하는데, <code class="language-plaintext highlighter-rouge">timeSize</code>(버퍼 사이즈) 설정시 <strong>2의 제곱의 수만 가능</strong>하므로 제곱의 수와 제일 근접한 <code class="language-plaintext highlighter-rouge">timeSize</code>를 설정할 수 있도록 하였습니다.<br />
+500으로 나눈 이유는 그래프의 x축 개수를 500개로 정했기 때문입니다.</li>
   <li>음악 파일의 전체 스펙트럼을 2차원 배열로 내보낸 뒤 2차원 배열의 <code class="language-plaintext highlighter-rouge">timeSize</code>당 부분을 평균을 산출해 단일 배열로 옮깁니다.</li>
   <li><code class="language-plaintext highlighter-rouge">min</code>, <code class="language-plaintext highlighter-rouge">max</code> 정보는 오디오 플레이어에서 그래프를 그리는 기준을 잡는 데 사용합니다.</li>
-  <li>Minim을 사용하려면 복잡한 과정을 거쳐야되는데 <strong>MinimImpl</strong>이라는 클래스에서 <code class="language-plaintext highlighter-rouge">getInstance</code>로 간단하게 줄일 수 있다. (<a href="https://github.com/ddf/Minim/issues/48">https://github.com/ddf/Minim/issues/48</a>)</li>
+  <li>Minim을 사용하려면 복잡한 과정을 거쳐야되는데 <strong>MinimImpl</strong>이라는 클래스에서 <code class="language-plaintext highlighter-rouge">getInstance</code>로 간단하게 줄일 수 있습니다. (<a href="https://github.com/ddf/Minim/issues/48">https://github.com/ddf/Minim/issues/48</a>)</li>
 </ul>
 
 <p> </p>
 
 <p><strong>MinimImpl</strong>을 패키지 내에 위치시킨 후 임포트해서 다음과 같이 사용합니다. <code class="language-plaintext highlighter-rouge">Minim minim = MinimImpl.getMinimInstance();</code></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -915,13 +962,13 @@
 65
 66
 67
-</pre></td><td class="rouge-code"><pre>import ddf.minim.Minim;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">ddf.minim.Minim</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileNotFoundException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
 
-/**
+<span class="cm">/**
  * This is a simple implementation of Minim requirements in order to be able to
  * use it outside Processing; in plain Java programs.
  *
@@ -953,48 +1000,53 @@ import java.io.InputStream;
  *
  * Author : Gregory Kotsaftis
  * License: Public Domain.
- */
-public final class MinimImpl {
+ */</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">MinimImpl</span> <span class="o">{</span>
 
-    /**
+    <span class="cm">/**
      * Use this method to obtain a valid Minim instance!
-     */
-    public static Minim getMinimInstance()
-    {
-        return new Minim(new MinimImpl());
-    }
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Minim</span> <span class="nf">getMinimInstance</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Minim</span><span class="o">(</span><span class="k">new</span> <span class="nc">MinimImpl</span><span class="o">());</span>
+    <span class="o">}</span>
 
-    /**
+    <span class="cm">/**
      * Override required method.
-     */
-    public String sketchPath(String fileName)
-    {
-        return( new File(fileName).getAbsolutePath() );
-    }
+     */</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">sketchPath</span><span class="o">(</span><span class="nc">String</span> <span class="n">fileName</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">return</span><span class="o">(</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">fileName</span><span class="o">).</span><span class="na">getAbsolutePath</span><span class="o">()</span> <span class="o">);</span>
+    <span class="o">}</span>
 
-    /**
+    <span class="cm">/**
      * Override required method.
-     */
-    public InputStream createInput(String fileName)
-        throws FileNotFoundException
-    {
-        return( new FileInputStream(new File(fileName)) );
-    }
+     */</span>
+    <span class="kd">public</span> <span class="nc">InputStream</span> <span class="nf">createInput</span><span class="o">(</span><span class="nc">String</span> <span class="n">fileName</span><span class="o">)</span>
+        <span class="kd">throws</span> <span class="nc">FileNotFoundException</span>
+    <span class="o">{</span>
+        <span class="k">return</span><span class="o">(</span> <span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">fileName</span><span class="o">))</span> <span class="o">);</span>
+    <span class="o">}</span>
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="3-만들어진-주파수-정보를-바탕으로-오디오-플레이어자바스크립트-제작"><span class="me-2">3. 만들어진 주파수 정보를 바탕으로 오디오 플레이어(자바스크립트) 제작</span><a href="#3-만들어진-주파수-정보를-바탕으로-오디오-플레이어자바스크립트-제작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="3-만들어진-주파수-정보를-바탕으로-오디오-플레이어자바스크립트-제작"><span class="me-2">3. 만들어진 주파수 정보를 바탕으로 오디오 플레이어(자바스크립트) 제작</span><a href="#3-만들어진-주파수-정보를-바탕으로-오디오-플레이어자바스크립트-제작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><strong>코드</strong>: <a href="https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c">https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c</a></p>
+<h4 id="코드-1"><span class="me-2"><strong>코드</strong></span><a href="#코드-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p><strong>결과</strong>: <a href="http://yoonbumtae.com/music/pastorale/">http://yoonbumtae.com/music/pastorale/</a></p>
+<!-- [https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c](https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c) -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/30c05be68e9201bcf6a9c56d9231741c.js"> </script>
 
-<p>https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c</p>
+<h4 id="결과"><span class="me-2"><strong>결과</strong>: </span><a href="#결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<!-- [http://yoonbumtae.com/music/pastorale/](http://yoonbumtae.com/music/pastorale/) -->
+
+<!-- https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c -->
 
 <p> </p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/03/스크린샷_2018-11-11_오후_10.32.56.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/03/스크린샷_2018-11-11_오후_10.32.56.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/03/processing-pastorale-page-1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/03/processing-pastorale-page-1.png" alt="" loading="lazy"></a></p>
 
 <p>지금은 각 과정이 전부 따로 진행되고 있지만, 만약 실제로 서비스할 수 있는(사운드클라우드와 비슷한) 오디오 플레이어를 <strong>전통적 MVC 웹 서비스 형태</strong>로 제작한다고 한다면</p>
 
@@ -7887,30 +7939,6 @@ public final class MinimImpl {
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -7924,6 +7952,34 @@ public final class MinimImpl {
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/%EC%9E%90%EB%B0%94-%EC%98%88%EC%A0%9C-%ED%8A%B9%EC%A0%95-%EC%A3%BC%ED%8C%8C%EC%88%98%EC%9D%98-%EC%86%8C%EB%A6%AC-%EC%9E%AC%EC%83%9D/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1572620400"
+  data-df="ll"
+  
+>
+  Nov  2, 2019
+</time>
+
+              <h4 class="pt-0 my-2">자바 예제: 특정 주파수의 소리 재생</h4>
+              <div class="text-muted">
+                <p>특정 주파수의 음을 사인파(Sine Wave)로 재생하고 싶다면, `javax.sound.sampled.*` 라이브러리를 사용합니다. **javax** 시리즈는 자바에서 기본 제공됩니다.     ##### **1) `new AudioFormat`으로 새로운 오디오 형식 생성**  ``` public AudioFormat(float sampleRate:...</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/posts/%EC%98%88%EC%A0%9C-%EA%B0%80%EC%9C%84%EB%B0%94%EC%9C%84%EB%B3%B4/" class="post-preview card h-100">
@@ -7981,34 +8037,6 @@ public final class MinimImpl {
           </a>
         </article>
       
-        <article class="col">
-          <a href="/posts/%EC%9E%90%EB%B0%94-%EB%9E%8C%EB%8B%A4%EC%8B%9D-lambda-expression/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1546700400"
-  data-df="ll"
-  
->
-  Jan  6, 2019
-</time>
-
-              <h4 class="pt-0 my-2">자바(Java): 람다식 (Lambda Expression) 기초 (Java 8 이상)</h4>
-              <div class="text-muted">
-                <p>람다식은 함수형 인터페이스(Functional Interface)을 쉽게 사용할 수 있도록 지원합니다. 함수형 인터페이스는 메소드가 한 개만 있는 인터페이스를 의미하며, 보통의 인터페이스에 메소드를 한 개만 만들면 자동으로 함수형 인터페이스가 됩니다.  컴파일러 단계에서 함수형 인터페이스를 명시하고 싶다면 @FunctionalInterface 를 이용...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -8034,11 +8062,11 @@ public final class MinimImpl {
 
   
     <a
-      href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-jquery%EC%A0%9C%EC%9D%B4%EC%BF%BC%EB%A6%AC-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%9D%98-%ED%96%89-%EC%97%B4-%EB%B2%88%ED%98%B8-%ED%91%9C%EC%8B%9C/"
+      href="/posts/%EB%B8%8C%EB%9D%BC%EC%8A%A4%EB%B0%B4%EB%93%9C-%EB%93%A3%EA%B8%B0-%EA%B0%90%EC%83%81-%ED%95%84%EB%A6%BD-%EC%8A%A4%ED%8C%8C%ED%81%AC-philip-sparke-the-year-of-the-dragon-%EC%A0%84%EC%84%A4/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>자바스크립트, JQuery(제이쿼리): 테이블의 행, 열 번호 표시 & 행, 열번호로 테이블 td 접근하기 (예제: 직선 거리 측정)</p>
+      <p>[브라스밴드/듣기/감상] 필립 스파크 (Philip Sparke) - The Year of the Dragon [전설의 명연주]</p>
     </a>
   
 </nav>

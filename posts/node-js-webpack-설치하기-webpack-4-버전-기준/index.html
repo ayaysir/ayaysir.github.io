@@ -212,9 +212,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -760,10 +767,118 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -790,7 +905,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Node.js: Webpack 설치하기 (Webpack 4 버전 기준)</h1>
     
@@ -864,9 +979,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="903 words"
+  title="886 words"
 >
-  <em>5 min</em> read</span>
+  <em>4 min</em> read</span>
 
         </div>
       </div>
@@ -874,22 +989,46 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Node.js: Webpack 설치하기 (Webpack 4 버전 기준)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Node.js: Webpack 설치하기 (Webpack 4 버전 기준)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>이전 글: <a href="http://yoonbumtae.com/?p=772">Node.js: 설치, 코드 실행 (Windows, macOS 기준)</a></p>
+    <ul>
+  <li>이전 글: <a href="/posts/2019-02-11-node-js-설치-코드-실행-windows-기준">Node.js: 설치, 코드 실행 (Windows, macOS 기준)</a></li>
+</ul>
 
 <p> </p>
 
 <p><strong>Webpack</strong>은 프로젝트의 구조를 분석하고 자바스크립트 모듈을 비롯한 관련 리소스들을 찾은 다음 이를 브라우저에서 이용할 수 있는 번들로 묶고 패킹하는 모듈 번들러(Module bundler)라고 합니다.</p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2">절차</span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><strong>1. npm으로 Webpack 설치</strong></p>
+<h3 id="1-npm으로-webpack-설치"><span class="me-2"><strong>1. npm으로 Webpack 설치</strong></span><a href="#1-npm으로-webpack-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre> npm install webpack --save-dev
+</pre></td><td class="rouge-code"><pre> npm <span class="nb">install </span>webpack <span class="nt">--save-dev</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/02/1-1-e1566830166750.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/02/1-1-e1566830166750.png" alt="" loading="lazy"></a></p>
@@ -898,12 +1037,12 @@
 
 <p> </p>
 
-<p><strong>2. webpack.config.js 설정</strong></p>
+<h3 id="2-webpackconfigjs-설정"><span class="me-2"><strong>2. webpack.config.js 설정</strong></span><a href="#2-webpackconfigjs-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>프로젝트 폴더 (<code class="language-plaintext highlighter-rouge">package.json</code> 파일이 있는 폴더와 동일한 위치)에 <code class="language-plaintext highlighter-rouge">webpack.config.js</code> 라는 이름의 파일을 생성합니다. 별도 옵션이 지정되어있지 않으면 파일 이름은 반드시 제시된 것과 동일해야 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -911,23 +1050,23 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>// webpack.config.js
-module.exports = {
- entry: './test.js',
- output: {
-  filename: './app.bundle.js'
- }
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// webpack.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="na">entry</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./test.js</span><span class="dl">'</span><span class="p">,</span>
+ <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+  <span class="na">filename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./app.bundle.js</span><span class="dl">'</span>
+ <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">entry</code>는 <code class="language-plaintext highlighter-rouge">webpack.config.js</code> 이 위치한 폴더(<code class="language-plaintext highlighter-rouge">./</code>는 동일한 위치라는 의미)에 있는 <code class="language-plaintext highlighter-rouge">test.js</code>를 포함하겠다는 것이고(엔트리는 통합을 시작할 파일을 지정하는 것입니다.) 그것을 번들링한 결과물(output)을 dist 폴더 내에 <code class="language-plaintext highlighter-rouge">app.bundle.js</code>라는 파일로 내보내겠다는 의미입니다. (왜 dist 폴더에 저장되는지는 아직 모르겠다)</p>
+<p><code class="language-plaintext highlighter-rouge">entry</code>는 <code class="language-plaintext highlighter-rouge">webpack.config.js</code> 이 위치한 폴더(<code class="language-plaintext highlighter-rouge">./</code>는 동일한 위치라는 의미)에 있는 <code class="language-plaintext highlighter-rouge">test.js</code>를 포함하겠다는 것이고(엔트리는 통합을 시작할 파일을 지정하는 것입니다.) 그것을 번들링한 결과물(output)을 dist 폴더 내에 <code class="language-plaintext highlighter-rouge">app.bundle.js</code>라는 파일로 내보내겠다는 의미입니다.</p>
 
 <p> </p>
 
-<p><strong>3. test.js 작성: 번들링하기 전의 개발 js 파일</strong></p>
+<h3 id="3-testjs-작성-번들링하기-전의-개발-js-파일"><span class="me-2"><strong>3. test.js 작성: 번들링하기 전의 개발 js 파일</strong></span><a href="#3-testjs-작성-번들링하기-전의-개발-js-파일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -938,24 +1077,24 @@ module.exports = {
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>function add(n1, n2){
-  console.log(n1 + n2)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">add</span><span class="p">(</span><span class="nx">n1</span><span class="p">,</span> <span class="nx">n2</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">n1</span> <span class="o">+</span> <span class="nx">n2</span><span class="p">)</span>
+<span class="p">}</span>
 
-function currentTime(){
-  return new Date().toString()
-}
+<span class="kd">function</span> <span class="nf">currentTime</span><span class="p">(){</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">().</span><span class="nf">toString</span><span class="p">()</span>
+<span class="p">}</span>
 
-add(3, 10)
-console.log(currentTime())
+<span class="nf">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">currentTime</span><span class="p">())</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<p><strong>4. <code class="language-plaintext highlighter-rouge">package.json</code> 파일 수정</strong></p>
+<h3 id="4-packagejson-파일-수정"><span class="me-2"><strong>4. <code class="language-plaintext highlighter-rouge">package.json</code> 파일 수정</strong></span><a href="#4-packagejson-파일-수정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-json highlighter-rouge"><div class="code-header">
+        <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -973,30 +1112,30 @@ console.log(currentTime())
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>{
-    "name": "nodejs",
-    "version": "1.0.0",
-    "description": "",
-    "main": "test.js",
-    "scripts": {
-        "dev": "webpack -d --watch"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "webpack": "^4.29.3",
-        "webpack-cli": "^3.2.3"
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nodejs"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.js"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack -d --watch"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"webpack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^4.29.3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"webpack-cli"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.2.3"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-</pre></td></tr></tbody></table></code></div></div>
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <p>기존 파일에서  <code class="language-plaintext highlighter-rouge">scripts</code>의 <code class="language-plaintext highlighter-rouge">dev</code>만 부분만 추가합니다.  <code class="language-plaintext highlighter-rouge">scripts</code> 부분은 npm 명령어를 간편하게 실행하는 옵션이며 <code class="language-plaintext highlighter-rouge">-d</code> 는 Webpack에서 자체적으로 제공하는 단축키로 <code class="language-plaintext highlighter-rouge">--debug --devtool cheap-module-eval-source-map --output-pathinfo</code> 의 약자입니다. <code class="language-plaintext highlighter-rouge">--watch</code> 또는 <code class="language-plaintext highlighter-rouge">-w</code>는 개발 프로젝트의 파일들의 변경 여부를 검사하여 변경이 되었다면 자동으로 <code class="language-plaintext highlighter-rouge">app.bundle.js</code>를 갱신합니다.</p>
 
 <p> </p>
 
-<p><strong>5. npm 번들링 작업 실행: <code class="language-plaintext highlighter-rouge">npm run dev</code></strong></p>
+<h3 id="5-npm-번들링-작업-실행-npm-run-dev"><span class="me-2"><strong>5. npm 번들링 작업 실행: <code class="language-plaintext highlighter-rouge">npm run dev</code></strong></span><a href="#5-npm-번들링-작업-실행-npm-run-dev" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2019/02/2-1-e1566830655485.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/02/2-1-e1566830655485.png" alt="" loading="lazy"></a></p>
 
@@ -1010,7 +1149,7 @@ console.log(currentTime())
 
 <p> </p>
 
-<p><strong>6. 해당 번들 파일 테스트</strong></p>
+<h3 id="6-해당-번들-파일-테스트"><span class="me-2"><strong>6. 해당 번들 파일 테스트</strong></span><a href="#6-해당-번들-파일-테스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2019/02/4-e1566831404176.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/02/4-e1566831404176.png" alt="" loading="lazy"></a></p>
 
@@ -1018,12 +1157,12 @@ console.log(currentTime())
 
 <p> </p>
 
-<p><strong>7. watch 테스트</strong></p>
+<h3 id="7-watch-테스트"><span class="me-2"><strong>7. watch 테스트</strong></span><a href="#7-watch-테스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">test.js</code> 파일에서 덧셈을 뺄셈으로 바꾸고 편집기에서 저장을 해보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1032,14 +1171,14 @@ console.log(currentTime())
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>function minus(n1, n2){
-  console.log(n1 - n2)
-  console.log("뺄셈입니다.")
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">minus</span><span class="p">(</span><span class="nx">n1</span><span class="p">,</span> <span class="nx">n2</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">n1</span> <span class="o">-</span> <span class="nx">n2</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">뺄셈입니다.</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span>
 
-.........
+<span class="p">.........</span>
 
-minus(25, 11)
+<span class="nf">minus</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -1048,19 +1187,21 @@ minus(25, 11)
 2
 3
 4
-5
 </pre></td><td class="rouge-code"><pre>usernameui-MacBook:dist username$ node app.bundle.js
 14
 뺄셈입니다.
 Tue Aug 27 2019 00:00:03 GMT+0900 (GMT+09:00)
-
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>다시 번들 파일을 실행하면 파일을 저장만 했음에도 watch 옵션이 작동하여 자동으로 컴파일이 된 것을 확인할 수 있습니다.</p>
 
-<p> </p>
+<hr />
+<p> 
+<strong>참고</strong></p>
 
-<p>참고 블로그: <a href="https://medium.com/@shlee1353/%EC%9B%B9%ED%8C%A9-%EC%9E%85%EB%AC%B8-%EA%B0%80%EC%9D%B4%EB%93%9C%ED%8E%B8-html-css-%EC%82%AC%EC%9A%A9%EA%B8%B0-75d9fb6062e6">바로가기</a></p>
+<ul>
+  <li>참고 블로그: <a href="https://medium.com/@shlee1353/%EC%9B%B9%ED%8C%A9-%EC%9E%85%EB%AC%B8-%EA%B0%80%EC%9D%B4%EB%93%9C%ED%8E%B8-html-css-%EC%82%AC%EC%9A%A9%EA%B8%B0-75d9fb6062e6">바로가기</a></li>
+</ul>
 
   </div>
 
@@ -2053,6 +2194,12 @@ Tue Aug 27 2019 00:00:03 GMT+0900 (GMT+09:00)
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7948,30 +8095,6 @@ Tue Aug 27 2019 00:00:03 GMT+0900 (GMT+09:00)
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -8008,7 +8131,7 @@ Tue Aug 27 2019 00:00:03 GMT+0900 (GMT+09:00)
 
               <h4 class="pt-0 my-2">Node.js: Webpack 4 추가 설정 (CSS, HTML, dev-server) 빌드 및 배포</h4>
               <div class="text-muted">
-                <p>[Node.js: 설치, 코드 실행 (Windows 기준)](http://yoonbumtae.com/?p=772) [Node.js: Webpack 설치하기 (Webpack 4 버전 기준)](http://yoonbumtae.com/?p=784)  ##### **1\. 아래 명령어들을 터미널에 입력합니다.**  ``` npm install --save-d...</p>
+                <p>**이전 글**  - [Node.js: 설치, 코드 실행 (Windows 기준)](/posts/node-js-설치-코드-실행-windows-기준) - [Node.js: Webpack 설치하기 (Webpack 4 버전 기준)](/posts/node-js-webpack-설치하기-webpack-4-버전-기준)  ---  ## 절차  ### **1\. 아래 ...</p>
               </div>
             </div>
           </a>
@@ -8036,7 +8159,7 @@ Tue Aug 27 2019 00:00:03 GMT+0900 (GMT+09:00)
 
               <h4 class="pt-0 my-2">Node.js: 설치, 코드 실행 (Windows, macOS 기준)</h4>
               <div class="text-muted">
-                <p>**Node.js**는 구글 크롬 브라우저에서 사용되는 V8엔진을 탑재한 런타임(실행환경)입니다. 자바스크립트를 웹 뿐만 아니라 아니라 백엔드 서버 개발, 데스크탑 소프트웨어 개발, IoT 개발 등에서도 자바스크립트가 이용될 수 있도록 자바스크립트 엔진의 적용 반경을 확장시키는 역할을 합니다.     1. [https://nodejs.org/ko/](...</p>
+                <p>**Node.js**는 구글 크롬 브라우저에서 사용되는 V8엔진을 탑재한 런타임(실행환경)입니다. 자바스크립트를 웹 뿐만 아니라 아니라 백엔드 서버 개발, 데스크탑 소프트웨어 개발, IoT 개발 등에서도 자바스크립트가 이용될 수 있도록 자바스크립트 엔진의 적용 반경을 확장시키는 역할을 합니다.  ## 절차  1. [https://nodejs.org/k...</p>
               </div>
             </div>
           </a>
@@ -8064,7 +8187,7 @@ Tue Aug 27 2019 00:00:03 GMT+0900 (GMT+09:00)
 
               <h4 class="pt-0 my-2">Node.js: Ace (Syntax Highlighter) 설치하기 (Webpack 4 기준)</h4>
               <div class="text-muted">
-                <p>### 참고 사이트[](https://github.com/ajaxorg/ace/blob/master/demo/webpack/demo.js#L12)  [https://github.com/ajaxorg/ace/blob/master/demo/webpack/demo.js#L12](https://github.com/ajaxorg/ace/blob/master/d...</p>
+                <p>**참고 사이트**  - [데모 1](https://github.com/ajaxorg/ace/blob/master/demo/webpack/demo.js#L12)  - [데모 2](https://github.com/ajaxorg/ace/blob/master/demo/webpack/demo.js#L12)   - [https://ace.c9.io/#nav=...</p>
               </div>
             </div>
           </a>
