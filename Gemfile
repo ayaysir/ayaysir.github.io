@@ -11,6 +11,7 @@ group :jekyll_plugins do
   gem "jekyll-seo-tag", "~> 2.8"
   gem "jekyll-youtube"
   gem "jekyll-gist"
+  gem "jekyll-sitemap"
 end
 
 # test helper
