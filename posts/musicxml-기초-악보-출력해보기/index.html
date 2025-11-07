@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -761,6 +768,60 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -791,7 +852,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>MusicXML: 기초 악보 만들기</h1>
     
@@ -865,7 +926,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2141 words"
+  title="2140 words"
 >
   <em>11 min</em> read</span>
 
@@ -875,18 +936,48 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">MusicXML: 기초 악보 만들기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">MusicXML: 기초 악보 만들기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>출처: <a href="https://www.musicxml.com/tutorial/hello-world/">https://www.musicxml.com/tutorial/hello-world/</a></p>
+    <ul>
+  <li>출처: <a href="https://www.musicxml.com/tutorial/hello-world/">https://www.musicxml.com/tutorial/hello-world/</a></li>
+</ul>
 
 <p>MusicXML에서 가사가 “hello, world”인 노래는 실제로 간단한 MusicXML 파일보다는 복잡합니다. 우리는 (조건을) 더 단순하게 유지합시다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">중간 C의 전체 음을 포함하는 한 마디의 음악, 4/4 박자 기준</code></p>
+<h2 id="조건"><span class="me-2">조건</span><a href="#조건" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">중간 C의 전체 음을 포함하는 한 마디의 음악, 4/4 박자 기준</code></li>
+</ul>
 
 <p><a href="/assets/img/wp-content/uploads/2019/04/xml2001fig1.gif" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/xml2001fig1.gif" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -924,231 +1015,231 @@
 35
 36
 37
-</pre></td><td class="rouge-code"><pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;!DOCTYPE score-partwise PUBLIC
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE score-partwise PUBLIC
     "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
-    "http://www.musicxml.org/dtds/partwise.dtd"&gt;
-&lt;score-partwise version="3.1"&gt;
-  &lt;part-list&gt;
-    &lt;score-part id="P1"&gt;
-      &lt;part-name&gt;Music&lt;/part-name&gt;
-    &lt;/score-part&gt;
-  &lt;/part-list&gt;
-  &lt;part id="P1"&gt;
-    &lt;measure number="1"&gt;
-      &lt;attributes&gt;
-        &lt;divisions&gt;1&lt;/divisions&gt;
-        &lt;key&gt;
-          &lt;fifths&gt;0&lt;/fifths&gt;
-        &lt;/key&gt;
-        &lt;time&gt;
-          &lt;beats&gt;4&lt;/beats&gt;
-          &lt;beat-type&gt;4&lt;/beat-type&gt;
-        &lt;/time&gt;
-        &lt;clef&gt;
-          &lt;sign&gt;G&lt;/sign&gt;
-          &lt;line&gt;2&lt;/line&gt;
-        &lt;/clef&gt;
-      &lt;/attributes&gt;
-      &lt;note&gt;
-        &lt;pitch&gt;
-          &lt;step&gt;C&lt;/step&gt;
-          &lt;octave&gt;4&lt;/octave&gt;
-        &lt;/pitch&gt;
-        &lt;duration&gt;4&lt;/duration&gt;
-        &lt;type&gt;whole&lt;/type&gt;
-      &lt;/note&gt;
-    &lt;/measure&gt;
-  &lt;/part&gt;
-&lt;/score-partwise&gt;
+    "http://www.musicxml.org/dtds/partwise.dtd"&gt;</span>
+<span class="nt">&lt;score-partwise</span> <span class="na">version=</span><span class="s">"3.1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;part-list&gt;</span>
+    <span class="nt">&lt;score-part</span> <span class="na">id=</span><span class="s">"P1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;part-name&gt;</span>Music<span class="nt">&lt;/part-name&gt;</span>
+    <span class="nt">&lt;/score-part&gt;</span>
+  <span class="nt">&lt;/part-list&gt;</span>
+  <span class="nt">&lt;part</span> <span class="na">id=</span><span class="s">"P1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;measure</span> <span class="na">number=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;attributes&gt;</span>
+        <span class="nt">&lt;divisions&gt;</span>1<span class="nt">&lt;/divisions&gt;</span>
+        <span class="nt">&lt;key&gt;</span>
+          <span class="nt">&lt;fifths&gt;</span>0<span class="nt">&lt;/fifths&gt;</span>
+        <span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;time&gt;</span>
+          <span class="nt">&lt;beats&gt;</span>4<span class="nt">&lt;/beats&gt;</span>
+          <span class="nt">&lt;beat-type&gt;</span>4<span class="nt">&lt;/beat-type&gt;</span>
+        <span class="nt">&lt;/time&gt;</span>
+        <span class="nt">&lt;clef&gt;</span>
+          <span class="nt">&lt;sign&gt;</span>G<span class="nt">&lt;/sign&gt;</span>
+          <span class="nt">&lt;line&gt;</span>2<span class="nt">&lt;/line&gt;</span>
+        <span class="nt">&lt;/clef&gt;</span>
+      <span class="nt">&lt;/attributes&gt;</span>
+      <span class="nt">&lt;note&gt;</span>
+        <span class="nt">&lt;pitch&gt;</span>
+          <span class="nt">&lt;step&gt;</span>C<span class="nt">&lt;/step&gt;</span>
+          <span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+        <span class="nt">&lt;/pitch&gt;</span>
+        <span class="nt">&lt;duration&gt;</span>4<span class="nt">&lt;/duration&gt;</span>
+        <span class="nt">&lt;type&gt;</span>whole<span class="nt">&lt;/type&gt;</span>
+      <span class="nt">&lt;/note&gt;</span>
+    <span class="nt">&lt;/measure&gt;</span>
+  <span class="nt">&lt;/part&gt;</span>
+<span class="nt">&lt;/score-partwise&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="설명"><span class="me-2">설명</span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>각 부분을 차례로 살펴보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>XML 선언부분입니다.</p>
 
-<p> </p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE score-partwise PUBLIC
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE score-partwise PUBLIC
     "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
-    "http://www.musicxml.org/dtds/partwise.dtd"&gt;
+    "http://www.musicxml.org/dtds/partwise.dtd"&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>DTD 선언부분입니다. (자세한 내용은 XML 포맷의 DTD 정의 참조)</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;score-partwise version="3.1"&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;score-partwise</span> <span class="na">version=</span><span class="s">"3.1"</span><span class="nt">&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이것이 루트 도큐멘트의 유형입니다. <code class="language-plaintext highlighter-rouge">&lt;score-partwise&gt;</code> 요소는 각 파트(part)가 마디(measures)로 구성됩니다. 또한 각 마디 값이 파트로 구성되는  <code class="language-plaintext highlighter-rouge">&lt;score-timewise&gt;</code> 옵션이 있습니다. (서로 반대됨) 버전 속성을 통해 프로그램은 사용되는 MusicXML의 버전을보다 쉽게 구별 할 수 있습니다. MusicXML 1.0 파일을 작성하는 경우에는 그대로 두십시오.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>&lt;part-list&gt;
-  &lt;score-part id="P1"&gt;
-    &lt;part-name&gt;Part 1&lt;/part-name&gt;
-  &lt;/score-part&gt;
-&lt;/part-list&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;part-list&gt;</span>
+  <span class="nt">&lt;score-part</span> <span class="na">id=</span><span class="s">"P1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;part-name&gt;</span>Part 1<span class="nt">&lt;/part-name&gt;</span>
+  <span class="nt">&lt;/score-part&gt;</span>
+<span class="nt">&lt;/part-list&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>파트별 또는 시간별 스코어(악보)가 있더라도 MusicXML 파일은 스코어의 다른 음악 파트를 열거하는 헤더로 시작됩니다. 위의 예제는 가능한 최소 부분 목록입니다. 하나의 <code class="language-plaintext highlighter-rouge">score-part</code>, score-part에 대한 필수 <code class="language-plaintext highlighter-rouge">id</code> 속성 및 필수 <code class="language-plaintext highlighter-rouge">part-name</code> 요소를 포함합니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;part id="P1"&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;part</span> <span class="na">id=</span><span class="s">"P1"</span><span class="nt">&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이제 도큐멘트에서 첫 번째 (의 경우에만) 부분을 시작합니다. 여기에 있는 <code class="language-plaintext highlighter-rouge">id</code> 속성은 헤더의 <code class="language-plaintext highlighter-rouge">score-part</code>에 대한 <code class="language-plaintext highlighter-rouge">id</code> 속성을 참조해야 합니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;measure number="1"&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;measure</span> <span class="na">number=</span><span class="s">"1"</span><span class="nt">&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>우리는 첫 번째 파트에서 첫 번째 마디를 시작합니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;attributes&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;attributes&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>속성 요소는이 파트에 나오는 음표와 음악 데이터를 해석하는 데 필요한 핵심 정보를 포함합니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;divisions&gt;1&lt;/divisions&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;divisions&gt;</span>1<span class="nt">&lt;/divisions&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>MusicXML의 각 음에는 <code class="language-plaintext highlighter-rouge">duration</code>(지속 시간) 요소가 있습니다. <code class="language-plaintext highlighter-rouge">division</code> 요소는 4분 음표에 대한 구분으로 <code class="language-plaintext highlighter-rouge">duration</code> 요소에 대한 측정 단위를 제공합니다. 우리가 이 파일에 가지고있는 것은 하나의 온음표(a whole note)이며, 4분 음표를 나눌 필요가 없으므로 <code class="language-plaintext highlighter-rouge">division</code> 값을 1로 설정합니다. 음악 지속 시간은 일반적으로 “<code class="language-plaintext highlighter-rouge">quarter</code>(4분 음표)”및 “<code class="language-plaintext highlighter-rouge">eighth</code>(8분 음표)”노트와 같이 분수로 표시됩니다. MusicXML 재생 시간도 분수입니다. 분모가 거의 변할 필요가 없으므로 분모 요소에서 별도로 표현되므로 분자만 각 개별 노트와 연결해야 합니다. 노트 주기를 나타내기 위해 MIDI에서 사용된 체계와 유사합니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>&lt;key&gt;
-  &lt;fifths&gt;0&lt;/fifths&gt;
-&lt;/key&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;key&gt;</span>
+  <span class="nt">&lt;fifths&gt;</span>0<span class="nt">&lt;/fifths&gt;</span>
+<span class="nt">&lt;/key&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>key 요소는 조표(key signature)을 나타내는 데 사용됩니다. 여기에 우리는 C 장조의 핵심에 있습니다. 플랫(flat)이나 샤프(sharp)가 없기 때문에 5도음(the fifths element)는 0입니다. 만약 샤프가 2개인 D장조라면, 5도음은 2로 설정 될 것입니다. 1개의 플랫을 가진 F 메이저는 -1로 설정됩니다. “fifths”이라는 이름은 5도권의 원을 따라 주요 조표를 표현한 것입니다. 샤프와 플랫을 위한 별도의 요소가 아닌 하나의 요소로 표준 키 시그니처를 표현할 수 있습니다.</p>
 
-<p><a href="/./assets/img/wp-content/uploads/2019/04/21338246524AB60D11.gif" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2019/04/21338246524AB60D11.gif" alt="5도권" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/04/21338246524AB60D11.gif" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/21338246524AB60D11.gif" alt="5도권" loading="lazy"></a></p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>&lt;time&gt;
-  &lt;beats&gt;4&lt;/beats&gt;
-  &lt;beat-type&gt;4&lt;/beat-type&gt;
-&lt;/time&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;time&gt;</span>
+  <span class="nt">&lt;beats&gt;</span>4<span class="nt">&lt;/beats&gt;</span>
+  <span class="nt">&lt;beat-type&gt;</span>4<span class="nt">&lt;/beat-type&gt;</span>
+<span class="nt">&lt;/time&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">time</code> 요소는 박자표를 나타냅니다. 두 개의 구성요소인 <code class="language-plaintext highlighter-rouge">beats</code>와 <code class="language-plaintext highlighter-rouge">beat-type</code>은 각각 박자표의 분자와 분모입니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>&lt;clef&gt;
-  &lt;sign&gt;G&lt;/sign&gt;
-  &lt;line&gt;2&lt;/line&gt;
-&lt;/clef&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;clef&gt;</span>
+  <span class="nt">&lt;sign&gt;</span>G<span class="nt">&lt;/sign&gt;</span>
+  <span class="nt">&lt;line&gt;</span>2<span class="nt">&lt;/line&gt;</span>
+<span class="nt">&lt;/clef&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>MusicXML은 오늘날 더 이상 사용되지 않는 많은 것을 포함하여 여러 가지 음자리표를 허용합니다. 여기서 높은음자리표(G clef; treble clef)는 보표(staff)의 두 번째 줄에있는 G 음자리표로 표시됩니다 (예: 스태프의 맨 아래에서 두 번째 줄은 G입니다).</p>
 
-<p><a href="/./assets/img/wp-content/uploads/2019/04/A5trebleclef.jpg" class="popup img-link shimmer"><img src="/./assets/img/wp-content/uploads/2019/04/A5trebleclef.jpg" alt="높은음자리표" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/04/A5trebleclef.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/A5trebleclef.jpg" alt="높은음자리표" loading="lazy"></a></p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>&lt;/attributes&gt;
-&lt;note&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;/attributes&gt;</span>
+<span class="nt">&lt;note&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>속성이 끝났으며 첫 번째 음을 시작할 준비가 되었습니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>&lt;pitch&gt;
-  &lt;step&gt;C&lt;/step&gt;
-  &lt;octave&gt;4&lt;/octave&gt;
-&lt;/pitch&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;pitch&gt;</span>
+  <span class="nt">&lt;step&gt;</span>C<span class="nt">&lt;/step&gt;</span>
+  <span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+<span class="nt">&lt;/pitch&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">pitch</code> 요소에는 <code class="language-plaintext highlighter-rouge">step</code> 및 <code class="language-plaintext highlighter-rouge">octave</code> 요소가 있어야합니다. 선택 사항으로 플랫 또는 샤프가 있는 경우 변경 요소가 있을 수 있습니다. 이러한 요소는 사운드를 나타내므로 변경 사항이 조표(key signature)에 있더라도 변경 요소는 반드시 포함되어야 합니다. 지금 경우에는 변경이 없습니다. 피치 스텝(pitch step)은 C입니다. 4의 옥타브는 중간의 C(middle C)로 시작하는 옥타브를 나타냅니다. 따라서이 음은 중간의 C입니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;duration&gt;4&lt;/duration&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;duration&gt;</span>4<span class="nt">&lt;/duration&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">division</code>의 대응값은 4분음표 마다 1 이므로,  <code class="language-plaintext highlighter-rouge">duration</code>이 4라면 4분 음표의 네 개분에 해당하는 길이입니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;type&gt;whole&lt;/type&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;type&gt;</span>whole<span class="nt">&lt;/type&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">&lt;type&gt;</code> 요소는 이것이 온음표(a whole note)로 표시된다는 것을 알려줍니다. 이 경우 <code class="language-plaintext highlighter-rouge">duration</code>에서 이 값을 지정할 수도 있지만, 표기법 및 성능 데이터를 별도로 나타내면 응용 프로그램에서 작업하는 것이 훨씬 쉽습니다. 어떤 경우에도 성능 및 표기법 데이터가 실제로 일치하지는 않습니다.</p>
@@ -1157,22 +1248,16 @@
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre>      &lt;/note&gt;
-
-    &lt;/measure&gt;
-
-  &lt;/part&gt;
-
-&lt;/score-partwise&gt;
+</pre></td><td class="rouge-code"><pre>      <span class="nt">&lt;/note&gt;</span>
+    <span class="nt">&lt;/measure&gt;</span>
+  <span class="nt">&lt;/part&gt;</span>
+<span class="nt">&lt;/score-partwise&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>그리고 악보 및 도큐멘트를 마무리합니다.</p>
@@ -1181,14 +1266,14 @@
 
 <p>XML의 문서 유형 정의의 한 가지 제한사항은 다른 요소의 요소 수를 제한하려면 일반적으로 해당 요소의 정렬 방법도 제한해야 한다는 것입니다. 예를 들어 <code class="language-plaintext highlighter-rouge">attribute</code>에서 하나 이상의 <code class="language-plaintext highlighter-rouge">divisions</code> 요소만 있으면 됩니다. 음의 피치에 대해 단 하나의 <code class="language-plaintext highlighter-rouge">step</code> 요소와 <code class="language-plaintext highlighter-rouge">octave</code> 요소만 필요합니다. 이렇게하려면 이러한 요소가 나타나는 순서도 제한되어야합니다. 따라서 이 예제에서 요소가 나타나는 순서는 중요합니다. DTD 정의는 어떤 순서가 필요한지 명확히 해야 합니다. 우리는 튜토리얼에서 자세히 설명하지 않을 것입니다.</p>
 
-<p> </p>
+<h2 id="연습"><span class="me-2">연습</span><a href="#연습" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><strong>[연습]</strong> 다음 악보를 MusicXML 포맷으로 만들어보기.</p>
+<p>다음 악보를 MusicXML 포맷으로 만들어보기.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2019/04/scoreex1-1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/scoreex1-1.png" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1258,75 +1343,75 @@
 67
 68
 69
-</pre></td><td class="rouge-code"><pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;!DOCTYPE score-partwise PUBLIC
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE score-partwise PUBLIC
     "-//Recordare//DTD MusicXML 3.1 Partwise//EN"
-    "http://www.musicxml.org/dtds/partwise.dtd"&gt;
-&lt;score-partwise version="3.1"&gt;
-  &lt;part-list&gt;
-    &lt;score-part id="P1"&gt;
-      &lt;part-name&gt;Music&lt;/part-name&gt;
-    &lt;/score-part&gt;
-  &lt;/part-list&gt;
-  &lt;part id="P1"&gt;
-    &lt;measure number="1"&gt;
-      &lt;attributes&gt;
-        &lt;divisions&gt;5&lt;/divisions&gt;
-        &lt;key&gt;
-          &lt;fifths&gt;0&lt;/fifths&gt;
-        &lt;/key&gt;
-        &lt;time&gt;
-          &lt;beats&gt;5&lt;/beats&gt;
-          &lt;beat-type&gt;4&lt;/beat-type&gt;
-        &lt;/time&gt;
-        &lt;clef&gt;
-          &lt;sign&gt;G&lt;/sign&gt;
-          &lt;line&gt;2&lt;/line&gt;
-        &lt;/clef&gt;
-      &lt;/attributes&gt;
-      &lt;note&gt;
-        &lt;pitch&gt;
-          &lt;step&gt;C&lt;/step&gt;
-          &lt;octave&gt;4&lt;/octave&gt;
-        &lt;/pitch&gt;
-        &lt;duration&gt;1&lt;/duration&gt;
-        &lt;type&gt;quarter&lt;/type&gt;
-      &lt;/note&gt;
-      &lt;note&gt;
-        &lt;pitch&gt;
-          &lt;step&gt;D&lt;/step&gt;
-          &lt;octave&gt;4&lt;/octave&gt;
-        &lt;/pitch&gt;
-        &lt;duration&gt;1&lt;/duration&gt;
-        &lt;type&gt;quarter&lt;/type&gt;
-      &lt;/note&gt;
-      &lt;note&gt;
-        &lt;pitch&gt;
-          &lt;step&gt;E&lt;/step&gt;
-          &lt;octave&gt;4&lt;/octave&gt;
-        &lt;/pitch&gt;
-        &lt;duration&gt;1&lt;/duration&gt;
-        &lt;type&gt;quarter&lt;/type&gt;
-      &lt;/note&gt;
-      &lt;note&gt;
-        &lt;pitch&gt;
-          &lt;step&gt;F&lt;/step&gt;
-          &lt;octave&gt;4&lt;/octave&gt;
-        &lt;/pitch&gt;
-        &lt;duration&gt;1&lt;/duration&gt;
-        &lt;type&gt;quarter&lt;/type&gt;
-      &lt;/note&gt;
-      &lt;note&gt;
-        &lt;pitch&gt;
-          &lt;step&gt;G&lt;/step&gt;
-          &lt;octave&gt;4&lt;/octave&gt;
-        &lt;/pitch&gt;
-        &lt;duration&gt;1&lt;/duration&gt;
-        &lt;type&gt;quarter&lt;/type&gt;
-      &lt;/note&gt;
-    &lt;/measure&gt;
-  &lt;/part&gt;
-&lt;/score-partwise&gt;
+    "http://www.musicxml.org/dtds/partwise.dtd"&gt;</span>
+<span class="nt">&lt;score-partwise</span> <span class="na">version=</span><span class="s">"3.1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;part-list&gt;</span>
+    <span class="nt">&lt;score-part</span> <span class="na">id=</span><span class="s">"P1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;part-name&gt;</span>Music<span class="nt">&lt;/part-name&gt;</span>
+    <span class="nt">&lt;/score-part&gt;</span>
+  <span class="nt">&lt;/part-list&gt;</span>
+  <span class="nt">&lt;part</span> <span class="na">id=</span><span class="s">"P1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;measure</span> <span class="na">number=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;attributes&gt;</span>
+        <span class="nt">&lt;divisions&gt;</span>5<span class="nt">&lt;/divisions&gt;</span>
+        <span class="nt">&lt;key&gt;</span>
+          <span class="nt">&lt;fifths&gt;</span>0<span class="nt">&lt;/fifths&gt;</span>
+        <span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;time&gt;</span>
+          <span class="nt">&lt;beats&gt;</span>5<span class="nt">&lt;/beats&gt;</span>
+          <span class="nt">&lt;beat-type&gt;</span>4<span class="nt">&lt;/beat-type&gt;</span>
+        <span class="nt">&lt;/time&gt;</span>
+        <span class="nt">&lt;clef&gt;</span>
+          <span class="nt">&lt;sign&gt;</span>G<span class="nt">&lt;/sign&gt;</span>
+          <span class="nt">&lt;line&gt;</span>2<span class="nt">&lt;/line&gt;</span>
+        <span class="nt">&lt;/clef&gt;</span>
+      <span class="nt">&lt;/attributes&gt;</span>
+      <span class="nt">&lt;note&gt;</span>
+        <span class="nt">&lt;pitch&gt;</span>
+          <span class="nt">&lt;step&gt;</span>C<span class="nt">&lt;/step&gt;</span>
+          <span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+        <span class="nt">&lt;/pitch&gt;</span>
+        <span class="nt">&lt;duration&gt;</span>1<span class="nt">&lt;/duration&gt;</span>
+        <span class="nt">&lt;type&gt;</span>quarter<span class="nt">&lt;/type&gt;</span>
+      <span class="nt">&lt;/note&gt;</span>
+      <span class="nt">&lt;note&gt;</span>
+        <span class="nt">&lt;pitch&gt;</span>
+          <span class="nt">&lt;step&gt;</span>D<span class="nt">&lt;/step&gt;</span>
+          <span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+        <span class="nt">&lt;/pitch&gt;</span>
+        <span class="nt">&lt;duration&gt;</span>1<span class="nt">&lt;/duration&gt;</span>
+        <span class="nt">&lt;type&gt;</span>quarter<span class="nt">&lt;/type&gt;</span>
+      <span class="nt">&lt;/note&gt;</span>
+      <span class="nt">&lt;note&gt;</span>
+        <span class="nt">&lt;pitch&gt;</span>
+          <span class="nt">&lt;step&gt;</span>E<span class="nt">&lt;/step&gt;</span>
+          <span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+        <span class="nt">&lt;/pitch&gt;</span>
+        <span class="nt">&lt;duration&gt;</span>1<span class="nt">&lt;/duration&gt;</span>
+        <span class="nt">&lt;type&gt;</span>quarter<span class="nt">&lt;/type&gt;</span>
+      <span class="nt">&lt;/note&gt;</span>
+      <span class="nt">&lt;note&gt;</span>
+        <span class="nt">&lt;pitch&gt;</span>
+          <span class="nt">&lt;step&gt;</span>F<span class="nt">&lt;/step&gt;</span>
+          <span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+        <span class="nt">&lt;/pitch&gt;</span>
+        <span class="nt">&lt;duration&gt;</span>1<span class="nt">&lt;/duration&gt;</span>
+        <span class="nt">&lt;type&gt;</span>quarter<span class="nt">&lt;/type&gt;</span>
+      <span class="nt">&lt;/note&gt;</span>
+      <span class="nt">&lt;note&gt;</span>
+        <span class="nt">&lt;pitch&gt;</span>
+          <span class="nt">&lt;step&gt;</span>G<span class="nt">&lt;/step&gt;</span>
+          <span class="nt">&lt;octave&gt;</span>4<span class="nt">&lt;/octave&gt;</span>
+        <span class="nt">&lt;/pitch&gt;</span>
+        <span class="nt">&lt;duration&gt;</span>1<span class="nt">&lt;/duration&gt;</span>
+        <span class="nt">&lt;type&gt;</span>quarter<span class="nt">&lt;/type&gt;</span>
+      <span class="nt">&lt;/note&gt;</span>
+    <span class="nt">&lt;/measure&gt;</span>
+  <span class="nt">&lt;/part&gt;</span>
+<span class="nt">&lt;/score-partwise&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -2310,6 +2395,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -8193,18 +8284,6 @@
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -8328,11 +8407,11 @@
 
   
     <a
-      href="/posts/node-js-webpack-%ED%95%9C-%EB%B2%88%EC%97%90-%EC%84%B8%ED%8C%85-%EC%99%84%EB%A3%8C%ED%95%98%EA%B8%B0-%EA%B0%9C%EC%9D%B8%EC%9A%A9/"
+      href="/posts/spring-boot-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0-jdbc-mysql-%EA%B8%B0%EC%A4%80/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Node.js Webpack: 한 번에 세팅 완료하기 (개인용)</p>
+      <p>Spring Boot: 데이터베이스 연결하기 (Jdbc, MySQL 기준)</p>
     </a>
   
 </nav>

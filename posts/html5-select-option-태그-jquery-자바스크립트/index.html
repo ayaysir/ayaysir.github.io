@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -537,11 +544,11 @@
       
 
       
-        <!-- add class to exist <a> tag -->
-        
-        
+        <!-- create the image wrapper -->
         
 
+        
+        
       
     
 
@@ -566,10 +573,48 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -616,41 +661,13 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
   
 
   
@@ -672,7 +689,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>HTML5: Select ~ Option (태그, JQuery, 자바스크립트)</h1>
     
@@ -746,7 +763,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="610 words"
+  title="607 words"
 >
   <em>3 min</em> read</span>
 
@@ -756,12 +773,34 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">HTML5: Select ~ Option (태그, JQuery, 자바스크립트)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">HTML5: Select ~ Option (태그, JQuery, 자바스크립트)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="기본-형태"><span class="me-2"><strong>기본 형태</strong></span><a href="#기본-형태" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="기본-형태"><span class="me-2"><strong>기본 형태</strong></span><a href="#기본-형태" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -769,22 +808,20 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>&lt;body&gt;
-  &lt;select&gt;
-    &lt;option&gt;사과&lt;/option&gt;
-    &lt;option&gt;귤&lt;/option&gt;
-    &lt;option&gt;포도&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/body&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;select&gt;</span>
+    <span class="nt">&lt;option&gt;</span>사과<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>귤<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>포도<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="http://yoonbumtae.com/?attachment_id=1003">
-          class="img-link shimmer"
-        ><img src="/assets/img/wp-content/uploads/2019/04/select1.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/04/select1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/select1.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h4 id="select-속성"><span class="me-2"><strong>select 속성</strong></span><a href="#select-속성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="select-속성"><span class="me-2"><strong>select 속성</strong></span><a href="#select-속성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">autofocus</code> - <strong>HTML5</strong>, 페이지 로드시 자동으로 포커스 적용</li>
@@ -793,15 +830,15 @@
   <li><code class="language-plaintext highlighter-rouge">multiple</code> - 다중 선택 가능</li>
   <li><code class="language-plaintext highlighter-rouge">name</code> - form 전송에 사용할 이름 지정</li>
   <li><code class="language-plaintext highlighter-rouge">required</code> - <strong>HTML5.</strong> 입력하지 않았을 경우 브라우저가 경고 메시지 표시</li>
-  <li><code class="language-plaintext highlighter-rouge">size</code> - 한 번에 볼 수 있는 행의 개수. 기본 값은 0.</li>
+  <li><code class="language-plaintext highlighter-rouge">size</code> - 한 번에 볼 수 있는 행의 개수. 기본 값은 <code class="language-plaintext highlighter-rouge">0</code>.</li>
 </ul>
 
 <p> </p>
 
-<h4 id="form-속성-예제"><span class="me-2"><strong>form 속성 예제</strong></span><a href="#form-속성-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="form-속성-예제"><span class="me-2"><strong>form 속성 예제</strong></span><a href="#form-속성-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -813,30 +850,34 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>&lt;body&gt;
- &lt;form method=get action="./go.htx" id=frm1&gt;
-  &lt;button&gt;submit&lt;/button&gt;   
- &lt;/form&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;body&gt;</span>
+ <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">get</span> <span class="na">action=</span><span class="s">"./go.htx"</span> <span class="na">id=</span><span class="s">frm1</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button&gt;</span>submit<span class="nt">&lt;/button&gt;</span>   
+ <span class="nt">&lt;/form&gt;</span>
  
-  &lt;select multiple form=frm1 name="fruits"&gt;
-    &lt;option label="apple bee"&gt;&lt;/option&gt;
-    &lt;option value="gjul"&gt;귤&lt;/option&gt;
-    &lt;option value="grapes"&gt;포도&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/body&gt;
+  <span class="nt">&lt;select</span> <span class="na">multiple</span> <span class="na">form=</span><span class="s">frm1</span> <span class="na">name=</span><span class="s">"fruits"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">label=</span><span class="s">"apple bee"</span><span class="nt">&gt;&lt;/option&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"gjul"</span><span class="nt">&gt;</span>귤<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"grapes"</span><span class="nt">&gt;</span>포도<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>/go.htx?fruits=gjul&amp;amp;fruits=grapes
+</pre></td><td class="rouge-code"><pre>/go.htx?fruits=gjul<span class="ni">&amp;amp;</span>fruits=grapes
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>위 예 제의 경우<code class="language-plaintext highlighter-rouge">select</code> 태그는  폼 범위 밖에 위치하고 있으나 <code class="language-plaintext highlighter-rouge">form</code> 속성을 폼 아이디 <code class="language-plaintext highlighter-rouge">frm1</code>로 지정하여 해당 폼 안에 포함시킬 수 있습니다. [submit] 버튼을 누르면 위의 결과가 get 형식으로 전송됩니다. <code class="language-plaintext highlighter-rouge">name</code>으로 파라미터 이름을 지정하며 <code class="language-plaintext highlighter-rouge">value</code> 내의 값이 전송됩니다.</p>
+<p>위 예 제의 경우<code class="language-plaintext highlighter-rouge">select</code> 태그는  폼 범위 밖에 위치하고 있으나 <code class="language-plaintext highlighter-rouge">form</code> 속성을 폼 아이디 <code class="language-plaintext highlighter-rouge">frm1</code>로 지정하여 해당 폼 안에 포함시킬 수 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">[submit]</code> 버튼을 누르면 위의 결과가 get 형식으로 전송됩니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">name</code>으로 파라미터 이름을 지정하며 <code class="language-plaintext highlighter-rouge">value</code> 내의 값이 전송됩니다.</p>
 
 <p> </p>
 
-<h4 id="option-속성"><span class="me-2"><strong>option 속성</strong></span><a href="#option-속성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="option-속성"><span class="me-2"><strong>option 속성</strong></span><a href="#option-속성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">disabled</code></li>
@@ -847,12 +888,12 @@
 
 <p> </p>
 
-<h4 id="jquery에서-다루기"><span class="me-2"><strong>JQuery에서 다루기</strong></span><a href="#jquery에서-다루기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="jquery에서-다루기"><span class="me-2"><strong>JQuery에서 다루기</strong></span><a href="#jquery에서-다루기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>당연한 이야기이겠지만 셀렉트 옵션은 JQuery에서 다루는 것이 훨씬 편리합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -863,30 +904,24 @@
 8
 9
 10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre>  
-  // 1. 현재 선택된 option의 값 가져오기 (multiple 아닌 경우)
-  var selected = $("#selectFruits option:selected").val()
+</pre></td><td class="rouge-code"><pre>  <span class="c1">// 1. 현재 선택된 option의 값 가져오기 (multiple 아닌 경우)</span>
+  <span class="kd">var</span> <span class="nx">selected</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#selectFruits option:selected</span><span class="dl">"</span><span class="p">).</span><span class="nf">val</span><span class="p">()</span>
   
-  // 2. 현재 선택된 option의 값 가져오기 (multiple인 경우)
-  $("#selectFruits option:selected").each(function(num, el){
-      obj[num] = $(el).val()
-  })
+  <span class="c1">// 2. 현재 선택된 option의 값 가져오기 (multiple인 경우)</span>
+  <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#selectFruits option:selected</span><span class="dl">"</span><span class="p">).</span><span class="nf">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">el</span><span class="p">){</span>
+      <span class="nx">obj</span><span class="p">[</span><span class="nx">num</span><span class="p">]</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="nx">el</span><span class="p">).</span><span class="nf">val</span><span class="p">()</span>
+  <span class="p">})</span>
   
-  // 3. 특정 값을 찾아 그 요소를 selected 시키기
-  $("#selectFruits option[value='" + prompt("value 입력") + "']").attr("selected", true)
-  
-
+  <span class="c1">// 3. 특정 값을 찾아 그 요소를 selected 시키기</span>
+  <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#selectFruits option[value='</span><span class="dl">"</span> <span class="o">+</span> <span class="nf">prompt</span><span class="p">(</span><span class="dl">"</span><span class="s2">value 입력</span><span class="dl">"</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">']</span><span class="dl">"</span><span class="p">).</span><span class="nf">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">selected</span><span class="dl">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="javascript-es5-에서-다루기"><span class="me-2"><strong>Javascript (ES5) 에서 다루기</strong></span><a href="#javascript-es5-에서-다루기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="javascript-es5-에서-다루기"><span class="me-2"><strong>Javascript (ES5) 에서 다루기</strong></span><a href="#javascript-es5-에서-다루기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -907,25 +942,25 @@
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>// 1. 현재 선택된 option의 값 가져오기 (multiple 아닌 경우)
-var list = document.getElementById("selectFruits")
-var value = list.options[list.selectedIndex].value
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1. 현재 선택된 option의 값 가져오기 (multiple 아닌 경우)</span>
+<span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">selectFruits</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">options</span><span class="p">[</span><span class="nx">list</span><span class="p">.</span><span class="nx">selectedIndex</span><span class="p">].</span><span class="nx">value</span>
 
-// 2. 현재 선택된 option의 값 가져오기 (multiple인 경우)
-var options = list.children
-for(var i in options){
-  if(options[i].selected){
-    obj[i] = options[i].value
-  }
-}
+<span class="c1">// 2. 현재 선택된 option의 값 가져오기 (multiple인 경우)</span>
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">children</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">options</span><span class="p">){</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">selected</span><span class="p">){</span>
+    <span class="nx">obj</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-// 3. 특정 값을 찾아 그 요소를 selected 시키기
-var toFindValue = "grapes"
-for(var i in options){
-  if(options[i].value == toFindValue){
-    options[i].selected = true
-  }
-}
+<span class="c1">// 3. 특정 값을 찾아 그 요소를 selected 시키기</span>
+<span class="kd">var</span> <span class="nx">toFindValue</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">grapes</span><span class="dl">"</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">options</span><span class="p">){</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span> <span class="o">==</span> <span class="nx">toFindValue</span><span class="p">){</span>
+    <span class="nx">options</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">selected</span> <span class="o">=</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1911,6 +1946,12 @@ for(var i in options){
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2657,18 +2698,6 @@ for(var i in options){
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="자바스크립트: 콜백, Promise, async - await 기초" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="자바스크립트에서 작업을 의도한 순서대로 처리한 방법에는 콜백, Promise, async - await 3가지가 있습니다. async - await가 최신 기술이며 3가지 방법들은 이전 개념을 이해해야 진행할 수 있습니다." />
-<meta property="og:description" content="자바스크립트에서 작업을 의도한 순서대로 처리한 방법에는 콜백, Promise, async - await 3가지가 있습니다. async - await가 최신 기술이며 3가지 방법들은 이전 개념을 이해해야 진행할 수 있습니다." />
+<meta name="description" content="자바스크립트에서 작업을 의도한 순서대로 처리한 방법에는 콜백, Promise, async - await 3가지가 있습니다. 3가지 방법들은 연관되어 있으므로 이전 개념을 이해해야 다음으로 진행할 수 있습니다." />
+<meta property="og:description" content="자바스크립트에서 작업을 의도한 순서대로 처리한 방법에는 콜백, Promise, async - await 3가지가 있습니다. 3가지 방법들은 연관되어 있으므로 이전 개념을 이해해야 다음으로 진행할 수 있습니다." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%9C%EB%B0%B1-promise-async-await-%EA%B8%B0%EC%B4%88/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%9C%EB%B0%B1-promise-async-await-%EA%B8%B0%EC%B4%88/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="자바스크립트: 콜백, Promise, async - await 기초" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-04-26T00:00:00+09:00","datePublished":"2019-04-26T00:00:00+09:00","description":"자바스크립트에서 작업을 의도한 순서대로 처리한 방법에는 콜백, Promise, async - await 3가지가 있습니다. async - await가 최신 기술이며 3가지 방법들은 이전 개념을 이해해야 진행할 수 있습니다.","headline":"자바스크립트: 콜백, Promise, async - await 기초","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%9C%EB%B0%B1-promise-async-await-%EA%B8%B0%EC%B4%88/"},"url":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%9C%EB%B0%B1-promise-async-await-%EA%B8%B0%EC%B4%88/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-04-26T00:00:00+09:00","datePublished":"2019-04-26T00:00:00+09:00","description":"자바스크립트에서 작업을 의도한 순서대로 처리한 방법에는 콜백, Promise, async - await 3가지가 있습니다. 3가지 방법들은 연관되어 있으므로 이전 개념을 이해해야 다음으로 진행할 수 있습니다.","headline":"자바스크립트: 콜백, Promise, async - await 기초","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%9C%EB%B0%B1-promise-async-await-%EA%B8%B0%EC%B4%88/"},"url":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%9C%EB%B0%B1-promise-async-await-%EA%B8%B0%EC%B4%88/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -498,6 +498,27 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -561,6 +582,38 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -656,9 +709,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2408 words"
+  title="2034 words"
 >
-  <em>13 min</em> read</span>
+  <em>11 min</em> read</span>
 
         </div>
       </div>
@@ -690,14 +743,16 @@
   
 
   <div class="content">
-    <p>자바스크립트에서 작업을 의도한 순서대로 처리한 방법에는 <code class="language-plaintext highlighter-rouge">콜백</code>, <code class="language-plaintext highlighter-rouge">Promise</code>, <code class="language-plaintext highlighter-rouge">async - await</code> 3가지가 있습니다. <code class="language-plaintext highlighter-rouge">async - await</code>가 최신 기술이며 3가지 방법들은 이전 개념을 이해해야 진행할 수 있습니다.</p>
+    <p>자바스크립트에서 작업을 의도한 순서대로 처리한 방법에는 <code class="language-plaintext highlighter-rouge">콜백</code>, <code class="language-plaintext highlighter-rouge">Promise</code>, <code class="language-plaintext highlighter-rouge">async - await</code> 3가지가 있습니다. 3가지 방법들은 연관되어 있으므로 이전 개념을 이해해야 다음으로 진행할 수 있습니다.</p>
 
-<p>원래 프로그래밍 언어가 순서대로 처리하는 건데 왜 별도의 개념을 익혀야 하느냐 묻는다면, 자바스크립트에서는 비동기 처리라는 복잡한 문제가 있기 때문입니다. 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미합니다. 예를 들면 다른 서버에서 정보를 받아오는 AJAX 등이 있겠네요. 예제도 AJAX를 사용하기로 했습니다. 모든 예제에 JQuery 코드 있으므로 참고해주세요.</p>
+<!-- 원래 프로그래밍 언어가 순서대로 처리하는 건데 왜 별도의 개념을 익혀야 하느냐 묻는다면, 자바스크립트에서는 비동기 처리라는 복잡한 문제가 있기 때문입니다. 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미합니다. 예를 들면 다른 서버에서 정보를 받아오는 AJAX 등이 있겠네요. 예제도 AJAX를 사용하기로 했습니다.  -->
+
+<p>모든 예제에 JQuery 코드 있으므로 참고해주세요.</p>
 
 <p>예시로 만든 서버 측 페이지(PHP)는 너무 간단해서 비동기 문제를 거의 느낄 수 없기 때문에 <code class="language-plaintext highlighter-rouge">sleep</code> 함수를 통해 서버 딜레이를 고의적으로 부여하였습니다. 목표는 1, 2, 3, 4번 메시지를 순차적으로 표시하는 것입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -716,32 +771,32 @@
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>&lt;?php
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
 
-$param = $_GET["n"];
+<span class="nv">$param</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">"n"</span><span class="p">];</span>
 
-// 서버 딜레이를 가정함 (1~5초 랜덤)
-sleep(rand(1, 5));
+<span class="c1">// 서버 딜레이를 가정함 (1~5초 랜덤)</span>
+<span class="nb">sleep</span><span class="p">(</span><span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
 
-if($param == 1){
-  echo "(1) 아침에 일어나서";
-} else if($param == 2){
-  echo "(2) 세수를 하고";
-} else if($param == 3){
-  echo "(3) 학교에 가서";
-} else if($param == 4){
-  echo "(4) 공부를 하고";
-}
+<span class="k">if</span><span class="p">(</span><span class="nv">$param</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+  <span class="k">echo</span> <span class="s2">"(1) 아침에 일어나서"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$param</span> <span class="o">==</span> <span class="mi">2</span><span class="p">){</span>
+  <span class="k">echo</span> <span class="s2">"(2) 세수를 하고"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$param</span> <span class="o">==</span> <span class="mi">3</span><span class="p">){</span>
+  <span class="k">echo</span> <span class="s2">"(3) 학교에 가서"</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nv">$param</span> <span class="o">==</span> <span class="mi">4</span><span class="p">){</span>
+  <span class="k">echo</span> <span class="s2">"(4) 공부를 하고"</span><span class="p">;</span>
+<span class="p">}</span>
   
-?&gt;
+<span class="cp">?&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="종류"><span class="me-2">종류 </span><a href="#종류" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="0-아무것도-적용하지-않은-경우"><span class="me-2">0. 아무것도 적용하지 않은 경우</span><a href="#0-아무것도-적용하지-않은-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -763,97 +818,77 @@ if($param == 1){
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>String.prototype.write = function() {
-  $(document.body).append(this + "&lt;br&gt;")
-}   
+</pre></td><td class="rouge-code"><pre><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">write</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">$</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nf">append</span><span class="p">(</span><span class="k">this</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span>   
 
-"목표: 아침에 일어나서 세수를 하고 학교에 가서 공부를 하고&lt;br&gt;".write()
+<span class="dl">"</span><span class="s2">목표: 아침에 일어나서 세수를 하고 학교에 가서 공부를 하고&lt;br&gt;</span><span class="dl">"</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
 
-$.get("./msg.php?n=1", (res) =&gt; {
-  res.write()
-})
+<span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=1</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+<span class="p">})</span>
 
-$.get("./msg.php?n=2", (res) =&gt; {
-  res.write()
-})
+<span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+<span class="p">})</span>
 
-$.get("./msg.php?n=3", (res) =&gt; {
-  res.write()
-})
+<span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=3</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+<span class="p">})</span>
 
-$.get("./msg.php?n=4", (res) =&gt; {
-  res.write()
-})
+<span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=4</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>목표: 아침에 일어나서 세수를 하고 학교에 가서 공부를 하고
+</pre></td><td class="rouge-code"><pre><span class="nx">목표</span><span class="p">:</span> <span class="nx">아침에</span> <span class="nx">일어나서</span> <span class="nx">세수를</span> <span class="nx">하고</span> <span class="nx">학교에</span> <span class="nx">가서</span> <span class="nx">공부를</span> <span class="nx">하고</span>
 
-(3) 학교에 가서
-(4) 공부를 하고
-(1) 아침에 일어나서
-(2) 세수를 하고
+<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="nx">학교에</span> <span class="nx">가서</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="nx">공부를</span> <span class="nx">하고</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="nx">아침에</span> <span class="nx">일어나서</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="nx">세수를</span> <span class="nx">하고</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre>let msg;
+<!-- ```js
+let msg;
 
-$.get("./msg.php?n=1", (res) =&gt; {
-  msg += res + "&lt;br&gt;"
+$.get("./msg.php?n=1", (res) => {
+  msg += res + "<br>"
 })
 
-$.get("./msg.php?n=2", (res) =&gt; {
-  msg += res + "&lt;br&gt;"
+$.get("./msg.php?n=2", (res) => {
+  msg += res + "<br>"
 })
 
-$.get("./msg.php?n=3", (res) =&gt; {
-  msg += res + "&lt;br&gt;"
+$.get("./msg.php?n=3", (res) => {
+  msg += res + "<br>"
 })
 
-$.get("./msg.php?n=4", (res) =&gt; {
-  msg += res + "&lt;br&gt;"
+$.get("./msg.php?n=4", (res) => {
+  msg += res + "<br>"
 }) 
 
 console.log(msg)  // undefined
-</pre></td></tr></tbody></table></code></div></div>
+```
 
-<p>순서가 제대로 나오지 않는 것 외에도 다른 문제가 있는데 변수 <code class="language-plaintext highlighter-rouge">msg</code>에 값이 하나도 저장되지 않는 문제가 있습니다. 이유는 <code class="language-plaintext highlighter-rouge">$.get</code> 함수가 결과를 받기도 전에 콘솔 로그가 먼저 실행되는 것에 있습니다. 서버에서 값을 받아오는건 5초가 걸리는데 콘솔 로그가 실행되는 시간은 0.0001..초만에 실행되므로 의도한 것과 다르게 값이 <code class="language-plaintext highlighter-rouge">undefined</code>라고 뜨는 것입니다.</p>
+순서가 제대로 나오지 않는 것 외에도 다른 문제가 있는데 변수 `msg`에 값이 하나도 저장되지 않는 문제가 있습니다. 이유는 `$.get` 함수가 결과를 받기도 전에 콘솔 로그가 먼저 실행되는 것에 있습니다. 서버에서 값을 받아오는건 5초가 걸리는데 콘솔 로그가 실행되는 시간은 0.0001..초만에 실행되므로 의도한 것과 다르게 값이 `undefined`라고 뜨는 것입니다. -->
 
 <p> </p>
 
 <h3 id="1-콜백-callback"><span class="me-2">1. 콜백 (Callback)</span><a href="#1-콜백-callback" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>기본 버전</p>
+<h4 id="기본-버전"><span class="me-2">기본 버전</span><a href="#기본-버전" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -866,24 +901,24 @@ console.log(msg)  // undefined
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>$.get("./msg.php?n=1", (res) =&gt; {
-  res.write()
-  $.get("./msg.php?n=2", (res) =&gt; {
-    res.write()
-    $.get("./msg.php?n=3", (res) =&gt; {
-      res.write()
-      $.get("./msg.php?n=4", (res) =&gt; {
-        res.write()           
-      })
-    })
-  })
-})
+</pre></td><td class="rouge-code"><pre><span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=1</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=3</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+      <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=4</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>           
+      <span class="p">})</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>약간 다듬은 버전</p>
+<h4 id="약간-다듬은-버전"><span class="me-2">약간 다듬은 버전</span><a href="#약간-다듬은-버전" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -921,43 +956,43 @@ console.log(msg)  // undefined
 35
 36
 37
-</pre></td><td class="rouge-code"><pre>const task1 = (cbFunc) =&gt; {
-  $.get("./msg.php?n=1", (res) =&gt; {
-    res.write()
-    cbFunc() // write가 긑나면 다음 콜백 함수를 실행한다.
-  })
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">task1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">cbFunc</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=1</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+    <span class="nf">cbFunc</span><span class="p">()</span> <span class="c1">// write가 긑나면 다음 콜백 함수를 실행한다.</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-const task2 = (cbFunc) =&gt; {
-  $.get("./msg.php?n=2", (res) =&gt; {
-    res.write()
-    cbFunc()
-  })
-}
+<span class="kd">const</span> <span class="nx">task2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">cbFunc</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+    <span class="nf">cbFunc</span><span class="p">()</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-const task3 = (cbFunc) =&gt; {
-  $.get("./msg.php?n=3", (res) =&gt; {
-    res.write()
-    cbFunc()
-  })
-}
+<span class="kd">const</span> <span class="nx">task3</span> <span class="o">=</span> <span class="p">(</span><span class="nx">cbFunc</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=3</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+    <span class="nf">cbFunc</span><span class="p">()</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-const task4 = (cbFunc) =&gt; {
-  $.get("./msg.php?n=4", (res) =&gt; {
-    res.write()
-    cbFunc()
-  })
-}
+<span class="kd">const</span> <span class="nx">task4</span> <span class="o">=</span> <span class="p">(</span><span class="nx">cbFunc</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=4</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+    <span class="nf">cbFunc</span><span class="p">()</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-task1(() =&gt; {
-  task2(() =&gt; {
-    task3(() =&gt; {
-      task4(() =&gt; {
-        alert("완료")
-      })
-    })
-  })
-})
+<span class="nf">task1</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nf">task2</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">task3</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nf">task4</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">완료</span><span class="dl">"</span><span class="p">)</span>
+      <span class="p">})</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -980,8 +1015,8 @@ task1(() =&gt; {
 
 <p>위 예시는 극단적인 경우고, 보통은 이런식으로 많이 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -991,15 +1026,15 @@ task1(() =&gt; {
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>function run(cbFunc) {
-  $.get("./msg.php?n=1", (res) =&gt; {
-    cbFunc(res)
-  })
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">run</span><span class="p">(</span><span class="nx">cbFunc</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=1</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">cbFunc</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-run(function(res){
-  alert('완료: ' + res )
-})
+<span class="nf">run</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
+  <span class="nf">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">완료: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">res</span> <span class="p">)</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">run</code> 함수의 파라미터로 또 다른 함수를 받도록 하였습니다. 여기서 <code class="language-plaintext highlighter-rouge">$.get</code> 안의 <code class="language-plaintext highlighter-rouge">(res) =&gt; {...}</code>도 <code class="language-plaintext highlighter-rouge">$.get</code> 함수가 쓰는 콜백 함수입니다.</p>
@@ -1008,8 +1043,8 @@ run(function(res){
 
 <p>프로미스에는 여러 사용 방법이 있는데 여기서는 함수를 순차적으로 실행하는 방법만 살펴보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1050,54 +1085,46 @@ run(function(res){
 38
 39
 40
-41
-42
-43
-44
-</pre></td><td class="rouge-code"><pre>const task1 = () =&gt; {
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">task1</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=1</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+      <span class="nf">resolve</span><span class="p">()</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-  return new Promise((resolve, reject) =&gt; {
-    $.get("./msg.php?n=1", (res) =&gt; {
-      res.write()
-      resolve()
-    })
-  })
-}
+<span class="kd">const</span> <span class="nx">task2</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+      <span class="nf">resolve</span><span class="p">()</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-const task2 = () =&gt; {
+<span class="kd">const</span> <span class="nx">task3</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=3</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+      <span class="nf">resolve</span><span class="p">()</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-  return new Promise((resolve, reject) =&gt; {
-    $.get("./msg.php?n=2", (res) =&gt; {
-      res.write()
-      resolve()
-    })
-  })
-}
+<span class="kd">const</span> <span class="nx">task4</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=4</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nf">write</span><span class="p">()</span>
+      <span class="nf">resolve</span><span class="p">()</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-const task3 = () =&gt; {
-
-  return new Promise((resolve, reject) =&gt; {
-    $.get("./msg.php?n=3", (res) =&gt; {
-      res.write()
-      resolve()
-    })
-  })
-}
-
-const task4 = () =&gt; {
-
-  return new Promise((resolve, reject) =&gt; {
-    $.get("./msg.php?n=4", (res) =&gt; {
-      res.write()
-      resolve()
-    })
-  })
-}
-
-task1()
-  .then(task2)
-  .then(task3)
-  .then(task4)
+<span class="nf">task1</span><span class="p">()</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">task2</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">task3</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">task4</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Promise의 사용 방법은 콜백에서 사용하던 <code class="language-plaintext highlighter-rouge">task</code> 함수의 내용물에 <code class="language-plaintext highlighter-rouge">new Promise(...)</code>를 덧씌우고, 그 안에 있는 함수에 파라미터로 필요한 <code class="language-plaintext highlighter-rouge">resolve</code>, <code class="language-plaintext highlighter-rouge">reject</code> 두 개를 지정하면 됩니다. <code class="language-plaintext highlighter-rouge">resolve</code>는 함수가 정상적으로 실행되었고 작업을 종료할 자리에 작성하고, <code class="language-plaintext highlighter-rouge">reject</code>는 에러가 났을때 파라미터입니다.</p>
@@ -1106,8 +1133,8 @@ task1()
 
 <p><code class="language-plaintext highlighter-rouge">resolve(result)</code> 이런식으로 안에 결과를 넣어 진행할 수도 있는데 다음과 같이 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1155,69 +1182,53 @@ task1()
 45
 46
 47
-48
-49
-50
-51
-52
-53
-54
-55
-</pre></td><td class="rouge-code"><pre>const task1 = (start) =&gt; {
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">task1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">start</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">min</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=1</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="p">(</span><span class="nx">res</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> ........ </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">min</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">분</span><span class="dl">"</span><span class="p">).</span><span class="nf">write</span><span class="p">()</span>
+      <span class="nf">resolve</span><span class="p">(</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">min</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-  return new Promise((resolve, reject) =&gt; {
+<span class="kd">const</span> <span class="nx">task2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">start</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">min</span> <span class="o">=</span> <span class="mi">60</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="p">(</span><span class="nx">res</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> ........ </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">min</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">분</span><span class="dl">"</span><span class="p">).</span><span class="nf">write</span><span class="p">()</span>
+      <span class="nf">resolve</span><span class="p">(</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">min</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-    const min = 15
-    $.get("./msg.php?n=1", (res) =&gt; {
-      (res + " ........ " + min + "분").write()
-      resolve(start + min)
-    })
-  })
-}
+<span class="kd">const</span> <span class="nx">task3</span> <span class="o">=</span> <span class="p">(</span><span class="nx">start</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">min</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=3</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="p">(</span><span class="nx">res</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> ........ </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">min</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">분</span><span class="dl">"</span><span class="p">).</span><span class="nf">write</span><span class="p">()</span>
+      <span class="nf">resolve</span><span class="p">(</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">min</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-const task2 = (start) =&gt; {
+<span class="kd">const</span> <span class="nx">task4</span> <span class="o">=</span> <span class="p">(</span><span class="nx">start</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">min</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=4</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="p">(</span><span class="nx">res</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> ........ </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">min</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">분</span><span class="dl">"</span><span class="p">).</span><span class="nf">write</span><span class="p">()</span>
+      <span class="nf">resolve</span><span class="p">(</span><span class="nx">start</span> <span class="o">+</span> <span class="nx">min</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-  return new Promise(function(resolve, reject) {
-
-    const min = 60
-    $.get("./msg.php?n=2", (res) =&gt; {
-      (res + " ........ " + min + "분").write()
-      resolve(start + min)
-    })
-  })
-}
-
-const task3 = (start) =&gt; {
-
-  return new Promise(function(resolve, reject) {
-
-    const min = 30
-    $.get("./msg.php?n=3", (res) =&gt; {
-      (res + " ........ " + min + "분").write()
-      resolve(start + min)
-    })
-  })
-}
-
-const task4 = (start) =&gt; {
-
-  return new Promise(function(resolve, reject) {
-
-    const min = 5
-    $.get("./msg.php?n=4", (res) =&gt; {
-      (res + " ........ " + min + "분").write()
-      resolve(start + min)
-    })
-  })
-}
-
-task1(0)
-  .then(task2)
-  .then(task3)
-  .then(task4)
-.then((res) =&gt; {
-  ("&lt;br&gt; 총합 ........ " + res + "분").write()
-})
+<span class="nf">task1</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">task2</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">task3</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">task4</span><span class="p">)</span>
+<span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">(</span><span class="dl">"</span><span class="s2">&lt;br&gt; 총합 ........ </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">res</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">분</span><span class="dl">"</span><span class="p">).</span><span class="nf">write</span><span class="p">()</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -1250,8 +1261,8 @@ task1(0)
 
 <p>task1 ~ task4 부분은 바로 위 예제 코드를 참조해주세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1264,26 +1275,26 @@ task1(0)
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>const asyncTasks = async (start) =&gt; {
-  const t1 = await task1(start)
-  const t2 = await task2(t1)
-  const t3 = await task3(t2)
-  const t4 = await task4(t3) 
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">asyncTasks</span> <span class="o">=</span> <span class="k">async </span><span class="p">(</span><span class="nx">start</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">t1</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">task1</span><span class="p">(</span><span class="nx">start</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">t2</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">task2</span><span class="p">(</span><span class="nx">t1</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">t3</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">task3</span><span class="p">(</span><span class="nx">t2</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">t4</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">task4</span><span class="p">(</span><span class="nx">t3</span><span class="p">)</span> 
   
-  return t4
-}
+  <span class="k">return</span> <span class="nx">t4</span>
+<span class="p">}</span>
 
-asyncTasks(0).then((res) =&gt; {
-  ("&lt;br&gt; 총합 ........ " + res + "분").write()
-})
+<span class="nf">asyncTasks</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">(</span><span class="dl">"</span><span class="s2">&lt;br&gt; 총합 ........ </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">res</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">분</span><span class="dl">"</span><span class="p">).</span><span class="nf">write</span><span class="p">()</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>결과도 동일합니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Promise</code>와는 다르게 고유 parameter를 넣을 수 있다는 차이가 있다. (사실 Promise도 그렇게 할 수 있는데 제가 못찾은 것일수도 있습니다) 이러한 점을 이용해 이전 예제를 간단하게 하면 다음과 같습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">Promise</code>와는 다르게 고유 parameter를 넣을 수 있다는 차이가 있습니다. (사실 Promise도 그렇게 할 수 있는데 제가 못찾은 것일수도 있습니다) 이러한 점을 이용해 이전 예제를 간단하게 하면 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1307,29 +1318,29 @@ asyncTasks(0).then((res) =&gt; {
 21
 22
 23
-</pre></td><td class="rouge-code"><pre>const task = (n, min) =&gt; {
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">task</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">min</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
-  return new Promise((resolve, reject) =&gt; {
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
-    $.get("./msg.php?n=" + n, (res) =&gt; {
-      (res + " ........ " + min + "분").write()
-      resolve(min)
-    })
-  })
-}
+    <span class="nx">$</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">./msg.php?n=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">n</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="p">(</span><span class="nx">res</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> ........ </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">min</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">분</span><span class="dl">"</span><span class="p">).</span><span class="nf">write</span><span class="p">()</span>
+      <span class="nf">resolve</span><span class="p">(</span><span class="nx">min</span><span class="p">)</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-const asyncTasks = async (start) =&gt; {
-  const t1 = await task(1, start)
-  const t2 = await task(2, 120)
-  const t3 = await task(3, 10)
-  const t4 = await task(4, 0) 
+<span class="kd">const</span> <span class="nx">asyncTasks</span> <span class="o">=</span> <span class="k">async </span><span class="p">(</span><span class="nx">start</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">t1</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">task</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">start</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">t2</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">task</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">t3</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">task</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">t4</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">task</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> 
   
-  return t1 + t2 + t3 + t4
-}
+  <span class="k">return</span> <span class="nx">t1</span> <span class="o">+</span> <span class="nx">t2</span> <span class="o">+</span> <span class="nx">t3</span> <span class="o">+</span> <span class="nx">t4</span>
+<span class="p">}</span>
 
-asyncTasks(30).then((res) =&gt; {
-  ("&lt;br&gt; 총합 ........ " + res + "분").write()
-})
+<span class="nf">asyncTasks</span><span class="p">(</span><span class="mi">30</span><span class="p">).</span><span class="nf">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">(</span><span class="dl">"</span><span class="s2">&lt;br&gt; 총합 ........ </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">res</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">분</span><span class="dl">"</span><span class="p">).</span><span class="nf">write</span><span class="p">()</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -2373,18 +2384,6 @@ asyncTasks(30).then((res) =&gt; {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

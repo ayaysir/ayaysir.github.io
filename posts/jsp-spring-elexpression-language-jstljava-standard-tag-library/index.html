@@ -544,11 +544,11 @@
       
 
       
-        <!-- add class to exist <a> tag -->
-        
-        
+        <!-- create the image wrapper -->
         
 
+        
+        
       
     
 
@@ -609,11 +609,11 @@
       
 
       
-        <!-- add class to exist <a> tag -->
-        
-        
+        <!-- create the image wrapper -->
         
 
+        
+        
       
     
 
@@ -638,11 +638,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -674,6 +669,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -774,7 +774,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1456 words"
+  title="1451 words"
 >
   <em>8 min</em> read</span>
 
@@ -812,14 +812,14 @@
 
 <p> </p>
 
-<h3 id="1-el"><span class="me-2">1. EL</span><a href="#1-el" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="1-el"><span class="me-2">1. EL</span><a href="#1-el" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>별도의 임포트 과정이 필요없고, JSP에서 바로 사용 가능합니다. 기본 사용 방법은 <code class="language-plaintext highlighter-rouge">${ 표현식 }</code> 의 꼴로 사용하며, 표현식 내부의 계산 결과를 HTML에서 사용하는 텍스트 형식으로 반환합니다. 즉, 표현식은 HTML 파일에서 텍스트가 입력되는 자리라면 어디든지 사용 가능합니다. (<code class="language-plaintext highlighter-rouge">style</code>, <code class="language-plaintext highlighter-rouge">script</code> 등을 가리지 않으며 스크립트의 주석 자리에서도 작동하므로 주의).</p>
 
 <p>스프링의 컨트롤러에서는 다음과 같이 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -853,47 +853,45 @@
 31
 32
 33
-34
-</pre></td><td class="rouge-code"><pre>// 컨트롤러의 일부
+</pre></td><td class="rouge-code"><pre><span class="c1">// 컨트롤러의 일부</span>
 
-@RequestMapping("/study/jstl.do")
-public ModelAndView jstlDemo(HttpSession session, ModelAndView mav){
+<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/study/jstl.do"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">ModelAndView</span> <span class="nf">jstlDemo</span><span class="o">(</span><span class="nc">HttpSession</span> <span class="n">session</span><span class="o">,</span> <span class="nc">ModelAndView</span> <span class="n">mav</span><span class="o">){</span>
 		
-	// 0. 일반 텍스트
-	String title = "EL과 JSTL";
+	<span class="c1">// 0. 일반 텍스트</span>
+	<span class="nc">String</span> <span class="n">title</span> <span class="o">=</span> <span class="s">"EL과 JSTL"</span><span class="o">;</span>
 
-	// 1. 리스트(List)
-	List list = new ArrayList&lt;&gt;();
-	list.add("Apple");
-	list.add("Orange");
+	<span class="c1">// 1. 리스트(List)</span>
+	<span class="nc">List</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+	<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Apple"</span><span class="o">);</span>
+	<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Orange"</span><span class="o">);</span>
 
-	// 2. 맵(Map)
-	Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
-	map.put("one", "Monday");
-	map.put("two", "Tuesday");
-	map.put("three", new Object());
-	// 3. 세션(Session)
-	session.setAttribute("loginId", "abcde");
+	<span class="c1">// 2. 맵(Map)</span>
+	<span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+	<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"one"</span><span class="o">,</span> <span class="s">"Monday"</span><span class="o">);</span>
+	<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"two"</span><span class="o">,</span> <span class="s">"Tuesday"</span><span class="o">);</span>
+	<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"three"</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">());</span>
+	<span class="c1">// 3. 세션(Session)</span>
+	<span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"loginId"</span><span class="o">,</span> <span class="s">"abcde"</span><span class="o">);</span>
 	
-	// 4. 사용자가 만든 VO(Value Object 또는 DTO, Bean..)
-	Car aCar = new Car(3000000, "Vens", "VMW1001");
-	// 텍스트, 리스트와 맵을 MAV 객체에 담는다.
-	mav.addObject("title", title);
-	mav.addObject("list", list);
-	mav.addObject("map", map);
-	mav.addObject("car", aCar );
+	<span class="c1">// 4. 사용자가 만든 VO(Value Object 또는 DTO, Bean..)</span>
+	<span class="nc">Car</span> <span class="n">aCar</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="o">(</span><span class="mi">3000000</span><span class="o">,</span> <span class="s">"Vens"</span><span class="o">,</span> <span class="s">"VMW1001"</span><span class="o">);</span>
+	<span class="c1">// 텍스트, 리스트와 맵을 MAV 객체에 담는다.</span>
+	<span class="n">mav</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="s">"title"</span><span class="o">,</span> <span class="n">title</span><span class="o">);</span>
+	<span class="n">mav</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="s">"list"</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
+	<span class="n">mav</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="s">"map"</span><span class="o">,</span> <span class="n">map</span><span class="o">);</span>
+	<span class="n">mav</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="s">"car"</span><span class="o">,</span> <span class="n">aCar</span> <span class="o">);</span>
 		
-	mav.setViewName("el-jstl");
+	<span class="n">mav</span><span class="o">.</span><span class="na">setViewName</span><span class="o">(</span><span class="s">"el-jstl"</span><span class="o">);</span>
 
-	return mav;
-}
-
+	<span class="k">return</span> <span class="n">mav</span><span class="o">;</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>일반 서블릿(Non-Spring)에서는 <code class="language-plaintext highlighter-rouge">doGet()</code> 또는 <code class="language-plaintext highlighter-rouge">doPost()</code> 메소드에서 <code class="language-plaintext highlighter-rouge">mav.addObject</code> 대신 <code class="language-plaintext highlighter-rouge">request.setAttribute</code>를 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -922,40 +920,40 @@ public ModelAndView jstlDemo(HttpSession session, ModelAndView mav){
 26
 27
 28
-</pre></td><td class="rouge-code"><pre>protected void doGet(HttpServletRequest request, HttpServletResponse response) 
-throws ServletException, IOException {
-  try {
-    List&lt;String&gt; list = new ArrayList&lt;&gt;();
-    list.add("Apple");
-    list.add("Orange"); 
+</pre></td><td class="rouge-code"><pre><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> 
+<span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+  <span class="k">try</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Apple"</span><span class="o">);</span>
+    <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Orange"</span><span class="o">);</span> 
 
-    Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
-    map.put("one", "Monday");
-    map.put("two", "Tuesday");
-    map.put("three", "Wednesday"); 
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+    <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"one"</span><span class="o">,</span> <span class="s">"Monday"</span><span class="o">);</span>
+    <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"two"</span><span class="o">,</span> <span class="s">"Tuesday"</span><span class="o">);</span>
+    <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"three"</span><span class="o">,</span> <span class="s">"Wednesday"</span><span class="o">);</span> 
             
-    // 리퀘스트 설정
-    request.setAttribute("RESULT", result);
-    request.setAttribute("LIST", list);
-    request.setAttribute("MAP", map);
-    request.setAttribute("CAR", myCar);
+    <span class="c1">// 리퀘스트 설정</span>
+    <span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"RESULT"</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+    <span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"LIST"</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
+    <span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"MAP"</span><span class="o">,</span> <span class="n">map</span><span class="o">);</span>
+    <span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"CAR"</span><span class="o">,</span> <span class="n">myCar</span><span class="o">);</span>
             
-    // 세션 설정: 이름이 중복된 경우 표시는 리퀘스트(작은 scope)가 우선적으로 표시됨.
-    request.getSession().setAttribute("name", "김길동");
+    <span class="c1">// 세션 설정: 이름이 중복된 경우 표시는 리퀘스트(작은 scope)가 우선적으로 표시됨.</span>
+    <span class="n">request</span><span class="o">.</span><span class="na">getSession</span><span class="o">().</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"김길동"</span><span class="o">);</span>
 
-    RequestDispatcher rd = request.getRequestDispatcher("pageUrl.jsp");
-    rd.forward(request, response);
-  } catch (Exception e) {
-    e.printStackTrace();
-    response.sendRedirect("error.htm");
-  }
-}
+    <span class="nc">RequestDispatcher</span> <span class="n">rd</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getRequestDispatcher</span><span class="o">(</span><span class="s">"pageUrl.jsp"</span><span class="o">);</span>
+    <span class="n">rd</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>
+  <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="s">"error.htm"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>JSP(뷰 페이지)에서는 다음과 같이 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -993,69 +991,68 @@ throws ServletException, IOException {
 35
 36
 37
-</pre></td><td class="rouge-code"><pre>&lt;%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
-&lt;title&gt;${ title }&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h2&gt;${ title }&lt;/h2&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na">
+    pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>${ title }<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;h2&gt;</span>${ title }<span class="nt">&lt;/h2&gt;</span>
   
-  &lt;h3&gt;1. 리스트 (EL)&lt;/h3&gt;
+  <span class="nt">&lt;h3&gt;</span>1. 리스트 (EL)<span class="nt">&lt;/h3&gt;</span>
     ${list[0]} : ${list[1]}
     
-    &lt;h3&gt;2. 맵 (EL)&lt;/h3&gt;
-    &lt;p&gt;${map.one}, ${map.two}, ${map["one"]}, ${map["two"]}&lt;/p&gt;   
+    <span class="nt">&lt;h3&gt;</span>2. 맵 (EL)<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>${map.one}, ${map.two}, ${map["one"]}, ${map["two"]}<span class="nt">&lt;/p&gt;</span>   
     
-    &lt;h3&gt;3. 세션 (EL): sessionScope (session 아님)&lt;/h3&gt;
-    &lt;p&gt;login ID: ${sessionScope.loginId}&lt;/p&gt;   
+    <span class="nt">&lt;h3&gt;</span>3. 세션 (EL): sessionScope (session 아님)<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>login ID: ${sessionScope.loginId}<span class="nt">&lt;/p&gt;</span>   
     
-    &lt;h3&gt;4. VO (EL)&lt;/h3&gt;
-    &lt;p&gt;${car.price}, ${car.brand}, ${car.name}, ${car["name"]}&lt;/p&gt;   
+    <span class="nt">&lt;h3&gt;</span>4. VO (EL)<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>${car.price}, ${car.brand}, ${car.name}, ${car["name"]}<span class="nt">&lt;/p&gt;</span>   
     
-    &lt;h3&gt;EL 내에서 계산, boolean 판단&lt;/h3&gt;
-    &lt;p&gt;${3+5}, ${3&gt;5}, ${ car.brand == "Vens" }&lt;/p&gt;
+    <span class="nt">&lt;h3&gt;</span>EL 내에서 계산, boolean 판단<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>${3+5}, ${3&gt;5}, ${ car.brand == "Vens" }<span class="nt">&lt;/p&gt;</span>
     
-    &lt;h3&gt;eq(equal), ne(not equal), param(파라미터)&lt;/h3&gt;
-    &lt;p&gt;${ car.brand eq "Vens" }, ${ car.brand ne "Lolsroyes" }&lt;/p&gt;
+    <span class="nt">&lt;h3&gt;</span>eq(equal), ne(not equal), param(파라미터)<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>${ car.brand eq "Vens" }, ${ car.brand ne "Lolsroyes" }<span class="nt">&lt;/p&gt;</span>
     
-    &lt;h3&gt;empty: 비어있는지 여부&lt;/h3&gt;
-    &lt;p&gt;${ empty param.voidParam ? '비어있음' : param.voidParam }&lt;/p&gt;
+    <span class="nt">&lt;h3&gt;</span>empty: 비어있는지 여부<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>${ empty param.voidParam ? '비어있음' : param.voidParam }<span class="nt">&lt;/p&gt;</span>
     
-    &lt;h3&gt;not empty: 비어있지 않은지 여부&lt;/h3&gt;
-    &lt;p&gt;${ not empty param.realParam ? param.realParam : '비어있음' }&lt;/p&gt;
+    <span class="nt">&lt;h3&gt;</span>not empty: 비어있지 않은지 여부<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>${ not empty param.realParam ? param.realParam : '비어있음' }<span class="nt">&lt;/p&gt;</span>
     
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="http://yoonbumtae.com/?attachment_id=1081">
-          class="img-link shimmer"
-        ><img src="/assets/img/wp-content/uploads/2019/04/jstl1.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/04/jstl1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/jstl1.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h3 id="2-jstl"><span class="me-2">2. JSTL</span><a href="#2-jstl" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="2-jstl"><span class="me-2">2. JSTL</span><a href="#2-jstl" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>JSP 상단에 임포트 선언을 해야합니다. 이름에 표준이 들어가 있는데 많이 쓰이는 것은 맞지만 엄밀히 말하면 표준도 아니고 옛날 기술이라서 스프링 부트에서는 기본 컴포넌트에 포함되지도 않았습니다. 스프링 부트에서는 maven에 jstl 라이브러리를 가져와야 하며 부트의 경우에는 처음부터 기본 내장된 <strong>Thymeleaf</strong>라는 렌더링 엔진을 사용하는 것을 추천합니다. <a href="http://yoonbumtae.com/?p=531">Thymeleaf 예제</a></p>
+<p>JSP 상단에 임포트 선언을 해야합니다. 이름에 표준이 들어가 있는데 많이 쓰이는 것은 맞지만 엄밀히 말하면 표준도 아니고 옛날 기술이라서 스프링 부트에서는 기본 컴포넌트에 포함되지도 않았습니다. 스프링 부트에서는 maven에 jstl 라이브러리를 가져와야 하며 부트의 경우에는 처음부터 기본 내장된 <strong>Thymeleaf</strong>라는 렌더링 엔진을 사용하는 것을 추천합니다.
+ <!-- [Thymeleaf 예제](http://yoonbumtae.com/?p=531) --></p>
 
 <p>JSTL은 얼핏 보면 html 태그와 비슷하게 생겼으며, 일반 HTML 태그와 결합하여 리스트, 배열 등에 있는 자료를 반복하여 표시하는 데 특화되어 있습니다.  JSTL <code class="language-plaintext highlighter-rouge">Core</code> 라이브러리의 주요 함수만 알아도 웹 프로그래밍의 대부분의 작업을 처리할 수 있습니다.</p>
 
 <p>선언은 JSP 파일 최상단에 다음과 같이 입력합니다. core 라이브러리</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;%@ taglib </span><span class="na">prefix=</span><span class="s">"c"</span><span class="na"> uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span> <span class="nt">%&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">prefix</code>는 바꿀 수도 있지만 기본 설정인 <code class="language-plaintext highlighter-rouge">c</code>를 사용하는 것을 추천합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1070,24 +1067,24 @@ throws ServletException, IOException {
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>// 예제를 위해 컨트롤러의 일부분 변경
+</pre></td><td class="rouge-code"><pre><span class="c1">// 예제를 위해 컨트롤러의 일부분 변경</span>
 
-// 1. 리스트(List)
-List&lt;String&gt; list = new ArrayList&lt;&gt;();
-String[] vege = new String[20];
+<span class="c1">// 1. 리스트(List)</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="nc">String</span><span class="o">[]</span> <span class="n">vege</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">[</span><span class="mi">20</span><span class="o">];</span>
 
-for(int i = 0; i &lt; 20; i++){
-  list.add("과일" + (i + 1));
-  vege[i] = "채소" + (i + 1);
-}
-// 리스트 길이를 JSP에서 구하려면 core가 아닌 별도 JSTL을 사용해야 하므로
-// 여기서 미리 구해서 보냄
-mav.addObject("listLength", list.size());
-mav.addObject("vege", vege);
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+  <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"과일"</span> <span class="o">+</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">));</span>
+  <span class="n">vege</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="s">"채소"</span> <span class="o">+</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="c1">// 리스트 길이를 JSP에서 구하려면 core가 아닌 별도 JSTL을 사용해야 하므로</span>
+<span class="c1">// 여기서 미리 구해서 보냄</span>
+<span class="n">mav</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="s">"listLength"</span><span class="o">,</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+<span class="n">mav</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="s">"vege"</span><span class="o">,</span> <span class="n">vege</span><span class="o">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1148,73 +1145,69 @@ mav.addObject("vege", vege);
 58
 59
 60
-61
-</pre></td><td class="rouge-code"><pre>&lt;%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%&gt;
-&lt;%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %&gt;
-&lt;!DOCTYPE html&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;%@ page </span><span class="na">language=</span><span class="s">"java"</span><span class="na"> contentType=</span><span class="s">"text/html; charset=UTF-8"</span><span class="na">
+    pageEncoding=</span><span class="s">"UTF-8"</span><span class="nt">%&gt;</span>
+<span class="nt">&lt;%@ taglib </span><span class="na">prefix=</span><span class="s">"c"</span><span class="na"> uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span> <span class="nt">%&gt;</span>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
 
 (...생략...)
 
-&lt;body&gt;
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>JSTL - CHOOSE WHEN: IF ELSE와 동일<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;c:choose&gt;</span>
+        <span class="nt">&lt;c:when </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">6</span> <span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span>** 해당 test가 true라면 표시됨 1 **<span class="nt">&lt;/c:when&gt;</span>
+        <span class="nt">&lt;c:when </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span>** 해당 test가 true라면 표시됨 2 **<span class="nt">&lt;/c:when&gt;</span>
+        <span class="nt">&lt;c:otherwise&gt;</span>** 위의 when이 전부 false인 경우 표시됨**<span class="nt">&lt;/c:otherwise&gt;</span>
+    <span class="nt">&lt;/c:choose&gt;</span>
     
-    &lt;h3&gt;JSTL - CHOOSE WHEN: IF ELSE와 동일&lt;/h3&gt;
-    &lt;c:choose&gt;
-        &lt;c:when test="${ 3 &gt; 6 }"&gt;** 해당 test가 true라면 표시됨 1 **&lt;/c:when&gt;
-        &lt;c:when test="${ 3 &lt; 6 }"&gt;** 해당 test가 true라면 표시됨 2 **&lt;/c:when&gt;
-        &lt;c:otherwise&gt;** 위의 when이 전부 false인 경우 표시됨**&lt;/c:otherwise&gt;
-    &lt;/c:choose&gt;
+    <span class="nt">&lt;h3&gt;</span>JSTL - forEach 1: 숫자를 사용<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;c:forEach </span><span class="na">var=</span><span class="s">"i"</span><span class="na"> begin=</span><span class="s">"1"</span><span class="na"> end=</span><span class="s">"10"</span><span class="na"> step=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    ${ i }번째 반복 <span class="nt">&lt;c:if </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span> <span class="n">i</span> <span class="n">eq</span> <span class="mi">5</span> <span class="si">}</span><span class="s">"</span><span class="nt">&gt;&lt;br&gt;&lt;/c:if&gt;</span>
+    <span class="nt">&lt;/c:forEach&gt;</span>
     
-    &lt;h3&gt;JSTL - forEach 1: 숫자를 사용&lt;/h3&gt;
-    &lt;c:forEach var="i" begin="1" end="10" step="1"&gt;
-    ${ i }번째 반복 &lt;c:if test="${ i eq 5 }"&gt;&lt;br&gt;&lt;/c:if&gt;
-    &lt;/c:forEach&gt;
-    
-    &lt;h3&gt;JSTL - forEach 2: 데이터(리스트 또는 배열)를 사용&lt;/h3&gt;
-    &lt;c:forEach var="item" items="${ list }" varStatus="status"&gt;
+    <span class="nt">&lt;h3&gt;</span>JSTL - forEach 2: 데이터(리스트 또는 배열)를 사용<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;c:forEach </span><span class="na">var=</span><span class="s">"item"</span><span class="na"> items=</span><span class="s">"</span><span class="si">${</span> <span class="n">list</span> <span class="si">}</span><span class="s">"</span><span class="na"> varStatus=</span><span class="s">"status"</span><span class="nt">&gt;</span>
     ${ item }
-      &lt;c:choose&gt;
-      	&lt;c:when test="${ (status.index + 1) % 5 eq 0 }"&gt;&lt;br&gt;&lt;/c:when&gt;
-      	&lt;c:when test="${ status.index ne listLength }"&gt;, &lt;/c:when&gt;
-      &lt;/c:choose&gt;
-    &lt;/c:forEach&gt; 
+      <span class="nt">&lt;c:choose&gt;</span>
+      	<span class="nt">&lt;c:when </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span> <span class="o">(</span><span class="n">status</span><span class="o">.</span><span class="na">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">%</span> <span class="mi">5</span> <span class="n">eq</span> <span class="mi">0</span> <span class="si">}</span><span class="s">"</span><span class="nt">&gt;&lt;br&gt;&lt;/c:when&gt;</span>
+      	<span class="nt">&lt;c:when </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span> <span class="n">status</span><span class="o">.</span><span class="na">index</span> <span class="n">ne</span> <span class="n">listLength</span> <span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span>, <span class="nt">&lt;/c:when&gt;</span>
+      <span class="nt">&lt;/c:choose&gt;</span>
+    <span class="nt">&lt;/c:forEach&gt;</span> 
     
-    &lt;h3&gt;JSTL - forEach 3: 데이터(맵)를 사용&lt;/h3&gt;
-    &lt;table border=1&gt;
-   		&lt;tr&gt;
-   			&lt;th&gt;키&lt;/th&gt;
-   			&lt;th&gt;값&lt;/th&gt;
-   		&lt;/tr&gt;
+    <span class="nt">&lt;h3&gt;</span>JSTL - forEach 3: 데이터(맵)를 사용<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">1</span><span class="nt">&gt;</span>
+   		<span class="nt">&lt;tr&gt;</span>
+   			<span class="nt">&lt;th&gt;</span>키<span class="nt">&lt;/th&gt;</span>
+   			<span class="nt">&lt;th&gt;</span>값<span class="nt">&lt;/th&gt;</span>
+   		<span class="nt">&lt;/tr&gt;</span>
     		
-      &lt;c:forEach var="item" items="${ map }"&gt;	
-      	&lt;tr&gt;
-      		&lt;td&gt;${item.key}&lt;/td&gt;
-      		&lt;td&gt;${item.value}&lt;/td&gt;
-      	&lt;tr&gt;
-      &lt;/c:forEach&gt; 
+      <span class="nt">&lt;c:forEach </span><span class="na">var=</span><span class="s">"item"</span><span class="na"> items=</span><span class="s">"</span><span class="si">${</span> <span class="n">map</span> <span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span>	
+      	<span class="nt">&lt;tr&gt;</span>
+      		<span class="nt">&lt;td&gt;</span>${item.key}<span class="nt">&lt;/td&gt;</span>
+      		<span class="nt">&lt;td&gt;</span>${item.value}<span class="nt">&lt;/td&gt;</span>
+      	<span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;/c:forEach&gt;</span> 
       
-    &lt;/table&gt;
+    <span class="nt">&lt;/table&gt;</span>
     
-    &lt;h3&gt;JSTL - forEach 복합: 여러 리스트를 한 번에 표시&lt;/h3&gt;
-    &lt;table border=1&gt;
-   		&lt;tr&gt;
-   			&lt;th&gt;과일&lt;/th&gt;
-   			&lt;th&gt;채소&lt;/th&gt;
-   		&lt;/tr&gt;
+    <span class="nt">&lt;h3&gt;</span>JSTL - forEach 복합: 여러 리스트를 한 번에 표시<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">1</span><span class="nt">&gt;</span>
+   		<span class="nt">&lt;tr&gt;</span>
+   			<span class="nt">&lt;th&gt;</span>과일<span class="nt">&lt;/th&gt;</span>
+   			<span class="nt">&lt;th&gt;</span>채소<span class="nt">&lt;/th&gt;</span>
+   		<span class="nt">&lt;/tr&gt;</span>
    		
-    	&lt;c:forEach var="item" items="${ list }" varStatus="status"&gt;	
-      	&lt;tr&gt;
-      		&lt;td&gt;${item}&lt;/td&gt;
-      		&lt;td&gt;${vege[status.index]}&lt;/td&gt;
-      	&lt;tr&gt;
-  &lt;/c:forEach&gt; 
-&lt;/body&gt;
-&lt;/html&gt;
+    	<span class="nt">&lt;c:forEach </span><span class="na">var=</span><span class="s">"item"</span><span class="na"> items=</span><span class="s">"</span><span class="si">${</span> <span class="n">list</span> <span class="si">}</span><span class="s">"</span><span class="na"> varStatus=</span><span class="s">"status"</span><span class="nt">&gt;</span>	
+      	<span class="nt">&lt;tr&gt;</span>
+      		<span class="nt">&lt;td&gt;</span>${item}<span class="nt">&lt;/td&gt;</span>
+      		<span class="nt">&lt;td&gt;</span>${vege[status.index]}<span class="nt">&lt;/td&gt;</span>
+      	<span class="nt">&lt;tr&gt;</span>
+  <span class="nt">&lt;/c:forEach&gt;</span> 
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="http://yoonbumtae.com/?attachment_id=1082">
-          class="img-link shimmer"
-        ><img src="/assets/img/wp-content/uploads/2019/04/jstl2.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/04/jstl2.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/jstl2.png" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -2237,18 +2230,6 @@ mav.addObject("vege", vege);
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

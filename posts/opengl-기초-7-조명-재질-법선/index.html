@@ -963,11 +963,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -1010,6 +1005,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -1110,7 +1110,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="5568 words"
+  title="5563 words"
 >
   <em>30 min</em> read</span>
 
@@ -1144,9 +1144,11 @@
   
 
   <div class="content">
-    <p>출처: <a href="http://soen.kr/lecture/library/opengl/opengl-9.htm">http://soen.kr/lecture/library/opengl/opengl-9.htm</a></p>
+    <ul>
+  <li>출처: <a href="http://soen.kr/lecture/library/opengl/opengl-9.htm">http://soen.kr/lecture/library/opengl/opengl-9.htm</a></li>
+</ul>
 
-<h3 id="31-조명-개요"><span class="me-2">31. 조명 개요</span><a href="#31-조명-개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="31-조명-개요"><span class="me-2">31. 조명 개요</span><a href="#31-조명-개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>OpenGL은 조명을 성격에 따라 다음 세가지로 분류한다.</p>
 
@@ -1160,30 +1162,30 @@
 
 <p>조명 효과를 사용하려면 조명 기능을 켜야 한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>glEnable(GL_LIGHTING);
+</pre></td><td class="rouge-code"><pre><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_LIGHTING</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>OpenGL은 보통 <code class="language-plaintext highlighter-rouge">GL_LIGHT0</code> ~ <code class="language-plaintext highlighter-rouge">GL_LIGHT7</code>까지 <strong>8개</strong>의 동시 조명을 지원하며 구현에 따라서는 더 많은 수의 조명을 지원하는 것도 있다. 모든 조명은 디폴트로 꺼져 있으므로 사용하고자 하는 조명을 개별적으로 켜 주어야 한다.</p>
 
 <p>첫 번째 조명을 사용하려면 다음과 같이 호출한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>glEnable(GL_LIGHT0);
+</pre></td><td class="rouge-code"><pre><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_LIGHT0</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>즉, 조명을 사용하려면 <code class="language-plaintext highlighter-rouge">GL_LIGHTING</code>으로 OpenGL 자체의 전체 조명 기능을 켜고 사용하고자 하는 번호의 조명도 켜야 하므로 최소한 두번은 <code class="language-plaintext highlighter-rouge">glEnable</code>을 호출해야 한다.</p>
 
 <p>각 조명에 대한 성질은 다음 함수로 지정한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glLight[f, i](GLenum light, GLenum pname, GLfloat param);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="n">glLight</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">](</span><span class="n">GLenum</span> <span class="n">light</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">pname</span><span class="p">,</span> <span class="n">GLfloat</span> <span class="n">param</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">light</code>는 조명의 번호이다. <code class="language-plaintext highlighter-rouge">GL_LIGHT0</code> ~ <code class="language-plaintext highlighter-rouge">GL_LIGHT7</code>중의 하나이다. <code class="language-plaintext highlighter-rouge">pname</code>은 설정할 속성의 이름이며 <code class="language-plaintext highlighter-rouge">param</code>은 속성의 값이다. 함수 하나로 파라미터를 바꾸어 가며 조명의 여러 가지 성질을 지정한다.</p>
@@ -1201,8 +1203,8 @@
 
 <p>다음 예제는 첫번째 조명을 배치하고 위치 및 주변광 설정을 조정한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1315,120 +1317,118 @@
 110
 111
 112
-113
-</pre></td><td class="rouge-code"><pre>#include &lt;windows.h&gt;
-#include &lt;gl/glut.h&gt;
-#include &lt;stdio.h&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;gl/glut.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">();</span>
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">DoMenu</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
 
-void DoDisplay();
-void DoKeyboard(unsigned char key, int x, int y);
-void DoMenu(int value);
+<span class="n">GLfloat</span> <span class="n">lx</span><span class="p">,</span> <span class="n">ly</span><span class="p">,</span> <span class="n">lz</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">GLfloat</span> <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">;</span>
+<span class="n">GLboolean</span> <span class="n">bAmbient</span><span class="p">;</span>
+<span class="n">GLboolean</span> <span class="n">bAttach</span><span class="p">;</span>
 
-GLfloat lx, ly, lz = -1.0;
-GLfloat xAngle, yAngle, zAngle;
-GLboolean bAmbient;
-GLboolean bAttach;
+<span class="kt">int</span> <span class="n">APIENTRY</span> <span class="nf">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span><span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span>
+       <span class="p">,</span><span class="n">LPSTR</span> <span class="n">lpszCmdParam</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">glutInitWindowSize</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+     <span class="n">glutCreateWindow</span><span class="p">(</span><span class="s">"OpenGL"</span><span class="p">);</span>
+     <span class="n">glutInitDisplayMode</span><span class="p">(</span><span class="n">GLUT_RGB</span> <span class="o">|</span> <span class="n">GLUT_DEPTH</span><span class="p">);</span>
+     <span class="n">glutDisplayFunc</span><span class="p">(</span><span class="n">DoDisplay</span><span class="p">);</span>
+     <span class="n">glutCreateMenu</span><span class="p">(</span><span class="n">DoMenu</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Ambient ON"</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Ambient OFF"</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Attach light"</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Unattach light"</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+     <span class="n">glutAttachMenu</span><span class="p">(</span><span class="n">GLUT_RIGHT_BUTTON</span><span class="p">);</span>
+     <span class="n">glutKeyboardFunc</span><span class="p">(</span><span class="n">DoKeyboard</span><span class="p">);</span>
+     <span class="n">glutMainLoop</span><span class="p">();</span>
 
-int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance
-       ,LPSTR lpszCmdParam,int nCmdShow)
-{
-     glutInitWindowSize(500, 500);
-     glutCreateWindow("OpenGL");
-     glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH);
-     glutDisplayFunc(DoDisplay);
-     glutCreateMenu(DoMenu);
-     glutAddMenuEntry("Ambient ON",1);
-     glutAddMenuEntry("Ambient OFF",2);
-     glutAddMenuEntry("Attach light",3);
-     glutAddMenuEntry("Unattach light",4);
-     glutAttachMenu(GLUT_RIGHT_BUTTON);
-     glutKeyboardFunc(DoKeyboard);
-     glutMainLoop();
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-     return 0;
-}
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="sc">'a'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'d'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'w'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'s'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'q'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'e'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'z'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">=</span> <span class="n">yAngle</span> <span class="o">=</span> <span class="n">zAngle</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
 
-void DoKeyboard(unsigned char key, int x, int y)
-{
+     <span class="k">case</span> <span class="sc">'j'</span><span class="p">:</span><span class="n">lx</span> <span class="o">-=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'l'</span><span class="p">:</span><span class="n">lx</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'i'</span><span class="p">:</span><span class="n">ly</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'k'</span><span class="p">:</span><span class="n">ly</span> <span class="o">-=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'u'</span><span class="p">:</span><span class="n">lz</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'o'</span><span class="p">:</span><span class="n">lz</span> <span class="o">-=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'m'</span><span class="p">:</span><span class="n">lx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ly</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lz</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     switch(key) {
-     case 'a':yAngle += 2;break;
-     case 'd':yAngle -= 2;break;
-     case 'w':xAngle += 2;break;
-     case 's':xAngle -= 2;break;
-     case 'q':zAngle += 2;break;
-     case 'e':zAngle -= 2;break;
-     case 'z':xAngle = yAngle = zAngle = 0.0;break;
+     <span class="kt">char</span> <span class="n">info</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>
+     <span class="n">sprintf</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s">"x=%.1f, y=%.1f, z=%.1f, lx=%.1f, ly=%.1f, lz=%.1f"</span><span class="p">,</span>
+             <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">,</span> <span class="n">lx</span><span class="p">,</span> <span class="n">ly</span><span class="p">,</span> <span class="n">lz</span><span class="p">);</span>
+     <span class="n">glutSetWindowTitle</span><span class="p">(</span><span class="n">info</span><span class="p">);</span>
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
+<span class="p">}</span>
 
-     case 'j':lx -= 0.1;break;
-     case 'l':lx += 0.1;break;
-     case 'i':ly += 0.1;break;
-     case 'k':ly -= 0.1;break;
-     case 'u':lz += 0.1;break;
-     case 'o':lz -= 0.1;break;
-     case 'm':lx = 0, ly = 0, lz = -1.0;break;
-     }
+<span class="kt">void</span> <span class="nf">DoMenu</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+          <span class="n">bAmbient</span> <span class="o">=</span> <span class="n">GL_TRUE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+          <span class="n">bAmbient</span> <span class="o">=</span> <span class="n">GL_FALSE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+          <span class="n">bAttach</span> <span class="o">=</span> <span class="n">GL_TRUE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+          <span class="n">bAttach</span> <span class="o">=</span> <span class="n">GL_FALSE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     char info[128];
-     sprintf(info, "x=%.1f, y=%.1f, z=%.1f, lx=%.1f, ly=%.1f, lz=%.1f",
-             xAngle, yAngle, zAngle, lx, ly, lz);
-     glutSetWindowTitle(info);
-     glutPostRedisplay();
-}
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
+<span class="p">}</span>
 
-void DoMenu(int value)
-{
-     switch(value) {
-     case 1:
-          bAmbient = GL_TRUE;
-          break;
-     case 2:
-          bAmbient = GL_FALSE;
-          break;
-     case 3:
-          bAttach = GL_TRUE;
-          break;
-     case 4:
-          bAttach = GL_FALSE;
-          break;
-     }
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span> <span class="o">|</span> <span class="n">GL_DEPTH_BUFFER_BIT</span><span class="p">);</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_DEPTH_TEST</span><span class="p">);</span>
+     <span class="n">glPushMatrix</span><span class="p">();</span>
 
-     glutPostRedisplay();
-}
+     <span class="k">if</span> <span class="p">(</span><span class="n">bAttach</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">glRotatef</span><span class="p">(</span><span class="n">xAngle</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+          <span class="n">glRotatef</span><span class="p">(</span><span class="n">yAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+          <span class="n">glRotatef</span><span class="p">(</span><span class="n">zAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+     <span class="p">}</span>
 
-void DoDisplay()
-{
-     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-     glEnable(GL_DEPTH_TEST);
-     glPushMatrix();
+     <span class="c1">// 0번 광원 배치.</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_LIGHTING</span><span class="p">);</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_LIGHT0</span><span class="p">);</span>
+     <span class="n">GLfloat</span> <span class="n">lightpos</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="n">lx</span><span class="p">,</span> <span class="n">ly</span><span class="p">,</span> <span class="n">lz</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+     <span class="n">glLightfv</span><span class="p">(</span><span class="n">GL_LIGHT0</span><span class="p">,</span> <span class="n">GL_POSITION</span><span class="p">,</span> <span class="n">lightpos</span><span class="p">);</span>
 
-     if (bAttach) {
-          glRotatef(xAngle, 1.0f, 0.0f, 0.0f);
-          glRotatef(yAngle, 0.0f, 1.0f, 0.0f);
-          glRotatef(zAngle, 0.0f, 0.0f, 1.0f);
-     }
+     <span class="c1">// 주변광을 초록색으로 설정</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">bAmbient</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">GLfloat</span> <span class="n">ambient</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span>
+          <span class="n">glLightfv</span><span class="p">(</span><span class="n">GL_LIGHT0</span><span class="p">,</span><span class="n">GL_AMBIENT</span><span class="p">,</span><span class="n">ambient</span><span class="p">);</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="n">GLfloat</span> <span class="n">ambient</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span>
+          <span class="n">glLightfv</span><span class="p">(</span><span class="n">GL_LIGHT0</span><span class="p">,</span><span class="n">GL_AMBIENT</span><span class="p">,</span><span class="n">ambient</span><span class="p">);</span>
+     <span class="p">}</span>
 
-     // 0번 광원 배치.
-     glEnable(GL_LIGHTING);
-     glEnable(GL_LIGHT0);
-     GLfloat lightpos[] = {lx, ly, lz, 1};
-     glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
+     <span class="n">glutSolidTeapot</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     // 주변광을 초록색으로 설정
-     if (bAmbient) {
-          GLfloat ambient[4]={0,1,0,1};
-          glLightfv(GL_LIGHT0,GL_AMBIENT,ambient);
-     } else {
-          GLfloat ambient[4]={0,0,0,1};
-          glLightfv(GL_LIGHT0,GL_AMBIENT,ambient);
-     }
+     <span class="n">glPopMatrix</span><span class="p">();</span>
+     <span class="n">glFlush</span><span class="p">();</span>
 
-     glutSolidTeapot(0.5);
-
-     glPopMatrix();
-     glFlush();
-
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/04/light1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/light1.png" alt="" loading="lazy"></a></p>
@@ -1441,10 +1441,10 @@ void DoDisplay()
 
 <p>다음 함수는 조명의 전역적인 성질을 지정한다. 장면 전체에 적용된다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glLightModel[f, i][v](GLenum pname, const GLfloat *params);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="n">glLightModel</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">][</span><span class="n">v</span><span class="p">](</span><span class="n">GLenum</span> <span class="n">pname</span><span class="p">,</span> <span class="k">const</span> <span class="n">GLfloat</span> <span class="o">*</span><span class="n">params</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">pname</code>은 지정할 속성이며 <code class="language-plaintext highlighter-rouge">params</code>는 속성의 값이다. 설정 가능한 속성은 다음 4가지가 있다.</p>
@@ -1458,8 +1458,8 @@ void DoDisplay()
 
 <p>다음 예제는 주전자를 배치해 놓고 전역 주변광만 비춘다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1531,81 +1531,77 @@ void DoDisplay()
 69
 70
 71
-72
-73
-</pre></td><td class="rouge-code"><pre>#include &lt;windows.h&gt;
-#include &lt;gl/glut.h&gt;
-#include &lt;stdio.h&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;gl/glut.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">();</span>
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+<span class="n">GLfloat</span> <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">;</span>
+<span class="n">GLfloat</span> <span class="n">red</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span><span class="p">;</span>
 
-void DoDisplay();
-void DoKeyboard(unsigned char key, int x, int y);
-GLfloat xAngle, yAngle, zAngle;
-GLfloat red=0.2, green=0.2, blue=0.2;
+<span class="kt">int</span> <span class="n">APIENTRY</span> <span class="nf">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span><span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span>
+       <span class="p">,</span><span class="n">LPSTR</span> <span class="n">lpszCmdParam</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">glutCreateWindow</span><span class="p">(</span><span class="s">"OpenGL"</span><span class="p">);</span>
+     <span class="n">glutDisplayFunc</span><span class="p">(</span><span class="n">DoDisplay</span><span class="p">);</span>
+     <span class="n">glutKeyboardFunc</span><span class="p">(</span><span class="n">DoKeyboard</span><span class="p">);</span>
+     <span class="n">glutMainLoop</span><span class="p">();</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance
-       ,LPSTR lpszCmdParam,int nCmdShow)
-{
-     glutCreateWindow("OpenGL");
-     glutDisplayFunc(DoDisplay);
-     glutKeyboardFunc(DoKeyboard);
-     glutMainLoop();
-     return 0;
-}
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="sc">'a'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'d'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'w'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'s'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'q'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'e'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'z'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">=</span> <span class="n">yAngle</span> <span class="o">=</span> <span class="n">zAngle</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
 
-void DoKeyboard(unsigned char key, int x, int y)
-{
-     switch(key) {
-     case 'a':yAngle += 2;break;
-     case 'd':yAngle -= 2;break;
-     case 'w':xAngle += 2;break;
-     case 's':xAngle -= 2;break;
-     case 'q':zAngle += 2;break;
-     case 'e':zAngle -= 2;break;
-     case 'z':xAngle = yAngle = zAngle = 0.0;break;
+     <span class="k">case</span> <span class="sc">'u'</span><span class="p">:</span><span class="n">red</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'j'</span><span class="p">:</span><span class="n">red</span> <span class="o">-=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'i'</span><span class="p">:</span><span class="n">green</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'k'</span><span class="p">:</span><span class="n">green</span> <span class="o">-=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'o'</span><span class="p">:</span><span class="n">blue</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'l'</span><span class="p">:</span><span class="n">blue</span> <span class="o">-=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'m'</span><span class="p">:</span><span class="n">red</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     case 'u':red += 0.1;break;
-     case 'j':red -= 0.1;break;
-     case 'i':green += 0.1;break;
-     case 'k':green -= 0.1;break;
-     case 'o':blue += 0.1;break;
-     case 'l':blue -= 0.1;break;
-     case 'm':red=0.5, green=0.5, blue=0.5;break;
-     }
+     <span class="kt">char</span> <span class="n">info</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>
+     <span class="n">sprintf</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s">"(%.0f,%.0f,%.0f)"</span>
+          <span class="s">"(%.1f,%.1f,%.1f)"</span><span class="p">,</span>
+          <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">,</span>
+          <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">);</span>
+     <span class="n">glutSetWindowTitle</span><span class="p">(</span><span class="n">info</span><span class="p">);</span>
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
 
-     char info[128];
-     sprintf(info, "(%.0f,%.0f,%.0f)"
-          "(%.1f,%.1f,%.1f)",
-          xAngle, yAngle, zAngle,
-          red, green, blue);
-     glutSetWindowTitle(info);
-     glutPostRedisplay();
+<span class="p">}</span>
 
-}
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span> <span class="o">|</span> <span class="n">GL_DEPTH_BUFFER_BIT</span><span class="p">);</span>
+     <span class="n">glShadeModel</span><span class="p">(</span><span class="n">GL_FLAT</span><span class="p">);</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_DEPTH_TEST</span><span class="p">);</span>
 
-void DoDisplay()
-{
-     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-     glShadeModel(GL_FLAT);
-     glEnable(GL_DEPTH_TEST);
+     <span class="c1">// 조명 모델 설정</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_LIGHTING</span><span class="p">);</span>
+     <span class="n">GLfloat</span> <span class="n">arLight</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">};</span>
+     <span class="n">glLightModelfv</span><span class="p">(</span><span class="n">GL_LIGHT_MODEL_AMBIENT</span><span class="p">,</span> <span class="n">arLight</span><span class="p">);</span>
 
-     // 조명 모델 설정
-     glEnable(GL_LIGHTING);
-     GLfloat arLight[]={red, green, blue, 1.0};
-     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, arLight);
+     <span class="n">glPushMatrix</span><span class="p">();</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">xAngle</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">yAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">zAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
 
-     glPushMatrix();
-     glRotatef(xAngle, 1.0f, 0.0f, 0.0f);
-     glRotatef(yAngle, 0.0f, 1.0f, 0.0f);
-     glRotatef(zAngle, 0.0f, 0.0f, 1.0f);
+     <span class="n">glutSolidTeapot</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     glutSolidTeapot(0.5);
+     <span class="n">glPopMatrix</span><span class="p">();</span>
 
-     glPopMatrix();
-
-     glFlush();
-
-}
-
+     <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/04/light1.gif" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/light1.gif" alt="" loading="lazy"></a></p>
@@ -1614,16 +1610,16 @@ void DoDisplay()
 
 <p> </p>
 
-<h3 id="32-재질"><span class="me-2">32. 재질</span><a href="#32-재질" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="32-재질"><span class="me-2">32. 재질</span><a href="#32-재질" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>똑같은 빛이라도 종이에 비춘 것과 유리에 비춘 것, 금속에 비춘 것 등의 효과가 다르게 나타난다. 각 조명의 어떤 색상 요소를 얼마나 반사할 것인가를 지정하는 성질을 물체의 재질이라고 한다.</p>
 
 <p>다음 함수로 각 다각형에 대해 재질을 지정한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glMaterial[f, i][v](GLenum face, GLenum pname, GLfloat* param);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="n">glMaterial</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">][</span><span class="n">v</span><span class="p">](</span><span class="n">GLenum</span> <span class="n">face</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">pname</span><span class="p">,</span> <span class="n">GLfloat</span><span class="o">*</span> <span class="n">param</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">face</code>는 물체의 어떤 면에 대한 재질인지를 지정하는데 <code class="language-plaintext highlighter-rouge">GL_FRONT</code>, <code class="language-plaintext highlighter-rouge">GL_BACK</code>, <code class="language-plaintext highlighter-rouge">GL_FRONT_AND_BACK</code> 중 하나의 값을 전달한다. 앞뒷면에 대해 서로 다른 재질을 부여할 수도 있다. <code class="language-plaintext highlighter-rouge">pname</code>은 설정하고자 하는 속성이며 <code class="language-plaintext highlighter-rouge">param</code>은 속성의 값이다.</p>
@@ -1642,8 +1638,8 @@ void DoDisplay()
 
 <p>다음 예제는 피라미드의 각 면에 대해 주변광에 대한 반사도를 지정했다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1779,146 +1775,144 @@ void DoDisplay()
 133
 134
 135
-136
-</pre></td><td class="rouge-code"><pre>#include &lt;windows.h&gt;
-#include &lt;gl/glut.h&gt;
-#include &lt;stdio.h&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;gl/glut.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">();</span>
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">DoMenu</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
+<span class="n">GLfloat</span> <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">;</span>
+<span class="n">GLfloat</span> <span class="n">red</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">GLboolean</span> <span class="n">bColorTrack</span> <span class="o">=</span> <span class="n">GL_FALSE</span><span class="p">;</span>
 
-void DoDisplay();
-void DoKeyboard(unsigned char key, int x, int y);
-void DoMenu(int value);
-GLfloat xAngle, yAngle, zAngle;
-GLfloat red=0.5, green=0.5, blue=0.5;
-GLboolean bColorTrack = GL_FALSE;
+<span class="kt">int</span> <span class="n">APIENTRY</span> <span class="nf">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span><span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span>
+       <span class="p">,</span><span class="n">LPSTR</span> <span class="n">lpszCmdParam</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">glutCreateWindow</span><span class="p">(</span><span class="s">"OpenGL"</span><span class="p">);</span>
+     <span class="n">glutDisplayFunc</span><span class="p">(</span><span class="n">DoDisplay</span><span class="p">);</span>
+     <span class="n">glutKeyboardFunc</span><span class="p">(</span><span class="n">DoKeyboard</span><span class="p">);</span>
+     <span class="n">glutCreateMenu</span><span class="p">(</span><span class="n">DoMenu</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Color Tracking ON"</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Color Tracking OFF"</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+     <span class="n">glutAttachMenu</span><span class="p">(</span><span class="n">GLUT_RIGHT_BUTTON</span><span class="p">);</span>
+     <span class="n">glutMainLoop</span><span class="p">();</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance
-       ,LPSTR lpszCmdParam,int nCmdShow)
-{
-     glutCreateWindow("OpenGL");
-     glutDisplayFunc(DoDisplay);
-     glutKeyboardFunc(DoKeyboard);
-     glutCreateMenu(DoMenu);
-     glutAddMenuEntry("Color Tracking ON",1);
-     glutAddMenuEntry("Color Tracking OFF",2);
-     glutAttachMenu(GLUT_RIGHT_BUTTON);
-     glutMainLoop();
-     return 0;
-}
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="sc">'a'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'d'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'w'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'s'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'q'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'e'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'z'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">=</span> <span class="n">yAngle</span> <span class="o">=</span> <span class="n">zAngle</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
 
-void DoKeyboard(unsigned char key, int x, int y)
-{
-     switch(key) {
-     case 'a':yAngle += 2;break;
-     case 'd':yAngle -= 2;break;
-     case 'w':xAngle += 2;break;
-     case 's':xAngle -= 2;break;
-     case 'q':zAngle += 2;break;
-     case 'e':zAngle -= 2;break;
-     case 'z':xAngle = yAngle = zAngle = 0.0;break;
+     <span class="k">case</span> <span class="sc">'u'</span><span class="p">:</span><span class="n">red</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'j'</span><span class="p">:</span><span class="n">red</span> <span class="o">-=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'i'</span><span class="p">:</span><span class="n">green</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'k'</span><span class="p">:</span><span class="n">green</span> <span class="o">-=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'o'</span><span class="p">:</span><span class="n">blue</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'l'</span><span class="p">:</span><span class="n">blue</span> <span class="o">-=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'m'</span><span class="p">:</span><span class="n">red</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">green</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     case 'u':red += 0.1;break;
-     case 'j':red -= 0.1;break;
-     case 'i':green += 0.1;break;
-     case 'k':green -= 0.1;break;
-     case 'o':blue += 0.1;break;
-     case 'l':blue -= 0.1;break;
-     case 'm':red=0.5, green=0.5, blue=0.5;break;
-     }
+     <span class="kt">char</span> <span class="n">info</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>
+     <span class="n">sprintf</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s">"(%.0f,%.0f,%.0f)"</span>
+          <span class="s">"(%.1f,%.1f,%.1f)"</span><span class="p">,</span>
+          <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">,</span>
+          <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">);</span>
+     <span class="n">glutSetWindowTitle</span><span class="p">(</span><span class="n">info</span><span class="p">);</span>
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
 
-     char info[128];
-     sprintf(info, "(%.0f,%.0f,%.0f)"
-          "(%.1f,%.1f,%.1f)",
-          xAngle, yAngle, zAngle,
-          red, green, blue);
-     glutSetWindowTitle(info);
-     glutPostRedisplay();
+<span class="p">}</span>
 
-}
+<span class="kt">void</span> <span class="nf">DoMenu</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+          <span class="n">bColorTrack</span> <span class="o">=</span> <span class="n">GL_TRUE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+          <span class="n">bColorTrack</span> <span class="o">=</span> <span class="n">GL_FALSE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
+<span class="p">}</span>
 
-void DoMenu(int value)
-{
-     switch(value) {
-     case 1:
-          bColorTrack = GL_TRUE;
-          break;
-     case 2:
-          bColorTrack = GL_FALSE;
-          break;
-     }
-     glutPostRedisplay();
-}
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span> <span class="o">|</span> <span class="n">GL_DEPTH_BUFFER_BIT</span><span class="p">);</span>
+     <span class="n">glShadeModel</span><span class="p">(</span><span class="n">GL_FLAT</span><span class="p">);</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_DEPTH_TEST</span><span class="p">);</span>
 
-void DoDisplay()
-{
-     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-     glShadeModel(GL_FLAT);
-     glEnable(GL_DEPTH_TEST);
+      <span class="c1">// 주변광 설정</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_LIGHTING</span><span class="p">);</span>
+     <span class="n">GLfloat</span> <span class="n">arLight</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">};</span>
+     <span class="n">glLightModelfv</span><span class="p">(</span><span class="n">GL_LIGHT_MODEL_AMBIENT</span><span class="p">,</span> <span class="n">arLight</span><span class="p">);</span>
 
-      // 주변광 설정
-     glEnable(GL_LIGHTING);
-     GLfloat arLight[]={red, green, blue, 1.0};
-     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, arLight);
+     <span class="k">if</span> <span class="p">(</span><span class="n">bColorTrack</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_COLOR_MATERIAL</span><span class="p">);</span>
+          <span class="n">glColorMaterial</span><span class="p">(</span><span class="n">GL_FRONT</span><span class="p">,</span> <span class="n">GL_AMBIENT</span><span class="p">);</span>
+          <span class="c1">// 물체의 앞면에 대해 주변광을 적용한다.</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="n">glDisable</span><span class="p">(</span><span class="n">GL_COLOR_MATERIAL</span><span class="p">);</span>
+     <span class="p">}</span>
 
-     if (bColorTrack) {
-          glEnable(GL_COLOR_MATERIAL);
-          glColorMaterial(GL_FRONT, GL_AMBIENT);
-          // 물체의 앞면에 대해 주변광을 적용한다.
-     } else {
-          glDisable(GL_COLOR_MATERIAL);
-     }
+     <span class="n">glPushMatrix</span><span class="p">();</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">xAngle</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">yAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">zAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
 
-     glPushMatrix();
-     glRotatef(xAngle, 1.0f, 0.0f, 0.0f);
-     glRotatef(yAngle, 0.0f, 1.0f, 0.0f);
-     glRotatef(zAngle, 0.0f, 0.0f, 1.0f);
+     <span class="c1">// 아랫면 흰 바닥</span>
+     <span class="n">GLfloat</span> <span class="n">arbottom</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">};</span>
+     <span class="n">glMaterialfv</span><span class="p">(</span><span class="n">GL_FRONT</span><span class="p">,</span> <span class="n">GL_AMBIENT</span><span class="p">,</span> <span class="n">arbottom</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_QUADS</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glEnd</span><span class="p">();</span>
 
-     // 아랫면 흰 바닥
-     GLfloat arbottom[]={1.0, 1.0, 1.0, 1.0};
-     glMaterialfv(GL_FRONT, GL_AMBIENT, arbottom);
-     glColor3f(1,1,1);
-     glBegin(GL_QUADS);
-     glVertex2f(-0.5, 0.5);
-     glVertex2f(0.5, 0.5);
-     glVertex2f(0.5, -0.5);
-     glVertex2f(-0.5, -0.5);
-     glEnd();
+     <span class="c1">// 위쪽 빨간 변</span>
+     <span class="n">GLfloat</span> <span class="n">arMat1</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">};</span>
+     <span class="n">glMaterialfv</span><span class="p">(</span><span class="n">GL_FRONT</span><span class="p">,</span> <span class="n">GL_AMBIENT</span><span class="p">,</span> <span class="n">arMat1</span><span class="p">);</span>
+     <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_TRIANGLE_FAN</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glVertex3f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     // 위쪽 빨간 변
-     GLfloat arMat1[]={1.0, 0.0, 0.0, 1.0};
-     glMaterialfv(GL_FRONT, GL_AMBIENT, arMat1);
-     glBegin(GL_TRIANGLE_FAN);
-     glColor3f(1,1,1);
-     glVertex3f(0.0, 0.0, -0.8);
-     glColor3f(1,0,0);
-     glVertex2f(0.5, 0.5);
-     glVertex2f(-0.5, 0.5);
+     <span class="c1">// 왼쪽 노란 변</span>
+     <span class="n">GLfloat</span> <span class="n">arMat2</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">};</span>
+     <span class="n">glMaterialfv</span><span class="p">(</span><span class="n">GL_FRONT</span><span class="p">,</span> <span class="n">GL_AMBIENT</span><span class="p">,</span> <span class="n">arMat2</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     // 왼쪽 노란 변
-     GLfloat arMat2[]={0.0, 0.0, 0.5, 1.0};
-     glMaterialfv(GL_FRONT, GL_AMBIENT, arMat2);
-     glColor3f(1,1,0);
-     glVertex2f(-0.5, -0.5);
+     <span class="c1">// 아래쪽 초록 변</span>
+     <span class="n">GLfloat</span> <span class="n">arMat3</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">};</span>
+     <span class="n">glMaterialfv</span><span class="p">(</span><span class="n">GL_FRONT</span><span class="p">,</span> <span class="n">GL_AMBIENT</span><span class="p">,</span> <span class="n">arMat3</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     // 아래쪽 초록 변
-     GLfloat arMat3[]={0.0, 0.25, 0.0, 1.0};
-     glMaterialfv(GL_FRONT, GL_AMBIENT, arMat3);
-     glColor3f(0,1,0);
-     glVertex2f(0.5, -0.5);
+     <span class="c1">// 오른쪽 파란 변</span>
+     <span class="n">GLfloat</span> <span class="n">arMat4</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">};</span>
+     <span class="n">glMaterialfv</span><span class="p">(</span><span class="n">GL_FRONT</span><span class="p">,</span> <span class="n">GL_AMBIENT</span><span class="p">,</span> <span class="n">arMat4</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glEnd</span><span class="p">();</span>
 
-     // 오른쪽 파란 변
-     GLfloat arMat4[]={0.0, 0.0, 1.0, 1.0};
-     glMaterialfv(GL_FRONT, GL_AMBIENT, arMat4);
-     glColor3f(0,0,1);
-     glVertex2f(0.5, 0.5);
-     glEnd();
-
-     glPopMatrix();
-     glFlush();
-
-}
+     <span class="n">glPopMatrix</span><span class="p">();</span>
+     <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="http://yoonbumtae.com/?attachment_id=985"></a></p>
+<!-- [](http://yoonbumtae.com/?attachment_id=985) -->
 
 <p>전역 주변광은 일단 회색으로 지정하되 ujikol 키로 각 색상 요소를 증감하도록 했다. 피라미드의 4면에는 각각 다른 재질 속성을 부여했다. 최초 실행하면 주변광이 50%밖에 안되므로 흐릿한 색상으로 보이지만 전역 주변광의 광도를 높이면 점점 밝아진다.</p>
 
@@ -1934,12 +1928,12 @@ void DoDisplay()
 
 <p>재질은 조명에 대한 반사도로 다각형의 색상을 지정하는 것이므로 <code class="language-plaintext highlighter-rouge">glColor</code>로 지정한 고유한 색상을 완전히 무시한다. 왼쪽면은 노란색으로 지정되었지만 재질에서 파란색만 반사하도록 설정했으므로 파란색으로 보인다. <code class="language-plaintext highlighter-rouge">glColor</code>로 지정한 색상을 재질 대신 사용하려면 <strong>색상 트래킹(color tracking) 기능</strong>을 사용한다. 기능을 사용하려면 다음 두 함수를 호출한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>glEnable(GL_COLOR_MATERIAL);
-void glColorMaterial(GLenum face, GLenum mode);
+</pre></td><td class="rouge-code"><pre><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_COLOR_MATERIAL</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">glColorMaterial</span><span class="p">(</span><span class="n">GLenum</span> <span class="n">face</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">mode</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>색상을 곧 재질로 사용하는 것이다. <code class="language-plaintext highlighter-rouge">face</code>는 조명이 적용될 면이고 <code class="language-plaintext highlighter-rouge">mode</code>는 면에 적용할 조명의 종류이다.</p>
@@ -1950,7 +1944,7 @@ void glColorMaterial(GLenum face, GLenum mode);
 
 <p> </p>
 
-<h3 id="33-법선-法線-a-normal"><span class="me-2">33. 법선 (法線; a normal)</span><a href="#33-법선-法線-a-normal" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="33-법선-法線-a-normal"><span class="me-2">33. 법선 (法線; a normal)</span><a href="#33-법선-法線-a-normal" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>방향성이 있는 조명은 각도에 따라 물체에 닿는 빛의 강도가 달라진다. 그러나 정점의 좌표만으로는 조명의 강도를 결정할 수 없으며 추가 정보가 더 필요하다.</p>
 
@@ -1958,10 +1952,10 @@ void glColorMaterial(GLenum face, GLenum mode);
 
 <p>법선은 다음 함수로 배치한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glNormal3[f,d,i,s,b][v](GLfloat nx, GLfloat ny, GLfloat nz);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="n">glNormal3</span><span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">b</span><span class="p">][</span><span class="n">v</span><span class="p">](</span><span class="n">GLfloat</span> <span class="n">nx</span><span class="p">,</span> <span class="n">GLfloat</span> <span class="n">ny</span><span class="p">,</span> <span class="n">GLfloat</span> <span class="n">nz</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>정점 하나에 대해 법선을 지정하므로 이 함수는 주로 <code class="language-plaintext highlighter-rouge">glVertex</code> 함수와 쌍으로 호출된다. 여러 개의 정점이 하나의 법선을 공유한다면 <code class="language-plaintext highlighter-rouge">glNormal</code>을 한번만 호출하고 <code class="language-plaintext highlighter-rouge">glVertex</code>로 정점을 계속 배치하면 된다. 즉, 법선도 한번 배치하면 다른 값으로 바꾸기전에는 계속 유효하다.</p>
@@ -1980,8 +1974,8 @@ void glColorMaterial(GLenum face, GLenum mode);
 
 <p>다음 예제는 피라미드의 각 정점에 대해 공식대로 법선을 계산하여 지정한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2154,180 +2148,178 @@ void glColorMaterial(GLenum face, GLenum mode);
 170
 171
 172
-173
-</pre></td><td class="rouge-code"><pre>#include &lt;windows.h&gt;
-#include &lt;gl/glut.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;math.h&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;gl/glut.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;math.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">();</span>
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">DoMenu</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
 
-void DoDisplay();
-void DoKeyboard(unsigned char key, int x, int y);
-void DoMenu(int value);
+<span class="n">GLfloat</span> <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">;</span>
+<span class="n">GLboolean</span> <span class="n">bNormal</span> <span class="o">=</span> <span class="n">GL_TRUE</span><span class="p">;</span>
 
-GLfloat xAngle, yAngle, zAngle;
-GLboolean bNormal = GL_TRUE;
+<span class="kt">int</span> <span class="n">APIENTRY</span> <span class="nf">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span><span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span>
+       <span class="p">,</span><span class="n">LPSTR</span> <span class="n">lpszCmdParam</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">glutCreateWindow</span><span class="p">(</span><span class="s">"OpenGL"</span><span class="p">);</span>
+     <span class="n">glutDisplayFunc</span><span class="p">(</span><span class="n">DoDisplay</span><span class="p">);</span>
+     <span class="n">glutKeyboardFunc</span><span class="p">(</span><span class="n">DoKeyboard</span><span class="p">);</span>
+     <span class="n">glutCreateMenu</span><span class="p">(</span><span class="n">DoMenu</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Normal ON"</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Normal OFF"</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+     <span class="n">glutAttachMenu</span><span class="p">(</span><span class="n">GLUT_RIGHT_BUTTON</span><span class="p">);</span>
+     <span class="n">glutMainLoop</span><span class="p">();</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance
-       ,LPSTR lpszCmdParam,int nCmdShow)
-{
-     glutCreateWindow("OpenGL");
-     glutDisplayFunc(DoDisplay);
-     glutKeyboardFunc(DoKeyboard);
-     glutCreateMenu(DoMenu);
-     glutAddMenuEntry("Normal ON",1);
-     glutAddMenuEntry("Normal OFF",2);
-     glutAttachMenu(GLUT_RIGHT_BUTTON);
-     glutMainLoop();
-     return 0;
-}
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="sc">'a'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'d'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'w'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'s'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'q'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'e'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'z'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">=</span> <span class="n">yAngle</span> <span class="o">=</span> <span class="n">zAngle</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
 
-void DoKeyboard(unsigned char key, int x, int y)
-{
-     switch(key) {
-     case 'a':yAngle += 2;break;
-     case 'd':yAngle -= 2;break;
-     case 'w':xAngle += 2;break;
-     case 's':xAngle -= 2;break;
-     case 'q':zAngle += 2;break;
-     case 'e':zAngle -= 2;break;
-     case 'z':xAngle = yAngle = zAngle = 0.0;break;
-     }
+     <span class="kt">char</span> <span class="n">info</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>
+     <span class="n">sprintf</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s">"x=%.1f, y=%.1f, z=%.1f"</span><span class="p">,</span> <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">);</span>
+     <span class="n">glutSetWindowTitle</span><span class="p">(</span><span class="n">info</span><span class="p">);</span>
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
+<span class="p">}</span>
 
-     char info[128];
-     sprintf(info, "x=%.1f, y=%.1f, z=%.1f", xAngle, yAngle, zAngle);
-     glutSetWindowTitle(info);
-     glutPostRedisplay();
-}
+<span class="kt">void</span> <span class="nf">DoMenu</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+          <span class="n">bNormal</span> <span class="o">=</span> <span class="n">GL_TRUE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+          <span class="n">bNormal</span> <span class="o">=</span> <span class="n">GL_FALSE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
+<span class="p">}</span>
 
-void DoMenu(int value)
-{
-     switch(value) {
-     case 1:
-          bNormal = GL_TRUE;
-          break;
-     case 2:
-          bNormal = GL_FALSE;
-          break;
-     }
-     glutPostRedisplay();
-}
+<span class="c1">// 법선 부분</span>
+<span class="kt">void</span> <span class="nf">GetNormal</span><span class="p">(</span><span class="n">GLfloat</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">GLfloat</span> <span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">GLfloat</span> <span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">GLfloat</span> <span class="n">normal</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="p">{</span>
+     <span class="n">GLfloat</span> <span class="n">ba</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+     <span class="n">GLfloat</span> <span class="n">ca</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+     <span class="n">GLfloat</span> <span class="n">n</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
 
-// 법선 부분
-void GetNormal(GLfloat a[3], GLfloat b[3], GLfloat c[3], GLfloat normal[3])
-{
-     GLfloat ba[3];
-     GLfloat ca[3];
-     GLfloat n[3];
+     <span class="c1">// 두 정점간의 벡터 계산</span>
+     <span class="n">ba</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="n">ba</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="n">ba</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+     <span class="n">ca</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="n">ca</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="n">ca</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
 
-     // 두 정점간의 벡터 계산
-     ba[0]=b[0]-a[0];ba[1]=b[1]-a[1];ba[2]=b[2]-a[2];
-     ca[0]=c[0]-a[0];ca[1]=c[1]-a[1];ca[2]=c[2]-a[2];
+     <span class="c1">// 외적 구함</span>
+     <span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">ba</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">ca</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">ca</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">ba</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+     <span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">ca</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">ba</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">ba</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">ca</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+     <span class="n">n</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">ba</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">ca</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ca</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">ba</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
 
-     // 외적 구함
-     n[0]=ba[1]*ca[2]-ca[1]*ba[2];
-     n[1]=ca[0]*ba[2]-ba[0]*ca[2];
-     n[2]=ba[0]*ca[1]-ca[0]*ba[1];
+     <span class="c1">// 정규화</span>
+     <span class="n">GLfloat</span> <span class="n">l</span><span class="o">=</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">n</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">n</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+     <span class="n">normal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">l</span><span class="p">;</span><span class="n">normal</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">l</span><span class="p">;</span><span class="n">normal</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">l</span><span class="p">;</span>
+<span class="p">}</span>
 
-     // 정규화
-     GLfloat l=sqrt(n[0]*n[0] + n[1]*n[1] + n[2]*n[2]);
-     normal[0]=n[0]/l;normal[1]=n[1]/l;normal[2]=n[2]/l;
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span> <span class="o">|</span> <span class="n">GL_DEPTH_BUFFER_BIT</span><span class="p">);</span>
+    <span class="n">glShadeModel</span><span class="p">(</span><span class="n">GL_FLAT</span><span class="p">);</span>
+    <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_DEPTH_TEST</span><span class="p">);</span>
 
-}
+     <span class="c1">// 조명을 켠다.</span>
+    <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_LIGHTING</span><span class="p">);</span>
+    <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_LIGHT0</span><span class="p">);</span>
+    <span class="n">GLfloat</span> <span class="n">ambient</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="p">};</span>
+    <span class="n">glLightfv</span><span class="p">(</span><span class="n">GL_LIGHT0</span><span class="p">,</span><span class="n">GL_AMBIENT</span><span class="p">,</span><span class="n">ambient</span><span class="p">);</span>
 
-void DoDisplay()
-{
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glShadeModel(GL_FLAT);
-    glEnable(GL_DEPTH_TEST);
+    <span class="n">GLfloat</span> <span class="n">diffuse</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="p">};</span>
+    <span class="n">glLightfv</span><span class="p">(</span><span class="n">GL_LIGHT0</span><span class="p">,</span><span class="n">GL_DIFFUSE</span><span class="p">,</span><span class="n">diffuse</span><span class="p">);</span>
+    <span class="n">GLfloat</span> <span class="n">spec</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="p">};</span>
+    <span class="n">glLightfv</span><span class="p">(</span><span class="n">GL_LIGHT0</span><span class="p">,</span><span class="n">GL_SPECULAR</span><span class="p">,</span><span class="n">ambient</span><span class="p">);</span>
 
-     // 조명을 켠다.
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
-    GLfloat ambient[] = { 0.5, 0.5, 0.5, 1.0 };
-    glLightfv(GL_LIGHT0,GL_AMBIENT,ambient);
+    <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_COLOR_MATERIAL</span><span class="p">);</span>
+    <span class="n">glColorMaterial</span><span class="p">(</span><span class="n">GL_FRONT</span><span class="p">,</span> <span class="n">GL_AMBIENT_AND_DIFFUSE</span><span class="p">);</span>
 
-    GLfloat diffuse[] = { 0.5, 0.5, 0.5, 1.0 };
-    glLightfv(GL_LIGHT0,GL_DIFFUSE,diffuse);
-    GLfloat spec[] = { 1.0, 1.0, 1.0, 1.0 };
-    glLightfv(GL_LIGHT0,GL_SPECULAR,ambient);
+    <span class="n">glPushMatrix</span><span class="p">();</span>
+    <span class="n">glRotatef</span><span class="p">(</span><span class="n">xAngle</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+    <span class="n">glRotatef</span><span class="p">(</span><span class="n">yAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+    <span class="n">glRotatef</span><span class="p">(</span><span class="n">zAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
 
-    glEnable(GL_COLOR_MATERIAL);
-    glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+    <span class="c1">// 아랫면 흰 바닥</span>
+    <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_QUADS</span><span class="p">);</span>
+    <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">glEnd</span><span class="p">();</span>
 
-    glPushMatrix();
-    glRotatef(xAngle, 1.0f, 0.0f, 0.0f);
-    glRotatef(yAngle, 0.0f, 1.0f, 0.0f);
-    glRotatef(zAngle, 0.0f, 0.0f, 1.0f);
+    <span class="n">GLfloat</span> <span class="n">normal</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+    <span class="n">glColor3ub</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">);</span>
 
-    // 아랫면 흰 바닥
-    glBegin(GL_QUADS);
-    glVertex2f(-0.5, 0.5);
-    glVertex2f(0.5, 0.5);
-    glVertex2f(0.5, -0.5);
-    glVertex2f(-0.5, -0.5);
-    glEnd();
+    <span class="c1">// 위</span>
+    <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">);</span>
+    <span class="n">GLfloat</span> <span class="n">up</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span> <span class="p">{</span>
+          <span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">},</span>
+          <span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,},</span>
+          <span class="p">{</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+     <span class="p">};</span>
 
-    GLfloat normal[3];
-    glColor3ub(128, 128, 128);
+    <span class="n">GetNormal</span><span class="p">(</span><span class="n">up</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">up</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">up</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">normal</span><span class="p">);</span>
 
-    // 위
-    glBegin(GL_TRIANGLES);
-    GLfloat up[3][3]= {
-          {0.0, 0.0, -0.8},
-          {0.5, 0.5, 0.0,},
-          {-0.5, 0.5, 0.0},
-     };
+    <span class="k">if</span> <span class="p">(</span><span class="n">bNormal</span><span class="p">)</span> <span class="n">glNormal3fv</span><span class="p">(</span><span class="n">normal</span><span class="p">);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">up</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">up</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">up</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
 
-    GetNormal(up[0], up[1], up[2], normal);
+    <span class="c1">// 왼쪽</span>
+    <span class="n">GLfloat</span> <span class="n">left</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span> <span class="p">{</span>
+          <span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">},</span>
+          <span class="p">{</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+          <span class="p">{</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+    <span class="p">};</span>
 
-    if (bNormal) glNormal3fv(normal);
-    glVertex3fv(up[0]);
-    glVertex3fv(up[1]);
-    glVertex3fv(up[2]);
+    <span class="n">GetNormal</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">left</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">left</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">normal</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">bNormal</span><span class="p">)</span> <span class="n">glNormal3fv</span><span class="p">(</span><span class="n">normal</span><span class="p">);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
 
-    // 왼쪽
-    GLfloat left[3][3]= {
-          {0.0, 0.0, -0.8},
-          {-0.5, 0.5, 0.0},
-          {-0.5, -0.5, 0.0},
-    };
+    <span class="c1">// 아래</span>
+    <span class="n">GLfloat</span> <span class="n">down</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span> <span class="p">{</span>
+         <span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">},</span>
+         <span class="p">{</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+         <span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+    <span class="p">};</span>
 
-    GetNormal(left[0], left[1], left[2], normal);
-    if (bNormal) glNormal3fv(normal);
-    glVertex3fv(left[0]);
-    glVertex3fv(left[1]);
-    glVertex3fv(left[2]);
+    <span class="n">GetNormal</span><span class="p">(</span><span class="n">down</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">down</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">down</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">normal</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">bNormal</span><span class="p">)</span> <span class="n">glNormal3fv</span><span class="p">(</span><span class="n">normal</span><span class="p">);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">down</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">down</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">down</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
 
-    // 아래
-    GLfloat down[3][3]= {
-         {0.0, 0.0, -0.8},
-         {-0.5, -0.5, 0.0},
-         {0.5, -0.5, 0.0},
-    };
+    <span class="c1">// 오른쪽</span>
+    <span class="n">GLfloat</span> <span class="n">right</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span> <span class="p">{</span>
+          <span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">},</span>
+          <span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+          <span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+     <span class="p">};</span>
 
-    GetNormal(down[0], down[1], down[2], normal);
-    if (bNormal) glNormal3fv(normal);
-    glVertex3fv(down[0]);
-    glVertex3fv(down[1]);
-    glVertex3fv(down[2]);
+    <span class="n">GetNormal</span><span class="p">(</span><span class="n">right</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">right</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">right</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">normal</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">bNormal</span><span class="p">)</span> <span class="n">glNormal3fv</span><span class="p">(</span><span class="n">normal</span><span class="p">);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">right</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="n">glVertex3fv</span><span class="p">(</span><span class="n">right</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
 
-    // 오른쪽
-    GLfloat right[3][3]= {
-          {0.0, 0.0, -0.8},
-          {0.5, -0.5, 0.0},
-          {0.5, 0.5, 0.0},
-     };
-
-    GetNormal(right[0], right[1], right[2], normal);
-    if (bNormal) glNormal3fv(normal);
-    glVertex3fv(right[0]);
-    glVertex3fv(right[1]);
-    glVertex3fv(right[2]);
-
-    glEnd();
-    glPopMatrix();
-    glFlush();
-}
+    <span class="n">glEnd</span><span class="p">();</span>
+    <span class="n">glPopMatrix</span><span class="p">();</span>
+    <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/04/light4.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/light4.png" alt="" loading="lazy"></a></p>
@@ -9210,18 +9202,6 @@ void DoDisplay()
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -9258,7 +9238,7 @@ void DoDisplay()
 
               <h4 class="pt-0 my-2">OpenGL 기초 8: 텍스처(비트맵, 픽셀맵), 폴리곤 스티플, 텍스처 매핑, 축소된 서브셋(ES)</h4>
               <div class="text-muted">
-                <p>출처: [http://soen.kr/lecture/library/opengl/opengl-10.htm](http://soen.kr/lecture/library/opengl/opengl-10.htm)  ### 34\. 텍스처: 비트맵  비트맵은 미리 만들어진 이미지를 의미하며 다양한 크기와 색상을 가질 수 있다. 그러나 OpenGL에서는 흑백 이미지만을...</p>
+                <p>- 출처: [http://soen.kr/lecture/library/opengl/opengl-10.htm](http://soen.kr/lecture/library/opengl/opengl-10.htm)  ## 34\. 텍스처: 비트맵  비트맵은 미리 만들어진 이미지를 의미하며 다양한 크기와 색상을 가질 수 있다. 그러나 OpenGL에서는 흑백 이미지만...</p>
               </div>
             </div>
           </a>
@@ -9286,7 +9266,7 @@ void DoDisplay()
 
               <h4 class="pt-0 my-2">OpenGL 기초 6: 행렬, 출력 영역의 제한</h4>
               <div class="text-muted">
-                <p>출처: http://soen.kr/lecture/library/opengl/opengl-8.htm  29. 행렬  OpenGL은 각종 변환에 행렬을 많이 사용한다.  행렬의 수학적 특성을 잘 이용하면 빠른 속도로 연산을 수행할 수 있다. OpenGL이 변환에 사용하는 행렬은 4*4 크기의 행렬이다. 3차원 공간은 3개의 좌표로 구성되지만 연산의 편의를...</p>
+                <p>출처: http://soen.kr/lecture/library/opengl/opengl-8.htm   29. 행렬  OpenGL은 각종 변환에 행렬을 많이 사용한다.  행렬의 수학적 특성을 잘 이용하면 빠른 속도로 연산을 수행할 수 있다. OpenGL이 변환에 사용하는 행렬은 4*4 크기의 행렬이다. 3차원 공간은 3개의 좌표로 구성되지만 연산의 편의...</p>
               </div>
             </div>
           </a>
@@ -9314,7 +9294,7 @@ void DoDisplay()
 
               <h4 class="pt-0 my-2">OpenGL 기초 5: 변환(관측, 모델링), 투영(직교, 원근), 뷰포트</h4>
               <div class="text-muted">
-                <p>출처: http://soen.kr/lecture/library/opengl/opengl-8.htm  24. 변환 - 개요  3차원 공간에 배치된 물체의 전체적인 변환 과정은 다음과 같다.    OpenGL은 변환 단계에서 수행되는 복잡한 연산들을 행렬로 처리한다. 모든 변환 함수의 연산 결과는 현재 행렬에 반영된다. 좀 더 정확하게는 현재 선택된 행렬...</p>
+                <p>출처: http://soen.kr/lecture/library/opengl/opengl-8.htm   24. 변환 - 개요  3차원 공간에 배치된 물체의 전체적인 변환 과정은 다음과 같다.    OpenGL은 변환 단계에서 수행되는 복잡한 연산들을 행렬로 처리한다. 모든 변환 함수의 연산 결과는 현재 행렬에 반영된다. 좀 더 정확하게는 현재 선택된 행...</p>
               </div>
             </div>
           </a>

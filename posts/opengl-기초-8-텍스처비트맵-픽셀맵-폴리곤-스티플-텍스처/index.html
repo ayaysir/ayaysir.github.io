@@ -1064,11 +1064,11 @@
       
 
       
-        <!-- add class to exist <a> tag -->
-        
-        
+        <!-- create the image wrapper -->
         
 
+        
+        
       
     
 
@@ -1223,11 +1223,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -1303,6 +1298,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -1403,7 +1403,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="7197 words"
+  title="7193 words"
 >
   <em>39 min</em> read</span>
 
@@ -1437,11 +1437,13 @@
   
 
   <div class="content">
-    <p>출처: <a href="http://soen.kr/lecture/library/opengl/opengl-10.htm">http://soen.kr/lecture/library/opengl/opengl-10.htm</a></p>
+    <ul>
+  <li>출처: <a href="http://soen.kr/lecture/library/opengl/opengl-10.htm">http://soen.kr/lecture/library/opengl/opengl-10.htm</a></li>
+</ul>
 
-<h3 id="34-텍스처-비트맵"><span class="me-2">34. 텍스처: 비트맵</span><a href="#34-텍스처-비트맵" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="34-텍스처-비트맵"><span class="me-2">34. 텍스처: 비트맵</span><a href="#34-텍스처-비트맵" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>비트맵은 미리 만들어진 이미지를 의미하며 다양한 크기와 색상을 가질 수 있다. 그러나 OpenGL에서는 흑백 이미지만을 비트맵이라고 칭하며 컬러 이미지는 <strong>픽셀맵(Pixelmap)</strong>이라는 별도의 용어를 사용한다. bit가 용어가 원래 0과 1만을 의미하는 흑백적인 뜻이기 때문이라고 한다.</p>
+<p>비트맵은 미리 만들어진 이미지를 의미하며 다양한 크기와 색상을 가질 수 있다. 그러나 OpenGL에서는 흑백 이미지만을 비트맵이라고 칭하며 컬러 이미지는 <strong>픽셀맵</strong>(Pixelmap)이라는 별도의 용어를 사용한다. bit가 용어가 원래 0과 1만을 의미하는 흑백적인 뜻이기 때문이라고 한다.</p>
 
 <p>OpenGL은 파일 입출력 기능을 제공하지 않으므로 파일이나 리소스로부터 비트맵을 생성하기 어렵다. 간단한 이미지라면 메모리에서 래스터 데이터를 직접 정의하여 만들어 써야 한다. 모눈 종이에 다음과 같이 이미지를 디자인해 보자.</p>
 
@@ -1449,22 +1451,22 @@
 
 <p>각 칸의 흰색은 이진수 0에 대응시키고 검정색은 1에 대응시킨다. 이 수를 나열하면 2진수가 나오는데 자리 수가 너무 많으므로 보통 16진수로 압축한다. 이렇게 만든 16진수를 배열에 순서대로 기록하면 비트맵이 된다. OpenGL의 비트맵은 <strong>아래에서 위로</strong> 정의되므로 제일 아래줄부터 배열에 기록한다.</p>
 
-<p>비트맵의 래스터 데이터는 처리의 효율성을 위해 <strong>4바이트 단위</strong>로 정렬된다.  행이 4의 배수가 안되더라도 뒷 부분에 더미를 추가해서라도 4의 배수로 맞추는 것이 유리하다. 그러나 위 이미지는 한 행이 2바이트 밖에 안되어 더미를 넣으면 무려 2배나 커진다. 정렬 단위를 바꾸고 싶다면 다음 함수로 비트맵의 저장 방식을 변경해야 한다.</p>
+<p>비트맵의 래스터 데이터는 처리의 효율성을 위해 <strong>4바이트 단위</strong>로 정렬된다. 행이 4의 배수가 안되더라도 뒷 부분에 더미를 추가해서라도 4의 배수로 맞추는 것이 유리하다. 그러나 위 이미지는 한 행이 2바이트 밖에 안되어 더미를 넣으면 무려 2배나 커진다. 정렬 단위를 바꾸고 싶다면 다음 함수로 비트맵의 저장 방식을 변경해야 한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glPixelStore[f, i](GLenum pname, GLfloat param);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="n">glPixelStore</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">](</span><span class="n">GLenum</span> <span class="n">pname</span><span class="p">,</span> <span class="n">GLfloat</span> <span class="n">param</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 함수로 바이트 순서(<code class="language-plaintext highlighter-rouge">GL_PACK_SWAP_BYTES</code>)나 바이트 정렬(<code class="language-plaintext highlighter-rouge">GL_PACK_ALIGNMENT</code>) 등의 옵션을 지정한다. 메모리에서 비트맵을 읽을 때의 정렬은 <code class="language-plaintext highlighter-rouge">GL_UNPACK_ALIGNMENT</code> 옵션으로 지정하며 이 값의 디폴트가 4이므로 4바이트 정렬된다. 2나 1로 바꾸면 더 작은 단위로 정렬할 수 있되 값을 일일이 잘라서 읽어야 하므로 속도에는 불리하다.</p>
 
 <p>비트맵의 출력 위치는 다음 함수로 지정한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glRasterPos[2,3,4][s,i,f,d][v](x, y,z,w);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="n">glRasterPos</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">][</span><span class="n">s</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">d</span><span class="p">][</span><span class="n">v</span><span class="p">](</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">w</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 함수가 지정한 좌표가 현재 위치가 되며 이 위치에서부터 비트맵이 출력되고 비트맵 출력 후 현재 위치는 자동으로 다음 위치로 갱신된다.</p>
@@ -1473,10 +1475,10 @@
 
 <p>비트맵을 출력할 때는 다음 함수를 호출한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glBitmap(GLsizei width, GLsizei height, GLfloat xorig, GLfloat yorig, GLfloat xmove, GLfloat ymove, const GLubyte * bitmap);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">glBitmap</span><span class="p">(</span><span class="n">GLsizei</span> <span class="n">width</span><span class="p">,</span> <span class="n">GLsizei</span> <span class="n">height</span><span class="p">,</span> <span class="n">GLfloat</span> <span class="n">xorig</span><span class="p">,</span> <span class="n">GLfloat</span> <span class="n">yorig</span><span class="p">,</span> <span class="n">GLfloat</span> <span class="n">xmove</span><span class="p">,</span> <span class="n">GLfloat</span> <span class="n">ymove</span><span class="p">,</span> <span class="k">const</span> <span class="n">GLubyte</span> <span class="o">*</span> <span class="n">bitmap</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>bitmap은 비트맵의 모양을 정의하는 래스터 데이터 배열이다. <code class="language-plaintext highlighter-rouge">width</code>, <code class="language-plaintext highlighter-rouge">height</code>는 비트맵의 폭과 높이를 픽셀 단위로 알려 주는데 일차원 배열의 래스터만으로는 비트맵의 모양을 알 수 없기 때문에 크기 정보를 별도로 제공해야 한다. 위 비트맵은 16 * 16 크기이므로 폭과 높이가 모두 16이다.</p>
@@ -1487,8 +1489,8 @@
 
 <p>다음 예제는 앞에서 디자인한 16 * 16 크기의 비트맵을 출력한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1524,41 +1526,41 @@
 33
 34
 35
-</pre></td><td class="rouge-code"><pre>#include &lt;windows.h&gt;
-#include &lt;gl/glut.h&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;gl/glut.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">();</span>
 
-void DoDisplay();
+<span class="kt">int</span> <span class="n">APIENTRY</span> <span class="nf">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span><span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span>
+       <span class="p">,</span><span class="n">LPSTR</span> <span class="n">lpszCmdParam</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">glutCreateWindow</span><span class="p">(</span><span class="s">"OpenGL"</span><span class="p">);</span>
+     <span class="n">glutDisplayFunc</span><span class="p">(</span><span class="n">DoDisplay</span><span class="p">);</span>
+     <span class="n">glutMainLoop</span><span class="p">();</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance
-       ,LPSTR lpszCmdParam,int nCmdShow)
-{
-     glutCreateWindow("OpenGL");
-     glutDisplayFunc(DoDisplay);
-     glutMainLoop();
-     return 0;
-}
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="k">static</span> <span class="n">GLubyte</span> <span class="n">bitmap</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xe0</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0xc2</span><span class="p">,</span>
+          <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span>
+          <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x92</span><span class="p">,</span> <span class="mh">0x49</span><span class="p">,</span> <span class="mh">0x4c</span><span class="p">,</span> <span class="mh">0x32</span><span class="p">,</span>
+          <span class="mh">0x40</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xe0</span><span class="p">,</span>
+     <span class="p">};</span>
 
-void DoDisplay()
-{
-     static GLubyte bitmap[] = {
-          0x07, 0xe0, 0x18, 0x18, 0x20, 0x04, 0x43, 0xc2,
-          0x44, 0x22, 0x88, 0x11, 0x81, 0x81, 0x81, 0x81,
-          0x80, 0x01, 0x80, 0x01, 0x92, 0x49, 0x4c, 0x32,
-          0x40, 0x02, 0x20, 0x04, 0x18, 0x18, 0x07, 0xe0,
-     };
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">);</span>
 
-     glClear(GL_COLOR_BUFFER_BIT);
+     <span class="c1">// 2바이트 단위로 비트맵을 읽는다.</span>
+     <span class="n">glPixelStorei</span><span class="p">(</span><span class="n">GL_UNPACK_ALIGNMENT</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 노란색</span>
+     <span class="n">glRasterPos2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glBitmap</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">bitmap</span><span class="p">);</span>
+     <span class="n">glBitmap</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">bitmap</span><span class="p">);</span>
+     <span class="n">glBitmap</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">bitmap</span><span class="p">);</span>
 
-     // 2바이트 단위로 비트맵을 읽는다.
-     glPixelStorei(GL_UNPACK_ALIGNMENT, 2);
-     glColor3f(1,1,0); // 노란색
-     glRasterPos2f(0.5,0.5);
-     glBitmap(16,16,0,0,20,0,bitmap);
-     glBitmap(16,16,0,0,20,0,bitmap);
-     glBitmap(16,16,0,10,20,0,bitmap);
-
-     glFlush();
-}
+     <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/04/bitmap1-e1579007412744.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/bitmap1-e1579007412744.png" alt="" loading="lazy"></a></p>
@@ -1573,22 +1575,22 @@ void DoDisplay()
 
 <p> </p>
 
-<h3 id="35-텍스처-픽셀맵"><span class="me-2">35. 텍스처: 픽셀맵</span><a href="#35-텍스처-픽셀맵" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="35-텍스처-픽셀맵"><span class="me-2">35. 텍스처: 픽셀맵</span><a href="#35-텍스처-픽셀맵" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>컬러를 표현할 수 있는 픽셀맵은 비트맵에 비해서는 이미지를 만들거나 출력하기 훨씬 더 복잡하다. 출력 함수는 다음과 같다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glDrawPixels(GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid * data);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">glDrawPixels</span><span class="p">(</span><span class="n">GLsizei</span> <span class="n">width</span><span class="p">,</span> <span class="n">GLsizei</span> <span class="n">height</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">format</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">type</span><span class="p">,</span> <span class="k">const</span> <span class="n">GLvoid</span> <span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">width</code>, <code class="language-plaintext highlighter-rouge">height</code>는 이미지의 폭과 높이이다. <code class="language-plaintext highlighter-rouge">format</code>은 픽셀의 색상 구성이며 <code class="language-plaintext highlighter-rouge">GL_RGB, GL_BGA</code> 등을 지정한다. 이미지 파일에 따라 색상 정보가 <code class="language-plaintext highlighter-rouge">RGB</code> 순으로 되어 있는 것이 있고 <code class="language-plaintext highlighter-rouge">BGA</code> 순으로 되어 있는 것이 있다. <code class="language-plaintext highlighter-rouge">type</code>은 data 배열의 요소 타입을 지정하며 data가 실제 이미지 정보인 래스터 데이터이다.</p>
 
 <p>다음 예제는 간단한 픽셀맵을 배열로 정의하고 출력한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1615,32 +1617,32 @@ void DoDisplay()
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>#include &lt;stdlib.h&gt;
-#include &lt;time.h&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp">
+</span>
+<span class="p">(...)</span>
 
-(...)
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="n">GLubyte</span> <span class="n">data</span><span class="p">[</span><span class="mi">32</span><span class="o">*</span><span class="mi">32</span><span class="o">*</span><span class="mi">3</span><span class="p">];</span>
 
-void DoDisplay()
-{
-     GLubyte data[32*32*3];
+     <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
 
-     srand(time(NULL));
+     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">y</span><span class="o">&lt;</span><span class="mi">32</span><span class="p">;</span><span class="n">y</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">32</span><span class="p">;</span><span class="n">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+              <span class="c1">// 픽셀 한 개에 들어갈 RGB 색상정보 입력</span>
+              <span class="n">data</span><span class="p">[</span><span class="n">y</span><span class="o">*</span><span class="mi">32</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">200</span><span class="p">;</span>
+              <span class="n">data</span><span class="p">[</span><span class="n">y</span><span class="o">*</span><span class="mi">32</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">200</span><span class="p">;</span>
+              <span class="n">data</span><span class="p">[</span><span class="n">y</span><span class="o">*</span><span class="mi">32</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">50</span><span class="p">;</span>
+          <span class="p">}</span>
+     <span class="p">}</span>
 
-     for (int y=0;y&lt;32;y++) {
-          for (int x=0;x&lt;32;x++) {
-              // 픽셀 한 개에 들어갈 RGB 색상정보 입력
-              data[y*32*3 + x*3+0] = rand() % 200;
-              data[y*32*3 + x*3+1] = rand() % 200;
-              data[y*32*3 + x*3+2] = rand() % 50;
-          }
-     }
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">);</span>
+     <span class="n">glRasterPos2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glDrawPixels</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
 
-     glClear(GL_COLOR_BUFFER_BIT);
-     glRasterPos2f(0.0,0.0);
-     glDrawPixels(32, 32, GL_RGB, GL_UNSIGNED_BYTE, data);
-
-     glFlush();
-}
+     <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>32*32크기의 픽셀맵은 각 픽셀당 색상 정보 3개씩이 필요하므로 총 필요한 바이트수는 3072바이트(=32*32*3)이다. 픽셀맵은 비트맵과는 달리 원점을 지정하는 기능이 없으므로 무조건 이미지의 좌하단이 현재 위치에 출력된다. 그래서 중앙에서 약간 오른쪽 위에 이미지가 출력되었다.</p>
@@ -1649,8 +1651,8 @@ void DoDisplay()
 
 <p>제대로 모양을 갖춘 이미지를 사용하려면 파일에서 읽어오는 것이 원칙적이다. OpenGL은 이미지 파일을 읽는 기능을 제공하지 않으므로 운영체제별로 적당한 이미지 읽기 함수를 만들어 사용해야 한다. 이 강좌는 윈도우즈 환경에서 실습을 진행하고 있으므로 윈도우즈 API로 읽기 용이한 BMP 파일을 출력했다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1721,76 +1723,76 @@ void DoDisplay()
 68
 69
 70
-</pre></td><td class="rouge-code"><pre>#include &lt;windows.h&gt;
-#include &lt;gl/glut.h&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;gl/glut.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">();</span>
 
-void DoDisplay();
+<span class="kt">int</span> <span class="n">APIENTRY</span> <span class="nf">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span><span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span>
+       <span class="p">,</span><span class="n">LPSTR</span> <span class="n">lpszCmdParam</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">glutCreateWindow</span><span class="p">(</span><span class="s">"OpenGL"</span><span class="p">);</span>
+     <span class="n">glutDisplayFunc</span><span class="p">(</span><span class="n">DoDisplay</span><span class="p">);</span>
+     <span class="n">glutMainLoop</span><span class="p">();</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance
-       ,LPSTR lpszCmdParam,int nCmdShow)
-{
-     glutCreateWindow("OpenGL");
-     glutDisplayFunc(DoDisplay);
-     glutMainLoop();
-     return 0;
-}
+<span class="n">GLubyte</span> <span class="o">*</span><span class="nf">LoadBmp</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">Path</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">Width</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">Height</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">HANDLE</span> <span class="n">hFile</span><span class="p">;</span>
+     <span class="n">DWORD</span> <span class="n">FileSize</span><span class="p">,</span> <span class="n">dwRead</span><span class="p">;</span>
+     <span class="n">BITMAPFILEHEADER</span> <span class="o">*</span><span class="n">fh</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span>
+     <span class="n">BITMAPINFOHEADER</span> <span class="o">*</span><span class="n">ih</span><span class="p">;</span>
+     <span class="n">BYTE</span> <span class="o">*</span><span class="n">pRaster</span><span class="p">;</span>
 
-GLubyte *LoadBmp(const char *Path, int *Width, int *Height)
-{
-     HANDLE hFile;
-     DWORD FileSize, dwRead;
-     BITMAPFILEHEADER *fh=NULL;
-     BITMAPINFOHEADER *ih;
-     BYTE *pRaster;
+     <span class="n">hFile</span><span class="o">=</span><span class="n">CreateFileA</span><span class="p">(</span><span class="n">Path</span><span class="p">,</span><span class="n">GENERIC_READ</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span>
+          <span class="n">OPEN_EXISTING</span><span class="p">,</span><span class="n">FILE_ATTRIBUTE_NORMAL</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
 
-     hFile=CreateFileA(Path,GENERIC_READ,0,NULL,
-          OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,NULL);
+     <span class="k">if</span> <span class="p">(</span><span class="n">hFile</span><span class="o">==</span><span class="n">INVALID_HANDLE_VALUE</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     if (hFile==INVALID_HANDLE_VALUE) {
-          return NULL;
-     }
+     <span class="n">FileSize</span><span class="o">=</span><span class="n">GetFileSize</span><span class="p">(</span><span class="n">hFile</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+     <span class="n">fh</span><span class="o">=</span><span class="p">(</span><span class="n">BITMAPFILEHEADER</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">FileSize</span><span class="p">);</span>
+     <span class="n">ReadFile</span><span class="p">(</span><span class="n">hFile</span><span class="p">,</span><span class="n">fh</span><span class="p">,</span><span class="n">FileSize</span><span class="p">,</span><span class="o">&amp;</span><span class="n">dwRead</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+     <span class="n">CloseHandle</span><span class="p">(</span><span class="n">hFile</span><span class="p">);</span>
 
-     FileSize=GetFileSize(hFile,NULL);
-     fh=(BITMAPFILEHEADER *)malloc(FileSize);
-     ReadFile(hFile,fh,FileSize,&amp;dwRead,NULL);
-     CloseHandle(hFile);
+     <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">FileSize</span> <span class="o">-</span> <span class="n">fh</span> <span class="o">-&gt;</span> <span class="n">bfOffBits</span><span class="p">;</span>
+     <span class="n">pRaster</span><span class="o">=</span><span class="p">(</span><span class="n">GLubyte</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+     <span class="n">memcpy</span><span class="p">(</span><span class="n">pRaster</span><span class="p">,</span> <span class="p">(</span><span class="n">BYTE</span> <span class="o">*</span><span class="p">)</span><span class="n">fh</span><span class="o">+</span><span class="n">fh</span><span class="o">-&gt;</span><span class="n">bfOffBits</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
 
-     int len = FileSize - fh -&gt; bfOffBits;
-     pRaster=(GLubyte *)malloc(len);
-     memcpy(pRaster, (BYTE *)fh+fh-&gt;bfOffBits, len);
+     <span class="c1">// RGB로 순서를 바꾼다.</span>
+     <span class="k">for</span> <span class="p">(</span><span class="n">BYTE</span> <span class="o">*</span><span class="n">p</span><span class="o">=</span><span class="n">pRaster</span><span class="p">;</span><span class="n">p</span> <span class="o">&lt;</span> <span class="n">pRaster</span> <span class="o">+</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span><span class="n">p</span><span class="o">+=</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">BYTE</span> <span class="n">b</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+          <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span>
+          <span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     // RGB로 순서를 바꾼다.
-     for (BYTE *p=pRaster;p &lt; pRaster + len - 3;p+=3) {
-          BYTE b = *p;
-          *p = *(p+2);
-          *(p+2) = b;
-     }
+     <span class="n">ih</span><span class="o">=</span><span class="p">(</span><span class="n">BITMAPINFOHEADER</span> <span class="o">*</span><span class="p">)((</span><span class="n">PBYTE</span><span class="p">)</span><span class="n">fh</span><span class="o">+</span><span class="k">sizeof</span><span class="p">(</span><span class="n">BITMAPFILEHEADER</span><span class="p">));</span>
+     <span class="o">*</span><span class="n">Width</span><span class="o">=</span><span class="n">ih</span><span class="o">-&gt;</span><span class="n">biWidth</span><span class="p">;</span>
+     <span class="o">*</span><span class="n">Height</span><span class="o">=</span><span class="n">ih</span><span class="o">-&gt;</span><span class="n">biHeight</span><span class="p">;</span>
 
-     ih=(BITMAPINFOHEADER *)((PBYTE)fh+sizeof(BITMAPFILEHEADER));
-     *Width=ih-&gt;biWidth;
-     *Height=ih-&gt;biHeight;
+     <span class="n">free</span><span class="p">(</span><span class="n">fh</span><span class="p">);</span>
+     <span class="k">return</span> <span class="n">pRaster</span><span class="p">;</span>
+<span class="p">}</span>
 
-     free(fh);
-     return pRaster;
-}
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="n">GLubyte</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+     <span class="kt">int</span> <span class="n">Width</span><span class="p">,</span> <span class="n">Height</span><span class="p">;</span>
 
-void DoDisplay()
-{
-     GLubyte *data;
-     int Width, Height;
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">);</span>
 
-     glClear(GL_COLOR_BUFFER_BIT);
+     <span class="n">data</span> <span class="o">=</span> <span class="n">LoadBmp</span><span class="p">(</span><span class="s">"c:</span><span class="se">\\</span><span class="s">fedup.bmp"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Width</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Height</span><span class="p">);</span>
 
-     data = LoadBmp("c:\\fedup.bmp", &amp;Width, &amp;Height);
+     <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">glRasterPos2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+          <span class="n">glDrawPixels</span><span class="p">(</span><span class="n">Width</span><span class="p">,</span> <span class="n">Height</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+          <span class="n">free</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+     <span class="p">}</span>
 
-     if (data != NULL) {
-          glRasterPos2f(-0.5,-0.5);
-          glDrawPixels(Width, Height, GL_RGB, GL_UNSIGNED_BYTE, data);
-          free(data);
-     }
-
-     glFlush();
-}
+     <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/04/light5-e1579007489996.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/light5-e1579007489996.png" alt="" loading="lazy"></a></p>
@@ -1799,18 +1801,18 @@ void DoDisplay()
 
 <p>파일로부터 이미지를 구하는 방법 외에 이미 출력된 화면의 이미지를 재사용할 수도 있다. 색상 버퍼의 픽셀값을 버퍼로 읽어들이거나 색상 버퍼의 일정 영역을 다른 곳으로 복사하면 된다. 다음 함수들은 화면의 일부를 버퍼로 읽어 들이고 화면끼리 복사한다. <code class="language-plaintext highlighter-rouge">glRasterPos</code>로 복사할 위치를 지정한 후 이 함수로 복사한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>void glReadPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type,  GLvoid * data);
-void glCopyPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum type);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">glReadPixels</span><span class="p">(</span><span class="n">GLint</span> <span class="n">x</span><span class="p">,</span> <span class="n">GLint</span> <span class="n">y</span><span class="p">,</span> <span class="n">GLsizei</span> <span class="n">width</span><span class="p">,</span> <span class="n">GLsizei</span> <span class="n">height</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">format</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">type</span><span class="p">,</span><span class="err">  </span><span class="n">GLvoid</span> <span class="o">*</span> <span class="n">data</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">glCopyPixels</span><span class="p">(</span><span class="n">GLint</span> <span class="n">x</span><span class="p">,</span> <span class="n">GLint</span> <span class="n">y</span><span class="p">,</span> <span class="n">GLsizei</span> <span class="n">width</span><span class="p">,</span> <span class="n">GLsizei</span> <span class="n">height</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">type</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>복사할 영역과 복사할 정보의 종류를 밝힌다. <code class="language-plaintext highlighter-rouge">type</code>에 <code class="language-plaintext highlighter-rouge">GL_COLOR</code>를 지정하면 색상 데이터를 복사하는 것이고 <code class="language-plaintext highlighter-rouge">GL_DEPTH</code>나 <code class="language-plaintext highlighter-rouge">GL_STENCIL</code>을 지정하면 깊이 정보와 스텐실 정보까지 복사한다. 다음 예제는 밤 이미지의 일부를 왼쪽 아래로 복사한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1832,27 +1834,27 @@ void glCopyPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum type);
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>void DoDisplay()
-{
-     GLubyte *data;
-     int Width, Height;
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="n">GLubyte</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+     <span class="kt">int</span> <span class="n">Width</span><span class="p">,</span> <span class="n">Height</span><span class="p">;</span>
 
-     glClear(GL_COLOR_BUFFER_BIT);
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">);</span>
 
-     data = LoadBmp("c:\\fedup.bmp", &amp;Width, &amp;Height);
+     <span class="n">data</span> <span class="o">=</span> <span class="n">LoadBmp</span><span class="p">(</span><span class="s">"c:</span><span class="se">\\</span><span class="s">fedup.bmp"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Width</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Height</span><span class="p">);</span>
 
-     if (data != NULL) {
-          glRasterPos2f(-0.5,-0.5);
-          glDrawPixels(Width, Height, GL_RGB, GL_UNSIGNED_BYTE, data);
-          free(data);
-     }
+     <span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">glRasterPos2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+          <span class="n">glDrawPixels</span><span class="p">(</span><span class="n">Width</span><span class="p">,</span> <span class="n">Height</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+          <span class="n">free</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+     <span class="p">}</span>
 
-     // 색상 정보 복사
-     glRasterPos2f(-1.0,-1.0);
-     glCopyPixels(100,100,80,50,GL_COLOR);
+     <span class="c1">// 색상 정보 복사</span>
+     <span class="n">glRasterPos2f</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glCopyPixels</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="n">GL_COLOR</span><span class="p">);</span>
 
-     glFlush();
-}
+     <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/04/fed2-e1579007527703.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/fed2-e1579007527703.png" alt="" loading="lazy"></a></p>
@@ -1873,7 +1875,7 @@ void glReadBuffer(GLenum mode);
 
 <p> </p>
 
-<h3 id="36-폴리곤-스티플"><span class="me-2">36. 폴리곤 스티플</span><a href="#36-폴리곤-스티플" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="36-폴리곤-스티플"><span class="me-2">36. 폴리곤 스티플</span><a href="#36-폴리곤-스티플" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>폴리곤 스티플링은 다각형의 내부를 채우는 아주 간단한 방법이다. 32*32 크기의 흑백 비트맵을 정의하고 다음 두 함수를 호출하면 된다.</p>
 
@@ -1887,8 +1889,8 @@ void glPolygonStipple(const GLubyte * pattern);
 
 <p>pattern은 32 * 32의 비트맵 패턴이므로 총 128 바이트로 구성된 배열이어야 한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1923,40 +1925,40 @@ void glPolygonStipple(const GLubyte * pattern);
 32
 33
 34
-</pre></td><td class="rouge-code"><pre>void DoDisplay()
-{
-     static GLubyte bitmap[] = {
-          0x07, 0xe0, 0x18, 0x18, 0x20, 0x04, 0x43, 0xc2,
-          0x44, 0x22, 0x88, 0x11, 0x81, 0x81, 0x81, 0x81,
-          0x80, 0x01, 0x80, 0x01, 0x92, 0x49, 0x4c, 0x32,
-          0x40, 0x02, 0x20, 0x04, 0x18, 0x18, 0x07, 0xe0,
-          0x07, 0xe0, 0x18, 0x18, 0x20, 0x04, 0x43, 0xc2,
-          0x44, 0x22, 0x88, 0x11, 0x81, 0x81, 0x81, 0x81,
-          0x80, 0x01, 0x80, 0x01, 0x92, 0x49, 0x4c, 0x32,
-          0x40, 0x02, 0x20, 0x04, 0x18, 0x18, 0x07, 0xe0,
-          0x07, 0xe0, 0x18, 0x18, 0x20, 0x04, 0x43, 0xc2,
-          0x44, 0x22, 0x88, 0x11, 0x81, 0x81, 0x81, 0x81,
-          0x80, 0x01, 0x80, 0x01, 0x92, 0x49, 0x4c, 0x32,
-          0x40, 0x02, 0x20, 0x04, 0x18, 0x18, 0x07, 0xe0,
-          0x07, 0xe0, 0x18, 0x18, 0x20, 0x04, 0x43, 0xc2,
-          0x44, 0x22, 0x88, 0x11, 0x81, 0x81, 0x81, 0x81,
-          0x80, 0x01, 0x80, 0x01, 0x92, 0x49, 0x4c, 0x32,
-          0x40, 0x02, 0x20, 0x04, 0x18, 0x18, 0x07, 0xe0,
-     };
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="k">static</span> <span class="n">GLubyte</span> <span class="n">bitmap</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xe0</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0xc2</span><span class="p">,</span>
+          <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span>
+          <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x92</span><span class="p">,</span> <span class="mh">0x49</span><span class="p">,</span> <span class="mh">0x4c</span><span class="p">,</span> <span class="mh">0x32</span><span class="p">,</span>
+          <span class="mh">0x40</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xe0</span><span class="p">,</span>
+          <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xe0</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0xc2</span><span class="p">,</span>
+          <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span>
+          <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x92</span><span class="p">,</span> <span class="mh">0x49</span><span class="p">,</span> <span class="mh">0x4c</span><span class="p">,</span> <span class="mh">0x32</span><span class="p">,</span>
+          <span class="mh">0x40</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xe0</span><span class="p">,</span>
+          <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xe0</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0xc2</span><span class="p">,</span>
+          <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span>
+          <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x92</span><span class="p">,</span> <span class="mh">0x49</span><span class="p">,</span> <span class="mh">0x4c</span><span class="p">,</span> <span class="mh">0x32</span><span class="p">,</span>
+          <span class="mh">0x40</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xe0</span><span class="p">,</span>
+          <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xe0</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0xc2</span><span class="p">,</span>
+          <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span>
+          <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x92</span><span class="p">,</span> <span class="mh">0x49</span><span class="p">,</span> <span class="mh">0x4c</span><span class="p">,</span> <span class="mh">0x32</span><span class="p">,</span>
+          <span class="mh">0x40</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0xe0</span><span class="p">,</span>
+     <span class="p">};</span>
 
-     glClear(GL_COLOR_BUFFER_BIT);
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">);</span>
 
-     glEnable(GL_POLYGON_STIPPLE);
-     glPolygonStipple(bitmap);
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_POLYGON_STIPPLE</span><span class="p">);</span>
+     <span class="n">glPolygonStipple</span><span class="p">(</span><span class="n">bitmap</span><span class="p">);</span>
 
-     glBegin(GL_TRIANGLES);
-     glVertex2f(0.0, 0.5);
-     glVertex2f(-0.5, -0.5);
-     glVertex2f(0.5, -0.5);
+     <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     glEnd();
-     glFlush();
-}
+     <span class="n">glEnd</span><span class="p">();</span>
+     <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/04/fed3-e1579007564864.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/fed3-e1579007564864.png" alt="" loading="lazy"></a></p>
@@ -1965,26 +1967,26 @@ void glPolygonStipple(const GLubyte * pattern);
 
 <p> </p>
 
-<h3 id="37-텍스처-매핑-개요"><span class="me-2">37. 텍스처 매핑 개요</span><a href="#37-텍스처-매핑-개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="37-텍스처-매핑-개요"><span class="me-2">37. 텍스처 매핑 개요</span><a href="#37-텍스처-매핑-개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>텍스처 맵핑(Texture Mapping)은 3차원 물체의 표면에 이미지를 입히는 기법이다. 3차원 표면에 울퉁불퉁한 모양이나 나무 무늬 등을 그려 넣으려면 조명이나 물체의 재질을 지정하는 방법으로는 한계가 많다. 대량의 정점이 필요하고 정점이 많아지면 속도도 느려진다. 텍스처 맵핑은 미리 만들어져 있는 이미지를 다각형의 표면에 그려 넣음으로써 임의의 무늬를 빠른 속도로 그려내는 획기적인 방법이다.</p>
 
 <p>텍스처 맵핑 기능을 사용하려면 먼저 해당 기능을 켜야 한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>glEnable(GL_TEXTURE_2D);
+</pre></td><td class="rouge-code"><pre><span class="n">glEnable</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>주로 2차원 평면 이미지로 텍스처를 입히지만 1차원이나 3차원의 이미지를 사용할 수도 있다. 사용할 텍스처의 차원에 따라 개별적으로 활성화시켜야 하며 한번에 하나만 활성화할 수 있다. 통상은 2차원 텍스처를 가장 많이 사용하며 ES 버전은 2차원밖에 지원하지 않는다.</p>
 
 <p>다음은 텍스처로 사용할 이미지를 메모리 버퍼로 로드한다. 여러 가지 방법으로 이미지를 준비할 수 있지만 가장 일반적인 방법은 이미지 파일에서 읽어오는 것이다. 앞에서 준비해둔 함수로 래스터 데이터를 배열에 읽어 놓는다. 이미지를 바로 사용할 수는 없으며 텍스처 맵핑에 적당한 형태로 가공해야 하는데 이때는 다음 함수를 호출한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glTexImage2D(GLenum target, GLint level, GLint internalFormat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid * data);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">glTexImage2D</span><span class="p">(</span><span class="n">GLenum</span> <span class="n">target</span><span class="p">,</span> <span class="n">GLint</span> <span class="n">level</span><span class="p">,</span> <span class="n">GLint</span> <span class="n">internalFormat</span><span class="p">,</span> <span class="n">GLsizei</span> <span class="n">width</span><span class="p">,</span> <span class="n">GLsizei</span> <span class="n">height</span><span class="p">,</span> <span class="n">GLint</span> <span class="n">border</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">format</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">type</span><span class="p">,</span> <span class="k">const</span> <span class="n">GLvoid</span> <span class="o">*</span> <span class="n">data</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>target은 이미지로부터 어떤 텍스처를 만들 것인가를 지정한다. 평범한 텍스처를 만들 수도 있고 프록시나 큐브맵을 만들 수도 있다. level은 밉맵(mipmap) 레벨이되 밉맵을 사용하지 않을 때는 0으로 지정한다.</p>
@@ -1999,18 +2001,18 @@ void glPolygonStipple(const GLubyte * pattern);
 
 <p>이미지의 크기에 상관없이 텍스처의 좌하단은 (0,0)이고 우상단은 (1,1)이다. 정중앙은 물론 (0.5, 0.5)가 될 것이다. 각 정점에 텍스처의 좌표를 지정할 때는 다음 함수를 사용한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glTexCoord[1,2,3,4][s,i,f,d][v](s, t, r, q);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="n">glTexCoord</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">][</span><span class="n">s</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">d</span><span class="p">][</span><span class="n">v</span><span class="p">](</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">q</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>정점에 텍스처 좌표를 대응시켜 놓으면 OpenGL이 정점의 위치에 텍스처의 대응되는 픽셀을 읽어 출력할 것이다. 정점들의 중간에는 정점과 텍스처의 거리 비율에 맞게 적당히 늘리거나 줄여서 픽셀들을 대응시켜 다각형 전체에 텍스처를 입힌다. 텍스처와 다각형의 크기가 보통 일치하지 않으므로 스트레칭은 거의 항상 발생한다.</p>
 
 <p>다음 예제는 피라미드에 대리석 모양의 텍스처를 입힌다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2367,376 +2369,375 @@ void glPolygonStipple(const GLubyte * pattern);
 354
 355
 356
-</pre></td><td class="rouge-code"><pre>#include &lt;windows.h&gt;
-#include &lt;gl/glut.h&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;gl/glut.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">();</span>
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">DoMenu</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
 
-void DoDisplay();
-void DoKeyboard(unsigned char key, int x, int y);
-void DoMenu(int value);
+<span class="n">GLfloat</span> <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">;</span>
+<span class="n">GLint</span> <span class="n">EnvMode</span> <span class="o">=</span> <span class="n">GL_REPLACE</span><span class="p">;</span>
+<span class="n">GLint</span> <span class="n">TexFilter</span> <span class="o">=</span> <span class="n">GL_LINEAR</span><span class="p">;</span>
 
-GLfloat xAngle, yAngle, zAngle;
-GLint EnvMode = GL_REPLACE;
-GLint TexFilter = GL_LINEAR;
+<span class="kt">int</span> <span class="n">APIENTRY</span> <span class="nf">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span><span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span>
+       <span class="p">,</span><span class="n">LPSTR</span> <span class="n">lpszCmdParam</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">glutCreateWindow</span><span class="p">(</span><span class="s">"OpenGL"</span><span class="p">);</span>
+     <span class="n">glutDisplayFunc</span><span class="p">(</span><span class="n">DoDisplay</span><span class="p">);</span>
+     <span class="n">glutKeyboardFunc</span><span class="p">(</span><span class="n">DoKeyboard</span><span class="p">);</span>
+     <span class="n">glutCreateMenu</span><span class="p">(</span><span class="n">DoMenu</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Replace"</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Modulate"</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Add"</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Nearest Filter"</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Linear Filter"</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glutAttachMenu</span><span class="p">(</span><span class="n">GLUT_RIGHT_BUTTON</span><span class="p">);</span>
+     <span class="n">glutMainLoop</span><span class="p">();</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance
-       ,LPSTR lpszCmdParam,int nCmdShow)
-{
-     glutCreateWindow("OpenGL");
-     glutDisplayFunc(DoDisplay);
-     glutKeyboardFunc(DoKeyboard);
-     glutCreateMenu(DoMenu);
-     glutAddMenuEntry("Replace",1);
-     glutAddMenuEntry("Modulate",2);
-     glutAddMenuEntry("Add",3);
-     glutAddMenuEntry("Nearest Filter",4);
-     glutAddMenuEntry("Linear Filter",5);
-     glutAttachMenu(GLUT_RIGHT_BUTTON);
-     glutMainLoop();
-     return 0;
-}
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="sc">'a'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'d'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'w'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'s'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'q'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'e'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'z'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">=</span> <span class="n">yAngle</span> <span class="o">=</span> <span class="n">zAngle</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
 
-void DoKeyboard(unsigned char key, int x, int y)
-{
-     switch(key) {
-     case 'a':yAngle += 2;break;
-     case 'd':yAngle -= 2;break;
-     case 'w':xAngle += 2;break;
-     case 's':xAngle -= 2;break;
-     case 'q':zAngle += 2;break;
-     case 'e':zAngle -= 2;break;
-     case 'z':xAngle = yAngle = zAngle = 0.0;break;
-     }
+     <span class="kt">char</span> <span class="n">info</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>
+     <span class="n">sprintf</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s">"x=%.1f, y=%.1f, z=%.1f"</span><span class="p">,</span> <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">);</span>
+     <span class="n">glutSetWindowTitle</span><span class="p">(</span><span class="n">info</span><span class="p">);</span>
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
+<span class="p">}</span>
 
-     char info[128];
-     sprintf(info, "x=%.1f, y=%.1f, z=%.1f", xAngle, yAngle, zAngle);
-     glutSetWindowTitle(info);
-     glutPostRedisplay();
-}
+<span class="kt">void</span> <span class="nf">DoMenu</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+          <span class="n">EnvMode</span> <span class="o">=</span> <span class="n">GL_REPLACE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+          <span class="n">EnvMode</span> <span class="o">=</span> <span class="n">GL_MODULATE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+          <span class="n">EnvMode</span> <span class="o">=</span> <span class="n">GL_ADD</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+          <span class="n">TexFilter</span> <span class="o">=</span> <span class="n">GL_NEAREST</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
+          <span class="n">TexFilter</span> <span class="o">=</span> <span class="n">GL_LINEAR</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
 
-void DoMenu(int value)
-{
-     switch(value) {
-     case 1:
-          EnvMode = GL_REPLACE;
-          break;
-     case 2:
-          EnvMode = GL_MODULATE;
-          break;
-     case 3:
-          EnvMode = GL_ADD;
-          break;
-     case 4:
-          TexFilter = GL_NEAREST;
-          break;
-     case 5:
-          TexFilter = GL_LINEAR;
-          break;
-     }
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
+<span class="p">}</span>
 
-     glutPostRedisplay();
-}
+<span class="n">GLubyte</span> <span class="o">*</span><span class="nf">LoadBmp</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">Path</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">Width</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">Height</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">HANDLE</span> <span class="n">hFile</span><span class="p">;</span>
+     <span class="n">DWORD</span> <span class="n">FileSize</span><span class="p">,</span> <span class="n">dwRead</span><span class="p">;</span>
+     <span class="n">BITMAPFILEHEADER</span> <span class="o">*</span><span class="n">fh</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span>
+     <span class="n">BITMAPINFOHEADER</span> <span class="o">*</span><span class="n">ih</span><span class="p">;</span>
+     <span class="n">BYTE</span> <span class="o">*</span><span class="n">pRaster</span><span class="p">;</span>
 
-GLubyte *LoadBmp(const char *Path, int *Width, int *Height)
-{
-     HANDLE hFile;
-     DWORD FileSize, dwRead;
-     BITMAPFILEHEADER *fh=NULL;
-     BITMAPINFOHEADER *ih;
-     BYTE *pRaster;
+     <span class="n">hFile</span><span class="o">=</span><span class="n">CreateFileA</span><span class="p">(</span><span class="n">Path</span><span class="p">,</span><span class="n">GENERIC_READ</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span>
+          <span class="n">OPEN_EXISTING</span><span class="p">,</span><span class="n">FILE_ATTRIBUTE_NORMAL</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
 
-     hFile=CreateFileA(Path,GENERIC_READ,0,NULL,
-          OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,NULL);
+     <span class="k">if</span> <span class="p">(</span><span class="n">hFile</span><span class="o">==</span><span class="n">INVALID_HANDLE_VALUE</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     if (hFile==INVALID_HANDLE_VALUE) {
-          return NULL;
-     }
+     <span class="n">FileSize</span><span class="o">=</span><span class="n">GetFileSize</span><span class="p">(</span><span class="n">hFile</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+     <span class="n">fh</span><span class="o">=</span><span class="p">(</span><span class="n">BITMAPFILEHEADER</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">FileSize</span><span class="p">);</span>
+     <span class="n">ReadFile</span><span class="p">(</span><span class="n">hFile</span><span class="p">,</span><span class="n">fh</span><span class="p">,</span><span class="n">FileSize</span><span class="p">,</span><span class="o">&amp;</span><span class="n">dwRead</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+     <span class="n">CloseHandle</span><span class="p">(</span><span class="n">hFile</span><span class="p">);</span>
 
-     FileSize=GetFileSize(hFile,NULL);
-     fh=(BITMAPFILEHEADER *)malloc(FileSize);
-     ReadFile(hFile,fh,FileSize,&amp;dwRead,NULL);
-     CloseHandle(hFile);
+     <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">FileSize</span> <span class="o">-</span> <span class="n">fh</span> <span class="o">-&gt;</span> <span class="n">bfOffBits</span><span class="p">;</span>
+     <span class="n">pRaster</span><span class="o">=</span><span class="p">(</span><span class="n">GLubyte</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+     <span class="n">memcpy</span><span class="p">(</span><span class="n">pRaster</span><span class="p">,</span> <span class="p">(</span><span class="n">BYTE</span> <span class="o">*</span><span class="p">)</span><span class="n">fh</span><span class="o">+</span><span class="n">fh</span><span class="o">-&gt;</span><span class="n">bfOffBits</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
 
-     int len = FileSize - fh -&gt; bfOffBits;
-     pRaster=(GLubyte *)malloc(len);
-     memcpy(pRaster, (BYTE *)fh+fh-&gt;bfOffBits, len);
+     <span class="c1">// RGB로 순서를 바꾼다.</span>
+     <span class="k">for</span> <span class="p">(</span><span class="n">BYTE</span> <span class="o">*</span><span class="n">p</span><span class="o">=</span><span class="n">pRaster</span><span class="p">;</span><span class="n">p</span> <span class="o">&lt;</span> <span class="n">pRaster</span> <span class="o">+</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span><span class="n">p</span><span class="o">+=</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">BYTE</span> <span class="n">b</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+          <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span>
+          <span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     // RGB로 순서를 바꾼다.
-     for (BYTE *p=pRaster;p &lt; pRaster + len - 3;p+=3) {
-          BYTE b = *p;
-          *p = *(p+2);
-          *(p+2) = b;
-     }
+     <span class="n">ih</span><span class="o">=</span><span class="p">(</span><span class="n">BITMAPINFOHEADER</span> <span class="o">*</span><span class="p">)((</span><span class="n">PBYTE</span><span class="p">)</span><span class="n">fh</span><span class="o">+</span><span class="k">sizeof</span><span class="p">(</span><span class="n">BITMAPFILEHEADER</span><span class="p">));</span>
+     <span class="o">*</span><span class="n">Width</span><span class="o">=</span><span class="n">ih</span><span class="o">-&gt;</span><span class="n">biWidth</span><span class="p">;</span>
+     <span class="o">*</span><span class="n">Height</span><span class="o">=</span><span class="n">ih</span><span class="o">-&gt;</span><span class="n">biHeight</span><span class="p">;</span>
 
-     ih=(BITMAPINFOHEADER *)((PBYTE)fh+sizeof(BITMAPFILEHEADER));
-     *Width=ih-&gt;biWidth;
-     *Height=ih-&gt;biHeight;
+     <span class="n">free</span><span class="p">(</span><span class="n">fh</span><span class="p">);</span>
+     <span class="k">return</span> <span class="n">pRaster</span><span class="p">;</span>
+<span class="p">}</span>
 
-     free(fh);
-     return pRaster;
-}
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="n">GLubyte</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+     <span class="kt">int</span> <span class="n">Width</span><span class="p">,</span> <span class="n">Height</span><span class="p">;</span>
 
-void DoDisplay()
-{
-     GLubyte *data;
-     int Width, Height;
+     <span class="c1">// 텍스처 이미지 준비</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">);</span>
+     <span class="n">data</span> <span class="o">=</span> <span class="n">LoadBmp</span><span class="p">(</span><span class="s">"c:</span><span class="se">\\</span><span class="s">block.bmp"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Width</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Height</span><span class="p">);</span>
+     <span class="n">glTexImage2D</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">Width</span><span class="p">,</span> <span class="n">Height</span><span class="p">,</span>
+          <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span>  <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+     <span class="n">free</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
 
-     // 텍스처 이미지 준비
-     glEnable(GL_TEXTURE_2D);
-     data = LoadBmp("c:\\block.bmp", &amp;Width, &amp;Height);
-     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, Width, Height,
-          0, GL_RGB,  GL_UNSIGNED_BYTE, data);
-     free(data);
+     <span class="c1">// 텍스처 환경 설정</span>
+     <span class="n">glTexEnvi</span><span class="p">(</span><span class="n">GL_TEXTURE_ENV</span><span class="p">,</span> <span class="n">GL_TEXTURE_ENV_MODE</span><span class="p">,</span> <span class="n">EnvMode</span><span class="p">);</span>
 
-     // 텍스처 환경 설정
-     glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, EnvMode);
+     <span class="c1">// 텍스처 필터 설정</span>
+     <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MIN_FILTER</span><span class="p">,</span> <span class="n">TexFilter</span><span class="p">);</span>
+     <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MAG_FILTER</span><span class="p">,</span> <span class="n">TexFilter</span><span class="p">);</span>
 
-     // 텍스처 필터 설정
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, TexFilter);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, TexFilter);
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span> <span class="o">|</span> <span class="n">GL_DEPTH_BUFFER_BIT</span><span class="p">);</span>
+     <span class="n">glShadeModel</span><span class="p">(</span><span class="n">GL_FLAT</span><span class="p">);</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_DEPTH_TEST</span><span class="p">);</span>
 
-     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-     glShadeModel(GL_FLAT);
-     glEnable(GL_DEPTH_TEST);
+     <span class="n">glPushMatrix</span><span class="p">();</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">xAngle</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">yAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">zAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
 
-     glPushMatrix();
-     glRotatef(xAngle, 1.0f, 0.0f, 0.0f);
-     glRotatef(yAngle, 0.0f, 1.0f, 0.0f);
-     glRotatef(zAngle, 0.0f, 0.0f, 1.0f);
+     <span class="c1">// 아랫면 흰 바닥</span>
+     <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_QUADS</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glEnd</span><span class="p">();</span>
 
-     // 아랫면 흰 바닥
-     glBegin(GL_QUADS);
-     glColor3f(1,1,1);
-     glTexCoord2f(0.0, 1.0);
-     glVertex2f(-0.5, 0.5);
-     glTexCoord2f(1.0, 1.0);
-     glVertex2f(0.5, 0.5);
-     glTexCoord2f(1.0, 0.0);
-     glVertex2f(0.5, -0.5);
-     glTexCoord2f(0.0, 0.0);
-     glVertex2f(-0.5, -0.5);
-     glEnd();
+     <span class="c1">// 위쪽 빨간 변</span>
+     <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_TRIANGLE_FAN</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glVertex3f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     // 위쪽 빨간 변
-     glBegin(GL_TRIANGLE_FAN);
-     glColor3f(1,0,0);
-     glTexCoord2f(0.5, 0.5);
-     glVertex3f(0.0, 0.0, -0.8);
-     glTexCoord2f(1.0, 1.0);
-     glVertex2f(0.5, 0.5);
-     glTexCoord2f(0.0, 1.0);
-     glVertex2f(-0.5, 0.5);
+     <span class="c1">// 왼쪽 노란 변</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     // 왼쪽 노란 변
-     glColor3f(1,1,0);
-     glTexCoord2f(0.0, 0.0);
-     glVertex2f(-0.5, -0.5);
+     <span class="c1">// 아래쪽 초록 변</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     // 아래쪽 초록 변
-     glColor3f(0,1,0);
-     glTexCoord2f(1.0, 0.0);
-     glVertex2f(0.5, -0.5);
+     <span class="c1">// 오른쪽 파란 변</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glEnd</span><span class="p">();</span>
 
-     // 오른쪽 파란 변
-     glColor3f(0,0,1);
-     glTexCoord2f(1.0, 1.0);
-     glVertex2f(0.5, 0.5);
-     glEnd();
+     <span class="n">glPopMatrix</span><span class="p">();</span>
+     <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;gl/glut.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">();</span>
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">DoMenu</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
 
-     glPopMatrix();
-     glFlush();
-}
-#include &lt;windows.h&gt;
-#include &lt;gl/glut.h&gt;
+<span class="n">GLfloat</span> <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">;</span>
+<span class="n">GLint</span> <span class="n">EnvMode</span> <span class="o">=</span> <span class="n">GL_REPLACE</span><span class="p">;</span>
+<span class="n">GLint</span> <span class="n">TexFilter</span> <span class="o">=</span> <span class="n">GL_LINEAR</span><span class="p">;</span>
 
-void DoDisplay();
-void DoKeyboard(unsigned char key, int x, int y);
-void DoMenu(int value);
+<span class="kt">int</span> <span class="n">APIENTRY</span> <span class="nf">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span><span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span>
+       <span class="p">,</span><span class="n">LPSTR</span> <span class="n">lpszCmdParam</span><span class="p">,</span><span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">glutCreateWindow</span><span class="p">(</span><span class="s">"OpenGL"</span><span class="p">);</span>
+     <span class="n">glutDisplayFunc</span><span class="p">(</span><span class="n">DoDisplay</span><span class="p">);</span>
+     <span class="n">glutKeyboardFunc</span><span class="p">(</span><span class="n">DoKeyboard</span><span class="p">);</span>
+     <span class="n">glutCreateMenu</span><span class="p">(</span><span class="n">DoMenu</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Replace"</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Modulate"</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Add"</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Nearest Filter"</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+     <span class="n">glutAddMenuEntry</span><span class="p">(</span><span class="s">"Linear Filter"</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glutAttachMenu</span><span class="p">(</span><span class="n">GLUT_RIGHT_BUTTON</span><span class="p">);</span>
+     <span class="n">glutMainLoop</span><span class="p">();</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-GLfloat xAngle, yAngle, zAngle;
-GLint EnvMode = GL_REPLACE;
-GLint TexFilter = GL_LINEAR;
+<span class="kt">void</span> <span class="nf">DoKeyboard</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="sc">'a'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'d'</span><span class="p">:</span><span class="n">yAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'w'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'s'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'q'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'e'</span><span class="p">:</span><span class="n">zAngle</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="sc">'z'</span><span class="p">:</span><span class="n">xAngle</span> <span class="o">=</span> <span class="n">yAngle</span> <span class="o">=</span> <span class="n">zAngle</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
 
-int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance
-       ,LPSTR lpszCmdParam,int nCmdShow)
-{
-     glutCreateWindow("OpenGL");
-     glutDisplayFunc(DoDisplay);
-     glutKeyboardFunc(DoKeyboard);
-     glutCreateMenu(DoMenu);
-     glutAddMenuEntry("Replace",1);
-     glutAddMenuEntry("Modulate",2);
-     glutAddMenuEntry("Add",3);
-     glutAddMenuEntry("Nearest Filter",4);
-     glutAddMenuEntry("Linear Filter",5);
-     glutAttachMenu(GLUT_RIGHT_BUTTON);
-     glutMainLoop();
-     return 0;
-}
+     <span class="kt">char</span> <span class="n">info</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>
+     <span class="n">sprintf</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s">"x=%.1f, y=%.1f, z=%.1f"</span><span class="p">,</span> <span class="n">xAngle</span><span class="p">,</span> <span class="n">yAngle</span><span class="p">,</span> <span class="n">zAngle</span><span class="p">);</span>
+     <span class="n">glutSetWindowTitle</span><span class="p">(</span><span class="n">info</span><span class="p">);</span>
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
+<span class="p">}</span>
 
-void DoKeyboard(unsigned char key, int x, int y)
-{
-     switch(key) {
-     case 'a':yAngle += 2;break;
-     case 'd':yAngle -= 2;break;
-     case 'w':xAngle += 2;break;
-     case 's':xAngle -= 2;break;
-     case 'q':zAngle += 2;break;
-     case 'e':zAngle -= 2;break;
-     case 'z':xAngle = yAngle = zAngle = 0.0;break;
-     }
+<span class="kt">void</span> <span class="nf">DoMenu</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="k">switch</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+          <span class="n">EnvMode</span> <span class="o">=</span> <span class="n">GL_REPLACE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+          <span class="n">EnvMode</span> <span class="o">=</span> <span class="n">GL_MODULATE</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+          <span class="n">EnvMode</span> <span class="o">=</span> <span class="n">GL_ADD</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+          <span class="n">TexFilter</span> <span class="o">=</span> <span class="n">GL_NEAREST</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
+          <span class="n">TexFilter</span> <span class="o">=</span> <span class="n">GL_LINEAR</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     char info[128];
-     sprintf(info, "x=%.1f, y=%.1f, z=%.1f", xAngle, yAngle, zAngle);
-     glutSetWindowTitle(info);
-     glutPostRedisplay();
-}
+     <span class="n">glutPostRedisplay</span><span class="p">();</span>
+<span class="p">}</span>
 
-void DoMenu(int value)
-{
-     switch(value) {
-     case 1:
-          EnvMode = GL_REPLACE;
-          break;
-     case 2:
-          EnvMode = GL_MODULATE;
-          break;
-     case 3:
-          EnvMode = GL_ADD;
-          break;
-     case 4:
-          TexFilter = GL_NEAREST;
-          break;
-     case 5:
-          TexFilter = GL_LINEAR;
-          break;
-     }
+<span class="n">GLubyte</span> <span class="o">*</span><span class="nf">LoadBmp</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">Path</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">Width</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">Height</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">HANDLE</span> <span class="n">hFile</span><span class="p">;</span>
+     <span class="n">DWORD</span> <span class="n">FileSize</span><span class="p">,</span> <span class="n">dwRead</span><span class="p">;</span>
+     <span class="n">BITMAPFILEHEADER</span> <span class="o">*</span><span class="n">fh</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;</span>
+     <span class="n">BITMAPINFOHEADER</span> <span class="o">*</span><span class="n">ih</span><span class="p">;</span>
+     <span class="n">BYTE</span> <span class="o">*</span><span class="n">pRaster</span><span class="p">;</span>
 
-     glutPostRedisplay();
-}
+     <span class="n">hFile</span><span class="o">=</span><span class="n">CreateFileA</span><span class="p">(</span><span class="n">Path</span><span class="p">,</span><span class="n">GENERIC_READ</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span>
+          <span class="n">OPEN_EXISTING</span><span class="p">,</span><span class="n">FILE_ATTRIBUTE_NORMAL</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
 
-GLubyte *LoadBmp(const char *Path, int *Width, int *Height)
-{
-     HANDLE hFile;
-     DWORD FileSize, dwRead;
-     BITMAPFILEHEADER *fh=NULL;
-     BITMAPINFOHEADER *ih;
-     BYTE *pRaster;
+     <span class="k">if</span> <span class="p">(</span><span class="n">hFile</span><span class="o">==</span><span class="n">INVALID_HANDLE_VALUE</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     hFile=CreateFileA(Path,GENERIC_READ,0,NULL,
-          OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,NULL);
+     <span class="n">FileSize</span><span class="o">=</span><span class="n">GetFileSize</span><span class="p">(</span><span class="n">hFile</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+     <span class="n">fh</span><span class="o">=</span><span class="p">(</span><span class="n">BITMAPFILEHEADER</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">FileSize</span><span class="p">);</span>
+     <span class="n">ReadFile</span><span class="p">(</span><span class="n">hFile</span><span class="p">,</span><span class="n">fh</span><span class="p">,</span><span class="n">FileSize</span><span class="p">,</span><span class="o">&amp;</span><span class="n">dwRead</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+     <span class="n">CloseHandle</span><span class="p">(</span><span class="n">hFile</span><span class="p">);</span>
 
-     if (hFile==INVALID_HANDLE_VALUE) {
-          return NULL;
-     }
+     <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">FileSize</span> <span class="o">-</span> <span class="n">fh</span> <span class="o">-&gt;</span> <span class="n">bfOffBits</span><span class="p">;</span>
+     <span class="n">pRaster</span><span class="o">=</span><span class="p">(</span><span class="n">GLubyte</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+     <span class="n">memcpy</span><span class="p">(</span><span class="n">pRaster</span><span class="p">,</span> <span class="p">(</span><span class="n">BYTE</span> <span class="o">*</span><span class="p">)</span><span class="n">fh</span><span class="o">+</span><span class="n">fh</span><span class="o">-&gt;</span><span class="n">bfOffBits</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
 
-     FileSize=GetFileSize(hFile,NULL);
-     fh=(BITMAPFILEHEADER *)malloc(FileSize);
-     ReadFile(hFile,fh,FileSize,&amp;dwRead,NULL);
-     CloseHandle(hFile);
+     <span class="c1">// RGB로 순서를 바꾼다.</span>
+     <span class="k">for</span> <span class="p">(</span><span class="n">BYTE</span> <span class="o">*</span><span class="n">p</span><span class="o">=</span><span class="n">pRaster</span><span class="p">;</span><span class="n">p</span> <span class="o">&lt;</span> <span class="n">pRaster</span> <span class="o">+</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span><span class="n">p</span><span class="o">+=</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">BYTE</span> <span class="n">b</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+          <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span>
+          <span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     int len = FileSize - fh -&gt; bfOffBits;
-     pRaster=(GLubyte *)malloc(len);
-     memcpy(pRaster, (BYTE *)fh+fh-&gt;bfOffBits, len);
+     <span class="n">ih</span><span class="o">=</span><span class="p">(</span><span class="n">BITMAPINFOHEADER</span> <span class="o">*</span><span class="p">)((</span><span class="n">PBYTE</span><span class="p">)</span><span class="n">fh</span><span class="o">+</span><span class="k">sizeof</span><span class="p">(</span><span class="n">BITMAPFILEHEADER</span><span class="p">));</span>
+     <span class="o">*</span><span class="n">Width</span><span class="o">=</span><span class="n">ih</span><span class="o">-&gt;</span><span class="n">biWidth</span><span class="p">;</span>
+     <span class="o">*</span><span class="n">Height</span><span class="o">=</span><span class="n">ih</span><span class="o">-&gt;</span><span class="n">biHeight</span><span class="p">;</span>
 
-     // RGB로 순서를 바꾼다.
-     for (BYTE *p=pRaster;p &lt; pRaster + len - 3;p+=3) {
-          BYTE b = *p;
-          *p = *(p+2);
-          *(p+2) = b;
-     }
+     <span class="n">free</span><span class="p">(</span><span class="n">fh</span><span class="p">);</span>
+     <span class="k">return</span> <span class="n">pRaster</span><span class="p">;</span>
+<span class="p">}</span>
 
-     ih=(BITMAPINFOHEADER *)((PBYTE)fh+sizeof(BITMAPFILEHEADER));
-     *Width=ih-&gt;biWidth;
-     *Height=ih-&gt;biHeight;
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="n">GLubyte</span> <span class="o">*</span><span class="n">data</span><span class="p">;</span>
+     <span class="kt">int</span> <span class="n">Width</span><span class="p">,</span> <span class="n">Height</span><span class="p">;</span>
 
-     free(fh);
-     return pRaster;
-}
+     <span class="c1">// 텍스처 이미지 준비</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">);</span>
+     <span class="n">data</span> <span class="o">=</span> <span class="n">LoadBmp</span><span class="p">(</span><span class="s">"c:</span><span class="se">\\</span><span class="s">block.bmp"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Width</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Height</span><span class="p">);</span>
+     <span class="n">glTexImage2D</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span> <span class="n">Width</span><span class="p">,</span> <span class="n">Height</span><span class="p">,</span>
+          <span class="mi">0</span><span class="p">,</span> <span class="n">GL_RGB</span><span class="p">,</span>  <span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+     <span class="n">free</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
 
-void DoDisplay()
-{
-     GLubyte *data;
-     int Width, Height;
+     <span class="c1">// 텍스처 환경 설정</span>
+     <span class="n">glTexEnvi</span><span class="p">(</span><span class="n">GL_TEXTURE_ENV</span><span class="p">,</span> <span class="n">GL_TEXTURE_ENV_MODE</span><span class="p">,</span> <span class="n">EnvMode</span><span class="p">);</span>
 
-     // 텍스처 이미지 준비
-     glEnable(GL_TEXTURE_2D);
-     data = LoadBmp("c:\\block.bmp", &amp;Width, &amp;Height);
-     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, Width, Height,
-          0, GL_RGB,  GL_UNSIGNED_BYTE, data);
-     free(data);
+     <span class="c1">// 텍스처 필터 설정</span>
+     <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MIN_FILTER</span><span class="p">,</span> <span class="n">TexFilter</span><span class="p">);</span>
+     <span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">GL_TEXTURE_MAG_FILTER</span><span class="p">,</span> <span class="n">TexFilter</span><span class="p">);</span>
 
-     // 텍스처 환경 설정
-     glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, EnvMode);
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span> <span class="o">|</span> <span class="n">GL_DEPTH_BUFFER_BIT</span><span class="p">);</span>
+     <span class="n">glShadeModel</span><span class="p">(</span><span class="n">GL_FLAT</span><span class="p">);</span>
+     <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_DEPTH_TEST</span><span class="p">);</span>
 
-     // 텍스처 필터 설정
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, TexFilter);
-     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, TexFilter);
+     <span class="n">glPushMatrix</span><span class="p">();</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">xAngle</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">yAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
+     <span class="n">glRotatef</span><span class="p">(</span><span class="n">zAngle</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="n">f</span><span class="p">);</span>
 
-     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-     glShadeModel(GL_FLAT);
-     glEnable(GL_DEPTH_TEST);
+     <span class="c1">// 아랫면 흰 바닥</span>
+     <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_QUADS</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glEnd</span><span class="p">();</span>
 
-     glPushMatrix();
-     glRotatef(xAngle, 1.0f, 0.0f, 0.0f);
-     glRotatef(yAngle, 0.0f, 1.0f, 0.0f);
-     glRotatef(zAngle, 0.0f, 0.0f, 1.0f);
+     <span class="c1">// 위쪽 빨간 변</span>
+     <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_TRIANGLE_FAN</span><span class="p">);</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glVertex3f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     // 아랫면 흰 바닥
-     glBegin(GL_QUADS);
-     glColor3f(1,1,1);
-     glTexCoord2f(0.0, 1.0);
-     glVertex2f(-0.5, 0.5);
-     glTexCoord2f(1.0, 1.0);
-     glVertex2f(0.5, 0.5);
-     glTexCoord2f(1.0, 0.0);
-     glVertex2f(0.5, -0.5);
-     glTexCoord2f(0.0, 0.0);
-     glVertex2f(-0.5, -0.5);
-     glEnd();
+     <span class="c1">// 왼쪽 노란 변</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     // 위쪽 빨간 변
-     glBegin(GL_TRIANGLE_FAN);
-     glColor3f(1,0,0);
-     glTexCoord2f(0.5, 0.5);
-     glVertex3f(0.0, 0.0, -0.8);
-     glTexCoord2f(1.0, 1.0);
-     glVertex2f(0.5, 0.5);
-     glTexCoord2f(0.0, 1.0);
-     glVertex2f(-0.5, 0.5);
+     <span class="c1">// 아래쪽 초록 변</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
 
-     // 왼쪽 노란 변
-     glColor3f(1,1,0);
-     glTexCoord2f(0.0, 0.0);
-     glVertex2f(-0.5, -0.5);
+     <span class="c1">// 오른쪽 파란 변</span>
+     <span class="n">glColor3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+     <span class="n">glTexCoord2f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+     <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+     <span class="n">glEnd</span><span class="p">();</span>
 
-     // 아래쪽 초록 변
-     glColor3f(0,1,0);
-     glTexCoord2f(1.0, 0.0);
-     glVertex2f(0.5, -0.5);
-
-     // 오른쪽 파란 변
-     glColor3f(0,0,1);
-     glTexCoord2f(1.0, 1.0);
-     glVertex2f(0.5, 0.5);
-     glEnd();
-
-     glPopMatrix();
-     glFlush();
-}
+     <span class="n">glPopMatrix</span><span class="p">();</span>
+     <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>    <a href="http://yoonbumtae.com/?attachment_id=997"> <a href="/assets/img/wp-content/uploads/2019/04/스크린샷-2020-01-14-오후-10.13.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/스크린샷-2020-01-14-오후-10.13.28.png" alt="" loading="lazy"></a>    
-          class="img-link shimmer"
-        ><img src="/assets/img/wp-content/uploads/2019/04/스크린샷-2020-01-14-오후-10.13.48.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/04/opengl-8-texture-1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/opengl-8-texture-1.png" alt="" loading="lazy"></a>
+<a href="/assets/img/wp-content/uploads/2019/04/opengl-8-texture-2.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/opengl-8-texture-2.png" alt="" loading="lazy"></a></p>
 
-<h3 id="38-텍스처-매핑-옵션"><span class="me-2">38. 텍스처 매핑 옵션</span><a href="#38-텍스처-매핑-옵션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="38-텍스처-매핑-옵션"><span class="me-2">38. 텍스처 매핑 옵션</span><a href="#38-텍스처-매핑-옵션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>텍스처 맵핑은 굉장히 복잡한 연산이어서 선택할 수 있는 옵션들이 아주 많다. 다음 함수는 텍스처 맵핑 환경을 지정한다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glTexEnv[f, i](GLenum target, GLenum pname, GLfloat param);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="n">glTexEnv</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">](</span><span class="n">GLenum</span> <span class="n">target</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">pname</span><span class="p">,</span> <span class="n">GLfloat</span> <span class="n">param</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">target</code> 인수는 어떤 환경을 조정할 것인가를 지정한다. <code class="language-plaintext highlighter-rouge">GL_TEXTURE_ENV</code>, <code class="language-plaintext highlighter-rouge">GL_TEXTURE_FILTER_CONTROL</code>, <code class="language-plaintext highlighter-rouge">GL_POINT_SPRITE</code> 중 하나이다. <code class="language-plaintext highlighter-rouge">pname</code>은 조정하고자 하는 옵션의 이름이고 <code class="language-plaintext highlighter-rouge">param</code>은 옵션의 값이다. <code class="language-plaintext highlighter-rouge">GL_TEXTURE_ENV_MODE</code>는 텍셀의 색상과 지오메트리의 색상을 결합하는 방식 지정하는데 다음 여섯 가지 방식이 있다.</p>
@@ -2752,14 +2753,15 @@ void DoDisplay()
 
 <p>피라미드의 각 면에 고유의 색상이 지정되어 있는데 결합 모드에 따라 이 색상과 텍스처 색상의 연산이 결정된다. <code class="language-plaintext highlighter-rouge">REPLACE</code>로 덮어 쓰면 텍스처의 무늬만 나타나지만 <code class="language-plaintext highlighter-rouge">MODULATE</code>나 <code class="language-plaintext highlighter-rouge">ADD</code>로 혼합하면 면의 원래색과 논리적으로 섞인다. 팝업 메뉴로 모드를 바꿔 보자.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/04/스크린샷-2020-01-14-오후-10.14.55.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/스크린샷-2020-01-14-오후-10.14.55.png" alt="" loading="lazy"></a>     <a href="/assets/img/wp-content/uploads/2019/04/스크린샷-2020-01-14-오후-10.15.21.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/스크린샷-2020-01-14-오후-10.15.21.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/04/opengl-8-texture-3.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/opengl-8-texture-3.png" alt="" loading="lazy"></a>     
+ <a href="/assets/img/wp-content/uploads/2019/04/opengl-8-texture-4.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/opengl-8-texture-4.png" alt="" loading="lazy"></a></p>
 
 <p>다음 함수는 텍스처 파라미터를 지정하는데 이 파라미터에 따라 텍스처를 그리는 랜더링 방식이 달라진다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>void glTexParameter[f, i][v](GLenum target, GLenum pname, GLfloat param);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="n">glTexParameter</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">i</span><span class="p">][</span><span class="n">v</span><span class="p">](</span><span class="n">GLenum</span> <span class="n">target</span><span class="p">,</span> <span class="n">GLenum</span> <span class="n">pname</span><span class="p">,</span> <span class="n">GLfloat</span> <span class="n">param</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">target</code>은 텍스처의 차원을 지정한다. <code class="language-plaintext highlighter-rouge">pname</code>은 파라미터의 이름이고 <code class="language-plaintext highlighter-rouge">param</code>은 값이다. 텍스처와 물체의 면적이 정확하게 일치하는 경우가 드물므로 텍스처를 늘리거나 줄여서 입혀야 한다. 텍스처 맵으로부터 입힐 색상을 계산하는 과정을 텍스처 필터링이라고 한다. <code class="language-plaintext highlighter-rouge">GL_TEXTURE_MIN_FILTER</code>는 축소시의 필터링을 지정하고 <code class="language-plaintext highlighter-rouge">GL_TEXTURE_MAG_FILTER</code>는 확대시의 필터링을 지정한다. 주로 다음 두 가지 필터가 사용된다.</p>
@@ -2785,7 +2787,7 @@ void DoDisplay()
 
 <p> </p>
 
-<h3 id="39-opengl-es-축소된-서브셋"><span class="me-2">39. OpenGL ES (축소된 서브셋)</span><a href="#39-opengl-es-축소된-서브셋" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="39-opengl-es-축소된-서브셋"><span class="me-2">39. OpenGL ES (축소된 서브셋)</span><a href="#39-opengl-es-축소된-서브셋" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>제약이 심한 임베디드 환경을 위해 더 작고 가벼운 별도의 표준을 재정했는데 이것이 바로 OpenGL ES이다. ES는 Embeded System의 약자이다. ES 표준은 크로노스 그룹에서 관리한다. ES는 상위의 표준인 OpenGL에서 잘 사용되지 않거나 대체적인 방법이 있는 것을 제외하고 축소하여 만든 것이다. 즉, OpenGL의 서브셋이다. </p>
 
@@ -9671,18 +9673,6 @@ void DoDisplay()
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -9719,7 +9709,7 @@ void DoDisplay()
 
               <h4 class="pt-0 my-2">OpenGL 기초 7: 조명, 재질, 법선</h4>
               <div class="text-muted">
-                <p>출처: http://soen.kr/lecture/library/opengl/opengl-9.htm  31. 조명 개요  OpenGL은 조명을 성격에 따라 다음 세가지로 분류한다.     주변광(Ambient) : 도처에 존재하는 빛이다. 광원에서 나온 빛이 여러 경로로 반사 및 재반사되어 방향성을 잃어버린 빛이다. 사방에서 물체의 모든 면에 골고루 비...</p>
+                <p>출처: http://soen.kr/lecture/library/opengl/opengl-9.htm   31. 조명 개요  OpenGL은 조명을 성격에 따라 다음 세가지로 분류한다.     주변광(Ambient) : 도처에 존재하는 빛이다. 광원에서 나온 빛이 여러 경로로 반사 및 재반사되어 방향성을 잃어버린 빛이다. 사방에서 물체의 모든 면에 골고루 ...</p>
               </div>
             </div>
           </a>
@@ -9747,7 +9737,7 @@ void DoDisplay()
 
               <h4 class="pt-0 my-2">OpenGL 기초 6: 행렬, 출력 영역의 제한</h4>
               <div class="text-muted">
-                <p>출처: http://soen.kr/lecture/library/opengl/opengl-8.htm  29. 행렬  OpenGL은 각종 변환에 행렬을 많이 사용한다.  행렬의 수학적 특성을 잘 이용하면 빠른 속도로 연산을 수행할 수 있다. OpenGL이 변환에 사용하는 행렬은 4*4 크기의 행렬이다. 3차원 공간은 3개의 좌표로 구성되지만 연산의 편의를...</p>
+                <p>출처: http://soen.kr/lecture/library/opengl/opengl-8.htm   29. 행렬  OpenGL은 각종 변환에 행렬을 많이 사용한다.  행렬의 수학적 특성을 잘 이용하면 빠른 속도로 연산을 수행할 수 있다. OpenGL이 변환에 사용하는 행렬은 4*4 크기의 행렬이다. 3차원 공간은 3개의 좌표로 구성되지만 연산의 편의...</p>
               </div>
             </div>
           </a>
@@ -9775,7 +9765,7 @@ void DoDisplay()
 
               <h4 class="pt-0 my-2">OpenGL 기초 5: 변환(관측, 모델링), 투영(직교, 원근), 뷰포트</h4>
               <div class="text-muted">
-                <p>출처: http://soen.kr/lecture/library/opengl/opengl-8.htm  24. 변환 - 개요  3차원 공간에 배치된 물체의 전체적인 변환 과정은 다음과 같다.    OpenGL은 변환 단계에서 수행되는 복잡한 연산들을 행렬로 처리한다. 모든 변환 함수의 연산 결과는 현재 행렬에 반영된다. 좀 더 정확하게는 현재 선택된 행렬...</p>
+                <p>출처: http://soen.kr/lecture/library/opengl/opengl-8.htm   24. 변환 - 개요  3차원 공간에 배치된 물체의 전체적인 변환 과정은 다음과 같다.    OpenGL은 변환 단계에서 수행되는 복잡한 연산들을 행렬로 처리한다. 모든 변환 함수의 연산 결과는 현재 행렬에 반영된다. 좀 더 정확하게는 현재 선택된 행...</p>
               </div>
             </div>
           </a>

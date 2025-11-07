@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="JSP, Spring: 웹소켓(Web Socket) 1" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="설명은 나중에.. 그리고 이 방법은 스프링 부트에서는 권장되지 않고 다른 방법이 있는데 그것도 나중에.." />
-<meta property="og:description" content="설명은 나중에.. 그리고 이 방법은 스프링 부트에서는 권장되지 않고 다른 방법이 있는데 그것도 나중에.." />
+<meta name="description" content="웹소켓을 이용한 채팅 예제" />
+<meta property="og:description" content="웹소켓을 이용한 채팅 예제" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-1/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-1/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="JSP, Spring: 웹소켓(Web Socket) 1" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-04-24T00:00:00+09:00","datePublished":"2019-04-24T00:00:00+09:00","description":"설명은 나중에.. 그리고 이 방법은 스프링 부트에서는 권장되지 않고 다른 방법이 있는데 그것도 나중에..","headline":"JSP, Spring: 웹소켓(Web Socket) 1","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-1/"},"url":"https://ayaysir.github.io/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-04-24T00:00:00+09:00","datePublished":"2019-04-24T00:00:00+09:00","description":"웹소켓을 이용한 채팅 예제","headline":"JSP, Spring: 웹소켓(Web Socket) 1","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-1/"},"url":"https://ayaysir.github.io/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -537,11 +544,11 @@
       
 
       
-        <!-- add class to exist <a> tag -->
-        
-        
+        <!-- create the image wrapper -->
         
 
+        
+        
       
     
 
@@ -566,10 +573,96 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -596,7 +689,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>JSP, Spring: 웹소켓(Web Socket) 1</h1>
     
@@ -670,7 +763,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="709 words"
+  title="695 words"
 >
   <em>3 min</em> read</span>
 
@@ -680,16 +773,40 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">JSP, Spring: 웹소켓(Web Socket) 1</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">JSP, Spring: 웹소켓(Web Socket) 1</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>설명은 나중에.. 그리고 이 방법은 스프링 부트에서는 권장되지 않고 다른 방법이 있는데 그것도 나중에..</p>
+    <p>웹소켓을 이용한 채팅 예제</p>
 
-<p>웹소켓을 이용한 채팅 예제</p>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>일반 JSP (서블릿)에서 사용하는 경우 다음 코드만 작성한다.</p>
+<h3 id="jsp-서블릿에서-작성"><span class="me-2">JSP 서블릿에서 작성</span><a href="#jsp-서블릿에서-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<p>일반 JSP (서블릿)에서 사용하는 경우 다음 코드만 작성합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -743,65 +860,67 @@
 51
 52
 53
-</pre></td><td class="rouge-code"><pre>package com.example.thymeleaf.websocket;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.thymeleaf.websocket</span><span class="o">;</span>
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Collections</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
  
-import javax.websocket.OnClose;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
-import javax.websocket.server.ServerEndpoint;
+<span class="kn">import</span> <span class="nn">javax.websocket.OnClose</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.websocket.OnMessage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.websocket.OnOpen</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.websocket.Session</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.websocket.server.ServerEndpoint</span><span class="o">;</span>
  
-@ServerEndpoint("/ws")    // 웹소켓용 서버 주소 지정 (ws://[서버 주소]/ws)
-public class WebSocket {
+<span class="nd">@ServerEndpoint</span><span class="o">(</span><span class="s">"/ws"</span><span class="o">)</span>    <span class="c1">// 웹소켓용 서버 주소 지정 (ws://[서버 주소]/ws)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebSocket</span> <span class="o">{</span>
  
-    //유저 집합 리스트
-    static List&lt;Session&gt; sessionUsers = Collections.synchronizedList(new ArrayList&lt;&gt;());
+    <span class="c1">//유저 집합 리스트</span>
+    <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Session</span><span class="o">&gt;</span> <span class="n">sessionUsers</span> <span class="o">=</span> <span class="nc">Collections</span><span class="o">.</span><span class="na">synchronizedList</span><span class="o">(</span><span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;());</span>
  
-    /**
+    <span class="cm">/**
      * 웹 소켓이 접속되면 유저리스트에 세션을 넣는다.
      * @param userSession 웹 소켓 세션
-     */
-    @OnOpen
-    public void handleOpen(Session userSession){
-        sessionUsers.add(userSession);
-    }
-    /**
+     */</span>
+    <span class="nd">@OnOpen</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleOpen</span><span class="o">(</span><span class="nc">Session</span> <span class="n">userSession</span><span class="o">){</span>
+        <span class="n">sessionUsers</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">userSession</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="cm">/**
      * 웹 소켓으로부터 메시지가 오면 호출한다.
      * @param message 메시지
      * @param userSession
      * @throws IOException
-     */
-    @OnMessage
-    public void handleMessage(String message, Session userSession) throws IOException{
+     */</span>
+    <span class="nd">@OnMessage</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="nc">String</span> <span class="n">message</span><span class="o">,</span> <span class="nc">Session</span> <span class="n">userSession</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">{</span>
         
-        for(Session ss : sessionUsers) {
-            if(ss != userSession) {
-                ss.getBasicRemote().sendText(message);
-            }
-        }
-    }
+        <span class="k">for</span><span class="o">(</span><span class="nc">Session</span> <span class="n">ss</span> <span class="o">:</span> <span class="n">sessionUsers</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">ss</span> <span class="o">!=</span> <span class="n">userSession</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">ss</span><span class="o">.</span><span class="na">getBasicRemote</span><span class="o">().</span><span class="na">sendText</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
  
-    /**
+    <span class="cm">/**
      * 웹소켓을 닫으면 해당 유저를 유저리스트에서 뺀다.
      * @param userSession
-     */
-    @OnClose
-    public void handleClose(Session userSession){
-        sessionUsers.remove(userSession);
-    }
+     */</span>
+    <span class="nd">@OnClose</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleClose</span><span class="o">(</span><span class="nc">Session</span> <span class="n">userSession</span><span class="o">){</span>
+        <span class="n">sessionUsers</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">userSession</span><span class="o">);</span>
+    <span class="o">}</span>
  
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="스프링부트를-사용하는-경우"><span class="me-2">스프링부트를 사용하는 경우</span><a href="#스프링부트를-사용하는-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><strong>스프링 부트</strong>를 사용하는 경우 다음 코드를 <strong>추가로 작성</strong>한다. <strong>(중요)</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -822,32 +941,32 @@ public class WebSocket {
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>package com.example.thymeleaf.websocket;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.thymeleaf.websocket</span><span class="o">;</span>
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.socket.server.standard.ServerEndpointExporter;
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.socket.server.standard.ServerEndpointExporter</span><span class="o">;</span>
 
-@Configuration
-public class EndpointConfig 
-{
-    @Bean // 웹소켓 클래스의 이름에 맞춰 작성
-    public WebSocket webSocket(){
-        return new WebSocket();
-    }
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EndpointConfig</span> 
+<span class="o">{</span>
+    <span class="nd">@Bean</span> <span class="c1">// 웹소켓 클래스의 이름에 맞춰 작성</span>
+    <span class="kd">public</span> <span class="nc">WebSocket</span> <span class="nf">webSocket</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">WebSocket</span><span class="o">();</span>
+    <span class="o">}</span>
 
-    @Bean
-    public ServerEndpointExporter endpointExporter(){
-        return new ServerEndpointExporter();
-    }
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="nc">ServerEndpointExporter</span> <span class="nf">endpointExporter</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ServerEndpointExporter</span><span class="o">();</span>
+    <span class="o">}</span>
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>HTML 코드</p>
+<h3 id="html-코드"><span class="me-2">HTML 코드</span><a href="#html-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -860,24 +979,24 @@ public class EndpointConfig
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>&lt;body&gt;
-    &lt;div id=wrapper &gt;
-        &lt;div id=chatArea&gt;&lt;/div&gt;
-        &lt;div id=chatInput &gt;
-          &lt;div&gt;
-          	&lt;input type=text id="inputMessage" class="form-control"
-                  placeholder="채팅을 입력하세요."&gt;
-                  &lt;button id=send class="btn btn-default"&gt;send&lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">wrapper</span> <span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">chatArea</span><span class="nt">&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">chatInput</span> <span class="nt">&gt;</span>
+          <span class="nt">&lt;div&gt;</span>
+          	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">text</span> <span class="na">id=</span><span class="s">"inputMessage"</span> <span class="na">class=</span><span class="s">"form-control"</span>
+                  <span class="na">placeholder=</span><span class="s">"채팅을 입력하세요."</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">send</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>send<span class="nt">&lt;/button&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>자바스크립트(JQuery 포함)</p>
+<h3 id="자바스크립트jquery-포함"><span class="me-2">자바스크립트(JQuery 포함)</span><a href="#자바스크립트jquery-포함" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -918,53 +1037,53 @@ public class EndpointConfig
 38
 39
 40
-</pre></td><td class="rouge-code"><pre>   var webSocket = new WebSocket('ws://[서버의 절대 주소]/ws');
-   webSocket.onerror = onError
-   webSocket.onopen = onOpen
-   webSocket.onmessage = onMessage
+</pre></td><td class="rouge-code"><pre>   <span class="kd">var</span> <span class="nx">webSocket</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WebSocket</span><span class="p">(</span><span class="dl">'</span><span class="s1">ws://[서버의 절대 주소]/ws</span><span class="dl">'</span><span class="p">);</span>
+   <span class="nx">webSocket</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="nx">onError</span>
+   <span class="nx">webSocket</span><span class="p">.</span><span class="nx">onopen</span> <span class="o">=</span> <span class="nx">onOpen</span>
+   <span class="nx">webSocket</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="nx">onMessage</span>
    
-   function onMessage(event) {
-   	var $div = $('&lt;div/&gt;', {"class": "msg msg-other", text: "상대: " + event.data })
-       $("#chatArea").append($div);
-   }
-   function onOpen(event) {
-   	var $div = $('&lt;div/&gt;', {"class": "msg msg-connect", text: "연결성공"})
-       $("#chatArea").append($div);
-   }
-   function onError(event) {
-   	var $div = $('&lt;div/&gt;', {"class": "msg msg-error", text: "연결이 끊겼습니다."})
-       $("#chatArea").append($div);
-   }
+   <span class="kd">function</span> <span class="nf">onMessage</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+   	<span class="kd">var</span> <span class="nx">$div</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;div/&gt;</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">msg msg-other</span><span class="dl">"</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">상대: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span> <span class="p">})</span>
+       <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chatArea</span><span class="dl">"</span><span class="p">).</span><span class="nf">append</span><span class="p">(</span><span class="nx">$div</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="kd">function</span> <span class="nf">onOpen</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+   	<span class="kd">var</span> <span class="nx">$div</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;div/&gt;</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">msg msg-connect</span><span class="dl">"</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">연결성공</span><span class="dl">"</span><span class="p">})</span>
+       <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chatArea</span><span class="dl">"</span><span class="p">).</span><span class="nf">append</span><span class="p">(</span><span class="nx">$div</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="kd">function</span> <span class="nf">onError</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+   	<span class="kd">var</span> <span class="nx">$div</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;div/&gt;</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">msg msg-error</span><span class="dl">"</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">연결이 끊겼습니다.</span><span class="dl">"</span><span class="p">})</span>
+       <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chatArea</span><span class="dl">"</span><span class="p">).</span><span class="nf">append</span><span class="p">(</span><span class="nx">$div</span><span class="p">);</span>
+   <span class="p">}</span>
 
-   function send() {
-       if (!inputMessage.value) {
-           alert("채팅을 입력하세요.");
-           return;
-       }
-       webSocket.send(inputMessage.value);
-       var $div = $('&lt;div/&gt;', {"class": "msg msg-me", text: "나: " + inputMessage.value })
-       $("#chatArea").append($div);
+   <span class="kd">function</span> <span class="nf">send</span><span class="p">()</span> <span class="p">{</span>
+       <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">inputMessage</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+           <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">채팅을 입력하세요.</span><span class="dl">"</span><span class="p">);</span>
+           <span class="k">return</span><span class="p">;</span>
+       <span class="p">}</span>
+       <span class="nx">webSocket</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="nx">inputMessage</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+       <span class="kd">var</span> <span class="nx">$div</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;div/&gt;</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="dl">"</span><span class="s2">class</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">msg msg-me</span><span class="dl">"</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span> <span class="dl">"</span><span class="s2">나: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">inputMessage</span><span class="p">.</span><span class="nx">value</span> <span class="p">})</span>
+       <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#chatArea</span><span class="dl">"</span><span class="p">).</span><span class="nf">append</span><span class="p">(</span><span class="nx">$div</span><span class="p">);</span>
        
-       $("#inputMessage").val("");
-       $("#inputMessage").focus();
-   }
+       <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#inputMessage</span><span class="dl">"</span><span class="p">).</span><span class="nf">val</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+       <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#inputMessage</span><span class="dl">"</span><span class="p">).</span><span class="nf">focus</span><span class="p">();</span>
+   <span class="p">}</span>
 
-   $("#inputMessage").keypress(function(e) {
-       if (e.which == 13) {
-           send();
-       }
-   });
+   <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#inputMessage</span><span class="dl">"</span><span class="p">).</span><span class="nf">keypress</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">if </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">which</span> <span class="o">==</span> <span class="mi">13</span><span class="p">)</span> <span class="p">{</span>
+           <span class="nf">send</span><span class="p">();</span>
+       <span class="p">}</span>
+   <span class="p">});</span>
 
-   $("#send").click(function() {
-       send();
-   })
+   <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#send</span><span class="dl">"</span><span class="p">).</span><span class="nf">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+       <span class="nf">send</span><span class="p">();</span>
+   <span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">[서버의 절대 주소]</code>에는 외부에서 자신의 서버에 접속할 수 있는 절대 주소를 입력한다. localhost, 127.0.0.1 이런 주소가 아니라 ISP에 할당된 주소를 입력해야 한다.</p>
+<p><code class="language-plaintext highlighter-rouge">[서버의 절대 주소]</code>에는 외부에서 자신의 서버에 접속할 수 있는 절대 주소를 입력합니다. localhost, 127.0.0.1 이런 주소가 아니라 ISP에 할당된 주소를 입력해야 합니다.</p>
 
-<p><a href="http://yoonbumtae.com/?attachment_id=1069">
-          class="img-link shimmer"
-        ><img src="/assets/img/wp-content/uploads/2019/04/websocket1.png" alt="" loading="lazy"></a></p>
+<h3 id="실행-화면"><span class="me-2">실행 화면</span><a href="#실행-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><a href="/assets/img/wp-content/uploads/2019/04/websocket1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/04/websocket1.png" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -1948,6 +2067,12 @@ public class EndpointConfig
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1981,18 +2106,6 @@ public class EndpointConfig
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
