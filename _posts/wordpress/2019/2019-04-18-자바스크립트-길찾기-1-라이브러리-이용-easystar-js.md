@@ -1,5 +1,5 @@
 ---
-title: "자바스크립트: 길찾기 1 (라이브러리 이용 - EasyStar.js)"
+title: "자바스크립트: 라이브러리 이용하여 길찾기 - EasyStar.js"
 date: 2019-04-18
 categories: 
   - "DevLog"
@@ -10,7 +10,9 @@ categories:
 
 라이브러리중에 **EasyStar.js** ([https://www.easystarjs.com/](https://www.easystarjs.com/)) 라는게 있는데 이걸로 길찾기 알고리즘을 직접 구현하지 않고도 사용할 수 있습니다.
 
-```
+## 코드 예제
+
+```js
 window.onload = function() {
   
   var startPoint = {x:0, y:0}
@@ -118,7 +120,7 @@ window.onload = function() {
 
 ```
 
-```
+```html
 <body>
 
   <div>
@@ -130,6 +132,7 @@ window.onload = function() {
 </body>
 ```
 
- 
+## 실행 화면
 
- ![](/assets/img/wp-content/uploads/2019/04/pathr1.gif)               ![](/assets/img/wp-content/uploads/2019/04/pathr2.gif)
+ ![](/assets/img/wp-content/uploads/2019/04/pathr1.gif)
+ ![](/assets/img/wp-content/uploads/2019/04/pathr2.gif)

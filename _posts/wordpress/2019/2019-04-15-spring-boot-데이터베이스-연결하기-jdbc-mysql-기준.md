@@ -8,11 +8,13 @@ tags:
   - "spring-boot"
 ---
 
-Spring Boot에 JDBC를 사용하여 데이터베이스를 연결하는 방법은 다음과 같다.
+Spring Boot에 JDBC를 사용하여 데이터베이스를 연결하는 방법은 다음과 같습니다.
 
-1\. pom.xml 에 디펜던시 추가
+## 절차
 
-```
+### 1\. pom.xml 에 디펜던시 추가
+
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -25,9 +27,9 @@ Spring Boot에 JDBC를 사용하여 데이터베이스를 연결하는 방법은
 </dependency>
 ```
 
-2\. application.properties 파일에 데이터베이스 설정 추가
+### 2\. application.properties 파일에 데이터베이스 설정 추가
 
-```
+```conf
 spring.datasource.url=jdbc:mysql://localhost/데이터베이스?serverTimezone=UTC
  
 # 주소 뒤에 ?serverTimezone=UTC를 붙이는 이유는 글자가 깨지는 문제를 방지하기 위함이다.
@@ -40,9 +42,9 @@ spring.datasource.password=비밀번호
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 ```
 
-3\. VO(DTO) 작성
+### 3\. VO(DTO) 작성
 
-```
+```java
 public class TempVO {
  
     private int idsortable1;
@@ -53,9 +55,9 @@ public class TempVO {
 }
 ```
 
-4\. 코드 작성
+### 4\. 서버 코드 작성
 
-```
+```java
 package com.example.ui;
  
 import java.util.List;
@@ -114,4 +116,4 @@ public class TempController {
 }
 ```
 
-예제이기 때문에 컨트롤러 한 곳에 몰아서 작성했지만 정석대로 한다면 데이터베이스 접근 부분은 DAO, 서비스와 컨트롤러가 서로 분리되어야 한다.
+<!-- 예제이기 때문에 컨트롤러 한 곳에 몰아서 작성했지만 정석대로 한다면 데이터베이스 접근 부분은 DAO, 서비스와 컨트롤러가 서로 분리되어야 한다. -->

@@ -8,9 +8,9 @@ tags:
   - "opengl"
 ---
 
-출처: [http://soen.kr/lecture/library/opengl/opengl-5.htm](http://soen.kr/lecture/library/opengl/opengl-5.htm)
+- 출처: [http://soen.kr/lecture/library/opengl/opengl-5.htm](http://soen.kr/lecture/library/opengl/opengl-5.htm)
 
-### 11\. 블렌딩
+## 11\. 블렌딩
 
 블렌딩은 색상 버퍼에 이미 기록되어 있는 값과 새로 그려지는 값의 논리 연산 방법을 지정한다. 다른 모드를 사용하면 두 값을 논리적으로 연산한 결과를 써 넣음으로써 특이한 효과를 낼 수 있다. 블렌딩 기능은 `glEnable(GL_BLEND);` 로 사용한다.
 
@@ -34,7 +34,7 @@ tags:
 
 `void glBlendFuncSeparate(GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);` `void glBlendEquationSeparate(GLenum modeRGB, GLenum modeAlpha);`
 
-```
+```c
 #include <windows.h>
 #include <gl/glut.h>
 
@@ -139,7 +139,7 @@ glBlendFunc(GL\_ONE, GL\_ZERO);
 
  
 
-### 12\. 앤티 앨리어싱
+## 12\. 앤티 앨리어싱
 
 컴퓨터 화면은 색상 경계가 뚜렷할수록 경계면이 어색해서 이질감이 더해 보인다. 디지털 화면에서 나타나는 계단 현상 등을 알리아스라고 하며 이런 현상을 제거 또는 감소시키는 기술을 안티 알리아싱(Anti Aliasing)이라고 한다.
 
@@ -155,7 +155,7 @@ glBlendFunc(GL\_ONE, GL\_ZERO);
 
 `target`은 옵션 조정의 대상이고 `mode`는 옵션을 어떻게 조정할 것인가를 지정한다. 조정 가능한 옵션 목록은 다음과 같다.
 
-```
+```c
 GL_FOG_HINT
 GL_GENERATE_MIPMAP_HINT
 GL_LINE_SMOOTH_HINT
@@ -170,7 +170,7 @@ GL_FRAGMENT_SHADER_DERIVATIVE_HINT
 
 힌트는 강제적인 명령이 아니며 어디까지나 특정 기능이 어떤 식으로 구현되었으면 좋겠다는 희망 사항을 밝히는 것 뿐이어서 반드시 지정한대로 동작한다는 법은 없다. 힌트를 실제 그리기에 적용할 것인가 아닌가는 드라이버가 결정한다.
 
-```
+```c
 #include <windows.h>
 #include <gl/glut.h>
 
@@ -274,7 +274,7 @@ void DoDisplay()
 
 [ ![](/assets/img/wp-content/uploads/2019/03/gl9-e1578999778372.png)](http://yoonbumtae.com/?attachment_id=923)
 
-### 13\. GLUT
+## 13\. GLUT
 
 GLUT의 고수준 인터페이스는 기반 운영체제들을 완벽하게 추상화하여 플랫폼 독립성을 제공한다. GLUT이 제공하는 기능은 그래픽과는 거의 상관없는 기능들이며 쉽게 말해서 그래픽을 그리기 위한 껍데기를 만들어 주는 것이다.
 
@@ -341,7 +341,7 @@ GLUT의 가장 중요한 기능은 그래픽을 출력할 수 있는 윈도우�
 
 다음 예제는 키보드와 마우스 입력을 받아 도형의 색상이나 위치를 변경한다.
 
-```
+```c
 #include <windows.h>
 #include <gl/glut.h>
 #include <stdio.h>
@@ -447,8 +447,8 @@ void DoDisplay()
 
  
 
-https://gph.is/g/4be8GAO
-
+<!-- https://gph.is/g/4be8GAO -->
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/Q7XUJOso6vkiT96PDv" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
  
 
 `void glutPostRedisplay(void);`
@@ -483,7 +483,7 @@ https://gph.is/g/4be8GAO
 
 다음 예제는 팝업 메뉴로 도형의 색상과 배경 색상을 변경한다.
 
-```
+```c
 #include <windows.h>
 #include <gl/glut.h>
 
@@ -562,9 +562,10 @@ void DoDisplay()
 
  
 
-https://gph.is/g/ZYm6pWn
+<!-- https://gph.is/g/ZYm6pWn -->
+<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/YpTo1IgULqeuKhfYQS" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
-### 14\. GLUT: 애니메이션
+## 14\. GLUT: 애니메이션
 
 GLUT은 반복적인 처리가 필요할 때 주로 사용되는 타이머 이벤트도 제공한다. 타이머 구현은 운영체제마다 다르지만 GLUT의 다음 함수를 호출하면 운영체제에 상관없이 타이머를 만들 수 있다. 다음 함수로 타이머 콜백 함수를 등록한다.
 
@@ -584,7 +585,7 @@ GLUT은 반복적인 처리가 필요할 때 주로 사용되는 타이머 이�
 
 다음 예제는 삼각형 도형을 좌우로 이동시키는 간단한 애니메이션을 보여준다.
 
-```
+```c
 #include <windows.h>
 #include <gl/glut.h>
 
@@ -632,6 +633,8 @@ void DoDisplay()
 
 ```
 
-https://gph.is/g/E0l7QJ8
+<!-- https://gph.is/g/E0l7QJ8 -->
+
+<div style="width:100%;height:0;padding-bottom:38%;position:relative;"><iframe src="https://giphy.com/embed/lMCxAyFAupoJhAyYmK" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
 DoTimer의 마지막 줄에서 자기 자신을 0.03초 후에 다시 호출함으로써 이동이 계속 반복된다. 이 처리가 생략되면 타이머는 딱 한번만 호출되므로 애니메이션이 실행되지 않을 것이다.

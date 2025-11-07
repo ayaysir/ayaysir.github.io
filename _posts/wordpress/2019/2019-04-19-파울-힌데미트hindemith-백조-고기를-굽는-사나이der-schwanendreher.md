@@ -6,6 +6,8 @@ categories:
   - "Classical"
 ---
 
+## 해설
+
 _**백조 고기를 굽는 사나이**_(Der Schwanendreher)는 파울 힌데미트가 작곡한 독주 비올라와 관현악을 위한 그의 세 번째 비올라 협주곡이다. 이 곡은 윌리엄 월튼과 버르토크 벨러의 협주곡과 더불어 중요한 비올라 연주곡이다. 1935년 9월에 힌데미트는 작곡을 시작해 10월 13일 베를린에서 완성했고, 같은 해 11월 14일에 암스테르담에서 콘세르트헤보 관현악단과의 협연으로(지휘:빌렘 멩겔베르크) 작곡자 자신이 독주 비올라를 직접 연주하여 초연했다.
 
 사실 이 때에 곡의 작업이 완전히 마무리 된 것은 아니여서, 다음 해 7월 이 곡의 피아노 스코어를 만들었을때 마지막 악장의 종결부를 완전히 새롭게 만들었고, 이 새로운 판을 그해 9월 13일 베네치아에서 연주하여(지휘:페르난도 프레비탈리) 대성공을 거두었다.
@@ -22,8 +24,9 @@ _**백조 고기를 굽는 사나이**_(Der Schwanendreher)는 파울 힌데미�
 
 악장 구성은 다음과 같다.
 
-1. _"Zwischen Berg und tiefem Tal" Langsam – Mäßig bewegt, mit Kraft_ ("산과 깊은 골짜기 사이" 느리게 - 적절히 역동적으로, 힘있게)
-2. _"Nun laube, Lindlein, laube!" Sehr ruhig – Fugato_ ("이제 잎이 자라고, 작은 피나무, 잎이 자란다" 매우 고요하게 - 푸가토)
-3. _Variationen "Seid ihr nicht der Schwanendreher?" Mäßig schnell_ (변주곡 "그대들은 백조 고기를 굽는 사나이가 아닌가?" 적절히 빠르게)
-
-_사실 이 곡은 오늘 아침에 버스 타면서 생전 처음 들었다. 그래서 잘 모르는 곡이다._ _다만.. 특유의 우중충한 분위기가 BGM같이 너무 잘 어울리는것 같아서..._ _매일매일이 괴롭다._
+1. _"Zwischen Berg und tiefem Tal" Langsam – Mäßig bewegt, mit Kraft_  
+("산과 깊은 골짜기 사이" 느리게 - 적절히 역동적으로, 힘있게)
+2. _"Nun laube, Lindlein, laube!" Sehr ruhig – Fugato_  
+("이제 잎이 자라고, 작은 피나무, 잎이 자란다" 매우 고요하게 - 푸가토)
+3. _Variationen "Seid ihr nicht der Schwanendreher?" Mäßig schnell_  
+(변주곡 "그대들은 백조 고기를 굽는 사나이가 아닌가?" 적절히 빠르게)

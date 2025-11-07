@@ -10,13 +10,13 @@ categories:
 
  
 
-### 1\. EL
+## 1\. EL
 
 별도의 임포트 과정이 필요없고, JSP에서 바로 사용 가능합니다. 기본 사용 방법은 `${ 표현식 }` 의 꼴로 사용하며, 표현식 내부의 계산 결과를 HTML에서 사용하는 텍스트 형식으로 반환합니다. 즉, 표현식은 HTML 파일에서 텍스트가 입력되는 자리라면 어디든지 사용 가능합니다. (`style`, `script` 등을 가리지 않으며 스크립트의 주석 자리에서도 작동하므로 주의).
 
 스프링의 컨트롤러에서는 다음과 같이 사용합니다.
 
-```
+```java
 // 컨트롤러의 일부
 
 @RequestMapping("/study/jstl.do")
@@ -50,12 +50,11 @@ public ModelAndView jstlDemo(HttpSession session, ModelAndView mav){
 
 	return mav;
 }
-
 ```
 
 일반 서블릿(Non-Spring)에서는 `doGet()` 또는 `doPost()` 메소드에서 `mav.addObject` 대신 `request.setAttribute`를 사용합니다.
 
-```
+```java
 protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 throws ServletException, IOException {
   try {
@@ -88,7 +87,7 @@ throws ServletException, IOException {
 
 JSP(뷰 페이지)에서는 다음과 같이 사용합니다.
 
-```
+```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -128,25 +127,26 @@ JSP(뷰 페이지)에서는 다음과 같이 사용합니다.
 </html>
 ```
 
-[ ![](/assets/img/wp-content/uploads/2019/04/jstl1.png)](http://yoonbumtae.com/?attachment_id=1081)
+![](/assets/img/wp-content/uploads/2019/04/jstl1.png)
 
  
 
-### 2\. JSTL
+## 2\. JSTL
 
-JSP 상단에 임포트 선언을 해야합니다. 이름에 표준이 들어가 있는데 많이 쓰이는 것은 맞지만 엄밀히 말하면 표준도 아니고 옛날 기술이라서 스프링 부트에서는 기본 컴포넌트에 포함되지도 않았습니다. 스프링 부트에서는 maven에 jstl 라이브러리를 가져와야 하며 부트의 경우에는 처음부터 기본 내장된 **Thymeleaf**라는 렌더링 엔진을 사용하는 것을 추천합니다. [Thymeleaf 예제](http://yoonbumtae.com/?p=531)
+JSP 상단에 임포트 선언을 해야합니다. 이름에 표준이 들어가 있는데 많이 쓰이는 것은 맞지만 엄밀히 말하면 표준도 아니고 옛날 기술이라서 스프링 부트에서는 기본 컴포넌트에 포함되지도 않았습니다. 스프링 부트에서는 maven에 jstl 라이브러리를 가져와야 하며 부트의 경우에는 처음부터 기본 내장된 **Thymeleaf**라는 렌더링 엔진을 사용하는 것을 추천합니다.
+ <!-- [Thymeleaf 예제](http://yoonbumtae.com/?p=531) -->
 
 JSTL은 얼핏 보면 html 태그와 비슷하게 생겼으며, 일반 HTML 태그와 결합하여 리스트, 배열 등에 있는 자료를 반복하여 표시하는 데 특화되어 있습니다.  JSTL `Core` 라이브러리의 주요 함수만 알아도 웹 프로그래밍의 대부분의 작업을 처리할 수 있습니다.
 
 선언은 JSP 파일 최상단에 다음과 같이 입력합니다. core 라이브러리
 
-```
+```jsp
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 ```
 
 `prefix`는 바꿀 수도 있지만 기본 설정인 `c`를 사용하는 것을 추천합니다.
 
-```
+```java
 // 예제를 위해 컨트롤러의 일부분 변경
 
 // 1. 리스트(List)
@@ -163,7 +163,7 @@ mav.addObject("listLength", list.size());
 mav.addObject("vege", vege);
 ```
 
-```
+```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -172,7 +172,6 @@ mav.addObject("vege", vege);
 (...생략...)
 
 <body>
-    
     <h3>JSTL - CHOOSE WHEN: IF ELSE와 동일</h3>
     <c:choose>
         <c:when test="${ 3 > 6 }">** 해당 test가 true라면 표시됨 1 **</c:when>
@@ -227,4 +226,4 @@ mav.addObject("vege", vege);
 </html>
 ```
 
-[ ![](/assets/img/wp-content/uploads/2019/04/jstl2.png)](http://yoonbumtae.com/?attachment_id=1082)
+![](/assets/img/wp-content/uploads/2019/04/jstl2.png)

@@ -6,13 +6,15 @@ categories:
   - "Spring/JSP"
 ---
 
-설명은 나중에.. 그리고 이 방법은 스프링 부트에서는 권장되지 않고 다른 방법이 있는데 그것도 나중에..
-
 웹소켓을 이용한 채팅 예제
 
-일반 JSP (서블릿)에서 사용하는 경우 다음 코드만 작성한다.
+## 코드
 
-```
+### JSP 서블릿에서 작성
+
+일반 JSP (서블릿)에서 사용하는 경우 다음 코드만 작성합니다.
+
+```java
 package com.example.thymeleaf.websocket;
 
 import java.io.IOException;
@@ -68,9 +70,11 @@ public class WebSocket {
 }
 ```
 
+### 스프링부트를 사용하는 경우
+
 **스프링 부트**를 사용하는 경우 다음 코드를 **추가로 작성**한다. **(중요)**
 
-```
+```java
 package com.example.thymeleaf.websocket;
 
 import org.springframework.context.annotation.Bean;
@@ -93,9 +97,9 @@ public class EndpointConfig
 }
 ```
 
-HTML 코드
+### HTML 코드
 
-```
+```html
 <body>
     <div id=wrapper >
         <div id=chatArea></div>
@@ -110,9 +114,9 @@ HTML 코드
 </body>
 ```
 
-자바스크립트(JQuery 포함)
+### 자바스크립트(JQuery 포함)
 
-```
+```js
    var webSocket = new WebSocket('ws://[서버의 절대 주소]/ws');
    webSocket.onerror = onError
    webSocket.onopen = onOpen
@@ -155,6 +159,8 @@ HTML 코드
    })
 ```
 
-`[서버의 절대 주소]`에는 외부에서 자신의 서버에 접속할 수 있는 절대 주소를 입력한다. localhost, 127.0.0.1 이런 주소가 아니라 ISP에 할당된 주소를 입력해야 한다.
+`[서버의 절대 주소]`에는 외부에서 자신의 서버에 접속할 수 있는 절대 주소를 입력합니다. localhost, 127.0.0.1 이런 주소가 아니라 ISP에 할당된 주소를 입력해야 합니다.
 
-[ ![](/assets/img/wp-content/uploads/2019/04/websocket1.png)](http://yoonbumtae.com/?attachment_id=1069)
+### 실행 화면
+
+![](/assets/img/wp-content/uploads/2019/04/websocket1.png)

@@ -6,15 +6,15 @@ categories:
   - "JavaScript"
 ---
 
-출처: [https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
+- 출처: [https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
 
-이 섹션의 목적은 three.js에 대한 간략한 소개입니다. 회전 큐브를 사용하여 장면을 설정하는 것으로 시작하겠습니다.
+이 포스트의 목적은 three.js에 대한 간략한 소개입니다. 회전 큐브를 사용하여 장면을 설정하는 것으로 시작하겠습니다.
 
-### 시작하기 전에
+## 시작하기 전에
 
 three.js를 사용하려면 먼저 어딘가에 표시해야합니다. 다음 HTML을 `js/` 디렉토리에 있는 `three.js` 사본과 함께 컴퓨터의 파일에 저장하고 브라우저에서 엽니다.
 
-```
+```xml
 <!DOCTYPE html>
 <html>
   <head>
@@ -38,11 +38,11 @@ three.js를 사용하려면 먼저 어딘가에 표시해야합니다. 다음 HT
 
  
 
-### 장면(scene) 만들기
+## 장면(scene) 만들기
 
 실제로 three.js로 무엇이든 표시 할 수 있으려면 **장면, 카메라 및 렌더러**라는 세 가지가 필요합니다. 그래서 카메라로 장면을 렌더링 할 수 있습니다.
 
-```
+```js
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -71,7 +71,7 @@ three.js에는 몇 가지 다른 카메라가 있습니다. 지금은 `Perspecti
 
 "다 좋은데, 약속한 그 큐브는 어디 있지?" 이제 추가하겠습니다.
 
-```
+```js
 var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 var cube = new THREE.Mesh( geometry, material );
@@ -89,12 +89,11 @@ camera.position.z = 5;
 기본적으로 `scene.add()`를 호출하면 우리가 추가 한 것이 좌표 `(0,0,0)`에 추가됩니다. 이렇게 하면 카메라와 큐브가 서로 내부에 엉켜있게됩니다. 이를 피하기 위해 간단히 카메라를 움직입니다.
 
  
-
-### 장면 렌더링하기
+## 장면 렌더링하기
 
 앞에서 작성한 HTML 파일에 위의 코드를 복사 한 경우 아무 것도 볼 수 없습니다. 우리가 실제로 아무것도 렌더링하지 않기 때문입니다. 이를 위해서는 렌더링 또는 애니메이션 루프가 필요합니다.
 
-```
+```js
 function animate() {
   requestAnimationFrame( animate );
   renderer.render( scene, camera );
@@ -106,13 +105,13 @@ animate();
 
  
 
-### 큐브에 애니메이션 적용
+## 큐브에 애니메이션 적용
 
 위 코드를 모두 시작하기 전에 작성한 파일에 삽입하면 녹색 상자가 나타납니다. 그것을 돌려서 조금 더 재미있게 만들어 봅시다.
 
 `animate` 함수에서 `renderer.render` 호출 바로 위에 다음을 추가하십시오.
 
-```
+```js
 cube.rotation.x += 0.01;
 cube.rotation.y += 0.01;
 ```
@@ -125,11 +124,11 @@ cube.rotation.y += 0.01;
 
 이제 첫 번째 three.js 응용 프로그램을 완료했습니다.
 
-[ ![](/assets/img/wp-content/uploads/2019/04/tex1.gif)](http://yoonbumtae.com/?attachment_id=1050)
+![](/assets/img/wp-content/uploads/2019/04/tex1.gif)
 
-전체 코드는 아래에서 볼 수 있습니다. 그것이 어떻게 작동하는지 더 잘 이해하기 위해 코드를 잘 살펴보십시오.
+전체 코드는 아래에서 볼 수 있습니다. 그것이 어떻게 작동하는지 더 잘 이해하기 위해 코드를 잘 살펴보세요.
 
-```
+```html
 <html>
   <head>
     <title>My first three.js app</title>
