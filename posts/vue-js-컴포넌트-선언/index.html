@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -602,11 +609,11 @@
       
 
       
-        <!-- add class to exist <a> tag -->
-        
-        
+        <!-- create the image wrapper -->
         
 
+        
+        
       
     
 
@@ -630,6 +637,49 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -661,7 +711,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Vue.js: 컴포넌트 선언</h1>
     
@@ -735,7 +785,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1204 words"
+  title="1212 words"
 >
   <em>6 min</em> read</span>
 
@@ -745,16 +795,42 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Vue.js: 컴포넌트 선언</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Vue.js: 컴포넌트 선언</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>이전 글: <a href="http://yoonbumtae.com/?p=547">Vue.js: 기초 사용 방법 + 예제: 이름으로 보는 운세</a></p>
+    <ul>
+  <li>이전 글: <a href="/posts/vue-js-기초-사용-방법">Vue.js: 기초 사용 방법 + 예제: 이름으로 보는 운세</a></li>
+</ul>
 
 <p> </p>
 
-<p><strong>요구사항:</strong> <em>Home, Portfolio, Guestbook 3개의 메뉴로 된 홈페이지를 만들되 각 메뉴는 Vue.js의 컴포넌트를 사용하여 작성하시오.</em></p>
+<h2 id="요구사항"><span class="me-2"><strong>요구사항</strong></span><a href="#요구사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<p><em>Home, Portfolio, Guestbook 3개의 메뉴로 된 홈페이지를 만들되 각 메뉴는 Vue.js의 컴포넌트를 사용하여 작성하시오.</em></p>
+
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -791,45 +867,47 @@
 34
 35
 36
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Homepage&lt;/title&gt;
-  &lt;link rel="stylesheet" href="[부트스트랩-cdn-주소]"&gt;
-&lt;/head&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Homepage<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"[부트스트랩-cdn-주소]"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 
-&lt;body class=container&gt;
+<span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">container</span><span class="nt">&gt;</span>
 
-  &lt;nav id="home-nav" class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
-    &lt;a class="navbar-brand" href="#"&gt;&lt;/a&gt;
-    &lt;button class="navbar-toggler" type="button"&gt;
-      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
-    &lt;/button&gt;
+  <span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">"home-nav"</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-dark bg-dark"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggler"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"navbar-toggler-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/button&gt;</span>
 
-    &lt;div class="collapse navbar-collapse" id="navbarColor02"&gt;
-      &lt;ul class="navbar-nav mr-auto"&gt;
-        &lt;li class="nav-item" v-for="item in menus"&gt;
-          &lt;a class="nav-link" href="#" v-on:click="moveMenu"&gt;&lt;/a&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/nav&gt;
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse navbar-collapse"</span> <span class="na">id=</span><span class="s">"navbarColor02"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav mr-auto"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span> <span class="na">v-for=</span><span class="s">"item in menus"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">v-on:click=</span><span class="s">"moveMenu"</span><span class="nt">&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/nav&gt;</span>
 
-  &lt;!-- 컴포넌트 부분, :contents 는 article객체의 currentContents에 있는 내용을 불러온다. --&gt;
-  &lt;article id="home-article" class="row"&gt;
-    &lt;display-article :contents="currentContents"&gt;
+  <span class="c">&lt;!-- 컴포넌트 부분, :contents 는 article객체의 currentContents에 있는 내용을 불러온다. --&gt;</span>
+  <span class="nt">&lt;article</span> <span class="na">id=</span><span class="s">"home-article"</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;display-article</span> <span class="na">:contents=</span><span class="s">"currentContents"</span><span class="nt">&gt;</span>
 
-    &lt;/display-article&gt;
-  &lt;/article&gt;
+    <span class="nt">&lt;/display-article&gt;</span>
+  <span class="nt">&lt;/article&gt;</span>
 
-  &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;
-  &lt;script src="./index.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./index.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">&lt;article&gt;</code>은 HTML5에 나오는 태그로 웹사이트에서 읽을 거리 등 주요 내용이 들어가는 의미를 가진(semantic) 구역(div) 태그입니다. 하위에 위치한  <code class="language-plaintext highlighter-rouge">&lt;display-article&gt;</code>이 컴포넌트가 들어갈 자리입니다. 이 태그의 이름은 실제 HTML5 스펙에는 없는 이름으로 Vue.js의 컴포넌트의 이름은 만드는 사람 마음대로 지을 수 있다는 것이 특징입니다.</p>
+
+<h2 id="컴포넌트-작성"><span class="me-2">컴포넌트 작성</span><a href="#컴포넌트-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>컴포넌트는 HTML 상에서는 껍데기 부분만 선언해놓고 실제 내용은 다른 곳에서 작성된다는 특징이 있습니다. 보통 규모가 있는 개발 환경에서는 <code class="language-plaintext highlighter-rouge">*.Vue</code> 라는 확장자의 파일로 따로 작성되는데, 지금은 예제이므로 단순하게 컴포넌트를 스크립트 부분에 선언해 보겠습니다.</p>
 
@@ -837,17 +915,17 @@
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>Vue.component('display-article', {
-  template: '&lt;div class="col-12 text-primary"&gt;&lt;/div&gt;',
-  props: ['contents']
-})
+</pre></td><td class="rouge-code"><pre><span class="nx">Vue</span><span class="p">.</span><span class="nf">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">display-article</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;div class="col-12 text-primary"&gt;&lt;/div&gt;</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">contents</span><span class="dl">'</span><span class="p">]</span>
+<span class="p">})</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -857,8 +935,8 @@
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -890,52 +968,53 @@
 29
 30
 31
-</pre></td><td class="rouge-code"><pre>var nav = new Vue({
-  el: "#home-nav",
-  data: {
-    title: "홈페이지",
-    menus: ["Home", "Portfolio", "Guestbook"],
-    contents: {
-      home: "첫화면입니다",
-      portfolio: "포트폴리오입니다.",
-      guestbook: "방명록입니다."
-    }
-  },
-  methods: {
-    moveMenu: function (e) {
-      var menu = e.target.text.toLowerCase()
-      // 클릭하면 메뉴값을 article.currnetContents에 대입한다.
-      article.currentContents = this.contents[menu] 
-    }
-  }
-})
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">nav</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Vue</span><span class="p">({</span>
+  <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#home-nav</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">홈페이지</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">menus</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Home</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Portfolio</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Guestbook</span><span class="dl">"</span><span class="p">],</span>
+    <span class="na">contents</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">home</span><span class="p">:</span> <span class="dl">"</span><span class="s2">첫화면입니다</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">portfolio</span><span class="p">:</span> <span class="dl">"</span><span class="s2">포트폴리오입니다.</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">guestbook</span><span class="p">:</span> <span class="dl">"</span><span class="s2">방명록입니다.</span><span class="dl">"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">moveMenu</span><span class="p">:</span> <span class="nf">function </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()</span>
+      <span class="c1">// 클릭하면 메뉴값을 article.currnetContents에 대입한다.</span>
+      <span class="nx">article</span><span class="p">.</span><span class="nx">currentContents</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">contents</span><span class="p">[</span><span class="nx">menu</span><span class="p">]</span> 
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})</span>
 
-var article = new Vue({
-  el: "#home-article",
-  data:{
-    currentContents: ""
-  }
-})
+<span class="kd">var</span> <span class="nx">article</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Vue</span><span class="p">({</span>
+  <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#home-article</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:{</span>
+    <span class="na">currentContents</span><span class="p">:</span> <span class="dl">""</span>
+  <span class="p">}</span>
+<span class="p">})</span>
 
-// 첫 화면 지정
-window.onload = function(){ 
-  article.currentContents = nav.contents.home 
-}
+<span class="c1">// 첫 화면 지정</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span> 
+  <span class="nx">article</span><span class="p">.</span><span class="nx">currentContents</span> <span class="o">=</span> <span class="nx">nav</span><span class="p">.</span><span class="nx">contents</span><span class="p">.</span><span class="nx">home</span> 
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">nav</code> 변수는 내비게이터 부분인 <code class="language-plaintext highlighter-rouge">&lt;nav&gt;</code> 태그를 관리하는 Vue.js 인스턴스입니다. <code class="language-plaintext highlighter-rouge">methods</code>에 <code class="language-plaintext highlighter-rouge">moveMenu</code>라는 것이 있는데 이 메소드가 실행되면 <code class="language-plaintext highlighter-rouge">contents[menu]</code>의 내용이 <code class="language-plaintext highlighter-rouge">article.currentContents</code>에 할당합니다. 예를 들어 <code class="language-plaintext highlighter-rouge">menu</code>가 <code class="language-plaintext highlighter-rouge">guestbook</code>이라면 <code class="language-plaintext highlighter-rouge">this.contents["guestbook"]</code> 에 있는 <em><code class="language-plaintext highlighter-rouge">"방명록입니다."</code></em> 라는 내용을 <code class="language-plaintext highlighter-rouge">article.currentContents</code>에 할당하겠다는 의미와 동일합니다.</p>
 
 <p>맨 위 HTML 부분의 <code class="language-plaintext highlighter-rouge">&lt;display-article&gt;</code> 태그에서 <code class="language-plaintext highlighter-rouge">:contents="currentContents"</code> 부분을 다시 보겠습니다. <code class="language-plaintext highlighter-rouge">&lt;article&gt;</code>이 Vue.js 인스턴스 관리 하에 있으므로 하위에 있는 <code class="language-plaintext highlighter-rouge">&lt;display-article&gt;</code>이라는 태그도 <code class="language-plaintext highlighter-rouge">currentContents</code> 데이터를 인식할 수 있습니다.  여기서 <code class="language-plaintext highlighter-rouge">contents</code>는 전역 선언한 컴포넌트 <code class="language-plaintext highlighter-rouge">'display-article'</code> 의 프로퍼티입니다. <code class="language-plaintext highlighter-rouge">currentContents</code>가 <code class="language-plaintext highlighter-rouge">nav</code> 인스턴스의 메소드에 의해 변경되면, 그것이 컴포넌트의 프로퍼티인 <code class="language-plaintext highlighter-rouge">contents</code>로 전달되며, 프로퍼티는 다시 템플릿(<code class="language-plaintext highlighter-rouge">template</code>) 안으로 전달됩니다. 브라우저에서는 템플릿의 내용을 바탕으로 컴포넌트 안이 렌더링됩니다. 이것을 순서대로 표시하면 아래 그림과 같습니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/05/스크린샷-2019-09-02-오후-11.31.12.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/05/스크린샷-2019-09-02-오후-11.31.12.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/05/vuejs-component-1.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/05/vuejs-component-1.png" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h2 id="동작-화면"><span class="me-2">동작 화면</span><a href="#동작-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>결과화면입니다. <a href="https://jsfiddle.net/j7rpuvdy/">JSFiddle</a>에서도 볼 수 있습니다.</p>
+<p>결과화면입니다.</p>
 
-<p><a href="http://yoonbumtae.com/?attachment_id=1114">
-          class="img-link shimmer"
-        ><img src="/assets/img/wp-content/uploads/2019/05/vue2.gif" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/05/vue2.gif" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/05/vue2.gif" alt="" loading="lazy"></a></p>
+
+<p><a href="https://jsfiddle.net/j7rpuvdy/">JSFiddle</a>에서도 볼 수 있습니다.</p>
+
 
   </div>
 
@@ -1591,77 +1670,6 @@ window.onload = function(){
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1750,8 +1758,6 @@ window.onload = function(){
     
     
     
-    
-      
     
   
     
@@ -1863,6 +1869,62 @@ window.onload = function(){
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1903,9 +1965,6 @@ window.onload = function(){
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -1913,6 +1972,9 @@ window.onload = function(){
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>
@@ -1928,6 +1990,12 @@ window.onload = function(){
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7775,42 +7843,6 @@ window.onload = function(){
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -8481,77 +8513,6 @@ window.onload = function(){
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -8640,8 +8601,6 @@ window.onload = function(){
     
     
     
-    
-      
     
   
     
@@ -8753,6 +8712,62 @@ window.onload = function(){
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -8793,9 +8808,6 @@ window.onload = function(){
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -8803,6 +8815,9 @@ window.onload = function(){
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>

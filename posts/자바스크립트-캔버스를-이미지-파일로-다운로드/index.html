@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,6 +498,27 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -521,7 +549,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: 캔버스를 이미지 파일로 다운로드</h1>
     
@@ -595,7 +623,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="77 words"
+  title="78 words"
 >
   <em>1 min</em> read</span>
 
@@ -605,12 +633,36 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: 캔버스를 이미지 파일로 다운로드</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: 캔버스를 이미지 파일로 다운로드</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p><code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> 요소를 만들어서 클릭 이벤트를 트리거시켜 다운로드 하는 방식입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -625,22 +677,20 @@
 12
 13
 14
-15
-</pre></td><td class="rouge-code"><pre>var canvas = document.getElementById("somewhere")
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">somewhere</span><span class="dl">"</span><span class="p">)</span>
 
-canvas.toBlob(function(blob) {
-  var a = document.createElement("a")
-  document.body.appendChild(a)
-  a.style = "display: none"
-  blob.type = "octet-stream"
+<span class="nx">canvas</span><span class="p">.</span><span class="nf">toBlob</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">blob</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">)</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+  <span class="nx">a</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">display: none</span><span class="dl">"</span>
+  <span class="nx">blob</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">octet-stream</span><span class="dl">"</span>
         	  
-  var url = URL.createObjectURL(blob)
-  a.href = url
-  a.download = "filename"
-  a.click()
-  window.URL.revokeObjectURL(url)
-}
-
+  <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">.</span><span class="nf">createObjectURL</span><span class="p">(</span><span class="nx">blob</span><span class="p">)</span>
+  <span class="nx">a</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">url</span>
+  <span class="nx">a</span><span class="p">.</span><span class="nx">download</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">filename</span><span class="dl">"</span>
+  <span class="nx">a</span><span class="p">.</span><span class="nf">click</span><span class="p">()</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nf">revokeObjectURL</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -1287,77 +1337,6 @@ canvas.toBlob(function(blob) {
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1446,8 +1425,6 @@ canvas.toBlob(function(blob) {
     
     
     
-    
-      
     
   
     
@@ -1559,6 +1536,62 @@ canvas.toBlob(function(blob) {
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1599,9 +1632,6 @@ canvas.toBlob(function(blob) {
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -1609,6 +1639,9 @@ canvas.toBlob(function(blob) {
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>
@@ -1624,6 +1657,12 @@ canvas.toBlob(function(blob) {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -2598,43 +2637,7 @@ canvas.toBlob(function(blob) {
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8177,77 +8180,6 @@ canvas.toBlob(function(blob) {
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -8336,8 +8268,6 @@ canvas.toBlob(function(blob) {
     
     
     
-    
-      
     
   
     
@@ -8449,6 +8379,62 @@ canvas.toBlob(function(blob) {
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -8489,9 +8475,6 @@ canvas.toBlob(function(blob) {
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -8499,6 +8482,9 @@ canvas.toBlob(function(blob) {
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>

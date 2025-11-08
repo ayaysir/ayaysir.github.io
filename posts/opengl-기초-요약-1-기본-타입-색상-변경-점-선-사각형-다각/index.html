@@ -2937,8 +2937,8 @@
 
 <p>배경 색상은 한번 지정해 놓으면 다른 값으로 바꾸지 않는 한 계속 유지된다. 그래서 매번 그리기를 할 때마다 지정할 필요없이 프로그램 초기화시에 별도의 함수에서 따로 설정하는 것이 원칙적이다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2968,34 +2968,34 @@
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>#include &lt;windows.h&gt;
-#include &lt;gl/glut.h&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;gl/glut.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">);</span>
 
-void DoDisplay()
-{
-    glClear(GL_COLOR_BUFFER_BIT);
+    <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">);</span>
+    <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">);</span>
+    <span class="n">glEnd</span><span class="p">();</span>
+    <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 
-    glBegin(GL_TRIANGLES);
-    glVertex2f(0.0, 0.5);
-    glVertex2f(-0.5, -0.5);
-    glVertex2f(0.5, -0.5);
-    glEnd();
-    glFlush();
-}
+<span class="kt">void</span> <span class="nf">DoInit</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// change color</span>
+    <span class="n">glClearColor</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">24</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
 
-void DoInit()
-{
-    // change color
-    glClearColor(1.0, 0.24, 0.5, 0);
-}
-
-void main()
-{
-    glutCreateWindow("OpenGL");
-    glutDisplayFunc(DoDisplay);
-    DoInit();
-    glutMainLoop();
-}
+<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">glutCreateWindow</span><span class="p">(</span><span class="s">"OpenGL"</span><span class="p">);</span>
+    <span class="n">glutDisplayFunc</span><span class="p">(</span><span class="n">DoDisplay</span><span class="p">);</span>
+    <span class="n">DoInit</span><span class="p">();</span>
+    <span class="n">glutMainLoop</span><span class="p">();</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -3330,8 +3330,8 @@ void main()
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3351,25 +3351,25 @@ void main()
 17
 18
 19
-</pre></td><td class="rouge-code"><pre>void DoDisplay()
-{
-    glClear(GL_COLOR_BUFFER_BIT);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">);</span>
 
-    GLfloat y;
-    GLfloat w = 1;
-    for(y = 0.8; y &gt; -0.8; y -= 0.2)
-    {
-        glLineWidth(w++);
-        glBegin(GL_LINES);
-        {
-            glVertex2f(-0.8, y);
-            glVertex2f(0.8, y);
-        }
+    <span class="n">GLfloat</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">GLfloat</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">;</span> <span class="n">y</span> <span class="o">-=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">glLineWidth</span><span class="p">(</span><span class="n">w</span><span class="o">++</span><span class="p">);</span>
+        <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_LINES</span><span class="p">);</span>
+        <span class="p">{</span>
+            <span class="n">glVertex2f</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+            <span class="n">glVertex2f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+        <span class="p">}</span>
 
-        glEnd();
-    }
-    glFlush();
-}
+        <span class="n">glEnd</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/03/image014-e1578998353563.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/03/image014-e1578998353563.jpg" alt="" loading="lazy"></a></p>
@@ -3488,8 +3488,8 @@ void main()
 
 <p><code class="language-plaintext highlighter-rouge">GL_TRIANGLE_STRIP</code>은 삼각형을 계속 이어서 그린다. 첫 세 개의 정점으로 삼각형을 그리고 추가되는 정점을 새로운 꼭지점으로 하는 삼각형을 계속 이어서 그린다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-c highlighter-rouge"><div class="code-header">
+        <span data-label-text="C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3512,28 +3512,28 @@ void main()
 20
 21
 22
-</pre></td><td class="rouge-code"><pre>void DoDisplay()
-{
-     glClear(GL_COLOR_BUFFER_BIT);
-     glShadeModel(GL_FLAT);
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">DoDisplay</span><span class="p">()</span>
+<span class="p">{</span>
+     <span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">);</span>
+     <span class="n">glShadeModel</span><span class="p">(</span><span class="n">GL_FLAT</span><span class="p">);</span>
 
-     glBegin(GL_TRIANGLE_STRIP);
-     GLfloat x = -0.8;
-     GLfloat y = 0.4;
-     for (int i = 0; i &lt; 6; i++) {
-          if (i % 2 == 0) {
-              glColor3f(1.0, 1.0, 0.0);
-          } else {
-              glColor3f(0.0, 1.0, 1.0);
-          }
-          glVertex2f(x, y);
-          x += 0.3;
-          y *= -1;
-     }
+     <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_TRIANGLE_STRIP</span><span class="p">);</span>
+     <span class="n">GLfloat</span> <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">;</span>
+     <span class="n">GLfloat</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">4</span><span class="p">;</span>
+     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+              <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+              <span class="n">glColor3f</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">);</span>
+          <span class="p">}</span>
+          <span class="n">glVertex2f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+          <span class="n">x</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="p">;</span>
+          <span class="n">y</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+     <span class="p">}</span>
 
-     glEnd();
-     glFlush();
-}
+     <span class="n">glEnd</span><span class="p">();</span>
+     <span class="n">glFlush</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2019/03/gl6-e1578998514568.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/03/gl6-e1578998514568.png" alt="" loading="lazy"></a><br />
@@ -3844,7 +3844,8 @@ void main()
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/03/image030-1-e1578999017141.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/03/image030-1-e1578999017141.jpg" alt="" loading="lazy"></a>   <a href="/assets/img/wp-content/uploads/2019/03/image032-e1578999071753.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/03/image032-e1578999071753.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/03/image030-1-e1578999017141.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/03/image030-1-e1578999017141.jpg" alt="" loading="lazy"></a> <br />
+<a href="/assets/img/wp-content/uploads/2019/03/image032-e1578999071753.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/03/image032-e1578999071753.jpg" alt="" loading="lazy"></a></p>
 
 <p><code class="language-plaintext highlighter-rouge">bEdge</code> 기능을 사용하지 않으면(<code class="language-plaintext highlighter-rouge">false</code> 이라면) 디폴트로 모든 선분이 외곽선으로 인식되므로 안쪽 삼각형도 경계선이 그려진다. <code class="language-plaintext highlighter-rouge">bEdge</code> 변수를 토글하여 내부의 선임을 알려 주면 내부의 선이 사라져 오각형만 남는다.</p>
 
@@ -4502,77 +4503,6 @@ void main()
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -4661,8 +4591,6 @@ void main()
     
     
     
-    
-      
     
   
     
@@ -4774,6 +4702,62 @@ void main()
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -4814,9 +4798,6 @@ void main()
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -4824,6 +4805,9 @@ void main()
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>
@@ -10692,42 +10676,6 @@ void main()
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -11398,77 +11346,6 @@ void main()
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -11557,8 +11434,6 @@ void main()
     
     
     
-    
-      
     
   
     
@@ -11670,6 +11545,62 @@ void main()
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -11710,9 +11641,6 @@ void main()
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -11720,6 +11648,9 @@ void main()
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>

@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="자바스크립트: setInterval(반복 함수) 정지하는 방법 (clearInterval 사용)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="자바스크립트에서 setInterval(function, millisecond)는 일정 시간(ms) 마다 함수를 실행하는 기능입니다. 예를 들어 millisecond를 1000으로 정하면 1초마다 함수를 반복 실행합니다. 참고로 0초(최초 setInterval이 실행되는 시점)에서는 실행되게 하려면 millisecond를 0으로 지정해야 합니다. 만약 1000로 설정했다면, 0초에는 아무 액션도 취하지 않고 있다가 1초 이후부터 실행 부분을 반복하게 됩니다." />
-<meta property="og:description" content="자바스크립트에서 setInterval(function, millisecond)는 일정 시간(ms) 마다 함수를 실행하는 기능입니다. 예를 들어 millisecond를 1000으로 정하면 1초마다 함수를 반복 실행합니다. 참고로 0초(최초 setInterval이 실행되는 시점)에서는 실행되게 하려면 millisecond를 0으로 지정해야 합니다. 만약 1000로 설정했다면, 0초에는 아무 액션도 취하지 않고 있다가 1초 이후부터 실행 부분을 반복하게 됩니다." />
+<meta name="description" content="setInterval 이란?" />
+<meta property="og:description" content="setInterval 이란?" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-setinterval%EB%B0%98%EB%B3%B5-%ED%95%A8%EC%88%98-%EC%A0%95%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-clearinterval-%EC%82%AC%EC%9A%A9/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-setinterval%EB%B0%98%EB%B3%B5-%ED%95%A8%EC%88%98-%EC%A0%95%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-clearinterval-%EC%82%AC%EC%9A%A9/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="자바스크립트: setInterval(반복 함수) 정지하는 방법 (clearInterval 사용)" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-06-04T00:00:00+09:00","datePublished":"2019-06-04T00:00:00+09:00","description":"자바스크립트에서 setInterval(function, millisecond)는 일정 시간(ms) 마다 함수를 실행하는 기능입니다. 예를 들어 millisecond를 1000으로 정하면 1초마다 함수를 반복 실행합니다. 참고로 0초(최초 setInterval이 실행되는 시점)에서는 실행되게 하려면 millisecond를 0으로 지정해야 합니다. 만약 1000로 설정했다면, 0초에는 아무 액션도 취하지 않고 있다가 1초 이후부터 실행 부분을 반복하게 됩니다.","headline":"자바스크립트: setInterval(반복 함수) 정지하는 방법 (clearInterval 사용)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-setinterval%EB%B0%98%EB%B3%B5-%ED%95%A8%EC%88%98-%EC%A0%95%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-clearinterval-%EC%82%AC%EC%9A%A9/"},"url":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-setinterval%EB%B0%98%EB%B3%B5-%ED%95%A8%EC%88%98-%EC%A0%95%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-clearinterval-%EC%82%AC%EC%9A%A9/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-06-04T00:00:00+09:00","datePublished":"2019-06-04T00:00:00+09:00","description":"setInterval 이란?","headline":"자바스크립트: setInterval(반복 함수) 정지하는 방법 (clearInterval 사용)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-setinterval%EB%B0%98%EB%B3%B5-%ED%95%A8%EC%88%98-%EC%A0%95%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-clearinterval-%EC%82%AC%EC%9A%A9/"},"url":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-setinterval%EB%B0%98%EB%B3%B5-%ED%95%A8%EC%88%98-%EC%A0%95%EC%A7%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-clearinterval-%EC%82%AC%EC%9A%A9/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,10 +498,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -532,6 +566,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -553,7 +592,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: setInterval(반복 함수) 정지하는 방법 (clearInterval 사용)</h1>
     
@@ -627,7 +666,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="305 words"
+  title="311 words"
 >
   <em>1 min</em> read</span>
 
@@ -637,16 +676,44 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: setInterval(반복 함수) 정지하는 방법 (clearInterval 사용)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: setInterval(반복 함수) 정지하는 방법 (clearInterval 사용)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>자바스크립트에서 <code class="language-plaintext highlighter-rouge">setInterval(function, millisecond)</code>는 일정 시간(ms) 마다 함수를 실행하는 기능입니다. 예를 들어 millisecond를 1000으로 정하면 1초마다 함수를 반복 실행합니다. 참고로 0초(최초 setInterval이 실행되는 시점)에서는 실행되게 하려면 millisecond를 0으로 지정해야 합니다. 만약 1000로 설정했다면, 0초에는 아무 액션도 취하지 않고 있다가 1초 이후부터 실행 부분을 반복하게 됩니다.</p>
+    <h2 id="setinterval-이란"><span class="me-2">setInterval 이란?</span><a href="#setinterval-이란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>자바스크립트에서 <code class="language-plaintext highlighter-rouge">setInterval(function, millisecond)</code>는 일정 시간(ms) 마다 함수를 실행하는 기능입니다.</p>
+
+<p>예를 들어 millisecond를 1000으로 정하면 1초마다 함수를 반복 실행합니다. 참고로 0초(최초 setInterval이 실행되는 시점)에서는 실행되게 하려면 millisecond를 0으로 지정해야 합니다. 만약 1000로 설정했다면, 0초에는 아무 액션도 취하지 않고 있다가 1초 이후부터 실행 부분을 반복하게 됩니다.</p>
 
 <p>실행되고 있는 인터벌 함수를 중지시키려면 <code class="language-plaintext highlighter-rouge">clearInterval([인터벌 변수])</code>를 사용하여 정지합니다. 외부에서 정지 시킬수도 있고(예제1) <strong>interval 내부에서 정지</strong>시키는 것도 가능합니다(예제2).</p>
 
-<h4 id="예제1"><span class="me-2">예제1</span><a href="#예제1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="예제1"><span class="me-2">예제1</span><a href="#예제1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -655,20 +722,20 @@
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>var interval = setInterval(function() {
-  console.log("await..")
-}, 500)
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nf">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">await..</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">},</span> <span class="mi">500</span><span class="p">)</span>
     
-function stop(){
-  console.log("stopped")
-  clearInterval(interval)
-}
+<span class="kd">function</span> <span class="nf">stop</span><span class="p">(){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">stopped</span><span class="dl">"</span><span class="p">)</span>
+  <span class="nf">clearInterval</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="예제2"><span class="me-2">예제2</span><a href="#예제2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="예제2"><span class="me-2">예제2</span><a href="#예제2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -683,20 +750,20 @@ function stop(){
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>var isStop = false
-var interval = setInterval(function() {
-  if (!isStop) {
-    console.log("await..")
-  } else {
-    console.log("stopped")
-    clearInterval(interval) 
-    // 밖에서 선언한 interval을 안에서 중지시킬 수 있음
-  }
-}, 500)
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">isStop</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="kd">var</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nf">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">isStop</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">await..</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">stopped</span><span class="dl">"</span><span class="p">)</span>
+    <span class="nf">clearInterval</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span> 
+    <span class="c1">// 밖에서 선언한 interval을 안에서 중지시킬 수 있음</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="mi">500</span><span class="p">)</span>
 
-function stop() {
-  isStop = true
-}
+<span class="kd">function</span> <span class="nf">stop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">isStop</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -1343,77 +1410,6 @@ function stop() {
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1502,8 +1498,6 @@ function stop() {
     
     
     
-    
-      
     
   
     
@@ -1615,6 +1609,62 @@ function stop() {
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1655,9 +1705,6 @@ function stop() {
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -1665,6 +1712,9 @@ function stop() {
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>
@@ -1680,6 +1730,12 @@ function stop() {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -2678,43 +2734,7 @@ function stop() {
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8233,77 +8253,6 @@ function stop() {
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -8392,8 +8341,6 @@ function stop() {
     
     
     
-    
-      
     
   
     
@@ -8505,6 +8452,62 @@ function stop() {
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -8545,9 +8548,6 @@ function stop() {
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -8555,6 +8555,9 @@ function stop() {
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>

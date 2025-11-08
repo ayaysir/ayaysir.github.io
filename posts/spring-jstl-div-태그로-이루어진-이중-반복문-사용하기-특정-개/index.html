@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Spring, JSTL: div 태그로 이루어진 이중 반복문 사용하기 (특정 개수별 구분)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="예를 들어 15개마다 줄바꿈이 되는 이런 모양의 웹 페이지를 만들고 싶은데, 사용 태그가 div라면" />
-<meta property="og:description" content="예를 들어 15개마다 줄바꿈이 되는 이런 모양의 웹 페이지를 만들고 싶은데, 사용 태그가 div라면" />
+<meta name="description" content="문제점" />
+<meta property="og:description" content="문제점" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/spring-jstl-div-%ED%83%9C%EA%B7%B8%EB%A1%9C-%EC%9D%B4%EB%A3%A8%EC%96%B4%EC%A7%84-%EC%9D%B4%EC%A4%91-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%ED%8A%B9%EC%A0%95-%EA%B0%9C/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/spring-jstl-div-%ED%83%9C%EA%B7%B8%EB%A1%9C-%EC%9D%B4%EB%A3%A8%EC%96%B4%EC%A7%84-%EC%9D%B4%EC%A4%91-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%ED%8A%B9%EC%A0%95-%EA%B0%9C/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="Spring, JSTL: div 태그로 이루어진 이중 반복문 사용하기 (특정 개수별 구분)" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-06-26T00:00:00+09:00","datePublished":"2019-06-26T00:00:00+09:00","description":"예를 들어 15개마다 줄바꿈이 되는 이런 모양의 웹 페이지를 만들고 싶은데, 사용 태그가 div라면","headline":"Spring, JSTL: div 태그로 이루어진 이중 반복문 사용하기 (특정 개수별 구분)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/spring-jstl-div-%ED%83%9C%EA%B7%B8%EB%A1%9C-%EC%9D%B4%EB%A3%A8%EC%96%B4%EC%A7%84-%EC%9D%B4%EC%A4%91-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%ED%8A%B9%EC%A0%95-%EA%B0%9C/"},"url":"https://ayaysir.github.io/posts/spring-jstl-div-%ED%83%9C%EA%B7%B8%EB%A1%9C-%EC%9D%B4%EB%A3%A8%EC%96%B4%EC%A7%84-%EC%9D%B4%EC%A4%91-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%ED%8A%B9%EC%A0%95-%EA%B0%9C/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-06-26T00:00:00+09:00","datePublished":"2019-06-26T00:00:00+09:00","description":"문제점","headline":"Spring, JSTL: div 태그로 이루어진 이중 반복문 사용하기 (특정 개수별 구분)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/spring-jstl-div-%ED%83%9C%EA%B7%B8%EB%A1%9C-%EC%9D%B4%EB%A3%A8%EC%96%B4%EC%A7%84-%EC%9D%B4%EC%A4%91-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%ED%8A%B9%EC%A0%95-%EA%B0%9C/"},"url":"https://ayaysir.github.io/posts/spring-jstl-div-%ED%83%9C%EA%B7%B8%EB%A1%9C-%EC%9D%B4%EB%A3%A8%EC%96%B4%EC%A7%84-%EC%9D%B4%EC%A4%91-%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%ED%8A%B9%EC%A0%95-%EA%B0%9C/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,6 +573,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -596,7 +635,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Spring, JSTL: div 태그로 이루어진 이중 반복문 사용하기 (특정 개수별 구분)</h1>
     
@@ -670,7 +709,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="548 words"
+  title="555 words"
 >
   <em>3 min</em> read</span>
 
@@ -680,16 +719,40 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Spring, JSTL: div 태그로 이루어진 이중 반복문 사용하기 (특정 개수별 구분)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Spring, JSTL: div 태그로 이루어진 이중 반복문 사용하기 (특정 개수별 구분)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>예를 들어 15개마다 줄바꿈이 되는 이런 모양의 웹 페이지를 만들고 싶은데, 사용 태그가 <code class="language-plaintext highlighter-rouge">div</code>라면</p>
+    <h2 id="문제점"><span class="me-2">문제점</span><a href="#문제점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>예를 들어 15개마다 줄바꿈이 되는 이런 모양의 웹 페이지를 만들고 싶은데, 사용 태그가 <code class="language-plaintext highlighter-rouge">div</code>라면</p>
 
 <p><a href="/assets/img/wp-content/uploads/2019/06/per15.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/06/per15.png" alt="" loading="lazy"></a></p>
 
 <p>HTML 페이지는 이런 형태가 될 것입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -768,92 +831,94 @@
 76
 77
 78
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
 
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 
-&lt;style&gt;
-  .list {
-    display: inline-block
-  }
+<span class="nt">&lt;style&gt;</span>
+  <span class="nc">.list</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">inline-block</span>
+  <span class="p">}</span>
 
-  .list&gt;div {
-    margin: 10px;
-    background-color: antiquewhite
-  }
+  <span class="nc">.list</span><span class="o">&gt;</span><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nx">antiquewhite</span>
+  <span class="p">}</span>
 
-&lt;/style&gt;
+<span class="nt">&lt;/style&gt;</span>
 
-&lt;body&gt;
-  &lt;div class="list"&gt;
-    &lt;!-- max 15 --&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="list"&gt;
-    &lt;!-- max 15 --&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="list"&gt;
-    &lt;!-- max 15 --&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-    &lt;div&gt; ...... &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- max 15 --&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- max 15 --&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- max 15 --&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span> ...... <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 
-&lt;/html&gt;
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="해결-방법"><span class="me-2">해결 방법</span><a href="#해결-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이것을 스프링에서 단순 리스트를 이러한 형태로 표시하고 싶고 JSTL로 구현한다고 할 때, 이중 반복문을 사용해야 합니다. 다만 이 경우는 <code class="language-plaintext highlighter-rouge">div</code> 태그로 바깥에서 열고 닫고 하는 형태이기 때문에 일반적인 이중 반복문보다는 더 추가해야할 내용이 있습니다.</p>
 
 <p>이것을 JSTL로 구현한다고 가정하면 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsp highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -865,17 +930,17 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>&lt;c:forEach var="item" items="${ list }" varStatus="status"&gt;
-  &lt;c:if test="${ status.index % 15 eq 0 }"&gt;
-    &lt;div class="list"&gt;
-      &lt;c:forEach var="j" begin="${ status.index }" end="${ status.index + (15 - 1) }" step="1"&gt;
-        &lt;c:if test="${ list[j] ne null }"&gt;
-          &lt;div&gt; ${ list[j] } &lt;/div&gt;
-        &lt;/c:if&gt;
-      &lt;/c:forEach&gt;
-    &lt;/div&gt;
-  &lt;/c:if&gt;
-&lt;/c:forEach&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;c:forEach </span><span class="na">var=</span><span class="s">"item"</span><span class="na"> items=</span><span class="s">"</span><span class="si">${</span> <span class="n">list</span> <span class="si">}</span><span class="s">"</span><span class="na"> varStatus=</span><span class="s">"status"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;c:if </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span> <span class="n">status</span><span class="o">.</span><span class="na">index</span> <span class="o">%</span> <span class="mi">15</span> <span class="n">eq</span> <span class="mi">0</span> <span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;c:forEach </span><span class="na">var=</span><span class="s">"j"</span><span class="na"> begin=</span><span class="s">"</span><span class="si">${</span> <span class="n">status</span><span class="o">.</span><span class="na">index</span> <span class="si">}</span><span class="s">"</span><span class="na"> end=</span><span class="s">"</span><span class="si">${</span> <span class="n">status</span><span class="o">.</span><span class="na">index</span> <span class="o">+</span> <span class="o">(</span><span class="mi">15</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="si">}</span><span class="s">"</span><span class="na"> step=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;c:if </span><span class="na">test=</span><span class="s">"</span><span class="si">${</span> <span class="n">list</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="n">ne</span> <span class="kc">null</span> <span class="si">}</span><span class="s">"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div&gt;</span> ${ list[j] } <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/c:if&gt;</span>
+      <span class="nt">&lt;/c:forEach&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/c:if&gt;</span>
+<span class="nt">&lt;/c:forEach&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위에서 바깥 <code class="language-plaintext highlighter-rouge">div</code>인 <code class="language-plaintext highlighter-rouge">div.list</code> 의 위치에 신경써야 합니다. 내부 <code class="language-plaintext highlighter-rouge">for</code>문의 바깥에 위치시킵니다. <code class="language-plaintext highlighter-rouge">ul</code> <code class="language-plaintext highlighter-rouge">li</code> 등의 태그에도 적용 가능합니다.</p>
@@ -1534,77 +1599,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1693,8 +1687,6 @@
     
     
     
-    
-      
     
   
     
@@ -1806,6 +1798,62 @@
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1846,9 +1894,6 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -1856,6 +1901,9 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>
@@ -1871,6 +1919,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -1905,42 +1959,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -7769,34 +7787,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-2-%EC%98%88%EC%A0%9C-%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9-%EA%B2%BD%EB%B3%B4-%ED%91%9C%EC%8B%9C%EA%B0%80-%EB%82%98%EC%98%A4%EB%8A%94-%EC%A7%80/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1560870000"
-  data-df="ll"
-  
->
-  Jun 19, 2019
-</time>
-
-              <h4 class="pt-0 my-2">JSP, Spring: 웹소켓(Web Socket) 2 + 예제: 긴급상황 경보 표시가 나오는 지도</h4>
-              <div class="text-muted">
-                <p>이전 글: JSP, Spring: 웹소켓(Web Socket) 1 참조  클라이언트 측에서는 계속 대기하고 있다가 서버에서 긴급 상황(?)이 일어났다는 신호와 지도 좌표를 보내면 즉시 해당 좌표에 경고 상황이 일어났다고 표시하는 웹 페이지를 만들어볼 것이다. 실제 시스템이 어떻게 동작하는지는 모르겠고 뇌내망상으로 진행함.  브라우저에 지도를 표시하는 ...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/spring-ajax%EB%A1%9C-%EB%B0%B1%EC%97%94%EB%93%9C%EC%97%90-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%A0%84%EC%86%A1-egov-%ED%98%B8%ED%99%98/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -7852,6 +7842,34 @@
           </a>
         </article>
       
+        <article class="col">
+          <a href="/posts/spring-%EC%8A%A4%ED%94%84%EB%A7%81%EC%9D%98-%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98annotations-%EC%82%AC%EC%9A%A9%EB%B2%95/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1548687600"
+  data-df="ll"
+  
+>
+  Jan 29, 2019
+</time>
+
+              <h4 class="pt-0 my-2">Spring: 스프링의 어노테이션(Annotations) 사용법</h4>
+              <div class="text-muted">
+                <p>스프링(Spring)에서 어노테이션은 @[어노테이션이름] 이라는 형식으로 특정 클래스, 메소드, 변수의 맨 위에 붙여 쓰며 일반적으로 해당 구역의 기능을 확장하는 역할을 합니다.  종류  @Component  Bean을 생성하며(클래스의 인스턴스화), 클래스 코드 바로 위에 붙여 사용합니다. 멤버 필드 내 값은 지정되지 않습니다. 사용 시 클래스 이름...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -7867,11 +7885,11 @@
 
   
     <a
-      href="/posts/jsp-spring-%EC%9B%B9%EC%86%8C%EC%BC%93web-socket-2-%EC%98%88%EC%A0%9C-%EA%B8%B4%EA%B8%89%EC%83%81%ED%99%A9-%EA%B2%BD%EB%B3%B4-%ED%91%9C%EC%8B%9C%EA%B0%80-%EB%82%98%EC%98%A4%EB%8A%94-%EC%A7%80/"
+      href="/posts/%EC%9D%BC%EB%B3%B8%EC%96%B4-%EB%8B%AC%EC%9D%98-%EB%B0%94%EB%8B%A4/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>JSP, Spring: 웹소켓(Web Socket) 2 + 예제: 긴급상황 경보 표시가 나오는 지도</p>
+      <p>[일본어] 달의 바다</p>
     </a>
   
 
@@ -8424,77 +8442,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -8583,8 +8530,6 @@
     
     
     
-    
-      
     
   
     
@@ -8696,6 +8641,62 @@
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -8736,9 +8737,6 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -8746,6 +8744,9 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>

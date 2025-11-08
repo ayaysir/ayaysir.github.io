@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -537,11 +544,11 @@
       
 
       
-        <!-- add class to exist <a> tag -->
-        
-        
+        <!-- create the image wrapper -->
         
 
+        
+        
       
     
 
@@ -565,6 +572,38 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -596,7 +635,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: AJAX로 blob 타입의 리스폰스 가져오기(파일 다운로드)</h1>
     
@@ -670,7 +709,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="321 words"
+  title="327 words"
 >
   <em>1 min</em> read</span>
 
@@ -680,6 +719,28 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: AJAX로 blob 타입의 리스폰스 가져오기(파일 다운로드)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: AJAX로 blob 타입의 리스폰스 가져오기(파일 다운로드)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p><a href="https://stackoverflow.com/questions/16086162/handle-file-download-from-ajax-post">https://stackoverflow.com/questions/16086162/handle-file-download-from-ajax-post</a></p>
@@ -688,8 +749,10 @@
 
 <p>결론부터 말하면 <code class="language-plaintext highlighter-rouge">XMLHttpRequest</code>의 <code class="language-plaintext highlighter-rouge">responseType</code> 을 <code class="language-plaintext highlighter-rouge">blob</code>으로 설정해야 하며 JQuery AJAX 기능은 오류가 지속적으로 발생하므로 자바스크립트 기본 <code class="language-plaintext highlighter-rouge">XMLHttpRequest</code>를 사용하는 것을 추천합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -716,39 +779,39 @@
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function(){
-    if (this.readyState == 4 &amp;&amp; this.status == 200){
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">if </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">){</span>
     	
-    	 var filename = "";
-    	 var disposition = xhr.getResponseHeader('Content-Disposition');
-         if (disposition &amp;&amp; disposition.indexOf('attachment') !== -1) {
-             var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
-             var matches = filenameRegex.exec(disposition);
-             if (matches != null &amp;&amp; matches[1]) filename = matches[1].replace(/['"]/g, '');
-         }
+    	 <span class="kd">var</span> <span class="nx">filename</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    	 <span class="kd">var</span> <span class="nx">disposition</span> <span class="o">=</span> <span class="nx">xhr</span><span class="p">.</span><span class="nf">getResponseHeader</span><span class="p">(</span><span class="dl">'</span><span class="s1">Content-Disposition</span><span class="dl">'</span><span class="p">);</span>
+         <span class="k">if </span><span class="p">(</span><span class="nx">disposition</span> <span class="o">&amp;&amp;</span> <span class="nx">disposition</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">attachment</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+             <span class="kd">var</span> <span class="nx">filenameRegex</span> <span class="o">=</span> <span class="sr">/filename</span><span class="se">[^</span><span class="sr">;=</span><span class="se">\n]</span><span class="sr">*=</span><span class="se">(([</span><span class="sr">'"</span><span class="se">])</span><span class="sr">.*</span><span class="se">?\2</span><span class="sr">|</span><span class="se">[^</span><span class="sr">;</span><span class="se">\n]</span><span class="sr">*</span><span class="se">)</span><span class="sr">/</span><span class="p">;</span>
+             <span class="kd">var</span> <span class="nx">matches</span> <span class="o">=</span> <span class="nx">filenameRegex</span><span class="p">.</span><span class="nf">exec</span><span class="p">(</span><span class="nx">disposition</span><span class="p">);</span>
+             <span class="k">if </span><span class="p">(</span><span class="nx">matches</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">matches</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="nx">filename</span> <span class="o">=</span> <span class="nx">matches</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">'"</span><span class="se">]</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+         <span class="p">}</span>
     	
-        //this.response is what you're looking for
-        console.log(this.response, typeof this.response);
-        var a = document.createElement("a");
-        var url = URL.createObjectURL(this.response)
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-    }
-}
-xhr.open('POST', '/fileDownloadUrl');
-xhr.responseType = 'blob'; // !!필수!!
-xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 부분은 생략
+        <span class="c1">//this.response is what you're looking for</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">,</span> <span class="k">typeof</span> <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">.</span><span class="nf">createObjectURL</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">)</span>
+        <span class="nx">a</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
+        <span class="nx">a</span><span class="p">.</span><span class="nx">download</span> <span class="o">=</span> <span class="nx">filename</span><span class="p">;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+        <span class="nx">a</span><span class="p">.</span><span class="nf">click</span><span class="p">();</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nf">revokeObjectURL</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">/fileDownloadUrl</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">blob</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// !!필수!!</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="nx">formData</span><span class="p">);</span> <span class="c1">// 파라미터 설정하는 부분이며 formData 설정 부분은 생략</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>백엔드 부분은 <a href="http://yoonbumtae.com/?p=684">JSP, Spring: URL을 입력하면 파일이 바로 다운로드되게 하기</a> 참조</p>
+<p>백엔드 부분은 <a href="/posts/jsp-spring-url%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%98%EB%A9%B4-%ED%8C%8C%EC%9D%BC%EC%9D%B4-%EB%B0%94%EB%A1%9C-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C%EB%90%98%EA%B2%8C-%ED%95%98%EA%B8%B0/">JSP, Spring: URL을 입력하면 파일이 바로 다운로드되게 하기</a> 참조</p>
 
-<p><a href="http://yoonbumtae.com/?attachment_id=1171">
-          class="img-link shimmer"
-        ><img src="/assets/img/wp-content/uploads/2019/06/blobajax.png" alt="" loading="lazy"></a></p>
+<h2 id="실행-화면"><span class="me-2">실행 화면</span><a href="#실행-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="/assets/img/wp-content/uploads/2019/06/blobajax.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/06/blobajax.png" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -1394,77 +1457,6 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1553,8 +1545,6 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
     
     
     
-    
-      
     
   
     
@@ -1666,6 +1656,62 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1706,9 +1752,6 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -1716,6 +1759,9 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>
@@ -1731,6 +1777,12 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -2741,43 +2793,7 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8284,77 +8300,6 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -8443,8 +8388,6 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
     
     
     
-    
-      
     
   
     
@@ -8556,6 +8499,62 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -8596,9 +8595,6 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring-boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/spring/">spring</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/vue-js/">vue-js</a>
       
         
@@ -8606,6 +8602,9 @@ xhr.send(formData); // 파라미터 설정하는 부분이며 formData 설정 �
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/opengl/">opengl</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/qbasic-%EA%B8%B0%EC%B4%88/">qbasic-기초</a>
       
     </div>
   </section>
