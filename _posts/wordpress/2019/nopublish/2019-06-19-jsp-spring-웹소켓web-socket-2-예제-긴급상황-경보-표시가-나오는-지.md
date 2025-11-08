@@ -1,4 +1,5 @@
 ---
+published: false
 title: "JSP, Spring: 웹소켓(Web Socket) 2 + 예제: 긴급상황 경보 표시가 나오는 지도"
 date: 2019-06-19
 categories: 

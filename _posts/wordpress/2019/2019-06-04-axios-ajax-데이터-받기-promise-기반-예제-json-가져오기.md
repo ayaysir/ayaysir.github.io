@@ -8,13 +8,15 @@ tags:
   - "vue-js"
 ---
 
-axios 홈페이지: [https://github.com/axios/axios](https://github.com/axios/axios)
+**axios**는 `Promise` 기반의 AJAX 라이브러리입니다.
 
-#### 사용법
+- axios 홈페이지: [https://github.com/axios/axios](https://github.com/axios/axios)
 
-**axios**는 `Promise` 기반의 AJAX 라이브러리입니다. 기본 형태는 다음과 같습니다.
+## 사용법
 
-```
+ 기본 형태는 다음과 같습니다.
+
+```js
 axios.get('/user', {
     params: {
       ID: 'anyvalue'
@@ -29,16 +31,22 @@ axios.get('/user', {
   .finally(function () {
     // always executed
   });  
-
 ```
 
-`axios.get` 뿐만 아니라 `post`, `delete`, `put`, `patch` 등 리퀘스트 종류에 따라 사용할 수 있습니다. `then`은 정상적으로 데이터를 받았을 경우 동작하며 `catch`는 에러 캐치, `finally`는 동작 여부와 무관하게 무조건 실행되는 부분입니다. 받은 데이터(JSON 등) 만 추출하고 싶은 경우 `response.data` 로 가져옵니다.
+ - `axios.get` 뿐만 아니라 `post`, `delete`, `put`, `patch` 등 리퀘스트 종류에 따라 사용할 수 있습니다.
+ - `then`은 정상적으로 데이터를 받았을 경우 동작합니다.
+ - `catch`는 에러 캐치, `finally`는 동작 여부와 무관하게 무조건 실행되는 부분입니다. 
+ - 받은 데이터(JSON 등) 만 추출하고 싶은 경우 `response.data` 로 가져옵니다.
 
-#### 예제 (Vue.js 포함)
+
+
+## 예제 (Vue.js 포함)
 
 퀴즈 카드를 만드는 [예제](https://jsfiddle.net/zo23fts4/)입니다. 데이터 출처는 [\[링크\]](https://support.oneskyapp.com/hc/en-us/articles/208047697-JSON-sample-files)
 
-```
+### HTML
+
+```html
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -66,6 +74,8 @@ axios.get('/user', {
 </html>
 
 ```
+
+### Vue.js
 
 ```jsx
     // 스트링을 대문자화
@@ -107,6 +117,11 @@ axios.get('/user', {
     })
 ```
 
-Vue.js에서 `filter`로 선언한 부분은 `{{variableName | filterName}}` 으로 사용합니다. `created` 안의 부분은 컴포넌트 라이프사이클에서 created 되었을 때 실행합니다.
+- Vue.js에서 `filter`로 선언한 부분은 `{{variableName | filterName}}` 으로 사용합니다. 
+- `created` 안의 부분은 컴포넌트 라이프사이클에서 created 되었을 때 실행합니다.
+
+
+
+### 실행 화면
 
 [ ![](/assets/img/wp-content/uploads/2019/06/quiz.png)](http://yoonbumtae.com/?attachment_id=1165)

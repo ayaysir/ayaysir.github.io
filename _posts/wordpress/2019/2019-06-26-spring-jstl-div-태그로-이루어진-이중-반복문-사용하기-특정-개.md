@@ -8,13 +8,15 @@ tags:
   - "spring"
 ---
 
+## 문제점
+
 예를 들어 15개마다 줄바꿈이 되는 이런 모양의 웹 페이지를 만들고 싶은데, 사용 태그가 `div`라면
 
  ![](/assets/img/wp-content/uploads/2019/06/per15.png)
 
 HTML 페이지는 이런 형태가 될 것입니다.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -95,11 +97,13 @@ HTML 페이지는 이런 형태가 될 것입니다.
 </html>
 ```
 
+## 해결 방법
+
 이것을 스프링에서 단순 리스트를 이러한 형태로 표시하고 싶고 JSTL로 구현한다고 할 때, 이중 반복문을 사용해야 합니다. 다만 이 경우는 `div` 태그로 바깥에서 열고 닫고 하는 형태이기 때문에 일반적인 이중 반복문보다는 더 추가해야할 내용이 있습니다.
 
 이것을 JSTL로 구현한다고 가정하면 다음과 같습니다.
 
-```
+```jsp
 <c:forEach var="item" items="${ list }" varStatus="status">
   <c:if test="${ status.index % 15 eq 0 }">
     <div class="list">

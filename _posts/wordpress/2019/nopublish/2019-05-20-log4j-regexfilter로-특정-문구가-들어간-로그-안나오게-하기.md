@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Log4j: RegexFilter로 특정 문구가 들어간 로그 안나오게 하기"
 date: 2019-05-20
 categories: 

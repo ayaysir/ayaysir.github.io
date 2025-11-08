@@ -10,78 +10,115 @@ categories:
 
 {% youtube "https://youtu.be/mPZn4x3uOac" %}
 
-In the bleak mid-winter 황량한 한겨울에
+## 가사 (원문 및 번역)
 
-Frosty wind made moan; 서리가 내린 바람에 울부짖는 소리가 났다.
+In the bleak mid-winter  
+황량한 한겨울에
 
-Earth stood hard as iron, 땅은 쇠처럼 단단하게 서 있었고,
+Frosty wind made moan;  
+서리가 내린 바람에 울부짖는 소리가 났다.
 
-Water like a stone; 물은 돌덩이 같았다.
+Earth stood hard as iron,  
+땅은 쇠처럼 단단하게 서 있었고,
 
-Snow had fallen, snow on snow, 눈이 내리고, 눈이 쌓이고
+Water like a stone;  
+물은 돌덩이 같았다.
 
-Snow on snow, 눈이 쌓인
+Snow had fallen, snow on snow,  
+눈이 내리고, 눈이 쌓이고
 
-In the bleak mid-winter Long ago. 오래 전 황량한 한겨울에
+Snow on snow,  
+눈이 쌓인
 
- 
+In the bleak mid-winter Long ago.  
+오래 전 황량한 한겨울에
 
-Our God, heaven cannot hold Him 하느님, 하늘은 그를 붙잡아 둘 수 없고
+<br>
 
-Nor earth sustain, 땅도 그를 지탱하지 못한다.
+Our God, heaven cannot hold Him  
+하느님, 하늘은 그를 붙잡아 둘 수 없고
 
-Heaven and earth shall flee away 하늘과 땅은 도망칠 것이다.
+Nor earth sustain,  
+땅도 그를 지탱하지 못한다.
 
-When He comes to reign: 그가 군림할 때
+Heaven and earth shall flee away  
+하늘과 땅은 도망칠 것이다.
 
-In the bleak mid-winter 황량한 한겨울에
+When He comes to reign:  
+그가 군림할 때
 
-A stable-place sufficed 안정된 장소에서 충족하신.
+In the bleak mid-winter  
+황량한 한겨울에
 
-The Lord God Almighty — Jesus Christ. 주 하나님 전능하신 예수 그리스도
+A stable-place sufficed  
+안정된 장소에서 충족하신.
 
- 
+The Lord God Almighty — Jesus Christ.  
+주 하나님 전능하신 예수 그리스도
 
-Enough for Him, whom Cherubim 케루빔(천사)은 그를 위해 충분하다.
+<br>
 
-Worship night and day, 밤낮의 예배
+Enough for Him, whom Cherubim  
+케루빔(천사)은 그를 위해 충분하다.
 
-A breastful of milk 풍족한 우유
+Worship night and day,  
+밤낮의 예배
 
-And a mangerful of hay; 그리고 여물통에 가득 찬 건초
+A breastful of milk  
+풍족한 우유
 
-Enough for Him, whom Angels 천사들은 그를 위해 충분하다.
+And a mangerful of hay;  
+그리고 여물통에 가득 찬 건초
 
-Fall down before, The ox and ass and camel Which adore. 떨어지기 전, 말과 나귀와 낙타 중 어느 것이 맘에 드는지
+Enough for Him, whom Angels  
+천사들은 그를 위해 충분하다.
 
-Angels and Archangels 천사와 대천사가
+Fall down before, The ox and ass and camel Which adore.  
+떨어지기 전, 말과 나귀와 낙타 중 어느 것이 맘에 드는지
 
-May have gathered there, 그곳에 모일지도 모른다
+Angels and Archangels  
+천사와 대천사가
 
-Cherubim and seraphim 케루빔과 치품천사들이
+May have gathered there,  
+그곳에 모일지도 모른다
 
-Thronged the air; 공기를 강타했다.
+Cherubim and seraphim  
+케루빔과 치품천사들이
+
+Thronged the air;  
+공기를 강타했다.
 
 {% youtube "https://youtu.be/7-nRv0uQvH0" %}
 
-But only His Mother 그러나 오직 그의 어머니
+But only His Mother  
+그러나 오직 그의 어머니
 
-In her maiden bliss 처녀의 행복 안에
+In her maiden bliss  
+처녀의 행복 안에
 
-Worshipped the Beloved With a kiss. 숭배하는 자에게 키스를 퍼부었다.
+Worshipped the Beloved With a kiss.  
+숭배하는 자에게 키스를 퍼부었다.
 
-What can I give Him, 그에게 무엇을 줄 수 있을까?
+What can I give Him,  
+그에게 무엇을 줄 수 있을까?
 
-Poor as I am? — 나처럼 불쌍한 자가?
+Poor as I am? —  
+나처럼 불쌍한 자가?
 
-If I were a Shepherd 내가 양치기라면
+If I were a Shepherd  
+내가 양치기라면
 
-I would bring a lamb; 양을 줄 텐데
+I would bring a lamb;  
+양을 줄 텐데
 
-If I were a Wise Man 내가 현자라면
+If I were a Wise Man  
+내가 현자라면
 
-I would do my part, — 제 역할을 할 텐데
+I would do my part, —  
+제 역할을 할 텐데
 
-Yet what I can I give Him, — 하지만 내가 줄 수 있는 건
+Yet what I can I give Him, —  
+하지만 내가 줄 수 있는 건
 
-Give my heart. 나의 마음 뿐
+Give my heart.  
+나의 마음 뿐

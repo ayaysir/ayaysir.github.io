@@ -8,7 +8,7 @@ categories:
 
 {% youtube "https://youtu.be/cmKqSQhF6Gc" %}
 
-#### Josef Suk
+## Josef Suk 는 누구인가?
 
 요세프 수크(Josef Suk, 1874년 1월 4일 ~ 1935년 5월 29일)는 체코의 작곡가이자 바이올린 연주자이다.
 
@@ -18,7 +18,7 @@ categories:
 
  
 
-#### Towards a New Life
+## Towards a New Life
 
 올림픽에서 '올림픽 예술'이라는 것이 있던 시대, 1932년 로스앤젤레스 올림픽에서 『새로운 삶을 향해 (작품 35c)』 (소콜 축하 행진곡) 에서 '음악 전반'부문 은메달을 획득하고 있다 .
 
@@ -26,11 +26,11 @@ categories:
 
 이 행진곡은 그의 나라에서 가장 유명한 교향곡 행진 중 하나가 되었다. 대중들에게 친숙한 영국과 미국의 행진곡과는 달리, 이 작품의 스타일은 체코슬로바키아의 민속 음악에 뿌리를두고 있으며 보다 더 성대한 분위기가 특징이다.
 
- 
-
 {% youtube "https://youtu.be/rruD198FwAU" %}
 
-#### Art competitions at the Summer Olympics
+
+
+## Art competitions at the Summer Olympics
 
 과거의 근대 올림픽(20세기 초반)에는 '올림픽 예술'이라고 하는 종목이 있었는데 종목은 회화, 조각, 문학, 건축, 음악이 있었고, 스포츠를 소재로 한 예술 작품을 제작하고 평가하여 순위를 겨루는 종목이었다.
 

@@ -8,9 +8,9 @@ tags:
   - "spring"
 ---
 
-### 컨트롤러 (일부)
+## 컨트롤러 (일부)
 
-```
+```java
 @RequestMapping(value = "/url", method = RequestMethod.POST)
 public String insert(MultipartHttpServletRequest request, HttpSession session, ModelMap model) throws Exception {
 
@@ -35,13 +35,14 @@ public String insert(MultipartHttpServletRequest request, HttpSession session, M
 
 ```
 
-`HttpServletRequest` 대신 **`MultipartHttpServletRequest` 을 사용합니다.** 값을 받을 때는 attribute가 아닌 `request.getParameter(x)` 를 사용합니다.
+- `HttpServletRequest` 대신 **`MultipartHttpServletRequest` 을 사용합니다.** 
+- 값을 받을 때는 attribute가 아닌 `request.getParameter(x)` 를 사용합니다.
 
  
 
-### HTML (일부)
+## HTML (일부)
 
-```
+```html
 <form id="frm" method="post" enctype="multipart/form-data">
   <input class="field-title" type="text" name="title">
   <textarea class="field-description" rows="3" name="desc"></textarea>
@@ -49,15 +50,14 @@ public String insert(MultipartHttpServletRequest request, HttpSession session, M
 </form>
 ```
 
-`method="post"`, `enctype="multipart/form-data"` 을 각각 지정합니다.
+- `method="post"`, `enctype="multipart/form-data"` 을 각각 지정합니다.
 
  
 
-### 자바스크립트(일부, JQuery 포함)
+## 자바스크립트(일부, JQuery 포함)
 
-```
+```js
 $(".submit-btn").click(function() {
-  
   var frm = document.getElementById("frm")
   var fd = new FormData(frm);
   	
@@ -70,9 +70,8 @@ $(".submit-btn").click(function() {
       success: function(res){
       	console.log(res)
       }
-    });
-  
+    });\
 })
 ```
 
-`data`에는 `FormData`를 지정하고, `processData: false`, `contentType: false`, `type: 'POST'`로 지정합니다.
+- `data`에는 `FormData`를 지정하고, `processData: false`, `contentType: false`, `type: 'POST'`로 지정합니다.
