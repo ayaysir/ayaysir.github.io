@@ -8,19 +8,20 @@ tags:
   - "스프링시큐리티"
 ---
 
-\[rcblock id="3197"\]
+<!-- \[rcblock id="3197"\] -->
 
-깃허브에서 전체 코드 보기 - [https://github.com/ayaysir/spring-boot-security-example-1](https://github.com/ayaysir/spring-boot-security-example-1)
+깃허브에서 전체 코드 보기
+- [https://github.com/ayaysir/spring-boot-security-example-1](https://github.com/ayaysir/spring-boot-security-example-1)
 
  
 
 로그인 폼을 거치지 않고 컨트롤러에서 로그인 처리를 하는 방법입니다. 외부 소셜 로그인 기능과 스프링 시큐리티를 연동하고자 할 때 사용할 수 있습니다.
 
- 
+## 절차
 
-##### 아래 메소드를 컨트롤러 내에 삽입합니다.
+### 아래 메소드를 컨트롤러 내에 삽입합니다.
 
-```
+```java
 /**
  * 로그인 폼을 거치지 않고 바로 로그인
  * @param username
@@ -49,17 +50,17 @@ public String loginWithoutForm(@PathVariable(value="username") String username) 
 
  
 
-##### 아래 테이블(`simple_users`)은 회원 목록입니다.
+### 아래 테이블(`simple_users`)은 회원 목록입니다.
 
  ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-27-오후-11.57.06.png)
 
  
 
-##### 첫 페이지에서 좋아하는 음식 목록을 가져오도록 변경합니다.
+### 첫 페이지에서 좋아하는 음식 목록을 가져오도록 변경합니다.
 
-###### 컨트롤러 내 메소드 (첫 페이지 담당)
+#### 컨트롤러 내 메소드 (첫 페이지 담당)
 
-```
+```java
 @RequestMapping("/")
 public String home(Model model) {
 
@@ -76,14 +77,13 @@ public String home(Model model) {
     
   }
   
-  
   return "home";	
 }
 ```
 
-###### DAO
+#### DAO
 
-```
+```java
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -107,14 +107,13 @@ public class SimpleUserDAO {
           return anUser;
         });
       }
- 
 }
 
 ```
 
-###### HTML 뷰 (Thymeleaf)
+### HTML 뷰 (Thymeleaf)
 
-```
+```html
 <body>
   <a href="test">Test Page</a>
 
@@ -126,12 +125,14 @@ public class SimpleUserDAO {
 </body>
 ```
 
+## 동작 화면
+
 결과 화면입니다. url (`/loginWithoutForm/아이디`)를 입력하면 로그인이 됩니다.
 
- ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오전-12.00.10.png)
+ ![](/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-am-12.00.10.png)
 
- ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오전-12.07.08.png)
+ ![](/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-am-12.07.08.png)
 
  
 
-\[rcblock id="3197"\]
+<!-- \[rcblock id="3197"\] -->

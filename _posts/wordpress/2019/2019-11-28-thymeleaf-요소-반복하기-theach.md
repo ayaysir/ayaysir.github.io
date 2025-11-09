@@ -8,11 +8,11 @@ tags:
   - "thymeleaf"
 ---
 
-[Thymeleaf  관련 글 보기](http://yoonbumtae.com/?tag=thymeleaf)
+[Thymeleaf  관련 글 보기](/tags/thymeleaf/)
 
 **Thymeleaf**에서 특정 요소를 `for`문처럼 반복하는 방법으로 **`th:each`**가 있습니다.
 
-```
+```html
 <table>
   <thead>
     <tr>
@@ -29,7 +29,7 @@ tags:
 
 ```
 
-```
+```html
 <tbody>
   <tr th:each="article, i: ${list}">
     <td th:text="${article.seq}"></td>
@@ -54,7 +54,7 @@ tags:
 
 참고로 컨트롤러에서 넘어오는 `list` 변수는 아래와 같은 `List<Map<String, Object>>` 타입입니다.
 
-```
+```java
 @RequestMapping("/board")
 public String board(Model model) {
   List<Map<String, Object>> list = [DAO를 통해 DB 테이블을 가져옴];

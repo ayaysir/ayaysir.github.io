@@ -16,8 +16,8 @@ categories:
 
 가능하면 jQuery 확장이 포함된 선택자를 사용하지 마십시오. 이러한 확장은 기본 `querySelectorAll()` DOM 메소드가 제공하는 성능 향상을 이용할 수 없으므로 jQuery에서 제공하는 **Sizzle 선택자 엔진**을 사용해야 합니다.
 
-```
-// 느림 (영기반(zero-based) ":even" 선택자는 jQuery의 확장입니다.)
+```js
+// 느림 (0 기반(zero-based) ":even" 선택자는 jQuery의 확장입니다.)
 $( "#my-table tr:even" );
  
 // 비록 정확하게 동일하지는 않지만 더 좋습니다.
@@ -30,7 +30,7 @@ $( "#my-table tr:nth-child(odd)" );
 
 ### 과도한 상세함 회피 (Avoid Excessive Specificity)
 
-```
+```js
 $( ".data table.attendees td.gonzalez" );
  
 // 더 나음: 가능한 중간 단계의 선택자를 생략하세요.
@@ -45,7 +45,7 @@ $( ".data td.gonzalez" );
 
 ID로 선택자를 시작하는 것이 안전합니다.
 
-```
+```js
 // 빠름:
 $( "#container div.robotarm" );
  
@@ -57,17 +57,17 @@ $( "#container" ).find( "div.robotarm" );
 
  
 
-### 이전 브라우저를 위한 팁
+## 이전 브라우저를 위한 팁
 
 Internet Explorer 8 이하와 같은 이전 브라우저에 대한 지원이 필요한 경우 다음 팁을 고려하십시오.
 
  
 
-#### 상세함 (Specificity)
+### 상세함 (Specificity)
 
 선택자의 오른쪽은 구체적으로, 왼쪽은 덜 구체적으로 구성하세요.
 
-```
+```js
 // 최적화되지 않음:
 $( "div.data .gonzalez" );
  
@@ -79,11 +79,11 @@ $( ".data td.gonzalez" );
 
  
 
-#### 범용 선택자를 회피 (Avoid the Universal Selector)
+### 범용 선택자를 회피 (Avoid the Universal Selector)
 
 "어디서나 일치하는 항목을 찾을 수 있는 선택자"를 지정하거나 또는 암시하는 선택자는 매우 느릴 수 있습니다.
 
-```
+```js
 $( ".buttons > *" ); // 매우 고비용(expensive)
 $( ".buttons" ).children(); // 훨씬 낫다
  

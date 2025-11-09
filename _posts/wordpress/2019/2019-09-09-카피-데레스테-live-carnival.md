@@ -8,6 +8,4 @@ categories:
 
 {% youtube "https://youtu.be/RH2mJQhP8Lc" %}
 
-와! 서커스 같다!
-
 [데레스테](https://twitter.com/imascg_stage) 4주년 축하합니다! 저도 2년째 열심히 달리고 있네요.

@@ -6,38 +6,39 @@ categories:
   - "Spring/JSP"
 ---
 
-깃허브에서 전체 코드 보기 - [https://github.com/ayaysir/spring-boot-security-example-1](https://github.com/ayaysir/spring-boot-security-example-1)
+깃허브에서 전체 코드 보기
+ - [https://github.com/ayaysir/spring-boot-security-example-1](https://github.com/ayaysir/spring-boot-security-example-1)
 
  
-
+네이버 API 문서 보기
 - [네이버 개발자 센터: 네이버 아이디로 로그인하기 튜토리얼](https://developers.naver.com/docs/login/web/#1-6-1--%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%94%84%EB%A1%9C%ED%95%84-%EC%A0%95%EB%B3%B4-%EC%A1%B0%ED%9A%8C-%EC%9A%94%EC%B2%AD-url)
 - [네이버 개발자 센터: 네이버 아이디로 로그인하기 API](https://developers.naver.com/docs/login/api/)
 
- 
+## 절차
 
-#### **1\. API 신청**
+### **1\. API 신청**
 
 네이버로 로그인한 후, 개발자 센터의 [애플리케이션 신청 페이지](https://developers.naver.com/apps/#/register)에 가서 애플리케이션을 신청합니다.
 
- ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-19-오전-3.20.53.png)
+ ![](/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-19-am-3.20.53.png)
 
-애플리케이션 이름을 입력한 뒤 사용 API를 네아로 (네이버 아이디로 로그인) 을 선택하고, 제공 정보 선택에 사용할 정보를 선택합니다.
+애플리케이션 이름을 입력한 뒤 사용 API를 네이버 아이디로 로그인(이하 네아로) 을 선택하고, 제공 정보 선택에 사용할 정보를 선택합니다.
 
- ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-19-오전-3.21.25.png)
+ ![](/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-19-am-3.21.25.png)
 
 서비스 환경에서 PC웹 또는 모바일 웹을 선택하고 서비스 URL에 메인 페이지 주소를, Callback URL에 콜백에 사용할 URL을 등록합니다. URL은 수정 가능하므로 아직 정해지지 않았더라도 형식에 맞게 입력하면 됩니다.
 
  
 
-#### **2\. 애플리케이션 정보의 클라이언트 아이디 확인**
+### **2\. 애플리케이션 정보의 클라이언트 아이디 확인**
 
- ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-19-오전-3.25.23.png)
+ ![](/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-19-am-3.25.23.png)
 
 등록되었으면 내 애플리케이션 정보 메뉴에서 클라이언트 아이디와 비밀 키를 확인합니다. 네아로 검수요청은 정식 서비스를 개시할 때 필요하고 개발단계에서는 아직 진행하지 않아도 됩니다.
 
  
 
-#### **3\. 서버 사이드 코드 작성**
+### **3\. 서버 사이드 코드 작성**
 
 동작 원리는 다음과 같습니다.
 
@@ -47,7 +48,7 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2019/11/615FC658-A847-4A35-8A54-64E28B2AF3D1.png)
 
-```
+```java
 package com.springboot.security;
 
 import java.io.BufferedReader;
@@ -287,9 +288,9 @@ public class NaverLoginController {
 
  
 
-#### **4\. 뷰 페이지 작성 (Thymeleaf 사용)**
+### **4\. 뷰 페이지 작성 (Thymeleaf 사용)**
 
-```
+```html
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
@@ -320,7 +321,7 @@ public class NaverLoginController {
 </html>
 ```
 
-```
+```html
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
@@ -342,26 +343,28 @@ public class NaverLoginController {
 
  
 
-#### **5\. 테스트**
+### **5\. 테스트**
 
-\[caption id="attachment\_1825" align="alignnone" width="325"\] ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-4.09.13-e1574104916922.png) 로그인 전의 첫화면입니다.\[/caption\]
-
- 
-
-\[caption id="attachment\_1827" align="alignnone" width="513"\] ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-2.27.44-1-e1574105015629.png) 이전에 연동한 적이 없다면 연동 동의 여부를 묻는 화면이 뜹니다. 이미 연동된 경우, 로그인됩니다.\[/caption\]
+ ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-am-4.09.13-e1574104916922.png)  
+*로그인 전의 첫화면입니다.*
 
  
 
-\[caption id="attachment\_1823" align="alignnone" width="399"\] ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-3.01.36-e1574105130632.png) API에서 설정한 콜백 페이지입니다.\[/caption\]
+![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-am-2.27.44-1-e1574105015629.png)  
+*이전에 연동한 적이 없다면 연동 동의 여부를 묻는 화면이 뜹니다. 이미 연동된 경우, 로그인됩니다.*
 
  
 
-\[caption id="attachment\_1826" align="alignnone" width="599"\] ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-4.09.36-e1574105191467.png) 로그인 후 첫화면입니다.\[/caption\]
+![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-am-3.01.36-e1574105130632.png) 
 
  
 
-\[caption id="attachment\_1824" align="alignnone" width="729"\] ![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-오전-3.02.37-e1574105247529.png) 회원정보를 가져오는 화면입니다. 여기서 `id`가 회원의 고유값입니다.\[/caption\]
+![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-am-4.09.36-e1574105191467.png)  
+*로그인 후 첫화면입니다.*
+ 
 
+![](/assets/img/wp-content/uploads/2019/11/-2019-11-19-am-3.02.37-e1574105247529.png)  
+*회원정보를 가져오는 화면입니다. 여기서 `id`가 회원의 고유값입니다.*
  
 
 다음에는 획득한 로그인 정보를 내 서버의 데이터베이스와 연동하는 방법에 대해 알아보겠습니다.
