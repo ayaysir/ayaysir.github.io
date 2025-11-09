@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,15 +498,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -568,19 +597,18 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -597,7 +625,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바 예제: 특정 주파수의 소리 재생</h1>
     
@@ -671,7 +699,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="637 words"
+  title="638 words"
 >
   <em>3 min</em> read</span>
 
@@ -681,58 +709,80 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바 예제: 특정 주파수의 소리 재생</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바 예제: 특정 주파수의 소리 재생</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>특정 주파수의 음을 사인파(Sine Wave)로 재생하고 싶다면, <code class="language-plaintext highlighter-rouge">javax.sound.sampled.*</code> 라이브러리를 사용합니다. <strong>javax</strong> 시리즈는 자바에서 기본 제공됩니다.</p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2">절차</span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-new-audioformat으로-새로운-오디오-형식-생성"><span class="me-2"><strong>1) <code class="language-plaintext highlighter-rouge">new AudioFormat</code>으로 새로운 오디오 형식 생성</strong></span><a href="#1-new-audioformat으로-새로운-오디오-형식-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-new-audioformat으로-새로운-오디오-형식-생성"><span class="me-2"><strong>1) <code class="language-plaintext highlighter-rouge">new AudioFormat</code>으로 새로운 오디오 형식 생성</strong></span><a href="#1-new-audioformat으로-새로운-오디오-형식-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>public AudioFormat(float sampleRate:샘플수,
-           int sampleSizeInBits:비트당샘플사이즈,
-           int channels:채널수,
-           boolean signed:부호여부,
-           boolean bigEndian:빅엔디안여부)
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="nf">AudioFormat</span><span class="o">(</span><span class="kt">float</span> <span class="nl">sampleRate:</span><span class="n">샘플수</span><span class="o">,</span>
+           <span class="kt">int</span> <span class="nl">sampleSizeInBits:</span><span class="n">비트당샘플사이즈</span><span class="o">,</span>
+           <span class="kt">int</span> <span class="nl">channels:</span><span class="n">채널수</span><span class="o">,</span>
+           <span class="kt">boolean</span> <span class="nl">signed:</span><span class="n">부호여부</span><span class="o">,</span>
+           <span class="kt">boolean</span> <span class="nl">bigEndian:</span><span class="n">빅엔디안여부</span><span class="o">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="2-생성한-audioformat에서-소스-데이터-라인source-data-line을-추출-후-sourcedataline-자료형-변수에-저장"><span class="me-2"><strong>2) 생성한 <code class="language-plaintext highlighter-rouge">AudioFormat</code>에서 소스 데이터 라인(Source Data Line)을 추출 후 <code class="language-plaintext highlighter-rouge">SourceDataLine</code> 자료형 변수에 저장</strong></span><a href="#2-생성한-audioformat에서-소스-데이터-라인source-data-line을-추출-후-sourcedataline-자료형-변수에-저장" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-생성한-audioformat에서-소스-데이터-라인source-data-line을-추출-후-sourcedataline-자료형-변수에-저장"><span class="me-2"><strong>2) 생성한 <code class="language-plaintext highlighter-rouge">AudioFormat</code>에서 소스 데이터 라인(Source Data Line)을 추출 후 <code class="language-plaintext highlighter-rouge">SourceDataLine</code> 자료형 변수에 저장</strong></span><a href="#2-생성한-audioformat에서-소스-데이터-라인source-data-line을-추출-후-sourcedataline-자료형-변수에-저장" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>AudioFormat af = new AudioFormat(SAMPLE_RATE, BITS, CHANNELS, IS_BIG_ENDIAN);
-SourceDataLine sdl = AudioSystem.getSourceDataLine(af);
+</pre></td><td class="rouge-code"><pre><span class="nc">AudioFormat</span> <span class="n">af</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AudioFormat</span><span class="o">(</span><span class="no">SAMPLE_RATE</span><span class="o">,</span> <span class="no">BITS</span><span class="o">,</span> <span class="no">CHANNELS</span><span class="o">,</span> <span class="no">IS_BIG_ENDIAN</span><span class="o">);</span>
+<span class="nc">SourceDataLine</span> <span class="n">sdl</span> <span class="o">=</span> <span class="nc">AudioSystem</span><span class="o">.</span><span class="na">getSourceDataLine</span><span class="o">(</span><span class="n">af</span><span class="o">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="3-sdl-오픈open-및-시작start"><span class="me-2"><strong>3) sdl 오픈(<code class="language-plaintext highlighter-rouge">open</code>) 및 시작(<code class="language-plaintext highlighter-rouge">start</code>)</strong></span><a href="#3-sdl-오픈open-및-시작start" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-sdl-오픈open-및-시작start"><span class="me-2"><strong>3) sdl 오픈(<code class="language-plaintext highlighter-rouge">open</code>) 및 시작(<code class="language-plaintext highlighter-rouge">start</code>)</strong></span><a href="#3-sdl-오픈open-및-시작start" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>sdl.open(af);
-sdl.start();
+</pre></td><td class="rouge-code"><pre><span class="n">sdl</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="n">af</span><span class="o">);</span>
+<span class="n">sdl</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="4-재생-정보에-대한-byte형-배열-생성-후-해당-배열을-sldwrite를-이용하여-기록"><span class="me-2"><strong>4) 재생 정보에 대한 <code class="language-plaintext highlighter-rouge">byte</code>형 배열 생성 후 해당 배열을 <code class="language-plaintext highlighter-rouge">sld.write()</code>를 이용하여 기록</strong></span><a href="#4-재생-정보에-대한-byte형-배열-생성-후-해당-배열을-sldwrite를-이용하여-기록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-재생-정보에-대한-byte형-배열-생성-후-해당-배열을-sldwrite를-이용하여-기록"><span class="me-2"><strong>4) 재생 정보에 대한 <code class="language-plaintext highlighter-rouge">byte</code>형 배열 생성 후 해당 배열을 <code class="language-plaintext highlighter-rouge">sld.write()</code>를 이용하여 기록</strong></span><a href="#4-재생-정보에-대한-byte형-배열-생성-후-해당-배열을-sldwrite를-이용하여-기록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -741,44 +791,46 @@ sdl.start();
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>// Speicify playback time from SAMPLE_RATE
-int sizePerMs = (int)(SAMPLE_RATE / 1000);
+</pre></td><td class="rouge-code"><pre><span class="c1">// Speicify playback time from SAMPLE_RATE</span>
+<span class="kt">int</span> <span class="n">sizePerMs</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)(</span><span class="no">SAMPLE_RATE</span> <span class="o">/</span> <span class="mi">1000</span><span class="o">);</span>
 
-for(int i = 0; i &lt; ms * sizePerMs; i++) {
-  double angle = i / (SAMPLE_RATE / hz) * 2.0 * Math.PI;
-  buf[0] = (byte) (Math.sin(angle) * 127.0 * vol);
-  sdl.write(buf, 0, 1);
-}
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ms</span> <span class="o">*</span> <span class="n">sizePerMs</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+  <span class="kt">double</span> <span class="n">angle</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="o">(</span><span class="no">SAMPLE_RATE</span> <span class="o">/</span> <span class="n">hz</span><span class="o">)</span> <span class="o">*</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="nc">Math</span><span class="o">.</span><span class="na">PI</span><span class="o">;</span>
+  <span class="n">buf</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">angle</span><span class="o">)</span> <span class="o">*</span> <span class="mf">127.0</span> <span class="o">*</span> <span class="n">vol</span><span class="o">);</span>
+  <span class="n">sdl</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>배열에는 특정 주파수에 대한 사인파 정보를 <code class="language-plaintext highlighter-rouge">재생시간(ms) * ms당 사이즈</code> 만큼 기록합니다. <code class="language-plaintext highlighter-rouge">i</code>가 1이고, 샘플수가 44000, 주파수는 440인 경우 <code class="language-plaintext highlighter-rouge">angle</code>은 <strong>0.0628</strong>이며, 이것에 대한 사인(sine)각도을 구하면 약 <strong>13.92</strong>입니다. 구해진 사인각은 그래프에서 y축의 높이 정보에 활용됩니다(자세한 사항은 <strong>푸리에 변환</strong> 참조). 여기에 <code class="language-plaintext highlighter-rouge">127</code>을 곱하는 이유는 바이트형 배열의 범위가 <code class="language-plaintext highlighter-rouge">-128</code>~<code class="language-plaintext highlighter-rouge">127</code>(<a href="https://emflant.tistory.com/133">참고사이트</a>)이기 때문입니다. <code class="language-plaintext highlighter-rouge">vol</code>(볼륨)의 기본값은 1.0입니다. 재생시간이 1초(1000ms)인 경우, <strong>44000 / 1000 * 100</strong>0 으로 <code class="language-plaintext highlighter-rouge">i</code>는 <strong>43999</strong>까지 진행합니다.</p>
 
 <p> </p>
 
-<h5 id="5-sd의-버퍼를-비우고drain-정지stop-닫기close-실행"><span class="me-2"><strong>5) sd의 버퍼를 비우고(<code class="language-plaintext highlighter-rouge">drain</code>) 정지(<code class="language-plaintext highlighter-rouge">stop</code>), 닫기(<code class="language-plaintext highlighter-rouge">close</code>) 실행</strong></span><a href="#5-sd의-버퍼를-비우고drain-정지stop-닫기close-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-sd의-버퍼를-비우고drain-정지stop-닫기close-실행"><span class="me-2"><strong>5) sd의 버퍼를 비우고(<code class="language-plaintext highlighter-rouge">drain</code>) 정지(<code class="language-plaintext highlighter-rouge">stop</code>), 닫기(<code class="language-plaintext highlighter-rouge">close</code>) 실행</strong></span><a href="#5-sd의-버퍼를-비우고drain-정지stop-닫기close-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>sdl.drain();
-sdl.stop();
-sdl.close();
+</pre></td><td class="rouge-code"><pre><span class="n">sdl</span><span class="o">.</span><span class="na">drain</span><span class="o">();</span>
+<span class="n">sdl</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
+<span class="n">sdl</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">drain()</code>을 하지 않으면 소리가 재생되지 않습니다.</p>
 
 <p> </p>
 
-<h5 id="추가-예제-제이콥-콜리어jaco-collier의-미분음-게임-microtonal-game"><span class="me-2"><strong>추가 예제: 제이콥 콜리어(Jaco Collier)의 미분음 게임 (Microtonal Game)</strong></span><a href="#추가-예제-제이콥-콜리어jaco-collier의-미분음-게임-microtonal-game" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="예제-제이콥-콜리어jaco-collier의-미분음-게임-microtonal-game"><span class="me-2"><strong>예제: 제이콥 콜리어(Jaco Collier)의 미분음 게임 (Microtonal Game)</strong></span><a href="#예제-제이콥-콜리어jaco-collier의-미분음-게임-microtonal-game" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/pFf1ggI7WFA" frameborder="0" allowfullscreen=""></iframe></div>
 
 <p>위 영상의 과정을 프로그래밍으로 나타내 봤습니다. 미 ~ 솔을 일정 수로 2등분부터 8등분까지 나눠서 노래를 부르고 있는데 이 사람은 외계인이라 가능한거고 다른 사람들은 절대 이런 식으로 할 수 없습니다. 원래는 평균율 기준으로 <code class="language-plaintext highlighter-rouge">미</code> - <code class="language-plaintext highlighter-rouge">파</code> - <code class="language-plaintext highlighter-rouge">파#</code> - <code class="language-plaintext highlighter-rouge">솔</code> 로 <strong>3등분</strong>입니다.</p>
 
-<p>https://gist.github.com/ayaysir/a65618d6e315b69a258a6061a8b2e5de</p>
+<!-- https://gist.github.com/ayaysir/a65618d6e315b69a258a6061a8b2e5de -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/a65618d6e315b69a258a6061a8b2e5de.js"> </script>
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/PC0xoz68dBg" frameborder="0" allowfullscreen=""></iframe></div>
@@ -1762,6 +1814,12 @@ sdl.close();
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

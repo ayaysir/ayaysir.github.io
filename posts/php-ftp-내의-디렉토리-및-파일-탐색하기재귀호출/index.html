@@ -735,9 +735,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="903 words"
+  title="870 words"
 >
-  <em>5 min</em> read</span>
+  <em>4 min</em> read</span>
 
         </div>
       </div>
@@ -749,34 +749,34 @@
   <div class="content">
     <p>PHP 계정에서 다음과 같은 구조로 파일이 존재하고 있습니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-31-오후-11.04.57.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-31-오후-11.04.57.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-31-pm-11.04.57.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-31-pm-11.04.57.png" alt="" loading="lazy"></a></p>
 
 <p>목표는 <strong>files</strong> 디렉토리(폴더) 내에 있는 파일들을 탐색하고, 파일들의 정보(이름, 확장자, 크기 등)를 표시 및 데이터베이스 테이블에 입력하는 것입니다. 핵심 코드는 아래와 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>$dir = './files';
-$iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
+</pre></td><td class="rouge-code"><pre><span class="nv">$dir</span> <span class="o">=</span> <span class="s1">'./files'</span><span class="p">;</span>
+<span class="nv">$iterator</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RecursiveIteratorIterator</span><span class="p">(</span><span class="k">new</span> <span class="nc">RecursiveDirectoryIterator</span><span class="p">(</span><span class="nv">$dir</span><span class="p">));</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>$<code class="language-plaintext highlighter-rouge">dir</code>은 탐색 대상 디렉토리의 루트 경로를 입력합니다. 현재 작성중인 php 파일과 files 디렉토리가 같은 경로 내에 있으므로 위와 같이 입력하였습니다. 일단 <code class="language-plaintext highlighter-rouge">RecursiveDirectoryIterator</code>는 이름을 보면 파일 시스템 내부를 재귀적으로 탐색하는 역할을 하는 것처럼 보이고, 실제로 그 역할이 맞습니다. 다만 <code class="language-plaintext highlighter-rouge">new RecursivesiveDirectoryIterator(경로)</code>를 단독으로 사용하면 원하는 결과가 나오지 않습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>// 잘못된 코드: 루트 디렉토리의 내용만 출력됨
-$iterator = new RecursiveDirectoryIterator($dir);
+</pre></td><td class="rouge-code"><pre><span class="c1">// 잘못된 코드: 루트 디렉토리의 내용만 출력됨</span>
+<span class="nv">$iterator</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RecursiveDirectoryIterator</span><span class="p">(</span><span class="nv">$dir</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>단독으로 사용할 경우 files 디렉토리 정보만 출력하고 하위 디렉토리는 출력되지 않습니다. 이것을 <code class="language-plaintext highlighter-rouge">RecursiveIteratorIterator</code>라는 클래스의 인스턴스로 한 번 감싸고 실행해야 실제로 재귀 탐색을 수행합니다. 클래스 이름이 이상한데 풀어쓰면 <code class="language-plaintext highlighter-rouge">RecursiveIterator의 Iterator</code>입니다. 굳이 이렇게 작성해야 하는 이유는 <a href="https://stackoverflow.com/questions/19478444/why-recursiveiteratoriterator-shows-elements-only-in-a-loop">이 글(영문)</a>을 참고해주세요.</p>
 
 <p>이제 <code class="language-plaintext highlighter-rouge">$iterator</code>는 파일 및 디렉토리의 정보들을 담고 있습니다. 이것을 <code class="language-plaintext highlighter-rouge">foreach</code>문으로 처리하면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -846,82 +846,82 @@ $iterator = new RecursiveDirectoryIterator($dir);
 67
 68
 69
-</pre></td><td class="rouge-code"><pre>&lt;?php
-    // DB 초기화 작업
-    (...)
-    if(!$mysqli){        
-        echo "MySQL 접속 실패: ";
-    } 
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+    <span class="c1">// DB 초기화 작업</span>
+    <span class="p">(</span><span class="mf">...</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$mysqli</span><span class="p">){</span>        
+        <span class="k">echo</span> <span class="s2">"MySQL 접속 실패: "</span><span class="p">;</span>
+    <span class="p">}</span> 
 
-    function iterateDirectory($i, $mysqli)
-    {
+    <span class="k">function</span> <span class="n">iterateDirectory</span><span class="p">(</span><span class="nv">$i</span><span class="p">,</span> <span class="nv">$mysqli</span><span class="p">)</span>
+    <span class="p">{</span>
 
-        foreach ($i as $path) {
-            if ($path-&gt;isDir())
-            {
-                iterateDirectory($path, $mysqli);
-            }
-            else
-            {
-                $r_path = str_replace("\\", "/", $path);
-                $v_path = str_replace("./files/", "", $r_path);
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$i</span> <span class="k">as</span> <span class="nv">$path</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$path</span><span class="o">-&gt;</span><span class="nf">isDir</span><span class="p">())</span>
+            <span class="p">{</span>
+                <span class="nf">iterateDirectory</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nv">$mysqli</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="nv">$r_path</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">,</span> <span class="nv">$path</span><span class="p">);</span>
+                <span class="nv">$v_path</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">"./files/"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="nv">$r_path</span><span class="p">);</span>
                 
-                $basename = $path-&gt;getBasename();
-                $real_path = str_replace("./files", "", $path-&gt;getPath());
-                $extension = $path-&gt;getExtension();
-                $disp_name = str_replace(".".$extension, "", $basename);
-                $a_time = $path-&gt;getATime();
-                $c_time = $path-&gt;getCTime();
-                $m_time = $path-&gt;getMTime();
-                $a_date = date("Y-m-d H:i:s", $a_time);
-                $c_date = date("Y-m-d H:i:s", $c_time);
-                $m_date = date("Y-m-d H:i:s", $m_time);
-                $size = $path-&gt;getSize();
-                $type = $path-&gt;getType();
+                <span class="nv">$basename</span> <span class="o">=</span> <span class="nv">$path</span><span class="o">-&gt;</span><span class="nf">getBasename</span><span class="p">();</span>
+                <span class="nv">$real_path</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">"./files"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="nv">$path</span><span class="o">-&gt;</span><span class="nf">getPath</span><span class="p">());</span>
+                <span class="nv">$extension</span> <span class="o">=</span> <span class="nv">$path</span><span class="o">-&gt;</span><span class="nf">getExtension</span><span class="p">();</span>
+                <span class="nv">$disp_name</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">"."</span><span class="mf">.</span><span class="nv">$extension</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="nv">$basename</span><span class="p">);</span>
+                <span class="nv">$a_time</span> <span class="o">=</span> <span class="nv">$path</span><span class="o">-&gt;</span><span class="nf">getATime</span><span class="p">();</span>
+                <span class="nv">$c_time</span> <span class="o">=</span> <span class="nv">$path</span><span class="o">-&gt;</span><span class="nf">getCTime</span><span class="p">();</span>
+                <span class="nv">$m_time</span> <span class="o">=</span> <span class="nv">$path</span><span class="o">-&gt;</span><span class="nf">getMTime</span><span class="p">();</span>
+                <span class="nv">$a_date</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"Y-m-d H:i:s"</span><span class="p">,</span> <span class="nv">$a_time</span><span class="p">);</span>
+                <span class="nv">$c_date</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"Y-m-d H:i:s"</span><span class="p">,</span> <span class="nv">$c_time</span><span class="p">);</span>
+                <span class="nv">$m_date</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"Y-m-d H:i:s"</span><span class="p">,</span> <span class="nv">$m_time</span><span class="p">);</span>
+                <span class="nv">$size</span> <span class="o">=</span> <span class="nv">$path</span><span class="o">-&gt;</span><span class="nf">getSize</span><span class="p">();</span>
+                <span class="nv">$type</span> <span class="o">=</span> <span class="nv">$path</span><span class="o">-&gt;</span><span class="nb">getType</span><span class="p">();</span>
 
-                echo "&lt;tr&gt;";
-                echo "&lt;td&gt;".$basename;
-                echo "&lt;td&gt;".$real_path;
-                echo "&lt;td&gt;".$extension;
-                echo "&lt;td&gt;".$disp_name;
-                echo "&lt;td&gt;".$a_date;
-                echo "&lt;td&gt;".$c_date;
-                echo "&lt;td&gt;".$m_date;
-                echo "&lt;td&gt;".$size;
-                echo "&lt;td&gt;".$type; 
+                <span class="k">echo</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="s2">"&lt;td&gt;"</span><span class="mf">.</span><span class="nv">$basename</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="s2">"&lt;td&gt;"</span><span class="mf">.</span><span class="nv">$real_path</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="s2">"&lt;td&gt;"</span><span class="mf">.</span><span class="nv">$extension</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="s2">"&lt;td&gt;"</span><span class="mf">.</span><span class="nv">$disp_name</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="s2">"&lt;td&gt;"</span><span class="mf">.</span><span class="nv">$a_date</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="s2">"&lt;td&gt;"</span><span class="mf">.</span><span class="nv">$c_date</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="s2">"&lt;td&gt;"</span><span class="mf">.</span><span class="nv">$m_date</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="s2">"&lt;td&gt;"</span><span class="mf">.</span><span class="nv">$size</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="s2">"&lt;td&gt;"</span><span class="mf">.</span><span class="nv">$type</span><span class="p">;</span> 
                 
                 
-                $sql = "INSERT INTO `music_midi_files`"
-                ."(`id`, `disp_name`, `basename`, `path`, `extension`, "
-                ."`a_time`, `c_time`, `m_time`, `size`, `type`, `reg_dt`, `is_work`) VALUES "
-                ."(0,'$disp_name','$base_name','$real_path','$extension',"
-                ."'$a_date','$c_date','$m_date','$size','$type',sysdate(),1)";
+                <span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"INSERT INTO `music_midi_files`"</span>
+                <span class="mf">.</span><span class="s2">"(`id`, `disp_name`, `basename`, `path`, `extension`, "</span>
+                <span class="mf">.</span><span class="s2">"`a_time`, `c_time`, `m_time`, `size`, `type`, `reg_dt`, `is_work`) VALUES "</span>
+                <span class="mf">.</span><span class="s2">"(0,'</span><span class="nv">$disp_name</span><span class="s2">','</span><span class="nv">$base_name</span><span class="s2">','</span><span class="nv">$real_path</span><span class="s2">','</span><span class="nv">$extension</span><span class="s2">',"</span>
+                <span class="mf">.</span><span class="s2">"'</span><span class="nv">$a_date</span><span class="s2">','</span><span class="nv">$c_date</span><span class="s2">','</span><span class="nv">$m_date</span><span class="s2">','</span><span class="nv">$size</span><span class="s2">','</span><span class="nv">$type</span><span class="s2">',sysdate(),1)"</span><span class="p">;</span>
                 
-                 if($mysqli-&gt;query($sql)) {
-                    echo "&lt;td&gt;&lt;span style='color:green;'&gt;success&lt;/span&gt;";
-                 } else {
-                    echo "&lt;td&gt;&lt;span style='color:red;'&gt;failure&lt;/span&gt;";
-                 }
-                 echo "&lt;/tr&gt;";
+                 <span class="k">if</span><span class="p">(</span><span class="nv">$mysqli</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">echo</span> <span class="s2">"&lt;td&gt;&lt;span style='color:green;'&gt;success&lt;/span&gt;"</span><span class="p">;</span>
+                 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">echo</span> <span class="s2">"&lt;td&gt;&lt;span style='color:red;'&gt;failure&lt;/span&gt;"</span><span class="p">;</span>
+                 <span class="p">}</span>
+                 <span class="k">echo</span> <span class="s2">"&lt;/tr&gt;"</span><span class="p">;</span>
 
-            }
-        }       
+            <span class="p">}</span>
+        <span class="p">}</span>       
 
-    }
+    <span class="p">}</span>
 
-    $dir = './files';
-    $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
+    <span class="nv">$dir</span> <span class="o">=</span> <span class="s1">'./files'</span><span class="p">;</span>
+    <span class="nv">$iterator</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RecursiveIteratorIterator</span><span class="p">(</span><span class="k">new</span> <span class="nc">RecursiveDirectoryIterator</span><span class="p">(</span><span class="nv">$dir</span><span class="p">));</span>
 
-    iterateDirectory($iterator, $mysqli);
+    <span class="nf">iterateDirectory</span><span class="p">(</span><span class="nv">$iterator</span><span class="p">,</span> <span class="nv">$mysqli</span><span class="p">);</span>
 
-?&gt;
+<span class="cp">?&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>데이터베이스 초기화 작업에 대한 코드는 생략합니다. <a href="http://yoonbumtae.com/?p=618">이 글</a>을 참고해주세요. 재귀 탐색을 위해 <code class="language-plaintext highlighter-rouge">iterateDirectory</code>라는 함수를 만들었습니다. 이 안에 <code class="language-plaintext highlighter-rouge">$iterator</code>에 대한 <code class="language-plaintext highlighter-rouge">foreach</code>문을 실행합니다. <code class="language-plaintext highlighter-rouge">$path</code>가 디렉토리라면 해당 함수를 재귀호출하고, 아니라면(=파일이라면) 파일 정보를 표시하고 sql의 <code class="language-plaintext highlighter-rouge">insert</code>문을 실행합니다. 참고로 <code class="language-plaintext highlighter-rouge">$path</code>의 타입은 <code class="language-plaintext highlighter-rouge">FilesystemIterator</code>입니다. (<a href="https://www.php.net/manual/en/class.filesystemiterator.php">바로 가기(영문)</a>)</p>
+<p>재귀 탐색을 위해 <code class="language-plaintext highlighter-rouge">iterateDirectory</code>라는 함수를 만들었습니다. 이 안에 <code class="language-plaintext highlighter-rouge">$iterator</code>에 대한 <code class="language-plaintext highlighter-rouge">foreach</code>문을 실행합니다. <code class="language-plaintext highlighter-rouge">$path</code>가 디렉토리라면 해당 함수를 재귀호출하고, 아니라면(=파일이라면) 파일 정보를 표시하고 sql의 <code class="language-plaintext highlighter-rouge">insert</code>문을 실행합니다. 참고로 <code class="language-plaintext highlighter-rouge">$path</code>의 타입은 <code class="language-plaintext highlighter-rouge">FilesystemIterator</code>입니다. (<a href="https://www.php.net/manual/en/class.filesystemiterator.php">바로 가기(영문)</a>)</p>
 
 <p>위에서 언급했던 문제되는 부분이 이 <code class="language-plaintext highlighter-rouge">if</code>문인데 <code class="language-plaintext highlighter-rouge">ReursiveDirectoryIterator</code>의 결과는 여기서 디렉토리라는 것을 인지하고 그 이후 탐색해야 할 정보도 가지고 있습니다. 다만 <code class="language-plaintext highlighter-rouge">$path</code>를 파라미터로 하는 함수를 호출해도 작업을 수행하지 못합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/09/스크린샷-2019-08-31-오후-11.00.41.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/09/스크린샷-2019-08-31-오후-11.00.41.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/09/screenshot-2019-08-31-pm-11.00.41.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/09/screenshot-2019-08-31-pm-11.00.41.png" alt="" loading="lazy"></a></p>
 
   </div>
 

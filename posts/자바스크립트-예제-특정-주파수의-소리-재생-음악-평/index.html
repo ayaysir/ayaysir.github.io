@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,15 +498,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -557,19 +586,18 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -586,7 +614,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트 예제: 특정 주파수의 소리 재생 + 음악 평균율 주파수 테이블</h1>
     
@@ -660,7 +688,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="691 words"
+  title="692 words"
 >
   <em>3 min</em> read</span>
 
@@ -670,32 +698,54 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트 예제: 특정 주파수의 소리 재생 + 음악 평균율 주파수 테이블</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트 예제: 특정 주파수의 소리 재생 + 음악 평균율 주파수 테이블</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p> </p>
 
 <p>자바에서 주파수를 재생하는 글 <a href="http://yoonbumtae.com/?p=1651">자바 예제: 특정 주파수의 소리 재생</a> 을 자바스크립트로 바꾼 예제입니다. 외부 온라인 소스나 라이브러리 필요 없이 자바스크립트 자체 엔진으로 소리를 재생합니다.</p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2">절차</span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-audiocontext-인스턴스-생성"><span class="me-2"><strong>1) <code class="language-plaintext highlighter-rouge">AudioContext</code> 인스턴스 생성</strong></span><a href="#1-audiocontext-인스턴스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-audiocontext-인스턴스-생성"><span class="me-2"><strong>1) <code class="language-plaintext highlighter-rouge">AudioContext</code> 인스턴스 생성</strong></span><a href="#1-audiocontext-인스턴스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
-var osc, gn;
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">audioCtx</span> <span class="o">=</span> <span class="k">new</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">AudioContext</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">webkitAudioContext</span><span class="p">)();</span>
+<span class="kd">var</span> <span class="nx">osc</span><span class="p">,</span> <span class="nx">gn</span><span class="p">;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>사파리 등 모바일 브라우저에서는 웹킷 접두어가 붙은 <code class="language-plaintext highlighter-rouge">webkitAudioContext</code>만 인식하므로 이 부분도 추가합니다. <code class="language-plaintext highlighter-rouge">osc</code>, gn은 오실레이터, 게인노드 인스턴스에서 사용할 변수명입니다.</p>
 
 <p> </p>
 
-<h5 id="2-변수-osc-gn-선언-및-연결"><span class="me-2"><strong>2) 변수 <code class="language-plaintext highlighter-rouge">osc</code>, <code class="language-plaintext highlighter-rouge">gn</code> 선언 및 연결</strong></span><a href="#2-변수-osc-gn-선언-및-연결" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-변수-osc-gn-선언-및-연결"><span class="me-2"><strong>2) 변수 <code class="language-plaintext highlighter-rouge">osc</code>, <code class="language-plaintext highlighter-rouge">gn</code> 선언 및 연결</strong></span><a href="#2-변수-osc-gn-선언-및-연결" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -703,43 +753,43 @@ var osc, gn;
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>osc = audioCtx.createOscillator() // 오실레이터 생성
-osc.type = "sine" // 그래프 타입 설정 (sine(기본값), saw, triangle 등)
-osc.frequency.value = 440 // 주파수(Hz) 입력
+</pre></td><td class="rouge-code"><pre><span class="nx">osc</span> <span class="o">=</span> <span class="nx">audioCtx</span><span class="p">.</span><span class="nf">createOscillator</span><span class="p">()</span> <span class="c1">// 오실레이터 생성</span>
+<span class="nx">osc</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">sine</span><span class="dl">"</span> <span class="c1">// 그래프 타입 설정 (sine(기본값), saw, triangle 등)</span>
+<span class="nx">osc</span><span class="p">.</span><span class="nx">frequency</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="mi">440</span> <span class="c1">// 주파수(Hz) 입력</span>
 
-gn = audioCtx.createGain() // 게인노드 생성
-osc.connect(gn) // 오실레이터와 게인노드 연결
-gn.connect(audioCtx.destination) // 게인노드를 추상화된 출력장치(스피커 등)에 연결
+<span class="nx">gn</span> <span class="o">=</span> <span class="nx">audioCtx</span><span class="p">.</span><span class="nf">createGain</span><span class="p">()</span> <span class="c1">// 게인노드 생성</span>
+<span class="nx">osc</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="nx">gn</span><span class="p">)</span> <span class="c1">// 오실레이터와 게인노드 연결</span>
+<span class="nx">gn</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="nx">audioCtx</span><span class="p">.</span><span class="nx">destination</span><span class="p">)</span> <span class="c1">// 게인노드를 추상화된 출력장치(스피커 등)에 연결</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="3-재생-및-정지"><span class="me-2"><strong>3) 재생 및 정지</strong></span><a href="#3-재생-및-정지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-재생-및-정지"><span class="me-2"><strong>3) 재생 및 정지</strong></span><a href="#3-재생-및-정지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>osc.start() // 오실레이터 스타트(음 재생)
+</pre></td><td class="rouge-code"><pre><span class="nx">osc</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span> <span class="c1">// 오실레이터 스타트(음 재생)</span>
 
-// 1초간 재생 후 페이드아웃하면서 정지 (마지막의 튀는 음을 방지하기 위함)
-setTimeout(function() {
-  gn.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.04)
-}, 1000)
+<span class="c1">// 1초간 재생 후 페이드아웃하면서 정지 (마지막의 튀는 음을 방지하기 위함)</span>
+<span class="nf">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">gn</span><span class="p">.</span><span class="nx">gain</span><span class="p">.</span><span class="nf">exponentialRampToValueAtTime</span><span class="p">(</span><span class="mf">0.00001</span><span class="p">,</span> <span class="nx">audioCtx</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">+</span> <span class="mf">0.04</span><span class="p">)</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>브라우저에 따라서 <code class="language-plaintext highlighter-rouge">osc.start()</code>는 사용자의 이벤트 행동에 의해서만 (마우스 클릭, 키보드 버튼 누름 등) 동작하도록 되어있는 경우도 있습니다. 재생의 정지는 osc.stop()으로도 가능하지만 마지막에 튀는 음을 방지하기 위해 위와 같은 방법을 사용하였습니다. (<a href="https://sonoport.github.io/audio-params.html">참고 사이트</a>)</p>
 
 <p> </p>
 
-<h5 id="4-stop후-다른-이벤트를-통해-다른-음을-재생하고자-하는-경우"><span class="me-2"><strong>4) stop후 다른 이벤트를 통해 다른 음을 재생하고자 하는 경우</strong> </span><a href="#4-stop후-다른-이벤트를-통해-다른-음을-재생하고자-하는-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-stop후-다른-이벤트를-통해-다른-음을-재생하고자-하는-경우"><span class="me-2"><strong>4) stop후 다른 이벤트를 통해 다른 음을 재생하고자 하는 경우</strong> </span><a href="#4-stop후-다른-이벤트를-통해-다른-음을-재생하고자-하는-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -747,24 +797,28 @@ setTimeout(function() {
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>if (osc &amp;&amp; gn) {
-  gn.disconnect(audioCtx.destination)
-  osc.disconnect(gn)
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if </span><span class="p">(</span><span class="nx">osc</span> <span class="o">&amp;&amp;</span> <span class="nx">gn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">gn</span><span class="p">.</span><span class="nf">disconnect</span><span class="p">(</span><span class="nx">audioCtx</span><span class="p">.</span><span class="nx">destination</span><span class="p">)</span>
+  <span class="nx">osc</span><span class="p">.</span><span class="nf">disconnect</span><span class="p">(</span><span class="nx">gn</span><span class="p">)</span>
+<span class="p">}</span>
 
-// 다시 인스턴스 생성
-osc = audioCtx.createOscillator()
+<span class="c1">// 다시 인스턴스 생성</span>
+<span class="nx">osc</span> <span class="o">=</span> <span class="nx">audioCtx</span><span class="p">.</span><span class="nf">createOscillator</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>디스커넥트 후 <code class="language-plaintext highlighter-rouge">osc</code> 인스턴스를 다시 생성해야 합니다. 기존의 <code class="language-plaintext highlighter-rouge">osc</code> 인스턴스를 재활용하려고 한다면 에러가 발생하면서 작동하지 않습니다. (<a href="https://stackoverflow.com/questions/15261030/web-audio-start-and-stop-oscillator-then-start-it-again">참고 사이트</a>)</p>
 
 <p> </p>
 
-<h5 id="추가-예제-음악의-평균율-주파수-테이블-jquery-포함"><span class="me-2"><strong>추가 예제: 음악의 평균율 주파수 테이블 (JQuery 포함)</strong></span><a href="#추가-예제-음악의-평균율-주파수-테이블-jquery-포함" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="예제-음악의-평균율-주파수-테이블-jquery-포함"><span class="me-2"><strong>예제: 음악의 평균율 주파수 테이블 (JQuery 포함)</strong></span><a href="#예제-음악의-평균율-주파수-테이블-jquery-포함" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>https://gist.github.com/ayaysir/85e974b311fad4f777e00dc65bb1d8d6</p>
+<!-- https://gist.github.com/ayaysir/85e974b311fad4f777e00dc65bb1d8d6 -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/85e974b311fad4f777e00dc65bb1d8d6.js"> </script>
 
-<p><a href="http://yoonbumtae.com/music/freq-table.html">예제 사이트 바로가기</a></p>
+<ul>
+  <li><a href="http://yoonbumtae.com/music/freq-table.html">예제 사이트 바로가기</a></li>
+</ul>
 
 <p>자바스크립트를 이용해 C1 ~ B7까지 각 노트의 주파수가 얼마인지 계산한 테이블입니다. 테이블의 행을 클릭하면 위의 방법을 이용한 해당 주파수의 소리가 납니다. (아이폰의 경우 무음 해제해야 함)</p>
 
@@ -1749,6 +1803,12 @@ osc = audioCtx.createOscillator()
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7632,7 +7692,7 @@ osc = audioCtx.createOscillator()
 
               <h4 class="pt-0 my-2">자바스크립트: 객체지향 3 - class (ES6 이상)</h4>
               <div class="text-muted">
-                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)      기존 ES5 이하 환경의 자바스크립트에서 장황하고 불편했던 클래스 생성 등의 과정이 ES6 이후에 class 문법이 생겨서 한결 편하게 클래스...</p>
+                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)   class 키워드  기존 ES5 이하 환경의 자바스크립트에서 장황하고 불편했던 클래스 생성 등의 과정이 ES6 이후에 class 문법이 생겨서 한결...</p>
               </div>
             </div>
           </a>
@@ -7660,7 +7720,7 @@ osc = audioCtx.createOscillator()
 
               <h4 class="pt-0 my-2">자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)</h4>
               <div class="text-muted">
-                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)      new 키워드를 이용해 각종 정보를 담고 특정 기능을 수행하는 인스턴스를 만드는 기능입니다. 먼저 컨테이너 함수를 만들어야 합니다. 객체지향 ...</p>
+                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)      new 키워드를 이용해 각종 정보를 담고 특정 기능을 수행하는 인스턴스를 만드는 기능입니다.  컨테이너 함수 작성  먼저 컨테이너 함수를 만들...</p>
               </div>
             </div>
           </a>

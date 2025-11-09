@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -956,10 +963,129 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -986,7 +1112,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: 객체지향 3 - class (ES6 이상)</h1>
     
@@ -1060,7 +1186,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1810 words"
+  title="1848 words"
 >
   <em>10 min</em> read</span>
 
@@ -1070,37 +1196,63 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: 객체지향 3 - class (ES6 이상)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: 객체지향 3 - class (ES6 이상)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <ul>
-  <li><a href="http://yoonbumtae.com/?p=1334">자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)</a></li>
-  <li><a href="http://yoonbumtae.com/?p=1368">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</a></li>
-  <li><a href="http://yoonbumtae.com/?p=1387">자바스크립트: 객체지향 3 - class (ES6 이상)</a></li>
+  <li><a href="/posts/자바스크립트-new-키워드를-이용해-객체-생성-es5-이하/">자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)</a></li>
+  <li><a href="/posts/자바스크립트-new-키워드를-이용해-객체-생성-es5-이하/">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</a></li>
+  <li><a href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-3-class-es6-%EC%9D%B4%EC%83%81/">자바스크립트: 객체지향 3 - class (ES6 이상)</a></li>
 </ul>
 
-<p> </p>
+<h2 id="class-키워드"><span class="me-2">class 키워드</span><a href="#class-키워드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>기존 ES5 이하 환경의 자바스크립트에서 장황하고 불편했던 클래스 생성 등의 과정이 ES6 이후에 <code class="language-plaintext highlighter-rouge">class</code> 문법이 생겨서 한결 편하게 클래스를 만들고 관리할 수 있게 되었습니다. 단, 문법만 개선된 일종의 슈가 신택스(sugar syntax)이며 동작 방식은 ES5 이하와 동일한 프로토타입 기반 방식입니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">class</code> 는 기존의 객체지향언어(자바 등)과 거의 비슷하게 클래스를 선언할 수 있습니다. 생성자가 포함된 클래스를 만드는 법은 다음과 같습니다. 생성자 내에서 클래스에서 사용할 멤버 필드 및 인스턴스 초기 생성시 해야 될 작업 등을 작성합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">class</code> 는 기존의 객체지향언어(자바 등)과 거의 비슷하게 클래스를 선언할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="생성자-constructor"><span class="me-2">생성자 (constructor)</span><a href="#생성자-constructor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>생성자가 포함된 클래스를 만드는 법은 다음과 같습니다. 생성자 내에서 클래스에서 사용할 멤버 필드 및 인스턴스 초기 생성시 해야 될 작업 등을 작성합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>class Instrument{
-    constructor(name){
-        this.name = name
-        this.inner = "내부구조"
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Instrument</span><span class="p">{</span>
+    <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">inner</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">내부구조</span><span class="dl">"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-2.11.15.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-2.11.15.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-2.11.15.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-2.11.15.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1112,12 +1264,12 @@
   <p>Uncaught ReferenceError: Cannot access ‘Instrument’ before initialization</p>
 </blockquote>
 
-<p> </p>
+<h2 id="메서드-생성"><span class="me-2">메서드 생성 </span><a href="#메서드-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다음은 메소드를 만들어 보겠습니다. 방법은 매우 단순합니다. 이름과 파라미터, 중괄호 안에 내용만 작성하면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1139,53 +1291,53 @@
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>class Instrument{
-    constructor(name){
-        this.name = name
-        this.inner = "내부구조"
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Instrument</span><span class="p">{</span>
+    <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">inner</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">내부구조</span><span class="dl">"</span>
+    <span class="p">}</span>
     
-    // 메소드
-    sound(){
-        console.log("this", this)
-        return "추상적 소리"
-    }
+    <span class="c1">// 메소드</span>
+    <span class="nf">sound</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">this</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">)</span>
+        <span class="k">return</span> <span class="dl">"</span><span class="s2">추상적 소리</span><span class="dl">"</span>
+    <span class="p">}</span>
     
-    // 메소드(setter/getter)
-    setInner(innerStructure){
-        this.inner = innerStructure
-    }
+    <span class="c1">// 메소드(setter/getter)</span>
+    <span class="nf">setInner</span><span class="p">(</span><span class="nx">innerStructure</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">inner</span> <span class="o">=</span> <span class="nx">innerStructure</span>
+    <span class="p">}</span>
     
-    getInner(){
-        return this.inner;
-    }
-}
+    <span class="nf">getInner</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">inner</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-2.18.00.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-2.18.00.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-2.18.00.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-2.18.00.png" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h2 id="상속-extends"><span class="me-2">상속 (extends)</span><a href="#상속-extends" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다음은 상속을 구현해 보겠습니다. 상속은 <code class="language-plaintext highlighter-rouge">extends</code>라는 키워드를 사용하면 됩니다. 옆 동네에서 많이 본 키워드 같네요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>class WindInstrument extends Instrument{
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">WindInstrument</span> <span class="kd">extends</span> <span class="nc">Instrument</span><span class="p">{</span>
     
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-2.52.47.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-2.52.47.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-2.52.47.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-2.52.47.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>이전에는 상속이 깔끔하게 되지 않아 여러 추가 작업이 필요 했던 반면에 ES6 클래스는 <code class="language-plaintext highlighter-rouge">extends</code> 키워드를 추가하는 것만으로 생성자를 포함한 모든 상속이 한 번에 이루어집니다. 이번에는 상속받은 생성자에서 추가적으로 내용을 추가하고자 합니다. 생성자에서 <code class="language-plaintext highlighter-rouge">super</code>를 사용하면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1199,29 +1351,29 @@
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>class WindInstrument extends Instrument{
-    constructor(name, key){
-        super(name) // Instrument 클래스의 내용을 물려받음
-        this.key = key
-        if(!key){
-            console.warn("key를 지정해야 합니다.")
-        }
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">WindInstrument</span> <span class="kd">extends</span> <span class="nc">Instrument</span><span class="p">{</span>
+    <span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">key</span><span class="p">){</span>
+        <span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="c1">// Instrument 클래스의 내용을 물려받음</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">key</span> <span class="o">=</span> <span class="nx">key</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">key</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nf">warn</span><span class="p">(</span><span class="dl">"</span><span class="s2">key를 지정해야 합니다.</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    sound(){
-        // super() // super는 생성자에서만 사용 가능
-    }
-}
+    <span class="nf">sound</span><span class="p">(){</span>
+        <span class="c1">// super() // super는 생성자에서만 사용 가능</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-2.44.41.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-2.44.41.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-2.44.41.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-2.44.41.png" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h2 id="super"><span class="me-2">super</span><a href="#super" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><code class="language-plaintext highlighter-rouge">super</code>는 생성자에서만 사용 가능하며 일반 메소드에서는 사용할 수 없습니다. 또한 모든 멤버 필드는 반드시 <code class="language-plaintext highlighter-rouge">super</code>를 사용한 이후에 선언해야 합니다. 이전에 선언하려고 하면 다음과 같은 에러 메시지가 발생합니다. 하지만 멤버 필드를 제외한 작업은 super이전에도 선언 가능합니다. 멤버 필드만 불가능한 이유는 <code class="language-plaintext highlighter-rouge">this</code>가 가리키는 주소가 <code class="language-plaintext highlighter-rouge">super</code>로 재지정되면서 충돌하는 문제 때문입니다.</p>
+<p><code class="language-plaintext highlighter-rouge">super</code>는 생성자에서만 사용 가능하며 일반 메소드에서는 사용할 수 없습니다. 또한 모든 멤버 필드는 반드시 <code class="language-plaintext highlighter-rouge">super</code>를 사용한 이후에 선언해야 합니다. 이전에 선언하려고 하면 다음과 같은 에러 메시지가 발생합니다. 하지만 멤버 필드를 제외한 작업은 <code class="language-plaintext highlighter-rouge">super</code> 이전에도 선언 가능합니다. 멤버 필드만 불가능한 이유는 <code class="language-plaintext highlighter-rouge">this</code>가 가리키는 주소가 <code class="language-plaintext highlighter-rouge">super</code>로 재지정되면서 충돌하는 문제 때문입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1230,26 +1382,26 @@
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>constructor(name, key){
-    const msg = "super 이전에도 멤버 필드 할당을 제외한 작업은 가능합니다."
-    this.field = "field" // 에러 발생
-    console.warn(msg) // 가능
-    super(name)
+</pre></td><td class="rouge-code"><pre><span class="nf">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">key</span><span class="p">){</span>
+    <span class="kd">const</span> <span class="nx">msg</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">super 이전에도 멤버 필드 할당을 제외한 작업은 가능합니다.</span><span class="dl">"</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">field</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">field</span><span class="dl">"</span> <span class="c1">// 에러 발생</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">warn</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="c1">// 가능</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
     
-   ....
-}
+   <span class="p">....</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
   <p>Uncaught ReferenceError: Must call super constructor in derived class before accessing ‘this’ or returning from derived constructor</p>
 </blockquote>
 
-<p> </p>
+<h3 id="자식-클래스에서-새로운-메서드-추가"><span class="me-2">자식 클래스에서 새로운 메서드 추가</span><a href="#자식-클래스에서-새로운-메서드-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>상속받은 자식 클래스만의 메소드를 만드는 방법은 매우 간단합니다. 자식 클래스에 새로운 메소드를 선언하면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1257,23 +1409,21 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>    class WindInstrument extends Instrument{
-....
+</pre></td><td class="rouge-code"><pre>    <span class="kd">class</span> <span class="nc">WindInstrument</span> <span class="kd">extends</span> <span class="nc">Instrument</span><span class="p">{</span>
+<span class="p">....</span>
         
-        smash(){
-            return "옆사람이 쓰러졌네요"
-        }
-    }
+        <span class="nf">smash</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="dl">"</span><span class="s2">옆사람이 쓰러졌네요</span><span class="dl">"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-2.48.04.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-2.48.04.png" alt="" loading="lazy"></a></p>
-
-<p> </p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-2.48.04.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-2.48.04.png" alt="" loading="lazy"></a></p>
 
 <p>자바와 다른 점이라면, 메소드에서 다른 메소드에 접근하고 싶은 경우에는 반드시 <code class="language-plaintext highlighter-rouge">this</code>를 경유해서 사용해야 한다는 점입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1283,23 +1433,24 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>class WindInstrument extends Instrument {
-    .......
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">WindInstrument</span> <span class="kd">extends</span> <span class="nc">Instrument</span> <span class="p">{</span>
+    <span class="p">.......</span>
 
-    smashAndSound(){
-        return `${this.sound()} and ${this.smash()}`
-        // "추상적 소리 and 옆사람이 쓰러졌네요"
-    }
+    <span class="nf">smashAndSound</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nf">sound</span><span class="p">()}</span><span class="s2"> and </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nf">smash</span><span class="p">()}</span><span class="s2">`</span>
+        <span class="c1">// "추상적 소리 and 옆사람이 쓰러졌네요"</span>
+    <span class="p">}</span>
 
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="static-정적-메서드"><span class="me-2">static (정적) 메서드</span><a href="#static-정적-메서드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p> </p>
 
 <p><code class="language-plaintext highlighter-rouge">static</code>(정적) 메소드라는 것도 클래스와 함께 들어왔습니다. 클래스는 인스턴스에서는 실행되지 않고 오직 클래스 자체에서만 실행됩니다. <code class="language-plaintext highlighter-rouge">Instrument</code> 클래스에 <code class="language-plaintext highlighter-rouge">callRepair</code> 라는 이름의 정적 메소드를 만들어봅시다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1311,25 +1462,29 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>class Instrument{
-    ......
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Instrument</span><span class="p">{</span>
+    <span class="p">......</span>
 
-    static callRepair(){
-        return "기술자가 오는 중입니다."
-    }
-}
+    <span class="kd">static</span> <span class="nf">callRepair</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="dl">"</span><span class="s2">기술자가 오는 중입니다.</span><span class="dl">"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-......
+<span class="p">......</span>
 
-const ins = new WindInstrument("리코더")
+<span class="kd">const</span> <span class="nx">ins</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WindInstrument</span><span class="p">(</span><span class="dl">"</span><span class="s2">리코더</span><span class="dl">"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-3.08.23.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-3.08.23.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-3.08.23.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-3.08.23.png" alt="" loading="lazy"></a></p>
 
-<p><code class="language-plaintext highlighter-rouge">WindInstrument</code>라는 클래스를 인스턴스 생성 없이 <code class="language-plaintext highlighter-rouge">callRepair</code>를 호출하면 정상적으로 실행이 되지만, 인스턴스인 변수 <code class="language-plaintext highlighter-rouge">ins</code>에서 실행하려고 하면 그런 메소드는 없다고 하면서 실행되지 않습니다.  정적 메소드는 인스턴스들을 위한 유틸리티 용도로 많이 사용됩니다. 다음은 MDN에 올라와 있는 예제인데 <code class="language-plaintext highlighter-rouge">Point</code> 인스턴스 두 개의 거리를 구하기 위한 <code class="language-plaintext highlighter-rouge">Point</code> 클래스의 <code class="language-plaintext highlighter-rouge">distance</code> 정적 메소드에 관한 예제입니다.</p>
+<p><code class="language-plaintext highlighter-rouge">WindInstrument</code>라는 클래스를 인스턴스 생성 없이 <code class="language-plaintext highlighter-rouge">callRepair</code>를 호출하면 정상적으로 실행이 되지만, 인스턴스인 변수 <code class="language-plaintext highlighter-rouge">ins</code>에서 실행하려고 하면 그런 메소드는 없다고 하면서 실행되지 않습니다.  정적 메소드는 인스턴스들을 위한 유틸리티 용도로 많이 사용됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="예제"><span class="me-2">예제</span><a href="#예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>다음은 MDN에 올라와 있는 예제인데 <code class="language-plaintext highlighter-rouge">Point</code> 인스턴스 두 개의 거리를 구하기 위한 <code class="language-plaintext highlighter-rouge">Point</code> 클래스의 <code class="language-plaintext highlighter-rouge">distance</code> 정적 메소드에 관한 예제입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1348,32 +1503,32 @@ const ins = new WindInstrument("리코더")
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>class Point {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Point</span> <span class="p">{</span>
+    <span class="nf">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    static distance(a, b) {
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
+    <span class="kd">static</span> <span class="nf">distance</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">dx</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">dy</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
 
-        return Math.sqrt(dx*dx + dy*dy);
-    }
-}
+        <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="nx">dx</span><span class="o">*</span><span class="nx">dx</span> <span class="o">+</span> <span class="nx">dy</span><span class="o">*</span><span class="nx">dy</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-const p1 = new Point(5, 5);
-const p2 = new Point(10, 10);
+<span class="kd">const</span> <span class="nx">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
 
-console.log(Point.distance(p1, p2));
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">Point</span><span class="p">.</span><span class="nf">distance</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span> <span class="nx">p2</span><span class="p">));</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="동적-gettersetter"><span class="me-2">동적 getter/setter</span><a href="#동적-gettersetter" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다음은 동적 setter/getter입니다. 동적으로 특정 변수를 다루고 싶을 때 사용합니다. 메소드 이름 앞에 <code class="language-plaintext highlighter-rouge">set</code> 또는 <code class="language-plaintext highlighter-rouge">get</code>을 입력합니다. 정적 메소드에서는 <code class="language-plaintext highlighter-rouge">static set</code> 또는 <code class="language-plaintext highlighter-rouge">static get</code>을 입력합니다. 같은 이름을 공유하면서 <code class="language-plaintext highlighter-rouge">=</code> 연산자만 사용해 값을 다룰 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1389,31 +1544,29 @@ console.log(Point.distance(p1, p2));
 13
 14
 15
-16
-</pre></td><td class="rouge-code"><pre>class OnlyChickenLover{
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">OnlyChickenLover</span><span class="p">{</span>
+    <span class="kd">set</span> <span class="nf">inAndOut</span><span class="p">(</span><span class="nx">foodName</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">foodName</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">치킨</span><span class="dl">"</span><span class="p">)</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">food</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">좋아요</span><span class="dl">"</span>
+        <span class="k">else</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">food</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">싫어요</span><span class="dl">"</span>
+    <span class="p">}</span>
     
-    set inAndOut(foodName){
-        if(foodName == "치킨")
-            this.food = "좋아요"
-        else
-            this.food = "싫어요"
-    }
-    
-    get inAndOut(){
-        if(this.food == "좋아요")
-            return "good"
-        else
-            return "bad"
-    }
-}
+    <span class="kd">get</span> <span class="nf">inAndOut</span><span class="p">(){</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">food</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">좋아요</span><span class="dl">"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="dl">"</span><span class="s2">good</span><span class="dl">"</span>
+        <span class="k">else</span>
+            <span class="k">return</span> <span class="dl">"</span><span class="s2">bad</span><span class="dl">"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-3.52.32.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-25-오전-3.52.32.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-3.52.32.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-25-am-3.52.32.png" alt="" loading="lazy"></a></p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=1334">자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)</a></li>
-  <li><a href="http://yoonbumtae.com/?p=1368">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</a></li>
-  <li><a href="http://yoonbumtae.com/?p=1387">자바스크립트: 객체지향 3 - class (ES6 이상)</a></li>
+  <li><a href="/posts/자바스크립트-new-키워드를-이용해-객체-생성-es5-이하/">자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)</a></li>
+  <li><a href="/posts/자바스크립트-new-키워드를-이용해-객체-생성-es5-이하/">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</a></li>
+  <li><a href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-3-class-es6-%EC%9D%B4%EC%83%81/">자바스크립트: 객체지향 3 - class (ES6 이상)</a></li>
 </ul>
 
   </div>
@@ -2390,6 +2543,12 @@ console.log(Point.distance(p1, p2));
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -8273,7 +8432,7 @@ console.log(Point.distance(p1, p2));
 
               <h4 class="pt-0 my-2">자바스크립트 예제: 특정 주파수의 소리 재생 + 음악 평균율 주파수 테이블</h4>
               <div class="text-muted">
-                <p>   자바에서 주파수를 재생하는 글 [자바 예제: 특정 주파수의 소리 재생](http://yoonbumtae.com/?p=1651) 을 자바스크립트로 바꾼 예제입니다. 외부 온라인 소스나 라이브러리 필요 없이 자바스크립트 자체 엔진으로 소리를 재생합니다.     ##### **1) `AudioContext` 인스턴스 생성**  ``` var audio...</p>
+                <p>   자바에서 주파수를 재생하는 글 [자바 예제: 특정 주파수의 소리 재생](http://yoonbumtae.com/?p=1651) 을 자바스크립트로 바꾼 예제입니다. 외부 온라인 소스나 라이브러리 필요 없이 자바스크립트 자체 엔진으로 소리를 재생합니다.  ## 절차  ### **1) `AudioContext` 인스턴스 생성**  ```js var a...</p>
               </div>
             </div>
           </a>
@@ -8301,7 +8460,7 @@ console.log(Point.distance(p1, p2));
 
               <h4 class="pt-0 my-2">자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)</h4>
               <div class="text-muted">
-                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)      new 키워드를 이용해 각종 정보를 담고 특정 기능을 수행하는 인스턴스를 만드는 기능입니다. 먼저 컨테이너 함수를 만들어야 합니다. 객체지향 ...</p>
+                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)      new 키워드를 이용해 각종 정보를 담고 특정 기능을 수행하는 인스턴스를 만드는 기능입니다.  컨테이너 함수 작성  먼저 컨테이너 함수를 만들...</p>
               </div>
             </div>
           </a>

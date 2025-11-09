@@ -682,12 +682,12 @@
   
 
   <div class="content">
-    <p><a href="http://yoonbumtae.com/?tag=thymeleaf">Thymeleaf  관련 글 보기</a></p>
+    <p><a href="/tags/thymeleaf/">Thymeleaf  관련 글 보기</a></p>
 
 <p><strong>Thymeleaf</strong>에서 특정 요소를 <code class="language-plaintext highlighter-rouge">for</code>문처럼 반복하는 방법으로 <strong><code class="language-plaintext highlighter-rouge">th:each</code></strong>가 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -702,24 +702,24 @@
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;No.&lt;/th&gt;
-      &lt;th&gt;username&lt;/th&gt;
-      &lt;th&gt;title&lt;/th&gt;
-      &lt;th&gt;date&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th&gt;</span>No.<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>username<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>title<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>date<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
     ....................
-  &lt;/tbody&gt;
-&lt;/table&gt;
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -732,18 +732,18 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>&lt;tbody&gt;
-  &lt;tr th:each="article, i: ${list}"&gt;
-    &lt;td th:text="${article.seq}"&gt;&lt;/td&gt;
-    &lt;td th:text="${article.username}"&gt;&lt;/td&gt;
-    &lt;td sec:authorize="isAuthenticated()"&gt;
-      &lt;a th:href="${'/board/read/' + article.seq}" th:text="${article.title}"&gt;&lt;/a&gt;
-      &lt;span class="text-blue" th:if="${i.count eq i.size}"&gt;[1등]&lt;/span&gt;
-    &lt;/td&gt;
-    &lt;td sec:authorize="!isAuthenticated()" th:text="${article.title}"&gt;&lt;/td&gt;
-    &lt;td th:text="${article.writeDate}"&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;tbody&gt;</span>
+  <span class="nt">&lt;tr</span> <span class="na">th:each=</span><span class="s">"article, i: ${list}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">th:text=</span><span class="s">"${article.seq}"</span><span class="nt">&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">th:text=</span><span class="s">"${article.username}"</span><span class="nt">&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">sec:authorize=</span><span class="s">"isAuthenticated()"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">th:href=</span><span class="s">"${'/board/read/' + article.seq}"</span> <span class="na">th:text=</span><span class="s">"${article.title}"</span><span class="nt">&gt;&lt;/a&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text-blue"</span> <span class="na">th:if=</span><span class="s">"${i.count eq i.size}"</span><span class="nt">&gt;</span>[1등]<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">sec:authorize=</span><span class="s">"!isAuthenticated()"</span> <span class="na">th:text=</span><span class="s">"${article.title}"</span><span class="nt">&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;td</span> <span class="na">th:text=</span><span class="s">"${article.writeDate}"</span><span class="nt">&gt;&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/tbody&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이렇게 코드를 작성하면 <code class="language-plaintext highlighter-rouge">&lt;tr&gt;</code> 요소가 리스트 사이즈만큼 반복됩니다. 2라인에서 인덱스 부분인 두번째 변수 <code class="language-plaintext highlighter-rouge">i</code> 는 옵션입니다. 인덱스를 사용하지 않는다면 <code class="language-plaintext highlighter-rouge">th:each="article: ${list}"</code> 이렇게만 적어도 됩니다.</p>
@@ -756,8 +756,8 @@
 
 <p>참고로 컨트롤러에서 넘어오는 <code class="language-plaintext highlighter-rouge">list</code> 변수는 아래와 같은 <code class="language-plaintext highlighter-rouge">List&lt;Map&lt;String, Object&gt;&gt;</code> 타입입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -765,13 +765,13 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>@RequestMapping("/board")
-public String board(Model model) {
-  List&lt;Map&lt;String, Object&gt;&gt; list = [DAO를 통해 DB 테이블을 가져옴];
+</pre></td><td class="rouge-code"><pre><span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/board"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">String</span> <span class="nf">board</span><span class="o">(</span><span class="nc">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="o">[</span><span class="nc">DAO를</span> <span class="n">통해</span> <span class="no">DB</span> <span class="n">테이블을</span> <span class="n">가져옴</span><span class="o">];</span>
   
-  model.addAttribute("list", list);
-  return "simple-board";
-}
+  <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"list"</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
+  <span class="k">return</span> <span class="s">"simple-board"</span><span class="o">;</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -891,6 +898,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -921,7 +960,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</h1>
     
@@ -995,7 +1034,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1168 words"
+  title="1166 words"
 >
   <em>6 min</em> read</span>
 
@@ -1005,20 +1044,42 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <ul>
-  <li><a href="http://yoonbumtae.com/?p=1334">자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)</a></li>
-  <li><a href="http://yoonbumtae.com/?p=1368">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</a></li>
-  <li><a href="http://yoonbumtae.com/?p=1387">자바스크립트: 객체지향 3 - class (ES6 이상)</a></li>
+  <li><a href="/posts/자바스크립트-new-키워드를-이용해-객체-생성-es5-이하/">자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)</a></li>
+  <li><a href="/posts/자바스크립트-new-키워드를-이용해-객체-생성-es5-이하/">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</a></li>
+  <li><a href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-3-class-es6-%EC%9D%B4%EC%83%81/">자바스크립트: 객체지향 3 - class (ES6 이상)</a></li>
 </ul>
 
-<p> </p>
+<h2 id="상속"><span class="me-2">상속</span><a href="#상속" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><strong>상속</strong>에 대한 예제로 악기에 대한 추상 클래스(완벽하게 동일한 개념은 아니나 편의상 이하 객체지향 용어들을 사용합니다.) 를 작성해 보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1026,23 +1087,23 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>function MusicalInstrument(){
-  this.material = "추상적 재료"
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">MusicalInstrument</span><span class="p">(){</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">material</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">추상적 재료</span><span class="dl">"</span>
+<span class="p">}</span>
 
-MusicalInstrument.prototype.sound = function(){
-  return "추상적 소리"
-}
+<span class="nx">MusicalInstrument</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sound</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="k">return</span> <span class="dl">"</span><span class="s2">추상적 소리</span><span class="dl">"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-1.07.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-1.07.16.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-1.07.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-1.07.16.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p><code class="language-plaintext highlighter-rouge">MusicalInstrument</code> 클래스를 상속받는 <code class="language-plaintext highlighter-rouge">StringInstrument</code>에 대한 코드입니다. 추가적인 메소드로  소음을 내는 메소드를 만들어 봅시다.</p>
+<p><code class="language-plaintext highlighter-rouge">MusicalInstrument</code> 클래스를 상속받는 <code class="language-plaintext highlighter-rouge">StringInstrument</code>에 대한 코드입니다. 소음을 내는 메소드를 만들어 봅시다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1050,18 +1111,29 @@ MusicalInstrument.prototype.sound = function(){
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>function StringInstrument(){
-    MusicalInstrument.apply(this, arguments)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">StringInstrument</span><span class="p">(){</span>
+    <span class="nx">MusicalInstrument</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
+<span class="p">}</span>
 
-StringInstrument.prototype.outOfTune = function(){
-    return "바로크 비올라 소리"
-}
+<span class="nx">StringInstrument</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">outOfTune</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">바로크 비올라 소리</span><span class="dl">"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">MusicalInstrument.apply(this, arguments)</code> 이 핵심입니다. <code class="language-plaintext highlighter-rouge">apply</code>는 이전에 작성한 글 <a href="http://yoonbumtae.com/?p=1323">자바스크립트: 배열 map, filter, apply + 예제: ABC(알파벳) 내비게이터</a> 에서 설명되어 있습니다. 파라미터 <code class="language-plaintext highlighter-rouge">this</code> 부분은 해당 클래스 내부에서 <code class="language-plaintext highlighter-rouge">this</code>에 할당할 객체를 설정하는 부분입니다. <code class="language-plaintext highlighter-rouge">StringInstrument</code>의 <code class="language-plaintext highlighter-rouge">this</code>를 파라미터에 설정하면 <code class="language-plaintext highlighter-rouge">MusicalInstrument</code> 가 호출될 때 해당 클래스의 <code class="language-plaintext highlighter-rouge">this</code>는 실은 <code class="language-plaintext highlighter-rouge">StringInstrument</code> 의 <code class="language-plaintext highlighter-rouge">this</code>가 할당되어 동작하는 것입니다. 이러한 과정을 통해 상속이 이루어지는 것입니다. 만약 이 부분이 없다면 단순히 두 개는 별개의 클래스입니다.</p>
+<p><code class="language-plaintext highlighter-rouge">MusicalInstrument.apply(this, arguments)</code> 이 핵심입니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-1.50.30.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-1.50.30.png" alt="" loading="lazy"></a></p>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">apply</code>는 이전에 작성한 글 <a href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4-map-filter-apply-%EC%98%88%EC%A0%9C-abc%EC%95%8C%ED%8C%8C%EB%B2%B3-%EB%82%B4%EB%B9%84%EA%B2%8C%EC%9D%B4%ED%84%B0/">자바스크립트: 배열 map, filter, apply + 예제: ABC(알파벳) 내비게이터</a> 에서 설명되어 있습니다.</p>
+</blockquote>
+
+<ul>
+  <li>파라미터 <code class="language-plaintext highlighter-rouge">this</code> 부분은 해당 클래스 내부에서 <code class="language-plaintext highlighter-rouge">this</code>에 할당할 객체를 설정하는 부분입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">StringInstrument</code>의 <code class="language-plaintext highlighter-rouge">this</code>를 파라미터에 설정하면 <code class="language-plaintext highlighter-rouge">MusicalInstrument</code> 가 호출될 때 해당 클래스의 <code class="language-plaintext highlighter-rouge">this</code>는 실제로 <code class="language-plaintext highlighter-rouge">StringInstrument</code> 의 <code class="language-plaintext highlighter-rouge">this</code>가 할당되어 동작하는 것입니다.</li>
+</ul>
+
+<p>이러한 과정을 통해 상속이 이루어지는 것입니다. 만약 이 부분이 없다면 단순히 두 개는 별개의 클래스입니다.</p>
+
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-1.50.30.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-1.50.30.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1085,44 +1157,44 @@ StringInstrument.prototype.outOfTune = function(){
 
 <p> </p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-1.53.36.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-1.53.36.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-1.53.36.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-1.53.36.png" alt="" loading="lazy"></a></p>
 
 <p>이제 제대로 동작합니다. 다만 생성자(<code class="language-plaintext highlighter-rouge">constructor</code>) 부분이 <code class="language-plaintext highlighter-rouge">MusicalInstrument</code>인게 뭔가 찝찝합니다. 제 수준에서 자바스크립트의 생성자를 제대로 설명할 수 없지만, 이 부분에는 자기 자신의 인스턴스를 대표하는 요소들이 들어있어야 하는 곳이라고 생각하시면 됩니다. 찾아보면 자바스크립트의 한계로 생성자를 제대로 배정하지 못하는 문제라고 알려져 있습니다. <strong>생성자를</strong> 부모 클래스 대신 <strong>자신의 클래스를 가리키도록</strong> 바꿔보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>StringInstrument.prototype.constructor = StringInstrument
+</pre></td><td class="rouge-code"><pre><span class="nx">StringInstrument</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">=</span> <span class="nx">StringInstrument</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-1.59.57.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-1.59.57.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-1.59.57.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-1.59.57.png" alt="" loading="lazy"></a></p>
 
 <p>생성자 부분이 바뀐 것을 확인할 수 있습니다.</p>
 
-<p> </p>
+<h2 id="오버라이딩"><span class="me-2">오버라이딩 </span><a href="#오버라이딩" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>상속 절차를 마쳤으니 상속의 대표적 기술인 <strong>오버라이딩</strong>을 해보겠습니다. 오버라이딩은 단순히 상위 클래스의 메소드 이름과 동일하게 프로토타입을 설정하면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>// 오버라이딩
-StringInstrument.prototype.sound = function(){
-    return "현악기 소리"
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 오버라이딩</span>
+<span class="nx">StringInstrument</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sound</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">현악기 소리</span><span class="dl">"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-2.03.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-2.03.28.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-2.03.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-2.03.28.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>자식 클래스만으로도 이미 복잡한 구조이지만, 마지막으로 <strong>손자 클래스</strong>까지 만들어보도록 합시다. 바이올린 클래스를 만들어 보겠습니다. 전에 했던 일련의 과정들을 진행하되 대상만 <code class="language-plaintext highlighter-rouge">StringInstrument</code> &gt; <code class="language-plaintext highlighter-rouge">Violin</code> 으로 변경하면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1139,25 +1211,25 @@ StringInstrument.prototype.sound = function(){
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>function Violin(){
-    StringInstrument.apply(this, arguments)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">Violin</span><span class="p">(){</span>
+    <span class="nx">StringInstrument</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
+<span class="p">}</span>
 
-Violin.prototype = new StringInstrument
-Violin.prototype.sound = function(){
-    return "바이올린 소리"
-}
-Violin.prototype.changeString = function(){
-    return "E현 교체중.."
-}
+<span class="nx">Violin</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">StringInstrument</span>
+<span class="nx">Violin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sound</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">바이올린 소리</span><span class="dl">"</span>
+<span class="p">}</span>
+<span class="nx">Violin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">changeString</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">E현 교체중..</span><span class="dl">"</span>
+<span class="p">}</span>
 
-Violin.prototype.constructor = Violin
+<span class="nx">Violin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">=</span> <span class="nx">Violin</span>
 
-var vi1 = new Violin()
+<span class="kd">var</span> <span class="nx">vi1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Violin</span><span class="p">()</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-2.11.25.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/스크린샷-2019-08-22-오전-2.11.25.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-2.11.25.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/08/screenshot-2019-08-22-am-2.11.25.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1166,9 +1238,9 @@ var vi1 = new Violin()
 <p> </p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=1334">자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)</a></li>
-  <li><a href="http://yoonbumtae.com/?p=1368">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</a></li>
-  <li><a href="http://yoonbumtae.com/?p=1387">자바스크립트: 객체지향 3 - class (ES6 이상)</a></li>
+  <li><a href="/posts/자바스크립트-new-키워드를-이용해-객체-생성-es5-이하/">자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)</a></li>
+  <li><a href="/posts/자바스크립트-new-키워드를-이용해-객체-생성-es5-이하/">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</a></li>
+  <li><a href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-3-class-es6-%EC%9D%B4%EC%83%81/">자바스크립트: 객체지향 3 - class (ES6 이상)</a></li>
 </ul>
 
   </div>
@@ -2135,6 +2207,12 @@ var vi1 = new Violin()
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -8018,7 +8096,7 @@ var vi1 = new Violin()
 
               <h4 class="pt-0 my-2">자바스크립트 예제: 특정 주파수의 소리 재생 + 음악 평균율 주파수 테이블</h4>
               <div class="text-muted">
-                <p>   자바에서 주파수를 재생하는 글 [자바 예제: 특정 주파수의 소리 재생](http://yoonbumtae.com/?p=1651) 을 자바스크립트로 바꾼 예제입니다. 외부 온라인 소스나 라이브러리 필요 없이 자바스크립트 자체 엔진으로 소리를 재생합니다.     ##### **1) `AudioContext` 인스턴스 생성**  ``` var audio...</p>
+                <p>   자바에서 주파수를 재생하는 글 [자바 예제: 특정 주파수의 소리 재생](http://yoonbumtae.com/?p=1651) 을 자바스크립트로 바꾼 예제입니다. 외부 온라인 소스나 라이브러리 필요 없이 자바스크립트 자체 엔진으로 소리를 재생합니다.  ## 절차  ### **1) `AudioContext` 인스턴스 생성**  ```js var a...</p>
               </div>
             </div>
           </a>
@@ -8074,7 +8152,7 @@ var vi1 = new Violin()
 
               <h4 class="pt-0 my-2">자바스크립트: 객체지향 3 - class (ES6 이상)</h4>
               <div class="text-muted">
-                <p>- [자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)](http://yoonbumtae.com/?p=1334) - [자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)](http://yoonbumtae.com/?p=1368) - [자바스크립트: 객체지향 3 - class (ES6 이상)](http://yoonbum...</p>
+                <p>- [자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)](/posts/자바스크립트-new-키워드를-이용해-객체-생성-es5-이하/) - [자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)](/posts/자바스크립트-new-키워드를-이용해-객체-생성-es5-이하/) - [자바스크립트: 객체지향 3 - class (E...</p>
               </div>
             </div>
           </a>

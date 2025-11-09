@@ -516,54 +516,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -612,8 +564,46 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
   
 
   
@@ -709,7 +699,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="803 words"
+  title="802 words"
 >
   <em>4 min</em> read</span>
 
@@ -753,18 +743,18 @@
 
 <p>가능하면 jQuery 확장이 포함된 선택자를 사용하지 마십시오. 이러한 확장은 기본 <code class="language-plaintext highlighter-rouge">querySelectorAll()</code> DOM 메소드가 제공하는 성능 향상을 이용할 수 없으므로 jQuery에서 제공하는 <strong>Sizzle 선택자 엔진</strong>을 사용해야 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>// 느림 (영기반(zero-based) ":even" 선택자는 jQuery의 확장입니다.)
-$( "#my-table tr:even" );
+</pre></td><td class="rouge-code"><pre><span class="c1">// 느림 (0 기반(zero-based) ":even" 선택자는 jQuery의 확장입니다.)</span>
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">#my-table tr:even</span><span class="dl">"</span> <span class="p">);</span>
  
-// 비록 정확하게 동일하지는 않지만 더 좋습니다.
-$( "#my-table tr:nth-child(odd)" );
+<span class="c1">// 비록 정확하게 동일하지는 않지만 더 좋습니다.</span>
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">#my-table tr:nth-child(odd)</span><span class="dl">"</span> <span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위의 예에서 <code class="language-plaintext highlighter-rouge">:even</code>를 포함하여 많은 jQuery 확장은 CSS 사양과 정확히 동등하지 않습니다. 경우에 따라 이러한 확장의 편리함이 성능 비용보다 클 수 있습니다.</p>
@@ -773,16 +763,16 @@ $( "#my-table tr:nth-child(odd)" );
 
 <h3 id="과도한-상세함-회피-avoid-excessive-specificity"><span class="me-2">과도한 상세함 회피 (Avoid Excessive Specificity)</span><a href="#과도한-상세함-회피-avoid-excessive-specificity" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>$( ".data table.attendees td.gonzalez" );
+</pre></td><td class="rouge-code"><pre><span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">.data table.attendees td.gonzalez</span><span class="dl">"</span> <span class="p">);</span>
  
-// 더 나음: 가능한 중간 단계의 선택자를 생략하세요.
-$( ".data td.gonzalez" );
+<span class="c1">// 더 나음: 가능한 중간 단계의 선택자를 생략하세요.</span>
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">.data td.gonzalez</span><span class="dl">"</span> <span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>바람 빠진(flatter) DOM은 또한 선택자 엔진이 요소를 찾을 때 거쳐야 할 레이어 수가 적어지기 때문에 선택자 성능을 향상시키는 데 도움이 됩니다.</p>
@@ -793,70 +783,70 @@ $( ".data td.gonzalez" );
 
 <p>ID로 선택자를 시작하는 것이 안전합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>// 빠름:
-$( "#container div.robotarm" );
+</pre></td><td class="rouge-code"><pre><span class="c1">// 빠름:</span>
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">#container div.robotarm</span><span class="dl">"</span> <span class="p">);</span>
  
-// 훨씬 빠름:
-$( "#container" ).find( "div.robotarm" );
+<span class="c1">// 훨씬 빠름:</span>
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">#container</span><span class="dl">"</span> <span class="p">).</span><span class="nf">find</span><span class="p">(</span> <span class="dl">"</span><span class="s2">div.robotarm</span><span class="dl">"</span> <span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>첫 번째 접근 방식으로 jQuery는 <code class="language-plaintext highlighter-rouge">document.querySelectorAll()</code>을 사용하여 <code class="language-plaintext highlighter-rouge">DOM</code>을 쿼리합니다. 두 번째로 jQuery는 <code class="language-plaintext highlighter-rouge">document.getElementById()</code>를 사용하는데,이 속도는 <code class="language-plaintext highlighter-rouge">.find()</code>에 대한 후속 호출로 인해 속도 향상이 줄어들 수 있지만 (이것을 감안하더라도) 더 빠릅니다.</p>
 
 <p> </p>
 
-<h3 id="이전-브라우저를-위한-팁"><span class="me-2">이전 브라우저를 위한 팁</span><a href="#이전-브라우저를-위한-팁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="이전-브라우저를-위한-팁"><span class="me-2">이전 브라우저를 위한 팁</span><a href="#이전-브라우저를-위한-팁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Internet Explorer 8 이하와 같은 이전 브라우저에 대한 지원이 필요한 경우 다음 팁을 고려하십시오.</p>
 
 <p> </p>
 
-<h4 id="상세함-specificity"><span class="me-2">상세함 (Specificity)</span><a href="#상세함-specificity" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="상세함-specificity"><span class="me-2">상세함 (Specificity)</span><a href="#상세함-specificity" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>선택자의 오른쪽은 구체적으로, 왼쪽은 덜 구체적으로 구성하세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>// 최적화되지 않음:
-$( "div.data .gonzalez" );
+</pre></td><td class="rouge-code"><pre><span class="c1">// 최적화되지 않음:</span>
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">div.data .gonzalez</span><span class="dl">"</span> <span class="p">);</span>
  
-// 최적화됨:
-$( ".data td.gonzalez" );
+<span class="c1">// 최적화됨:</span>
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">.data td.gonzalez</span><span class="dl">"</span> <span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>가장 오른쪽 선택자에서 가능한 경우 <code class="language-plaintext highlighter-rouge">tag.class</code>를 사용하고 왼쪽에서는 <code class="language-plaintext highlighter-rouge">.class</code> 만 사용하세요.</p>
 
 <p> </p>
 
-<h4 id="범용-선택자를-회피-avoid-the-universal-selector"><span class="me-2">범용 선택자를 회피 (Avoid the Universal Selector)</span><a href="#범용-선택자를-회피-avoid-the-universal-selector" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="범용-선택자를-회피-avoid-the-universal-selector"><span class="me-2">범용 선택자를 회피 (Avoid the Universal Selector)</span><a href="#범용-선택자를-회피-avoid-the-universal-selector" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>“어디서나 일치하는 항목을 찾을 수 있는 선택자”를 지정하거나 또는 암시하는 선택자는 매우 느릴 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>$( ".buttons &gt; *" ); // 매우 고비용(expensive)
-$( ".buttons" ).children(); // 훨씬 낫다
+</pre></td><td class="rouge-code"><pre><span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">.buttons &gt; *</span><span class="dl">"</span> <span class="p">);</span> <span class="c1">// 매우 고비용(expensive)</span>
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">.buttons</span><span class="dl">"</span> <span class="p">).</span><span class="nf">children</span><span class="p">();</span> <span class="c1">// 훨씬 낫다</span>
  
-$( ":radio" ); // 암시된 범용 선택자
-$( "*:radio" ); // 똑같은 상황
-$( "input:radio" ); // 훨씬 낫다
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">:radio</span><span class="dl">"</span> <span class="p">);</span> <span class="c1">// 암시된 범용 선택자</span>
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">*:radio</span><span class="dl">"</span> <span class="p">);</span> <span class="c1">// 똑같은 상황</span>
+<span class="nf">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">input:radio</span><span class="dl">"</span> <span class="p">);</span> <span class="c1">// 훨씬 낫다</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>원문: <a href="https://learn.jquery.com/performance/optimize-selectors/">https://learn.jquery.com/performance/optimize-selectors/</a></p>
@@ -7714,7 +7704,7 @@ $( "input:radio" ); // 훨씬 낫다
 
               <h4 class="pt-0 my-2">자바스크립트 예제: 특정 주파수의 소리 재생 + 음악 평균율 주파수 테이블</h4>
               <div class="text-muted">
-                <p>   자바에서 주파수를 재생하는 글 [자바 예제: 특정 주파수의 소리 재생](http://yoonbumtae.com/?p=1651) 을 자바스크립트로 바꾼 예제입니다. 외부 온라인 소스나 라이브러리 필요 없이 자바스크립트 자체 엔진으로 소리를 재생합니다.     ##### **1) `AudioContext` 인스턴스 생성**  ``` var audio...</p>
+                <p>   자바에서 주파수를 재생하는 글 [자바 예제: 특정 주파수의 소리 재생](http://yoonbumtae.com/?p=1651) 을 자바스크립트로 바꾼 예제입니다. 외부 온라인 소스나 라이브러리 필요 없이 자바스크립트 자체 엔진으로 소리를 재생합니다.  ## 절차  ### **1) `AudioContext` 인스턴스 생성**  ```js var a...</p>
               </div>
             </div>
           </a>
@@ -7742,7 +7732,7 @@ $( "input:radio" ); // 훨씬 낫다
 
               <h4 class="pt-0 my-2">자바스크립트: 객체지향 3 - class (ES6 이상)</h4>
               <div class="text-muted">
-                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)      기존 ES5 이하 환경의 자바스크립트에서 장황하고 불편했던 클래스 생성 등의 과정이 ES6 이후에 class 문법이 생겨서 한결 편하게 클래스...</p>
+                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)   class 키워드  기존 ES5 이하 환경의 자바스크립트에서 장황하고 불편했던 클래스 생성 등의 과정이 ES6 이후에 class 문법이 생겨서 한결...</p>
               </div>
             </div>
           </a>
@@ -7770,7 +7760,7 @@ $( "input:radio" ); // 훨씬 낫다
 
               <h4 class="pt-0 my-2">자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)</h4>
               <div class="text-muted">
-                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)      상속에 대한 예제로 악기에 대한 추상 클래스(완벽하게 동일한 개념은 아니나 편의상 이하 객체지향 용어들을 사용합니다.) 를 작성해 보겠습니다....</p>
+                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)   상속  상속에 대한 예제로 악기에 대한 추상 클래스(완벽하게 동일한 개념은 아니나 편의상 이하 객체지향 용어들을 사용합니다.) 를 작성해 보겠습니다...</p>
               </div>
             </div>
           </a>

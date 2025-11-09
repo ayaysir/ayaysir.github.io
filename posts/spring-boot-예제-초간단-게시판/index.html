@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1216,16 +1223,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -1290,6 +1287,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -1311,7 +1318,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Spring Boot 예제: 초간단 게시판</h1>
     
@@ -1385,7 +1392,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="537 words"
+  title="521 words"
 >
   <em>2 min</em> read</span>
 
@@ -1395,13 +1402,35 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Spring Boot 예제: 초간단 게시판</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Spring Boot 예제: 초간단 게시판</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>이 예제에는 스프링 시큐리티를 사용하였습니다. 시큐리티와 관련된 내용은  <a href="http://yoonbumtae.com/?tag=스프링시큐리티">스프링 시큐리티 관련 글</a>을 참고하세요.</p>
+    <p>이 예제에는 스프링 시큐리티를 사용하였습니다. 시큐리티와 관련된 내용은  <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/">스프링 시큐리티 관련 글</a>을 참고하세요.</p>
 
 <p> </p>
 
-<h4 id="개요"><span class="me-2"><strong>개요</strong></span><a href="#개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="개요"><span class="me-2"><strong>개요</strong></span><a href="#개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Spring Boot의 기본 기능(Thymeleaf, 시큐리티 포함)을 이용해서 전통적 형태의 웹 게시판을 만들었습니다. 게시판은 웹 프로그래밍에 있어서 필수라고 볼 수 있는 <strong>CRUD</strong>(Create, Read, Update, Delete)를 연습하기에 적당한 예제입니다.</p>
 
@@ -1416,11 +1445,11 @@
 
 <p> </p>
 
-<h4 id="프로젝트의-구조-일부"><span class="me-2"><strong>프로젝트의 구조 (일부)</strong></span><a href="#프로젝트의-구조-일부" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="프로젝트의-구조-일부"><span class="me-2"><strong>프로젝트의 구조 (일부)</strong></span><a href="#프로젝트의-구조-일부" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.21.49.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.21.49.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.21.49.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.21.49.png" alt="" loading="lazy"></a></p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.22.00.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.22.00.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.22.00.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.22.00.png" alt="" loading="lazy"></a></p>
 
 <ul>
   <li><strong>SimpleBoardController</strong>: 게시판 관련 컨트롤러</li>
@@ -1429,55 +1458,59 @@
 
 <p> </p>
 
-<h4 id="데이터베이스-구조"><span class="me-2"><strong>데이터베이스 구조</strong></span><a href="#데이터베이스-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="데이터베이스-구조"><span class="me-2"><strong>데이터베이스 구조</strong></span><a href="#데이터베이스-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.30.43.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.30.43.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.30.43.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.30.43.png" alt="" loading="lazy"></a></p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.31.56.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.31.56.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.31.56.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.31.56.png" alt="" loading="lazy"></a></p>
 
 <p>데이터베이스 설정하는 방법은 <a href="http://yoonbumtae.com/?p=658">Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)</a>를 참고하세요.</p>
 
 <p> </p>
 
-<h4 id="코드-일부"><span class="me-2"><strong>코드 (일부)</strong></span><a href="#코드-일부" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="코드-일부"><span class="me-2"><strong>코드 (일부)</strong></span><a href="#코드-일부" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>https://gist.github.com/ayaysir/5ee2ccb6efd8063a568e2d5944ffd21c</p>
 
 <p> </p>
 
-<h4 id="동작-내용"><span class="me-2"><strong>동작 내용</strong></span><a href="#동작-내용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="동작-내용"><span class="me-2"><strong>동작 내용</strong></span><a href="#동작-내용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>[caption id=”attachment_1854” align=”alignnone” width=”474”] <a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.00.57.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.00.57.png" alt="" loading="lazy"></a> 메인 화면 (로그인한 경우)[/caption]</p>
-
-<p> </p>
-
-<p>[caption id=”attachment_1856” align=”alignnone” width=”454”] <a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.10.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.10.16.png" alt="" loading="lazy"></a> 메인 화면 (로그인하지 않은 경우)[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.00.57.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.00.57.png" alt="" loading="lazy"></a> 
+<em>메인 화면 (로그인한 경우)</em></p>
 
 <p> </p>
 
-<p>[caption id=”attachment_1863” align=”alignnone” width=”387”] <a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.37.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.37.28.png" alt="" loading="lazy"></a> 게시글 보기 (내 글)[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.10.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.10.16.png" alt="" loading="lazy"></a> 
+<em>메인 화면 (로그인하지 않은 경우)</em></p>
 
 <p> </p>
 
-<p>[caption id=”attachment_1855” align=”alignnone” width=”383”] <a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.09.12.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-9.09.12.png" alt="" loading="lazy"></a> 게시글 보기 (다른 사람의 글)[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.37.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.37.28.png" alt="" loading="lazy"></a> 
+<em>게시글 보기 (내 글)</em></p>
+
+<p> </p>
+
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.09.12.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.09.12.png" alt="" loading="lazy"></a> 
+<em>게시글 보기 (다른 사람의 글)</em></p>
 
 <p> </p>
 
 <p><a href="https://media.giphy.com/media/kcC0josb7fmy2b4VhR/giphy.gif" class="popup img-link shimmer"><img src="https://media.giphy.com/media/kcC0josb7fmy2b4VhR/giphy.gif" alt="" loading="lazy"></a></p>
 
-<p>게시글 작성</p>
+<p><em>게시글 작성</em></p>
 
 <p> </p>
 
 <p><a href="https://media.giphy.com/media/kfF3EO88jbSs0Ulboz/giphy.gif" class="popup img-link shimmer"><img src="https://media.giphy.com/media/kfF3EO88jbSs0Ulboz/giphy.gif" alt="" loading="lazy"></a></p>
 
-<p>게시글 수정</p>
+<p><em>게시글 수정</em></p>
 
 <p> </p>
 
 <p><a href="https://media.giphy.com/media/IbZ1cV7NF1M4A4jFcQ/giphy.gif" class="popup img-link shimmer"><img src="https://media.giphy.com/media/IbZ1cV7NF1M4A4jFcQ/giphy.gif" alt="" loading="lazy"></a></p>
 
-<p>게시글 삭제</p>
+<p><em>게시글 삭제</em></p>
 
   </div>
 
@@ -2458,6 +2491,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

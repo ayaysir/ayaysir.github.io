@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -761,15 +768,59 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -807,6 +858,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -823,7 +884,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트 + abcjs: 악보 출력, Synth 플레이어 삽입</h1>
     
@@ -897,7 +958,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="509 words"
+  title="532 words"
 >
   <em>2 min</em> read</span>
 
@@ -906,6 +967,28 @@
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트 + abcjs: 악보 출력, Synth 플레이어 삽입</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트 + abcjs: 악보 출력, Synth 플레이어 삽입</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -916,8 +999,10 @@
   <li><a href="https://www.abcjs.net/abcjs-audio.css">https://www.abcjs.net/abcjs-audio.css [다운로드]</a></li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="사용-방법"><span class="me-2">사용 방법</span><a href="#사용-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -938,45 +1023,47 @@
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;link href="abcjs-audio.css" media="all" rel="stylesheet" type="text/css" /&gt;
-  &lt;script src="abcjs_basic_5.9.1-min.js" type="text/javascript"&gt;&lt;/script&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"abcjs-audio.css"</span> <span class="na">media=</span><span class="s">"all"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"abcjs_basic_5.9.1-min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-&lt;/head&gt;
-&lt;body&gt;
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
 
-  &lt;div id="notation"&gt;&lt;/div&gt;
-  &lt;div id="audio"&gt;&lt;/div&gt;
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"notation"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"audio"</span><span class="nt">&gt;&lt;/div&gt;</span>
 
-&lt;script type="text/javascript"&gt;
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
 
- .........
+ <span class="p">.........</span>
 
-&lt;/script&gt;
+<span class="nt">&lt;/script&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>var cooleys = 'X:1\nT: Cooley\'s\nM: 4/4\nL: 1/8\nR: reel\nK: Emin\nD2|:"Em"EB{c}BA B2 EB|~B2 AB dBAG|"D"FDAD BDAD|FDAD dAFD|\n"Em"EBBA B2 EB|B2 AB defg|"D"afe^c dBAF|1"Em"DEFD E2 D2:|2"Em"DEFD E2 gf||\n|:"Em"eB B2 efge|eB B2 gedB|"D"A2 FA DAFA|A2 FA defg|\n"Em"eB B2 eBgB|eB B2 defg|"D"afe^c dBAF|1"Em"DEFD E2 gf:|2"Em"DEFD E4|]\n';
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">cooleys</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">X:1</span><span class="se">\n</span><span class="s1">T: Cooley</span><span class="se">\'</span><span class="s1">s</span><span class="se">\n</span><span class="s1">M: 4/4</span><span class="se">\n</span><span class="s1">L: 1/8</span><span class="se">\n</span><span class="s1">R: reel</span><span class="se">\n</span><span class="s1">K: Emin</span><span class="se">\n</span><span class="s1">D2|:"Em"EB{c}BA B2 EB|~B2 AB dBAG|"D"FDAD BDAD|FDAD dAFD|</span><span class="se">\n</span><span class="s1">"Em"EBBA B2 EB|B2 AB defg|"D"afe^c dBAF|1"Em"DEFD E2 D2:|2"Em"DEFD E2 gf||</span><span class="se">\n</span><span class="s1">|:"Em"eB B2 efge|eB B2 gedB|"D"A2 FA DAFA|A2 FA defg|</span><span class="se">\n</span><span class="s1">"Em"eB B2 eBgB|eB B2 defg|"D"afe^c dBAF|1"Em"DEFD E2 gf:|2"Em"DEFD E4|]</span><span class="se">\n</span><span class="dl">'</span><span class="p">;</span>
 
-var visualObj = ABCJS.renderAbc('notation', cooleys)[0]; // 악보 입력
-var synthControl = new ABCJS.synth.SynthController(); // 플레이어 선언
-synthControl.load("#audio", null, {displayRestart: true, displayPlay: true, displayProgress: true});
-synthControl.setTune(visualObj, false);
+<span class="kd">var</span> <span class="nx">visualObj</span> <span class="o">=</span> <span class="nx">ABCJS</span><span class="p">.</span><span class="nf">renderAbc</span><span class="p">(</span><span class="dl">'</span><span class="s1">notation</span><span class="dl">'</span><span class="p">,</span> <span class="nx">cooleys</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 악보 입력</span>
+<span class="kd">var</span> <span class="nx">synthControl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ABCJS</span><span class="p">.</span><span class="nx">synth</span><span class="p">.</span><span class="nc">SynthController</span><span class="p">();</span> <span class="c1">// 플레이어 선언</span>
+<span class="nx">synthControl</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="dl">"</span><span class="s2">#audio</span><span class="dl">"</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="na">displayRestart</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">displayPlay</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">displayProgress</span><span class="p">:</span> <span class="kc">true</span><span class="p">});</span>
+<span class="nx">synthControl</span><span class="p">.</span><span class="nf">setTune</span><span class="p">(</span><span class="nx">visualObj</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.13.08.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.13.08.png" alt="" loading="lazy"></a></p>
+<h2 id="실행-결과"><span class="me-2">실행 결과</span><a href="#실행-결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-16-am-2.13.08.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-16-am-2.13.08.png" alt="" loading="lazy"></a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1002,33 +1089,40 @@ EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|
 eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="abc-살펴보기"><span class="me-2">abc 살펴보기</span><a href="#abc-살펴보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <p>위의 마크업 언어는 <strong>abc</strong>라고 하는 언어입니다. <a href="http://abcnotation.com/blog/2010/01/31/how-to-understand-abc-the-basics/">여기</a>서 매뉴얼을 볼 수 있습니다. 간단하게만 살펴보겠습니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">X:</code> 에서 <code class="language-plaintext highlighter-rouge">K:</code> 까지는 <strong>헤더</strong> 부분입니다 제목, 작곡가, 박자, 조성 등을 설정하는 부분입니다.</p>
-
-<p>그 밑에는 <strong>노트</strong> 부분이며 여기에 악보를 기입합니다. 첫번째 마디의 <code class="language-plaintext highlighter-rouge">D2</code>에서  <code class="language-plaintext highlighter-rouge">D</code>는 <strong>음높이</strong>이고 뒤 숫자 <code class="language-plaintext highlighter-rouge">2</code>는 박자의 상대적 배수입니다.</p>
-
-<p>박자는 <code class="language-plaintext highlighter-rouge">L:</code> 에 상대적으로 대응합니다. <code class="language-plaintext highlighter-rouge">L:</code> 이 <code class="language-plaintext highlighter-rouge">1/8</code>이므로 <code class="language-plaintext highlighter-rouge">2</code>를 입력하면 8분음표의 <strong>2배</strong>가 되어 <strong>4분음표</strong>가 입력됩니다. <code class="language-plaintext highlighter-rouge">/2</code>는 2분의 1배라는 뜻으로 8분음표를 <strong>1/2배</strong>인 <strong>16분음표</strong>가 입력됩니다.</p>
-
-<p>마디는 <code class="language-plaintext highlighter-rouge">|</code>를 입력합니다. 샤프(♯)는 노트 이름 앞에 “<code class="language-plaintext highlighter-rouge">^</code>”, 내추럴(♮)은 “<code class="language-plaintext highlighter-rouge">=</code>”, 플랫(♭)은 “<code class="language-plaintext highlighter-rouge">_</code>“를 입력합니다.</p>
-
-<p> </p>
-
-<h5 id="음높이-"><span class="me-2"><strong>음높이</strong> <a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.19.27.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.19.27.png" alt="" loading="lazy"></a></span><a href="#음높이-" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">X:</code> 에서 <code class="language-plaintext highlighter-rouge">K:</code> 까지는 <strong>헤더</strong> 부분입니다 제목, 작곡가, 박자, 조성 등을 설정하는 부분입니다.</li>
+  <li>그 밑에는 <strong>노트</strong> 부분이며 여기에 악보를 기입합니다. 첫번째 마디의 <code class="language-plaintext highlighter-rouge">D2</code>에서  <code class="language-plaintext highlighter-rouge">D</code>는 <strong>음높이</strong>이고 뒤 숫자 <code class="language-plaintext highlighter-rouge">2</code>는 박자의 상대적 배수입니다.</li>
+  <li>박자는 <code class="language-plaintext highlighter-rouge">L:</code> 에 상대적으로 대응합니다. <code class="language-plaintext highlighter-rouge">L:</code> 이 <code class="language-plaintext highlighter-rouge">1/8</code>이므로 <code class="language-plaintext highlighter-rouge">2</code>를 입력하면 8분음표의 <strong>2배</strong>가 되어 <strong>4분음표</strong>가 입력됩니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">/2</code>는 2분의 1배라는 뜻으로 8분음표를 <strong>1/2배</strong>인 <strong>16분음표</strong>가 입력됩니다.</li>
+  <li>마디는 <code class="language-plaintext highlighter-rouge">|</code>를 입력합니다.</li>
+  <li>샤프(♯)는 노트 이름 앞에 “<code class="language-plaintext highlighter-rouge">^</code>”, 내추럴(♮)은 “<code class="language-plaintext highlighter-rouge">=</code>”, 플랫(♭)은 “<code class="language-plaintext highlighter-rouge">_</code>“를 입력합니다.</li>
+</ul>
 
 <p> </p>
 
-<h5 id="박자"><span class="me-2"><strong>박자</strong></span><a href="#박자" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<p><a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.24.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.24.16.png" alt="" loading="lazy"></a></p>
+<h3 id="음높이"><span class="me-2"><strong>음높이</strong></span><a href="#음높이" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-16-am-2.19.27.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-16-am-2.19.27.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
+
+<h3 id="박자"><span class="me-2"><strong>박자</strong></span><a href="#박자" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-16-am-2.24.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-16-am-2.24.16.png" alt="" loading="lazy"></a></p>
+
+<h2 id="예제-semitone-스케일-표시"><span class="me-2">예제: semitone 스케일 표시</span><a href="#예제-semitone-스케일-표시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래 예제는 semitone 스케일을 악보로 표시합니다.</p>
 
-<p>https://gist.github.com/ayaysir/411afca4581eb066c5d5a7a94b76903c</p>
+<!-- https://gist.github.com/ayaysir/411afca4581eb066c5d5a7a94b76903c -->
 
-<p><a href="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.27.51.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-16-오전-2.27.51.png" alt="" loading="lazy"></a></p>
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/411afca4581eb066c5d5a7a94b76903c.js"> </script>
+
+<p><a href="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-16-am-2.27.51.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-16-am-2.27.51.png" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -1994,6 +2088,12 @@ eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7877,7 +7977,7 @@ eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
 
               <h4 class="pt-0 my-2">자바스크립트 예제: 특정 주파수의 소리 재생 + 음악 평균율 주파수 테이블</h4>
               <div class="text-muted">
-                <p>   자바에서 주파수를 재생하는 글 자바 예제: 특정 주파수의 소리 재생 을 자바스크립트로 바꾼 예제입니다. 외부 온라인 소스나 라이브러리 필요 없이 자바스크립트 자체 엔진으로 소리를 재생합니다.     1) AudioContext 인스턴스 생성  var audioCtx = new(window.AudioContext || window.webkitAud...</p>
+                <p>   자바에서 주파수를 재생하는 글 자바 예제: 특정 주파수의 소리 재생 을 자바스크립트로 바꾼 예제입니다. 외부 온라인 소스나 라이브러리 필요 없이 자바스크립트 자체 엔진으로 소리를 재생합니다.  절차  1) AudioContext 인스턴스 생성  var audioCtx = new(window.AudioContext || window.webkitAu...</p>
               </div>
             </div>
           </a>
@@ -7933,7 +8033,7 @@ eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|
 
               <h4 class="pt-0 my-2">자바스크립트: 객체지향 3 - class (ES6 이상)</h4>
               <div class="text-muted">
-                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)      기존 ES5 이하 환경의 자바스크립트에서 장황하고 불편했던 클래스 생성 등의 과정이 ES6 이후에 class 문법이 생겨서 한결 편하게 클래스...</p>
+                <p>자바스크립트: 객체지향 1 - new 키워드를 이용해 객체 생성 (ES5 이하)   자바스크립트: 객체지향 2 – 상속 구현 (ES5 이하)   자바스크립트: 객체지향 3 - class (ES6 이상)   class 키워드  기존 ES5 이하 환경의 자바스크립트에서 장황하고 불편했던 클래스 생성 등의 과정이 ES6 이후에 class 문법이 생겨서 한결...</p>
               </div>
             </div>
           </a>
