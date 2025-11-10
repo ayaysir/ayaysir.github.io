@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -743,6 +750,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -761,16 +833,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -813,6 +875,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -834,7 +906,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: 캔버스로 원 그리기 + 원을 n등분하기</h1>
     
@@ -908,7 +980,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1225 words"
+  title="1211 words"
 >
   <em>6 min</em> read</span>
 
@@ -918,28 +990,50 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: 캔버스로 원 그리기 + 원을 n등분하기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: 캔버스로 원 그리기 + 원을 n등분하기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>캔버스에 대한 기초 사용법은 <a href="https://developer.mozilla.org/ko/docs/Web/HTML/Canvas/Tutorial/Basic_usage">모질라 web docs</a>에서 볼 수 있습니다.</p>
 
 <p> </p>
 
-<h4 id="원-그리기"><span class="me-2"><strong>원 그리기</strong></span><a href="#원-그리기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="원-그리기"><span class="me-2"><strong>원 그리기</strong></span><a href="#원-그리기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><strong>호</strong>(<code class="language-plaintext highlighter-rouge">arc</code>) 명령을 이용해서 원을 그릴 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>arc(x, y, radius, startAngle, endAngle, anticlockwise)
+</pre></td><td class="rouge-code"><pre><span class="nf">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">radius</span><span class="p">,</span> <span class="nx">startAngle</span><span class="p">,</span> <span class="nx">endAngle</span><span class="p">,</span> <span class="nx">anticlockwise</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><em><code class="language-plaintext highlighter-rouge">(x, y)</code></em> 위치에 원점을 두면서, 반지름 <code class="language-plaintext highlighter-rouge">r</code>을 가지고,  <em><code class="language-plaintext highlighter-rouge">startAngle</code></em> 에서 시작하여 <em><code class="language-plaintext highlighter-rouge">endAngle</code></em> 에서 끝나며 주어진 <em><code class="language-plaintext highlighter-rouge">anticlockwise</code></em> 방향으로 향하는 (기본값 <code class="language-plaintext highlighter-rouge">false</code> - 시계방향 회전) 호를 그리게 됩니다.</p>
 
 <p>예제 코드를 살펴보겠습니다. HTML 기본 토대는 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -955,29 +1049,29 @@
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 
-&lt;body onload="draw();"&gt;
-    &lt;canvas width="500" height="500" id="canvas"&gt;&lt;/canvas&gt;
+<span class="nt">&lt;body</span> <span class="na">onload=</span><span class="s">"draw();"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;canvas</span> <span class="na">width=</span><span class="s">"500"</span> <span class="na">height=</span><span class="s">"500"</span> <span class="na">id=</span><span class="s">"canvas"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
 
-    &lt;script&gt;
-        ............
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+    <span class="nt">&lt;script&gt;</span>
+        <span class="p">............</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">body</code> 요소의 로드가 완료되면 스크립트 부분의 <code class="language-plaintext highlighter-rouge">draw()</code> 함수를 실행합니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1003,31 +1097,31 @@
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>const geom = {
-    x: 100,
-    y: 100,
-    radius: 90,
-    statrAngle: 0,
-    endAngle: 360,
-    anticlockwise: false
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">geom</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">x</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="na">y</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="na">radius</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+    <span class="na">statrAngle</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="na">endAngle</span><span class="p">:</span> <span class="mi">360</span><span class="p">,</span>
+    <span class="na">anticlockwise</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 
-function degToRad(deg) {
-    return (Math.PI / 180) * deg
-}
-//
+<span class="kd">function</span> <span class="nf">degToRad</span><span class="p">(</span><span class="nx">deg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return </span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">180</span><span class="p">)</span> <span class="o">*</span> <span class="nx">deg</span>
+<span class="p">}</span>
+<span class="c1">//</span>
 
-function draw() {
-    const canvas = document.getElementById("canvas")
-    const ctx = canvas.getContext("2d")
+<span class="kd">function</span> <span class="nf">draw</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">canvas</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nf">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">)</span>
 
-    ctx.beginPath()
-    // arc(x, y, radius, startAngle, endAngle, anticlockwise)
-    ctx.arc(geom.x, geom.y, geom.radius, degToRad(geom.statrAngle), degToRad(geom.endAngle), geom.anticlockwise)
-    console.log(degToRad(geom.statrAngle), degToRad(geom.endAngle))
-    ctx.stroke()
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">beginPath</span><span class="p">()</span>
+    <span class="c1">// arc(x, y, radius, startAngle, endAngle, anticlockwise)</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">arc</span><span class="p">(</span><span class="nx">geom</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">geom</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">geom</span><span class="p">.</span><span class="nx">radius</span><span class="p">,</span> <span class="nf">degToRad</span><span class="p">(</span><span class="nx">geom</span><span class="p">.</span><span class="nx">statrAngle</span><span class="p">),</span> <span class="nf">degToRad</span><span class="p">(</span><span class="nx">geom</span><span class="p">.</span><span class="nx">endAngle</span><span class="p">),</span> <span class="nx">geom</span><span class="p">.</span><span class="nx">anticlockwise</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">degToRad</span><span class="p">(</span><span class="nx">geom</span><span class="p">.</span><span class="nx">statrAngle</span><span class="p">),</span> <span class="nf">degToRad</span><span class="p">(</span><span class="nx">geom</span><span class="p">.</span><span class="nx">endAngle</span><span class="p">))</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">stroke</span><span class="p">()</span>
 
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>변수 <code class="language-plaintext highlighter-rouge">geom</code>은 설정 정보를 모아놓은 객체 변수입니다. 함수 <code class="language-plaintext highlighter-rouge">degToRad</code>는 각도(degree)를 라디언(radian)으로 변환하여 리턴합니다. 제가 사실 문과 출신이라 라디언이 뭔지 잘 몰라서 이하 내용에서는 전부 각도를 사용한 뒤 <code class="language-plaintext highlighter-rouge">degToRad</code> 를 이용해 변환하겠습니다. 함수 <code class="language-plaintext highlighter-rouge">draw</code>는 캔버스에 그림을 그리는 부분입니다.</p>
@@ -1038,20 +1132,21 @@ function draw() {
 
 <p><code class="language-plaintext highlighter-rouge">arc</code> 명령에서 <code class="language-plaintext highlighter-rouge">x</code>, <code class="language-plaintext highlighter-rouge">y</code>는 <strong>중심점의 위치</strong>입니다. <code class="language-plaintext highlighter-rouge">radius</code>는 <strong>반지름</strong>입니다. 단위는 캔버스에서 사용하는 고유 단위입니다. (픽셀과 비슷하나 1:1 대응하지는 않습니다.) <code class="language-plaintext highlighter-rouge">startAngle</code>, <code class="language-plaintext highlighter-rouge">endAngle</code>은 <strong>시작 각</strong>과 <strong>끝 각</strong>인데 사용 단위는 <strong>라디언(radian)</strong>입니다. <code class="language-plaintext highlighter-rouge">anticlockwise</code>는 회전 방향을 지정하는 것으로 기본값은 <code class="language-plaintext highlighter-rouge">false</code>입니다. (반시계방향 설정인데 <code class="language-plaintext highlighter-rouge">false</code>이므로 <strong>시계 방향 회전</strong>합니다.)</p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-23-오전-12.34.33.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-23-오전-12.34.33.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-23-am-12.34.33.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-23-am-12.34.33.png" alt="`startAngle`이 0인 경우 3시 방향을 가리키는 것이니 주의하시기 바랍니다." loading="lazy"></a></p>
 
 <p><code class="language-plaintext highlighter-rouge">startAngle</code>이 0인 경우 3시 방향을 가리키는 것이니 주의하시기 바랍니다.</p>
 
+<p> 
+<a href="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-23-am-12.48.33.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-23-am-12.48.33.png" alt="`startAngle`, `endAngle` 값의 변화에 따른 그림들" loading="lazy"></a></p>
+
+<p><em><code class="language-plaintext highlighter-rouge">startAngle</code>, <code class="language-plaintext highlighter-rouge">endAngle</code> 값의 변화에 따른 그림들</em></p>
+
 <p> </p>
 
-<p>[caption id=”attachment_1986” align=”alignnone” width=”350”] <a href="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-23-오전-12.48.33.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-23-오전-12.48.33.png" alt="" loading="lazy"></a> <code class="language-plaintext highlighter-rouge">startAngle</code>, <code class="language-plaintext highlighter-rouge">endAngle</code> 값의 변화에 따른 그림들[/caption]</p>
+<h2 id="원을-n등분하여-그리기"><span class="me-2"><strong>원을 n등분하여 그리기</strong></span><a href="#원을-n등분하여-그리기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p> </p>
-
-<h4 id="원을-n등분하여-그리기"><span class="me-2"><strong>원을 n등분하여 그리기</strong></span><a href="#원을-n등분하여-그리기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1080,55 +1175,63 @@ function draw() {
 26
 27
 28
-</pre></td><td class="rouge-code"><pre>function draw(){
-    const canvas = document.getElementById("canvas")
-    const ctx = canvas.getContext("2d")
-    const geom = {
-        x: 120,
-        y: 120,
-        radius: 100,
-        statrAngle: 0,
-        endAngle: 360,
-        anticlockwise: false
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">draw</span><span class="p">(){</span>
+    <span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">canvas</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nf">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">geom</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">x</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+        <span class="na">y</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+        <span class="na">radius</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="na">statrAngle</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="na">endAngle</span><span class="p">:</span> <span class="mi">360</span><span class="p">,</span>
+        <span class="na">anticlockwise</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
     
-    let part = 6
-    let eachDeg = 360 / part
+    <span class="kd">let</span> <span class="nx">part</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="kd">let</span> <span class="nx">eachDeg</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">/</span> <span class="nx">part</span>
 
-//
+<span class="c1">//</span>
     
-    ctx.beginPath()
-    for(let i = 0; i &lt;= part; i++){
-        // arc(x, y, radius, startAngle, endAngle, anticlockwise)
-        ctx.arc(geom.x, geom.y, geom.radius, degToRad(i * eachDeg), degToRad(i * eachDeg + eachDeg), geom.anticlockwise)
-        ctx.lineTo(geom.x, geom.y)
-    }
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">beginPath</span><span class="p">()</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">part</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="c1">// arc(x, y, radius, startAngle, endAngle, anticlockwise)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nf">arc</span><span class="p">(</span><span class="nx">geom</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">geom</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">geom</span><span class="p">.</span><span class="nx">radius</span><span class="p">,</span> <span class="nf">degToRad</span><span class="p">(</span><span class="nx">i</span> <span class="o">*</span> <span class="nx">eachDeg</span><span class="p">),</span> <span class="nf">degToRad</span><span class="p">(</span><span class="nx">i</span> <span class="o">*</span> <span class="nx">eachDeg</span> <span class="o">+</span> <span class="nx">eachDeg</span><span class="p">),</span> <span class="nx">geom</span><span class="p">.</span><span class="nx">anticlockwise</span><span class="p">)</span>
+        <span class="nx">ctx</span><span class="p">.</span><span class="nf">lineTo</span><span class="p">(</span><span class="nx">geom</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">geom</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
+    <span class="p">}</span>
 
-    ctx.stroke()
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">stroke</span><span class="p">()</span>
 
     
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>원을 <em>n</em> 으로 나눠 그리는 예제입니다. 피자 나누는 그림을 생각하면 될 것 같습니다. <code class="language-plaintext highlighter-rouge">part</code>의 숫자에 따라 나누는데, <code class="language-plaintext highlighter-rouge">lineTo()</code>은 현재 경로의 위치에서 특정 좌표까지 선을 그리면서 이동하는 명령입니다. 360도를 n으로 나누면 각 등분한 도형 당 필요한 각도가 계산되고, <code class="language-plaintext highlighter-rouge">for</code>문을 돌리면서 필요한 각도를 곱하는 식으로 원을 그리게 됩니다.</p>
 
-<p>[caption id=”attachment_1987” align=”alignnone” width=”321”] <a href="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-23-오전-12.55.27.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-23-오전-12.55.27.png" alt="" loading="lazy"></a> 6등분[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-23-am-12.55.27.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-23-am-12.55.27.png" alt="6등분" loading="lazy"></a> 
+<em>6등분</em></p>
 
-<p>[caption id=”attachment_1988” align=”alignnone” width=”318”] <a href="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-23-오전-12.56.04.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-23-오전-12.56.04.png" alt="" loading="lazy"></a> 11등분[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-23-am-12.56.04.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-23-am-12.56.04.png" alt="11등분" loading="lazy"></a> 
+<em>11등분</em></p>
 
 <p> </p>
 
-<h4 id="예제-피자를-n등분으로-나누기"><span class="me-2"><strong>예제: 피자를 n등분으로 나누기</strong></span><a href="#예제-피자를-n등분으로-나누기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제-피자를-n등분으로-나누기"><span class="me-2"><strong>예제: 피자를 n등분으로 나누기</strong></span><a href="#예제-피자를-n등분으로-나누기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>여기에 이미지를 입히고 입력값을 받아 피자를 n등분하는 예제 프로그램을 만들어보도록 하겠습니다. (<a href="https://jsfiddle.net/BGSMM/agof16cu/7/"><strong>jsfiddle에서 보기</strong></a>)</p>
+<p>여기에 이미지를 입히고 입력값을 받아 피자를 n등분하는 예제 프로그램을 만들어보도록 하겠습니다.</p>
+<ul>
+  <li>(<a href="https://jsfiddle.net/BGSMM/agof16cu/7/"><strong>jsfiddle에서 보기</strong></a>)</li>
+</ul>
 
-<p>https://gist.github.com/ayaysir/d43d7f51204a3f2fdb49e012ca8786a2</p>
+<!-- https://gist.github.com/ayaysir/d43d7f51204a3f2fdb49e012ca8786a2 -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/d43d7f51204a3f2fdb49e012ca8786a2.js"> </script>
 
 <p> </p>
 
 <p><code class="language-plaintext highlighter-rouge">new Image()</code>로 인스턴스를 만들어 이미지를 불러오고, 그 이미지를 <code class="language-plaintext highlighter-rouge">ctx.drawImage(image객체, 시작점x, 시작점y)</code>로 그린 다음 n등분한 원의 외곽선을 검은색으로 그려 피자를 칼로 자른것 같은 이미지를 보여줍니다.</p>
 
-<p>https://gph.is/g/Z2dBKjL</p>
+<!-- https://gph.is/g/Z2dBKjL -->
+<p><a href="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTFiZjVvbGg4Z3QzdzRuYXdpc2xvMDVmbzE4NnBsYTkyMXg1dWEwdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h8mrsBm9tFkf9iCGd6/giphy.gif" class="popup img-link shimmer"><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTFiZjVvbGg4Z3QzdzRuYXdpc2xvMDVmbzE4NnBsYTkyMXg1dWEwdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h8mrsBm9tFkf9iCGd6/giphy.gif" alt="피자" loading="lazy"></a></p>
 
   </div>
 
@@ -2094,6 +2197,12 @@ function draw() {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

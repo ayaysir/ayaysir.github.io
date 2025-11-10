@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,6 +498,27 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -521,7 +549,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: 오디오(Audio) 요소 구간반복하기</h1>
     
@@ -595,7 +623,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="859 words"
+  title="861 words"
 >
   <em>4 min</em> read</span>
 
@@ -605,16 +633,40 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: 오디오(Audio) 요소 구간반복하기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: 오디오(Audio) 요소 구간반복하기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>자바스크립트와 HTML로 이루어진 페이지에서 <code class="language-plaintext highlighter-rouge">audio</code>태그를 사용하여 음원을 재생할 때 설정할 수 있는 구간 반복 기능을 구현한 예제입니다. 언어 학습 등에 사용하면 좋을 것 같습니다.</p>
 
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <p>자바스크립트 오디오 객체에서 특정 이벤트를 실행하는 방법은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>audioElement.addEventListener(type, listener[, useCapture]);
+</pre></td><td class="rouge-code"><pre><span class="nx">audioElement</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">[,</span> <span class="nx">useCapture</span><span class="p">]);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -625,14 +677,17 @@
 
 <p> </p>
 
-<p><strong><a href="https://jsfiddle.net/d1t37gra/3/">JSFiddle 에서 코드 보기 및 실행</a></strong></p>
+<ul>
+  <li><strong><a href="https://jsfiddle.net/d1t37gra/3/">JSFiddle 에서 코드 보기 및 실행</a></strong></li>
+  <li><a href="https://crossxp.tistory.com/668#element_audio_tag">자바스크립트 Audio 참고글</a></li>
+</ul>
 
-<h6 id="자바스크립트-audio-참고글"><a href="https://crossxp.tistory.com/668#element_audio_tag">자바스크립트 Audio 참고글</a></h6>
+<hr />
 
 <p><strong>2020년 6월 11일 업데이트</strong>: 오디오 구간반복 부분은 <code class="language-plaintext highlighter-rouge">timeupdate</code> 이벤트를 사용하는 것보다 <code class="language-plaintext highlighter-rouge">setInterval</code>을 사용하는 것이 더 자연스럽습니다. <code class="language-plaintext highlighter-rouge">timeupdate</code>는 끊기는 부분이 많아 부자연스러운 구간 반복이 되는 경우가 많습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -640,21 +695,21 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>// 재생 중일때, 현재 위치가 끝 위치보다 크면 시작 위치로 되돌아가도록 함
-setInterval(e =&gt; {
-  if(setting.isSectionRepeatOn &amp;&amp; audio.currentTime &gt;= setting.endTime){
-  	audio.currentTime = setting.startTime
-    audio.play()
-  }
-}, 100)
+</pre></td><td class="rouge-code"><pre><span class="c1">// 재생 중일때, 현재 위치가 끝 위치보다 크면 시작 위치로 되돌아가도록 함</span>
+<span class="nf">setInterval</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">setting</span><span class="p">.</span><span class="nx">isSectionRepeatOn</span> <span class="o">&amp;&amp;</span> <span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">&gt;=</span> <span class="nx">setting</span><span class="p">.</span><span class="nx">endTime</span><span class="p">){</span>
+  	<span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="nx">setting</span><span class="p">.</span><span class="nx">startTime</span>
+    <span class="nx">audio</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="mi">100</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <hr />
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -669,34 +724,34 @@ setInterval(e =&gt; {
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>&lt;audio id=audio controls preload="metadata" loop&gt;
-  &lt;source id=sndSrc src="http://cdndown.chosun.com/chosun/entertainment/native/Japanese-20191217.mp3" type="audio/mpeg"&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;audio</span> <span class="na">id=</span><span class="s">audio</span> <span class="na">controls</span> <span class="na">preload=</span><span class="s">"metadata"</span> <span class="na">loop</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">id=</span><span class="s">sndSrc</span> <span class="na">src=</span><span class="s">"http://cdndown.chosun.com/chosun/entertainment/native/Japanese-20191217.mp3"</span> <span class="na">type=</span><span class="s">"audio/mpeg"</span><span class="nt">&gt;</span>
   Your browser does not support the audio element.
-&lt;/audio&gt;
-&lt;button id="btn-set-repeat"&gt;
+<span class="nt">&lt;/audio&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"btn-set-repeat"</span><span class="nt">&gt;</span>
 구간반복 OFF
-&lt;/button&gt;
-&lt;button id="btn-set-start"&gt;
+<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"btn-set-start"</span><span class="nt">&gt;</span>
   시작
-&lt;/button&gt;
-&lt;button id="btn-set-end"&gt;
+<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"btn-set-end"</span><span class="nt">&gt;</span>
   끝
-&lt;/button&gt;
-&lt;pre id="debug"&gt;&lt;/pre&gt;
+<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;pre</span> <span class="na">id=</span><span class="s">"debug"</span><span class="nt">&gt;&lt;/pre&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>.blue{
-  color: blue;
-}
+</pre></td><td class="rouge-code"><pre><span class="p">.</span><span class="nx">blue</span><span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nx">blue</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -772,81 +827,81 @@ setInterval(e =&gt; {
 73
 74
 75
-</pre></td><td class="rouge-code"><pre>// audio 객체 로드
-const audio = document.getElementById("audio")
+</pre></td><td class="rouge-code"><pre><span class="c1">// audio 객체 로드</span>
+<span class="kd">const</span> <span class="nx">audio</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">audio</span><span class="dl">"</span><span class="p">)</span>
 
-// 설정 변수
-const setting = {
-  isSectionRepeatOn: false,
-  startTime: 0,
-  endTime: 0
-}
+<span class="c1">// 설정 변수</span>
+<span class="kd">const</span> <span class="nx">setting</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">isSectionRepeatOn</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">startTime</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="na">endTime</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
 
-// DOM 로드
-const btnSetRepeat = document.getElementById("btn-set-repeat")
-const btnSetStart = document.getElementById("btn-set-start")
-const btnSetEnd = document.getElementById("btn-set-end")
-const debug = document.getElementById("debug")
+<span class="c1">// DOM 로드</span>
+<span class="kd">const</span> <span class="nx">btnSetRepeat</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">btn-set-repeat</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">btnSetStart</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">btn-set-start</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">btnSetEnd</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">btn-set-end</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">debug</span><span class="dl">"</span><span class="p">)</span>
 
-// 오디오 메타 데이터가 로드되었을 때
-audio.addEventListener("loadedmetadata", e =&gt; {
-  setting.endTime = e.target.duration
-}, false)
+<span class="c1">// 오디오 메타 데이터가 로드되었을 때</span>
+<span class="nx">audio</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">loadedmetadata</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setting</span><span class="p">.</span><span class="nx">endTime</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">duration</span>
+<span class="p">},</span> <span class="kc">false</span><span class="p">)</span>
 
-// 버튼 클릭 이벤트(시작, 끝)
-btnSetStart.onclick = e =&gt; {
-  if(setting.endTime &lt;= audio.currentTime){
-  	debug.innerHTML = "시작 시간은 끝 시간보다 크거나 같으면 안됩니다."
-  } else {
-    setting.startTime = audio.currentTime
-    debug.innerHTML = `시작: ${setting.startTime} / 끝: ${setting.endTime}`
-    // 구간반복 ON 상태에서 시작 버튼 클릭하면 구간반복이 OFF되도록 함 (UX 측면)
-    if(setting.isSectionRepeatOn){
-    	btnSetRepeat.click()
-    }
-  }
-}
-btnSetEnd.onclick = e =&gt; {
-  if(setting.StartTime &gt;= audio.currentTime){
-  	debug.innerHTML = "끝 시간은 시작 시간보다 작거나 같으면 안됩니다."
-  } else {
-    setting.endTime = audio.currentTime
-    debug.innerHTML = `시작: ${setting.startTime} / 끝: ${setting.endTime}`
-    // 구간반복 OFF 상태에서 끝 버튼 클릭하면 구간반복이 ON되도록 함 (UX 측면)
-    if(!setting.isSectionRepeatOn){
-    	btnSetRepeat.click()
-    }
-  }
-}
+<span class="c1">// 버튼 클릭 이벤트(시작, 끝)</span>
+<span class="nx">btnSetStart</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">setting</span><span class="p">.</span><span class="nx">endTime</span> <span class="o">&lt;=</span> <span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">){</span>
+  	<span class="nx">debug</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">시작 시간은 끝 시간보다 크거나 같으면 안됩니다.</span><span class="dl">"</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">setting</span><span class="p">.</span><span class="nx">startTime</span> <span class="o">=</span> <span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span>
+    <span class="nx">debug</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`시작: </span><span class="p">${</span><span class="nx">setting</span><span class="p">.</span><span class="nx">startTime</span><span class="p">}</span><span class="s2"> / 끝: </span><span class="p">${</span><span class="nx">setting</span><span class="p">.</span><span class="nx">endTime</span><span class="p">}</span><span class="s2">`</span>
+    <span class="c1">// 구간반복 ON 상태에서 시작 버튼 클릭하면 구간반복이 OFF되도록 함 (UX 측면)</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">setting</span><span class="p">.</span><span class="nx">isSectionRepeatOn</span><span class="p">){</span>
+    	<span class="nx">btnSetRepeat</span><span class="p">.</span><span class="nf">click</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">btnSetEnd</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">setting</span><span class="p">.</span><span class="nx">StartTime</span> <span class="o">&gt;=</span> <span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">){</span>
+  	<span class="nx">debug</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">끝 시간은 시작 시간보다 작거나 같으면 안됩니다.</span><span class="dl">"</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">setting</span><span class="p">.</span><span class="nx">endTime</span> <span class="o">=</span> <span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span>
+    <span class="nx">debug</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`시작: </span><span class="p">${</span><span class="nx">setting</span><span class="p">.</span><span class="nx">startTime</span><span class="p">}</span><span class="s2"> / 끝: </span><span class="p">${</span><span class="nx">setting</span><span class="p">.</span><span class="nx">endTime</span><span class="p">}</span><span class="s2">`</span>
+    <span class="c1">// 구간반복 OFF 상태에서 끝 버튼 클릭하면 구간반복이 ON되도록 함 (UX 측면)</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">setting</span><span class="p">.</span><span class="nx">isSectionRepeatOn</span><span class="p">){</span>
+    	<span class="nx">btnSetRepeat</span><span class="p">.</span><span class="nf">click</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-// 버튼 설정 이벤트(구간반복 ON/OFF)
-btnSetRepeat.onclick = e =&gt; {
-  setting.isSectionRepeatOn = !setting.isSectionRepeatOn
-  if(setting.isSectionRepeatOn){
-  	btnSetRepeat.innerHTML = "구간반복 ON"
-    btnSetRepeat.className = "blue"
-    audio.currentTime = setting.startTime
-    audio.play()
-  } else {
-  	btnSetRepeat.innerHTML = "구간반복 OFF"
-    btnSetRepeat.className = ""
-  }
-}
+<span class="c1">// 버튼 설정 이벤트(구간반복 ON/OFF)</span>
+<span class="nx">btnSetRepeat</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setting</span><span class="p">.</span><span class="nx">isSectionRepeatOn</span> <span class="o">=</span> <span class="o">!</span><span class="nx">setting</span><span class="p">.</span><span class="nx">isSectionRepeatOn</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">setting</span><span class="p">.</span><span class="nx">isSectionRepeatOn</span><span class="p">){</span>
+  	<span class="nx">btnSetRepeat</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">구간반복 ON</span><span class="dl">"</span>
+    <span class="nx">btnSetRepeat</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span>
+    <span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="nx">setting</span><span class="p">.</span><span class="nx">startTime</span>
+    <span class="nx">audio</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  	<span class="nx">btnSetRepeat</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">구간반복 OFF</span><span class="dl">"</span>
+    <span class="nx">btnSetRepeat</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="dl">""</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-// 재생 중일때, 현재 위치가 끝 위치보다 크면 시작 위치로 되돌아가도록 함
-audio.addEventListener("timeupdate", e =&gt; {
-  if(setting.isSectionRepeatOn &amp;&amp; audio.currentTime &gt;= setting.endTime){
-  	audio.currentTime = setting.startTime
-    audio.play()
-  }
-}, false)
+<span class="c1">// 재생 중일때, 현재 위치가 끝 위치보다 크면 시작 위치로 되돌아가도록 함</span>
+<span class="nx">audio</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">timeupdate</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">setting</span><span class="p">.</span><span class="nx">isSectionRepeatOn</span> <span class="o">&amp;&amp;</span> <span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">&gt;=</span> <span class="nx">setting</span><span class="p">.</span><span class="nx">endTime</span><span class="p">){</span>
+  	<span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="nx">setting</span><span class="p">.</span><span class="nx">startTime</span>
+    <span class="nx">audio</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="kc">false</span><span class="p">)</span>
 
-// 구간반복 ON일때, 현재 위치가 시작 위치보다 작으면 시작 위치로 강제 이동하도록 함
-audio.addEventListener("play", e =&gt; {
-  if(setting.isSectionRepeatOn &amp;&amp; audio.currentTime &lt;= setting.startTime){
-  	audio.currentTime = setting.startTime
-  }
-}, false)
+<span class="c1">// 구간반복 ON일때, 현재 위치가 시작 위치보다 작으면 시작 위치로 강제 이동하도록 함</span>
+<span class="nx">audio</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">play</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">setting</span><span class="p">.</span><span class="nx">isSectionRepeatOn</span> <span class="o">&amp;&amp;</span> <span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">&lt;=</span> <span class="nx">setting</span><span class="p">.</span><span class="nx">startTime</span><span class="p">){</span>
+  	<span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="nx">setting</span><span class="p">.</span><span class="nx">startTime</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="kc">false</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -1813,6 +1868,12 @@ audio.addEventListener("play", e =&gt; {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

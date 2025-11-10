@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -696,15 +703,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -764,6 +793,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -780,7 +819,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Spring Boot: Webjars (Bootstrap, JQuery 등의 프론트엔드 라이브러리를 메이븐을 통해 관리)</h1>
     
@@ -854,7 +893,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="428 words"
+  title="433 words"
 >
   <em>2 min</em> read</span>
 
@@ -864,22 +903,44 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Spring Boot: Webjars (Bootstrap, JQuery 등의 프론트엔드 라이브러리를 메이븐을 통해 관리)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Spring Boot: Webjars (Bootstrap, JQuery 등의 프론트엔드 라이브러리를 메이븐을 통해 관리)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p><strong>Webjars</strong>는 스프링 부트에서 <strong><em>Bootstrap</em></strong>, <strong><em>JQuery</em></strong> 등의 프론트엔드 라이브러리를 스프링 프레임워크가 자체적으로 관리하도록 하는 방법 중 하나입니다. 예제로 부트스트랩과 JQuery를 추가하겠습니다.</p>
+    <p>Webjars는 스프링 부트에서 <em>Bootstrap</em>, <em>JQuery</em> 등의 프론트엔드 라이브러리를 스프링 프레임워크가 자체적으로 관리하도록 하는 방법 중 하나입니다. 예제로 부트스트랩과 JQuery를 추가하겠습니다.</p>
+
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="1-webjarsorg를-접속한-다음popular-webjars-에서build-tool-maven을-선택합니다"><span class="me-2">1. <a href="https://webjars.org">webjars.org</a>를 접속한 다음 Popular WebJars 에서 Build Tool: Maven을 선택합니다.</span><a href="#1-webjarsorg를-접속한-다음popular-webjars-에서build-tool-maven을-선택합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><a href="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-pm-11.02.35.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-pm-11.02.35.png" alt="webjars.org" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="1-webjarsorg를-접속한-다음popular-webjars-에서build-tool-maven을-선택합니다"><span class="me-2"><strong>1. <a href="https://webjars.org">webjars.org</a>를 접속한 다음 Popular WebJars 에서 Build Tool: Maven을 선택합니다.</strong></span><a href="#1-webjarsorg를-접속한-다음popular-webjars-에서build-tool-maven을-선택합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-사용하고자-하는-라이브러리의-dependency-안의-내용을-복사한-다음-pomxml의-dependencies-태그-내에-추가합니다"><span class="me-2">2. 사용하고자 하는 라이브러리의 <code class="language-plaintext highlighter-rouge">&lt;dependency/&gt;</code> 안의 내용을 복사한 다음 <code class="language-plaintext highlighter-rouge">pom.xml</code>의 <code class="language-plaintext highlighter-rouge">&lt;dependencies/&gt;</code> 태그 내에 추가합니다.</span><a href="#2-사용하고자-하는-라이브러리의-dependency-안의-내용을-복사한-다음-pomxml의-dependencies-태그-내에-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5><a href="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.02.35.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.02.35.png" alt="" loading="lazy"></a></h5>
-
-<p> </p>
-
-<h5 id="2-사용하고자-하는-라이브러리의-dependency-안의-내용을-복사한-다음-pomxml의-dependencies-태그-내에-추가합니다"><span class="me-2"><strong>2. 사용하고자 하는 라이브러리의 <code class="language-plaintext highlighter-rouge">&lt;dependency/&gt;</code> 안의 내용을 복사한 다음 <code class="language-plaintext highlighter-rouge">pom.xml</code>의 <code class="language-plaintext highlighter-rouge">&lt;dependencies/&gt;</code> 태그 내에 추가합니다.</strong></span><a href="#2-사용하고자-하는-라이브러리의-dependency-안의-내용을-복사한-다음-pomxml의-dependencies-태그-내에-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -891,39 +952,41 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>  &lt;dependencies&gt;
+</pre></td><td class="rouge-code"><pre>  <span class="nt">&lt;dependencies&gt;</span>
 ...
-    &lt;!-- webjars.org --&gt;
+    <span class="c">&lt;!-- webjars.org --&gt;</span>
 
-    &lt;dependency&gt;
-      &lt;groupId&gt;org.webjars&lt;/groupId&gt;
-      &lt;artifactId&gt;bootstrap&lt;/artifactId&gt;
-      &lt;version&gt;4.4.1&lt;/version&gt;
-    &lt;/dependency&gt;
+    <span class="nt">&lt;dependency&gt;</span>
+      <span class="nt">&lt;groupId&gt;</span>org.webjars<span class="nt">&lt;/groupId&gt;</span>
+      <span class="nt">&lt;artifactId&gt;</span>bootstrap<span class="nt">&lt;/artifactId&gt;</span>
+      <span class="nt">&lt;version&gt;</span>4.4.1<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
 ...
-  &lt;/dependencies&gt;
+  <span class="nt">&lt;/dependencies&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="3-웹서버가-실행중이라면-종료-후-프로젝트를-새로고침합니다-프로젝트를-새로고침-하지-않는-경우-적용이-안됩니다"><span class="me-2"><strong>3. 웹서버가 실행중이라면 종료 후 프로젝트를 새로고침합니다. 프로젝트를 새로고침 하지 않는 경우 적용이 안됩니다.</strong></span><a href="#3-웹서버가-실행중이라면-종료-후-프로젝트를-새로고침합니다-프로젝트를-새로고침-하지-않는-경우-적용이-안됩니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-웹서버가-실행중이라면-종료-후-프로젝트를-새로고침합니다-프로젝트를-새로고침-하지-않는-경우-적용이-안됩니다"><span class="me-2">3. 웹서버가 실행중이라면 종료 후 프로젝트를 새로고침합니다. 프로젝트를 새로고침 하지 않는 경우 적용이 안됩니다.</span><a href="#3-웹서버가-실행중이라면-종료-후-프로젝트를-새로고침합니다-프로젝트를-새로고침-하지-않는-경우-적용이-안됩니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p> </p>
 
-<h5 id="4-뷰-페이지에-라이브러리를-추가합니다"><span class="me-2"><strong>4. 뷰 페이지에 라이브러리를 추가합니다.</strong></span><a href="#4-뷰-페이지에-라이브러리를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-뷰-페이지에-라이브러리를-추가합니다"><span class="me-2">4. 뷰 페이지에 라이브러리를 추가합니다.</span><a href="#4-뷰-페이지에-라이브러리를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><a href="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.06.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.06.28.png" alt="" loading="lazy"></a>사용할 경로는 위 1번 홈페이지에서 <code class="language-plaintext highlighter-rouge">Files</code>를 클릭하면 경로가 나옵니다. <code class="language-plaintext highlighter-rouge">META-INF/resources</code> 부분은 제외하고 나머지 부분(<strong><code class="language-plaintext highlighter-rouge">/webjars/...</code></strong>)을 경로로 사용합니다.</p>
+<p><a href="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-pm-11.06.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-pm-11.06.28.png" alt="Files for jquery" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<p>사용할 경로는 위 1번 홈페이지에서 <code class="language-plaintext highlighter-rouge">Files</code>를 클릭하면 경로가 나옵니다. <code class="language-plaintext highlighter-rouge">META-INF/resources</code> 부분은 제외하고 나머지 부분(<code class="language-plaintext highlighter-rouge">/webjars/...</code>)을 경로로 사용합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>&lt;link rel="stylesheet" th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}"&gt;
-&lt;script th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"&gt;&lt;/script&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">th:href=</span><span class="s">"@{/webjars/bootstrap/4.4.1/css/bootstrap.css}"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">th:src=</span><span class="s">"@{/webjars/jquery/3.4.1/jquery.min.js}"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -944,41 +1007,42 @@
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:th="http://www.thymeleaf.org"
-  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"&gt;
-&lt;head&gt;
-&lt;meta charset="UTF-8"&gt;
-&lt;title&gt;Select Menu&lt;/title&gt;
-&lt;link rel="stylesheet" th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.css}"&gt;
-&lt;/head&gt;
-&lt;body class="container"&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1999/xhtml"</span>
+  <span class="na">xmlns:th=</span><span class="s">"http://www.thymeleaf.org"</span>
+  <span class="na">xmlns:sec=</span><span class="s">"http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>Select Menu<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">th:href=</span><span class="s">"@{/webjars/bootstrap/4.4.1/css/bootstrap.css}"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
 
 (.... 생략 ....)
 
-  &lt;script th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"&gt;&lt;/script&gt;
-  &lt;script&gt;
-    var testMsg = $(".navbar-brand").text()
-    $(".to-replace").text("JQUERY TEST: " + testMsg)
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+  <span class="nt">&lt;script </span><span class="na">th:src=</span><span class="s">"@{/webjars/jquery/3.4.1/jquery.min.js}"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">testMsg</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.navbar-brand</span><span class="dl">"</span><span class="p">).</span><span class="nf">text</span><span class="p">()</span>
+    <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.to-replace</span><span class="dl">"</span><span class="p">).</span><span class="nf">text</span><span class="p">(</span><span class="dl">"</span><span class="s2">JQUERY TEST: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">testMsg</span><span class="p">)</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>위에서 <code class="language-plaintext highlighter-rouge">th:href</code>나 <code class="language-plaintext highlighter-rouge">th:src</code>를 사용하지 않고 아래처럼 사용하는것도 가능합니다만, <strong>Thymeleaf</strong>를 사용하고 있다면 위의 방법을 따를 것을 권장합니다. 아래 내용은 JSP나 JSTL 페이지에서도 적용 가능합니다.</p>
+<p>위에서 <code class="language-plaintext highlighter-rouge">th:href</code>나 <code class="language-plaintext highlighter-rouge">th:src</code>를 사용하지 않고 아래처럼 사용하는것도 가능합니다만, Thymeleaf를 사용하고 있다면 위의 방법을 따를 것을 권장합니다. 아래 내용은 JSP나 JSTL 페이지에서도 적용 가능합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>&lt;link rel="stylesheet" href="/webjars/bootstrap/4.4.1/css/bootstrap.css"&gt;
-&lt;script src="/webjars/jquery/3.4.1/jquery.min.js"&gt;&lt;/script&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/webjars/bootstrap/4.4.1/css/bootstrap.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/webjars/jquery/3.4.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="실행-결과"><span class="me-2">실행 결과</span><a href="#실행-결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p> </p>
 
-<p><a href="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.19.02.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오후-11.19.02.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-pm-11.19.02.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-pm-11.19.02.png" alt="결과" loading="lazy"></a></p>
 
   </div>
 
@@ -1954,6 +2018,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
