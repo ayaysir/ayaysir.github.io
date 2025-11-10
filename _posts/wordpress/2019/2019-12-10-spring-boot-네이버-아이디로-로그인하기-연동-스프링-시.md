@@ -6,25 +6,26 @@ categories:
   - "Spring/JSP"
 ---
 
-깃허브에서 전체 코드 보기 - [https://github.com/ayaysir/spring-boot-security-example-1](https://github.com/ayaysir/spring-boot-security-example-1)
+- 깃허브에서 전체 코드 보기 - [https://github.com/ayaysir/spring-boot-security-example-1](https://github.com/ayaysir/spring-boot-security-example-1)
 
-보다 개선된 네이버 로그인 - [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버 아이디로 로그인](http://yoonbumtae.com/?p=2652)
+보다 개선된 네이버 로그인 - [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버 아이디로 로그인](/posts/스프링-부트spring-boot-구글-로그인-연동-스프링-부트-스타/)
 
 이전글의 두 상황을 결합하여 네이버 아이디로 로그인(이하 네아로)을 스프링 시큐리티와 연결하는 예제입니다.
 
-- [Spring Boot: - 네이버 아이디로 로그인하기 - 연동하기 (1)](http://yoonbumtae.com/?p=1818)
-- [Spring Boot: 시큐리티(Security) - 4 - 로그인 폼을 거치지 않고 컨트롤러에서 로그인](http://yoonbumtae.com/?p=1841)
+- [Spring Boot: - 네이버 아이디로 로그인하기 - 연동하기 (1)](/posts/spring-boot-%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EB%A1%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%95%98%EA%B8%B0-%EC%97%B0%EB%8F%99-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C/)
+- [Spring Boot: 시큐리티(Security) - 4 - 로그인 폼을 거치지 않고 컨트롤러에서 로그인](/posts/spring-boot-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0security-4-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%8F%BC%EC%9D%84-%EA%B1%B0%EC%B9%98%EC%A7%80-%EC%95%8A%EA%B3%A0-%EC%BB%A8%ED%8A%B8%EB%A1%A4/)
 
- 
+
+## 상황 가정
 
 외부 소셜 로그인을 구현할 때 다음 상황이 있습니다.
 
-1. 기존에 사용자 계정이 존재하고, 네아로를 기존 로그인 체계로 연결
+1. 기존에 사용자 계정이 존재하고, 네이버 아이디로 로그인 (이하 네아로)를 기존 로그인 체계로 연결
 2. 기존 사용자 계정과 연결하지 않고 네이버 아이디를 단독으로 사용
 
 여기서는 1번을 다룹니다.
 
- 
+## 주의사항
 
 네아로 연결 시 구현 내용 및 주의사항들이 있습니다.
 
@@ -34,35 +35,35 @@ categories:
 
 내용이 굉장히 많아서 시리즈로 나눠서 연재하며 오늘은 3번만 구현하도록 하겠습니다.
 
+## 방법
+
+### 1\. 데이터베이스 구조
+
+#### 회원 테이블 (_simple\_users_)
+
+ ![](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-am-2.11.21.png)
+
+ ![](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-10.48.36.png)
+
  
 
-#### **1\. 데이터베이스 구조**
+#### 외부 로그인 연동 테이블(_users\_oauth_)
 
-##### 회원 테이블 (_simple\_users_)
-
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오전-2.11.21.png)
-
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-10.48.36.png)
-
- 
-
-##### 외부 로그인 연동 테이블(_users\_oauth_)
-
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-10.50.04.png)
+ ![](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-10.50.04.png)
 
 `username`은 외래키로 회원 테이블의 키와 연결됩니다. `provider`는 제공사 이름으로, "_naver_", "_google_" 등이 입력됩니다. `unique_id`에는 회원을 구분하는 고유값이 입력됩니다.
 
  
 
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-10.52.32.png)
+ ![](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-10.52.32.png)
 
 테스트를 위해 임의로 레코드 하나를 수작업으로 삽입했습니다. 나중에 연동 여부에 따라 컨트롤러에서 삽입되도록 변경할 예정입니다.
 
  
 
-#### **2\. 컨트롤러, DAO 등 작성**
+### 2\. 컨트롤러, DAO 등 작성
 
-```
+```java
 package com.springboot.security.controller;
 
 import java.io.BufferedReader;
@@ -106,8 +107,8 @@ public class LoginController {
   
   @Autowired SimpleUserDAO sud;
 
-  private final String CLIENT_ID = "*************"; //애플리케이션 클라이언트 아이디값";
-  private final String CLI_SECRET = "**************"; //애플리케이션 클라이언트 시크릿값";
+  private final String CLIENT_ID = "*"; //애플리케이션 클라이언트 아이디값";
+  private final String CLI_SECRET = ""; //애플리케이션 클라이언트 시크릿값";
   private final String REDIRECT_URI = "[네이버 개발자 센터에 등록된 콜백주소]";
   
   @RequestMapping("/login")
@@ -117,7 +118,7 @@ public class LoginController {
     return "login-form";
   }
 
-  /**
+  /
    * 로그인 폼을 거치지 않고 바로 로그인
    * @param username
    * @return
@@ -138,7 +139,7 @@ public class LoginController {
     return "redirect:/";
   }
 
-  /**
+  /
    * 현재 로그인한 사용자 정보 가져오기
    * @return
    */
@@ -146,7 +147,7 @@ public class LoginController {
    생략
 
   
-  /**
+  /
    * getNaverOAuthURI (+ 세션의 "state" 속성에 값 부여)
    * @param session
    * @return
@@ -170,7 +171,7 @@ public class LoginController {
     return apiURL;
   }
 
-  /**
+  /
    * 콜백 페이지 컨트롤러
    * @param session
    * @param request
@@ -241,7 +242,7 @@ public class LoginController {
     return "test-naver-callback";
   }
 
-  /**
+  /
    * 토큰 갱신 요청 페이지 컨트롤러
    * @param session
    * @param request
@@ -254,7 +255,7 @@ public class LoginController {
     
    생략
 
-  /**
+  /
    * 토큰 삭제 컨트롤러
    * @param session
    * @param request
@@ -266,7 +267,7 @@ public class LoginController {
   
    생략
 
-  /**
+  /
    * 액세스 토큰으로 네이버에서 프로필 받기
    * @param accessToken
    * @return
@@ -283,7 +284,7 @@ public class LoginController {
     return res;
   }
 
-  /**
+  /
    * 세션 무효화(로그아웃)
    * @param session
    * @return
@@ -291,7 +292,7 @@ public class LoginController {
   
    생략
 
-  /**
+  /
    * 서버 통신 메소드
    * @param apiURL
    * @return
@@ -301,7 +302,7 @@ public class LoginController {
     return requestToServer(apiURL, "");
   }
 
-  /**
+  /
    * 서버 통신 메소드
    * @param apiURL
    * @param headerStr
@@ -352,7 +353,7 @@ public class LoginController {
 
  
 
-```
+```java
 package com.springboot.security.dao;
 
 import java.util.HashMap;
@@ -403,11 +404,11 @@ https://gist.github.com/ayaysir/efad25b1b3cd43c80b3964d24fae2bef
 
  
 
-#### **3\. 뷰 페이지(Thymeleaf) 작성**
+### 3\. 뷰 페이지(Thymeleaf) 작성
 
-##### login-form.html
+#### login-form.html
 
-```
+```html
 <html xmlns:th="http://www.thymeleaf.org"
   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
@@ -447,9 +448,9 @@ https://gist.github.com/ayaysir/efad25b1b3cd43c80b3964d24fae2bef
 
  
 
-##### test-naver-callback.html
+#### test-naver-callback.html
 
-```
+```html
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
@@ -485,26 +486,29 @@ https://gist.github.com/ayaysir/efad25b1b3cd43c80b3964d24fae2bef
 
  
 
-#### **4\. 테스트**
+### 4\. 테스트
 
-\[caption id="attachment\_1953" align="alignnone" width="385"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-11.11.26.png) 현재 로그인되지 않은 상태이며 로그인 버튼이 있습니다.\[/caption\]
-
- 
-
-
+![현재 로그인되지 않은 상태이며 로그인 버튼이 있습니다.](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-11.11.26.png) 
+*현재 로그인되지 않은 상태이며 로그인 버튼이 있습니다.*
 
  
 
-\[caption id="attachment\_1949" align="alignnone" width="603"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-11.06.56.png) 로그인 버튼을 누르면 밑에 네이버 로그인 버튼이 새로 추가된 것을 볼 수 있습니다.\[/caption\]
+
 
  
 
-\[caption id="attachment\_1950" align="alignnone" width="654"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-11.07.12.png) 네이버 아이디로 로그인이 성공하면 콜백 페이지가 나타납니다.\[/caption\]
+![로그인 버튼을 누르면 밑에 네이버 로그인 버튼이 새로 추가된 것을 볼 수 있습니다.](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-11.06.56.png) 
+*로그인 버튼을 누르면 밑에 네이버 로그인 버튼이 새로 추가된 것을 볼 수 있습니다.*
 
  
 
-\[caption id="attachment\_1951" align="alignnone" width="629"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-11.07.29.png) 메인 페이지로 가면 이전과 다르게 로그인이 된 것을 볼 수 있습니다.\[/caption\]
-
+![네이버 아이디로 로그인이 성공하면 콜백 페이지가 나타납니다.](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-11.07.12.png) 
+*네이버 아이디로 로그인이 성공하면 콜백 페이지가 나타납니다.*
  
 
-\[caption id="attachment\_1952" align="alignnone" width="578"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-11.08.10.png) 회원 전용 글쓰기가 정상적으로 동작합니다.\[/caption\]
+![메인 페이지로 가면 이전과 다르게 로그인이 된 것을 볼 수 있습니다.](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-11.07.29.png) 
+*메인 페이지로 가면 이전과 다르게 로그인이 된 것을 볼 수 있습니다.*
+ 
+
+![회원 전용 글쓰기가 정상적으로 동작합니다.](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-11.08.10.png) 
+*회원 전용 글쓰기가 정상적으로 동작합니다.*

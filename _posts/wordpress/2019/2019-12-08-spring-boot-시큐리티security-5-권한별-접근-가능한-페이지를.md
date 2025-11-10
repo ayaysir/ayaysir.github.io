@@ -8,9 +8,9 @@ tags:
   - "스프링시큐리티"
 ---
 
-\[rcblock id="3197"\]
+<!-- \[rcblock id="3197"\] -->
 
-깃허브에서 전체 코드 보기 - [https://github.com/ayaysir/spring-boot-security-example-1](https://github.com/ayaysir/spring-boot-security-example-1)
+- 깃허브에서 전체 코드 보기 - [https://github.com/ayaysir/spring-boot-security-example-1](https://github.com/ayaysir/spring-boot-security-example-1)
 
  
 
@@ -18,17 +18,17 @@ tags:
 
  
 
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-08-오후-11.47.18.png)
+ ![권한 설정 부분](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-08-pm-11.47.18.png)
 
  
 
 Security Config 클래스의 코드에서 위의 빨간색 네모 코드를 데이터베이스에서 가져오는 것으로 바꾸는 작업을 하겠습니다. 이유는 위 네모박스는 자주 변경될 수 있는 부분인데 하드코딩 방식으로 정보가 입력되어 있기 때문입니다.
 
- 
+## 기존 컨트롤러 코드 
 
 참고로 컨트롤러(일부)는 다음과 같습니다.
 
-```
+```java
 @ResponseBody
 @RequestMapping("/adminOnly")
 public String adminOnly(Authentication auth) {
@@ -58,23 +58,23 @@ public String everybodyOK() {
 
 ```
 
- 
+## 방법 
 
-##### **1\. 데이터베이스에서 테이블 생성 및 URL, 권한정보를  입력합니다.**
+### **1\. 데이터베이스에서 테이블 생성 및 URL, 권한정보를  입력합니다.**
 
- ![](/assets/img/wp-content/uploads/2019/12/-2019-12-08-오후-11.50.09-e1575817106884.png)
+ ![phpmyadmin 1](/assets/img/wp-content/uploads/2019/12/-2019-12-08-pm-11.50.09-e1575817106884.png)
 
- ![](/assets/img/wp-content/uploads/2019/12/-2019-12-08-오후-11.57.38-e1575817176644.png)
+ ![phpmyadmin 2](/assets/img/wp-content/uploads/2019/12/-2019-12-08-pm-11.57.38-e1575817176644.png)
 
 프로젝트에 연결되어 있는 DB를 이용해 정보를 입력하면 됩니다. 여기서는 **mariadb**를 사용하였습니다.
 
-- [Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)](http://yoonbumtae.com/?p=658)
+- [Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)](/posts/spring-boot-mariadb-연결하기-jdbc-maven-기준/)
 
  
 
-##### **2\. 위의 데이터베이스를 가져오는 DAO 등을 작성합니다.**
+### **2\. 위의 데이터베이스를 가져오는 DAO 등을 작성합니다.**
 
-```
+```java
 package com.springboot.security.dao;
 
 import java.util.HashMap;
@@ -106,9 +106,9 @@ public class SecurityDAO {
 
  
 
-##### **3\. Security Config 클래스 파일에서 하드코딩에 해당하는 부분을 별도 메소드로 교체하고, DB에서 읽어오도록 변경합니다.**
+### **3\. Security Config 클래스 파일에서 하드코딩에 해당하는 부분을 별도 메소드로 교체하고, DB에서 읽어오도록 변경합니다.**
 
-```
+```java
 (.......)
 
 @EnableWebSecurity
@@ -164,36 +164,35 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.authorizeRequests()
     .antMatchers("/**").permitAll()	
     .anyRequest().authenticated();
-
   }
-
 }
 ```
 
  
 
-##### **4\. 테스트해서 이전 방식과 동일한 결과가 나오는지 확인합니다.**
+### **4\. 테스트해서 이전 방식과 동일한 결과가 나오는지 확인합니다.**
 
-**운영자(`ROLE_ADMIN`)로 접속한 경우**
+#### **운영자(`ROLE_ADMIN`)로 접속한 경우**
 
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.16.32.png)
+ ![](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-am-12.16.32.png)
 
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.17.03.png)
+ ![](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-am-12.17.03.png)
 
  
 
 **손님(`ROLE_GUEST`)로 접속한 경우**
 
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.17.52.png)
+ ![Role page 1](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-am-12.17.52.png)
 
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.18.35.png)
+ ![Role page 2](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-am-12.18.35.png)
 
 **로그인하지 않고 접속하는 경우**
 
-\[caption id="attachment\_1909" align="alignnone" width="365"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.19.22.png) 모든 페이지 접속 시도 시 로그인 화면으로 리다이렉트됨\[/caption\]
+![모든 페이지 접속 시도 시 로그인 화면으로 리다이렉트됨](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-am-12.19.22.png) 
+*모든 페이지 접속 시도 시 로그인 화면으로 리다이렉트됨*
 
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-09-오전-12.20.20.png)
+ ![everybody ok](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-09-am-12.20.20.png)
 
  
 
-\[rcblock id="3197"\]
+<!-- \[rcblock id="3197"\] -->

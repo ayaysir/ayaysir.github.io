@@ -6,7 +6,12 @@ categories:
   - "Database"
 ---
 
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-8.32.40.png)  ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-8.35.41.png)
+ ## 방법
+
+![구조](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-8.32.40.png)  
+ 
+![외래키 제약](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-8.35.41.png)
+
 
 1. **\[구조\]** 버튼을 클릭합니다.
 2. **\[릴레이션 뷰\]** 버튼을 클릭합니다.
@@ -16,6 +21,6 @@ categories:
 6. **옵션** (`SET NULL`: 참조되는 컬럼이 변경되면 `null`로 업데이트/`CASCADE`: 연쇄 업데이트/`RESTRICT`: 변경 제한/`NO ACTION`: 참조되는 컬럼의 변경에 아무 영향을 받지 않음) 을 설정합니다.
 7. **\[저장\]** 버튼을 클릭합니다.
 
- 
+## 실행 결과
 
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-8.41.15.png)
+ ![](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-8.41.15.png)

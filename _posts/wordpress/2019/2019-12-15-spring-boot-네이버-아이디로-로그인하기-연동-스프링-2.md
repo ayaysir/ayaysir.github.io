@@ -6,16 +6,16 @@ categories:
   - "Spring/JSP"
 ---
 
-보다 개선된 네이버 로그인 – [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버 아이디로 로그인](http://yoonbumtae.com/?p=2652)
+보다 개선된 네이버 로그인 – [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버 아이디로 로그인](/posts/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8spring-boot-%EA%B5%AC%EA%B8%80-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%97%B0%EB%8F%99-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EC%8A%A4%ED%83%80/)
 
  
 
 이전글의 두 상황을 결합하여 네이버 아이디로 로그인(이하 네아로)을 스프링 시큐리티와 연결하는 예제입니다.
 
-- [Spring Boot: – 네이버 아이디로 로그인하기 – 연동하기 (1)](http://yoonbumtae.com/?p=1818)
-- [Spring Boot: 시큐리티(Security) – 4 – 로그인 폼을 거치지 않고 컨트롤러에서 로그인](http://yoonbumtae.com/?p=1841)
+- [Spring Boot: – 네이버 아이디로 로그인하기 – 연동하기 (1)](/posts/spring-boot-%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EB%A1%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%95%98%EA%B8%B0-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-1/)
+- [Spring Boot: 시큐리티(Security) – 4 – 로그인 폼을 거치지 않고 컨트롤러에서 로그인](/posts/spring-boot-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0security-4-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%8F%BC%EC%9D%84-%EA%B1%B0%EC%B9%98%EC%A7%80-%EC%95%8A%EA%B3%A0-%EC%BB%A8%ED%8A%B8%EB%A1%A4/)
 
- 
+## 가정
 
 외부 소셜 로그인을 구현할 때 다음 상황이 있습니다.
 
@@ -24,7 +24,9 @@ categories:
 
 여기서는 1번을 다룹니다.
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
+
+## 주의사항
 
 네아로 연결 시 구현 내용 및 주의사항들이 있습니다.
 
@@ -34,26 +36,28 @@ categories:
 
 오늘은 2번을 구현하도록 하겠습니다. 이전 구현 내용은 아래 링크를 참고하세요.
 
-- [Spring Boot: “네이버 아이디로 로그인하기” 연동 – 스프링 시큐리티와 연결 (1)](http://yoonbumtae.com/?p=1940)
-- [Spring Boot: “네이버 아이디로 로그인하기” 연동 – 스프링 시큐리티와 연결 (2)](http://yoonbumtae.com/?p=1960)
+- [Spring Boot: “네이버 아이디로 로그인하기” 연동 – 스프링 시큐리티와 연결 (1)](/posts/spring-boot-%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EB%A1%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%95%98%EA%B8%B0-%EC%97%B0%EB%8F%99-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C/)
+- [Spring Boot: “네이버 아이디로 로그인하기” 연동 – 스프링 시큐리티와 연결 (2)](/posts/spring-boot-%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EB%A1%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%95%98%EA%B8%B0-%EC%97%B0%EB%8F%99-%EC%8A%A4%ED%94%84%EB%A7%81/)
 
  
 
 2번의 상황을 구현하기 위해 기존 로그인 창을 두 갈래로 나눠 작업을 진행하도록 변경합니다. 일반적인 로그인 상황이 아닌 네이버 로그인 버튼을 통해 접속했는데 '_연동된 정보가 없고 로그인이 되지 않은 상태_'라면 약간 다른 기능을 가진 로그인 창을 띄우도록 했습니다. (테스트 동영상 참고)
 
-#### **1\. 데이터베이스 구조**
+## 방법
 
-이전 글
+### **1\. 데이터베이스 구조**
+
+[이전 글](/posts/spring-boot-네이버-아이디로-로그인하기-연동-스프링)
 
  
 
-#### **2\. 컨트롤러, DAO 등 작성**
+### **2\. 컨트롤러, DAO 등 작성**
 
 내용이 많고 이전 글의 내용과 겹치는 부분이 많아서 중요한 부분은 하이라이트 처리합니다.
 
-##### 로그인 컨트롤러 (일부)
+#### 로그인 컨트롤러 (일부)
 
-```
+```java
 /**
  * 로그인 페이지
  * @param session
@@ -77,7 +81,7 @@ public String loginForm(HttpSession session, Model model) throws UnsupportedEnco
 
  
 
-```
+```java
 /**
  * 네이버 로그인을 했는데 연동이 안되어있고 로그인 상태가 아닌 경우 로그인을 했을 때 연동 여부를 묻는 페이지로 이동하는 메소드  
  * @param session
@@ -213,9 +217,9 @@ public String addRowToOAuthTableForNaver(HttpSession session, Authentication aut
 
  
 
-##### 사용자 컨트롤러 (일부)
+#### 사용자 컨트롤러 (일부)
 
-```
+```java
 package com.springboot.security.controller;
 
 .......
@@ -252,11 +256,11 @@ public class UserController {
 
 ```
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
-##### 시큐리티 config (일부)
+#### 시큐리티 config (일부)
 
-```
+```java
 package com.springboot.security;
 
 ......
@@ -290,9 +294,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
  
 
-##### 로그인 성공했을 시 실행되는 핸들러
+#### 로그인 성공했을 시 실행되는 핸들러
 
-```
+```java
 package com.springboot.security;
 import java.io.IOException;
 
@@ -330,13 +334,13 @@ public class LoginSuccessForOAauthHandler implements AuthenticationSuccessHandle
 
  
 
-#### **3\. 뷰 페이지(Thymeleaf) 작성**
+### **3\. 뷰 페이지(Thymeleaf) 작성**
 
-- 이전 글: [Spring Boot 예제: 회원가입 폼 만들기](http://yoonbumtae.com/?p=1923)
+- 이전 글: [Spring Boot 예제: 회원가입 폼 만들기](/posts/spring-boot-%EC%98%88%EC%A0%9C-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%ED%8F%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0/)
 
-##### login-form.html (로그인 페이지)
+#### login-form.html (로그인 페이지)
 
-```
+```html
 <html xmlns:th="http://www.thymeleaf.org"
   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
@@ -389,11 +393,11 @@ public class LoginSuccessForOAauthHandler implements AuthenticationSuccessHandle
 
 `th:if` 또는 `th:unless`를 사용해 로그인 상황에 따라 나오는 부분을 다르게 했습니다.
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
-##### assign-naver.html (네이버 아이디와 연동 여부를 물음)
+#### assign-naver.html (네이버 아이디와 연동 여부를 물음)
 
-```
+```html
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
@@ -425,9 +429,9 @@ public class LoginSuccessForOAauthHandler implements AuthenticationSuccessHandle
 
  
 
-##### signup.html (회원가입 뷰 페이지)
+#### signup.html (회원가입 뷰 페이지)
 
-```
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
@@ -504,9 +508,9 @@ public class LoginSuccessForOAauthHandler implements AuthenticationSuccessHandle
 
  
 
-##### signup-result.html (회원가입 결과 페이지)
+#### signup-result.html (회원가입 결과 페이지)
 
-```
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
@@ -547,6 +551,6 @@ public class LoginSuccessForOAauthHandler implements AuthenticationSuccessHandle
 
  
 
-#### **4\. 테스트**
+### **4\. 테스트**
 
 {% youtube "https://www.youtube.com/watch?v=mazs3a40S44" %}

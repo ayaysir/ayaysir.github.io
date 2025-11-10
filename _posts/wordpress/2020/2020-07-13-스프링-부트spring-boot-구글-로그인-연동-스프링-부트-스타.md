@@ -569,7 +569,7 @@ public class IndexController {
 
 위의 작업 내용에 다음 부분을 추가하여 네이버도 연동할 수 있습니다.
 
-[네이버 아이디로 로그인하기 클라이언트 및 아이디 획득방법](http://yoonbumtae.com/?p=1818)
+[네이버 아이디로 로그인하기 클라이언트 및 아이디 획득방법](/posts/spring-boot-%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EB%A1%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%95%98%EA%B8%B0-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-1/)
 
  
 

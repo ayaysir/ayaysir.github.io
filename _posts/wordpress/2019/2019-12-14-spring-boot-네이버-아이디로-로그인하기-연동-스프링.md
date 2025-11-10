@@ -6,18 +6,20 @@ categories:
   - "Spring/JSP"
 ---
 
-깃허브에서 전체 코드 보기 - [https://github.com/ayaysir/spring-boot-security-example-1](https://github.com/ayaysir/spring-boot-security-example-1)
+## 전체 코드 보기
 
-보다 개선된 네이버 아이디로 로그인 - [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버 아이디로 로그인](http://yoonbumtae.com/?p=2652)
+- 깃허브에서 전체 코드 보기 - [https://github.com/ayaysir/spring-boot-security-example-1](https://github.com/ayaysir/spring-boot-security-example-1)
 
- 
+## 소개
+
+- 보다 개선된 네이버 아이디로 로그인 - [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버 아이디로 로그인](/posts/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8spring-boot-%EA%B5%AC%EA%B8%80-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%97%B0%EB%8F%99-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EC%8A%A4%ED%83%80/)
 
 이전글의 두 상황을 결합하여 네이버 아이디로 로그인(이하 네아로)을 스프링 시큐리티와 연결하는 예제입니다.
 
-- [Spring Boot: – 네이버 아이디로 로그인하기 – 연동하기 (1)](http://yoonbumtae.com/?p=1818)
-- [Spring Boot: 시큐리티(Security) – 4 – 로그인 폼을 거치지 않고 컨트롤러에서 로그인](http://yoonbumtae.com/?p=1841)
+- [Spring Boot: – 네이버 아이디로 로그인하기 – 연동하기 (1)](/posts/spring-boot-%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%95%84%EC%9D%B4%EB%94%94%EB%A1%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%95%98%EA%B8%B0-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0-1/)
+- [Spring Boot: 시큐리티(Security) – 4 – 로그인 폼을 거치지 않고 컨트롤러에서 로그인](/posts/spring-boot-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0security-4-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%8F%BC%EC%9D%84-%EA%B1%B0%EC%B9%98%EC%A7%80-%EC%95%8A%EA%B3%A0-%EC%BB%A8%ED%8A%B8%EB%A1%A4/)
 
- 
+## 가정
 
 외부 소셜 로그인을 구현할 때 다음 상황이 있습니다.
 
@@ -26,7 +28,7 @@ categories:
 
 여기서는 1번을 다룹니다.
 
- 
+## 주의사항
 
 네아로 연결 시 구현 내용 및 주의사항들이 있습니다.
 
@@ -34,23 +36,23 @@ categories:
 2. 네아로 연동 안되어 있고 로그인이 되어 있지 않다면, 로그인 창(+회원가입 링크)으로 리다이렉트 – 기존에 회원아이디로 로그인했다면 네아로 연동 과정을 계속 진행 – 회원가입이 되지 않은 상태이며 이 회원 가입링크를 통해 가입한 경우 가입 완료하자마자 네아로 연동 과정 진행
 3. 네아로 연동이 되어 있다면 연동 정보를 통해 로그인 처리 – 현재 로그인한 계정과 네아로 연결된 로그인 계정이 다른 경우, 현재 계정을 로그아웃하고 그 연결된 계정으로 재로그인
 
-오늘은 1번을 구현하도록 하겠습니다. 3번은 [지난 글](http://yoonbumtae.com/?p=1940)에서 구현하였습니다.
+오늘은 1번을 구현하도록 하겠습니다. 3번은 [지난 글](/posts/spring-boot-네이버-아이디로-로그인하기-연동-스프링-시)에서 구현하였습니다.
 
- 
+## 방법 
 
-#### **1\. 데이터베이스 구조**
+### **1\. 데이터베이스 구조**
 
-##### 외부 로그인 연동 테이블(_users\_oauth_)
+#### 외부 로그인 연동 테이블(_users\_oauth_)
 
- ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-10-오후-10.50.04.png)
+ ![](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-pm-10.50.04.png)
 
 `username`은 외래키로 회원 테이블의 키와 연결됩니다. `provider`는 제공사 이름으로, “_naver_“, “_google_” 등이 입력됩니다. `unique_id`에는 회원을 구분하는 고유값이 입력됩니다.
 
  
 
-#### **2\. 컨트롤러, DAO 등 작성**
+### **2\. 컨트롤러, DAO 등 작성**
 
-```
+```java
 // 로그인 컨트롤러: 전체 내용은 지난번 글 참고
 
 @Autowired SimpleUserDAO sud;
@@ -159,13 +161,8 @@ public String addRowToOAuthTableForNaver(HttpSession session, Authentication aut
 
 연동이 되어있지 않은 상황이라면 `isConnectedToNaver`와 `uniqueIdOfNaver` 정보를 `Model` 속성에 담아 뷰 페이지로 넘깁니다. 밑의 뷰 페이지의 _**test-naver-callback.html**_에 연결되는 내용이 있습니다.  `addRowToOAuthTableForNaver` 메소드에서는 이미 연동된 네이버 아이디인지 여부를 검색하고 연동이 안되어있으면 연동 정보 레코드를 추가하는 작업을 진행합니다. 사실 그 전에 이미 연동 여부를 `naverCallback1` 메소드에서 이미 체크한 상태이므로 여기서 다시 검사하지 않아도 상관은 없습니다.
 
- 
 
-
-
- 
-
-```
+```java
 SimpleUserDAO: 전체 내용은 지난 글 참고
 
 /**
@@ -191,7 +188,7 @@ public int insertAnUserOAuth(Map<String, String> aRow) {
 
  
 
-```
+```java
 // 메인 컨트롤러의 일부	
 
 @Autowired SimpleUserDAO sud;
@@ -225,11 +222,11 @@ public String home(Model model, HttpSession session) throws Exception {
 
  
 
-#### **3\. 뷰 페이지(Thymeleaf) 작성**
+### **3\. 뷰 페이지(Thymeleaf) 작성**
 
-##### home.html (메인 페이지)
+#### home.html (메인 페이지)
 
-```
+```html
 ......
 <body>
   ......
@@ -244,8 +241,6 @@ public String home(Model model, HttpSession session) throws Exception {
 
   ......
 
-  
-
 </body>
 ```
 
@@ -253,9 +248,9 @@ public String home(Model model, HttpSession session) throws Exception {
 
 
 
-##### test-naver-callback.html (네이버 콜백 페이지)
+#### test-naver-callback.html (네이버 콜백 페이지)
 
-```
+```html
 ......
 
 <body>
@@ -280,32 +275,30 @@ public String home(Model model, HttpSession session) throws Exception {
 
  
 
-#### **4\. 테스트**
+### **4\. 테스트**
 
-\[caption id="attachment\_1961" align="alignnone" width="529"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.28.35.png) 처음에는 테이블이 비어있습니다. (연동 전)\[/caption\]
-
- 
-
-\[caption id="attachment\_1962" align="alignnone" width="647"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.29.37.png) _**guest1**_ 아이디로 로그인하면 네이버 연동 여부를 묻는 부분이 나타납니다.\[/caption\]
+![처음에는 테이블이 비어있습니다. (연동 전)](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-14-pm-9.28.35.png) 처음에는 테이블이 비어있습니다. (연동 전)
 
  
 
-
-
-\[caption id="attachment\_1963" align="alignnone" width="707"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.30.51.png) 빨간 네모박스로 연동 여부를 물어봅니다.\[/caption\]
+![guest1 아이디로 로그인하면 네이버 연동 여부를 묻는 부분이 나타납니다.](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-14-pm-9.29.37.png) _**guest1**_ 아이디로 로그인하면 네이버 연동 여부를 묻는 부분이 나타납니다.
 
  
 
-\[caption id="attachment\_1967" align="alignnone" width="626"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.33.42-1.png) \[YES\] 버튼을 누르면 연동 작업이 진행됩니다. 테이블에 연동 정보가 추가되었습니다.\[/caption\] 
 
-\[caption id="attachment\_1964" align="alignnone" width="500"\] ![](/assets/img/wp-content/uploads/2019/12/스크린샷-2019-12-14-오후-9.33.14.png) 네이버 계정과 연동되었으므로 아까 그 부분은 더 이상 나오지 않습니다.\[/caption\]
 
+![빨간 네모박스로 연동 여부를 물어봅니다.](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-14-pm-9.30.51.png) 빨간 네모박스로 연동 여부를 물어봅니다.
+
+ 
+
+![YES 버튼을 누르면 연동 작업이 진행됩니다. 테이블에 연동 정보가 추가되었습니다.](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-14-pm-9.33.42-1.png) \[YES\] 버튼을 누르면 연동 작업이 진행됩니다. 테이블에 연동 정보가 추가되었습니다.
+
+![네이버 계정과 연동되었으므로 아까 그 부분은 더 이상 나오지 않습니다.](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-14-pm-9.33.14.png) 네이버 계정과 연동되었으므로 아까 그 부분은 더 이상 나오지 않습니다.
 
 
  
 
-_**guest1**_로 로그인하는 장면입니다.
+#### _**guest1**_로 로그인하는 장면입니다.
 
- 
-
-https://gph.is/g/4Lg1J6d
+<!-- https://gph.is/g/4Lg1J6d -->
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2wxZmVwdHQ1cWo3NDhtdDdlcWFlZGNjbXlubHh5bW9xdzJxNzduMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/efsC8cYZJTUwsR9Znt/giphy.gif)
