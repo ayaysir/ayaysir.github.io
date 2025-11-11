@@ -6,9 +6,9 @@ categories:
   - "SwiftUI"
 ---
 
-# 📘 SwiftUI 뷰 작성 규칙 및 구조 가이드
+# SwiftUI 뷰 작성 규칙 및 구조 가이드
 
-## 📐 1. **파일 구조 분할 원칙**
+## 1. **파일 구조 분할 원칙**
 
 확장(`extension`)을 사용하여 코드를 구역별로 분할합니다. 규모에 따라 확장2, 3은 분리하지 않을 수도 있습니다.
 
@@ -33,9 +33,9 @@ extension ExampleView { // MARK: - Utility methods }
 
 * * *
 
-## 🧱 2. **뷰 컴포넌트 구성 규칙**
+## 2. **뷰 컴포넌트 구성 규칙**
 
-### ✅ `body`는 상위 구성 요소만 나열:
+### `body`는 상위 구성 요소만 나열:
 
 ```swift
 var body: some View {
@@ -54,7 +54,7 @@ var body: some View {
 
 * * *
 
-## 🧠 3. **네이밍 컨벤션**
+## 3. **네이밍 컨벤션**
 
 | 대상 | 형식 | 예시 |
 | --- | --- | --- |
@@ -66,7 +66,7 @@ var body: some View {
 
 * * *
 
-## 🔧 4. **onChange / onReceive 등 modifier 정리 원칙**
+## 4. **onChange / onReceive 등 modifier 정리 원칙**
 
 - 서식 관련 modifier는 해당 뷰의 밑에 정의합니다.
 - 상태 관련 modifier(onChange 등)은 가능한 `body` 안의 최상위 뷰 밑에 정의합니다.
@@ -93,7 +93,7 @@ var body: some View {
 
 * * *
 
-## 📌 6. 기타 컨벤션
+## 6. 기타 컨벤션
 
 - 상태 변수는 `private` 접근제어자 기본
 - 컴포넌트 뷰는 View 하위 `extension 2` 안에 정리
@@ -101,4 +101,4 @@ var body: some View {
 - `MARK:` 주석으로 주요 구역 구분
 - 그 외에는 널리 알려진 컨벤션에 따릅니다.
 
-\[rcblock id="6686"\]
+<!--[rcblock id="6686"]-->

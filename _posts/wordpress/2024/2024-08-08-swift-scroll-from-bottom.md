@@ -69,4 +69,4 @@ https://gist.github.com/ayaysir/1dd7f9192c265e5ec63b1d1c50f87544
 
 이 포스트에서는 SwiftUI에서 스크롤 뷰를 밑에서 위로 스크롤하는 두 가지 방법을 살펴보았습니다. iOS 14부터 iOS 16까지는 리스트를 역순으로 처리하고 뷰를 회전시키는 방법을 사용해야 하며, iOS 17 이상에서는 간단히 `defaultScrollAnchor` modifier를 사용하면 됩니다. 이 두 가지 방법을 적절히 사용하여 사용자 경험을 향상시킬 수 있습니다.
 
-\[rcblock id="6686"\]
+<!--[rcblock id="6686"]-->

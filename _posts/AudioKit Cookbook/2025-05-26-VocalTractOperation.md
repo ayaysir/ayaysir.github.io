@@ -1,12 +1,10 @@
 ---
-title: AudioKit의 VocalTractOperation
+title: AudioKit의 VocalTractOperation 사용법
 author: ayaysir
 date: 2025-05-26 14:05:58 +0900
 categories: [StudyLog, AudioKit]
 tags: [AudioKit, 음향이론]
 ---
-
-# Vocal Tract Operation
 
 - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Operations/VocalTractOperation.swift)
 
@@ -14,7 +12,7 @@ tags: [AudioKit, 음향이론]
 
 ---
 
-### 🔁 전체 구조
+### 전체 구조
 
 ```swift
 let generator = OperationGenerator { ... }
@@ -23,9 +21,7 @@ let generator = OperationGenerator { ... }
 * Swift 클로저 안에서 **AudioKit Operation DSL**을 사용해 신호 흐름을 정의합니다.
 * 반환값은 `Operation.vocalTract(...)`: 인간 음성을 시뮬레이션하는 메인 오퍼레이션
 
----
-
-### 🔊 각 파라미터 설명
+### 각 파라미터 설명
 
 #### 1. 성문 주파수 (Glottal Frequency)
 
@@ -86,8 +82,6 @@ let nasality = Operation.sineWave(frequency: 0.35).scale()
 
 * 비강(코)으로 얼마나 소리를 흘리는지를 나타냄 → 콧소리 비율 제어
 
----
-
 ### 🔚 최종 합성
 
 ```swift
@@ -103,9 +97,7 @@ return Operation.vocalTract(
 * `vocalTract`는 위 파라미터들을 이용해 목소리의 **음높이, 모음형, 억양**을 종합적으로 결정
 * `frequency + jitter` → 안정된 음 높이 + 지터를 통한 자연스러움 부여
 
----
-
-### 💡 요약
+### 요약
 
 | 파라미터      | 역할           | 효과 예시                        |
 | --------- | ------------ | ---------------------------- |

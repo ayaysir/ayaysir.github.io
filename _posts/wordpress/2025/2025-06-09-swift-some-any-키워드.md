@@ -60,7 +60,7 @@ struct Windows: 운영체제 {
 ```swift
 func Apple의_OS추천(게이머인가: Bool) -> some 운영체제 {
     if 게이머인가 {
-        return MacOS(버전: "게임잘되는버전") // ✅ 항상 MacOS 타입 반환
+        return MacOS(버전: "게임잘되는버전") // 항상 MacOS 타입 반환
     } else {
         return MacOS(버전: "아무거나")
     }
@@ -145,8 +145,8 @@ func 운영체제_버전출력(_ os: any 운영체제) {
 }
 
 // 다양한 타입을 모두 받을 수 있습니다
-운영체제_버전출력(MacOS())     // ✅ MacOS 전달
-운영체제_버전출력(Windows())   // ✅ Windows 전달
+운영체제_버전출력(MacOS())     // MacOS 전달
+운영체제_버전출력(Windows())   // Windows 전달
 
 // 배열에서도 사용 가능
 let 운영체제들: [any 운영체제] = [MacOS(), Windows(), MacOS(버전: "Monterey")]
@@ -282,4 +282,4 @@ Swift의 `some`과 `any` 키워드는 각각 다른 목적을 가지고 있습�
 
  
 
-\[rcblock id="6686"\]
+<!--[rcblock id="6686"]-->

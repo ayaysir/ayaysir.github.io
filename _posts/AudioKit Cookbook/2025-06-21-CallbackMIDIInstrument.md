@@ -6,8 +6,6 @@ categories: [StudyLog, AudioKit]
 tags: [AudioKit, 음향이론]
 ---
 
-# Callback MIDI Instrument
-
 - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/UncategorizedDemos/CallbackInstrument.swift)
 
 이 코드는 **AudioKit + SwiftUI**를 이용해 MIDI 시퀀서 이벤트를 감지하고 사운드폰트로 소리를 재생하며, 동시에 이벤트 로그를 실시간으로 출력합니다.
@@ -16,8 +14,6 @@ tags: [AudioKit, 음향이론]
 * `MIDICallbackInstrument`: MIDI 이벤트를 **실시간으로 감지**하여 로그 출력
 * `MIDISampler`: MIDI 노트를 **실제로 재생**
 * `AppleSequencer`: 시간에 따라 MIDI 노트를 **자동으로 발생**시키는 시퀀서
-
----
 
 ## 클래스 구성: `CallbackInstrumentConductor`
 
@@ -33,8 +29,6 @@ tags: [AudioKit, 음향이론]
 | `division`   | 한 마디 내 노트 수 (박자 세분화)                 |
 | `text`       | MIDI 이벤트 발생 로그                       |
 
----
-
 ## 초기화 흐름
 
 ```swift
@@ -48,8 +42,6 @@ init() {
   engine.output = sampler                  // 출력 설정
 }
 ```
-
----
 
 ## `createClickTrack()`: 실제 트랙 생성
 
@@ -67,8 +59,6 @@ soundTrack.setMIDIOutput(sampler.midiIn)
 1. **첫 박자 시작 (`firstPosition`)**
 2. **중간 박자 위치 (`secondPosition`)**
 
----
-
 ## `setCallback()`: 콜백 로직
 
 ```swift
@@ -79,9 +69,7 @@ self.callbacker = MIDICallbackInstrument { ... }
 
   * 현재 시퀀서 시간 (`self.sequencer.currentPosition.seconds`)과 노트 번호를 로그에 추가
 
----
-
-## 🖥️ SwiftUI 뷰: `CallbackInstrumentView`
+## SwiftUI 뷰: `CallbackInstrumentView`
 
 ### 주요 UI 구성:
 
@@ -105,19 +93,6 @@ Start Note 61 at 0.5000
 
 * 스크롤은 `.scrollTo("logBottom")`으로 항상 아래로 유지됨
 
----
-
-## Preview
-
-```swift
-#Preview {
-  CallbackInstrumentView()
-}
-```
-
-Xcode의 canvas에서 인터랙티브 미리보기 지원
-
----
 
 ## 요약
 
@@ -127,8 +102,6 @@ Xcode의 canvas에서 인터랙티브 미리보기 지원
 | 소리 재생      | `MIDISampler` + 사운드폰트       |
 | 이벤트 감지     | `MIDICallbackInstrument`    |
 | 로그 출력      | SwiftUI `Text` + ScrollView |
-
----
 
 ## 확장 아이디어
 

@@ -66,4 +66,4 @@ Palettes 패널에서 마우스 오른쪽 버튼을 클릭한 후 **"Insert New 
 
 MuseScore 4의 Palette 기능을 통해 자주 사용하는 음악 요소들을 정리하고 단축키를 설정하면 악보 작성 시 작업 효율을 높일 수 있습니다.
 
-\[rcblock id="6686"\]
+<!--[rcblock id="6686"]-->

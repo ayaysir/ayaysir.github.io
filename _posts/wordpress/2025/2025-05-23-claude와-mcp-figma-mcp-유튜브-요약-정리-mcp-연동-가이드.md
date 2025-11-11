@@ -202,4 +202,4 @@ YouTube Transcript MCP는 YouTube 동영상의 자막을 자동으로 추출하�
 
  
 
-\[rcblock id="6686"\]
+<!--[rcblock id="6686"]-->

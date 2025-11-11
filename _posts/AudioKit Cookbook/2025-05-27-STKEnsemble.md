@@ -6,16 +6,23 @@ categories: [StudyLog, AudioKit]
 tags: [AudioKit, 음향이론]
 ---
 
-# STK Ensemble
 
-<!-- 예제 앱 영상 -->
-https://github.com/user-attachments/assets/fcab9142-670f-4026-a257-19ec9dce263e
+## 소개
+
+### 예제 앱 영상
+
+<video controls>
+  <source src='/assets/img/DevLog/stk-ensemble.mp4'>
+  브라우저가 video 태그를 지원하지 않습니다.
+</video>
+
+### 코드 보기
 
 - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/PhysicalModels/STKEnsemble.swift)
 
-이 코드는 **AudioKit**, **STKAudioKit**, 그리고 SwiftUI를 활용하여 세 개의 가상 악기(Flute, Clarinet, Tubular Bells)를 조합한 \*\*음악 합주 시스템(Ensemble Generator)\*\*입니다. 주기적으로 음을 무작위로 선택하여 세 악기가 연주되며, 각 악기의 볼륨을 조절하고, 스케일(Scale)과 전조(Transpose)를 실시간으로 반영할 수 있습니다.
+### 소개
 
----
+이 코드는 **AudioKit**, **STKAudioKit**, 그리고 SwiftUI를 활용하여 세 개의 가상 악기(Flute, Clarinet, Tubular Bells)를 조합한 음악 합주 시스템(Ensemble Generator)입니다. 주기적으로 음을 무작위로 선택하여 세 악기가 연주되며, 각 악기의 볼륨을 조절하고, 스케일(Scale)과 전조(Transpose)를 실시간으로 반영할 수 있습니다.
 
 ## 주요 구성 요소
 
@@ -42,8 +49,6 @@ https://github.com/user-attachments/assets/fcab9142-670f-4026-a257-19ec9dce263e
 * `loop.start()` / `loop.stop()`으로 실행 제어
 * 현재 `playRate`가 1.67이면 약 0.6초 간격으로 실행됨
 
----
-
 ## 음원 생성 로직
 
 ```swift
@@ -67,8 +72,6 @@ if random(0.45) { flute.trigger(...) }
 * 무작위로 노트를 선택하고 `trigger()` 호출
 * 벨로시티는 30\~100 사이 무작위 (`randomVelocity()`)
 
----
-
 ## 상태 변수
 
 | 변수             | 설명                         |
@@ -80,8 +83,6 @@ if random(0.45) { flute.trigger(...) }
 | `clarinetGain` | 클라리넷 볼륨                    |
 | `bellsGain`    | 벨 볼륨                       |
 | `playingNotes` | 최근 연주된 노트 (악기별)            |
-
----
 
 ## 주요 함수
 
@@ -99,12 +100,9 @@ if random(0.45) { flute.trigger(...) }
 
 * 세 악기를 모두 멈춤 (음이 겹치거나 끊기지 않게 관리)
 
----
-
 ## 활용 예시
 
 이 클래스를 SwiftUI에서 사용하면,
-
 * 스케일 선택기, 트랜스포즈 슬라이더, 볼륨 조절 노브 등 UI를 통해
   실시간으로 음원을 조작할 수 있음
 
@@ -114,8 +112,6 @@ if random(0.45) { flute.trigger(...) }
 Slider(value: $conductor.fluteGain, in: 0...1)
 Picker("Scale", selection: $conductor.scale) { ... }
 ```
-
----
 
 ## 정리
 

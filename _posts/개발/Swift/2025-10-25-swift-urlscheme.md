@@ -10,8 +10,6 @@ tags: [swift]
 
 iOS에서 Custom URL Scheme를 등록하는 방법입니다.
 
----
-
 ## 1. 메인 앱에 URL Scheme 등록
 
 먼저 ImageTranslator 앱의 Info.plist에 다음을 추가하세요.
@@ -48,7 +46,7 @@ SceneDelegate 방식 (UIKit 기반)
 func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
   guard let url = URLContexts.first?.url else { return }
   if url.absoluteString.hasPrefix("imagetranslator://open-from-extension") {
-    // ✅ 해야 할 작업 작성
+    // 해야 할 작업 작성
   }
 }
 ```
@@ -63,7 +61,7 @@ struct ImageTranslatorApp: App {
       ContentView()
         .onOpenURL { url in
           if url.absoluteString.hasPrefix("imagetranslator://open-from-extension") {
-            // ✅ 해야 할 작업 작성
+            // 해야 할 작업 작성
           }
         }
     }

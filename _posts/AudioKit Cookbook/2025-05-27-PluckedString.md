@@ -6,17 +6,14 @@ categories: [StudyLog, AudioKit]
 tags: [AudioKit, 음향이론]
 ---
 
-# Plucked String
-
 - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/PhysicalModels/PluckedString.swift)
 
-이 코드는 **AudioKit**과 **SoundpipeAudioKit**을 사용하여 *플럭 현악기(plucked string)* 소리를 자동 생성하고, 여기에 **딜레이**와 **리버브** 효과를 적용하는 구조입니다. 아래에 각 구성요소별로 자세히 설명드리겠습니다.
+이 코드는 **AudioKit**과 **SoundpipeAudioKit**을 사용하여 *플럭 현악기(plucked string)* 소리를 자동 생성하고, 여기에 **딜레이**와 **리버브** 효과를 적용하는 구조입니다. 
 
----
 
 ## 주요 구성 요소 설명
 
-### `let pluckedString = PluckedString()`
+### let pluckedString = PluckedString()
 
 * SoundpipeAudioKit의 `PluckedString` 노드입니다.
 * 실제 기타, 하프 등 줄을 튕기는 소리의 물리적 모델링으로 소리를 생성합니다.
@@ -24,14 +21,12 @@ tags: [AudioKit, 음향이론]
 * `frequency`: 재생될 음의 주파수
 * `amplitude`: 음의 크기
 
-### `playRate = 3.0`
+### playRate = 3.0
 
 * 초당 3번 루프가 반복됨을 의미합니다.
 * `CallbackLoop(frequency:)`에서 사용되어, 약 0.33초마다 트리거가 발생합니다.
 
----
-
-## `init()` – 노드 연결 및 효과 설정
+## init() – 노드 연결 및 효과 설정
 
 1. `DryWetMixer(pluckedString, pluckedString2)`
 
@@ -53,9 +48,7 @@ tags: [AudioKit, 음향이론]
 
    * 오디오 엔진 출력으로 설정
 
----
-
-## `loop = CallbackLoop(frequency: playRate)`
+## loop = CallbackLoop(frequency: playRate)
 
 * 1초에 3번 반복하는 콜백 루프
 * 콜백 안에서는 다음이 실행됩니다:
@@ -85,13 +78,9 @@ if AUValue.random(...) > 15 {
 
 * 확률적으로 50%의 확률로 둘 다 트리거
 
----
-
-## `@Published var isRunning`
+## @Published var isRunning
 
 * SwiftUI와 바인딩되어 있으며, 사용자가 ON/OFF 조작 시 `loop.start()` 또는 `loop.stop()`을 실행
-
----
 
 ## 요약
 

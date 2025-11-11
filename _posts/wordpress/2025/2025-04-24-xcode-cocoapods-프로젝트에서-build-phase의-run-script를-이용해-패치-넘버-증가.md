@@ -95,7 +95,7 @@ sed -i '' -E "s/(s\.version[[:space:]]*=[[:space:]]*['\"])$versionString(['\"])/
 
 # 변경되었는지 확인
 if grep -q "$newVersion" "$PODSPEC_FILE"; then
-  echo "✅ podspec 버전이 $versionString → $newVersion 으로 변경되었습니다."
+  echo "podspec 버전이 $versionString → $newVersion 으로 변경되었습니다."
 else
   echo "❌ 버전 변경에 실패했습니다. 현재 버전: $versionString"
   exit 1  # 실패로 간주하고 빌드 중단
@@ -118,4 +118,4 @@ fi
 
 단, 한 번 릴리즈된 버전은 CocoaPods 서버에 재등록할 수 없기 때문에, **실제 배포 전에 반드시 커밋 + 태그 작업도 병행**해 주세요.
 
-\[rcblock id="6686"\]
+<!--[rcblock id="6686"]-->

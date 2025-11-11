@@ -1,5 +1,5 @@
 ---
-title: "SwiftUI: @Observable 동작원리"
+title: "SwiftUI: @Observable의 동작원리"
 author: ayaysir
 date: 2025-04-29 16:25:40 +0900
 categories: 
@@ -8,16 +8,7 @@ categories:
 tags: [SwiftUI]
 ---
 
-# Observable 동작 원리
-```plain
-Q.
-viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유? 
-@Observable 클래스 AudioKit3DViewModel에서 참조하는  
-각 클래스 AudioEngine3DConductor, SceneCoordinator에 
-@Observable을 붙이지 않아도 동작하는 이유?
-```
-
-## 답변
+## 설명
 
 ### 1. `viewModel`에서 `@State`를 붙이지 않아도 코드가 동작하는 이유
 
@@ -29,7 +20,6 @@ Swift 5.9 이상 (또는 Xcode 15 이상)에서는 SwiftUI의 **Observation 프�
 
 다시 말해, `viewModel`이 `@Observable`을 따르고 있고, SwiftUI가 이를 알 수 있기 때문에 별도의 속성 래퍼가 필요 없습니다. 단, 이 기능은 Swift의 Observation이 제대로 적용되는 환경(Xcode 15 이상, Swift 5.9 이상, iOS 17 이상 등)에서만 가능합니다.
 
----
 
 ### 2. `AudioEngine3DConductor`, `SceneCoordinator`에 `@Observable`을 붙이지 않아도 되는 이유
 
@@ -46,9 +36,8 @@ Swift 5.9 이상 (또는 Xcode 15 이상)에서는 SwiftUI의 **Observation 프�
 
 단, 만약 `AudioEngine3DConductor`나 `SceneCoordinator`의 속성을 뷰에서 **직접 바인딩하거나 관찰**해야 할 경우, 그때는 해당 클래스에도 `@Observable`이나 `@Published` 등을 적용해야 합니다.
 
----
 
-### 요약
+## 요약
 
 | 항목                          | 이유                                                                 |
 |-----------------------------|----------------------------------------------------------------------|

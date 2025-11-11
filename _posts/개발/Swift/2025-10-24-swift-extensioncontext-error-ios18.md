@@ -10,10 +10,8 @@ tags: [SwiftUI]
 
 iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.
 
-### 원문 링크
+**원문 링크**
 - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-open-main-app-from-action-extension-in-ios-18-previously-working-met)
-
----
 
 ## 문제 개요
 
@@ -43,7 +41,8 @@ func openVoicepaperApp(path: String = "") {
   더 이상 허용되지 않거나, 호출이 무시됨.
 
 
-## 해결책 ① (Nivedi Manavadariya 제안, iOS 18 대응 확인됨)
+## 해결책 
+### ① (iOS 18 대응 확인됨)
 
 아래 코드를 사용하면 iOS 18에서도 메인 앱 실행 가능:
 
@@ -76,7 +75,7 @@ func redirectToApp() {
 }
 ```
 
-### 핵심 포인트:
+#### 핵심 포인트:
 
 * `UIApplication` 인스턴스를 **responder chain을 통해 직접 탐색**
 * iOS 18에서는 `application.open()` 을 명시적으로 호출해야 함
@@ -85,7 +84,7 @@ func redirectToApp() {
 
 
 
-## 해결책 ② (Shishir Jha 제안, iOS 17~18 모두 호환)
+### ② (iOS 17~18 모두 호환)
 
 ```swift
 func openMainApp(_ hostValue: String) {

@@ -8,16 +8,18 @@ categories:
 tags: [SwiftUI]
 ---
 
-iOS `Translation` 프레임워크는 iOS 17.4부터 도입된 기능으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스텀된 번역 기능을 구현할 수 있게 되었습니다. 
+iOS `Translation` 프레임워크는 iOS 17.4부터 도입된 기능(실질적으로는 iOS 18 이상 되어야 모든 기능 사용 가능)으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스텀된 번역 기능을 구현할 수 있게 되었습니다. 
 
 
 ## 주요 특징
+
  - 온디바이스 번역: 번역에 필요한 머신러닝 모델이 기기 내에서 실행되므로, 인터넷 연결 없이도 빠르고 안전하게 번역할 수 있습니다.
  - 시스템 통합: 사용자가 번역 모델을 다운로드하도록 권한을 요청하고, 다운로드 진행 상황을 표시하는 등 번역에 필요한 모든 과정을 시스템이 관리합니다.
  - 공유 모델: 한번 다운로드된 언어 모델은 시스템의 모든 앱이 공유하므로, 여러 앱에서 중복해서 다운로드할 필요가 없습니다.
  - 개인정보 보호: 번역이 기기 내에서 처리되기 때문에 개인 정보가 보호됩니다. 
 
 ## 사용 방법
+
 Translation 프레임워크는 크게 두 가지 방식으로 사용할 수 있습니다.
 
 ### 1. 내장 UI 활용
@@ -56,7 +58,7 @@ struct ContentView: View {
 }
 ```
 
-![번역으로 대치](/assets/img/DevLog/번역으로대치%20Oct-25-2025%2015-20-12.gif)
+![번역으로 대치](/assets/img/DevLog/replace-to-translation.gif)
 
 
 ### 2. translationTask를 이용한 커스텀 구현 (上) - 시작시 바로 실행
@@ -69,7 +71,7 @@ struct ContentView: View {
    ![로컬에 언어 데이터가 다운로드 되어있어야 함](/assets/img/DevLog/swift-translationtask-1.jpg)
 
 
-SwiftUI 예시:
+#### SwiftUI 예시
 ```swift
 import SwiftUI
 import Translation
@@ -217,7 +219,3 @@ struct CustomTranslationTriggerStartView: View {
 ```
 
 ![Translation Task 2](/assets/img/DevLog/Translation3%20Oct-25-2025%2021-00-03.gif)
-
-## 지원 범위
-- OS: iOS 17.4 이상, iPadOS 17.4 이상, macOS 14.4 이상 (대부분의 API는 iOS 18, iPadOS 18, macOS 15부터 SwiftUI 환경에서 사용 가능).
-- Xcode: Xcode 16 이상. 

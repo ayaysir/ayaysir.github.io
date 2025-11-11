@@ -42,13 +42,13 @@ UIKit에서의 **오토리사이징 마스크(Autoresizing Mask)**는, **부모 
 
  
 
-#### **🔧 역할 요약**
+#### **역할 요약**
 
 오토리사이징 마스크는 `UIView`의 `autoresizingMask` 속성에 설정되며, 부모 뷰의 크기가 변할 때 **자식 뷰가 어느 방향으로 늘어나거나 이동할지를 결정**합니다.
 
  
 
-#### **📐 예를 들어 보면:**
+#### **예를 들어 보면:**
 
 ```swift
 let subView = UIView(frame: CGRect(x: 20, y: 20, width: 100, height: 50))
@@ -60,7 +60,7 @@ subView.autoresizingMask = [.flexibleWidth, .flexibleRightMargin]
 
  
 
-#### **🎯 사용 가능한 마스크 값들**
+#### **사용 가능한 마스크 값들**
 
 | 마스크 이름 | 의미 |
 | --- | --- |
@@ -73,7 +73,7 @@ subView.autoresizingMask = [.flexibleWidth, .flexibleRightMargin]
 
  
 
-#### **🧠 왜 이것이 `translatesAutoresizingMaskIntoConstraints`와 관련될까?**
+#### **왜 이것이 `translatesAutoresizingMaskIntoConstraints`와 관련될까?**
 
 UIKit은 **오토리사이징 마스크를 내부적으로 Auto Layout 제약으로 변환**할 수 있는데, 그 여부를 `translatesAutoresizingMaskIntoConstraints` 속성으로 결정합니다.
 
@@ -90,7 +90,7 @@ UIKit은 **오토리사이징 마스크를 내부적으로 Auto Layout 제약으
 
  
 
-#### **✅ 개념 정리**
+#### **개념 정리**
 
 ##### `translatesAutoresizingMaskIntoConstraints = true` (기본값)
 
@@ -109,7 +109,7 @@ UIKit은 **오토리사이징 마스크를 내부적으로 Auto Layout 제약으
 
 * * *
 
-### **✅ 예시 코드 비교**
+### **예시 코드 비교**
 
 ```swift
 let button = UIButton()
@@ -139,7 +139,7 @@ NSLayoutConstraint.activate([
 
 * * *
 
-### **⚠️ 충돌 예제:**
+### **충돌 예제:**
 
 Auto Layout 제약과 `translatesAutoresizingMaskIntoConstraints`의 충돌을 보여주는 간단한 예제를 Swift로 설명드리겠습니다.
 
@@ -163,7 +163,7 @@ NSLayoutConstraint.activate([
 ])
 ```
 
-### 🔴 문제점
+### 문제점
 
 - `translatesAutoresizingMaskIntoConstraints`의 기본값은 `true`입니다.
 - 이 상태에서 Auto Layout 제약을 추가하면 **시스템이 frame 기반 제약과 Auto Layout 제약 둘 다 적용하려고 해서 충돌**합니다.
@@ -179,7 +179,7 @@ NSLayoutConstraint.activate([
 
 * * *
 
-### **✅ 해결 예제:**
+### **해결 예제:**
 
 ##### **`translatesAutoresizingMaskIntoConstraints = false` 사용**
 
@@ -201,7 +201,7 @@ NSLayoutConstraint.activate([
 ])
 ```
 
-#### **✅ 결과**
+#### **결과**
 
 - 충돌 없이 버튼이 정확한 위치에 배치됩니다.
 - Auto Layout이 의도대로 작동합니다.
@@ -212,7 +212,7 @@ NSLayoutConstraint.activate([
 
 * * *
 
-### **✅ 요약**
+### **요약**
 
 | 속성 값 | 의미 | 보통 사용하는 경우 |
 | --- | --- | --- |
@@ -221,4 +221,4 @@ NSLayoutConstraint.activate([
 
  
 
-\[rcblock id="6686"\]
+<!--[rcblock id="6686"]-->
