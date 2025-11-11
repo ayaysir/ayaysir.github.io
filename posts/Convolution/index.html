@@ -780,7 +780,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="978 words"
+  title="961 words"
 >
   <em>5 min</em> read</span>
 
@@ -818,20 +818,16 @@
 
 <p>이 코드는 AudioKit과 SoundpipeAudioKit을 사용해 <strong>컨볼루션 리버브(Convolution Reverb)</strong> 효과를 구현한 예제입니다. 특히, <strong>두 개의 다른 임펄스 응답(Impulse Response)</strong> 파일을 혼합하여 사용자 지정 리버브 환경을 만드는 것이 핵심입니다.</p>
 
-<hr />
+<h2 id="핵심-개념-요약"><span class="me-2">핵심 개념 요약</span><a href="#핵심-개념-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="-핵심-개념-요약"><span class="me-2">🔊 핵심 개념 요약</span><a href="#-핵심-개념-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="-convolution"><span class="me-2">🔹 Convolution</span><a href="#-convolution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="convolution-1"><span class="me-2">Convolution</span><a href="#convolution-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><strong>Convolution Reverb</strong>는 <strong>실제 공간에서 녹음된 ‘임펄스 응답(Impulse Response)’과 입력 오디오 신호를 **곱셈-합산 연산(convolution)**하여, **실제 공간의 리버브를 시뮬레이션</strong>합니다.</li>
   <li>입력 오디오와 IR 파일을 합성(convolve)하여 <strong>현실적인 반향 효과</strong>를 구현합니다.</li>
 </ul>
 
-<hr />
-
-<h3 id="-간단-정리"><span class="me-2">📌 간단 정리</span><a href="#-간단-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="간단-정리"><span class="me-2">간단 정리</span><a href="#간단-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -856,9 +852,7 @@
   </tbody>
 </table></div>
 
-<hr />
-
-<h3 id="️-convolution-클래스-정의"><span class="me-2">🎛️ Convolution 클래스 정의</span><a href="#️-convolution-클래스-정의" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="convolution-클래스-정의"><span class="me-2">Convolution 클래스 정의</span><a href="#convolution-클래스-정의" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -872,16 +866,12 @@
   <li><strong>partitioned convolution</strong>: IR을 여러 작은 조각으로 나눠 계산해 <strong>CPU 부하를 줄이고 지연(latency)을 줄이는 방식</strong></li>
 </ul>
 
-<hr />
-
-<h3 id="-예시로-이해하기"><span class="me-2">🔉 예시로 이해하기</span><a href="#-예시로-이해하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="예시로-이해하기"><span class="me-2">예시로 이해하기</span><a href="#예시로-이해하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>당신이 <code class="language-plaintext highlighter-rouge">플루트 소리</code>를 건물 계단실에서 연주했다고 가정</li>
+  <li><code class="language-plaintext highlighter-rouge">플루트 소리</code>를 건물 계단실에서 연주했다고 가정</li>
   <li>실제 계단실에서 녹음된 <strong>IR (Impulse Response)</strong> 파일: <code class="language-plaintext highlighter-rouge">stairwell.wav</code></li>
-  <li>
-    <p>AudioKit의 <code class="language-plaintext highlighter-rouge">Convolution</code>은:</p>
-
+  <li>AudioKit의 <code class="language-plaintext highlighter-rouge">Convolution</code>은:
     <blockquote>
       <p>입력된 플루트 소리를 <code class="language-plaintext highlighter-rouge">stairwell.wav</code>의 ftable과 합성해,
 마치 그 계단실에서 직접 플루트를 연주한 것처럼 들리게 함</p>
@@ -889,20 +879,16 @@
   </li>
 </ul>
 
-<hr />
-
-<h3 id="-왜-ftable을-쓰는가"><span class="me-2">💡 왜 ftable을 쓰는가?</span><a href="#-왜-ftable을-쓰는가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="왜-ftable을-쓰는가"><span class="me-2">왜 ftable을 쓰는가?</span><a href="#왜-ftable을-쓰는가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>오디오를 실시간 처리하기 위해선 <strong>미리 처리된 IR 데이터를 배열(테이블)로 변환</strong>하는 게 효율적</li>
   <li>이 테이블을 기반으로 빠르게 수학적 곱셈/합산 연산을 진행할 수 있음</li>
 </ul>
 
-<hr />
+<h2 id="구조-및-동작-흐름"><span class="me-2">구조 및 동작 흐름</span><a href="#구조-및-동작-흐름" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="-구조-및-동작-흐름"><span class="me-2">🧱 구조 및 동작 흐름</span><a href="#-구조-및-동작-흐름" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="1--convolutiondata"><span class="me-2">1. 🔧 <code class="language-plaintext highlighter-rouge">ConvolutionData</code></span><a href="#1--convolutiondata" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="1-convolutiondata"><span class="me-2">1. <code class="language-plaintext highlighter-rouge">ConvolutionData</code></span><a href="#1-convolutiondata" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -921,9 +907,7 @@
   <li><code class="language-plaintext highlighter-rouge">stairwellDishMix</code>: 두 리버브 (<code class="language-plaintext highlighter-rouge">stairwell</code>, <code class="language-plaintext highlighter-rouge">dish</code>) 간 비율.</li>
 </ul>
 
-<hr />
-
-<h3 id="2-️-임펄스-응답-파일-불러오기"><span class="me-2">2. 🛠️ 임펄스 응답 파일 불러오기</span><a href="#2-️-임펄스-응답-파일-불러오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="2-임펄스-응답-파일-불러오기"><span class="me-2">2. 임펄스 응답 파일 불러오기</span><a href="#2-임펄스-응답-파일-불러오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -934,9 +918,7 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>
-    <p>각각의 리버브 환경을 묘사하는 <code class="language-plaintext highlighter-rouge">.wav</code> 파일</p>
-
+  <li>각각의 리버브 환경을 묘사하는 <code class="language-plaintext highlighter-rouge">.wav</code> 파일
     <ul>
       <li><strong>stairwell.wav</strong>: 계단실과 같은 큰 공간 느낌</li>
       <li><strong>dish.wav</strong>: 금속성 또는 특이한 잔향 느낌</li>
@@ -944,9 +926,7 @@
   </li>
 </ul>
 
-<hr />
-
-<h3 id="3--convolution-효과-구성"><span class="me-2">3. 🔄 Convolution 효과 구성</span><a href="#3--convolution-효과-구성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="3-convolution-효과-구성"><span class="me-2">3. Convolution 효과 구성</span><a href="#3-convolution-효과-구성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -961,9 +941,7 @@
   <li>두 개의 서로 다른 공간 리버브 효과 생성</li>
 </ul>
 
-<hr />
-
-<h3 id="4--drywetmixer-체인"><span class="me-2">4. 🔀 DryWetMixer 체인</span><a href="#4--drywetmixer-체인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="4-drywetmixer-체인"><span class="me-2">4. DryWetMixer 체인</span><a href="#4-drywetmixer-체인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1012,9 +990,7 @@ Stairwell   Dish
      [Engine Output]
 </pre></td></tr></tbody></table></code></div></div>
 
-<hr />
-
-<h3 id="7--리버브-활성화"><span class="me-2">7. 🧪 리버브 활성화</span><a href="#7--리버브-활성화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="7-리버브-활성화"><span class="me-2">7. 리버브 활성화</span><a href="#7-리버브-활성화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1028,9 +1004,7 @@ Stairwell   Dish
   <li>AudioKit의 <code class="language-plaintext highlighter-rouge">Node</code>는 사용 전 <code class="language-plaintext highlighter-rouge">.start()</code> 필수</li>
 </ul>
 
-<hr />
-
-<h2 id="-요약"><span class="me-2">🧩 요약</span><a href="#-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1063,17 +1037,13 @@ Stairwell   Dish
   </tbody>
 </table></div>
 
-<hr />
-
-<h2 id="-활용-예시"><span class="me-2">📌 활용 예시</span><a href="#-활용-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="활용-예시"><span class="me-2">활용 예시</span><a href="#활용-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>게임에서 공간 이동에 따른 잔향 효과</li>
   <li>음악에서 마이크 녹음 시 실제 공간 질감 추가</li>
   <li>Foley 사운드 제작</li>
 </ul>
-
-<hr />
 
   </div>
 
@@ -2746,18 +2716,6 @@ Stairwell   Dish
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -3131,7 +3089,7 @@ Stairwell   Dish
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3159,7 +3117,7 @@ Stairwell   Dish
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3187,7 +3145,7 @@ Stairwell   Dish
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>
@@ -3208,11 +3166,11 @@ Stairwell   Dish
 
   
     <a
-      href="/posts/AudioPlayer%EC%9E%AC%EC%83%9D%EA%B8%B8%EC%9D%B4%EB%AC%B8%EC%A0%9C/"
+      href="/posts/%EC%BB%B4%ED%94%84%EB%A0%88%EC%84%9C(Compressor)/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>AudioKit에서 AudioPlayer 재생 길이 문제</p>
+      <p>음향: 컴프레서(Compressor)란 무엇인가?</p>
     </a>
   
 
@@ -3222,7 +3180,7 @@ Stairwell   Dish
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>AudioKit의 Delay 및 DryWetMixer</p>
+      <p>AudioKit의 Delay 및 DryWetMixer 에 관하여</p>
     </a>
   
 </nav>

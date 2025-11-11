@@ -33,8 +33,8 @@
 <meta property="og:title" content="AudioKit의 MID Port Test" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="MIDI Port Test (Virtual MIDI Host 포함)" />
-<meta property="og:description" content="MIDI Port Test (Virtual MIDI Host 포함)" />
+<meta name="description" content="코드 보기" />
+<meta property="og:description" content="코드 보기" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/MIDIPortTest/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/MIDIPortTest/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -44,7 +44,7 @@
 <meta property="twitter:title" content="AudioKit의 MID Port Test" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-23T00:42:28+09:00","datePublished":"2025-06-23T00:42:28+09:00","description":"MIDI Port Test (Virtual MIDI Host 포함)","headline":"AudioKit의 MID Port Test","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/MIDIPortTest/"},"url":"https://ayaysir.github.io/posts/MIDIPortTest/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-23T00:42:28+09:00","datePublished":"2025-06-23T00:42:28+09:00","description":"코드 보기","headline":"AudioKit의 MID Port Test","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/MIDIPortTest/"},"url":"https://ayaysir.github.io/posts/MIDIPortTest/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -561,39 +561,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -609,6 +576,39 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -900,7 +900,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1608 words"
+  title="1595 words"
 >
   <em>8 min</em> read</span>
 
@@ -934,15 +934,11 @@
   
 
   <div class="content">
-    <h1 id="midi-port-test-virtual-midi-host-포함">MIDI Port Test (Virtual MIDI Host 포함)</h1>
-
-<ul>
+    <ul>
   <li><a href="https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest">코드 보기</a></li>
 </ul>
 
 <p><code class="language-plaintext highlighter-rouge">MIDIPortTestConductor</code>는 AudioKit과 MIDIKit을 이용해 MIDI 포트를 테스트하거나 MIDI 이벤트를 수신/전송할 수 있도록 설계된 <strong>MIDI 테스트 도구의 핵심 로직 클래스</strong>입니다. 가상 포트를 생성하고, 외부 장치와 통신하며, MIDI 로그를 저장하고, 포트 정보를 조회하는 기능을 포함합니다.</p>
-
-<hr />
 
 <h2 id="주요-목적"><span class="me-2">주요 목적</span><a href="#주요-목적" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -954,9 +950,7 @@
   <li>테스트용 UI와의 연결을 위한 ObservableObject 구현</li>
 </ul>
 
-<hr />
-
-<h2 id="주요-구성요소-설명"><span class="me-2">주요 구성요소 설명</span><a href="#주요-구성요소-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="conductor의-주요-구성요소-설명"><span class="me-2">Conductor의 주요 구성요소 설명</span><a href="#conductor의-주요-구성요소-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="고정-uid-정의"><span class="me-2">고정 UID 정의</span><a href="#고정-uid-정의" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -977,8 +971,6 @@
   <li>UID 기반으로 포트 교체(swap)하거나 구분 가능</li>
 </ul>
 
-<hr />
-
 <h3 id="published-속성"><span class="me-2"><code class="language-plaintext highlighter-rouge">@Published</code> 속성</span><a href="#published-속성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -997,8 +989,6 @@
   <li>UI에서 실시간으로 바뀌는 값을 추적할 수 있도록 상태 노출</li>
   <li>MIDI 이벤트 기록(log), 포트 스왑 여부, 출력 포트 오픈 여부 관리</li>
 </ul>
-
-<hr />
 
 <h3 id="midi-초기화"><span class="me-2">MIDI 초기화</span><a href="#midi-초기화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1019,8 +1009,6 @@
   <li><code class="language-plaintext highlighter-rouge">self</code>를 <code class="language-plaintext highlighter-rouge">MIDIListener</code>로 등록하여 수신 처리 가능</li>
 </ul>
 
-<hr />
-
 <h3 id="로그-버퍼링-및-timer-처리"><span class="me-2">로그 버퍼링 및 Timer 처리</span><a href="#로그-버퍼링-및-timer-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -1036,8 +1024,6 @@
   <li>0.5초마다 한 번씩 <code class="language-plaintext highlighter-rouge">flushLogBuffer()</code>를 호출해 log에 삽입 → UI 성능 저하 방지</li>
 </ul>
 
-<hr />
-
 <h3 id="포트-설명-캐싱"><span class="me-2">포트 설명 캐싱</span><a href="#포트-설명-캐싱" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -1050,8 +1036,6 @@
   <li><code class="language-plaintext highlighter-rouge">inputPortDescription(forUID:)</code> 함수에서 매번 조회하지 않고 캐싱</li>
   <li>초기화 시 백그라운드 스레드에서 inputInfos를 순회해 캐싱해둠</li>
 </ul>
-
-<hr />
 
 <h3 id="포트-열기-및-닫기"><span class="me-2">포트 열기 및 닫기</span><a href="#포트-열기-및-닫기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1069,8 +1053,6 @@
   <li><code class="language-plaintext highlighter-rouge">outputIsOpen</code>이 바뀔 때 포트를 열거나 닫음</li>
   <li><code class="language-plaintext highlighter-rouge">start()</code>는 input 포트 열기, <code class="language-plaintext highlighter-rouge">stop()</code>은 모두 닫기</li>
 </ul>
-
-<hr />
 
 <h3 id="이벤트-전송"><span class="me-2">이벤트 전송</span><a href="#이벤트-전송" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1095,8 +1077,6 @@
   </li>
 </ul>
 
-<hr />
-
 <h3 id="포트-스왑-기능"><span class="me-2">포트 스왑 기능</span><a href="#포트-스왑-기능" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -1111,8 +1091,6 @@
   <li>개발용 포트와 메인 포트를 교체하여 라우팅 방식 변경 가능</li>
   <li>예: 출력 포트 UID가 <code class="language-plaintext highlighter-rouge">outputUIDDevelop</code>이면 → <code class="language-plaintext highlighter-rouge">inputUIDDevelop</code>로 바꿈</li>
 </ul>
-
-<hr />
 
 <h3 id="midilistener-구현"><span class="me-2">MIDIListener 구현</span><a href="#midilistener-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1131,8 +1109,6 @@
   <li>수신된 이벤트를 <code class="language-plaintext highlighter-rouge">logBuffer</code>에 추가</li>
   <li>로그에 포트 ID 포함 → 어떤 포트에서 들어온 메시지인지 추적 가능</li>
 </ul>
-
-<hr />
 
 <h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -1175,17 +1151,13 @@
   </tbody>
 </table></div>
 
-<hr />
-
-<h1 id="midiporttestview">MIDIPortTestView</h1>
+<h2 id="midiporttestview의-주요-구성-요소-설명"><span class="me-2">MIDIPortTestView의 주요 구성 요소 설명</span><a href="#midiporttestview의-주요-구성-요소-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">MIDIPortTestView</code>는 AudioKit + MIDIKit 기반의 SwiftUI 뷰로,
 <strong>가상 및 외부 MIDI 포트의 입출력 테스트, CC/노트 전송, 포트 선택 및 실시간 로그 확인</strong> 기능을 제공합니다.
 앱 또는 MIDI 툴에서 <strong>MIDI 포트 동작 상태를 시각적으로 테스트하거나 디버그하는 데 유용</strong>한 구성입니다.</p>
 
-<hr />
-
-<h2 id="전체-구조-요약"><span class="me-2">전체 구조 요약</span><a href="#전체-구조-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="전체-구조"><span class="me-2">전체 구조</span><a href="#전체-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1211,10 +1183,6 @@
  <span class="err">└─</span> <span class="kt">LogDataArea</span>                   <span class="err">←</span> <span class="n">수신된</span> <span class="kt">MIDI</span> <span class="n">로그</span> <span class="n">목록</span> <span class="n">표시</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<hr />
-
-<h2 id="주요-구성-요소-설명"><span class="me-2">주요 구성 요소 설명</span><a href="#주요-구성-요소-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
 <h3 id="headerarea"><span class="me-2"><code class="language-plaintext highlighter-rouge">HeaderArea</code></span><a href="#headerarea" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -1226,8 +1194,6 @@
 <ul>
   <li>현재 MIDI 시스템에 등록된 포트 정보(입력/출력/가상 등)의 개수, 이름, UID를 표시</li>
 </ul>
-
-<hr />
 
 <h3 id="tabview--port12selectarea"><span class="me-2"><code class="language-plaintext highlighter-rouge">TabView</code> + <code class="language-plaintext highlighter-rouge">Port1/2SelectArea</code></span><a href="#tabview--port12selectarea" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1243,8 +1209,6 @@
   <li>두 번째 페이지: Virtual Output 포트 선택 + 전송</li>
 </ul>
 
-<hr />
-
 <h3 id="porteventareaportid"><span class="me-2"><code class="language-plaintext highlighter-rouge">PortEventArea(portID:)</code></span><a href="#porteventareaportid" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -1258,8 +1222,6 @@
   <li>ProgramChange(랜덤 악기 변경), CC 1 (Mod Wheel) 전송 버튼 포함</li>
   <li>버튼 클릭 시 <code class="language-plaintext highlighter-rouge">conductor.sendEvent(...)</code> 호출로 해당 포트에 MIDI 전송</li>
 </ul>
-
-<hr />
 
 <h3 id="로그-관련-ui"><span class="me-2">로그 관련 UI</span><a href="#로그-관련-ui" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1283,8 +1245,6 @@
   <li><code class="language-plaintext highlighter-rouge">conductor.inputPortDescription(forUID:)</code>를 통해 포트 UID → 이름/제조사 변환 (성능 저하 원인)</li>
 </ul>
 
-<hr />
-
 <h3 id="포트-상태-전환-토글"><span class="me-2">포트 상태 전환 토글</span><a href="#포트-상태-전환-토글" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -1303,8 +1263,6 @@
   <li><code class="language-plaintext highlighter-rouge">outputPortIsSwapped</code>: 가상 출력 포트 UID 스왑 여부
 → <code class="language-plaintext highlighter-rouge">conductor.swapVirtualInputPort(...)</code> 등의 포트 경로 제어에 영향</li>
 </ul>
-
-<hr />
 
 <h2 id="기능-요약"><span class="me-2">기능 요약</span><a href="#기능-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -1339,9 +1297,7 @@
   </tbody>
 </table></div>
 
-<hr />
-
-<h2 id="주의개선-포인트"><span class="me-2">주의/개선 포인트</span><a href="#주의개선-포인트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="주의"><span class="me-2">주의</span><a href="#주의" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">LogDataArea</code>에서 <code class="language-plaintext highlighter-rouge">inputPortDescription()</code>은 성능 병목 → 캐싱 또는 비동기 평가 필요</li>
@@ -1349,9 +1305,7 @@
   <li>각 포트별 상태나 활성화 여부도 추가 UI로 제공 가능</li>
 </ul>
 
-<hr />
-
-<h2 id="요약-1"><span class="me-2">요약</span><a href="#요약-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="midiporttestview-요약"><span class="me-2">MIDIPortTestView 요약</span><a href="#midiporttestview-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">MIDIPortTestView</code>는:</p>
 
@@ -1362,8 +1316,6 @@
 </ul>
 
 <p>테스트 도구, 디버깅 뷰, 또는 DAW 플러그인 개발자용 MIDI 유틸리티로 활용할 수 있습니다.</p>
-
-<hr />
 
   </div>
 
@@ -3324,18 +3276,6 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -3421,7 +3361,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3449,7 +3389,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3477,7 +3417,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 PolyphonicSTK+MIDIKit</h4>
               <div class="text-muted">
-                <p>Polyphonic STK + MIDIKit     코드 보기   이 코드는 AudioKit과 MIDIKit을 함께 사용하여, 가상 또는 외부 MIDI 장치로부터 들어오는 MIDI 이벤트를 수신하고, RhodesPianoKey(SoundpipeAudioKit) 기반으로 폴리포닉 연주를 가능하게 하는 구조입니다.    MIDIKit 관련 설명  MIDI...</p>
+                <p>코드 보기   이 코드는 AudioKit과 MIDIKit을 함께 사용하여, 가상 또는 외부 MIDI 장치로부터 들어오는 MIDI 이벤트를 수신하고, RhodesPianoKey(SoundpipeAudioKit) 기반으로 폴리포닉 연주를 가능하게 하는 구조입니다.  MIDIKit 부분 설명  MIDIManager 생성  let midiManager = M...</p>
               </div>
             </div>
           </a>

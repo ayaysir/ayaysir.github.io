@@ -33,8 +33,8 @@
 <meta property="og:title" content="AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Multitrack MIDI Player" />
-<meta property="og:description" content="Multitrack MIDI Player" />
+<meta name="description" content="코드 보기" />
+<meta property="og:description" content="코드 보기" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/MultiTrackMIDIPlayer/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/MultiTrackMIDIPlayer/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -44,7 +44,7 @@
 <meta property="twitter:title" content="AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-23T17:16:31+09:00","datePublished":"2025-06-23T17:16:31+09:00","description":"Multitrack MIDI Player","headline":"AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/MultiTrackMIDIPlayer/"},"url":"https://ayaysir.github.io/posts/MultiTrackMIDIPlayer/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-23T17:16:31+09:00","datePublished":"2025-06-23T17:16:31+09:00","description":"코드 보기","headline":"AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/MultiTrackMIDIPlayer/"},"url":"https://ayaysir.github.io/posts/MultiTrackMIDIPlayer/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -769,7 +769,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="738 words"
+  title="733 words"
 >
   <em>4 min</em> read</span>
 
@@ -803,18 +803,14 @@
   
 
   <div class="content">
-    <h1 id="multitrack-midi-player">Multitrack MIDI Player</h1>
-
-<ul>
+    <ul>
   <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift">코드 보기</a></li>
 </ul>
 
 <p>이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 <strong>MIDI 파일을 재생할 수 있는 SwiftUI 기반의 멀티트랙 MIDI 플레이어</strong>입니다.
 구성은 크게 <code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerConductor</code>(오디오 및 MIDI 처리 로직)와 <code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerView</code>(UI)로 나뉘며, 아래와 같이 작동합니다.</p>
 
-<hr />
-
-<h2 id="multitrackmidiplayerconductor-오디오-및-midi-제어-클래스"><span class="me-2"><code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerConductor</code>: 오디오 및 MIDI 제어 클래스</span><a href="#multitrackmidiplayerconductor-오디오-및-midi-제어-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="multitrackmidiplayerconductor-오디오-및-midi-제어-클래스"><span class="me-2">MultitrackMIDIPlayerConductor: 오디오 및 MIDI 제어 클래스</span><a href="#multitrackmidiplayerconductor-오디오-및-midi-제어-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="주요-프로퍼티"><span class="me-2">주요 프로퍼티</span><a href="#주요-프로퍼티" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -839,8 +835,6 @@
   <li><code class="language-plaintext highlighter-rouge">mixer</code>: 여러 sampler를 하나로 합쳐 출력</li>
 </ul>
 
-<hr />
-
 <h3 id="init"><span class="me-2"><code class="language-plaintext highlighter-rouge">init()</code></span><a href="#init" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -854,8 +848,6 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>앱 시작 시 기본 MIDI 파일(<code class="language-plaintext highlighter-rouge">Horde3</code>)을 불러오고, 트랙 구성 및 믹서 설정을 실행합니다.</p>
-
-<hr />
 
 <h3 id="loadmidifileurl"><span class="me-2"><code class="language-plaintext highlighter-rouge">loadMIDIFile(url:)</code></span><a href="#loadmidifileurl" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -877,8 +869,6 @@
 </ul>
 
 <p>※ <code class="language-plaintext highlighter-rouge">engine.output = mixer</code>가 <code class="language-plaintext highlighter-rouge">setMixerOutput()</code> 안에서 설정되므로 이 라인 이후 오디오 출력이 재설정됨</p>
-
-<hr />
 
 <h3 id="settracks"><span class="me-2"><code class="language-plaintext highlighter-rouge">setTracks()</code></span><a href="#settracks" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -908,8 +898,6 @@
 
 <p>로그는 <code class="language-plaintext highlighter-rouge">conductor.midiLog</code>에 텍스트로 기록됨</p>
 
-<hr />
-
 <h3 id="sequencerplay--sequencerstop"><span class="me-2"><code class="language-plaintext highlighter-rouge">sequencerPlay()</code> / <code class="language-plaintext highlighter-rouge">sequencerStop()</code></span><a href="#sequencerplay--sequencerstop" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -921,8 +909,6 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>플레이/스톱 버튼에 대응하여 시퀀서를 재생 또는 정지합니다.</p>
-
-<hr />
 
 <h2 id="multitrackmidiplayerview-사용자-인터페이스"><span class="me-2"><code class="language-plaintext highlighter-rouge">MultitrackMIDIPlayerView</code>: 사용자 인터페이스</span><a href="#multitrackmidiplayerview-사용자-인터페이스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -941,13 +927,11 @@
   <li><code class="language-plaintext highlighter-rouge">showFileImporter</code>: 파일 가져오기 창 제어용</li>
 </ul>
 
-<hr />
-
 <h3 id="ui-구성-요약"><span class="me-2">UI 구성 요약</span><a href="#ui-구성-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>MIDI 파일명 표시</li>
-  <li>[Load MIDI File], [PLAY / STOP] 버튼</li>
+  <li><code class="language-plaintext highlighter-rouge">[Load MIDI File]</code>, <code class="language-plaintext highlighter-rouge">[PLAY / STOP]</code> 버튼</li>
   <li>MIDI 분석 로그 스크롤 출력</li>
 </ul>
 
@@ -964,8 +948,6 @@
   <span class="kt">Text</span><span class="p">(</span><span class="n">conductor</span><span class="o">.</span><span class="n">midiLog</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
-
-<hr />
 
 <h3 id="파일-가져오기-midi"><span class="me-2">파일 가져오기 (.midi)</span><a href="#파일-가져오기-midi" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -984,8 +966,6 @@
 <p>유저가 파일을 선택하면 MIDI 파일을 <code class="language-plaintext highlighter-rouge">Conductor</code>에 전달하여 새롭게 로드합니다.
 <strong>보안 스코프 리소스 접근 권한</strong>도 자동으로 획득함 (<code class="language-plaintext highlighter-rouge">startAccessingSecurityScopedResource()</code>)</p>
 
-<hr />
-
 <h3 id="오디오-엔진-관리"><span class="me-2">오디오 엔진 관리</span><a href="#오디오-엔진-관리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -998,9 +978,7 @@
 
 <p>뷰가 등장할 때 AudioKit 엔진 시작, 사라질 때 정지</p>
 
-<hr />
-
-<h2 id="-핵심-특징-요약"><span class="me-2">✅ 핵심 특징 요약</span><a href="#-핵심-특징-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="핵심-특징-요약"><span class="me-2">핵심 특징 요약</span><a href="#핵심-특징-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1033,9 +1011,7 @@
   </tbody>
 </table></div>
 
-<hr />
-
-<h2 id="-확장-아이디어"><span class="me-2">📦 확장 아이디어</span><a href="#-확장-아이디어" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="확장-아이디어"><span class="me-2">확장 아이디어</span><a href="#확장-아이디어" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>트랙별 볼륨/음소거 슬라이더 추가</li>
@@ -3025,18 +3001,6 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -3098,7 +3062,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p>MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEvent(time: 6...</p>
+                <p>문제 상황 요약  코드  track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ]      표준 MIDI에서는 이런 식으로...</p>
               </div>
             </div>
           </a>
@@ -3126,7 +3090,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p>MIDI Port Test (Virtual MIDI Host 포함)     코드 보기   MIDIPortTestConductor는 AudioKit과 MIDIKit을 이용해 MIDI 포트를 테스트하거나 MIDI 이벤트를 수신/전송할 수 있도록 설계된 MIDI 테스트 도구의 핵심 로직 클래스입니다. 가상 포트를 생성하고, 외부 장치와 통신하며, MIDI ...</p>
+                <p>코드 보기   MIDIPortTestConductor는 AudioKit과 MIDIKit을 이용해 MIDI 포트를 테스트하거나 MIDI 이벤트를 수신/전송할 수 있도록 설계된 MIDI 테스트 도구의 핵심 로직 클래스입니다. 가상 포트를 생성하고, 외부 장치와 통신하며, MIDI 로그를 저장하고, 포트 정보를 조회하는 기능을 포함합니다.  주요 목적   ...</p>
               </div>
             </div>
           </a>
@@ -3154,7 +3118,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 PolyphonicSTK+MIDIKit</h4>
               <div class="text-muted">
-                <p>Polyphonic STK + MIDIKit     코드 보기   이 코드는 AudioKit과 MIDIKit을 함께 사용하여, 가상 또는 외부 MIDI 장치로부터 들어오는 MIDI 이벤트를 수신하고, RhodesPianoKey(SoundpipeAudioKit) 기반으로 폴리포닉 연주를 가능하게 하는 구조입니다.    MIDIKit 관련 설명  MIDI...</p>
+                <p>코드 보기   이 코드는 AudioKit과 MIDIKit을 함께 사용하여, 가상 또는 외부 MIDI 장치로부터 들어오는 MIDI 이벤트를 수신하고, RhodesPianoKey(SoundpipeAudioKit) 기반으로 폴리포닉 연주를 가능하게 하는 구조입니다.  MIDIKit 부분 설명  MIDIManager 생성  let midiManager = M...</p>
               </div>
             </div>
           </a>

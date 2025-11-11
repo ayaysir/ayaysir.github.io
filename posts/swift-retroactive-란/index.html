@@ -498,11 +498,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -510,65 +505,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -661,8 +597,94 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
 
 
@@ -753,7 +775,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1200 words"
+  title="1226 words"
 >
   <em>6 min</em> read</span>
 
@@ -787,18 +809,24 @@
   
 
   <div class="content">
-    <h3 id="retroactive-란"><span class="me-2"><strong>Retroactive 란?</strong></span><a href="#retroactive-란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="retroactive-란"><span class="me-2">Retroactive 란?</span><a href="#retroactive-란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<blockquote>
+  <p>영어 시전에서 retroactive의 뜻: (=retrospective) 소급 적용되는, 회상하는</p>
+</blockquote>
 
 <p>해당 경고는 Swift에서 <strong>retroactive conformance</strong>(기존 타입에 프로토콜을 채택시키는 것)를 사용할 때 나타나는 것으로, 나중에 AudioKit 라이브러리 자체에서 NodeParameter에 Hashable을 추가하게 되면 <strong>중복 충돌</strong>이 발생할 수 있음을 경고합니다.</p>
 
+<h3 id="에러-메시지의-예"><span class="me-2">에러 메시지의 예</span><a href="#에러-메시지의-예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <blockquote>
-  <p>Extension declares a conformance of imported type ‘AVAudioUnitReverbPreset’ to imported protocol ‘CaseIterable’; this will not behave correctly if the owners of ‘AVFAudio’ introduce this conformance in the future 확장 기능은 가져온 프로토콜 ‘CaseIterable’에 대한 가져온 유형 ‘AVAudioUnitReverbPreset’의 적합성을 선언합니다. 이는 ‘AVFAudio’ 소유자가 향후 이 적합성(내가 새로 준수conform하려고 한 프로토콜)을 도입하는 경우 올바르게 작동하지 않습니다. Add ‘@retroactive’ to silence this warning (<code class="language-plaintext highlighter-rouge">@retroactive</code>를 추가하여 경고 무시)</p>
+  <p>Extension declares a conformance of imported type ‘AVAudioUnitReverbPreset’ to imported protocol ‘CaseIterable’; this will not behave correctly if the owners of ‘AVFAudio’ introduce this conformance in the future.<br /><i>확장 기능은 가져온 프로토콜 ‘CaseIterable’에 대한 가져온 유형 ‘AVAudioUnitReverbPreset’의 적합성을 선언합니다. 이는 ‘AVFAudio’ 소유자가 향후 이 적합성(내가 새로 준수conform하려고 한 프로토콜)을 도입하는 경우 올바르게 작동하지 않습니다.</i><br /><br />Add ‘@retroactive’ to silence this warning<br /><i><code class="language-plaintext highlighter-rouge">@retroactive</code>를 추가하여 경고 무시</i></p>
 </blockquote>
 
-<h4 id="예시-코드"><span class="me-2"><strong>예시 코드:</strong></span><a href="#예시-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="문제-발생의-예시-코드"><span class="me-2">문제 발생의 예시 코드</span><a href="#문제-발생의-예시-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -810,29 +838,27 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>import AudioKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">AudioKit</span>
 
-extension NodeParameter: Hashable {
-  public func hash(into hasher: inout Hasher) {
-    // 구현
-  }
+<span class="kd">extension</span> <span class="kt">NodeParameter</span><span class="p">:</span> <span class="kt">Hashable</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">hash</span><span class="p">(</span><span class="n">into</span> <span class="nv">hasher</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Hasher</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 구현</span>
+  <span class="p">}</span>
 
-  public static func == (lhs: NodeParameter, rhs: NodeParameter) -&gt; Bool {
-    // 구현
-  }
-}
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">NodeParameter</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">NodeParameter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="c1">// 구현</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이미 존재하는 NodeParameter에서 해당 타입의 개발자는 Hashable을 구현하지 않은 상태입니다. 여기서 이 프레임워크를 사용하는 임의의 개발자가 Hashable을 준수하도록 하는 확장을 추가할 경우 위와 같은 경고가 발생합니다.</p>
 
-<p> </p>
-
-<h4 id="해결-방법"><span class="me-2"><strong>해결 방법</strong></span><a href="#해결-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="해결-방법"><span class="me-2">해결 방법</span><a href="#해결-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>경고를 무시하겠다는 의도를 명시하려면 @retroactive를 추가합니다:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -842,20 +868,20 @@ extension NodeParameter: Hashable {
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>@retroactive extension NodeParameter: Hashable {
-  public func hash(into hasher: inout Hasher) {
-    // 구현
-  }
+</pre></td><td class="rouge-code"><pre><span class="kd">@retroactive</span> <span class="kd">extension</span> <span class="kt">NodeParameter</span><span class="p">:</span> <span class="kt">Hashable</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">hash</span><span class="p">(</span><span class="n">into</span> <span class="nv">hasher</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Hasher</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 구현</span>
+  <span class="p">}</span>
 
-  public static func == (lhs: NodeParameter, rhs: NodeParameter) -&gt; Bool {
-    // 구현
-  }
-}
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">NodeParameter</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">NodeParameter</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="c1">// 구현</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="경고를-무시해도-괜찮은가"><span class="me-2"><strong>경고를 무시해도 괜찮은가?</strong></span><a href="#경고를-무시해도-괜찮은가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="경고를-무시해도-괜찮은가"><span class="me-2">경고를 무시해도 괜찮은가?</span><a href="#경고를-무시해도-괜찮은가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><strong>괜찮은 경우</strong>: 해당 라이브러리를 <strong>직접 컨트롤하고 있고</strong>, 라이브러리 업데이트 시 이 부분을 <strong>체크할 수 있다면</strong> 사용해도 됩니다.</li>
@@ -864,12 +890,12 @@ extension NodeParameter: Hashable {
 
 <p> </p>
 
-<h4 id="대안-1-별도의-타입으로-래핑"><span class="me-2"><strong>대안 1: 별도의 타입으로 래핑</strong></span><a href="#대안-1-별도의-타입으로-래핑" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="대안-별도의-타입으로-래핑"><span class="me-2">대안: 별도의 타입으로 래핑</span><a href="#대안-별도의-타입으로-래핑" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>필요하다면 NodeParameter을 래핑한 별도의 타입을 만들어 안전하게 Hashable을 채택하는 것도 대안입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -881,32 +907,30 @@ extension NodeParameter: Hashable {
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>struct NodeParameterWrapper: Hashable {
-  let parameter: NodeParameter
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">NodeParameterWrapper</span><span class="p">:</span> <span class="kt">Hashable</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">parameter</span><span class="p">:</span> <span class="kt">NodeParameter</span>
 
-  func hash(into hasher: inout Hasher) {
-    // 원하는 기준으로 hash 처리
-  }
+  <span class="kd">func</span> <span class="nf">hash</span><span class="p">(</span><span class="n">into</span> <span class="nv">hasher</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Hasher</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 원하는 기준으로 hash 처리</span>
+  <span class="p">}</span>
 
-  static func == (lhs: NodeParameterWrapper, rhs: NodeParameterWrapper) -&gt; Bool {
-    // 원하는 기준으로 비교
-  }
-}
+  <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">NodeParameterWrapper</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">NodeParameterWrapper</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="c1">// 원하는 기준으로 비교</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 방법은 미래 충돌을 피할 수 있는 <strong>더 안전한 선택지</strong>입니다.</p>
 
-<h4 id="중복으로-프로토콜-준수-시-어떤-문제가-발생"><span class="me-2"><strong>중복으로 프로토콜 준수 시 어떤 문제가 발생?</strong></span><a href="#중복으로-프로토콜-준수-시-어떤-문제가-발생" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="중복으로-프로토콜-준수-시-어떤-문제가-발생"><span class="me-2">중복으로 프로토콜 준수 시 어떤 문제가 발생?</span><a href="#중복으로-프로토콜-준수-시-어떤-문제가-발생" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">@retroactive</code>를 사용해 외부에서 정의된 타입(<code class="language-plaintext highlighter-rouge">NodeParameter</code>)에 외부 프로토콜(<code class="language-plaintext highlighter-rouge">Hashable</code>)을 채택시킨 경우, 해당 라이브러리(예: AudioKit)에서 나중에 <strong>자체적으로 NodeParameter에 Hashable을 채택하게 되면</strong> 다음과 같은 일이 발생할 수 있습니다:</p>
 
-<h4 id="결과"><span class="me-2"><strong>결과:</strong></span><a href="#결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<h5 id="중복된-프로토콜-채택으로-인한-컴파일-오류-발생"><span class="me-2"><strong>중복된 프로토콜 채택으로 인한 컴파일 오류 발생</strong></span><a href="#중복된-프로토콜-채택으로-인한-컴파일-오류-발생" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="중복된-프로토콜-채택으로-인한-컴파일-오류-발생"><span class="me-2">중복된 프로토콜 채택으로 인한 컴파일 오류 발생</span><a href="#중복된-프로토콜-채택으로-인한-컴파일-오류-발생" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Swift는 동일한 타입이 <strong>여러 모듈에서 동일한 프로토콜을 채택</strong>하면 <strong>충돌이 발생했다는 컴파일 오류</strong>를 발생시킵니다. 이 상황은 특히 @retroactive를 사용하여 <strong>내가 직접 Hashable 채택을 선언한 경우</strong> 문제가 됩니다.</p>
 
-<h4 id="예시-시나리오"><span class="me-2"><strong>예시 시나리오</strong></span><a href="#예시-시나리오" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="예시-시나리오"><span class="me-2">예시 시나리오</span><a href="#예시-시나리오" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li>현재: NodeParameter는 AudioKit에서는 Hashable을 채택하지 않음 → 내가 임의로 @retroactive를 사용해 채택함 → 문제 없음</li>
@@ -916,28 +940,25 @@ extension NodeParameter: Hashable {
 
 <p> </p>
 
-<h4 id="해결-방법-1"><span class="me-2"><strong>해결 방법</strong></span><a href="#해결-방법-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="해결-방법-1"><span class="me-2">해결 방법</span><a href="#해결-방법-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<ol>
-  <li><strong>라이브러리에서 공식적으로 채택한 후에는 내 선언을 제거해야 합니다.</strong>
-    <ul>
-      <li>@retroactive로 채택한 코드를 삭제하면 충돌이 사라집니다.</li>
-      <li>이후엔 라이브러리의 공식 채택을 그대로 사용하면 됩니다.</li>
-    </ul>
+<h4 id="1-라이브러리에서-공식적으로-채택한-후에는-내-선언을-제거해야-합니다"><span class="me-2">1. 라이브러리에서 공식적으로 채택한 후에는 내 선언을 제거해야 합니다.</span><a href="#1-라이브러리에서-공식적으로-채택한-후에는-내-선언을-제거해야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>@retroactive로 채택한 코드를 삭제하면 충돌이 사라집니다.</li>
+  <li>이후엔 라이브러리의 공식 채택을 그대로 사용하면 됩니다.
+    <h4 id="2-가능하면-retroactive-대신-타입-래핑을-고려하세요"><span class="me-2">2. 가능하면 @retroactive 대신 타입 래핑을 고려하세요.</span><a href="#2-가능하면-retroactive-대신-타입-래핑을-고려하세요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
   </li>
-  <li><strong>가능하면 @retroactive 대신 타입 래핑을 고려하세요.</strong>
-    <ul>
-      <li>예: struct MyNodeParameter: Hashable { let base: NodeParameter }</li>
-      <li>안전한 방법이지만 코드가 다소 복잡해집니다.</li>
-    </ul>
-  </li>
-</ol>
+  <li>예: struct MyNodeParameter: Hashable { let base: NodeParameter }</li>
+  <li>안전한 방법이지만 코드가 다소 복잡해집니다.</li>
+</ul>
 
 <p> </p>
 
-<h4 id="요약"><span class="me-2"><strong>요약</strong></span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><code class="language-plaintext highlighter-rouge">@retroactive</code>는 편리하지만 <strong>라이브러리 업데이트에 매우 민감한 선택</strong>입니다. 라이브러리에서 해당 채택을 직접 제공하게 되면 <strong>당신의 선언과 충돌하게 되며, 코드를 수정해야만 컴파일이 가능합니다.</strong> 가능한 경우 타입 래핑 같은 대체 방식을 고려하는 것이 좋습니다. [rcblock id=”6686”]</p>
+<p><code class="language-plaintext highlighter-rouge">@retroactive</code>는 편리하지만 <strong>라이브러리 업데이트에 매우 민감한 선택</strong>입니다. 라이브러리에서 해당 채택을 직접 제공하게 되면 <strong>당신의 선언과 충돌하게 되며, 코드를 수정해야만 컴파일이 가능합니다.</strong> 가능한 경우 타입 래핑 같은 대체 방식을 고려하는 것이 좋습니다.</p>
+
+<!--[rcblock id="6686"]-->
 
   </div>
 
@@ -7792,7 +7813,7 @@ extension NodeParameter: Hashable {
 
               <h4 class="pt-0 my-2">Swift: iOS에서 Custom URL Scheme 등록해서 url로 앱 열기</h4>
               <div class="text-muted">
-                <p>iOS에서 Custom URL Scheme를 등록하는 방법입니다.  ---  ## 1. 메인 앱에 URL Scheme 등록  먼저 ImageTranslator 앱의 Info.plist에 다음을 추가하세요.  ```xml CFBundleURLTypes         CFBundleURLSchemes            imagetranslator    ...</p>
+                <p>iOS에서 Custom URL Scheme를 등록하는 방법입니다.  ## 1. 메인 앱에 URL Scheme 등록  먼저 ImageTranslator 앱의 Info.plist에 다음을 추가하세요.  ```xml CFBundleURLTypes         CFBundleURLSchemes            imagetranslator         ...</p>
               </div>
             </div>
           </a>
@@ -7820,7 +7841,7 @@ extension NodeParameter: Hashable {
 
               <h4 class="pt-0 my-2">Swift: Action Extension에서 extensionContext가 iOS 18에서 작동하지 않는 문제</h4>
               <div class="text-muted">
-                <p>iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  ### 원문 링크 - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-open-ma...</p>
+                <p>iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  **원문 링크** - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-open-ma...</p>
               </div>
             </div>
           </a>
@@ -7879,7 +7900,7 @@ extension NodeParameter: Hashable {
 
   
     <a
-      href="/posts/%ED%95%84%ED%84%B0(Filter)/"
+      href="/posts/Filter/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >

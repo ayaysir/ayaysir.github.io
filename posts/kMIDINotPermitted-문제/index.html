@@ -703,7 +703,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="472 words"
+  title="468 words"
 >
   <em>2 min</em> read</span>
 
@@ -739,13 +739,11 @@
   <div class="content">
     <h1 id="kmidinotpermitted-문제">kMIDINotPermitted 문제</h1>
 
-<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="원인"><span class="me-2">원인</span><a href="#원인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><strong>iOS 앱에서 Background Modes의 “Audio, AirPlay, and Picture in Picture” 옵션을 활성화하지 않으면 MIDI 권한이 제한되어</strong>, <code class="language-plaintext highlighter-rouge">MIDISampler</code>나 <code class="language-plaintext highlighter-rouge">MIDICallbackInstrument</code>와 같은 <strong>실시간 MIDI 관련 기능이 제대로 작동하지 않습니다.</strong></p>
+<p>iOS 앱에서 <strong><em>Background Modes</em></strong>의 <strong><em>“Audio, AirPlay, and Picture in Picture”</em></strong> 옵션을 활성화하지 않으면 MIDI 권한이 제한되어, <code class="language-plaintext highlighter-rouge">MIDISampler</code>나 <code class="language-plaintext highlighter-rouge">MIDICallbackInstrument</code>와 같은 실시간 MIDI 관련 기능이 제대로 작동하지 않습니다.</p>
 
-<hr />
-
-<h2 id="-오류-메시지-해석"><span class="me-2">✅ 오류 메시지 해석</span><a href="#-오류-메시지-해석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="오류-메시지-해석"><span class="me-2">오류 메시지 해석</span><a href="#오류-메시지-해석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -757,13 +755,11 @@ Have you enabled the audio background mode in your ios app?
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">kMIDINotPermitted</code>는 <strong>MIDI 권한 부족</strong>을 나타냅니다.</li>
-  <li>“Have you enabled the audio background mode…?”라는 메시지 자체가 해결 방법을 알려주고 있습니다:
+  <li>“Have you enabled the audio background mode…?”라는 메시지 자체가 해결 방법을 알려주고 있습니다:<br />
 → 즉, <strong>“Background Modes &gt; Audio”를 활성화해야 MIDI 기능이 허용됨</strong>을 뜻합니다.</li>
 </ul>
 
-<hr />
-
-<h2 id="-왜-이런-문제가-발생하는가"><span class="me-2">🧠 왜 이런 문제가 발생하는가?</span><a href="#-왜-이런-문제가-발생하는가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="왜-이런-문제가-발생하는가"><span class="me-2">왜 이런 문제가 발생하는가?</span><a href="#왜-이런-문제가-발생하는가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>iOS는 <strong>에너지 절약과 보안을 이유로</strong>, 백그라운드 또는 오디오 처리 관련 기능을 <strong>명시적으로 허용하지 않으면 일부 오디오/MIDI 기능을 제한</strong>합니다.</p>
 
@@ -773,13 +769,11 @@ Have you enabled the audio background mode in your ios app?
   <li>AudioKit의 <code class="language-plaintext highlighter-rouge">MIDISampler</code>, <code class="language-plaintext highlighter-rouge">AppleSequencer</code>, <code class="language-plaintext highlighter-rouge">MIDICallbackInstrument</code> 등은
 <strong>Core MIDI 또는 AVAudioEngine의 실시간 처리 권한</strong>이 필요합니다.</li>
   <li>하지만 <code class="language-plaintext highlighter-rouge">Info.plist</code> 또는 Build 설정에 <strong>Background Modes &gt; Audio</strong>가 설정되지 않으면,
-iOS는 <strong>이 앱이 오디오 기반 앱이 아니라고 판단</strong>하고,
+iOS는 <strong>이 앱이 오디오 기반 앱이 아니라고 판단</strong>하고,<br />
 → MIDI 처리를 차단합니다.</li>
 </ul>
 
-<hr />
-
-<h2 id="-해결-방법"><span class="me-2">✅ 해결 방법</span><a href="#-해결-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="해결-방법"><span class="me-2">해결 방법</span><a href="#해결-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="1-xcode에서-설정"><span class="me-2">1. Xcode에서 설정</span><a href="#1-xcode에서-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -803,9 +797,7 @@ iOS는 <strong>이 앱이 오디오 기반 앱이 아니라고 판단</strong>�
 <span class="nt">&lt;/array&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<hr />
-
-<h2 id="-정리"><span class="me-2">📌 정리</span><a href="#-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="정리"><span class="me-2">정리</span><a href="#정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -834,7 +826,6 @@ iOS는 <strong>이 앱이 오디오 기반 앱이 아니라고 판단</strong>�
   </tbody>
 </table></div>
 
-<hr />
 
   </div>
 
@@ -2844,18 +2835,6 @@ iOS는 <strong>이 앱이 오디오 기반 앱이 아니라고 판단</strong>�
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -2892,7 +2871,7 @@ iOS는 <strong>이 앱이 오디오 기반 앱이 아니라고 판단</strong>�
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -2920,7 +2899,7 @@ iOS는 <strong>이 앱이 오디오 기반 앱이 아니라고 판단</strong>�
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -2948,7 +2927,7 @@ iOS는 <strong>이 앱이 오디오 기반 앱이 아니라고 판단</strong>�
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>

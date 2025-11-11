@@ -725,7 +725,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="675 words"
+  title="673 words"
 >
   <em>3 min</em> read</span>
 
@@ -763,26 +763,18 @@
 
 <p><code class="language-plaintext highlighter-rouge">Low Pass Cutoff</code>는 오디오 필터에서 저역 통과 필터(Low-Pass Filter, LPF)의 핵심 설정값입니다. 아래에서 LPF의 개념과 <code class="language-plaintext highlighter-rouge">cutoff frequency</code>가 실제로 어떤 영향을 주는지 자세히 설명드리겠습니다.</p>
 
-<hr />
-
 <h2 id="low-pass-filter-저역-통과-필터란"><span class="me-2">Low-Pass Filter (저역 통과 필터)란?</span><a href="#low-pass-filter-저역-통과-필터란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<blockquote>
-  <p><strong>저주파수(낮은 소리)는 통과시키고, 고주파수(높은 소리)는 차단</strong>하는 필터</p>
-</blockquote>
+<p><strong>저주파수(낮은 소리)는 통과시키고, 고주파수(높은 소리)는 차단</strong>하는 필터입니다.</p>
 
 <ul>
   <li>주로 소리를 <strong>부드럽게 만들거나</strong>, <strong>고주파 잡음을 줄일 때</strong> 사용</li>
   <li><code class="language-plaintext highlighter-rouge">Delay</code>, <code class="language-plaintext highlighter-rouge">Reverb</code>, <code class="language-plaintext highlighter-rouge">Distortion</code> 등 다양한 효과에서 <strong>필터링</strong> 용도로 포함됨</li>
 </ul>
 
-<hr />
-
 <h2 id="cutoff-frequency-컷오프-주파수"><span class="me-2">Cutoff Frequency (컷오프 주파수)</span><a href="#cutoff-frequency-컷오프-주파수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<blockquote>
-  <p>“어디까지를 <strong>통과</strong>시키고, 그 이상부터는 <strong>감쇄</strong>시킬지”를 결정하는 경계점</p>
-</blockquote>
+<p>“어디까지를 <strong>통과</strong>시키고, 그 이상부터는 <strong>감쇄</strong>시킬지”를 결정하는 경계점입니다</p>
 
 <h3 id="예시"><span class="me-2">예시:</span><a href="#예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -793,12 +785,12 @@
 
 <h3 id="감쇄는-점진적으로-일어남"><span class="me-2">감쇄는 <strong>점진적으로 일어남</strong></span><a href="#감쇄는-점진적으로-일어남" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>→ 흔히 -6dB/octave, -12dB/octave 등의 기울기(slope)를 가짐
-즉, 컷오프를 지난 주파수는 <strong>갑자기 잘리는 게 아니라</strong>, 부드럽게 약해짐</p>
+<ul>
+  <li>흔히 -6dB/octave, -12dB/octave 등의 기울기(slope)를 가짐
+즉, 컷오프를 지난 주파수는 <strong>갑자기 잘리는 게 아니라</strong>, 부드럽게 약해짐</li>
+</ul>
 
-<hr />
-
-<h2 id="시각적-비유-간단한-ascii-그래프"><span class="me-2">시각적 비유 (간단한 ASCII 그래프)</span><a href="#시각적-비유-간단한-ascii-그래프" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="시각적-비유-ascii-그래프"><span class="me-2">시각적 비유 (ASCII 그래프)</span><a href="#시각적-비유-ascii-그래프" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -824,12 +816,9 @@
      컷오프 주파수
 </pre></td></tr></tbody></table></code></div></div>
 
-<hr />
-
 <h2 id="audiokit의-delay에서의-역할"><span class="me-2">AudioKit의 <code class="language-plaintext highlighter-rouge">Delay</code>에서의 역할</span><a href="#audiokit의-delay에서의-역할" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>AudioKit의 <code class="language-plaintext highlighter-rouge">Delay</code> 노드는 내부적으로 딜레이된 신호가 <strong>점점 줄어들며 반복</strong>되는데,
-여기서 <strong>고주파 성분이 계속 남아 있으면 날카로운 잔향</strong>이 생깁니다.</p>
+<p>AudioKit의 <code class="language-plaintext highlighter-rouge">Delay</code> 노드는 내부적으로 딜레이된 신호가 <strong>점점 줄어들며 반복</strong>되는데, 여기서 <strong>고주파 성분이 계속 남아 있으면 날카로운 잔향</strong>이 생깁니다.</p>
 
 <h3 id="따라서"><span class="me-2">따라서:</span><a href="#따라서" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -838,8 +827,6 @@
   <li><code class="language-plaintext highlighter-rouge">cutoff = 4000Hz</code> → 고역을 많이 줄이고, 더 <strong>부드러운 느낌</strong>의 딜레이로 바뀜</li>
   <li><code class="language-plaintext highlighter-rouge">cutoff = 1000Hz 이하</code> → 딜레이가 <strong>저음 위주</strong>로만 들림 (무겁고 둔탁함)</li>
 </ul>
-
-<hr />
 
 <h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -866,9 +853,7 @@
   </tbody>
 </table></div>
 
-<hr />
-
-<h3 id="실용-팁"><span class="me-2">실용 팁:</span><a href="#실용-팁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="팁"><span class="me-2">팁</span><a href="#팁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>보컬 딜레이 → <code class="language-plaintext highlighter-rouge">cutoff ≈ 8000~12000Hz</code> : 선명하면서 자연스러움</li>
@@ -876,7 +861,7 @@
   <li>베이스 → <code class="language-plaintext highlighter-rouge">cutoff ≈ 1000Hz</code> 이하 : 저음의 웅장함 유지</li>
 </ul>
 
-<p>필요에 따라 <code class="language-plaintext highlighter-rouge">cutoff frequency</code>를 조절하여, <strong>딜레이 톤을 “밝게” 혹은 “어둡게” 만드는 도구</strong>로 생각하시면 됩니다.</p>
+<p>필요에 따라 <code class="language-plaintext highlighter-rouge">cutoff frequency</code>를 조절하여, <strong>딜레이 톤을 “밝게” 혹은 “어둡게” 만드는 도구</strong>로 생각하면 됩니다.</p>
 
   </div>
 
@@ -2573,18 +2558,6 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -2934,7 +2907,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -2962,7 +2935,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -2990,7 +2963,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>
@@ -3015,7 +2988,7 @@
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>AudioKit의 Delay 및 DryWetMixer</p>
+      <p>AudioKit의 Delay 및 DryWetMixer 에 관하여</p>
     </a>
   
 
@@ -3025,7 +2998,7 @@
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>AudioKit의 DynamicRangeCompressor</p>
+      <p>AudioKit의 DynamicRangeCompressor 사용 방법</p>
     </a>
   
 </nav>

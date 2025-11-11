@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="AudioKit의 Expander" />
+<meta property="og:title" content="AudioKit의 Expander 사용법" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Expander" />
-<meta property="og:description" content="Expander" />
+<meta name="description" content="Expander는 작은 소리를 더 작게 만들어서 잡음을 줄이거나, 다이내믹 레인지를 넓히는 데 사용되는 오디오 효과입니다. 압축기(Compressor)와 반대 개념입니다. 아래는 각 파라미터의 역할과 수치 변화에 따른 음향적 효과를 설명한 내용입니다." />
+<meta property="og:description" content="Expander는 작은 소리를 더 작게 만들어서 잡음을 줄이거나, 다이내믹 레인지를 넓히는 데 사용되는 오디오 효과입니다. 압축기(Compressor)와 반대 개념입니다. 아래는 각 파라미터의 역할과 수치 변화에 따른 음향적 효과를 설명한 내용입니다." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/Expander/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/Expander/" />
 <meta property="og:site_name" content="BGSMM" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-06-05T14:05:42+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="AudioKit의 Expander" />
+<meta property="twitter:title" content="AudioKit의 Expander 사용법" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-05T14:05:42+09:00","datePublished":"2025-06-05T14:05:42+09:00","description":"Expander","headline":"AudioKit의 Expander","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/Expander/"},"url":"https://ayaysir.github.io/posts/Expander/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-05T14:05:42+09:00","datePublished":"2025-06-05T14:05:42+09:00","description":"Expander는 작은 소리를 더 작게 만들어서 잡음을 줄이거나, 다이내믹 레인지를 넓히는 데 사용되는 오디오 효과입니다. 압축기(Compressor)와 반대 개념입니다. 아래는 각 파라미터의 역할과 수치 변화에 따른 음향적 효과를 설명한 내용입니다.","headline":"AudioKit의 Expander 사용법","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/Expander/"},"url":"https://ayaysir.github.io/posts/Expander/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>AudioKit의 Expander | BGSMM
+  <title>AudioKit의 Expander 사용법 | BGSMM
   </title>
 
   <!--
@@ -416,7 +416,7 @@
         
           
             
-              <span>AudioKit의 Expander</span>
+              <span>AudioKit의 Expander 사용법</span>
             
 
           
@@ -759,7 +759,7 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>AudioKit의 Expander</h1>
+    <h1 data-toc-skip>AudioKit의 Expander 사용법</h1>
     
 
     <div class="post-meta text-muted">
@@ -834,9 +834,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="900 words"
+  title="896 words"
 >
-  <em>5 min</em> read</span>
+  <em>4 min</em> read</span>
 
         </div>
       </div>
@@ -845,7 +845,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">AudioKit의 Expander</span>
+      <span class="label text-truncate">AudioKit의 Expander 사용법</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -858,7 +858,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">AudioKit의 Expander</div>
+        <div class="label text-truncate py-2 ms-4">AudioKit의 Expander 사용법</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -868,13 +868,11 @@
   
 
   <div class="content">
-    <h1 id="expander">Expander</h1>
-
-<p><code class="language-plaintext highlighter-rouge">Expander</code>는 <strong>작은 소리를 더 작게 만들어서</strong> 잡음을 줄이거나, <strong>다이내믹 레인지</strong>를 넓히는 데 사용되는 오디오 효과입니다. 압축기(Compressor)와 반대 개념입니다. 아래는 각 파라미터의 역할과 수치 변화에 따른 음향적 효과를 설명한 내용입니다.</p>
+    <p><code class="language-plaintext highlighter-rouge">Expander</code>는 <strong>작은 소리를 더 작게 만들어서</strong> 잡음을 줄이거나, <strong>다이내믹 레인지</strong>를 넓히는 데 사용되는 오디오 효과입니다. 압축기(Compressor)와 반대 개념입니다. 아래는 각 파라미터의 역할과 수치 변화에 따른 음향적 효과를 설명한 내용입니다.</p>
 
 <hr />
 
-<h2 id="-expander-파라미터-상세-설명"><span class="me-2">🔧 Expander 파라미터 상세 설명</span><a href="#-expander-파라미터-상세-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="expander-파라미터-상세-설명"><span class="me-2">Expander 파라미터 상세 설명</span><a href="#expander-파라미터-상세-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="1-expansion-ratio-확장-비율"><span class="me-2">1. <strong>Expansion Ratio (확장 비율)</strong></span><a href="#1-expansion-ratio-확장-비율" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -882,9 +880,7 @@
   <li><strong>설명:</strong> Threshold 이하의 소리 신호를 얼마나 줄일지를 결정합니다.</li>
   <li><strong>값 범위:</strong> <code class="language-plaintext highlighter-rouge">1.0</code> ~ <code class="language-plaintext highlighter-rouge">50.0</code></li>
   <li><strong>기본값:</strong> <code class="language-plaintext highlighter-rouge">2.0</code></li>
-  <li>
-    <p><strong>작동 방식:</strong></p>
-
+  <li><strong>작동 방식:</strong>
     <ul>
       <li>비율이 <strong>1.0:1</strong>이면 <strong>확장 없음</strong> (flat)</li>
       <li>비율이 <strong>2.0:1</strong>이면 threshold보다 2dB 낮은 입력은 <strong>4dB 감소</strong></li>
@@ -953,7 +949,6 @@
 <hr />
 
 <h3 id="4-release-time-릴리스-시간"><span class="me-2">4. <strong>Release Time (릴리스 시간)</strong></span><a href="#4-release-time-릴리스-시간" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
 <ul>
   <li><strong>설명:</strong> 신호가 다시 threshold 아래로 떨어졌을 때 <strong>확장이 다시 적용되기까지 걸리는 시간</strong></li>
   <li><strong>값 범위:</strong> <code class="language-plaintext highlighter-rouge">0.01</code> ~ <code class="language-plaintext highlighter-rouge">3.0</code> 초</li>
@@ -996,7 +991,7 @@
 
 <hr />
 
-<h2 id="-요약"><span class="me-2">📝 요약</span><a href="#-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1037,7 +1032,7 @@
 
 <hr />
 
-<h2 id="-응용-예시"><span class="me-2">🎧 응용 예시</span><a href="#-응용-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="응용-예시"><span class="me-2">응용 예시</span><a href="#응용-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><strong>보컬 트랙에서 리버브나 호흡 소리를 줄이고 싶을 때</strong></li>
@@ -1109,21 +1104,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=AudioKit%EC%9D%98%20Expander%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FExpander%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=AudioKit%EC%9D%98%20Expander%20%EC%82%AC%EC%9A%A9%EB%B2%95%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FExpander%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=AudioKit%EC%9D%98%20Expander%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FExpander%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=AudioKit%EC%9D%98%20Expander%20%EC%82%AC%EC%9A%A9%EB%B2%95%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FExpander%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FExpander%2F&text=AudioKit%EC%9D%98%20Expander%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FExpander%2F&text=AudioKit%EC%9D%98%20Expander%20%EC%82%AC%EC%9A%A9%EB%B2%95%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2790,18 +2785,6 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -3103,7 +3086,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3131,7 +3114,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3159,7 +3142,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>

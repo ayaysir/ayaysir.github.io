@@ -30,7 +30,7 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="SpriteKitAudio 예제" />
+<meta property="og:title" content="Swift: SpriteKitAudio 예제 (AudioKit)" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
 <meta name="description" content="Sprite Kit Audio" />
@@ -41,14 +41,14 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-05-11T16:17:36+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="SpriteKitAudio 예제" />
+<meta property="twitter:title" content="Swift: SpriteKitAudio 예제 (AudioKit)" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-05-11T16:17:36+09:00","datePublished":"2025-05-11T16:17:36+09:00","description":"Sprite Kit Audio","headline":"SpriteKitAudio 예제","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/SpriteKitAudio/"},"url":"https://ayaysir.github.io/posts/SpriteKitAudio/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-05-11T16:17:36+09:00","datePublished":"2025-05-11T16:17:36+09:00","description":"Sprite Kit Audio","headline":"Swift: SpriteKitAudio 예제 (AudioKit)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/SpriteKitAudio/"},"url":"https://ayaysir.github.io/posts/SpriteKitAudio/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>SpriteKitAudio 예제 | BGSMM
+  <title>Swift: SpriteKitAudio 예제 (AudioKit) | BGSMM
   </title>
 
   <!--
@@ -416,7 +416,7 @@
         
           
             
-              <span>SpriteKitAudio 예제</span>
+              <span>Swift: SpriteKitAudio 예제 (AudioKit)</span>
             
 
           
@@ -748,7 +748,7 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>SpriteKitAudio 예제</h1>
+    <h1 data-toc-skip>Swift: SpriteKitAudio 예제 (AudioKit)</h1>
     
 
     <div class="post-meta text-muted">
@@ -823,7 +823,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1225 words"
+  title="1218 words"
 >
   <em>6 min</em> read</span>
 
@@ -834,7 +834,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">SpriteKitAudio 예제</span>
+      <span class="label text-truncate">Swift: SpriteKitAudio 예제 (AudioKit)</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -847,7 +847,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">SpriteKitAudio 예제</div>
+        <div class="label text-truncate py-2 ms-4">Swift: SpriteKitAudio 예제 (AudioKit)</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -865,17 +865,13 @@
 
 <p>이 코드는 <strong>SpriteKit과 AudioKit을 결합한 인터랙티브 사운드 예제</strong>입니다. 사용자가 화면을 터치하면 공이 생성되고, 플랫폼에 부딪히면 소리가 나는 구조입니다. 주요 구성요소별로 설명드리겠습니다.</p>
 
-<hr />
-
-<h2 id="-전반적-구조"><span class="me-2">✅ 전반적 구조</span><a href="#-전반적-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="전반적-구조"><span class="me-2">전반적 구조</span><a href="#전반적-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">SpriteKit</code>을 이용해 물리 기반 애니메이션 처리</li>
   <li><code class="language-plaintext highlighter-rouge">AudioKit</code>을 이용해 플랫폼에 충돌 시 음향 재생</li>
   <li><code class="language-plaintext highlighter-rouge">SwiftUI</code>에서 <code class="language-plaintext highlighter-rouge">SpriteView</code>로 SpriteKit 장면을 보여줌</li>
 </ul>
-
-<hr />
 
 <h2 id="1-gamescene-skscene--물리-처리"><span class="me-2">1. <strong>GameScene (SKScene + 물리 처리)</strong></span><a href="#1-gamescene-skscene--물리-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -899,8 +895,6 @@
   <li><code class="language-plaintext highlighter-rouge">isDynamic = false</code>로 고정된 물체 (움직이지 않음)</li>
 </ul>
 
-<hr />
-
 <h2 id="2-touchesbegan_with"><span class="me-2">2. <strong>touchesBegan(_:with:)</strong></span><a href="#2-touchesbegan_with" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
@@ -915,8 +909,6 @@
     </ul>
   </li>
 </ul>
-
-<hr />
 
 <h2 id="3-didbegin_"><span class="me-2">3. <strong>didBegin(_:)</strong></span><a href="#3-didbegin_" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -936,15 +928,11 @@
   </li>
 </ul>
 
-<hr />
-
 <h2 id="4-playsoundnotenumber"><span class="me-2">4. <strong>playSound(noteNumber:)</strong></span><a href="#4-playsoundnotenumber" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">MIDISampler</code>를 이용해 해당 note를 0.1초 동안 연주 후 중지</li>
 </ul>
-
-<hr />
 
 <h2 id="5-spritekitaudioconductor"><span class="me-2">5. <strong>SpriteKitAudioConductor</strong></span><a href="#5-spritekitaudioconductor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -954,8 +942,6 @@
   <li><code class="language-plaintext highlighter-rouge">Reverb</code>로 출력 노드 감쌈 → 약간의 공간감 제공</li>
 </ul>
 
-<hr />
-
 <h2 id="6-spritekitaudioview-swiftui"><span class="me-2">6. <strong>SpriteKitAudioView (SwiftUI)</strong></span><a href="#6-spritekitaudioview-swiftui" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
@@ -964,9 +950,7 @@
   <li><code class="language-plaintext highlighter-rouge">.onAppear</code> / <code class="language-plaintext highlighter-rouge">.onDisappear</code>로 AudioKit 엔진 제어</li>
 </ul>
 
-<hr />
-
-<h2 id="-동작-흐름-요약"><span class="me-2">🔊 동작 흐름 요약</span><a href="#-동작-흐름-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="동작-흐름-요약"><span class="me-2">동작 흐름 요약</span><a href="#동작-흐름-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>화면 터치 → 공 생성 → 중력에 의해 하강</li>
@@ -974,17 +958,13 @@
   <li>바닥에 닿으면 → 공 제거</li>
 </ol>
 
-<hr />
-
 <h1 id="spritekit-부분-상세">SpriteKit 부분 상세</h1>
 
 <p><code class="language-plaintext highlighter-rouge">SpriteKit</code> 부분은 이 프로젝트에서 <strong>그래픽과 물리 시뮬레이션을 담당</strong>하며, 주로 <code class="language-plaintext highlighter-rouge">GameScene</code> 클래스 내에서 구성됩니다. 각 구성 요소를 더 구체적으로 설명드리겠습니다.</p>
 
-<hr />
+<h2 id="gamescene-구성-요소-상세"><span class="me-2"><code class="language-plaintext highlighter-rouge">GameScene</code> 구성 요소 상세</span><a href="#gamescene-구성-요소-상세" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="-gamescene-구성-요소-상세"><span class="me-2">🧱 <code class="language-plaintext highlighter-rouge">GameScene</code> 구성 요소 상세</span><a href="#-gamescene-구성-요소-상세" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="-didmoveto"><span class="me-2">📍 <code class="language-plaintext highlighter-rouge">didMove(to:)</code></span><a href="#-didmoveto" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="didmoveto-1"><span class="me-2"><code class="language-plaintext highlighter-rouge">didMove(to:)</code></span><a href="#didmoveto-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>SpriteKit 장면이 화면에 처음 표시될 때 호출되는 메서드입니다. 여기서 물리 월드 설정과 플랫폼 배치를 합니다.</p>
 
@@ -1041,9 +1021,7 @@
   <li><strong>categoryBitMask &amp; contactTestBitMask</strong> → 충돌 감지 대상 설정 (같은 그룹끼리 감지 가능)</li>
 </ul>
 
-<hr />
-
-<h3 id="-touchesbegan_with"><span class="me-2">📍 <code class="language-plaintext highlighter-rouge">touchesBegan(_:with:)</code></span><a href="#-touchesbegan_with" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="touchesbegan_with"><span class="me-2"><code class="language-plaintext highlighter-rouge">touchesBegan(_:with:)</code></span><a href="#touchesbegan_with" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>사용자가 화면을 터치하면 호출되는 메서드입니다.</p>
 
@@ -1072,9 +1050,7 @@
 
 <p>이 공은 중력으로 낙하하며, platform과 category 설정이 같기 때문에 충돌 시 <code class="language-plaintext highlighter-rouge">didBegin(_:)</code> 호출됨.</p>
 
-<hr />
-
-<h3 id="-didbegin_-contact-skphysicscontact"><span class="me-2">📍 <code class="language-plaintext highlighter-rouge">didBegin(_ contact: SKPhysicsContact)</code></span><a href="#-didbegin_-contact-skphysicscontact" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="didbegin_-contact-skphysicscontact"><span class="me-2"><code class="language-plaintext highlighter-rouge">didBegin(_ contact: SKPhysicsContact)</code></span><a href="#didbegin_-contact-skphysicscontact" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>SpriteKit의 충돌 이벤트가 발생했을 때 자동 호출되는 메서드입니다.</p>
 
@@ -1085,9 +1061,7 @@
 
 <p>또한, 특정 노드가 바닥이나 화면 하단에 닿은 경우 제거 처리도 여기에 포함될 수 있습니다.</p>
 
-<hr />
-
-<h2 id="-spritekit에서-이-예제가-하는-일-요약"><span class="me-2">🎯 SpriteKit에서 이 예제가 하는 일 요약</span><a href="#-spritekit에서-이-예제가-하는-일-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="spritekit에서-이-예제가-하는-일-요약"><span class="me-2">SpriteKit에서 이 예제가 하는 일 요약</span><a href="#spritekit에서-이-예제가-하는-일-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1127,8 +1101,6 @@
     </tr>
   </tbody>
 </table></div>
-
-<hr />
 
   </div>
 
@@ -1192,21 +1164,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=SpriteKitAudio%20%EC%98%88%EC%A0%9C%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FSpriteKitAudio%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Swift:%20SpriteKitAudio%20%EC%98%88%EC%A0%9C%20(AudioKit)%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FSpriteKitAudio%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=SpriteKitAudio%20%EC%98%88%EC%A0%9C%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FSpriteKitAudio%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Swift:%20SpriteKitAudio%20%EC%98%88%EC%A0%9C%20(AudioKit)%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FSpriteKitAudio%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FSpriteKitAudio%2F&text=SpriteKitAudio%20%EC%98%88%EC%A0%9C%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FSpriteKitAudio%2F&text=Swift:%20SpriteKitAudio%20%EC%98%88%EC%A0%9C%20(AudioKit)%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -3138,18 +3110,6 @@
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -3186,7 +3146,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3214,7 +3174,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3242,7 +3202,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>
@@ -3267,7 +3227,7 @@
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>랜덤 노이즈(random noise)란?</p>
+      <p>음향: 랜덤 노이즈(random noise)란?</p>
     </a>
   
 

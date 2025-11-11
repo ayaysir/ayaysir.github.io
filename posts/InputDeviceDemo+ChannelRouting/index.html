@@ -33,8 +33,8 @@
 <meta property="og:title" content="AudioKit의 InputDeviceDemo+ChannelRouting" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Input Device Demo" />
-<meta property="og:description" content="Input Device Demo" />
+<meta name="description" content="코드 보기" />
+<meta property="og:description" content="코드 보기" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/InputDeviceDemo+ChannelRouting/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/InputDeviceDemo+ChannelRouting/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -44,7 +44,7 @@
 <meta property="twitter:title" content="AudioKit의 InputDeviceDemo+ChannelRouting" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-22T15:36:36+09:00","datePublished":"2025-06-22T15:36:36+09:00","description":"Input Device Demo","headline":"AudioKit의 InputDeviceDemo+ChannelRouting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/InputDeviceDemo+ChannelRouting/"},"url":"https://ayaysir.github.io/posts/InputDeviceDemo+ChannelRouting/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-22T15:36:36+09:00","datePublished":"2025-06-22T15:36:36+09:00","description":"코드 보기","headline":"AudioKit의 InputDeviceDemo+ChannelRouting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/InputDeviceDemo+ChannelRouting/"},"url":"https://ayaysir.github.io/posts/InputDeviceDemo+ChannelRouting/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -801,7 +801,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="754 words"
+  title="731 words"
 >
   <em>4 min</em> read</span>
 
@@ -835,24 +835,16 @@
   
 
   <div class="content">
-    <h1 id="input-device-demo">Input Device Demo</h1>
-
-<ul>
+    <ul>
   <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/InputDeviceDemo.swift">코드 보기</a></li>
 </ul>
 
 <p>이 SwiftUI + AudioKit 코드의 목적은 <strong>입력 장치(마이크)를 선택하고 오디오 입력을 시작/정지하는 UI를 제공하는 것</strong>입니다.
 즉, 여러 마이크 장치가 연결된 환경에서 사용자가 원하는 입력을 선택하고, 마이크 버튼을 눌러 오디오 입력을 켜거나 끌 수 있게 합니다.</p>
 
-<blockquote>
-  <p>Channel/Device Routing 예제와 거의 동일</p>
-</blockquote>
+<h2 id="클래스-inputdevicedemoconductor"><span class="me-2">클래스: <code class="language-plaintext highlighter-rouge">InputDeviceDemoConductor</code></span><a href="#클래스-inputdevicedemoconductor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<hr />
-
-<h2 id="-클래스-inputdevicedemoconductor"><span class="me-2">🔧 클래스: <code class="language-plaintext highlighter-rouge">InputDeviceDemoConductor</code></span><a href="#-클래스-inputdevicedemoconductor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="-역할-오디오-입력-장치-관리--audiokit-엔진-제어"><span class="me-2">✅ 역할: 오디오 입력 장치 관리 + AudioKit 엔진 제어</span><a href="#-역할-오디오-입력-장치-관리--audiokit-엔진-제어" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="역할-오디오-입력-장치-관리--audiokit-엔진-제어"><span class="me-2">역할: 오디오 입력 장치 관리 + AudioKit 엔진 제어</span><a href="#역할-오디오-입력-장치-관리--audiokit-엔진-제어" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <h4 id="주요-속성"><span class="me-2">주요 속성</span><a href="#주요-속성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
@@ -902,11 +894,9 @@
   <li>변경 전에는 <code class="language-plaintext highlighter-rouge">stop()</code> 호출로 엔진을 멈춤</li>
 </ul>
 
-<hr />
+<h2 id="view-inputdevicedemoview"><span class="me-2">View: <code class="language-plaintext highlighter-rouge">InputDeviceDemoView</code></span><a href="#view-inputdevicedemoview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="️-view-inputdevicedemoview"><span class="me-2">🖼️ View: <code class="language-plaintext highlighter-rouge">InputDeviceDemoView</code></span><a href="#️-view-inputdevicedemoview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="-역할-ui를-통해-입력-장치-선택-및-오디오-입력-시작정지"><span class="me-2">✅ 역할: UI를 통해 입력 장치 선택 및 오디오 입력 시작/정지</span><a href="#-역할-ui를-통해-입력-장치-선택-및-오디오-입력-시작정지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="역할-ui를-통해-입력-장치-선택-및-오디오-입력-시작정지"><span class="me-2">역할: UI를 통해 입력 장치 선택 및 오디오 입력 시작/정지</span><a href="#역할-ui를-통해-입력-장치-선택-및-오디오-입력-시작정지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <h4 id="주요-상태-변수"><span class="me-2">주요 상태 변수</span><a href="#주요-상태-변수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
@@ -929,11 +919,9 @@
   </tbody>
 </table></div>
 
-<hr />
+<h3 id="뷰-구조-설명"><span class="me-2">뷰 구조 설명</span><a href="#뷰-구조-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="-뷰-구조-설명"><span class="me-2">✅ 뷰 구조 설명</span><a href="#-뷰-구조-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<h4 id="-안내-텍스트"><span class="me-2">📍 안내 텍스트</span><a href="#-안내-텍스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="안내-텍스트"><span class="me-2">안내 텍스트</span><a href="#안내-텍스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -949,9 +937,7 @@
   <li>피드백(하울링)을 피하기 위해 이어폰 사용을 권장</li>
 </ul>
 
-<hr />
-
-<h4 id="-입력-장치-선택-picker"><span class="me-2">🎛 입력 장치 선택 Picker</span><a href="#-입력-장치-선택-picker" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="입력-장치-선택-picker"><span class="me-2">입력 장치 선택 Picker</span><a href="#입력-장치-선택-picker" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -974,9 +960,7 @@
   <li>선택이 변경되면 <code class="language-plaintext highlighter-rouge">.onChange(of: inputDevice)</code>를 통해 <code class="language-plaintext highlighter-rouge">switchInput(...)</code> 호출</li>
 </ul>
 
-<hr />
-
-<h4 id="-마이크-onoff-버튼"><span class="me-2">🎤 마이크 on/off 버튼</span><a href="#-마이크-onoff-버튼" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="마이크-onoff-버튼"><span class="me-2">마이크 on/off 버튼</span><a href="#마이크-onoff-버튼" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -996,9 +980,7 @@
   <li><code class="language-plaintext highlighter-rouge">.resizable()</code> + <code class="language-plaintext highlighter-rouge">.frame(...)</code>으로 크기와 정렬 지정</li>
 </ul>
 
-<hr />
-
-<h4 id="-종료-시-동작"><span class="me-2">📤 종료 시 동작</span><a href="#-종료-시-동작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="종료-시-동작"><span class="me-2">종료 시 동작</span><a href="#종료-시-동작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1014,9 +996,7 @@
   <li>뷰가 사라질 때 자동으로 오디오 입력 종료</li>
 </ul>
 
-<hr />
-
-<h2 id="-전체-동작-요약"><span class="me-2">✅ 전체 동작 요약</span><a href="#-전체-동작-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="전체-동작-요약"><span class="me-2">전체 동작 요약</span><a href="#전체-동작-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1045,17 +1025,13 @@
   </tbody>
 </table></div>
 
-<hr />
-
-<h2 id="-확장-가능성"><span class="me-2">✅ 확장 가능성</span><a href="#-확장-가능성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="확장-가능성"><span class="me-2">확장 가능성</span><a href="#확장-가능성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>입력 장치별 채널 수 확인</li>
   <li>입력을 파일로 녹음</li>
   <li>출력 장치 설정도 추가 가능</li>
 </ul>
-
-<hr />
 
 <p>이 코드는 AudioKit을 활용한 <strong>기초 오디오 입출력 제어 구조</strong>를 익히기에 적절한 예제입니다.</p>
 
@@ -2970,18 +2946,6 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -3115,7 +3079,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3143,7 +3107,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3171,7 +3135,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>

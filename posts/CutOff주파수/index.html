@@ -779,7 +779,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1113 words"
+  title="1115 words"
 >
   <em>6 min</em> read</span>
 
@@ -815,59 +815,50 @@
   <div class="content">
     <h1 id="cutoff-frequency">CutOff Frequency</h1>
 
-<p><strong>컷오프 주파수(Cutoff Frequency)</strong>란, <strong>오디오 필터가 신호를 걸러내기 시작하는 주파수의 경계점</strong>을 의미합니다.</p>
+<p>컷오프 주파수(Cutoff Frequency)란, 오디오 필터가 신호를 걸러내기 시작하는 주파수의 경계점을 의미합니다.</p>
 
-<hr />
 <h2 id="설명"><span class="me-2">설명</span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h4 id="로우패스-필터low-pass-filter의-경우"><span class="me-2">로우패스 필터(Low-pass filter)의 경우:</span><a href="#로우패스-필터low-pass-filter의-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li>컷오프 주파수 <strong>이하의</strong> 저주파 성분은 <strong>통과</strong></li>
-  <li>컷오프 주파수 <strong>이상의</strong> 고주파 성분은 <strong>감쇠 또는 제거</strong></li>
+  <li>컷오프 주파수 이하의 저주파 성분은 통과</li>
+  <li>컷오프 주파수 이상의 고주파 성분은 감쇠 또는 제거</li>
 </ul>
 
 <p>즉, 컷오프 주파수가 5,000Hz면 →
 5kHz보다 낮은 음은 통과시키고, 높은 음은 줄이거나 제거합니다.</p>
-
-<hr />
 
 <h3 id="컷오프-주파수의-수치-범위"><span class="me-2">컷오프 주파수의 수치 범위</span><a href="#컷오프-주파수의-수치-범위" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>음향에서 일반적인 컷오프 주파수 범위는 다음과 같습니다:</p>
 
 <ul>
-  <li><strong>20Hz ~ 20,000Hz (20kHz)</strong>
+  <li>20Hz ~ 20,000Hz (20kHz)
 → 인간의 청각 범위 전체</li>
   <li>예: <code class="language-plaintext highlighter-rouge">30...20000</code> Hz 라고 쓰면
 → 30Hz 이하나 20kHz 이상은 거의 모두 걸러짐</li>
 </ul>
 
-<hr />
-
 <h3 id="왜-조정하나"><span class="me-2">왜 조정하나?</span><a href="#왜-조정하나" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>필터의 **톤(tone)**을 바꾸기 위해서입니다.</p>
+<p>필터의 톤(tone)을 바꾸기 위해서입니다.</p>
 
 <ul>
-  <li>컷오프를 낮추면 → 소리가 <strong>더 어두워짐</strong></li>
-  <li>컷오프를 높이면 → <strong>고음이 살아남아 밝은 소리</strong></li>
+  <li>컷오프를 낮추면 → 소리가 더 어두워짐</li>
+  <li>컷오프를 높이면 → 고음이 살아남아 밝은 소리</li>
 </ul>
-
-<hr />
 
 <h2 id="예제-정규화된-frequency가-08--02로-줄어들면"><span class="me-2">예제: 정규화된 Frequency가 0.8 → 0.2로 줄어들면?</span><a href="#예제-정규화된-frequency가-08--02로-줄어들면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">frequency.denormalized(to: 30...20000, taper: 3)</code>에서 <code class="language-plaintext highlighter-rouge">frequency</code>가 <code class="language-plaintext highlighter-rouge">0.8 → 0.2</code>로 줄어들면, 다음과 같은 의미입니다:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">0.8</code>은 <strong>상대적으로 높은 컷오프 주파수</strong> → 예: 약 12,000Hz 근처</li>
-  <li><code class="language-plaintext highlighter-rouge">0.2</code>는 <strong>상대적으로 낮은 컷오프 주파수</strong> → 예: 약 100~200Hz 근처</li>
+  <li><code class="language-plaintext highlighter-rouge">0.8</code>은 상대적으로 높은 컷오프 주파수 → 예: 약 12,000Hz 근처</li>
+  <li><code class="language-plaintext highlighter-rouge">0.2</code>는 상대적으로 낮은 컷오프 주파수 → 예: 약 100~200Hz 근처</li>
 </ul>
 
-<p>즉, <code class="language-plaintext highlighter-rouge">denormalized</code>는 <strong>0.0~1.0 사이의 정규화된 값</strong>을 로그 스케일로 <code class="language-plaintext highlighter-rouge">30Hz~20000Hz</code> 범위에 매핑해주는 함수입니다.</p>
-
-<hr />
+<p>즉, <code class="language-plaintext highlighter-rouge">denormalized</code>는 0.0~1.0 사이의 정규화된 값을 로그 스케일로 <code class="language-plaintext highlighter-rouge">30Hz~20000Hz</code> 범위에 매핑해주는 함수입니다.</p>
 
 <h3 id="대략적인-값-예시-taper-3-기준-로그-스케일"><span class="me-2">대략적인 값 예시 (<code class="language-plaintext highlighter-rouge">taper: 3</code> 기준, 로그 스케일):</span><a href="#대략적인-값-예시-taper-3-기준-로그-스케일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -904,33 +895,27 @@
 
 <p>따라서
 → <code class="language-plaintext highlighter-rouge">0.8 → 0.2</code>로 바꾸면
-→ 컷오프 주파수는 <strong>약 12,000Hz → 200Hz</strong>로 급격히 낮아지며,
-→ <strong>소리가 어두워지고 고음이 잘려나가며 묵직해지는 느낌</strong>이 납니다.</p>
-
-<hr />
+→ 컷오프 주파수는 약 12,000Hz → 200Hz로 급격히 낮아지며,
+→ 소리가 어두워지고 고음이 잘려나가며 묵직해지는 느낌이 납니다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">denormalized(to:taper:)</code>는 AudioKit에서 사용하는 보간 함수로,
-<code class="language-plaintext highlighter-rouge">0.0~1.0</code> 값을 실사용 주파수로 <strong>비선형(log taper)</strong> 변환할 때 사용됩니다.</p>
+<code class="language-plaintext highlighter-rouge">0.0~1.0</code> 값을 실사용 주파수로 비선형(log taper) 변환할 때 사용됩니다.</p>
 
 <hr />
 
-<h2 id="log-taper란"><span class="me-2">Log Taper란?</span><a href="#log-taper란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="참고-log-taper란"><span class="me-2">참고: Log Taper란?</span><a href="#참고-log-taper란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><strong>Log taper</strong>(로그 테이퍼)는 값의 변화가 <strong>로그함수 곡선처럼 느리게 시작하고 점점 빠르게 증가하는 방식의 곡선</strong>을 말합니다.</p>
-
-<hr />
+<p>Log taper(로그 테이퍼)는 값의 변화가 로그함수 곡선처럼 느리게 시작하고 점점 빠르게 증가하는 방식의 곡선을 말합니다.</p>
 
 <h3 id="왜-log-taper를-쓰나"><span class="me-2">왜 log taper를 쓰나?</span><a href="#왜-log-taper를-쓰나" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="사람의-귀는-소리의-변화를-선형linear이-아닌-로그logarithmic-방식으로-인식하기-때문입니다"><span class="me-2">사람의 귀는 소리의 변화를 선형(linear)이 아닌 <strong>로그(logarithmic)</strong> 방식으로 인식하기 때문입니다.</span><a href="#사람의-귀는-소리의-변화를-선형linear이-아닌-로그logarithmic-방식으로-인식하기-때문입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="사람의-귀는-소리의-변화를-선형linear이-아닌-로그logarithmic-방식으로-인식하기-때문입니다"><span class="me-2">사람의 귀는 소리의 변화를 선형(linear)이 아닌 로그(logarithmic) 방식으로 인식하기 때문입니다.</span><a href="#사람의-귀는-소리의-변화를-선형linear이-아닌-로그logarithmic-방식으로-인식하기-때문입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li>예:
-주파수 100Hz → 200Hz는 <strong>큰 차이</strong>로 느껴지고
-10,000Hz → 10,100Hz는 <strong>거의 차이 없음</strong></li>
+주파수 100Hz → 200Hz는 큰 차이로 느껴지고
+10,000Hz → 10,100Hz는 거의 차이 없음</li>
 </ul>
-
-<hr />
 
 <h3 id="log-taper-vs-linear-taper"><span class="me-2">log taper vs. linear taper</span><a href="#log-taper-vs-linear-taper" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -972,21 +957,17 @@
 </table></div>
 
 <ul>
-  <li><strong>Linear</strong>: 중간값도 10,000Hz 근처 (느끼기엔 대부분 고음만 변함)</li>
-  <li><strong>Log</strong>: 중간값이 1,000Hz로, 사람 귀에 더 <strong>자연스럽고 유효한 조절</strong> 가능</li>
+  <li>Linear: 중간값도 10,000Hz 근처 (느끼기엔 대부분 고음만 변함)</li>
+  <li>Log: 중간값이 1,000Hz로, 사람 귀에 더 자연스럽고 유효한 조절 가능</li>
 </ul>
-
-<hr />
 
 <h3 id="실제-적용-예"><span class="me-2">실제 적용 예</span><a href="#실제-적용-예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>EQ(이퀄라이저)의 <strong>컷오프 주파수 노브</strong></li>
-  <li>디지털 신디사이저의 <strong>파라미터 슬라이더</strong></li>
+  <li>EQ(이퀄라이저)의 컷오프 주파수 노브</li>
+  <li>디지털 신디사이저의 파라미터 슬라이더</li>
   <li>UI 슬라이더 값 → 실 주파수/볼륨 매핑 등</li>
 </ul>
-
-<hr />
 
 <h3 id="swift에서-taper가-적용된-예"><span class="me-2">Swift에서 taper가 적용된 예</span><a href="#swift에서-taper가-적용된-예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1000,8 +981,6 @@
   <li><code class="language-plaintext highlighter-rouge">taper: 1</code> → linear</li>
   <li><code class="language-plaintext highlighter-rouge">taper: &gt;1</code> → log taper (ex: 3이면 더 강한 곡선)</li>
 </ul>
-
-<hr />
 
 <p>아래는 정규화된 값(<code class="language-plaintext highlighter-rouge">0.0\~1.0</code>)을 기준으로 한 <code class="language-plaintext highlighter-rouge">log taper</code> 와 <code class="language-plaintext highlighter-rouge">linear taper</code>의 대략적인 비교 그래프입니다.
 가로축은 입력값 (<code class="language-plaintext highlighter-rouge">x: 0.0 ~ 1.0</code>), 세로축은 실제 주파수 출력 (<code class="language-plaintext highlighter-rouge">y: 30Hz ~ 20000Hz</code>)입니다.</p>
@@ -1043,8 +1022,8 @@
 <h3 id="해석"><span class="me-2">해석:</span><a href="#해석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li><strong>Linear taper</strong>는 일정하게 증가 → 대부분 고음에서만 세밀 조절 가능</li>
-  <li><strong>Log taper</strong>는 저역에서 더 섬세하게 조절 가능 → 사람이 듣기에 더 자연스럽고 유용</li>
+  <li>Linear taper는 일정하게 증가 → 대부분 고음에서만 세밀 조절 가능</li>
+  <li>Log taper는 저역에서 더 섬세하게 조절 가능 → 사람이 듣기에 더 자연스럽고 유용</li>
 </ul>
 
 <p>예를 들어 0.2, 0.4, 0.6, 0.8 정규화 값을 넣었을 때:</p>
@@ -1081,9 +1060,7 @@
   </tbody>
 </table></div>
 
-<hr />
-
-<p>요약하자면, <strong>log taper는 사람의 감각에 맞춘 비선형 조절 방식</strong>이며, 보통 <strong>UI 슬라이더</strong>나 <strong>오디오 파라미터</strong>에서는 log taper를 사용합니다.</p>
+<p>요약하자면, log taper는 사람의 감각에 맞춘 비선형 조절 방식이며, 보통 UI 슬라이더나 오디오 파라미터에서는 log taper를 사용합니다.</p>
 
 <hr />
 
@@ -3095,18 +3072,6 @@
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -3143,7 +3108,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3171,7 +3136,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3199,7 +3164,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>
@@ -3234,7 +3199,7 @@
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>랜덤 노이즈(random noise)란?</p>
+      <p>음향: 랜덤 노이즈(random noise)란?</p>
     </a>
   
 </nav>

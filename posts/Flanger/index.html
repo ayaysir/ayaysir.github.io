@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="AudioKit의 Flanger" />
+<meta property="og:title" content="AudioKit의 Flanger 사용법" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Flanger" />
-<meta property="og:description" content="Flanger" />
+<meta name="description" content="Flanger는 오디오 이펙트 중 하나로, 짧은 시간 지연(delay)과 지속적인 변조(modulation)를 이용해 스윙감이 있는 웅웅거리는 소리를 만들어내는 효과입니다. 일종의 위상 간섭을 활용하여 음원에 움직임을 부여합니다." />
+<meta property="og:description" content="Flanger는 오디오 이펙트 중 하나로, 짧은 시간 지연(delay)과 지속적인 변조(modulation)를 이용해 스윙감이 있는 웅웅거리는 소리를 만들어내는 효과입니다. 일종의 위상 간섭을 활용하여 음원에 움직임을 부여합니다." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/Flanger/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/Flanger/" />
 <meta property="og:site_name" content="BGSMM" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-06-06T13:52:59+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="AudioKit의 Flanger" />
+<meta property="twitter:title" content="AudioKit의 Flanger 사용법" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-06T13:52:59+09:00","datePublished":"2025-06-06T13:52:59+09:00","description":"Flanger","headline":"AudioKit의 Flanger","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/Flanger/"},"url":"https://ayaysir.github.io/posts/Flanger/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-06T13:52:59+09:00","datePublished":"2025-06-06T13:52:59+09:00","description":"Flanger는 오디오 이펙트 중 하나로, 짧은 시간 지연(delay)과 지속적인 변조(modulation)를 이용해 스윙감이 있는 웅웅거리는 소리를 만들어내는 효과입니다. 일종의 위상 간섭을 활용하여 음원에 움직임을 부여합니다.","headline":"AudioKit의 Flanger 사용법","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/Flanger/"},"url":"https://ayaysir.github.io/posts/Flanger/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>AudioKit의 Flanger | BGSMM
+  <title>AudioKit의 Flanger 사용법 | BGSMM
   </title>
 
   <!--
@@ -416,7 +416,7 @@
         
           
             
-              <span>AudioKit의 Flanger</span>
+              <span>AudioKit의 Flanger 사용법</span>
             
 
           
@@ -550,17 +550,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -576,6 +565,28 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -705,7 +716,7 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>AudioKit의 Flanger</h1>
+    <h1 data-toc-skip>AudioKit의 Flanger 사용법</h1>
     
 
     <div class="post-meta text-muted">
@@ -780,7 +791,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1331 words"
+  title="1323 words"
 >
   <em>7 min</em> read</span>
 
@@ -791,7 +802,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">AudioKit의 Flanger</span>
+      <span class="label text-truncate">AudioKit의 Flanger 사용법</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -804,7 +815,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">AudioKit의 Flanger</div>
+        <div class="label text-truncate py-2 ms-4">AudioKit의 Flanger 사용법</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -814,13 +825,9 @@
   
 
   <div class="content">
-    <h1 id="flanger">Flanger</h1>
+    <p><code class="language-plaintext highlighter-rouge">Flanger</code>는 오디오 이펙트 중 하나로, 짧은 시간 지연(delay)과 지속적인 변조(modulation)를 이용해 <strong>스윙감이 있는 웅웅거리는 소리</strong>를 만들어내는 효과입니다. 일종의 <strong>위상 간섭</strong>을 활용하여 음원에 움직임을 부여합니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Flanger</code>는 오디오 이펙트 중 하나로, 짧은 시간 지연(delay)과 지속적인 변조(modulation)를 이용해 <strong>스윙감이 있는 웅웅거리는 소리</strong>를 만들어내는 효과입니다. 일종의 <strong>위상 간섭</strong>을 활용하여 음원에 움직임을 부여합니다.</p>
-
-<hr />
-
-<h2 id="️-flanger의-역할"><span class="me-2">🎛️ Flanger의 역할</span><a href="#️-flanger의-역할" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="flanger의-역할"><span class="me-2">Flanger의 역할</span><a href="#flanger의-역할" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><strong>지연된 신호를 원래 신호에 더해서</strong> 두 신호 간의 위상 차이로 생기는 <strong>콤 필터(Comb Filter)</strong> 효과를 이용합니다.</li>
@@ -828,9 +835,7 @@
   <li>전기 기타, 신디사이저, 드럼, 보컬 등 다양한 소스에 사용됩니다.</li>
 </ul>
 
-<hr />
-
-<h2 id="-주요-파라미터-설명"><span class="me-2">🧪 주요 파라미터 설명</span><a href="#-주요-파라미터-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="주요-파라미터-설명"><span class="me-2">주요 파라미터 설명</span><a href="#주요-파라미터-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="1-frequency-hz"><span class="me-2">1. <strong>Frequency (Hz)</strong></span><a href="#1-frequency-hz" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -861,8 +866,6 @@
   </tbody>
 </table></div>
 
-<hr />
-
 <h3 id="2-depth-01"><span class="me-2">2. <strong>Depth (0~1)</strong></span><a href="#2-depth-01" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
@@ -890,8 +893,6 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
     </tr>
   </tbody>
 </table></div>
-
-<hr />
 
 <h3 id="3-feedback--095--095"><span class="me-2">3. <strong>Feedback (-0.95 ~ 0.95)</strong></span><a href="#3-feedback--095--095" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -925,8 +926,6 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
   </tbody>
 </table></div>
 
-<hr />
-
 <h3 id="4-drywet-mix-01"><span class="me-2">4. <strong>Dry/Wet Mix (0~1)</strong></span><a href="#4-drywet-mix-01" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
@@ -959,19 +958,7 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
   </tbody>
 </table></div>
 
-<hr />
-
-<h2 id="-예시-상황"><span class="me-2">🎧 예시 상황</span><a href="#-예시-상황" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ul>
-  <li>🎸 일렉기타에 적용하면: “제트기 지나가는 듯한” 움직임이 생김</li>
-  <li>🧑‍🎤 보컬에 적용하면: 공중에 떠 있는 듯한 공간감</li>
-  <li>🥁 드럼에 적용하면: 리듬에 변화감 부여</li>
-</ul>
-
-<hr />
-
-<h2 id="-요약-표"><span class="me-2">📝 요약 표</span><a href="#-요약-표" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="주요파라미터-요약-표"><span class="me-2">주요파라미터 요약 표</span><a href="#주요파라미터-요약-표" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1005,15 +992,23 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
   </tbody>
 </table></div>
 
-<hr />
-
 <p>Flanger는 <strong>모듈레이션 기반 효과 중에서도 가장 개성 있는 이펙트</strong> 중 하나로, 잘만 쓰면 음원에 <strong>생동감과 움직임</strong>을 추가할 수 있습니다.</p>
 
-<p>🎧 <strong>Flanger</strong>는 다음과 같은 상황에서 자주 사용됩니다. 핵심은 <strong>움직임·깊이감·특수 효과</strong>를 주고 싶을 때입니다:</p>
+<h2 id="팁"><span class="me-2">팁</span><a href="#팁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<hr />
+<p><strong>팁:</strong> Flanger는 <strong>적게 쓰면 분위기 강화</strong>, <strong>많이 쓰면 효과음화</strong>됩니다. 컨텍스트에 맞게 조절하는 것이 중요합니다.</p>
 
-<h3 id="-1-일렉트릭-기타"><span class="me-2">🎸 1. <strong>일렉트릭 기타</strong></span><a href="#-1-일렉트릭-기타" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="예시-상황"><span class="me-2">예시 상황</span><a href="#예시-상황" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>일렉기타에 적용하면: “제트기 지나가는 듯한” 움직임이 생김</li>
+  <li>보컬에 적용하면: 공중에 떠 있는 듯한 공간감</li>
+  <li>드럼에 적용하면: 리듬에 변화감 부여</li>
+</ul>
+
+<p><strong>Flanger</strong>는 다음과 같은 상황에서 자주 사용됩니다. 핵심은 <strong>움직임·깊이감·특수 효과</strong>를 주고 싶을 때입니다:</p>
+
+<h3 id="1-일렉트릭-기타"><span class="me-2">1. <strong>일렉트릭 기타</strong></span><a href="#1-일렉트릭-기타" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><strong>가장 전통적이고 널리 알려진 사용처</strong>입니다.</li>
@@ -1025,9 +1020,7 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
   <p>✦ 특히 <strong>록, 메탈, 프로그레시브 록</strong>에서 배경을 몽환적으로 만들 때.</p>
 </blockquote>
 
-<hr />
-
-<h3 id="️-2-신디사이저--패드-사운드"><span class="me-2">🎛️ 2. <strong>신디사이저 / 패드 사운드</strong></span><a href="#️-2-신디사이저--패드-사운드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="2-신디사이저--패드-사운드"><span class="me-2">2. <strong>신디사이저 / 패드 사운드</strong></span><a href="#2-신디사이저--패드-사운드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>정적인 코드 진행에 <strong>움직임과 공간감</strong>을 부여함.</li>
@@ -1035,36 +1028,28 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
   <li>EDM, Ambient, Synthwave 등에서 많이 사용됨.</li>
 </ul>
 
-<hr />
-
-<h3 id="-3-드럼"><span class="me-2">🥁 3. <strong>드럼</strong></span><a href="#-3-드럼" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="3-드럼"><span class="me-2">3. <strong>드럼</strong></span><a href="#3-드럼" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><strong>하이햇이나 심벌</strong>, 때론 스네어에 플랜저를 걸어 <strong>리듬에 흐름감을 추가</strong>하거나,</li>
   <li><strong>빌드업</strong> 구간에서 점점 깊어지는 플랜저로 긴장감을 조성함.</li>
 </ul>
 
-<hr />
-
-<h3 id="-4-보컬"><span class="me-2">🧑‍🎤 4. <strong>보컬</strong></span><a href="#-4-보컬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="4-보컬"><span class="me-2">4. <strong>보컬</strong></span><a href="#4-보컬" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>리드보컬보다는 <strong>백킹보컬, 브리지 파트, 특수 효과용</strong>으로 사용</li>
   <li>예를 들어, <strong>꿈속 말하는 듯한 느낌</strong>이나 <strong>사이버 보이스</strong>를 연출할 때 적합</li>
 </ul>
 
-<hr />
-
-<h3 id="-5-효과음-sfx"><span class="me-2">🧪 5. <strong>효과음 (SFX)</strong></span><a href="#-5-효과음-sfx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="5-효과음-sfx"><span class="me-2">5. <strong>효과음 (SFX)</strong></span><a href="#5-효과음-sfx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>영화/게임 등에서 레이저, 외계 소리, 사이버틱한 음향 효과를 만들 때 사용</li>
   <li>일시적으로 강한 플랜저를 적용해 <strong>전환점, 강조 지점</strong>에 사용</li>
 </ul>
 
-<hr />
-
-<h2 id="-요약"><span class="me-2">✅ 요약</span><a href="#-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="상황별-사용처-요약"><span class="me-2">상황별 사용처 요약</span><a href="#상황별-사용처-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1075,31 +1060,28 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
   </thead>
   <tbody>
     <tr>
-      <td>🎸 일렉기타</td>
+      <td>일렉기타</td>
       <td>스윙감, 제트기 같은 소리</td>
     </tr>
     <tr>
-      <td>🎛️ 신디사이저</td>
+      <td>신디사이저</td>
       <td>패드에 깊이와 공간감 추가</td>
     </tr>
     <tr>
-      <td>🥁 드럼</td>
+      <td>드럼</td>
       <td>빌드업, 하이햇에 흘러가는 느낌</td>
     </tr>
     <tr>
-      <td>🎤 보컬</td>
+      <td>보컬</td>
       <td>몽환적, 미래적 분위기</td>
     </tr>
     <tr>
-      <td>🧪 SFX</td>
+      <td>SFX</td>
       <td>사이버틱, 외계적인 효과음</td>
     </tr>
   </tbody>
 </table></div>
 
-<hr />
-
-<p>💡 <strong>팁:</strong> Flanger는 <strong>적게 쓰면 분위기 강화</strong>, <strong>많이 쓰면 효과음화</strong>됩니다. 컨텍스트에 맞게 조절하는 것이 중요합니다.</p>
 
   </div>
 
@@ -1163,21 +1145,21 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=AudioKit%EC%9D%98%20Flanger%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FFlanger%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=AudioKit%EC%9D%98%20Flanger%20%EC%82%AC%EC%9A%A9%EB%B2%95%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FFlanger%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=AudioKit%EC%9D%98%20Flanger%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FFlanger%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=AudioKit%EC%9D%98%20Flanger%20%EC%82%AC%EC%9A%A9%EB%B2%95%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FFlanger%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FFlanger%2F&text=AudioKit%EC%9D%98%20Flanger%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FFlanger%2F&text=AudioKit%EC%9D%98%20Flanger%20%EC%82%AC%EC%9A%A9%EB%B2%95%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2856,18 +2838,6 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -3157,7 +3127,7 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3185,7 +3155,7 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3213,7 +3183,7 @@ LFO가 <strong>지연 시간을 얼마나 변화시키는지</strong>, 즉 <stro
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>

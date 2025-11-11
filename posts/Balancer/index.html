@@ -33,8 +33,8 @@
 <meta property="og:title" content="AudioKit의 Balancer" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Balancer" />
-<meta property="og:description" content="Balancer" />
+<meta name="description" content="코드 보기" />
+<meta property="og:description" content="코드 보기" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/Balancer/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/Balancer/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -44,7 +44,7 @@
 <meta property="twitter:title" content="AudioKit의 Balancer" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-05-29T12:58:54+09:00","datePublished":"2025-05-29T12:58:54+09:00","description":"Balancer","headline":"AudioKit의 Balancer","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/Balancer/"},"url":"https://ayaysir.github.io/posts/Balancer/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-05-29T12:58:54+09:00","datePublished":"2025-05-29T12:58:54+09:00","description":"코드 보기","headline":"AudioKit의 Balancer","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/Balancer/"},"url":"https://ayaysir.github.io/posts/Balancer/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -605,17 +605,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -664,6 +653,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -671,6 +671,27 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -769,7 +790,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1448 words"
+  title="1443 words"
 >
   <em>8 min</em> read</span>
 
@@ -803,15 +824,11 @@
   
 
   <div class="content">
-    <h1 id="balancer">Balancer</h1>
-
-<ul>
+    <ul>
   <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Effects/Balancer.swift">코드 보기</a></li>
 </ul>
 
 <p>이 코드는 <code class="language-plaintext highlighter-rouge">AudioKit</code>을 이용해 재생 중인 오디오(피아노 소스)와 <strong>지속적인 사인파(440Hz 등)를 비교하여 밸런스를 맞추는</strong> 오디오 신호처리 구조입니다. 아래에서 각 구성 요소와 오디오 흐름, 그리고 핵심 역할인 <code class="language-plaintext highlighter-rouge">Balancer</code>를 중심으로 설명드립니다.</p>
-
-<hr />
 
 <h2 id="클래스-목적"><span class="me-2">클래스 목적</span><a href="#클래스-목적" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -822,8 +839,6 @@
   <li>오디오 재생 속도(<code class="language-plaintext highlighter-rouge">rate</code>)</li>
   <li>Dry/Wet 믹스 비율(<code class="language-plaintext highlighter-rouge">balance</code>)을 조절할 수 있습니다.</li>
 </ul>
-
-<hr />
 
 <h2 id="신호-흐름"><span class="me-2">신호 흐름</span><a href="#신호-흐름" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -840,8 +855,6 @@
                                                         ├─[DryWetMixer]─▶ Output
 [Fader] ------------------------------------------------┘
 </pre></td></tr></tbody></table></code></div></div>
-
-<hr />
 
 <h2 id="구성-요소-설명"><span class="me-2">구성 요소 설명</span><a href="#구성-요소-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -884,8 +897,6 @@
   </tbody>
 </table></div>
 
-<hr />
-
 <h2 id="published-변수"><span class="me-2">@Published 변수</span><a href="#published-변수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
@@ -911,15 +922,11 @@
   </tbody>
 </table></div>
 
-<hr />
-
 <h2 id="balancer란"><span class="me-2">Balancer란?</span><a href="#balancer란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Balancer(source, comparator)</code>는 <strong><code class="language-plaintext highlighter-rouge">source</code>의 레벨을 <code class="language-plaintext highlighter-rouge">comparator</code>에 맞춰 보정</strong>합니다.</li>
-  <li>
-    <p>이 경우:</p>
-
+  <li>이 경우:
     <ul>
       <li><code class="language-plaintext highlighter-rouge">source</code>: 오실레이터 (톤 기준)</li>
       <li><code class="language-plaintext highlighter-rouge">comparator</code>: 피아노 파일 (재생된 사운드)</li>
@@ -929,9 +936,7 @@
   <li>이는 두 소스 간 <strong>일정한 레벨 밸런스를 유지할 때</strong> 유용합니다 (예: 모노소스 정렬, 분석 기준 맞춤 등).</li>
 </ul>
 
-<hr />
-
-<h2 id="-실용적-의미"><span class="me-2">🔍 실용적 의미</span><a href="#-실용적-의미" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="실용적-의미"><span class="me-2">실용적 의미</span><a href="#실용적-의미" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>이 코드는 음향 비교, 레벨 정규화, 주파수 기반 음향 실험에 적합합니다.</li>
@@ -939,13 +944,9 @@
   <li>사용자는 실시간으로 주파수(frequency), 재생속도(rate), DryWet 비율(balance)를 변경해가며 음향 실험을 진행할 수 있습니다.</li>
 </ul>
 
-<hr />
+<h2 id="시각적-의미"><span class="me-2">시각적 의미</span><a href="#시각적-의미" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h1 id="시각적-의미">시각적 의미</h1>
-
-<hr />
-
-<h2 id="기본-개념"><span class="me-2">기본 개념</span><a href="#기본-개념" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="기본-개념"><span class="me-2">기본 개념</span><a href="#기본-개념" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">Balancer</code>는 다음 두 신호의 레벨 차이를 비교하고, <strong>source의 게인을 자동으로 조정</strong>합니다:</p>
 
@@ -954,9 +955,7 @@
   <li><code class="language-plaintext highlighter-rouge">comparator</code>: 기준 레벨 (여기서는 <code class="language-plaintext highlighter-rouge">fader</code> = 피아노 재생 소스)</li>
 </ul>
 
-<hr />
-
-<h2 id="시각적-예시"><span class="me-2">시각적 예시</span><a href="#시각적-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="시각적-예시"><span class="me-2">시각적 예시</span><a href="#시각적-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>예:
 <code class="language-plaintext highlighter-rouge">osc</code>는 일정한 레벨의 사인파,
@@ -988,8 +987,6 @@ Balancer(source, comparator) 출력:
 
 <p>즉, <code class="language-plaintext highlighter-rouge">osc</code>의 신호는 실제로는 그대로지만, <strong><code class="language-plaintext highlighter-rouge">Balancer</code>가 comparator의 레벨을 추적하여 볼륨을 자동으로 매칭</strong>합니다.</p>
 
-<hr />
-
 <h2 id="응용-시나리오"><span class="me-2">응용 시나리오</span><a href="#응용-시나리오" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
@@ -998,8 +995,6 @@ Balancer(source, comparator) 출력:
   <li>실시간 신호 비교 및 교정</li>
   <li>“참조 기준” 대비 신호 변화를 분석하고자 할 때</li>
 </ul>
-
-<hr />
 
 <p>이해를 돕기 위한 간단한 다이어그램:</p>
 
@@ -1019,13 +1014,9 @@ Balancer(source, comparator) 출력:
                 └──────────────────────┘
 </pre></td></tr></tbody></table></code></div></div>
 
-<hr />
-
 <h2 id="용어-설명"><span class="me-2">용어 설명</span><a href="#용어-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<hr />
-
-<h3 id="-1-모노-소스-정렬-mono-source-matching--alignment"><span class="me-2">🎧 1. <strong>모노 소스 정렬 (Mono Source Matching / Alignment)</strong></span><a href="#-1-모노-소스-정렬-mono-source-matching--alignment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="1-모노-소스-정렬-mono-source-matching--alignment"><span class="me-2">1. <strong>모노 소스 정렬 (Mono Source Matching / Alignment)</strong></span><a href="#1-모노-소스-정렬-mono-source-matching--alignment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>
@@ -1046,9 +1037,7 @@ Balancer(source, comparator) 출력:
   </li>
 </ul>
 
-<hr />
-
-<h3 id="-2-분석-기준-맞춤-comparator-level-matching--normalization"><span class="me-2">🔬 2. <strong>분석 기준 맞춤 (Comparator Level Matching / Normalization)</strong></span><a href="#-2-분석-기준-맞춤-comparator-level-matching--normalization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="2-분석-기준-맞춤-comparator-level-matching--normalization"><span class="me-2">2. <strong>분석 기준 맞춤 (Comparator Level Matching / Normalization)</strong></span><a href="#2-분석-기준-맞춤-comparator-level-matching--normalization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>
@@ -1068,16 +1057,12 @@ Balancer(source, comparator) 출력:
   </li>
 </ul>
 
-<hr />
-
-<h3 id="-쉽게-비유하자면"><span class="me-2">🧠 쉽게 비유하자면:</span><a href="#-쉽게-비유하자면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h4 id="쉽게-비유하자면"><span class="me-2">쉽게 비유하자면:</span><a href="#쉽게-비유하자면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <blockquote>
   <p>기준이 되는 “모델 소리”가 있고, 그 기준에 따라 “학생 소리”가 그에 맞춰 음량을 조정당한다고 보면 됩니다.
 <code class="language-plaintext highlighter-rouge">Balancer</code>는 이 “모델 소리”를 <code class="language-plaintext highlighter-rouge">comparator</code>로 사용하고, <code class="language-plaintext highlighter-rouge">source</code> 신호를 모델에 맞게 맞춰주는 역할을 합니다.</p>
 </blockquote>
-
-<hr />
 
   </div>
 
@@ -3087,18 +3072,6 @@ Balancer(source, comparator) 출력:
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -3135,7 +3108,7 @@ Balancer(source, comparator) 출력:
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3163,7 +3136,7 @@ Balancer(source, comparator) 출력:
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3191,7 +3164,7 @@ Balancer(source, comparator) 출력:
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>

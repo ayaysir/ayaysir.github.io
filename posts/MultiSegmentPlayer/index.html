@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="AudioKit의 MultiSegmentPlayer" />
+<meta property="og:title" content="AudioKit의 MultiSegmentPlayer 구현 방법 설명" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="MultiSegment Player" />
-<meta property="og:description" content="MultiSegment Player" />
+<meta name="description" content="코드 보기" />
+<meta property="og:description" content="코드 보기" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/MultiSegmentPlayer/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/MultiSegmentPlayer/" />
 <meta property="og:site_name" content="BGSMM" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-06-18T19:11:56+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="AudioKit의 MultiSegmentPlayer" />
+<meta property="twitter:title" content="AudioKit의 MultiSegmentPlayer 구현 방법 설명" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-18T19:11:56+09:00","datePublished":"2025-06-18T19:11:56+09:00","description":"MultiSegment Player","headline":"AudioKit의 MultiSegmentPlayer","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/MultiSegmentPlayer/"},"url":"https://ayaysir.github.io/posts/MultiSegmentPlayer/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-18T19:11:56+09:00","datePublished":"2025-06-18T19:11:56+09:00","description":"코드 보기","headline":"AudioKit의 MultiSegmentPlayer 구현 방법 설명","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/MultiSegmentPlayer/"},"url":"https://ayaysir.github.io/posts/MultiSegmentPlayer/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>AudioKit의 MultiSegmentPlayer | BGSMM
+  <title>AudioKit의 MultiSegmentPlayer 구현 방법 설명 | BGSMM
   </title>
 
   <!--
@@ -416,7 +416,7 @@
         
           
             
-              <span>AudioKit의 MultiSegmentPlayer</span>
+              <span>AudioKit의 MultiSegmentPlayer 구현 방법 설명</span>
             
 
           
@@ -715,7 +715,7 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>AudioKit의 MultiSegmentPlayer</h1>
+    <h1 data-toc-skip>AudioKit의 MultiSegmentPlayer 구현 방법 설명</h1>
     
 
     <div class="post-meta text-muted">
@@ -790,7 +790,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1018 words"
+  title="1008 words"
 >
   <em>5 min</em> read</span>
 
@@ -801,7 +801,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">AudioKit의 MultiSegmentPlayer</span>
+      <span class="label text-truncate">AudioKit의 MultiSegmentPlayer 구현 방법 설명</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -814,7 +814,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">AudioKit의 MultiSegmentPlayer</div>
+        <div class="label text-truncate py-2 ms-4">AudioKit의 MultiSegmentPlayer 구현 방법 설명</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -824,9 +824,7 @@
   
 
   <div class="content">
-    <h1 id="multisegment-player">MultiSegment Player</h1>
-
-<ul>
+    <ul>
   <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/AudioPlayer/MultiSegmentPlayer.swift">코드 보기</a></li>
 </ul>
 
@@ -834,19 +832,15 @@
 
 <p><code class="language-plaintext highlighter-rouge">MultiSegmentPlayerConductor</code>는 오디오 제어 로직을 담당하고, <code class="language-plaintext highlighter-rouge">MultiSegmentPlayerView</code>는 이를 화면에 표시합니다.</p>
 
-<hr />
-
-<h2 id="-전체-구조-개요"><span class="me-2">🧠 전체 구조 개요</span><a href="#-전체-구조-개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="전체-구조-개요"><span class="me-2">전체 구조 개요</span><a href="#전체-구조-개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>✅ <code class="language-plaintext highlighter-rouge">MultiSegmentPlayerConductor</code>: 오디오 재생, 시간 추적, RMS 설정, 세그먼트 생성, 오디오 세션 구성 등 핵심 로직</li>
-  <li>✅ <code class="language-plaintext highlighter-rouge">MultiSegmentPlayerView</code>: 시각적 UI (파형, 플레이헤드, 버튼 등)</li>
-  <li>✅ RMS: 소리의 실제 감지 크기를 표현하는 지표 (RMS = Root Mean Square)</li>
+  <li><code class="language-plaintext highlighter-rouge">MultiSegmentPlayerConductor</code>: 오디오 재생, 시간 추적, RMS 설정, 세그먼트 생성, 오디오 세션 구성 등 핵심 로직</li>
+  <li><code class="language-plaintext highlighter-rouge">MultiSegmentPlayerView</code>: 시각적 UI (파형, 플레이헤드, 버튼 등)</li>
+  <li>RMS: 소리의 실제 감지 크기를 표현하는 지표 (RMS = Root Mean Square)</li>
 </ul>
 
-<hr />
-
-<h2 id="-multisegmentplayerconductor-클래스"><span class="me-2">🔷 MultiSegmentPlayerConductor 클래스</span><a href="#-multisegmentplayerconductor-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="multisegmentplayerconductor-클래스"><span class="me-2">MultiSegmentPlayerConductor 클래스</span><a href="#multisegmentplayerconductor-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="1-오디오-구성-요소"><span class="me-2">1. 오디오 구성 요소</span><a href="#1-오디오-구성-요소" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -867,7 +861,7 @@
 <h3 id="3-rms-시각화-제어"><span class="me-2">3. RMS 시각화 제어</span><a href="#3-rms-시각화-제어" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <h4 id="rms-root-mean-square"><span class="me-2">RMS (Root Mean Square)</span><a href="#rms-root-mean-square" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p><strong>RMS (Root Mean Square)</strong>는 신호의 <strong>전반적인 에너지 크기(=지속적인 평균적인 세기)</strong>를 나타내는 통계적 측정값입니다. 오디오에서는 “소리의 실제 감지되는 볼륨 크기”에 가까운 값으로 간주됩니다.</p>
+<p><strong>RMS</strong> (Root Mean Square)는 신호의 <strong>전반적인 에너지 크기</strong>(=지속적인 평균적인 세기)를 나타내는 통계적 측정값입니다. 오디오에서는 “소리의 실제 감지되는 볼륨 크기”에 가까운 값으로 간주됩니다.</p>
 <ul>
   <li>오디오 파형은 시간에 따라 위아래로 진동하는 파형인데, 단순 평균(mean)은 0이 되기 때문에 사용이 어렵습니다.</li>
   <li>대신, 각 샘플의 제곱 → 평균 → 제곱근을 구해 전체적인 크기를 양수로 계산하는 것이 RMS입니다.</li>
@@ -887,8 +881,6 @@
   <li><code class="language-plaintext highlighter-rouge">false</code>: <code class="language-plaintext highlighter-rouge">player.stop()</code> → 재생 중지</li>
 </ul>
 
-<hr />
-
 <h3 id="5-주요-함수"><span class="me-2">5. 주요 함수</span><a href="#5-주요-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
@@ -901,9 +893,7 @@
   <li><code class="language-plaintext highlighter-rouge">setTimer()</code>: 타이머 시작</li>
 </ul>
 
-<hr />
-
-<h2 id="-multisegmentplayerview-구조체"><span class="me-2">🔶 MultiSegmentPlayerView 구조체</span><a href="#-multisegmentplayerview-구조체" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="multisegmentplayerview-구조체"><span class="me-2">MultiSegmentPlayerView 구조체</span><a href="#multisegmentplayerview-구조체" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="구성-요소"><span class="me-2">구성 요소</span><a href="#구성-요소" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -933,9 +923,7 @@
   <li><code class="language-plaintext highlighter-rouge">playheadWidth</code>만큼 왼쪽으로 보정해서 중앙 정렬</li>
 </ul>
 
-<hr />
-
-<h2 id="-실행-흐름-요약"><span class="me-2">🔧 실행 흐름 요약</span><a href="#-실행-흐름-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="실행-흐름-요약"><span class="me-2">실행 흐름 요약</span><a href="#실행-흐름-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">onAppear</code> 시 <code class="language-plaintext highlighter-rouge">conductor.start()</code> → 오디오 엔진 시작</li>
@@ -945,9 +933,7 @@
   <li>RMS 파형은 <code class="language-plaintext highlighter-rouge">TrackView</code>에서 표시됨 (코드 미포함)</li>
 </ol>
 
-<hr />
-
-<h2 id="-이-코드가-하는-일"><span class="me-2">🎯 이 코드가 하는 일</span><a href="#-이-코드가-하는-일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="이-코드가-하는-일"><span class="me-2">이 코드가 하는 일</span><a href="#이-코드가-하는-일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>다수의 오디오 파일을 시간차를 두고 이어붙여 순차 재생</li>
@@ -955,8 +941,6 @@
   <li>재생 시간에 따라 플레이헤드를 이동</li>
   <li>SwiftUI UI와 오디오 재생이 실시간으로 연동</li>
 </ul>
-
-<hr />
 
   </div>
 
@@ -1020,21 +1004,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=AudioKit%EC%9D%98%20MultiSegmentPlayer%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FMultiSegmentPlayer%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=AudioKit%EC%9D%98%20MultiSegmentPlayer%20%EA%B5%AC%ED%98%84%20%EB%B0%A9%EB%B2%95%20%EC%84%A4%EB%AA%85%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FMultiSegmentPlayer%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=AudioKit%EC%9D%98%20MultiSegmentPlayer%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FMultiSegmentPlayer%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=AudioKit%EC%9D%98%20MultiSegmentPlayer%20%EA%B5%AC%ED%98%84%20%EB%B0%A9%EB%B2%95%20%EC%84%A4%EB%AA%85%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FMultiSegmentPlayer%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FMultiSegmentPlayer%2F&text=AudioKit%EC%9D%98%20MultiSegmentPlayer%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FMultiSegmentPlayer%2F&text=AudioKit%EC%9D%98%20MultiSegmentPlayer%20%EA%B5%AC%ED%98%84%20%EB%B0%A9%EB%B2%95%20%EC%84%A4%EB%AA%85%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2785,18 +2769,6 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -3014,7 +2986,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3042,7 +3014,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3070,7 +3042,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>
@@ -3105,7 +3077,7 @@
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>AudioKit의 Flow</p>
+      <p>AudioKit의 Flow 설명</p>
     </a>
   
 </nav>

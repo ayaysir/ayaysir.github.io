@@ -30,7 +30,7 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Tables" />
+<meta property="og:title" content="AudioKit: AudioKitUI의 Tables 사용법" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
 <meta name="description" content="Tables" />
@@ -41,14 +41,14 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-06-21T20:11:40+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tables" />
+<meta property="twitter:title" content="AudioKit: AudioKitUI의 Tables 사용법" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-21T20:11:40+09:00","datePublished":"2025-06-21T20:11:40+09:00","description":"Tables","headline":"Tables","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/Tables/"},"url":"https://ayaysir.github.io/posts/Tables/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-21T20:11:40+09:00","datePublished":"2025-06-21T20:11:40+09:00","description":"Tables","headline":"AudioKit: AudioKitUI의 Tables 사용법","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/Tables/"},"url":"https://ayaysir.github.io/posts/Tables/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Tables | BGSMM
+  <title>AudioKit: AudioKitUI의 Tables 사용법 | BGSMM
   </title>
 
   <!--
@@ -416,7 +416,7 @@
         
           
             
-              <span>Tables</span>
+              <span>AudioKit: AudioKitUI의 Tables 사용법</span>
             
 
           
@@ -661,7 +661,7 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>Tables</h1>
+    <h1 data-toc-skip>AudioKit: AudioKitUI의 Tables 사용법</h1>
     
 
     <div class="post-meta text-muted">
@@ -736,7 +736,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="844 words"
+  title="833 words"
 >
   <em>4 min</em> read</span>
 
@@ -747,7 +747,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">Tables</span>
+      <span class="label text-truncate">AudioKit: AudioKitUI의 Tables 사용법</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -760,7 +760,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">Tables</div>
+        <div class="label text-truncate py-2 ms-4">AudioKit: AudioKitUI의 Tables 사용법</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -773,16 +773,14 @@
     <h1 id="tables">Tables</h1>
 
 <ul>
-  <li><a href="">코드 보기</a></li>
+  <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/UncategorizedDemos/Tables.swift">코드 보기</a></li>
 </ul>
 
 <p>이 코드는 <code class="language-plaintext highlighter-rouge">AudioKit</code>의 <code class="language-plaintext highlighter-rouge">Table</code> 객체들을 생성하고 시각화하는 SwiftUI 뷰입니다.
-특히 생성자(<code class="language-plaintext highlighter-rouge">init()</code>)에서는 다양한 방식으로 **파형 테이블(Table)**을 생성하여 오실레이터 등에서 사용할 수 있도록 준비합니다.
+특히 생성자(<code class="language-plaintext highlighter-rouge">init()</code>)에서는 다양한 방식으로 <strong>파형 테이블</strong>(Table)을 생성하여 오실레이터 등에서 사용할 수 있도록 준비합니다.
 이 Table들은 사인파, 정사각파, 사용자 정의 파형 등의 <strong>루프 가능한 단일 사이클 웨이브폼</strong>입니다.</p>
 
-<hr />
-
-<h2 id="-클래스-개요-tableconductor"><span class="me-2">✅ 클래스 개요: <code class="language-plaintext highlighter-rouge">TableConductor</code></span><a href="#-클래스-개요-tableconductor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="클래스-개요-tableconductor"><span class="me-2">클래스 개요: <code class="language-plaintext highlighter-rouge">TableConductor</code></span><a href="#클래스-개요-tableconductor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 클래스는 <code class="language-plaintext highlighter-rouge">ObservableObject</code>로, UI에서 이 객체의 <code class="language-plaintext highlighter-rouge">@Published</code> 값을 관찰할 수 있도록 구성되어 있습니다.</p>
 
@@ -792,7 +790,7 @@
 </pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">TableConductor</span><span class="p">:</span> <span class="kt">ObservableObject</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="-속성-목록"><span class="me-2">📌 속성 목록</span><a href="#-속성-목록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="속성-목록"><span class="me-2">속성 목록</span><a href="#속성-목록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -829,11 +827,9 @@
   </tbody>
 </table></div>
 
-<hr />
+<h2 id="생성자-설명-init"><span class="me-2">생성자 설명: <code class="language-plaintext highlighter-rouge">init()</code></span><a href="#생성자-설명-init" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="-생성자-설명-init"><span class="me-2">🧠 생성자 설명: <code class="language-plaintext highlighter-rouge">init()</code></span><a href="#-생성자-설명-init" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="-1-기본-파형-테이블-생성"><span class="me-2">🔹 1. 기본 파형 테이블 생성</span><a href="#-1-기본-파형-테이블-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="1-기본-파형-테이블-생성"><span class="me-2">1. 기본 파형 테이블 생성</span><a href="#1-기본-파형-테이블-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -850,9 +846,7 @@
   <li><code class="language-plaintext highlighter-rouge">count</code>는 <strong>테이블 길이 (샘플 수)</strong>, 2의 제곱수로 설정하는 것이 일반적 (FFT 등 성능에 영향)</li>
 </ul>
 
-<hr />
-
-<h3 id="-2-오디오-파일-기반-파형-생성"><span class="me-2">🔹 2. 오디오 파일 기반 파형 생성</span><a href="#-2-오디오-파일-기반-파형-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="2-오디오-파일-기반-파형-생성"><span class="me-2">2. 오디오 파일 기반 파형 생성</span><a href="#2-오디오-파일-기반-파형-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -869,14 +863,12 @@
   <li><code class="language-plaintext highlighter-rouge">fileTable</code>은 실제 음성 데이터를 기반으로 한 루프 테이블이 됨</li>
 </ul>
 
-<p>주의:</p>
+<p><strong>주의:</strong></p>
 <ul>
   <li>파일 로딩은 오래 걸릴 수 있으므로 생성자에서 직접 하지 말고 <code class="language-plaintext highlighter-rouge">task</code> 등을 통해 비동기적으로 실행</li>
 </ul>
 
-<hr />
-
-<h3 id="-3-하모닉-오버톤-기반-테이블-생성"><span class="me-2">🔹 3. 하모닉 오버톤 기반 테이블 생성</span><a href="#-3-하모닉-오버톤-기반-테이블-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="3-하모닉-오버톤-기반-테이블-생성"><span class="me-2">3. 하모닉 오버톤 기반 테이블 생성</span><a href="#3-하모닉-오버톤-기반-테이블-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -891,7 +883,7 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">AudioKit.TableType.harmonic(_)</code>은 **기본파 + 배음(amplitudes)**으로 구성된 파형 생성</li>
+  <li><code class="language-plaintext highlighter-rouge">AudioKit.TableType.harmonic(_)</code>은 <strong>기본파 + 배음(amplitudes)</strong>으로 구성된 파형 생성</li>
   <li><code class="language-plaintext highlighter-rouge">harmonicOvertoneAmplitudes[n]</code>은 <strong>(n+1)번째 고조파의 세기</strong></li>
   <li><code class="language-plaintext highlighter-rouge">phase: 0.75</code>는 <strong>위상 오프셋</strong>으로, 시작 지점을 오른쪽으로 75%만큼 이동</li>
 </ul>
@@ -900,9 +892,7 @@
 배음 = <code class="language-plaintext highlighter-rouge">[0.0, 0.0, 0.016, 0.301]</code>
 → 기본파 없음, 3번째와 4번째 고조파만 있는 파형</p>
 
-<hr />
-
-<h3 id="-4-사용자-정의-파형-생성"><span class="me-2">🔹 4. 사용자 정의 파형 생성</span><a href="#-4-사용자-정의-파형-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="4-사용자-정의-파형-생성"><span class="me-2">4. 사용자 정의 파형 생성</span><a href="#4-사용자-정의-파형-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -928,9 +918,7 @@
   <li><code class="language-plaintext highlighter-rouge">Float(i) / 2048.0</code> → 위치에 따라 증가하는 값</li>
 </ul>
 
-<hr />
-
-<h2 id="️-테이블-시각화-뷰-tabledataview"><span class="me-2">🖼️ 테이블 시각화 뷰 (<code class="language-plaintext highlighter-rouge">TableDataView</code>)</span><a href="#️-테이블-시각화-뷰-tabledataview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="테이블-시각화-뷰-tabledataview"><span class="me-2">테이블 시각화 뷰 (<code class="language-plaintext highlighter-rouge">TableDataView</code>)</span><a href="#테이블-시각화-뷰-tabledataview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -942,8 +930,6 @@
   <li>AudioKit에서 제공하는 <code class="language-plaintext highlighter-rouge">TableView</code>를 UIKit 기반으로 감싸 SwiftUI에서 사용 가능하게 함</li>
   <li><code class="language-plaintext highlighter-rouge">table</code>을 주입받아 <code class="language-plaintext highlighter-rouge">makeUIView</code>에서 그려줌</li>
 </ul>
-
-<hr />
 
 <h2 id="-swiftui-구성-tablerecipeview"><span class="me-2">📱 SwiftUI 구성 (<code class="language-plaintext highlighter-rouge">TableRecipeView</code>)</span><a href="#-swiftui-구성-tablerecipeview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -965,9 +951,7 @@
   <li>각 Table을 <code class="language-plaintext highlighter-rouge">Text</code>와 함께 나열하여 시각적으로 비교 가능</li>
 </ul>
 
-<hr />
-
-<h2 id="-요약"><span class="me-2">✅ 요약</span><a href="#-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -996,7 +980,6 @@
   </tbody>
 </table></div>
 
-<hr />
 
   </div>
 
@@ -1060,21 +1043,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Tables%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FTables%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=AudioKit:%20AudioKitUI%EC%9D%98%20Tables%20%EC%82%AC%EC%9A%A9%EB%B2%95%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FTables%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Tables%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FTables%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=AudioKit:%20AudioKitUI%EC%9D%98%20Tables%20%EC%82%AC%EC%9A%A9%EB%B2%95%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FTables%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FTables%2F&text=Tables%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FTables%2F&text=AudioKit:%20AudioKitUI%EC%9D%98%20Tables%20%EC%82%AC%EC%9A%A9%EB%B2%95%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2885,18 +2868,6 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -3054,7 +3025,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3082,7 +3053,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3110,7 +3081,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>

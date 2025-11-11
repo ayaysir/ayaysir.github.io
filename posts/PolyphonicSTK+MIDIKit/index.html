@@ -33,8 +33,8 @@
 <meta property="og:title" content="AudioKit의 PolyphonicSTK+MIDIKit" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Polyphonic STK + MIDIKit" />
-<meta property="og:description" content="Polyphonic STK + MIDIKit" />
+<meta name="description" content="코드 보기" />
+<meta property="og:description" content="코드 보기" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/PolyphonicSTK+MIDIKit/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/PolyphonicSTK+MIDIKit/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -44,7 +44,7 @@
 <meta property="twitter:title" content="AudioKit의 PolyphonicSTK+MIDIKit" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-22T19:03:37+09:00","datePublished":"2025-06-22T19:03:37+09:00","description":"Polyphonic STK + MIDIKit","headline":"AudioKit의 PolyphonicSTK+MIDIKit","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/PolyphonicSTK+MIDIKit/"},"url":"https://ayaysir.github.io/posts/PolyphonicSTK+MIDIKit/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-22T19:03:37+09:00","datePublished":"2025-06-22T19:03:37+09:00","description":"코드 보기","headline":"AudioKit의 PolyphonicSTK+MIDIKit","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/PolyphonicSTK+MIDIKit/"},"url":"https://ayaysir.github.io/posts/PolyphonicSTK+MIDIKit/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -746,7 +746,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="648 words"
+  title="639 words"
 >
   <em>3 min</em> read</span>
 
@@ -780,9 +780,7 @@
   
 
   <div class="content">
-    <h1 id="polyphonic-stk--midikit">Polyphonic STK + MIDIKit</h1>
-
-<ul>
+    <ul>
   <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/PolyphonicSTK%2BMIDIKit.swift">코드 보기</a></li>
 </ul>
 
@@ -790,9 +788,7 @@
 가상 또는 외부 MIDI 장치로부터 들어오는 MIDI 이벤트를 수신하고,
 <code class="language-plaintext highlighter-rouge">RhodesPianoKey</code>(SoundpipeAudioKit) 기반으로 폴리포닉 연주를 가능하게 하는 구조입니다.</p>
 
-<hr />
-
-<h2 id="midikit-관련-설명"><span class="me-2">MIDIKit 관련 설명</span><a href="#midikit-관련-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="midikit-부분-설명"><span class="me-2">MIDIKit 부분 설명</span><a href="#midikit-부분-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="midimanager-생성"><span class="me-2">MIDIManager 생성</span><a href="#midimanager-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -815,8 +811,6 @@
   <li>CoreMIDI 클라이언트를 만들고, 포트와 연결을 관리함</li>
   <li>iOS/macOS의 MIDI 시스템과 연동됨</li>
 </ul>
-
-<hr />
 
 <h3 id="midi-연결-설정-midiconnect"><span class="me-2">MIDI 연결 설정: <code class="language-plaintext highlighter-rouge">MIDIConnect()</code></span><a href="#midi-연결-설정-midiconnect" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -856,8 +850,6 @@
   <li><code class="language-plaintext highlighter-rouge">receiver: .events</code>: 이벤트 수신 핸들러</li>
 </ul>
 
-<hr />
-
 <h3 id="이벤트-수신-핸들러"><span class="me-2">이벤트 수신 핸들러</span><a href="#이벤트-수신-핸들러" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
@@ -887,8 +879,6 @@
 <blockquote>
   <p><code class="language-plaintext highlighter-rouge">@Sendable</code> 제한을 피하기 위해 <code class="language-plaintext highlighter-rouge">DispatchQueue.main.async</code> 대신 <code class="language-plaintext highlighter-rouge">Task { @MainActor }</code> 사용</p>
 </blockquote>
-
-<hr />
 
 <h3 id="수신된-midi-이벤트-처리"><span class="me-2">수신된 MIDI 이벤트 처리</span><a href="#수신된-midi-이벤트-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -937,9 +927,7 @@
   <p><code class="language-plaintext highlighter-rouge">NotificationCenter.default.post(...)</code>는 외부 UI에 키보드 상태 전파에 사용됨</p>
 </blockquote>
 
-<hr />
-
-<h2 id="audiokit-관련-간단-요약"><span class="me-2">AudioKit 관련 (간단 요약)</span><a href="#audiokit-관련-간단-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="audiokit-부분-설명"><span class="me-2">AudioKit 부분 설명</span><a href="#audiokit-부분-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">RhodesPianoKey</code> → 기본 오실레이터</li>
@@ -949,9 +937,7 @@
   <li>출력은 <code class="language-plaintext highlighter-rouge">Mixer(envs)</code> → <code class="language-plaintext highlighter-rouge">engine.output</code></li>
 </ul>
 
-<hr />
-
-<h2 id="-동작-요약"><span class="me-2">🧪 동작 요약</span><a href="#-동작-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="동작-요약"><span class="me-2">동작 요약</span><a href="#동작-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>앱 실행 → MIDIManager 시작</li>
@@ -961,8 +947,6 @@
   <li><code class="language-plaintext highlighter-rouge">.noteOff</code> 수신 → <code class="language-plaintext highlighter-rouge">noteOff(pitch:)</code> → 게이트 닫힘</li>
 </ol>
 
-<hr />
-
 <h2 id="사용-예"><span class="me-2">사용 예</span><a href="#사용-예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
@@ -970,8 +954,6 @@
   <li>SwiftUI UI에서 <code class="language-plaintext highlighter-rouge">MIDIKItKeyboard</code>로 직접 연주도 가능</li>
   <li>모든 이벤트는 콘솔과 UI에 실시간 반영됨</li>
 </ul>
-
-<hr />
 
   </div>
 
@@ -2920,18 +2902,6 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -3029,7 +2999,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3057,7 +3027,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3085,7 +3055,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>

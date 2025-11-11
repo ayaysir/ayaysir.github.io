@@ -33,8 +33,8 @@
 <meta property="og:title" content="SwiftUI: @Binding을 지원하지 않는 뷰의 강제 리프레시" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="SwiftUI에서 @Binding을 지원하지 않는 뷰의 강제 리프레시" />
-<meta property="og:description" content="SwiftUI에서 @Binding을 지원하지 않는 뷰의 강제 리프레시" />
+<meta name="description" content="parameters와 ParameterRow가 바인딩(Binding)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(HStack)를 자동으로 업데이트하지 않습니다. 따라서 Randomize 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생합니다." />
+<meta property="og:description" content="parameters와 ParameterRow가 바인딩(Binding)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(HStack)를 자동으로 업데이트하지 않습니다. 따라서 Randomize 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생합니다." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -44,7 +44,7 @@
 <meta property="twitter:title" content="SwiftUI: @Binding을 지원하지 않는 뷰의 강제 리프레시" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-05-14T18:04:00+09:00","datePublished":"2025-05-14T18:04:00+09:00","description":"SwiftUI에서 @Binding을 지원하지 않는 뷰의 강제 리프레시","headline":"SwiftUI: @Binding을 지원하지 않는 뷰의 강제 리프레시","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/"},"url":"https://ayaysir.github.io/posts/%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-05-14T18:04:00+09:00","datePublished":"2025-05-14T18:04:00+09:00","description":"parameters와 ParameterRow가 바인딩(Binding)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(HStack)를 자동으로 업데이트하지 않습니다. 따라서 Randomize 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생합니다.","headline":"SwiftUI: @Binding을 지원하지 않는 뷰의 강제 리프레시","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/"},"url":"https://ayaysir.github.io/posts/%EB%B7%B0%EA%B0%95%EC%A0%9C%EB%A6%AC%ED%94%84%EB%A0%88%EC%8B%9C/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -499,11 +499,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -546,6 +541,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -649,7 +649,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="422 words"
+  title="403 words"
 >
   <em>2 min</em> read</span>
 
@@ -683,11 +683,9 @@
   
 
   <div class="content">
-    <h1 id="swiftui에서-binding을-지원하지-않는-뷰의-강제-리프레시">SwiftUI에서 @Binding을 지원하지 않는 뷰의 강제 리프레시</h1>
+    <p><code class="language-plaintext highlighter-rouge">parameters</code>와 <code class="language-plaintext highlighter-rouge">ParameterRow</code>가 바인딩(<code class="language-plaintext highlighter-rouge">Binding</code>)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(<code class="language-plaintext highlighter-rouge">HStack</code>)를 자동으로 업데이트하지 않습니다. 따라서 <code class="language-plaintext highlighter-rouge">Randomize</code> 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생합니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">parameters</code>와 <code class="language-plaintext highlighter-rouge">ParameterRow</code>가 바인딩(<code class="language-plaintext highlighter-rouge">Binding</code>)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(<code class="language-plaintext highlighter-rouge">HStack</code>)를 자동으로 업데이트하지 않습니다. 따라서 <code class="language-plaintext highlighter-rouge">Randomize</code> 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생합니다.</p>
-
-<h3 id="해결-방법-id-값을-바꿔서-뷰-강제-갱신"><span class="me-2">해결 방법: <code class="language-plaintext highlighter-rouge">id</code> 값을 바꿔서 뷰 강제 갱신</span><a href="#해결-방법-id-값을-바꿔서-뷰-강제-갱신" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="해결-방법-id-값을-바꿔서-뷰-강제-갱신"><span class="me-2">해결 방법: <code class="language-plaintext highlighter-rouge">id</code> 값을 바꿔서 뷰 강제 갱신</span><a href="#해결-방법-id-값을-바꿔서-뷰-강제-갱신" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">HStack</code> 전체에 <code class="language-plaintext highlighter-rouge">.id(...)</code>를 주어 SwiftUI가 해당 뷰를 다른 것으로 인식하도록 하면 <strong>뷰 전체가 강제로 다시 그려집니다.</strong></p>
 
@@ -737,9 +735,7 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<hr />
-
-<h3 id="대안-권장-binding을-지원하도록-구조-수정"><span class="me-2">대안 (권장): <code class="language-plaintext highlighter-rouge">Binding</code>을 지원하도록 구조 수정</span><a href="#대안-권장-binding을-지원하도록-구조-수정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="대안-권장-binding을-지원하도록-구조-수정"><span class="me-2">대안 (권장): <code class="language-plaintext highlighter-rouge">Binding</code>을 지원하도록 구조 수정</span><a href="#대안-권장-binding을-지원하도록-구조-수정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">VocalTract.parameters</code>가 <code class="language-plaintext highlighter-rouge">@Published var</code> 배열이면 <code class="language-plaintext highlighter-rouge">@Binding</code>으로 넘길 수 있습니다.</li>
@@ -748,9 +744,7 @@
 
 <p>하지만 외부 라이브러리이거나 구조를 못 바꾸는 경우에는 <code class="language-plaintext highlighter-rouge">.id(UUID())</code> 방식이 가장 확실하고 간단한 방법입니다.</p>
 
-<hr />
-
-<h3 id="결론"><span class="me-2">결론</span><a href="#결론" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="결론"><span class="me-2">결론</span><a href="#결론" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">parameters</code>가 <code class="language-plaintext highlighter-rouge">Binding</code>을 지원하지 않더라도 <code class="language-plaintext highlighter-rouge">HStack</code>에 <code class="language-plaintext highlighter-rouge">.id(refreshID)</code>를 설정하고 <code class="language-plaintext highlighter-rouge">UUID()</code>를 변경하는 방식으로 뷰를 강제로 새로 그리게 만들 수 있습니다.</p>
 
@@ -7629,7 +7623,7 @@
 
               <h4 class="pt-0 my-2">SwiftUI: 번역 기능 (Translation) 사용하기 (iOS 18 이상)</h4>
               <div class="text-muted">
-                <p>iOS `Translation` 프레임워크는 iOS 17.4부터 도입된 기능으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스텀된 번역 기능을 구현할 수 있게 되었습...</p>
+                <p>iOS `Translation` 프레임워크는 iOS 17.4부터 도입된 기능(실질적으로는 iOS 18 이상 되어야 모든 기능 사용 가능)으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSes...</p>
               </div>
             </div>
           </a>
@@ -7655,9 +7649,9 @@
   Apr 29, 2025
 </time>
 
-              <h4 class="pt-0 my-2">SwiftUI: @Observable 동작원리</h4>
+              <h4 class="pt-0 my-2">SwiftUI: @Observable의 동작원리</h4>
               <div class="text-muted">
-                <p>Observable 동작 원리 Q. viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유?  @Observable 클래스 AudioKit3DViewModel에서 참조하는   각 클래스 AudioEngine3DConductor, SceneCoordinator에  @Observable을 붙이지 않아도 동작하는 이유?   답변  1. vi...</p>
+                <p>설명  1. viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유  @State는 SwiftUI 뷰 내부에서 값 타입(보통 구조체)을 직접 소유하고 변경할 때 사용됩니다. 그러나 viewModel은 클래스(AudioKit3DViewModel) 타입이며, 해당 클래스는 SwiftUI 뷰 외부에서 생성되어 참조됩니다. 이 경우 Swift...</p>
               </div>
             </div>
           </a>
@@ -7685,7 +7679,7 @@
 
               <h4 class="pt-0 my-2">Swift: Action Extension에서 extensionContext가 iOS 18에서 작동하지 않는 문제</h4>
               <div class="text-muted">
-                <p>iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  ### 원문 링크 - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-open-ma...</p>
+                <p>iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  **원문 링크** - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-open-ma...</p>
               </div>
             </div>
           </a>
@@ -7710,7 +7704,7 @@
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>AudioKit의 VocalTract</p>
+      <p>AudioKit의 VocalTract (성도) 사용법</p>
     </a>
   
 

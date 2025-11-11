@@ -1094,8 +1094,7 @@
   
 
   <div class="content">
-    <p>“Action Extension으로 사진을 내 앱에 넘기는 방법”은 Share Extension과 비슷하지만,
-Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에서 바로 실행되는 확장(App Extension) 입니다.
+    <p>“Action Extension으로 사진을 내 앱에 넘기는 방법”은 Share Extension과 비슷하지만, Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에서 바로 실행되는 확장(App Extension) 입니다.
 즉, 사용자가 사진 앱, 파일 앱 등에서 “공유” 메뉴 대신 “작업(Action)” 메뉴에서 내 앱을 실행할 수 있게 해줍니다.</p>
 
 <p>아래는 사진 앱에서 이미지를 선택 → 내 앱의 Action Extension 실행 → 원본 앱으로 이미지 전달하는 전체 흐름과 코드 예시입니다.</p>
@@ -1112,12 +1111,12 @@ Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에�
 
 <h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="1-action-extension-target-생성"><span class="me-2">1) Action Extension Target 생성</span><a href="#1-action-extension-target-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="1-action-extension-target-생성"><span class="me-2">(1) Action Extension Target 생성</span><a href="#1-action-extension-target-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ol>
   <li>Xcode → File → New → Target…</li>
   <li>iOS → Application Extension → Action Extension 선택</li>
-  <li>이름 예: ImageTranslatorActionExtension<br /><a href="/assets/img/DevLog/swift-action-extension/1%20target%20생성%20스크린샷%202025-10-25%20오후%2011.38.40%20복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/1%20target%20생성%20스크린샷%202025-10-25%20오후%2011.38.40%20복사본.jpg" alt="target 생성" loading="lazy"></a>
+  <li>이름 예: ImageTranslatorActionExtension<br /><a href="/assets/img/DevLog/swift-action-extension/1%20target.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/1%20target.jpg" alt="target 생성" loading="lazy"></a>
     <ul>
       <li><code class="language-plaintext highlighter-rouge">ActionType</code></li>
     </ul>
@@ -1126,11 +1125,11 @@ Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에�
       <li>No Present UI: UI를 표시하지 않습니다.</li>
     </ul>
   </li>
-  <li>“Activate …” 선택<br /><a href="/assets/img/DevLog/swift-action-extension/2%20activate%20스크린샷%202025-10-25%20오후%2011.38.58%20복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/2%20activate%20스크린샷%202025-10-25%20오후%2011.38.58%20복사본.jpg" alt="Activate 창" loading="lazy"></a></li>
+  <li>“Activate …” 선택<br /><a href="/assets/img/DevLog/swift-action-extension/2%20activate.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/2%20activate.jpg" alt="Activate 창" loading="lazy"></a></li>
   <li>완료 후, ActionViewController.swift 파일이 자동 생성됩니다.</li>
 </ol>
 
-<h3 id="2-infoplist-설정-action-extension-프로젝트에"><span class="me-2">2) Info.plist 설정 (Action Extension 프로젝트에)</span><a href="#2-infoplist-설정-action-extension-프로젝트에" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="2-infoplist-설정-action-extension-프로젝트에"><span class="me-2">(2) Info.plist 설정 (Action Extension 프로젝트에)</span><a href="#2-infoplist-설정-action-extension-프로젝트에" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Action Extension이 어떤 타입의 콘텐츠를 받을지 지정해야 합니다.
 <code class="language-plaintext highlighter-rouge">Info.plist</code>의 <code class="language-plaintext highlighter-rouge">NSExtension</code> 항목을 다음과 같이 수정하세요:</p>
@@ -1172,9 +1171,9 @@ Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에�
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Property View에서 보면 다음과 같이 보입니다.<br />
-<a href="/assets/img/DevLog/swift-action-extension/3%20property%20view%20스크린샷%202025-10-25%20오후%209.24.22%20복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/3%20property%20view%20스크린샷%202025-10-25%20오후%209.24.22%20복사본.jpg" alt="Property View" loading="lazy"></a></p>
+<a href="/assets/img/DevLog/swift-action-extension/3%20property%20view.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/3%20property%20view.jpg" alt="Property View" loading="lazy"></a></p>
 
-<h3 id="3-actionviewcontrollerswift-구현-action-extension-프로젝트에"><span class="me-2">3) ActionViewController.swift 구현 (Action Extension 프로젝트에)</span><a href="#3-actionviewcontrollerswift-구현-action-extension-프로젝트에" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="3-actionviewcontrollerswift-구현-action-extension-프로젝트에"><span class="me-2">(3) ActionViewController.swift 구현 (Action Extension 프로젝트에)</span><a href="#3-actionviewcontrollerswift-구현-action-extension-프로젝트에" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>이제 사진(이미지 데이터)을 가져오고, 내 앱으로 전달하는 코드를 작성합니다.</p>
 
@@ -1298,16 +1297,16 @@ Action Extension은 ‘공유’가 아니라 원본 앱의 컨텍스트 안에�
   <li>완료 후 <code class="language-plaintext highlighter-rouge">URLScheme</code>를 이용하여 내가 만든 앱으로 이동하게 하는 방법은 <a href="/posts/swift-urlscheme">이 포스트</a>를 참조합니다.</li>
 </ul>
 
-<h3 id="4--app-group-설정"><span class="me-2">4)  App Group 설정</span><a href="#4--app-group-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="4--app-group-설정"><span class="me-2">(4)  App Group 설정</span><a href="#4--app-group-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <ol>
   <li>메인 앱과 Action Extension 두 타깃 모두 <code class="language-plaintext highlighter-rouge">Signing &amp; Capabilities → + Capability → App Groups</code> 추가</li>
   <li>동일한 그룹 ID 생성: <code class="language-plaintext highlighter-rouge">group.com.yourcompany.imagetranslator</code></li>
   <li>위 코드에서 동일한 ID 사용.</li>
 </ol>
 
-<p><a href="/assets/img/DevLog/swift-action-extension/4%20app%20group%20스크린샷%202025-10-25%20오후%209.24.54%20복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/4%20app%20group%20스크린샷%202025-10-25%20오후%209.24.54%20복사본.jpg" alt="App Group 설정" loading="lazy"></a></p>
+<p><a href="/assets/img/DevLog/swift-action-extension/4%20app%20group.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/4%20app%20group.jpg" alt="App Group 설정" loading="lazy"></a></p>
 
-<h3 id="5-메인-앱에서-이미지-불러오기"><span class="me-2">5) 메인 앱에서 이미지 불러오기</span><a href="#5-메인-앱에서-이미지-불러오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="5-메인-앱에서-이미지-불러오기"><span class="me-2">(5) 메인 앱에서 이미지 불러오기</span><a href="#5-메인-앱에서-이미지-불러오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Action Extension에서 저장한 이미지는 메인 앱에서도 같은 App Group 경로를 통해 접근할 수 있습니다.</p>
 
@@ -1341,7 +1340,7 @@ Action Extension에서 전달된 이미지를 바로 가져올 수 있습니다.
 
 <h3 id="6-빌드-후-아무-앱에서-이미지-공유-메뉴를-열고-action-extension이-추가되었는지-확인"><span class="me-2">6) 빌드 후 아무 앱에서 이미지 공유 메뉴를 열고 Action Extension이 추가되었는지 확인</span><a href="#6-빌드-후-아무-앱에서-이미지-공유-메뉴를-열고-action-extension이-추가되었는지-확인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><a href="/assets/img/DevLog/swift-action-extension/5%20example%20IMG_6715.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/5%20example%20IMG_6715.jpg" alt="ActionExtension 추가됨" loading="lazy"></a></p>
+<p><a href="/assets/img/DevLog/swift-action-extension/5%20example.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/swift-action-extension/5%20example.jpg" alt="ActionExtension 추가됨" loading="lazy"></a></p>
 
 <hr />
 
@@ -8240,7 +8239,7 @@ Action Extension에서 전달된 이미지를 바로 가져올 수 있습니다.
 
               <h4 class="pt-0 my-2">Swift: iOS에서 Custom URL Scheme 등록해서 url로 앱 열기</h4>
               <div class="text-muted">
-                <p>iOS에서 Custom URL Scheme를 등록하는 방법입니다.  ---  ## 1. 메인 앱에 URL Scheme 등록  먼저 ImageTranslator 앱의 Info.plist에 다음을 추가하세요.  ```xml CFBundleURLTypes         CFBundleURLSchemes            imagetranslator    ...</p>
+                <p>iOS에서 Custom URL Scheme를 등록하는 방법입니다.  ## 1. 메인 앱에 URL Scheme 등록  먼저 ImageTranslator 앱의 Info.plist에 다음을 추가하세요.  ```xml CFBundleURLTypes         CFBundleURLSchemes            imagetranslator         ...</p>
               </div>
             </div>
           </a>
@@ -8268,7 +8267,7 @@ Action Extension에서 전달된 이미지를 바로 가져올 수 있습니다.
 
               <h4 class="pt-0 my-2">Swift: Action Extension에서 extensionContext가 iOS 18에서 작동하지 않는 문제</h4>
               <div class="text-muted">
-                <p>iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  ### 원문 링크 - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-open-ma...</p>
+                <p>iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  **원문 링크** - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-open-ma...</p>
               </div>
             </div>
           </a>

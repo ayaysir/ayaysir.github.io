@@ -30,25 +30,25 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="SwiftUI: @Observable 동작원리" />
+<meta property="og:title" content="SwiftUI: @Observable의 동작원리" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Observable 동작 원리 Q. viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유? @Observable 클래스 AudioKit3DViewModel에서 참조하는 각 클래스 AudioEngine3DConductor, SceneCoordinator에 @Observable을 붙이지 않아도 동작하는 이유?" />
-<meta property="og:description" content="Observable 동작 원리 Q. viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유? @Observable 클래스 AudioKit3DViewModel에서 참조하는 각 클래스 AudioEngine3DConductor, SceneCoordinator에 @Observable을 붙이지 않아도 동작하는 이유?" />
+<meta name="description" content="설명" />
+<meta property="og:description" content="설명" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/Observable-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/Observable-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/" />
 <meta property="og:site_name" content="BGSMM" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-04-29T16:25:40+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="SwiftUI: @Observable 동작원리" />
+<meta property="twitter:title" content="SwiftUI: @Observable의 동작원리" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-04-29T16:25:40+09:00","datePublished":"2025-04-29T16:25:40+09:00","description":"Observable 동작 원리 Q. viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유? @Observable 클래스 AudioKit3DViewModel에서 참조하는 각 클래스 AudioEngine3DConductor, SceneCoordinator에 @Observable을 붙이지 않아도 동작하는 이유?","headline":"SwiftUI: @Observable 동작원리","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/Observable-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/"},"url":"https://ayaysir.github.io/posts/Observable-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-04-29T16:25:40+09:00","datePublished":"2025-04-29T16:25:40+09:00","description":"설명","headline":"SwiftUI: @Observable의 동작원리","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/Observable-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/"},"url":"https://ayaysir.github.io/posts/Observable-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>SwiftUI: @Observable 동작원리 | BGSMM
+  <title>SwiftUI: @Observable의 동작원리 | BGSMM
   </title>
 
   <!--
@@ -416,7 +416,7 @@
         
           
             
-              <span>SwiftUI: @Observable 동작원리</span>
+              <span>SwiftUI: @Observable의 동작원리</span>
             
 
           
@@ -517,6 +517,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -532,17 +543,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -595,7 +595,7 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>SwiftUI: @Observable 동작원리</h1>
+    <h1 data-toc-skip>SwiftUI: @Observable의 동작원리</h1>
     
 
     <div class="post-meta text-muted">
@@ -670,9 +670,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="720 words"
+  title="660 words"
 >
-  <em>4 min</em> read</span>
+  <em>3 min</em> read</span>
 
         </div>
       </div>
@@ -681,7 +681,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">SwiftUI: @Observable 동작원리</span>
+      <span class="label text-truncate">SwiftUI: @Observable의 동작원리</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -694,7 +694,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">SwiftUI: @Observable 동작원리</div>
+        <div class="label text-truncate py-2 ms-4">SwiftUI: @Observable의 동작원리</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -704,15 +704,7 @@
   
 
   <div class="content">
-    <h1 id="observable-동작-원리">Observable 동작 원리</h1>
-<pre><code class="language-plain">Q.
-viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유? 
-@Observable 클래스 AudioKit3DViewModel에서 참조하는  
-각 클래스 AudioEngine3DConductor, SceneCoordinator에 
-@Observable을 붙이지 않아도 동작하는 이유?
-</code></pre>
-
-<h2 id="답변"><span class="me-2">답변</span><a href="#답변" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="설명"><span class="me-2">설명</span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="1-viewmodel에서-state를-붙이지-않아도-코드가-동작하는-이유"><span class="me-2">1. <code class="language-plaintext highlighter-rouge">viewModel</code>에서 <code class="language-plaintext highlighter-rouge">@State</code>를 붙이지 않아도 코드가 동작하는 이유</span><a href="#1-viewmodel에서-state를-붙이지-않아도-코드가-동작하는-이유" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -723,8 +715,6 @@ viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유?
 <p>Swift 5.9 이상 (또는 Xcode 15 이상)에서는 SwiftUI의 <strong>Observation 프레임워크</strong>를 기반으로 하는 <code class="language-plaintext highlighter-rouge">@Observable</code> 프로토콜이 도입되었으며, 이 프로토콜을 채택한 객체는 SwiftUI에서 자동으로 상태를 관찰할 수 있습니다. 이를 통해 <code class="language-plaintext highlighter-rouge">@StateObject</code>나 <code class="language-plaintext highlighter-rouge">@ObservedObject</code> 없이도 <strong>값의 변경이 뷰에 반영됩니다</strong>.</p>
 
 <p>다시 말해, <code class="language-plaintext highlighter-rouge">viewModel</code>이 <code class="language-plaintext highlighter-rouge">@Observable</code>을 따르고 있고, SwiftUI가 이를 알 수 있기 때문에 별도의 속성 래퍼가 필요 없습니다. 단, 이 기능은 Swift의 Observation이 제대로 적용되는 환경(Xcode 15 이상, Swift 5.9 이상, iOS 17 이상 등)에서만 가능합니다.</p>
-
-<hr />
 
 <h3 id="2-audioengine3dconductor-scenecoordinator에-observable을-붙이지-않아도-되는-이유"><span class="me-2">2. <code class="language-plaintext highlighter-rouge">AudioEngine3DConductor</code>, <code class="language-plaintext highlighter-rouge">SceneCoordinator</code>에 <code class="language-plaintext highlighter-rouge">@Observable</code>을 붙이지 않아도 되는 이유</span><a href="#2-audioengine3dconductor-scenecoordinator에-observable을-붙이지-않아도-되는-이유" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -743,9 +733,7 @@ viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유?
 
 <p>단, 만약 <code class="language-plaintext highlighter-rouge">AudioEngine3DConductor</code>나 <code class="language-plaintext highlighter-rouge">SceneCoordinator</code>의 속성을 뷰에서 <strong>직접 바인딩하거나 관찰</strong>해야 할 경우, 그때는 해당 클래스에도 <code class="language-plaintext highlighter-rouge">@Observable</code>이나 <code class="language-plaintext highlighter-rouge">@Published</code> 등을 적용해야 합니다.</p>
 
-<hr />
-
-<h3 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -823,21 +811,21 @@ viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유?
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=SwiftUI:%20@Observable%20%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FObservable-%25EB%258F%2599%25EC%259E%2591%25EC%259B%2590%25EB%25A6%25AC%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=SwiftUI:%20@Observable%EC%9D%98%20%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC%20-%20BGSMM&url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FObservable-%25EB%258F%2599%25EC%259E%2591%25EC%259B%2590%25EB%25A6%25AC%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=SwiftUI:%20@Observable%20%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FObservable-%25EB%258F%2599%25EC%259E%2591%25EC%259B%2590%25EB%25A6%25AC%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=SwiftUI:%20@Observable%EC%9D%98%20%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC%20-%20BGSMM&u=https%3A%2F%2Fayaysir.github.io%2Fposts%2FObservable-%25EB%258F%2599%25EC%259E%2591%25EC%259B%2590%25EB%25A6%25AC%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FObservable-%25EB%258F%2599%25EC%259E%2591%25EC%259B%2590%25EB%25A6%25AC%2F&text=SwiftUI:%20@Observable%20%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fayaysir.github.io%2Fposts%2FObservable-%25EB%258F%2599%25EC%259E%2591%25EC%259B%2590%25EB%25A6%25AC%2F&text=SwiftUI:%20@Observable%EC%9D%98%20%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC%20-%20BGSMM" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -7641,7 +7629,7 @@ viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유?
 
               <h4 class="pt-0 my-2">SwiftUI: 번역 기능 (Translation) 사용하기 (iOS 18 이상)</h4>
               <div class="text-muted">
-                <p>iOS `Translation` 프레임워크는 iOS 17.4부터 도입된 기능으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSession을 이용해 커스텀된 번역 기능을 구현할 수 있게 되었습...</p>
+                <p>iOS `Translation` 프레임워크는 iOS 17.4부터 도입된 기능(실질적으로는 iOS 18 이상 되어야 모든 기능 사용 가능)으로, 개발자가 앱 내에 텍스트 번역 기능을 쉽게 통합할 수 있도록 애플이 제공하는 API입니다. 특히 iOS 18에서는 이 기능이 더욱 발전하여, 시스템에서 제공하는 내장 UI를 활용하거나 TranslationSes...</p>
               </div>
             </div>
           </a>
@@ -7669,7 +7657,7 @@ viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유?
 
               <h4 class="pt-0 my-2">SwiftUI: @Binding을 지원하지 않는 뷰의 강제 리프레시</h4>
               <div class="text-muted">
-                <p># SwiftUI에서 @Binding을 지원하지 않는 뷰의 강제 리프레시  `parameters`와 `ParameterRow`가 바인딩(`Binding`)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(`HStack`)를 자동으로 업데이트하지 않습니다. 따라서 `Randomize` 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생...</p>
+                <p>`parameters`와 `ParameterRow`가 바인딩(`Binding`)을 사용하지 않고 있다면, SwiftUI는 내부 값이 바뀌더라도 해당 뷰(`HStack`)를 자동으로 업데이트하지 않습니다. 따라서 `Randomize` 버튼을 눌러도 뷰가 갱신되지 않는 문제가 발생합니다.  ## 해결 방법: `id` 값을 바꿔서 뷰 강제 갱신  `HSta...</p>
               </div>
             </div>
           </a>
@@ -7697,7 +7685,7 @@ viewModel에서 @State를 붙이지 않아도 코드가 동작하는 이유?
 
               <h4 class="pt-0 my-2">Swift: Action Extension에서 extensionContext가 iOS 18에서 작동하지 않는 문제</h4>
               <div class="text-muted">
-                <p>iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  ### 원문 링크 - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-open-ma...</p>
+                <p>iOS 18부터 **Action Extension에서 메인 앱을 여는(openURL) 기능이 동작하지 않는 문제** (iOS 17 이하에서는 정상 동작했음) 에 대한 해결방법 요약입니다.  **원문 링크** - [Stack Overflow](https://stackoverflow.com/questions/79077018/unable-to-open-ma...</p>
               </div>
             </div>
           </a>

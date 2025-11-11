@@ -33,8 +33,8 @@
 <meta property="og:title" content="AudioKit의 PluckedString" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Plucked String" />
-<meta property="og:description" content="Plucked String" />
+<meta name="description" content="코드 보기" />
+<meta property="og:description" content="코드 보기" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/PluckedString/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/PluckedString/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -44,7 +44,7 @@
 <meta property="twitter:title" content="AudioKit의 PluckedString" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-05-27T15:35:34+09:00","datePublished":"2025-05-27T15:35:34+09:00","description":"Plucked String","headline":"AudioKit의 PluckedString","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/PluckedString/"},"url":"https://ayaysir.github.io/posts/PluckedString/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-05-27T15:35:34+09:00","datePublished":"2025-05-27T15:35:34+09:00","description":"코드 보기","headline":"AudioKit의 PluckedString","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/PluckedString/"},"url":"https://ayaysir.github.io/posts/PluckedString/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -703,7 +703,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="637 words"
+  title="613 words"
 >
   <em>3 min</em> read</span>
 
@@ -737,19 +737,15 @@
   
 
   <div class="content">
-    <h1 id="plucked-string">Plucked String</h1>
-
-<ul>
+    <ul>
   <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/PhysicalModels/PluckedString.swift">코드 보기</a></li>
 </ul>
 
-<p>이 코드는 <strong>AudioKit</strong>과 <strong>SoundpipeAudioKit</strong>을 사용하여 <em>플럭 현악기(plucked string)</em> 소리를 자동 생성하고, 여기에 <strong>딜레이</strong>와 <strong>리버브</strong> 효과를 적용하는 구조입니다. 아래에 각 구성요소별로 자세히 설명드리겠습니다.</p>
-
-<hr />
+<p>이 코드는 <strong>AudioKit</strong>과 <strong>SoundpipeAudioKit</strong>을 사용하여 <em>플럭 현악기(plucked string)</em> 소리를 자동 생성하고, 여기에 <strong>딜레이</strong>와 <strong>리버브</strong> 효과를 적용하는 구조입니다.</p>
 
 <h2 id="주요-구성-요소-설명"><span class="me-2">주요 구성 요소 설명</span><a href="#주요-구성-요소-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="let-pluckedstring--pluckedstring"><span class="me-2"><code class="language-plaintext highlighter-rouge">let pluckedString = PluckedString()</code></span><a href="#let-pluckedstring--pluckedstring" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="let-pluckedstring--pluckedstring"><span class="me-2">let pluckedString = PluckedString()</span><a href="#let-pluckedstring--pluckedstring" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>SoundpipeAudioKit의 <code class="language-plaintext highlighter-rouge">PluckedString</code> 노드입니다.</li>
@@ -759,16 +755,14 @@
   <li><code class="language-plaintext highlighter-rouge">amplitude</code>: 음의 크기</li>
 </ul>
 
-<h3 id="playrate--30"><span class="me-2"><code class="language-plaintext highlighter-rouge">playRate = 3.0</code></span><a href="#playrate--30" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="playrate--30"><span class="me-2">playRate = 3.0</span><a href="#playrate--30" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>초당 3번 루프가 반복됨을 의미합니다.</li>
   <li><code class="language-plaintext highlighter-rouge">CallbackLoop(frequency:)</code>에서 사용되어, 약 0.33초마다 트리거가 발생합니다.</li>
 </ul>
 
-<hr />
-
-<h2 id="init--노드-연결-및-효과-설정"><span class="me-2"><code class="language-plaintext highlighter-rouge">init()</code> – 노드 연결 및 효과 설정</span><a href="#init--노드-연결-및-효과-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="init--노드-연결-및-효과-설정"><span class="me-2">init() – 노드 연결 및 효과 설정</span><a href="#init--노드-연결-및-효과-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>
@@ -805,9 +799,7 @@
   </li>
 </ol>
 
-<hr />
-
-<h2 id="loop--callbackloopfrequency-playrate"><span class="me-2"><code class="language-plaintext highlighter-rouge">loop = CallbackLoop(frequency: playRate)</code></span><a href="#loop--callbackloopfrequency-playrate" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="loop--callbackloopfrequency-playrate"><span class="me-2">loop = CallbackLoop(frequency: playRate)</span><a href="#loop--callbackloopfrequency-playrate" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>1초에 3번 반복하는 콜백 루프</li>
@@ -859,15 +851,11 @@
   <li>확률적으로 50%의 확률로 둘 다 트리거</li>
 </ul>
 
-<hr />
-
-<h2 id="published-var-isrunning"><span class="me-2"><code class="language-plaintext highlighter-rouge">@Published var isRunning</code></span><a href="#published-var-isrunning" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="published-var-isrunning"><span class="me-2">@Published var isRunning</span><a href="#published-var-isrunning" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>SwiftUI와 바인딩되어 있으며, 사용자가 ON/OFF 조작 시 <code class="language-plaintext highlighter-rouge">loop.start()</code> 또는 <code class="language-plaintext highlighter-rouge">loop.stop()</code>을 실행</li>
 </ul>
-
-<hr />
 
 <h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -2908,18 +2896,6 @@
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -2956,7 +2932,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -2984,7 +2960,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3012,7 +2988,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>
@@ -3037,7 +3013,7 @@
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>AudioKit의 VocalTractOperation</p>
+      <p>AudioKit의 VocalTractOperation 사용법</p>
     </a>
   
 

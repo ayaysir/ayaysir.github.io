@@ -33,8 +33,8 @@
 <meta property="og:title" content="AudioKit의 MultiTapDelay" />
 <meta name="author" content="ayaysir(BGSMM)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Multi Tap Delay" />
-<meta property="og:description" content="Multi Tap Delay" />
+<meta name="description" content="코드 보기" />
+<meta property="og:description" content="코드 보기" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/MultiTapDelay/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/MultiTapDelay/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -44,7 +44,7 @@
 <meta property="twitter:title" content="AudioKit의 MultiTapDelay" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-07T14:53:20+09:00","datePublished":"2025-06-07T14:53:20+09:00","description":"Multi Tap Delay","headline":"AudioKit의 MultiTapDelay","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/MultiTapDelay/"},"url":"https://ayaysir.github.io/posts/MultiTapDelay/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ayaysir(BGSMM)","url":"https://github.com/ayaysir"},"dateModified":"2025-06-07T14:53:20+09:00","datePublished":"2025-06-07T14:53:20+09:00","description":"코드 보기","headline":"AudioKit의 MultiTapDelay","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/MultiTapDelay/"},"url":"https://ayaysir.github.io/posts/MultiTapDelay/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -539,50 +539,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -598,6 +554,50 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -714,7 +714,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="753 words"
+  title="749 words"
 >
   <em>4 min</em> read</span>
 
@@ -748,28 +748,24 @@
   
 
   <div class="content">
-    <h1 id="multi-tap-delay">Multi Tap Delay</h1>
-
-<ul>
+    <ul>
   <li><a href="https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Effects/MultiTapDelay.swift">코드 보기</a></li>
 </ul>
 
 <p><code class="language-plaintext highlighter-rouge">MultiTapDelayConductor</code> 클래스는 AudioKit을 사용하여 <strong>멀티탭 딜레이(Multi-Tap Delay)</strong> 효과를 구현하는 Swift 클래스입니다. 여러 개의 지연된 복사본을 입력 신호에 섞어 리듬감 있는 반복 효과나 리버브와 유사한 풍부한 공간감을 만들어냅니다.</p>
 
-<hr />
+<h2 id="클래스-설명"><span class="me-2">클래스 설명</span><a href="#클래스-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="-클래스-설명"><span class="me-2">📌 클래스 설명</span><a href="#-클래스-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="class-multitapdelayconductor"><span class="me-2">class MultiTapDelayConductor</span><a href="#class-multitapdelayconductor" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="class-multitapdelayconductor-observableobject-processesplayerinput"><span class="me-2"><code class="language-plaintext highlighter-rouge">class MultiTapDelayConductor: ObservableObject, ProcessesPlayerInput</code></span><a href="#class-multitapdelayconductor-observableobject-processesplayerinput" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>ObservableObject, ProcessesPlayerInput을 준수합니다.</p>
 
 <ul>
   <li><strong><code class="language-plaintext highlighter-rouge">ObservableObject</code></strong>: SwiftUI 뷰와 데이터를 바인딩하기 위해 사용됩니다. 슬라이더를 통해 딜레이 시간 및 게인 값이 바뀌면 뷰가 자동으로 업데이트됩니다.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">ProcessesPlayerInput</code></strong>: 오디오 재생 처리를 담당하는 AudioKit Cookbook의 프로토콜입니다.</li>
 </ul>
 
-<hr />
-
-<h2 id="-주요-변수"><span class="me-2">🔧 주요 변수</span><a href="#-주요-변수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="주요-변수"><span class="me-2">주요 변수</span><a href="#주요-변수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -814,21 +810,23 @@
   </tbody>
 </table></div>
 
-<hr />
-
-<h2 id="️-init"><span class="me-2">🎛️ init()</span><a href="#️-init" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="init"><span class="me-2">init()</span><a href="#init" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">player.buffer</code>에 오디오 데이터를 세팅하고 반복 재생을 설정합니다.</li>
   <li><code class="language-plaintext highlighter-rouge">engine.output</code>에 <code class="language-plaintext highlighter-rouge">multiTapDelay(player, times: times, gains: gains)</code>을 설정하여 엔진 출력에 멀티탭 딜레이 효과를 적용합니다.</li>
 </ul>
 
-<hr />
+<h3 id="multitapdelay---mixer"><span class="me-2">multiTapDelay -&gt; Mixer</span><a href="#multitapdelay---mixer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h2 id="-multitapdelay_-input-node-times-auvalue-gains-auvalue---mixer"><span class="me-2">🧩 <code class="language-plaintext highlighter-rouge">multiTapDelay(_ input: Node, times: [AUValue], gains: [AUValue]) -&gt; Mixer</code></span><a href="#-multitapdelay_-input-node-times-auvalue-gains-auvalue---mixer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nf">multiTapDelay</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">Node</span><span class="p">,</span> <span class="nv">times</span><span class="p">:</span> <span class="p">[</span><span class="kt">AUValue</span><span class="p">],</span> <span class="nv">gains</span><span class="p">:</span> <span class="p">[</span><span class="kt">AUValue</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Mixer</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>**입력 노드(input)**의 신호를 딜레이 + 게인 조절해서 믹서에 추가합니다.</li>
+  <li>입력 노드(input)의 신호를 딜레이 + 게인 조절해서 믹서에 추가합니다.</li>
   <li>딜레이와 게인은 슬라이더로 개별 조정 가능.</li>
   <li>Mixer에 원본 입력도 함께 포함되어 Dry/Wet 믹싱 효과가 생깁니다.</li>
 </ul>
@@ -849,9 +847,7 @@
 
 <p>즉, <code class="language-plaintext highlighter-rouge">VariableDelay</code> → <code class="language-plaintext highlighter-rouge">Fader</code> → <code class="language-plaintext highlighter-rouge">Mixer</code> 순으로 체인 구성합니다.</p>
 
-<hr />
-
-<h2 id="-updatedelays"><span class="me-2">🔄 <code class="language-plaintext highlighter-rouge">updateDelays()</code></span><a href="#-updatedelays" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="updatedelays"><span class="me-2">updateDelays()</span><a href="#updatedelays" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>슬라이더 값이 변경될 때마다 호출되어 딜레이 및 게인 값을 실시간 반영합니다.</li>
@@ -865,9 +861,7 @@
 <span class="n">faders</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">gain</span> <span class="o">=</span> <span class="n">gains</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<hr />
-
-<h2 id="-요약"><span class="me-2">✅ 요약</span><a href="#-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="요약"><span class="me-2">요약</span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -878,27 +872,25 @@
   </thead>
   <tbody>
     <tr>
-      <td>🎧 딜레이 타임</td>
+      <td>딜레이 타임</td>
       <td><code class="language-plaintext highlighter-rouge">[0.1, 0.2, 0.4]</code>초로 지정된 여러 지점에서 입력 신호를 지연</td>
     </tr>
     <tr>
-      <td>🎚 게인</td>
+      <td>게인</td>
       <td>각 딜레이된 신호의 볼륨을 개별 조절</td>
     </tr>
     <tr>
-      <td>🎼 사용 효과</td>
+      <td>사용 효과</td>
       <td>리듬감 있는 에코, 다층적인 반향, 리버브 유사 환경</td>
     </tr>
     <tr>
-      <td>🔁 슬라이더 연동</td>
+      <td>슬라이더 연동</td>
       <td><code class="language-plaintext highlighter-rouge">@Published</code> 값이 변할 때 <code class="language-plaintext highlighter-rouge">updateDelays()</code> 호출로 실시간 반영</td>
     </tr>
   </tbody>
 </table></div>
 
-<hr />
-
-<h2 id="-오디오-체인-구성도"><span class="me-2">📊 오디오 체인 구성도</span><a href="#-오디오-체인-구성도" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="오디오-체인-구성도"><span class="me-2">오디오 체인 구성도</span><a href="#오디오-체인-구성도" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -915,8 +907,6 @@
   ├──▶ VariableDelay(time: 0.4) ─▶ Fader(gain: 0.5) ─┤
   └──────────────────────────────────────────────────▶ Mixer (최종 출력)
 </pre></td></tr></tbody></table></code></div></div>
-
-<hr />
 
 <p>이 구조는 <strong>동일한 소스에서 여러 딜레이 시점을 만든 다음, 볼륨 조절 후 믹싱</strong>하는 구조로, 공간감 있고 풍부한 사운드를 만드는 데 매우 유용합니다.</p>
 
@@ -2687,18 +2677,6 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -2976,7 +2954,7 @@
 
               <h4 class="pt-0 my-2">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</h4>
               <div class="text-muted">
-                <p># Multitrack MIDI Player  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 Audio...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/blob/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/Labs/MultitrackMIDIPlayer.swift)  이 코드는 AudioKit을 사용하여 여러 트랙과 악기를 포함한 *...</p>
               </div>
             </div>
           </a>
@@ -3004,7 +2982,7 @@
 
               <h4 class="pt-0 my-2">AudioKit: MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법</h4>
               <div class="text-muted">
-                <p># MIDISampler+AppleSequencer를 이용한 미디 멀티트랙 재생 중 트랙 중간에 프로그램 체인지가 있는 경우 대응 방법  ```text track 2: [   AudioKit.MIDIProgramChangeEvent(time: 0.0, channel: 2, number: 57),   AudioKit.MIDIProgramChangeEve...</p>
+                <p>## 문제 상황 요약  ### 코드  ```swift track 2: [   ProgramChange(channel: 2, number: 57) // 시작 시   ProgramChange(channel: 2, number: 60) // 64초쯤   ProgramChange(channel: 2, number: 57) // 120초쯤 복귀 ] ```  *...</p>
               </div>
             </div>
           </a>
@@ -3032,7 +3010,7 @@
 
               <h4 class="pt-0 my-2">AudioKit의 MID Port Test</h4>
               <div class="text-muted">
-                <p># MIDI Port Test (Virtual MIDI Host 포함)  - [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTe...</p>
+                <p>- [코드 보기](https://github.com/ayaysir/Swift-Playgrounds/tree/main/AudioKit%20Cookbook%20Copy/AudioKit%20Cookbook%20Copy/Recipe/WIP/MIDIPortTest)  `MIDIPortTestConductor`는 AudioKit과 MIDIKit을 이용해 MIDI...</p>
               </div>
             </div>
           </a>
@@ -3057,7 +3035,7 @@
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>AudioKit의 Flanger</p>
+      <p>AudioKit의 Flanger 사용법</p>
     </a>
   
 
