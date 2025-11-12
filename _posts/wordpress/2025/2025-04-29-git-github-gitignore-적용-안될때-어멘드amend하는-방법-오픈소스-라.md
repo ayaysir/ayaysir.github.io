@@ -6,19 +6,232 @@ categories:
   - "Git"
 ---
 
-### **.gitignore 적용 안될때** 
+## .gitignore가 적용되지 않는 이유와 해결법
 
-.gitignore가 제대로 적용되지 않는 경우, 주로 이미 Git에 추적되고 있는 파일이거나 .gitignore 파일이 잘못 설정된 경우입니다. 이를 해결하기 위한 단계별 점검 및 해결 방법은 아래와 같습니다.
+.gitignore가 제대로 적용되지 않는 이유는 주로 **이미 Git이 추적 중인 파일이거나** `.gitignore` 설정이 잘못되어 있기 때문입니다.  아래는 문제를 진단하고 해결하는 단계별 가이드입니다.
+
+### 1. 이미 추적되고 있는 파일인지 확인
+
+`.gitignore`는 **Git이 추적하지 않는 파일**에만 적용됩니다.  
+이미 추적 중인 파일은 `.gitignore`에 추가해도 무시되지 않습니다.
+
+#### 해결 방법
+
+- **캐시에서 파일 제거**
+
+  ```bash
+  git rm --cached <파일명 또는 디렉터리>
+  # 예시
+  git rm --cached -r my_folder/
+  ```
+
+* **변경 사항 커밋**
+
+  ```bash
+  git commit -m "Remove files from tracking"
+  ```
+
+* `.gitignore`에 해당 파일/디렉터리를 추가하고 동작 여부 확인
+
+
+### 2. .gitignore 경로 및 패턴 확인
+
+.gitignore의 경로나 작성된 패턴이 정확하지 않을 수 있습니다.
+
+#### 체크 리스트
+
+* 파일 이름은 `.gitignore`여야 하며 **루트 디렉터리에 위치**해야 합니다.
+* 디렉터리를 무시하려면 경로 뒤에 `/`를 붙입니다.
+
+  ```
+  logs/        # logs 디렉터리 무시
+  *.log        # 확장자가 .log인 모든 파일 무시
+  /app/cache/  # app 디렉터리 내 cache 디렉터리 무시
+  ```
+
+---
+
+### 3. Git이 .gitignore를 인식하는지 확인
+
+`.gitignore` 파일이 무시되고 있는지 직접 확인합니다.
+
+```bash
+git check-ignore -v <파일명>
+```
+
+해당 명령어는 어떤 규칙에 의해 무시되는지 보여줍니다.
+`.git/info/exclude` 또는 상위 폴더의 `.gitignore`에 불필요한 설정이 있으면 제거해야 합니다.
+
+### 4. (추천) .gitignore 강제 재적용
+
+수정 후에도 적용되지 않는다면 캐시를 초기화해야 합니다.
+
+```bash
+git rm -r --cached .
+git add .
+git commit -m "Apply updated .gitignore"
+```
+
+`git status`로 무시 규칙이 잘 반영되었는지 확인합니다.
+
+
+### 5. 외부 설정 확인
+
+시스템 전체 설정이나 개별 exclude 파일에 규칙이 있을 수도 있습니다.
+
+```bash
+cat .git/info/exclude
+cat ~/.config/git/ignore
+```
+
+필요 없는 규칙은 제거합니다.
+
+
+## 이미 푸시된 커밋 수정하기 (--amend)
+
+원격 저장소(GitHub 등)에 푸시된 커밋을 수정하려면
+`--amend`와 **강제 푸시(force push)** 를 함께 사용해야 합니다.
+
+### 1. 마지막 커밋 수정
+
+```bash
+git commit --amend
+```
+
+이 명령어로 마지막 커밋 메시지를 수정하거나, 빠뜨린 파일을 추가할 수 있습니다.
+
+
+### 2. 수정된 커밋 강제 푸시
+
+```bash
+git push --force
+```
+
+리모트 이름이 `origin`, 브랜치가 `main`이라면 다음과 같습니다.
+
+```bash
+git push origin main --force
+```
+
+> ⚠️ `--force`는 커밋 해시를 변경하므로 **협업 중인 프로젝트에서는 주의해야 합니다.**
+> 공동작업자가 있는 경우 `--force-with-lease` 사용을 권장합니다.
+
+```bash
+git push --force-with-lease
+```
+
+#### 요약
+
+| 작업 구분     | 명령어                           |
+| --------- | ----------------------------- |
+| 마지막 커밋 수정 | `git commit --amend`          |
+| 수정된 커밋 푸시 | `git push --force`            |
+| 안전한 강제 푸시 | `git push --force-with-lease` |
+
+
+
+## GitHub 오픈소스 프로젝트에 Pull Request(PR) 보내는 방법
+
+### 1. 프로젝트 포크(Fork)
+
+1. 기여하려는 리포지토리 페이지로 이동
+2. 오른쪽 상단의 **“Fork”** 버튼 클릭
+3. 내 계정으로 복제된 저장소가 생성됨
+
+### 2. 로컬로 클론(Clone)
+
+```bash
+git clone https://github.com/내-아이디/프로젝트이름.git
+cd 프로젝트이름
+```
+
+원본 저장소를 추가해 최신 코드를 동기화할 수 있도록 설정합니다.
+
+```bash
+git remote add upstream https://github.com/원본-저장소-이름/프로젝트이름.git
+git fetch upstream
+```
+
+### 3. 새 브랜치 생성
+
+```bash
+git checkout -b fix/issue-123
+```
+
+브랜치 이름은 보통 `fix/버그번호`, `feature/기능명` 형태로 지정합니다.
+
+
+### 4. 코드 수정 및 커밋
+
+```bash
+git add .
+git commit -m "fix: 버그 수정 내용 또는 기능 추가"
+```
+
+커밋 메시지는 다음 규칙을 따릅니다.
+
+* `fix:` 버그 수정
+* `feat:` 새로운 기능 추가
+* `docs:` 문서 수정
+* `refactor:` 코드 리팩토링
+
+### 5. 포크된 저장소에 푸시
+
+```bash
+git push origin fix/issue-123
+```
+
+
+### 6. Pull Request(PR) 생성
+
+1. 내 포크된 저장소로 이동
+2. **“Compare & pull request”** 버튼 클릭
+3. PR 제목과 설명 입력
+
+   * 변경 이유, 주요 수정점 작성
+   * 관련 이슈는 `Closes #123` 형식으로 연결
+4. **“Create Pull Request”** 버튼 클릭
+
+
+### 7. 코드 리뷰 및 피드백 반영
+
+프로젝트 관리자가 리뷰를 남기면 수정 후 다시 푸시하면 됩니다.
+
+```bash
+git add .
+git commit --amend -m "리뷰 반영"
+git push origin fix/issue-123 --force
+```
+
+
+### 8. PR 머지 후 정리
+
+PR이 승인되고 머지되면, 로컬과 원격 브랜치를 정리합니다.
+
+```bash
+git checkout main
+git pull upstream main
+git push origin main
+git branch -d fix/issue-123
+```
+
+이제 PR이 정상적으로 반영되었습니다.
+
+```
+```
+
+
+<!-- .gitignore가 제대로 적용되지 않는 경우, 주로 이미 Git에 추적되고 있는 파일이거나 .gitignore 파일이 잘못 설정된 경우입니다. 이를 해결하기 위한 단계별 점검 및 해결 방법은 아래와 같습니다.
 
  
 
-#### **이미 추적되고 있는 파일인지 확인**
+## **이미 추적되고 있는 파일인지 확인**
 
 .gitignore는 Git이 추적하지 않는 파일에만 적용됩니다. 이미 추적 중인 파일은 .gitignore에 추가해도 무시되지 않습니다.
 
  
 
-#### **해결 방법:**
+### **해결 방법:**
 
 - **캐시에서 파일 제거:** `git rm --cached <파일명 또는 디렉터리>` 예: `git rm --cached -r my_folder/`
 - **변경 사항 커밋:** `git commit -m "Remove files from tracking"`
@@ -247,4 +460,4 @@ git push origin main
 git branch -d fix/issue-123
 ```
 
-이제 PR이 성공적으로 반영되었습니다! <!--[rcblock id="6686"]-->
+이제 PR이 성공적으로 반영되었습니다! [rcblock id="6686"] -->

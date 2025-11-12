@@ -175,7 +175,7 @@ RadialLayout {
 
 - font의 design: 둥근 글꼴(.rounded)를 적용합니다.
 
- ![](/assets/img/wp-content/uploads/2024/04/스크린샷-2024-04-04-오전-12.12.12-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/04/screenshot-2024-04-04-am-12.12.12-copy.jpg)
 
  
 
@@ -195,7 +195,7 @@ RadialLayout {
 .frame(width: 360)
 ```
 
- ![](/assets/img/wp-content/uploads/2024/04/스크린샷-2024-04-04-오전-12.13.59-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/04/screenshot-2024-04-04-am-12.13.59-copy.jpg)
 
  
 
@@ -215,13 +215,13 @@ RadialLayout {
 .frame(width: 120)
 ```
 
- ![](/assets/img/wp-content/uploads/2024/04/스크린샷-2024-04-04-오전-12.14.58-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/04/screenshot-2024-04-04-am-12.14.58-copy.jpg)
 
  
 
 위 세개의 요소가 전부 포함된 화면은 다음과 같습니다.
 
- ![](/assets/img/wp-content/uploads/2024/04/스크린샷-2024-04-04-오전-12.15.34-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/04/screenshot-2024-04-04-am-12.15.34-copy.jpg)
 
  
 
@@ -245,8 +245,8 @@ Circle()
 
 완성된 화면은 다음과 같습니다.
 
- ![](/assets/img/wp-content/uploads/2024/04/스크린샷-2024-04-04-오전-12.17.19-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/04/screenshot-2024-04-04-am-12.17.19-copy.jpg)
 
 참고로 `RadialLayout`의 `frame` 구분 영역은 다음과 같습니다.
 
- ![](/assets/img/wp-content/uploads/2024/04/스크린샷-2024-04-04-오전-12.12.25-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/04/screenshot-2024-04-04-am-12.12.25-copy.jpg)

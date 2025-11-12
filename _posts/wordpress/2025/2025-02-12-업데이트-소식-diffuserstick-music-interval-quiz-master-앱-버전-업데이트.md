@@ -6,26 +6,28 @@ categories:
   - "App News"
 ---
 
-#### **디퓨저 스틱 교체 주기 알림 도우미 Diffuser Stick 앱 업데이트**
+## **디퓨저 스틱 교체 주기 알림 도우미 Diffuser Stick 앱 업데이트**
 
-- [디퓨저 스틱의 유효 기간 - 디퓨저 스틱은 효과가 영구적이지 않습니다.](http://yoonbumtae.com/?p=3904)
-- [iOS 앱 포트폴리오: 디퓨저 스틱 (Diffuser Stick) 애플 앱스토어 출시 📱- 디퓨저 스틱 교체주기 관리 앱](http://yoonbumtae.com/?p=3842)
+- [디퓨저 스틱의 유효 기간 - 디퓨저 스틱은 효과가 영구적이지 않습니다.](/posts/디퓨저-스틱의-유효-기간-디퓨저-스틱은-효과가-영구/)
+- [iOS 앱 포트폴리오: 디퓨저 스틱 (Diffuser Stick) 애플 앱스토어 출시 📱- 디퓨저 스틱 교체주기 관리 앱](/_site/posts/ios-앱-디퓨저-스틱-diffuser-stick-애플-앱스토어-출시/)
 
  
 
 **[Diffuser Stick 앱 다운로드](https://apps.apple.com/kr/app/diffuserstick/id1578285458) (무료, 인 앱 결제 있음)**
 
-##### **(1) 메인 화면에서 바로 교체하기 기능 추가**
+### 업데이트 내역
+
+#### (1) 메인 화면에서 바로 교체하기 기능 추가
 
 디퓨저 목록을 스와이프해서 상세 페이지에 들어가지 않고도 바로 교체할 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2025/02/스크린샷-2025-02-13-오전-12.15.32.jpeg)
+ ![](/assets/img/wp-content/uploads/2025/02/screenshot-2025-02-13-am-12.15.32.jpeg)
 
-<iframe width="372" height="480" src="https://giphy.com/embed/zkJbXIwUANCbqeKUV6" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
-
+<!-- <iframe width="372" height="480" src="https://giphy.com/embed/zkJbXIwUANCbqeKUV6" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2NpdXpubTdxcmw3ZGxieXNtcXdjZGZtNGIwa3ZjMXg1NHY5bzRpcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zkJbXIwUANCbqeKUV6/giphy.gif)
  
 
-##### **(2) 그 외에 UI 레이아웃을 개선하고, 앱의 안정성을 향상시켰습니다!**
+#### (2) 그 외에 UI 레이아웃을 개선하고, 앱의 안정성을 향상시켰습니다!
 
  
 
@@ -33,22 +35,24 @@ categories:
 
  
 
-#### **음정(Interval) 학습 도우미 Music Interval Quiz Master 버전 업데이트**
+## 음정(Interval) 학습 도우미 Music Interval Quiz Master 버전 업데이트
 
-- [새로운 음악 학습 앱 출시: Music Interval Quiz Master로 골치아픈 음정 정복!](http://yoonbumtae.com/?p=6905)
+- [새로운 음악 학습 앱 출시: Music Interval Quiz Master로 골치아픈 음정 정복!](/posts/새로운-음악-학습-앱-출시-music-interval-quiz-master로-골치아픈-음정-정/)
 
  
 
 **[](https://apps.apple.com/kr/app/diffuserstick/id1578285458)[Music Interval Quiz Master 앱 다운로드](https://apps.apple.com/kr/app/music-interval-quiz-master/id6738980588) (유료)**
 
-##### **(1) 리마인더 알림 기능을 추가하였습니다.**
+### 업데이트 내역
+
+#### (1) 리마인더 알림 기능을 추가하였습니다.
 
 이 기능을 사용하면 하루에 한 번씩 학습을 유도하는 푸시 알림(Local Notification)을 받게 됩니다. 단순한 푸시 알림이 아니라 알림에서도 음정을 학습할 수 있도록 "오늘의 음정"을 제공합니다!
 
- ![](/assets/img/wp-content/uploads/2025/02/Simulator-Screenshot-iPhone-16-Pro-Max-2025-02-13-at-00.24.04-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2025/02/Simulator-Screenshot-iPhone-16-Pro-Max-2025-02-13-at-00.24.04-copy.jpg)
 
-<iframe width="220" height="480" src="https://giphy.com/embed/XDUrumnLI5l4gYA3fN" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
-
+<!-- <iframe width="220" height="480" src="https://giphy.com/embed/XDUrumnLI5l4gYA3fN" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![Gif](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDdlcmhwamQ4amt1Y2FuZDQyY3FwN3lhczQ3OWZ1ejl2MzRiMW4wMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XDUrumnLI5l4gYA3fN/giphy.gif)
  
 
-##### **(2) 그 외에 앱 퍼포먼스를 개선했습니다!**
+#### (2) 그 외에 앱 퍼포먼스를 개선했습니다!

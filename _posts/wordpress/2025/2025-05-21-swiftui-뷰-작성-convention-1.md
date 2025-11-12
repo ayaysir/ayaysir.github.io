@@ -6,9 +6,9 @@ categories:
   - "SwiftUI"
 ---
 
-# SwiftUI 뷰 작성 규칙 및 구조 가이드
+SwiftUI에서 원인을 찾지 못하는 컴파일 에러를 방지하려면 SwiftUI의 요소를 세부적으로 분리해야 합니다. 그 분리 방법 중 하나를 소개합니다.
 
-## 1. **파일 구조 분할 원칙**
+## 1. 파일 구조 분할 원칙
 
 확장(`extension`)을 사용하여 코드를 구역별로 분할합니다. 규모에 따라 확장2, 3은 분리하지 않을 수도 있습니다.
 
@@ -26,14 +26,12 @@ extension ExampleView { // MARK: - Utility methods }
 
 | 영역 | 설명 |
 | --- | --- |
-| **main** | `@State`, `@FocusState`, `@Environment` 등 속성 선언 + `body` |
-| **확장 1** | 뷰 구성 요소 (뷰 단위 서브컴포넌트) |
-| **확장 2** | 초기화 및 뷰 설정 관련 함수 (`setup`, `onAppear`, etc) |
-| **확장 3** | 유틸리티 함수 |
+| main | `@State`, `@FocusState`, `@Environment` 등 속성 선언 + `body` |
+| 확장 1 | 뷰 구성 요소 (뷰 단위 서브컴포넌트) |
+| 확장 2 | 초기화 및 뷰 설정 관련 함수 (`setup`, `onAppear`, etc) |
+| 확장 3 | 유틸리티 함수 |
 
-* * *
-
-## 2. **뷰 컴포넌트 구성 규칙**
+## 2. 뷰 컴포넌트 구성 규칙
 
 ### `body`는 상위 구성 요소만 나열:
 
@@ -52,9 +50,7 @@ var body: some View {
 - 명확한 의도 전달 및 뷰 로직 단순화를 위함.
 - 단 `Divider(), Spacer()`와 같이 한 줄로 처리할 수 있는 뷰는 별도로 분리하지 않을 수도 있음
 
-* * *
-
-## 3. **네이밍 컨벤션**
+## 3. 네이밍 컨벤션
 
 | 대상 | 형식 | 예시 |
 | --- | --- | --- |
@@ -64,9 +60,7 @@ var body: some View {
 | show/hide 토글 | `showXXXX` | `.opacity(showXXXX ? 1 : 0)` |
 |  |  |  |
 
-* * *
-
-## 4. **onChange / onReceive 등 modifier 정리 원칙**
+## 4. onChange / onReceive 등 modifier 정리 원칙
 
 - 서식 관련 modifier는 해당 뷰의 밑에 정의합니다.
 - 상태 관련 modifier(onChange 등)은 가능한 `body` 안의 최상위 뷰 밑에 정의합니다.
@@ -84,14 +78,10 @@ var body: some View {
     .onReceive(debounce.themeName.publisher, perform: updateThemeName)
 ```
 
-* * *
-
-## 🧹 5. **코드 정렬 및 스타일 가이드**
+## 5. 코드 정렬 및 스타일 가이드
 
 - `@State`, `@Environment`, `@FocusState`는 뭉쳐서 선언
-- View 내부는 **기능 단위로 줄 간격 확보**
-
-* * *
+- View 내부는 기능 단위로 줄 간격 확보
 
 ## 6. 기타 컨벤션
 

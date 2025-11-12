@@ -27,7 +27,7 @@ iOS 프로젝트에서 Game Center를 연동하려면 몇 가지 단계를 거�
 
  
 
- ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-07-오후-8.24.23.jpg)
+ ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.24.23.jpg)
 
  
 
@@ -48,11 +48,11 @@ iOS 프로젝트에서 Game Center를 연동하려면 몇 가지 단계를 거�
     - **저장(Save)** 버튼을 클릭하여 업적을 저장합니다.
     - 현지화는 1개 언어 이상 필수로 작성해야 합니다.
 
-\[caption id="attachment\_6813" align="alignnone" width="799"\] ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-07-오후-8.37.39-복사본.jpg) 순위표 또는 목표 달성 추가 및 관리\[/caption\]
+\[caption id="attachment\_6813" align="alignnone" width="799"\] ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.39-copy.jpg) 순위표 또는 목표 달성 추가 및 관리\[/caption\]
 
  
 
-\[caption id="attachment\_6814" align="alignnone" width="837"\] ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-07-오후-8.37.59-복사본.jpg) 정보 입력\[/caption\]
+\[caption id="attachment\_6814" align="alignnone" width="837"\] ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.59-copy.jpg) 정보 입력\[/caption\]
 
  
 
@@ -214,7 +214,7 @@ Button(action: {
 
  
 
- ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-07-오후-8.46.24.jpeg)  ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-07-오후-8.46.01.jpeg)
+ ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.46.24.jpeg)  ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.46.01.jpeg)
 
  
 

@@ -34,7 +34,7 @@ fetch("https://reqres.in/api/users?page=2", {
 })
 ```
 
- ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-14-오후-12.38.45.jpg)
+ ![](/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-14-pm-12.38.45.jpg)
 
  
 

@@ -25,11 +25,11 @@ categories:
 
 #### **목표**
 
-\[caption id="attachment\_6864" align="alignnone" width="377"\] ![](/assets/img/wp-content/uploads/2024/10/스크린샷-2024-10-06-오후-5.07.57-복사본.jpg) 평일 특정 시간에 30분 간격으로 앱을 열 것을 종용하는 알림을 보냄\[/caption\]
+\[caption id="attachment\_6864" align="alignnone" width="377"\] ![](/assets/img/wp-content/uploads/2024/10/screenshot-2024-10-06-pm-5.07.57-copy.jpg) 평일 특정 시간에 30분 간격으로 앱을 열 것을 종용하는 알림을 보냄\[/caption\]
 
  
 
-\[caption id="attachment\_6856" align="alignnone" width="570"\] ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-29-오후-3.05.20-복사본.jpg) 알림 스케줄\[/caption\]
+\[caption id="attachment\_6856" align="alignnone" width="570"\] ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-29-pm-3.05.20-copy.jpg) 알림 스케줄\[/caption\]
 
  
 

@@ -22,7 +22,7 @@ categories:
 - 복사/붙여넣기가 가능합니다.
 - 플레이스홀더의 내용을 채우지 않으면 컴파일러에서 에러를 발생시켜 프로그램이 실행되지 않습니다. 반드시 입력해야 할 내용을 적어둘 때 도움이 됩니다.
 
- ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-21-오후-7.32.48-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.32.48-copy.jpg)
 
 방법은 에디터에서 `<#코드내용#>`을 적으면 아래와 같이 플레이스홀더화 됩니다.
 
@@ -32,7 +32,7 @@ categories:
 let blahblah: String = <#"필수 입력란"#>
 ```
 
- ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-21-오후-7.36.32-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.36.32-copy.jpg)
 
  
 
@@ -42,15 +42,15 @@ let blahblah: String = <#"필수 입력란"#>
 
 예를 들어 switch문을 잊어버렸지만 바로 사용하고 싶은 경우, 코드 에디터에서 `switch` 또는 일부를 입력하면 아래와 같은 메뉴가 뜹니다.
 
- ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-21-오후-7.38.23-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.38.23-copy.jpg)
 
 해당 메뉴를 클릭하면 아래와 같은 코드 스니펫이 입력됩니다. 여기서 회색 네모칸은 앞서 언급한 플레이스홀더입니다.
 
- ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-21-오후-7.38.29-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.38.29-copy.jpg)
 
 코드 스니펫은 `View -> Show Library` 또는 코드 에디터 상단에 있는 `[+]` 버튼을 눌러서 둘러보고 추가하는것도 가능합니다.
 
- ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-21-오후-7.39.41-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.39.41-copy.jpg)
 
  
 
@@ -64,20 +64,20 @@ let blahblah: String = <#"필수 입력란"#>
 var twoDimArray: [[<#Type#>]] = .init(repeating: .init(repeating: <#Element#>, count: <#N#>), count: <#N#>)
 ```
 
- ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-21-오후-7.46.57-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.46.57-copy.jpg)
 
 방법은 다음과 같습니다.
 
-1. 스니펫으로 만들 코드를 선택합니다.  ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-21-오후-7.50.05-복사본.jpg)
-2. 마우스 오른쪽 버튼 또는 상단 `Editor` 메뉴의 `[Create Code Snippet...]` 를 선택합니다.  ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-21-오후-7.50.11-복사본.jpg)
-3. 제목, 설명 등의 정보들을 입력하고 `Done`을 선택합니다.  ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-21-오후-7.50.52-복사본.jpg)
+1. 스니펫으로 만들 코드를 선택합니다.  ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.05-copy.jpg)
+2. 마우스 오른쪽 버튼 또는 상단 `Editor` 메뉴의 `[Create Code Snippet...]` 를 선택합니다.  ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.11-copy.jpg)
+3. 제목, 설명 등의 정보들을 입력하고 `Done`을 선택합니다.  ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.52-copy.jpg)
     - **제목, 설명:** 제목 및 설명을 입력합니다. 메인으로 표시되는 정보입니다.
     - **코드:** 스니펫으로 사용할 코드를 입력합니다.
     - **언어:** Swift 등 Xcode에서 지원하는 언어를 선택할 수 있습니다.
     - **플랫폼**: iOS, macOS 등 특정 플랫폼에서만 사용하고 싶을 때 사용합니다.
     - **Completion (완성 단축어)**
         - 코드 에디터에 해당 단축어를 입력하면 컨텍스트 메뉴가 떠서 바로 사용할 수 있습니다.
-        - 예를 들어 `twodimarray`로 등록했다면, `twod` 등 단축어의 일부를 입력해도 메뉴가 바로 뜹니다.  ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-21-오후-7.51.39-복사본.jpg)
+        - 예를 들어 `twodimarray`로 등록했다면, `twod` 등 단축어의 일부를 입력해도 메뉴가 바로 뜹니다.  ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.51.39-copy.jpg)
     - **사용범위**
         - 특정 스코프에서 사용하고 싶거나 코드의 스코프를 정의할 때 사용합니다.
         - Class Implementation: 해당 스니펫은 클래스, 구조체 등을 정의하였거나 클래스 레벨에서 사용할 수 있습니다.

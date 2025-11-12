@@ -14,7 +14,7 @@ Cambridge Variations는 필립 스파크(Philip Sparke)가 1992년에 작곡하�
 
 이 변주의 기초는 "Cambridge"라는 단어에서 나온 여섯 개의 음(CABDGE)을 바탕으로, 주로 역순으로 사용됩니다.
 
- ![](/assets/img/wp-content/uploads/2024/07/스크린샷-2024-07-21-오후-11.00.15.jpg)
+ ![](/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-21-pm-11.00.15.jpg)
 
  
 

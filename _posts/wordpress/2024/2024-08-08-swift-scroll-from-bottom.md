@@ -61,7 +61,7 @@ https://gist.github.com/ayaysir/1dd7f9192c265e5ec63b1d1c50f87544
 
  
 
- ![](/assets/img/wp-content/uploads/2024/08/스크린샷-2024-08-11-오후-4.57.40.jpg)
+ ![](/assets/img/wp-content/uploads/2024/08/screenshot-2024-08-11-pm-4.57.40.jpg)
 
  
 

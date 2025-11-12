@@ -6,7 +6,7 @@ categories:
   - "Swift UIKit"
 ---
 
-## **1\. UIApplication의 KeyWindow 대체**
+## 1\. UIApplication의 KeyWindow 대체
 
 ```swift
 import UIKit
@@ -24,7 +24,7 @@ extension UIApplication {
 _'keyWindow' was deprecated in iOS 13.0: Should not be used for applications that support multiple scenes as it returns a key window across all connected scenes_ 에러를 방지하기 위함입니다.
 
  
-## **2\. 뷰 컨트롤러에서 최상위 뷰 컨트롤러를 반환하는 함수 작성**
+## 2\. 뷰 컨트롤러에서 최상위 뷰 컨트롤러를 반환하는 함수 작성
 
 ```swift
 import UIKit
@@ -47,7 +47,7 @@ extension UIViewController {
 
  
 
-## **3\. 뷰 컨트롤러 오브젝트에서 다음과 같이 .getTopMostViewController() 사용**
+## 3\. 뷰 컨트롤러 오브젝트에서 다음과 같이 .getTopMostViewController() 사용
 
 ```swift
 if let topViewController = UIApplication.shared.keyWindow?.rootViewController?.getTopMostViewController() {
@@ -56,6 +56,8 @@ if let topViewController = UIApplication.shared.keyWindow?.rootViewController?.g
 ```
 
 현재 키 윈도우에 있는 `rootViewController`의 최상위 뷰 컨트롤러를 반환합니다. 
+
+### 바로 불러오기
 
 또는 아래와 같이 `UIViewController`에서 바로 `getTopMostViewController()`를 불러올 수 있도록 합니다.
 
@@ -73,7 +75,7 @@ if let topViewController = UIViewController.getTopMostViewController() {
 }
 ```
 
-## **예제: SwiftUI에서 빠른 Alert 띄우기**
+## 예제: SwiftUI에서 빠른 Alert 띄우기
 
 ```swift
 import UIKit
@@ -108,8 +110,6 @@ struct QuickAlert {
 ```
 
 최상위 뷰 컨트롤러를 찾아서 UIKit의 `UIAlert`을 띄웁니다.
-
- 
 
 UIKit에서도 사용할 수 있고, 아래 코드처럼 SwiftUI에서도 원하는 곳에서 바로 사용할 수 있습니다.
 

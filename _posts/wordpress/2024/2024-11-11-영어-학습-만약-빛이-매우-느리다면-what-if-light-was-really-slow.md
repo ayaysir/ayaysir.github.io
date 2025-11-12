@@ -20,7 +20,7 @@ For example, the siren of an ambulance passing by sounds to pitch down. 예를 �
 
 This is known as the Doppler effect. 이것을 도플러 효과라고 합니다.
 
- ![](/assets/img/wp-content/uploads/2024/11/스크린샷-2024-11-14-오전-12.27.00-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/11/screenshot-2024-11-14-am-12.27.00-copy.jpg)
 
 It happens due to the sound waves contracting and expanding when emitted by a moving object. 이것은 움직이는 물체가 소리를 방출할 때 음파가 압축되고 팽창하기 때문에 발생합니다.
 
@@ -94,7 +94,7 @@ If you disable the color shifting, we can actually see it. 색 변화를 비활�
 
 ##### **Montage** **몽타주**
 
- ![](/assets/img/wp-content/uploads/2024/11/스크린샷-2024-11-14-오전-12.32.38-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/11/screenshot-2024-11-14-am-12.32.38-copy.jpg)
 
 One important thing that has to be factored in is that because light takes more time to reach us, the further away something is, the further in the past we see it. 중요한 점은 빛이 우리에게 도달하는 데 시간이 더 걸리기 때문에, 먼 거리에 있는 물체일수록 더 과거의 모습을 보게 된다는 것입니다.
 

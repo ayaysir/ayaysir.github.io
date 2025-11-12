@@ -300,7 +300,7 @@ anyPublisher.sink { receivedValue in
 
 ```
 
- ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-02-오후-5.44.59.jpg)
+ ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-02-pm-5.44.59.jpg)
 
 ##### **설명:**
 
@@ -353,7 +353,7 @@ intArray.publisher.subscribe(intSubscriber)
 
 ```
 
- ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-02-오후-5.44.50.jpg)
+ ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-02-pm-5.44.50.jpg)
 
 ##### **설명:**
 

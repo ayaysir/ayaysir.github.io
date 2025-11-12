@@ -395,7 +395,7 @@ Embedded Swift is strictly a subset compared to full Swift, and not a variant or
 
 So there won’t be any differences in behavior between Embedded Swift and full Swift. 따라서 Embedded Swift와 전체 Swift 사이에는 동작상의 차이가 없습니다.
 
- ![](/assets/img/wp-content/uploads/2024/09/스크린샷-2024-09-06-오후-4.08.47.jpg)
+ ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-06-pm-4.08.47.jpg)
 
  
 

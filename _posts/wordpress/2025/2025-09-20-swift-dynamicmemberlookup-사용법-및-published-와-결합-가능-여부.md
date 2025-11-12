@@ -6,13 +6,13 @@ categories:
   - "Swift"
 ---
 
-### **개요 — `@dynamicMemberLookup`이란**
+## **개요 — `@dynamicMemberLookup`이란**
 
-`@dynamicMemberLookup`은 \*\*컴파일러에게 “점(`.`) 접근을 보낼 때 `subscript(dynamicMember:)`로 재해석해라”\*\*고 지시하는 어노테이션입니다. 즉 `obj.foo`를 호출하면 컴파일러는 `obj[dynamicMember: "foo"]` 형태의 서브스크립트 호출로 바꿔줍니다. 주로 내부에 `[String: Any]` 같은 딕셔너리를 두고 JSON/동적 프로퍼티처럼 보이게 할 때 유용합니다.
+`@dynamicMemberLookup`은 컴파일러에게 “점(`.`) 접근을 보낼 때 `subscript(dynamicMember:)`로 재해석해라”고 지시하는 어노테이션입니다. 즉 `obj.foo`를 호출하면 컴파일러는 `obj[dynamicMember: "foo"]` 형태의 서브스크립트 호출로 바꿔줍니다. 주로 내부에 `[String: Any]` 같은 딕셔너리를 두고 JSON/동적 프로퍼티처럼 보이게 할 때 유용합니다.
 
  
 
-#### **간단한 동작 원리**
+## **간단한 동작 원리**
 
 - 선언: `@dynamicMemberLookup`을 타입 앞에 붙입니다.
 - 필수: `subscript(dynamicMember:)` 구현(여러 오버로드 허용).
@@ -21,7 +21,7 @@ categories:
 
  
 
-### **`@dynamicMemberLookup` 기본 예제**
+## **`@dynamicMemberLookup` 기본 예제**
 
 아래는 가장 단순한 형태입니다.
 
@@ -42,7 +42,6 @@ d.title = "Hello"            // storage["title"] = "Hello"
 print(d.title as? String)    // "Hello"
 ```
 
- 
 
 타입 안전성을 조금 더 주고 싶으면 제네릭(generic) 서브스크립트를 씁니다:
 
@@ -64,7 +63,7 @@ let c: Int? = dt.count
 
  
 
-### **`@Published`와 결합(가능/불가능 & 구현 방식)**
+## **`@Published`와 결합(가능/불가능 & 구현 방식)**
 
 직접적으로 `@Published`를 **동적 멤버에 붙일 수는 없습니다**. 이유는 `@Published`는 **_정적 저장 프로퍼티_**에 적용되는 property wrapper이기 때문입니다. 즉 컴파일 시점에 해당 프로퍼티가 존재해야 합니다.
 
@@ -72,7 +71,7 @@ let c: Int? = dt.count
 
  
 
-#### **방법 A — 내부에 `@Published var storage: [String: Any]` 두기 (권장)**
+### **방법 A — 내부에 `@Published var storage: [String: Any]` 두기 (권장)**
 
 - `storage`를 `@Published`로 두고, dynamic subscript는 `storage`를 읽고 씁니다.
 - `storage`가 바뀌면 Combine이 발행하므로 `ObservableObject` 구독자(SwiftUI 등)는 갱신됩니다.
@@ -115,7 +114,7 @@ let title: String? = dyn.title
 
  
 
-#### **방법 B — `objectWillChange.send()`를 수동으로 호출**
+### **방법 B — `objectWillChange.send()`를 수동으로 호출**
 
 `@Published` 대신 `ObservableObject`의 `objectWillChange`를 직접 제어할 수도 있습니다. (더 유연하지만 수동 호출 책임이 증가)
 
@@ -136,7 +135,7 @@ final class DynamicManualObservable: ObservableObject {
 
  
 
-### **WKWebView 속성(예: canGoBack 등)을 한꺼번에 다루려는 경우 권장 패턴**
+## **WKWebView 속성(예: canGoBack 등)을 한꺼번에 다루려는 경우 권장 패턴**
 
 `@dynamicMemberLookup`만으로 KVO/Subscribers를 자동 생성해주는 건 불가능합니다. 왜냐하면 `publisher(for:)`는 **각 KeyPath마다** 퍼블리셔를 만들어 주기 때문입니다. 하지만 반복 코드를 줄이는 구조는 만들 수 있습니다:
 
@@ -145,7 +144,7 @@ final class DynamicManualObservable: ObservableObject {
 
  
 
-#### **예시(컨덕터에 적용):**
+### **예시(컨덕터에 적용):**
 
 ```swift
 @dynamicMemberLookup
@@ -186,7 +185,7 @@ final class WKWebViewConductor: ObservableObject {
 
  
 
-##### **이 패턴의 장점**
+## **장점**
 
 - `conductor.canGoBack` 형태로 접근 가능(옵셔널 반환).
 - `publisher(for:)`로 각 키에 대한 Combine 스트림도 얻어 쓸 수 있음.
@@ -194,7 +193,7 @@ final class WKWebViewConductor: ObservableObject {
 
  
 
-##### **단점 / 유의사항**
+## **단점 / 유의사항**
 
 - 타입 안전성은 약해짐(`Any` 캐스팅 필요).
 - 자동완성 및 문서화 이점이 줄어듦(동적 키는 컴파일타임 검사가 안 됨).
@@ -203,7 +202,7 @@ final class WKWebViewConductor: ObservableObject {
 
  
 
-### **결론**
+## **결론**
 
 - `@dynamicMemberLookup`은 **동적 접근 문법**을 제공하지만, `@Published`를 동적 멤버에 직접 붙일 수는 없습니다.
 - 실무에서는 `@Published private var storage: [String: Any]` + `subscript(dynamicMember:)` 패턴이 가장 현실적이고 실용적입니다.
@@ -212,7 +211,7 @@ final class WKWebViewConductor: ObservableObject {
 
  
 
-##### **참고: 핵심 프로퍼티만 명시적으로 선언하는 방법**
+## **참고: 핵심 프로퍼티만 명시적으로 선언하는 방법**
 
 ```swift
 // Combine으로 Publish 되는 변수들
