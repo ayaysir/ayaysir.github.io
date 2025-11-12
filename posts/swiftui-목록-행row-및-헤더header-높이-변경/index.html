@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -548,6 +555,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -566,16 +638,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -629,6 +691,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -650,7 +722,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>SwiftUI: 목록 행(row) 및 헤더(header) 높이 변경</h1>
     
@@ -734,26 +806,48 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">SwiftUI: 목록 행(row) 및 헤더(header) 높이 변경</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">SwiftUI: 목록 행(row) 및 헤더(header) 높이 변경</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 예제는 SwiftUI List에서 행(row)과 헤더(header) 높이를 변경하는 방법을 보여줍니다.</p>
 
 <p>최종 결과는 다음과 같습니다:</p>
 
-<iframe width="271" height="480" src="https://giphy.com/embed/0O9Qt64wazqLCFKkFF" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="271" height="480" src="https://giphy.com/embed/0O9Qt64wazqLCFKkFF" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+<p><a href="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGt6bTBheG5oeHo0b2phamtmMjRhcGI1amZ2eWE0MmFlbnc3Z3hsYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0O9Qt64wazqLCFKkFF/giphy.gif" class="popup img-link shimmer"><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGt6bTBheG5oeHo0b2phamtmMjRhcGI1amZ2eWE0MmFlbnc3Z3hsYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0O9Qt64wazqLCFKkFF/giphy.gif" alt="" loading="lazy"></a>
+ </p>
 
-<p> </p>
-
-<h4 id="설명"><span class="me-2"><strong>설명</strong></span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="설명"><span class="me-2"><strong>설명</strong></span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">defaultMinListRowHeight</code> 라는 <code class="language-plaintext highlighter-rouge">EnvironmentValue</code>를 사용해서 기본 최소 행 높이를 설정할 수 있습니다. 마찬가지로 <code class="language-plaintext highlighter-rouge">defaultMinListHeaderHeight</code>를 사용하면 섹션 헤더의 높이를 지정할 수 있습니다.</p>
 
 <p>아래 코드는 그룹화된 리스트에서 슬라이더로 두 값을 조절하는 예시입니다:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -781,43 +875,43 @@
 25
 26
 27
-</pre></td><td class="rouge-code"><pre>// ...SwiftUI View에서 작성...
+</pre></td><td class="rouge-code"><pre><span class="c1">// ...SwiftUI View에서 작성...</span>
 
-@State private var rowHeight: CGFloat = 40
-@State private var headerHeight: CGFloat = 60
+<span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">rowHeight</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">headerHeight</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">60</span>
 
-var body: some View {
-  VStack {
-    HStack {
-      Text("Row height")
-      Slider(value: $rowHeight, in: 40.0...80.0)
-    }
-    HStack {
-      Text("Header height")
-      Slider(value: $headerHeight, in: 60.0...80.0)
-    }
-    List(1..&lt;5) { section in
-      Section("Section \(section)") {
-        ForEach(1..&lt;3) { row in
-          Text("Row \(row) of section \(section)")
-        }
-      }
-    }
-  }
-  .padding()
-  .environment(\.defaultMinListRowHeight, rowHeight) // 행 높이 지정
-  .environment(\.defaultMinListHeaderHeight, headerHeight) // 헤더 높이 지정
-}
+<span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="kt">VStack</span> <span class="p">{</span>
+    <span class="kt">HStack</span> <span class="p">{</span>
+      <span class="kt">Text</span><span class="p">(</span><span class="s">"Row height"</span><span class="p">)</span>
+      <span class="kt">Slider</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="n">$rowHeight</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="mf">40.0</span><span class="o">...</span><span class="mf">80.0</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kt">HStack</span> <span class="p">{</span>
+      <span class="kt">Text</span><span class="p">(</span><span class="s">"Header height"</span><span class="p">)</span>
+      <span class="kt">Slider</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="n">$headerHeight</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="mf">60.0</span><span class="o">...</span><span class="mf">80.0</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kt">List</span><span class="p">(</span><span class="mi">1</span><span class="o">..&lt;</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span> <span class="n">section</span> <span class="k">in</span>
+      <span class="kt">Section</span><span class="p">(</span><span class="s">"Section </span><span class="se">\(</span><span class="n">section</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">ForEach</span><span class="p">(</span><span class="mi">1</span><span class="o">..&lt;</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="n">row</span> <span class="k">in</span>
+          <span class="kt">Text</span><span class="p">(</span><span class="s">"Row </span><span class="se">\(</span><span class="n">row</span><span class="se">)</span><span class="s"> of section </span><span class="se">\(</span><span class="n">section</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+  <span class="o">.</span><span class="nf">environment</span><span class="p">(\</span><span class="o">.</span><span class="n">defaultMinListRowHeight</span><span class="p">,</span> <span class="n">rowHeight</span><span class="p">)</span> <span class="c1">// 행 높이 지정</span>
+  <span class="o">.</span><span class="nf">environment</span><span class="p">(\</span><span class="o">.</span><span class="n">defaultMinListHeaderHeight</span><span class="p">,</span> <span class="n">headerHeight</span><span class="p">)</span> <span class="c1">// 헤더 높이 지정</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="추가-ios-16-이하-버전에서-리스트-섹션-간-간격-조절"><span class="me-2"><strong>추가: iOS 16 이하 버전에서 리스트 섹션 간 간격 조절</strong></span><a href="#추가-ios-16-이하-버전에서-리스트-섹션-간-간격-조절" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="추가-ios-16-이하-버전에서-리스트-섹션-간-간격-조절"><span class="me-2"><strong>추가: iOS 16 이하 버전에서 리스트 섹션 간 간격 조절</strong></span><a href="#추가-ios-16-이하-버전에서-리스트-섹션-간-간격-조절" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="/assets/img/wp-content/uploads/2025/09/스크린샷-2025-09-09-오전-1.07.11.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/09/스크린샷-2025-09-09-오전-1.07.11.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2025/09/screenshot-2025-09-09-am-1.07.11.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/09/screenshot-2025-09-09-am-1.07.11.png" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -832,25 +926,25 @@ var body: some View {
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-struct ContentView: View {
-  init() {
-    // 섹션간 높이 조절
-    var layoutConfig = UICollectionLayoutListConfiguration(appearance: .plain) // 주의: 우선하여 적용됨
-    layoutConfig.headerMode = .supplementary
-    layoutConfig.headerTopPadding = 10
-    let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
-    UICollectionView.appearance().collectionViewLayout = listLayout
-  }
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 섹션간 높이 조절</span>
+    <span class="k">var</span> <span class="nv">layoutConfig</span> <span class="o">=</span> <span class="kt">UICollectionLayoutListConfiguration</span><span class="p">(</span><span class="nv">appearance</span><span class="p">:</span> <span class="o">.</span><span class="n">plain</span><span class="p">)</span> <span class="c1">// 주의: 우선하여 적용됨</span>
+    <span class="n">layoutConfig</span><span class="o">.</span><span class="n">headerMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">supplementary</span>
+    <span class="n">layoutConfig</span><span class="o">.</span><span class="n">headerTopPadding</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">let</span> <span class="nv">listLayout</span> <span class="o">=</span> <span class="kt">UICollectionViewCompositionalLayout</span><span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">layoutConfig</span><span class="p">)</span>
+    <span class="kt">UICollectionView</span><span class="o">.</span><span class="nf">appearance</span><span class="p">()</span><span class="o">.</span><span class="n">collectionViewLayout</span> <span class="o">=</span> <span class="n">listLayout</span>
+  <span class="p">}</span>
 
-  ...
-}
+  <span class="o">...</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://swiftuirecipes.com/blog/swiftui-list-change-row-and-header-height">SwiftUI List Change Row and Header Height</a></li>
@@ -1821,6 +1915,12 @@ struct ContentView: View {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -743,6 +750,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -761,15 +833,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -827,30 +921,18 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -867,7 +949,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift UIKit: 테이블 뷰에서 UITextView의 컨텐츠에 따라 높이 자동조정</h1>
     
@@ -941,7 +1023,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="385 words"
+  title="376 words"
 >
   <em>2 min</em> read</span>
 
@@ -951,33 +1033,57 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift UIKit: 테이블 뷰에서 UITextView의 컨텐츠에 따라 높이 자동조정</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift UIKit: 테이블 뷰에서 UITextView의 컨텐츠에 따라 높이 자동조정</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h5 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p><strong>참고</strong></p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=4521">Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기 + 특정 행의 크기만 조절</a></li>
+  <li><a href="/posts/swift스위프트-static-cell-모드인-테이블-뷰uitableview에서-특정-섹션/">Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기 + 특정 행의 크기만 조절</a></li>
 </ul>
 
 <p> </p>
+<h2 id="구조-및-제약constraints"><span class="me-2">구조 및 제약(Constraints)</span><a href="#구조-및-제약constraints" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="구조-및-제약constraints"><span class="me-2"><strong>구조 및 제약(Constraints)</strong></span><a href="#구조-및-제약constraints" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p><a href="/assets/img/wp-content/uploads/2025/05/screenshot-2025-05-13-am-1.17.12-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/05/screenshot-2025-05-13-am-1.17.12-copy.jpg" alt="테이블 뷰 섹션 &gt; 셀 &gt; 콘텐트 뷰 &gt; 텍스트 뷰" loading="lazy"></a></p>
 
-<p>[caption id=”attachment_7041” align=”alignnone” width=”202”] <a href="/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.12-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.12-복사본.jpg" alt="" loading="lazy"></a> 테이블 뷰 섹션 &gt; 셀 &gt; 콘텐트 뷰 &gt; 텍스트 뷰[/caption]</p>
+<p><em>테이블 뷰 섹션 &gt; 셀 &gt; 콘텐트 뷰 &gt; 텍스트 뷰</em>
+ </p>
 
-<p> </p>
+<p><a href="/assets/img/wp-content/uploads/2025/05/screenshot-2025-05-13-am-1.17.23-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/05/screenshot-2025-05-13-am-1.17.23-copy.jpg" alt="제약: 컨텐트 뷰(상위 뷰)에 맞춤" loading="lazy"></a></p>
 
-<p>[caption id=”attachment_7042” align=”alignnone” width=”250”] <a href="/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.23-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.23-복사본.jpg" alt="" loading="lazy"></a> 제약: 컨텐트 뷰(상위 뷰)에 맞춤[/caption]</p>
-
-<p> </p>
-
-<p><a href="/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.39-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-13-오전-1.17.39-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><em>제약: 컨텐트 뷰(상위 뷰)에 맞춤</em></p>
 
 <p> </p>
 
-<h5 id="1-텍스트-뷰uitextview를-선택한-뒤-indicator--scroll-view--scrolling-enabled-해제"><span class="me-2"><strong>1) 텍스트 뷰(UITextView)를 선택한 뒤 Indicator &gt; Scroll View &gt; Scrolling Enabled 해제</strong></span><a href="#1-텍스트-뷰uitextview를-선택한-뒤-indicator--scroll-view--scrolling-enabled-해제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p><a href="/assets/img/wp-content/uploads/2025/05/screenshot-2025-05-13-am-1.17.39-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/05/screenshot-2025-05-13-am-1.17.39-copy.jpg" alt="" loading="lazy"></a></p>
 
-<p><a href="/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-12-오후-11.28.13-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/05/스크린샷-2025-05-12-오후-11.28.13-복사본.jpg" alt="" loading="lazy"></a></p>
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="1-텍스트-뷰uitextview를-선택한-뒤-indicator--scroll-view--scrolling-enabled-해제"><span class="me-2">(1) 텍스트 뷰(UITextView)를 선택한 뒤 Indicator &gt; Scroll View &gt; Scrolling Enabled 해제</span><a href="#1-텍스트-뷰uitextview를-선택한-뒤-indicator--scroll-view--scrolling-enabled-해제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><a href="/assets/img/wp-content/uploads/2025/05/screenshot-2025-05-12-pm-11.28.13-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/05/screenshot-2025-05-12-pm-11.28.13-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p>또는 코드에서 직접 설정합니다.</p>
 
@@ -987,10 +1093,10 @@
 
 <p> </p>
 
-<h5 id="2-해당-인덱스패스-indexpath의-heightforrowat을-uitableviewautomaticdimension으로-설정"><span class="me-2"><strong>2) 해당 인덱스패스 (IndexPath)의 heightForRowAt을 UITableView.automaticDimension으로 설정</strong></span><a href="#2-해당-인덱스패스-indexpath의-heightforrowat을-uitableviewautomaticdimension으로-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-해당-인덱스패스-indexpath의-heightforrowat을-uitableviewautomaticdimension으로-설정"><span class="me-2">(2) 해당 인덱스패스 (IndexPath)의 heightForRowAt을 UITableView.automaticDimension으로 설정</span><a href="#2-해당-인덱스패스-indexpath의-heightforrowat을-uitableviewautomaticdimension으로-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -998,37 +1104,37 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -&gt; CGFloat {
-  if indexPath == &lt;텍스트 뷰가 있는 셀의 인덱스패스&gt; {
-    return UITableView.automaticDimension
-  }
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">heightForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="n">indexPath</span> <span class="o">==</span> <span class="o">&lt;</span><span class="n">텍스트</span> <span class="n">뷰가</span> <span class="n">있는</span> <span class="n">셀의</span> <span class="n">인덱스패스</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">UITableView</span><span class="o">.</span><span class="n">automaticDimension</span>
+  <span class="p">}</span>
   
-  return super.tableView(tableView, heightForRowAt: indexPath)
-}
+  <span class="k">return</span> <span class="k">super</span><span class="o">.</span><span class="nf">tableView</span><span class="p">(</span><span class="n">tableView</span><span class="p">,</span> <span class="nv">heightForRowAt</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="3-텍스트-뷰uitextview에-딜리게이트-설정"><span class="me-2"><strong>3) 텍스트 뷰(UITextView)에 딜리게이트 설정</strong></span><a href="#3-텍스트-뷰uitextview에-딜리게이트-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-텍스트-뷰uitextview에-딜리게이트-설정"><span class="me-2">(3) 텍스트 뷰(UITextView)에 딜리게이트 설정</span><a href="#3-텍스트-뷰uitextview에-딜리게이트-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>txvComment.delegate = self
+</pre></td><td class="rouge-code"><pre><span class="n">txvComment</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>extension SomeTableViewController: UITextViewDelegate { ... }
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">SomeTableViewController</span><span class="p">:</span> <span class="kt">UITextViewDelegate</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="4-textviewshouldchangetextin과-textviewdidchange_-딜리게이트-메서드-구현"><span class="me-2"><strong>4) textView(…shouldChangeTextIn…)과 textViewDidChange(_:) 딜리게이트 메서드 구현</strong></span><a href="#4-textviewshouldchangetextin과-textviewdidchange_-딜리게이트-메서드-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-textviewshouldchangetextin과-textviewdidchange_-딜리게이트-메서드-구현"><span class="me-2">(4) textView(…shouldChangeTextIn…)과 textViewDidChange(_:) 딜리게이트 메서드 구현</span><a href="#4-textviewshouldchangetextin과-textviewdidchange_-딜리게이트-메서드-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1044,39 +1150,38 @@
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>extension SomeTableViewController: UITextViewDelegate {
-  func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -&gt; Bool {
-    if text == "\n" {
-      tableView.scrollToRow(at: &lt;텍스트 뷰가 있는 셀의 인덱스패스&gt;, at: .bottom, animated: false)
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">SomeTableViewController</span><span class="p">:</span> <span class="kt">UITextViewDelegate</span> <span class="p">{</span>
+  <span class="kd">func</span> <span class="nf">textView</span><span class="p">(</span><span class="n">_</span> <span class="nv">textView</span><span class="p">:</span> <span class="kt">UITextView</span><span class="p">,</span> <span class="n">shouldChangeTextIn</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSRange</span><span class="p">,</span> <span class="n">replacementText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">text</span> <span class="o">==</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span> <span class="p">{</span>
+      <span class="n">tableView</span><span class="o">.</span><span class="nf">scrollToRow</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">텍스트</span> <span class="n">뷰가</span> <span class="n">있는</span> <span class="n">셀의</span> <span class="n">인덱스패스</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    return true
-  }
+    <span class="k">return</span> <span class="kc">true</span>
+  <span class="p">}</span>
   
-  func textViewDidChange(_ textView: UITextView) {
-    tableView.beginUpdates()
-    tableView.endUpdates()
-  }
-}
+  <span class="kd">func</span> <span class="nf">textViewDidChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">textView</span><span class="p">:</span> <span class="kt">UITextView</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">tableView</span><span class="o">.</span><span class="nf">beginUpdates</span><span class="p">()</span>
+    <span class="n">tableView</span><span class="o">.</span><span class="nf">endUpdates</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li><strong>textView(…shouldChangeTextIn…)</strong>
+  <li>textView(…shouldChangeTextIn…)
     <ul>
       <li>엔터키를 입력했을 경우에는 테이블 뷰의 스크롤을 텍스트 뷰 아래로 이동합니다.</li>
     </ul>
   </li>
-  <li><strong>textViewDidChange(_:)</strong>
+  <li>textViewDidChange(_:)
     <ul>
       <li>텍스트뷰의 내용이 바뀐 경우 테이블 뷰의 레이아웃만 조정해 입력중인 키보드가 사라지는 것을 방지합니다.</li>
     </ul>
   </li>
 </ul>
 
-<p> </p>
-
-<iframe width="222" height="480" src="https://giphy.com/embed/h91WLkb4znjMue7JO3" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<p> 
+<a href="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTNtcGV3cHFwMHQxZ2JtbDN5ZjNtYWVhM3hlaHV1NWk5NndiZ3NxbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h91WLkb4znjMue7JO3/giphy.gif" class="popup img-link shimmer"><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTNtcGV3cHFwMHQxZ2JtbDN5ZjNtYWVhM3hlaHV1NWk5NndiZ3NxbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h91WLkb4znjMue7JO3/giphy.gif" alt="딜리게이트" loading="lazy"></a></p>
 
   </div>
 
@@ -2042,6 +2147,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7925,7 +8036,7 @@
 
               <h4 class="pt-0 my-2">Swift UIKit: .translatesAutoresizingMaskIntoConstraints 란 무엇인가?</h4>
               <div class="text-muted">
-                <p>translatesAutoresizingMaskIntoConstraints  UIKit에서 아직도 무슨 의미인지 잘 모르겠는 (View).translatesAutoresizingMaskIntoConstraints에 대해 알아보겠습니다.     한국어 직역  translatesAutoresizingMaskIntoConstraints를 한국어로 직역하면 ...</p>
+                <p>UIKit에서 아직도 무슨 의미인지 잘 모르겠는 (View).translatesAutoresizingMaskIntoConstraints에 대해 알아보겠습니다.     한국어 직역  translatesAutoresizingMaskIntoConstraints를 한국어로 직역하면 다음과 같습니다:     “Autoresizing 마스크를 제약 조건으로 변환...</p>
               </div>
             </div>
           </a>

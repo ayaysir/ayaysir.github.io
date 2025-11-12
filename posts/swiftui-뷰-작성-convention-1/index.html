@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="SwiftUI: 뷰 작성 Convention #1" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="SwiftUI 뷰 작성 규칙 및 구조 가이드" />
-<meta property="og:description" content="SwiftUI 뷰 작성 규칙 및 구조 가이드" />
+<meta name="description" content="SwiftUI에서 원인을 찾지 못하는 컴파일 에러를 방지하려면 SwiftUI의 요소를 세부적으로 분리해야 합니다. 그 분리 방법 중 하나를 소개합니다." />
+<meta property="og:description" content="SwiftUI에서 원인을 찾지 못하는 컴파일 에러를 방지하려면 SwiftUI의 요소를 세부적으로 분리해야 합니다. 그 분리 방법 중 하나를 소개합니다." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/swiftui-%EB%B7%B0-%EC%9E%91%EC%84%B1-convention-1/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/swiftui-%EB%B7%B0-%EC%9E%91%EC%84%B1-convention-1/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="SwiftUI: 뷰 작성 Convention #1" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-21T00:00:00+09:00","datePublished":"2025-05-21T00:00:00+09:00","description":"SwiftUI 뷰 작성 규칙 및 구조 가이드","headline":"SwiftUI: 뷰 작성 Convention #1","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/swiftui-%EB%B7%B0-%EC%9E%91%EC%84%B1-convention-1/"},"url":"https://ayaysir.github.io/posts/swiftui-%EB%B7%B0-%EC%9E%91%EC%84%B1-convention-1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-21T00:00:00+09:00","datePublished":"2025-05-21T00:00:00+09:00","description":"SwiftUI에서 원인을 찾지 못하는 컴파일 에러를 방지하려면 SwiftUI의 요소를 세부적으로 분리해야 합니다. 그 분리 방법 중 하나를 소개합니다.","headline":"SwiftUI: 뷰 작성 Convention #1","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/swiftui-%EB%B7%B0-%EC%9E%91%EC%84%B1-convention-1/"},"url":"https://ayaysir.github.io/posts/swiftui-%EB%B7%B0-%EC%9E%91%EC%84%B1-convention-1/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -699,7 +699,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="662 words"
+  title="704 words"
 >
   <em>3 min</em> read</span>
 
@@ -733,9 +733,9 @@
   
 
   <div class="content">
-    <h1 id="swiftui-뷰-작성-규칙-및-구조-가이드">SwiftUI 뷰 작성 규칙 및 구조 가이드</h1>
+    <p>SwiftUI에서 원인을 찾지 못하는 컴파일 에러를 방지하려면 SwiftUI의 요소를 세부적으로 분리해야 합니다. 그 분리 방법 중 하나를 소개합니다.</p>
 
-<h2 id="1-파일-구조-분할-원칙"><span class="me-2">1. <strong>파일 구조 분할 원칙</strong></span><a href="#1-파일-구조-분할-원칙" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="1-파일-구조-분할-원칙"><span class="me-2">1. 파일 구조 분할 원칙</span><a href="#1-파일-구조-분할-원칙" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>확장(<code class="language-plaintext highlighter-rouge">extension</code>)을 사용하여 코드를 구역별로 분할합니다. 규모에 따라 확장2, 3은 분리하지 않을 수도 있습니다.</p>
 
@@ -770,27 +770,25 @@
   </thead>
   <tbody>
     <tr>
-      <td><strong>main</strong></td>
+      <td>main</td>
       <td><code class="language-plaintext highlighter-rouge">@State</code>, <code class="language-plaintext highlighter-rouge">@FocusState</code>, <code class="language-plaintext highlighter-rouge">@Environment</code> 등 속성 선언 + <code class="language-plaintext highlighter-rouge">body</code></td>
     </tr>
     <tr>
-      <td><strong>확장 1</strong></td>
+      <td>확장 1</td>
       <td>뷰 구성 요소 (뷰 단위 서브컴포넌트)</td>
     </tr>
     <tr>
-      <td><strong>확장 2</strong></td>
+      <td>확장 2</td>
       <td>초기화 및 뷰 설정 관련 함수 (<code class="language-plaintext highlighter-rouge">setup</code>, <code class="language-plaintext highlighter-rouge">onAppear</code>, etc)</td>
     </tr>
     <tr>
-      <td><strong>확장 3</strong></td>
+      <td>확장 3</td>
       <td>유틸리티 함수</td>
     </tr>
   </tbody>
 </table></div>
 
-<hr />
-
-<h2 id="2-뷰-컴포넌트-구성-규칙"><span class="me-2">2. <strong>뷰 컴포넌트 구성 규칙</strong></span><a href="#2-뷰-컴포넌트-구성-규칙" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="2-뷰-컴포넌트-구성-규칙"><span class="me-2">2. 뷰 컴포넌트 구성 규칙</span><a href="#2-뷰-컴포넌트-구성-규칙" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="body는-상위-구성-요소만-나열"><span class="me-2"><code class="language-plaintext highlighter-rouge">body</code>는 상위 구성 요소만 나열:</span><a href="#body는-상위-구성-요소만-나열" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -820,9 +818,7 @@
   <li>단 <code class="language-plaintext highlighter-rouge">Divider(), Spacer()</code>와 같이 한 줄로 처리할 수 있는 뷰는 별도로 분리하지 않을 수도 있음</li>
 </ul>
 
-<hr />
-
-<h2 id="3-네이밍-컨벤션"><span class="me-2">3. <strong>네이밍 컨벤션</strong></span><a href="#3-네이밍-컨벤션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="3-네이밍-컨벤션"><span class="me-2">3. 네이밍 컨벤션</span><a href="#3-네이밍-컨벤션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -861,9 +857,7 @@
   </tbody>
 </table></div>
 
-<hr />
-
-<h2 id="4-onchange--onreceive-등-modifier-정리-원칙"><span class="me-2">4. <strong>onChange / onReceive 등 modifier 정리 원칙</strong></span><a href="#4-onchange--onreceive-등-modifier-정리-원칙" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="4-onchange--onreceive-등-modifier-정리-원칙"><span class="me-2">4. onChange / onReceive 등 modifier 정리 원칙</span><a href="#4-onchange--onreceive-등-modifier-정리-원칙" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>서식 관련 modifier는 해당 뷰의 밑에 정의합니다.</li>
@@ -896,16 +890,12 @@
     <span class="o">.</span><span class="nf">onReceive</span><span class="p">(</span><span class="n">debounce</span><span class="o">.</span><span class="n">themeName</span><span class="o">.</span><span class="n">publisher</span><span class="p">,</span> <span class="nv">perform</span><span class="p">:</span> <span class="n">updateThemeName</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<hr />
-
-<h2 id="-5-코드-정렬-및-스타일-가이드"><span class="me-2">🧹 5. <strong>코드 정렬 및 스타일 가이드</strong></span><a href="#-5-코드-정렬-및-스타일-가이드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="5-코드-정렬-및-스타일-가이드"><span class="me-2">5. 코드 정렬 및 스타일 가이드</span><a href="#5-코드-정렬-및-스타일-가이드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">@State</code>, <code class="language-plaintext highlighter-rouge">@Environment</code>, <code class="language-plaintext highlighter-rouge">@FocusState</code>는 뭉쳐서 선언</li>
-  <li>View 내부는 <strong>기능 단위로 줄 간격 확보</strong></li>
+  <li>View 내부는 기능 단위로 줄 간격 확보</li>
 </ul>
-
-<hr />
 
 <h2 id="6-기타-컨벤션"><span class="me-2">6. 기타 컨벤션</span><a href="#6-기타-컨벤션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -696,10 +703,48 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -783,39 +828,21 @@
 
       
     
-      
 
-      
-      
+    
+  
 
-      
-      
-      
+  
+  
 
-      
+  
+    
+    
+
     
       
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
+        
+        
       
 
       
@@ -845,7 +872,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Xcode: CocoaPods 프로젝트에서 Build Phase의 Run Script를 이용해 패치 넘버 증가</h1>
     
@@ -919,7 +946,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1349 words"
+  title="1339 words"
 >
   <em>7 min</em> read</span>
 
@@ -929,9 +956,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Xcode: CocoaPods 프로젝트에서 Build Phase의 Run Script를 이용해 패치 넘버 증가</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Xcode: CocoaPods 프로젝트에서 Build Phase의 Run Script를 이용해 패치 넘버 증가</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h5 id="관련-글-run-script"><span class="me-2"><strong>관련 글 Run Script</strong></span><a href="#관련-글-run-script" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p><strong>관련 글 Run Script</strong></p>
 
 <ul>
   <li><a href="http://yoonbumtae.com/?p=5011">Swift Package Manager(SPM)와 CocoaPods를 동시에 대응하는 라이브러리 만들기 (1)</a></li>
@@ -939,7 +988,7 @@
 
 <p> </p>
 
-<h4 id="버전-넘버-구성"><span class="me-2"><strong>버전 넘버 구성</strong></span><a href="#버전-넘버-구성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="버전-넘버-구성"><span class="me-2"><strong>버전 넘버 구성</strong></span><a href="#버전-넘버-구성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>예) <a href="https://en.wikipedia.org/wiki/Software_versioning#Semantic_versioning">Semantic Versioning</a> 라는 방법에 따르면 <code class="language-plaintext highlighter-rouge">1.0.0</code> 이라는 버전이 있을 때 앞에서부터 순서대로</p>
 
@@ -952,59 +1001,60 @@
 <p>라고 합니다.</p>
 
 <blockquote>
-  <p><strong>Semantic Versioning(SemVer)</strong>은 소프트웨어 버전을 체계적으로 관리하기 위한 규칙으로, 버전 번호를 주버전.부버전.패치버전 형식으로 구성합니다. 이 버전 규칙은 변경 사항의 위험도와 기능적 의미를 기준으로 버전을 증가시킵니다.</p>
+  <p><strong>Semantic Versioning</strong>(SemVer)은 소프트웨어 버전을 체계적으로 관리하기 위한 규칙으로, 버전 번호를 주버전.부버전.패치버전 형식으로 구성합니다. 이 버전 규칙은 변경 사항의 위험도와 기능적 의미를 기준으로 버전을 증가시킵니다.</p>
 
-  <p><strong>주버전(Major)</strong>은 호환되지 않는 큰 변경이 있을 때 증가하며, <strong>부버전(Minor)</strong>은 기존 기능을 해치지 않는 새로운 기능이 추가될 때 증가합니다. <strong>패치버전(Patch)</strong>은 버그 수정이나 사소한 변경 시에 증가합니다. 즉, 변경의 위험도가 높을수록 앞자리를 증가시키고, 위험도가 낮을수록 뒤의 숫자가 증가합니다.</p>
+  <p><strong>주버전</strong>(Major)은 호환되지 않는 큰 변경이 있을 때 증가하며, <strong>부버전</strong>(Minor)은 기존 기능을 해치지 않는 새로운 기능이 추가될 때 증가합니다. <strong>패치버전</strong>(Patch)은 버그 수정이나 사소한 변경 시에 증가합니다. 즉, 변경의 위험도가 높을수록 앞자리를 증가시키고, 위험도가 낮을수록 뒤의 숫자가 증가합니다.</p>
 
-  <p>또한 -alpha, -beta와 같은 프리릴리즈 태그는 아직 안정되지 않은 사전 릴리스 버전을 의미하며, 주버전이 0으로 시작하는 0.y.z 형식은 개발 초기 상태로 언제든지 호환성이 깨질 수 있음을 나타냅니다. 예를 들어, 2.1.5를 사용하는 소프트웨어는 2.2.3과는 호환되지만, 3.2.4와는 호환되지 않을 수 있습니다.</p>
+  <p>또한 -alpha, -beta와 같은 프리릴리즈 태그는 아직 안정되지 않은 사전 릴리스 버전을 의미하며, 주버전이 0으로 시작하는 <code class="language-plaintext highlighter-rouge">0.y.z</code> 형식은 개발 초기 상태로 언제든지 호환성이 깨질 수 있음을 나타냅니다. 예를 들어, 2.1.5를 사용하는 소프트웨어는 2.2.3과는 호환되지만, 3.2.4와는 호환되지 않을 수 있습니다.</p>
 </blockquote>
 
 <p> </p>
 
-<h4 id="run-script-로-podspec-파일의-패치-버전-증가"><span class="me-2"><strong>Run Script 로 podspec 파일의 패치 버전 증가</strong></span><a href="#run-script-로-podspec-파일의-패치-버전-증가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="run-script-로-podspec-파일의-패치-버전-증가"><span class="me-2"><strong>Run Script 로 podspec 파일의 패치 버전 증가</strong></span><a href="#run-script-로-podspec-파일의-패치-버전-증가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Xcode에서 매 빌드마다 <code class="language-plaintext highlighter-rouge">.podspec</code> 파일의 **패치 버전(Patch)**을 자동으로 +1 해주는 <strong>Run Script</strong>를 작성할 수 있습니다. 프로젝트 루트에 위치한 <code class="language-plaintext highlighter-rouge">BGSMM_DevKit.podspec</code> 파일을 찾아 현재 버전을 읽고, 패치 버전을 증가시킨 뒤 다시 파일을 수정합니다.</p>
+<p>Xcode에서 매 빌드마다 <code class="language-plaintext highlighter-rouge">.podspec</code> 파일의 <strong>패치 버전</strong>(Patch)을 자동으로 +1 해주는 <strong>Run Script</strong>를 작성할 수 있습니다. 프로젝트 루트에 위치한 <code class="language-plaintext highlighter-rouge">[프로젝트명].podspec</code> 파일을 찾아 현재 버전을 읽고, 패치 버전을 증가시킨 뒤 다시 파일을 수정합니다.</p>
 
 <p> </p>
 
-<h5 id="podspec-파일이란-무엇인가요"><span class="me-2"><strong>podspec 파일이란 무엇인가요?</strong></span><a href="#podspec-파일이란-무엇인가요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="podspec-파일이란-무엇인가요"><span class="me-2"><strong>podspec 파일이란 무엇인가요?</strong></span><a href="#podspec-파일이란-무엇인가요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>podspec 파일은 CocoaPods에서 사용하는 라이브러리의 메타 정보를 정의하는 파일입니다. Swift 또는 Objective-C로 작성된 라이브러리를 외부에서 재사용할 수 있도록 패키징할 때, 이 파일을 통해 해당 라이브러리의 이름, 버전, 소스 경로, 종속성 등을 정의합니다. Run Script</p>
 
 <p>예를 들어, 다음은 BGSMM_DevKit이라는 라이브러리의 podspec 일부입니다:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-ruby highlighter-rouge"><div class="code-header">
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>Pod::Spec.new do |s|
-    s.name = 'BGSMM_DevKit'
-    s.version = '1.1.4'
+</pre></td><td class="rouge-code"><pre><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+    <span class="n">s</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s1">'BGSMM_DevKit'</span>
+    <span class="n">s</span><span class="p">.</span><span class="nf">version</span> <span class="o">=</span> <span class="s1">'1.1.4'</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>여기서 <code class="language-plaintext highlighter-rouge">s.name</code>은 라이브러리의 이름을, <code class="language-plaintext highlighter-rouge">s.version</code>은 현재 버전 정보를 나타냅니다. 이 값은 <code class="language-plaintext highlighter-rouge">pod trunk push</code> 같은 배포 명령 시 사용되며, CocoaPods 저장소에 올라간 후에는 한 번 등록된 버전은 수정할 수 없습니다. 따라서 정확한 버전 관리가 중요합니다.</p>
 
-<p>CocoaPods 프로젝트에서 Build Phase의 Run Script를 이용해 패치 넘버 증가</p>
+<h3 id="cocoapods-프로젝트에서-build-phase의-run-script를-이용해-패치-넘버-증가"><span class="me-2">CocoaPods 프로젝트에서 Build Phase의 Run Script를 이용해 패치 넘버 증가</span><a href="#cocoapods-프로젝트에서-build-phase의-run-script를-이용해-패치-넘버-증가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="step-1-워크스페이스에서-pods-프로젝트를-클릭한-뒤-target--build-phase---버튼을-눌러-run-script를-추가합니다"><span class="me-2"><strong>Step 1: 워크스페이스에서 Pods 프로젝트를 클릭한 뒤 Target &gt; Build Phase &gt; [+] 버튼을 눌러 Run Script를 추가합니다.</strong></span><a href="#step-1-워크스페이스에서-pods-프로젝트를-클릭한-뒤-target--build-phase---버튼을-눌러-run-script를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="step-1-워크스페이스에서-pods-프로젝트를-클릭한-뒤-target--build-phase---버튼을-눌러-run-script를-추가합니다"><span class="me-2"><strong>Step 1: 워크스페이스에서 Pods 프로젝트를 클릭한 뒤 Target &gt; Build Phase &gt; [+] 버튼을 눌러 Run Script를 추가합니다.</strong></span><a href="#step-1-워크스페이스에서-pods-프로젝트를-클릭한-뒤-target--build-phase---버튼을-눌러-run-script를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>[caption id=”attachment_6991” align=”alignnone” width=”336”] <a href="/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.11.11-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.11.11-복사본.jpg" alt="" loading="lazy"></a> Pods 클릭[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2025/04/screenshot-2025-04-24-pm-8.11.11-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/04/screenshot-2025-04-24-pm-8.11.11-copy.jpg" alt="Pods 클릭" loading="lazy"></a><br />
+<em>Pods 클릭</em></p>
 
-<p>[caption id=”attachment_6992” align=”alignnone” width=”721”] <a href="/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.18.22-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.18.22-복사본.jpg" alt="" loading="lazy"></a> 상단의 <code class="language-plaintext highlighter-rouge">[+]</code> 버튼을 눌러 <code class="language-plaintext highlighter-rouge">Run Script</code> 추가[/caption] </p>
+<p><a href="/assets/img/wp-content/uploads/2025/04/screenshot-2025-04-24-pm-8.18.22-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/04/screenshot-2025-04-24-pm-8.18.22-copy.jpg" alt="Run Script 추가" loading="lazy"></a> 
+<em>상단의 <code class="language-plaintext highlighter-rouge">[+]</code> 버튼을 눌러 <code class="language-plaintext highlighter-rouge">Run Script</code> 추가</em></p>
 
-<h5 id="step-2-호환성을-위해-shell을--b-i-n--b-a-s-h로-설정"><span class="me-2"><strong>Step 2: 호환성을 위해 Shell을 / b i n / b a s h로 설정</strong></span><a href="#step-2-호환성을-위해-shell을--b-i-n--b-a-s-h로-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="step-2-호환성을-위해-shell을--b-i-n--b-a-s-h로-설정"><span class="me-2"><strong>Step 2: 호환성을 위해 Shell을 / b i n / b a s h로 설정</strong></span><a href="#step-2-호환성을-위해-shell을--b-i-n--b-a-s-h로-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>[caption id=”attachment_6993” align=”alignnone” width=”753”] <a href="/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.00.59-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/04/스크린샷-2025-04-24-오후-8.00.59-복사본.jpg" alt="" loading="lazy"></a> Shell 변경[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2025/04/screenshot-2025-04-24-pm-8.00.59-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2025/04/screenshot-2025-04-24-pm-8.00.59-copy.jpg" alt="Shell 변경" loading="lazy"></a>
+<em>Shell 변경</em></p>
 
 <p>나머지 옵션은 그대로 둡니다.</p>
 
-<p> </p>
+<h4 id="step-3-스크립트-코드-작성"><span class="me-2"><strong>Step 3: 스크립트 코드 작성</strong></span><a href="#step-3-스크립트-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<h5 id="step-3-스크립트-코드-작성"><span class="me-2"><strong>Step 3: 스크립트 코드 작성</strong></span><a href="#step-3-스크립트-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1036,37 +1086,37 @@
 29
 30
 31
-</pre></td><td class="rouge-code"><pre>echo "🚀 Run Script 실행됨! ${PROJECT_DIR}"
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="s2">"🚀 Run Script 실행됨! </span><span class="k">${</span><span class="nv">PROJECT_DIR</span><span class="k">}</span><span class="s2">"</span>
 
-LIBRARY_ROOT=$(cd "${PROJECT_DIR}/../.." &amp;&amp; pwd)
-PODSPEC_FILE="${LIBRARY_ROOT}/BGSMM_DevKit.podspec"
+<span class="nv">LIBRARY_ROOT</span><span class="o">=</span><span class="si">$(</span><span class="nb">cd</span> <span class="s2">"</span><span class="k">${</span><span class="nv">PROJECT_DIR</span><span class="k">}</span><span class="s2">/../.."</span> <span class="o">&amp;&amp;</span> <span class="nb">pwd</span><span class="si">)</span>
+<span class="nv">PODSPEC_FILE</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">LIBRARY_ROOT</span><span class="k">}</span><span class="s2">/BGSMM_DevKit.podspec"</span>
 
-# 현재 버전 추출 (숫자 3개만 필터링)
-versionLine=$(grep 's.version' "$PODSPEC_FILE")
-versionString=$(echo "$versionLine" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+<span class="c"># 현재 버전 추출 (숫자 3개만 필터링)</span>
+<span class="nv">versionLine</span><span class="o">=</span><span class="si">$(</span><span class="nb">grep</span> <span class="s1">'s.version'</span> <span class="s2">"</span><span class="nv">$PODSPEC_FILE</span><span class="s2">"</span><span class="si">)</span>
+<span class="nv">versionString</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$versionLine</span><span class="s2">"</span> | <span class="nb">grep</span> <span class="nt">-oE</span> <span class="s1">'[0-9]+\.[0-9]+\.[0-9]+'</span><span class="si">)</span>
 
-IFS='.' read -r major minor patch &lt;&lt;&lt; "$versionString"
+<span class="nv">IFS</span><span class="o">=</span><span class="s1">'.'</span> <span class="nb">read</span> <span class="nt">-r</span> major minor patch <span class="o">&lt;&lt;&lt;</span> <span class="s2">"</span><span class="nv">$versionString</span><span class="s2">"</span>
 
-# 패치 버전이 정수인지 확인
-if ! [[ "$patch" =~ ^[0-9]+$ ]]; then
-  echo "❌ patch 버전이 정수가 아닙니다: $patch"
-  exit 1
-fi
+<span class="c"># 패치 버전이 정수인지 확인</span>
+<span class="k">if</span> <span class="o">!</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$patch</span><span class="s2">"</span> <span class="o">=</span>~ ^[0-9]+<span class="nv">$ </span><span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"❌ patch 버전이 정수가 아닙니다: </span><span class="nv">$patch</span><span class="s2">"</span>
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
 
-# 패치 버전 증가
-newPatch=$((patch + 1))
-newVersion="${major}.${minor}.${newPatch}"
+<span class="c"># 패치 버전 증가</span>
+<span class="nv">newPatch</span><span class="o">=</span><span class="k">$((</span>patch <span class="o">+</span> <span class="m">1</span><span class="k">))</span>
+<span class="nv">newVersion</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">major</span><span class="k">}</span><span class="s2">.</span><span class="k">${</span><span class="nv">minor</span><span class="k">}</span><span class="s2">.</span><span class="k">${</span><span class="nv">newPatch</span><span class="k">}</span><span class="s2">"</span>
 
-# 교체 (작은/큰따옴표 모두 대응)
-sed -i '' -E "s/(s\.version[[:space:]]*=[[:space:]]*['\"])$versionString(['\"])/\1$newVersion\2/" "$PODSPEC_FILE"
+<span class="c"># 교체 (작은/큰따옴표 모두 대응)</span>
+<span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">''</span> <span class="nt">-E</span> <span class="s2">"s/(s</span><span class="se">\.</span><span class="s2">version[[:space:]]*=[[:space:]]*['</span><span class="se">\"</span><span class="s2">])</span><span class="nv">$versionString</span><span class="s2">(['</span><span class="se">\"</span><span class="s2">])/</span><span class="se">\1</span><span class="nv">$newVersion</span><span class="se">\2</span><span class="s2">/"</span> <span class="s2">"</span><span class="nv">$PODSPEC_FILE</span><span class="s2">"</span>
 
-# 변경되었는지 확인
-if grep -q "$newVersion" "$PODSPEC_FILE"; then
-  echo "podspec 버전이 $versionString → $newVersion 으로 변경되었습니다."
-else
-  echo "❌ 버전 변경에 실패했습니다. 현재 버전: $versionString"
-  exit 1  # 실패로 간주하고 빌드 중단
-fi
+<span class="c"># 변경되었는지 확인</span>
+<span class="k">if </span><span class="nb">grep</span> <span class="nt">-q</span> <span class="s2">"</span><span class="nv">$newVersion</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$PODSPEC_FILE</span><span class="s2">"</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"podspec 버전이 </span><span class="nv">$versionString</span><span class="s2"> → </span><span class="nv">$newVersion</span><span class="s2"> 으로 변경되었습니다."</span>
+<span class="k">else
+  </span><span class="nb">echo</span> <span class="s2">"❌ 버전 변경에 실패했습니다. 현재 버전: </span><span class="nv">$versionString</span><span class="s2">"</span>
+  <span class="nb">exit </span>1  <span class="c"># 실패로 간주하고 빌드 중단</span>
+<span class="k">fi</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h5 id="스크립트-작동-방식-요약"><span class="me-2"><strong>스크립트 작동 방식 요약</strong></span><a href="#스크립트-작동-방식-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
@@ -1081,11 +1131,11 @@ fi
 
 <p> </p>
 
-<h5 id="run-script를-이용한-자동화의-장점"><span class="me-2"><strong>Run Script를 이용한 자동화의 장점</strong></span><a href="#run-script를-이용한-자동화의-장점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="run-script를-이용한-자동화의-장점"><span class="me-2"><strong>Run Script를 이용한 자동화의 장점</strong></span><a href="#run-script를-이용한-자동화의-장점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 스크립트를 사용하면 <code class="language-plaintext highlighter-rouge">.podspec</code>을 수정하고 커밋할 때마다 <strong>자동으로 버전이 업데이트되므로</strong>,실수로 같은 버전으로 배포하는 일을 방지할 수 있고, <strong>CI/CD 자동화에도 유리</strong>합니다.</p>
 
-<p>단, 한 번 릴리즈된 버전은 CocoaPods 서버에 재등록할 수 없기 때문에, <strong>실제 배포 전에 반드시 커밋 + 태그 작업도 병행</strong>해 주세요.</p>
+<p>단, 한 번 릴리즈된 버전은 CocoaPods 서버에 재등록할 수 없기 때문에, <strong>실제 배포 전에 반드시 커밋 + 태그 작업도 병행</strong>해야 합니다.</p>
 
 <!--[rcblock id="6686"]-->
 
@@ -2053,6 +2103,12 @@ fi
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7964,7 +8020,7 @@ fi
 
               <h4 class="pt-0 my-2">macOS 개발: 내 앱으로 파일 열기 시도 시 실행 불가 문제("확인되지 않은 개발자가 배포함") 해결 과정</h4>
               <div class="text-muted">
-                <p>### **macOS 앱 노터라이즈(Notarize) 및 실행 불가 문제 해결 과정**  #### **1\. 문제 개요**  macOS에서 포스트잇 플레인 텍스트 앱인 [StickyPlainPad](http://yoonbumtae.com/?p=6980)을 테스트하는 중, 특정 테스트 파일 "다음으로 열기..."를 통해 실행했을 때 다음과 같은 문제가 ...</p>
+                <p>macOS 앱 노터라이즈(Notarize) 및 실행 불가 문제 해결 과정을 기록하였습니다.  ## 1\. 문제 개요  macOS에서 포스트잇 플레인 텍스트 앱인 [StickyPlainPad](http://yoonbumtae.com/?p=6980)을 테스트하는 중, 특정 테스트 파일 "다음으로 열기..."를 통해 실행했을 때 다음과 같은 문제가 발생하였...</p>
               </div>
             </div>
           </a>
@@ -7992,7 +8048,7 @@ fi
 
               <h4 class="pt-0 my-2">Xcode에서 Navigator & Inspector를 숨기거나 보이게 하는 방법, 동시에 토글하는 방법</h4>
               <div class="text-muted">
-                <p>## **Xcode에서 Navigator & Inspector를 숨기거나 보이게 하는 방법, 동시에 토글하는 방법**  ### **소개**  Xcode를 사용하다 보면 좁은 모니터 환경에서 **Navigator (왼쪽 패널)**와 **Inspector (오른쪽 패널)**를 상황에 따라 동시에 숨기거나 나타내고 싶을 때가 많습니다. 하지만 기본 단축키만...</p>
+                <p>## **소개**  Xcode를 사용하다 보면 좁은 모니터 환경에서 **Navigator (왼쪽 패널)**와 **Inspector (오른쪽 패널)**를 상황에 따라 동시에 숨기거나 나타내고 싶을 때가 많습니다. 하지만 기본 단축키만으로는 이 둘을 **동시에 제어할 수 있는 방법은 제공되지 않습니다.**  ![내비게이터(Navigator)와 인스펙터(I...</p>
               </div>
             </div>
           </a>

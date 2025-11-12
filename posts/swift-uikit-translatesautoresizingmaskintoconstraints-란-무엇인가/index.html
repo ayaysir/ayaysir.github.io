@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Swift UIKit: .translatesAutoresizingMaskIntoConstraints 란 무엇인가?" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="translatesAutoresizingMaskIntoConstraints" />
-<meta property="og:description" content="translatesAutoresizingMaskIntoConstraints" />
+<meta name="description" content="UIKit에서 아직도 무슨 의미인지 잘 모르겠는 (View).translatesAutoresizingMaskIntoConstraints에 대해 알아보겠습니다." />
+<meta property="og:description" content="UIKit에서 아직도 무슨 의미인지 잘 모르겠는 (View).translatesAutoresizingMaskIntoConstraints에 대해 알아보겠습니다." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/swift-uikit-translatesautoresizingmaskintoconstraints-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/swift-uikit-translatesautoresizingmaskintoconstraints-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="Swift UIKit: .translatesAutoresizingMaskIntoConstraints 란 무엇인가?" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-08T00:00:00+09:00","datePublished":"2025-05-08T00:00:00+09:00","description":"translatesAutoresizingMaskIntoConstraints","headline":"Swift UIKit: .translatesAutoresizingMaskIntoConstraints 란 무엇인가?","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/swift-uikit-translatesautoresizingmaskintoconstraints-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/"},"url":"https://ayaysir.github.io/posts/swift-uikit-translatesautoresizingmaskintoconstraints-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-08T00:00:00+09:00","datePublished":"2025-05-08T00:00:00+09:00","description":"UIKit에서 아직도 무슨 의미인지 잘 모르겠는 (View).translatesAutoresizingMaskIntoConstraints에 대해 알아보겠습니다.","headline":"Swift UIKit: .translatesAutoresizingMaskIntoConstraints 란 무엇인가?","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/swift-uikit-translatesautoresizingmaskintoconstraints-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/"},"url":"https://ayaysir.github.io/posts/swift-uikit-translatesautoresizingmaskintoconstraints-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -516,135 +516,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -759,8 +630,116 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
 
 
@@ -851,7 +830,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1586 words"
+  title="1576 words"
 >
   <em>8 min</em> read</span>
 
@@ -885,13 +864,11 @@
   
 
   <div class="content">
-    <h2 id="translatesautoresizingmaskintoconstraints"><span class="me-2"><strong>translatesAutoresizingMaskIntoConstraints</strong></span><a href="#translatesautoresizingmaskintoconstraints" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>UIKit에서 아직도 무슨 의미인지 잘 모르겠는 (View).translatesAutoresizingMaskIntoConstraints에 대해 알아보겠습니다.</p>
+    <p>UIKit에서 아직도 무슨 의미인지 잘 모르겠는 <code class="language-plaintext highlighter-rouge">(View).translatesAutoresizingMaskIntoConstraints</code>에 대해 알아보겠습니다.</p>
 
 <p> </p>
 
-<h3 id="한국어-직역"><span class="me-2"><strong>한국어 직역</strong></span><a href="#한국어-직역" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="한국어-직역"><span class="me-2"><strong>한국어 직역</strong></span><a href="#한국어-직역" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints</code>를 한국어로 직역하면 다음과 같습니다:</p>
 
@@ -917,23 +894,15 @@
 
 <p>이 속성이 <code class="language-plaintext highlighter-rouge">true</code>이면 시스템이 뷰의 <code class="language-plaintext highlighter-rouge">frame</code> 정보를 바탕으로 <strong>자동 제약 조건을 생성</strong>해주고, <code class="language-plaintext highlighter-rouge">false</code>이면 <strong>직접 Auto Layout 제약을 설정해야 함</strong>을 뜻합니다.</p>
 
-<p> </p>
-
-<hr />
-
-<h3 id="오토리사이징-마스크autoresizing-mask란"><span class="me-2"><strong>오토리사이징 마스크(Autoresizing Mask)란?</strong></span><a href="#오토리사이징-마스크autoresizing-mask란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="오토리사이징-마스크autoresizing-mask란"><span class="me-2"><strong>오토리사이징 마스크(Autoresizing Mask)란?</strong></span><a href="#오토리사이징-마스크autoresizing-mask란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>UIKit에서의 <strong>오토리사이징 마스크(Autoresizing Mask)</strong>는, <strong>부모 뷰의 크기가 바뀔 때 자식 뷰의 크기나 위치를 어떻게 자동으로 조절할지를 설정하는 값</strong>입니다. 이는 <strong>Auto Layout이 도입되기 전부터 사용되던 레이아웃 방식</strong>입니다.</p>
 
-<p> </p>
-
-<h4 id="역할-요약"><span class="me-2"><strong>역할 요약</strong></span><a href="#역할-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="역할-요약"><span class="me-2"><strong>역할 요약</strong></span><a href="#역할-요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>오토리사이징 마스크는 <code class="language-plaintext highlighter-rouge">UIView</code>의 <code class="language-plaintext highlighter-rouge">autoresizingMask</code> 속성에 설정되며, 부모 뷰의 크기가 변할 때 <strong>자식 뷰가 어느 방향으로 늘어나거나 이동할지를 결정</strong>합니다.</p>
 
-<p> </p>
-
-<h4 id="예를-들어-보면"><span class="me-2"><strong>예를 들어 보면:</strong></span><a href="#예를-들어-보면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="예"><span class="me-2"><strong>예:</strong></span><a href="#예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -950,7 +919,7 @@
 
 <p> </p>
 
-<h4 id="사용-가능한-마스크-값들"><span class="me-2"><strong>사용 가능한 마스크 값들</strong></span><a href="#사용-가능한-마스크-값들" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="사용-가능한-마스크-값들"><span class="me-2"><strong>사용 가능한 마스크 값들</strong></span><a href="#사용-가능한-마스크-값들" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -989,7 +958,7 @@
 
 <p> </p>
 
-<h4 id="왜-이것이-translatesautoresizingmaskintoconstraints와-관련될까"><span class="me-2"><strong>왜 이것이 <code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints</code>와 관련될까?</strong></span><a href="#왜-이것이-translatesautoresizingmaskintoconstraints와-관련될까" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="오토-리사이징-마스크와-translatesautoresizingmaskintoconstraints와의-연관"><span class="me-2"><strong>오토 리사이징 마스크와 <code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints</code>와의 연관</strong></span><a href="#오토-리사이징-마스크와-translatesautoresizingmaskintoconstraints와의-연관" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>UIKit은 <strong>오토리사이징 마스크를 내부적으로 Auto Layout 제약으로 변환</strong>할 수 있는데, 그 여부를 <code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints</code> 속성으로 결정합니다.</p>
 
@@ -998,19 +967,15 @@
   <li><code class="language-plaintext highlighter-rouge">false</code>: 오토리사이징 마스크는 무시되고, <strong>직접 Auto Layout 제약을 설정해야 함</strong></li>
 </ul>
 
-<p> </p>
-
-<hr />
-
-<h3 id="그래서-translatesautoresizingmaskintoconstraints가-뭔데"><span class="me-2"><strong>그래서 translatesAutoresizingMaskIntoConstraints가 뭔데?</strong></span><a href="#그래서-translatesautoresizingmaskintoconstraints가-뭔데" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="그래서-translatesautoresizingmaskintoconstraints가-뭔데"><span class="me-2"><strong>그래서 translatesAutoresizingMaskIntoConstraints가 뭔데?</strong></span><a href="#그래서-translatesautoresizingmaskintoconstraints가-뭔데" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints</code>는 Auto Layout을 사용할 때 매우 중요한 속성입니다. 이 속성이 어떤 역할을 하는지 이해하면 <strong>뷰의 위치와 크기를 어떻게 제어할지</strong>에 대한 개념이 명확해집니다.</p>
 
 <p> </p>
 
-<h4 id="개념-정리"><span class="me-2"><strong>개념 정리</strong></span><a href="#개념-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="개념-정리"><span class="me-2"><strong>개념 정리</strong></span><a href="#개념-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="translatesautoresizingmaskintoconstraints--true-기본값"><span class="me-2"><code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints = true</code> (기본값)</span><a href="#translatesautoresizingmaskintoconstraints--true-기본값" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="translatesautoresizingmaskintoconstraints--true-기본값"><span class="me-2"><code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints = true</code> (기본값)</span><a href="#translatesautoresizingmaskintoconstraints--true-기본값" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li><strong>오토리사이징 마스크</strong>(Autoresizing Mask)가 <strong>Auto Layout 제약 조건으로 자동 변환됩니다</strong>.</li>
@@ -1019,7 +984,7 @@
   <li>결과적으로 <strong>직접 Auto Layout 제약을 추가하면 충돌할 수 있습니다</strong>.</li>
 </ul>
 
-<h5 id="translatesautoresizingmaskintoconstraints--false"><span class="me-2"><code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints = false</code></span><a href="#translatesautoresizingmaskintoconstraints--false" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="translatesautoresizingmaskintoconstraints--false"><span class="me-2"><code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints = false</code></span><a href="#translatesautoresizingmaskintoconstraints--false" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li>오토리사이징 마스크 → 제약 변환을 <strong>하지 않도록 끕니다</strong>.</li>
@@ -1027,11 +992,7 @@
   <li>주로 Auto Layout 기반 레이아웃을 할 때 사용하는 설정입니다.</li>
 </ul>
 
-<p> </p>
-
-<hr />
-
-<h3 id="예시-코드-비교"><span class="me-2"><strong>예시 코드 비교</strong></span><a href="#예시-코드-비교" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="예시-코드-비교"><span class="me-2"><strong>예시 코드 비교</strong></span><a href="#예시-코드-비교" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1074,11 +1035,7 @@
   <li><code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints = false</code>가 없으면 위 제약이 적용되지 않거나 충돌이 발생할 수 있습니다.</li>
 </ul>
 
-<p> </p>
-
-<hr />
-
-<h3 id="충돌-예제"><span class="me-2"><strong>충돌 예제:</strong></span><a href="#충돌-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="충돌-예제"><span class="me-2"><strong>충돌 예제</strong></span><a href="#충돌-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Auto Layout 제약과 <code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints</code>의 충돌을 보여주는 간단한 예제를 Swift로 설명드리겠습니다.</p>
 
@@ -1134,13 +1091,9 @@
 
 <p>또는 버튼 위치가 이상하거나 전혀 보이지 않을 수 있습니다.</p>
 
-<p> </p>
-
-<hr />
-
 <h3 id="해결-예제"><span class="me-2"><strong>해결 예제:</strong></span><a href="#해결-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="translatesautoresizingmaskintoconstraints--false-사용"><span class="me-2"><strong><code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints = false</code> 사용</strong></span><a href="#translatesautoresizingmaskintoconstraints--false-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="translatesautoresizingmaskintoconstraints--false-사용"><span class="me-2"><strong><code class="language-plaintext highlighter-rouge">translatesAutoresizingMaskIntoConstraints = false</code> 사용</strong></span><a href="#translatesautoresizingmaskintoconstraints--false-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1176,7 +1129,7 @@
 <span class="p">])</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="결과"><span class="me-2"><strong>결과</strong></span><a href="#결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="결과"><span class="me-2"><strong>결과</strong></span><a href="#결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>충돌 없이 버튼이 정확한 위치에 배치됩니다.</li>
@@ -1187,9 +1140,7 @@
 
 <p> </p>
 
-<hr />
-
-<h3 id="요약"><span class="me-2"><strong>요약</strong></span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="요약"><span class="me-2"><strong>요약</strong></span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -8070,7 +8021,7 @@
 
               <h4 class="pt-0 my-2">Swift UIKit: 테이블 뷰에서 UITextView의 컨텐츠에 따라 높이 자동조정</h4>
               <div class="text-muted">
-                <p>##### **참고**  - [Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기 + 특정 행의 크기만 조절](http://yoonbumtae.com/?p=4521)     ##### **구조 및 제약(Constraints)**  \[caption id="attachment\_7041" align...</p>
+                <p>**참고**  - [Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기 + 특정 행의 크기만 조절](/posts/swift스위프트-static-cell-모드인-테이블-뷰uitableview에서-특정-섹션/)    ## 구조 및 제약(Constraints)  ![테이블 뷰 섹션 > 셀 > 콘텐트 뷰...</p>
               </div>
             </div>
           </a>
