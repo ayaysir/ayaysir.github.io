@@ -6,7 +6,7 @@ categories:
   - "MuseScore 4"
 ---
 
-### **소개**
+## **소개**
 
 두 Staff를 합쳐서 다른 Staff에 붙여넣는 작업을 하려고 합니다. (하단 악보 참조)
 
@@ -15,25 +15,27 @@ categories:
 - `Implode` 기능과 특별한 선택 두 기능을 사용해서 호른 두 파트를 아래 Trombone 1 처럼 합칠 수 있습니다.
     - implode 뜻: 자체적으로 파열되다, 폭파하여 안쪽으로 붕괴하다; (문화 따위가) 한 점에 집중하다, 통합되다
 
-\[caption id="attachment\_6271" align="alignnone" width="565"\] ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-09-오후-10.20.35-복사본.jpg) 두 파트를 하나의 보이스로 합쳐서\[/caption\]
+ ![두 파트를 하나의 보이스로 합쳐서](/assets/img/wp-content/uploads/2024/02/musescore4-implode/intro.jpg)  
+*두 파트를 하나의 보이스로 합쳐서*
 
-\[caption id="attachment\_6272" align="alignnone" width="563"\] ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-09-오후-10.48.05-복사본.jpg) 악보를 생성\[/caption\]
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/intro2.jpg)  
+*악보를 생성*
 
  
 
-#### **전제조건**
+## **전제조건**
 
 - 두 파트에서 선택한 범위의 리듬이 동일해야 합니다.
 
  
 
-#### **참조**
+## **참조**
 
 - [MuseScore 공식 매뉴얼: Implode and explode](https://musescore.org/en/handbook/4/implode-and-explode)
 
  
 
-#### **방법**
+## **방법**
 
 - Implode 시키면 두 보이스로 악보가 합쳐집니다.
 - 보이스 2의 악보를 보이스 1로 변경합니다.
@@ -41,7 +43,7 @@ categories:
 
  
 
-##### **(1) implode 시키기**
+### **(1) implode 시키기**
 
 두 파트에 걸친 범위를 선택 후 `implode`를 실행하면 별도의 보이스로 악보가 합쳐지게 됩니다.
 
@@ -50,11 +52,22 @@ categories:
 3. 합칠 두 파트를 선택한 뒤 상단 메뉴 `Tools > Implode`를 클릭합니다.
 4. 상단 부분(Trombone 1)은 파란색(`Voice 1`)로, 하단 부분(Trombone 3)은 초록색(`Voice 2`)로 합쳐졌습니다. Trombone 3에 임시로 붙여넣은 악보는 삭제합니다.
 
-\[gallery type="slideshow" link="none" size="full" ids="6280,6279,6283,6281"\]
+#### 과정 스크린샷 보기
 
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/1-1.jpg)  
+*1 – 윗부분 복사*
+
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/1-2.jpg)  
+*2 – 아랫부분 복사*
+
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/1-3.jpg)  
+*3 – Implode 메뉴 선택*
+
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/1-4.jpg)  
+*4 – Voice 2개로 합쳐짐*
  
 
-##### **(2) Voice 2 (초록색)을 Voice 1로 변환**
+### **(2) Voice 2 (초록색)을 Voice 1로 변환**
 
 하나의 보이스로 합치는 것을 원하기 때문에 보이스 2를 보이스 1로 변환합니다.
 
@@ -64,11 +77,26 @@ categories:
 4. 이 상태에서 상단 툴바의 `Voice 1 버튼`을 누릅니다. 이 버튼을 누르면 보이스 2가 1로 변경됩니다.
 5. 파란색으로 변경되면 보이스 1로 변환된 것입니다.
 
-\[gallery type="slideshow" link="none" size="full" ids="6285,6286,6289,6288,6287"\]
+<!-- \[gallery type="slideshow" link="none" size="full" ids="6285,6286,6289,6288,6287"\] -->
 
- 
+#### 과정 스크린샷 보기
 
-##### **(3) Voice 2의 모든 쉼표 삭제**
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/2-1.jpg)  
+*1 – More 선택 옵션 메뉴 열기*
+
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/2-2.jpg)  
+*2 – Same Voice 선택*
+
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/2-3.jpg)  
+*3 – Voice 2만 선택됨*
+
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/2-4.jpg)  
+*4 – Voice 1로 전환*
+
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/2-5.jpg)  
+*5 – Voice 1로 합쳐짐*
+
+### **(3) Voice 2의 모든 쉼표 삭제**
 
 (2)번 작업을 마치면 보이스 2의 쉼표가 남아있게 됩니다. 보이스 2에 아무것도 없어야 하므로 지워야 합니다.
 
@@ -76,4 +104,14 @@ categories:
 2. 보이스 2(초록색)의 쉼표만 선택된 상태가 됩니다. 키보드의 `백스페이스`(또는 `Del`) 키를 눌러 선택된 쉼표를 삭제합니다.
 3. 보이스 2의 모든 요소가 제거되었습니다.
 
-\[gallery type="slideshow" size="full" ids="6290,6291,6292"\]
+<!-- \[gallery type="slideshow" size="full" ids="6290,6291,6292"\] -->
+#### 과정 스크린샷 보기
+
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/3-1.jpg)  
+*1 – More 선택 옵션 열기*
+
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/3-2.jpg)  
+*2 – Voice 2만 선택된 상태에서 백스페이스 키 눌러서 지우기*
+
+![](/assets/img/wp-content/uploads/2024/02/musescore4-implode/3-3.jpg)  
+*3 – Voice 2 제거되었는지 확인*

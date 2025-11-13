@@ -129,7 +129,7 @@ Vibration.warning.vibrate()
 
 iOS 프로젝트를 생성한 뒤, 메인 화면에 피커 뷰(`UIPickerView`) 및 버튼을(`UIButton`)을 추가하고 다음과 같이 `IBOutlet` 및 `IBAction`을 뷰 컨트롤러에 연결합니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-01-오후-9.19.02.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-01-pm-9.19.02.jpg)
 
 > **참고)** 스위치(`UISwitch`)는 기본적으로 값이 변경될 떄마다 진동이 발생하므로 따로 진동을 추가할 필요가 없습니다. `Vibration.light`와 비슷한 세기의 진동이 발생합니다.
 
@@ -179,7 +179,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 실제 기기에서 빌드 및 실행합니다. 종류를 선택하고 `Vibrate` 버튼을 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-01-오후-11.19.26.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-01-pm-11.19.26.jpg)
 
  
 

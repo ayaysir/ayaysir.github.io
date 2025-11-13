@@ -6,7 +6,7 @@ categories:
   - "Classical"
 ---
 
-### **소개**
+## **소개**
 
 {% youtube "https://www.youtube.com/watch?v=TMSgWhIENSk&pp=ygUIbGEgdmFsc2U%3D" %}
 
@@ -30,7 +30,7 @@ _**La valse**_, _poème chorégraphique pour orchestre_ (오케스트라를 위
 
  
 
-#### **창작 및 의미**
+## **창작 및 의미**
 
 "라 발스"의 아이디어는 먼저 "Vienne"라는 제목으로 시작되었으며, 이후에는 "Wien" (Vienne는 프랑스어, Wien은 독일어로 각각 "비엔나(Vienna)"를 의미)로 바뀌었습니다. 이러한 아이디어는 1906년경에 나타났는데, 이때 라벨은 왈츠 형식과 [요한 슈트라우스 2세](https://ko.wikipedia.org/wiki/%EC%9A%94%ED%95%9C_%EC%8A%88%ED%8A%B8%EB%9D%BC%EC%9A%B0%EC%8A%A4_2%EC%84%B8)에 대한 경의로 작품을 오케스트레이션하려고 했습니다. 다른 작곡가의 영향으로는 Emmanuel Chabrier의 오페라 'Le roi malgré lui(의지에 반하는 왕)'의 왈츠가 있었습니다.
 
@@ -56,7 +56,7 @@ _**La valse**_, _poème chorégraphique pour orchestre_ (오케스트라를 위
 
  
 
-#### **설명**
+## **설명**
 
 {% youtube "https://www.youtube.com/watch?v=YDk2RUaoEJQ&pp=ygUIbGEgdmFsc2U%3D" %}
 
@@ -78,7 +78,7 @@ _**La valse**_, _poème chorégraphique pour orchestre_ (오케스트라를 위
 
  
 
-#### **편성**
+## **편성**
 
 - 목관악기: 플루트 3(제3은 피콜로를 겸함), 오보에 2, 잉글리시 호른, 클라리넷(A) 2, 베이스 클라리넷(A), 바순 2, 콘트라바순
 - 금관악기: 호른 4, 트럼펫(C) 3, 트롬본 3, 튜바
@@ -87,15 +87,12 @@ _**La valse**_, _poème chorégraphique pour orchestre_ (오케스트라를 위
 
  
 
-#### **편곡 (Transcriptions)**
+## **편곡 (Transcriptions)**
 
 먼저 공개적으로 연주된 라벨과 알프레도 카셀라(Alfredo Casella)의 두 대의 피아노 편곡 외에도 라벨은 이 작품을 한 대의 피아노 독주로 편곡하기도 했습니다. 피아노 독주 편곡은 난이도 때문에 자주 연주되지 않습니다. 특히 피아노 독주판은 기법면으로나 음악면으로 매우 어려워 오케스트라나 두 대의 피아노를 위한 연주판보다 녹음 수가 적습니다.
 
-{% youtube "https://www.youtube.com/watch?v=ghY2ak8YoBM&pp=ygUIbGEgdmFsc2U%3D" %}
-
+{% youtube "https://www.youtube.com/watch?v=ghY2ak8YoBM&pp=ygUIbGEgdmFsc2U%3D" %}  
 _솔로 피아노 버전 연주와 악보: 조성진 연주_
-
- 
 
 Lucien Garban은 1920년에 4개의 손을 위한  피아노 편곡을 제작했습니다. 그는 이전에 비슷한 방식으로 1919년에 라벨의 쿠프랭의 무덤(Le tombeau de Couperin)을 편곡했습니다. 라벨의 음악을 거의 연주하지 않았던 피아니스트 글렌 굴드(Glenn Gould)가 1975년에 자신의 편곡을 만들었습니다. 2008년에 Andrey Kasparov는 라벨의 원래 악보를 연주자들 사이에 더욱 효과적으로 분배시킨 피아노 네 손을 위한 개선된 라발스 편곡을 제작했습니다. Sean Chen은 2014년 Steinway & Sons 레이블에서 자신의 편곡을 녹음했습니다.
 
@@ -107,17 +104,15 @@ Lucien Garban은 1920년에 4개의 손을 위한  피아노 편곡을 제작�
 
 Linos Piano Trio는 2021년 앨범 Stolen Music에 피아노 트리오 곡의 편곡 버전을 포함했습니다.
 
- 
 
-#### **발레**
+## **발레**
 
 Ida Rubinstein의 회사는 Bronislava Nijinska가 안무한 La Valse를 1929년에 처음으로 공연했습니다. 이 버전은 공동 창립자이자 창립 안무가인 George Balanchine이 1951년 La Valse에서 발레를 만든 New York City Ballet등에 의해 다수 부활했습니다.
 
 Frederick Ashton은 또한 1958년 The Royal Ballet을 위해 La Valse 발레를 제작했습니다. 초연에서 Francis Poulenc는 음악에 대한 라벨의 의도에 대한 최초의 성공적인 해석이라고 Ashton을 칭찬했습니다.
 
- 
 
-#### **링크**
+## **링크**
 
 - 출처: [La valse](https://en.wikipedia.org/wiki/La_valse)
 - [Apple 클래식](https://classical.music.apple.com/kr/work/maurice-ravel-1875-pp22?l=ko-KR) 앱에서 보기 (애플뮤직 구독 필요)

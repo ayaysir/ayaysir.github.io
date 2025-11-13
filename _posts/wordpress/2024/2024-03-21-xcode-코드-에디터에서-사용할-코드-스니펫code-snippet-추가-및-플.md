@@ -86,4 +86,5 @@ var twoDimArray: [[<#Type#>]] = .init(repeating: .init(repeating: <#Element#>, c
         - String or Comment: 문자열 또는 코멘트 레벨입니다.
         - Top Level: 최상위 레벨 (클래스 레벨보다 더 위)입니다.
 
-http://www.giphy.com/gifs/SZPRYnlbGZAl11AwVA
+<!-- http://www.giphy.com/gifs/SZPRYnlbGZAl11AwVA -->
+![](https://)

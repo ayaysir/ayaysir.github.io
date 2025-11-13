@@ -12,7 +12,7 @@ categories:
 
 ##### **2\. 컨트롤러 및 `GetMapping` 예제 작성**
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-5.25.17.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.25.17.png)
 
 ```
 package com.example.awsboard.web;
@@ -36,11 +36,11 @@ public class BasicController {
 
 ##### **4\. 패키지 내에 `BasicControllerTest` 클래스 생성**
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-5.30.39.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.30.39.png)
 
 ##### **5\. 테스트 코드 작성**
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-5.32.13.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.32.13.png)
 
 ```
 package com.example.awsboard.web;
@@ -78,13 +78,13 @@ public class BasicControllerTest {
 
 ##### **6\. 메소드 코드 옆의 재생 버튼(`Run Test`) 클릭**
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-5.36.35.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.36.35.png)
 
  
 
 ##### **7\. 테스트 결과 확인**
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-30-오후-5.37.13.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.37.13.png)
 
  
 

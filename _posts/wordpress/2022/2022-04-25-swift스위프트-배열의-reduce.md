@@ -209,7 +209,7 @@ people.reduce(into: [Int: [Person]]() ) { partialResult, currentPerson in
 
 ```
 
-\[caption id="attachment\_4392" align="alignnone" width="456"\] ![](/assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-25-오후-9.20.15.png) \[Int: \[Person\]\] 타입의 결과\[/caption\] 
+\[caption id="attachment\_4392" align="alignnone" width="456"\] ![](/assets/img/wp-content/uploads/2022/04/screenshot-2022-04-25-pm-9.20.15.png) \[Int: \[Person\]\] 타입의 결과\[/caption\] 
 
  
 
@@ -242,7 +242,7 @@ readers.reduce(into: []) { partialResult, currentReader in
 
 ```
 
-\[caption id="attachment\_4393" align="alignnone" width="217"\] ![](/assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-25-오후-9.30.33.png) \[String\] 타입의 결과\[/caption\] 
+\[caption id="attachment\_4393" align="alignnone" width="217"\] ![](/assets/img/wp-content/uploads/2022/04/screenshot-2022-04-25-pm-9.30.33.png) \[String\] 타입의 결과\[/caption\] 
 
  
 

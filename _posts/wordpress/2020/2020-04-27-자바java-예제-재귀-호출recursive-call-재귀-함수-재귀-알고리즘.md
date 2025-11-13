@@ -78,7 +78,7 @@ public class FactorialExample {
 
 ```
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-4.08.34.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-4.08.34.png)
 
  
 
@@ -119,7 +119,7 @@ public class SumOfArray {
 
 ```
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-4.37.52.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-4.37.52.png)
 
  
 
@@ -156,7 +156,7 @@ public class Palindrome {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-4.54.56.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-4.54.56.png)
 
  
 
@@ -191,4 +191,4 @@ public class Pattern {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-27-오후-5.04.57.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-5.04.57.png)

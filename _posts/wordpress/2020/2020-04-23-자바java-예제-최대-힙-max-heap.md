@@ -28,4 +28,4 @@ tags:
 
 https://gist.github.com/ayaysir/f5d8a90eb056432cdc67e44284ef3d9c
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-23-오후-8.26.45.png)  ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-23-오후-8.50.22.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-23-pm-8.26.45.png)  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-23-pm-8.50.22.png)

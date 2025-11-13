@@ -156,7 +156,7 @@ var increment = makeIncrementer() // addOne을 리턴시키고 increment에 적�
 print( increment(15) )   // 16
 ```
 
- ![](/assets/img/wp-content/uploads/2020/01/스크린샷-2020-01-18-오후-11.17.22.png)
+ ![](/assets/img/wp-content/uploads/2020/01/screenshot-2020-01-18-pm-11.17.22.png)
 
  
 

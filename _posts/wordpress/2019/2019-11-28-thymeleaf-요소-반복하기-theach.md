@@ -48,7 +48,7 @@ tags:
 
 인덱스 변수는 `.index` / `.count` / `.size` 등의 기능이 있으며, `.index`는 0부터 시작, `.count`는 1부터 시작, `.size`는 리스트의 사이즈를 가져옵니다. 리스트의 맨 마지막을 순회할 때 동작을 지정하고 싶다면 `th:if="${i.count eq i.size}"`를 사용합니다.
 
- ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-28-오후-5.57.42.png)
+ ![](/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-5.57.42.png)
 
  
 

@@ -20,11 +20,11 @@ _이전 글 [달력 그리기 (1)](http://yoonbumtae.com/?p=5271) 포스트에 �
 
 컬렉션 뷰(`UICollectionView`)를 이용하며, 컬렉션 뷰의 사이즈를 조정하면 해당 사이즈에 맞게 자동으로 달력의 레이아웃도 조절되는 것에 중점을 맞추겠습니다.
 
-\[caption id="attachment\_5286" align="alignnone" width="414"\] ![](/assets/img/wp-content/uploads/2023/02/Simulator-Screen-Shot-iPhone-11-2023-02-05-at-22.48.29-복사본.jpg) 컬렉션 뷰의 사이즈에 맞춰 달력을 그립니다.\[/caption\]
+\[caption id="attachment\_5286" align="alignnone" width="414"\] ![](/assets/img/wp-content/uploads/2023/02/Simulator-Screen-Shot-iPhone-11-2023-02-05-at-22.48.29-copy.jpg) 컬렉션 뷰의 사이즈에 맞춰 달력을 그립니다.\[/caption\]
 
  
 
-\[caption id="attachment\_5287" align="alignnone" width="707"\] ![](/assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-05-오후-10.49.45.jpg) 컬렉션 뷰의 사이즈를 줄이면 달력 레이아웃도 자동으로 맞춰 줄어듭니다.\[/caption\]
+\[caption id="attachment\_5287" align="alignnone" width="707"\] ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-05-pm-10.49.45.jpg) 컬렉션 뷰의 사이즈를 줄이면 달력 레이아웃도 자동으로 맞춰 줄어듭니다.\[/caption\]
 
  
 
@@ -38,7 +38,7 @@ _이전 글 [달력 그리기 (1)](http://yoonbumtae.com/?p=5271) 포스트에 �
 
 뷰 컨트롤러에 아래와 같이 요소들을 추가합니다.
 
- ![](/assets/img/wp-content/uploads/2023/02/달력-스크린샷-2023-02-05-오후-11.15.09.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/달력-스크린샷-2023-02-05-pm-11.15.09.jpg)
 
 - **제목**
     - `2023년 2월`과 같이 현재 연월을 표시합니다.
@@ -62,7 +62,7 @@ _이전 글 [달력 그리기 (1)](http://yoonbumtae.com/?p=5271) 포스트에 �
 
 #### **스토리보드와 뷰 컨트롤러 코드 간 연결**
 
- ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-오후-11.41.00.jpg) ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-오후-11.41.20.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-pm-11.41.00.jpg) ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-pm-11.41.20.jpg)
 
 - **@IBOutlet**
     - `calendarCollectionView`: 달력의 컬렉션 뷰
@@ -85,8 +85,8 @@ _이전 글 [달력 그리기 (1)](http://yoonbumtae.com/?p=5271) 포스트에 �
 
 컬렉션 뷰의 셀(하나만 있음)을 클릭하고 오른쪽 설정 패널에서
 
-- `Identity Inspector`에서 `Custom Class`를 `DayCell`로 지정  ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-오후-11.41.41.jpg)
-- `Attribute Inspector`에서 `Identifier`를 `DayCell`로 지정  ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-오후-11.41.37.jpg)
+- `Identity Inspector`에서 `Custom Class`를 `DayCell`로 지정  ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-pm-11.41.41.jpg)
+- `Attribute Inspector`에서 `Identifier`를 `DayCell`로 지정  ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-pm-11.41.37.jpg)
 
 합니다.
 
@@ -324,7 +324,7 @@ private var calendarData: CalendarData!
 
 달력의 셀에 대한 커스텀 클래스가 필요합니다. 프로젝트에 다음 코드를 추가하고, `@IBOutlet` 연결을 수행합니다. (연결되지 않으면 프로젝트 창을 껐다 켜면 됩니다.)
 
- ![](/assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-06-오전-12.04.29.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-06-오전-12.04.29.jpg)
 
 ```
 class DayCell: UICollectionViewCell {
@@ -492,7 +492,7 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
     - 각 셀의 인스턴스 및 표시될 내용을 지정하는 부분입니다.
 3. **...viewForSupplementaryElementOfKind...**
     - 셀의 헤더 뷰를 표시하려면 이 부분을 반드시 추가해야 합니다.
-    - 헤더 뷰의 `Identifier`를 `CalendarHeaderView`로 지정합니다. ![](/assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-06-오전-12.20.12.jpg)
+    - 헤더 뷰의 `Identifier`를 `CalendarHeaderView`로 지정합니다. ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-06-오전-12.20.12.jpg)
     - `kind`가 헤더 뷰(`.elementKindSectionHeader`)인 경우, `collectionView. dequeueReusableSupplementaryView`를 통해 헤더 뷰 인스턴스를 반환합니다.
     - 참고: [iOS ) UICollectionReusableView](https://zeddios.tistory.com/998)
 4. **...didSelectItemAt...**
@@ -506,7 +506,8 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
 
 빌드 및 실행하고, 아래와 같이 동작하는지 확인합니다.
 
-http://www.giphy.com/gifs/SyXQOKZlvxk1eiorIb
+<!-- http://www.giphy.com/gifs/SyXQOKZlvxk1eiorIb -->
+![](https://)
 
 - 달력이 칸수에 맞게 제대로 그려집니다.
 - `Prev`, `Next` 버튼을 클릭하면 이전 달 또는 다음 달로 이동합니다.

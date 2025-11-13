@@ -52,7 +52,7 @@ public String loginWithoutForm(@PathVariable(value="username") String username) 
 
 ### 아래 테이블(`simple_users`)은 회원 목록입니다.
 
- ![](/assets/img/wp-content/uploads/2019/11/스크린샷-2019-11-27-오후-11.57.06.png)
+ ![](/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-27-pm-11.57.06.png)
 
  
 

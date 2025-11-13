@@ -26,13 +26,13 @@ categories:
 
 {% youtube "https://www.youtube.com/watch?v=wy9gt_3gmjM" %}
 
-> #### ** ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-13-오전-1.39.26-복사본.jpg)**
+> #### ** ![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-13-오전-1.39.26-copy.jpg)**
 
 #### **새로운 템포의 결정**
 
 다음 공식은 메트릭 모듈레이션 전후에 템포를 결정하는 방법과 전후에 각 소절에 관련 음표 값이 몇 개 있는지를 결정하는 방법을 보여줍니다.
 
- ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-7.48.19.png)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-07-pm-7.48.19.png)
 
  
 
@@ -50,7 +50,7 @@ categories:
 
 다음 구하고자 하는 새로운 템포를 x로 두고, x 값을 구합니다.
 
- ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-07-오후-8.08.48.png)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-07-pm-8.08.48.png)
 
 ♩ = 126 (4분음표 = 126)인 이 템포는 (([![half note](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Figure_rythmique_blanche_hampe_haut.svg/6px-Figure_rythmique_blanche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_blanche_hampe_haut.svg "half note") = [![dotted half note](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Figure_rythmique_blanche_hampe_haut.svg/6px-Figure_rythmique_blanche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_blanche_hampe_haut.svg "dotted half note").) = ([![quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "quarter note") = [![dotted quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "dotted quarter note").)). 과 동일합니다. (84 \* 3) / 2 대신 (84 \* 1.5) / 1로 계산해도 126이라는 동일한 수치가 나옵니다. 
 
@@ -82,7 +82,7 @@ categories:
 
 현대적인 개념과 미터법 변조 표기법이 나오기 전에 작곡가들은 두 배 속도와 절반 속도에 대해 _doppio piu mosso_(두 배 빠르게) 및 _doppio piu lento_(두 배 느리게)라는 용어를 사용했으며 나중에는 다음과 같은 표시를 사용했습니다.
 
- ![](/assets/img/wp-content/uploads/2023/12/스크린샷-2023-12-13-오전-1.31.37.png)
+ ![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-13-오전-1.31.37.png)
 
 현대에는 다음과 같이 표기될 수 있습니다.  [![eighth note](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Figure_rythmique_croche_hampe_haut.svg/10px-Figure_rythmique_croche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_croche_hampe_haut.svg "eighth note")\= [![quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "quarter note")
 

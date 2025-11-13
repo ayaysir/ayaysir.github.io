@@ -104,7 +104,7 @@ override func viewDidAppear(_ animated: Bool) {
 
 이렇게 하면 실제 로그인이 됩니다. 그리고 비밀번호가 틀렸거나 이메일 형식이 맞지 않는 경우 등 유효성 검사도 저절로 체크하도록 이미 기능이 구현되어 있습니다.
 
- ![](/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-03.03.57-복사본.jpg)  ![](/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-03.04.12-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-03.03.57-copy.jpg)  ![](/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-03.04.12-copy.jpg)
 
 하지만 시각적으로 로그인이 되었다는 것을 확인할 방법이 없습니다.
 
@@ -112,7 +112,7 @@ override func viewDidAppear(_ animated: Bool) {
 
 #### **추가 구현 1: 로그인 여부 표시 및 현재 유저의 이메일 표시**
 
- ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-18-오전-3.07.28.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-오전-3.07.28.jpg)
 
  
 
@@ -251,4 +251,5 @@ extension ViewController: UIAdaptivePresentationControllerDelegate {
 
 빌드 및 실행해서 새로운 커스터마이징 화면이 나타나는지 확인합니다.
 
-http://www.giphy.com/gifs/1JxlyaoJ9bDHA0w9cj
+<!-- http://www.giphy.com/gifs/1JxlyaoJ9bDHA0w9cj -->
+![](https://)

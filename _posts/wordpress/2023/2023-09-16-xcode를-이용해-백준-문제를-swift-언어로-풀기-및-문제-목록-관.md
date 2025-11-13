@@ -19,7 +19,7 @@ categories:
 
 Xcode 상단에서 `File > New > Project...` (단축키 `command + shift + N`)을 누른 뒤 아래 스크린샷과 같이 `macOS > Command Line Tool` 프로젝트를 생성합니다.
 
- ![](/assets/img/wp-content/uploads/2023/09/스크린샷-2023-09-16-오후-10.56.18-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/09/screenshot-2023-09-16-pm-10.56.18-copy.jpg)
 
 `Command Line Tool` 프로젝트를 이용하는 이유는 인풋값을 받는 `ReadLine()` 함수를 이 프로젝트에서 사용할 수 있기 때문입니다.
 
@@ -29,7 +29,7 @@ Xcode 상단에서 `File > New > Project...` (단축키 `command + shift + N`)�
 
 프로젝트를 생성하면 `main.swift`가 기본으로 제공됩니다. 한 문제만 풀 것이라면 여기서 작성해도 되지만 여러 문제를 풀고 관리하려면 아래와 같이 `Question` 폴더를 생성합니다.
 
- ![](/assets/img/wp-content/uploads/2023/09/스크린샷-2023-09-16-오후-10.59.49-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/09/screenshot-2023-09-16-pm-10.59.49-copy.jpg)
 
 지금은 두 문제만 풀었으므로 Question 폴더 내에 파일이 2개이지만, 앞으로 여러 문제들을 파일 형태로 계속 추가할 수 있습니다.
 
@@ -159,7 +159,7 @@ question(targetQuestion)
 
 `command + R`을 눌러 프로그램을 실행한 뒤 입력값을 붙여넣기 하고 결과가 출력되는것을 확인합니다.
 
- ![](/assets/img/wp-content/uploads/2023/09/스크린샷-2023-09-16-오후-11.14.58-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/09/screenshot-2023-09-16-pm-11.14.58-copy.jpg)
 
  
 
@@ -167,4 +167,4 @@ question(targetQuestion)
 
 `func Q_2798() {...}`으로 감싼 부분은 제외하고, `import Foundation`과 같은 프레임워크를 불러오는 부분은 필요한 경우 추가합니다.
 
- ![](/assets/img/wp-content/uploads/2023/09/스크린샷-2023-09-16-오후-11.19.16-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/09/screenshot-2023-09-16-pm-11.19.16-copy.jpg)

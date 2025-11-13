@@ -77,7 +77,7 @@ var body: some View {
 
 `url` 파라미터에 `URL`을 입력해서 유효한 주소인 경우 웹 페이지가 표시됩니다. 아래 스크린샷은 SwiftUI의 뷰 내부에 `WebView`를 삽입한 예제입니다.
 
- ![](/assets/img/wp-content/uploads/2023/04/Simulator-Screenshot-iPhone-14-2023-04-07-at-14.45.33-복사본-2.jpg)
+ ![](/assets/img/wp-content/uploads/2023/04/Simulator-Screenshot-iPhone-14-2023-04-07-at-14.45.33-copy-2.jpg)
 
  
 
@@ -248,7 +248,8 @@ Button {
 
  
 
-http://www.giphy.com/gifs/uiSo2m6jk28v4uUf0H
+<!-- http://www.giphy.com/gifs/uiSo2m6jk28v4uUf0H -->
+![](https://)
 
  
 

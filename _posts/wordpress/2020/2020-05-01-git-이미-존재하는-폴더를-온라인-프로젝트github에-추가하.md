@@ -24,7 +24,7 @@ categories:
 
 ##### **3\. 자신이 git에 올리고 싶은 root 폴더로 이동합니다.**
 
-#####  ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-01-오후-6.08.56.png)
+#####  ![](/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-01-pm-6.08.56.png)
 
 ##### **4\. git디렉토리를 초기화 하여 줍니다.**
 
@@ -32,7 +32,7 @@ categories:
 $ git init
 ```
 
- ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-01-오후-6.09.42.png)
+ ![](/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-01-pm-6.09.42.png)
 
  
 
@@ -43,7 +43,7 @@ $ git add .
 $ git commit -m "First Commit"
 ```
 
- ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-01-오후-6.12.51.png)
+ ![](/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-01-pm-6.12.51.png)
 
 ##### **6\. remote repository를 등록하여 줍니다.**
 
@@ -52,24 +52,24 @@ $ git remote add origin [ github clone URL ]
 $ git push -u origin master
 ```
 
- ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-01-오후-6.16.23.png)
+ ![](/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-01-pm-6.16.23.png)
 
  
 
-\[caption id="attachment\_2374" align="alignnone" width="2318"\] ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-01-오후-6.25.03.png) GitHub에 업로드 되었는지 확인\[/caption\]
+\[caption id="attachment\_2374" align="alignnone" width="2318"\] ![](/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-01-pm-6.25.03.png) GitHub에 업로드 되었는지 확인\[/caption\]
 
  
 
 ##### **추가: GitKraken에서 불러오기**
 
-\[caption id="attachment\_2371" align="alignnone" width="383"\] ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-01-오후-6.20.00.png) Open Repo 기능 실행\[/caption\]
+\[caption id="attachment\_2371" align="alignnone" width="383"\] ![](/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-01-pm-6.20.00.png) Open Repo 기능 실행\[/caption\]
 
  
 
  
 
-\[caption id="attachment\_2372" align="alignnone" width="517"\] ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-01-오후-6.22.45.png) remote git 이 있는 폴더로 이동 후 \[열기\] 클릭\[/caption\] 
+\[caption id="attachment\_2372" align="alignnone" width="517"\] ![](/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-01-pm-6.22.45.png) remote git 이 있는 폴더로 이동 후 \[열기\] 클릭\[/caption\] 
 
  
 
- ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-01-오후-6.23.04.png)
+ ![](/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-01-pm-6.23.04.png)

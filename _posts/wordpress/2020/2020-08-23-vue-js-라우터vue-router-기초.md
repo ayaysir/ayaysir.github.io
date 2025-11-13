@@ -24,7 +24,7 @@ npm install vue-router --save
 
 이름 및 경로는 자유롭게 지정할 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-23-오후-11.59.56.png)
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-23-pm-11.59.56.png)
 
  
 
@@ -162,8 +162,8 @@ new Vue({
 
  
 
-\[caption id="attachment\_2949" align="alignnone" width="583"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-24-오전-12.26.09.png) 기본 URL에 접속했을 때, `"/"` 에 해당하는 컴포넌트(`Topic`)를 띄움\[/caption\]
+\[caption id="attachment\_2949" align="alignnone" width="583"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-오전-12.26.09.png) 기본 URL에 접속했을 때, `"/"` 에 해당하는 컴포넌트(`Topic`)를 띄움\[/caption\]
 
  
 
-\[caption id="attachment\_2948" align="alignnone" width="586"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-24-오전-12.24.16.png) 다른 URL을 입력하거나 내비게이션 바의 메뉴를 클릭했을 때, 해당 URL의 컴포넌트가 표시됨\[/caption\]
+\[caption id="attachment\_2948" align="alignnone" width="586"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-오전-12.24.16.png) 다른 URL을 입력하거나 내비게이션 바의 메뉴를 클릭했을 때, 해당 URL의 컴포넌트가 표시됨\[/caption\]

@@ -19,13 +19,13 @@ categories:
 
 2\. `시작하기` 버튼을 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-18-오후-5.52.09.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-18-pm-5.52.09.jpg)
 
  
 
 3\. 그러면 아래와 같이 `로그인 제공업체`라는 페이지가 뜨게 되는데 여기서 `이메일/비밀번호` 옆의 연필 모양의 버튼을 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-18-오후-5.52.31.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-18-pm-5.52.31.jpg)
 
 만약 메뉴가 뜨지 않는다면 `Sign-in method` 탭을 클릭하면 됩니다.
 
@@ -33,7 +33,7 @@ categories:
 
 4\. `사용 설정` 스위치를 활성화시키고, `저장` 버튼을 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-18-오후-5.52.45.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-18-pm-5.52.45.jpg)
 
  
 
@@ -41,17 +41,17 @@ categories:
 
 `Users` 탭에서 `사용자 추가` 버튼을 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-18-오후-8.22.17.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-18-pm-8.22.17.jpg)
 
  
 
 6\. 임의의 이메일 주소, 비밀번호를 입력한 후 `사용자 추가` 버튼을 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-18-오후-8.18.43.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-18-pm-8.18.43.jpg)
 
 사용자가 추가되었습니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-18-오후-8.17.58.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-18-pm-8.17.58.jpg)
 
  
 
@@ -156,7 +156,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 - [iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기](http://yoonbumtae.com/?p=2160)
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-18-오후-8.16.06.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-18-pm-8.16.06.jpg)
 
  
 

@@ -53,7 +53,7 @@ struct ContentView: View {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2023/04/스크린샷-2023-04-07-오전-12.06.47.png)
+ ![](/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-07-오전-12.06.47.png)
 
 키보드를 누르면 위의 `From SwiftUI Button` 대신 입력된 키보드의 문자가 출력될 것입니다.
 
@@ -223,4 +223,5 @@ struct ContentView: View {
 
  
 
-http://www.giphy.com/gifs/lOwSPlC2J9Yz5oewYl
+<!-- http://www.giphy.com/gifs/lOwSPlC2J9Yz5oewYl -->
+![](https://)

@@ -8,13 +8,13 @@ categories:
 
 텍스트 필드 (UITextField)를 스토리보드에서 숫자 패드(Number Pad)만 나오게 설정할 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-03-오후-4.53.49.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-4.53.49.jpg)
 
  
 
 이 패드의 문제점은 아래 그림 완료(엔터) 버튼이 없다는 점입니다. 완료 버튼이 없으므로 추가 설정이 없다면 어떤 방법으로도 키보드를 사라지게 할 수 없습니다.
 
- ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-03-오후-4.56.31.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-4.56.31.jpg)
 
 해결 방안으로
 
@@ -48,7 +48,7 @@ extension UITextField {
 - `get` - `true` 또는 `false` (On, Off) 값을 받습니다.
 - `wanryoAccesory`가 `true`라면 `addDoneButtonOnKeyboard` 함수를 실행합니다.
 
- ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-03-오후-5.06.01.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-5.06.01.jpg)
 
  
 
@@ -93,7 +93,7 @@ extension UITextField {
 
 다음에 Attribute Inspector에서 Wanryo Accesory를 `On`로 설정하거나, 또는 컨트롤러의 `viewDidLoad()`에 코드를 추가하여 완료 버튼이 나타나게 할 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-03-오후-5.21.39.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-5.21.39.jpg)
 
 ```
 textFieldOutlet.addDoneButtonOnKeyboard()
@@ -101,4 +101,4 @@ textFieldOutlet.addDoneButtonOnKeyboard()
 
  
 
- ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-03-오후-6.24.55.png)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-6.24.55.png)

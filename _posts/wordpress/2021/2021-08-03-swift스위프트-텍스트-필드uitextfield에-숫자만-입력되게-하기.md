@@ -12,7 +12,7 @@ categories:
 
 1) 마우스 오른쪽 버튼을 누른채로, 또는 control 버튼을 누른채로 드래그하여 @IBOutlet 변수를 생성합니다.
 
- ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-03-오후-6.52.54.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-6.52.54.jpg)
 
 ```
 @IBOutlet weak var textFieldOutlet: UITextField!
@@ -94,4 +94,5 @@ extension String  {
 }
 ```
 
-http://www.giphy.com/gifs/FoVAHgRYHDsKeTshNQ
+<!-- http://www.giphy.com/gifs/FoVAHgRYHDsKeTshNQ -->
+![](https://)

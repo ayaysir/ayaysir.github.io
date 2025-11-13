@@ -79,7 +79,7 @@ class Computer: NSObject, NSCoding, NSSecureCoding, Codable {
 
 그러면 두 클래스에 Protocol stub을 추가하라는 메시지가 뜹니다. `Fix` 버튼을 눌러 추가합니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-29-오후-8.44.52.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-29-pm-8.44.52.jpg)
 
  
 
@@ -337,7 +337,7 @@ override func viewDidLoad() {
 
  
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-29-오후-9.39.06.jpg)  ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-29-오후-9.40.16.jpg)  ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-29-오후-9.40.26.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-29-pm-9.39.06.jpg)  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-29-pm-9.40.16.jpg)  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-29-pm-9.40.26.jpg)
 
 #### **전체 코드**
 

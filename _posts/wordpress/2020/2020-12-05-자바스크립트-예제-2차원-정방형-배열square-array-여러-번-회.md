@@ -75,7 +75,7 @@ for (let row = 0; row < N; row++) {
 
  
 
- ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-06-오전-12.11.55.png)
+ ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-06-오전-12.11.55.png)
 
  
 
@@ -144,7 +144,7 @@ viewArr(rotateArr(originalArr, rotateCount),
         `${rotateCount < 0 ? '왼쪽' : '오른쪽'}으로 ${rotateCount} 번 회전`)
 ```
 
- ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-06-오전-12.32.27.png) ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-06-오전-12.32.49.png) ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-06-오전-12.33.27.png)
+ ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-06-오전-12.32.27.png) ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-06-오전-12.32.49.png) ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-06-오전-12.33.27.png)
 
  
 

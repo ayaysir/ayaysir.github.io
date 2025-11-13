@@ -73,7 +73,7 @@ catch (Exception $e) {
 
 이 코드가 실행되면 원본 파일과 동일한 위치에 섬네일 파일이 생성됩니다.
 
- ![](/assets/img/wp-content/uploads/2020/12/스크린샷-2020-12-26-오후-11.34.15.png)
+ ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-26-pm-11.34.15.png)
 
  
 

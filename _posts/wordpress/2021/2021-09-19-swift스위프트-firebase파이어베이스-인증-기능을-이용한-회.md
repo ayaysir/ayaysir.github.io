@@ -27,7 +27,7 @@ categories:
 
 아래 그림과 같이 새로운 `UIViewController`(뷰 컨트롤러)를 추가하고 회원가입 폼을 작성합니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-19-오후-6.16.09.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-19-pm-6.16.09.jpg)
 
  
 
@@ -67,7 +67,7 @@ Identity Inspector에서 뷰 컨트롤러(`SignUpViewController`)를 커스텀 �
 
 회원가입 버튼을 선택하고, 마우스 오른쪽 또는 control 키를 누른채로 회원가입 뷰 컨트롤러로 드래그하면 `Action Segue` 메뉴가 생깁니다. 여기서 `show`를 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-19-오후-6.18.04.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-19-pm-6.18.04.jpg)
 
 이렇게 하면 회원가입 버튼을 누르면 회원가입 뷰 컨트롤러가 나타납니다.
 
@@ -248,7 +248,7 @@ extension SignUpViewController: UITextFieldDelegate {
 
 먼저 Firebase 웹 콘솔에서 실시간 데이터베이스에 대한 규칙을 지정해야 합니다. `rules` 하위 노드로 아래 코드와 같이 입력합니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-19-오후-7.52.11.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-19-pm-7.52.11.jpg)
 
  
 
@@ -326,7 +326,7 @@ Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] au
 - `ref.child("xxx")` - 해당 이름을 가진 자식 노드로 이동합니다.
 - `.setValue(["interesting": selectedInteresting])` - 현재 노드(사용자의 `uid`)에 키-값 쌍을 하나 추가합니다. 관심 분야에 대한 정보를 저장하면 실시간 데이터베이스에 아래와 같이 저장됩니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-19-오후-7.59.14.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-19-pm-7.59.14.jpg)
 
  
 
@@ -334,9 +334,9 @@ Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] au
 
 <iframe width="286" height="480" src="https://giphy.com/embed/X2Afs7dDfigs1cR424" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-19-오후-7.07.15.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-19-pm-7.07.15.jpg)
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-19-오후-7.06.44.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-19-pm-7.06.44.jpg)
 
  
 

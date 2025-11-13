@@ -42,8 +42,8 @@ document.querySelector("#table-info .head-title").addEventListener("click", e =>
 
  
 
-\[caption id="attachment\_2902" align="alignnone" width="748"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-17-오후-10.37.14.png) 정렬 전\[/caption\]
+\[caption id="attachment\_2902" align="alignnone" width="748"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-17-pm-10.37.14.png) 정렬 전\[/caption\]
 
  
 
-\[caption id="attachment\_2903" align="alignnone" width="753"\] ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-17-오후-10.38.48.png) 정렬 후\[/caption\]
+\[caption id="attachment\_2903" align="alignnone" width="753"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-17-pm-10.38.48.png) 정렬 후\[/caption\]

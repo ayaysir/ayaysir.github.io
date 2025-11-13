@@ -83,11 +83,11 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 짧은 클라이맥스 이후 두 번째 변주는 모음곡 "Swansea Town"의 두 번째 민요를 연주하는 유포니엄 독주로 시작됩니다.
 
- ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-4.54.47-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-31-pm-4.54.47-copy.jpg)
 
-테마는 트리오가 되기 전에 전체 밴드에 의해 반복됩니다. 트리오의 경우 홀스트는 B♭(내림나) 단조의 파격적인 서브도미넌트 단조로 변조하고 박자를 6/8로 변박합니다. 일반적으로는 전통적인 행진곡 형식에서 서브도미넌트 장조로 변조됩니다. _**행진곡의 왕**_으로 알려진 [J. P. 수자(J . P. Sousa)](https://ko.wikipedia.org/wiki/%EC%A1%B4_%ED%95%84%EB%A6%BD_%EC%88%98%EC%9E%90)는 때때로 트리오의 박자표를 변경했지만 (특히 "El Capitán"에서) 이는 흔한 일이 아니었습니다. "클로디 강 둑(Claudy Banks)"라고 불리는 세 번째 주제는 표준 행진곡 오케스트레이션과 마찬가지로 낮은 목관 악기의 솔리(soli)로 연주됩니다. ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-5.00.03-복사본.jpg)
+테마는 트리오가 되기 전에 전체 밴드에 의해 반복됩니다. 트리오의 경우 홀스트는 B♭(내림나) 단조의 파격적인 서브도미넌트 단조로 변조하고 박자를 6/8로 변박합니다. 일반적으로는 전통적인 행진곡 형식에서 서브도미넌트 장조로 변조됩니다. _**행진곡의 왕**_으로 알려진 [J. P. 수자(J . P. Sousa)](https://ko.wikipedia.org/wiki/%EC%A1%B4_%ED%95%84%EB%A6%BD_%EC%88%98%EC%9E%90)는 때때로 트리오의 박자표를 변경했지만 (특히 "El Capitán"에서) 이는 흔한 일이 아니었습니다. "클로디 강 둑(Claudy Banks)"라고 불리는 세 번째 주제는 표준 행진곡 오케스트레이션과 마찬가지로 낮은 목관 악기의 솔리(soli)로 연주됩니다. ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-31-pm-5.00.03-copy.jpg)
 
- ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-5.00.17-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-31-pm-5.00.17-copy.jpg)
 
 그 후, 처음 두 곡이 다 카포(da capo)로 반복됩니다.
 
@@ -123,7 +123,7 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 마지막 D(라) 장조 코드는 마지막 악장의 길을 여는 영광과 천상의 사운드를 가지고 있습니다. 이 화음은 예상치 못한 채 등장하기 때문에 매우 효과적으로 작동합니다. 음악이 갑자기 상대 단조(relative minor)의 장조로 이동하고 전체 악장은 F(바) 장조가 됩니다.
 
-\[caption id="attachment\_5854" align="alignnone" width="198"\] ![](/assets/img/wp-content/uploads/2023/08/-2023-08-31-오후-5.20.19-복사본-e1693470117581.jpg) 3악장 B♭ 코넷(Cornet) 1, 2 파트와 B♭ 트럼펫(Trumpet)의 마지막 두 마디\[/caption\]
+\[caption id="attachment\_5854" align="alignnone" width="198"\] ![](/assets/img/wp-content/uploads/2023/08/-2023-08-31-pm-5.20.19-copy-e1693470117581.jpg) 3악장 B♭ 코넷(Cornet) 1, 2 파트와 B♭ 트럼펫(Trumpet)의 마지막 두 마디\[/caption\]
 
  
 
@@ -137,7 +137,7 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 모음곡의 피날레는 The Dancing Master 초판에 포함된 16세기 영국 춤곡 "다가슨(Dargason)"을 기반으로 한 알토 색소폰 솔로로 시작됩니다. 환상곡(fantasia)은 밴드의 모든 역량을 포괄하는 여러 변주를 통해 계속됩니다. 마지막 민요인 "Greensleeves"는 헤미올라(hemiolas; 중세 음악에서 완전 5도)를 사용하여 교묘하게 엮여 있으며 "Dargason"은 6/8박자이고 "Greensleeves"는 3/4박자입니다.
 
- ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-31-오후-5.34.34-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-31-pm-5.34.34-copy.jpg)
 
 악장의 클라이막스에서 두 개의 경쟁적 주제가 경쟁적 섹션에 배치됩니다. 악장이 멈춤에 따라 튜바와 피콜로 듀엣은 저음역과 고음역의 경쟁을 통해 모음곡의 시작 부분으로 돌아가는 호출을 형성합니다.
 

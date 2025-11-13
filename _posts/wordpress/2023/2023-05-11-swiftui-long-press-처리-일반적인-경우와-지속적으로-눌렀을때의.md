@@ -15,7 +15,8 @@ SwiftUI에서 일반 탭 외에 길게 눌렀을때의 동작을 어떻게 처�
 
 아래 그림을 보면 일반적인 minimum duration이 1초로 설정된 Long Press의 동작이 어떤 것인지 알 수 있습니다. 일반적인 Long Press는 아무리 길게 눌러도 1초가 지나면 동작이 끝납니다. 아래 Continous Press Button은 특수한 처리를 한 경우로 구현 방법은 후술합니다.
 
-http://www.giphy.com/gifs/6xTD4wTGxqpY3N3rC6
+<!-- http://www.giphy.com/gifs/6xTD4wTGxqpY3N3rC6 -->
+![](https://)
 
  
 
@@ -57,7 +58,8 @@ VStack {
 
 아래 그림에서 `Long Press Button`이 해당 예입니다.
 
-http://www.giphy.com/gifs/6xTD4wTGxqpY3N3rC6
+<!-- http://www.giphy.com/gifs/6xTD4wTGxqpY3N3rC6 -->
+![](https://)
 
  
 
@@ -117,7 +119,8 @@ VStack {
 
 아래 그림에서 `Continuous Press Button`이 해당 예입니다.
 
-http://www.giphy.com/gifs/6xTD4wTGxqpY3N3rC6
+<!-- http://www.giphy.com/gifs/6xTD4wTGxqpY3N3rC6 -->
+![](https://)
 
  
 

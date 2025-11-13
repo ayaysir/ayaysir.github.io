@@ -37,7 +37,7 @@ iOS 단위 테스트는 거창하지 않지만 테스트를 통해 앱이 버그
 
 [프로젝트 자료(구글 드라이브)](https://drive.google.com/file/d/1BL97B3HpompHuXZS7Tq4hdOujVXpwqWW/view?usp=sharing)를 다운로드하세요. 여기에는 [UIKit Apprentice](https://store.raywenderlich.com/products/ios-apprentice)의 샘플 앱을 기반으로 하는 프로젝트 BullsEye가 포함됩니다. 이것은 간단한 운빨 게임입니다. 게임의 로직은 이 튜토리얼에서 테스트할 BullsEyeGame 클래스에 있습니다.
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-06-오후-5.17.27.jpg)  ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-06-오후-5.19.53.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-06-pm-5.17.27.jpg)  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-06-pm-5.19.53.jpg)
 
 시작하기 전에 이 게임 앱에 대한 이해가 필요합니다. 첫 번째 모드(slide)만 설명하면, 랜덤으로 1부터 100 사이의 랜덤 숫자가 제공됩니다. 이 숫자가 어디쯤 위치할 지 추측해서 해당 숫자의 위치로 슬라이드 버튼을 움직입니다. 결과를 확인해서 해당 숫자와 완전히 일치하면 100점, 그 외에 최대한 가까울수록 높은 점수를 받는 시스템입니다.
 
@@ -166,7 +166,7 @@ FIRST 원칙을 따르면 테스트가 앱의 장애물이 되는 것이 아니�
 
  ![](/assets/img/wp-content/uploads/2021/09/tests_1_Introduction_NewUnitTestTarget_annotated-1-356x500-1.png)
 
- ![](/assets/img/wp-content/uploads/2021/09/스크린샷-2021-09-06-오후-5.36.50.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-06-pm-5.36.50.jpg)
 
  
 

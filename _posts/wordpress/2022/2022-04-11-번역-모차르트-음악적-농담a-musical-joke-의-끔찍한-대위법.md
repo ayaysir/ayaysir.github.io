@@ -19,7 +19,7 @@ categories:
 
  
 
- ![](/assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-10-오후-9.21.06.jpg)
+ ![](/assets/img/wp-content/uploads/2022/04/screenshot-2022-04-10-pm-9.21.06.jpg)
 
  
 

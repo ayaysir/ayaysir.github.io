@@ -75,7 +75,8 @@ class DrawingPDFView: PDFView {
 
 #### **결과**
 
-https://giphy.com/gifs/7ZHlSvH6I46oDP8ILg
+<!-- https://giphy.com/gifs/7ZHlSvH6I46oDP8ILg -->
+![](https://)
 
 확대/축소 및 이동하면서 여러 곳을 찍어도 After 좌표는 일정한 위치를 가리키는 것을 확인할 수 있습니다.
 

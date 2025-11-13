@@ -119,7 +119,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 
  
 
- ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-28-오전-1.24.36.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-오전-1.24.36.jpg)
 
 자바스크립트에서 `sendToNativeApp` 함수를 실행하면 네이티브 앱에서 경고창이 뜨게 됩니다.
 
@@ -154,7 +154,7 @@ webView.configuration.userContentController.addUserScript(injectionScript)
 
  
 
- ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-28-오전-1.30.32.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-오전-1.30.32.jpg)
 
 실행되면 웹 페이지의 제목이 위와 같이 바뀝니다.
 
@@ -200,4 +200,4 @@ console.log("success")
 
  
 
- ![](/assets/img/wp-content/uploads/2021/08/스크린샷-2021-08-28-오전-1.32.19.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-오전-1.32.19.jpg)

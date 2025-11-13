@@ -38,7 +38,7 @@ Swift, Xcode
 
 ##### 스크린샷
 
-\[caption id="attachment\_2311" align="alignnone" width="415"\] ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-16-오후-2.12.35.png) 첫 화면, 시간 표시 부분은 사용자가 스타일을 지정할 수 있습니다.\[/caption\]
+\[caption id="attachment\_2311" align="alignnone" width="415"\] ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-16-pm-2.12.35.png) 첫 화면, 시간 표시 부분은 사용자가 스타일을 지정할 수 있습니다.\[/caption\]
 
  
 
@@ -50,7 +50,7 @@ Swift, Xcode
 
  
 
-\[caption id="attachment\_2313" align="alignnone" width="413"\] ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-16-오후-2.28.06.png) 시작, 일시정지, 리셋 등의 모든 기록을 로그로 남기고 조회할 수 있는 기능\[/caption\]
+\[caption id="attachment\_2313" align="alignnone" width="413"\] ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-16-pm-2.28.06.png) 시작, 일시정지, 리셋 등의 모든 기록을 로그로 남기고 조회할 수 있는 기능\[/caption\]
 
  
 
@@ -72,7 +72,7 @@ https://media.giphy.com/media/ZEg8e5aSnmPeQDLxrl/source.mp4
 
  
 
-\[caption id="attachment\_2314" align="alignnone" width="466"\] ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-16-오후-2.31.27.png) 스탑워치 시간 표시 부분의 스타일을 사용자가 설정하고 저장할 수 있습니다. 색상 팔레트를 이용해 색상을 선택하고, Font 부분에서는 현재 iOS에서 이용할 수 있는 모든 폰트의 리스트가 표시되며, 사이즈도 조절 가능합니다.\[/caption\]
+\[caption id="attachment\_2314" align="alignnone" width="466"\] ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-16-pm-2.31.27.png) 스탑워치 시간 표시 부분의 스타일을 사용자가 설정하고 저장할 수 있습니다. 색상 팔레트를 이용해 색상을 선택하고, Font 부분에서는 현재 iOS에서 이용할 수 있는 모든 폰트의 리스트가 표시되며, 사이즈도 조절 가능합니다.\[/caption\]
 
  
 

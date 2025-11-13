@@ -56,14 +56,16 @@ categories:
 
 - 아이폰 앱에서 숫자를 증감시키면 애플 워치 앱에 실시간으로 반영됩니다.
 
-http://www.giphy.com/gifs/joWqzA74ih34OYPjN2
+<!-- http://www.giphy.com/gifs/joWqzA74ih34OYPjN2 -->
+![](https://)
 
  
 
 - 반대로 애플워치 앱에서 숫자를 증감시켜도 아이폰 앱에서 실시간으로 반영됩니다.
 - 이 때 통신상태 불량으로 인한 데이터 불일치를 방지하기 위해 싱크 검증 기능이 있습니다.
 
-http://www.giphy.com/gifs/Gay28hfApiqpELQ7Kk
+<!-- http://www.giphy.com/gifs/Gay28hfApiqpELQ7Kk -->
+![](https://)
 
 _(시뮬레이터는 통신 속도가 느려 싱크 과정에서 딜레이가 있습니다.)_
 
@@ -71,19 +73,22 @@ _(시뮬레이터는 통신 속도가 느려 싱크 과정에서 딜레이가 �
 
 - 현재 카운트 수 및 `현재 카운트 수 / 목표 수치`의 진행율을 표시하는 컴플리케이션 기능(`CLKComplicationTemplateCircularSmallRingText`)이 있습니다.
 
-http://www.giphy.com/gifs/mgZnzfzjFvdZTpEZlz
+<!-- http://www.giphy.com/gifs/mgZnzfzjFvdZTpEZlz -->
+![](https://)
 
 1000으로 목표 수치 설정
 
  
 
-http://www.giphy.com/gifs/4U2ZIdxnTkaPtPwWI7
+<!-- http://www.giphy.com/gifs/4U2ZIdxnTkaPtPwWI7 -->
+![](https://)
 
 `현재 카운트 수 / 목표 수치 = 450 / 1000 = 45%` 분량의 진행율이 프로그레스 링으로 표시
 
  
 
-http://www.giphy.com/gifs/7Yb7hHjaeWGMVqvRrE
+<!-- http://www.giphy.com/gifs/7Yb7hHjaeWGMVqvRrE -->
+![](https://)
 
 _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCircularSmallRingText`의 표시 자리수 한계 방지를 위함)_
 
@@ -95,7 +100,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
 
 - 시뮬레이터에서 아이폰 디바이스와 워치 모델을 연결시켜야 합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-23-오후-10.02.38.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-23-pm-10.02.38.jpg)
 
  
 
@@ -103,7 +108,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
 
 - 먼저 애플 워치를 고려하지 않고 아이폰 단독 앱을 개발합니다. 스토리보드 구조는 아래와 같습니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-28-오전-12.09.37.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-28-오전-12.09.37.jpg)
 
  
 
@@ -122,7 +127,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
     - `Interfaces`는 앱을 열었을 때 바로 첫 화면을 표시하는 부분입니다.
     - 여기서 UI 컴포넌트를 추가하고, 연동 작업은 WatchKit Extension의 **_InterfaceController.swift_**에서 작성합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-28-오전-12.16.11.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-28-오전-12.16.11.jpg)
 
  
 
@@ -838,7 +843,8 @@ func getCurrentTimelineEntry(for complication: CLKComplication, withHandler hand
 - 타이머를 돌려서 데이터가 `nil`이 아닌 경우(=데이터를 받아온 경우) 그 순간에 업데이트된 컴플리케이션 정보를 미래 엔트리에 등록합니다.
 - 이렇게 하면 앱을 닫은 후에도 컴플리케이션 정보가 업데이트됩니다.
 
-http://www.giphy.com/gifs/4U2ZIdxnTkaPtPwWI7
+<!-- http://www.giphy.com/gifs/4U2ZIdxnTkaPtPwWI7 -->
+![](https://)
 
 _버튼을 눌러 앱을 닫으면, 처음에는 기본 내용 별표(★)가 표시되었다가 잠시 뒤 정보가 업데이트되면 별표가 사라지고 해당 정보로 업데이트됩니다._
 

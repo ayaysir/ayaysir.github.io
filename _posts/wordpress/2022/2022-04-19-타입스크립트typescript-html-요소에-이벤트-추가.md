@@ -16,7 +16,7 @@ categories:
 
 - [첫 vite 프로젝트 만들어보기](https://vitejs-kr.github.io/guide/#scaffolding-your-first-vite-project)
 
- ![](/assets/img/wp-content/uploads/2022/04/스크린샷-2022-04-20-오전-12.20.42.jpg)
+ ![](/assets/img/wp-content/uploads/2022/04/screenshot-2022-04-20-오전-12.20.42.jpg)
 
  
 
@@ -51,7 +51,8 @@ categories:
 
 ##### **예제 1) 클릭 이벤트**
 
-http://www.giphy.com/gifs/RN87K9Hk1i0glMwNui
+<!-- http://www.giphy.com/gifs/RN87K9Hk1i0glMwNui -->
+![](https://)
 
 이 예제는 `<div>` 영역을 클릭하면 배경색이 빨간색\-파란색으로 번갈아가며 바뀝니다.
 
@@ -92,7 +93,8 @@ box?.addEventListener("click", (ev: Event) => {
 
 ##### **예제 2) 체크박스 변경(change) 이벤트** 
 
-http://www.giphy.com/gifs/bX0HSb5cii4wyhMI9x
+<!-- http://www.giphy.com/gifs/bX0HSb5cii4wyhMI9x -->
+![](https://)
 
  
 
@@ -156,7 +158,8 @@ window.addEventListener("keydown", (ev: Event) => {
 
 ##### **예제 4) instanceof를 사용해 요소 타입별로 구분하여 실행하기**
 
-http://www.giphy.com/gifs/d6UgCZSScXxqDnLSRV
+<!-- http://www.giphy.com/gifs/d6UgCZSScXxqDnLSRV -->
+![](https://)
 
 이 예제는 `textbox`라는 클래스를 가진 각각 다른 타입의 HTML 요소 3개(`input`, `textarea`, `div`)에 같은 이벤트 함수를 지정한 뒤, 해당 이벤트가 실행된 요소의 하위 타입을 구분해서 각 타입별로 다른 내용을 실행하는 예제입니다.
 

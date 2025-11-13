@@ -20,13 +20,13 @@ categories:
 
 프로젝트 세팅의 `PROJECT` > `Info` 에서 `Localizations` 아래에 있는 `+` 버튼을 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-11-29-오후-11.46.27.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-29-pm-11.46.27.jpg)
 
  
 
 여기서는 한국어(`ko`)를 선택하도록 하겠습니다. 여러 언어를 추가할 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-11-29-오후-11.46.39.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-29-pm-11.46.39.jpg)
 
  
 
@@ -36,29 +36,29 @@ categories:
 
 ### **2\. 스토리보드 로컬라이징**
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-11-29-오후-11.46.52.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-29-pm-11.46.52.jpg)
 
 위에서 언어를 선택하면 위와 같은 창이 뜹니다. 여기서 스토리보드 목록이 나오는데 현지화가 필요한 스토리보드를 체크하고 `Finish`를 누릅니다.
 
  
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-11-29-오후-11.47.27.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-29-pm-11.47.27.jpg)
 
 Main 스토리보드에 펼치기 버튼이 새로 생기며, 하위 메뉴에 `Main(Korean)`이라는 메뉴가 생깁니다. 이것을 클릭합니다.
 
  
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-11-29-오후-11.47.43.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-29-pm-11.47.43.jpg)
 
 클릭하면 위와 같이 번역 서식을 자동으로 생성해줍니다. 초록색 부분을 참고로 하여 빨간색 라인의 오른쪽 부분을 아래와 같은 방식으로 해당 언어로 번역하면 됩니다.
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-11-29-오후-11.48.34.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-29-pm-11.48.34.jpg)
 
  
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-01-오후-11.33.29.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-01-pm-11.33.29.jpg)
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-11-30-오전-12.08.56.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-12.08.56.jpg)
 
 앱을 실행하고 언어를 변경하면 위와 같이 영어와 한국어가 다르게 표기되는것을 볼 수 있습니다.
 
@@ -106,27 +106,27 @@ func NSLocalizedString(_ key: String, tableName: String? = nil, bundle: Bundle =
 
 번역 테이블 파일을 생성합니다. 프로젝트에서 새 파일을 생성합니다. `Strings FIle`을 선택합니다.
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-11-30-오전-1.05.33.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-1.05.33.jpg)
 
 파일 이름을 `Localizable.strings`로 설정합니다. (대소문자 및 철자 주의)
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-02-오전-12.44.05.png)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-12.44.05.png)
 
  
 
 `Localizable.strings` 파일을 연 뒤 Xcode 창 오른쪽의 `File Inspector`에서 `Localize...` 버튼을 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-11-30-오전-1.06.00.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-1.06.00.jpg)
 
  
 
 아래와 같은 창이 나오면 `Base` 가 있는 경우 `Base`, 없는 경우 개발 언어인 `English` 를 선택합니다.
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-02-오전-12.46.35.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-12.46.35.jpg)
 
 File Inspector으로 다시 돌아가서 번역 대상 언어를 선택합니다. `English`는 번역할 필요가 없으므로 체크 해제합니다.
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-11-30-오전-1.07.49.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-1.07.49.jpg)
 
  
 
@@ -203,7 +203,7 @@ Swift의 String(format:) 스타일을 활용하여 `%1$@`, `%2$d`처럼 **인덱
 
 ### **5\. info.plist 로컬라이징**
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-02-오전-1.21.56.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-1.21.56.jpg)
 
 위 그림은 `info.plist` 파일에서 카메라, 사진 라이브러리 사용자 권한을 묻는 메시지를 적는 곳입니다. 여기에 작성된 문구도 당연히 현지화를 해야 합니다.
 
@@ -221,7 +221,7 @@ Swift의 String(format:) 스타일을 활용하여 `%1$@`, `%2$d`처럼 **인덱
 
 `info.plist` 에서 마우스 오른쪽 버튼 클릭후 `Source Code` 로 열기를 선택합니다. (원래 표 형태로 보고 싶은 경우 `Property List` 선택)
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-02-오전-1.26.13.png)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-1.26.13.png)
 
 XML 형태의 프로퍼티 리스트가 표시됩니다.
 

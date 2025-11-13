@@ -29,7 +29,7 @@ create-react-app [앱_이름]
 
 생성된 프로젝트는 다음과 같은 구조로 되어 있습니다.
 
- ![](/assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-15-오후-2.11.08.png)
+ ![](/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-15-pm-2.11.08.png)
 
 - `index.js` 는 Vue의 `main.js` 에 해당하는 역할을 합니다.
 - `App.js`는 Vue의 `App.vue` 역할을 합니다.
@@ -56,7 +56,7 @@ cd [앱_이름]
 
 1) 적당한 위치에 js 파일을 하나 생성하고 `import React from 'react'` 를 파일 최상단에 삽입합니다.
 
- ![](/assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-15-오후-2.32.27.png)
+ ![](/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-15-pm-2.32.27.png)
 
 2) 함수 또는 클래스를 선택해서 렌더링할 컴포넌트를 JSX 형태로 작성합니다. 저는 함수를 선택하도록 하겠습니다.
 
@@ -112,4 +112,4 @@ export default App;
 
  
 
- ![](/assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-15-오후-2.36.46.png)
+ ![](/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-15-pm-2.36.46.png)

@@ -44,9 +44,9 @@ CocoaPods로도 추가할 수는 있지만 `pod 'ENSwiftSideMenu'`
 
 **1) Navigation Controller를 추가하고, 원래 뷰 컨트롤러를 Root View Controller로 연결합니다**
 
- ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.21.05.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-17-오전-2.21.05.jpg)
 
- ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.23.42.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-17-오전-2.23.42.jpg)
 
 해당 내비게이션 컨트롤러가 반드시 Initial View Controller가 되게 합니다. (Attribute Inspector에서 `Is Initial View Controller` 체크박스 선택)
 
@@ -54,7 +54,7 @@ CocoaPods로도 추가할 수는 있지만 `pod 'ENSwiftSideMenu'`
 
 **2) 사이드 메뉴가 될 뷰 컨트롤러를 생성하고, Storyboard ID를 부여합니다.**
 
- ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.27.29.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-17-오전-2.27.29.jpg)
 
 테이블 뷰로 메뉴를 만들며, 각 메뉴를 클릭하면 해당 페이지로 이동합니다. Custom Class에도 뷰 컨트롤러 클래스를 연결합니다.
 
@@ -133,7 +133,7 @@ extension MenuNavigationController: ENSideMenuDelegate {
 
 **4) Navigation Controller의 커스텀 클래스로 3번 섹션에서 만든 `MenuNavigationController`를 추가합니다.**
 
- ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-17-오전-2.37.06.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-17-오전-2.37.06.jpg)
 
  
 
@@ -149,7 +149,8 @@ toggleSideMenuView()
 
 빌드 및 실행 후 화면 오른쪽을 드래그해서 사이드 메뉴가 나오는지 확인합니다.
 
-http://www.giphy.com/gifs/VG5dyfTl3VLmqaTvmu
+<!-- http://www.giphy.com/gifs/VG5dyfTl3VLmqaTvmu -->
+![](https://)
 
 아직 셀(버튼)을 눌렀을 떄 동작은 구현되지 않았습니다.
 
@@ -225,7 +226,8 @@ class SlideMenuViewController: UIViewController {
 
 ```
 
-http://www.giphy.com/gifs/IVFWF5hGNSplBUH8Py
+<!-- http://www.giphy.com/gifs/IVFWF5hGNSplBUH8Py -->
+![](https://)
 
 _주파수 테이블 버튼을 클릭하면 뷰 컨트롤러가 새로운 것으로 교체됩니다. (`TunerViewController`에서 `FreqTableViewController`로 교체됨)_
 
@@ -257,6 +259,7 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 이렇게 하면 컨텐츠 뷰 컨트롤러는 교체되지 않고 특정 작업만 수행할 수 있습니다.
 
-http://www.giphy.com/gifs/fZjHIdYsCXPHD2knLn
+<!-- http://www.giphy.com/gifs/fZjHIdYsCXPHD2knLn -->
+![](https://)
 
 _셀을 클릭하면 `vc.webView.load(request)`를 수행해서 웹 페이지만 교체하며 뷰 컨트롤러는 바뀌지 않습니다._

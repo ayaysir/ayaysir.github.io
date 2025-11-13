@@ -10,7 +10,8 @@ categories:
 
 아래와 같이 알파벳으로 섹션이 나뉘어져 있으며 해당 알파벳을 클릭하면 섹션으로 이동하는 기능을 알파벳 내비게이터라고 칭하겠습니다. (정식 명칭은 다를 수 있습니다.)
 
-http://www.giphy.com/gifs/PywKnLLMIQPLM3RW1F
+<!-- http://www.giphy.com/gifs/PywKnLLMIQPLM3RW1F -->
+![](https://)
 
  
 
@@ -64,7 +65,7 @@ struct ContentView: View {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-17-오후-7.21.25-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-17-pm-7.21.25-copy.jpg)
 
  
 
@@ -108,7 +109,7 @@ ForEach(alphabet, id: \.self) { letter in
 - `ForEach`를 통해 알파벳 문자마다 섹션을 만들고, 헤더 텍스트와 `id`를 해당 알파벳으로 지정합니다.
 - `id`는 나중에 알파벳 내비게이터에서 버튼을 눌렀을 때 스크롤 위치를 지정하기 위한 역할입니다.
 
- ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-17-오후-7.33.27-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-17-pm-7.33.27-copy.jpg)
 
  
 
@@ -134,7 +135,7 @@ ForEach(alphabet, id: \.self) { letter in
 
  
 
- ![](/assets/img/wp-content/uploads/2024/03/스크린샷-2024-03-17-오후-7.36.17-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-17-pm-7.36.17-copy.jpg)
 
  
 
@@ -170,7 +171,8 @@ ForEach(alphabet, id: \.self) { letter in
     - `anchor`가 `.top`이어야 헤더가 눈에 보이는 제일 위에 위치하게 됩니다.
     - `withAnimation`으로 감싸면 스크롤 애니메이션이 되면서 자연스럽게 이동하고, 사용하지 않으면 애니메이션 없이 바로 이동합니다.
 
-http://www.giphy.com/gifs/wzVgF4cP4A0mChZtwb
+<!-- http://www.giphy.com/gifs/wzVgF4cP4A0mChZtwb -->
+![](https://)
 
 _탭(클릭)하면 해당 알파벳 헤더로 이동합니다._
 
@@ -274,7 +276,8 @@ struct AlphabetNavigator: View {
 
  
 
-http://www.giphy.com/gifs/PywKnLLMIQPLM3RW1F
+<!-- http://www.giphy.com/gifs/PywKnLLMIQPLM3RW1F -->
+![](https://)
 
 _탭뿐만 아니라 드래그로도 이동할 수 있습니다. 실제 기기라면 진동도 울립니다._
 

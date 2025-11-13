@@ -8,7 +8,7 @@ categories:
 
 페이지네이션, 페이징, 페이지 내비게이션 등 다양한 이름으로 불리는 이것은 웹 페이지에서 흔히 볼 수 있는 페이지 번호를 클릭하면 특정 페이지로 이동하는 부분이나 기법을 통칭하는 용어입니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-5.13.50.png)
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-26-pm-5.13.50.png)
 
 위의 HTML 요소 전부를 편의상 블럭이라고 하겠습니다. 이 예제는 (1) 현재 페이지, (2) 블럭 당 페이지 개수, (3) 전체 글 개수, (4) 페이지당 글 개수에 따라 블럭에 몇 페이지부터 몇 페이지를 표시할지 숫자들을 알려줍니다.
 
@@ -74,4 +74,4 @@ public class IndexController {
 
 참고로 첫 번째 그림은 getFixedBlock()을 적용한 것이며, 6페이지를 getElasticBlock()으로 적용하면 다음과 같습니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-26-오후-6.16.23.png)
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-26-pm-6.16.23.png)

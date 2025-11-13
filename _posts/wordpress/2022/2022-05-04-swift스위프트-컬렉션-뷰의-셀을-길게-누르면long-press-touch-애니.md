@@ -129,19 +129,19 @@ class ImageViewModel {
 
  
 
-\[caption id="attachment\_4422" align="alignnone" width="948"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-04-오후-11.07.56.jpg) 컬렉션 뷰 @IBOutlet 연결\[/caption\]
+\[caption id="attachment\_4422" align="alignnone" width="948"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-11.07.56.jpg) 컬렉션 뷰 @IBOutlet 연결\[/caption\]
 
  
 
  
 
-\[caption id="attachment\_4419" align="alignnone" width="821"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-04-오후-10.58.13.jpg) 셀 요소 @IBOutlet 연결\[/caption\]
+\[caption id="attachment\_4419" align="alignnone" width="821"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.58.13.jpg) 셀 요소 @IBOutlet 연결\[/caption\]
 
  
 
  
 
-\[caption id="attachment\_4420" align="alignnone" width="969"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-04-오후-10.59.14.jpg) asset에 이미지 추가\[/caption\]
+\[caption id="attachment\_4420" align="alignnone" width="969"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.59.14.jpg) asset에 이미지 추가\[/caption\]
 
  
 

@@ -177,7 +177,8 @@ struct ContentView_Previews: PreviewProvider {
 
 ```
 
-http://www.giphy.com/gifs/fxKmTvvJs2EmqSKpWV
+<!-- http://www.giphy.com/gifs/fxKmTvvJs2EmqSKpWV -->
+![](https://)
 
  
 

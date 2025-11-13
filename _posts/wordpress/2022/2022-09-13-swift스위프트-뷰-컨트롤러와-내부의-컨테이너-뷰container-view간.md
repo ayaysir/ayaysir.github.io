@@ -12,7 +12,7 @@ categories:
 
 예를 들어 아래 스크린샷은, `RootViewController`라는 부모 VC 안에 자식 VC를 포함하는 형태입니다. 부모 VC는 `RootViewController`라는 클래스와 연결되어 있고 자식 VC는 컨테이너 뷰 안에 담겨 보여지며 `ContainerViewController`라는 다른 클래스와 연결되어 있습니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-13-오후-10.53.14.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-10.53.14.jpg)
 
  
 
@@ -28,13 +28,13 @@ categories:
 
 스토리보드에서 빨간색 원과 같이 생긴 화살표를 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-13-오후-10.54.43.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-10.54.43.jpg)
 
  
 
 선택하면 Xcode의 오른쪽 상단에 `Show the Attriutes Inspector`라는 버튼이 있습니다. 클릭해서 `Identifier`를 지정합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-13-오후-10.55.32.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-10.55.32.jpg)
 
  
 
@@ -108,7 +108,7 @@ func setLabel(_ value: String) {
 
 다음 전송 버튼에 이벤트를 설정합니다. 위의 스크린샷에서는 전송 버튼이 누락되었는데, 아래와 같이 전송 버튼을 추가해줍니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-13-오후-11.22.12.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-11.22.12.jpg)
 
 ##### **RootViewController.swift 파일**
 
@@ -127,7 +127,8 @@ func setLabel(_ value: String) {
 
 빌드 및 실행하고 결과를 확인합니다.
 
-http://www.giphy.com/gifs/hIVBwBGUyRP6v0DYLS
+<!-- http://www.giphy.com/gifs/hIVBwBGUyRP6v0DYLS -->
+![](https://)
 
  
 

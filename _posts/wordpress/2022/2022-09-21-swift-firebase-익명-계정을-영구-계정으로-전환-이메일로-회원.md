@@ -21,7 +21,7 @@ categories:
 
 익명 로그인이 존재하지 않고, '좋아요' 버튼을 누르려면 무조건 회원 가입이 되어 있어야 합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-21-오후-11.53.07.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-21-pm-11.53.07.jpg)
 
  
 

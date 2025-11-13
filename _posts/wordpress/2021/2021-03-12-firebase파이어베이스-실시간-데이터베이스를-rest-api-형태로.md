@@ -7,7 +7,7 @@ categories:
 
 Firebase(파이어베이스)에서 실시간 데이터베이스(Realtime Database)를 Rest API 형태로 사용하기 방법은 매우 간단합니다. 파이어베이스 접속 주소 뒤에 `.json` 확장자를 붙이면 Rest API 형태로 사용할 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2021/03/스크린샷-2021-03-12-오후-8.50.06.png)
+ ![](/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-12-pm-8.50.06.png)
 
  
 
@@ -17,7 +17,7 @@ Firebase(파이어베이스)에서 실시간 데이터베이스(Realtime Databas
 
  
 
- ![](/assets/img/wp-content/uploads/2021/03/스크린샷-2021-03-12-오후-8.00.31.png)
+ ![](/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-12-pm-8.00.31.png)
 
 ##### **GET - 리스트 가져오기**
 
@@ -27,7 +27,7 @@ https://[프로덕트_ID].firebaseio.com/messages.json
 
  
 
- ![](/assets/img/wp-content/uploads/2021/03/스크린샷-2021-03-12-오후-8.56.39.png)
+ ![](/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-12-pm-8.56.39.png)
 
  
 
@@ -37,7 +37,7 @@ https://[프로덕트_ID].firebaseio.com/messages.json
 https://[프로덕트_ID].firebaseio.com/messages/-MVa6Jf8slFiQclwT5wA.json
 ```
 
- ![](/assets/img/wp-content/uploads/2021/03/스크린샷-2021-03-12-오후-8.59.58.png)
+ ![](/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-12-pm-8.59.58.png)
 
  
 
@@ -63,7 +63,7 @@ DB에 서버 시간 저장하기: 위의 입력 JSON에서 `"server_timestamp"`�
 
  
 
- ![](/assets/img/wp-content/uploads/2021/03/스크린샷-2021-03-12-오후-9.01.36.png)
+ ![](/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-12-pm-9.01.36.png)
 
  
 
@@ -81,7 +81,7 @@ https://[프로덕트_ID].firebaseio.com/-MVa6Jf8slFiQclwT5wA.json
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2021/03/스크린샷-2021-03-12-오후-9.03.53.png)
+ ![](/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-12-pm-9.03.53.png)
 
 입력 JSON은 `value`만 업데이트하고자 의도하였으나 전체 객체가 입력 JSON으로 대치되었습니다.
 
@@ -99,7 +99,7 @@ https://[프로덕트_ID].firebaseio.com/-MVa6Jf8slFiQclwT5wA.json
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2021/03/스크린샷-2021-03-12-오후-9.08.25.png)
+ ![](/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-12-pm-9.08.25.png)
 
 `value`만 변경하고자 한다면, `PUT` 대신 `PATCH`를 사용하면 됩니다.
 

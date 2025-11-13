@@ -30,11 +30,11 @@ categories:
 
  
 
- ![](/assets/img/wp-content/uploads/2020/11/스크린샷-2020-11-05-오후-6.11.03.png)
+ ![](/assets/img/wp-content/uploads/2020/11/screenshot-2020-11-05-pm-6.11.03.png)
 
  
 
-\[caption id="attachment\_3165" align="alignnone" width="310"\] ![](/assets/img/wp-content/uploads/2020/11/스크린샷-2020-11-05-오후-8.18.48.png) 주석 입력 등의 용도로 사용할 수 있습니다.\[/caption\]
+\[caption id="attachment\_3165" align="alignnone" width="310"\] ![](/assets/img/wp-content/uploads/2020/11/screenshot-2020-11-05-pm-8.18.48.png) 주석 입력 등의 용도로 사용할 수 있습니다.\[/caption\]
 
  
 

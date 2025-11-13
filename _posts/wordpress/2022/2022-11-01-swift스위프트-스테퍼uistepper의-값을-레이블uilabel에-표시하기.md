@@ -8,7 +8,8 @@ categories:
 
 InterfaceBuilder의 스토리보드에서 `UIStepper`는 아래 그림과 같이 마이너스(`-`) 버튼과 플러스(`+`) 버튼이 있으며 버튼을 누를때마다 값이 증감하는 컴포넌트입니다. 스테퍼의 값은 `Double` 타입의 형태로 UIStepper 인스턴스에 자체적으로 저장됩니다만 화면에는 표시되지 않기 때문에 알 방법이 없습니다. 이를 레이블(`UILabel`)에 표시하는 예제입니다.
 
-http://www.giphy.com/gifs/hmAgG6wyg2ZCWAM29t
+<!-- http://www.giphy.com/gifs/hmAgG6wyg2ZCWAM29t -->
+![](https://)
 
  
 
@@ -16,7 +17,7 @@ http://www.giphy.com/gifs/hmAgG6wyg2ZCWAM29t
 > 
 > 1) 스토리보드에서 UIStepper 컴포넌트를 선택한 후 우측 `Attribute Inspector`에서 설정
 > 
->  ![](/assets/img/wp-content/uploads/2022/11/스크린샷-2022-11-02-오전-1.10.00.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.10.00.jpg)
 > 
 > 2) 프로그래밍 방식으로 설정
 > 
@@ -45,13 +46,13 @@ http://www.giphy.com/gifs/hmAgG6wyg2ZCWAM29t
 
 **1)** 스토리보드에 레이블과 스테퍼를 배치한 후 각각 `@IBOutlet`으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/11/스크린샷-2022-11-02-오전-1.00.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.00.52.jpg)
 
  
 
 **2)** 스토리보드에 스테퍼를 `@IBAction`으로 뷰 컨트롤러 코드와 연결합니다. `stepperActCount` 메서드는 버튼이 눌렸을 때 실행됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/11/스크린샷-2022-11-02-오전-1.04.38.jpg)
+ ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.04.38.jpg)
 
  
 
@@ -109,7 +110,7 @@ pod 'RxCocoa'
 
 **1)** 스토리보드에 레이블과 스테퍼를 배치한 후 각각 `@IBOutlet`으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/11/스크린샷-2022-11-02-오전-1.00.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.00.52.jpg)
 
  
 

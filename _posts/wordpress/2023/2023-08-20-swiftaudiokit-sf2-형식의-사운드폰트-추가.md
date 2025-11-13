@@ -18,13 +18,13 @@ categories:
 
 ##### **1) Capabilities > Background Modes에서 Audio 추가**
 
- ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-20-오후-4.35.40-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-20-pm-4.35.40-copy.jpg)
 
  
 
 ##### **2) 사운드폰트 파일을 프로젝트 내에 추가**
 
- ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-20-오후-4.38.09-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-20-pm-4.38.09-copy.jpg)
 
  
 
@@ -89,4 +89,4 @@ struct ContentView: View {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-20-오후-4.45.09-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-20-pm-4.45.09-copy.jpg)

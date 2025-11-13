@@ -79,7 +79,7 @@ Different Trains는 다음과 같은 제목을 가진 세 악장으로 구성됩
 > 
 > L-R-L-L 또는 R-L-R-R의 순서로 연주되는 4개의 짝수 스트로크로 구성된 드럼의 기본 패턴 중 하나.
 > 
->  ![](/assets/img/wp-content/uploads/2022/10/스크린샷-2022-10-12-오후-8.42.31.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-12-pm-8.42.31.jpg)
 
  
 

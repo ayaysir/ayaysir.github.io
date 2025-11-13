@@ -54,7 +54,8 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 
 에디트 모드인 이 화면에서만 삭제 등의 작업을 진행하고 싶은데, 문제는 평상시 모드(`isEditing = false`)에서도 스와이프 하면 삭제 메뉴가 나타납니다.
 
-http://www.giphy.com/gifs/KhpWcDkCCIKjxG0Z5m
+<!-- http://www.giphy.com/gifs/KhpWcDkCCIKjxG0Z5m -->
+![](https://)
 
  
 
@@ -108,6 +109,7 @@ override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurat
 
  
 
-http://www.giphy.com/gifs/a0TpAI0XWhigJH4ouu
+<!-- http://www.giphy.com/gifs/a0TpAI0XWhigJH4ouu -->
+![](https://)
 
 이제 에디트 모드일 때에만 삭제 버튼이 활성화되고, 비에디트 모드인 경우 스와이프해도 아무 액션이 나타나지 않습니다.

@@ -16,7 +16,8 @@ SwiftUI상에서 내비게이션 (앞, 뒤로 이동하는 뷰들의 집합)을 
 - 두 번째 화면에서는 `Go to Jacob Link`가 있으며 이 링크를 클릭하면 다음 세 번째 화면으로 이동합니다. 또는 `< Bac`k 버튼을 누르면 뒤로 이동합니다.
 - 세 번째 화면에서는 `Jacob [색상]` 이라는 이름이 표시됩니다.
 
-http://www.giphy.com/gifs/UjmLm56fvyQJiaPRjs
+<!-- http://www.giphy.com/gifs/UjmLm56fvyQJiaPRjs -->
+![](https://)
 
  
 
@@ -25,7 +26,8 @@ http://www.giphy.com/gifs/UjmLm56fvyQJiaPRjs
 - 첫 번째 화면에서 `[파발]` 기능이 있어서 3번째 화면으로 파발 메시지를 전달할 수 있습니다.
 - 세 번째 화면에서 `[왜곡]` 버튼을 누르면 파발 메시지가 왜곡되어 첫 번째 화면으로 재전달됩니다.
 
-http://www.giphy.com/gifs/TJikax42WUZzg13lsu
+<!-- http://www.giphy.com/gifs/TJikax42WUZzg13lsu -->
+![](https://)
 
  
 
@@ -78,7 +80,7 @@ NavigationStack {
 - `NavigationLink`의 첫 번째 파라미터는 버튼(링크) 이름, 두 번째 `value:` 파라미터는 다음으로 이동하는 View에 전달할 값을 입력합니다. 다양한 타입의 값을 입력하는 것이 가능합니다.
     - 위의 예제에서는 `Color` 타입의 값을 전달합니다.
 
-\[caption id="attachment\_5426" align="alignnone" width="193"\] ![](/assets/img/wp-content/uploads/2023/04/스크린샷-2023-04-03-오후-7.25.10-복사본.jpg) `List`와 `NavigationLink`\[/caption\]
+\[caption id="attachment\_5426" align="alignnone" width="193"\] ![](/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.25.10-copy.jpg) `List`와 `NavigationLink`\[/caption\]
 
  
 
@@ -109,7 +111,7 @@ List {
 
 `[동대문]` 버튼을 누르면 `Color.mint` 값이 전달되며 다음 뷰로 넘어갑니다.
 
- ![](/assets/img/wp-content/uploads/2023/04/스크린샷-2023-04-03-오후-7.33.58-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.33.58-copy.jpg)
 
  
 
@@ -156,7 +158,7 @@ struct ColorDetail: View {
 - **NavigationLink**
     - `JacobDetail` 뷰(후술, 3번째 화면)으로 이동합니다.
 
- ![](/assets/img/wp-content/uploads/2023/04/스크린샷-2023-04-03-오후-7.43.16.png)
+ ![](/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.43.16.png)
 
 ##### **JacobDetail.swift**
 
@@ -183,7 +185,8 @@ struct JacobDetail: View {
 
  
 
-http://www.giphy.com/gifs/TJikax42WUZzg13lsu
+<!-- http://www.giphy.com/gifs/TJikax42WUZzg13lsu -->
+![](https://)
 
  
 
@@ -237,7 +240,8 @@ if #available(iOS 16.0, *) {
     }}
 ```
 
-https://giphy.com/gifs/iIDyddQQzHTqLqMv18
+<!-- https://giphy.com/gifs/iIDyddQQzHTqLqMv18 -->
+![](https://)
 
  
 

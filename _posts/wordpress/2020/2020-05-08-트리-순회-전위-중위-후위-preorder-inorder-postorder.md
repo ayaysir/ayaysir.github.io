@@ -87,4 +87,4 @@ function traverseTree(inputStr) {
 console.log(traverseTree(input1))
 ```
 
- ![](/assets/img/wp-content/uploads/2020/05/스크린샷-2020-05-08-오후-8.12.09.png)
+ ![](/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-08-pm-8.12.09.png)

@@ -24,7 +24,7 @@ const names = ["James", "Thomas", "Joseph", "Jacob"]
 names.filter(x => console.log(x))
 ```
 
- ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-22-오후-2.51.59.png)
+ ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-22-pm-2.51.59.png)
 
  
 
@@ -47,7 +47,7 @@ public class StreamTest {
 
 ```
 
- ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-22-오후-2.53.37.png)
+ ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-22-pm-2.53.37.png)
 
 참고로 `forEach`는 굳이 스트림이 아니더라도 `Iterable` 인터페이스를 구현하는 자료형이라면 전부 사용 가능합니다.
 
@@ -65,7 +65,7 @@ const filtered = names.filter(x => x.indexOf("J") !== -1)
 console.log(filtered)
 ```
 
- ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-22-오후-5.55.54.png)
+ ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-22-pm-5.55.54.png)
 
  
 
@@ -89,7 +89,7 @@ public class StreamTest {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-22-오후-5.50.33.png)
+ ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-22-pm-5.50.33.png)
 
 스트림을 `List`형으로 변환하려면 `collect()`를 사용하며 방법은 다음과 같습니다.
 
@@ -149,7 +149,7 @@ const names = ["James", "Thomas", "Joseph", "Jacob"]
 names.map(x => x + " Simpson").forEach(e => console.log(e))
 ```
 
- ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-22-오후-6.06.11.png)
+ ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-22-pm-6.06.11.png)
 
  
 
@@ -175,7 +175,7 @@ public class StreamTest {
 
 ```
 
- ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-22-오후-6.08.39.png)
+ ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-22-pm-6.08.39.png)
 
  
 

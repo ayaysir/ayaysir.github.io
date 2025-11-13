@@ -142,4 +142,5 @@ cropViewController.config.presetFixedRatioType = .alwaysUsingOnePresetFixedRatio
 
 #### **실행 화면**
 
-http://www.giphy.com/gifs/PIW6cAxBkqAL2UN35P
+<!-- http://www.giphy.com/gifs/PIW6cAxBkqAL2UN35P -->
+![](https://)

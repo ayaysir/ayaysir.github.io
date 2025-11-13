@@ -98,7 +98,7 @@ _The Chantays - Pipeline_
 
  
 
- ![](/assets/img/wp-content/uploads/2022/03/스크린샷-2022-03-23-오후-7.41.49.jpg)
+ ![](/assets/img/wp-content/uploads/2022/03/screenshot-2022-03-23-pm-7.41.49.jpg)
 
 {% youtube "https://youtu.be/9GB8SSIK0sQ?t=33" %}
 

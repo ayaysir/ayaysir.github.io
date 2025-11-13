@@ -70,13 +70,14 @@ export default App
 
 ```
 
-http://www.giphy.com/gifs/7Y2H2DRhbm736ZhNzF
+<!-- http://www.giphy.com/gifs/7Y2H2DRhbm736ZhNzF -->
+![](https://)
 
  
 
 타입스크립트 + 리액트에서 이벤트를 처리하려면 이벤트의 타입을 지정해야 합니다. 위의 코드는 일반 JSX에서는 문제가 없는 코드이지만 TSX(TypeScript + eXtensions)에서는 문법 오류가 발생합니다.
 
- ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오후-8.40.32.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-8.40.32.jpg)
 
 > 'e' 매개 변수에는 암시적으로 'any' 형식이 포함됩니다.ts(7006)
 
@@ -92,7 +93,7 @@ http://www.giphy.com/gifs/7Y2H2DRhbm736ZhNzF
 
 아래와 같이 이벤트 모든 유형에 `any`를 사용해도 되지만, 이렇게 사용할바엔 처음부터 자바스크립트를 사용하는 것이 낫다고 생각합니다.
 
- ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오후-8.48.56.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-8.48.56.jpg)
 
  
 
@@ -133,7 +134,7 @@ const handleTextField = (e: ChangeEvent<HTMLInputElement>) => {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오전-1.49.44.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-오전-1.49.44.jpg)
 
 - 위와 같이 변경 이벤트에는 `ChangeEvent`가 사용되며, 제네릭 부분에 이벤트가 발생하는 HTML 요소의 타입(`HTML element interfaces`)을 지정합니다.
     - 예를 들어 `<input>` 태그에는 `HTMLInputElement`,
@@ -143,7 +144,7 @@ const handleTextField = (e: ChangeEvent<HTMLInputElement>) => {
 
 `HTML element interfaces`의 목록은 [MDN web docs - The HTML DOM API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API#html_dom_api_interfaces) 링크를 참조하면 됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오후-8.58.49.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-8.58.49.jpg)
 
  
 
@@ -208,7 +209,7 @@ export default App
 
 제네릭을 사용하지 않으면 `e.target`이 무슨 요소인지 알 수 없으므로 `value`가 없다는 문법 오류가 발생합니다.
 
- ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오후-9.16.08.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.16.08.jpg)
 
  
 
@@ -229,7 +230,7 @@ const handleTextArea = (e: ChangeEvent) => {
 
 자바스크립트에서는 타입을 지정할 필요가 없으므로 하나의 함수를 공유해서 쓰면 되지만 타입스크립트에서는 타입을 구분해야 하기 때문에 공유할 수 없습니다. 예를 들어 `handleInputText`를 텍스트 구역에 적용하려고 하면 아래와 같은 오류가 발생합니다. 둘의 파라미터 타입은 `ChangeEvent`로 동일합니다만, 제네릭은 `HTMLInputElement`로 지정되어 있으나 실제 `<textarea>`는 `HTMLTextAreaElement` 이기 때문에 타입이 맞지 않아 오류가 발생하는 것입니다.
 
- ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오후-9.21.20.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.21.20.jpg)
 
  
 
@@ -262,22 +263,22 @@ const handleText = (e: ChangeEvent) => {
 
  
 
-\[caption id="attachment\_4450" align="alignnone" width="580"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오후-9.35.47.jpg) `instanceof` 효과로 인한 타입 자동 지정 1\[/caption\]
+\[caption id="attachment\_4450" align="alignnone" width="580"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.35.47.jpg) `instanceof` 효과로 인한 타입 자동 지정 1\[/caption\]
 
  
 
-\[caption id="attachment\_4451" align="alignnone" width="617"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오후-9.36.18.jpg) `instanceof` 효과로 인한 타입 자동 지정 2\[/caption\]
+\[caption id="attachment\_4451" align="alignnone" width="617"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.36.18.jpg) `instanceof` 효과로 인한 타입 자동 지정 2\[/caption\]
 
  
 
-\[caption id="attachment\_4452" align="alignnone" width="620"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오후-9.37.02.jpg) `value`는 `null`의 가능성이 있음\[/caption\]
+\[caption id="attachment\_4452" align="alignnone" width="620"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.37.02.jpg) `value`는 `null`의 가능성이 있음\[/caption\]
 
  
 
-\[caption id="attachment\_4453" align="alignnone" width="281"\] ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오후-9.37.18.jpg) `&&` 연산자로 인한 타입 자동 지정 및 `null` 가능성 제거\[/caption\]
+\[caption id="attachment\_4453" align="alignnone" width="281"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.37.18.jpg) `&&` 연산자로 인한 타입 자동 지정 및 `null` 가능성 제거\[/caption\]
 
  
 
 이제 `<input>`태그와 `<textarea>` 태그의 `onChange` 이벤트에 동일한 함수를 지정해도 이전과 마찬가지로 정상 동작합니다.
 
- ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-09-오후-9.41.08.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.41.08.jpg)

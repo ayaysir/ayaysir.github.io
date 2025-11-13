@@ -56,7 +56,7 @@ MVVM(Model-View-ViewModel)은 오브젝트를 세 개의 개별 그룹으로 분
 
 Xcode에서 새로운 플레이그라운드를 생성합니다.
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-22-오후-11.27.10.jpg)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-22-pm-11.27.10.jpg)
 
  
 
@@ -206,7 +206,7 @@ public class PetView: UIView {
 
  ![](/assets/img/wp-content/uploads/2021/12/stuart.jpg)
 
- ![](/assets/img/wp-content/uploads/2021/12/스크린샷-2021-12-22-오후-11.52.55.png)
+ ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-22-pm-11.52.55.png)
 
  
 

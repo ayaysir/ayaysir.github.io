@@ -29,7 +29,7 @@ vacation.addEventListener("click", event => {
 })
 ```
 
- ![](/assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-18-오후-2.09.15.png)
+ ![](/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-2.09.15.png)
 
  
 
@@ -49,11 +49,11 @@ vacation.addEventListener("click", event => {
 })
 ```
 
- ![](/assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-18-오후-2.24.51.png)
+ ![](/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-2.24.51.png)
 
 이벤트 버블링을 막는 행위는 지양하는 것이 좋다고 합니다. ([이유](https://ko.javascript.info/bubbling-and-capturing))
 
- ![](/assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-18-오후-2.27.12.png)
+ ![](/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-2.27.12.png)
 
 #### **이벤트 캡처링**
 
@@ -86,7 +86,7 @@ $ul.addEventListener("click", event => {
 }) // capturing option: 기본값 false
 ```
 
- ![](/assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-18-오후-2.33.15.png)
+ ![](/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-2.33.15.png)
 
  
 
@@ -100,7 +100,7 @@ $ul.addEventListener("click", event => {
 
  
 
- ![](/assets/img/wp-content/uploads/2020/09/-2020-09-18-오후-2.37.10-e1600407520899.png)
+ ![](/assets/img/wp-content/uploads/2020/09/-2020-09-18-pm-2.37.10-e1600407520899.png)
 
 보라색 부분을 클릭하면 `<li>` 태그에 할당된 이벤트까지 실행이 됩니다. `<li>` 태그에서 이벤트가 멈춘 이유는 여기의 이벤트는 캡처 옵션이 `false`이기 때문입니다.
 
@@ -147,7 +147,7 @@ items.forEach(el => {
 
  
 
- ![](/assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-18-오후-2.59.32.png)
+ ![](/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-2.59.32.png)
 
  
 
@@ -173,6 +173,6 @@ itemBox.addEventListener("click", event => {
 })
 ```
 
- ![](/assets/img/wp-content/uploads/2020/09/스크린샷-2020-09-18-오후-3.24.21.png)
+ ![](/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-3.24.21.png)
 
 상위 요소인 `<ul>` 에 `addEventListener`로 이벤트를 추가하고 `event.target`을 이용해 이벤트가 시작한 요소를 찾아 해당 요소가 `item`이라는 클래스를 가지고 있다면 이벤트가 동작하도록 변경했습니다. 이를 통해 `forEach`로 번거롭게 이벤트를 부여하는 과정도 없앴고 동적 요소에도 이벤트가 정상적으로 동작하게 되었습니다.

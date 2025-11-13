@@ -24,7 +24,7 @@ categories:
 
 아래와 같이 `Info.plist` 파일에 두 개의 권한 허용 여부를 묻는 메시지를 추가합니다.
 
- ![](/assets/img/wp-content/uploads/2023/07/스크린샷-2023-07-16-오후-4.28.02-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/07/screenshot-2023-07-16-pm-4.28.02-copy.jpg)
 
 - **Privacy - Photo Library Usage Description (**`NSPhotoLibraryUsageDescription`**)**
     - 사진 라이브러리에 접근하기 위한 권한입니다. 거부시 사진을 저장할 수 없습니다.

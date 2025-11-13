@@ -47,7 +47,7 @@ userNotiCenter.requestAuthorization(options: notiAuthOptions) { (success, error)
 
 `arrayLiteral:`에 들어갈 수 있는 카테고리는 다음과 같습니다.
 
- ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-10-오후-10.11.59.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-10-pm-10.11.59.jpg)
 
 [애플 UnauthorizationOptions 문서](https://developer.apple.com/documentation/usernotifications/unauthorizationoptions)
 
@@ -105,7 +105,7 @@ do {
 
 비디오 파일은 섬네일이 임의로 표시되며 움직이지 않습니다.
 
- ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-10-오후-10.35.16.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-10-pm-10.35.16.jpg)
 
 ##### **재생 소리 설정**
 
@@ -260,7 +260,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
  
 
- ![](/assets/img/wp-content/uploads/2022/08/스크린샷-2022-08-11-오전-12.08.06.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-11-오전-12.08.06.jpg)
 
 위 코드가 동작하지 않을 경우
 

@@ -44,7 +44,7 @@ categories:
 
 #### **튜토리얼/매뉴얼**
 
- ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.04-복사본.jpg)  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.10-복사본.jpg)  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.14-복사본.jpg)  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.22-복사본.jpg)  ![](/assets/img/wp-content/uploads/2023/05/스크린샷-2023-05-10-오후-6.44.28-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.04-copy.jpg)  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.10-copy.jpg)  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.14-copy.jpg)  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.22-copy.jpg)  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.28-copy.jpg)
 
  
 

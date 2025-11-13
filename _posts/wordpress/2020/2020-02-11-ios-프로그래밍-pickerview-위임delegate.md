@@ -10,7 +10,7 @@ tags:
 
 스토리보드 상에서 Delegate, DataSource 설정
 
- ![](/assets/img/wp-content/uploads/2020/02/스크린샷-2020-02-15-오전-12.17.34.png)
+ ![](/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-15-오전-12.17.34.png)
 
 또는 코드상에서 Delegate, DataSource 설정
 
@@ -53,7 +53,7 @@ override func viewDidLoad() {
 
  
 
- ![](/assets/img/wp-content/uploads/2020/02/스크린샷-2020-02-12-오전-12.45.35.png)
+ ![](/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-12-오전-12.45.35.png)
 
  
 

@@ -140,7 +140,7 @@ header('Access-Control-Allow-Origin: *');
 > - URL 대신 `*`를 입력하면 모든 URL에 대한 접근을 허용한다는 의미입니다.
 > - _`...-Origin: *` => 중간에 `origin`과 `:` 사이에 띄어쓰기 하면 에러가 발생합니다._
 > - _Request Headers의 `Origin URL`을 그대로 적습니다, URL 끝에 원래 `/`이 없는데 `/`를 붙이면 에러가 발생합니다._
->     - _예) `http://example.com` 와 `http://example.com/` => 둘은 다른 URL입니다.  ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-01-오후-9.59.05.jpg)_ 
+>     - _예) `http://example.com` 와 `http://example.com/` => 둘은 다른 URL입니다.  ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-01-pm-9.59.05.jpg)_ 
 
  
 
@@ -260,7 +260,8 @@ const proxyUrl = "http://[내_주소]/proxy/?certkey_no=4422&key=[API_KEY]&type_
 
 CORS 문제가 발생하지 않고 API 호출이 정상적으로 동작하는지 확인합니다.
 
-http://www.giphy.com/gifs/qVBeQOcfARbpjQEfKH
+<!-- http://www.giphy.com/gifs/qVBeQOcfARbpjQEfKH -->
+![](https://)
 
 \[caption id="attachment\_4874" align="alignnone" width="514"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-02-오전-12.55.53.jpg) 콘솔 표시 결과\[/caption\]
 

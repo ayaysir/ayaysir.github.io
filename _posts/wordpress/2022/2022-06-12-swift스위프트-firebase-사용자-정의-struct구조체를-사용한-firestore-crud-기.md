@@ -21,11 +21,11 @@ Firebase에서는 두 가지 형태의 데이터베이스를 제공합니다 이
 
 #### **Firestore에서 자료를 저장하는 일반적인 형태**
 
-![컬렉션 - 문서 - 필드](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.32.03.jpg) *컬렉션 - 문서 - 필드*
+![컬렉션 - 문서 - 필드](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-4.32.03.jpg) *컬렉션 - 문서 - 필드*
 
  
 
-![문서 내부에 컬랙션 생성](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.32.30.jpg) *문서 내부에 컬랙션 생성*
+![문서 내부에 컬랙션 생성](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-4.32.30.jpg) *문서 내부에 컬랙션 생성*
 
  
 
@@ -99,7 +99,7 @@ class FirebasePractice {
 
 파이어베이스 콘솔에서 익명 인증 절차를 추가합니다.
 
-![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.40.49.jpg)
+![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-4.40.49.jpg)
 
  
 
@@ -137,7 +137,7 @@ FirebasePractice.shared.signInAnonymously { user in
 
 익명 로그인으로 권한을 획득한 사람만 접근 가능하도록 보안 규칙을 추가합니다. 읽기는 외부인도 모두 가능하도록 하되, 나머지 Create, Update, Delete는 익명 유저만 가능하게 하겠습니다.
 
- ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-4.59.13.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-4.59.13.jpg)
 
 ```
 rules_version = '2';
@@ -404,23 +404,23 @@ override func viewDidLoad() {
 
 ##### **Create**
 
- ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-5.14.23.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-5.14.23.jpg)
 
  
 
 ##### **Read(한 개) & Update**
 
-\[caption id="attachment\_4545" align="alignnone" width="745"\] ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.07.27.jpg) 업데이트 전\[/caption\]
+\[caption id="attachment\_4545" align="alignnone" width="745"\] ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.07.27.jpg) 업데이트 전\[/caption\]
 
  
 
-\[caption id="attachment\_4546" align="alignnone" width="764"\] ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.08.16.jpg) 업데이트 후\[/caption\]
+\[caption id="attachment\_4546" align="alignnone" width="764"\] ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.08.16.jpg) 업데이트 후\[/caption\]
 
  
 
 ##### **Read(컬렉션 내 전체 문서)**
 
- ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.35.29.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.35.29.jpg)
 
 참고: [Firestore timestamp getting null](https://stackoverflow.com/questions/47771044/firestore-timestamp-getting-null)
 
@@ -428,11 +428,11 @@ override func viewDidLoad() {
 
 ##### **Delete**
 
- ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.19.38.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.19.38.jpg)
 
- ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.20.54.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.20.54.jpg)
 
- ![](/assets/img/wp-content/uploads/2022/06/스크린샷-2022-06-12-오후-7.21.18.jpg)
+ ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.21.18.jpg)
 
  
 

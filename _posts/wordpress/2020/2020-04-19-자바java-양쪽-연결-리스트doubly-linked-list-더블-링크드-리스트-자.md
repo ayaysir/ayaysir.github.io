@@ -47,7 +47,7 @@ public class LinkedListTest {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-19-오후-5.04.35.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-19-pm-5.04.35.png)
 
  
 
@@ -55,6 +55,6 @@ public class LinkedListTest {
 
 https://gist.github.com/ayaysir/c0f3e067fea9ec47d255f5fa1f116dc7
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-19-오후-5.09.40.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-19-pm-5.09.40.png)
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-19-오후-5.10.30.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-19-pm-5.10.30.png)

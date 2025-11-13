@@ -511,7 +511,7 @@ let suffix = stackOfInts.suffix(2)
 
 ##### **where Suffix.Item == Item의 의미**
 
- ![](/assets/img/wp-content/uploads/2022/05/스크린샷-2022-05-27-오전-9.20.03.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-27-오전-9.20.03.jpg)
 
 `where Suffix.Item == Item`의 의미는 다음과 같습니다. `SuffixableContainer`를 구현하는 `DoubleStack`이라는 구조체를 만들었습니다. `Container`에 정의되어 있는 `append(_:)` 메서드와 `subscript`에 모두 `Double` 타입을 지정하였습니다. 앞서 언급한 컴파일러의 추론 기능으로 인해 `DoubleStack`의 연관 타입 `Item`은 `Double`로 추론이 된 상태입니다.
 

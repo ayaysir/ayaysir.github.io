@@ -151,7 +151,7 @@ public class CarTest {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-11-오후-3.00.16.png)
+ ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-3.00.16.png)
 
  
 
@@ -211,4 +211,4 @@ public class LombokCarTest {
 
 ```
 
- ![](/assets/img/wp-content/uploads/2020/07/스크린샷-2020-07-11-오후-3.05.42.png)
+ ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-3.05.42.png)

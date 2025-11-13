@@ -6,19 +6,21 @@ categories:
   - "Swift UIKit"
 ---
 
-### **소개**
+## **소개**
 
 `UIKit`에서 특정 로딩 상황이 발생할 때 로딩 인디케이터를 띄우는 예제입니다. 외부 라이브러리를 사용하지 않고 기본 제공 요소로 만들었습니다.
 
-https://giphy.com/gifs/hH9JzdEtDTTOWxSTCf
+<!-- https://giphy.com/gifs/hH9JzdEtDTTOWxSTCf -->
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDAzbTVpM21ra2t2dzIyZ3kzNHdpM213eW0zd2pkczhsMzJ5NG1nYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hH9JzdEtDTTOWxSTCf/giphy.gif)
 
-https://giphy.com/gifs/kvqcJeJoeClyln5Oe8
+<!-- https://giphy.com/gifs/kvqcJeJoeClyln5Oe8 -->
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODBjMmc4cG0wZHVmbXN6dmpqbG55dWx4bDJ2ajRkYXNrdTk4NzA3cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kvqcJeJoeClyln5Oe8/giphy.gif)
 
  
 
-#### **코드**
+## **코드**
 
-```
+```swift
 import UIKit
 
 struct LoadingIndicatorUtil {
@@ -84,12 +86,15 @@ struct LoadingIndicatorUtil {
 
  
 
-#### **사용 방법**
+## **사용 방법**
 
 - 위의 코드를 프로젝트에 추가합니다,
-- 로딩이 시작되는 곳에 `show(...)`를 추가합니다.  ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-24-오후-2.41.57-복사본.jpg)
+- 로딩이 시작되는 곳에 `show(...)`를 추가합니다.  
+![](/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-24-pm-2.41.57-copy.jpg)
     - **style**
         - `clear`, `blur` 둘 중에서 선택할 수 있습니다.
     - **text**
         - 지정하지 않으면 로딩 인디케이터 그래픽만 표시되며, 텍스트를 추가하면 안내 메시지가 같이 표시됩니다.
-- 로딩이 종료되면 `hide(...)`를 사용해 인디케이터 화면을 제거합니다.  ![](/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-24-오후-2.42.23-복사본.jpg)
+- 로딩이 종료되면 `hide(...)`를 사용해 인디케이터 화면을 제거합니다.  
+
+![](/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-24-pm-2.42.23-copy.jpg)

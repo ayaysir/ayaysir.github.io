@@ -30,6 +30,6 @@ function getLanguage() {
 
 https://gist.github.com/ayaysir/55cc8892609b37e3a57e9fb166b7b2db
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-10-오후-11.47.03.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-10-pm-11.47.03.png)
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-10-오후-11.47.26.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-10-pm-11.47.26.png)

@@ -35,7 +35,7 @@ if($_GET['callback']) {
 
 간단한 JSON을 리턴하는 PHP 페이지를 만들었습니다.  [JSON 링크](http://yoonbumtae.com/util/misc/jsonp-example/)를 브라우저 링크에서 열면 잘 열립니다. 하지만 이것을 자바스크립트 내에서 AJAX로 가져오려고 하면 CORS 위반이 됩니다.
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-03-오후-10.49.30.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-03-pm-10.49.30.png)
 
  
 
@@ -86,7 +86,7 @@ function getJsonUsePureJSCallback(obj) {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-03-오후-11.11.34.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-03-pm-11.11.34.png)
 
 이론상으로는 `<script>`에 url을 지정한 뒤 밑에서 함수 선언만 하면 잘 실행될 것 같은데 최신 크롬 브라우저에서는 진행이 안되서 자바스크립트에서 DOM을 만든 뒤 강제 추가하는 형식으로 JSONP를 실행하였습니다.
 
@@ -106,7 +106,7 @@ function getJsonpUseJQuery1() {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-03-오후-11.03.38.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-03-pm-11.03.38.png)
 
 `dataType`을 `"jsonp"`, `jsonpCallback`에서 콜백으로 사용할 **함수의 이름을 지정**하면 알아서 `callback` 파라미터로 보내줍니다.
 
@@ -120,6 +120,6 @@ function getJsonpUseJQuery2() {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2020/06/스크린샷-2020-06-03-오후-11.06.35.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-03-pm-11.06.35.png)
 
 더 간단한 방법입니다. 여기서 `callback=?`로 지정하면 JQuery에서 생성한 무작위 함수 이름을 리퀘스트합니다.

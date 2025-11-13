@@ -30,7 +30,7 @@ categories:
 </html>
 ```
 
- ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-12-오후-2.00.47.png)
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-12-pm-2.00.47.png)
 
 위의 개발자 도구를 보면, 스크롤을 전혀 하지 않았음에도 불구하고 첫 번째 사진인 `국화.jpg`와 마지막 사진인 `튤립.jpg`의 리퀘스트 요청 시간이 거의 비슷하며, 국화 외의 사진은 아직 보이지 않는데도 벌써 데이터를 전부 로딩한 모습을 볼 수 있습니다. (로딩 타이밍은 Waterfall 그래프를 보면 됩니다.)
 
@@ -155,7 +155,7 @@ window.onload = () => {
 
 이렇게 하면 이미지의 lazy-loading을 구현할 수 있습니다. 일부러 스크롤을 느리게 해 순차적으로 이미지가 로딩되도록 하였습니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-12-오후-1.59.45.png)
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-12-pm-1.59.45.png)
 
 #### **고려 사항**
 
@@ -165,4 +165,4 @@ lazy-loading 적용 시 몇 가지 고려할 사항이 있습니다. 먼저 화�
 
 처음 HTML을 불러올 시 뷰포트에 다수의 0px 크기의 요소가 있다면 intersection이 충족된 것으로 판단되어 그냥 처음부터 이미지를 로딩해버립니다. 따라서 lazy-loading을 적용한 효과가 무의미해집니다. 아래 그림을 보면 그 이유를 알 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-12-오후-2.10.09.png)
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-12-pm-2.10.09.png)

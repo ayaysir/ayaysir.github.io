@@ -96,7 +96,7 @@ CSV 파일로 내보낼 수 있습니다.
 
  ![](/assets/img/wp-content/uploads/2022/12/IMG_3B5897304303-1.jpeg)
 
-\[caption id="attachment\_5111" align="aligncenter" width="750"\] ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-08-오후-6.11.01-복사본.jpg) CSV 파일\[/caption\]
+\[caption id="attachment\_5111" align="aligncenter" width="750"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-08-pm-6.11.01-copy.jpg) CSV 파일\[/caption\]
 
  
 

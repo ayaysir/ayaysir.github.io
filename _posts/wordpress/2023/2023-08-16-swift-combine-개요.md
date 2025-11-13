@@ -49,7 +49,7 @@ Xcode에서 `File -> New... -> Playgorund... -> MacOS -> Single App`으로 플�
 
 메인 뷰(`MyView`)에 텍스트 필드(`NSTextField`)를 추가합니다.
 
- ![](/assets/img/wp-content/uploads/2023/08/스크린샷-2023-08-16-오후-9.41.09-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-16-pm-9.41.09-copy.jpg)
 
 ```
 //: A Cocoa based Playground to present user interface

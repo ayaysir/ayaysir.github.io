@@ -19,19 +19,19 @@ tags:
 
 ##### 1\. 보컬과 코러스가 포함된 원래 음원과 MR음원(보컬 및 코러스가 제거된 음원)을 준비합니다.
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-13-오후-8.38.57.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-8.38.57.png)
 
  
 
 ##### 2\. 두 파일을 로직 안으로 임포트(Import) 합니다.
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-13-오후-8.44.55.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-8.44.55.png)
 
  
 
 ##### 3\. 확대 기능을 이용하여 두 파일의 시작점을 최대한 똑같게 맞춥니다. 운이 좋은 두 파일의 시작점이 같을 수도 있지만 보통 이런 기능의 악용을 방지하기 위해 시작점이 약간 차이가 있는 경우가 대부분입니다. 시작점이 약간이라도 차이가 나면 이 기능이 전혀 동작하지 않기 때문에 반드시 맞출 수 있는 데까지 맞춰야 합니다.
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-13-오후-8.41.54.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-8.41.54.png)
 
 음원의 위치를 이동할 때 `control` 버튼을 누르고 있으면 스냅이 무효화되며 정밀한 이동이 가능합니다.
 
@@ -41,7 +41,7 @@ tags:
 
 ##### 4\. 두 음원 중 하나에 Invert 기능을 적용합니다. 여기서는 Instrumental 트랙에 적용하겠습니다. 주의할 점은 트랙 에디터가 아니라 파일(File) 에디터에 기능이 존재한다는 점입니다.
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-13-오후-8.49.09.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-8.49.09.png)
 
  
 
@@ -51,7 +51,7 @@ Invert 기능을 적용하면 파형의 그림이 살짝 변하는데 이것은 
 
 ##### 5\. (3)번 기능을 다시 수행합니다.
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-13-오후-9.00.07.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-9.00.07.png)
 
 Waveform Zoom 기능은 파형을 확대해서 보여주는 기능인데, MP3같은 압축 음원은 파형이 왜곡되어 보이는 경우가 있어 사용하지 않는 편이 낫습니다. 스크린샷을 찍을 당시 착각했던 부분입니다.
 
@@ -63,6 +63,6 @@ Waveform Zoom 기능은 파형을 확대해서 보여주는 기능인데, MP3같
 
 ##### 6.  Bounce In Place(단축키: `control + B`) 기능을 이용하면 역위상이 적용된 두 트랙을 하나의 새로운 트랙으로 추출할 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-13-오후-9.12.32.png)  ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-13-오후-9.12.47.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-9.12.32.png)  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-9.12.47.png)
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-13-오후-9.17.05.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-9.17.05.png)

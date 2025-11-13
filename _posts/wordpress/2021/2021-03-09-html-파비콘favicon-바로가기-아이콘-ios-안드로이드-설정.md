@@ -24,7 +24,7 @@ categories:
 </head>
 ```
 
- ![](/assets/img/wp-content/uploads/2021/03/스크린샷-2021-03-09-오후-11.21.31.png)
+ ![](/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-09-pm-11.21.31.png)
 
 - `rel="icon"` 부분은 파비콘(favicon)을 설정합니다. 파비콘은 크롬 기준으로 탭 아이콘을 말합니다.
     - 사이즈는 일반적으로 `32 * 32` 픽셀을 기준으로 합니다.

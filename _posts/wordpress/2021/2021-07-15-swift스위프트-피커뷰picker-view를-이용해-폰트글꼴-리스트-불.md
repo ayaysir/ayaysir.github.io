@@ -8,7 +8,7 @@ categories:
 
 ##### **1) 스토리보드에 폰트를 선택할 피커뷰(picker view)와 미리보기 할 레이블을 배치합니다.**
 
- ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-15-오전-11.08.10.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-15-오전-11.08.10.jpg)
 
  
 
@@ -89,7 +89,7 @@ Arial Rounded MT Bold
 
 ##### **4) 피커뷰는 딜리게이트(delegate) 패턴을 사용하므로 스토리보드에서 컨트롤러가 delegate 할 수 있도록 설정합니다.**
 
- ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-15-오전-11.17.23.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-15-오전-11.17.23.jpg)
 
  
 
@@ -127,4 +127,4 @@ extension SettingViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
  
 
- ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-15-오전-11.20.29.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-15-오전-11.20.29.jpg)

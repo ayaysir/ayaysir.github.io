@@ -119,7 +119,7 @@ for i in 0..<8 {
     - `Decimal` 타입을 `NSDecimalNumber`으로 변환합니다.
     - `NSDecimalNumber`으로 반환된 `powed`의 값을 `Int(truncating:)`을 사용하여 `Int`로 변환합니다.
 
- ![](/assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-07-오전-1.35.18.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-07-오전-1.35.18.jpg)
 
  
 

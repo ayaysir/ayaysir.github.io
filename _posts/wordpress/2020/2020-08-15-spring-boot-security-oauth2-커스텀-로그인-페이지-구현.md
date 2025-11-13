@@ -22,7 +22,7 @@ tags:
 
 OAuth 2.0으로 외부 로그인을 구현한 상태에서 아무 설정도 하지 않은 기본 로그인 페이지(`"/login"`)는 다음과 같습니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오전-11.42.48.png)
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-오전-11.42.48.png)
 
  
 
@@ -141,7 +141,7 @@ public class LoginController {
 
 나머지 코드는 저도 자세히 모르기 때문에 복붙하였고, 마지막으로 View 주소를 리턴합니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-12.37.18.png)
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-12.37.18.png)
 
  
 
@@ -181,4 +181,4 @@ Thymeleaf를 사용하였습니다. `Map` 타입의 `urls` 변수에 담긴 키-
 
 바꾼 후 로그인 페이지에 접속하면 다음과 같이 바뀝니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/스크린샷-2020-08-15-오후-12.43.02.png)
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-12.43.02.png)

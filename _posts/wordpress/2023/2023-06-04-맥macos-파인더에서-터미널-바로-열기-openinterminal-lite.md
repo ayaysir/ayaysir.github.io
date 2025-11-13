@@ -9,7 +9,7 @@ categories:
 
 ### **소개**
 
- ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-04-오후-3.16.57-복사본.jpg)  ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-04-오후-3.17.11-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-3.16.57-copy.jpg)  ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-3.17.11-copy.jpg)
 
 [OpenInTerminal-Lite](https://github.com/Ji4n1ng/OpenInTerminal/blob/master/Resources/README-Lite.md)는 파인더(Finder)의 특정 폴더에서 버튼 하나만 누르면 해당 경로가 위치한 터미널을 바로 실행하는 유틸리티입니다.
 
@@ -33,29 +33,29 @@ categories:
 
 1) `Finder`에서 응용 프로그램으로 이동한 뒤 `OpenInTerminal-Lite` 앱을 엽니다.
 
- ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-04-오후-3.04.58-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-3.04.58-copy.jpg)
 
 아래 경고창이 뜨면 `[열기]`를 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-04-오후-3.05.07-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-3.05.07-copy.jpg)
 
 기본이 될 터미널 프로그램을 선택하라는 창이 뜨면 `Terminal`을 클릭합니다.
 
 (프로그램은 나중에 변경 가능하며 해당 방법은 하단의 **_고급 설정 방법_** 섹션 참고)
 
- ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-04-오후-3.05.16-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-3.05.16-copy.jpg)
 
 다시 `OpenInTerminal-Lite` 앱 아이콘을 클릭한 뒤 키보드의 `command`를 누른 상태에서 파인더 상단의 툴바로 드래그하면 아이콘을 위치시킬 수 있는 사각형 영역이 나타납니다.
 
 원하는 위치에 드래그해서 아이콘을 추가합니다.
 
- ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-04-오후-3.06.12-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-3.06.12-copy.jpg)
 
 #### **사용 방법**
 
 이후 각 폴더마다 해당 아이콘을 누르면 해당 폴더 경로로 이동한 터미널이 실행됩니다.
 
- ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-04-오후-3.16.57-복사본.jpg)  ![](/assets/img/wp-content/uploads/2023/06/스크린샷-2023-06-04-오후-3.17.11-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-3.16.57-copy.jpg)  ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-3.17.11-copy.jpg)
 
  
 

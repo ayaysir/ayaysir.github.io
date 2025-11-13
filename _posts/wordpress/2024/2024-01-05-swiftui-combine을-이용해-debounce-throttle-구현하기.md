@@ -6,11 +6,11 @@ categories:
   - "SwiftUI"
 ---
 
-### **소개**
+## **소개**
 
 Debounce, Throttle 기능이 필요할 때 `Combine`을 이용해서 구현할 수 있습니다.
 
-- [Swift(스위프트): Debounce, Throttle 로 함수 실행 횟수 제한 (DispatchWorkItem 이용, 외부 라이브러리 없이)](http://yoonbumtae.com/?p=5121)
+- [Swift(스위프트): Debounce, Throttle 로 함수 실행 횟수 제한 (DispatchWorkItem 이용, 외부 라이브러리 없이)](/posts/swift스위프트-debounce-throttle-로-함수-실행-횟수-제한-dispatchworkitem-이용-외/)
 
 > debounce, throttle를 간단히 요약하면 이벤트의 반복 실행시 콜백 함수의 불필요한 실행을 줄이는 역할을 합니다. 이로 인해 클라이언트가 혜택을 볼 수도 있거나 혹은 서버 측에 불필요한 리퀘스트를 줄일 수도 있습니다.
 > 
@@ -30,16 +30,16 @@ Debounce, Throttle 기능이 필요할 때 `Combine`을 이용해서 구현할 �
 
  
 
-#### **장점**
+## **장점**
 
 - Swift에 기본 내장되어 있기 때문에 외부 라이브러리를 사용하거나 별도로 구현할 필요가 없습니다.
 - Combine을 사용하지 않는 프로젝트에서도 문제 없이 바로 사용할 수 있습니다.
 
  
 
-#### **버튼에 Debounce 구현하는 방법**
+## **버튼에 Debounce 구현하는 방법**
 
-```
+```swift
 import SwiftUI
 import Combine
 
@@ -73,20 +73,21 @@ struct ButtonDebounce: View {
 ```
 
 - `debounce(... for:)` - Debounce가 실행될 범위(interval)을 정합니다.
-    - 사용할 수 있는 시간 종류는 다음과 같습니다.  ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-05-오후-10.20.02-복사본.jpg)
+    - 사용할 수 있는 시간 종류는 다음과 같습니다.  
+    ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-05-pm-10.20.02-copy.jpg)
 - `debounce(... scheduler:)` - 어느 스레드에서 실행할 지 정합니다. UI와 관련되었으므로 `RunLoop.main`을 사용합니다.
 
  
 
-http://www.giphy.com/gifs/7MB78LrKpHGnJAkdIC
-
+<!-- http://www.giphy.com/gifs/7MB78LrKpHGnJAkdIC -->
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGdzbjU2emJ2cmM3ZWJveTYwY2M5dnN1MmxuYnNpbDRoM2piamw2cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7MB78LrKpHGnJAkdIC/giphy.gif)
  
 
  
 
-#### **버튼에 Throttle 구현하는 방법**
+## **버튼에 Throttle 구현하는 방법**
 
-```
+```swift
 import SwiftUI
 import Combine
 
@@ -121,17 +122,17 @@ struct ButtonThrottle: View {
 - `throttle(... latest:)` - 실행할 때 1초의 Throttle의 범위(interval)에서 처음에 받은 값을 배출할지, 가장 나중에 받은 값을 배출할지에 대한 여부를 묻는 파라미터입니다.
     - 이 예제는 `Void`를 배출하기 때문에 어느 옵션을 사용해도 상관은 없지만 보통 `true`를 사용합니다.
 
-http://www.giphy.com/gifs/8H5pc5LiQaq0EtpeC8
-
+<!-- http://www.giphy.com/gifs/8H5pc5LiQaq0EtpeC8 -->
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmlyZm50dm5wdmVlZXduaDNjcHNveWk3ZWJ2Nnk3cHMyc280N3ExbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8H5pc5LiQaq0EtpeC8/giphy.gif)
  
 
-#### **참고**
+## **참고**
 
 SwiftUI에서 값이 변경되는 컴포넌트 대다수가 이런 다중 실행 방지 기능을 기본 내장하고 있습니다. 예를 들어 `Slider`에서는 `onEditingChanged` 핸들러를 통해 슬라이드가 움직일때 값을 계속 반영하는것 외에 값이 실질적으로 변화했을 때에만 실행할 작업을 지정할 수 있습니다.
 
 사용하고자 하는 컴포넌트의 옵션의 동작 방식을 살펴보고 위의 Debounce, Throttle 사용 여부를 결정하는 것이 좋습니다.
 
-```
+```swift
 VStack {
     Text("Slider Value[EditingChanged: \(sliderChangedCount)]: \(sliderValue)")
     Slider(value: $sliderValue,
@@ -142,4 +143,5 @@ VStack {
 }
 ```
 
-http://www.giphy.com/gifs/NKqUVz2JyUoZ7WN0IJ
+<!-- http://www.giphy.com/gifs/NKqUVz2JyUoZ7WN0IJ -->
+![](https://)

@@ -18,7 +18,7 @@ categories:
 
 Push notification(푸시 노티피케이션) 흔히 푸시 알림, 푸시 메시지로 일컫는 기기 메시지의 형태인데 네트워크를 통해 정보를 전송받으면 그 정보를 바탕으로 앱에서 메시지를 그대로 표시하거나 또는 가공하여 표시합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/IMG_9A986B8A82D7-1-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/IMG_9A986B8A82D7-1-copy.jpg)
 
 위 스크린샷은 로컬 노티피케이션의 예제로 제목과, 내용이 첨부되어 있습니다.
 
@@ -81,7 +81,7 @@ iOS 개발자는 사람들이 멋진 앱을 지속적으로 사용하는 것을 
 
 스토리보드 기반의 iOS SingleApp 프로젝트를 생성합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-03-오후-10.58.50.jpg) ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-03-오후-10.59.20.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-10.58.50.jpg) ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-10.59.20.jpg)
 
  
 
@@ -99,27 +99,27 @@ iOS 개발자는 사람들이 멋진 앱을 지속적으로 사용하는 것을 
 
 Xcode의 프로젝트 탐색기의 프로젝트 설정의 `General` 탭에서 번들 식별자를 고유값으로 변경하여 Apple의 푸시 알림 서버가 푸시를 이 앱으로 보낼 수 있도록 합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-03-오후-11.00.34.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-11.00.34.jpg)
 
  
 
 다음으로 개발자 계정에서 앱 ID를 생성하고 푸시 알림 자격을 활성화해야 합니다. Xcode에는 이를 수행하는 간단한 방법이 있습니다. 위의 창에서 `Signing & Capabilities` 탭을 클릭한 다음 `+` 버튼을 클릭합니다. 검색창에 "push"를 입력하고 `Push Notifications`를 선택합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-03-오후-11.03.39.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-11.03.39.jpg)
 
  
 
 푸시 알림 자격을 추가한 후 프로젝트 창은 다음과 같아야 합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-03-오후-11.04.48.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-11.04.48.jpg)
 
  
 
 애플 개발자 센터의 [Certificates, Identifiers & Profiles](https://developer.apple.com/account/resources/identifiers/list)에 로그인 한 뒤 해당 앱의 Identifier 페이지에 들어가면 이를 확인할 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-03-오후-11.06.05.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-11.06.05.jpg)
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-03-오후-11.08.16.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-11.08.16.jpg)
 
  
 
@@ -175,7 +175,7 @@ registerForPushNotifications()
 
 빌드 및 실행합니다. 앱이 실행되면 알림을 보낼 수 있는 권한을 요청하는 메시지가 표시되어야 합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-03-오후-11.19.36.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-11.19.36.jpg)
 
  
 
@@ -286,7 +286,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
 `simctl`을 사용하려면 앱을 실행하는 시뮬레이터의 장치 식별자(`Identifier`)를 알아야 합니다. 식별자를 얻으려면 Xcode에서 Windows ▸ Device and Simulators를 선택한 다음 상단의 Simulator 탭을 선택하고 왼쪽 목록에서 사용 중인 시뮬레이터를 선택합니다. 마우스를 사용하여 식별자를 복사합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-03-오후-11.44.34.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-11.44.34.jpg)
 
  
 
@@ -302,7 +302,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
 명령을 실행하면 시뮬레이터에 푸시 알림이 표시됩니다. 푸시 알림을 탭하면 앱이 열립니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-03-오후-11.53.11.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-11.53.11.jpg)
 
  
 
@@ -402,7 +402,7 @@ extension Notification.Name {
 
 `UITextView`를 `ViewController.swift`와 `@IBOutlet` 연결하고
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-04-오후-8.48.37.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-04-pm-8.48.37.jpg)
 
  
 
@@ -464,7 +464,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 - `receivePushNotiNews` 함수로 해당 내용을 UserDefaults 저장소에 등록합니다.
 - `NotificationCenter`의 `post` 기능을 이용해 추가되었다면 텍스트 뷰를 새로고침합니다.
 
-http://www.giphy.com/gifs/WMgkmCgH9rpt3SuUAq
+<!-- http://www.giphy.com/gifs/WMgkmCgH9rpt3SuUAq -->
+![](https://)
 
  
 
@@ -487,17 +488,18 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 
 작동 원리는 Case 1과 같습니다.
 
-http://www.giphy.com/gifs/JdcJf23PuganowYdRY
+<!-- http://www.giphy.com/gifs/JdcJf23PuganowYdRY -->
+![](https://)
 
-\[caption id="attachment\_4702" align="alignnone" width="372"\] ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-20.46.10-복사본.jpg) 앱이 완전히 종료된 상태를 만드려면 위의 그림처럼 앱을 종료합니다.\[/caption\]
-
- 
-
-\[caption id="attachment\_4700" align="alignnone" width="372"\] ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-20.41.38-복사본.jpg) 앱이 완전히 종료된 상태에서 푸시 알림을 클릭하면\[/caption\]
+\[caption id="attachment\_4702" align="alignnone" width="372"\] ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-20.46.10-copy.jpg) 앱이 완전히 종료된 상태를 만드려면 위의 그림처럼 앱을 종료합니다.\[/caption\]
 
  
 
-\[caption id="attachment\_4701" align="alignnone" width="372"\] ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-22.51.20-복사본.jpg) 앱이 열리면서 목록이 갱신됩니다.\[/caption\]
+\[caption id="attachment\_4700" align="alignnone" width="372"\] ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-20.41.38-copy.jpg) 앱이 완전히 종료된 상태에서 푸시 알림을 클릭하면\[/caption\]
+
+ 
+
+\[caption id="attachment\_4701" align="alignnone" width="372"\] ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-22.51.20-copy.jpg) 앱이 열리면서 목록이 갱신됩니다.\[/caption\]
 
  
 

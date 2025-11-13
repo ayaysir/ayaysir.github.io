@@ -12,7 +12,7 @@ Xcode 프로젝트에서 개발 언어(Development Language)는 기본 현지화
 
 (개발 언어는 프로젝트 설정 > Info의 Localizations 란에서 볼 수 있습니다.)
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-13-오후-4.08.31.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-4.08.31.jpg)
 
  
 
@@ -26,13 +26,13 @@ Xcode 프로젝트에서 개발 언어(Development Language)는 기본 현지화
 
 ##### **1: Finder를 열어 변경할 프로젝트의 `.xcodeproj` 확장자 파일이 있는 폴더로 이동한 후 프로젝트 파일에서 마우스 오른쪽 클릭 > `패키지 내용 보기`를 클릭합니다.**
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-13-오후-4.00.44.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-4.00.44.jpg)
 
  
 
 ##### **2: 동일한 창에서 패키지 내용 안의 파일들이 보이는데, `project.pbxproj` 파일을 더블클릭하거나 이 파일을 텍스트 편집기에서 엽니다. Xcode가 깔려있다면 Xcode 에디터가 열립니다.**
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-13-오후-4.01.46.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-4.01.46.jpg)
 
  
 
@@ -42,7 +42,7 @@ Xcode 프로젝트에서 개발 언어(Development Language)는 기본 현지화
 developmentRegion = ko;
 ```
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-13-오후-4.03.02.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-4.03.02.jpg)
 
 ##### **4: 검색창에서 `knownRegion`을 검색한 후, 해당 위치의 `en`을 `ko`로 변경합니다.**
 
@@ -53,8 +53,8 @@ knownRegions = (
 );
 ```
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-13-오후-4.05.03.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-4.05.03.jpg)
 
 ##### **5: 개발 언어의 변경된 내용을 확인합니다.**
 
- ![](/assets/img/wp-content/uploads/2022/09/스크린샷-2022-09-13-오후-4.06.25.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-4.06.25.jpg)

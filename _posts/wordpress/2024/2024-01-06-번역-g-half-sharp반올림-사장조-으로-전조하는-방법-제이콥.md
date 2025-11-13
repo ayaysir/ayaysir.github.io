@@ -6,25 +6,24 @@ categories:
   - "음악이론"
 ---
 
-#### **원본 영상**
+## **원본 영상**
 
 {% youtube "https://www.youtube.com/watch?v=Xd54l8gfi7M" %}
 
  
 
-#### **In the Bleak Midwinter - Jacob Collier**
+### **In the Bleak Midwinter - Jacob Collier**
 
 {% youtube "https://www.youtube.com/watch?v=mPZn4x3uOac" %}
 
  
 
-#### **주요 내용**
+## **주요 내용**
 
 이 영상은 microtonality(미분음성)의 독특함에 대해 다룹니다. 이 영상에서 다루는 곡은 크리스마스 캐럴 In the Bleak Midwinter의 Jacob Collier(제이콥 콜리어)의 편곡으로, 어느 시점에서 그는 E 메이저(마장조)에서 G와 G♯ 사이의 중간 지점에서 G 하프 샤프 메이저(반올림사장조; Gｷ major)로 전조했습니다. 이것은 음악 작품을 만들 때 음률(temperament)이 얼마나 변하는지 생각해 볼 수 있다는 뜻이에요.
 
 {% youtube "https://youtu.be/MnFbqIVTXjw" %}
-
- 
+ 
 
 이제 저는 Jacob Collier가 얼마나 훌륭한지에 대한 찬사의 비디오를 만들기 위해 여기 온 것이 아닙니다. 여러분은 이 모든 것에 '자랑하기 위한 것' 외에 어떤 표현 요소가 있는지 확실히 질문할 수 있으며 우리는 마지막에 그 질문에 대한 답에 도달할 것입니다.
 
@@ -50,17 +49,18 @@ _(네 개의 마법 코드)_
 
 여기서 무슨 일이 일어나고 있는지 이해하려면 먼저 센트(cents)에 대해 알아야 합니다. 피아노에서 음을 치는 경우 그 사이의 거리는 반음(half step/semitone)이며 전통 음악 이론에 따르면 이 반음을 100센트로 더 나눌 수 있습니다. 따라서 반음은 100센트이고, 온음(whole tone)은 200센트가 됩니다.
 
-\[caption id="attachment\_6126" align="alignnone" width="709"\] ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-10.44.50-복사본.jpg) 반음(semitone)\[/caption\]
+![반음(semitone)](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-10.44.50-copy.jpg) 
+*반음(semitone)*
 
  
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-10.46.56-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-10.46.56-copy.jpg)
 
  
 
 그는 곡의 전체 조를 반음의 2분의 1, 즉 사분음(온음의 4분의 1)로 변경하는 것을 성공했습니다. 이것은 50센트이며 일반적으로 꽤 변화를 눈치채기 쉬운(audible) 점프입니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/-2024-01-06-오후-10.46.56-복사본-1-e1704548957718.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/-2024-01-06-pm-10.46.56-copy-1-e1704548957718.jpg)
 
  
 
@@ -78,9 +78,13 @@ _(네 개의 마법 코드)_
 
 하지만 물론 멜로디뿐만 아니라 코드도 다룰 때는 상황이 다를 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-10.55.11-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-10.55.11-copy.jpg)
 
-\[audio mp3="http://yoonbumtae.com/wp-content/uploads/2024/01/화음1.mp3"\]\[/audio\]
+<!-- \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2024/01/화음1.mp3"\]\[/audio\] -->
+<audio controls>
+  <source src='/assets/img/wp-content/uploads/2024/01/g-half/chord1.mp3' type='audio/mpeg'>
+  브라우저가 audio 태그를 지원하지 않습니다.
+</audio>
 
 여기에 C 메이저의 첫 4개 코드가 있습니다. (I - ii - iii - IV)
 
@@ -88,8 +92,11 @@ _(네 개의 마법 코드)_
 
 위의 진행에서 각 코드 사이의 거리에 15센트를 추가해 보겠습니다.
 
-\[audio mp3="http://yoonbumtae.com/wp-content/uploads/2024/01/화음2-15cent-acc.mp3"\]\[/audio\]
-
+<!-- \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2024/01/화음2-15cent-acc.mp3"\]\[/audio\] -->
+<audio controls>
+  <source src='/assets/img/wp-content/uploads/2024/01/g-half/chord2-15cent-acc.mp3' type='audio/mpeg'>
+  브라우저가 audio 태그를 지원하지 않습니다.
+</audio>
  
 
 이런 경우에는 비록 약간의 차이가 있기는 하지만 처음 음조를 기억하고 계신다면 마지막에 좀 눈에 띄고, 확실히 차이를 체감할 만한 부분이라고 생각합니다. 이 45센트(=15 \* 3)는 거의 사분음과 비슷합니다.
@@ -102,7 +109,7 @@ Jacob의 작품에서 그도 마찬가지로 4개의 코드만 사용하고 어�
 
 여기서 우리는 피아노로 연주하는 주요 화음이 배음(overtone)에서 발견되는 주요 화음과 어떻게 다른지 이해해야 합니다. 음을 연주하면 음 자체만 듣는 것이 아니라 음파가 공명하고 진동하는 방식에 대한 물리적 현상의 일부로 들립니다. 이것을 배음이라고 합니다.
 
-- [\[음악\] 배음 현상과 기초 3화음](http://yoonbumtae.com/?p=1685)
+- [\[음악\] 배음 현상과 기초 3화음](/posts/음악-배음-현상과-기초-3화음/)
 
  
 
@@ -114,23 +121,23 @@ Jacob의 작품에서 그도 마찬가지로 4개의 코드만 사용하고 어�
 
 주파수 분석기를 통해 피아노 음을 연주하면 여기에 있는 모든 추가 음표가 점점 더 조용해지고 서로 점점 더 가까워지는 것을 볼 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-11.05.00-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-11.05.00-copy.jpg)
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-11.06.13-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-11.06.13-copy.jpg)
 
 이 분석기는 실제로 들리는 음높이를 표시하고, 격자는 평균율 스케일의 피아노의 12개 음표를 나타냅니다. 여기 C 음표가 있습니다. 아래 C3가 주요 음표인데, 그 소리 내에는 C4, G5 등등이 포함되어 있습니다. 이러한 배음 중 하나의 볼륨을 높이면 더 뚜렷하게 들을 수 있습니다. 그 소리들은 인위적으로로 추가한 것이 아니라 이미 피아노에서 만들어진 소리입니다. 따라서 모든 배음은 단일 음표의 사운드 내에 있으며 각 배음의 다양한 강도는 악기에 특정 사운드 또는 음색을 제공할 수 있게 합니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-11.07.31-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-11.07.31-copy.jpg)
 
  
 
 다시 보면 위의 원래 C, G 및 C를 볼 수 있지만 E 하모닉을 자세히 들으면 자연스럽게 E로 들립니다. 그런데 이 부분은 평균율의 음과 딱 맞지 않는다는 것을 알 수 있습니다. 따라서 어떤 음의 파장의 일부로 존재하는 완벽하게 조율된 음은 실제로 피아노에서 연주하는 E보다 약간 낮습니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-10-1.00.03-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-10-1.00.03-copy.jpg)
 
 여기 피아노의 E가 있습니다. 이 E는 그리드 선상에서 딱 맞아떨어지는 것을 볼 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-10.03.06-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-10.03.06-copy.jpg)
 
 반면 C의 하모닉에서 발견된 E는 약간 뒤로 떨어져 있습니다. 센트로 환산하면 이는 실제로 반음의 약 14/100, 약 14센트 정도 낮습니다.
 
@@ -150,17 +157,17 @@ Jacob의 작품에서 그도 마찬가지로 4개의 코드만 사용하고 어�
 
 첫 번째 코드에서 그는 D 코드의 일부로 B를 사용합니다. 이는 D13이므로 이와 같은 D 코드는 일반적으로 G 메이저로 해결됩니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-11.20.08-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-11.20.08-copy.jpg)
 
 그래서 그는 이 B를 마치 G Major의 배음의 구성음의 일부인 것처럼 취급하고 있고, 이 음은 피아노에서 들리는 음보다 약간 더 좁다는 것을 기억하세요. (참고: B는 GMaj화음에서 장3도의 구성음)
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-11.20.22-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-11.20.22-copy.jpg)
 
 {% youtube "https://youtu.be/UYXRGXoSOrc" %}
 
 여기서 그가 할 수 있는 것은 전체 코드의 아랫 부분을 14센트 차이만큼 약간 위로 가져오는 것입니다. 전체 코드가 14센트 위로 이동했지만 조율이 어긋난 게 아니라 실제로는 평소보다 더 조율이 잘 된 상태입니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-11.25.39-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-11.25.39-copy.jpg)
 
 > G 메이저로 봤을 때 B를 제외한 나머지 음들이 14센트가 높아진 것은, B가 다른 음들에 비해 상대적으로  14센트 낮아진 것으로 볼 수 있으며 이것은 배음적으로 훨씬 더 조화로운 상태입니다.
 
@@ -170,9 +177,9 @@ Jacob의 작품에서 그도 마찬가지로 4개의 코드만 사용하고 어�
 
 이 시리즈의 세 번째 코드 Am9는 근음 A에서 5도를 두 번 쌓으면, 또 다른 B가 됩니다. (참고: A의 완전5도 위는 E, E의 완전5도 위는 B)
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-11.40.12-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-11.40.12-copy.jpg)
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-06-오후-11.43.51-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-11.43.51-copy.jpg)
 
 그리고 다시 우리가 본 것처럼 자연스러운 배음의 5도는 피아노 5도보다 5센트 더 낮습니다. 그래서 이 쌓아올린 2개의 5도의 차이는 총 10센트가 되므로(자연 배음이 피아노보다 10센트 낮음) 나머지의 코드 음들은 B의 음조가 맞지 않는 소리 없이 10센트씩 올라갈 수 있습니다.
 

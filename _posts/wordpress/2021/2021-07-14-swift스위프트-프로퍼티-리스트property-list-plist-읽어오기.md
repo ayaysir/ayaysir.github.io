@@ -38,7 +38,7 @@ categories:
 
  
 
- ![](/assets/img/wp-content/uploads/2021/07/스크린샷-2021-07-14-오후-2.33.00.png)
+ ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-14-pm-2.33.00.png)
 
 먼저 위 프로퍼티 리스트의 타입을 참고하여 두 개의 `struct` 를 만듭니다.
 

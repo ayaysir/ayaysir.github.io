@@ -34,9 +34,9 @@ BackgroundTasks는 앱이 백그라운드에서 작업을 할 수 있게 하는 
 
 를 체크합니다.
 
- ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-02-25-오전-1.59.24.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-오전-1.59.24.jpg)
 
- ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-02-25-오전-1.56.53.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-오전-1.56.53.jpg)
 
  
 
@@ -197,7 +197,7 @@ func sceneDidEnterBackground(_ scene: UIScene) {
     e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"TASK_IDENTIFIER"]
     ```
     
-     ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-02-23-오후-11.43.01.jpg)
+     ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-23-pm-11.43.01.jpg)
 4. 홈 화면에서 앱 아이콘을 실행해 다시 실행합니다. 시스템은 해당 작업에 대한 실행 핸들러를 호출합니다.
 
  

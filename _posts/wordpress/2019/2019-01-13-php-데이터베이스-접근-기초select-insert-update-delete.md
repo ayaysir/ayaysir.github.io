@@ -195,7 +195,7 @@ $seq = $_POST['seq'];
 
 ## **데이터베이스 구조**
 
- ![](/assets/img/wp-content/uploads/2019/01/-2021-02-17-오후-12.20.39-e1613532613329.png)
+ ![](/assets/img/wp-content/uploads/2019/01/-2021-02-17-pm-12.20.39-e1613532613329.png)
 
 ```sql
 --

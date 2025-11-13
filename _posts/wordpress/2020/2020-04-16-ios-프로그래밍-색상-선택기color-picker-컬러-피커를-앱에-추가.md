@@ -70,7 +70,7 @@ class ViewController: UIViewController {
 
 이미지 위에 슬라이더를 놓고 트랙 색조(track tints)를 투명하게 설정하십시오. 이것으로 서브클래스를 만들지 않고도 커스텀 UI의 느낌을 얻을 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2020/04/스크린샷-2020-04-16-오후-3.43.40.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-16-pm-3.43.40.png)
 
  
 

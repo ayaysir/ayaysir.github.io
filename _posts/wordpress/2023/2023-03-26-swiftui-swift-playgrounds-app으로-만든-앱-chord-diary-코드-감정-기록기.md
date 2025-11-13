@@ -52,7 +52,7 @@ categories:
 
 #### **프로젝트 구조**
 
- ![](/assets/img/wp-content/uploads/2023/03/스크린샷-2023-03-27-오전-1.34.16-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-27-오전-1.34.16-copy.jpg)
 
 - **주요 코드**는 `Chord_Todo` 폴더 내에 있습니다.
     - `MainView`: 각종 뷰가 조합된 메인 화면
@@ -82,7 +82,7 @@ CRUD의 모든 과정은 `UserDefaults`를 사용해 관리되며 실제로 동�
 
 ##### **Read**
 
- ![](/assets/img/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-02.08.38-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-02.08.38-copy.jpg)
 
 {% youtube "https://www.youtube.com/watch?v=mutCONP3c0Q" %}
 

@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-#### **소개**
+## **소개**
 
 iCloudKit의 `CloudKit`을 이용해 CoreData에 저장된 데이터를 동기화하는 방법입니다. 별도의 인증 절차 없이 같은 iCloud계정을 가진 기기는 자동으로 연동이 됩니다.
 
@@ -15,53 +15,53 @@ iCloudKit의 `CloudKit`을 이용해 CoreData에 저장된 데이터를 동기�
 
  
 
-#### **방법**
+## **방법**
 
-##### **Step 1: 프로젝트 생성**
+### **Step 1: 프로젝트 생성**
 
 (1) Xcode에서 `File -> New -> Project...` 메뉴 선택 후 `iOS App` 프로젝트 생성
 
 (2) 옵션에서 `SwiftUI`, `CoreData`, `Host in CloudKit` 선택
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.50.09-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.50.09-copy.jpg)
 
 - 만약 SwiftUI 프로젝트가 이미 만들어진 경우라면 다음 Step을 보면서 빠진 부분을 보충합니다.
 
  
 
-##### **Step 2: CloutKit 설정**
+### **Step 2: CloutKit 설정**
 
 `Target 설정`창으로 가서 `Signing & Capabilities -> iCloud` 부분에서 `Services`에 `CloudKit`을 선택하고, `+` 버튼을 누릅니다.
 
 iCloud가 없는 경우 상단의 `+ Capability` 버튼을 눌러 iCloud를 먼저 추가합니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-9.01.49-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-9.01.49-copy.jpg)
 
  
 
 번들 이름을 입력합니다. 앞에 `iCloud.*` 접두사가 자동으로 붙습니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.38.28-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.38.28-copy.jpg)
 
  
 
 Xcode 왼쪽 프로젝트 탐색기 영역에 `프로젝트이름.entitlements` 라는 파일이 생겼는지 확인하고, `iCloud Container Identifiers`에 위에서 입력한 컨테이너가 제대로 들어갔는지도 확인합니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.42.33-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.42.33-copy.jpg)
 
  
 
 > **참고:** Unable to process request - PLA Update available 에러가 뜨는 경우 [애플 개발자 계정 홈페이지](https://developer.apple.com/account)를 방문한 후 업데이트된 약관을 검토하고 동의합니다.
 > 
->  ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.35.20-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.35.20-copy.jpg)
 > 
->  ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.37.31-복사본.jpg)
+>  ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.37.31-copy.jpg)
 
  
 
-##### **Step 3: Persistence.swift 파일을 확인하고, 만약 없다면 새로 생성합니다.**
+### **Step 3: Persistence.swift 파일을 확인하고, 만약 없다면 새로 생성합니다.**
 
-```
+```swift
 import CoreData
 
 struct PersistenceController {
@@ -77,8 +77,6 @@ struct PersistenceController {
         do {
             try viewContext.save()
         } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
@@ -96,9 +94,6 @@ struct PersistenceController {
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -124,21 +119,21 @@ struct PersistenceController {
 
  
 
-##### **Step 4: CoreData를 입출력하는 뷰 만들기**
+### **Step 4: CoreData를 입출력하는 뷰 만들기**
 
 그 전에 먼저 `프로젝트 이름.xcdatamodeld`으로 된 Core Data Model 파일이 제대로 생성되었는지 확인합니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-9.24.38-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-9.24.38-copy.jpg)
 
 여기서 `Item` 엔티티(Enitities)를 선택하고, `String` 타입의 `message`라는 속성(attribute)를 추가합니다.
 
- ![](/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.45.04-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.45.04-copy.jpg)
 
  
 
 Step 1에서 CoreData와 Host in CloudKit을 선택했다면 `ContentView,swift`에 예제 CRUD 페이지가 자동으로 생성됩니다. 하이라이트된 부분은 편의를 위해 임의로 추가한 라인이며 나머지는 자동 생성된 코드입니다.
 
-```
+```swift
 import SwiftUI
 import CoreData
 
@@ -186,8 +181,6 @@ struct ContentView: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
@@ -201,8 +194,6 @@ struct ContentView: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
@@ -240,9 +231,9 @@ private let itemFormatter: DateFormatter = {
 
  
 
-##### **Step 5: @main 진입 부분에 CoreData 컨트롤러와 환경(environment) 추가하기**
+### **Step 5: @main 진입 부분에 CoreData 컨트롤러와 환경(environment) 추가하기**
 
-```
+```swift
 import SwiftUI
 
 @main
@@ -267,10 +258,11 @@ struct TargetBrowserApp: App {
 
  
 
-##### **Step 6: 실제 기기에서 테스트**
+### **Step 6: 실제 기기에서 테스트**
 
 시뮬레이터는 별도의 iCloud 로그인 과정이 필요하고, 간혹 로그아웃이 되지 않는 버그가 있기 때문에 실제 기기에서 하는 것을 권장합니다.
 
 여러 대의 기기(아이폰, 아이패드)에서 빌드한 뒤 실행하고, 실시간으로 동기화가 되는지 확인합니다.
 
-https://giphy.com/gifs/5g9Z5jOBwEme6muZBb
+<!-- https://giphy.com/gifs/5g9Z5jOBwEme6muZBb -->
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHplcnQ3MmdjcnB3dzlwdHE2Mm5ud2NrMGFja21nZzh4Yjk5eXE4cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5g9Z5jOBwEme6muZBb/giphy.gif)

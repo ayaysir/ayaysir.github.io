@@ -24,21 +24,21 @@ categories:
 
 **1: 오디오 트랙을 추가합니다.**
 
- ![](/assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-21-오후-11.35.27.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-21-pm-11.35.27.jpg)
 
  
 
 **2: Audio Effect Plug-in 영역에 `Gain`(Utility > Gain > 스테레오 Stereo)을 추가합니다.**
 
- ![](/assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-21-오후-11.35.38.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-21-pm-11.35.38.jpg)
 
- ![](/assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-21-오후-11.40.20.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-21-pm-11.40.20.jpg)
 
  
 
 **3: Gain 플러그인 설정 중에서 `Phase Invert` 부분을 찾은 뒤, `L` 또는 `R` 둘 중 하나만 체크합니다.**
 
- ![](/assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-21-오후-11.21.44.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-21-pm-11.21.44.jpg)
 
 L과 R 둘 다 모두 체크하면 L, R에 각각 적용된 역위상이 서로 상쇄되므로 원래 소리와 똑같아집니다. 그러므로 하나만 체크합니다.
 
@@ -46,7 +46,7 @@ L과 R 둘 다 모두 체크하면 L, R에 각각 적용된 역위상이 서로 
 
 **4: `MONO`를 `ON` 합니다.**
 
- ![](/assets/img/wp-content/uploads/2023/02/스크린샷-2023-02-21-오후-11.21.44-복사본.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-21-pm-11.21.44-copy.jpg)
 
  
 

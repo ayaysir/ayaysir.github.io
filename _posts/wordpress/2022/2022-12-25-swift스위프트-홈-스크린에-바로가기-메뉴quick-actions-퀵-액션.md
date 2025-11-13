@@ -35,7 +35,7 @@ categories:
 
 새로운 iOS App 프로젝트를 생성합니다. 이 포스트는 스토리보드(Interface Builder)를 기준으로 설명합니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.16.22.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.16.22.jpg)
 
  
 
@@ -45,7 +45,7 @@ Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, `inf
 
 `info.plist` 파일을 열고 아래와 같이 트리를 구성합니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.22.37.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.22.37.jpg)
 
 - **UIApplicationShortcutItemType (필수) - Icon Type** 
     - 퀵 액션을 식별하는 고유한 문자열입니다.
@@ -74,11 +74,11 @@ Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, `inf
 > 
 > **1) info.plist 파일을 마우스 오른쪽 클릭한 후 Open As > Source Code를 선택해 소스 편집기로 엽니다.**
 > 
->  ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.20.36.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.20.36.jpg)
 > 
 > **2) 아래 XML 코드를 `<dict>` 아래에 복붙합니다.**
 > 
->  ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.21.34.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.21.34.jpg)
 > 
 > ```
 > <key>UIApplicationShortcutItems</key>
@@ -116,19 +116,20 @@ Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, `inf
 > 
 > 아래와 같이 구성되었는지 확인합니다.
 > 
->  ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.22.12.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.22.12.jpg)
 > 
 > **3) Property List로 다시 열어 Home Screen Shorcut Items가 추가되었는지 확인합니다.**
 > 
->  ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.22.19.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.22.19.jpg)
 > 
->  ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-25-오후-2.34.32.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-25-pm-2.34.32.jpg)
 
  
 
 앱을 빌드 및 실행합니다. 홈 스크린으로 이동 후 Static 퀵 액션이 추가되었는지 확인합니다.
 
-http://www.giphy.com/gifs/Z5j8P0zLZbqa97Su5n
+<!-- http://www.giphy.com/gifs/Z5j8P0zLZbqa97Su5n -->
+![](https://)
 
  
 
@@ -138,7 +139,8 @@ Dynamic 퀵 액션은 앱 내부에서 코드로 작성하여 추가할 수 있�
 
 아래 예제는 `UIStepper`의 값이 바뀌면, 그 값의 배수를 메뉴 제목에 표시하고 계산 과정을 메뉴 부제에 표시하도록 갱신하는 예제입니다.
 
-http://www.giphy.com/gifs/4YHpN4pPN7iR07RGts
+<!-- http://www.giphy.com/gifs/4YHpN4pPN7iR07RGts -->
+![](https://)
 
  
 
@@ -205,7 +207,7 @@ func setDynamicQuickActions(_ value: Int) {
 
 _**SceneDelegate.swift**_ 파일을 열고 `SceneDelegate` 클래스의 하단에 `windowScene(...perfomActionFor...)`를 추가합니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.36.00.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.36.00.jpg)
 
  
 
@@ -260,13 +262,13 @@ func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UI
 
 `[New Message]` 퀵 액션을 클릭해서 열면 다음과 같이 경고창이 표시됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-24-오후-10.40.18.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.40.18.jpg)
 
  
 
 또한 임의로 만든 Dynamic 퀵 액션을 클릭해서 열면 콘솔에 다음과 같이 표시됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-25-오후-3.02.03.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-25-pm-3.02.03.jpg)
 
  
 

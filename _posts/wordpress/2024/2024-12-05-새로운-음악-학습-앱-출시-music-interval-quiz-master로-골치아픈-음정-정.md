@@ -8,11 +8,13 @@ categories:
   - "포트폴리오"
 ---
 
-### **Music Interval Quiz Master**
+<!-- 했음 -->
+
+**Music Interval Quiz Master**
 
  ![](/assets/img/wp-content/uploads/2024/12/screenshot-2024-12-05-pm-9.40.35-copy.jpg)
 
-##### **[여기를 눌러 설치](https://apps.apple.com/kr/app/music-interval-quiz-master/id6738980588) (아이폰, 아이패드, 맥 등 애플 기기 대응)**
+**[여기를 눌러 설치](https://apps.apple.com/kr/app/music-interval-quiz-master/id6738980588) (아이폰, 아이패드, 맥 등 애플 기기 대응)**
 
 이 앱은 음악 이론 맨 첫부분에서 배우는 음정(interval)이 어려워 골치인 모든 애플 기기 유저들을 위해 제작되었습니다.
 
@@ -24,9 +26,10 @@ categories:
 
  
 
-#### **App Store 소개문**
+## **App Store 소개문**
 
-<iframe width="220" height="480" src="https://giphy.com/embed/7kl4cIGmDs8Kbzpknt" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="220" height="480" src="https://giphy.com/embed/7kl4cIGmDs8Kbzpknt" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjFpazI3aGtqdjcyMTh5b2cwZnRuYnV0cXY3YzlnczdhZWw0d2VwaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7kl4cIGmDs8Kbzpknt/giphy.gif)
 
 음정 공부를 퀴즈, 악보, 소리와 함께 쉽게 마스터하세요! 통계로 학습 진행 상황을 추적하고, 설정을 맞춤화하며 학습 속도를 빠르게 향상시켜 보세요!
 
@@ -34,7 +37,7 @@ categories:
 
  
 
-##### **퀴즈로 음정 계산을 마스터**
+### **퀴즈로 음정 계산을 마스터**
 
 \[gallery link="file" columns="2" size="large" ids="6907,6908"\]
 
@@ -42,15 +45,16 @@ categories:
 
  
 
-##### **틀려도 괜찮아요**
+### **틀려도 괜찮아요**
 
-\[gallery link="file" columns="2" size="full" ids="6909,6910"\]
+<!-- \[gallery link="file" columns="2" size="full" ids="6909,6910"\] -->
+![](/assets/img/wp-content/uploads/2024/12/app-interval/1.jpg)
 
 틀린 문제는 맞출 때까지! 수많은 문제 폭탄으로 누구나 음정 마스터!
 
  
 
-##### **통계 기능**
+### **통계 기능**
 
  ![](/assets/img/wp-content/uploads/2024/12/ko_5_stats.jpg)
 
@@ -58,15 +62,16 @@ categories:
 
  
 
-##### **설정 기능**
+### **설정 기능**
 
-\[gallery link="file" columns="2" size="full" ids="6912,6913"\]
+<!-- \[gallery link="file" columns="2" size="full" ids="6912,6913"\] -->
+![](/assets/img/wp-content/uploads/2024/12/app-interval/2.jpg)
 
 문제 범위를 정하고 풀이 방식도 내 마음대로 설정 제한 타이머를 설정해 풀이 속도를 단축해보세요!
 
  
 
-#### **추가 예정 기능**
+### **추가 예정 기능**
 
 앞으로 다양한 편리 기능이 업데이트될 예정입니다. 가장 저렴한 구매가로 평생 혜택을 누려보세요!
 
@@ -80,6 +85,6 @@ categories:
 
  
 
-> 안녕히세요! 이 포스트를 읽어주셔서 감사합니다. 이 포스트만의 특전으로 음정 학습이 필요하신 3분께 이 앱의 프로모션 리딤 코드를 제공하도록 하겠습니다. App Store에서 아래 리딤 코드를 사용하시면 1100원 상당의 유료 앱 Music Interval Quiz Master을 무료로 설치할 수 있습니다! (한 줄당 리딤코드 한 개입니다. 이 앱을 사용하기 위해서는 음악 이론 중 음정 Interval에 대한 사전 지식이 필요합니다.)
+<!-- > 안녕히세요! 이 포스트를 읽어주셔서 감사합니다. 이 포스트만의 특전으로 음정 학습이 필요하신 3분께 이 앱의 프로모션 리딤 코드를 제공하도록 하겠습니다. App Store에서 아래 리딤 코드를 사용하시면 1100원 상당의 유료 앱 Music Interval Quiz Master을 무료로 설치할 수 있습니다! (한 줄당 리딤코드 한 개입니다. 이 앱을 사용하기 위해서는 음악 이론 중 음정 Interval에 대한 사전 지식이 필요합니다.)
 > 
->  ![](/assets/img/wp-content/uploads/2024/12/screenshot-2025-02-13-am-12.03.59.png)
+>  ![](/assets/img/wp-content/uploads/2024/12/screenshot-2025-02-13-am-12.03.59.png) -->

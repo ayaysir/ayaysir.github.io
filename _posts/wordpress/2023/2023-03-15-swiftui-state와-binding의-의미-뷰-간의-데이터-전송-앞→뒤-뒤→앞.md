@@ -43,7 +43,8 @@ struct PlayButton: View {
 }
 ```
 
-http://www.giphy.com/gifs/M1YL5UJsNSlK1PKdWq
+<!-- http://www.giphy.com/gifs/M1YL5UJsNSlK1PKdWq -->
+![](https://)
 
  
 
@@ -255,4 +256,5 @@ struct ContentView: View {
 
  
 
-http://www.giphy.com/gifs/CW9TRkvJCMLLythIlV
+<!-- http://www.giphy.com/gifs/CW9TRkvJCMLLythIlV -->
+![](https://)

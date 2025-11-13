@@ -18,7 +18,7 @@ categories:
 
 ##### **1) 앱을 arm64용으로 Archive합니다.**
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-6.47.18.jpg)    ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-6.52.55.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.47.18.jpg)    ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.52.55.jpg)
 
 아카이브가 완료되면 `Organizer` 창이 표시됩니다.
 
@@ -30,19 +30,19 @@ categories:
 
  
 
-\[caption id="attachment\_5099" align="alignnone" width="791"\] ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-6.51.38.jpg) Organizer 창에서 Distribute App 클릭\[/caption\]
+\[caption id="attachment\_5099" align="alignnone" width="791"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.51.38.jpg) Organizer 창에서 Distribute App 클릭\[/caption\]
 
  
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-6.52.00.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.52.00.jpg)
 
-\[caption id="attachment\_5101" align="alignnone" width="473"\] ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-6.52.08.jpg) `Export` 선택\[/caption\]
+\[caption id="attachment\_5101" align="alignnone" width="473"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.52.08.jpg) `Export` 선택\[/caption\]
 
  
 
 파일을 생성할 위치를 지정한 뒤 작업이 완료되면 폴더 내에 `.ipa` 파일이 생깁니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-6.52.55.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.52.55.jpg)
 
  
 
@@ -58,19 +58,19 @@ categories:
 
 `.ipa` 파일을 Transporter 창에 드래그 앤 드롭하면 목록에 추가됩니다. `업로드` 버튼을 눌러 업로드를 시작합니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-5.23.41.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-5.23.41.jpg)
 
  
 
 ##### **5) 업로드가 완료될 때까지 기다린 뒤, 완료 메시지가 정상적으로 뜨는지 확인합니다.**
 
-\[caption id="attachment\_5094" align="alignnone" width="952"\] ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-5.28.26.jpg) 업로드 중\[/caption\]
+\[caption id="attachment\_5094" align="alignnone" width="952"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-5.28.26.jpg) 업로드 중\[/caption\]
 
  
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-5.48.18.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-5.48.18.jpg)
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-5.48.30.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-5.48.30.jpg)
 
  
 
@@ -84,4 +84,4 @@ categories:
 
 이후 앱 스토어 커넥트(App Store Connect) 페이지에 접속해서 빌드 등록을 완료합니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/스크린샷-2022-12-06-오후-6.38.23.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.38.23.jpg)
