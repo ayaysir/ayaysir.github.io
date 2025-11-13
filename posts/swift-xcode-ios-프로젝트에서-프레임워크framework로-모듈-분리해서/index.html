@@ -1743,63 +1743,6 @@
   
 
   
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -1840,6 +1783,21 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -1862,8 +1820,72 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
 
 
@@ -1954,7 +1976,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1724 words"
+  title="1733 words"
 >
   <em>9 min</em> read</span>
 
@@ -1988,30 +2010,30 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>iOS 프로젝트에서 어느 부분을 외부 프레임워크(Framework) 파일로 빼서 모듈로 사용하는 방법입니다.</p>
 
 <p>모듈을 불러와 사용하는 방법은 <code class="language-plaintext highlighter-rouge">import</code> 키워드를 사용하는 것입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>import UIKit
-import WebKit
-import MapKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">WebKit</span>
+<span class="kd">import</span> <span class="kt">MapKit</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="분리하려는-코드-예제"><span class="me-2"><strong>분리하려는 코드 예제</strong></span><a href="#분리하려는-코드-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p> 
+예시로 아래와 같이 데이터가 있으면 그래프를 표시하는 앱을 만들었는데 그래프를 그려주는 부분(클래스 <code class="language-plaintext highlighter-rouge">GraphMaker</code>)은 앞으로 코드가 복잡해질 것 같아서 다른 곳에서 개발 및 관리하고 싶을 때가 있을 것입니다. 또 이러한 기능은 여러 앱에서 사용될 것 같은 경우 분리해두면 다른 앱 프로젝트에서도 재활용할 수 있습니다. 이 경우에 프레임워크로 분리하면 편리합니다.</p>
 
-<p>예시로 아래와 같이 데이터가 있으면 그래프를 표시하는 앱을 만들었는데 그래프를 그려주는 부분(클래스 <code class="language-plaintext highlighter-rouge">GraphMaker</code>)은 앞으로 코드가 복잡해질 것 같아서 다른 곳에서 개발 및 관리하고 싶을 때가 있을 것입니다. 또 이러한 기능은 여러 앱에서 사용될 것 같은 경우 분리해두면 다른 앱 프로젝트에서도 재활용할 수 있습니다. 이 경우에 프레임워크로 분리하면 편리합니다.</p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.41.48-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.41.48-copy.jpg" alt="" loading="lazy"></a></p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.41.48-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.41.48-복사본.jpg" alt="" loading="lazy"></a></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2030,28 +2052,28 @@ import MapKit
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>struct ExampleView: View {
-    let data = [42, 15, 37, 93, 87, 51, 7, 14, 68, 88, 43]
-    let maker = GraphMaker()
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">ExampleView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">43</span><span class="p">]</span>
+    <span class="k">let</span> <span class="nv">maker</span> <span class="o">=</span> <span class="kt">GraphMaker</span><span class="p">()</span>
     
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("추세 그래프")
-                .font(.title)
-                .padding(.bottom, 10)
-            Text(maker.draw(data))
-        }
-    }
-}
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="s">"추세 그래프"</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="n">maker</span><span class="o">.</span><span class="nf">draw</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-#Preview {
-    ExampleView()
-}
+<span class="cp">#Preview {</span>
+    <span class="kt">ExampleView</span><span class="p">()</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2081,35 +2103,35 @@ import MapKit
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>class GraphMaker {
-    /// 그래프를 그림
-    func draw(_ data: [Int]) -&gt; String {
-        guard !data.isEmpty else {
-            return ""
-        }
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">GraphMaker</span> <span class="p">{</span>
+    <span class="c1">/// 그래프를 그림</span>
+    <span class="kd">func</span> <span class="nf">draw</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="o">!</span><span class="n">data</span><span class="o">.</span><span class="n">isEmpty</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s">""</span>
+        <span class="p">}</span>
         
-        let maxValue = Double(data.max()! )
-        let convertedData = data.map {
-            Int(round(Double($0) / maxValue * 10))
-        }
+        <span class="k">let</span> <span class="nv">maxValue</span> <span class="o">=</span> <span class="kt">Double</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span> <span class="p">)</span>
+        <span class="k">let</span> <span class="nv">convertedData</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span>
+            <span class="kt">Int</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="kt">Double</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="o">/</span> <span class="n">maxValue</span> <span class="o">*</span> <span class="mi">10</span><span class="p">))</span>
+        <span class="p">}</span>
         
-        var pivot: [Int: [Int]] = convertedData.enumerated().reduce([Int:[Int]]()) { pivot, elem in
-            var pivot = pivot
-            let (index, yPos) = elem
-            pivot[yPos, default: []].append(index + 1)
-            return pivot
-        }
+        <span class="k">var</span> <span class="nv">pivot</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]]</span> <span class="o">=</span> <span class="n">convertedData</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span><span class="o">.</span><span class="nf">reduce</span><span class="p">([</span><span class="kt">Int</span><span class="p">:[</span><span class="kt">Int</span><span class="p">]]())</span> <span class="p">{</span> <span class="n">pivot</span><span class="p">,</span> <span class="n">elem</span> <span class="k">in</span>
+            <span class="k">var</span> <span class="nv">pivot</span> <span class="o">=</span> <span class="n">pivot</span>
+            <span class="k">let</span> <span class="p">(</span><span class="nv">index</span><span class="p">,</span> <span class="nv">yPos</span><span class="p">)</span> <span class="o">=</span> <span class="n">elem</span>
+            <span class="n">pivot</span><span class="p">[</span><span class="n">yPos</span><span class="p">,</span> <span class="k">default</span><span class="p">:</span> <span class="p">[]]</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">pivot</span>
+        <span class="p">}</span>
         
-        return stride(from: 10, through: 1, by: -1).map { yPos in
-            var progressX = 0
-            return "🟫" + pivot[yPos, default: []].sorted().map { xIndex in
-                let count = xIndex - progressX
-                progressX = xIndex
-                return String(repeating: "◽️", count: count - 1 ) + "⭐️"
-            }.joined() + String(repeating: "◽️", count: max(data.count - progressX, 0))
-        }.joined(separator: "\n") + "\n🟫\(String(repeating: "🟫", count: data.count))\n"
-    }
-}
+        <span class="k">return</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">through</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">yPos</span> <span class="k">in</span>
+            <span class="k">var</span> <span class="nv">progressX</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="s">"🟫"</span> <span class="o">+</span> <span class="n">pivot</span><span class="p">[</span><span class="n">yPos</span><span class="p">,</span> <span class="k">default</span><span class="p">:</span> <span class="p">[]]</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">xIndex</span> <span class="k">in</span>
+                <span class="k">let</span> <span class="nv">count</span> <span class="o">=</span> <span class="n">xIndex</span> <span class="o">-</span> <span class="n">progressX</span>
+                <span class="n">progressX</span> <span class="o">=</span> <span class="n">xIndex</span>
+                <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="s">"◽️"</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="o">+</span> <span class="s">"⭐️"</span>
+            <span class="p">}</span><span class="o">.</span><span class="nf">joined</span><span class="p">()</span> <span class="o">+</span> <span class="kt">String</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="s">"◽️"</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="nf">max</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="n">progressX</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">🟫</span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="s">"🟫"</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="p">)</span><span class="se">)\n</span><span class="s">"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2118,18 +2140,20 @@ import MapKit
 
 <p> </p>
 
-<h4 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="step-1-프레임워크-프로젝트-생성"><span class="me-2"><strong>Step 1: 프레임워크 프로젝트 생성</strong></span><a href="#step-1-프레임워크-프로젝트-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-1-프레임워크-프로젝트-생성"><span class="me-2"><strong>Step 1: 프레임워크 프로젝트 생성</strong></span><a href="#step-1-프레임워크-프로젝트-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">New &gt; Project... &gt; iOS &gt; Framework</code>를 클릭합니다.</li>
   <li>정보를 입력한 후 프로젝트를 생성합니다.</li>
 </ul>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.44.00-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.44.00-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.44.00-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.44.00-copy.jpg" alt="" loading="lazy"></a></p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.44.52-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.44.52-복사본.jpg" alt="" loading="lazy"></a>  <a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.45.28-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.45.28-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.44.52-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.44.52-copy.jpg" alt="" loading="lazy"></a></p>
+
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.45.28-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.45.28-copy.jpg" alt="" loading="lazy"></a></p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Product Name</code>이 앞으로 <code class="language-plaintext highlighter-rouge">import</code>에서 사용할 프레임워크 이름이 됩니다.
@@ -2143,28 +2167,30 @@ import MapKit
 
 <p>생성하면 다음과 같은 프로젝트 창이 생깁니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.49.49-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.49.49-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.49.49-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.49.49-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p>헤더 파일이 있는데 Objective-C 관련 소스코드/디펜던시를 사용하는 경우에만 필요합니다.</p>
 
 <p> </p>
 
-<h5 id="step-2-배포-버전-설정"><span class="me-2"><strong>Step 2: 배포 버전 설정</strong></span><a href="#step-2-배포-버전-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-2-배포-버전-설정"><span class="me-2"><strong>Step 2: 배포 버전 설정</strong></span><a href="#step-2-배포-버전-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>프로젝트 설정의 <code class="language-plaintext highlighter-rouge">Project</code>, <code class="language-plaintext highlighter-rouge">Targets</code>에서 배포할 iOS 버전을 선택합니다. 예를 들어 원래 프로젝트의 배포 버전이 <code class="language-plaintext highlighter-rouge">14.0</code>이라면 프레임워크의 배포 버전도 동일하거나 그 이하의 버전으로 선택합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.48.54-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.48.54-복사본.jpg" alt="" loading="lazy"></a>  <a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.48.50-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.48.50-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.48.54-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.48.54-copy.jpg" alt="" loading="lazy"></a></p>
+
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.48.50-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.48.50-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="step-3-프레임워크-코드-작성-또는-옮기기"><span class="me-2"><strong>Step 3: 프레임워크 코드 작성 (또는 옮기기)</strong></span><a href="#step-3-프레임워크-코드-작성-또는-옮기기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-3-프레임워크-코드-작성-또는-옮기기"><span class="me-2"><strong>Step 3: 프레임워크 코드 작성 (또는 옮기기)</strong></span><a href="#step-3-프레임워크-코드-작성-또는-옮기기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>원래 코드를 프레임워크로 옮긴 뒤 기존 프로젝트에서 제거합니다. 또는 새로운 코드를 프레임워크에 작성합니다.</p>
 
-<p><strong>주의점</strong></p>
+<h4 id="주의점"><span class="me-2"><strong>주의점</strong></span><a href="#주의점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li>모든 소스코드는 반드시 <code class="language-plaintext highlighter-rouge">[프로젝트명]</code> 폴더 내에 위치해야 합니다.  <a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.52.54-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-7.52.54-복사본.jpg" alt="" loading="lazy"></a></li>
+  <li>모든 소스코드는 반드시 <code class="language-plaintext highlighter-rouge">[프로젝트명]</code> 폴더 내에 위치해야 합니다.  <a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.52.54-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-7.52.54-copy.jpg" alt="" loading="lazy"></a></li>
   <li>외부에서 사용할 클래스, 구조체, 메서드 등은 접근 제한자를 반드시 <code class="language-plaintext highlighter-rouge">public</code> 또는 <code class="language-plaintext highlighter-rouge">open</code>(클래스에만 해당)으로 설정합니다.</li>
 </ul>
 
@@ -2178,9 +2204,9 @@ import MapKit
 
 <p>앞서 작성한 <code class="language-plaintext highlighter-rouge">GraphMaker</code> 클래스를 프레임워크 프로젝트로 옮기겠습니다. 기존 접근 제한자였던 <code class="language-plaintext highlighter-rouge">internal</code>(생략한 경우의 기본값)을 전부 <code class="language-plaintext highlighter-rouge">public</code>으로 변경합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.00.17-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.00.17-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.00.17-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.00.17-copy.jpg" alt="" loading="lazy"></a></p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.25.59-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.25.59-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.25.59-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.25.59-copy.jpg" alt="" loading="lazy"></a></p>
 
 <ul>
   <li><strong>[주의]</strong> 클래스를 외부에 공개하는 경우 클래스 선언부뿐만 아니라 <strong>생성자</strong>  및 내부 메서드도 전부 <code class="language-plaintext highlighter-rouge">public</code> 키워드를 사용해야 합니다.
@@ -2194,7 +2220,7 @@ import MapKit
 
 <p> </p>
 
-<h5 id="step-4-기존-프로젝트에서-새로-만든-프레임워크-불러오기"><span class="me-2"><strong>Step 4: 기존 프로젝트에서 새로 만든 프레임워크 불러오기</strong></span><a href="#step-4-기존-프로젝트에서-새로-만든-프레임워크-불러오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-4-기존-프로젝트에서-새로-만든-프레임워크-불러오기"><span class="me-2"><strong>Step 4: 기존 프로젝트에서 새로 만든 프레임워크 불러오기</strong></span><a href="#step-4-기존-프로젝트에서-새로-만든-프레임워크-불러오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><strong>(1) 반드시 프레임워크 프로젝트 창을 닫습니다.</strong></p>
 
@@ -2204,11 +2230,11 @@ import MapKit
 
 <p><code class="language-plaintext highlighter-rouge">[+]</code> 버튼을 클릭한 뒤 하단의 <code class="language-plaintext highlighter-rouge">Add Other... &gt; Add Files...</code> 를 선택합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.13.19-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.13.19-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.13.19-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.13.19-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p>파일 선택창에서 프레임워크의 <code class="language-plaintext highlighter-rouge">.xcodeprj</code> 파일을 선택해 프레임워크 프로젝트를 불러옵니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.07.48-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.07.48-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.07.48-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.07.48-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -2216,7 +2242,7 @@ import MapKit
 
 <p>왼쪽 프로젝트 내비게이터 창에 <code class="language-plaintext highlighter-rouge">Framework</code>라는 그룹과 함께 프레임워크 프로젝트가 추가되었는지 확인합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.16.22-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.16.22-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.16.22-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.16.22-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -2224,39 +2250,39 @@ import MapKit
 
 <p>전에 진행했던 프로젝트 설정창의 <code class="language-plaintext highlighter-rouge">Targets</code>에서 <code class="language-plaintext highlighter-rouge">General &gt; Frameworks, Libraries and Emb....</code> 으로 이동합니다. 아래처럼 목록이 비어있다면  <code class="language-plaintext highlighter-rouge">[+]</code> 버튼을 다시 클릭합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.18.47-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.18.47-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.18.47-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.18.47-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p>아래와 같이 <code class="language-plaintext highlighter-rouge">[프레임워크 이름].framework</code>가 목록에 있는지 확인한 뒤 추가합니다. 만약 없다면 (2) ~ (3) 번에서 안된 것일수 있으므로 다시 반복합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.18.58-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.18.58-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.18.58-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.18.58-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p>프레임워크가 추가되었는지 확인합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.19.40-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.19.40-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.19.40-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.19.40-copy.jpg" alt="" loading="lazy"></a></p>
 
-<h5 id="step-5-외부-프레임워크를-import를-통해-사용"><span class="me-2"><strong>Step 5: 외부 프레임워크를 import를 통해 사용</strong></span><a href="#step-5-외부-프레임워크를-import를-통해-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-5-외부-프레임워크를-import를-통해-사용"><span class="me-2"><strong>Step 5: 외부 프레임워크를 import를 통해 사용</strong></span><a href="#step-5-외부-프레임워크를-import를-통해-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>다시 원래 프로젝트로 돌아오면 <code class="language-plaintext highlighter-rouge">GraphMaker</code>가 제거된 상태이므로 컴파일 오류가 발생합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.21.31-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.21.31-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.21.31-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.21.31-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p><code class="language-plaintext highlighter-rouge">import</code> 키워드를 사용해서 프레임워크를 불러옵니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.21.48-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.21.48-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.21.48-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.21.48-copy.jpg" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>import GraphMaker
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">GraphMaker</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>다시 빌드하면 오류없이 동작하는 것을 확인할 수 있습니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.33.53-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/스크린샷-2024-02-08-오후-8.33.53-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.33.53-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/02/screenshot-2024-02-08-pm-8.33.53-copy.jpg" alt="" loading="lazy"></a></p>
 
   </div>
 

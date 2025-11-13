@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1003,6 +1010,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1021,16 +1093,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -1143,6 +1205,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1159,7 +1231,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>SwiftUI: CoreData와 CloudKit을 이용해 iCloud로 기기간 데이터 동기화 기초</h1>
     
@@ -1233,9 +1305,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1857 words"
+  title="1687 words"
 >
-  <em>10 min</em> read</span>
+  <em>9 min</em> read</span>
 
         </div>
       </div>
@@ -1243,9 +1315,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">SwiftUI: CoreData와 CloudKit을 이용해 iCloud로 기기간 데이터 동기화 기초</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">SwiftUI: CoreData와 CloudKit을 이용해 iCloud로 기기간 데이터 동기화 기초</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>iCloudKit의 <code class="language-plaintext highlighter-rouge">CloudKit</code>을 이용해 CoreData에 저장된 데이터를 동기화하는 방법입니다. 별도의 인증 절차 없이 같은 iCloud계정을 가진 기기는 자동으로 연동이 됩니다.</p>
 
@@ -1256,15 +1350,15 @@
 
 <p> </p>
 
-<h4 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="step-1-프로젝트-생성"><span class="me-2"><strong>Step 1: 프로젝트 생성</strong></span><a href="#step-1-프로젝트-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-1-프로젝트-생성"><span class="me-2"><strong>Step 1: 프로젝트 생성</strong></span><a href="#step-1-프로젝트-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>(1) Xcode에서 <code class="language-plaintext highlighter-rouge">File -&gt; New -&gt; Project...</code> 메뉴 선택 후 <code class="language-plaintext highlighter-rouge">iOS App</code> 프로젝트 생성</p>
 
 <p>(2) 옵션에서 <code class="language-plaintext highlighter-rouge">SwiftUI</code>, <code class="language-plaintext highlighter-rouge">CoreData</code>, <code class="language-plaintext highlighter-rouge">Host in CloudKit</code> 선택</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.50.09-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.50.09-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.50.09-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.50.09-copy.jpg" alt="" loading="lazy"></a></p>
 
 <ul>
   <li>만약 SwiftUI 프로젝트가 이미 만들어진 경우라면 다음 Step을 보면서 빠진 부분을 보충합니다.</li>
@@ -1272,42 +1366,42 @@
 
 <p> </p>
 
-<h5 id="step-2-cloutkit-설정"><span class="me-2"><strong>Step 2: CloutKit 설정</strong></span><a href="#step-2-cloutkit-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-2-cloutkit-설정"><span class="me-2"><strong>Step 2: CloutKit 설정</strong></span><a href="#step-2-cloutkit-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">Target 설정</code>창으로 가서 <code class="language-plaintext highlighter-rouge">Signing &amp; Capabilities -&gt; iCloud</code> 부분에서 <code class="language-plaintext highlighter-rouge">Services</code>에 <code class="language-plaintext highlighter-rouge">CloudKit</code>을 선택하고, <code class="language-plaintext highlighter-rouge">+</code> 버튼을 누릅니다.</p>
 
 <p>iCloud가 없는 경우 상단의 <code class="language-plaintext highlighter-rouge">+ Capability</code> 버튼을 눌러 iCloud를 먼저 추가합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-9.01.49-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-9.01.49-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-9.01.49-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-9.01.49-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>번들 이름을 입력합니다. 앞에 <code class="language-plaintext highlighter-rouge">iCloud.*</code> 접두사가 자동으로 붙습니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.38.28-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.38.28-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.38.28-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.38.28-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>Xcode 왼쪽 프로젝트 탐색기 영역에 <code class="language-plaintext highlighter-rouge">프로젝트이름.entitlements</code> 라는 파일이 생겼는지 확인하고, <code class="language-plaintext highlighter-rouge">iCloud Container Identifiers</code>에 위에서 입력한 컨테이너가 제대로 들어갔는지도 확인합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.42.33-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.42.33-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.42.33-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.42.33-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <blockquote>
   <p><strong>참고:</strong> Unable to process request - PLA Update available 에러가 뜨는 경우 <a href="https://developer.apple.com/account">애플 개발자 계정 홈페이지</a>를 방문한 후 업데이트된 약관을 검토하고 동의합니다.</p>
 
-  <p><a href="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.35.20-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.35.20-복사본.jpg" alt="" loading="lazy"></a></p>
+  <p><a href="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.35.20-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.35.20-copy.jpg" alt="" loading="lazy"></a></p>
 
-  <p><a href="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.37.31-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.37.31-복사본.jpg" alt="" loading="lazy"></a></p>
+  <p><a href="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.37.31-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.37.31-copy.jpg" alt="" loading="lazy"></a></p>
 </blockquote>
 
 <p> </p>
 
-<h5 id="step-3-persistenceswift-파일을-확인하고-만약-없다면-새로-생성합니다"><span class="me-2"><strong>Step 3: Persistence.swift 파일을 확인하고, 만약 없다면 새로 생성합니다.</strong></span><a href="#step-3-persistenceswift-파일을-확인하고-만약-없다면-새로-생성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-3-persistenceswift-파일을-확인하고-만약-없다면-새로-생성합니다"><span class="me-2"><strong>Step 3: Persistence.swift 파일을 확인하고, 만약 없다면 새로 생성합니다.</strong></span><a href="#step-3-persistenceswift-파일을-확인하고-만약-없다면-새로-생성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1356,63 +1450,53 @@
 46
 47
 48
-49
-50
-51
-52
-53
-</pre></td><td class="rouge-code"><pre>import CoreData
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">CoreData</span>
 
-struct PersistenceController {
-    static let shared = PersistenceController()
+<span class="kd">struct</span> <span class="kt">PersistenceController</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span> <span class="o">=</span> <span class="kt">PersistenceController</span><span class="p">()</span>
 
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        for _ in 0..&lt;10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        return result
-    }()
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">preview</span><span class="p">:</span> <span class="kt">PersistenceController</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">PersistenceController</span><span class="p">(</span><span class="nv">inMemory</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">viewContext</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">viewContext</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="mi">10</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">newItem</span> <span class="o">=</span> <span class="kt">Item</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="n">viewContext</span><span class="p">)</span>
+            <span class="n">newItem</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="n">viewContext</span><span class="o">.</span><span class="nf">save</span><span class="p">()</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">nsError</span> <span class="o">=</span> <span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unresolved error </span><span class="se">\(</span><span class="n">nsError</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">nsError</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="p">}()</span>
 
-    let container: NSPersistentCloudKitContainer
+    <span class="k">let</span> <span class="nv">container</span><span class="p">:</span> <span class="kt">NSPersistentCloudKitContainer</span>
 
-    init(inMemory: Bool = false) {
-        container = NSPersistentCloudKitContainer(name: "TargetBrowser")
+    <span class="nf">init</span><span class="p">(</span><span class="nv">inMemory</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">container</span> <span class="o">=</span> <span class="kt">NSPersistentCloudKitContainer</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"TargetBrowser"</span><span class="p">)</span>
         
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        }
+        <span class="k">if</span> <span class="n">inMemory</span> <span class="p">{</span>
+            <span class="n">container</span><span class="o">.</span><span class="n">persistentStoreDescriptions</span><span class="o">.</span><span class="n">first</span><span class="o">!.</span><span class="n">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"/dev/null"</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
-                /*
+        <span class="n">container</span><span class="o">.</span><span class="nf">loadPersistentStores</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">storeDescription</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span><span class="p">?</span> <span class="p">{</span>
+                <span class="cm">/*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
                  * The persistent store is not accessible, due to permissions or data protection when the device is locked.
                  * The device is out of space.
                  * The store could not be migrated to the current model version.
                  Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
+                 */</span>
+                <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unresolved error </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
         
-        container.viewContext.automaticallyMergesChangesFromParent = true
-    }
-}
+        <span class="n">container</span><span class="o">.</span><span class="n">viewContext</span><span class="o">.</span><span class="n">automaticallyMergesChangesFromParent</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1425,22 +1509,22 @@ struct PersistenceController {
 
 <p> </p>
 
-<h5 id="step-4-coredata를-입출력하는-뷰-만들기"><span class="me-2"><strong>Step 4: CoreData를 입출력하는 뷰 만들기</strong></span><a href="#step-4-coredata를-입출력하는-뷰-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-4-coredata를-입출력하는-뷰-만들기"><span class="me-2"><strong>Step 4: CoreData를 입출력하는 뷰 만들기</strong></span><a href="#step-4-coredata를-입출력하는-뷰-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>그 전에 먼저 <code class="language-plaintext highlighter-rouge">프로젝트 이름.xcdatamodeld</code>으로 된 Core Data Model 파일이 제대로 생성되었는지 확인합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-9.24.38-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-9.24.38-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-9.24.38-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-9.24.38-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p>여기서 <code class="language-plaintext highlighter-rouge">Item</code> 엔티티(Enitities)를 선택하고, <code class="language-plaintext highlighter-rouge">String</code> 타입의 <code class="language-plaintext highlighter-rouge">message</code>라는 속성(attribute)를 추가합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.45.04-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/스크린샷-2024-01-22-오후-8.45.04-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.45.04-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-22-pm-8.45.04-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>Step 1에서 CoreData와 Host in CloudKit을 선택했다면 <code class="language-plaintext highlighter-rouge">ContentView,swift</code>에 예제 CRUD 페이지가 자동으로 생성됩니다. 하이라이트된 부분은 편의를 위해 임의로 추가한 라인이며 나머지는 자동 생성된 코드입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1519,91 +1603,83 @@ struct PersistenceController {
 76
 77
 78
-79
-80
-81
-82
-</pre></td><td class="rouge-code"><pre>import SwiftUI
-import CoreData
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">CoreData</span>
 
-struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@Environment</span><span class="p">(\</span><span class="o">.</span><span class="n">managedObjectContext</span><span class="p">)</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">viewContext</span>
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults&lt;Item&gt;
+    <span class="kd">@FetchRequest</span><span class="p">(</span>
+        <span class="nv">sortDescriptors</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSSortDescriptor</span><span class="p">(</span><span class="nv">keyPath</span><span class="p">:</span> <span class="p">\</span><span class="kt">Item</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span> <span class="nv">ascending</span><span class="p">:</span> <span class="kc">true</span><span class="p">)],</span>
+        <span class="nv">animation</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">items</span><span class="p">:</span> <span class="kt">FetchedResults</span><span class="o">&lt;</span><span class="kt">Item</span><span class="o">&gt;</span>
 
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                        + Text(" \(item.message ?? "")")
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
-        }
-    }
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">NavigationView</span> <span class="p">{</span>
+            <span class="kt">List</span> <span class="p">{</span>
+                <span class="kt">ForEach</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="p">{</span> <span class="n">item</span> <span class="k">in</span>
+                    <span class="kt">NavigationLink</span> <span class="p">{</span>
+                        <span class="kt">Text</span><span class="p">(</span><span class="s">"Item at </span><span class="se">\(</span><span class="n">item</span><span class="o">.</span><span class="n">timestamp</span><span class="o">!</span><span class="p">,</span> <span class="nv">formatter</span><span class="p">:</span> <span class="n">itemFormatter</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                    <span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="kt">Text</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">timestamp</span><span class="o">!</span><span class="p">,</span> <span class="nv">formatter</span><span class="p">:</span> <span class="n">itemFormatter</span><span class="p">)</span>
+                        <span class="o">+</span> <span class="kt">Text</span><span class="p">(</span><span class="s">" </span><span class="se">\(</span><span class="n">item</span><span class="o">.</span><span class="n">message</span> <span class="p">??</span> <span class="s">""</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="o">.</span><span class="nf">onDelete</span><span class="p">(</span><span class="nv">perform</span><span class="p">:</span> <span class="n">deleteItems</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="o">.</span><span class="n">toolbar</span> <span class="p">{</span>
+                <span class="kt">ToolbarItem</span><span class="p">(</span><span class="nv">placement</span><span class="p">:</span> <span class="o">.</span><span class="n">navigationBarTrailing</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kt">EditButton</span><span class="p">()</span>
+                <span class="p">}</span>
+                <span class="kt">ToolbarItem</span> <span class="p">{</span>
+                    <span class="kt">Button</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="n">addItem</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kt">Label</span><span class="p">(</span><span class="s">"Add Item"</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="s">"plus"</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="s">"Select an item"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-            newItem.message = "\(UUID().uuidString.split(separator: "-")[0])"
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">addItem</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">withAnimation</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">newItem</span> <span class="o">=</span> <span class="kt">Item</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="n">viewContext</span><span class="p">)</span>
+            <span class="n">newItem</span><span class="o">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
+            <span class="n">newItem</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="kt">UUID</span><span class="p">()</span><span class="o">.</span><span class="n">uuidString</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"-"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="se">)</span><span class="s">"</span>
 			
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+            <span class="k">do</span> <span class="p">{</span>
+                <span class="k">try</span> <span class="n">viewContext</span><span class="o">.</span><span class="nf">save</span><span class="p">()</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="k">let</span> <span class="nv">nsError</span> <span class="o">=</span> <span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span>
+                <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unresolved error </span><span class="se">\(</span><span class="n">nsError</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">nsError</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">deleteItems</span><span class="p">(</span><span class="nv">offsets</span><span class="p">:</span> <span class="kt">IndexSet</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">withAnimation</span> <span class="p">{</span>
+            <span class="n">offsets</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">items</span><span class="p">[</span><span class="nv">$0</span><span class="p">]</span> <span class="p">}</span><span class="o">.</span><span class="nf">forEach</span><span class="p">(</span><span class="n">viewContext</span><span class="o">.</span><span class="n">delete</span><span class="p">)</span>
 
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-}
+            <span class="k">do</span> <span class="p">{</span>
+                <span class="k">try</span> <span class="n">viewContext</span><span class="o">.</span><span class="nf">save</span><span class="p">()</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="k">let</span> <span class="nv">nsError</span> <span class="o">=</span> <span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span>
+                <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unresolved error </span><span class="se">\(</span><span class="n">nsError</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">nsError</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
+<span class="kd">private</span> <span class="k">let</span> <span class="nv">itemFormatter</span><span class="p">:</span> <span class="kt">DateFormatter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
+    <span class="n">formatter</span><span class="o">.</span><span class="n">dateStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">short</span>
+    <span class="n">formatter</span><span class="o">.</span><span class="n">timeStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">medium</span>
+    <span class="k">return</span> <span class="n">formatter</span>
+<span class="p">}()</span>
 
-#Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-}
+<span class="cp">#Preview {</span>
+    <span class="kt">ContentView</span><span class="p">()</span><span class="o">.</span><span class="nf">environment</span><span class="p">(\</span><span class="o">.</span><span class="n">managedObjectContext</span><span class="p">,</span> <span class="kt">PersistenceController</span><span class="o">.</span><span class="n">preview</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">viewContext</span><span class="p">)</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1644,10 +1720,10 @@ private let itemFormatter: DateFormatter = {
 
 <p> </p>
 
-<h5 id="step-5-main-진입-부분에-coredata-컨트롤러와-환경environment-추가하기"><span class="me-2"><strong>Step 5: @main 진입 부분에 CoreData 컨트롤러와 환경(environment) 추가하기</strong></span><a href="#step-5-main-진입-부분에-coredata-컨트롤러와-환경environment-추가하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-5-main-진입-부분에-coredata-컨트롤러와-환경environment-추가하기"><span class="me-2"><strong>Step 5: @main 진입 부분에 CoreData 컨트롤러와 환경(environment) 추가하기</strong></span><a href="#step-5-main-진입-부분에-coredata-컨트롤러와-환경environment-추가하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1661,19 +1737,19 @@ private let itemFormatter: DateFormatter = {
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-@main
-struct TargetBrowserApp: App {
-    let persistenceController = PersistenceController.shared
+<span class="kd">@main</span>
+<span class="kd">struct</span> <span class="kt">TargetBrowserApp</span><span class="p">:</span> <span class="kt">App</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">persistenceController</span> <span class="o">=</span> <span class="kt">PersistenceController</span><span class="o">.</span><span class="n">shared</span>
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }
-    }
-}
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">Scene</span> <span class="p">{</span>
+        <span class="kt">WindowGroup</span> <span class="p">{</span>
+            <span class="kt">ContentView</span><span class="p">()</span>
+                <span class="o">.</span><span class="nf">environment</span><span class="p">(\</span><span class="o">.</span><span class="n">managedObjectContext</span><span class="p">,</span> <span class="n">persistenceController</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">viewContext</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1696,13 +1772,14 @@ struct TargetBrowserApp: App {
 
 <p> </p>
 
-<h5 id="step-6-실제-기기에서-테스트"><span class="me-2"><strong>Step 6: 실제 기기에서 테스트</strong></span><a href="#step-6-실제-기기에서-테스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-6-실제-기기에서-테스트"><span class="me-2"><strong>Step 6: 실제 기기에서 테스트</strong></span><a href="#step-6-실제-기기에서-테스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>시뮬레이터는 별도의 iCloud 로그인 과정이 필요하고, 간혹 로그아웃이 되지 않는 버그가 있기 때문에 실제 기기에서 하는 것을 권장합니다.</p>
 
 <p>여러 대의 기기(아이폰, 아이패드)에서 빌드한 뒤 실행하고, 실시간으로 동기화가 되는지 확인합니다.</p>
 
-<p>https://giphy.com/gifs/5g9Z5jOBwEme6muZBb</p>
+<!-- https://giphy.com/gifs/5g9Z5jOBwEme6muZBb -->
+<p><a href="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHplcnQ3MmdjcnB3dzlwdHE2Mm5ud2NrMGFja21nZzh4Yjk5eXE4cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5g9Z5jOBwEme6muZBb/giphy.gif" class="popup img-link shimmer"><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHplcnQ3MmdjcnB3dzlwdHE2Mm5ud2NrMGFja21nZzh4Yjk5eXE4cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5g9Z5jOBwEme6muZBb/giphy.gif" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -2668,6 +2745,12 @@ struct TargetBrowserApp: App {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

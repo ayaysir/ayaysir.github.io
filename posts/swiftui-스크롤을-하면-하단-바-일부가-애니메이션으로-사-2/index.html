@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -602,11 +609,11 @@
       
 
       
-        <!-- add class to exist <a> tag -->
-        
-        
+        <!-- create the image wrapper -->
         
 
+        
+        
       
     
 
@@ -737,6 +744,201 @@
         
         
 
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- add class to exist <a> tag -->
+        
+        
+        
+
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
       
     
 
@@ -761,16 +963,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -914,19 +1106,18 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -943,7 +1134,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>SwiftUI: 스크롤을 하면 하단 바 일부가 애니메이션으로 사라지거나 나타나기 (사파리처럼) 下</h1>
     
@@ -1017,7 +1208,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2954 words"
+  title="2942 words"
 >
   <em>16 min</em> read</span>
 
@@ -1027,9 +1218,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">SwiftUI: 스크롤을 하면 하단 바 일부가 애니메이션으로 사라지거나 나타나기 (사파리처럼) 下</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">SwiftUI: 스크롤을 하면 하단 바 일부가 애니메이션으로 사라지거나 나타나기 (사파리처럼) 下</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h5 id="이전-글"><span class="me-2"><strong>이전 글</strong></span><a href="#이전-글" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p><strong>이전 글</strong></p>
 
 <ul>
   <li><a href="http://yoonbumtae.com/?p=6168">SwiftUI: 스크롤을 하면 하단 바 일부가 애니메이션으로 사라지거나 나타나기 (사파리처럼) 上</a></li>
@@ -1037,17 +1250,18 @@
 
 <p> </p>
 
-<h4 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">UIViewReprestable</code>로 감싼 웹뷰(<code class="language-plaintext highlighter-rouge">WKWebView</code>)의 스크롤 상태에 따라 하단 툴바 및 주소창 모양이 변하도록 하는 예제입니다.</p>
 
-<p>http://www.giphy.com/gifs/TBwPdSqknf4AZLxquv</p>
+<!-- http://www.giphy.com/gifs/TBwPdSqknf4AZLxquv -->
+<p><a href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW1hY3g5YWEyMDZ0dmdoeDdobTFhZzVrajl6MHN3N2dyanZxMDU0diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TBwPdSqknf4AZLxquv/giphy.gif" class="popup img-link shimmer"><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW1hY3g5YWEyMDZ0dmdoeDdobTFhZzVrajl6MHN3N2dyanZxMDU0diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TBwPdSqknf4AZLxquv/giphy.gif" alt="" loading="lazy"></a></p>
 
-<p><a href="http://yoonbumtae.com/?p=6168">이전 예제</a>에서 해당 동작을 @State로 구현하는 방법을 설명하였습니다. 이번 포스트는 실제로 웹뷰의 스크롤 상태에 따라 하단 툴바가 확장/축소되기 위한 과정을 진행합니다.</p>
+<p><a href="_posts/swiftui-스크롤을-하면-하단-바-일부가-애니메이션으로-사">이전 예제</a>에서 해당 동작을 @State로 구현하는 방법을 설명하였습니다. 이번 포스트는 실제로 웹뷰의 스크롤 상태에 따라 하단 툴바가 확장/축소되기 위한 과정을 진행합니다.</p>
 
 <p> </p>
 
-<h4 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">UIViewReprestable</code>로 감싼 웹뷰(<code class="language-plaintext highlighter-rouge">WKWebView</code>) 생성</li>
@@ -1060,14 +1274,14 @@
 
 <p> </p>
 
-<h5 id="1-uiviewreprestable로-감싼-웹뷰wkwebview-생성"><span class="me-2"><strong>(1) UIViewReprestable로 감싼 웹뷰(WKWebView) 생성</strong></span><a href="#1-uiviewreprestable로-감싼-웹뷰wkwebview-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-uiviewreprestable로-감싼-웹뷰wkwebview-생성"><span class="me-2"><strong>(1) UIViewReprestable로 감싼 웹뷰(WKWebView) 생성</strong></span><a href="#1-uiviewreprestable로-감싼-웹뷰wkwebview-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=5436">SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)</a></li>
+  <li><a href="/posts/swiftui-웹-뷰wkwebview-추가하기-및-자바스크립트-실행-representable-사용/">SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)</a></li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1092,30 +1306,30 @@
 22
 23
 24
-</pre></td><td class="rouge-code"><pre>import SwiftUI
-import WebKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">WebKit</span>
 
-struct WebRepresentableView: UIViewRepresentable {
-    typealias UIViewType = WKWebView
-    typealias WebViewHandler = ((WebViewScrollState) -&gt; Void)
+<span class="kd">struct</span> <span class="kt">WebRepresentableView</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span> <span class="p">{</span>
+    <span class="kd">typealias</span> <span class="kt">UIViewType</span> <span class="o">=</span> <span class="kt">WKWebView</span>
+    <span class="kd">typealias</span> <span class="kt">WebViewHandler</span> <span class="o">=</span> <span class="p">((</span><span class="kt">WebViewScrollState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
     
-    var webViewHandler: WebViewHandler?
-    private let webView = WKWebView(frame: .zero)
+    <span class="k">var</span> <span class="nv">webViewHandler</span><span class="p">:</span> <span class="kt">WebViewHandler</span><span class="p">?</span>
+    <span class="kd">private</span> <span class="k">let</span> <span class="nv">webView</span> <span class="o">=</span> <span class="kt">WKWebView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span>
     
-    init(webViewHandler: WebViewHandler? = nil) {
-        self.webViewHandler = webViewHandler
-    }
+    <span class="nf">init</span><span class="p">(</span><span class="nv">webViewHandler</span><span class="p">:</span> <span class="kt">WebViewHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">webViewHandler</span> <span class="o">=</span> <span class="n">webViewHandler</span>
+    <span class="p">}</span>
     
-    func makeUIView(context: Context) -&gt; WKWebView {
-        let request = URLRequest(url: .init(string: "https://en.m.wikipedia.org/wiki/Symphony_No._1_(Prokofiev)")!)
-        webView.load(request)
-        webView.scrollView.delegate = context.coordinator
+    <span class="kd">func</span> <span class="nf">makeUIView</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">WKWebView</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://en.m.wikipedia.org/wiki/Symphony_No._1_(Prokofiev)"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+        <span class="n">webView</span><span class="o">.</span><span class="nf">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="n">webView</span><span class="o">.</span><span class="n">scrollView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">coordinator</span>
         
-        return webView
-    }
+        <span class="k">return</span> <span class="n">webView</span>
+    <span class="p">}</span>
 
-    func updateUIView(_ uiView: WKWebView, context: Context) {}
-}
+    <span class="kd">func</span> <span class="nf">updateUIView</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1125,17 +1339,17 @@ struct WebRepresentableView: UIViewRepresentable {
       <li>
         <p><code class="language-plaintext highlighter-rouge">WebViewScrollState</code>은 다음과 같습니다.</p>
 
-        <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+        <div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>  enum WebViewScrollState {
-      case scrollUp, scrollDown, zoomIn, zoomOut, reachBottom
-  }
+</pre></td><td class="rouge-code"><pre>  <span class="kd">enum</span> <span class="kt">WebViewScrollState</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="n">scrollUp</span><span class="p">,</span> <span class="n">scrollDown</span><span class="p">,</span> <span class="n">zoomIn</span><span class="p">,</span> <span class="n">zoomOut</span><span class="p">,</span> <span class="n">reachBottom</span>
+  <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div>        </div>
       </li>
-      <li>SwiftUI의 뷰에서 Representable로 데이터를 <a href="http://yoonbumtae.com/?p=5981">보내는 과정</a>은 <a href="http://yoonbumtae.com/?p=5436">복잡</a>하지만, Representable로부터 데이터를 받는 것은 위와 같이 클로저 함수만으로도 가능하므로 상대적으로 덜 복잡합니다.</li>
+      <li>SwiftUI의 뷰에서 Representable로 데이터를 <a href="/posts/swiftui-swiftui의-view에서-uirepresentableviewviewcontroller에-접근하여-명령을-실행하는/">보내는 과정</a>은 <a href="/posts/swiftui-웹-뷰wkwebview-추가하기-및-자바스크립트-실행-representable-사용/">복잡</a>하지만, Representable로부터 데이터를 받는 것은 위와 같이 클로저 함수만으로도 가능하므로 상대적으로 덜 복잡합니다.</li>
     </ul>
   </li>
   <li><strong>webView.scrollView.delegate = context.coordinator</strong>
@@ -1148,10 +1362,10 @@ struct WebRepresentableView: UIViewRepresentable {
 
 <p> </p>
 
-<h5 id="2-메인-뷰에-웹뷰-추가"><span class="me-2"><strong>(2) 메인 뷰에 웹뷰 추가</strong></span><a href="#2-메인-뷰에-웹뷰-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-메인-뷰에-웹뷰-추가"><span class="me-2"><strong>(2) 메인 뷰에 웹뷰 추가</strong></span><a href="#2-메인-뷰에-웹뷰-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1169,37 +1383,37 @@ struct WebRepresentableView: UIViewRepresentable {
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>/// Body
-var body: some View {
-    NavigationStack {
-        VStack(spacing: 0) {
-            WebRepresentableView { state in
-                // ... //
-            }
+</pre></td><td class="rouge-code"><pre><span class="c1">/// Body</span>
+<span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kt">NavigationStack</span> <span class="p">{</span>
+        <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">WebRepresentableView</span> <span class="p">{</span> <span class="n">state</span> <span class="k">in</span>
+                <span class="c1">// ... //</span>
+            <span class="p">}</span>
             
-            if showToolBar {
-                urlLargeArea
-            } else {
-                urlShrinkedArea
-            }
-        }
-        // ... //
-    }
-}
+            <span class="k">if</span> <span class="n">showToolBar</span> <span class="p">{</span>
+                <span class="n">urlLargeArea</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">urlShrinkedArea</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// ... //</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li>이전 포스트의 메인 뷰의 <code class="language-plaintext highlighter-rouge">body</code> 내에 웹뷰를 추가합니다.</li>
 </ul>
 
-<p><a href="/assets/img/wp-content/uploads/2024/01/Simulator-Screenshot-iPhone-15-Pro-2024-01-20-at-20.46.46-복사본.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/Simulator-Screenshot-iPhone-15-Pro-2024-01-20-at-20.46.46-복사본.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2024/01/Simulator-Screenshot-iPhone-15-Pro-2024-01-20-at-20.46.46-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/01/Simulator-Screenshot-iPhone-15-Pro-2024-01-20-at-20.46.46-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="3-코디네이터-클래스-생성"><span class="me-2"><strong>(3) 코디네이터 클래스 생성</strong></span><a href="#3-코디네이터-클래스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-코디네이터-클래스-생성"><span class="me-2"><strong>(3) 코디네이터 클래스 생성</strong></span><a href="#3-코디네이터-클래스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1232,37 +1446,37 @@ var body: some View {
 30
 31
 32
-</pre></td><td class="rouge-code"><pre>import SwiftUI
-import WebKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">WebKit</span>
 
-struct WebRepresentableView: UIViewRepresentable {
-    // ... //
+<span class="kd">struct</span> <span class="kt">WebRepresentableView</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span> <span class="p">{</span>
+    <span class="c1">// ... //</span>
     
-    typealias WebViewHandler = ((WebViewScrollState) -&gt; Void)
-    var webViewHandler: WebViewHandler?
+    <span class="kd">typealias</span> <span class="kt">WebViewHandler</span> <span class="o">=</span> <span class="p">((</span><span class="kt">WebViewScrollState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">webViewHandler</span><span class="p">:</span> <span class="kt">WebViewHandler</span><span class="p">?</span>
 
-    // ... //
+    <span class="c1">// ... //</span>
 
-    func makeCoordinator() -&gt; Coordinator {
-        Coordinator(webViewHandler: webViewHandler)
-    }
+    <span class="kd">func</span> <span class="nf">makeCoordinator</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Coordinator</span> <span class="p">{</span>
+        <span class="kt">Coordinator</span><span class="p">(</span><span class="nv">webViewHandler</span><span class="p">:</span> <span class="n">webViewHandler</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    class Coordinator: NSObject, UIScrollViewDelegate {
-        var webViewHandler: WebViewHandler?
-        private var isScrollViewReachedBottomOnce = false
+    <span class="kd">class</span> <span class="kt">Coordinator</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UIScrollViewDelegate</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">webViewHandler</span><span class="p">:</span> <span class="kt">WebViewHandler</span><span class="p">?</span>
+        <span class="kd">private</span> <span class="k">var</span> <span class="nv">isScrollViewReachedBottomOnce</span> <span class="o">=</span> <span class="kc">false</span>
         
-        init(webViewHandler: WebViewHandler? = nil) {
-            self.webViewHandler = webViewHandler
-        }
+        <span class="nf">init</span><span class="p">(</span><span class="nv">webViewHandler</span><span class="p">:</span> <span class="kt">WebViewHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">webViewHandler</span> <span class="o">=</span> <span class="n">webViewHandler</span>
+        <span class="p">}</span>
         
-        // MARK: - UIScrollViewDelegate
-        // ... //
-    }
-}
+        <span class="c1">// MARK: - UIScrollViewDelegate</span>
+        <span class="c1">// ... //</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-#Preview {
-    WebRepresentableView()
-}
+<span class="cp">#Preview {</span>
+    <span class="kt">WebRepresentableView</span><span class="p">()</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1274,14 +1488,14 @@ struct WebRepresentableView: UIViewRepresentable {
 
 <p> </p>
 
-<h5 id="4-코디네이터-클래스-내에-위임자-메서드를-추가"><span class="me-2"><strong>(4) 코디네이터 클래스 내에 위임자 메서드를 추가</strong></span><a href="#4-코디네이터-클래스-내에-위임자-메서드를-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-코디네이터-클래스-내에-위임자-메서드를-추가"><span class="me-2"><strong>(4) 코디네이터 클래스 내에 위임자 메서드를 추가</strong></span><a href="#4-코디네이터-클래스-내에-위임자-메서드를-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>이전 포스트에서 하단 주소창 툴바의 상태를 다음과 같이 정의했습니다. 펼처서 툴바 상태 보기</p>
+<p>이전 포스트에서 하단 주소창 툴바의 상태를 다음과 같이 정의했습니다.</p>
 
-<script>document.querySelector("#expand-toolbar-status").addEventListener("click", function(e){ if(document.querySelector("#toolbar-status").style.display=="none") { document.querySelector("#toolbar-status").style.display="block"; e.target.textContent = "툴바 상태 접기"; } else { document.querySelector("#toolbar-status").style.display="none"; e.target.textContent = "펼처서 툴바 상태 보기"; }});</script>
+<!-- <script>document.querySelector("#expand-toolbar-status").addEventListener("click", function(e){ if(document.querySelector("#toolbar-status").style.display=="none") { document.querySelector("#toolbar-status").style.display="block"; e.target.textContent = "툴바 상태 접기"; } else { document.querySelector("#toolbar-status").style.display="none"; e.target.textContent = "펼처서 툴바 상태 보기"; }});</script> -->
 
 <blockquote>
-  <h6 id="1-url-입력창과-툴바가-보이는-상태에서-아래로-스크롤-및-확대를-한-경우"><strong>(1) URL 입력창과 툴바가 보이는 상태에서 아래로 스크롤 및 확대를 한 경우</strong></h6>
+  <p><strong>(1) URL 입력창과 툴바가 보이는 상태에서 아래로 스크롤 및 확대를 한 경우</strong></p>
 
   <p><a href="https://giphy.com/gifs/XJUKFsJk6XqjuUDFZp"
           class="img-link shimmer"
@@ -1294,7 +1508,7 @@ struct WebRepresentableView: UIViewRepresentable {
 
   <p> </p>
 
-  <h6 id="2-url-입력창과-툴바가-숨겨진-상태에서-위로-스크롤한-경우"><strong>(2) URL 입력창과 툴바가 숨겨진 상태에서 위로 스크롤한 경우</strong></h6>
+  <p><strong>(2) URL 입력창과 툴바가 숨겨진 상태에서 위로 스크롤한 경우</strong></p>
 
   <p><a href="https://giphy.com/gifs/GwDvK1FwZZ2plBxvCF"
           class="img-link shimmer"
@@ -1306,7 +1520,7 @@ struct WebRepresentableView: UIViewRepresentable {
 
   <p> </p>
 
-  <h6 id="3-url-입력창과-툴바가-숨겨진-상태--최하단까지-스크롤된-상태에서-한-번-더-아래로-스크롤-한-경우"><strong>(3) URL 입력창과 툴바가 숨겨진 상태 + 최하단까지 스크롤된 상태에서 한 번 더 아래로 스크롤 한 경우</strong></h6>
+  <p><strong>(3) URL 입력창과 툴바가 숨겨진 상태 + 최하단까지 스크롤된 상태에서 한 번 더 아래로 스크롤 한 경우</strong></p>
 
   <p><a href="https://giphy.com/gifs/3PYLgh3jov4ay6Sy1h"
           class="img-link shimmer"
@@ -1318,9 +1532,8 @@ struct WebRepresentableView: UIViewRepresentable {
   </ul>
 </blockquote>
 
-<p> </p>
-
-<p>이러한 상태를 파악하려면 아래의 4개 메서드 구현이 필요합니다.</p>
+<p> 
+이러한 상태를 파악하려면 아래의 4개 메서드 구현이 필요합니다.</p>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">scrollViewDidScroll</code> - 스크롤 동작이 진행되고 있을 때마다 실행</li>
@@ -1329,8 +1542,8 @@ struct WebRepresentableView: UIViewRepresentable {
   <li><code class="language-plaintext highlighter-rouge">scrollViewDidZoom</code> - 스크롤 뷰가 확대 또는 축소되고 있을 때마다 실행</li>
 </ol>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1368,43 +1581,43 @@ struct WebRepresentableView: UIViewRepresentable {
 35
 36
 37
-</pre></td><td class="rouge-code"><pre>    // MARK: - UIScrollViewDelegate
+</pre></td><td class="rouge-code"><pre>    <span class="c1">// MARK: - UIScrollViewDelegate</span>
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y &gt; 0) {
-            webViewHandler?(.scrollUp)
-        } else if isScrollViewReachedBottomOnce {
-            webViewHandler?(.reachBottom)
-        } else {
-            webViewHandler?(.scrollDown)
-        }
-    }
+    <span class="kd">func</span> <span class="nf">scrollViewDidScroll</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">scrollView</span><span class="o">.</span><span class="n">panGestureRecognizer</span><span class="o">.</span><span class="nf">translation</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">superview</span><span class="p">)</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nf">webViewHandler</span><span class="p">?(</span><span class="o">.</span><span class="n">scrollUp</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">isScrollViewReachedBottomOnce</span> <span class="p">{</span>
+            <span class="nf">webViewHandler</span><span class="p">?(</span><span class="o">.</span><span class="n">reachBottom</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">webViewHandler</span><span class="p">?(</span><span class="o">.</span><span class="n">scrollDown</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        if scrollViewReachedBottom(scrollView) {
-            isScrollViewReachedBottomOnce = true
-        }
-    }
+    <span class="kd">func</span> <span class="nf">scrollViewWillBeginDragging</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="nf">scrollViewReachedBottom</span><span class="p">(</span><span class="n">scrollView</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">isScrollViewReachedBottomOnce</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        isScrollViewReachedBottomOnce = isScrollViewReachedBottomOnce &amp;&amp; scrollViewReachedBottom(scrollView)
-    }
+    <span class="kd">func</span> <span class="nf">scrollViewDidEndDragging</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">,</span> <span class="n">willDecelerate</span> <span class="nv">decelerate</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">isScrollViewReachedBottomOnce</span> <span class="o">=</span> <span class="n">isScrollViewReachedBottomOnce</span> <span class="o">&amp;&amp;</span> <span class="nf">scrollViewReachedBottom</span><span class="p">(</span><span class="n">scrollView</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        if scrollView.zoomScale == scrollView.minimumZoomScale {
-            webViewHandler?(.zoomOut)
-        } else {
-            webViewHandler?(.zoomIn)
-        }
-    }
+    <span class="kd">func</span> <span class="nf">scrollViewDidZoom</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">zoomScale</span> <span class="o">==</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">minimumZoomScale</span> <span class="p">{</span>
+            <span class="nf">webViewHandler</span><span class="p">?(</span><span class="o">.</span><span class="n">zoomOut</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">webViewHandler</span><span class="p">?(</span><span class="o">.</span><span class="n">zoomIn</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    // MARK: - Utility Methods
+    <span class="c1">// MARK: - Utility Methods</span>
     
-    /// 스크롤 뷰가 현재 바닥에 있는가?
-    func scrollViewReachedBottom(_ scrollView: UIScrollView) -&gt; Bool {
-        scrollView.contentOffset.y &gt;= (scrollView.contentSize.height - scrollView.frame.size.height)
-    }
-}
+    <span class="c1">/// 스크롤 뷰가 현재 바닥에 있는가?</span>
+    <span class="kd">func</span> <span class="nf">scrollViewReachedBottom</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="n">contentOffset</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">scrollView</span><span class="o">.</span><span class="n">contentSize</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1441,7 +1654,7 @@ struct WebRepresentableView: UIViewRepresentable {
 
 <p> </p>
 
-<h5 id="5-해당-메서드가-실행되면-웹뷰-초기화시에-지정한-콜백-함수를-실행"><span class="me-2"><strong>(5) 해당 메서드가 실행되면 웹뷰 초기화시에 지정한 콜백 함수를 실행</strong></span><a href="#5-해당-메서드가-실행되면-웹뷰-초기화시에-지정한-콜백-함수를-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-해당-메서드가-실행되면-웹뷰-초기화시에-지정한-콜백-함수를-실행"><span class="me-2"><strong>(5) 해당 메서드가 실행되면 웹뷰 초기화시에 지정한 콜백 함수를 실행</strong></span><a href="#5-해당-메서드가-실행되면-웹뷰-초기화시에-지정한-콜백-함수를-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>4번 섹션 코드를 참고하면 <code class="language-plaintext highlighter-rouge">webViewHandler?(.scrollUp)</code> 등으로 특정 조건에서 콜백 함수가 실행되도록 지정하고 있습니다.</li>
@@ -1450,10 +1663,10 @@ struct WebRepresentableView: UIViewRepresentable {
 
 <p> </p>
 
-<h5 id="6-콜백-함수의-파라미터-결과에-따라-하단-상태-결정"><span class="me-2"><strong>(6) 콜백 함수의 파라미터 결과에 따라 하단 상태 결정</strong></span><a href="#6-콜백-함수의-파라미터-결과에-따라-하단-상태-결정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="6-콜백-함수의-파라미터-결과에-따라-하단-상태-결정"><span class="me-2"><strong>(6) 콜백 함수의 파라미터 결과에 따라 하단 상태 결정</strong></span><a href="#6-콜백-함수의-파라미터-결과에-따라-하단-상태-결정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1464,16 +1677,16 @@ struct WebRepresentableView: UIViewRepresentable {
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>WebRepresentableView { state in
-    withAnimation(.bouncy(duration: 0.2, extraBounce: -0.2)) {
-        showToolBar = switch state {
-        case .scrollDown, .zoomIn:
-            false
-        case .scrollUp, .zoomOut, .reachBottom:
-            true
-        }
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kt">WebRepresentableView</span> <span class="p">{</span> <span class="n">state</span> <span class="k">in</span>
+    <span class="nf">withAnimation</span><span class="p">(</span><span class="o">.</span><span class="nf">bouncy</span><span class="p">(</span><span class="nv">duration</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="nv">extraBounce</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">showToolBar</span> <span class="o">=</span> <span class="k">switch</span> <span class="n">state</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="n">scrollDown</span><span class="p">,</span> <span class="o">.</span><span class="nv">zoomIn</span><span class="p">:</span>
+            <span class="kc">false</span>
+        <span class="k">case</span> <span class="o">.</span><span class="n">scrollUp</span><span class="p">,</span> <span class="o">.</span><span class="n">zoomOut</span><span class="p">,</span> <span class="o">.</span><span class="nv">reachBottom</span><span class="p">:</span>
+            <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1495,24 +1708,24 @@ struct WebRepresentableView: UIViewRepresentable {
 
 <p> </p>
 
-<p>http://www.giphy.com/gifs/TBwPdSqknf4AZLxquv</p>
-
-<p><em>스크롤 동작 시</em></p>
-
-<p> </p>
-
-<p>http://www.giphy.com/gifs/maqEBaFkgyvv7BbUuK</p>
-
-<p><em>확대/축소 동작 시</em></p>
+<!-- http://www.giphy.com/gifs/TBwPdSqknf4AZLxquv -->
+<p><a href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVrOXQydGhrbzM3bGx2a2o4bXB6ZWFzNmszajU2ZTIxeTZoOGtvbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TBwPdSqknf4AZLxquv/giphy.gif" class="popup img-link shimmer"><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVrOXQydGhrbzM3bGx2a2o4bXB6ZWFzNmszajU2ZTIxeTZoOGtvbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TBwPdSqknf4AZLxquv/giphy.gif" alt="" loading="lazy"></a><br />
+<em>스크롤 동작 시</em></p>
 
 <p> </p>
 
-<h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<!-- http://www.giphy.com/gifs/maqEBaFkgyvv7BbUuK -->
+<p><a href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDd5bXUzN2p2NWJhNGt2Mm9leHlhZGRmazlkdjZzd2hiZXhydXdwdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/maqEBaFkgyvv7BbUuK/giphy.gif" class="popup img-link shimmer"><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDd5bXUzN2p2NWJhNGt2Mm9leHlhZGRmazlkdjZzd2hiZXhydXdwdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/maqEBaFkgyvv7BbUuK/giphy.gif" alt="" loading="lazy"></a><br />
+<em>확대/축소 동작 시</em></p>
 
-<h5 id="webrepresentableviewswift"><span class="me-2"><strong>WebRepresentableView.swift</strong></span><a href="#webrepresentableviewswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="webrepresentableviewswift"><span class="me-2"><strong>WebRepresentableView.swift</strong></span><a href="#webrepresentableviewswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1596,97 +1809,97 @@ struct WebRepresentableView: UIViewRepresentable {
 81
 82
 83
-</pre></td><td class="rouge-code"><pre>import SwiftUI
-import WebKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">WebKit</span>
 
-enum WebViewScrollState {
-    case scrollUp, scrollDown, zoomIn, zoomOut, reachBottom
-}
+<span class="kd">enum</span> <span class="kt">WebViewScrollState</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">scrollUp</span><span class="p">,</span> <span class="n">scrollDown</span><span class="p">,</span> <span class="n">zoomIn</span><span class="p">,</span> <span class="n">zoomOut</span><span class="p">,</span> <span class="n">reachBottom</span>
+<span class="p">}</span>
 
-struct WebRepresentableView: UIViewRepresentable {
-    typealias UIViewType = WKWebView
-    typealias WebViewHandler = ((WebViewScrollState) -&gt; Void)
+<span class="kd">struct</span> <span class="kt">WebRepresentableView</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span> <span class="p">{</span>
+    <span class="kd">typealias</span> <span class="kt">UIViewType</span> <span class="o">=</span> <span class="kt">WKWebView</span>
+    <span class="kd">typealias</span> <span class="kt">WebViewHandler</span> <span class="o">=</span> <span class="p">((</span><span class="kt">WebViewScrollState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
     
-    var webViewHandler: WebViewHandler?
-    private let webView = WKWebView(frame: .zero)
+    <span class="k">var</span> <span class="nv">webViewHandler</span><span class="p">:</span> <span class="kt">WebViewHandler</span><span class="p">?</span>
+    <span class="kd">private</span> <span class="k">let</span> <span class="nv">webView</span> <span class="o">=</span> <span class="kt">WKWebView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span>
     
-    init(webViewHandler: WebViewHandler? = nil) {
-        self.webViewHandler = webViewHandler
-    }
+    <span class="nf">init</span><span class="p">(</span><span class="nv">webViewHandler</span><span class="p">:</span> <span class="kt">WebViewHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">webViewHandler</span> <span class="o">=</span> <span class="n">webViewHandler</span>
+    <span class="p">}</span>
     
-    func makeUIView(context: Context) -&gt; WKWebView {
-        let request = URLRequest(url: .init(string: "https://en.m.wikipedia.org/wiki/Symphony_No._1_(Prokofiev)")!)
-        webView.load(request)
-        webView.scrollView.delegate = context.coordinator
+    <span class="kd">func</span> <span class="nf">makeUIView</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">WKWebView</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://en.m.wikipedia.org/wiki/Symphony_No._1_(Prokofiev)"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+        <span class="n">webView</span><span class="o">.</span><span class="nf">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="n">webView</span><span class="o">.</span><span class="n">scrollView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">coordinator</span>
         
-        return webView
-    }
+        <span class="k">return</span> <span class="n">webView</span>
+    <span class="p">}</span>
     
-    func updateUIView(_ uiView: WKWebView, context: Context) {}
+    <span class="kd">func</span> <span class="nf">updateUIView</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{}</span>
     
-    func makeCoordinator() -&gt; Coordinator {
-        Coordinator(webViewHandler: webViewHandler)
-    }
+    <span class="kd">func</span> <span class="nf">makeCoordinator</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Coordinator</span> <span class="p">{</span>
+        <span class="kt">Coordinator</span><span class="p">(</span><span class="nv">webViewHandler</span><span class="p">:</span> <span class="n">webViewHandler</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    class Coordinator: NSObject, UIScrollViewDelegate {
-        var webViewHandler: WebViewHandler?
-        private var isScrollViewReachedBottomOnce = false
+    <span class="kd">class</span> <span class="kt">Coordinator</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UIScrollViewDelegate</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">webViewHandler</span><span class="p">:</span> <span class="kt">WebViewHandler</span><span class="p">?</span>
+        <span class="kd">private</span> <span class="k">var</span> <span class="nv">isScrollViewReachedBottomOnce</span> <span class="o">=</span> <span class="kc">false</span>
         
-        init(webViewHandler: WebViewHandler? = nil) {
-            self.webViewHandler = webViewHandler
-        }
+        <span class="nf">init</span><span class="p">(</span><span class="nv">webViewHandler</span><span class="p">:</span> <span class="kt">WebViewHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">webViewHandler</span> <span class="o">=</span> <span class="n">webViewHandler</span>
+        <span class="p">}</span>
         
-        // MARK: - UIScrollViewDelegate
+        <span class="c1">// MARK: - UIScrollViewDelegate</span>
         
-        func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y &gt; 0) {
-                webViewHandler?(.scrollUp)
-            } else if isScrollViewReachedBottomOnce {
-                webViewHandler?(.reachBottom)
-            } else {
-                webViewHandler?(.scrollDown)
-            }
-        }
+        <span class="kd">func</span> <span class="nf">scrollViewDidScroll</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">scrollView</span><span class="o">.</span><span class="n">panGestureRecognizer</span><span class="o">.</span><span class="nf">translation</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">superview</span><span class="p">)</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nf">webViewHandler</span><span class="p">?(</span><span class="o">.</span><span class="n">scrollUp</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">isScrollViewReachedBottomOnce</span> <span class="p">{</span>
+                <span class="nf">webViewHandler</span><span class="p">?(</span><span class="o">.</span><span class="n">reachBottom</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">webViewHandler</span><span class="p">?(</span><span class="o">.</span><span class="n">scrollDown</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
         
-        func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-            if scrollViewReachedBottom(scrollView) {
-                isScrollViewReachedBottomOnce = true
-            }
-        }
+        <span class="kd">func</span> <span class="nf">scrollViewWillBeginDragging</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="nf">scrollViewReachedBottom</span><span class="p">(</span><span class="n">scrollView</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">isScrollViewReachedBottomOnce</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
         
-        func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-            isScrollViewReachedBottomOnce = isScrollViewReachedBottomOnce &amp;&amp; scrollViewReachedBottom(scrollView)
-        }
+        <span class="kd">func</span> <span class="nf">scrollViewDidEndDragging</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">,</span> <span class="n">willDecelerate</span> <span class="nv">decelerate</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">isScrollViewReachedBottomOnce</span> <span class="o">=</span> <span class="n">isScrollViewReachedBottomOnce</span> <span class="o">&amp;&amp;</span> <span class="nf">scrollViewReachedBottom</span><span class="p">(</span><span class="n">scrollView</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        func scrollViewDidZoom(_ scrollView: UIScrollView) {
-            if scrollView.zoomScale == scrollView.minimumZoomScale {
-                webViewHandler?(.zoomOut)
-            } else {
-                webViewHandler?(.zoomIn)
-            }
-        }
+        <span class="kd">func</span> <span class="nf">scrollViewDidZoom</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">zoomScale</span> <span class="o">==</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">minimumZoomScale</span> <span class="p">{</span>
+                <span class="nf">webViewHandler</span><span class="p">?(</span><span class="o">.</span><span class="n">zoomOut</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">webViewHandler</span><span class="p">?(</span><span class="o">.</span><span class="n">zoomIn</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
         
-        // MARK: - Utility Methods
+        <span class="c1">// MARK: - Utility Methods</span>
         
-        /// 스크롤 뷰가 현재 바닥에 있는가?
-        func scrollViewReachedBottom(_ scrollView: UIScrollView) -&gt; Bool {
-            scrollView.contentOffset.y &gt;= (scrollView.contentSize.height - scrollView.frame.size.height)
-        }
-    }
-}
+        <span class="c1">/// 스크롤 뷰가 현재 바닥에 있는가?</span>
+        <span class="kd">func</span> <span class="nf">scrollViewReachedBottom</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">contentOffset</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">scrollView</span><span class="o">.</span><span class="n">contentSize</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-#Preview {
-    WebRepresentableView()
-}
+<span class="cp">#Preview {</span>
+    <span class="kt">WebRepresentableView</span><span class="p">()</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="likesafariviewswift-메인-뷰"><span class="me-2"><strong>LikeSafariView.swift (메인 뷰)</strong></span><a href="#likesafariviewswift-메인-뷰" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="likesafariviewswift-메인-뷰"><span class="me-2"><strong>LikeSafariView.swift (메인 뷰)</strong></span><a href="#likesafariviewswift-메인-뷰" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1821,140 +2034,140 @@ struct WebRepresentableView: UIViewRepresentable {
 132
 133
 134
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-struct LikeSafariView: View {
-    @State private var showToolBar = true
+<span class="kd">struct</span> <span class="kt">LikeSafariView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">showToolBar</span> <span class="o">=</span> <span class="kc">true</span>
     
-    // 하단 툴바 배경색 강제적용
-    init() {
-        let toolbarAppearance = UIToolbarAppearance()
-        toolbarAppearance.configureWithOpaqueBackground()
-        toolbarAppearance.backgroundColor = .clear
-        toolbarAppearance.shadowColor = .clear
+    <span class="c1">// 하단 툴바 배경색 강제적용</span>
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">toolbarAppearance</span> <span class="o">=</span> <span class="kt">UIToolbarAppearance</span><span class="p">()</span>
+        <span class="n">toolbarAppearance</span><span class="o">.</span><span class="nf">configureWithOpaqueBackground</span><span class="p">()</span>
+        <span class="n">toolbarAppearance</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">clear</span>
+        <span class="n">toolbarAppearance</span><span class="o">.</span><span class="n">shadowColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">clear</span>
         
-        UIToolbar.appearance().standardAppearance = toolbarAppearance
-        UIToolbar.appearance().scrollEdgeAppearance = toolbarAppearance
-    }
+        <span class="kt">UIToolbar</span><span class="o">.</span><span class="nf">appearance</span><span class="p">()</span><span class="o">.</span><span class="n">standardAppearance</span> <span class="o">=</span> <span class="n">toolbarAppearance</span>
+        <span class="kt">UIToolbar</span><span class="o">.</span><span class="nf">appearance</span><span class="p">()</span><span class="o">.</span><span class="n">scrollEdgeAppearance</span> <span class="o">=</span> <span class="n">toolbarAppearance</span>
+    <span class="p">}</span>
     
-    /// URL 창: 확대된 상태
-    private var urlLargeArea: some View {
-        VStack(spacing: 0) {
-            // 테두리(위)
-            Rectangle()
-                .fill(Color(white: 228/255))
-                .frame(height: 1)
-            HStack {
-                // 하얀색 둥근 사각형
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(white: 253/255))
-                    .frame(height: 50)
-                    .padding()
-                    .shadow(color: .init(red: 0.8, green: 0.8, blue: 0.8), radius: 10, y: 5)
-                    .overlay {
-                        // 둥근 사각형 안의 내용
-                        HStack {
-                            Image(systemName: "character")
-                            Spacer()
-                            // URL 부분
-                            HStack {
-                                Image(systemName: "lock.fill")
-                                    .foregroundStyle(.gray)
-                                Text("en.m.wikipedia.org")
-                            }
-                            Spacer()
-                            Image(systemName: "arrow.clockwise")
-                        }
-                        .padding(30)
-                    }
-            }
-            .padding(.bottom, -15)
-            .background(Color(white: 247/255))
-            .transition(.offset(y: 100))
-        }
-    }
+    <span class="c1">/// URL 창: 확대된 상태</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">urlLargeArea</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 테두리(위)</span>
+            <span class="kt">Rectangle</span><span class="p">()</span>
+                <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="kt">Color</span><span class="p">(</span><span class="nv">white</span><span class="p">:</span> <span class="mi">228</span><span class="o">/</span><span class="mi">255</span><span class="p">))</span>
+                <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="kt">HStack</span> <span class="p">{</span>
+                <span class="c1">// 하얀색 둥근 사각형</span>
+                <span class="kt">RoundedRectangle</span><span class="p">(</span><span class="nv">cornerRadius</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="kt">Color</span><span class="p">(</span><span class="nv">white</span><span class="p">:</span> <span class="mi">253</span><span class="o">/</span><span class="mi">255</span><span class="p">))</span>
+                    <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+                    <span class="o">.</span><span class="nf">shadow</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">),</span> <span class="nv">radius</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">overlay</span> <span class="p">{</span>
+                        <span class="c1">// 둥근 사각형 안의 내용</span>
+                        <span class="kt">HStack</span> <span class="p">{</span>
+                            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"character"</span><span class="p">)</span>
+                            <span class="kt">Spacer</span><span class="p">()</span>
+                            <span class="c1">// URL 부분</span>
+                            <span class="kt">HStack</span> <span class="p">{</span>
+                                <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"lock.fill"</span><span class="p">)</span>
+                                    <span class="o">.</span><span class="nf">foregroundStyle</span><span class="p">(</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+                                <span class="kt">Text</span><span class="p">(</span><span class="s">"en.m.wikipedia.org"</span><span class="p">)</span>
+                            <span class="p">}</span>
+                            <span class="kt">Spacer</span><span class="p">()</span>
+                            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"arrow.clockwise"</span><span class="p">)</span>
+                        <span class="p">}</span>
+                        <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+                    <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="kt">Color</span><span class="p">(</span><span class="nv">white</span><span class="p">:</span> <span class="mi">247</span><span class="o">/</span><span class="mi">255</span><span class="p">))</span>
+            <span class="o">.</span><span class="nf">transition</span><span class="p">(</span><span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">y</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    /// URL 창: 축소된 상태
-    private var urlShrinkedArea: some View {
-        ZStack(alignment: .center) {
-            // 배경색
-            Color(red: 247/255, green: 247/255, blue: 247/255).ignoresSafeArea()
-            VStack(spacing: 0) {
-                // 테두리(위)
-                Rectangle()
-                    .fill(Color(white: 238/255))
-                    .frame(height: 1)
-                HStack(alignment: .center) {
-                    Image(systemName: "lock.fill")
-                        .foregroundStyle(.gray)
-                    Text("en.m.wikipedia.org")
-                }
-                .padding(.top, 10)
-                .font(.system(size: 15))
-            }
-        }
-        .frame(height: 10)
-        .transition(.offset(y: -75))
-    }
+    <span class="c1">/// URL 창: 축소된 상태</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">urlShrinkedArea</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">ZStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 배경색</span>
+            <span class="kt">Color</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">247</span><span class="sr">/255, green: 247/255, blue: 247/</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="nf">ignoresSafeArea</span><span class="p">()</span>
+            <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// 테두리(위)</span>
+                <span class="kt">Rectangle</span><span class="p">()</span>
+                    <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="kt">Color</span><span class="p">(</span><span class="nv">white</span><span class="p">:</span> <span class="mi">238</span><span class="o">/</span><span class="mi">255</span><span class="p">))</span>
+                    <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="kt">HStack</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"lock.fill"</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">foregroundStyle</span><span class="p">(</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+                    <span class="kt">Text</span><span class="p">(</span><span class="s">"en.m.wikipedia.org"</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">15</span><span class="p">))</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">transition</span><span class="p">(</span><span class="o">.</span><span class="nf">offset</span><span class="p">(</span><span class="nv">y</span><span class="p">:</span> <span class="o">-</span><span class="mi">75</span><span class="p">))</span>
+    <span class="p">}</span>
     
-    /// Body
-    var body: some View {
-        NavigationStack {
-            VStack(spacing: 0) {
-                WebRepresentableView { state in
-                    withAnimation(.bouncy(duration: 0.2, extraBounce: -0.2)) {
-                        showToolBar = switch state {
-                        case .scrollDown, .zoomIn:
-                            false
-                        case .scrollUp, .zoomOut, .reachBottom:
-                            true
-                        }
-                    }
-                }
+    <span class="c1">/// Body</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">NavigationStack</span> <span class="p">{</span>
+            <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">WebRepresentableView</span> <span class="p">{</span> <span class="n">state</span> <span class="k">in</span>
+                    <span class="nf">withAnimation</span><span class="p">(</span><span class="o">.</span><span class="nf">bouncy</span><span class="p">(</span><span class="nv">duration</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="nv">extraBounce</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="n">showToolBar</span> <span class="o">=</span> <span class="k">switch</span> <span class="n">state</span> <span class="p">{</span>
+                        <span class="k">case</span> <span class="o">.</span><span class="n">scrollDown</span><span class="p">,</span> <span class="o">.</span><span class="nv">zoomIn</span><span class="p">:</span>
+                            <span class="kc">false</span>
+                        <span class="k">case</span> <span class="o">.</span><span class="n">scrollUp</span><span class="p">,</span> <span class="o">.</span><span class="n">zoomOut</span><span class="p">,</span> <span class="o">.</span><span class="nv">reachBottom</span><span class="p">:</span>
+                            <span class="kc">true</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
                 
-                if showToolBar {
-                    urlLargeArea
-                } else {
-                    urlShrinkedArea
-                }
-            }
-            // 툴바(맨 아래 아이콘 5개 부분) 보이기 여부
-            .toolbar(showToolBar ? .visible : .hidden, for: .bottomBar)
-            // 툴바 그리기
-            .toolbar {
-                ToolbarItemGroup(placement: .bottomBar) {
-                    HStack {
-                        Button {} label: {
-                            Image(systemName: "chevron.left")
-                        }
-                        Spacer()
-                        Button {} label: {
-                            Image(systemName: "chevron.right")
-                        }
-                        Spacer()
-                        Button {} label: {
-                            Image(systemName: "square.and.arrow.up")
-                        }
-                        Spacer()
-                        Button {} label: {
-                            Image(systemName: "book")
-                        }
-                        Spacer()
-                        Button {} label: {
-                            Image(systemName: "square.on.square")
-                        }
-                    }
-                    .padding(10)
-                    .padding(.top, 22)
-                }
-            }
-        }
-    }
-}
+                <span class="k">if</span> <span class="n">showToolBar</span> <span class="p">{</span>
+                    <span class="n">urlLargeArea</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">urlShrinkedArea</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="c1">// 툴바(맨 아래 아이콘 5개 부분) 보이기 여부</span>
+            <span class="o">.</span><span class="nf">toolbar</span><span class="p">(</span><span class="n">showToolBar</span> <span class="p">?</span> <span class="o">.</span><span class="nv">visible</span> <span class="p">:</span> <span class="o">.</span><span class="n">hidden</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">bottomBar</span><span class="p">)</span>
+            <span class="c1">// 툴바 그리기</span>
+            <span class="o">.</span><span class="n">toolbar</span> <span class="p">{</span>
+                <span class="kt">ToolbarItemGroup</span><span class="p">(</span><span class="nv">placement</span><span class="p">:</span> <span class="o">.</span><span class="n">bottomBar</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kt">HStack</span> <span class="p">{</span>
+                        <span class="kt">Button</span> <span class="p">{}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"chevron.left"</span><span class="p">)</span>
+                        <span class="p">}</span>
+                        <span class="kt">Spacer</span><span class="p">()</span>
+                        <span class="kt">Button</span> <span class="p">{}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"chevron.right"</span><span class="p">)</span>
+                        <span class="p">}</span>
+                        <span class="kt">Spacer</span><span class="p">()</span>
+                        <span class="kt">Button</span> <span class="p">{}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"square.and.arrow.up"</span><span class="p">)</span>
+                        <span class="p">}</span>
+                        <span class="kt">Spacer</span><span class="p">()</span>
+                        <span class="kt">Button</span> <span class="p">{}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"book"</span><span class="p">)</span>
+                        <span class="p">}</span>
+                        <span class="kt">Spacer</span><span class="p">()</span>
+                        <span class="kt">Button</span> <span class="p">{}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"square.on.square"</span><span class="p">)</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                    <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-#Preview {
-    LikeSafariView()
-}
+<span class="cp">#Preview {</span>
+    <span class="kt">LikeSafariView</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -2920,6 +3133,12 @@ struct LikeSafariView: View {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
