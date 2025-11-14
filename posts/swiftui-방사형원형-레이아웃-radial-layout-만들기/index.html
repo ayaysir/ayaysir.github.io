@@ -898,11 +898,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -921,32 +916,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -1085,6 +1054,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1175,7 +1154,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1425 words"
+  title="1422 words"
 >
   <em>7 min</em> read</span>
 
@@ -1209,7 +1188,7 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2">소개</span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2">소개</span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>뷰의 중심점(center point)과 반경을 계산하여 사용자 정의 방사형 레이아웃을 생성합니다.</p>
 
@@ -1219,10 +1198,7 @@
 </ul>
 
 <p> </p>
-
-<h3 id="구현"><span class="me-2"><strong>구현</strong></span><a href="#구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<h4 id="커스텀-radial-layout-만들기"><span class="me-2"><strong>커스텀 Radial Layout 만들기</strong></span><a href="#커스텀-radial-layout-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="커스텀-radial-layout-만들기"><span class="me-2">커스텀 Radial Layout 만들기</span><a href="#커스텀-radial-layout-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>레이아웃 중앙에 서브뷰를 배치하고 인덱스 값을 사용하여 최소한의 변형(transforming)을 수행하는 사용자 정의 레이아웃 코드부터 시작하겠습니다.</p>
 
@@ -1242,9 +1218,8 @@
 </blockquote>
 
 <p> </p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1254,20 +1229,20 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>struct RadialLayout: Layout {
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -&gt; CGSize {
-        proposal.replacingUnspecifiedDimensions()
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">RadialLayout</span><span class="p">:</span> <span class="kt">Layout</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">sizeThatFits</span><span class="p">(</span><span class="nv">proposal</span><span class="p">:</span> <span class="kt">ProposedViewSize</span><span class="p">,</span> <span class="nv">subviews</span><span class="p">:</span> <span class="kt">Subviews</span><span class="p">,</span> <span class="nv">cache</span><span class="p">:</span> <span class="nf">inout</span> <span class="p">())</span> <span class="o">-&gt;</span> <span class="kt">CGSize</span> <span class="p">{</span>
+        <span class="n">proposal</span><span class="o">.</span><span class="nf">replacingUnspecifiedDimensions</span><span class="p">()</span>
+    <span class="p">}</span>
 
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        // Place subviews
-    }
-}
+    <span class="kd">func</span> <span class="nf">placeSubviews</span><span class="p">(</span><span class="k">in</span> <span class="nv">bounds</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">,</span> <span class="nv">proposal</span><span class="p">:</span> <span class="kt">ProposedViewSize</span><span class="p">,</span> <span class="nv">subviews</span><span class="p">:</span> <span class="kt">Subviews</span><span class="p">,</span> <span class="nv">cache</span><span class="p">:</span> <span class="nf">inout</span> <span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// Place subviews</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="서브뷰-배치"><span class="me-2"><strong>서브뷰 배치</strong></span><a href="#서브뷰-배치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="서브뷰-배치"><span class="me-2">서브뷰 배치</span><a href="#서브뷰-배치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>루프의 모든 항목을 사용자 정의 위치에 배치해 보겠습니다.</p>
 
@@ -1317,7 +1292,7 @@
 
 <p> </p>
 
-<h5 id="반경-radius"><span class="me-2"><strong>반경 (Radius)</strong></span><a href="#반경-radius" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="반경-radius"><span class="me-2">반경 (Radius)</span><a href="#반경-radius" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>레이아웃 크기(<code class="language-plaintext highlighter-rouge">bounds</code>)의 <code class="language-plaintext highlighter-rouge">1/3</code>을 사용해 해당 값으로 <code class="language-plaintext highlighter-rouge">y</code> 위치를 이동시킬 것입니다.</p>
 
@@ -1345,28 +1320,28 @@ let radius = bounds.width / 3.0
 
 <p> </p>
 
-<h5 id="각도-angle"><span class="me-2"><strong>각도 (Angle)</strong></span><a href="#각도-angle" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="각도-angle"><span class="me-2">각도 (Angle)</span><a href="#각도-angle" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>이것은 원형 레이아웃이므로 <code class="language-plaintext highlighter-rouge">360도</code>를 아이템 개수로 나누어야 합니다. 그런 다음 값을 라디안(<code class="language-plaintext highlighter-rouge">radians</code>)으로 변환합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>// After radius
-let angle: CGFloat = Angle.degrees(360.0 / Double(subviews.count)).radians
+</pre></td><td class="rouge-code"><pre><span class="c1">// After radius</span>
+<span class="k">let</span> <span class="nv">angle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="kt">Angle</span><span class="o">.</span><span class="nf">degrees</span><span class="p">(</span><span class="mf">360.0</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span><span class="n">subviews</span><span class="o">.</span><span class="n">count</span><span class="p">))</span><span class="o">.</span><span class="n">radians</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>마지막으로 각도(<code class="language-plaintext highlighter-rouge">angle</code>)와 인덱스 값의 배수(<code class="language-plaintext highlighter-rouge">index</code>)를 사용합니다. 이렇게 하면 항목이 원 안에 적절하게 분산됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>var point = CGPoint(x: 0, y: -radius)
-  .applying(.init(rotationAngle: angle * CGFloat(index)))
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">point</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="o">-</span><span class="n">radius</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">applying</span><span class="p">(</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">rotationAngle</span><span class="p">:</span> <span class="n">angle</span> <span class="o">*</span> <span class="kt">CGFloat</span><span class="p">(</span><span class="n">index</span><span class="p">)))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1376,22 +1351,22 @@ let angle: CGFloat = Angle.degrees(360.0 / Double(subviews.count)).radians
 
 <p> </p>
 
-<h4 id="뷰에-적용"><span class="me-2"><strong>뷰에 적용</strong></span><a href="#뷰에-적용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="뷰에-적용"><span class="me-2">뷰에 적용</span><a href="#뷰에-적용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>예제로 시계를 만들어봅니다.</p>
 
 <p> </p>
 
-<h5 id="데이터"><span class="me-2"><strong>데이터</strong></span><a href="#데이터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="데이터"><span class="me-2">데이터</span><a href="#데이터" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>뷰를 생성한 다음 멤버 변수로 다음 데이터를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>let icons = ["calendar", "message", "figure.walk", "music.note"]
-let numbers = [12,1,2,3,4,5,6,7,8,9,10,11]
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">icons</span> <span class="o">=</span> <span class="p">[</span><span class="s">"calendar"</span><span class="p">,</span> <span class="s">"message"</span><span class="p">,</span> <span class="s">"figure.walk"</span><span class="p">,</span> <span class="s">"music.note"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1405,36 +1380,36 @@ let numbers = [12,1,2,3,4,5,6,7,8,9,10,11]
 
 <p> </p>
 
-<h5 id="프레임-크기-및-zstack"><span class="me-2"><strong>프레임 크기 및 ZStack</strong></span><a href="#프레임-크기-및-zstack" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="프레임-크기-및-zstack"><span class="me-2">프레임 크기 및 ZStack</span><a href="#프레임-크기-및-zstack" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>레이아웃에 프레임 크기를 설정하고 ZStack에 포함시킵니다. 이렇게 하면 더 많은 방사형 레이아웃을 만들 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>ZStack {
-    RadialLayout {
-        // ForEach
-    }
-    .frame(width: 사이즈)
-}
+</pre></td><td class="rouge-code"><pre><span class="kt">ZStack</span> <span class="p">{</span>
+    <span class="kt">RadialLayout</span> <span class="p">{</span>
+        <span class="c1">// ForEach</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="n">사이즈</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="시-hour"><span class="me-2"><strong>시 (Hour)</strong></span><a href="#시-hour" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="시-hour"><span class="me-2">시 (Hour)</span><a href="#시-hour" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>방사형 레이아웃을 사용하여 시계의 12개 숫자를 반복합니다.</p>
 
 <p>앞서 생성한 <code class="language-plaintext highlighter-rouge">numbers</code> 데이터를 바탕으로 시계의 시간을 반복하고 디자인합니다. <code class="language-plaintext highlighter-rouge">ZStack</code> 안에 배치합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1445,16 +1420,16 @@ let numbers = [12,1,2,3,4,5,6,7,8,9,10,11]
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>// Hours
-RadialLayout {
-  ForEach(numbers, id: \.self) { number in
-    Text("\(number)")
-      .font(.system(.title, design: .rounded))
-      .bold()
-      .foregroundStyle(.black)
-  }
-}
-.frame(width: 240)
+</pre></td><td class="rouge-code"><pre><span class="c1">// Hours</span>
+<span class="kt">RadialLayout</span> <span class="p">{</span>
+  <span class="kt">ForEach</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">number</span> <span class="k">in</span>
+    <span class="kt">Text</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">number</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">design</span><span class="p">:</span> <span class="o">.</span><span class="n">rounded</span><span class="p">))</span>
+      <span class="o">.</span><span class="nf">bold</span><span class="p">()</span>
+      <span class="o">.</span><span class="nf">foregroundStyle</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">240</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1465,12 +1440,12 @@ RadialLayout {
 
 <p> </p>
 
-<h5 id="분-minute"><span class="me-2"><strong>분 (Minute)</strong></span><a href="#분-minute" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="분-minute"><span class="me-2">분 (Minute)</span><a href="#분-minute" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>시간과 마찬가지로 동일한 데이터를 사용하지만 이번에는 <code class="language-plaintext highlighter-rouge">5</code>를 곱하여 분을 구하겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1480,25 +1455,25 @@ RadialLayout {
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>// Minutes
-RadialLayout {
-  ForEach(numbers, id: \.self) { item in
-    Text("\(item * 5)")
-      .font(.system(.caption, design: .rounded))
-      .foregroundColor(.black)
-  }
-}
-.frame(width: 360)
+</pre></td><td class="rouge-code"><pre><span class="c1">// Minutes</span>
+<span class="kt">RadialLayout</span> <span class="p">{</span>
+  <span class="kt">ForEach</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">item</span> <span class="k">in</span>
+    <span class="kt">Text</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">item</span> <span class="o">*</span> <span class="mi">5</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="o">.</span><span class="n">caption</span><span class="p">,</span> <span class="nv">design</span><span class="p">:</span> <span class="o">.</span><span class="n">rounded</span><span class="p">))</span>
+      <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">360</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2024/04/screenshot-2024-04-04-am-12.13.59-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/04/screenshot-2024-04-04-am-12.13.59-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="아이콘"><span class="me-2"><strong>아이콘</strong></span><a href="#아이콘" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="아이콘"><span class="me-2">아이콘</span><a href="#아이콘" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1510,17 +1485,17 @@ RadialLayout {
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>RadialLayout {
-  ForEach(icons, id: \.self) { item in
-    Circle()
-      .frame(width: 44)
-      .overlay {
-        Image(systemName: item)
-          .foregroundStyle(.white)
-      }
-  }
-}
-.frame(width: 120)
+</pre></td><td class="rouge-code"><pre><span class="kt">RadialLayout</span> <span class="p">{</span>
+  <span class="kt">ForEach</span><span class="p">(</span><span class="n">icons</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">item</span> <span class="k">in</span>
+    <span class="kt">Circle</span><span class="p">()</span>
+      <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">44</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">overlay</span> <span class="p">{</span>
+        <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="n">item</span><span class="p">)</span>
+          <span class="o">.</span><span class="nf">foregroundStyle</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">120</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2024/04/screenshot-2024-04-04-am-12.14.58-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/04/screenshot-2024-04-04-am-12.14.58-copy.jpg" alt="" loading="lazy"></a></p>
@@ -1533,18 +1508,18 @@ RadialLayout {
 
 <p> </p>
 
-<h5 id="대시-라인-스트로크하기-stroke-dash-lines"><span class="me-2"><strong>대시 라인 스트로크하기 (Stroke Dash Lines)</strong></span><a href="#대시-라인-스트로크하기-stroke-dash-lines" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="대시-라인-스트로크하기-stroke-dash-lines"><span class="me-2">대시 라인 스트로크하기 (Stroke Dash Lines)</span><a href="#대시-라인-스트로크하기-stroke-dash-lines" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>StrokeStyle을 사용하면 대시와 간격을 사용자 정의하여 시계 라인을 얻을 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>Circle()
-  .strokeBorder(.black, style: StrokeStyle(lineWidth: 10, dash: [1, 10]))
-  .frame(width: 220)
+</pre></td><td class="rouge-code"><pre><span class="kt">Circle</span><span class="p">()</span>
+  <span class="o">.</span><span class="nf">strokeBorder</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">StrokeStyle</span><span class="p">(</span><span class="nv">lineWidth</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">dash</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
+  <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">220</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2572,18 +2547,6 @@ RadialLayout {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

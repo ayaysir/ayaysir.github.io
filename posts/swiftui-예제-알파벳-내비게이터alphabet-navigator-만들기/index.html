@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -891,10 +898,92 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -982,92 +1071,10 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
 
@@ -1084,7 +1091,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>SwiftUI 예제: 알파벳 내비게이터(Alphabet Navigator) 만들기</h1>
     
@@ -1158,7 +1165,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1776 words"
+  title="1777 words"
 >
   <em>9 min</em> read</span>
 
@@ -1168,18 +1175,40 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">SwiftUI 예제: 알파벳 내비게이터(Alphabet Navigator) 만들기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">SwiftUI 예제: 알파벳 내비게이터(Alphabet Navigator) 만들기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="알파벳-내비게이터-만들기"><span class="me-2"><strong>알파벳 내비게이터 만들기</strong></span><a href="#알파벳-내비게이터-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="알파벳-내비게이터-만들기"><span class="me-2"><strong>알파벳 내비게이터 만들기</strong></span><a href="#알파벳-내비게이터-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래와 같이 알파벳으로 섹션이 나뉘어져 있으며 해당 알파벳을 클릭하면 섹션으로 이동하는 기능을 알파벳 내비게이터라고 칭하겠습니다. (정식 명칭은 다를 수 있습니다.)</p>
 
 <!-- http://www.giphy.com/gifs/PywKnLLMIQPLM3RW1F -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHM2dnZ1bnZiZ3h6dDZvbnIxMjZjbmQwenBkZXVjcDBtMHd4dHIzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PywKnLLMIQPLM3RW1F/giphy.gif" class="popup img-link shimmer"><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHM2dnZ1bnZiZ3h6dDZvbnIxMjZjbmQwenBkZXVjcDBtMHd4dHIzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PywKnLLMIQPLM3RW1F/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://stackoverflow.com/questions/58809357/swiftui-list-with-section-index-on-right-hand-side">SwiftUI List with Section Index on right hand side?</a></li>
@@ -1187,19 +1216,19 @@
 
 <p> </p>
 
-<h4 id="기본-형태"><span class="me-2"><strong>기본 형태</strong></span><a href="#기본-형태" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="기본-형태"><span class="me-2"><strong>기본 형태</strong></span><a href="#기본-형태" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Contacts</code>배열에 있는 사람 목록을 보여주는 뷰입니다.
     <ul>
-      <li>예제를 복잡하지 않게 하기 위해 단순 [String] 배열로 만들었습니다.</li>
+      <li>예제를 복잡하지 않게 하기 위해 단순 <code class="language-plaintext highlighter-rouge">[String]</code> 배열로 만들었습니다.</li>
     </ul>
   </li>
   <li>아래 기본 형태를 바탕으로 진행합니다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1235,55 +1264,55 @@
 33
 34
 35
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-struct ContentView: View {
-  @State private var searchText = ""
-  var contacts = [String]()
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">searchText</span> <span class="o">=</span> <span class="s">""</span>
+  <span class="k">var</span> <span class="nv">contacts</span> <span class="o">=</span> <span class="p">[</span><span class="kt">String</span><span class="p">]()</span>
 
-  var body: some View {
-    ScrollViewReader { scrollProxy in
-        List {
-          ForEach(contacts, id: \.self) { contact in
-            HStack {
-              Image(systemName: "person.circle.fill")
-                .font(.largeTitle)
-                .padding(.trailing, 5)
-              Text(contact)
-            }
-          }
-        }
-        .navigationTitle("Contacts")
-        .listStyle(PlainListStyle())
-      }
-  }
+  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kt">ScrollViewReader</span> <span class="p">{</span> <span class="n">scrollProxy</span> <span class="k">in</span>
+        <span class="kt">List</span> <span class="p">{</span>
+          <span class="kt">ForEach</span><span class="p">(</span><span class="n">contacts</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">contact</span> <span class="k">in</span>
+            <span class="kt">HStack</span> <span class="p">{</span>
+              <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"person.circle.fill"</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">largeTitle</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">trailing</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+              <span class="kt">Text</span><span class="p">(</span><span class="n">contact</span><span class="p">)</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">navigationTitle</span><span class="p">(</span><span class="s">"Contacts"</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">listStyle</span><span class="p">(</span><span class="kt">PlainListStyle</span><span class="p">())</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
   
-  init() {
-    contacts = [
-      "Chris", "Ryan", "Allyson", "Ryan", "Jonathan", "Ryan", "Brendan", "Ryaan",
-      "Jaxon", "Riner", "Leif", "Adams", "Frank", "Conors", "Allyssa", "Bishop",
-      "Justin", "Bishop", "Johnny", "Appleseed", "George", "Washingotn", "Abraham", "Lincoln",
-      "Steve", "Jobs",  "Steve", "Woz", "Bill", "Gates", "Donald", "Trump", "Darth", "Vader",
-      "Clark", "Kent", "Bruce", "Wayne", "John", "Doe",  "Jane", "Doe", "Rei", "Kim",
-      "James", "Elephant", "Julius", "Fucik", "Kane", "Hammersmith",
-    ]
-    contacts.sort()
-  }
-}
+  <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">contacts</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s">"Chris"</span><span class="p">,</span> <span class="s">"Ryan"</span><span class="p">,</span> <span class="s">"Allyson"</span><span class="p">,</span> <span class="s">"Ryan"</span><span class="p">,</span> <span class="s">"Jonathan"</span><span class="p">,</span> <span class="s">"Ryan"</span><span class="p">,</span> <span class="s">"Brendan"</span><span class="p">,</span> <span class="s">"Ryaan"</span><span class="p">,</span>
+      <span class="s">"Jaxon"</span><span class="p">,</span> <span class="s">"Riner"</span><span class="p">,</span> <span class="s">"Leif"</span><span class="p">,</span> <span class="s">"Adams"</span><span class="p">,</span> <span class="s">"Frank"</span><span class="p">,</span> <span class="s">"Conors"</span><span class="p">,</span> <span class="s">"Allyssa"</span><span class="p">,</span> <span class="s">"Bishop"</span><span class="p">,</span>
+      <span class="s">"Justin"</span><span class="p">,</span> <span class="s">"Bishop"</span><span class="p">,</span> <span class="s">"Johnny"</span><span class="p">,</span> <span class="s">"Appleseed"</span><span class="p">,</span> <span class="s">"George"</span><span class="p">,</span> <span class="s">"Washingotn"</span><span class="p">,</span> <span class="s">"Abraham"</span><span class="p">,</span> <span class="s">"Lincoln"</span><span class="p">,</span>
+      <span class="s">"Steve"</span><span class="p">,</span> <span class="s">"Jobs"</span><span class="p">,</span>  <span class="s">"Steve"</span><span class="p">,</span> <span class="s">"Woz"</span><span class="p">,</span> <span class="s">"Bill"</span><span class="p">,</span> <span class="s">"Gates"</span><span class="p">,</span> <span class="s">"Donald"</span><span class="p">,</span> <span class="s">"Trump"</span><span class="p">,</span> <span class="s">"Darth"</span><span class="p">,</span> <span class="s">"Vader"</span><span class="p">,</span>
+      <span class="s">"Clark"</span><span class="p">,</span> <span class="s">"Kent"</span><span class="p">,</span> <span class="s">"Bruce"</span><span class="p">,</span> <span class="s">"Wayne"</span><span class="p">,</span> <span class="s">"John"</span><span class="p">,</span> <span class="s">"Doe"</span><span class="p">,</span>  <span class="s">"Jane"</span><span class="p">,</span> <span class="s">"Doe"</span><span class="p">,</span> <span class="s">"Rei"</span><span class="p">,</span> <span class="s">"Kim"</span><span class="p">,</span>
+      <span class="s">"James"</span><span class="p">,</span> <span class="s">"Elephant"</span><span class="p">,</span> <span class="s">"Julius"</span><span class="p">,</span> <span class="s">"Fucik"</span><span class="p">,</span> <span class="s">"Kane"</span><span class="p">,</span> <span class="s">"Hammersmith"</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">contacts</span><span class="o">.</span><span class="nf">sort</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-17-pm-7.21.25-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-17-pm-7.21.25-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h4 id="사람-이름을-알파벳-섹션으로-분류하기"><span class="me-2"><strong>사람 이름을 알파벳 섹션으로 분류하기</strong></span><a href="#사람-이름을-알파벳-섹션으로-분류하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="사람-이름을-알파벳-섹션으로-분류하기"><span class="me-2"><strong>사람 이름을 알파벳 섹션으로 분류하기</strong></span><a href="#사람-이름을-알파벳-섹션으로-분류하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="step-1-전역-변수로-알파벳-배열을-추가합니다"><span class="me-2"><strong>Step 1: 전역 변수로 알파벳 배열을 추가합니다.</strong></span><a href="#step-1-전역-변수로-알파벳-배열을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-1-전역-변수로-알파벳-배열을-추가합니다"><span class="me-2"><strong>Step 1: 전역 변수로 알파벳 배열을 추가합니다.</strong></span><a href="#step-1-전역-변수로-알파벳-배열을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>let alphabet: [String] = (65...90).map { String(UnicodeScalar($0)!) }
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">alphabet</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">65</span><span class="o">...</span><span class="mi">90</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">)</span> <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1293,16 +1322,16 @@ struct ContentView: View {
 
 <p> </p>
 
-<h5 id="step-2-알파벳-첫문자로-contacts-배열-필터링하기"><span class="me-2"><strong>Step 2: 알파벳 첫문자로 Contacts 배열 필터링하기</strong></span><a href="#step-2-알파벳-첫문자로-contacts-배열-필터링하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-2-알파벳-첫문자로-contacts-배열-필터링하기"><span class="me-2"><strong>Step 2: 알파벳 첫문자로 Contacts 배열 필터링하기</strong></span><a href="#step-2-알파벳-첫문자로-contacts-배열-필터링하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>func contactsFilter(by letter: String) -&gt; [String] {
-  contacts.filter { $0.prefix(1) == letter }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">contactsFilter</span><span class="p">(</span><span class="n">by</span> <span class="nv">letter</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span>
+  <span class="n">contacts</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">prefix</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">letter</span> <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1311,22 +1340,22 @@ struct ContentView: View {
 
 <p> </p>
 
-<h5 id="step-3-알파벳-섹션-만들기"><span class="me-2"><strong>Step 3: 알파벳 섹션 만들기</strong></span><a href="#step-3-알파벳-섹션-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-3-알파벳-섹션-만들기"><span class="me-2"><strong>Step 3: 알파벳 섹션 만들기</strong></span><a href="#step-3-알파벳-섹션-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">List {...}</code> 안에 다음을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>ForEach(alphabet, id: \.self) { letter in
-  Section(header: Text(letter).id(letter)) {
+</pre></td><td class="rouge-code"><pre><span class="kt">ForEach</span><span class="p">(</span><span class="n">alphabet</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">letter</span> <span class="k">in</span>
+  <span class="kt">Section</span><span class="p">(</span><span class="nv">header</span><span class="p">:</span> <span class="kt">Text</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span><span class="o">.</span><span class="nf">id</span><span class="p">(</span><span class="n">letter</span><span class="p">))</span> <span class="p">{</span>
     
-  }
-}
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1338,12 +1367,12 @@ struct ContentView: View {
 
 <p> </p>
 
-<h5 id="step-4-섹션별로-필터링된-사람-목록-보여주기"><span class="me-2"><strong>Step 4: 섹션별로 필터링된 사람 목록 보여주기</strong></span><a href="#step-4-섹션별로-필터링된-사람-목록-보여주기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-4-섹션별로-필터링된-사람-목록-보여주기"><span class="me-2"><strong>Step 4: 섹션별로 필터링된 사람 목록 보여주기</strong></span><a href="#step-4-섹션별로-필터링된-사람-목록-보여주기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>위 <code class="language-plaintext highlighter-rouge">Section {...}</code> 안에 사람 목록을 보여주는 <code class="language-plaintext highlighter-rouge">ForEach</code>문을 넣되, 대상 자료를 필터링된 <code class="language-plaintext highlighter-rouge">Contacts</code>인 <code class="language-plaintext highlighter-rouge">contactsFilter(by:)</code>로 바꿔줍니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1355,17 +1384,17 @@ struct ContentView: View {
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>ForEach(alphabet, id: \.self) { letter in
-  Section(header: Text(letter).id(letter)) {
-    ForEach(contactsFilter(by: letter), id: \.self) { contact in
-      HStack {
-        Image(systemName: "person.circle.fill")
-          .font(.largeTitle)
-          .padding(.trailing, 5)
-        Text(contact)
-      }
-    }
-  }
+</pre></td><td class="rouge-code"><pre><span class="kt">ForEach</span><span class="p">(</span><span class="n">alphabet</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">letter</span> <span class="k">in</span>
+  <span class="kt">Section</span><span class="p">(</span><span class="nv">header</span><span class="p">:</span> <span class="kt">Text</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span><span class="o">.</span><span class="nf">id</span><span class="p">(</span><span class="n">letter</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kt">ForEach</span><span class="p">(</span><span class="nf">contactsFilter</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">letter</span><span class="p">),</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">contact</span> <span class="k">in</span>
+      <span class="kt">HStack</span> <span class="p">{</span>
+        <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"person.circle.fill"</span><span class="p">)</span>
+          <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">largeTitle</span><span class="p">)</span>
+          <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">trailing</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="kt">Text</span><span class="p">(</span><span class="n">contact</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1378,12 +1407,12 @@ struct ContentView: View {
 
 <p> </p>
 
-<h4 id="알파벳-내비게이터-추가-탭-방식"><span class="me-2"><strong>알파벳 내비게이터 추가: 탭 방식</strong></span><a href="#알파벳-내비게이터-추가-탭-방식" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="알파벳-내비게이터-추가-탭-방식"><span class="me-2"><strong>알파벳 내비게이터 추가: 탭 방식</strong></span><a href="#알파벳-내비게이터-추가-탭-방식" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>알파벳을 누르면 해당 섹션으로 이동하는 기초적인 내비게이터를 추가하겠습니다. <code class="language-plaintext highlighter-rouge">ScrollView {...}</code>의 오버레이를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1402,24 +1431,24 @@ struct ContentView: View {
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>.overlay(alignment: .top) {
-  VStack {
-    ForEach(alphabet, id: \.self) { letter in
-      HStack {
-        Spacer()
-        Button {
-          withAnimation {
-            scrollProxy.scrollTo(letter, anchor: .top)
-          }
-        } label: {
-          Text(letter)
-            .font(.system(size: 15))
-            .padding(.trailing, 7)
-        }
-      }
-    }
-  }
-}
+</pre></td><td class="rouge-code"><pre><span class="o">.</span><span class="nf">overlay</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">VStack</span> <span class="p">{</span>
+    <span class="kt">ForEach</span><span class="p">(</span><span class="n">alphabet</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">letter</span> <span class="k">in</span>
+      <span class="kt">HStack</span> <span class="p">{</span>
+        <span class="kt">Spacer</span><span class="p">()</span>
+        <span class="kt">Button</span> <span class="p">{</span>
+          <span class="n">withAnimation</span> <span class="p">{</span>
+            <span class="n">scrollProxy</span><span class="o">.</span><span class="nf">scrollTo</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="nv">anchor</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span>
+          <span class="p">}</span>
+        <span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+          <span class="kt">Text</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">15</span><span class="p">))</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">trailing</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1444,22 +1473,22 @@ struct ContentView: View {
 
 <p> </p>
 
-<h4 id="알파벳-내비게이터-추가-탭--드래그-방식"><span class="me-2"><strong>알파벳 내비게이터 추가: 탭 + 드래그 방식</strong></span><a href="#알파벳-내비게이터-추가-탭--드래그-방식" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="알파벳-내비게이터-추가-탭--드래그-방식"><span class="me-2"><strong>알파벳 내비게이터 추가: 탭 + 드래그 방식</strong></span><a href="#알파벳-내비게이터-추가-탭--드래그-방식" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>위에 예제도 바로 사용가능하긴 하지만, 기존에 알던 알파벳 내비게이터는 드래그로도 선택할 수 있고, 진동도 울렸던 것으로 기억합니다.</p>
 
 <p> </p>
 
-<h5 id="step-1-뷰-분리"><span class="me-2"><strong>Step 1: 뷰 분리</strong></span><a href="#step-1-뷰-분리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-1-뷰-분리"><span class="me-2"><strong>Step 1: 뷰 분리</strong></span><a href="#step-1-뷰-분리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>.overlay(alignment: .top) {
-  AlphabetNavigator(scrollViewProxy: scrollProxy)
-}
+</pre></td><td class="rouge-code"><pre><span class="o">.</span><span class="nf">overlay</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">AlphabetNavigator</span><span class="p">(</span><span class="nv">scrollViewProxy</span><span class="p">:</span> <span class="n">scrollProxy</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1470,10 +1499,10 @@ struct ContentView: View {
 
 <p> </p>
 
-<h5 id="step-2-alphabetnavigator-뷰-구현"><span class="me-2"><strong>Step 2: AlphabetNavigator 뷰 구현</strong></span><a href="#step-2-alphabetnavigator-뷰-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-2-alphabetnavigator-뷰-구현"><span class="me-2"><strong>Step 2: AlphabetNavigator 뷰 구현</strong></span><a href="#step-2-alphabetnavigator-뷰-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1534,65 +1563,65 @@ struct ContentView: View {
 58
 59
 60
-</pre></td><td class="rouge-code"><pre>struct AlphabetNavigator: View {
-  let scrollViewProxy: ScrollViewProxy
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">AlphabetNavigator</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">scrollViewProxy</span><span class="p">:</span> <span class="kt">ScrollViewProxy</span>
   
-  @GestureState private var dragLocation: CGPoint = .zero
-  @State private var currentLetter = ""
+  <span class="kd">@GestureState</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">dragLocation</span><span class="p">:</span> <span class="kt">CGPoint</span> <span class="o">=</span> <span class="o">.</span><span class="n">zero</span>
+  <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">currentLetter</span> <span class="o">=</span> <span class="s">""</span>
   
-  func dragObserver(title: String) -&gt; some View {
-    GeometryReader { geometry in
-      dragObserver(geometry: geometry, title: title)
-    }
-  }
+  <span class="kd">func</span> <span class="nf">dragObserver</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kt">GeometryReader</span> <span class="p">{</span> <span class="n">geometry</span> <span class="k">in</span>
+      <span class="nf">dragObserver</span><span class="p">(</span><span class="nv">geometry</span><span class="p">:</span> <span class="n">geometry</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="n">title</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-  func dragObserver(geometry: GeometryProxy, title: String) -&gt; some View {
-    if geometry.frame(in: .global).contains(dragLocation) {
-      DispatchQueue.main.async {
-        currentLetter = title
+  <span class="kd">func</span> <span class="nf">dragObserver</span><span class="p">(</span><span class="nv">geometry</span><span class="p">:</span> <span class="kt">GeometryProxy</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">geometry</span><span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="o">.</span><span class="n">global</span><span class="p">)</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">dragLocation</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="n">currentLetter</span> <span class="o">=</span> <span class="n">title</span>
         
-        withAnimation {
-          scrollViewProxy.scrollTo(title, anchor: .top)
-        }
-      }
-    }
+        <span class="n">withAnimation</span> <span class="p">{</span>
+          <span class="n">scrollViewProxy</span><span class="o">.</span><span class="nf">scrollTo</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="nv">anchor</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">)</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
     
-    return Rectangle().fill(.clear)
-  }
+    <span class="k">return</span> <span class="kt">Rectangle</span><span class="p">()</span><span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="o">.</span><span class="n">clear</span><span class="p">)</span>
+  <span class="p">}</span>
   
-  var body: some View {
-    VStack {
-      ForEach(alphabet, id: \.self) { letter in
-        HStack {
-          Spacer()
-          Text(letter)
-            .font(.system(size: 18, weight: .semibold))
-            .foregroundStyle(.cyan)
-            .padding(.trailing, 7)
-            .opacity(letter == currentLetter ? 0.3 : 1)
-          .background(dragObserver(title: letter))
-        }
-      }
-    }
-    .gesture(
-      DragGesture(minimumDistance: 0, coordinateSpace: .global)
-        .updating($dragLocation) { value, state, _ in
-          state = value.location
-        }
-    )
-    .onChange(of: currentLetter) { _ in
-      if currentLetter != "" {
-        Vibration.light.vibrate()
+  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kt">VStack</span> <span class="p">{</span>
+      <span class="kt">ForEach</span><span class="p">(</span><span class="n">alphabet</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">letter</span> <span class="k">in</span>
+        <span class="kt">HStack</span> <span class="p">{</span>
+          <span class="kt">Spacer</span><span class="p">()</span>
+          <span class="kt">Text</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">semibold</span><span class="p">))</span>
+            <span class="o">.</span><span class="nf">foregroundStyle</span><span class="p">(</span><span class="o">.</span><span class="n">cyan</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="o">.</span><span class="n">trailing</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">opacity</span><span class="p">(</span><span class="n">letter</span> <span class="o">==</span> <span class="n">currentLetter</span> <span class="p">?</span> <span class="mf">0.3</span> <span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+          <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="nf">dragObserver</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">letter</span><span class="p">))</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="nf">gesture</span><span class="p">(</span>
+      <span class="kt">DragGesture</span><span class="p">(</span><span class="nv">minimumDistance</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">coordinateSpace</span><span class="p">:</span> <span class="o">.</span><span class="n">global</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">updating</span><span class="p">(</span><span class="n">$dragLocation</span><span class="p">)</span> <span class="p">{</span> <span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">_</span> <span class="k">in</span>
+          <span class="n">state</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">location</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="nf">onChange</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">currentLetter</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+      <span class="k">if</span> <span class="n">currentLetter</span> <span class="o">!=</span> <span class="s">""</span> <span class="p">{</span>
+        <span class="kt">Vibration</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="nf">vibrate</span><span class="p">()</span>
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-          withAnimation {
-            currentLetter = ""
-          }
-        }
-      }
-    }
-  }
-}
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="nf">seconds</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="p">{</span>
+          <span class="n">withAnimation</span> <span class="p">{</span>
+            <span class="n">currentLetter</span> <span class="o">=</span> <span class="s">""</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1624,9 +1653,12 @@ struct ContentView: View {
 
 <p> </p>
 
-<h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>https://gist.github.com/ayaysir/940e4af3d89302c48b1a591e1cf51227</p>
+<!-- https://gist.github.com/ayaysir/940e4af3d89302c48b1a591e1cf51227 -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/940e4af3d89302c48b1a591e1cf51227.js"> </script>
+
 
   </div>
 
@@ -2593,6 +2625,12 @@ struct ContentView: View {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2626,18 +2664,6 @@ struct ContentView: View {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

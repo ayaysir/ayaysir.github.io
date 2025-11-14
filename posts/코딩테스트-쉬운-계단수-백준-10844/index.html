@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -696,16 +703,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -840,6 +837,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -856,7 +863,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>코딩테스트: 쉬운 계단수 (백준 10844)</h1>
     
@@ -940,9 +947,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">코딩테스트: 쉬운 계단수 (백준 10844)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">코딩테스트: 쉬운 계단수 (백준 10844)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="문제-쉬운-계단수"><span class="me-2"><strong>문제: 쉬운 계단수</strong></span><a href="#문제-쉬운-계단수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="문제-쉬운-계단수"><span class="me-2"><strong>문제: 쉬운 계단수</strong></span><a href="#문제-쉬운-계단수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://www.acmicpc.net/problem/10844">https://www.acmicpc.net/problem/10844</a></li>
@@ -957,7 +986,7 @@
 
 <p> </p>
 
-<h5 id="예제-입출력"><span class="me-2"><strong>예제 입출력</strong></span><a href="#예제-입출력" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="예제-입출력"><span class="me-2"><strong>예제 입출력</strong></span><a href="#예제-입출력" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>1 =&gt; 9</li>
@@ -966,12 +995,12 @@
 
 <p> </p>
 
-<h4 id="해답"><span class="me-2"><strong>해답</strong></span><a href="#해답" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="해답"><span class="me-2"><strong>해답</strong></span><a href="#해답" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="python-3"><span class="me-2"><strong>Python 3</strong></span><a href="#python-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="python-3"><span class="me-2"><strong>Python 3</strong></span><a href="#python-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -989,31 +1018,31 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>n = int(input())
-divisor = 1000000000
-dp = [[0] * 10 for _ in range(101)]
+</pre></td><td class="rouge-code"><pre><span class="n">n</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">())</span>
+<span class="n">divisor</span> <span class="o">=</span> <span class="mi">1000000000</span>
+<span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">101</span><span class="p">)]</span>
 
-for i in range(1, 10):
-    dp[1][i] = 1
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
-for i in range(2, n + 1):
-    for j in range(10):
-        if j == 0:
-            dp[i][j] = dp[i - 1][1] % divisor
-        elif j == 9:
-            dp[i][j] = dp[i - 1][8] % divisor
-        else:
-            dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j + 1]) % divisor
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">%</span> <span class="n">divisor</span>
+        <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">8</span><span class="p">]</span> <span class="o">%</span> <span class="n">divisor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="o">%</span> <span class="n">divisor</span>
 
-print(sum(dp[n]) % divisor)
+<span class="nf">print</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="o">%</span> <span class="n">divisor</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="swift"><span class="me-2"><strong>Swift</strong></span><a href="#swift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="swift"><span class="me-2"><strong>Swift</strong></span><a href="#swift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1034,26 +1063,26 @@ print(sum(dp[n]) % divisor)
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>let n = Int(readLine()!)!, divisor = 1000000000
-var dp = Array(repeating: Array(repeating: 0, count: 10), count: 101)
-for i in 1...9 {
-    dp[1][i] = 1
-}
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!</span><span class="p">)</span><span class="o">!</span><span class="p">,</span> <span class="n">divisor</span> <span class="o">=</span> <span class="mi">1000000000</span>
+<span class="k">var</span> <span class="nv">dp</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="kt">Array</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span> <span class="nv">count</span><span class="p">:</span> <span class="mi">101</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">9</span> <span class="p">{</span>
+    <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">}</span>
 
-for i in stride(from: 2, through: n, by: 1) {
-    for j in stride(from: 0, through: 9, by: 1) {
-        switch j {
-        case 0:
-            dp[i][j] = dp[i-1][1] % divisor
-        case 9:
-            dp[i][j] = dp[i-1][8] % divisor
-        default:
-            dp[i][j] = (dp[i-1][j-1] + dp[i-1][j+1]) % divisor
-        }
-    }
-}
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">through</span><span class="p">:</span> <span class="n">n</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">through</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">j</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">%</span> <span class="n">divisor</span>
+        <span class="k">case</span> <span class="mi">9</span><span class="p">:</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">8</span><span class="p">]</span> <span class="o">%</span> <span class="n">divisor</span>
+        <span class="k">default</span><span class="p">:</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="o">%</span> <span class="n">divisor</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-print(dp[n].reduce(0, +) % divisor)
+<span class="nf">print</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span> <span class="o">%</span> <span class="n">divisor</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1075,7 +1104,7 @@ print(dp[n].reduce(0, +) % divisor)
 
 <p> </p>
 
-<h4 id="풀이"><span class="me-2"><strong>풀이</strong></span><a href="#풀이" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="풀이"><span class="me-2"><strong>풀이</strong></span><a href="#풀이" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>먼저 계단수가 얼마나 만들어질 수 있는지 경우의 수를 따집니다.</p>
 
@@ -1200,13 +1229,13 @@ print(dp[n].reduce(0, +) % divisor)
 
 <p> </p>
 
-<h4 id="참고-나머지를-중간-계산과정에서도-해야하는-이유"><span class="me-2"><strong>참고: 나머지를 중간 계산과정에서도 해야하는 이유</strong></span><a href="#참고-나머지를-중간-계산과정에서도-해야하는-이유" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="참고-나머지를-중간-계산과정에서도-해야하는-이유"><span class="me-2"><strong>참고: 나머지를 중간 계산과정에서도 해야하는 이유</strong></span><a href="#참고-나머지를-중간-계산과정에서도-해야하는-이유" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>결론부터 말하자면, 중간에 나머지를 안하면 산술 오버플로(arithmetic overflow)라는 유형의 런타임 에러가 발생하기 때문입니다.</p>
 
 <p>나머지를 하지 않은 상태에서 문제에서 요구하는 최대값인 <code class="language-plaintext highlighter-rouge">n = 100</code>을 입력하면 다음과 같이 계산됩니다.</p>
 
-<h5 id="예-중간-계산-과정에서-나머지를-하지-않은-경우--컴파일러-터짐"><span class="me-2"><strong>예) 중간 계산 과정에서 나머지를 하지 않은 경우 (=&gt; 컴파일러 터짐)</strong></span><a href="#예-중간-계산-과정에서-나머지를-하지-않은-경우--컴파일러-터짐" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="예-중간-계산-과정에서-나머지를-하지-않은-경우--컴파일러-터짐"><span class="me-2"><strong>예) 중간 계산 과정에서 나머지를 하지 않은 경우 (=&gt; 컴파일러 터짐)</strong></span><a href="#예-중간-계산-과정에서-나머지를-하지-않은-경우--컴파일러-터짐" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>dp[68][2] = 8,833,413,110,019,436,605</li>
@@ -1218,7 +1247,7 @@ print(dp[n].reduce(0, +) % divisor)
 
 <p>읽을수도 없는 천문학적인 숫자가 나오면서 <code class="language-plaintext highlighter-rouge">for</code>문의 <code class="language-plaintext highlighter-rouge">i = 68</code>번째에서 산술 오버플로가 발생합니다. 중간 계산과정에서 나머지를 하면 산술 오버플로를 방지할 수 있습니다.</p>
 
-<h5 id="예-중간-계산-과정에서-나머지를-한-경우"><span class="me-2"><strong>예) 중간 계산 과정에서 나머지를 한 경우</strong></span><a href="#예-중간-계산-과정에서-나머지를-한-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="예-중간-계산-과정에서-나머지를-한-경우"><span class="me-2"><strong>예) 중간 계산 과정에서 나머지를 한 경우</strong></span><a href="#예-중간-계산-과정에서-나머지를-한-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>dp[68][2] = 19,436,605</li>
@@ -1231,7 +1260,7 @@ print(dp[n].reduce(0, +) % divisor)
 
 <p> </p>
 
-<h5 id="그러면-중간에-했는데-마지막에-나머지는-왜-또-하나요"><span class="me-2"><strong>그러면 중간에 했는데 마지막에 나머지는 왜 또 하나요?</strong></span><a href="#그러면-중간에-했는데-마지막에-나머지는-왜-또-하나요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="그러면-중간에-했는데-마지막에-나머지는-왜-또-하나요"><span class="me-2"><strong>그러면 중간에 했는데 마지막에 나머지는 왜 또 하나요?</strong></span><a href="#그러면-중간에-했는데-마지막에-나머지는-왜-또-하나요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>나머지 공식이 성립해야 하기 때문입니다. 나머지 연산자 성질 중에 다음과 같은 공식이 있습니다.</p>
 
@@ -2210,6 +2239,12 @@ print(dp[n].reduce(0, +) % divisor)
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2243,18 +2278,6 @@ print(dp[n].reduce(0, +) % divisor)
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

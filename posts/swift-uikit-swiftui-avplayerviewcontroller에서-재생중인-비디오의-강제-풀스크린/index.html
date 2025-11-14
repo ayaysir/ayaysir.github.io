@@ -483,6 +483,81 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -498,37 +573,6 @@
   
 
   
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -569,6 +613,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -577,26 +643,15 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
+  
 
-      
-      
-      
+  
+  
 
-      
-    
-
-    
   
 
 
@@ -687,7 +742,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="629 words"
+  title="630 words"
 >
   <em>3 min</em> read</span>
 
@@ -721,7 +776,7 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">AVPlayerViewController</code>는 처음에 풀 스크린으로 바로 시작할 수 없는 옵션도 없고, 반복 재생 옵션도 없습니다. <code class="language-plaintext highlighter-rouge">AVPlayerViewController</code>에서 강제 풀스크린 전환 및 반복 재생하는 방법입니다.</p>
 
@@ -729,10 +784,10 @@
 
 <p> </p>
 
-<h4 id="시작시-강제-풀스크린-전환"><span class="me-2"><strong>시작시 강제 풀스크린 전환</strong></span><a href="#시작시-강제-풀스크린-전환" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="시작시-강제-풀스크린-전환"><span class="me-2"><strong>시작시 강제 풀스크린 전환</strong></span><a href="#시작시-강제-풀스크린-전환" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -751,24 +806,24 @@
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>let controller = AVPlayerViewController()
-let player = AVPlayer(url: url)
-controller.player = player
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="kt">AVPlayerViewController</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">player</span> <span class="o">=</span> <span class="kt">AVPlayer</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+<span class="n">controller</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">player</span>
 
-let selectorToForceFullScreenMode = NSSelectorFromString("_transitionToFullScreenAnimated:interactive:completionHandler:")
+<span class="k">let</span> <span class="nv">selectorToForceFullScreenMode</span> <span class="o">=</span> <span class="kt">NSSelectorFromString</span><span class="p">(</span><span class="s">"_transitionToFullScreenAnimated:interactive:completionHandler:"</span><span class="p">)</span>
 
-player.play()
+<span class="n">player</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
 
-// 강제 풀스크린 전환
-// asyncAfter는 전체화면에서 컨트롤 요소가 나오지 않을 떄에만 사용
-DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
-    if controller.responds(to: selectorToForceFullScreenMode) {
-        controller.perform(selectorToForceFullScreenMode, with: true, with: nil)
+<span class="c1">// 강제 풀스크린 전환</span>
+<span class="c1">// asyncAfter는 전체화면에서 컨트롤 요소가 나오지 않을 떄에만 사용</span>
+<span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="nf">milliseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">controller</span><span class="o">.</span><span class="nf">responds</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">selectorToForceFullScreenMode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">controller</span><span class="o">.</span><span class="nf">perform</span><span class="p">(</span><span class="n">selectorToForceFullScreenMode</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
         
-    }
-}
+    <span class="p">}</span>
+<span class="p">}</span>
 
-// parentVC.present(...)로 AVPlayerViewController 나오게 하기
+<span class="c1">// parentVC.present(...)로 AVPlayerViewController 나오게 하기</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -782,14 +837,14 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
 
 <p> </p>
 
-<iframe width="250" height="480" src="https://giphy.com/embed/NhamDntUvmFrKNnOpi" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="250" height="480" src="https://giphy.com/embed/NhamDntUvmFrKNnOpi" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+<p><a href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGtxYzZ0eHA0NWdhODJsdHNyMmx1MXVxcnV2MWUxOGFuejUya3N0YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NhamDntUvmFrKNnOpi/giphy.gif" class="popup img-link shimmer"><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGtxYzZ0eHA0NWdhODJsdHNyMmx1MXVxcnV2MWUxOGFuejUya3N0YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NhamDntUvmFrKNnOpi/giphy.gif" alt="" loading="lazy"></a>
+ </p>
 
-<p> </p>
+<h2 id="반복loop-재생"><span class="me-2"><strong>반복(Loop) 재생</strong></span><a href="#반복loop-재생" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="반복loop-재생"><span class="me-2"><strong>반복(Loop) 재생</strong></span><a href="#반복loop-재생" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -804,20 +859,20 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>func loopVideo() {
-    NotificationCenter.default.removeObserver(self, name: AVPlayerItem.didPlayToEndTimeNotification, object: nil)
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">loopVideo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">removeObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">AVPlayerItem</span><span class="o">.</span><span class="n">didPlayToEndTimeNotification</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
     
-    // Be sure to specify the object as the AVPlayer's player item if you have multiple players. https://stackoverflow.com/a/40396824
-    NotificationCenter.default.addObserver(forName: AVPlayerItem.didPlayToEndTimeNotification, object: self.player.currentItem, queue: .main) { _ in
-        player.seek(to: CMTime.zero)
-        player.play()
-    }
-}
+    <span class="c1">// Be sure to specify the object as the AVPlayer's player item if you have multiple players. https://stackoverflow.com/a/40396824</span>
+    <span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="nv">forName</span><span class="p">:</span> <span class="kt">AVPlayerItem</span><span class="o">.</span><span class="n">didPlayToEndTimeNotification</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">currentItem</span><span class="p">,</span> <span class="nv">queue</span><span class="p">:</span> <span class="o">.</span><span class="n">main</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+        <span class="n">player</span><span class="o">.</span><span class="nf">seek</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CMTime</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+        <span class="n">player</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-// ... //
-player.play()
-loopVideo()
-// ... //
+<span class="c1">// ... //</span>
+<span class="n">player</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+<span class="nf">loopVideo</span><span class="p">()</span>
+<span class="c1">// ... //</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -828,10 +883,10 @@ loopVideo()
 
 <p> </p>
 
-<h4 id="swiftui-representable-코드"><span class="me-2"><strong>SwiftUI Representable 코드</strong></span><a href="#swiftui-representable-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="swiftui-representable-view-코드"><span class="me-2"><strong>SwiftUI Representable View 코드</strong></span><a href="#swiftui-representable-view-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -886,63 +941,63 @@ loopVideo()
 52
 53
 54
-</pre></td><td class="rouge-code"><pre>//
-//  FullScreenVideoPlayer.swift
-//  study-WidgetExample
-//
-//  Created by 윤범태 on 6/20/24.
-//
+</pre></td><td class="rouge-code"><pre><span class="c1">//</span>
+<span class="c1">//  FullScreenVideoPlayer.swift</span>
+<span class="c1">//  study-WidgetExample</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by 윤범태 on 6/20/24.</span>
+<span class="c1">//</span>
 
-import SwiftUI
-import AVKit
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">AVKit</span>
 
-struct FullScreenVideoPlayerRepresentedView: UIViewControllerRepresentable {
-    let url: URL
-    let player = AVPlayer()
+<span class="kd">struct</span> <span class="kt">FullScreenVideoPlayerRepresentedView</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span>
+    <span class="k">let</span> <span class="nv">player</span> <span class="o">=</span> <span class="kt">AVPlayer</span><span class="p">()</span>
     
-    func makeUIViewController(context: Context) -&gt; AVPlayerViewController {
-        let controller = AVPlayerViewController()
-        controller.player = player
+    <span class="kd">func</span> <span class="nf">makeUIViewController</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AVPlayerViewController</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="kt">AVPlayerViewController</span><span class="p">()</span>
+        <span class="n">controller</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">player</span>
         
-        player.replaceCurrentItem(with: .init(url: url))
+        <span class="n">player</span><span class="o">.</span><span class="nf">replaceCurrentItem</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">))</span>
         
-        let selectorToForceFullScreenMode = NSSelectorFromString("_transitionToFullScreenAnimated:interactive:completionHandler:")
+        <span class="k">let</span> <span class="nv">selectorToForceFullScreenMode</span> <span class="o">=</span> <span class="kt">NSSelectorFromString</span><span class="p">(</span><span class="s">"_transitionToFullScreenAnimated:interactive:completionHandler:"</span><span class="p">)</span>
         
-        player.play()
-        loopVideo()
+        <span class="n">player</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+        <span class="nf">loopVideo</span><span class="p">()</span>
         
-        // 강제 풀스크린 전환
-        // asyncAfter는 전체화면에서 컨트롤 요소가 나오지 않을 떄에만 사용
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
-            if controller.responds(to: selectorToForceFullScreenMode) {
-                controller.perform(selectorToForceFullScreenMode, with: true, with: nil)
-            }
-        }
+        <span class="c1">// 강제 풀스크린 전환</span>
+        <span class="c1">// asyncAfter는 전체화면에서 컨트롤 요소가 나오지 않을 떄에만 사용</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="nf">milliseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">controller</span><span class="o">.</span><span class="nf">responds</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">selectorToForceFullScreenMode</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">controller</span><span class="o">.</span><span class="nf">perform</span><span class="p">(</span><span class="n">selectorToForceFullScreenMode</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
         
-        return controller
-    }
+        <span class="k">return</span> <span class="n">controller</span>
+    <span class="p">}</span>
     
-    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
-    }
+    <span class="kd">func</span> <span class="nf">updateUIViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiViewController</span><span class="p">:</span> <span class="kt">AVPlayerViewController</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
     
-    func loopVideo() {
-        NotificationCenter.default.removeObserver(self, name: AVPlayerItem.didPlayToEndTimeNotification, object: nil)
+    <span class="kd">func</span> <span class="nf">loopVideo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">removeObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">AVPlayerItem</span><span class="o">.</span><span class="n">didPlayToEndTimeNotification</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
         
-        // Be sure to specify the object as the AVPlayer's player item if you have multiple players. https://stackoverflow.com/a/40396824
-        NotificationCenter.default.addObserver(forName: AVPlayerItem.didPlayToEndTimeNotification, object: self.player.currentItem, queue: .main) { _ in
-            player.seek(to: CMTime.zero)
-            player.play()
-        }
-    }
-}
+        <span class="c1">// Be sure to specify the object as the AVPlayer's player item if you have multiple players. https://stackoverflow.com/a/40396824</span>
+        <span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="nv">forName</span><span class="p">:</span> <span class="kt">AVPlayerItem</span><span class="o">.</span><span class="n">didPlayToEndTimeNotification</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">currentItem</span><span class="p">,</span> <span class="nv">queue</span><span class="p">:</span> <span class="o">.</span><span class="n">main</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+            <span class="n">player</span><span class="o">.</span><span class="nf">seek</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CMTime</span><span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+            <span class="n">player</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-#Preview {
-    FullScreenVideoPlayerRepresentedView(url: URL(string: "https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_2mb.mp4")!)
-}
+<span class="cp">#Preview {</span>
+    <span class="kt">FullScreenVideoPlayerRepresentedView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_2mb.mp4"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>풀스크린: <a href="https://stackoverflow.com/a/51618451">https://stackoverflow.com/a/51618451</a></li>
@@ -1953,18 +2008,6 @@ struct FullScreenVideoPlayerRepresentedView: UIViewControllerRepresentable {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

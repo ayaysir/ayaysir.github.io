@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1021,16 +1028,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -1132,6 +1129,37 @@
     
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
 
 
@@ -1148,7 +1176,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Logic Pro X: MIDI 리전(region)의 위치는 그대로 놔둔 상태에서 템포만 바꾸기</h1>
     
@@ -1222,9 +1250,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="728 words"
+  title="719 words"
 >
-  <em>4 min</em> read</span>
+  <em>3 min</em> read</span>
 
         </div>
       </div>
@@ -1232,9 +1260,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Logic Pro X: MIDI 리전(region)의 위치는 그대로 놔둔 상태에서 템포만 바꾸기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Logic Pro X: MIDI 리전(region)의 위치는 그대로 놔둔 상태에서 템포만 바꾸기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>원래 음악의 템포(BPM)가 73인 곡이 있는데 파일 오류로 미디 데이터상의 BPM은 25인 미디 파일이 있습니다.</p>
 
@@ -1242,9 +1292,11 @@
 
 <p>그래서 템포를 원래 템포인 73으로로 정정하고 싶은데 이 상태에서 BPM을 73로 변경하면 미디의 상대 템포에 맞춰 미디 이벤트의 속도도 같이 빨라집니다.</p>
 
-<p>[caption id=”attachment_6632” align=”alignnone” width=”312”] <a href="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.30.50.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.30.50.jpg" alt="" loading="lazy"></a> 원래 길이 (BPM 25인 상태에서)[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.30.50.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.30.50.jpg" alt="원래 길이 (BPM 25인 상태에서)" loading="lazy"></a><br />
+<em>원래 길이 (BPM 25인 상태에서)</em></p>
 
-<p>[caption id=”attachment_6633” align=”alignnone” width=”312”] <a href="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.31.02.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.31.02.jpg" alt="" loading="lazy"></a> BPM 75로 변경시 미디 이벤트 위치도 같이 바뀌므로 17초가 됨[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.31.02.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.31.02.jpg" alt="BPM 75로 변경시 미디 이벤트 위치도 같이 바뀌므로 17초가 됨" loading="lazy"></a> <br />
+<em>BPM 75로 변경시 미디 이벤트 위치도 같이 바뀌므로 17초가 됨</em></p>
 
 <p> </p>
 
@@ -1254,9 +1306,9 @@
 
 <p> </p>
 
-<h4 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="step-1-메인-화면에서-미디-트랙의-전체-리전region을-선택한-후-피아노-롤-에디터를-엽니다-더블-클릭"><span class="me-2"><strong>Step 1: 메인 화면에서 미디 트랙의 전체 리전(region)을 선택한 후 피아노 롤 에디터를 엽니다. (더블 클릭)</strong></span><a href="#step-1-메인-화면에서-미디-트랙의-전체-리전region을-선택한-후-피아노-롤-에디터를-엽니다-더블-클릭" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-1-메인-화면에서-미디-트랙의-전체-리전region을-선택한-후-피아노-롤-에디터를-엽니다-더블-클릭"><span class="me-2"><strong>Step 1: 메인 화면에서 미디 트랙의 전체 리전(region)을 선택한 후 피아노 롤 에디터를 엽니다. (더블 클릭)</strong></span><a href="#step-1-메인-화면에서-미디-트랙의-전체-리전region을-선택한-후-피아노-롤-에디터를-엽니다-더블-클릭" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.32.39.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.32.39.jpg" alt="" loading="lazy"></a></p>
 
@@ -1266,13 +1318,13 @@
 
 <p> </p>
 
-<h5 id="step-2-command--a를-눌러-전체-노트를-선택합니다"><span class="me-2"><strong>Step 2: <code class="language-plaintext highlighter-rouge">command + a</code>를 눌러 전체 노트를 선택합니다.</strong></span><a href="#step-2-command--a를-눌러-전체-노트를-선택합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-2-command--a를-눌러-전체-노트를-선택합니다"><span class="me-2"><strong>Step 2: <code class="language-plaintext highlighter-rouge">command + a</code>를 눌러 전체 노트를 선택합니다.</strong></span><a href="#step-2-command--a를-눌러-전체-노트를-선택합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.32.53.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.32.53.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="step-3-피아노-롤-에디터의-상단-기능-메뉴에서-smpte-위치-잠금을-선택합니다-단축키는-command--아래화살표-입니다"><span class="me-2"><strong>Step 3: 피아노 롤 에디터의 상단 <code class="language-plaintext highlighter-rouge">[기능]</code> 메뉴에서 <code class="language-plaintext highlighter-rouge">[SMPTE 위치 잠금</code>]을 선택합니다. 단축키는 <code class="language-plaintext highlighter-rouge">command + 아래화살표(↓)</code> 입니다.</strong></span><a href="#step-3-피아노-롤-에디터의-상단-기능-메뉴에서-smpte-위치-잠금을-선택합니다-단축키는-command--아래화살표-입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-3-피아노-롤-에디터의-상단-기능-메뉴에서-smpte-위치-잠금을-선택합니다-단축키는-command--아래화살표-입니다"><span class="me-2"><strong>Step 3: 피아노 롤 에디터의 상단 <code class="language-plaintext highlighter-rouge">[기능]</code> 메뉴에서 <code class="language-plaintext highlighter-rouge">[SMPTE 위치 잠금</code>]을 선택합니다. 단축키는 <code class="language-plaintext highlighter-rouge">command + 아래화살표(↓)</code> 입니다.</strong></span><a href="#step-3-피아노-롤-에디터의-상단-기능-메뉴에서-smpte-위치-잠금을-선택합니다-단축키는-command--아래화살표-입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.32.58.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.32.58.jpg" alt="" loading="lazy"></a></p>
 
@@ -1287,14 +1339,14 @@
 <p> </p>
 
 <blockquote>
-  <p><strong>SMPTE 위치란?</strong></p>
+  <h4 id="smpte-위치란"><span class="me-2"><strong>SMPTE 위치란?</strong></span><a href="#smpte-위치란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
   <p><a href="https://ko.wikipedia.org/wiki/SMPTE">SMPTE</a>는 영화ㆍ텔레비전 기술자 협회(Society of Motion Picture and Television Engineers, SMPTE)의 약자로 1916년 미국에서 영화 산업에 종사하는 기술인들이 주축이 되어 설립한 국제 전문가 단체입니다. SMPTE는 국제적으로 저명한 표준화 기구로 600개 이상의 표준을 가지고 있습니다. SMPTE 위치란 이 단체에서 규정한 시간 및 미디어 위치 정보의 표준입니다.</p>
 </blockquote>
 
 <p> </p>
 
-<h5 id="step-4-메인-화면-트랙의-리전-길이를-조절합니다"><span class="me-2"><strong>Step 4: 메인 화면 트랙의 리전 길이를 조절합니다.</strong></span><a href="#step-4-메인-화면-트랙의-리전-길이를-조절합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-4-메인-화면-트랙의-리전-길이를-조절합니다"><span class="me-2"><strong>Step 4: 메인 화면 트랙의 리전 길이를 조절합니다.</strong></span><a href="#step-4-메인-화면-트랙의-리전-길이를-조절합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.35.31.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.35.31.jpg" alt="" loading="lazy"></a></p>
 
@@ -1302,7 +1354,7 @@
 
 <p> </p>
 
-<h4 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://support.apple.com/ko-kr/guide/logicpro/lgcp21581f00/mac">https://support.apple.com/ko-kr/guide/logicpro/lgcp21581f00/mac</a></li>
@@ -2272,6 +2324,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1216,16 +1223,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -1255,6 +1252,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1263,26 +1282,15 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
+  
 
-      
-      
-      
+  
+  
 
-      
-    
-
-    
   
 
 
@@ -1299,7 +1307,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Xcode: 코드 에디터에서 사용할 코드 스니펫(Code Snippet) 추가 및 플레이스홀더 만들기</h1>
     
@@ -1373,7 +1381,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1223 words"
+  title="1226 words"
 >
   <em>6 min</em> read</span>
 
@@ -1383,9 +1391,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Xcode: 코드 에디터에서 사용할 코드 스니펫(Code Snippet) 추가 및 플레이스홀더 만들기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Xcode: 코드 에디터에서 사용할 코드 스니펫(Code Snippet) 추가 및 플레이스홀더 만들기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="플레이스홀더"><span class="me-2"><strong>플레이스홀더</strong></span><a href="#플레이스홀더" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="플레이스홀더"><span class="me-2"><strong>플레이스홀더</strong></span><a href="#플레이스홀더" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>플레이스홀더는 Xcode에서 매우 빈번하게 사용되는 기능입니다. 단독으로 사용하기보다는 주로 코드 스니펫 기능과 결합되어 많이 사용됩니다.</p>
 
@@ -1395,7 +1425,7 @@
   <p>예를 들어, 함수의 매개변수 목록이나 변수 선언 시에 임시 이름을 지정하고자 할 때 플레이스홀더를 사용할 수 있습니다. 또한 특정 코드 블록이나 기능을 나중에 구현할 때, 그 구현이 아직 완료되지 않았을 때도 플레이스홀더를 사용할 수 있습니다.</p>
 </blockquote>
 
-<p> </p>
+<h2 id="주요-특징"><span class="me-2"><strong>주요 특징</strong></span><a href="#주요-특징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>플레이스홀더의 주요 특징으로는</p>
 
@@ -1413,17 +1443,17 @@
   <li>플레이스홀더를 더블 클릭하면 코드내용이 그대로 입력됩니다. 여기에 실제 실행되는 코드나 설명문, 안내문 등을 적을 수도 있습니다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>let blahblah: String = &lt;#"필수 입력란"#&gt;
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">blahblah</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">&lt;</span><span class="err">#</span><span class="s">"필수 입력란"</span><span class="err">#</span><span class="o">&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.36.32-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.36.32-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h4 id="코드-스니펫"><span class="me-2"><strong>코드 스니펫</strong></span><a href="#코드-스니펫" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="코드-스니펫"><span class="me-2"><strong>코드 스니펫</strong></span><a href="#코드-스니펫" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>코드 스니펫은 아래와 같이 코드 스니펫 라이브러리에서 선택하거나 또는 코드 에디터에서 특정 텍스트를 입력하면 바로 사용할 수 있는 코드 조각을 주는 기능을 말합니다.</p>
 
@@ -1441,16 +1471,16 @@
 
 <p> </p>
 
-<h5 id="커스텀-코드-스니펫-만들기"><span class="me-2"><strong>커스텀 코드 스니펫 만들기</strong></span><a href="#커스텀-코드-스니펫-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="커스텀-코드-스니펫-만들기"><span class="me-2"><strong>커스텀 코드 스니펫 만들기</strong></span><a href="#커스텀-코드-스니펫-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>자주 사용하는 코드 블록은 스니펫으로 만들어두면 유용하게 사용할 수 있습니다.</p>
 
 <p>예를 들어 아래와 같이 2차원 배열을 만드는 코드 스니펫으로 만들려고 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>var twoDimArray: [[&lt;#Type#&gt;]] = .init(repeating: .init(repeating: &lt;#Element#&gt;, count: &lt;#N#&gt;), count: &lt;#N#&gt;)
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">twoDimArray</span><span class="p">:</span> <span class="p">[[</span><span class="o">&lt;</span><span class="k">#Type</span><span class="err">#</span><span class="o">&gt;</span><span class="p">]]</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">#Element</span><span class="err">#</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">#N</span><span class="err">#</span><span class="o">&gt;</span><span class="p">),</span> <span class="nv">count</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">#N</span><span class="err">#</span><span class="o">&gt;</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.46.57-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.46.57-copy.jpg" alt="" loading="lazy"></a></p>
@@ -1458,9 +1488,12 @@
 <p>방법은 다음과 같습니다.</p>
 
 <ol>
-  <li>스니펫으로 만들 코드를 선택합니다.  <a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.05-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.05-copy.jpg" alt="" loading="lazy"></a></li>
-  <li>마우스 오른쪽 버튼 또는 상단 <code class="language-plaintext highlighter-rouge">Editor</code> 메뉴의 <code class="language-plaintext highlighter-rouge">[Create Code Snippet...]</code> 를 선택합니다.  <a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.11-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.11-copy.jpg" alt="" loading="lazy"></a></li>
-  <li>제목, 설명 등의 정보들을 입력하고 <code class="language-plaintext highlighter-rouge">Done</code>을 선택합니다.  <a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.52-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.52-copy.jpg" alt="" loading="lazy"></a>
+  <li>스니펫으로 만들 코드를 선택합니다. <br />
+<a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.05-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.05-copy.jpg" alt="" loading="lazy"></a></li>
+  <li>마우스 오른쪽 버튼 또는 상단 <code class="language-plaintext highlighter-rouge">Editor</code> 메뉴의 <code class="language-plaintext highlighter-rouge">[Create Code Snippet...]</code> 를 선택합니다. <br />
+<a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.11-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.11-copy.jpg" alt="" loading="lazy"></a></li>
+  <li>제목, 설명 등의 정보들을 입력하고 <code class="language-plaintext highlighter-rouge">Done</code>을 선택합니다. <br />
+<a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.52-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.52-copy.jpg" alt="" loading="lazy"></a>
     <ul>
       <li><strong>제목, 설명:</strong> 제목 및 설명을 입력합니다. 메인으로 표시되는 정보입니다.</li>
       <li><strong>코드:</strong> 스니펫으로 사용할 코드를 입력합니다.</li>
@@ -1469,7 +1502,8 @@
       <li><strong>Completion (완성 단축어)</strong>
         <ul>
           <li>코드 에디터에 해당 단축어를 입력하면 컨텍스트 메뉴가 떠서 바로 사용할 수 있습니다.</li>
-          <li>예를 들어 <code class="language-plaintext highlighter-rouge">twodimarray</code>로 등록했다면, <code class="language-plaintext highlighter-rouge">twod</code> 등 단축어의 일부를 입력해도 메뉴가 바로 뜹니다.  <a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.51.39-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.51.39-copy.jpg" alt="" loading="lazy"></a></li>
+          <li>예를 들어 <code class="language-plaintext highlighter-rouge">twodimarray</code>로 등록했다면, <code class="language-plaintext highlighter-rouge">twod</code> 등 단축어의 일부를 입력해도 메뉴가 바로 뜹니다. <br />
+  <a href="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.51.39-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.51.39-copy.jpg" alt="" loading="lazy"></a></li>
         </ul>
       </li>
       <li><strong>사용범위</strong>
@@ -1487,7 +1521,7 @@
 </ol>
 
 <!-- http://www.giphy.com/gifs/SZPRYnlbGZAl11AwVA -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnBlcm5pbHRhbTM1dXI4ejE1NWZveWluMW03cHF1eTg4ZHI5c2dqZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SZPRYnlbGZAl11AwVA/giphy.gif" class="popup img-link shimmer"><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnBlcm5pbHRhbTM1dXI4ejE1NWZveWluMW03cHF1eTg4ZHI5c2dqZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SZPRYnlbGZAl11AwVA/giphy.gif" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -2454,6 +2488,12 @@
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2487,18 +2527,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

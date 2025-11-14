@@ -573,11 +573,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -596,21 +591,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -683,6 +663,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -807,7 +797,7 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>PDFView에서 탭했을 때 확대 여부에 상관없이 실제 PDF 문서상의 좌표를 알아내고 싶을 때 사용하는 방법입니다,</p>
 
@@ -818,12 +808,12 @@
 
 <p> </p>
 
-<h4 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="step-1-uitapgesturerecognizer를-pdfview에-추가"><span class="me-2"><strong>Step 1: UITapGestureRecognizer를 PDFView에 추가</strong></span><a href="#step-1-uitapgesturerecognizer를-pdfview에-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-1-uitapgesturerecognizer를-pdfview에-추가"><span class="me-2"><strong>Step 1: UITapGestureRecognizer를 PDFView에 추가</strong></span><a href="#step-1-uitapgesturerecognizer를-pdfview에-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -832,14 +822,14 @@
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>class DrawingPDFView: PDFView {
-    init() {
-        super.init(frame: .zero)
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">DrawingPDFView</span><span class="p">:</span> <span class="kt">PDFView</span> <span class="p">{</span>
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span>
         
-        let pdfTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapView))
-        self.addGestureRecognizer(pdfTapGestureRecognizer)
-    }
-}
+        <span class="k">let</span> <span class="nv">pdfTapGestureRecognizer</span> <span class="o">=</span> <span class="kt">UITapGestureRecognizer</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">tapView</span><span class="p">))</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">addGestureRecognizer</span><span class="p">(</span><span class="n">pdfTapGestureRecognizer</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -849,18 +839,18 @@
 
 <p> </p>
 
-<h5 id="step-2-uitapgesturerecognizer를-통해-탭한-곳의-좌표값-받아오기"><span class="me-2"><strong>Step 2: UITapGestureRecognizer를 통해 탭한 곳의 좌표값 받아오기</strong></span><a href="#step-2-uitapgesturerecognizer를-통해-탭한-곳의-좌표값-받아오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-2-uitapgesturerecognizer를-통해-탭한-곳의-좌표값-받아오기"><span class="me-2"><strong>Step 2: UITapGestureRecognizer를 통해 탭한 곳의 좌표값 받아오기</strong></span><a href="#step-2-uitapgesturerecognizer를-통해-탭한-곳의-좌표값-받아오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>@objc func tapView(_ gesture: UITapGestureRecognizer) {
-    let tapLocation = gesture.location(in: self.documentView)
-    print("before convert:", tapLocation)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">tapView</span><span class="p">(</span><span class="n">_</span> <span class="nv">gesture</span><span class="p">:</span> <span class="kt">UITapGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">tapLocation</span> <span class="o">=</span> <span class="n">gesture</span><span class="o">.</span><span class="nf">location</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">documentView</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"before convert:"</span><span class="p">,</span> <span class="n">tapLocation</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -870,10 +860,10 @@
 
 <p> </p>
 
-<h5 id="step-3-taplocation을-실제-pdf-문서에-맞는-좌표로-변환-후-사용"><span class="me-2"><strong>Step 3: tapLocation을 실제 PDF 문서에 맞는 좌표로 변환 후 사용</strong></span><a href="#step-3-taplocation을-실제-pdf-문서에-맞는-좌표로-변환-후-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-3-taplocation을-실제-pdf-문서에-맞는-좌표로-변환-후-사용"><span class="me-2"><strong>Step 3: tapLocation을 실제 PDF 문서에 맞는 좌표로 변환 후 사용</strong></span><a href="#step-3-taplocation을-실제-pdf-문서에-맞는-좌표로-변환-후-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -885,17 +875,17 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>@objc func tapView(_ gesture: UITapGestureRecognizer) {
-    // ... //
+</pre></td><td class="rouge-code"><pre><span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">tapView</span><span class="p">(</span><span class="n">_</span> <span class="nv">gesture</span><span class="p">:</span> <span class="kt">UITapGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ... //</span>
    
-    guard let page = self.page(for: tapLocation, nearest: true) else {
-        return
-    }
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">page</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="nf">page</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">tapLocation</span><span class="p">,</span> <span class="nv">nearest</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    let convertedLocation = self.convert(tapLocation, to: page)
+    <span class="k">let</span> <span class="nv">convertedLocation</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">tapLocation</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">page</span><span class="p">)</span>
     
-    print("after convert:", convertedLocation)
-}
+    <span class="nf">print</span><span class="p">(</span><span class="s">"after convert:"</span><span class="p">,</span> <span class="n">convertedLocation</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -907,14 +897,13 @@
   </li>
 </ul>
 
-<p> </p>
+<p> 
+ </p>
 
-<p> </p>
-
-<h4 id="결과"><span class="me-2"><strong>결과</strong></span><a href="#결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="결과"><span class="me-2"><strong>결과</strong></span><a href="#결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <!-- https://giphy.com/gifs/7ZHlSvH6I46oDP8ILg -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l3bWpldDk5eWl0ZXVzNjAycml4OW9uaGlzYWhoYWhjamF5dTduNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7ZHlSvH6I46oDP8ILg/giphy.gif" class="popup img-link shimmer"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l3bWpldDk5eWl0ZXVzNjAycml4OW9uaGlzYWhoYWhjamF5dTduNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7ZHlSvH6I46oDP8ILg/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p>확대/축소 및 이동하면서 여러 곳을 찍어도 After 좌표는 일정한 위치를 가리키는 것을 확인할 수 있습니다.</p>
 
@@ -7160,18 +7149,6 @@ after convert: (772.7663913146058, 1554.5758590878288)
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
   
 
@@ -7886,11 +7863,11 @@ after convert: (772.7663913146058, 1554.5758590878288)
 
   
     <a
-      href="/posts/swift-ios-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%9D%98-%EC%9D%B8%EC%95%B1-%EA%B2%B0%EC%A0%9Cin-app-puchase-iap-%EA%B8%B0%EC%B4%88-%EC%98%88%EC%A0%9C/"
+      href="/posts/swift-uikit-%EC%98%88%EC%A0%9C-%EB%A1%9C%EB%94%A9-%EC%9D%B8%EB%94%94%EC%BC%80%EC%9D%B4%ED%84%B0-%ED%99%94%EB%A9%B4/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Swift: iOS 프로젝트의 인앱 결제(In App Purchase; IAP) 기초 예제</p>
+      <p>Swift UIKit 예제: 로딩 인디케이터 화면</p>
     </a>
   
 
