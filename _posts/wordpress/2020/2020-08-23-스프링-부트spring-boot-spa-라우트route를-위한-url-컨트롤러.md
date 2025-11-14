@@ -19,7 +19,7 @@ categories:
 
 문제를 해결하려면 서버 URL에 대체 경로를 추가하면 됩니다. URL에 매핑되어 있는 정적(static) 페이지가 없다면, SPA 앱이 있는 `index.html` 페이지를 매핑하도록 하면 됩니다.
 
-예제에서는 `http://server.url/` 에 `index.html`이 배정되어 있으며, `http://server.url/v/**` 로 구성된 모든 URL은 SPA 라우팅을 이용하였다고 가정합니다.
+예제에서는 `http://server.url/` 에 `index.html`이 배정되어 있으며, `http://server.url/v/**` 로 구성된 모든 URL은 SPA 라우팅을 이용하였다고 가정합니다.
 
 ```
 import java.io.IOException;

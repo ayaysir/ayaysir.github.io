@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-### 소개
+## 소개
 
 뷰의 중심점(center point)과 반경을 계산하여 사용자 정의 방사형 레이아웃을 생성합니다.
 
@@ -14,10 +14,7 @@ categories:
 - 출처: [Radial Layout](https://designcode.io/swiftui-handbook-radial-layout)
 
  
-
-### **구현**
-
-#### **커스텀 Radial Layout 만들기**
+## 커스텀 Radial Layout 만들기
 
 레이아웃 중앙에 서브뷰를 배치하고 인덱스 값을 사용하여 최소한의 변형(transforming)을 수행하는 사용자 정의 레이아웃 코드부터 시작하겠습니다.
 
@@ -30,8 +27,7 @@ categories:
 > [https://velog.io/@comdongsam/SwiftUI-Layout](https://velog.io/@comdongsam/SwiftUI-Layout)
 
  
-
-```
+```swift
 struct RadialLayout: Layout {
     func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
         proposal.replacingUnspecifiedDimensions()
@@ -45,7 +41,7 @@ struct RadialLayout: Layout {
 
  
 
-##### **서브뷰 배치**
+### 서브뷰 배치
 
 루프의 모든 항목을 사용자 정의 위치에 배치해 보겠습니다.
 
@@ -74,7 +70,7 @@ func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subv
 
  
 
-##### **반경 (Radius)**
+### 반경 (Radius)
 
 레이아웃 크기(`bounds`)의 `1/3`을 사용해 해당 값으로 `y` 위치를 이동시킬 것입니다.
 
@@ -95,11 +91,11 @@ var point = CGPoint(x: 0, y: -radius)
 
  
 
-##### **각도 (Angle)**
+### 각도 (Angle)
 
 이것은 원형 레이아웃이므로 `360도`를 아이템 개수로 나누어야 합니다. 그런 다음 값을 라디안(`radians`)으로 변환합니다.
 
-```
+```swift
 // After radius
 let angle: CGFloat = Angle.degrees(360.0 / Double(subviews.count)).radians
 ```
@@ -108,7 +104,7 @@ let angle: CGFloat = Angle.degrees(360.0 / Double(subviews.count)).radians
 
 마지막으로 각도(`angle`)와 인덱스 값의 배수(`index`)를 사용합니다. 이렇게 하면 항목이 원 안에 적절하게 분산됩니다.
 
-```
+```swift
 var point = CGPoint(x: 0, y: -radius)
   .applying(.init(rotationAngle: angle * CGFloat(index)))
 ```
@@ -118,17 +114,17 @@ var point = CGPoint(x: 0, y: -radius)
 
  
 
-#### **뷰에 적용**
+## 뷰에 적용
 
 예제로 시계를 만들어봅니다.
 
  
 
-##### **데이터**
+### 데이터
 
 뷰를 생성한 다음 멤버 변수로 다음 데이터를 추가합니다.
 
-```
+```swift
 let icons = ["calendar", "message", "figure.walk", "music.note"]
 let numbers = [12,1,2,3,4,5,6,7,8,9,10,11]
 ```
@@ -139,28 +135,28 @@ let numbers = [12,1,2,3,4,5,6,7,8,9,10,11]
 
  
 
-##### **프레임 크기 및 ZStack**
+### 프레임 크기 및 ZStack
 
 레이아웃에 프레임 크기를 설정하고 ZStack에 포함시킵니다. 이렇게 하면 더 많은 방사형 레이아웃을 만들 수 있습니다.
 
-```
+```swift
 ZStack {
     RadialLayout {
         // ForEach
     }
-    .frame(width: 사이즈)
+    .frame(width: 사이즈)
 }
 ```
 
  
 
-##### **시 (Hour)**
+### 시 (Hour)
 
 방사형 레이아웃을 사용하여 시계의 12개 숫자를 반복합니다.
 
 앞서 생성한 `numbers` 데이터를 바탕으로 시계의 시간을 반복하고 디자인합니다. `ZStack` 안에 배치합니다.
 
-```
+```swift
 // Hours
 RadialLayout {
   ForEach(numbers, id: \.self) { number in
@@ -179,11 +175,11 @@ RadialLayout {
 
  
 
-##### **분 (Minute)**
+### 분 (Minute)
 
 시간과 마찬가지로 동일한 데이터를 사용하지만 이번에는 `5`를 곱하여 분을 구하겠습니다.
 
-```
+```swift
 // Minutes
 RadialLayout {
   ForEach(numbers, id: \.self) { item in
@@ -199,9 +195,9 @@ RadialLayout {
 
  
 
-##### **아이콘**
+### 아이콘
 
-```
+```swift
 RadialLayout {
   ForEach(icons, id: \.self) { item in
     Circle()
@@ -225,11 +221,11 @@ RadialLayout {
 
  
 
-##### **대시 라인 스트로크하기 (Stroke Dash Lines)**
+### 대시 라인 스트로크하기 (Stroke Dash Lines)
 
 StrokeStyle을 사용하면 대시와 간격을 사용자 정의하여 시계 라인을 얻을 수 있습니다.
 
-```
+```swift
 Circle()
   .strokeBorder(.black, style: StrokeStyle(lineWidth: 10, dash: [1, 10]))
   .frame(width: 220)

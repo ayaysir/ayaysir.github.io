@@ -171,7 +171,7 @@ struct PriorityQueue<T: Comparable> {
 - **leftChildIndex(of:)**
     - 특정 인덱스로부터 왼쪽 자식의 인덱스를 구하는 공식입니다.
     - **`2 * index + 1`**
-- **rightChildIndex(of:)**
+- **rightChildIndex(of:)**
     - 특정 인덱스로부터 오른쪽 자식의 인덱스를 구하는 공식입니다.
     - **`2 * index + 2`**
 

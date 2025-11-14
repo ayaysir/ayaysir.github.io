@@ -168,7 +168,7 @@ userNotiCenter.add(request) { (error) in
 
 - `trigger` - 일정 시간 후 푸시 메시지가 발생하도록 하는 트리거를 작성합니다.
     - `timeInteval` - 초(second) 단위 시간을 입력합니다. 최소 `0`보다 커야 합니다.
-        - 또한 `repeats` 옵션이 `true`일 경우에는 `60` 이상이어야 합니다.
+        - 또한 `repeats` 옵션이 `true`일 경우에는 `60` 이상이어야 합니다.
     - `repeats` - 이 옵션이 `true`인 경우 일정 시간마다 메시지가 반복하여 나타납니다. (`60`초 이상 필수) `false`인 경우 한번만 나타납니다.
         - 예를 들어 30분마다 메시지를 반복 표시하고자 할 경우 `(timeInterval: 60 * 30, repeats: true)` 로 작성하면 됩니다.
 -  `request` - `notiContent`와 `trigger`를 사용하여 푸시 메시지를 표시하도록 요청합니다.

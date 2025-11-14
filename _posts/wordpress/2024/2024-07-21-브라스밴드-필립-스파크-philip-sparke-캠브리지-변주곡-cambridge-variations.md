@@ -6,7 +6,7 @@ categories:
   - "Band Music"
 ---
 
-#### **Cambridge Variations (캠브리지 변주곡)**
+## **Cambridge Variations (캠브리지 변주곡) 듣기 및 해설**
 
 {% youtube "https://www.youtube.com/watch?v=TBcmug3mX1k" %}
 

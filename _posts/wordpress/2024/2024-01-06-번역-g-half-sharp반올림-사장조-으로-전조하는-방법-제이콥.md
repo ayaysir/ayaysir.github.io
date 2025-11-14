@@ -139,7 +139,7 @@ Jacob의 작품에서 그도 마찬가지로 4개의 코드만 사용하고 어�
 
  ![](/assets/img/wp-content/uploads/2024/01/screenshot-2024-01-06-pm-10.03.06-copy.jpg)
 
-반면 C의 하모닉에서 발견된 E는 약간 뒤로 떨어져 있습니다. 센트로 환산하면 이는 실제로 반음의 약 14/100, 약 14센트 정도 낮습니다.
+반면 C의 하모닉에서 발견된 E는 약간 뒤로 떨어져 있습니다. 센트로 환산하면 이는 실제로 반음의 약 14/100, 약 14센트 정도 낮습니다.
 
 \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2024/01/ET-vs-JI.mp3"\]\[/audio\]
 

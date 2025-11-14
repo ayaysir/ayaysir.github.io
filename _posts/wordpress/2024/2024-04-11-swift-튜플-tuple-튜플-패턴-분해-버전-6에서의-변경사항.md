@@ -6,9 +6,9 @@ categories:
   - "Swift"
 ---
 
-### **튜플 (Tuple): 데이터의 집합**
 
-튜플(Tuple)은 Swift에 존재하는 두 가지 복합 타입 (compound type) 중 하나입니다.
+
+튜플(Tuple)은 데이터의 집합으로 Swift에 존재하는 두 가지 복합 타입 (compound type) 중 하나입니다.
 
 > 복합 타입에는 함수 타입(Function type)과 튜플 타입(Tuple type)의 두 가지가 있습니다.
 > 
@@ -16,17 +16,17 @@ categories:
 
  
 
-#### **특징**
+## **특징**
 
 튜플의 특징은 다음과 같습니다.
 
-##### **여러 값을 동시에 표현 및 저장할 수 있다. (데이터의 집합)**
+### **여러 값을 동시에 표현 및 저장할 수 있다. (데이터의 집합)**
 
 예를 들어 `x`, `y` 좌표를 나타내는 타입을 만들고 싶다고 합니다. `Coordinate`라는 이름의 `struct`를 만들 수도 있지만(이에 대한 내용은 생략합니다), 그보다 더 간단하게 튜플을 사용해서 `x`, `y` 좌표를 나타낼 수 있습니다.
 
 아래는 좌표 x, y를 튜플 타입인 `(x: Int, y: Int)`로 나타낸 예제입니다.
 
-```
+```swift
 var coordinate = (x: 10, y: 12)   // coordinate는  (\x: Int, y: Int) 타입의 변수입니다.
 coordinate = (x: 4, y: 42)        // OK: 이름이 매치됩니다.
 coordinate = (9, 99)              // OK: 이름을 적지 않으면 자동으로 유추(inferred)됩니다.
@@ -63,13 +63,13 @@ var.coord.x // 30
 
  
 
-##### **장단점**
+## **장단점**
 
 구조체를 만드는 것보다 튜플을 통해 만들었을 때의 장단점에 대해 알아보겠습니다.
 
 예를 들어 `동물`이라는 구조체를 만든다고 하면
 
-```
+```swift
 struct 동물 {
   var 이름: String
   var 종: String
@@ -84,7 +84,7 @@ print("니네집강아지 이름은 \(니네집강아지.이름)이며, 종은 \
 
 이것을 튜플을 통해 다음과 같이 간편하게 구현할 수 있습니다.
 
-```
+```swift
 var 니네집강아지 = (이름: "뽀삐", 종: "요크셔테리어", 무게: 30)
 // 또는
 var 니네집강아지 = ("뽀삐", "요크셔테리어", 30)
@@ -105,13 +105,13 @@ print("니네집강아지 이름은 \(니네집강아지.0)이며, 종은 \(니�
 
  
 
-#### **튜플 패턴을 이용한 분해**
+## **튜플 패턴을 이용한 분해**
 
 튜플 패턴을 이용한 분해(destruction) 이란 튜플을 개별 변수로 분리할 수 있는 기능입니다.
 
 위의 예제에서 `니네집강아지` 라는 튜플 안의 값을 묶어서 사용하기 보다 개별 변수로 분리해서 사용하고 싶다고 할 때
 
-```
+```swift
 let name = 니네집강아지.이름
 let species = 니네집강아지.종
 let weight = 니네집강아지.무게
@@ -119,7 +119,7 @@ let weight = 니네집강아지.무게
 
 이렇게 할 수도 있지만, 이것을 튜플 패턴을 이용하면 라인 수를 줄이면서도 더 간편하게 개별 변수로 나눌 수 있습니다.
 
-```
+```swift
 let (name, species, weight) = 니네집강아지
 // 이 코드는 바로 위의 예제와 동일하게 작동합니다.
 
@@ -132,7 +132,7 @@ print(weight * 2) // 60
 
 앞의 예제 `circle`처럼 튜플 안에 튜플이 있는 타입도 다음과 같이 분해할 수 있습니다.
 
-```
+```swift
 var circle = (radius: 10, coord: (x: 30, y: 50))
 let (radius, (x, y)) = circle
 
@@ -146,7 +146,7 @@ print(y) // 50
 
 이것을 튜플 패턴을 사용하면 여러 라인의 코드를 한 줄로 줄일 수 있습니다.
 
-```
+```swift
 let array = [3, 6, 200, 100]
 let x = array[0]
 let y = array[1]
@@ -161,9 +161,9 @@ let (x, y, width, height) = (array[0], array[1], array[2], array[3])
 
  
 
-##### **\[심화\] 배열의 withUnsafeBytes 기능을 이용하여 배열을 튜플로 변환**
+## **\[심화\] 배열의 withUnsafeBytes 기능을 이용하여 배열을 튜플로 변환**
 
-```
+```swift
 var polePairs: [(l: Int, r: Int)] = []
 polePairs.append([50, 60].withUnsafeBytes { $0.bindMemory(to: (l: Int, r: Int).self)[0] })
 polePairs.first! // (l: 50, r: 60)
@@ -171,7 +171,7 @@ polePairs.first! // (l: 50, r: 60)
 
  
 
-#### **Swift 버전 6에서 튜플의 변경사항**
+## **기타: 프로토콜 준수 문제**
 
 이렇게 다양한 기능이 있음에도 불구하고 실제로 튜플은 거의 사용되지 않고 있습니다. 다양한 이유가 있지만 튜플의 치명적인 단점 중 하나는 튜플은 다른 프로토콜을 준수(conform) 할 수 있는 기능이 없다는 점입니다.
 
@@ -181,7 +181,7 @@ polePairs.first! // (l: 50, r: 60)
 
 따라서 누군가가 우선순위 큐 구조체 `PriorityQueue<T: Comparable>`를 아래와 같이 만들었고 그것을 사용하고 싶다고 가정합니다.
 
-```
+```swift
 struct PriorityQueue<T: Comparable> { ... }
 
 // 최소 거리를 찾기 위한 기본 정보
@@ -210,7 +210,7 @@ struct Node: Comparable {
 
 이러한 사례로 많은 구조체, 클래스, 함수 등에서 요구하는 프로토콜 준수사항인 `Equatable`, `Hashable`, `Comparable` 등이 있지만 튜플은 이 중 단 하나도 지원하지 않습니다. 이러한 점 때문에 튜플은 거의 사용되지 않고 있던 것입니다.
 
-하지만 곧 출시될 Swift 6에서 (작성 시점 현재 Xcode에서 사용되는 버전은 Swift 5.9 입니다.) `Equatable`, `Hashable`, `Comparable` 을 지원한다는 소문이 있습니다.
+<!-- 하지만 곧 출시될 Swift 6에서 (작성 시점 현재 Xcode에서 사용되는 버전은 Swift 5.9 입니다.) `Equatable`, `Hashable`, `Comparable` 을 지원한다는 소문이 있습니다.
 
 > **Swift 6.0에서 튜플은 Equatable, Comparable 및 Hashable을 준수합니다.**
 > 
@@ -239,4 +239,4 @@ print (uniquePoints) // [(x: 0, y: 0), (x: 1, y: 2)]
 (x: 0, y: 0).hashValue == (0, 0).hashValue // true
 ```
 
-구체적인 스펙이나 정확한 내용은 아직 출시 전이므로 알 수 없지만, Swift 6이 활성화되는 시기에는 치명적인 단점이 극복되어 튜플의 사용처가 늘지 않을까 싶습니다.
+구체적인 스펙이나 정확한 내용은 아직 출시 전이므로 알 수 없지만, Swift 6이 활성화되는 시기에는 치명적인 단점이 극복되어 튜플의 사용처가 늘지 않을까 싶습니다. -->

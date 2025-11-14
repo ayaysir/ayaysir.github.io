@@ -39,7 +39,7 @@ struct AlbumListView: View {
                         Text("Temp Detail Page: \(element)")
                     } label: {
                         VStack {
-                            Image("sample")
+                            Image("sample")
                                 .resizable() // 중요: 지정하지 않으면 이미지 사이즈 요지부동
                                 .aspectRatio(1, contentMode: .fill)
                         }

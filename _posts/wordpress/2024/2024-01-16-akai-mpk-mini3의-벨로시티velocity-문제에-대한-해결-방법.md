@@ -23,7 +23,7 @@ categories:
  ![](/assets/img/wp-content/uploads/2024/01/mpk-mini-mk3-sl-orthoK.jpg)
 
  
-**Poor documentation, no technical specifications** 
+<!-- **Poor documentation, no technical specifications**  -->
 ## **문서 부족, 기술 사양이 없음**
 
 <!-- The user documentation provided with the controller itself or available for download on AKAI’s website is reduced to the bare minimum. Sure, the controller is simple enough to use, but it does have some features that are completely undocumented.  -->

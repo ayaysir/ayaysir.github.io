@@ -45,7 +45,7 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-3.05.16-copy.jpg)
 
-다시 `OpenInTerminal-Lite` 앱 아이콘을 클릭한 뒤 키보드의 `command`를 누른 상태에서 파인더 상단의 툴바로 드래그하면 아이콘을 위치시킬 수 있는 사각형 영역이 나타납니다.
+다시 `OpenInTerminal-Lite` 앱 아이콘을 클릭한 뒤 키보드의 `command`를 누른 상태에서 파인더 상단의 툴바로 드래그하면 아이콘을 위치시킬 수 있는 사각형 영역이 나타납니다.
 
 원하는 위치에 드래그해서 아이콘을 추가합니다.
 

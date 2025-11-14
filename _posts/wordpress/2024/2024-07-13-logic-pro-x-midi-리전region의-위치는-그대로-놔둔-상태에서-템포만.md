@@ -6,7 +6,7 @@ categories:
   - "Logic Pro"
 ---
 
-#### **소개**
+## **소개**
 
 원래 음악의 템포(BPM)가 73인 곡이 있는데 파일 오류로 미디 데이터상의 BPM은 25인 미디 파일이 있습니다.
 
@@ -14,9 +14,12 @@ categories:
 
 그래서 템포를 원래 템포인 73으로로 정정하고 싶은데 이 상태에서 BPM을 73로 변경하면 미디의 상대 템포에 맞춰 미디 이벤트의 속도도 같이 빨라집니다.
 
-\[caption id="attachment\_6632" align="alignnone" width="312"\] ![](/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.30.50.jpg) 원래 길이 (BPM 25인 상태에서)\[/caption\]
+![원래 길이 (BPM 25인 상태에서)](/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.30.50.jpg)  
+*원래 길이 (BPM 25인 상태에서)*
 
-\[caption id="attachment\_6633" align="alignnone" width="312"\] ![](/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.31.02.jpg) BPM 75로 변경시 미디 이벤트 위치도 같이 바뀌므로 17초가 됨\[/caption\]
+
+![BPM 75로 변경시 미디 이벤트 위치도 같이 바뀌므로 17초가 됨](/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.31.02.jpg)   
+*BPM 75로 변경시 미디 이벤트 위치도 같이 바뀌므로 17초가 됨*
 
  
 
@@ -26,9 +29,9 @@ categories:
 
  
 
-#### **방법**
+## **방법**
 
-##### **Step 1: 메인 화면에서 미디 트랙의 전체 리전(region)을 선택한 후 피아노 롤 에디터를 엽니다. (더블 클릭)**
+### **Step 1: 메인 화면에서 미디 트랙의 전체 리전(region)을 선택한 후 피아노 롤 에디터를 엽니다. (더블 클릭)**
 
  ![](/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.32.39.jpg)
 
@@ -38,13 +41,13 @@ categories:
 
  
 
-##### **Step 2: `command + a`를 눌러 전체 노트를 선택합니다.**
+### **Step 2: `command + a`를 눌러 전체 노트를 선택합니다.**
 
  ![](/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.32.53.jpg)
 
  
 
-##### **Step 3: 피아노 롤 에디터의 상단 `[기능]` 메뉴에서 `[SMPTE 위치 잠금`\]을 선택합니다. 단축키는 `command + 아래화살표(↓)` 입니다.**
+### **Step 3: 피아노 롤 에디터의 상단 `[기능]` 메뉴에서 `[SMPTE 위치 잠금`\]을 선택합니다. 단축키는 `command + 아래화살표(↓)` 입니다.**
 
  ![](/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.32.58.jpg)
 
@@ -56,13 +59,13 @@ categories:
 
  
 
-> **SMPTE 위치란?**
+> #### **SMPTE 위치란?**
 > 
 > [SMPTE](https://ko.wikipedia.org/wiki/SMPTE)는 영화ㆍ텔레비전 기술자 협회(Society of Motion Picture and Television Engineers, SMPTE)의 약자로 1916년 미국에서 영화 산업에 종사하는 기술인들이 주축이 되어 설립한 국제 전문가 단체입니다. SMPTE는 국제적으로 저명한 표준화 기구로 600개 이상의 표준을 가지고 있습니다. SMPTE 위치란 이 단체에서 규정한 시간 및 미디어 위치 정보의 표준입니다.
 
  
 
-##### **Step 4: 메인 화면 트랙의 리전 길이를 조절합니다.**
+### **Step 4: 메인 화면 트랙의 리전 길이를 조절합니다.**
 
  ![](/assets/img/wp-content/uploads/2024/07/screenshot-2024-07-14-am-12.35.31.jpg)
 
@@ -70,6 +73,6 @@ BPM이 25에서 73으로 변경된 경우 그만큼 각 노트의 길이도 증�
 
  
 
-#### **참고**
+## **참고**
 
 - [https://support.apple.com/ko-kr/guide/logicpro/lgcp21581f00/mac](https://support.apple.com/ko-kr/guide/logicpro/lgcp21581f00/mac)

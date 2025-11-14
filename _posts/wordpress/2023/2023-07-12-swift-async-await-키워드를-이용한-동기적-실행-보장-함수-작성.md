@@ -121,7 +121,7 @@ Task {
     - `async` 함수는 반드시 동시성 작업이 지원되는 환경 안에서 실행되어야 합니다.
     - 그렇지 않은 경우 _**'async' call in a function that does not support concurrency**_ 에러가 발생합니다.
 - `async` 함수는 반드시 `await` 키워드를 동반해서 사용되어야 합니다.
-    - async/await 키워드를 사용함으로서 '콜백 지옥' 없이 깔끔한 들여쓰기로 사용할 수 있습니다.
+    - async/await 키워드를 사용함으로서 '콜백 지옥' 없이 깔끔한 들여쓰기로 사용할 수 있습니다.
 
  
 

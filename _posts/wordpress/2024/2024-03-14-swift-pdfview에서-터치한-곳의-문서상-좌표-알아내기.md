@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
 PDFView에서 탭했을 때 확대 여부에 상관없이 실제 PDF 문서상의 좌표를 알아내고 싶을 때 사용하는 방법입니다,
 
@@ -15,11 +15,11 @@ PDFView에서 탭했을 때 확대 여부에 상관없이 실제 PDF 문서상�
 
  
 
-#### 방법
+## 방법
 
-##### **Step 1: UITapGestureRecognizer를 PDFView에 추가**
+### **Step 1: UITapGestureRecognizer를 PDFView에 추가**
 
-```
+```swift
 class DrawingPDFView: PDFView {
     init() {
         super.init(frame: .zero)
@@ -35,9 +35,9 @@ class DrawingPDFView: PDFView {
 
  
 
-##### **Step 2: UITapGestureRecognizer를 통해 탭한 곳의 좌표값 받아오기**
+### **Step 2: UITapGestureRecognizer를 통해 탭한 곳의 좌표값 받아오기**
 
-```
+```swift
 @objc func tapView(_ gesture: UITapGestureRecognizer) {
     let tapLocation = gesture.location(in: self.documentView)
     print("before convert:", tapLocation)
@@ -49,9 +49,9 @@ class DrawingPDFView: PDFView {
 
  
 
-##### **Step 3: tapLocation을 실제 PDF 문서에 맞는 좌표로 변환 후 사용**
+### **Step 3: tapLocation을 실제 PDF 문서에 맞는 좌표로 변환 후 사용**
 
-```
+```swift
 @objc func tapView(_ gesture: UITapGestureRecognizer) {
     // ... //
    
@@ -70,13 +70,12 @@ class DrawingPDFView: PDFView {
     - 현재 페이지를 기준으로 `tapLocation`의 좌표를 반환합니다.
 
  
-
  
 
-#### **결과**
+## **결과**
 
 <!-- https://giphy.com/gifs/7ZHlSvH6I46oDP8ILg -->
-![](https://)
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l3bWpldDk5eWl0ZXVzNjAycml4OW9uaGlzYWhoYWhjamF5dTduNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7ZHlSvH6I46oDP8ILg/giphy.gif)
 
 확대/축소 및 이동하면서 여러 곳을 찍어도 After 좌표는 일정한 위치를 가리키는 것을 확인할 수 있습니다.
 

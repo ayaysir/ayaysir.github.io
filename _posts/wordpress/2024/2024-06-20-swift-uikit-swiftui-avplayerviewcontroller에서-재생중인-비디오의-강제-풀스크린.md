@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
 `AVPlayerViewController`는 처음에 풀 스크린으로 바로 시작할 수 없는 옵션도 없고, 반복 재생 옵션도 없습니다. `AVPlayerViewController`에서 강제 풀스크린 전환 및 반복 재생하는 방법입니다.
 
@@ -14,9 +14,9 @@ categories:
 
  
 
-#### **시작시 강제 풀스크린 전환**
+## **시작시 강제 풀스크린 전환**
 
-```
+```swift
 let controller = AVPlayerViewController()
 let player = AVPlayer(url: url)
 controller.player = player
@@ -43,13 +43,13 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(10)) {
 
  
 
-<iframe width="250" height="480" src="https://giphy.com/embed/NhamDntUvmFrKNnOpi" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
-
+<!-- <iframe width="250" height="480" src="https://giphy.com/embed/NhamDntUvmFrKNnOpi" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGtxYzZ0eHA0NWdhODJsdHNyMmx1MXVxcnV2MWUxOGFuejUya3N0YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NhamDntUvmFrKNnOpi/giphy.gif)
  
 
-#### **반복(Loop) 재생**
+## **반복(Loop) 재생**
 
-```
+```swift
 func loopVideo() {
     NotificationCenter.default.removeObserver(self, name: AVPlayerItem.didPlayToEndTimeNotification, object: nil)
     
@@ -72,9 +72,9 @@ loopVideo()
 
  
 
-#### **SwiftUI Representable 코드**
+## **SwiftUI Representable View 코드**
 
-```
+```swift
 //
 //  FullScreenVideoPlayer.swift
 //  study-WidgetExample
@@ -131,7 +131,7 @@ struct FullScreenVideoPlayerRepresentedView: UIViewControllerRepresentable {
 
 ```
 
-##### **출처**
+## **출처**
 
 - 풀스크린: [https://stackoverflow.com/a/51618451](https://stackoverflow.com/a/51618451)
 - 반복: [https://stackoverflow.com/questions/27808266/how-do-you-loop-avplayer-in-swift](https://stackoverflow.com/questions/27808266/how-do-you-loop-avplayer-in-swift)

@@ -93,11 +93,11 @@ categories:
 
  
 
-단색 레이어 2개를 추가하면 왼쪽 하단레이어 창이 아래와 같이 됩니다. ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-05-오전-12.48.24.png)
+단색 레이어 2개를 추가하면 왼쪽 하단레이어 창이 아래와 같이 됩니다. ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-05-오전-12.48.24.png)
 
  
 
-##### **텍스트 레이어 추가 (맥 `cmd + option + shift + T`)**
+##### **텍스트 레이어 추가 (맥 `cmd + option + shift + T`)**
 
 - 텍스트 입력 후 command + enter로 마무리합니다.
 - 크기 조절 중 shift를 누른 채 마우스를 드래그하면 비율이 유지됩니다.

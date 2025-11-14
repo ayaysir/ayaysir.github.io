@@ -6,9 +6,9 @@ categories:
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
-Xcode 15에서 작업하다가 위젯을 추가하고 싶어서 _**Widget Extension**_을 추가하였는데, 위젯의 최소 배포 타깃(Minimum Deployments Target) 버전을 `15.0` 이상으로 잡고 진행하고 싶은 경우가 있을 것입니다.
+Xcode 15에서 작업하다가 위젯을 추가하고 싶어서 **Widget Extension**을 추가하였는데, 위젯의 최소 배포 타깃(Minimum Deployments Target) 버전을 `15.0` 이상으로 잡고 진행하고 싶은 경우가 있을 것입니다.
 
  ![](/assets/img/wp-content/uploads/2024/06/screenshot-2024-06-12-am-1.29.07.jpg)
 
@@ -24,9 +24,9 @@ Xcode 15에서 작업하다가 위젯을 추가하고 싶어서 _**Widget Extens
 
  
 
-### **작업 순서**
+## **작업 순서**
 
-#### **Widget Extension 추가**
+### **Widget Extension 추가**
 
 - Xcode -> File -> Target
 
@@ -47,7 +47,7 @@ Xcode 15에서 작업하다가 위젯을 추가하고 싶어서 _**Widget Extens
 
  
 
-#### **Intent Definition 파일 추가**
+### **Intent Definition 파일 추가**
 
 위젯 프로젝트에서 `File > New`를 선택해 `SiriKit Intent Definition`를 추가 (확장자 `*.intentdefinition`) 합니다.
 
@@ -75,11 +75,11 @@ Intent 파일의 `Target Membership`에서 위젯 프로젝트를 체크합니�
 
  
 
-#### **@main 구조체를 제외하고 전부 제거**
+### **@main 구조체를 제외하고 전부 제거**
 
 기본 제공 코드 중 `@main` 부분(`struct 프로젝트명Bundle`) 을 제외한 아래 구조체 등을 전부 주석 처리하거나 제거합니다.
 
-```
+```swift
 /*
  ============= 17.0 이상 전용 =============
  */
@@ -93,64 +93,7 @@ Intent 파일의 `Target Membership`에서 위젯 프로젝트를 체크합니�
 //         SimpleEntry(date: Date(), configuration: configuration)
 //     }
 //     
-//     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-//         var entries: [SimpleEntry] = []
-// 
-//         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-//         let currentDate = Date()
-//         for hourOffset in 0 ..< 5 {
-//             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-//             let entry = SimpleEntry(date: entryDate, configuration: configuration)
-//             entries.append(entry)
-//         }
-// 
-//         return Timeline(entries: entries, policy: .atEnd)
-//     }
-// }
-// 
-// struct SimpleEntry: TimelineEntry {
-//     let date: Date
-//     let configuration: ConfigurationAppIntent
-// }
-// 
-// struct StaticWidget1EntryView : View {
-//     var entry: Provider.Entry
-// 
-//     var body: some View {
-//         VStack {
-//             Text("Time:")
-//             Text(entry.date, style: .time)
-// 
-//             Text("Favorite Emoji:")
-//             Text(entry.configuration.favoriteEmoji)
-//         }
-//     }
-// }
-// 
-// struct StaticWidget1: Widget {
-//     let kind: String = "StaticWidget1"
-// 
-//     var body: some WidgetConfiguration {
-//         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
-//             StaticWidget1EntryView(entry: entry)
-//                 .containerBackground(.fill.tertiary, for: .widget)
-//         }
-//     }
-// }
-// 
-// extension ConfigurationAppIntent {
-//     fileprivate static var smiley: ConfigurationAppIntent {
-//         let intent = ConfigurationAppIntent()
-//         intent.favoriteEmoji = "😀"
-//         return intent
-//     }
-//     
-//     fileprivate static var starEyes: ConfigurationAppIntent {
-//         let intent = ConfigurationAppIntent()
-//         intent.favoriteEmoji = "🤩"
-//         return intent
-//     }
-// }
+// (나머지도 전부 제거) ...
 // 
 // #Preview(as: .systemSmall) {
 //     StaticWidget1()
@@ -161,7 +104,7 @@ Intent 파일의 `Target Membership`에서 위젯 프로젝트를 체크합니�
 
 ```
 
-```
+```swift
 // struct ConfigurationAppIntent: WidgetConfigurationIntent {
 //     static var title: LocalizedStringResource = "Configuration"
 //     static var description = IntentDescription("This is an example widget.")
@@ -172,11 +115,11 @@ Intent 파일의 `Target Membership`에서 위젯 프로젝트를 체크합니�
 // }
 ```
 
- 
+### 호환 코드 추가
 
 제거하면 다음과 같이 `프로젝트명Bundle` 구조체만 남습니다. 아래를 시작점으로 해서 하위 호환 코드들을 추가합니다
 
-```
+```swift
 import SwiftUI
 import WidgetKit
 
@@ -190,10 +133,9 @@ struct StaticWidget1Bundle: WidgetBundle {
 ```
 
  
+#### **(1) StaticWidget1 구조체 추가**
 
-##### **(1) StaticWidget1 구조체 추가**
-
-```
+```swift
 struct StaticWidget1: Widget {
     let kind: String = "StaticWidget1"
     
@@ -209,9 +151,9 @@ struct StaticWidget1: Widget {
 
  
 
-##### **(2)  StaticWidget1EntryView 추가**
+#### **(2)  StaticWidget1EntryView 추가**
 
-```
+```swift
 struct StaticWidget1EntryView: View {
     var entry: Provider.Entry
 
@@ -226,9 +168,9 @@ struct StaticWidget1EntryView: View {
 
  
 
-##### **(3) SimplyEntry 추가**
+#### **(3) SimplyEntry 추가**
 
-```
+```swift
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
@@ -237,9 +179,9 @@ struct SimpleEntry: TimelineEntry {
 
  
 
-##### **(4) Provider 추가**
+#### **(4) Provider 추가**
 
-```
+```swift
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
@@ -274,7 +216,7 @@ struct Provider: IntentTimelineProvider {
 
  
 
-#### **빌드 및 실행**
+## **빌드 및 실행**
 
 위젯의 최소 배포 타깃을 `15.0`으로 변경하고 빌드 및 실행합니다.[](https://ios-development.tistory.com/1131)
 

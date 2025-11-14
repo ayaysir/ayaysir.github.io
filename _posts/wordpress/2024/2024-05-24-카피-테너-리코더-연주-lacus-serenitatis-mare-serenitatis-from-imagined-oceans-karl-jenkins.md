@@ -11,7 +11,7 @@ categories:
 
  
 
-#### **Lacus Serenitatis (Mare Serenitatis)** **from Imagined Oceans - Karl Jenkins**
+## **Lacus Serenitatis (Mare Serenitatis)** **from Imagined Oceans - Karl Jenkins**
 
 일단 영상 자체는 2017년에 찍은 것이고요 여기 블로그 올린 줄 알고 있었다가 이제서야 올립니다.
 
@@ -51,4 +51,4 @@ categories:
 
 잘 알려져있지 않은 것 같아서 안타깝습니다.
 
-- [칼 젠킨스 (Karl Jenkins): Imagined Oceans (상상의 바다)](http://yoonbumtae.com/?p=5876)
+- [칼 젠킨스 (Karl Jenkins): Imagined Oceans (상상의 바다)](/posts/칼-젠킨스-karl-jenkins-imagined-oceans-상상의-바다/)

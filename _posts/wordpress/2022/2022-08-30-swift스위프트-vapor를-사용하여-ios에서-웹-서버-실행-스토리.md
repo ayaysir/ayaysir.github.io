@@ -52,7 +52,7 @@ Xcode를 연 후 `Swift Package Manager`에서 이러한 패키지의 최신 버
 
 #### **서버 생성**
 
-`Server` 그룹 안에 새 파일을 만들고 이름을 `FileServer.swift`로 지정한 뒤, 다음 코드를 추가합니다.
+`Server` 그룹 안에 새 파일을 만들고 이름을 `FileServer.swift`로 지정한 뒤, 다음 코드를 추가합니다.
 
 ```
 import Vapor

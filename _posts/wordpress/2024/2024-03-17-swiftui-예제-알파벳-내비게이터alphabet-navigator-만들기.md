@@ -6,28 +6,28 @@ categories:
   - "SwiftUI"
 ---
 
-#### **알파벳 내비게이터 만들기**
+## **알파벳 내비게이터 만들기**
 
 아래와 같이 알파벳으로 섹션이 나뉘어져 있으며 해당 알파벳을 클릭하면 섹션으로 이동하는 기능을 알파벳 내비게이터라고 칭하겠습니다. (정식 명칭은 다를 수 있습니다.)
 
 <!-- http://www.giphy.com/gifs/PywKnLLMIQPLM3RW1F -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHM2dnZ1bnZiZ3h6dDZvbnIxMjZjbmQwenBkZXVjcDBtMHd4dHIzbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PywKnLLMIQPLM3RW1F/giphy.gif)
 
  
 
-##### **출처**
+## **출처**
 
 - [SwiftUI List with Section Index on right hand side?](https://stackoverflow.com/questions/58809357/swiftui-list-with-section-index-on-right-hand-side)
 
  
 
-#### **기본 형태**
+## **기본 형태**
 
 - `Contacts`배열에 있는 사람 목록을 보여주는 뷰입니다.
-    - 예제를 복잡하지 않게 하기 위해 단순 \[String\] 배열로 만들었습니다.
+    - 예제를 복잡하지 않게 하기 위해 단순 `[String]` 배열로 만들었습니다.
 - 아래 기본 형태를 바탕으로 진행합니다.
 
-```
+```swift
 import SwiftUI
 
 struct ContentView: View {
@@ -69,11 +69,11 @@ struct ContentView: View {
 
  
 
-#### **사람 이름을 알파벳 섹션으로 분류하기**
+## **사람 이름을 알파벳 섹션으로 분류하기**
 
-##### **Step 1: 전역 변수로 알파벳 배열을 추가합니다.**
+### **Step 1: 전역 변수로 알파벳 배열을 추가합니다.**
 
-```
+```swift
 let alphabet: [String] = (65...90).map { String(UnicodeScalar($0)!) }
 ```
 
@@ -82,9 +82,9 @@ let alphabet: [String] = (65...90).map { String(UnicodeScalar($0)!) }
 
  
 
-##### **Step 2: 알파벳 첫문자로 Contacts 배열 필터링하기**
+### **Step 2: 알파벳 첫문자로 Contacts 배열 필터링하기**
 
-```
+```swift
 func contactsFilter(by letter: String) -> [String] {
   contacts.filter { $0.prefix(1) == letter }
 }
@@ -94,11 +94,11 @@ func contactsFilter(by letter: String) -> [String] {
 
  
 
-##### **Step 3: 알파벳 섹션 만들기**
+### **Step 3: 알파벳 섹션 만들기**
 
 `List {...}` 안에 다음을 추가합니다.
 
-```
+```swift
 ForEach(alphabet, id: \.self) { letter in
   Section(header: Text(letter).id(letter)) {
     
@@ -113,11 +113,11 @@ ForEach(alphabet, id: \.self) { letter in
 
  
 
-##### **Step 4: 섹션별로 필터링된 사람 목록 보여주기**
+### **Step 4: 섹션별로 필터링된 사람 목록 보여주기**
 
 위 `Section {...}` 안에 사람 목록을 보여주는 `ForEach`문을 넣되, 대상 자료를 필터링된 `Contacts`인 `contactsFilter(by:)`로 바꿔줍니다.
 
-```
+```swift
 ForEach(alphabet, id: \.self) { letter in
   Section(header: Text(letter).id(letter)) {
     ForEach(contactsFilter(by: letter), id: \.self) { contact in
@@ -139,11 +139,11 @@ ForEach(alphabet, id: \.self) { letter in
 
  
 
-#### **알파벳 내비게이터 추가: 탭 방식**
+## **알파벳 내비게이터 추가: 탭 방식**
 
 알파벳을 누르면 해당 섹션으로 이동하는 기초적인 내비게이터를 추가하겠습니다. `ScrollView {...}`의 오버레이를 추가합니다.
 
-```
+```swift
 .overlay(alignment: .top) {
   VStack {
     ForEach(alphabet, id: \.self) { letter in
@@ -178,15 +178,15 @@ _탭(클릭)하면 해당 알파벳 헤더로 이동합니다._
 
  
 
-#### **알파벳 내비게이터 추가: 탭 + 드래그 방식**
+## **알파벳 내비게이터 추가: 탭 + 드래그 방식**
 
 위에 예제도 바로 사용가능하긴 하지만, 기존에 알던 알파벳 내비게이터는 드래그로도 선택할 수 있고, 진동도 울렸던 것으로 기억합니다.
 
  
 
-##### **Step 1: 뷰 분리**
+### **Step 1: 뷰 분리**
 
-```
+```swift
 .overlay(alignment: .top) {
   AlphabetNavigator(scrollViewProxy: scrollProxy)
 }
@@ -198,9 +198,9 @@ _탭(클릭)하면 해당 알파벳 헤더로 이동합니다._
 
  
 
-##### **Step 2: AlphabetNavigator 뷰 구현**
+### **Step 2: AlphabetNavigator 뷰 구현**
 
-```
+```swift
 struct AlphabetNavigator: View {
   let scrollViewProxy: ScrollViewProxy
   
@@ -283,6 +283,7 @@ _탭뿐만 아니라 드래그로도 이동할 수 있습니다. 실제 기기�
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
-https://gist.github.com/ayaysir/940e4af3d89302c48b1a591e1cf51227
+<!-- https://gist.github.com/ayaysir/940e4af3d89302c48b1a591e1cf51227 -->
+{% gist "940e4af3d89302c48b1a591e1cf51227" %}

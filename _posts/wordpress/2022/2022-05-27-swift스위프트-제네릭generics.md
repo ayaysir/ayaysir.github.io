@@ -60,7 +60,7 @@ func swapTwoDoubles(_ a: inout Double, _ b: inout Double) {
 
 이런 문제를 해결하기 위해 등장한 것이 제네릭입니다.
 
-> **참고: `inout`**
+> **참고: `inout`**
 > 
 > 변경 가능한 파라미터를 전달하고 파라미터를 변경할 수 있는 방법이 있습니다. inout 키워드를 사용하면 전달한 파라미터를 변경할 수 있고 그 변경 내용이 원본 값에도 영향을 미칩니다. var 변수에서만 사용 가능합니다.
 
@@ -782,7 +782,7 @@ extension Container {
 }
 ```
 
-- `subscript`는 배열, 사전에서 사용하는 `array[0]`과 같이 `[]` 괄호 안에 값을 넣어 사용하는 형태의 문법을 말합니다. 이를 통해 `class`, `struct`, `enum` 등의 요소에 쉽게 접근할 수 있는 문법을 제공합니다.
+- `subscript`는 배열, 사전에서 사용하는 `array[0]`과 같이 `[]` 괄호 안에 값을 넣어 사용하는 형태의 문법을 말합니다. 이를 통해 `class`, `struct`, `enum` 등의 요소에 쉽게 접근할 수 있는 문법을 제공합니다.
 - `subscript`는 제네릭일 수 있으며 제네릭 `where` 절을 포함할 수 있습니다.
 - 이 `extension`은 인덱스 시퀀스를 취하고 주어진 각 인덱스에 항목을 포함하는 배열을 반환하는 `subscript`를 추가합니다. 이 제네릭 `subscript`는 다음과 같이 제한됩니다.
     - `placeholder` 타입인 `Indices`는 `Sequence` 프로토콜을 준수해야 합니다.

@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-#### **플레이스홀더**
+## **플레이스홀더**
 
 플레이스홀더는 Xcode에서 매우 빈번하게 사용되는 기능입니다. 단독으로 사용하기보다는 주로 코드 스니펫 기능과 결합되어 많이 사용됩니다.
 
@@ -14,7 +14,7 @@ categories:
 > 
 > 예를 들어, 함수의 매개변수 목록이나 변수 선언 시에 임시 이름을 지정하고자 할 때 플레이스홀더를 사용할 수 있습니다. 또한 특정 코드 블록이나 기능을 나중에 구현할 때, 그 구현이 아직 완료되지 않았을 때도 플레이스홀더를 사용할 수 있습니다.
 
- 
+## **주요 특징**
 
 플레이스홀더의 주요 특징으로는
 
@@ -28,7 +28,7 @@ categories:
 
 - 플레이스홀더를 더블 클릭하면 코드내용이 그대로 입력됩니다. 여기에 실제 실행되는 코드나 설명문, 안내문 등을 적을 수도 있습니다.
 
-```
+```swift
 let blahblah: String = <#"필수 입력란"#>
 ```
 
@@ -36,7 +36,7 @@ let blahblah: String = <#"필수 입력란"#>
 
  
 
-#### **코드 스니펫**
+## **코드 스니펫**
 
 코드 스니펫은 아래와 같이 코드 스니펫 라이브러리에서 선택하거나 또는 코드 에디터에서 특정 텍스트를 입력하면 바로 사용할 수 있는 코드 조각을 주는 기능을 말합니다.
 
@@ -54,13 +54,13 @@ let blahblah: String = <#"필수 입력란"#>
 
  
 
-##### **커스텀 코드 스니펫 만들기**
+## **커스텀 코드 스니펫 만들기**
 
 자주 사용하는 코드 블록은 스니펫으로 만들어두면 유용하게 사용할 수 있습니다.
 
 예를 들어 아래와 같이 2차원 배열을 만드는 코드 스니펫으로 만들려고 합니다.
 
-```
+```swift
 var twoDimArray: [[<#Type#>]] = .init(repeating: .init(repeating: <#Element#>, count: <#N#>), count: <#N#>)
 ```
 
@@ -68,16 +68,20 @@ var twoDimArray: [[<#Type#>]] = .init(repeating: .init(repeating: <#Element#>, c
 
 방법은 다음과 같습니다.
 
-1. 스니펫으로 만들 코드를 선택합니다.  ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.05-copy.jpg)
-2. 마우스 오른쪽 버튼 또는 상단 `Editor` 메뉴의 `[Create Code Snippet...]` 를 선택합니다.  ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.11-copy.jpg)
-3. 제목, 설명 등의 정보들을 입력하고 `Done`을 선택합니다.  ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.52-copy.jpg)
+1. 스니펫으로 만들 코드를 선택합니다.   
+![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.05-copy.jpg)
+2. 마우스 오른쪽 버튼 또는 상단 `Editor` 메뉴의 `[Create Code Snippet...]` 를 선택합니다.   
+![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.11-copy.jpg)
+3. 제목, 설명 등의 정보들을 입력하고 `Done`을 선택합니다.   
+![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.50.52-copy.jpg)
     - **제목, 설명:** 제목 및 설명을 입력합니다. 메인으로 표시되는 정보입니다.
     - **코드:** 스니펫으로 사용할 코드를 입력합니다.
     - **언어:** Swift 등 Xcode에서 지원하는 언어를 선택할 수 있습니다.
     - **플랫폼**: iOS, macOS 등 특정 플랫폼에서만 사용하고 싶을 때 사용합니다.
     - **Completion (완성 단축어)**
         - 코드 에디터에 해당 단축어를 입력하면 컨텍스트 메뉴가 떠서 바로 사용할 수 있습니다.
-        - 예를 들어 `twodimarray`로 등록했다면, `twod` 등 단축어의 일부를 입력해도 메뉴가 바로 뜹니다.  ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.51.39-copy.jpg)
+        - 예를 들어 `twodimarray`로 등록했다면, `twod` 등 단축어의 일부를 입력해도 메뉴가 바로 뜹니다.   
+        ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-21-pm-7.51.39-copy.jpg)
     - **사용범위**
         - 특정 스코프에서 사용하고 싶거나 코드의 스코프를 정의할 때 사용합니다.
         - Class Implementation: 해당 스니펫은 클래스, 구조체 등을 정의하였거나 클래스 레벨에서 사용할 수 있습니다.
@@ -87,4 +91,4 @@ var twoDimArray: [[<#Type#>]] = .init(repeating: .init(repeating: <#Element#>, c
         - Top Level: 최상위 레벨 (클래스 레벨보다 더 위)입니다.
 
 <!-- http://www.giphy.com/gifs/SZPRYnlbGZAl11AwVA -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnBlcm5pbHRhbTM1dXI4ejE1NWZveWluMW03cHF1eTg4ZHI5c2dqZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SZPRYnlbGZAl11AwVA/giphy.gif)

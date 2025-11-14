@@ -203,7 +203,7 @@ func updateUIView(_ uiView: UIViewType, context: Context) {
 ##### **5) SwiftUI의 뷰(ContentView 등) 내부에 WebViewData를 추가합니다.**
 
 ```
-struct ContentView: View {
+struct ContentView: View {
     // ... //
     @StateObject var webViewData = WebViewData()
     // ... //

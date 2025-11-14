@@ -6,11 +6,10 @@ categories:
   - "CI/CD"
 ---
 
-\[rcblock id="5348"\]
+<!-- \[rcblock id="5348"\] -->
 
- 
 
-### **소개**
+## **소개**
 
 Xcode의 iOS 프로젝트에서 Fastlane 설정하는 방법입니다.
 
@@ -25,15 +24,15 @@ Xcode의 iOS 프로젝트에서 Fastlane 설정하는 방법입니다.
 4. 빌드 번호 증가 및 ipa 생성
 5. ipa 파일을 테스트플라이트(TestFlight)로 업로드
 
- 
+## **절차**
 
-#### **컴퓨터에 Fastlane 설치**
+### **1. 컴퓨터에 Fastlane 설치**
 
 터미널을 열고 다음을 입력합니다.
 
 Xcode Command Line Tools (미설치인 경우)
 
-```
+```bash
 xcode-select --install
 ```
 
@@ -41,7 +40,7 @@ xcode-select --install
 
 Homebrew를 통한 설치
 
-```
+```bash
 brew install fastlane
 ```
 
@@ -49,7 +48,7 @@ brew install fastlane
 
  
 
-#### **2\. iOS 프로젝트에 Fastlane 초기화 및 통합**
+### **2\. iOS 프로젝트에 Fastlane 초기화 및 통합**
 
 터미널을 열고 Xcode 프로젝트가 있는 폴더로 이동합니다. 그 다음 아래 명령어를 입력합니다.
 
@@ -57,9 +56,7 @@ brew install fastlane
 fastlane init
 ```
 
- 
-
-\[caption id="attachment\_6944" align="alignnone" width="888"\] ![](/assets/img/wp-content/uploads/2024/03/screenshot-2025-01-24-am-2.07.22-copy.jpg) Screenshot\[/caption\]
+![](/assets/img/wp-content/uploads/2024/03/screenshot-2025-01-24-am-2.07.22-copy.jpg)
 
 초기에 사용 목적을 물어보고 거기에 맞게 대답하면 환경이 자동으로 설정됩니다. 2번 "테스트플라이트에 업로드" 를 선택하는 것을 추천합니다.
 
@@ -71,7 +68,7 @@ fastlane init
 
  
 
-#### **3\. AppStore Connect API로 인증 연결**
+### **3\. AppStore Connect API로 인증 연결**
 
 Fastlane을 통해 AppStoreConnect에 업로드, 정보 수정 등의 작업을 하려면 Fastlane에 애플 계정에 대한 인증 정보가 있어야 합니다.
 
@@ -113,13 +110,13 @@ API 키에는 다음과 같은 정보가 있습니다.
 
  
 
-##### **Fastfile 설정**
+## **Fastfile 설정**
 
 실행할 수 있는 각종 명령들이 있는데 해당 명령들을 lane이라고 칭합니다. lane은 fastlane/Fastfile이라는 파일에서 Ruby 언어로 작성합니다.
 
 예를 들어 배포(release)라는 명령을 만들고 실행하고 싶은 경우는 다음과 같이 작성합니다.
 
-```
+```bash
 lane :release do
   # 각종 작업 - 빌드 및 앱스토어에 업로드 등
 end
@@ -136,7 +133,7 @@ API 인증과 관련된 정보도 lane 내에서 작성합니다.
 
 이번 예제에서 만들어 볼 lane은 `beta`라는 이름을 가진 명령입니다. `Fastfile`에 다음과 같이 추가합니다.
 
-```
+```bash
 lane :beta do
   app_store_connect_api_key(
     key_id: ENV['API_KEY_ID'],
@@ -163,7 +160,7 @@ end
 
 env 파일을 열고 다음과 같이 작성합니다.
 
-```
+```bash
 APP_IDENTIFIER="com.app.identifier"
 API_KEY_ID="앱스토어_커넥트_키_아이디"
 API_ISSUER_ID="앱스토어_커넥트_이슈어_아이디"
@@ -174,11 +171,11 @@ API_KEY_FILEPATH="p8_키패스_파일경로"
 
  
 
-#### **Lane 생성: 빌드 번호를 올리고, IPA 파일을 생성한 뒤 그 파일을 TestFilght에 업로드하는 작업 'beta'**
+### **Lane 생성: 빌드 번호를 올리고, IPA 파일을 생성한 뒤 그 파일을 TestFilght에 업로드하는 작업 'beta'**
 
 `Fastfile`을 열고 이전에 작성했던 beta lane에 다음 코드를 추가합니다.
 
-```
+```bash
 lane :beta do
   app_store_connect_api_key(
     key_id: ENV['API_KEY_ID'],
@@ -207,7 +204,7 @@ end
 
 Fastfile을 저장한 뒤 프로젝트 폴더 경로로 터미널을 열고 다음 명령을 입력합니다.
 
-```
+```bash
 fastlane beta
 ```
 
@@ -227,9 +224,9 @@ fastlane beta
 
  
 
-#### **실행 중 발생 가능한 문제점 및 해결 방법**
+## **실행 중 발생 가능한 문제점 및 해결 방법**
 
-##### **프로파일을 찾을 수 없는 에러**
+### **프로파일을 찾을 수 없는 에러**
 
 ```
 error: exportArchive: No profiles for 'com.bgsmm.MiracleCircle5' were found
@@ -249,7 +246,7 @@ error: exportArchive: No profiles for 'com.bgsmm.MiracleCircle5' were found
 
  
 
-##### **앱 스토어 커넥트에 해당 앱 페이지를 개설하지 않은 경우**
+### **앱 스토어 커넥트에 해당 앱 페이지를 개설하지 않은 경우**
 
 ```
 [01:43:18]: Couldn't find app 'com.example.App' on the account of '' on App Store Connect
@@ -265,7 +262,7 @@ error: exportArchive: No profiles for 'com.bgsmm.MiracleCircle5' were found
 
  
 
-##### **프로젝트에서 앱 아이콘이 설정되어 있지 않음**
+### **프로젝트에서 앱 아이콘이 설정되어 있지 않음**
 
 ```
 [Application Loader Error Output]: ERROR: [ContentDelivery.Uploader] Asset validation failed (90713) Missing Info plist value. A value for the Info.plist key 'CFBundleIconName' is missing in the bundle 'com.example.AppProject'.

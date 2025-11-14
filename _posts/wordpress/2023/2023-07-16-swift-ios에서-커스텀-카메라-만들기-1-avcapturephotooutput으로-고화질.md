@@ -384,7 +384,7 @@ func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo:
     - `performChanges(requestHandler, completionHandler)`
         - `requestHandler` 부분에 사진 라이브러리에 사진 저장 리퀘스트를 요청합니다.
     - **creationRequest.addResource**
-        - `data`에 `photo.fileDataRepresentation()!`을 지정하면 `Data` 타입의 사진이 지정됩니다.
+        - `data`에 `photo.fileDataRepresentation()!`을 지정하면 `Data` 타입의 사진이 지정됩니다.
         - 기본적으로 `photo.fileDataRepresentation()`은 옵셔널 값이나 `data`는 비옵셔널 값을 요구하기 때문에 강제 언래핑합니다.
 
  

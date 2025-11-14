@@ -86,7 +86,7 @@ struct MPMediaPickerControllerRP: UIViewControllerRepresentable {
 ```
 struct ContentView: View {
     /*
-     @State로 선언한 프로퍼티는 값이 변경되면 뷰 계층 구조의 부분을 업데이트
+     @State로 선언한 프로퍼티는 값이 변경되면 뷰 계층 구조의 부분을 업데이트
      @State를 자식 뷰에 전달하면 부모에서 값이 변경될 때마다 자식을 업데이트
      단, 자식 뷰에서 값을 수정하려면, 부모에서 자식으로 Binidng을 전달하여 자식 뷰에서 값을 수정이 가능
      */
@@ -255,7 +255,7 @@ import MediaPlayer
 
 struct ContentView: View {
     /*
-     @State로 선언한 프로퍼티는 값이 변경되면 뷰 계층 구조의 부분을 업데이트
+     @State로 선언한 프로퍼티는 값이 변경되면 뷰 계층 구조의 부분을 업데이트
      @State를 자식 뷰에 전달하면 부모에서 값이 변경될 때마다 자식을 업데이트
      단, 자식 뷰에서 값을 수정하려면, 부모에서 자식으로 Binidng을 전달하여 자식 뷰에서 값을 수정이 가능
      */
