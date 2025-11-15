@@ -1137,8 +1137,8 @@
 
 <p>노래의 메타데이터를 담은 구조체 <code class="language-plaintext highlighter-rouge">MediaMetadata</code>를 생성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1148,15 +1148,15 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-struct MediaMetadata {
-    let title: String
-    let artist: String
-    let albumTitle: String
-    let duration: TimeInterval
-    let albumArtImage: UIImage?
-}
+<span class="kd">struct</span> <span class="kt">MediaMetadata</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">artist</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">albumTitle</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span>
+    <span class="k">let</span> <span class="nv">albumArtImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1322,8 +1322,8 @@ func makeCoordinator() -&gt; Coordinator {
 
 <h5 id="전체-코드-contentviewswift"><span class="me-2"><strong>전체 코드 (ContentView.swift)</strong></span><a href="#전체-코드-contentviewswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1489,170 +1489,170 @@ func makeCoordinator() -&gt; Coordinator {
 163
 164
 165
-</pre></td><td class="rouge-code"><pre>import SwiftUI
-import MediaPlayer
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">MediaPlayer</span>
 
-struct ContentView: View {
-    /*
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="cm">/*
      @State로 선언한 프로퍼티는 값이 변경되면 뷰 계층 구조의 부분을 업데이트
      @State를 자식 뷰에 전달하면 부모에서 값이 변경될 때마다 자식을 업데이트
      단, 자식 뷰에서 값을 수정하려면, 부모에서 자식으로 Binidng을 전달하여 자식 뷰에서 값을 수정이 가능
-     */
-    @State var statusText = "Ready to play..."
-    @State var isOpenMusicPickerView = false
-    @State var mediaTitle = "Select a music..."
-    @State var mediaSubtitle = ""
-    @State var albumImage: UIImage? = UIImage(named: "Adiemus II")
+     */</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">statusText</span> <span class="o">=</span> <span class="s">"Ready to play..."</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">isOpenMusicPickerView</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">mediaTitle</span> <span class="o">=</span> <span class="s">"Select a music..."</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">mediaSubtitle</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">albumImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"Adiemus II"</span><span class="p">)</span>
     
-    var albums: [AlbumInfo] = []
-    var songQuery: SongQuery = SongQuery()
+    <span class="k">var</span> <span class="nv">albums</span><span class="p">:</span> <span class="p">[</span><span class="kt">AlbumInfo</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">var</span> <span class="nv">songQuery</span><span class="p">:</span> <span class="kt">SongQuery</span> <span class="o">=</span> <span class="kt">SongQuery</span><span class="p">()</span>
     
-    var body: some View {
-        VStack {
-            Spacer()
-            // 이미지 사이즈 조정
-            Image(uiImage: albumImage ?? UIImage())
-                .resizable()
-                .frame(width: 380, height: 380)
-            Spacer()
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">Spacer</span><span class="p">()</span>
+            <span class="c1">// 이미지 사이즈 조정</span>
+            <span class="kt">Image</span><span class="p">(</span><span class="nv">uiImage</span><span class="p">:</span> <span class="n">albumImage</span> <span class="p">??</span> <span class="kt">UIImage</span><span class="p">())</span>
+                <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
+                <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">380</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">380</span><span class="p">)</span>
+            <span class="kt">Spacer</span><span class="p">()</span>
             
-            // 각종 버튼 (HStack)
-            HStack {
-                Spacer()
-                Button {
-                    statusText = "Backward"
-                } label: {
-                    Image(systemName: "backward.end.fill")
-                        .font(.system(size: 50))
-                        .foregroundColor(.black)
-                }
-                Spacer()
-                Button {
-                    statusText = "Play"
-                } label: {
-                    Image(systemName: "play.fill")
-                        .font(.system(size: 50))
-                        .foregroundColor(.black)
-                }
-                Spacer()
-                Button {
-                    statusText = "Afterward"
-                } label: {
-                    Image(systemName: "forward.end.fill")
-                        .font(.system(size: 50))
-                        .foregroundColor(.black)
-                }
-                Spacer()
-            }
-            // Spacer 높이 변경
-            Spacer().frame(height: 25)
+            <span class="c1">// 각종 버튼 (HStack)</span>
+            <span class="kt">HStack</span> <span class="p">{</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+                <span class="kt">Button</span> <span class="p">{</span>
+                    <span class="n">statusText</span> <span class="o">=</span> <span class="s">"Backward"</span>
+                <span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"backward.end.fill"</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">50</span><span class="p">))</span>
+                        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+                <span class="kt">Button</span> <span class="p">{</span>
+                    <span class="n">statusText</span> <span class="o">=</span> <span class="s">"Play"</span>
+                <span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"play.fill"</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">50</span><span class="p">))</span>
+                        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+                <span class="kt">Button</span> <span class="p">{</span>
+                    <span class="n">statusText</span> <span class="o">=</span> <span class="s">"Afterward"</span>
+                <span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"forward.end.fill"</span><span class="p">)</span>
+                        <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">50</span><span class="p">))</span>
+                        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">black</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+            <span class="p">}</span>
+            <span class="c1">// Spacer 높이 변경</span>
+            <span class="kt">Spacer</span><span class="p">()</span><span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">25</span><span class="p">)</span>
             
-            Group {
-                Text(mediaTitle)
-                    .font(.system(size: 25, weight: .bold))
-                Text(mediaSubtitle)
-                    .font(.system(size: 18))
-                Spacer()
-                Text(statusText)
-                    .foregroundColor(.gray)
-            }
+            <span class="kt">Group</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="n">mediaTitle</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">))</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="n">mediaSubtitle</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">system</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">18</span><span class="p">))</span>
+                <span class="kt">Spacer</span><span class="p">()</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="n">statusText</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+            <span class="p">}</span>
             
-            Spacer()
+            <span class="kt">Spacer</span><span class="p">()</span>
             
-            Button {
-                isOpenMusicPickerView = true
-            } label: {
-                Text("Select a music from library...")
-            }.sheet(isPresented: $isOpenMusicPickerView) {
-                MPMediaPickerControllerRP { metadata in
-                    // coordinator에서 밖으로 꺼낸 데이터
-                    print("metadata outside:", metadata)
-                    mediaTitle = metadata.title
-                    mediaSubtitle = "\(metadata.artist) - \(metadata.albumTitle)"
-                    albumImage = metadata.albumArtImage
-                }
-            }
-        }
-        .padding()
-        .onAppear {
-            MPMediaLibrary.requestAuthorization { status in
-                switch status {
-                case .notDetermined:
-                    print("status: notDetermined")
-                case .denied:
-                    print("status: denied")
-                case .restricted:
-                    print("status: restricted")
-                case .authorized:
-                    print("status: authorized")
+            <span class="kt">Button</span> <span class="p">{</span>
+                <span class="n">isOpenMusicPickerView</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Select a music from library..."</span><span class="p">)</span>
+            <span class="p">}</span><span class="o">.</span><span class="nf">sheet</span><span class="p">(</span><span class="nv">isPresented</span><span class="p">:</span> <span class="n">$isOpenMusicPickerView</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">MPMediaPickerControllerRP</span> <span class="p">{</span> <span class="n">metadata</span> <span class="k">in</span>
+                    <span class="c1">// coordinator에서 밖으로 꺼낸 데이터</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"metadata outside:"</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
+                    <span class="n">mediaTitle</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">title</span>
+                    <span class="n">mediaSubtitle</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">metadata</span><span class="o">.</span><span class="n">artist</span><span class="se">)</span><span class="s"> - </span><span class="se">\(</span><span class="n">metadata</span><span class="o">.</span><span class="n">albumTitle</span><span class="se">)</span><span class="s">"</span>
+                    <span class="n">albumImage</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">albumArtImage</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">onAppear</span> <span class="p">{</span>
+            <span class="kt">MPMediaLibrary</span><span class="o">.</span><span class="n">requestAuthorization</span> <span class="p">{</span> <span class="n">status</span> <span class="k">in</span>
+                <span class="k">switch</span> <span class="n">status</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nv">notDetermined</span><span class="p">:</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"status: notDetermined"</span><span class="p">)</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nv">denied</span><span class="p">:</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"status: denied"</span><span class="p">)</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nv">restricted</span><span class="p">:</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"status: restricted"</span><span class="p">)</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nv">authorized</span><span class="p">:</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"status: authorized"</span><span class="p">)</span>
                     
-                @unknown default:
-                    print("status: unknown default")
-                }
-            }
-        }
-    }
-}
+                <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"status: unknown default"</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct MPMediaPickerControllerRP: UIViewControllerRepresentable {
+<span class="kd">struct</span> <span class="kt">MPMediaPickerControllerRP</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentable</span> <span class="p">{</span>
     
-    typealias UIViewControllerType = MPMediaPickerController
-    typealias MetadataCallback = (MediaMetadata) -&gt; Void
+    <span class="kd">typealias</span> <span class="kt">UIViewControllerType</span> <span class="o">=</span> <span class="kt">MPMediaPickerController</span>
+    <span class="kd">typealias</span> <span class="kt">MetadataCallback</span> <span class="o">=</span> <span class="p">(</span><span class="kt">MediaMetadata</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span>
     
-    let picker = MPMediaPickerController(mediaTypes: .music)
-    var metadataCallback: MetadataCallback
+    <span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">MPMediaPickerController</span><span class="p">(</span><span class="nv">mediaTypes</span><span class="p">:</span> <span class="o">.</span><span class="n">music</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">metadataCallback</span><span class="p">:</span> <span class="kt">MetadataCallback</span>
     
-    func makeUIViewController(context: Context) -&gt; UIViewControllerType {
-        picker.allowsPickingMultipleItems = false
-        return picker
-    }
+    <span class="kd">func</span> <span class="nf">makeUIViewController</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewControllerType</span> <span class="p">{</span>
+        <span class="n">picker</span><span class="o">.</span><span class="n">allowsPickingMultipleItems</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">picker</span>
+    <span class="p">}</span>
     
-    func updateUIViewController(_ uiViewController: MPMediaPickerController, context: Context) {}
+    <span class="kd">func</span> <span class="nf">updateUIViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiViewController</span><span class="p">:</span> <span class="kt">MPMediaPickerController</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{}</span>
     
-    // Representable에서 delegate 사용
-    func makeCoordinator() -&gt; Coordinator {
-        Coordinator(picker, metadataCallback: metadataCallback)
-    }
+    <span class="c1">// Representable에서 delegate 사용</span>
+    <span class="kd">func</span> <span class="nf">makeCoordinator</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Coordinator</span> <span class="p">{</span>
+        <span class="kt">Coordinator</span><span class="p">(</span><span class="n">picker</span><span class="p">,</span> <span class="nv">metadataCallback</span><span class="p">:</span> <span class="n">metadataCallback</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    class Coordinator: NSObject, MPMediaPickerControllerDelegate {
+    <span class="kd">class</span> <span class="kt">Coordinator</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">MPMediaPickerControllerDelegate</span> <span class="p">{</span>
         
-        // 데이터를 전달하는 콜백(클로저) 함수
-        var metadataCallback: MetadataCallback
+        <span class="c1">// 데이터를 전달하는 콜백(클로저) 함수</span>
+        <span class="k">var</span> <span class="nv">metadataCallback</span><span class="p">:</span> <span class="kt">MetadataCallback</span>
         
-        init(_ viewController: MPMediaPickerController, metadataCallback: @escaping MetadataCallback) {
-            self.metadataCallback = metadataCallback
-            super.init()
-            viewController.delegate = self
-        }
+        <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">viewController</span><span class="p">:</span> <span class="kt">MPMediaPickerController</span><span class="p">,</span> <span class="nv">metadataCallback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">MetadataCallback</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">metadataCallback</span> <span class="o">=</span> <span class="n">metadataCallback</span>
+            <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+            <span class="n">viewController</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+        <span class="p">}</span>
         
-        // Delegate function
-        func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
-            let media = mediaItemCollection.items[0]
-            let title = media.title ?? "unknown title"
-            let artist = media.artist ?? "unknown artist"
-            let albumTitle = media.albumTitle ?? "unknown album title"
-            let duration = media.playbackDuration
-            let albumArtImage = media.artwork?.image(at: .zero)
-            let metadata = MediaMetadata(title: title, artist: artist, albumTitle: albumTitle, duration: duration, albumArtImage: albumArtImage)
+        <span class="c1">// Delegate function</span>
+        <span class="kd">func</span> <span class="nf">mediaPicker</span><span class="p">(</span><span class="n">_</span> <span class="nv">mediaPicker</span><span class="p">:</span> <span class="kt">MPMediaPickerController</span><span class="p">,</span> <span class="n">didPickMediaItems</span> <span class="nv">mediaItemCollection</span><span class="p">:</span> <span class="kt">MPMediaItemCollection</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">media</span> <span class="o">=</span> <span class="n">mediaItemCollection</span><span class="o">.</span><span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">let</span> <span class="nv">title</span> <span class="o">=</span> <span class="n">media</span><span class="o">.</span><span class="n">title</span> <span class="p">??</span> <span class="s">"unknown title"</span>
+            <span class="k">let</span> <span class="nv">artist</span> <span class="o">=</span> <span class="n">media</span><span class="o">.</span><span class="n">artist</span> <span class="p">??</span> <span class="s">"unknown artist"</span>
+            <span class="k">let</span> <span class="nv">albumTitle</span> <span class="o">=</span> <span class="n">media</span><span class="o">.</span><span class="n">albumTitle</span> <span class="p">??</span> <span class="s">"unknown album title"</span>
+            <span class="k">let</span> <span class="nv">duration</span> <span class="o">=</span> <span class="n">media</span><span class="o">.</span><span class="n">playbackDuration</span>
+            <span class="k">let</span> <span class="nv">albumArtImage</span> <span class="o">=</span> <span class="n">media</span><span class="o">.</span><span class="n">artwork</span><span class="p">?</span><span class="o">.</span><span class="nf">image</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">metadata</span> <span class="o">=</span> <span class="kt">MediaMetadata</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="nv">artist</span><span class="p">:</span> <span class="n">artist</span><span class="p">,</span> <span class="nv">albumTitle</span><span class="p">:</span> <span class="n">albumTitle</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="n">duration</span><span class="p">,</span> <span class="nv">albumArtImage</span><span class="p">:</span> <span class="n">albumArtImage</span><span class="p">)</span>
             
-            // 방법 1: system music player로 재생
-            let musicPlayer = MPMusicPlayerController.systemMusicPlayer
-            musicPlayer.setQueue(with: mediaItemCollection)
-            musicPlayer.play()
+            <span class="c1">// 방법 1: system music player로 재생</span>
+            <span class="k">let</span> <span class="nv">musicPlayer</span> <span class="o">=</span> <span class="kt">MPMusicPlayerController</span><span class="o">.</span><span class="n">systemMusicPlayer</span>
+            <span class="n">musicPlayer</span><span class="o">.</span><span class="nf">setQueue</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">mediaItemCollection</span><span class="p">)</span>
+            <span class="n">musicPlayer</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
             
-            // 데이터 밖으로 내보내기
-            metadataCallback(metadata)
+            <span class="c1">// 데이터 밖으로 내보내기</span>
+            <span class="nf">metadataCallback</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
             
-            mediaPicker.dismiss(animated: true)
-        }
-    }
-}
+            <span class="n">mediaPicker</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+<span class="kd">struct</span> <span class="kt">ContentView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">ContentView</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

@@ -1002,8 +1002,8 @@ private func setTorch(_ torchBrightness: Float) {
 
 <p><code class="language-plaintext highlighter-rouge">Swift Playground App</code> 프로젝트를 생성한 뒤 <code class="language-plaintext highlighter-rouge">ContentView</code>를 아래와 같이 채웁니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1103,104 +1103,104 @@ private func setTorch(_ torchBrightness: Float) {
 97
 98
 99
-</pre></td><td class="rouge-code"><pre>import SwiftUI
-import AVFoundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">AVFoundation</span>
 
-struct ContentView: View {
-    private let DEBUG_MODE: Bool = false
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="k">let</span> <span class="nv">DEBUG_MODE</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
     
-    @Environment(\.scenePhase) var scenePhase
-    @State var outsideDisplayBrightness: CGFloat = 0.5
-    @State var displayBrightness: CGFloat = 1.0 {
-        didSet {
-            guard displayBrightness &lt;= 1 &amp;&amp; displayBrightness &gt;= 0 else {
-                return
-            }
+    <span class="kd">@Environment</span><span class="p">(\</span><span class="o">.</span><span class="n">scenePhase</span><span class="p">)</span> <span class="k">var</span> <span class="nv">scenePhase</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">outsideDisplayBrightness</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">displayBrightness</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="p">{</span>
+        <span class="k">didSet</span> <span class="p">{</span>
+            <span class="k">guard</span> <span class="n">displayBrightness</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">displayBrightness</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
     
-            setBrightness(displayBrightness)
-        }
-    }
+            <span class="nf">setBrightness</span><span class="p">(</span><span class="n">displayBrightness</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    @State var torchBrightness: Float = 1.0 {
-        didSet {
-            guard torchBrightness &lt;= 1.0  else {
-                torchBrightness = 1.0
-                return
-            }
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">torchBrightness</span><span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="p">{</span>
+        <span class="k">didSet</span> <span class="p">{</span>
+            <span class="k">guard</span> <span class="n">torchBrightness</span> <span class="o">&lt;=</span> <span class="mf">1.0</span>  <span class="k">else</span> <span class="p">{</span>
+                <span class="n">torchBrightness</span> <span class="o">=</span> <span class="mf">1.0</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
             
-            guard torchBrightness &gt;= 0.0 else {
-                torchBrightness = 0.01 // 0.0은 에러발생
-                return
-            }
+            <span class="k">guard</span> <span class="n">torchBrightness</span> <span class="o">&gt;=</span> <span class="mf">0.0</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">torchBrightness</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1">// 0.0은 에러발생</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
             
-            setTorch(torchBrightness)
-        }
-    }
+            <span class="nf">setTorch</span><span class="p">(</span><span class="n">torchBrightness</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    private func setBrightness(_ displayBrightness: CGFloat) {
-        UIScreen.main.brightness = displayBrightness
-    }
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setBrightness</span><span class="p">(</span><span class="n">_</span> <span class="nv">displayBrightness</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">brightness</span> <span class="o">=</span> <span class="n">displayBrightness</span>
+    <span class="p">}</span>
     
-    private func setTorch(_ torchBrightness: Float) {
-        guard let device = AVCaptureDevice.default(for: .video), device.hasTorch else {
-            return
-        }
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setTorch</span><span class="p">(</span><span class="n">_</span> <span class="nv">torchBrightness</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">device</span> <span class="o">=</span> <span class="kt">AVCaptureDevice</span><span class="o">.</span><span class="nf">default</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">video</span><span class="p">),</span> <span class="n">device</span><span class="o">.</span><span class="n">hasTorch</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        do {
-            try device.lockForConfiguration()
-            try device.setTorchModeOn(level: torchBrightness)
-            // 참고: 플래시 끄기
-            // device.torchMode = .off
-            device.unlockForConfiguration()
-        } catch {
-            print(#function, error.localizedDescription)
-        }
-    }
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="n">device</span><span class="o">.</span><span class="nf">lockForConfiguration</span><span class="p">()</span>
+            <span class="k">try</span> <span class="n">device</span><span class="o">.</span><span class="nf">setTorchModeOn</span><span class="p">(</span><span class="nv">level</span><span class="p">:</span> <span class="n">torchBrightness</span><span class="p">)</span>
+            <span class="c1">// 참고: 플래시 끄기</span>
+            <span class="c1">// device.torchMode = .off</span>
+            <span class="n">device</span><span class="o">.</span><span class="nf">unlockForConfiguration</span><span class="p">()</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="k">#function</span><span class="p">,</span> <span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    var body: some View {
-        HStack(spacing: 0) {
-            VStack(spacing: 0) {
-                Rectangle()
-                    .fill(DEBUG_MODE ? .cyan : .white)
-                    .onTapGesture {
-                        displayBrightness += 0.1
-                    }
-                Rectangle()
-                    .onTapGesture {
-                        displayBrightness -= 0.1
-                    }
-            }
-            VStack(spacing: 0) {
-                Rectangle()
-                    .onTapGesture {
-                        torchBrightness += 0.1
-                    }
-                Rectangle()
-                    .fill(DEBUG_MODE ? .cyan : .white)
-                    .onTapGesture {
-                        torchBrightness -= 0.1
-                    }
-            }
-        }
-        .foregroundColor(.white)
-        .ignoresSafeArea()
-        .onChange(of: scenePhase) { scenePhase in
-            switch scenePhase {
-            case .background:
-                break
-            case .inactive:
-                setBrightness(outsideDisplayBrightness)
-                // 플래시(torch)는 저절로 꺼지기 때문에 굳이 코드로 넣지 않음
-            case .active:
-                outsideDisplayBrightness = UIScreen.main.brightness
-                setTorch(torchBrightness)
-                setBrightness(displayBrightness)
-            @unknown default:
-                break
-            }
-        }
-    }
-}
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">HStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Rectangle</span><span class="p">()</span>
+                    <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="kt">DEBUG_MODE</span> <span class="p">?</span> <span class="o">.</span><span class="nv">cyan</span> <span class="p">:</span> <span class="o">.</span><span class="n">white</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">onTapGesture</span> <span class="p">{</span>
+                        <span class="n">displayBrightness</span> <span class="o">+=</span> <span class="mf">0.1</span>
+                    <span class="p">}</span>
+                <span class="kt">Rectangle</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">onTapGesture</span> <span class="p">{</span>
+                        <span class="n">displayBrightness</span> <span class="o">-=</span> <span class="mf">0.1</span>
+                    <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Rectangle</span><span class="p">()</span>
+                    <span class="o">.</span><span class="n">onTapGesture</span> <span class="p">{</span>
+                        <span class="n">torchBrightness</span> <span class="o">+=</span> <span class="mf">0.1</span>
+                    <span class="p">}</span>
+                <span class="kt">Rectangle</span><span class="p">()</span>
+                    <span class="o">.</span><span class="nf">fill</span><span class="p">(</span><span class="kt">DEBUG_MODE</span> <span class="p">?</span> <span class="o">.</span><span class="nv">cyan</span> <span class="p">:</span> <span class="o">.</span><span class="n">white</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">onTapGesture</span> <span class="p">{</span>
+                        <span class="n">torchBrightness</span> <span class="o">-=</span> <span class="mf">0.1</span>
+                    <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">ignoresSafeArea</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">onChange</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">scenePhase</span><span class="p">)</span> <span class="p">{</span> <span class="n">scenePhase</span> <span class="k">in</span>
+            <span class="k">switch</span> <span class="n">scenePhase</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="o">.</span><span class="nv">background</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="k">case</span> <span class="o">.</span><span class="nv">inactive</span><span class="p">:</span>
+                <span class="nf">setBrightness</span><span class="p">(</span><span class="n">outsideDisplayBrightness</span><span class="p">)</span>
+                <span class="c1">// 플래시(torch)는 저절로 꺼지기 때문에 굳이 코드로 넣지 않음</span>
+            <span class="k">case</span> <span class="o">.</span><span class="nv">active</span><span class="p">:</span>
+                <span class="n">outsideDisplayBrightness</span> <span class="o">=</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">brightness</span>
+                <span class="nf">setTorch</span><span class="p">(</span><span class="n">torchBrightness</span><span class="p">)</span>
+                <span class="nf">setBrightness</span><span class="p">(</span><span class="n">displayBrightness</span><span class="p">)</span>
+            <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

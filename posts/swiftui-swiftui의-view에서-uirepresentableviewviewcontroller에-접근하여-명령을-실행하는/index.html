@@ -933,8 +933,8 @@
 
 <p>그래서 아래와 같이 아주 간단한 웹 뷰를 감싼 <code class="language-plaintext highlighter-rouge">UIRepresentableView</code>를 만들었습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -951,30 +951,30 @@
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>import SwiftUI
-import WebKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">WebKit</span>
 
-struct WebViewRepresentable: UIViewRepresentable {
-    typealias UIViewType = WKWebView
+<span class="kd">struct</span> <span class="kt">WebViewRepresentable</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span> <span class="p">{</span>
+    <span class="kd">typealias</span> <span class="kt">UIViewType</span> <span class="o">=</span> <span class="kt">WKWebView</span>
     
-    func makeUIView(context: Context) -&gt; WKWebView {
-        let webView = WKWebView()
-        let request = URLRequest(url: .init(string: "https://google.com")!)
-        webView.load(request)
+    <span class="kd">func</span> <span class="nf">makeUIView</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">WKWebView</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">webView</span> <span class="o">=</span> <span class="kt">WKWebView</span><span class="p">()</span>
+        <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://google.com"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+        <span class="n">webView</span><span class="o">.</span><span class="nf">load</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
         
-        return webView
-    }
+        <span class="k">return</span> <span class="n">webView</span>
+    <span class="p">}</span>
     
-    func updateUIView(_ uiView: WKWebView, context: Context) {}
-}
+    <span class="kd">func</span> <span class="nf">updateUIView</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>그리고 이것을 앱의 메인 부분에 추가했습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1000,31 +1000,31 @@ struct WebViewRepresentable: UIViewRepresentable {
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-struct WebContentView: View {
-    var body: some View {
-        VStack {
-            HStack {
-                Button("구글") {
-                    // ??
-                }
-                .buttonStyle(.borderedProminent)
-                Button("네이버") {
-                    // ??
-                }
-                .buttonStyle(.borderedProminent)
-                Button("스크립트(evaulateJS) 실행") {
-                    // ??
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(.pink)
-            }
+<span class="kd">struct</span> <span class="kt">WebContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">HStack</span> <span class="p">{</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"구글"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// ??</span>
+                <span class="p">}</span>
+                <span class="o">.</span><span class="nf">buttonStyle</span><span class="p">(</span><span class="o">.</span><span class="n">borderedProminent</span><span class="p">)</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"네이버"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// ??</span>
+                <span class="p">}</span>
+                <span class="o">.</span><span class="nf">buttonStyle</span><span class="p">(</span><span class="o">.</span><span class="n">borderedProminent</span><span class="p">)</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"스크립트(evaulateJS) 실행"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// ??</span>
+                <span class="p">}</span>
+                <span class="o">.</span><span class="nf">buttonStyle</span><span class="p">(</span><span class="o">.</span><span class="n">borderedProminent</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">tint</span><span class="p">(</span><span class="o">.</span><span class="n">pink</span><span class="p">)</span>
+            <span class="p">}</span>
             
-            WebViewRepresentable()
-        }
-    }
-}
+            <span class="kt">WebViewRepresentable</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>문제는 여기서 <code class="language-plaintext highlighter-rouge">WebViewRepresentable()</code>를 제어할 수 있는 방법이 없습니다.</p>
@@ -1306,8 +1306,8 @@ struct WebContentView: View {
 
 <h5 id="step-5-swiftui의-뷰에서-뷰모델-클래스를-초기화initializaiton하고-해당-뷰모델-변수를-통해-원하는-작업을-실행합니다"><span class="me-2"><strong>Step 5: SwiftUI의 뷰에서 뷰모델 클래스를 초기화(initializaiton)하고, 해당 뷰모델 변수를 통해 원하는 작업을 실행합니다.</strong></span><a href="#step-5-swiftui의-뷰에서-뷰모델-클래스를-초기화initializaiton하고-해당-뷰모델-변수를-통해-원하는-작업을-실행합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1347,44 +1347,44 @@ struct WebContentView: View {
 37
 38
 39
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-struct WebContentView: View {
-    @StateObject var nexus = WebViewNexus()
+<span class="kd">struct</span> <span class="kt">WebContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@StateObject</span> <span class="k">var</span> <span class="nv">nexus</span> <span class="o">=</span> <span class="kt">WebViewNexus</span><span class="p">()</span>
     
-    var body: some View {
-        VStack {
-            HStack {
-                Button("구글") {
-                    // 이제 여기에 nexus(뷰모델)를 사용하면 됩니다.
-                    nexus.move(urlString: "https://google.com")
-                }
-                .buttonStyle(.borderedProminent)
-                Button("네이버") {
-                    // 이제 여기에 nexus(뷰모델)를 사용하면 됩니다.
-                    nexus.move(urlString: "https://naver.com")
-                }
-                .buttonStyle(.borderedProminent)
-                Button("스크립트(evaulateJS) 실행") {
-                    // 이제 여기에 nexus(뷰모델)를 사용하면 됩니다.
-                    nexus.evaluateJS(
-                    """
-                    document.body.innerHTML = "&lt;b&gt;메롱  🤪&lt;/b&gt;"
-                    """
-                    )
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(.pink)
-            }
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">HStack</span> <span class="p">{</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"구글"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// 이제 여기에 nexus(뷰모델)를 사용하면 됩니다.</span>
+                    <span class="n">nexus</span><span class="o">.</span><span class="nf">move</span><span class="p">(</span><span class="nv">urlString</span><span class="p">:</span> <span class="s">"https://google.com"</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="o">.</span><span class="nf">buttonStyle</span><span class="p">(</span><span class="o">.</span><span class="n">borderedProminent</span><span class="p">)</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"네이버"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// 이제 여기에 nexus(뷰모델)를 사용하면 됩니다.</span>
+                    <span class="n">nexus</span><span class="o">.</span><span class="nf">move</span><span class="p">(</span><span class="nv">urlString</span><span class="p">:</span> <span class="s">"https://naver.com"</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="o">.</span><span class="nf">buttonStyle</span><span class="p">(</span><span class="o">.</span><span class="n">borderedProminent</span><span class="p">)</span>
+                <span class="kt">Button</span><span class="p">(</span><span class="s">"스크립트(evaulateJS) 실행"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// 이제 여기에 nexus(뷰모델)를 사용하면 됩니다.</span>
+                    <span class="n">nexus</span><span class="o">.</span><span class="nf">evaluateJS</span><span class="p">(</span>
+                    <span class="s">"""
+                    document.body.innerHTML = "</span><span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">메롱</span>  <span class="n">🤪</span><span class="o">&lt;/</span><span class="n">b</span><span class="o">&gt;</span><span class="s">"
+                    """</span>
+                    <span class="p">)</span>
+                <span class="p">}</span>
+                <span class="o">.</span><span class="nf">buttonStyle</span><span class="p">(</span><span class="o">.</span><span class="n">borderedProminent</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">tint</span><span class="p">(</span><span class="o">.</span><span class="n">pink</span><span class="p">)</span>
+            <span class="p">}</span>
             
-            WebViewRepresentable(connector: nexus)
-        }
-    }
-}
+            <span class="kt">WebViewRepresentable</span><span class="p">(</span><span class="nv">connector</span><span class="p">:</span> <span class="n">nexus</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-#Preview {
-    WebContentView()
-}
+<span class="cp">#Preview {</span>
+    <span class="kt">WebContentView</span><span class="p">()</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

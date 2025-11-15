@@ -912,8 +912,8 @@
 
 <p>먼저 기본 <code class="language-plaintext highlighter-rouge">ContentView</code> 레이아웃을 생성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -940,32 +940,32 @@
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-struct ContentView: View {
-    @State var pressedKeyStr = ""
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">pressedKeyStr</span> <span class="o">=</span> <span class="s">""</span>
     
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Button {
-                buttonAction()
-            } label: {
-                Text("Press ZXCVASDF")
-            }
-            Text(pressedKeyStr)
-                .font(.largeTitle)
-            // ... 이곳에 키보드 입력 관련 내용이 들어갑니다 ... //
-        }
-        .padding()
-    }
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"globe"</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">imageScale</span><span class="p">(</span><span class="o">.</span><span class="n">large</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">accentColor</span><span class="p">)</span>
+            <span class="kt">Button</span> <span class="p">{</span>
+                <span class="nf">buttonAction</span><span class="p">()</span>
+            <span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Press ZXCVASDF"</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="n">pressedKeyStr</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="n">largeTitle</span><span class="p">)</span>
+            <span class="c1">// ... 이곳에 키보드 입력 관련 내용이 들어갑니다 ... //</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+    <span class="p">}</span>
     
-    func buttonAction(_ text: String = "From SwiftUI Button") {
-        pressedKeyStr = text
-    }
-}
+    <span class="kd">func</span> <span class="nf">buttonAction</span><span class="p">(</span><span class="n">_</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"From SwiftUI Button"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">pressedKeyStr</span> <span class="o">=</span> <span class="n">text</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-07-오전-12.06.47.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-07-오전-12.06.47.png" alt="" loading="lazy"></a></p>

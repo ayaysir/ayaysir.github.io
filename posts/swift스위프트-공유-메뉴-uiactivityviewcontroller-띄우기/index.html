@@ -1053,8 +1053,8 @@
 
 <h5 id="1단계-프로젝트에-아래-함수를-추가합니다"><span class="me-2"><strong>1단계: 프로젝트에 아래 함수를 추가합니다.</strong></span><a href="#1단계-프로젝트에-아래-함수를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1072,22 +1072,22 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-func showActivityVC(_ controller: UIViewController,
-                     activityItems: [Any],
-                     sourceRect: CGRect,
-                     completion: (() -&gt; ())? = nil) {
-    let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-    activityVC.excludedActivityTypes = [.postToTwitter, .postToWeibo, .postToVimeo, .postToFlickr, .postToFacebook, .postToTencentWeibo]
+<span class="kd">func</span> <span class="nf">showActivityVC</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span>
+                     <span class="nv">activityItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">],</span>
+                     <span class="nv">sourceRect</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">,</span>
+                     <span class="nv">completion</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="p">())?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">activityVC</span> <span class="o">=</span> <span class="kt">UIActivityViewController</span><span class="p">(</span><span class="nv">activityItems</span><span class="p">:</span> <span class="n">activityItems</span><span class="p">,</span> <span class="nv">applicationActivities</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="n">activityVC</span><span class="o">.</span><span class="n">excludedActivityTypes</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">postToTwitter</span><span class="p">,</span> <span class="o">.</span><span class="n">postToWeibo</span><span class="p">,</span> <span class="o">.</span><span class="n">postToVimeo</span><span class="p">,</span> <span class="o">.</span><span class="n">postToFlickr</span><span class="p">,</span> <span class="o">.</span><span class="n">postToFacebook</span><span class="p">,</span> <span class="o">.</span><span class="n">postToTencentWeibo</span><span class="p">]</span>
     
-    // 아이패드 - activity view를 popover 할 기준 view 지정
-    activityVC.popoverPresentationController?.sourceView = controller.view
-    // 아이패드 - activity view를 어디에서 표시할 것인지 해당 구역(CGRect) 지정
-    activityVC.popoverPresentationController?.sourceRect = sourceRect
+    <span class="c1">// 아이패드 - activity view를 popover 할 기준 view 지정</span>
+    <span class="n">activityVC</span><span class="o">.</span><span class="n">popoverPresentationController</span><span class="p">?</span><span class="o">.</span><span class="n">sourceView</span> <span class="o">=</span> <span class="n">controller</span><span class="o">.</span><span class="n">view</span>
+    <span class="c1">// 아이패드 - activity view를 어디에서 표시할 것인지 해당 구역(CGRect) 지정</span>
+    <span class="n">activityVC</span><span class="o">.</span><span class="n">popoverPresentationController</span><span class="p">?</span><span class="o">.</span><span class="n">sourceRect</span> <span class="o">=</span> <span class="n">sourceRect</span>
     
-    controller.present(activityVC, animated: true, completion: completion)
-}
+    <span class="n">controller</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">activityVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="n">completion</span><span class="p">)</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

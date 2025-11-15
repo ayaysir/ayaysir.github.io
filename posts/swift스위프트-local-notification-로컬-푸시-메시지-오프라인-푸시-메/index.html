@@ -1272,8 +1272,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">ViewDidLoad(_:)</code>에 아래 코드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1282,14 +1282,14 @@
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>import UIKit
-let userNotiCenter = UNUserNotificationCenter.current()
-let notiAuthOptions = UNAuthorizationOptions(arrayLiteral: [.alert, .badge, .sound])
-userNotiCenter.requestAuthorization(options: notiAuthOptions) { (success, error) in
-    if let error = error {
-        print(#function, error)
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="k">let</span> <span class="nv">userNotiCenter</span> <span class="o">=</span> <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">notiAuthOptions</span> <span class="o">=</span> <span class="kt">UNAuthorizationOptions</span><span class="p">(</span><span class="nv">arrayLiteral</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">alert</span><span class="p">,</span> <span class="o">.</span><span class="n">badge</span><span class="p">,</span> <span class="o">.</span><span class="n">sound</span><span class="p">])</span>
+<span class="n">userNotiCenter</span><span class="o">.</span><span class="nf">requestAuthorization</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="n">notiAuthOptions</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="k">#function</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">arrayLiteral:</code>에 들어갈 수 있는 카테고리는 다음과 같습니다.</p>

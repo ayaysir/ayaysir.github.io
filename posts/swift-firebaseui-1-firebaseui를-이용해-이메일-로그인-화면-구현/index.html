@@ -1112,12 +1112,12 @@ pod 'FirebaseUI'
 
 <p>뷰 컨트롤러에 다음 코드를 추가합니다. 새로운 뷰 컨트롤러를 띄우는 부분이 있으므로 <code class="language-plaintext highlighter-rouge">viewDidAppear</code>에서 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>import UIKit
-import FirebaseEmailAuthUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">FirebaseEmailAuthUI</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -1309,8 +1309,8 @@ import FirebaseEmailAuthUI
 
 <p>먼저 <code class="language-plaintext highlighter-rouge">FUIAuthPickerViewController</code>를 상속받는 뷰 컨트롤러를 생성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1342,37 +1342,37 @@ import FirebaseEmailAuthUI
 29
 30
 31
-</pre></td><td class="rouge-code"><pre>import UIKit
-import FirebaseAuthUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">FirebaseAuthUI</span>
 
-class LoginCustomViewController: FUIAuthPickerViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
+<span class="kd">class</span> <span class="kt">LoginCustomViewController</span><span class="p">:</span> <span class="kt">FUIAuthPickerViewController</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
         
-        let width = UIScreen.main.bounds.size.width
-        let height = UIScreen.main.bounds.size.height
+        <span class="k">let</span> <span class="nv">width</span> <span class="o">=</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span>
+        <span class="k">let</span> <span class="nv">height</span> <span class="o">=</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span>
         
-        let imageView = UIImageView(image: UIImage(named: "StringQuartet"))
-        view.addSubview(imageView)
+        <span class="k">let</span> <span class="nv">imageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"StringQuartet"</span><span class="p">))</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">imageView</span><span class="p">)</span>
         
-        let label = UILabel(frame: CGRect(x: 10, y: 0, width: width - 20, height: 200))
-        label.text = "이메일, 구글, 애플 로그인 중 하나를 선택해서 로그인하세요."
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.numberOfLines = 0
-        view.addSubview(label)
-    }
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="n">width</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">200</span><span class="p">))</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"이메일, 구글, 애플 로그인 중 하나를 선택해서 로그인하세요."</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">numberOfLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">animated</span><span class="p">)</span>
+        <span class="n">navigationController</span><span class="p">?</span><span class="o">.</span><span class="nf">setNavigationBarHidden</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="n">animated</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-}
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillDisappear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewWillDisappear</span><span class="p">(</span><span class="n">animated</span><span class="p">)</span>
+        <span class="n">navigationController</span><span class="p">?</span><span class="o">.</span><span class="nf">setNavigationBarHidden</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="n">animated</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

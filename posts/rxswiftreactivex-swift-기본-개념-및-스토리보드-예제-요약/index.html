@@ -2008,8 +2008,8 @@ struct LoginViewModel {
 
 <h5 id="viewcontrollerswift"><span class="me-2"><strong>ViewController.swift</strong></span><a href="#viewcontrollerswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2061,57 +2061,57 @@ struct LoginViewModel {
 49
 50
 51
-</pre></td><td class="rouge-code"><pre>import UIKit
-import RxSwift
-import RxCocoa
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">RxSwift</span>
+<span class="kd">import</span> <span class="kt">RxCocoa</span>
 
-class ViewController: UIViewController {
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
     
-    @IBOutlet weak var txfUsername: UITextField!
-    @IBOutlet weak var txfPassword: UITextField!
-    @IBOutlet weak var btnLogin: UIButton!
-    @IBOutlet weak var lblStatus: UILabel!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">txfUsername</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">txfPassword</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">btnLogin</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">lblStatus</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
     
-    var loginViewModel = LoginViewModel()
+    <span class="k">var</span> <span class="nv">loginViewModel</span> <span class="o">=</span> <span class="kt">LoginViewModel</span><span class="p">()</span>
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
         
-        configureLoginButton(isEnabled: false)
+        <span class="nf">configureLoginButton</span><span class="p">(</span><span class="nv">isEnabled</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
         
-        // UITextField의 값을 뷰모델의 property에 바인딩
-        _ = txfUsername.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.username)
-        _ = txfPassword.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.password)
+        <span class="c1">// UITextField의 값을 뷰모델의 property에 바인딩</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">txfUsername</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span> <span class="p">??</span> <span class="s">""</span> <span class="p">}</span><span class="o">.</span><span class="nf">bind</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">loginViewModel</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">txfPassword</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span> <span class="p">??</span> <span class="s">""</span> <span class="p">}</span><span class="o">.</span><span class="nf">bind</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">loginViewModel</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
         
-        // 뷰모델의 isBind를 btnLogin에 바인딩
-        _ = loginViewModel.isValid.bind(to: btnLogin.rx.isEnabled)
+        <span class="c1">// 뷰모델의 isBind를 btnLogin에 바인딩</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">loginViewModel</span><span class="o">.</span><span class="n">isValid</span><span class="o">.</span><span class="nf">bind</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">btnLogin</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="n">isEnabled</span><span class="p">)</span>
         
-        // 뷰모델의 isValid를 subscribe(구독)한다.
-        // 텍스트필드에 값이 입력되면 onNext가 실행되고
-        // 뷰모델의 Observable.combineLatest가 유효성 검사를 한 뒤
-        // Observable&lt;Bool&gt; 타입의 값을 반환한다.
-        // 그 값이 클로저 함수 안의 isValid와 연동된다.
-        _ = loginViewModel.isValid.subscribe(onNext: { [unowned self] isValid in
+        <span class="c1">// 뷰모델의 isValid를 subscribe(구독)한다.</span>
+        <span class="c1">// 텍스트필드에 값이 입력되면 onNext가 실행되고</span>
+        <span class="c1">// 뷰모델의 Observable.combineLatest가 유효성 검사를 한 뒤</span>
+        <span class="c1">// Observable&lt;Bool&gt; 타입의 값을 반환한다.</span>
+        <span class="c1">// 그 값이 클로저 함수 안의 isValid와 연동된다.</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">loginViewModel</span><span class="o">.</span><span class="n">isValid</span><span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">unowned</span> <span class="k">self</span><span class="p">]</span> <span class="n">isValid</span> <span class="k">in</span>
             
-            // 상태 레이블 서식 변경
-            configureStatuslabel(isEnabled: isValid)
-            // 텍스트 필드에 값을 입력할 때마다 isValid가 실시간으로 변경된다.
-            print("isValid:", isValid)
-            // 버튼 서식 변경
-            configureLoginButton(isEnabled: isValid)
-        })
-    }
+            <span class="c1">// 상태 레이블 서식 변경</span>
+            <span class="nf">configureStatuslabel</span><span class="p">(</span><span class="nv">isEnabled</span><span class="p">:</span> <span class="n">isValid</span><span class="p">)</span>
+            <span class="c1">// 텍스트 필드에 값을 입력할 때마다 isValid가 실시간으로 변경된다.</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"isValid:"</span><span class="p">,</span> <span class="n">isValid</span><span class="p">)</span>
+            <span class="c1">// 버튼 서식 변경</span>
+            <span class="nf">configureLoginButton</span><span class="p">(</span><span class="nv">isEnabled</span><span class="p">:</span> <span class="n">isValid</span><span class="p">)</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
     
-    func configureLoginButton(isEnabled: Bool) {
-        btnLogin.isEnabled = isEnabled
-        btnLogin.backgroundColor = isEnabled ? .orange : .lightGray
-    }
+    <span class="kd">func</span> <span class="nf">configureLoginButton</span><span class="p">(</span><span class="nv">isEnabled</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">btnLogin</span><span class="o">.</span><span class="n">isEnabled</span> <span class="o">=</span> <span class="n">isEnabled</span>
+        <span class="n">btnLogin</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="n">isEnabled</span> <span class="p">?</span> <span class="o">.</span><span class="nv">orange</span> <span class="p">:</span> <span class="o">.</span><span class="n">lightGray</span>
+    <span class="p">}</span>
     
-    func configureStatuslabel(isEnabled: Bool) {
-        lblStatus.text = isEnabled ? "Enabled" : "Disabled"
-        lblStatus.textColor = isEnabled ? UIColor(red: 55/255, green: 168/255, blue: 82/255, alpha: 1) : .red
-    }
-}
+    <span class="kd">func</span> <span class="nf">configureStatuslabel</span><span class="p">(</span><span class="nv">isEnabled</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">lblStatus</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">isEnabled</span> <span class="p">?</span> <span class="s">"Enabled"</span> <span class="p">:</span> <span class="s">"Disabled"</span>
+        <span class="n">lblStatus</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="n">isEnabled</span> <span class="p">?</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">55</span><span class="sr">/255, green: 168/255, blue: 82/</span><span class="mi">255</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span> <span class="p">:</span> <span class="o">.</span><span class="n">red</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

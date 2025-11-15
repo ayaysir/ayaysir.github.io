@@ -1288,8 +1288,8 @@ end
 
 <p>6. 프로젝트의 <code class="language-plaintext highlighter-rouge">AppDelegate.swift</code> 파일에서 아래 하이라이트 부분을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1301,17 +1301,17 @@ end
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>import UIKit
-import Firebase
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">Firebase</span>
 
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+<span class="kd">@main</span>
+<span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
-        // Override point for customization after application launch.
-        FirebaseApp.configure()
-        return true
-    }
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="c1">// Override point for customization after application launch.</span>
+        <span class="kt">FirebaseApp</span><span class="o">.</span><span class="nf">configure</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1504,8 +1504,8 @@ viewUserInfo.isHidden = true
 
 <h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1569,69 +1569,69 @@ viewUserInfo.isHidden = true
 61
 62
 63
-</pre></td><td class="rouge-code"><pre>import UIKit
-import Firebase
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">Firebase</span>
 
-class ViewController: UIViewController {
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
     
-    @IBOutlet weak var txtUserEmail: UITextField!
-    @IBOutlet weak var txtUserPassword: UITextField!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">txtUserEmail</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">txtUserPassword</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span>
     
-    @IBOutlet weak var lblUserEmail: UILabel!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">lblUserEmail</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
     
-    @IBOutlet weak var viewSignUpForm: UIView!
-    @IBOutlet weak var viewUserInfo: UIView!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">viewSignUpForm</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">viewUserInfo</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span>
     
-    var handle: AuthStateDidChangeListenerHandle!
+    <span class="k">var</span> <span class="nv">handle</span><span class="p">:</span> <span class="kt">AuthStateDidChangeListenerHandle</span><span class="o">!</span>
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        viewSignUpForm.isHidden = true
-        viewUserInfo.isHidden = true
-    }
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="n">viewSignUpForm</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">viewUserInfo</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
     
-    override func viewWillAppear(_ animated: Bool) {
-        handle = Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
-                self.viewUserInfo.isHidden = false
-                self.viewSignUpForm.isHidden = true
-                self.lblUserEmail.text = user.email
-            } else {
-                self.viewUserInfo.isHidden = true
-                self.viewSignUpForm.isHidden = false
-                self.lblUserEmail.text = ""
-            }
-        }
-    }
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">handle</span> <span class="o">=</span> <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="n">addStateDidChangeListener</span> <span class="p">{</span> <span class="n">auth</span><span class="p">,</span> <span class="n">user</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">user</span> <span class="o">=</span> <span class="n">user</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">viewUserInfo</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">false</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">viewSignUpForm</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">lblUserEmail</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">viewUserInfo</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">viewSignUpForm</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">false</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">lblUserEmail</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    override func viewWillDisappear(_ animated: Bool) {
-        Auth.auth().removeStateDidChangeListener(handle!)
-    }
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillDisappear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="nf">removeStateDidChangeListener</span><span class="p">(</span><span class="n">handle</span><span class="o">!</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    @IBAction func btnActSubmit(_ sender: UIButton) {
-        guard let userEmail = txtUserEmail.text else { return }
-        guard let userPassword = txtUserPassword.text else  { return }
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActSubmit</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">userEmail</span> <span class="o">=</span> <span class="n">txtUserEmail</span><span class="o">.</span><span class="n">text</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">userPassword</span> <span class="o">=</span> <span class="n">txtUserPassword</span><span class="o">.</span><span class="n">text</span> <span class="k">else</span>  <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
         
-        Auth.auth().signIn(withEmail: userEmail, password: userPassword) { [weak self] authResult, error in
-            guard self != nil else { return }
+        <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="nf">signIn</span><span class="p">(</span><span class="nv">withEmail</span><span class="p">:</span> <span class="n">userEmail</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="n">userPassword</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">authResult</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+            <span class="k">guard</span> <span class="k">self</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
             
-            if authResult != nil {
-                print("로그인 되었습니다")
-            } else {
-                print("로그인되지 않았습니다.", error?.localizedDescription ?? "")
-            }
-        }
-    }
+            <span class="k">if</span> <span class="n">authResult</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"로그인 되었습니다"</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"로그인되지 않았습니다."</span><span class="p">,</span> <span class="n">error</span><span class="p">?</span><span class="o">.</span><span class="n">localizedDescription</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    @IBAction func btnActSignOut(_ sender: UIButton) {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActSignOut</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="nf">signOut</span><span class="p">()</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>

@@ -1304,8 +1304,8 @@
 
 <p>이 코드는 1번 섹션에서 만들었던 Navigation Controller와 연결할 코드입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1357,56 +1357,56 @@
 49
 50
 51
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-class MenuNavigationController: ENSideMenuNavigationController {
+<span class="kd">class</span> <span class="kt">MenuNavigationController</span><span class="p">:</span> <span class="kt">ENSideMenuNavigationController</span> <span class="p">{</span>
     
-    override func viewDidLoad() {
-        // 스토리보드 ID를 바탕으로 뷰 컨트롤러 인스턴스 생성
-        let menuViewController = self.storyboard?.instantiateViewController(identifier: "ArticleListViewController")
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 스토리보드 ID를 바탕으로 뷰 컨트롤러 인스턴스 생성</span>
+        <span class="k">let</span> <span class="nv">menuViewController</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">storyboard</span><span class="p">?</span><span class="o">.</span><span class="nf">instantiateViewController</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="s">"ArticleListViewController"</span><span class="p">)</span>
         
-        // 사이드 메뉴 생성
-        self.sideMenu = ENSideMenu(sourceView: view, menuViewController: menuViewController!, menuPosition:.right)
+        <span class="c1">// 사이드 메뉴 생성</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">sideMenu</span> <span class="o">=</span> <span class="kt">ENSideMenu</span><span class="p">(</span><span class="nv">sourceView</span><span class="p">:</span> <span class="n">view</span><span class="p">,</span> <span class="nv">menuViewController</span><span class="p">:</span> <span class="n">menuViewController</span><span class="o">!</span><span class="p">,</span> <span class="nv">menuPosition</span><span class="p">:</span><span class="o">.</span><span class="k">right</span><span class="p">)</span>
         
-        // 딜리게이트 설정
-        self.sideMenu?.delegate = self
+        <span class="c1">// 딜리게이트 설정</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">sideMenu</span><span class="p">?</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
         
-        // 사이드 메뉴 설정 (가로 폭, 바운스 활성화, 애니메이션 타입)
-        self.sideMenu?.menuWidth = 300
-        self.sideMenu?.bouncingEnabled = false
-        self.sideMenuAnimationType = .none
+        <span class="c1">// 사이드 메뉴 설정 (가로 폭, 바운스 활성화, 애니메이션 타입)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">sideMenu</span><span class="p">?</span><span class="o">.</span><span class="n">menuWidth</span> <span class="o">=</span> <span class="mi">300</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">sideMenu</span><span class="p">?</span><span class="o">.</span><span class="n">bouncingEnabled</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">sideMenuAnimationType</span> <span class="o">=</span> <span class="o">.</span><span class="k">none</span>
         
-        // 내비게이션 바 위에 사이드 메뉴를 표시
-        self.view.bringSubviewToFront(navigationBar)
-    }
-}
+        <span class="c1">// 내비게이션 바 위에 사이드 메뉴를 표시</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">bringSubviewToFront</span><span class="p">(</span><span class="n">navigationBar</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-extension MenuNavigationController: ENSideMenuDelegate {
-    func sideMenuWillOpen() {
-        // 사이드메뉴가 열릴 때
-        print("sideMenuWillOpen")
-    }
+<span class="kd">extension</span> <span class="kt">MenuNavigationController</span><span class="p">:</span> <span class="kt">ENSideMenuDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">sideMenuWillOpen</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 사이드메뉴가 열릴 때</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"sideMenuWillOpen"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func sideMenuWillClose() {
-        // 사이드메뉴가 닫힐 때
-        print("sideMenuWillClose")
-    }
+    <span class="kd">func</span> <span class="nf">sideMenuWillClose</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 사이드메뉴가 닫힐 때</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"sideMenuWillClose"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func sideMenuDidClose() {
-        // 사이드메뉴가 닫히고 나서
-        print("sideMenuDidClose")
-    }
+    <span class="kd">func</span> <span class="nf">sideMenuDidClose</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 사이드메뉴가 닫히고 나서</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"sideMenuDidClose"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func sideMenuDidOpen() {
-        // 사이드메뉴가 열리고 나서
-        print("sideMenuDidOpen")
-    }
+    <span class="kd">func</span> <span class="nf">sideMenuDidOpen</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 사이드메뉴가 열리고 나서</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"sideMenuDidOpen"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func sideMenuShouldOpenSideMenu() -&gt; Bool {
-        // 사이드메뉴 활성화
-        return true
-    }
-}
+    <span class="kd">func</span> <span class="nf">sideMenuShouldOpenSideMenu</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="c1">// 사이드메뉴 활성화</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1467,8 +1467,8 @@ extension MenuNavigationController: ENSideMenuDelegate {
 
 <p>예제 코드는 다음과 같습니다. (버튼을 사용한 사이드 메뉴)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1517,53 +1517,53 @@ extension MenuNavigationController: ENSideMenuDelegate {
 46
 47
 48
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-class MenuState {
-    static let shared = MenuState()
-    var currentMenu = "TunerViewController"
-}
+<span class="kd">class</span> <span class="kt">MenuState</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span> <span class="o">=</span> <span class="kt">MenuState</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">currentMenu</span> <span class="o">=</span> <span class="s">"TunerViewController"</span>
+<span class="p">}</span>
 
-class SlideMenuViewController: UIViewController {
+<span class="kd">class</span> <span class="kt">SlideMenuViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
         
-        // Do any additional setup after loading the view.
-    }
+        <span class="c1">// Do any additional setup after loading the view.</span>
+    <span class="p">}</span>
     
-    @IBAction func btnFreqTable(_ sender: UIButton) {
-        openController(menu: "FreqTableViewController")
-    }
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnFreqTable</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">openController</span><span class="p">(</span><span class="nv">menu</span><span class="p">:</span> <span class="s">"FreqTableViewController"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    @IBAction func btnTuner(_ sender: UIButton) {
-        openController(menu: "TunerViewController")
-    }
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnTuner</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">openController</span><span class="p">(</span><span class="nv">menu</span><span class="p">:</span> <span class="s">"TunerViewController"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    @IBAction func btnStats(_ sender: UIButton) {
-        openController(menu: "StatsViewController")
-    }
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnStats</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">openController</span><span class="p">(</span><span class="nv">menu</span><span class="p">:</span> <span class="s">"StatsViewController"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    @IBAction func btnSetting(_ sender: UIButton) {
-        openController(menu: "SettingViewController")
-    }
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnSetting</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">openController</span><span class="p">(</span><span class="nv">menu</span><span class="p">:</span> <span class="s">"SettingViewController"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    @IBAction func btnHelp(_ sender: UIButton) {
-        openController(menu: "HelpViewController")
-    }
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnHelp</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">openController</span><span class="p">(</span><span class="nv">menu</span><span class="p">:</span> <span class="s">"HelpViewController"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func openController(menu: String) {
-        if MenuState.shared.currentMenu == menu {
-            sideMenuController()?.sideMenu?.toggleMenu()
-            return
-        }
+    <span class="kd">func</span> <span class="nf">openController</span><span class="p">(</span><span class="nv">menu</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="kt">MenuState</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">currentMenu</span> <span class="o">==</span> <span class="n">menu</span> <span class="p">{</span>
+            <span class="nf">sideMenuController</span><span class="p">()?</span><span class="o">.</span><span class="n">sideMenu</span><span class="p">?</span><span class="o">.</span><span class="nf">toggleMenu</span><span class="p">()</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        MenuState.shared.currentMenu = menu
-        let targetVC = self.storyboard?.instantiateViewController(identifier: menu)
-        self.sideMenuController()?.setContentViewController(targetVC!)
-    }
+        <span class="kt">MenuState</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">currentMenu</span> <span class="o">=</span> <span class="n">menu</span>
+        <span class="k">let</span> <span class="nv">targetVC</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">storyboard</span><span class="p">?</span><span class="o">.</span><span class="nf">instantiateViewController</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="n">menu</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">sideMenuController</span><span class="p">()?</span><span class="o">.</span><span class="nf">setContentViewController</span><span class="p">(</span><span class="n">targetVC</span><span class="o">!</span><span class="p">)</span>
+    <span class="p">}</span>
     
-}
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

@@ -833,11 +833,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -878,6 +873,32 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -1110,7 +1131,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1791 words"
+  title="1753 words"
 >
   <em>9 min</em> read</span>
 
@@ -1144,13 +1165,13 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>iOS 프로젝트에서 Game Center를 연동하려면 몇 가지 단계를 거쳐야 합니다. Game Center는 애플의 게임 서비스로, 멀티플레이어 매치메이킹, 리더보드, 도전 과제 등을 제공합니다. 아래는 SwiftUI로 iOS 프로젝트에서 Game Center를 연동하는 방법에 대한 자세한 설명입니다.</p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="1-game-center-설정-준비"><span class="me-2"><strong>1. Game Center 설정 준비</strong></span><a href="#1-game-center-설정-준비" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="1-game-center-설정-준비"><span class="me-2"><strong>1. Game Center 설정 준비</strong></span><a href="#1-game-center-설정-준비" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li><strong>Apple Developer 계정 준비:</strong> <a href="https://developer.apple.com/">Apple Developer 계정</a>에 가입하고 필요한 설정을 완료합니다.</li>
@@ -1204,34 +1225,34 @@
   </li>
 </ol>
 
-<p>[caption id=”attachment_6813” align=”alignnone” width=”799”] <a href="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.39-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.39-copy.jpg" alt="" loading="lazy"></a> 순위표 또는 목표 달성 추가 및 관리[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.39-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.39-copy.jpg" alt="순위표 또는 목표 달성 추가 및 관리" loading="lazy"></a><br />
+<em>순위표 또는 목표 달성 추가 및 관리</em></p>
 
-<p> </p>
-
-<p>[caption id=”attachment_6814” align=”alignnone” width=”837”] <a href="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.59-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.59-copy.jpg" alt="" loading="lazy"></a> 정보 입력[/caption]</p>
-
-<p> </p>
+<p> 
+<a href="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.59-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.59-copy.jpg" alt="정보 입력" loading="lazy"></a> <br />
+<em>정보 입력</em>
+ </p>
 
 <h3 id="4-swiftui에서-game-center-연동"><span class="me-2"><strong>4. SwiftUI에서 Game Center 연동</strong></span><a href="#4-swiftui에서-game-center-연동" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="1-gamekit-프레임워크-가져오기"><span class="me-2"><strong>1. GameKit 프레임워크 가져오기</strong></span><a href="#1-gamekit-프레임워크-가져오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="1-gamekit-프레임워크-가져오기"><span class="me-2"><strong>(1) GameKit 프레임워크 가져오기</strong></span><a href="#1-gamekit-프레임워크-가져오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>먼저 <code class="language-plaintext highlighter-rouge">GameKit</code> 프레임워크를 가져와야 합니다. 이를 위해 사용할 Swift 파일 상단에 다음과 같이 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>import GameKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">GameKit</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="2-game-center-인증-처리"><span class="me-2"><strong>2. Game Center 인증 처리</strong></span><a href="#2-game-center-인증-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="2-game-center-인증-처리"><span class="me-2"><strong>(2) Game Center 인증 처리</strong></span><a href="#2-game-center-인증-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>사용자가 Game Center에 로그인하도록 인증 프로세스를 구현해야 합니다. SwiftUI에서 인증 뷰를 제공하려면 아래와 같이 <code class="language-plaintext highlighter-rouge">GameCenterViewModel</code>을 만들 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1257,41 +1278,41 @@
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>class GameCenterViewModel: ObservableObject {
-  @Published var isAuthenticated = false
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">GameCenterViewModel</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+  <span class="kd">@Published</span> <span class="k">var</span> <span class="nv">isAuthenticated</span> <span class="o">=</span> <span class="kc">false</span>
   
-  func authenticateUser() {
-    let localPlayer = GKLocalPlayer.local
+  <span class="kd">func</span> <span class="nf">authenticateUser</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">localPlayer</span> <span class="o">=</span> <span class="kt">GKLocalPlayer</span><span class="o">.</span><span class="n">local</span>
     
-    localPlayer.authenticateHandler = { viewController, error in
-      if let viewController = viewController {
-        // 로그인 뷰를 표시해야 할 경우
-        UIApplication.shared.windows.first?.rootViewController?.present(viewController, animated: true, completion: nil)
-      } else if localPlayer.isAuthenticated {
-        // 인증이 성공한 경우
-        DispatchQueue.main.async {
-          self.isAuthenticated = true
-        }
-      } else {
-        // 인증 실패 처리
-        print("Game Center 인증 실패: \(error?.localizedDescription ?? "알 수 없는 오류")")
-      }
-    }
-  }
+    <span class="n">localPlayer</span><span class="o">.</span><span class="n">authenticateHandler</span> <span class="o">=</span> <span class="p">{</span> <span class="n">viewController</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">viewController</span> <span class="o">=</span> <span class="n">viewController</span> <span class="p">{</span>
+        <span class="c1">// 로그인 뷰를 표시해야 할 경우</span>
+        <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">windows</span><span class="o">.</span><span class="n">first</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">viewController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">localPlayer</span><span class="o">.</span><span class="n">isAuthenticated</span> <span class="p">{</span>
+        <span class="c1">// 인증이 성공한 경우</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+          <span class="k">self</span><span class="o">.</span><span class="n">isAuthenticated</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="p">}</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// 인증 실패 처리</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Game Center 인증 실패: </span><span class="se">\(</span><span class="n">error</span><span class="p">?</span><span class="o">.</span><span class="n">localizedDescription</span> <span class="p">??</span> <span class="s">"알 수 없는 오류"</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-  ...
+  <span class="o">...</span>
 
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="3-swiftui-view에서-인증-처리"><span class="me-2"><strong>3. SwiftUI View에서 인증 처리</strong></span><a href="#3-swiftui-view에서-인증-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="3-swiftui-view에서-인증-처리"><span class="me-2"><strong>(3) SwiftUI View에서 인증 처리</strong></span><a href="#3-swiftui-view에서-인증-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p><code class="language-plaintext highlighter-rouge">GameCenterViewModel</code>을 사용하여 Game Center에 사용자를 인증하는 과정을 SwiftUI 뷰에 추가할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1310,29 +1331,29 @@
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-struct ContentView: View {
-  @StateObject private var gameCenterViewModel = GameCenterViewModel()
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="kd">@StateObject</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">gameCenterViewModel</span> <span class="o">=</span> <span class="kt">GameCenterViewModel</span><span class="p">()</span>
   
-  var body: some View {
-    VStack {
-      if gameCenterViewModel.isAuthenticated {
-        Text("Game Center 인증 성공")
+  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kt">VStack</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="n">gameCenterViewModel</span><span class="o">.</span><span class="n">isAuthenticated</span> <span class="p">{</span>
+        <span class="kt">Text</span><span class="p">(</span><span class="s">"Game Center 인증 성공"</span><span class="p">)</span>
         
-        ...
-      }
-    }
-    .onAppear {
-      gameCenterViewModel.authenticateUser()
-    }
-  }
-}
+        <span class="o">...</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="n">onAppear</span> <span class="p">{</span>
+      <span class="n">gameCenterViewModel</span><span class="o">.</span><span class="nf">authenticateUser</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="4-리더보드-및-도전-과제-구현"><span class="me-2"><strong>4. 리더보드 및 도전 과제 구현</strong></span><a href="#4-리더보드-및-도전-과제-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="4-리더보드-및-도전-과제-구현"><span class="me-2"><strong>(4) 리더보드 및 도전 과제 구현</strong></span><a href="#4-리더보드-및-도전-과제-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>Game Center의 리더보드나 도전 과제를 사용하려면, 인증된 후 사용자의 점수를 보고하거나 도전 과제를 달성하는 등의 추가 코드를 작성해야 합니다.</p>
 
@@ -1340,8 +1361,8 @@ struct ContentView: View {
 
 <h5 id="리더보드에-점수-보고-예제"><span class="me-2"><strong>리더보드에 점수 보고 예제:</strong></span><a href="#리더보드에-점수-보고-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1356,28 +1377,28 @@ struct ContentView: View {
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>/// 리더보드에 점수 제출
-func reportScore(leaderboardID: String, score: Int) {
-  GKLeaderboard.submitScore(
-    score,
-    context: 0,
-    player: GKLocalPlayer.local,
-    leaderboardIDs: [leaderboardID]) { error in
-      if let error {
-        print(error)
-      }
+</pre></td><td class="rouge-code"><pre><span class="c1">/// 리더보드에 점수 제출</span>
+<span class="kd">func</span> <span class="nf">reportScore</span><span class="p">(</span><span class="nv">leaderboardID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">score</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">GKLeaderboard</span><span class="o">.</span><span class="nf">submitScore</span><span class="p">(</span>
+    <span class="n">score</span><span class="p">,</span>
+    <span class="nv">context</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nv">player</span><span class="p">:</span> <span class="kt">GKLocalPlayer</span><span class="o">.</span><span class="n">local</span><span class="p">,</span>
+    <span class="nv">leaderboardIDs</span><span class="p">:</span> <span class="p">[</span><span class="n">leaderboardID</span><span class="p">])</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+      <span class="p">}</span>
       
-      print("리더보드에 점수가 성공적으로 업데이트 되었습니다.")
-    }
-}
+      <span class="nf">print</span><span class="p">(</span><span class="s">"리더보드에 점수가 성공적으로 업데이트 되었습니다."</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <h5 id="도전-과제-구현-예제"><span class="me-2"><strong>도전 과제 구현 예제:</strong></span><a href="#도전-과제-구현-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1409,45 +1430,45 @@ func reportScore(leaderboardID: String, score: Int) {
 29
 30
 31
-</pre></td><td class="rouge-code"><pre>@Published var achievements = [GKAchievement]()
+</pre></td><td class="rouge-code"><pre><span class="kd">@Published</span> <span class="k">var</span> <span class="nv">achievements</span> <span class="o">=</span> <span class="p">[</span><span class="kt">GKAchievement</span><span class="p">]()</span>
 
-/// Game Center에서 업적 로드
-func loadAchievements() {
-  GKAchievement.loadAchievements { [weak self] achievements, error in
-    if let error {
-      print("업적을 로드하는 동안 오류 발생: \(error.localizedDescription)")
-      return
-    }
+<span class="c1">/// Game Center에서 업적 로드</span>
+<span class="kd">func</span> <span class="nf">loadAchievements</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">GKAchievement</span><span class="o">.</span><span class="n">loadAchievements</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">achievements</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="s">"업적을 로드하는 동안 오류 발생: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="k">return</span>
+    <span class="p">}</span>
     
-    DispatchQueue.main.async {
-      self?.achievements = achievements ?? []
-    }
-  }
-}
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+      <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">achievements</span> <span class="o">=</span> <span class="n">achievements</span> <span class="p">??</span> <span class="p">[]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-/// 업적 달성 보고
-func reportAchievement(identifier: String, percentComplete: Double) {
-  let achievement = GKAchievement(identifier: identifier)
-  achievement.percentComplete = percentComplete
-  achievement.showsCompletionBanner = true
+<span class="c1">/// 업적 달성 보고</span>
+<span class="kd">func</span> <span class="nf">reportAchievement</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">percentComplete</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">achievement</span> <span class="o">=</span> <span class="kt">GKAchievement</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="n">identifier</span><span class="p">)</span>
+  <span class="n">achievement</span><span class="o">.</span><span class="n">percentComplete</span> <span class="o">=</span> <span class="n">percentComplete</span>
+  <span class="n">achievement</span><span class="o">.</span><span class="n">showsCompletionBanner</span> <span class="o">=</span> <span class="kc">true</span>
   
-  GKAchievement.report([achievement]) { error in
-    if let error {
-      print("업적 보고 실패: \(error.localizedDescription)")
-      return
-    }
+  <span class="kt">GKAchievement</span><span class="o">.</span><span class="nf">report</span><span class="p">([</span><span class="n">achievement</span><span class="p">])</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="s">"업적 보고 실패: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+      <span class="k">return</span>
+    <span class="p">}</span>
     
-    print("업적이 성공적으로 보고되었습니다.")
-  }
-}
+    <span class="nf">print</span><span class="p">(</span><span class="s">"업적이 성공적으로 보고되었습니다."</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>위 함수들을 <code class="language-plaintext highlighter-rouge">GameCenterViewModel</code>에 추가한 뒤, 뷰에서 표시하는 방법은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1461,19 +1482,19 @@ func reportAchievement(identifier: String, percentComplete: Double) {
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>// 뷰의 body에서
+</pre></td><td class="rouge-code"><pre><span class="c1">// 뷰의 body에서</span>
 
-Button(action: {
-  // 예시로 업적 달성 100%, 스코어 932점 보고
-  gameCenterViewModel.reportAchievement(identifier: "achivement_perfect_10", percentComplete: 100.0)
-  gameCenterViewModel.reportScore(leaderboardID: "leaderboard_totalscore", score: 932)
-}) {
-  Text("업적 달성 100%, 스코어 932점 보고")
-    .padding()
-    .background(Color.blue)
-    .foregroundColor(.white)
-    .cornerRadius(8)
-}
+<span class="kt">Button</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span>
+  <span class="c1">// 예시로 업적 달성 100%, 스코어 932점 보고</span>
+  <span class="n">gameCenterViewModel</span><span class="o">.</span><span class="nf">reportAchievement</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="s">"achivement_perfect_10"</span><span class="p">,</span> <span class="nv">percentComplete</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">)</span>
+  <span class="n">gameCenterViewModel</span><span class="o">.</span><span class="nf">reportScore</span><span class="p">(</span><span class="nv">leaderboardID</span><span class="p">:</span> <span class="s">"leaderboard_totalscore"</span><span class="p">,</span> <span class="nv">score</span><span class="p">:</span> <span class="mi">932</span><span class="p">)</span>
+<span class="p">})</span> <span class="p">{</span>
+  <span class="kt">Text</span><span class="p">(</span><span class="s">"업적 달성 100%, 스코어 932점 보고"</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+    <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">cornerRadius</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1482,17 +1503,15 @@ Button(action: {
 
 <p> </p>
 
-<h4 id="5-game-center-대시보드-띄우기-버튼-만들기"><span class="me-2"><strong>5. Game Center 대시보드 띄우기 버튼 만들기</strong></span><a href="#5-game-center-대시보드-띄우기-버튼-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="5-game-center-대시보드-띄우기-버튼-만들기"><span class="me-2"><strong>(5) Game Center 대시보드 띄우기 버튼 만들기</strong></span><a href="#5-game-center-대시보드-띄우기-버튼-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li>GameCenter 뷰에 대한 <code class="language-plaintext highlighter-rouge">UIViewControllerRepresentable</code> 작성</li>
   <li>대시보드 띄우는 버튼 만들기</li>
 </ul>
 
-<p> </p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1542,59 +1561,59 @@ Button(action: {
 47
 48
 49
-</pre></td><td class="rouge-code"><pre>import SwiftUI
-import GameKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">GameKit</span>
 
-// Game Center 대시보드를 표시하기 위한 UIViewControllerRepresentable 구조체
-struct GameCenterDashboardRepresentedView: UIViewControllerRepresentable {
-  typealias UIViewControllerType = UIViewController
+<span class="c1">// Game Center 대시보드를 표시하기 위한 UIViewControllerRepresentable 구조체</span>
+<span class="kd">struct</span> <span class="kt">GameCenterDashboardRepresentedView</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentable</span> <span class="p">{</span>
+  <span class="kd">typealias</span> <span class="kt">UIViewControllerType</span> <span class="o">=</span> <span class="kt">UIViewController</span>
   
-  @Environment(\.presentationMode) var presentationMode
+  <span class="kd">@Environment</span><span class="p">(\</span><span class="o">.</span><span class="n">presentationMode</span><span class="p">)</span> <span class="k">var</span> <span class="nv">presentationMode</span>
   
-  func makeUIViewController(context: Context) -&gt; UIViewController {
-    let viewController = UIViewController()
-    showGameCenterDashboard(on: viewController, context: context)
-    return viewController
-  }
+  <span class="kd">func</span> <span class="nf">makeUIViewController</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">viewController</span> <span class="o">=</span> <span class="kt">UIViewController</span><span class="p">()</span>
+    <span class="nf">showGameCenterDashboard</span><span class="p">(</span><span class="nv">on</span><span class="p">:</span> <span class="n">viewController</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="n">context</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">viewController</span>
+  <span class="p">}</span>
   
-  func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+  <span class="kd">func</span> <span class="nf">updateUIViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{}</span>
   
-  // Game Center 대시보드 표시 함수
-  private func showGameCenterDashboard(on viewController: UIViewController, context: Context) {
-    guard GKLocalPlayer.local.isAuthenticated else {
-      print("Game Center에 인증되지 않았습니다.")
-      return
-    }
+  <span class="c1">// Game Center 대시보드 표시 함수</span>
+  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">showGameCenterDashboard</span><span class="p">(</span><span class="n">on</span> <span class="nv">viewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="kt">GKLocalPlayer</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">isAuthenticated</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nf">print</span><span class="p">(</span><span class="s">"Game Center에 인증되지 않았습니다."</span><span class="p">)</span>
+      <span class="k">return</span>
+    <span class="p">}</span>
     
-    let gameCenterViewController = GKGameCenterViewController()
-    gameCenterViewController.gameCenterDelegate = context.coordinator // 델리게이트 설정
-    viewController.present(gameCenterViewController, animated: true, completion: nil)
-  }
+    <span class="k">let</span> <span class="nv">gameCenterViewController</span> <span class="o">=</span> <span class="kt">GKGameCenterViewController</span><span class="p">()</span>
+    <span class="n">gameCenterViewController</span><span class="o">.</span><span class="n">gameCenterDelegate</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">coordinator</span> <span class="c1">// 델리게이트 설정</span>
+    <span class="n">viewController</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">gameCenterViewController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+  <span class="p">}</span>
   
-  // Coordinator 클래스 사용
-  func makeCoordinator() -&gt; Coordinator {
-    return Coordinator(self)
-  }
+  <span class="c1">// Coordinator 클래스 사용</span>
+  <span class="kd">func</span> <span class="nf">makeCoordinator</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Coordinator</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">Coordinator</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+  <span class="p">}</span>
   
-  class Coordinator: NSObject, GKGameCenterControllerDelegate {
-    var parent: GameCenterDashboardRepresentedView
+  <span class="kd">class</span> <span class="kt">Coordinator</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">GKGameCenterControllerDelegate</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">parent</span><span class="p">:</span> <span class="kt">GameCenterDashboardRepresentedView</span>
     
-    init(_ parent: GameCenterDashboardRepresentedView) {
-      self.parent = parent
-    }
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">parent</span><span class="p">:</span> <span class="kt">GameCenterDashboardRepresentedView</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
+    <span class="p">}</span>
     
-    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-      gameCenterViewController.dismiss(animated: true) {
-        self.parent.presentationMode.wrappedValue.dismiss() // 대시보드를 닫고 SwiftUI Sheet도 닫음
-      }
-    }
-  }
-}
+    <span class="kd">func</span> <span class="nf">gameCenterViewControllerDidFinish</span><span class="p">(</span><span class="n">_</span> <span class="nv">gameCenterViewController</span><span class="p">:</span> <span class="kt">GKGameCenterViewController</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">gameCenterViewController</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">presentationMode</span><span class="o">.</span><span class="n">wrappedValue</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">()</span> <span class="c1">// 대시보드를 닫고 SwiftUI Sheet도 닫음</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1620,36 +1639,36 @@ struct GameCenterDashboardRepresentedView: UIViewControllerRepresentable {
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>struct ContentView: View {
-  @StateObject private var gameCenterViewModel = GameCenterViewModel()
-  @State private var showDashboard = false
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="kd">@StateObject</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">gameCenterViewModel</span> <span class="o">=</span> <span class="kt">GameCenterViewModel</span><span class="p">()</span>
+  <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">showDashboard</span> <span class="o">=</span> <span class="kc">false</span>
   
-  var body: some View {
-    VStack {
-      if gameCenterViewModel.isAuthenticated {
-        ...
-        Button(action: {
-          showDashboard.toggle()
-        }) {
-          Text("Game Center 대시보드 열기")
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-        }
+  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kt">VStack</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="n">gameCenterViewModel</span><span class="o">.</span><span class="n">isAuthenticated</span> <span class="p">{</span>
+        <span class="o">...</span>
+        <span class="kt">Button</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span>
+          <span class="n">showDashboard</span><span class="o">.</span><span class="nf">toggle</span><span class="p">()</span>
+        <span class="p">})</span> <span class="p">{</span>
+          <span class="kt">Text</span><span class="p">(</span><span class="s">"Game Center 대시보드 열기"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">background</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">cornerRadius</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        ...
-      }
-    }
-    .fullScreenCover(isPresented: $showDashboard) {
-      GameCenterDashboardRepresentedView()
-    }
-  }
+        <span class="o">...</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="nf">fullScreenCover</span><span class="p">(</span><span class="nv">isPresented</span><span class="p">:</span> <span class="n">$showDashboard</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">GameCenterDashboardRepresentedView</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <iframe width="480" height="461" src="https://giphy.com/embed/U4P9bXHGli5SkPcP3Q" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
 
-<h3 id="요약"><span class="me-2"><strong>요약</strong></span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="요약"><span class="me-2"><strong>요약</strong></span><a href="#요약" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>Apple Developer 계정 및 Xcode 프로젝트 설정</li>
@@ -1658,8 +1677,6 @@ struct GameCenterDashboardRepresentedView: UIViewControllerRepresentable {
   <li>리더보드 및 도전 과제 구현</li>
   <li>대시보드 띄우기</li>
 </ol>
-
-<p>이렇게 하면 SwiftUI 기반의 iOS 프로젝트에서 Game Center를 연동할 수 있습니다.</p>
 
 <p> </p>
 

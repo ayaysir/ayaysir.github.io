@@ -1315,8 +1315,8 @@ class EmployeesViewModel: NSObject {
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1356,44 +1356,44 @@ class EmployeesViewModel: NSObject {
 37
 38
 39
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-class ViewController: UIViewController {
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
     
-    @IBOutlet weak var employeeTableView: UITableView!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">employeeTableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="o">!</span>
     
-    private var employeeViewModel: EmployeesViewModel!
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">employeeViewModel</span><span class="p">:</span> <span class="kt">EmployeesViewModel</span><span class="o">!</span>
     
-    private var dataSource : EmployeeTableViewDataSource&lt;EmployeeTableViewCell, EmployeeData&gt;!
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">dataSource</span> <span class="p">:</span> <span class="kt">EmployeeTableViewDataSource</span><span class="o">&lt;</span><span class="kt">EmployeeTableViewCell</span><span class="p">,</span> <span class="kt">EmployeeData</span><span class="o">&gt;!</span>
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        callToViewModelForUIUpdate()
-    }
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="nf">callToViewModelForUIUpdate</span><span class="p">()</span>
+    <span class="p">}</span>
     
-    func callToViewModelForUIUpdate(){
+    <span class="kd">func</span> <span class="nf">callToViewModelForUIUpdate</span><span class="p">(){</span>
         
-        self.employeeViewModel =  EmployeesViewModel()
-        self.employeeViewModel.bindEmployeeViewModelToController = {
-            self.updateDataSource()
-        }
-    }
+        <span class="k">self</span><span class="o">.</span><span class="n">employeeViewModel</span> <span class="o">=</span>  <span class="kt">EmployeesViewModel</span><span class="p">()</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">employeeViewModel</span><span class="o">.</span><span class="n">bindEmployeeViewModelToController</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">updateDataSource</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    func updateDataSource(){
+    <span class="kd">func</span> <span class="nf">updateDataSource</span><span class="p">(){</span>
         
-        self.dataSource = EmployeeTableViewDataSource(cellIdentifier: "EmployeeTableViewCell", items: self.employeeViewModel.empData.data, configureCell: { (cell, evm) in
-            cell.employeeIdLabel.text = evm.id
-            cell.employeeNameLabel.text = evm.employeeName
-        })
+        <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="kt">EmployeeTableViewDataSource</span><span class="p">(</span><span class="nv">cellIdentifier</span><span class="p">:</span> <span class="s">"EmployeeTableViewCell"</span><span class="p">,</span> <span class="nv">items</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">employeeViewModel</span><span class="o">.</span><span class="n">empData</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="nv">configureCell</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">evm</span><span class="p">)</span> <span class="k">in</span>
+            <span class="n">cell</span><span class="o">.</span><span class="n">employeeIdLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">id</span>
+            <span class="n">cell</span><span class="o">.</span><span class="n">employeeNameLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">employeeName</span>
+        <span class="p">})</span>
         
-        DispatchQueue.main.async {
-            self.employeeTableView.dataSource = self.dataSource
-            self.employeeTableView.reloadData()
-        }
-    }
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">employeeTableView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">dataSource</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">employeeTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-}
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

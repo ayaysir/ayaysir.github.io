@@ -1592,8 +1592,8 @@ List {
 
 <h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1702,113 +1702,113 @@ List {
 106
 107
 108
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-// 1st nav
-struct ColorDetail: View {
-    var color: Color
-    @Binding var message: String
+<span class="c1">// 1st nav</span>
+<span class="kd">struct</span> <span class="kt">ColorDetail</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span>
+    <span class="kd">@Binding</span> <span class="k">var</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span>
     
-    @Environment(\.dismiss) var dismiss
+    <span class="kd">@Environment</span><span class="p">(\</span><span class="o">.</span><span class="n">dismiss</span><span class="p">)</span> <span class="k">var</span> <span class="nv">dismiss</span>
     
-    var body: some View {
-        Text("\(color.description)")
-            .foregroundColor(color)
-        Divider()
-        if #available(iOS 16.0, *) {
-            // NavigationStack or NavigationView 없어도 됨
-            NavigationLink("Go to Jacob Link", value: color.description).navigationDestination(for: String.self) { lastName in
-                JacobDetail(lastName: lastName.capitalized, message: $message)
-            }
-        } else {
-            // Fallback on earlier versions
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Text</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">color</span><span class="o">.</span><span class="n">description</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="kt">Divider</span><span class="p">()</span>
+        <span class="k">if</span> <span class="k">#available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">16.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// NavigationStack or NavigationView 없어도 됨</span>
+            <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"Go to Jacob Link"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">color</span><span class="o">.</span><span class="n">description</span><span class="p">)</span><span class="o">.</span><span class="nf">navigationDestination</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">lastName</span> <span class="k">in</span>
+                <span class="kt">JacobDetail</span><span class="p">(</span><span class="nv">lastName</span><span class="p">:</span> <span class="n">lastName</span><span class="o">.</span><span class="n">capitalized</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// Fallback on earlier versions</span>
             
-            // JacobDetail에서 Binding시 뒤로가기 오류를 방지하기 위해 추가 (NavigationView)
-            NavigationView {
-                NavigationLink("Go to Jacob Link") {
-                    JacobDetail(lastName: color.description.capitalized, message: $message)
-                }
-            }
-        }
-        Divider()
-        Button {
-            dismiss()
-        } label: {
-            Label("Back", systemImage: "chevron.left")
-        }
-    }
-}
+            <span class="c1">// JacobDetail에서 Binding시 뒤로가기 오류를 방지하기 위해 추가 (NavigationView)</span>
+            <span class="kt">NavigationView</span> <span class="p">{</span>
+                <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"Go to Jacob Link"</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kt">JacobDetail</span><span class="p">(</span><span class="nv">lastName</span><span class="p">:</span> <span class="n">color</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">capitalized</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="kt">Divider</span><span class="p">()</span>
+        <span class="kt">Button</span> <span class="p">{</span>
+            <span class="nf">dismiss</span><span class="p">()</span>
+        <span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+            <span class="kt">Label</span><span class="p">(</span><span class="s">"Back"</span><span class="p">,</span> <span class="nv">systemImage</span><span class="p">:</span> <span class="s">"chevron.left"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-// 2nd nav
-struct JacobDetail: View {
-    var lastName: String
-    @Binding var message: String
+<span class="c1">// 2nd nav</span>
+<span class="kd">struct</span> <span class="kt">JacobDetail</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">lastName</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="kd">@Binding</span> <span class="k">var</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span>
     
-    var body: some View {
-        Text("Jacob \(lastName)")
-        Text("파발: \(message)")
-        Button("왜곡") {
-            let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-            message = String((0..&lt;8).map {_ in letters.randomElement()!})
-        }
-    }
-}
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Text</span><span class="p">(</span><span class="s">"Jacob </span><span class="se">\(</span><span class="n">lastName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="kt">Text</span><span class="p">(</span><span class="s">"파발: </span><span class="se">\(</span><span class="n">message</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="kt">Button</span><span class="p">(</span><span class="s">"왜곡"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">letters</span> <span class="o">=</span> <span class="s">"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="kt">String</span><span class="p">((</span><span class="mi">0</span><span class="o">..&lt;</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span><span class="n">_</span> <span class="k">in</span> <span class="n">letters</span><span class="o">.</span><span class="nf">randomElement</span><span class="p">()</span><span class="o">!</span><span class="p">})</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct NavStackView: View {
-    @State var message: String = ""
+<span class="kd">struct</span> <span class="kt">NavStackView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
     
-    var body: some View {
-        Image("동대문")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(maxWidth: .infinity, maxHeight: 150)
-        if #available(iOS 16.0, *) {
-            NavigationStack {
-                List {
-                    // NavigationLink은 밖에 있으면 버튼, List 안에 있으면 목록 형태로 자동 변형
-                    NavigationLink("동대문", value: Color.mint)
-                    NavigationLink("서대문", value: Color.pink)
-                    NavigationLink("남대문", value: Color.cyan)
-                    NavigationLink("북대문", value: Color.teal)
-                    TextField("파발로 보낼 말을 입력", text: $message)
-                }
-                // List 아래 위치
-                .navigationTitle("조선시대 성문")
-                .navigationDestination(for: Color.self) { color in
-                    ColorDetail(color: color, message: $message)
-                }
-            }
-            // .transition(.identity)
-        } else {
-            // Fallback on earlier versions
-            NavigationView {
-                List {
-                    NavigationLink("동대문") {
-                        ColorDetail(color: Color.mint, message: $message)
-                    }
-                    NavigationLink("서대문") {
-                        ColorDetail(color: Color.pink, message: $message)
-                    }
-                    NavigationLink("남대문") {
-                        ColorDetail(color: Color.cyan, message: $message)
-                    }
-                    NavigationLink("북대문") {
-                        ColorDetail(color: Color.teal, message: $message)
-                    }
-                    TextField("파발로 보낼 말을 입력", text: $message)
-                }
-                .navigationTitle("조선시대 성문")
-                .navigationViewStyle(.stack)
-            }
-        }
-    }
-}
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Image</span><span class="p">(</span><span class="s">"동대문"</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
+            <span class="o">.</span><span class="nf">aspectRatio</span><span class="p">(</span><span class="nv">contentMode</span><span class="p">:</span> <span class="o">.</span><span class="n">fill</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">maxWidth</span><span class="p">:</span> <span class="o">.</span><span class="n">infinity</span><span class="p">,</span> <span class="nv">maxHeight</span><span class="p">:</span> <span class="mi">150</span><span class="p">)</span>
+        <span class="k">if</span> <span class="k">#available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">16.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">NavigationStack</span> <span class="p">{</span>
+                <span class="kt">List</span> <span class="p">{</span>
+                    <span class="c1">// NavigationLink은 밖에 있으면 버튼, List 안에 있으면 목록 형태로 자동 변형</span>
+                    <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"동대문"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">mint</span><span class="p">)</span>
+                    <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"서대문"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">pink</span><span class="p">)</span>
+                    <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"남대문"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">cyan</span><span class="p">)</span>
+                    <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"북대문"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">teal</span><span class="p">)</span>
+                    <span class="kt">TextField</span><span class="p">(</span><span class="s">"파발로 보낼 말을 입력"</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="c1">// List 아래 위치</span>
+                <span class="o">.</span><span class="nf">navigationTitle</span><span class="p">(</span><span class="s">"조선시대 성문"</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">navigationDestination</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">color</span> <span class="k">in</span>
+                    <span class="kt">ColorDetail</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="n">color</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="c1">// .transition(.identity)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// Fallback on earlier versions</span>
+            <span class="kt">NavigationView</span> <span class="p">{</span>
+                <span class="kt">List</span> <span class="p">{</span>
+                    <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"동대문"</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kt">ColorDetail</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">mint</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+                    <span class="p">}</span>
+                    <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"서대문"</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kt">ColorDetail</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">pink</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+                    <span class="p">}</span>
+                    <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"남대문"</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kt">ColorDetail</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">cyan</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+                    <span class="p">}</span>
+                    <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"북대문"</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kt">ColorDetail</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">teal</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+                    <span class="p">}</span>
+                    <span class="kt">TextField</span><span class="p">(</span><span class="s">"파발로 보낼 말을 입력"</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="o">.</span><span class="nf">navigationTitle</span><span class="p">(</span><span class="s">"조선시대 성문"</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">navigationViewStyle</span><span class="p">(</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct NavStackView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavStackView()
-    }
-}
+<span class="kd">struct</span> <span class="kt">NavStackView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">NavStackView</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

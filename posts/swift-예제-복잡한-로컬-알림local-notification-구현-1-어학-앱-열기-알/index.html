@@ -638,11 +638,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -753,19 +748,13 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
   
 
   
@@ -861,7 +850,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2153 words"
+  title="2143 words"
 >
   <em>11 min</em> read</span>
 
@@ -895,7 +884,7 @@
   
 
   <div class="content">
-    <h4 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <p><strong>참고</strong></p>
 
 <ul>
   <li><a href="http://yoonbumtae.com/?p=5064">Swift(스위프트): 로컬 알림(Local Notification)을 스케줄에 맞춰 반복 발신하기 (및 한계점)</a></li>
@@ -905,9 +894,9 @@
 
 <hr />
 
-<h3 id="시나리오"><span class="me-2"><strong>시나리오</strong></span><a href="#시나리오" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="시나리오"><span class="me-2"><strong>시나리오</strong></span><a href="#시나리오" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="앱-설명"><span class="me-2"><strong>앱 설명</strong></span><a href="#앱-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="앱-설명"><span class="me-2"><strong>앱 설명</strong></span><a href="#앱-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>하루에 한 번 공부 자료가 업데이트 되는 어학 앱이 있습니다.</li>
@@ -916,15 +905,16 @@
 
 <p> </p>
 
-<h4 id="목표"><span class="me-2"><strong>목표</strong></span><a href="#목표" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="목표"><span class="me-2"><strong>목표</strong></span><a href="#목표" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>[caption id=”attachment_6864” align=”alignnone” width=”377”] <a href="/assets/img/wp-content/uploads/2024/10/screenshot-2024-10-06-pm-5.07.57-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/10/screenshot-2024-10-06-pm-5.07.57-copy.jpg" alt="" loading="lazy"></a> 평일 특정 시간에 30분 간격으로 앱을 열 것을 종용하는 알림을 보냄[/caption]</p>
-
-<p> </p>
-
-<p>[caption id=”attachment_6856” align=”alignnone” width=”570”] <a href="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-29-pm-3.05.20-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-29-pm-3.05.20-copy.jpg" alt="" loading="lazy"></a> 알림 스케줄[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2024/10/screenshot-2024-10-06-pm-5.07.57-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/10/screenshot-2024-10-06-pm-5.07.57-copy.jpg" alt="평일 특정 시간에 30분 간격으로 앱을 열 것을 종용하는 알림을 보냄" loading="lazy"></a> <br />
+<em>평일 특정 시간에 30분 간격으로 앱을 열 것을 종용하는 알림을 보냄</em></p>
 
 <p> </p>
+
+<p><a href="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-29-pm-3.05.20-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-29-pm-3.05.20-copy.jpg" alt="알림 스케줄" loading="lazy"></a> <br />
+<em>알림 스케줄</em>
+ </p>
 
 <ul>
   <li>월요일 ~ 금요일에 오전 9:30분부터 오후 9:30분까지 30분 간격으로 앱을 열어 공부하라는 <a href="https://developer.apple.com/documentation/usernotifications/scheduling-a-notification-locally-from-your-app">로컬 알림(Local Notification)</a>을 보냅니다.
@@ -938,7 +928,7 @@
 
 <p> </p>
 
-<h3 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>앱을 열면 그 날에는 더 이상 알림이 울릴 필요가 없으므로 당일의 남은 알림은 모두 삭제합니다.</li>
@@ -947,20 +937,19 @@
 
 <p> </p>
 
-<h3 id="구현"><span class="me-2"><strong>구현</strong></span><a href="#구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="구현"><span class="me-2"><strong>구현</strong></span><a href="#구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
+<h3 id="알림-등록"><span class="me-2"><strong>알림 등록</strong></span><a href="#알림-등록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="알림-등록"><span class="me-2"><strong>알림 등록</strong></span><a href="#알림-등록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1029,74 +1018,74 @@
 66
 67
 68
-</pre></td><td class="rouge-code"><pre>static func scheduleLocalNotifications() {
-    let center = UNUserNotificationCenter.current()
+</pre></td><td class="rouge-code"><pre><span class="kd">static</span> <span class="kd">func</span> <span class="nf">scheduleLocalNotifications</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">center</span> <span class="o">=</span> <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span>
     
-    // TODO: - 모든 기존 알림 제거?
+    <span class="c1">// TODO: - 모든 기존 알림 제거?</span>
     
-    let content = UNMutableNotificationContent()
-    content.title = "오늘 공부 시작?"
-    content.body = "일본어 회화 공부를 시작하세요."
-    content.sound = .fastFanfare
+    <span class="k">let</span> <span class="nv">content</span> <span class="o">=</span> <span class="kt">UNMutableNotificationContent</span><span class="p">()</span>
+    <span class="n">content</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"오늘 공부 시작?"</span>
+    <span class="n">content</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="s">"일본어 회화 공부를 시작하세요."</span>
+    <span class="n">content</span><span class="o">.</span><span class="n">sound</span> <span class="o">=</span> <span class="o">.</span><span class="n">fastFanfare</span>
     
-    let calendar = Calendar.current
+    <span class="k">let</span> <span class="nv">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span>
     
-    // 알림이 등록될 날짜의 다음 날
-    var currentDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+    <span class="c1">// 알림이 등록될 날짜의 다음 날</span>
+    <span class="k">var</span> <span class="nv">currentDate</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">Date</span><span class="p">())</span><span class="o">!</span>
     
-    // 10:30부터 21:30까지 30분 간격으로 최대 60개의 알림 등록
-    let startHour = 9
-    let endHour = 21
-    let intervalMinutes = 30
-    var notificationCount = 0
+    <span class="c1">// 10:30부터 21:30까지 30분 간격으로 최대 60개의 알림 등록</span>
+    <span class="k">let</span> <span class="nv">startHour</span> <span class="o">=</span> <span class="mi">9</span>
+    <span class="k">let</span> <span class="nv">endHour</span> <span class="o">=</span> <span class="mi">21</span>
+    <span class="k">let</span> <span class="nv">intervalMinutes</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="k">var</span> <span class="nv">notificationCount</span> <span class="o">=</span> <span class="mi">0</span>
     
-    while notificationCount &lt; 60 {
-        var dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .weekday], from: currentDate)
+    <span class="k">while</span> <span class="n">notificationCount</span> <span class="o">&lt;</span> <span class="mi">60</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">dateComponents</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">dateComponents</span><span class="p">([</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="o">.</span><span class="n">minute</span><span class="p">,</span> <span class="o">.</span><span class="n">weekday</span><span class="p">],</span> <span class="nv">from</span><span class="p">:</span> <span class="n">currentDate</span><span class="p">)</span>
         
-        // 토요일(7), 일요일(1)은 제외
-        guard let weekday = dateComponents.weekday, weekday != 7, weekday != 1 else {
-            // 다음 날로 이동, notificationCount는 업데이트하지 않음
-            currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
-            continue
-        }
+        <span class="c1">// 토요일(7), 일요일(1)은 제외</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">weekday</span> <span class="o">=</span> <span class="n">dateComponents</span><span class="o">.</span><span class="n">weekday</span><span class="p">,</span> <span class="n">weekday</span> <span class="o">!=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">weekday</span> <span class="o">!=</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// 다음 날로 이동, notificationCount는 업데이트하지 않음</span>
+            <span class="n">currentDate</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">currentDate</span><span class="p">)</span><span class="o">!</span>
+            <span class="k">continue</span>
+        <span class="p">}</span>
         
-        // 9:30부터 21:30까지 30분 간격으로 알림 설정
-        dateComponents.hour = startHour
-        dateComponents.minute = 30
+        <span class="c1">// 9:30부터 21:30까지 30분 간격으로 알림 설정</span>
+        <span class="n">dateComponents</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="n">startHour</span>
+        <span class="n">dateComponents</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="mi">30</span>
         
-        while let year = dateComponents.year,
-              let month = dateComponents.month,
-              let day = dateComponents.day,
-              let hour = dateComponents.hour,
-              let minute = dateComponents.minute,
-              hour &lt;= endHour &amp;&amp; notificationCount &lt; 60 {
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        <span class="k">while</span> <span class="k">let</span> <span class="nv">year</span> <span class="o">=</span> <span class="n">dateComponents</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+              <span class="k">let</span> <span class="nv">month</span> <span class="o">=</span> <span class="n">dateComponents</span><span class="o">.</span><span class="n">month</span><span class="p">,</span>
+              <span class="k">let</span> <span class="nv">day</span> <span class="o">=</span> <span class="n">dateComponents</span><span class="o">.</span><span class="n">day</span><span class="p">,</span>
+              <span class="k">let</span> <span class="nv">hour</span> <span class="o">=</span> <span class="n">dateComponents</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span>
+              <span class="k">let</span> <span class="nv">minute</span> <span class="o">=</span> <span class="n">dateComponents</span><span class="o">.</span><span class="n">minute</span><span class="p">,</span>
+              <span class="n">hour</span> <span class="o">&lt;=</span> <span class="n">endHour</span> <span class="o">&amp;&amp;</span> <span class="n">notificationCount</span> <span class="o">&lt;</span> <span class="mi">60</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">trigger</span> <span class="o">=</span> <span class="kt">UNCalendarNotificationTrigger</span><span class="p">(</span><span class="nv">dateMatching</span><span class="p">:</span> <span class="n">dateComponents</span><span class="p">,</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
             
-            let uniqueIdentifier = "Noti_AppOpenPromotion_\(year)_\(month)_\(day)_\(hour)_\(minute)"
-            let request = UNNotificationRequest(identifier: uniqueIdentifier, content: content, trigger: trigger)
+            <span class="k">let</span> <span class="nv">uniqueIdentifier</span> <span class="o">=</span> <span class="s">"Noti_AppOpenPromotion_</span><span class="se">\(</span><span class="n">year</span><span class="se">)</span><span class="s">_</span><span class="se">\(</span><span class="n">month</span><span class="se">)</span><span class="s">_</span><span class="se">\(</span><span class="n">day</span><span class="se">)</span><span class="s">_</span><span class="se">\(</span><span class="n">hour</span><span class="se">)</span><span class="s">_</span><span class="se">\(</span><span class="n">minute</span><span class="se">)</span><span class="s">"</span>
+            <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">UNNotificationRequest</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="n">uniqueIdentifier</span><span class="p">,</span> <span class="nv">content</span><span class="p">:</span> <span class="n">content</span><span class="p">,</span> <span class="nv">trigger</span><span class="p">:</span> <span class="n">trigger</span><span class="p">)</span>
             
-            // print("등록대기 \(uniqueIdentifier): \(hour):\(minute) :: \(currentDate)")
-            center.add(request) { error in
-                if let error {
-                    print("알림 \(uniqueIdentifier) 등록 실패: \(error)")
-                    return
-                }
+            <span class="c1">// print("등록대기 \(uniqueIdentifier): \(hour):\(minute) :: \(currentDate)")</span>
+            <span class="n">center</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">request</span><span class="p">)</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+                <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"알림 </span><span class="se">\(</span><span class="n">uniqueIdentifier</span><span class="se">)</span><span class="s"> 등록 실패: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                    <span class="k">return</span>
+                <span class="p">}</span>
                 
-                print("알림 \(uniqueIdentifier) 등록 성공: \(hour):\(minute) :: \(currentDate)")
-            }
+                <span class="nf">print</span><span class="p">(</span><span class="s">"알림 </span><span class="se">\(</span><span class="n">uniqueIdentifier</span><span class="se">)</span><span class="s"> 등록 성공: </span><span class="se">\(</span><span class="n">hour</span><span class="se">)</span><span class="s">:</span><span class="se">\(</span><span class="n">minute</span><span class="se">)</span><span class="s"> :: </span><span class="se">\(</span><span class="n">currentDate</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
             
-            notificationCount += 1
-            dateComponents.minute! += intervalMinutes
+            <span class="n">notificationCount</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">dateComponents</span><span class="o">.</span><span class="n">minute</span><span class="o">!</span> <span class="o">+=</span> <span class="n">intervalMinutes</span>
             
-            if dateComponents.minute! &gt;= 60 {
-                dateComponents.minute! = 0
-                dateComponents.hour! += 1
-            }
-        }
+            <span class="k">if</span> <span class="n">dateComponents</span><span class="o">.</span><span class="n">minute</span><span class="o">!</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="p">{</span>
+                <span class="n">dateComponents</span><span class="o">.</span><span class="n">minute</span><span class="o">!</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">dateComponents</span><span class="o">.</span><span class="n">hour</span><span class="o">!</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
         
-        // 다음 날로 이동
-        currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
-    }
+        <span class="c1">// 다음 날로 이동</span>
+        <span class="n">currentDate</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">currentDate</span><span class="p">)</span><span class="o">!</span>
+    <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1113,10 +1102,10 @@
 
 <p> </p>
 
-<h4 id="당일-알림-삭제"><span class="me-2"><strong>당일 알림 삭제</strong></span><a href="#당일-알림-삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="당일-알림-삭제"><span class="me-2"><strong>당일 알림 삭제</strong></span><a href="#당일-알림-삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1149,38 +1138,38 @@
 30
 31
 32
-</pre></td><td class="rouge-code"><pre>static func removeTodayNotificationsAfterCurrentTime() {
-    let currentDate = Date()
-    let calendar = Calendar.current
+</pre></td><td class="rouge-code"><pre><span class="kd">static</span> <span class="kd">func</span> <span class="nf">removeTodayNotificationsAfterCurrentTime</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">currentDate</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
+    <span class="k">let</span> <span class="nv">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span>
     
-    // 현재 날짜 및 시간 정보를 가져옵니다.
-    let currentYear = calendar.component(.year, from: currentDate)
-    let currentMonth = calendar.component(.month, from: currentDate)
-    let currentDay = calendar.component(.day, from: currentDate)
+    <span class="c1">// 현재 날짜 및 시간 정보를 가져옵니다.</span>
+    <span class="k">let</span> <span class="nv">currentYear</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">component</span><span class="p">(</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">currentDate</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">currentMonth</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">component</span><span class="p">(</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">currentDate</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">currentDay</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">component</span><span class="p">(</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">currentDate</span><span class="p">)</span>
     
-    let center = UNUserNotificationCenter.current()
+    <span class="k">let</span> <span class="nv">center</span> <span class="o">=</span> <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span>
     
-    // 오늘 날짜의 노티피케이션을 삭제
-    center.getPendingNotificationRequests { requests in
-        for request in requests {
-            // 고유 아이디에서 날짜와 시간을 추출
-            let identifierComponents = request.identifier.split(separator: "_").map { String($0) }
-            guard identifierComponents.count &gt;= 5,
-                  let year = Int(identifierComponents[2]),
-                  let month = Int(identifierComponents[3]),
-                  let day = Int(identifierComponents[4]) else {
-                continue
-            }
+    <span class="c1">// 오늘 날짜의 노티피케이션을 삭제</span>
+    <span class="n">center</span><span class="o">.</span><span class="n">getPendingNotificationRequests</span> <span class="p">{</span> <span class="n">requests</span> <span class="k">in</span>
+        <span class="k">for</span> <span class="n">request</span> <span class="k">in</span> <span class="n">requests</span> <span class="p">{</span>
+            <span class="c1">// 고유 아이디에서 날짜와 시간을 추출</span>
+            <span class="k">let</span> <span class="nv">identifierComponents</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">identifier</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"_"</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+            <span class="k">guard</span> <span class="n">identifierComponents</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">,</span>
+                  <span class="k">let</span> <span class="nv">year</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">identifierComponents</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span>
+                  <span class="k">let</span> <span class="nv">month</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">identifierComponents</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span>
+                  <span class="k">let</span> <span class="nv">day</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">identifierComponents</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">continue</span>
+            <span class="p">}</span>
             
-            // 오늘 날짜와 시간이 조건에 맞는지 확인
-            if year == currentYear, month == currentMonth, day == currentDay {
-                // 조건에 맞는 노티피케이션 삭제
-                center.removePendingNotificationRequests(withIdentifiers: [request.identifier])
-                print("삭제됨:", request.identifier)
-            }
-        }
-    }
-}
+            <span class="c1">// 오늘 날짜와 시간이 조건에 맞는지 확인</span>
+            <span class="k">if</span> <span class="n">year</span> <span class="o">==</span> <span class="n">currentYear</span><span class="p">,</span> <span class="n">month</span> <span class="o">==</span> <span class="n">currentMonth</span><span class="p">,</span> <span class="n">day</span> <span class="o">==</span> <span class="n">currentDay</span> <span class="p">{</span>
+                <span class="c1">// 조건에 맞는 노티피케이션 삭제</span>
+                <span class="n">center</span><span class="o">.</span><span class="nf">removePendingNotificationRequests</span><span class="p">(</span><span class="nv">withIdentifiers</span><span class="p">:</span> <span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">identifier</span><span class="p">])</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"삭제됨:"</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1192,10 +1181,10 @@
 
 <p> </p>
 
-<h4 id="뷰-컨트롤러에서-사용-uikit"><span class="me-2"><strong>뷰 컨트롤러에서 사용 (UIKit)</strong></span><a href="#뷰-컨트롤러에서-사용-uikit" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="뷰-컨트롤러에서-사용-uikit"><span class="me-2"><strong>뷰 컨트롤러에서 사용 (UIKit)</strong></span><a href="#뷰-컨트롤러에서-사용-uikit" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1228,38 +1217,38 @@
 30
 31
 32
-</pre></td><td class="rouge-code"><pre>override func viewDidLoad() {
-    super.viewDidLoad()
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
     
-    // ... //
+    <span class="c1">// ... //</span>
     
-    // 앱이 백그라운드에서 다시 돌아올 때의 노티피케이션 등록
-    NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
-}
+    <span class="c1">// 앱이 백그라운드에서 다시 돌아올 때의 노티피케이션 등록</span>
+    <span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">appDidBecomeActive</span><span class="p">),</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">didBecomeActiveNotification</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
 
-override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    // ... //
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">animated</span><span class="p">)</span>
+    <span class="c1">// ... //</span>
     
-    setLocalNotiAlarms()
-}
+    <span class="nf">setLocalNotiAlarms</span><span class="p">()</span>
+<span class="p">}</span>
 
-override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillDisappear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewWillDisappear</span><span class="p">(</span><span class="n">animated</span><span class="p">)</span>
     
-    // 노티피케이션 옵저버 제거
-    NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
-}
+    <span class="c1">// 노티피케이션 옵저버 제거</span>
+    <span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">removeObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">didBecomeActiveNotification</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
 
-@objc func appDidBecomeActive() {
-    // 백그라운드에서 돌아왔을 때 실행할 함수
-    setLocalNotiAlarms()
-}
+<span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">appDidBecomeActive</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 백그라운드에서 돌아왔을 때 실행할 함수</span>
+    <span class="nf">setLocalNotiAlarms</span><span class="p">()</span>
+<span class="p">}</span>
 
-private func setLocalNotiAlarms() {
-    LocalNotiSchedulingService.removeTodayNotificationsAfterCurrentTime()
-    LocalNotiSchedulingService.scheduleLocalNotifications()
-}
+<span class="kd">private</span> <span class="kd">func</span> <span class="nf">setLocalNotiAlarms</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">LocalNotiSchedulingService</span><span class="o">.</span><span class="nf">removeTodayNotificationsAfterCurrentTime</span><span class="p">()</span>
+    <span class="kt">LocalNotiSchedulingService</span><span class="o">.</span><span class="nf">scheduleLocalNotifications</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

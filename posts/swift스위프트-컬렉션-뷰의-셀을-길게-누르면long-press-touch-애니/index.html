@@ -1300,8 +1300,8 @@
 
 <h4 id="기존-프로젝트"><span class="me-2"><strong>기존 프로젝트</strong></span><a href="#기존-프로젝트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1396,99 +1396,99 @@
 92
 93
 94
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-struct ImageInfo {
+<span class="kd">struct</span> <span class="kt">ImageInfo</span> <span class="p">{</span>
     
-    let name: String
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
     
-    var image: UIImage? {
-        return UIImage(named: "\(name).jpg")
-    }
+    <span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">.jpg"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    init (name: String) {
-        self.name = name
-    }
-}
+    <span class="nf">init</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-class ViewController: UIViewController {
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
     
-    let viewModel = ImageViewModel() // 뷰모델 변수를 추가합니다.
+    <span class="k">let</span> <span class="nv">viewModel</span> <span class="o">=</span> <span class="kt">ImageViewModel</span><span class="p">()</span> <span class="c1">// 뷰모델 변수를 추가합니다.</span>
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="o">!</span>
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
         
-    }
-}
+    <span class="p">}</span>
+<span class="p">}</span>
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span> <span class="p">{</span>
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
-        return viewModel.countOfImageList // 뷰모델에서 카운트 가져옴
-    }
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">viewModel</span><span class="o">.</span><span class="n">countOfImageList</span> <span class="c1">// 뷰모델에서 카운트 가져옴</span>
+    <span class="p">}</span>
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as?
-                Cell else {
-            return UICollectionViewCell()
-        }
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withReuseIdentifier</span><span class="p">:</span> <span class="s">"cell"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span>
+                <span class="kt">Cell</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kt">UICollectionViewCell</span><span class="p">()</span>
+        <span class="p">}</span>
         
-        let imageInfo = viewModel.imageInfo(at: indexPath.item) // indexPath.item을 기준으로 뷰모델에서 ImageInfo 가져옴
-        cell.update(info: imageInfo) // 해당 셀을 업데이트
-        return cell
+        <span class="k">let</span> <span class="nv">imageInfo</span> <span class="o">=</span> <span class="n">viewModel</span><span class="o">.</span><span class="nf">imageInfo</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">)</span> <span class="c1">// indexPath.item을 기준으로 뷰모델에서 ImageInfo 가져옴</span>
+        <span class="n">cell</span><span class="o">.</span><span class="nf">update</span><span class="p">(</span><span class="nv">info</span><span class="p">:</span> <span class="n">imageInfo</span><span class="p">)</span> <span class="c1">// 해당 셀을 업데이트</span>
+        <span class="k">return</span> <span class="n">cell</span>
 
-    }
+    <span class="p">}</span>
     
-    // 셀이 선택되었을 때
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    <span class="c1">// 셀이 선택되었을 때</span>
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">didSelectItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
         
-        let imageInfo = viewModel.imageInfo(at: indexPath.item)
+        <span class="k">let</span> <span class="nv">imageInfo</span> <span class="o">=</span> <span class="n">viewModel</span><span class="o">.</span><span class="nf">imageInfo</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">)</span>
         
-        let dialog = UIAlertController(title: "\(imageInfo.name)", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+        <span class="k">let</span> <span class="nv">dialog</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">imageInfo</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">action</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"확인"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">UIAlertAction</span><span class="o">.</span><span class="kt">Style</span><span class="o">.</span><span class="k">default</span><span class="p">)</span>
 
-        dialog.addAction(action)
+        <span class="n">dialog</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 
-        self.present(dialog, animated: true, completion: nil)
+        <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">dialog</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
 
-    }
-}
+    <span class="p">}</span>
+<span class="p">}</span>
 
-class Cell: UICollectionViewCell {
+<span class="kd">class</span> <span class="kt">Cell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
     
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">imgView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">nameLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
     
-    func update(info: ImageInfo) {
-        imgView.image = info.image
-        nameLabel.text = info.name
-    }
-}
+    <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">info</span><span class="p">:</span> <span class="kt">ImageInfo</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">imgView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">image</span>
+        <span class="n">nameLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">name</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-// view model
-class ImageViewModel {
+<span class="c1">// view model</span>
+<span class="kd">class</span> <span class="kt">ImageViewModel</span> <span class="p">{</span>
     
-    let imageInfoList: [ImageInfo] = [
-        ImageInfo(name: "Chrysanthemum"),
-        ImageInfo(name: "Desert"),
-        ImageInfo(name: "Hydrangeas"),
-        ImageInfo(name: "Jellyfish"),
-        ImageInfo(name: "Koala"),
-        ImageInfo(name: "Lighthouse"),
-        ImageInfo(name: "Penguins"),
-        ImageInfo(name: "Tulips"),
-    ]
+    <span class="k">let</span> <span class="nv">imageInfoList</span><span class="p">:</span> <span class="p">[</span><span class="kt">ImageInfo</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Chrysanthemum"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Desert"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Hydrangeas"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Jellyfish"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Koala"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Lighthouse"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Penguins"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Tulips"</span><span class="p">),</span>
+    <span class="p">]</span>
     
-    var countOfImageList: Int {
-        return imageInfoList.count
-    }
+    <span class="k">var</span> <span class="nv">countOfImageList</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">imageInfoList</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
     
-    func imageInfo(at index: Int) -&gt; ImageInfo {
-        return imageInfoList[index]
-    }
-}
+    <span class="kd">func</span> <span class="nf">imageInfo</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageInfo</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">imageInfoList</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1798,8 +1798,8 @@ class ImageViewModel {
 
 <h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1957,162 +1957,162 @@ class ImageViewModel {
 155
 156
 157
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-struct ImageInfo {
+<span class="kd">struct</span> <span class="kt">ImageInfo</span> <span class="p">{</span>
     
-    let name: String
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
     
-    var image: UIImage? {
-        return UIImage(named: "\(name).jpg")
-    }
+    <span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">.jpg"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    init (name: String) {
-        self.name = name
-    }
-}
+    <span class="nf">init</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-class ViewController: UIViewController {
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
     
-    let viewModel = ImageViewModel() // 뷰모델 변수를 추가합니다.
+    <span class="k">let</span> <span class="nv">viewModel</span> <span class="o">=</span> <span class="kt">ImageViewModel</span><span class="p">()</span> <span class="c1">// 뷰모델 변수를 추가합니다.</span>
     
-    var currentLongPressedCell: Cell?
+    <span class="k">var</span> <span class="nv">currentLongPressedCell</span><span class="p">:</span> <span class="kt">Cell</span><span class="p">?</span>
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="o">!</span>
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupLongGestureRecognizerOnCollection()
-    }
-}
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="nf">setupLongGestureRecognizerOnCollection</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-extension ViewController: UIGestureRecognizerDelegate {
-    // long press 이벤트 부여
-    private func setupLongGestureRecognizerOnCollection() {
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIGestureRecognizerDelegate</span> <span class="p">{</span>
+    <span class="c1">// long press 이벤트 부여</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupLongGestureRecognizerOnCollection</span><span class="p">()</span> <span class="p">{</span>
         
-        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
-        longPressedGesture.minimumPressDuration = 0.5
-        longPressedGesture.delegate = self
-        longPressedGesture.delaysTouchesBegan = true
-        collectionView.addGestureRecognizer(longPressedGesture)
-    }
+        <span class="k">let</span> <span class="nv">longPressedGesture</span> <span class="o">=</span> <span class="kt">UILongPressGestureRecognizer</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">handleLongPress</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:)))</span>
+        <span class="n">longPressedGesture</span><span class="o">.</span><span class="n">minimumPressDuration</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">longPressedGesture</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+        <span class="n">longPressedGesture</span><span class="o">.</span><span class="n">delaysTouchesBegan</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">collectionView</span><span class="o">.</span><span class="nf">addGestureRecognizer</span><span class="p">(</span><span class="n">longPressedGesture</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // long press 이벤트 액션
-    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+    <span class="c1">// long press 이벤트 액션</span>
+    <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">handleLongPress</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="kt">UILongPressGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
         
-        let location = gestureRecognizer.location(in: gestureRecognizer.view)
-        let collectionView = gestureRecognizer.view as! UICollectionView
+        <span class="k">let</span> <span class="nv">location</span> <span class="o">=</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="nf">location</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">view</span> <span class="k">as!</span> <span class="kt">UICollectionView</span>
         
-        if gestureRecognizer.state == .began {
+        <span class="k">if</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="o">.</span><span class="n">began</span> <span class="p">{</span>
             
-            if let indexPath = collectionView.indexPathForItem(at: location) {
-                print("Long press at item began: \(indexPath.row)")
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">indexPathForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">location</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Long press at item began: </span><span class="se">\(</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
                 
-                // animation
-                UIView.animate(withDuration: 0.2) {
-                    if let cell = collectionView.cellForItem(at: indexPath) as? Cell {
-                        self.currentLongPressedCell = cell
-                        cell.transform = .init(scaleX: 0.95, y: 0.95)
-                    }
-                }
-            }
-        } else if gestureRecognizer.state == .ended {
+                <span class="c1">// animation</span>
+                <span class="kt">UIView</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">withDuration</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">cellForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">Cell</span> <span class="p">{</span>
+                        <span class="k">self</span><span class="o">.</span><span class="n">currentLongPressedCell</span> <span class="o">=</span> <span class="n">cell</span>
+                        <span class="n">cell</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">scaleX</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="o">.</span><span class="n">ended</span> <span class="p">{</span>
             
-            if let indexPath = collectionView.indexPathForItem(at: location) {
-                print("Long press at item end: \(indexPath.row)")
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">indexPathForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">location</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Long press at item end: </span><span class="se">\(</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
                 
-                // animation
-                UIView.animate(withDuration: 0.2) {
-                    if let cell = self.currentLongPressedCell  {
-                        cell.transform = .init(scaleX: 1, y: 1)
+                <span class="c1">// animation</span>
+                <span class="kt">UIView</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">withDuration</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">currentLongPressedCell</span>  <span class="p">{</span>
+                        <span class="n">cell</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">scaleX</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
                         
-                        if cell == collectionView.cellForItem(at: indexPath) as? Cell {
+                        <span class="k">if</span> <span class="n">cell</span> <span class="o">==</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">cellForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">Cell</span> <span class="p">{</span>
                             
-                            let imageInfo = self.viewModel.imageInfo(at: indexPath.item)
+                            <span class="k">let</span> <span class="nv">imageInfo</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">imageInfo</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">)</span>
                             
-                            let dialog = UIAlertController(title: "\(imageInfo.name)", message: "롱 프레스 터치로 실행된 경고창입니다.", preferredStyle: .alert)
-                            let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+                            <span class="k">let</span> <span class="nv">dialog</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">imageInfo</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"롱 프레스 터치로 실행된 경고창입니다."</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+                            <span class="k">let</span> <span class="nv">action</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"확인"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">UIAlertAction</span><span class="o">.</span><span class="kt">Style</span><span class="o">.</span><span class="k">default</span><span class="p">)</span>
 
-                            dialog.addAction(action)
+                            <span class="n">dialog</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 
-                            self.present(dialog, animated: true, completion: nil)
-                        }
-                    }
-                }
-            }
-        } else {
-            return
-        }
-    }
-}
+                            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">dialog</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span> <span class="p">{</span>
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
-        return viewModel.countOfImageList // 뷰모델에서 카운트 가져옴
-    }
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">viewModel</span><span class="o">.</span><span class="n">countOfImageList</span> <span class="c1">// 뷰모델에서 카운트 가져옴</span>
+    <span class="p">}</span>
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as?
-                Cell else {
-            return UICollectionViewCell()
-        }
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withReuseIdentifier</span><span class="p">:</span> <span class="s">"cell"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span>
+                <span class="kt">Cell</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kt">UICollectionViewCell</span><span class="p">()</span>
+        <span class="p">}</span>
         
-        let imageInfo = viewModel.imageInfo(at: indexPath.item) // indexPath.item을 기준으로 뷰모델에서 ImageInfo 가져옴
-        cell.update(info: imageInfo) // 해당 셀을 업데이트
-        return cell
+        <span class="k">let</span> <span class="nv">imageInfo</span> <span class="o">=</span> <span class="n">viewModel</span><span class="o">.</span><span class="nf">imageInfo</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">)</span> <span class="c1">// indexPath.item을 기준으로 뷰모델에서 ImageInfo 가져옴</span>
+        <span class="n">cell</span><span class="o">.</span><span class="nf">update</span><span class="p">(</span><span class="nv">info</span><span class="p">:</span> <span class="n">imageInfo</span><span class="p">)</span> <span class="c1">// 해당 셀을 업데이트</span>
+        <span class="k">return</span> <span class="n">cell</span>
 
-    }
+    <span class="p">}</span>
     
-    // 셀이 선택되었을 때
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    <span class="c1">// 셀이 선택되었을 때</span>
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">didSelectItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
         
-        let imageInfo = viewModel.imageInfo(at: indexPath.item)
+        <span class="k">let</span> <span class="nv">imageInfo</span> <span class="o">=</span> <span class="n">viewModel</span><span class="o">.</span><span class="nf">imageInfo</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">)</span>
         
-        let dialog = UIAlertController(title: "\(imageInfo.name)", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+        <span class="k">let</span> <span class="nv">dialog</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">imageInfo</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">action</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"확인"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">UIAlertAction</span><span class="o">.</span><span class="kt">Style</span><span class="o">.</span><span class="k">default</span><span class="p">)</span>
 
-        dialog.addAction(action)
+        <span class="n">dialog</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 
-        self.present(dialog, animated: true, completion: nil)
+        <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">dialog</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
 
-    }
-}
+    <span class="p">}</span>
+<span class="p">}</span>
 
-class Cell: UICollectionViewCell {
+<span class="kd">class</span> <span class="kt">Cell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
     
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">imgView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">nameLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
     
-    func update(info: ImageInfo) {
-        imgView.image = info.image
-        nameLabel.text = info.name
-    }
-}
+    <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">info</span><span class="p">:</span> <span class="kt">ImageInfo</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">imgView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">image</span>
+        <span class="n">nameLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">name</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-// view model
-class ImageViewModel {
+<span class="c1">// view model</span>
+<span class="kd">class</span> <span class="kt">ImageViewModel</span> <span class="p">{</span>
     
-    let imageInfoList: [ImageInfo] = [
-        ImageInfo(name: "Chrysanthemum"),
-        ImageInfo(name: "Desert"),
-        ImageInfo(name: "Hydrangeas"),
-        ImageInfo(name: "Jellyfish"),
-        ImageInfo(name: "Koala"),
-        ImageInfo(name: "Lighthouse"),
-        ImageInfo(name: "Penguins"),
-        ImageInfo(name: "Tulips"),
-    ]
+    <span class="k">let</span> <span class="nv">imageInfoList</span><span class="p">:</span> <span class="p">[</span><span class="kt">ImageInfo</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Chrysanthemum"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Desert"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Hydrangeas"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Jellyfish"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Koala"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Lighthouse"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Penguins"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Tulips"</span><span class="p">),</span>
+    <span class="p">]</span>
     
-    var countOfImageList: Int {
-        return imageInfoList.count
-    }
+    <span class="k">var</span> <span class="nv">countOfImageList</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">imageInfoList</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
     
-    func imageInfo(at index: Int) -&gt; ImageInfo {
-        return imageInfoList[index]
-    }
-}
+    <span class="kd">func</span> <span class="nf">imageInfo</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageInfo</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">imageInfoList</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

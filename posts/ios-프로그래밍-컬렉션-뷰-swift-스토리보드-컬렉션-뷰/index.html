@@ -1910,8 +1910,8 @@
 
 <p>이러한 정보를 제공하기 위해 <code class="language-plaintext highlighter-rouge">UICollectionViewDataSource</code>, <code class="language-plaintext highlighter-rouge">UICollectionViewDelegate</code> 프로토콜을 구현해야 합니다. 뷰 컨트롤러 클래스의 최상단 부분에 다음 두 개 프로토콜을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1924,18 +1924,18 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-class ViewController: UIViewController,
-                      UICollectionViewDataSource,
-                      UICollectionViewDelegate {
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span>
+                      <span class="kt">UICollectionViewDataSource</span><span class="p">,</span>
+                      <span class="kt">UICollectionViewDelegate</span> <span class="p">{</span>
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="c1">// Do any additional setup after loading the view.</span>
+    <span class="p">}</span>
 
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위 부분을 추가하면 아래와 같은 에러가 발생할 것입니다.<code class="language-plaintext highlighter-rouge">[Fix]</code> 버튼을 눌러 프로토콜 조각(protocol stub)을 추가합니다. <a href="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-08-pm-11.09.36.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-08-pm-11.09.36.png" alt="" loading="lazy"></a></p>
@@ -2279,8 +2279,8 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
 
 <p>이것들을 종합한 <code class="language-plaintext highlighter-rouge">ViewController.swift</code>의 내용은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2371,95 +2371,95 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
 88
 89
 90
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-struct ImageInfo {
-    let name: String
+<span class="kd">struct</span> <span class="kt">ImageInfo</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
     
-    var image: UIImage? {
-        return UIImage(named: "\(name).jpg")
-    }
+    <span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">.jpg"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    init (name: String) {
-        self.name = name
-    }
-}
+    <span class="nf">init</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-class ViewController: UIViewController,
-                      UICollectionViewDataSource,
-                      UICollectionViewDelegate {
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span>
+                      <span class="kt">UICollectionViewDataSource</span><span class="p">,</span>
+                      <span class="kt">UICollectionViewDelegate</span> <span class="p">{</span>
     
-    let viewModel = ImageViewModel() // 뷰모델 변수를 추가합니다.
+    <span class="k">let</span> <span class="nv">viewModel</span> <span class="o">=</span> <span class="kt">ImageViewModel</span><span class="p">()</span> <span class="c1">// 뷰모델 변수를 추가합니다.</span>
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
-        return viewModel.countOfImageList // 뷰모델에서 카운트 가져옴
-    }
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">viewModel</span><span class="o">.</span><span class="n">countOfImageList</span> <span class="c1">// 뷰모델에서 카운트 가져옴</span>
+    <span class="p">}</span>
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as?
-                Cell else {
-            return UICollectionViewCell()
-        }
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withReuseIdentifier</span><span class="p">:</span> <span class="s">"cell"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span>
+                <span class="kt">Cell</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kt">UICollectionViewCell</span><span class="p">()</span>
+        <span class="p">}</span>
         
-        let imageInfo = viewModel.imageInfo(at: indexPath.item) // indexPath.item을 기준으로 뷰모델에서 ImageInfo 가져옴
-        cell.update(info: imageInfo) // 해당 셀을 업데이트
-        return cell
+        <span class="k">let</span> <span class="nv">imageInfo</span> <span class="o">=</span> <span class="n">viewModel</span><span class="o">.</span><span class="nf">imageInfo</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">)</span> <span class="c1">// indexPath.item을 기준으로 뷰모델에서 ImageInfo 가져옴</span>
+        <span class="n">cell</span><span class="o">.</span><span class="nf">update</span><span class="p">(</span><span class="nv">info</span><span class="p">:</span> <span class="n">imageInfo</span><span class="p">)</span> <span class="c1">// 해당 셀을 업데이트</span>
+        <span class="k">return</span> <span class="n">cell</span>
 
-    }
+    <span class="p">}</span>
     
-    // 셀이 선택되었을 때
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    <span class="c1">// 셀이 선택되었을 때</span>
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">didSelectItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
         
-        let imageInfo = viewModel.imageInfo(at: indexPath.item)
+        <span class="k">let</span> <span class="nv">imageInfo</span> <span class="o">=</span> <span class="n">viewModel</span><span class="o">.</span><span class="nf">imageInfo</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">)</span>
         
-        let dialog = UIAlertController(title: "\(imageInfo.name)", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+        <span class="k">let</span> <span class="nv">dialog</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">imageInfo</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">action</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"확인"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">UIAlertAction</span><span class="o">.</span><span class="kt">Style</span><span class="o">.</span><span class="k">default</span><span class="p">)</span>
 
-        dialog.addAction(action)
+        <span class="n">dialog</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 
-        self.present(dialog, animated: true, completion: nil)
+        <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">dialog</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
 
-    }
+    <span class="p">}</span>
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="c1">// Do any additional setup after loading the view.</span>
+    <span class="p">}</span>
 
-}
+<span class="p">}</span>
 
-class Cell: UICollectionViewCell {
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+<span class="kd">class</span> <span class="kt">Cell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">imgView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">nameLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
     
-    func update(info: ImageInfo) {
-        imgView.image = info.image
-        nameLabel.text = info.name
-    }
+    <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">info</span><span class="p">:</span> <span class="kt">ImageInfo</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">imgView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">image</span>
+        <span class="n">nameLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">name</span>
+    <span class="p">}</span>
     
-}
+<span class="p">}</span>
 
-// view model
-class ImageViewModel {
-    let imageInfoList: [ImageInfo] = [
-        ImageInfo(name: "Chrysanthemum"),
-        ImageInfo(name: "Desert"),
-        ImageInfo(name: "Hydrangeas"),
-        ImageInfo(name: "Jellyfish"),
-        ImageInfo(name: "Koala"),
-        ImageInfo(name: "Lighthouse"),
-        ImageInfo(name: "Penguins"),
-        ImageInfo(name: "Tulips"),
-    ]
+<span class="c1">// view model</span>
+<span class="kd">class</span> <span class="kt">ImageViewModel</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">imageInfoList</span><span class="p">:</span> <span class="p">[</span><span class="kt">ImageInfo</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Chrysanthemum"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Desert"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Hydrangeas"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Jellyfish"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Koala"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Lighthouse"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Penguins"</span><span class="p">),</span>
+        <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Tulips"</span><span class="p">),</span>
+    <span class="p">]</span>
     
-    var countOfImageList: Int {
-        return imageInfoList.count
-    }
+    <span class="k">var</span> <span class="nv">countOfImageList</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">imageInfoList</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
     
-    func imageInfo(at index: Int) -&gt; ImageInfo {
-        return imageInfoList[index]
-    }
-}
+    <span class="kd">func</span> <span class="nf">imageInfo</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ImageInfo</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">imageInfoList</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

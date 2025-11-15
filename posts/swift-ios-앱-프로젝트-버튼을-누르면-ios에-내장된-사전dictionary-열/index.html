@@ -620,6 +620,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -638,11 +703,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -661,21 +721,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -770,6 +815,37 @@
     
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
 
 
@@ -860,7 +936,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="764 words"
+  title="773 words"
 >
   <em>4 min</em> read</span>
 
@@ -894,20 +970,18 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>iOS에서 UIKit을 사용하여 내장된 사전을 여는 방법은 <code class="language-plaintext highlighter-rouge">UIReferenceLibraryViewController</code>를 활용하는 것입니다. 이 클래스는 지정된 단어에 대한 사전 정의를 표시하는 뷰 컨트롤러를 제공합니다.</p>
 
-<h4 id="uikit"><span class="me-2"><strong>UIKit</strong></span><a href="#uikit" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<h5 id="구현-방법"><span class="me-2"><strong>구현 방법</strong></span><a href="#구현-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="uikit에서-구현방법"><span class="me-2"><strong>UIKit에서 구현방법</strong></span><a href="#uikit에서-구현방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래는 특정 단어에 대해 iOS 내장 사전을 여는 예제입니다.</p>
 
-<h5 id="1-기본-구현"><span class="me-2"><strong>1. 기본 구현</strong></span><a href="#1-기본-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -918,33 +992,35 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-func openDictionary(for word: String, from viewController: UIViewController) {
-  if UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: word) {
-    let dictionaryVC = UIReferenceLibraryViewController(term: word)
-    viewController.present(dictionaryVC, animated: true, completion: nil)
-  } else {
-    print("No definition available for the word: \(word)")
-  }
-}
+<span class="kd">func</span> <span class="nf">openDictionary</span><span class="p">(</span><span class="k">for</span> <span class="nv">word</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">from</span> <span class="nv">viewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="kt">UIReferenceLibraryViewController</span><span class="o">.</span><span class="nf">dictionaryHasDefinition</span><span class="p">(</span><span class="nv">forTerm</span><span class="p">:</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">dictionaryVC</span> <span class="o">=</span> <span class="kt">UIReferenceLibraryViewController</span><span class="p">(</span><span class="nv">term</span><span class="p">:</span> <span class="n">word</span><span class="p">)</span>
+    <span class="n">viewController</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">dictionaryVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"No definition available for the word: </span><span class="se">\(</span><span class="n">word</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>사용 예시</strong> 버튼 눌렀을때 액션 함수 등에서 사용합니다.</p>
+<h4 id="사용-예시"><span class="me-2"><strong>사용 예시</strong></span><a href="#사용-예시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p>버튼 눌렀을때 액션 함수 등에서 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>openDictionary(for: "language", from: self)
+</pre></td><td class="rouge-code"><pre><span class="nf">openDictionary</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="s">"language"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
-
-<p> </p>
-
+<p><a href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzA4cGlidmJ3MjdqYW13MHlyZGE5c3NsbDViMTY0amtiMjBhNTFjMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bQq9Sf4QwjhD8mz66F/giphy.gif" class="popup img-link shimmer"><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzA4cGlidmJ3MjdqYW13MHlyZGE5c3NsbDViMTY0amtiMjBhNTFjMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bQq9Sf4QwjhD8mz66F/giphy.gif" alt="" loading="lazy"></a>
+ 
+&lt;!–</p>
 <iframe width="222" height="480" src="https://giphy.com/embed/bQq9Sf4QwjhD8mz66F" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<p>–&gt;</p>
 
 <p> </p>
 
-<h5 id="설명"><span class="me-2"><strong>설명</strong></span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="설명"><span class="me-2"><strong>설명</strong></span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ol>
   <li><strong>UIReferenceLibraryViewController</strong>
@@ -968,7 +1044,7 @@ func openDictionary(for word: String, from viewController: UIViewController) {
 
 <p> </p>
 
-<h5 id="주의-사항"><span class="me-2"><strong>주의 사항</strong></span><a href="#주의-사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="주의-사항"><span class="me-2"><strong>주의 사항</strong></span><a href="#주의-사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>SwiftUI 프리뷰 및 시뮬레이터에선 사전 기능이 동작하지 않을 수 있습니다.</li>
@@ -978,12 +1054,14 @@ func openDictionary(for word: String, from viewController: UIViewController) {
 
 <p> </p>
 
-<h4 id="swiftui"><span class="me-2"><strong>SwiftUI</strong></span><a href="#swiftui" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="swiftui에서-구현방법"><span class="me-2"><strong>SwiftUI에서 구현방법</strong></span><a href="#swiftui에서-구현방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>SwiftUI에서 iOS 내장 사전을 여는 방법은 UIKit의 <code class="language-plaintext highlighter-rouge">UIReferenceLibraryViewController</code>를 SwiftUI 뷰에 통합하여 사용하면 됩니다. 이를 위해 <code class="language-plaintext highlighter-rouge">UIViewControllerRepresentable</code>을 활용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="코드-1"><span class="me-2"><strong>코드</strong></span><a href="#코드-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1026,47 +1104,47 @@ func openDictionary(for word: String, from viewController: UIViewController) {
 40
 41
 42
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-struct DictionaryRPView: UIViewControllerRepresentable {
-  let term: String
+<span class="kd">struct</span> <span class="kt">DictionaryRPView</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentable</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">term</span><span class="p">:</span> <span class="kt">String</span>
   
-  func makeUIViewController(context: Context) -&gt; UIReferenceLibraryViewController {
-    return UIReferenceLibraryViewController(term: term)
-  }
+  <span class="kd">func</span> <span class="nf">makeUIViewController</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIReferenceLibraryViewController</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">UIReferenceLibraryViewController</span><span class="p">(</span><span class="nv">term</span><span class="p">:</span> <span class="n">term</span><span class="p">)</span>
+  <span class="p">}</span>
   
-  func updateUIViewController(_ uiViewController: UIReferenceLibraryViewController, context: Context) {
-    // 업데이트 로직 없음
-  }
-}
+  <span class="kd">func</span> <span class="nf">updateUIViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiViewController</span><span class="p">:</span> <span class="kt">UIReferenceLibraryViewController</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 업데이트 로직 없음</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-struct DictionaryView: View {
-  @State private var isShowingDictionary = false
-  @State private var word = "language"
+<span class="kd">struct</span> <span class="kt">DictionaryView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+  <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">isShowingDictionary</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">word</span> <span class="o">=</span> <span class="s">"language"</span>
   
-  var body: some View {
-    VStack(spacing: 20) {
-      Text("Tap the button to open the dictionary.")
-        .padding()
+  <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kt">VStack</span><span class="p">(</span><span class="nv">spacing</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">Text</span><span class="p">(</span><span class="s">"Tap the button to open the dictionary."</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
       
-      Button("Open Dictionary for \(word)") {
-        if UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: word) {
-          isShowingDictionary = true
-        } else {
-          print("No definition available for the word: \(word)")
-        }
-      }
-      .padding()
-    }
-    .sheet(isPresented: $isShowingDictionary) {
-      DictionaryRPView(term: word)
-    }
-  }
-}
+      <span class="kt">Button</span><span class="p">(</span><span class="s">"Open Dictionary for </span><span class="se">\(</span><span class="n">word</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="kt">UIReferenceLibraryViewController</span><span class="o">.</span><span class="nf">dictionaryHasDefinition</span><span class="p">(</span><span class="nv">forTerm</span><span class="p">:</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">isShowingDictionary</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"No definition available for the word: </span><span class="se">\(</span><span class="n">word</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="o">.</span><span class="nf">padding</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="o">.</span><span class="nf">sheet</span><span class="p">(</span><span class="nv">isPresented</span><span class="p">:</span> <span class="n">$isShowingDictionary</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">DictionaryRPView</span><span class="p">(</span><span class="nv">term</span><span class="p">:</span> <span class="n">word</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-#Preview {
-  DictionaryView()
-}
+<span class="cp">#Preview {</span>
+  <span class="kt">DictionaryView</span><span class="p">()</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1074,7 +1152,7 @@ struct DictionaryView: View {
 
 <p><a href="/assets/img/wp-content/uploads/2024/12/IMG_4687.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/12/IMG_4687.jpg" alt="" loading="lazy"></a></p>
 
-<h5 id="설명-1"><span class="me-2"><strong>설명</strong></span><a href="#설명-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="설명-1"><span class="me-2"><strong>설명</strong></span><a href="#설명-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ol>
   <li><strong>UIViewControllerRepresentable</strong>

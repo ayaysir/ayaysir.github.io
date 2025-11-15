@@ -909,8 +909,8 @@
 
 <p>아래 코드를 <code class="language-plaintext highlighter-rouge">Vibration.swift</code>라는 이름의 파일로 프로젝트에 추가합니다. (<a href="https://stackoverflow.com/questions/26455880/how-to-make-iphone-vibrate-using-swift">출처</a>)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -981,75 +981,75 @@
 68
 69
 70
-</pre></td><td class="rouge-code"><pre>import UIKit
-import AVFoundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">AVFoundation</span>
 
-enum Vibration: String, CaseIterable {
+<span class="kd">enum</span> <span class="kt">Vibration</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span> <span class="p">{</span>
     
-    static var allCases: [Vibration] {
-        let defaultList = [
-            error,
-            success,
-            warning,
-            light,
-            medium,
-            heavy,
-            selection,
-            oldSchool,
-        ]
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">allCases</span><span class="p">:</span> <span class="p">[</span><span class="kt">Vibration</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">defaultList</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">error</span><span class="p">,</span>
+            <span class="n">success</span><span class="p">,</span>
+            <span class="n">warning</span><span class="p">,</span>
+            <span class="n">light</span><span class="p">,</span>
+            <span class="n">medium</span><span class="p">,</span>
+            <span class="n">heavy</span><span class="p">,</span>
+            <span class="n">selection</span><span class="p">,</span>
+            <span class="n">oldSchool</span><span class="p">,</span>
+        <span class="p">]</span>
         
-        if #available(iOS 13.0, *) {
-            return defaultList + [soft, rigid,]
-        }
+        <span class="k">if</span> <span class="k">#available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">defaultList</span> <span class="o">+</span> <span class="p">[</span><span class="n">soft</span><span class="p">,</span> <span class="n">rigid</span><span class="p">,]</span>
+        <span class="p">}</span>
         
-        return defaultList
-    }
+        <span class="k">return</span> <span class="n">defaultList</span>
+    <span class="p">}</span>
     
-    case error
-    case success
-    case warning
-    case light
-    case medium
-    case heavy
-    case selection
-    /// 옛 진동 방식
-    case oldSchool
+    <span class="k">case</span> <span class="n">error</span>
+    <span class="k">case</span> <span class="n">success</span>
+    <span class="k">case</span> <span class="n">warning</span>
+    <span class="k">case</span> <span class="n">light</span>
+    <span class="k">case</span> <span class="n">medium</span>
+    <span class="k">case</span> <span class="n">heavy</span>
+    <span class="k">case</span> <span class="n">selection</span>
+    <span class="c1">/// 옛 진동 방식</span>
+    <span class="k">case</span> <span class="n">oldSchool</span>
     
-    @available(iOS 13.0, *)
-    case soft
+    <span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">soft</span>
     
-    @available(iOS 13.0, *)
-    case rigid
+    <span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">rigid</span>
     
-    public func vibrate() {
-        switch self {
-        case .error:
-            UINotificationFeedbackGenerator().notificationOccurred(.error)
-        case .success:
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
-        case .warning:
-            UINotificationFeedbackGenerator().notificationOccurred(.warning)
-        case .light:
-            UIImpactFeedbackGenerator(style: .light).impactOccurred()
-        case .medium:
-            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        case .heavy:
-            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-        case .soft:
-            if #available(iOS 13.0, *) {
-                UIImpactFeedbackGenerator(style: .soft).impactOccurred()
-            }
-        case .rigid:
-            if #available(iOS 13.0, *) {
-                UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
-            }
-        case .selection:
-            UISelectionFeedbackGenerator().selectionChanged()
-        case .oldSchool:
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-        }
-    }
-}
+    <span class="kd">public</span> <span class="kd">func</span> <span class="nf">vibrate</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">error</span><span class="p">:</span>
+            <span class="kt">UINotificationFeedbackGenerator</span><span class="p">()</span><span class="o">.</span><span class="nf">notificationOccurred</span><span class="p">(</span><span class="o">.</span><span class="n">error</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">success</span><span class="p">:</span>
+            <span class="kt">UINotificationFeedbackGenerator</span><span class="p">()</span><span class="o">.</span><span class="nf">notificationOccurred</span><span class="p">(</span><span class="o">.</span><span class="n">success</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">warning</span><span class="p">:</span>
+            <span class="kt">UINotificationFeedbackGenerator</span><span class="p">()</span><span class="o">.</span><span class="nf">notificationOccurred</span><span class="p">(</span><span class="o">.</span><span class="n">warning</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">light</span><span class="p">:</span>
+            <span class="kt">UIImpactFeedbackGenerator</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">light</span><span class="p">)</span><span class="o">.</span><span class="nf">impactOccurred</span><span class="p">()</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">medium</span><span class="p">:</span>
+            <span class="kt">UIImpactFeedbackGenerator</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">medium</span><span class="p">)</span><span class="o">.</span><span class="nf">impactOccurred</span><span class="p">()</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">heavy</span><span class="p">:</span>
+            <span class="kt">UIImpactFeedbackGenerator</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">heavy</span><span class="p">)</span><span class="o">.</span><span class="nf">impactOccurred</span><span class="p">()</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">soft</span><span class="p">:</span>
+            <span class="k">if</span> <span class="k">#available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">UIImpactFeedbackGenerator</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">soft</span><span class="p">)</span><span class="o">.</span><span class="nf">impactOccurred</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">rigid</span><span class="p">:</span>
+            <span class="k">if</span> <span class="k">#available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">UIImpactFeedbackGenerator</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">rigid</span><span class="p">)</span><span class="o">.</span><span class="nf">impactOccurred</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">selection</span><span class="p">:</span>
+            <span class="kt">UISelectionFeedbackGenerator</span><span class="p">()</span><span class="o">.</span><span class="nf">selectionChanged</span><span class="p">()</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">oldSchool</span><span class="p">:</span>
+            <span class="kt">AudioServicesPlaySystemSound</span><span class="p">(</span><span class="kt">SystemSoundID</span><span class="p">(</span><span class="n">kSystemSoundID_Vibrate</span><span class="p">))</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1083,8 +1083,8 @@ enum Vibration: String, CaseIterable {
 
 <p>뷰 컨트롤러 코드를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1120,40 +1120,40 @@ enum Vibration: String, CaseIterable {
 33
 34
 35
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-class ViewController: UIViewController {
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
 
-    @IBOutlet weak var pkvVibrationCategory: UIPickerView!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">pkvVibrationCategory</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="o">!</span>
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
         
-        // 피커 뷰 delegate, dataSource
-        pkvVibrationCategory.delegate = self
-        pkvVibrationCategory.dataSource = self
-    }
+        <span class="c1">// 피커 뷰 delegate, dataSource</span>
+        <span class="n">pkvVibrationCategory</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+        <span class="n">pkvVibrationCategory</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="p">}</span>
 
-    @IBAction func btnActVibrate(_ sender: Any) {
-        let index = pkvVibrationCategory.selectedRow(inComponent: 0)
-        Vibration.allCases[index].vibrate()
-    }
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActVibrate</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">index</span> <span class="o">=</span> <span class="n">pkvVibrationCategory</span><span class="o">.</span><span class="nf">selectedRow</span><span class="p">(</span><span class="nv">inComponent</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="kt">Vibration</span><span class="o">.</span><span class="n">allCases</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="nf">vibrate</span><span class="p">()</span>
+    <span class="p">}</span>
     
-}
+<span class="p">}</span>
 
-extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -&gt; Int {
-        1
-    }
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIPickerViewDelegate</span><span class="p">,</span> <span class="kt">UIPickerViewDataSource</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">numberOfComponents</span><span class="p">(</span><span class="k">in</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="mi">1</span>
+    <span class="p">}</span>
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -&gt; Int {
-        Vibration.allCases.count
-    }
+    <span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">numberOfRowsInComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="kt">Vibration</span><span class="o">.</span><span class="n">allCases</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&gt; String? {
-        Vibration.allCases[row].rawValue
-    }
-}
+    <span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">titleForRow</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">forComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="kt">Vibration</span><span class="o">.</span><span class="n">allCases</span><span class="p">[</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">rawValue</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

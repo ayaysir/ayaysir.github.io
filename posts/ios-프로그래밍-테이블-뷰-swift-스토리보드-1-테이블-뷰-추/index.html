@@ -1550,8 +1550,8 @@
 
 <p>이러한 정보를 제공하기 위해 <code class="language-plaintext highlighter-rouge">UITableViewDataSource</code>, <code class="language-plaintext highlighter-rouge">UITableViewDelegate</code> 프로토콜을 구현해야 합니다. 뷰 컨트롤러 클래스의 최상단 부분에 다음 두 개 프로토콜을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1568,22 +1568,22 @@
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-// 필수1: 테이블 뷰 셀 몇 개? (UITableViewDataSource)
-// 필수2: 테이블 뷰 어떻게 보여줄까? (UITableViewDelegate)
-class ViewController: UIViewController,
-                            UITableViewDelegate,
-                            UITableViewDataSource {
-    // ...
+<span class="c1">// 필수1: 테이블 뷰 셀 몇 개? (UITableViewDataSource)</span>
+<span class="c1">// 필수2: 테이블 뷰 어떻게 보여줄까? (UITableViewDelegate)</span>
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span>
+                            <span class="kt">UITableViewDelegate</span><span class="p">,</span>
+                            <span class="kt">UITableViewDataSource</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
 
-        // Do any additional setup after loading the view.
-    }
+        <span class="c1">// Do any additional setup after loading the view.</span>
+    <span class="p">}</span>
 
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위 부분을 추가하면 다음과 같은 에러가 발생할 것입니다. <code class="language-plaintext highlighter-rouge">[Fix]</code> 버튼을 눌러 프로토콜 조각(protocol stub)을 추가합니다.</p>

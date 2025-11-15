@@ -1043,8 +1043,8 @@
 
 <h5 id="1-아래-코드를-프로젝트에-추가합니다"><span class="me-2"><strong>1, 아래 코드를 프로젝트에 추가합니다.</strong></span><a href="#1-아래-코드를-프로젝트에-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1087,56 +1087,56 @@
 40
 41
 42
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-#if canImport(SwiftUI) &amp;&amp; DEBUG
-import SwiftUI
+<span class="cp">#if canImport(SwiftUI) &amp;&amp; DEBUG</span>
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-@available(iOS 13.0, *)
-struct UIViewPreview&lt;View: UIView&gt;: UIViewRepresentable {
-    let view: View
+<span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">struct</span> <span class="kt">UIViewPreview</span><span class="o">&lt;</span><span class="kt">View</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">View</span>
 
-    init(_ builder: @escaping () -&gt; View) {
-        view = builder()
-    }
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">builder</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">View</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">view</span> <span class="o">=</span> <span class="nf">builder</span><span class="p">()</span>
+    <span class="p">}</span>
 
-    // MARK: - UIViewRepresentable
-    func makeUIView(context: Context) -&gt; UIView {
-        return view
-    }
+    <span class="c1">// MARK: - UIViewRepresentable</span>
+    <span class="kd">func</span> <span class="nf">makeUIView</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIView</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="p">}</span>
 
-    func updateUIView(_ view: UIView, context: Context) {
-        view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
-    }
-}
+    <span class="kd">func</span> <span class="nf">updateUIView</span><span class="p">(</span><span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">setContentHuggingPriority</span><span class="p">(</span><span class="o">.</span><span class="n">defaultHigh</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">horizontal</span><span class="p">)</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">setContentHuggingPriority</span><span class="p">(</span><span class="o">.</span><span class="n">defaultHigh</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">vertical</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-@available(iOS 13.0, *)
-struct UIViewControllerPreview&lt;ViewController: UIViewController&gt;: UIViewControllerRepresentable {
-    let viewController: ViewController
+<span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">struct</span> <span class="kt">UIViewControllerPreview</span><span class="o">&lt;</span><span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">viewController</span><span class="p">:</span> <span class="kt">ViewController</span>
 
-    init(_ builder: @escaping () -&gt; ViewController) {
-        viewController = builder()
-    }
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">builder</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">ViewController</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">viewController</span> <span class="o">=</span> <span class="nf">builder</span><span class="p">()</span>
+    <span class="p">}</span>
 
-    // MARK: - UIViewControllerRepresentable
-    func makeUIViewController(context: Context) -&gt; ViewController {
-        viewController
-    }
+    <span class="c1">// MARK: - UIViewControllerRepresentable</span>
+    <span class="kd">func</span> <span class="nf">makeUIViewController</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ViewController</span> <span class="p">{</span>
+        <span class="n">viewController</span>
+    <span class="p">}</span>
 
-    func updateUIViewController(_ uiViewController: ViewController, context: UIViewControllerRepresentableContext&lt;UIViewControllerPreview&lt;ViewController&gt;&gt;) {
-        return
-    }
-}
-#endif
+    <span class="kd">func</span> <span class="nf">updateUIViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiViewController</span><span class="p">:</span> <span class="kt">ViewController</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentableContext</span><span class="o">&lt;</span><span class="kt">UIViewControllerPreview</span><span class="o">&lt;</span><span class="kt">ViewController</span><span class="o">&gt;&gt;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <h5 id="2-커스텀-uiview-클래스를-작성합니다-간단한-선과-원을-그리는-그리는-예제입니다"><span class="me-2"><strong>2. 커스텀 <code class="language-plaintext highlighter-rouge">UIView</code> 클래스를 작성합니다. 간단한 선과 원을 그리는 그리는 예제입니다.</strong></span><a href="#2-커스텀-uiview-클래스를-작성합니다-간단한-선과-원을-그리는-그리는-예제입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1163,32 +1163,32 @@ struct UIViewControllerPreview&lt;ViewController: UIViewController&gt;: UIViewCo
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-struct Constant {
-    var marginX: CGFloat = 10
-    var marginY: CGFloat = 10
-}
+<span class="kd">struct</span> <span class="kt">Constant</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">marginX</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">var</span> <span class="nv">marginY</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="p">}</span>
 
-class ExampleView: UIView {
+<span class="kd">class</span> <span class="kt">ExampleView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="p">{</span>
     
-    let cnst = Constant()
+    <span class="k">let</span> <span class="nv">cnst</span> <span class="o">=</span> <span class="kt">Constant</span><span class="p">()</span>
     
-    override func draw(_ rect: CGRect) {
-        let context = UIGraphicsGetCurrentContext()!
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">draw</span><span class="p">(</span><span class="n">_</span> <span class="nv">rect</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="kt">UIGraphicsGetCurrentContext</span><span class="p">()</span><span class="o">!</span>
         
-        let width = bounds.width
+        <span class="k">let</span> <span class="nv">width</span> <span class="o">=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">width</span>
         
-        UIColor.green.set()
-        context.move(to: CGPoint(x: cnst.marginX, y: cnst.marginY))
-        context.addLine(to: CGPoint(x: width - cnst.marginX, y: cnst.marginY))
-        context.strokePath()
+        <span class="kt">UIColor</span><span class="o">.</span><span class="n">green</span><span class="o">.</span><span class="nf">set</span><span class="p">()</span>
+        <span class="n">context</span><span class="o">.</span><span class="nf">move</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">cnst</span><span class="o">.</span><span class="n">marginX</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">cnst</span><span class="o">.</span><span class="n">marginY</span><span class="p">))</span>
+        <span class="n">context</span><span class="o">.</span><span class="nf">addLine</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">width</span> <span class="o">-</span> <span class="n">cnst</span><span class="o">.</span><span class="n">marginX</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">cnst</span><span class="o">.</span><span class="n">marginY</span><span class="p">))</span>
+        <span class="n">context</span><span class="o">.</span><span class="nf">strokePath</span><span class="p">()</span>
         
-        let path = UIBezierPath(ovalIn: CGRect(x: 100, y: 100, width: 100, height: 100))
-        path.stroke()
+        <span class="k">let</span> <span class="nv">path</span> <span class="o">=</span> <span class="kt">UIBezierPath</span><span class="p">(</span><span class="nv">ovalIn</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">100</span><span class="p">))</span>
+        <span class="n">path</span><span class="o">.</span><span class="nf">stroke</span><span class="p">()</span>
         
-    }
-}
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

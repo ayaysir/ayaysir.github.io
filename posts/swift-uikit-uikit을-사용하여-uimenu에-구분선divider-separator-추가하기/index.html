@@ -638,6 +638,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -763,7 +795,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="400 words"
+  title="399 words"
 >
   <em>2 min</em> read</span>
 
@@ -801,20 +833,22 @@
   <li><strong>출처</strong>: <a href="https://www.swiftjectivec.com/add-a-divider-in-context-menu-using-uikit/">Create Dividers in UIMenu using UIKit</a></li>
 </ul>
 
-<h3 id="시나리오"><span class="me-2"><strong>시나리오</strong></span><a href="#시나리오" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="시나리오"><span class="me-2"><strong>시나리오</strong></span><a href="#시나리오" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">UIKit</code>을 사용하여 <code class="language-plaintext highlighter-rouge">UIMenu</code> 내에 구분선을 추가하는 방법</p>
 
 <p> </p>
 
-<p>[caption id=”attachment_6860” align=”alignnone” width=”314”] <a href="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-30-pm-11.26.22-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-30-pm-11.26.22-copy.jpg" alt="" loading="lazy"></a> 구분선이 있는 컨텍스트 메뉴[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-30-pm-11.26.22-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-30-pm-11.26.22-copy.jpg" alt="구분선이 있는 컨텍스트 메뉴" loading="lazy"></a><br />
+<em>구분선이 있는 컨텍스트 메뉴</em></p>
 
+<h2 id="구현방법"><span class="me-2"><strong>구현방법</strong></span><a href="#구현방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p> </p>
 
 <p>버튼을 누르면 컨텍스트 메뉴가 뜨며, 메뉴가 표시될 때 구분선이 존재합니다:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -851,45 +885,45 @@
 34
 35
 36
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-class ContextDividerViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
+<span class="kd">class</span> <span class="kt">ContextDividerViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
         
-        // 1
-        let topActions = [
-            UIAction(title: "Two", image: UIImage(systemName: "2.square"), handler: { (_) in
-            }),
-            UIAction(title: "One", image: UIImage(systemName: "1.square"), handler: { (_) in
-            })
-        ]
-        // 2
-        let divider = UIMenu(title: "", options: .displayInline, children: topActions)
+        <span class="c1">// 1</span>
+        <span class="k">let</span> <span class="nv">topActions</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="kt">UIAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Two"</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"2.square"</span><span class="p">),</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">in</span>
+            <span class="p">}),</span>
+            <span class="kt">UIAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"One"</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"1.square"</span><span class="p">),</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">in</span>
+            <span class="p">})</span>
+        <span class="p">]</span>
+        <span class="c1">// 2</span>
+        <span class="k">let</span> <span class="nv">divider</span> <span class="o">=</span> <span class="kt">UIMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="o">.</span><span class="n">displayInline</span><span class="p">,</span> <span class="nv">children</span><span class="p">:</span> <span class="n">topActions</span><span class="p">)</span>
 
-        let bottomAction = UIAction(title: "Three", image: UIImage(systemName: "3.square"), handler: { (_) in
-        })
-        // 3
-        let items = [bottomAction, divider]
-        // 4
-        let menu = UIMenu(title: "Divider", children: items)
+        <span class="k">let</span> <span class="nv">bottomAction</span> <span class="o">=</span> <span class="kt">UIAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Three"</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"3.square"</span><span class="p">),</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">in</span>
+        <span class="p">})</span>
+        <span class="c1">// 3</span>
+        <span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">bottomAction</span><span class="p">,</span> <span class="n">divider</span><span class="p">]</span>
+        <span class="c1">// 4</span>
+        <span class="k">let</span> <span class="nv">menu</span> <span class="o">=</span> <span class="kt">UIMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Divider"</span><span class="p">,</span> <span class="nv">children</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
         
-        // 버튼을 눌렀을 때 menu가 뜨도록 함
-        let button = UIButton(configuration: .borderedProminent())
-        button.setTitle("Open", for: .normal)
-        button.showsMenuAsPrimaryAction = true
-        button.menu = menu
+        <span class="c1">// 버튼을 눌렀을 때 menu가 뜨도록 함</span>
+        <span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="o">.</span><span class="nf">borderedProminent</span><span class="p">())</span>
+        <span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">"Open"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">showsMenuAsPrimaryAction</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">menu</span> <span class="o">=</span> <span class="n">menu</span>
         
-        // 버튼을 화면 한가운데 추가
-        view.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    }
-}
+        <span class="c1">// 버튼을 화면 한가운데 추가</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">centerYAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">centerYAnchor</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>세부 사항</strong></p>
+<h3 id="세부-사항"><span class="me-2"><strong>세부 사항</strong></span><a href="#세부-사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ol>
   <li>구분선을 사용하려면 최소한 구분선 위와 아래에 하나 이상의 항목이 필요합니다. 그렇지 않으면 나눌 것이 없겠죠.</li>
@@ -7828,7 +7862,7 @@ class ContextDividerViewController: UIViewController {
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Swift: [ChatGPT가 말하는] 로컬 알림(로컬 노티피케이션) 기능의 한계점과 극복 방안</p>
+      <p>Swift: 김생성씨의 로컬 알림(로컬 노티피케이션) 기능의 한계점과 극복 방안</p>
     </a>
   
 

@@ -1619,8 +1619,8 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 
 <p><a href="/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-13-오전-12.15.55.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-13-오전-12.15.55.jpg" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1652,36 +1652,36 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 29
 30
 31
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-class DelayWorkViewController: UIViewController {
+<span class="kd">class</span> <span class="kt">DelayWorkViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
     
-    @IBOutlet weak var txvDebounce: UITextView!
-    @IBOutlet weak var txvThrottle: UITextView!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">txvDebounce</span><span class="p">:</span> <span class="kt">UITextView</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">txvThrottle</span><span class="p">:</span> <span class="kt">UITextView</span><span class="o">!</span>
     
-    private var debounce: Debounce!
-    private var throttle: Throttle!
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">debounce</span><span class="p">:</span> <span class="kt">Debounce</span><span class="o">!</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">throttle</span><span class="p">:</span> <span class="kt">Throttle</span><span class="o">!</span>
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
         
-        txvDebounce.text = ""
-        txvThrottle.text = ""
+        <span class="n">txvDebounce</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="n">txvThrottle</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
         
-        debounce = Debounce(milliseconds: 1000) { [unowned self] date in
-            txvDebounce.text += "DEBOUNCE: \(date)\n"
-        }
+        <span class="n">debounce</span> <span class="o">=</span> <span class="kt">Debounce</span><span class="p">(</span><span class="nv">milliseconds</span><span class="p">:</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">unowned</span> <span class="k">self</span><span class="p">]</span> <span class="n">date</span> <span class="k">in</span>
+            <span class="n">txvDebounce</span><span class="o">.</span><span class="n">text</span> <span class="o">+=</span> <span class="s">"DEBOUNCE: </span><span class="se">\(</span><span class="n">date</span><span class="se">)\n</span><span class="s">"</span>
+        <span class="p">}</span>
         
-        throttle = Throttle(milliseconds: 2000) { [unowned self] date in
-            txvThrottle.text += "THROTTLE: \(date)\n"
-        }
-    }
+        <span class="n">throttle</span> <span class="o">=</span> <span class="kt">Throttle</span><span class="p">(</span><span class="nv">milliseconds</span><span class="p">:</span> <span class="mi">2000</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">unowned</span> <span class="k">self</span><span class="p">]</span> <span class="n">date</span> <span class="k">in</span>
+            <span class="n">txvThrottle</span><span class="o">.</span><span class="n">text</span> <span class="o">+=</span> <span class="s">"THROTTLE: </span><span class="se">\(</span><span class="n">date</span><span class="se">)\n</span><span class="s">"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    @IBAction func btnActClick(_ sender: UIButton) {
-        debounce.run()
-        throttle.run()
-    }
-}
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActClick</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">debounce</span><span class="o">.</span><span class="nf">run</span><span class="p">()</span>
+        <span class="n">throttle</span><span class="o">.</span><span class="nf">run</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

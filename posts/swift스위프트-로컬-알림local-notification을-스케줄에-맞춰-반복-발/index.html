@@ -1106,8 +1106,8 @@ let trigger = UNCalendarNotificationTrigger(
   <li><a href="http://yoonbumtae.com/?p=4642">Swift(스위프트): Local Notification (로컬 푸시 메시지, 오프라인 푸시 메시지)</a></li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1248,146 +1248,146 @@ let trigger = UNCalendarNotificationTrigger(
 138
 139
 140
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-struct LocalDate {
-    let year: Int
-    let month: Int
-    let day: Int
-}
+<span class="kd">struct</span> <span class="kt">LocalDate</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">year</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">month</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">day</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">}</span>
 
-struct LocalTime {
-    let hour: Int
-    let minute: Int
-}
+<span class="kd">struct</span> <span class="kt">LocalTime</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">hour</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">minute</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">}</span>
 
-extension Date {
-    var localDate: LocalDate {
-        let current = Calendar.current
-        let components = current.dateComponents([.year, .month, .day], from: self)
-        let year = components.year!
-        let month = components.month!
-        let day = components.day!
-        return LocalDate(year: year, month: month, day: day)
-    }
+<span class="kd">extension</span> <span class="kt">Date</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">localDate</span><span class="p">:</span> <span class="kt">LocalDate</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">current</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span>
+        <span class="k">let</span> <span class="nv">components</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="nf">dateComponents</span><span class="p">([</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="o">.</span><span class="n">day</span><span class="p">],</span> <span class="nv">from</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">year</span> <span class="o">=</span> <span class="n">components</span><span class="o">.</span><span class="n">year</span><span class="o">!</span>
+        <span class="k">let</span> <span class="nv">month</span> <span class="o">=</span> <span class="n">components</span><span class="o">.</span><span class="n">month</span><span class="o">!</span>
+        <span class="k">let</span> <span class="nv">day</span> <span class="o">=</span> <span class="n">components</span><span class="o">.</span><span class="n">day</span><span class="o">!</span>
+        <span class="k">return</span> <span class="kt">LocalDate</span><span class="p">(</span><span class="nv">year</span><span class="p">:</span> <span class="n">year</span><span class="p">,</span> <span class="nv">month</span><span class="p">:</span> <span class="n">month</span><span class="p">,</span> <span class="nv">day</span><span class="p">:</span> <span class="n">day</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    var localTime: LocalTime {
-        let current = Calendar.current
-        let components = current.dateComponents([.hour, .minute], from: self)
-        let hour = components.hour!
-        let minute = components.minute!
-        return LocalTime(hour: hour, minute: minute)
-    }
+    <span class="k">var</span> <span class="nv">localTime</span><span class="p">:</span> <span class="kt">LocalTime</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">current</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span>
+        <span class="k">let</span> <span class="nv">components</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="nf">dateComponents</span><span class="p">([</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="o">.</span><span class="n">minute</span><span class="p">],</span> <span class="nv">from</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">hour</span> <span class="o">=</span> <span class="n">components</span><span class="o">.</span><span class="n">hour</span><span class="o">!</span>
+        <span class="k">let</span> <span class="nv">minute</span> <span class="o">=</span> <span class="n">components</span><span class="o">.</span><span class="n">minute</span><span class="o">!</span>
+        <span class="k">return</span> <span class="kt">LocalTime</span><span class="p">(</span><span class="nv">hour</span><span class="p">:</span> <span class="n">hour</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="n">minute</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func adding(_ component: Calendar.Component, _ value: Int) -&gt; Date {
-        return Calendar.current.date(byAdding: component, value: value, to: self)!
-    }
-}
+    <span class="kd">func</span> <span class="nf">adding</span><span class="p">(</span><span class="n">_</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Calendar</span><span class="o">.</span><span class="kt">Component</span><span class="p">,</span> <span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Date</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="n">component</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span><span class="o">!</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-class ViewController: UIViewController {
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="c1">// Do any additional setup after loading the view.</span>
+    <span class="p">}</span>
 
-    @IBAction func clicked(_ sender: Any) {
-        let center = UNUserNotificationCenter.current()
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">clicked</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">center</span> <span class="o">=</span> <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span>
 
-        let options: UNAuthorizationOptions = [.badge, .sound, .alert]
+        <span class="k">let</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">UNAuthorizationOptions</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">badge</span><span class="p">,</span> <span class="o">.</span><span class="n">sound</span><span class="p">,</span> <span class="o">.</span><span class="n">alert</span><span class="p">]</span>
 
-        center.requestAuthorization(options: options) { (flag, error) in
-            if flag == true {
+        <span class="n">center</span><span class="o">.</span><span class="nf">requestAuthorization</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="n">options</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">{</span>
                 
-                // Registering user notification
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
+                <span class="c1">// Registering user notification</span>
+                <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+                    <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">registerForRemoteNotifications</span><span class="p">()</span>
                     
-                    self.performNotificationSetup(uuidString: "1")
-                }
-            } else {
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Alert", message: "(Provide reason why we need Notifications permission)", preferredStyle: UIAlertController.Style.alert)
+                    <span class="k">self</span><span class="o">.</span><span class="nf">performNotificationSetup</span><span class="p">(</span><span class="nv">uuidString</span><span class="p">:</span> <span class="s">"1"</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+                    <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"(Provide reason why we need Notifications permission)"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="kt">UIAlertController</span><span class="o">.</span><span class="kt">Style</span><span class="o">.</span><span class="n">alert</span><span class="p">)</span>
 
-                    let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -&gt; Void in
+                    <span class="k">let</span> <span class="nv">settingsAction</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Settings"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
 
-                        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                            return
-                        }
+                        <span class="k">guard</span> <span class="k">let</span> <span class="nv">settingsUrl</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">openSettingsURLString</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                            <span class="k">return</span>
+                        <span class="p">}</span>
 
-                        if UIApplication.shared.canOpenURL(settingsUrl) {
-                            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                                print("Settings opened: \(success)") // Prints true
-                            })
-                        }
-                    }
-                    alert.addAction(settingsAction)
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-                    alert.addAction(cancelAction)
+                        <span class="k">if</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">canOpenURL</span><span class="p">(</span><span class="n">settingsUrl</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="n">settingsUrl</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="k">in</span>
+                                <span class="nf">print</span><span class="p">(</span><span class="s">"Settings opened: </span><span class="se">\(</span><span class="n">success</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="c1">// Prints true</span>
+                            <span class="p">})</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">settingsAction</span><span class="p">)</span>
+                    <span class="k">let</span> <span class="nv">cancelAction</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Cancel"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+                    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">cancelAction</span><span class="p">)</span>
                     
-                    self.present(alert, animated: true, completion: nil)
-                }
-            }
+                    <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
 
-        }
+        <span class="p">}</span>
         
-    }
+    <span class="p">}</span>
     
-    private func performNotificationSetup(uuidString: String) {
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">performNotificationSetup</span><span class="p">(</span><span class="nv">uuidString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
 
-        // Compute local date and local time for the next minute.
-        let date = Date()
-        let nextMinuteDate = date.adding(.minute, 1)
-        let nextMinuteLocalDate = nextMinuteDate.localDate
-        let nextMinuteLocalTime = nextMinuteDate.localTime
+        <span class="c1">// Compute local date and local time for the next minute.</span>
+        <span class="k">let</span> <span class="nv">date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
+        <span class="k">let</span> <span class="nv">nextMinuteDate</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="nf">adding</span><span class="p">(</span><span class="o">.</span><span class="n">minute</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">nextMinuteLocalDate</span> <span class="o">=</span> <span class="n">nextMinuteDate</span><span class="o">.</span><span class="n">localDate</span>
+        <span class="k">let</span> <span class="nv">nextMinuteLocalTime</span> <span class="o">=</span> <span class="n">nextMinuteDate</span><span class="o">.</span><span class="n">localTime</span>
         
-        //
-        // STEP 1 : Create the Notification's Content
-        //
-        let content = UNMutableNotificationContent()
-        content.title = "\(uuidString) My App"
-        content.body = "Body \(nextMinuteDate.localTime)"
+        <span class="c1">//</span>
+        <span class="c1">// STEP 1 : Create the Notification's Content</span>
+        <span class="c1">//</span>
+        <span class="k">let</span> <span class="nv">content</span> <span class="o">=</span> <span class="kt">UNMutableNotificationContent</span><span class="p">()</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">uuidString</span><span class="se">)</span><span class="s"> My App"</span>
+        <span class="n">content</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="s">"Body </span><span class="se">\(</span><span class="n">nextMinuteDate</span><span class="o">.</span><span class="n">localTime</span><span class="se">)</span><span class="s">"</span>
         
-        print("\(content.title)")
-        print("\(content.body)")
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">content</span><span class="o">.</span><span class="n">title</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">content</span><span class="o">.</span><span class="n">body</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
         
-        //
-        // STEP 2 : Specify the Conditions for Delivery
-        //
-        var dateComponents = DateComponents()
-        dateComponents.calendar = Calendar.current
+        <span class="c1">//</span>
+        <span class="c1">// STEP 2 : Specify the Conditions for Delivery</span>
+        <span class="c1">//</span>
+        <span class="k">var</span> <span class="nv">dateComponents</span> <span class="o">=</span> <span class="kt">DateComponents</span><span class="p">()</span>
+        <span class="n">dateComponents</span><span class="o">.</span><span class="n">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span>
 
-        dateComponents.year = nextMinuteLocalDate.year
-        dateComponents.month = nextMinuteLocalDate.month
-        dateComponents.day = nextMinuteLocalDate.day
+        <span class="n">dateComponents</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">nextMinuteLocalDate</span><span class="o">.</span><span class="n">year</span>
+        <span class="n">dateComponents</span><span class="o">.</span><span class="n">month</span> <span class="o">=</span> <span class="n">nextMinuteLocalDate</span><span class="o">.</span><span class="n">month</span>
+        <span class="n">dateComponents</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="n">nextMinuteLocalDate</span><span class="o">.</span><span class="n">day</span>
 
-        dateComponents.hour = nextMinuteLocalTime.hour
-        dateComponents.minute = nextMinuteLocalTime.minute
+        <span class="n">dateComponents</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="n">nextMinuteLocalTime</span><span class="o">.</span><span class="n">hour</span>
+        <span class="n">dateComponents</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="n">nextMinuteLocalTime</span><span class="o">.</span><span class="n">minute</span>
         
-        let trigger = UNCalendarNotificationTrigger(
-                 dateMatching: dateComponents,
-                 repeats: false
-        )
+        <span class="k">let</span> <span class="nv">trigger</span> <span class="o">=</span> <span class="kt">UNCalendarNotificationTrigger</span><span class="p">(</span>
+                 <span class="nv">dateMatching</span><span class="p">:</span> <span class="n">dateComponents</span><span class="p">,</span>
+                 <span class="nv">repeats</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">)</span>
         
-        //
-        // STEP 3 : Create and Register a Notification Request
-        //
-        // Create the request
-        let request = UNNotificationRequest(identifier: uuidString,
-                    content: content, trigger: trigger)
+        <span class="c1">//</span>
+        <span class="c1">// STEP 3 : Create and Register a Notification Request</span>
+        <span class="c1">//</span>
+        <span class="c1">// Create the request</span>
+        <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">UNNotificationRequest</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="n">uuidString</span><span class="p">,</span>
+                    <span class="nv">content</span><span class="p">:</span> <span class="n">content</span><span class="p">,</span> <span class="nv">trigger</span><span class="p">:</span> <span class="n">trigger</span><span class="p">)</span>
 
-        // Schedule the request with the system.
-        let notificationCenter = UNUserNotificationCenter.current()
-        notificationCenter.add(request) { (error) in
-           if error != nil {
-               // Handle any errors.
-               print("error \(error)")
-           }
-        }
+        <span class="c1">// Schedule the request with the system.</span>
+        <span class="k">let</span> <span class="nv">notificationCenter</span> <span class="o">=</span> <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span>
+        <span class="n">notificationCenter</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">request</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+           <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+               <span class="c1">// Handle any errors.</span>
+               <span class="nf">print</span><span class="p">(</span><span class="s">"error </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+           <span class="p">}</span>
+        <span class="p">}</span>
         
-        print("ok")
-    }
-}
+        <span class="nf">print</span><span class="p">(</span><span class="s">"ok"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

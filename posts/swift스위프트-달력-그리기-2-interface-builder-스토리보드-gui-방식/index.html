@@ -1457,7 +1457,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3815 words"
+  title="3813 words"
 >
   <em>21 min</em> read</span>
 
@@ -1679,8 +1679,8 @@ struct MonthMetadata {
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1849,173 +1849,173 @@ struct MonthMetadata {
 166
 167
 168
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-enum CalendarDataError: Error {
-    case metadataGeneration
-}
+<span class="kd">enum</span> <span class="kt">CalendarDataError</span><span class="p">:</span> <span class="kt">Error</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">metadataGeneration</span>
+<span class="p">}</span>
 
-class CalendarData {
-    typealias DateHandler = (Date) -&gt; Void
+<span class="kd">class</span> <span class="kt">CalendarData</span> <span class="p">{</span>
+    <span class="kd">typealias</span> <span class="kt">DateHandler</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span>
     
-    private let calendar = Calendar(identifier: .gregorian)
+    <span class="kd">private</span> <span class="k">let</span> <span class="nv">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="o">.</span><span class="n">gregorian</span><span class="p">)</span>
     
-    let changedBaseDateHandler: DateHandler
+    <span class="k">let</span> <span class="nv">changedBaseDateHandler</span><span class="p">:</span> <span class="kt">DateHandler</span>
     
-    private var baseDate: Date {
-        didSet {
-            days = generateDaysInMonth(for: baseDate)
-            // collectionView.reloadData()
-            //
-            // headerView.baseDate = baseDate
-            changedBaseDateHandler(baseDate)
-        }
-    }
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span> <span class="p">{</span>
+        <span class="k">didSet</span> <span class="p">{</span>
+            <span class="n">days</span> <span class="o">=</span> <span class="nf">generateDaysInMonth</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)</span>
+            <span class="c1">// collectionView.reloadData()</span>
+            <span class="c1">//</span>
+            <span class="c1">// headerView.baseDate = baseDate</span>
+            <span class="nf">changedBaseDateHandler</span><span class="p">(</span><span class="n">baseDate</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    var selectedDate: Date {
-        didSet {
-            days = generateDaysInMonth(for: self.baseDate)
-        }
-    }
-    private(set) var days: [Day] = []
+    <span class="k">var</span> <span class="nv">selectedDate</span><span class="p">:</span> <span class="kt">Date</span> <span class="p">{</span>
+        <span class="k">didSet</span> <span class="p">{</span>
+            <span class="n">days</span> <span class="o">=</span> <span class="nf">generateDaysInMonth</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">baseDate</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">days</span><span class="p">:</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
     
-    /// baseDate가 속한 달에서 주(week)의 수는 몇개인지 반환
-    var numberOfWeeksInBaseDate: Int {
-      calendar.range(of: .weekOfMonth, in: .month, for: baseDate)?.count ?? 0
-    }
+    <span class="c1">/// baseDate가 속한 달에서 주(week)의 수는 몇개인지 반환</span>
+    <span class="k">var</span> <span class="nv">numberOfWeeksInBaseDate</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+      <span class="n">calendar</span><span class="o">.</span><span class="nf">range</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="o">.</span><span class="n">weekOfMonth</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)?</span><span class="o">.</span><span class="n">count</span> <span class="p">??</span> <span class="mi">0</span>
+    <span class="p">}</span>
     
-    private lazy var dateFormatterOnlyD: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d"
-        return dateFormatter
-    }()
+    <span class="kd">private</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">dateFormatterOnlyD</span><span class="p">:</span> <span class="kt">DateFormatter</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">dateFormatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
+        <span class="n">dateFormatter</span><span class="o">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">"d"</span>
+        <span class="k">return</span> <span class="n">dateFormatter</span>
+    <span class="p">}()</span>
 
-    private lazy var dateFormatterCalendarTitle: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        dateFormatter.locale = Locale.autoupdatingCurrent
-        dateFormatter.setLocalizedDateFormatFromTemplate("MMMM y")
-        return dateFormatter
-    }()
+    <span class="kd">private</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">dateFormatterCalendarTitle</span><span class="p">:</span> <span class="kt">DateFormatter</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">dateFormatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
+        <span class="n">dateFormatter</span><span class="o">.</span><span class="n">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="o">.</span><span class="n">gregorian</span><span class="p">)</span>
+        <span class="n">dateFormatter</span><span class="o">.</span><span class="n">locale</span> <span class="o">=</span> <span class="kt">Locale</span><span class="o">.</span><span class="n">autoupdatingCurrent</span>
+        <span class="n">dateFormatter</span><span class="o">.</span><span class="nf">setLocalizedDateFormatFromTemplate</span><span class="p">(</span><span class="s">"MMMM y"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dateFormatter</span>
+    <span class="p">}()</span>
     
-    var localizedCalendarTitle: String {
-        return dateFormatterCalendarTitle.string(from: baseDate)
-    }
+    <span class="k">var</span> <span class="nv">localizedCalendarTitle</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">dateFormatterCalendarTitle</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    init(baseDate: Date, changedBaseDateHandler: @escaping DateHandler) {
-        self.baseDate = baseDate
-        self.changedBaseDateHandler = changedBaseDateHandler
-        self.selectedDate = baseDate
+    <span class="nf">init</span><span class="p">(</span><span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="nv">changedBaseDateHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">DateHandler</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">baseDate</span> <span class="o">=</span> <span class="n">baseDate</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">changedBaseDateHandler</span> <span class="o">=</span> <span class="n">changedBaseDateHandler</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">selectedDate</span> <span class="o">=</span> <span class="n">baseDate</span>
         
-        days = generateDaysInMonth(for: self.baseDate)
-    }
+        <span class="n">days</span> <span class="o">=</span> <span class="nf">generateDaysInMonth</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">baseDate</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // MARK: - Methods
+    <span class="c1">// MARK: - Methods</span>
     
-    func moveMonth(value: Int) {
-        baseDate = calendar.date(byAdding: .month, value: value, to: baseDate) ?? baseDate
-    }
+    <span class="kd">func</span> <span class="nf">moveMonth</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">baseDate</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)</span> <span class="p">??</span> <span class="n">baseDate</span>
+    <span class="p">}</span>
     
-    // MARK: - Generating a Month’s Metadata
+    <span class="c1">// MARK: - Generating a Month’s Metadata</span>
      
-    ///  Date를 기준으로 월별 메타데이터인 MonthMetaData 인스턴스를 생성.
-    private func monthMetadata(for baseDate: Date) throws -&gt; MonthMetadata {
-        // You ask the calendar for the number of days in baseDate‘s month, then you get the first day of that month.
-        guard
-            let numberOfDaysInMonth = calendar.range(of: .day, in: .month, for: baseDate)?.count,
-            let firstDayOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: baseDate))
-        else {
-            // Both of the previous calls return optional values. If either returns nil, the code throws an error and returns.
-            throw CalendarDataError.metadataGeneration
-        }
+    <span class="c1">///  Date를 기준으로 월별 메타데이터인 MonthMetaData 인스턴스를 생성.</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">monthMetadata</span><span class="p">(</span><span class="k">for</span> <span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">MonthMetadata</span> <span class="p">{</span>
+        <span class="c1">// You ask the calendar for the number of days in baseDate‘s month, then you get the first day of that month.</span>
+        <span class="k">guard</span>
+            <span class="k">let</span> <span class="nv">numberOfDaysInMonth</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">range</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)?</span><span class="o">.</span><span class="n">count</span><span class="p">,</span>
+            <span class="k">let</span> <span class="nv">firstDayOfMonth</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">dateComponents</span><span class="p">([</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="o">.</span><span class="n">month</span><span class="p">],</span> <span class="nv">from</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">))</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// Both of the previous calls return optional values. If either returns nil, the code throws an error and returns.</span>
+            <span class="k">throw</span> <span class="kt">CalendarDataError</span><span class="o">.</span><span class="n">metadataGeneration</span>
+        <span class="p">}</span>
         
-        // You get the weekday value, a number between one and seven that represents which day of the week the first day of the month falls on.
-        // weekday: 주일, 평일: 일요일 이외의 6일간을 가리키는 경우와 토·일요일 이외의 5일간을 가리키는 경우가 있음.
-        let firstDayWeekday: Int = calendar.component(.weekday, from: firstDayOfMonth)
+        <span class="c1">// You get the weekday value, a number between one and seven that represents which day of the week the first day of the month falls on.</span>
+        <span class="c1">// weekday: 주일, 평일: 일요일 이외의 6일간을 가리키는 경우와 토·일요일 이외의 5일간을 가리키는 경우가 있음.</span>
+        <span class="k">let</span> <span class="nv">firstDayWeekday</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">component</span><span class="p">(</span><span class="o">.</span><span class="n">weekday</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">firstDayOfMonth</span><span class="p">)</span>
         
-        // Finally, you use these values to create an instance of MonthMetadata and return it.
-        return MonthMetadata(
-            numberOfDays: numberOfDaysInMonth,
-            firstDay: firstDayOfMonth,
-            firstDayWeekday: firstDayWeekday)
-    }
+        <span class="c1">// Finally, you use these values to create an instance of MonthMetadata and return it.</span>
+        <span class="k">return</span> <span class="kt">MonthMetadata</span><span class="p">(</span>
+            <span class="nv">numberOfDays</span><span class="p">:</span> <span class="n">numberOfDaysInMonth</span><span class="p">,</span>
+            <span class="nv">firstDay</span><span class="p">:</span> <span class="n">firstDayOfMonth</span><span class="p">,</span>
+            <span class="nv">firstDayWeekday</span><span class="p">:</span> <span class="n">firstDayWeekday</span><span class="p">)</span>
+    <span class="p">}</span>
 
-    /// Adds or subtracts an offset from a Date to produce a new one, and return its result.
-    private func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedMonth: Bool) -&gt; Day {
-        let date = calendar.date(byAdding: .day, value: dayOffset, to: baseDate) ?? baseDate
+    <span class="c1">/// Adds or subtracts an offset from a Date to produce a new one, and return its result.</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">generateDay</span><span class="p">(</span><span class="n">offsetBy</span> <span class="nv">dayOffset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="k">for</span> <span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="nv">isWithinDisplayedMonth</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Day</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">date</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">dayOffset</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)</span> <span class="p">??</span> <span class="n">baseDate</span>
         
-        return Day(
-            date: date,
-            number: dateFormatterOnlyD.string(from: date),
-            isSelected: calendar.isDate(date, inSameDayAs: selectedDate),
-            isWithinDisplayedMonth: isWithinDisplayedMonth)
-    }
+        <span class="k">return</span> <span class="kt">Day</span><span class="p">(</span>
+            <span class="nv">date</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
+            <span class="nv">number</span><span class="p">:</span> <span class="n">dateFormatterOnlyD</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">date</span><span class="p">),</span>
+            <span class="nv">isSelected</span><span class="p">:</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">isDate</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="nv">inSameDayAs</span><span class="p">:</span> <span class="n">selectedDate</span><span class="p">),</span>
+            <span class="nv">isWithinDisplayedMonth</span><span class="p">:</span> <span class="n">isWithinDisplayedMonth</span><span class="p">)</span>
+    <span class="p">}</span>
 
-    /// Takes the first day of the displayed month and returns an array of Day objects.
-    private func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date) -&gt; [Day] {
-        // Retrieve the last day of the displayed month. If this fails, you return an empty array.
-        guard let lastDayInMonth = calendar.date(
-            byAdding: DateComponents(month: 1, day: -1),
-            to: firstDayOfDisplayedMonth) else {
-            return []
-        }
+    <span class="c1">/// Takes the first day of the displayed month and returns an array of Day objects.</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">generateStartOfNextMonth</span><span class="p">(</span><span class="n">using</span> <span class="nv">firstDayOfDisplayedMonth</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="p">{</span>
+        <span class="c1">// Retrieve the last day of the displayed month. If this fails, you return an empty array.</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">lastDayInMonth</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span>
+            <span class="nv">byAdding</span><span class="p">:</span> <span class="kt">DateComponents</span><span class="p">(</span><span class="nv">month</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">day</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+            <span class="nv">to</span><span class="p">:</span> <span class="n">firstDayOfDisplayedMonth</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="p">}</span>
         
-        // Calculate the number of extra days you need to fill the last row of the calendar.
-        // For instance, if the last day of the month is a Saturday, the result is zero and you return an empty array.
-        let additionalDays = 7 - calendar.component(.weekday, from: lastDayInMonth)
-        guard additionalDays &gt; 0 else {
-            return []
-        }
+        <span class="c1">// Calculate the number of extra days you need to fill the last row of the calendar.</span>
+        <span class="c1">// For instance, if the last day of the month is a Saturday, the result is zero and you return an empty array.</span>
+        <span class="k">let</span> <span class="nv">additionalDays</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">-</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">component</span><span class="p">(</span><span class="o">.</span><span class="n">weekday</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">lastDayInMonth</span><span class="p">)</span>
+        <span class="k">guard</span> <span class="n">additionalDays</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="p">}</span>
         
-        /*
+        <span class="cm">/*
          Create a Range&lt;Int&gt; from one to the value of additionalDays, as in the previous section.
          Then, it transforms this into an array of Days.
          This time, generateDay(offsetBy:for:isWithinDisplayedMonth:) adds the current day in the loop to lastDayInMonth
          to generate the days at the beginning of the next month.
-         */
-        let days: [Day] = (1...additionalDays)
-            .map {
-                generateDay(offsetBy: $0, for: lastDayInMonth, isWithinDisplayedMonth: false)
-            }
+         */</span>
+        <span class="k">let</span> <span class="nv">days</span><span class="p">:</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">additionalDays</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">map</span> <span class="p">{</span>
+                <span class="nf">generateDay</span><span class="p">(</span><span class="nv">offsetBy</span><span class="p">:</span> <span class="nv">$0</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">lastDayInMonth</span><span class="p">,</span> <span class="nv">isWithinDisplayedMonth</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+            <span class="p">}</span>
         
-        return days
-    }
+        <span class="k">return</span> <span class="n">days</span>
+    <span class="p">}</span>
 
-    /// Takes in a Date and returns an array of Days.
-    private func generateDaysInMonth(for baseDate: Date) -&gt; [Day] {
-        // Retrieve the metadata you need about the month, using monthMetadata(for:).
-        // If something goes wrong here, the app can’t function. As a result, it terminates with a fatalError.
-        guard let metadata = try? monthMetadata(for: baseDate) else {
-            fatalError("An error occurred when generating the metadata for \(baseDate)")
-        }
+    <span class="c1">/// Takes in a Date and returns an array of Days.</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">generateDaysInMonth</span><span class="p">(</span><span class="k">for</span> <span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="p">{</span>
+        <span class="c1">// Retrieve the metadata you need about the month, using monthMetadata(for:).</span>
+        <span class="c1">// If something goes wrong here, the app can’t function. As a result, it terminates with a fatalError.</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">metadata</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="nf">monthMetadata</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"An error occurred when generating the metadata for </span><span class="se">\(</span><span class="n">baseDate</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        let numberOfDaysInMonth = metadata.numberOfDays
-        let offsetInInitialRow = metadata.firstDayWeekday
-        let firstDayOfMonth = metadata.firstDay
+        <span class="k">let</span> <span class="nv">numberOfDaysInMonth</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">numberOfDays</span>
+        <span class="k">let</span> <span class="nv">offsetInInitialRow</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">firstDayWeekday</span>
+        <span class="k">let</span> <span class="nv">firstDayOfMonth</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">firstDay</span>
         
-        /*
+        <span class="cm">/*
          If a month starts on a day other than Sunday, you add the last few days from the previous month at the beginning.
          This avoids gaps in a month’s first row. Here, you create a Range&lt;Int&gt; that handles this scenario.
          For example, if a month starts on Friday, offsetInInitialRow would add five extra days to even up the row.
          You then transform this range into [Day], using map(_:).
-         */
-        var days: [Day] = (1..&lt;(numberOfDaysInMonth + offsetInInitialRow))
-            .map { day in
-                // Check if the current day in the loop is within the current month or part of the previous month.
-                let isWithinDisplayedMonth = day &gt;= offsetInInitialRow
+         */</span>
+        <span class="k">var</span> <span class="nv">days</span><span class="p">:</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">..&lt;</span><span class="p">(</span><span class="n">numberOfDaysInMonth</span> <span class="o">+</span> <span class="n">offsetInInitialRow</span><span class="p">))</span>
+            <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">day</span> <span class="k">in</span>
+                <span class="c1">// Check if the current day in the loop is within the current month or part of the previous month.</span>
+                <span class="k">let</span> <span class="nv">isWithinDisplayedMonth</span> <span class="o">=</span> <span class="n">day</span> <span class="o">&gt;=</span> <span class="n">offsetInInitialRow</span>
                 
-                // Calculate the offset that day is from the first day of the month. If day is in the previous month, this value will be negative.
-                let dayOffset = isWithinDisplayedMonth ? day - offsetInInitialRow : -(offsetInInitialRow - day)
+                <span class="c1">// Calculate the offset that day is from the first day of the month. If day is in the previous month, this value will be negative.</span>
+                <span class="k">let</span> <span class="nv">dayOffset</span> <span class="o">=</span> <span class="n">isWithinDisplayedMonth</span> <span class="p">?</span> <span class="n">day</span> <span class="o">-</span> <span class="nv">offsetInInitialRow</span> <span class="p">:</span> <span class="o">-</span><span class="p">(</span><span class="n">offsetInInitialRow</span> <span class="o">-</span> <span class="n">day</span><span class="p">)</span>
                 
-                // Call generateDay(offsetBy:for:isWithinDisplayedMonth:), which adds or subtracts an offset from a Date to produce a new one, and return its result.
-                return generateDay(offsetBy: dayOffset, for: firstDayOfMonth, isWithinDisplayedMonth: isWithinDisplayedMonth)
-            }
+                <span class="c1">// Call generateDay(offsetBy:for:isWithinDisplayedMonth:), which adds or subtracts an offset from a Date to produce a new one, and return its result.</span>
+                <span class="k">return</span> <span class="nf">generateDay</span><span class="p">(</span><span class="nv">offsetBy</span><span class="p">:</span> <span class="n">dayOffset</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">firstDayOfMonth</span><span class="p">,</span> <span class="nv">isWithinDisplayedMonth</span><span class="p">:</span> <span class="n">isWithinDisplayedMonth</span><span class="p">)</span>
+            <span class="p">}</span>
         
-        days += generateStartOfNextMonth(using: firstDayOfMonth)
+        <span class="n">days</span> <span class="o">+=</span> <span class="nf">generateStartOfNextMonth</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">firstDayOfMonth</span><span class="p">)</span>
         
-        return days
-    }
-}
+        <span class="k">return</span> <span class="n">days</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2023,7 +2023,7 @@ class CalendarData {
   <li>달력 데이터 클래스에 대한 구현 방법 및 자세한 원리는 <a href="http://yoonbumtae.com/?p=5271">이전 포스트</a>에 설명되어 있습니다.</li>
 </ul>
 
-<p>[the_ad id=”3020”]</p>
+<!-- \[the\_ad id="3020"\] -->
 
 <p> </p>
 

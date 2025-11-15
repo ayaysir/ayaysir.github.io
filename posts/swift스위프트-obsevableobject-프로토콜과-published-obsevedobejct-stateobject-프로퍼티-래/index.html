@@ -865,8 +865,8 @@ print(john.haveBirthday())
 
 <p><code class="language-plaintext highlighter-rouge">@Published</code> 속성이 있는 속성을 게시(publish)하면 이 유형의 퍼블리셔(publisher)가 생성됩니다. 다음과 같이 <code class="language-plaintext highlighter-rouge">$</code> 연산자를 사용하여 퍼블리셔에 액세스합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -900,38 +900,38 @@ print(john.haveBirthday())
 31
 32
 33
-</pre></td><td class="rouge-code"><pre>import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
-// 날씨 클래스: 온도를 저장한다.
-class Weather: ObservableObject {
-    @Published var temperature: Double
-    init(temperature: Double) {
-        self.temperature = temperature
-    }
-}
+<span class="c1">// 날씨 클래스: 온도를 저장한다.</span>
+<span class="kd">class</span> <span class="kt">Weather</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+    <span class="kd">@Published</span> <span class="k">var</span> <span class="nv">temperature</span><span class="p">:</span> <span class="kt">Double</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">temperature</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-let weather = Weather(temperature: 20)
+<span class="k">let</span> <span class="nv">weather</span> <span class="o">=</span> <span class="kt">Weather</span><span class="p">(</span><span class="nv">temperature</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span>
 
-/*
+<span class="cm">/*
  weather.temperature는 단순한 Double 타입이지만
  weather.$temperature Published&lt;Double&gt;.Publisher 타입으로 sink()를 사용할 수 있다.
  - sink() : closure에서 새로운 값이나 종료 이벤트에 대해 처리한다.
  - weather 인스턴스의 temperature가 변경될 때 sink의 클로저에 작성된 내용이 실행된다.
- */
+ */</span>
 
-let cancellable = weather.$temperature
-    .sink() {
-        print ("Temperature now: \($0)")
-}
+<span class="k">let</span> <span class="nv">cancellable</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">$temperature</span>
+    <span class="o">.</span><span class="nf">sink</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">print</span> <span class="p">(</span><span class="s">"Temperature now: </span><span class="se">\(</span><span class="nv">$0</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
 
-// 3초 뒤 weather.temperature 의 값을 25로 변경한다.
-DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-    weather.temperature = 25
-}
+<span class="c1">// 3초 뒤 weather.temperature 의 값을 25로 변경한다.</span>
+<span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="nf">seconds</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">weather</span><span class="o">.</span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="p">}</span>
 
-// 출력:
-// Temperature now: 20.0
-// Temperature now: 25.0 (3초 후)
+<span class="c1">// 출력:</span>
+<span class="c1">// Temperature now: 20.0</span>
+<span class="c1">// Temperature now: 25.0 (3초 후)</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -947,8 +947,8 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
 
 <p>관찰 가능한 오브젝트의 초기 인스턴스를 생성할 때 <code class="language-plaintext highlighter-rouge">@ObservedObject</code>를 사용해서는 안 됩니다. 이것은 <code class="language-plaintext highlighter-rouge">@StateObject</code>로 지정해야 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -997,53 +997,53 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
 46
 47
 48
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-// ContetnView에서 @ObservedObejct를 사용하기 위해서는 ObservableObject 프로토콜을 준수해야 한다.
-class Person: ObservableObject {
-    // @Published를 제거하면 아래 ContentView의 레이블이 새로고침되지 않는다.
-    @Published var name: String = "Unknown"
+<span class="c1">// ContetnView에서 @ObservedObejct를 사용하기 위해서는 ObservableObject 프로토콜을 준수해야 한다.</span>
+<span class="kd">class</span> <span class="kt">Person</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+    <span class="c1">// @Published를 제거하면 아래 ContentView의 레이블이 새로고침되지 않는다.</span>
+    <span class="kd">@Published</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"Unknown"</span>
     
-    // 이름을 받아오는 메서드
-    func fetchPerson() {
-        self.name = (1...10).map { _ in
-            let code = Int.random(in: 64...90)
-            return String(UnicodeScalar(UInt8(code)))
-        }.joined(separator: "")
-    }
-}
+    <span class="c1">// 이름을 받아오는 메서드</span>
+    <span class="kd">func</span> <span class="nf">fetchPerson</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+            <span class="k">let</span> <span class="nv">code</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">64</span><span class="o">...</span><span class="mi">90</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="kt">UInt8</span><span class="p">(</span><span class="n">code</span><span class="p">)))</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct InnerView: View {
-    // @StateObject로 대체하더라도 동작은 된다.
-    @ObservedObject var person: Person
+<span class="kd">struct</span> <span class="kt">InnerView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="c1">// @StateObject로 대체하더라도 동작은 된다.</span>
+    <span class="kd">@ObservedObject</span> <span class="k">var</span> <span class="nv">person</span><span class="p">:</span> <span class="kt">Person</span>
     
-    var body: some View {
-        Button("Fetch Name") {
-            person.fetchPerson()
-        }
-    }
-}
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">Button</span><span class="p">(</span><span class="s">"Fetch Name"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">person</span><span class="o">.</span><span class="nf">fetchPerson</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct ContentView: View {
-    // @StateObject를 제거하면 Fetch Name 버튼을 클릭해도 앱의 레이블에서 이름이 변경되지 않는다.
-    // @ObsevedObejct로 대체하더라도 동작은 된다.
-    @StateObject var person = Person()
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="c1">// @StateObject를 제거하면 Fetch Name 버튼을 클릭해도 앱의 레이블에서 이름이 변경되지 않는다.</span>
+    <span class="c1">// @ObsevedObejct로 대체하더라도 동작은 된다.</span>
+    <span class="kd">@StateObject</span> <span class="k">var</span> <span class="nv">person</span> <span class="o">=</span> <span class="kt">Person</span><span class="p">()</span>
     
-    var body: some View {
-        VStack {
-            // person.name을 표시하는 레이블
-            Text(person.name)
-            // 버튼을 누르면 person.fetchPerson()을 실행한다.
-            InnerView(person: person)
-        }
-    }
-}
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="c1">// person.name을 표시하는 레이블</span>
+            <span class="kt">Text</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="c1">// 버튼을 누르면 person.fetchPerson()을 실행한다.</span>
+            <span class="kt">InnerView</span><span class="p">(</span><span class="nv">person</span><span class="p">:</span> <span class="n">person</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+<span class="kd">struct</span> <span class="kt">ContentView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">ContentView</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

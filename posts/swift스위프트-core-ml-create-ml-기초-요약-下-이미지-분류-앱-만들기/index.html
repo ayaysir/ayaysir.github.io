@@ -1245,16 +1245,16 @@
 
 <p>먼저 뷰 컨트롤러에 다음 import들을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>import UIKit
-import CoreML
-import Vision // 이미지 고급 처리
-import ImageIO
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">CoreML</span>
+<span class="kd">import</span> <span class="kt">Vision</span> <span class="c1">// 이미지 고급 처리</span>
+<span class="kd">import</span> <span class="kt">ImageIO</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1490,8 +1490,8 @@ func updateClassifications(for image: UIImage) {
 
 <p><strong>CGImagePropertyOrientation에 대한 extension</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1517,30 +1517,30 @@ func updateClassifications(for image: UIImage) {
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>import UIKit
-import ImageIO
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">ImageIO</span>
 
-extension CGImagePropertyOrientation {
-    /**
+<span class="kd">extension</span> <span class="kt">CGImagePropertyOrientation</span> <span class="p">{</span>
+    <span class="cm">/**
      Converts a `UIImageOrientation` to a corresponding
      `CGImagePropertyOrientation`. The cases for each
      orientation are represented by different raw values.
      
      - Tag: ConvertOrientation
-     */
-    init(_ orientation: UIImageOrientation) {
-        switch orientation {
-        case .up: self = .up
-        case .upMirrored: self = .upMirrored
-        case .down: self = .down
-        case .downMirrored: self = .downMirrored
-        case .left: self = .left
-        case .leftMirrored: self = .leftMirrored
-        case .right: self = .right
-        case .rightMirrored: self = .rightMirrored
-        }
-    }
-}
+     */</span>
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">orientation</span><span class="p">:</span> <span class="kt">UIImageOrientation</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">orientation</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">up</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">up</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">upMirrored</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">upMirrored</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">down</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">down</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">downMirrored</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">downMirrored</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">left</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="k">left</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">leftMirrored</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">leftMirrored</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">right</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="k">right</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">rightMirrored</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">rightMirrored</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1739,8 +1739,8 @@ func processClassifications(for request: VNRequest, error: Error?) {
 
 <p><strong>CGImagePropertyOrientation의 extension</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1765,38 +1765,38 @@ func processClassifications(for request: VNRequest, error: Error?) {
 22
 23
 24
-</pre></td><td class="rouge-code"><pre>import UIKit
-import ImageIO
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">ImageIO</span>
 
-extension CGImagePropertyOrientation {
-    /**
+<span class="kd">extension</span> <span class="kt">CGImagePropertyOrientation</span> <span class="p">{</span>
+    <span class="cm">/**
      Converts a `UIImageOrientation` to a corresponding
      `CGImagePropertyOrientation`. The cases for each
      orientation are represented by different raw values.
      
      - Tag: ConvertOrientation
-     */
-    init(_ orientation: UIImageOrientation) {
-        switch orientation {
-        case .up: self = .up
-        case .upMirrored: self = .upMirrored
-        case .down: self = .down
-        case .downMirrored: self = .downMirrored
-        case .left: self = .left
-        case .leftMirrored: self = .leftMirrored
-        case .right: self = .right
-        case .rightMirrored: self = .rightMirrored
-        }
-    }
-}
+     */</span>
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">orientation</span><span class="p">:</span> <span class="kt">UIImageOrientation</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">orientation</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">up</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">up</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">upMirrored</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">upMirrored</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">down</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">down</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">downMirrored</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">downMirrored</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">left</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="k">left</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">leftMirrored</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">leftMirrored</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">right</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="k">right</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">rightMirrored</span><span class="p">:</span> <span class="k">self</span> <span class="o">=</span> <span class="o">.</span><span class="n">rightMirrored</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p><strong>뷰 컨트롤러</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1930,138 +1930,138 @@ extension CGImagePropertyOrientation {
 131
 132
 133
-</pre></td><td class="rouge-code"><pre>import UIKit
-import CoreML
-import Vision // 이미지 고급 처리
-import ImageIO
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">CoreML</span>
+<span class="kd">import</span> <span class="kt">Vision</span> <span class="c1">// 이미지 고급 처리</span>
+<span class="kd">import</span> <span class="kt">ImageIO</span>
 
-// 시뮬레이터는 결과가 엉터리로 나옴
-// 반드시 실제 기기에서 테스트
+<span class="c1">// 시뮬레이터는 결과가 엉터리로 나옴</span>
+<span class="c1">// 반드시 실제 기기에서 테스트</span>
 
-class ImageClassificationViewController: UIViewController {
-    // MARK: - IBOutlets
+<span class="kd">class</span> <span class="kt">ImageClassificationViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">// MARK: - IBOutlets</span>
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var cameraButton: UIBarButtonItem!
-    @IBOutlet weak var classificationLabel: UILabel!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">cameraButton</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">classificationLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
     
-    /// - Tag: MLModelSetup
-    lazy var classificationRequest: VNCoreMLRequest = {
-        do {
-            // 모델 파일에 접근할 수 있도록 인스턴스 생성
-            let model = try VNCoreMLModel(for: LivestocksClassifier(configuration: MLModelConfiguration()).model)
+    <span class="c1">/// - Tag: MLModelSetup</span>
+    <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">classificationRequest</span><span class="p">:</span> <span class="kt">VNCoreMLRequest</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="c1">// 모델 파일에 접근할 수 있도록 인스턴스 생성</span>
+            <span class="k">let</span> <span class="nv">model</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">VNCoreMLModel</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="kt">LivestocksClassifier</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="kt">MLModelConfiguration</span><span class="p">())</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
             
-            // Core ML 리퀘스트 인스턴스
-            // CompletionHandler: 모델 초기화가 완료되면 처리할 내용
-            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
-                self?.processClassifications(for: request, error: error)
-            })
+            <span class="c1">// Core ML 리퀘스트 인스턴스</span>
+            <span class="c1">// CompletionHandler: 모델 초기화가 완료되면 처리할 내용</span>
+            <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">VNCoreMLRequest</span><span class="p">(</span><span class="nv">model</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">request</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+                <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="nf">processClassifications</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="n">error</span><span class="p">)</span>
+            <span class="p">})</span>
             
-            // 이미지 분류를 요청할 때, 이미지가 크거나 비율이 다를 경우 이미지를 어디서 취할 것인가?
-            // .centerCrop이 가장 많이 사용됨
-            request.imageCropAndScaleOption = .centerCrop
-            return request
-        } catch {
-            fatalError("Failed to load Vision ML model: \(error)")
-        }
-    }()
+            <span class="c1">// 이미지 분류를 요청할 때, 이미지가 크거나 비율이 다를 경우 이미지를 어디서 취할 것인가?</span>
+            <span class="c1">// .centerCrop이 가장 많이 사용됨</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">imageCropAndScaleOption</span> <span class="o">=</span> <span class="o">.</span><span class="n">centerCrop</span>
+            <span class="k">return</span> <span class="n">request</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Failed to load Vision ML model: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}()</span>
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
         
-        // 카메라를 이용할 수 없으면 카메라 버튼 비활성화
-        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-            cameraButton.isEnabled = false
-        }
-    }
+        <span class="c1">// 카메라를 이용할 수 없으면 카메라 버튼 비활성화</span>
+        <span class="k">if</span> <span class="o">!</span><span class="kt">UIImagePickerController</span><span class="o">.</span><span class="nf">isSourceTypeAvailable</span><span class="p">(</span><span class="o">.</span><span class="n">camera</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cameraButton</span><span class="o">.</span><span class="n">isEnabled</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    // MARK: - Photo Actions
+    <span class="c1">// MARK: - Photo Actions</span>
     
-    @IBAction func takePicture() {
-        // Show options for the source picker only if the camera is available.
-        // 카메라를 사용할 수 있는 경우에만 source picker에 대한 옵션을 표시합니다.
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-            return
-        }
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">takePicture</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Show options for the source picker only if the camera is available.</span>
+        <span class="c1">// 카메라를 사용할 수 있는 경우에만 source picker에 대한 옵션을 표시합니다.</span>
+        <span class="k">guard</span> <span class="kt">UIImagePickerController</span><span class="o">.</span><span class="nf">isSourceTypeAvailable</span><span class="p">(</span><span class="o">.</span><span class="n">camera</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        presentPhotoPicker(sourceType: .camera)
-    }
+        <span class="nf">presentPhotoPicker</span><span class="p">(</span><span class="nv">sourceType</span><span class="p">:</span> <span class="o">.</span><span class="n">camera</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    @IBAction func choosePicture(_ sender: UIBarButtonItem) {
-        self.presentPhotoPicker(sourceType: .photoLibrary)
-    }
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">choosePicture</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">presentPhotoPicker</span><span class="p">(</span><span class="nv">sourceType</span><span class="p">:</span> <span class="o">.</span><span class="n">photoLibrary</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func presentPhotoPicker(sourceType: UIImagePickerControllerSourceType) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.sourceType = sourceType
-        present(picker, animated: true)
-    }
-}
+    <span class="kd">func</span> <span class="nf">presentPhotoPicker</span><span class="p">(</span><span class="nv">sourceType</span><span class="p">:</span> <span class="kt">UIImagePickerControllerSourceType</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">UIImagePickerController</span><span class="p">()</span>
+        <span class="n">picker</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+        <span class="n">picker</span><span class="o">.</span><span class="n">sourceType</span> <span class="o">=</span> <span class="n">sourceType</span>
+        <span class="nf">present</span><span class="p">(</span><span class="n">picker</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-extension ImageClassificationViewController {
+<span class="kd">extension</span> <span class="kt">ImageClassificationViewController</span> <span class="p">{</span>
     
-    // MARK: - Image Classification
+    <span class="c1">// MARK: - Image Classification</span>
     
-    /// - Tag: PerformRequests
-    func updateClassifications(for image: UIImage) {
-        classificationLabel.text = "Classifying..."
+    <span class="c1">/// - Tag: PerformRequests</span>
+    <span class="kd">func</span> <span class="nf">updateClassifications</span><span class="p">(</span><span class="k">for</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">classificationLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Classifying..."</span>
         
-        let orientation = CGImagePropertyOrientation(image.imageOrientation) // 이미지 방향
-        guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
+        <span class="k">let</span> <span class="nv">orientation</span> <span class="o">=</span> <span class="kt">CGImagePropertyOrientation</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">imageOrientation</span><span class="p">)</span> <span class="c1">// 이미지 방향</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">ciImage</span> <span class="o">=</span> <span class="kt">CIImage</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unable to create </span><span class="se">\(</span><span class="kt">CIImage</span><span class="o">.</span><span class="k">self</span><span class="se">)</span><span class="s"> from </span><span class="se">\(</span><span class="n">image</span><span class="se">)</span><span class="s">."</span><span class="p">)</span> <span class="p">}</span>
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
-            do {
-                try handler.perform([self.classificationRequest])
-            } catch {
-                /*
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">(</span><span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="n">userInitiated</span><span class="p">)</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">handler</span> <span class="o">=</span> <span class="kt">VNImageRequestHandler</span><span class="p">(</span><span class="nv">ciImage</span><span class="p">:</span> <span class="n">ciImage</span><span class="p">,</span> <span class="nv">orientation</span><span class="p">:</span> <span class="n">orientation</span><span class="p">)</span>
+            <span class="k">do</span> <span class="p">{</span>
+                <span class="k">try</span> <span class="n">handler</span><span class="o">.</span><span class="nf">perform</span><span class="p">([</span><span class="k">self</span><span class="o">.</span><span class="n">classificationRequest</span><span class="p">])</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="cm">/*
                  이 핸들러는 일반적인 이미지 처리 오류를 포착합니다. `classificationRequest`의 완료 핸들러 `processClassifications(_:error:)`는 해당 요청 처리와 관련된 오류를 포착합니다.
-                 */
-                print("Failed to perform classification.\n\(error.localizedDescription)")
-            }
-        }
-    }
+                 */</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Failed to perform classification.</span><span class="se">\n\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    /// 분류 결과를 바탕으로 UI를 업데이트합니다.
-    /// - Tag: ProcessClassifications
-    func processClassifications(for request: VNRequest, error: Error?) {
-        DispatchQueue.main.async {
-            guard let results = request.results else {
-                self.classificationLabel.text = "Unable to classify image.\n\(error!.localizedDescription)"
-                return
-            }
+    <span class="c1">/// 분류 결과를 바탕으로 UI를 업데이트합니다.</span>
+    <span class="c1">/// - Tag: ProcessClassifications</span>
+    <span class="kd">func</span> <span class="nf">processClassifications</span><span class="p">(</span><span class="k">for</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">VNRequest</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">results</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">results</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">classificationLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Unable to classify image.</span><span class="se">\n\(</span><span class="n">error</span><span class="o">!.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
 
-            // `result`는 이 프로젝트의 Core ML 모델에서 지정한 대로 항상 'VNClassificationObservation'이 됩니다.
-            let classifications = results as! [VNClassificationObservation]
+            <span class="c1">// `result`는 이 프로젝트의 Core ML 모델에서 지정한 대로 항상 'VNClassificationObservation'이 됩니다.</span>
+            <span class="k">let</span> <span class="nv">classifications</span> <span class="o">=</span> <span class="n">results</span> <span class="k">as!</span> <span class="p">[</span><span class="kt">VNClassificationObservation</span><span class="p">]</span>
         
-            if classifications.isEmpty {
-                self.classificationLabel.text = "Nothing recognized."
-            } else {
-                let topClassifications = classifications.prefix(2)
-                let descriptions = topClassifications.map { classification in
-                    // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
-                    // 표시할 분류 형식을 지정합니다. 예) "(0.37) Dog".
-                   return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
-                }
-                self.classificationLabel.text = "Classification:\n" + descriptions.joined(separator: "\n")
-            }
-        }
-    }
-}
+            <span class="k">if</span> <span class="n">classifications</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">classificationLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Nothing recognized."</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">let</span> <span class="nv">topClassifications</span> <span class="o">=</span> <span class="n">classifications</span><span class="o">.</span><span class="nf">prefix</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+                <span class="k">let</span> <span class="nv">descriptions</span> <span class="o">=</span> <span class="n">topClassifications</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">classification</span> <span class="k">in</span>
+                    <span class="c1">// Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".</span>
+                    <span class="c1">// 표시할 분류 형식을 지정합니다. 예) "(0.37) Dog".</span>
+                   <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="s">"  (%.2f) %@"</span><span class="p">,</span> <span class="n">classification</span><span class="o">.</span><span class="n">confidence</span><span class="p">,</span> <span class="n">classification</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">classificationLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Classification:</span><span class="se">\n</span><span class="s">"</span> <span class="o">+</span> <span class="n">descriptions</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-extension ImageClassificationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    // MARK: - Handling Image Picker Selection
+<span class="kd">extension</span> <span class="kt">ImageClassificationViewController</span><span class="p">:</span> <span class="kt">UIImagePickerControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span> <span class="p">{</span>
+    <span class="c1">// MARK: - Handling Image Picker Selection</span>
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        picker.dismiss(animated: true)
+    <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">UIImagePickerController</span><span class="p">,</span> <span class="n">didFinishPickingMediaWithInfo</span> <span class="nv">info</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="p">{</span>
+        <span class="n">picker</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
         
-        // `imagePickerController(:didFinishPickingMediaWithInfo:)`는 원본 이미지를 제공할 것입니다.
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imageView.image = image
-        updateClassifications(for: image)
-    }
-}
+        <span class="c1">// `imagePickerController(:didFinishPickingMediaWithInfo:)`는 원본 이미지를 제공할 것입니다.</span>
+        <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="kt">UIImagePickerControllerOriginalImage</span><span class="p">]</span> <span class="k">as!</span> <span class="kt">UIImage</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+        <span class="nf">updateClassifications</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

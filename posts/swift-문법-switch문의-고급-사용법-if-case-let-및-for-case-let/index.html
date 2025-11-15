@@ -498,6 +498,82 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -631,13 +707,19 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
-  
-
-  
-  
-
   
 
   
@@ -673,85 +755,13 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
   
 
 
@@ -842,7 +852,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2115 words"
+  title="2111 words"
 >
   <em>11 min</em> read</span>
 
@@ -877,15 +887,15 @@
 
   <div class="content">
     <ul>
-  <li><a href="http://yoonbumtae.com/?p=2109">Swift 기초 (2): if 문, for ~ in 문, while 문, switch 문</a></li>
+  <li><a href="/posts/swift-기초-2-if-문-for-in-문-while-문-switch-문/">Swift 기초 (2): if 문, for ~ in 문, while 문, switch 문</a></li>
 </ul>
 
-<h3 id="1-switch-문을-사용한-튜플-매칭-이해하기"><span class="me-2"><strong>1. Switch 문을 사용한 튜플 매칭 이해하기</strong></span><a href="#1-switch-문을-사용한-튜플-매칭-이해하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="1-switch-문을-사용한-튜플-매칭-이해하기"><span class="me-2"><strong>1. Switch 문을 사용한 튜플 매칭 이해하기</strong></span><a href="#1-switch-문을-사용한-튜플-매칭-이해하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Swift의 <code class="language-plaintext highlighter-rouge">switch</code> 문은 특정 값에 대해 다양한 경우를 다룰 수 있도록 해줍니다. 특히 튜플을 사용할 때 매우 유용합니다. 이번 섹션에서는 <code class="language-plaintext highlighter-rouge">switch</code> 문이 튜플을 어떻게 처리하는지 살펴보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -906,29 +916,29 @@
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>func getPoint(somePoint: (Int, Int)) {
-    switch somePoint {
-    case (0, 0):
-        print("\(somePoint) is at the origin")
-    case (_, 0):
-        print("\(somePoint) is on the x-axis")
-    case (0, _):
-        print("\(somePoint) is on the y-axis")
-    case (-2...2, -2...2):
-        print("\(somePoint) is inside the box")
-    default:
-        print("\(somePoint) is outside of the box")
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">getPoint</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">somePoint</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is at the origin"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is on the x-axis"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is on the y-axis"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">...</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">...</span><span class="mi">2</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is inside the box"</span><span class="p">)</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is outside of the box"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-getPoint(somePoint: (0, 0))    // (0, 0) is at the origin
-getPoint(somePoint: (3, 0))    // (3, 0) is on the x-axis
-getPoint(somePoint: (0, 124))  // (0, 124) is on the y-axis
-getPoint(somePoint: (1, 3))    // (1, 3) is outside of the box
-getPoint(somePoint: (1, 2))    // (1, 2) is inside the box
+<span class="nf">getPoint</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>    <span class="c1">// (0, 0) is at the origin</span>
+<span class="nf">getPoint</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>    <span class="c1">// (3, 0) is on the x-axis</span>
+<span class="nf">getPoint</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">124</span><span class="p">))</span>  <span class="c1">// (0, 124) is on the y-axis</span>
+<span class="nf">getPoint</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>    <span class="c1">// (1, 3) is outside of the box</span>
+<span class="nf">getPoint</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>    <span class="c1">// (1, 2) is inside the box</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="설명"><span class="me-2"><strong>설명:</strong></span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="설명"><span class="me-2"><strong>설명:</strong></span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">getPoint(somePoint:)</code> 함수는 <code class="language-plaintext highlighter-rouge">(Int, Int)</code> 형태의 튜플을 매개변수로 받아, 그 튜플이 어디에 위치하는지 출력합니다.</li>
@@ -941,14 +951,12 @@ getPoint(somePoint: (1, 2))    // (1, 2) is inside the box
 
 <p> </p>
 
-<p> </p>
-
-<h3 id="2-값-바인딩과-switch-문"><span class="me-2"><strong>2. 값 바인딩과 Switch 문</strong></span><a href="#2-값-바인딩과-switch-문" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="2-값-바인딩과-switch-문"><span class="me-2"><strong>2. 값 바인딩과 Switch 문</strong></span><a href="#2-값-바인딩과-switch-문" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다음 섹션에서는 <code class="language-plaintext highlighter-rouge">switch</code> 문에서 값 바인딩을 사용하여 각 케이스에서 변수를 사용해 값을 출력하는 방법을 살펴보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -969,29 +977,29 @@ getPoint(somePoint: (1, 2))    // (1, 2) is inside the box
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>func getPoint2(somePoint:(Int,Int)) {
-    switch somePoint {
-    case (0, 0):
-        print("\(somePoint) is at the origin")
-    case (let x, 0):
-        print("on the x-axis with an x value of \(x)")
-    case (0, let y):
-        print("on the y-axis with an y value of \(y)")
-    case (-2...2, -2...2):
-        print("\(somePoint) is inside the box")
-    default:
-        print("\(somePoint) is outside of the box")
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">getPoint2</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:(</span><span class="kt">Int</span><span class="p">,</span><span class="kt">Int</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">somePoint</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is at the origin"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">(</span><span class="k">let</span> <span class="nv">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"on the x-axis with an x value of </span><span class="se">\(</span><span class="n">x</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="k">let</span> <span class="nv">y</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"on the y-axis with an y value of </span><span class="se">\(</span><span class="n">y</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">...</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">...</span><span class="mi">2</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is inside the box"</span><span class="p">)</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">somePoint</span><span class="se">)</span><span class="s"> is outside of the box"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-getPoint2(somePoint: (0, 0))    // (0, 0) is at the origin
-getPoint2(somePoint: (3, 0))    // on the x-axis with an x value of 3
-getPoint2(somePoint: (0, 124))  // on the y-axis with a y value of 124
-getPoint2(somePoint: (1, 3))    // (1, 3) is outside of the box
-getPoint2(somePoint: (1, 2))    // (1, 2) is inside the box
+<span class="nf">getPoint2</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>    <span class="c1">// (0, 0) is at the origin</span>
+<span class="nf">getPoint2</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>    <span class="c1">// on the x-axis with an x value of 3</span>
+<span class="nf">getPoint2</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">124</span><span class="p">))</span>  <span class="c1">// on the y-axis with a y value of 124</span>
+<span class="nf">getPoint2</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>    <span class="c1">// (1, 3) is outside of the box</span>
+<span class="nf">getPoint2</span><span class="p">(</span><span class="nv">somePoint</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>    <span class="c1">// (1, 2) is inside the box</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="설명-1"><span class="me-2"><strong>설명:</strong></span><a href="#설명-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="설명-1"><span class="me-2"><strong>설명:</strong></span><a href="#설명-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">let x</code> 또는 <code class="language-plaintext highlighter-rouge">let y</code>를 사용해 <code class="language-plaintext highlighter-rouge">somePoint</code>의 값을 변수로 바인딩할 수 있습니다.</li>
@@ -1001,14 +1009,12 @@ getPoint2(somePoint: (1, 2))    // (1, 2) is inside the box
 
 <p> </p>
 
-<p> </p>
-
-<h3 id="3-where-절을-사용한-추가-조건-적용"><span class="me-2"><strong>3. Where 절을 사용한 추가 조건 적용</strong></span><a href="#3-where-절을-사용한-추가-조건-적용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="3-where-절을-사용한-추가-조건-적용"><span class="me-2"><strong>3. Where 절을 사용한 추가 조건 적용</strong></span><a href="#3-where-절을-사용한-추가-조건-적용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이번 섹션에서는 <code class="language-plaintext highlighter-rouge">where</code> 절을 사용해 <code class="language-plaintext highlighter-rouge">switch</code> 문 내에서 추가적인 조건을 적용하는 방법을 알아보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1023,23 +1029,23 @@ getPoint2(somePoint: (1, 2))    // (1, 2) is inside the box
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>func wherePoint(point:(Int,Int)) {
-    switch point {
-    case let (x, y) where x == y:
-        print("(\(x), \(y)) is on the line x == y")
-    case let (x, y) where x == -y:
-        print("(\(x), \(y)) is on the line x == -y")
-    case let (x, y):
-        print("(\(x), \(y)) is just some arbitrary point")
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">wherePoint</span><span class="p">(</span><span class="nv">point</span><span class="p">:(</span><span class="kt">Int</span><span class="p">,</span><span class="kt">Int</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">point</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="k">let</span> <span class="p">(</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">)</span> <span class="k">where</span> <span class="n">x</span> <span class="o">==</span> <span class="nv">y</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"(</span><span class="se">\(</span><span class="n">x</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">y</span><span class="se">)</span><span class="s">) is on the line x == y"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="k">let</span> <span class="p">(</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">)</span> <span class="k">where</span> <span class="n">x</span> <span class="o">==</span> <span class="o">-</span><span class="nv">y</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"(</span><span class="se">\(</span><span class="n">x</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">y</span><span class="se">)</span><span class="s">) is on the line x == -y"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="k">let</span> <span class="p">(</span><span class="nv">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"(</span><span class="se">\(</span><span class="n">x</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">y</span><span class="se">)</span><span class="s">) is just some arbitrary point"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-wherePoint(point: (3, 3))    // (3, 3) is on the line x == y
-wherePoint(point: (3, -3))   // (3, -3) is on the line x == -y
-wherePoint(point: (3, 2))    // (3, 2) is just some arbitrary point
+<span class="nf">wherePoint</span><span class="p">(</span><span class="nv">point</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>    <span class="c1">// (3, 3) is on the line x == y</span>
+<span class="nf">wherePoint</span><span class="p">(</span><span class="nv">point</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">))</span>   <span class="c1">// (3, -3) is on the line x == -y</span>
+<span class="nf">wherePoint</span><span class="p">(</span><span class="nv">point</span><span class="p">:</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>    <span class="c1">// (3, 2) is just some arbitrary point</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="설명-2"><span class="me-2"><strong>설명:</strong></span><a href="#설명-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="설명-2"><span class="me-2"><strong>설명:</strong></span><a href="#설명-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">where</code> 절을 사용하면 특정 조건을 충족하는 경우에만 해당 <code class="language-plaintext highlighter-rouge">case</code>가 실행되도록 할 수 있습니다.</li>
@@ -1050,16 +1056,14 @@ wherePoint(point: (3, 2))    // (3, 2) is just some arbitrary point
 
 <p> </p>
 
-<p> </p>
-
-<h3 id="4-switch-문에서의-열거형enumeration-처리"><span class="me-2"><strong>4. Switch 문에서의 열거형(Enumeration) 처리</strong></span><a href="#4-switch-문에서의-열거형enumeration-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="4-switch-문에서의-열거형enumeration-처리"><span class="me-2"><strong>4. Switch 문에서의 열거형(Enumeration) 처리</strong></span><a href="#4-switch-문에서의-열거형enumeration-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이번 섹션에서는 <code class="language-plaintext highlighter-rouge">switch</code> 문을 사용하여 열거형을 처리하는 방법을 알아보겠습니다. Swift의 열거형은 정해진 몇 가지 값 중 하나를 가질 수 있는 타입을 정의할 때 유용합니다.</p>
 
-<h5 id="사전-코드"><span class="me-2"><strong>사전 코드:</strong></span><a href="#사전-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="사전-코드"><span class="me-2"><strong>사전 코드:</strong></span><a href="#사전-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1088,42 +1092,40 @@ wherePoint(point: (3, 2))    // (3, 2) is just some arbitrary point
 26
 27
 28
-</pre></td><td class="rouge-code"><pre>enum JustError: Error {
-    case fatalError
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">enum</span> <span class="kt">JustError</span><span class="p">:</span> <span class="kt">Error</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">fatalError</span>
+<span class="p">}</span>
 
-func justError(_ throwError: Bool) throws {
-    if throwError {
-        throw JustError.fatalError
-    } else {
-        return
-    }
-}
+<span class="kd">func</span> <span class="nf">justError</span><span class="p">(</span><span class="n">_</span> <span class="nv">throwError</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">throwError</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="kt">JustError</span><span class="o">.</span><span class="n">fatalError</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-func justErrorWithValue(_ throwError: Bool) throws -&gt; String {
-    if throwError {
-        throw JustError.fatalError
-    } else {
-        return "1234567"
-    }
-}
+<span class="kd">func</span> <span class="nf">justErrorWithValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">throwError</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">throwError</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="kt">JustError</span><span class="o">.</span><span class="n">fatalError</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"1234567"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-let result = Result {
-    try justError(false) // .success()
-}
+<span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">Result</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="nf">justError</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span> <span class="c1">// .success()</span>
+<span class="p">}</span>
 
-let result2 = Result {
-    try justErrorWithValue(false) // .success("1234567")
-}
+<span class="k">let</span> <span class="nv">result2</span> <span class="o">=</span> <span class="kt">Result</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="nf">justErrorWithValue</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span> <span class="c1">// .success("1234567")</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="본-코드"><span class="me-2"><strong>본 코드:</strong></span><a href="#본-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="본-코드"><span class="me-2"><strong>본 코드:</strong></span><a href="#본-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1137,22 +1139,22 @@ let result2 = Result {
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>switch result2 {
-case .success(let data):
-    print("success", data) // "success 1234567\n"
-case .failure(let error):
-    print("failed", error)
-}
+</pre></td><td class="rouge-code"><pre><span class="k">switch</span> <span class="n">result2</span> <span class="p">{</span>
+<span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">data</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"success"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="c1">// "success 1234567\n"</span>
+<span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"failed"</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+<span class="p">}</span>
 
-switch result2 {
-  case let .success(data):
-    print("success", data) // "success 1234567\n"
-  case let .failure(error):
-    print("failed", error)
-}
+<span class="k">switch</span> <span class="n">result2</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="kd">let</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"success"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="c1">// "success 1234567\n"</span>
+  <span class="k">case</span> <span class="kd">let</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="n">error</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"failed"</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="설명-3"><span class="me-2"><strong>설명:</strong></span><a href="#설명-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="설명-3"><span class="me-2"><strong>설명:</strong></span><a href="#설명-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>열거형 <code class="language-plaintext highlighter-rouge">result2</code>의 값이 <code class="language-plaintext highlighter-rouge">success</code>인 경우, <code class="language-plaintext highlighter-rouge">data</code>를 출력합니다.</li>
@@ -1162,14 +1164,12 @@ switch result2 {
 
 <p> </p>
 
-<p> </p>
-
-<h3 id="5-if-case-문을-활용한-값-매칭"><span class="me-2"><strong>5. <code class="language-plaintext highlighter-rouge">if case</code> 문을 활용한 값 매칭</strong></span><a href="#5-if-case-문을-활용한-값-매칭" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="5-if-case-문을-활용한-값-매칭"><span class="me-2"><strong>5. <code class="language-plaintext highlighter-rouge">if case</code> 문을 활용한 값 매칭</strong></span><a href="#5-if-case-문을-활용한-값-매칭" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>마지막으로, <code class="language-plaintext highlighter-rouge">if case</code> 문을 사용하여 특정 케이스에 대해 조건을 확인하는 방법을 알아보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1177,16 +1177,16 @@ switch result2 {
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>if case let .success(data) = result {
-    print("success", data)
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">case</span> <span class="kd">let</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"success"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">}</span>
 
-if case .success(let data) = result {
-    print("success", data)
-}
+<span class="k">if</span> <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">data</span><span class="p">)</span> <span class="o">=</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"success"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="설명-4"><span class="me-2"><strong>설명:</strong></span><a href="#설명-4" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="설명-4"><span class="me-2"><strong>설명:</strong></span><a href="#설명-4" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">if case</code> 문을 사용하면 <code class="language-plaintext highlighter-rouge">switch</code> 문을 사용하지 않고도 특정 케이스와 매칭할 수 있습니다.</li>
@@ -1195,8 +1195,8 @@ if case .success(let data) = result {
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1208,17 +1208,17 @@ if case .success(let data) = result {
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>let scoresIncludeNil = [1, 13, 6, 5, nil, 30, 4, nil]
-for case let score? in scoresIncludeNil where score &gt;= 5 {
-    print("5점 초과 스코어", score)
-}
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">scoresIncludeNil</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="kc">nil</span><span class="p">]</span>
+<span class="k">for</span> <span class="k">case</span> <span class="k">let</span> <span class="nv">score</span><span class="p">?</span> <span class="k">in</span> <span class="n">scoresIncludeNil</span> <span class="k">where</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"5점 초과 스코어"</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+<span class="p">}</span>
 
-/* 결과:
+<span class="cm">/* 결과:
 5점 초과 스코어 13
 5점 초과 스코어 6
 5점 초과 스코어 5
 5점 초과 스코어 30
-*/
+*/</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1229,7 +1229,7 @@ for case let score? in scoresIncludeNil where score &gt;= 5 {
 
 <hr />
 
-<h3 id="참고-if-case-let-for-case-let"><span class="me-2"><strong>참고) if case let, for case let</strong></span><a href="#참고-if-case-let-for-case-let" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="참고-if-case-let-for-case-let"><span class="me-2"><strong>(참고) if case let, for case let</strong></span><a href="#참고-if-case-let-for-case-let" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p> </p>
 
@@ -1263,7 +1263,7 @@ if case let .success(value) = result {
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="설명-5"><span class="me-2"><strong>설명:</strong></span><a href="#설명-5" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="설명-5"><span class="me-2"><strong>설명:</strong></span><a href="#설명-5" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Result</code>라는 열거형(enum)이 있고, 두 가지 상태(<code class="language-plaintext highlighter-rouge">success</code>, <code class="language-plaintext highlighter-rouge">failure</code>)를 가질 수 있습니다.</li>
@@ -1294,7 +1294,7 @@ for case let .success(value) in items {
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="설명-6"><span class="me-2"><strong>설명:</strong></span><a href="#설명-6" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="설명-6"><span class="me-2"><strong>설명:</strong></span><a href="#설명-6" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">items</code>라는 배열이 있고, <code class="language-plaintext highlighter-rouge">Result.success</code>와 <code class="language-plaintext highlighter-rouge">Result.failure</code>가 섞여 있습니다.</li>
@@ -1315,19 +1315,19 @@ for case let .success(value) in items {
 
 <h3 id="4-추가-예시-if-case-let"><span class="me-2"><strong>4. 추가 예시: <code class="language-plaintext highlighter-rouge">if case let</code></strong></span><a href="#4-추가-예시-if-case-let" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>let optionalNumber: Int? = 42
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">optionalNumber</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="mi">42</span>
 
-if case let number? = optionalNumber {
-    print("The number is \(number)") // 42
-}
+<span class="k">if</span> <span class="k">case</span> <span class="k">let</span> <span class="nv">number</span><span class="p">?</span> <span class="o">=</span> <span class="n">optionalNumber</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"The number is </span><span class="se">\(</span><span class="n">number</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="c1">// 42</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1335,19 +1335,19 @@ if case let number? = optionalNumber {
 
 <h3 id="5-추가-예시-for-case-let"><span class="me-2"><strong>5. 추가 예시: <code class="language-plaintext highlighter-rouge">for case let</code></strong></span><a href="#5-추가-예시-for-case-let" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>let mixedValues: [Int?] = [nil, 42, nil, 7, nil, 100]
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">mixedValues</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">?]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">nil</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 
-for case let number? in mixedValues {
-    print("Found a number: \(number)") // 42, 7, 100
-}
+<span class="k">for</span> <span class="k">case</span> <span class="k">let</span> <span class="nv">number</span><span class="p">?</span> <span class="k">in</span> <span class="n">mixedValues</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Found a number: </span><span class="se">\(</span><span class="n">number</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="c1">// 42, 7, 100</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

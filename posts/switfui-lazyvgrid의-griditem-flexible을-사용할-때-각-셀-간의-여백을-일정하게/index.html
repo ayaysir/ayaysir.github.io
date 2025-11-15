@@ -726,8 +726,8 @@
 
 <h4 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -772,49 +772,49 @@
 42
 43
 44
-</pre></td><td class="rouge-code"><pre>import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-struct AlbumListView: View {
-    let MARGIN: CGFloat = 10
-    @State private var columnCount = 3.0
+<span class="kd">struct</span> <span class="kt">AlbumListView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">MARGIN</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">columnCount</span> <span class="o">=</span> <span class="mf">3.0</span>
     
-    // 화면을 그리드형식으로 꽉채워줌
-    var columns: [GridItem] {
-        return (1...Int(columnCount)).map { _ in
-            GridItem(.flexible(), spacing: MARGIN)
-        }
-    }
+    <span class="c1">// 화면을 그리드형식으로 꽉채워줌</span>
+    <span class="k">var</span> <span class="nv">columns</span><span class="p">:</span> <span class="p">[</span><span class="kt">GridItem</span><span class="p">]</span> <span class="p">{</span>
+        <span class="nf">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="kt">Int</span><span class="p">(</span><span class="n">columnCount</span><span class="p">))</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+            <span class="kt">GridItem</span><span class="p">(</span><span class="o">.</span><span class="nf">flexible</span><span class="p">(),</span> <span class="nv">spacing</span><span class="p">:</span> <span class="kt">MARGIN</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    var body: some View {
-        ScrollView {
-            Stepper("Column Count", value: $columnCount)
-            LazyVGrid(columns: columns, spacing: MARGIN) {
-                ForEach(1..&lt;100) { element in
-                    NavigationLink {
-                        Text("Temp Detail Page: \(element)")
-                    } label: {
-                        VStack {
-                            Image("sample")
-                                .resizable() // 중요: 지정하지 않으면 이미지 사이즈 요지부동
-                                .aspectRatio(1, contentMode: .fill)
-                        }
-                        // Rectangle()
-                        //     .fill(.gray)
-                        //     .aspectRatio(1, contentMode: .fit)
-                        // Color.gray
-                        //     .aspectRatio(1, contentMode: .fit)
-                    }
-                }
-            }
-        }
-    }
-}
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">ScrollView</span> <span class="p">{</span>
+            <span class="kt">Stepper</span><span class="p">(</span><span class="s">"Column Count"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">$columnCount</span><span class="p">)</span>
+            <span class="kt">LazyVGrid</span><span class="p">(</span><span class="nv">columns</span><span class="p">:</span> <span class="n">columns</span><span class="p">,</span> <span class="nv">spacing</span><span class="p">:</span> <span class="kt">MARGIN</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">ForEach</span><span class="p">(</span><span class="mi">1</span><span class="o">..&lt;</span><span class="mi">100</span><span class="p">)</span> <span class="p">{</span> <span class="n">element</span> <span class="k">in</span>
+                    <span class="kt">NavigationLink</span> <span class="p">{</span>
+                        <span class="kt">Text</span><span class="p">(</span><span class="s">"Temp Detail Page: </span><span class="se">\(</span><span class="n">element</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                    <span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="kt">VStack</span> <span class="p">{</span>
+                            <span class="kt">Image</span><span class="p">(</span><span class="s">"sample"</span><span class="p">)</span>
+                                <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span> <span class="c1">// 중요: 지정하지 않으면 이미지 사이즈 요지부동</span>
+                                <span class="o">.</span><span class="nf">aspectRatio</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nv">contentMode</span><span class="p">:</span> <span class="o">.</span><span class="n">fill</span><span class="p">)</span>
+                        <span class="p">}</span>
+                        <span class="c1">// Rectangle()</span>
+                        <span class="c1">//     .fill(.gray)</span>
+                        <span class="c1">//     .aspectRatio(1, contentMode: .fit)</span>
+                        <span class="c1">// Color.gray</span>
+                        <span class="c1">//     .aspectRatio(1, contentMode: .fit)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-struct AlbumListView_Previews: PreviewProvider {
-    static var previews: some View {
-        AlbumListView()
-    }
-}
+<span class="kd">struct</span> <span class="kt">AlbumListView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">AlbumListView</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
