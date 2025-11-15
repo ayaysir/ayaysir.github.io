@@ -140,7 +140,7 @@ func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems media
 
 노래의 메타데이터를 담은 구조체 `MediaMetadata`를 생성합니다.
 
-```
+```swift
 import UIKit
 
 struct MediaMetadata {
@@ -249,7 +249,7 @@ Button {
 
 ##### **전체 코드 (ContentView.swift)**
 
-```
+```swift
 import SwiftUI
 import MediaPlayer
 

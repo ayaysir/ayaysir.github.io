@@ -78,7 +78,7 @@ class Bag: ObservableObject {
 
 `@Published` 속성이 있는 속성을 게시(publish)하면 이 유형의 퍼블리셔(publisher)가 생성됩니다. 다음과 같이 `$` 연산자를 사용하여 퍼블리셔에 액세스합니다.
 
-```
+```swift
 import UIKit
 
 // 날씨 클래스: 온도를 저장한다.
@@ -126,7 +126,7 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
 
 관찰 가능한 오브젝트의 초기 인스턴스를 생성할 때 `@ObservedObject`를 사용해서는 안 됩니다. 이것은 `@StateObject`로 지정해야 합니다.
 
-```
+```swift
 import SwiftUI
 
 // ContetnView에서 @ObservedObejct를 사용하기 위해서는 ObservableObject 프로토콜을 준수해야 한다.

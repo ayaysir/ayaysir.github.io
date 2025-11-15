@@ -131,7 +131,7 @@ struct MonthMetadata {
 
 ```
 
-```
+```swift
 import UIKit
 
 enum CalendarDataError: Error {
@@ -304,7 +304,7 @@ class CalendarData {
 
 - 달력 데이터 클래스에 대한 구현 방법 및 자세한 원리는 [이전 포스트](http://yoonbumtae.com/?p=5271)에 설명되어 있습니다.
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 

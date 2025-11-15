@@ -20,7 +20,7 @@ categories:
 
 ##### **1, 아래 코드를 프로젝트에 추가합니다.**
 
-```
+```swift
 import UIKit
 
 #if canImport(SwiftUI) && DEBUG
@@ -69,7 +69,7 @@ struct UIViewControllerPreview<ViewController: UIViewController>: UIViewControll
 
 ##### **2\. 커스텀 `UIView` 클래스를 작성합니다. 간단한 선과 원을 그리는 그리는 예제입니다.**
 
-```
+```swift
 import UIKit
 
 struct Constant {

@@ -50,7 +50,7 @@ private func removeAnnotationAtPoint(point: CGPoint, page: PDFPage) {
 
 ##### **Step 3: PDFPage+Selection.swift 파일의 annotationWithHitTest(at:) 변경**
 
-```
+```swift
 import UIKit
 import PDFKit
 

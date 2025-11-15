@@ -120,7 +120,7 @@ Navigation Bar, Bar Button Item, Table View, Table View Cell을 이용해 UI를 
 
 먼저 `CoreData`와 `UIKit`을 import 해야 합니다.
 
-```
+```swift
 import UIKit
 import CoreData
 ```
@@ -333,7 +333,7 @@ func updateCoreData(object: NSManagedObject, name: String, email: String) -> Boo
 
  
 
-```
+```swift
 import UIKit
 import CoreData
 

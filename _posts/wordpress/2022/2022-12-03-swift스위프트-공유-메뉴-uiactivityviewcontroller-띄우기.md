@@ -24,7 +24,7 @@ categories:
 
 ##### **1단계: 프로젝트에 아래 함수를 추가합니다.**
 
-```
+```swift
 import UIKit
 
 func showActivityVC(_ controller: UIViewController,

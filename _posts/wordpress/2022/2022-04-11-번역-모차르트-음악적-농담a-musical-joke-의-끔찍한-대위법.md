@@ -117,7 +117,7 @@ categories:
 
  
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 
@@ -193,7 +193,7 @@ categories:
 
  
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 
@@ -515,7 +515,7 @@ categories:
 
  
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 

@@ -342,7 +342,7 @@ Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] au
 
 #### **전체 코드**
 
-```
+```swift
 import UIKit
 import Firebase
 

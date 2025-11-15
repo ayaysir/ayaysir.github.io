@@ -33,7 +33,7 @@ struct Folder: Codable, Equatable, Hashable, Identifiable, FileSystem {
 
 트리 표시 뷰 생성
 
-```
+```swift
 import SwiftUI
 
 struct SelectFolderView: View {

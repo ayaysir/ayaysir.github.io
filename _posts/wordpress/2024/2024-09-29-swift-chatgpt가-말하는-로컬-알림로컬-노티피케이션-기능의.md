@@ -1,24 +1,25 @@
 ---
-title: "Swift: [ChatGPT가 말하는] 로컬 알림(로컬 노티피케이션) 기능의 한계점과 극복 방안"
+title: "Swift: 김생성씨의 로컬 알림(로컬 노티피케이션) 기능의 한계점과 극복 방안"
 date: 2024-09-29
 categories: 
   - "DevLog"
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
-ChatGPT에게 아래 글을 읽고 구체적인 이유와 해결 방안을 제시해보라고 요구했습니다.
+김생성씨에게 아래 글을 읽고 구체적인 이유와 해결 방안을 제시해보라고 요구했습니다.
 
-- [Swift(스위프트): 로컬 알림(Local Notification)을 스케줄에 맞춰 반복 발신하기 (및 한계점)](http://yoonbumtae.com/?p=5064)
+- [Swift(스위프트): 로컬 알림(Local Notification)을 스케줄에 맞춰 반복 발신하기 (및 한계점)](/posts/swift스위프트-로컬-알림local-notification을-스케줄에-맞춰-반복-발/)
 
-일반론적인 이야기를 풀어 말한것에 불과하지만, 일단 틀린 답변은 아니므로 ChatGPT가 제시한 해결 방안을 올려봅니다.
+일반론적인 이야기를 풀어 말한것에 불과하지만, 일단 틀린 답변은 아니므로 김생성씨가 제시한 해결 방안을 올려봅니다.
 
  
 
-### **해결 방안 (ChatGPT의 답변)**
+## **해결 방안 (김생성씨의 답변)**
 
-\[caption id="attachment\_6856" align="alignnone" width="570"\] ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-29-pm-3.05.20-copy.jpg) 복잡한 알람 스케줄의 예시\[/caption\]
+![복잡한 알람 스케줄의 예시](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-29-pm-3.05.20-copy.jpg)  
+*복잡한 알람 스케줄의 예시*
 
  
 
@@ -26,11 +27,11 @@ Google Keep에서 구현된 것처럼 iOS에서 복잡한 스케줄링을 로컬
 
  
 
-#### **기본 메서드로 해결하기 어려운 이유**
+### **기본 메서드로 해결하기 어려운 이유**
 
 `UNCalendarNotificationTrigger`와 `UNTimeIntervalNotificationTrigger`가 복잡한 스케줄링 요구를 해결하기 어려운 이유는 두 메서드의 동작 원리와 제한 사항 때문입니다. 이를 이해하기 위해 각 메서드의 동작 방식을 살펴보겠습니다.
 
-##### **1\. UNCalendarNotificationTrigger**
+#### **1\. UNCalendarNotificationTrigger**
 
 **UNCalendarNotificationTrigger**는 사용자가 제공한 특정 날짜와 시간에 알림을 예약하는 데 사용됩니다. 해당 메서드는 날짜와 시간을 기반으로 하는 트리거를 설정할 수 있지만, 한 번에 여러 트리거를 예약하거나 복잡한 조건에 따른 스케줄링은 지원하지 않습니다.
 
@@ -51,7 +52,7 @@ Google Keep에서 구현된 것처럼 iOS에서 복잡한 스케줄링을 로컬
 
 **예시 코드:**
 
-```
+```swift
 var dateComponents = DateComponents()
 dateComponents.hour = 8
 dateComponents.minute = 0
@@ -62,7 +63,7 @@ let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeat
 
  
 
-##### **2\. UNTimeIntervalNotificationTrigger**
+#### **2\. UNTimeIntervalNotificationTrigger**
 
 **UNTimeIntervalNotificationTrigger**는 알림을 일정 시간 간격 후에 트리거할 때 사용됩니다. 이는 시간 경과에 따른 트리거로, 예를 들어 10초 뒤에 알림을 발송하거나, 일정 시간 간격으로 알림을 반복하는 등의 동작을 수행할 수 있습니다.
 
@@ -79,14 +80,14 @@ let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeat
 
 **예시 코드:**
 
-```
+```swift
 // 60초 뒤에 알림 발송
 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
 ```
 
  
 
-##### **왜 복잡한 스케줄링을 지원하지 못하는가?**
+#### **왜 복잡한 스케줄링을 지원하지 못하는가?**
 
 - **기본적인 반복 패턴 제한:** 두 트리거 모두 매우 제한적인 반복 패턴만 지원합니다.
     - **UNCalendarNotificationTrigger**는 특정 날짜 및 시간, 요일에 대한 반복을 설정할 수 있지만, 더 복잡한 규칙(예: 2일마다, 특정 종료일에 따른 반복 종료)은 지원하지 않습니다.
@@ -96,11 +97,11 @@ let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false
 
  
 
-#### **해결방안: 동적 스케줄링 및 백그라운드 태스크**
+### **해결방안: 동적 스케줄링 및 백그라운드 태스크**
 
 다음은 복잡한 로컬 노티피케이션 스케줄링을 구현하기 위한 전략입니다.
 
-##### **1\. 개별 알림의 동적 스케줄링**
+#### **1\. 개별 알림의 동적 스케줄링**
 
 iOS의 로컬 노티피케이션에서 특정 요일, 종료 날짜 등을 고려한 알림을 구현하려면, 알림을 한 번에 모두 등록하는 대신 동적으로 스케줄링하는 방식을 사용해야 합니다. 즉, Google Keep의 방식처럼 앱이 실행될 때마다 가까운 알림 시간을 계산하여 등록하는 방법입니다.
 
@@ -115,7 +116,7 @@ iOS의 로컬 노티피케이션에서 특정 요일, 종료 날짜 등을 고�
 
  
 
-##### **2\. 백그라운드 작업 및 앱 실행 시 알림 갱신**
+#### **2\. 백그라운드 작업 및 앱 실행 시 알림 갱신**
 
 Google Keep에서 앱이 실행될 때마다 알림을 계산하고 등록하듯이, iOS에서도 백그라운드 작업(예: BackgroundTask)이나 앱이 다시 포그라운드로 돌아왔을 때 알림을 갱신하는 방식으로 구현할 수 있습니다.
 
@@ -126,13 +127,13 @@ Google Keep에서 앱이 실행될 때마다 알림을 계산하고 등록하듯
 
  
 
-##### **3\. 복잡한 스케줄 관리**
+#### **3\. 복잡한 스케줄 관리**
 
 **UNCalendarNotificationTrigger**는 복잡한 스케줄(예: 2일마다, 특정 요일마다)을 기본적으로 지원하지 않기 때문에, 커스텀 로직을 사용하여 각 알림을 직접 관리해야 합니다. 이를 구현하기 위해 다음과 같은 방식이 가능합니다.
 
-**예시 코드:**
+##### **예시 코드:**
 
-```
+```swift
 func scheduleComplexNotification(for date: Date, repeatingDays: [Int], endDate: Date?) {
     let center = UNUserNotificationCenter.current()
     
@@ -165,7 +166,7 @@ func scheduleComplexNotification(for date: Date, repeatingDays: [Int], endDate: 
 }
 ```
 
-**설명:**
+##### **설명:**
 
 - `repeatingDays`는 반복할 요일(월요일, 화요일 등)을 의미하며, `[2, 3, 6]`과 같이 배열로 관리됩니다.
 - `endDate`가 존재하는 경우 해당 날짜까지 반복 알림을 등록합니다.
@@ -173,7 +174,7 @@ func scheduleComplexNotification(for date: Date, repeatingDays: [Int], endDate: 
 
  
 
-##### **4\. 사용자 커스텀 스케줄 관리**
+#### **4\. 사용자 커스텀 스케줄 관리**
 
 복잡한 규칙을 지원하는 로직을 작성하려면 사용자 설정에 따라 다양한 패턴을 관리해야 합니다:
 
@@ -183,14 +184,14 @@ func scheduleComplexNotification(for date: Date, repeatingDays: [Int], endDate: 
 
  
 
-##### **5\. 다양한 트리거 조합**
+#### **5\. 다양한 트리거 조합**
 
 - **UNCalendarNotificationTrigger**와 **UNTimeIntervalNotificationTrigger**를 혼합하여 다양한 스케줄 패턴을 구현.
 - 필요 시 트리거가 발생한 후 추가적으로 새로운 알림을 동적으로 등록하여, 마치 복잡한 반복 패턴을 지원하는 것처럼 작동하도록 함.
 
  
 
-##### **결론**
+## **결론**
 
 iOS의 기본 로컬 노티피케이션 시스템으로는 복잡한 반복 패턴을 바로 지원하지 않지만, Google Keep과 같은 방식으로 동적 알림 스케줄링을 통해 이를 구현할 수 있습니다. `UNUserNotificationCenter`의 64개 제한을 고려하여 가장 가까운 알림만 등록하고, 이후 앱이 다시 활성화되거나 백그라운드 작업이 실행될 때 새 알림을 계산하는 방식으로 처리할 수 있습니다.
 

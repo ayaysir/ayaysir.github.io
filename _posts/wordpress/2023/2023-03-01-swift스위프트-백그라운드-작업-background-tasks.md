@@ -56,7 +56,7 @@ BackgroundTasks는 앱이 백그라운드에서 작업을 할 수 있게 하는 
 
 `BGTaskScheduler.shared.register(...)`를 이용해 백그라운드 작업들을 등록합니다.
 
-```
+```swift
 import UIKit
 import BackgroundTasks
 

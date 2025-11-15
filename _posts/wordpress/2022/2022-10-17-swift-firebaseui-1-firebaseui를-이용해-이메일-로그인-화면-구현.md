@@ -46,7 +46,7 @@ pod 'FirebaseUI'
 
 뷰 컨트롤러에 다음 코드를 추가합니다. 새로운 뷰 컨트롤러를 띄우는 부분이 있으므로 `viewDidAppear`에서 작성합니다.
 
-```
+```swift
 import UIKit
 import FirebaseEmailAuthUI
 ```
@@ -177,7 +177,7 @@ override func viewWillAppear(_ animated: Bool) {
 
 먼저 `FUIAuthPickerViewController`를 상속받는 뷰 컨트롤러를 생성합니다.
 
-```
+```swift
 import UIKit
 import FirebaseAuthUI
 

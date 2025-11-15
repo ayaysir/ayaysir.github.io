@@ -30,7 +30,7 @@ SwiftUI에서 WebKitView를 이용해 웹 페이지를 띄우는 앱을 만드�
 
 그래서 아래와 같이 아주 간단한 웹 뷰를 감싼 `UIRepresentableView`를 만들었습니다.
 
-```
+```swift
 import SwiftUI
 import WebKit
 
@@ -53,7 +53,7 @@ struct WebViewRepresentable: UIViewRepresentable {
 
 그리고 이것을 앱의 메인 부분에 추가했습니다.
 
-```
+```swift
 import SwiftUI
 
 struct WebContentView: View {
@@ -244,7 +244,7 @@ struct WebViewRepresentable: UIViewRepresentable {
 
 ##### **Step 5: SwiftUI의 뷰에서 뷰모델 클래스를 초기화(initializaiton)하고, 해당 뷰모델 변수를 통해 원하는 작업을 실행합니다.**
 
-```
+```swift
 import SwiftUI
 
 struct WebContentView: View {

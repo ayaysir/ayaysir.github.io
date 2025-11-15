@@ -247,7 +247,7 @@ if #available(iOS 16.0, *) {
 
 #### **전체 코드**
 
-```
+```swift
 import SwiftUI
 
 // 1st nav

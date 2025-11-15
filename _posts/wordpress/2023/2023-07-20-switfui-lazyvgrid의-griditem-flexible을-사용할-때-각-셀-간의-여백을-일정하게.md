@@ -16,7 +16,7 @@ categories:
 
 #### **코드**
 
-```
+```swift
 import SwiftUI
 
 struct AlbumListView: View {

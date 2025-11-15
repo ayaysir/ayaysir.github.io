@@ -6,19 +6,17 @@ categories:
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
 iOS에서 UIKit을 사용하여 내장된 사전을 여는 방법은 `UIReferenceLibraryViewController`를 활용하는 것입니다. 이 클래스는 지정된 단어에 대한 사전 정의를 표시하는 뷰 컨트롤러를 제공합니다.
 
-#### **UIKit**
-
-##### **구현 방법**
+## **UIKit에서 구현방법**
 
 아래는 특정 단어에 대해 iOS 내장 사전을 여는 예제입니다.
 
-##### **1\. 기본 구현**
+### **코드**
 
-```
+```swift
 import UIKit
 
 func openDictionary(for word: String, from viewController: UIViewController) {
@@ -31,19 +29,20 @@ func openDictionary(for word: String, from viewController: UIViewController) {
 }
 ```
 
-**사용 예시** 버튼 눌렀을때 액션 함수 등에서 사용합니다.
+#### **사용 예시**  
+버튼 눌렀을때 액션 함수 등에서 사용합니다.
 
-```
+```swift
 openDictionary(for: "language", from: self)
 ```
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzA4cGlidmJ3MjdqYW13MHlyZGE5c3NsbDViMTY0amtiMjBhNTFjMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bQq9Sf4QwjhD8mz66F/giphy.gif)
+ 
+<!-- 
+<iframe width="222" height="480" src="https://giphy.com/embed/bQq9Sf4QwjhD8mz66F" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
 
  
 
-<iframe width="222" height="480" src="https://giphy.com/embed/bQq9Sf4QwjhD8mz66F" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
-
- 
-
-##### **설명**
+### **설명**
 
 1. **UIReferenceLibraryViewController**
     - `term` 매개변수를 사용하여 단어를 초기화합니다.
@@ -56,7 +55,7 @@ openDictionary(for: "language", from: self)
 
  
 
-##### **주의 사항**
+### **주의 사항**
 
 - SwiftUI 프리뷰 및 시뮬레이터에선 사전 기능이 동작하지 않을 수 있습니다.
 - iOS 내장 사전은 사용자가 설정에서 활성화한 언어에 따라 작동합니다. 예를 들어, 한국어 사전이 비활성화된 경우 한국어 단어의 정의가 제공되지 않을 수 있습니다.
@@ -64,11 +63,13 @@ openDictionary(for: "language", from: self)
 
  
 
-#### **SwiftUI**
+## **SwiftUI에서 구현방법**
 
 SwiftUI에서 iOS 내장 사전을 여는 방법은 UIKit의 `UIReferenceLibraryViewController`를 SwiftUI 뷰에 통합하여 사용하면 됩니다. 이를 위해 `UIViewControllerRepresentable`을 활용합니다.
 
-```
+### **코드**
+
+```swift
 import SwiftUI
 
 struct DictionaryRPView: UIViewControllerRepresentable {
@@ -117,7 +118,7 @@ struct DictionaryView: View {
 
  ![](/assets/img/wp-content/uploads/2024/12/IMG_4687.jpg)
 
-##### **설명**
+### **설명**
 
 1. **UIViewControllerRepresentable**
     - UIKit의 `UIReferenceLibraryViewController`를 SwiftUI에서 사용할 수 있도록 래핑합니다.

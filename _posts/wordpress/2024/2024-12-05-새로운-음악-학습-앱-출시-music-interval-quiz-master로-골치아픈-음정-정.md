@@ -8,8 +8,6 @@ categories:
   - "포트폴리오"
 ---
 
-<!-- 했음 -->
-
 **Music Interval Quiz Master**
 
  ![](/assets/img/wp-content/uploads/2024/12/screenshot-2024-12-05-pm-9.40.35-copy.jpg)

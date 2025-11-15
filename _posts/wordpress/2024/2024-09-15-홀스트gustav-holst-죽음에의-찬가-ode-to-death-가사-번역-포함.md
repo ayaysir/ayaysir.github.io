@@ -6,7 +6,7 @@ categories:
   - "Classical"
 ---
 
-### **작품 소개**
+## **작품 소개: 죽음에의 찬가**
 
 {% youtube "https://youtu.be/73rX1AfaHz0?si=AeBYAUCgnengY7sx" %}
 
@@ -20,59 +20,46 @@ categories:
 
  
 
-### **가사**
+## **가사**
 
 > 미국의 시인 [월트 휘트먼](https://ko.m.wikipedia.org/wiki/월트_휘트먼)이 1865년에 미국 대통령 [에이브러햄 링컨](https://ko.wikipedia.org/wiki/에이브러햄_링컨)의 죽음을 애도하며 쓴 애가 "[보랏빛 라일락이 문간에 필 때](https://en.m.wikipedia.org/wiki/When_Lilacs_Last_in_the_Dooryard_Bloom%27d)" (When Lilacs Last in the Dooryard Bloom'd) 의 한 구절
 
-Come lovely and soothing death, Undulate round the world, serenely arriving, arriving, In the day, in the night, to all, to each, Sooner or later delicate death.
-
+Come lovely and soothing death, Undulate round the world, serenely arriving, arriving, In the day, in the night, to all, to each, Sooner or later delicate death.  
 오라, 사랑스럽고 위로를 주는 죽음이여, 세상을 감싸며 너울거려라, 고요하게 다가와라, 다가와라, 낮이든 밤이든 모두에게, 각자에게, 이르게든 늦게든, 섬세한 죽음이여.
 
  
 
-Prais’d be the fathomless universe, For life and joy, and for objects and knowledge curious, And for love, sweet love—but praise! praise! praise! For the sure-enwinding arms of cool-enfolding death.
-
+Prais’d be the fathomless universe, For life and joy, and for objects and knowledge curious, And for love, sweet love—but praise! praise! praise! For the sure-enwinding arms of cool-enfolding death.  
 찬양하라, 헤아릴 수 없는 우주를, 삶과 기쁨, 그리고 신비롭고 새로운 지식과 사물을, 사랑을, 달콤한 사랑을—그러나 찬양하라! 찬양하라! 찬양하라! 확실하게 우리를 감싸는, 서늘하게 품어주는 죽음의 팔을.
 
  
 
-Dark mother always gliding near with soft feet, Have none chanted for thee a chant of fullest welcome? Then I chant it for thee, I glorify thee above all, I bring thee a song that when thou must indeed come, come unfalteringly.
-
+Dark mother always gliding near with soft feet, Have none chanted for thee a chant of fullest welcome? Then I chant it for thee, I glorify thee above all, I bring thee a song that when thou must indeed come, come unfalteringly.  
 항상 부드러운 발걸음으로 다가오는 어두운 어머니여, 그대를 위해 완전한 환영의 노래를 부른 이 없었는가? 그러면 내가 그대를 위해 노래하리, 그대를 가장 위대하게 찬양하리, 그대가 반드시 와야 할 때 주저함 없이 오라, 나는 그대에게 이 노래를 바치리.
 
  
 
-Approach strong deliveress, When it is so, when thou hast taken them I joyously sing the dead, Lost in the loving floating ocean of thee, Laved in the flood of thy bliss O death.
-
+Approach strong deliveress, When it is so, when thou hast taken them I joyously sing the dead, Lost in the loving floating ocean of thee, Laved in the flood of thy bliss O death.  
 다가오라, 강력한 구원자여, 그 때가 되면, 그대가 그들을 데려갔을 때, 나는 기쁨으로 죽은 이들을 노래하리, 그대의 사랑 가득한 부유하는 바다에 빠져, 그대의 기쁨의 물결에 씻기리, 오 죽음이여.
 
  
 
-From me to thee glad serenades, Dances for thee I propose saluting thee, adornments and feastings for thee, And the sights of the open landscape and the high-spread sky are fitting, And life and the fields, and the huge and thoughtful night.
-
+From me to thee glad serenades, Dances for thee I propose saluting thee, adornments and feastings for thee, And the sights of the open landscape and the high-spread sky are fitting, And life and the fields, and the huge and thoughtful night.  
 내게서 그대에게 기쁨의 세레나데를, 그대를 위한 춤을 제안하리, 그대를 경배하며, 그대를 위한 장식과 축제를 펼치리, 열린 풍경과 넓게 펼쳐진 하늘의 경치가 적합하리, 삶과 들판, 그리고 광대하고 사색적인 밤도 그러하리.
 
  
 
-The night in silence under many a star, The ocean shore and the husky whispering wave whose voice I know, And the soul turning to thee O vast and well-veil’d death, And the body gratefully nestling close to thee.
-
+The night in silence under many a star, The ocean shore and the husky whispering wave whose voice I know, And the soul turning to thee O vast and well-veil’d death, And the body gratefully nestling close to thee.  
 많은 별 아래 고요한 밤, 바닷가와 나는 잘 아는 속삭이는 파도의 거친 소리, 그리고 영혼은 그대에게 향하리, 오 광대하고 은밀하게 가려진 죽음이여, 몸은 그대에게 감사히 기대리.
 
  
 
-Over the tree-tops I float thee a song, Over the rising and sinking waves, over the myriad fields and the prairies wide, Over the dense-pack’d cities all and the teeming wharves and ways, I float this carol with joy, with joy to thee O death.
-
+Over the tree-tops I float thee a song, Over the rising and sinking waves, over the myriad fields and the prairies wide, Over the dense-pack’d cities all and the teeming wharves and ways, I float this carol with joy, with joy to thee O death.  
 나무 꼭대기 너머로 그대를 위해 노래를 띄우리, 솟아오르고 가라앉는 파도 위로, 수많은 들판과 광활한 초원 너머로, 빽빽하게 모인 도시와 북적이는 부두와 길들 위로, 나는 이 찬가를 기쁨으로, 기쁨으로 그대에게 띄우리, 오 죽음이여.
-
-> "When Lilacs Last in the Dooryard Bloom'd" (보랏빛 라일락이 문간에 필 때)는 미국 시인 월트 휘트먼이 에이브러햄 링컨 대통령의 암살을 추모하기 위해 1865년 여름에 쓴 목가적 애가다. 이 시는 206행의 자유시로, 목가적 애가에서 흔히 사용되는 문학적 기법을 사용하여 자연과 농촌 이미지를 통해 슬픔에서 죽음의 수용과 이해로 나아가는 과정을 표현한다. 대표적인 상징으로는 라일락, 서쪽 하늘의 별(금성), 은둔의 새 등이 등장하며, 링컨의 이름이나 그의 죽음의 구체적인 상황을 언급하지 않고, 전반적으로 미국 남북전쟁을 암시하는 이미지를 통해 전쟁의 비극을 묘사한다.
-> 
-> 이 시는 휘트먼의 대표작 \*Leaves of Grass\*가 출판된 지 10년 후에 쓰였으며, 휘트먼의 시적 비전이 성숙해진 것을 보여준다. 특히 남북전쟁에서 겪은 감정적 경험이 반영되어 있으며, 휘트먼의 초기 시에서 드러난 정체성의 드라마와 낭만적 활력이 더 깊이 있는 역사적 성찰과 미국의 불확실한 미래에 대한 인식으로 전환되었음을 나타낸다. 링컨의 죽음 직후 재빠르게 완성된 \*Drum-Taps\*와 \*Sequel to Drum-Taps\*에 수록된 이 시는 1865년 가을 처음 출판되었으며, 1867년 네 번째 판부터 \*Leaves of Grass\*에 통합되었다.
-> 
-> 휘트먼은 이 시를 자신의 최고작으로 여기지 않았으나, 영문학의 고전 애가인 존 밀턴의 \*Lycidas\*와 퍼시 비시 셸리의 \*Adonais\*와 비교될 만큼 높은 평가를 받는다.
 
  
 
-### **유튜브 댓글들**
+## **유튜브 댓글들**
 
 > 구스타브 홀스트는 비디오 게임이 나오기 전, 이미 비디오 게임 사운드트랙을 작곡한 사람이다.
 
@@ -90,6 +77,15 @@ Over the tree-tops I float thee a song, Over the rising and sinking waves, over 
 
 > 정말 숭고하다. 감사합니다, 홀스트. 세상이 당신을 단순히 '행성'의 작곡가로만 알지 않기를.
 
- 
+
+
+## **참고: 보랏빛 라일락이 문간에 필 때**
+
+"When Lilacs Last in the Dooryard Bloom'd" (보랏빛 라일락이 문간에 필 때)는 미국 시인 월트 휘트먼이 에이브러햄 링컨 대통령의 암살을 추모하기 위해 1865년 여름에 쓴 목가적 애가다. 이 시는 206행의 자유시로, 목가적 애가에서 흔히 사용되는 문학적 기법을 사용하여 자연과 농촌 이미지를 통해 슬픔에서 죽음의 수용과 이해로 나아가는 과정을 표현한다. 대표적인 상징으로는 라일락, 서쪽 하늘의 별(금성), 은둔의 새 등이 등장하며, 링컨의 이름이나 그의 죽음의 구체적인 상황을 언급하지 않고, 전반적으로 미국 남북전쟁을 암시하는 이미지를 통해 전쟁의 비극을 묘사한다.
+
+이 시는 휘트먼의 대표작 Leaves of Grass가 출판된 지 10년 후에 쓰였으며, 휘트먼의 시적 비전이 성숙해진 것을 보여준다. 특히 남북전쟁에서 겪은 감정적 경험이 반영되어 있으며, 휘트먼의 초기 시에서 드러난 정체성의 드라마와 낭만적 활력이 더 깊이 있는 역사적 성찰과 미국의 불확실한 미래에 대한 인식으로 전환되었음을 나타낸다. 링컨의 죽음 직후 재빠르게 완성된 Drum-Taps와 Sequel to Drum-Taps에 수록된 이 시는 1865년 가을 처음 출판되었으며, 1867년 네 번째 판부터 Leaves of Grass에 통합되었다.
+
+휘트먼은 이 시를 자신의 최고작으로 여기지 않았으나, 영문학의 고전 애가인 존 밀턴의 Lycidas와 퍼시 비시 셸리의 Adonais와 비교될 만큼 높은 평가를 받는다.
+
 
 <!--[rcblock id="6686"]-->

@@ -130,7 +130,7 @@ $ pod install
 
 6\. 프로젝트의 `AppDelegate.swift` 파일에서 아래 하이라이트 부분을 추가합니다.
 
-```
+```swift
 import UIKit
 import Firebase
 
@@ -280,7 +280,7 @@ override func viewWillDisappear(_ animated: Bool) {
 
 #### **전체 코드**
 
-```
+```swift
 import UIKit
 import Firebase
 

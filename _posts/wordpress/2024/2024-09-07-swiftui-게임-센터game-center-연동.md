@@ -6,13 +6,13 @@ categories:
   - "SwiftUI"
 ---
 
-### **소개**
+## **소개**
 
 iOS 프로젝트에서 Game Center를 연동하려면 몇 가지 단계를 거쳐야 합니다. Game Center는 애플의 게임 서비스로, 멀티플레이어 매치메이킹, 리더보드, 도전 과제 등을 제공합니다. 아래는 SwiftUI로 iOS 프로젝트에서 Game Center를 연동하는 방법에 대한 자세한 설명입니다.
 
- 
+## **절차**
 
-### **1\. Game Center 설정 준비**
+## **1\. Game Center 설정 준비**
 
 1. **Apple Developer 계정 준비:** [Apple Developer 계정](https://developer.apple.com/)에 가입하고 필요한 설정을 완료합니다.
 2. **App ID 생성:** Apple Developer 계정에서 `App ID`를 생성하고, Game Center 기능을 활성화합니다.
@@ -48,31 +48,31 @@ iOS 프로젝트에서 Game Center를 연동하려면 몇 가지 단계를 거�
     - **저장(Save)** 버튼을 클릭하여 업적을 저장합니다.
     - 현지화는 1개 언어 이상 필수로 작성해야 합니다.
 
-\[caption id="attachment\_6813" align="alignnone" width="799"\] ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.39-copy.jpg) 순위표 또는 목표 달성 추가 및 관리\[/caption\]
+![순위표 또는 목표 달성 추가 및 관리](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.39-copy.jpg)  
+*순위표 또는 목표 달성 추가 및 관리*
 
  
-
-\[caption id="attachment\_6814" align="alignnone" width="837"\] ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.59-copy.jpg) 정보 입력\[/caption\]
-
+![정보 입력](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-07-pm-8.37.59-copy.jpg)   
+*정보 입력*
  
 
 ### **4\. SwiftUI에서 Game Center 연동**
 
-#### **1\. GameKit 프레임워크 가져오기**
+#### **(1) GameKit 프레임워크 가져오기**
 
 먼저 `GameKit` 프레임워크를 가져와야 합니다. 이를 위해 사용할 Swift 파일 상단에 다음과 같이 추가합니다.
 
-```
+```swift
 import GameKit
 ```
 
  
 
-#### **2\. Game Center 인증 처리**
+#### **(2) Game Center 인증 처리**
 
 사용자가 Game Center에 로그인하도록 인증 프로세스를 구현해야 합니다. SwiftUI에서 인증 뷰를 제공하려면 아래와 같이 `GameCenterViewModel`을 만들 수 있습니다.
 
-```
+```swift
 class GameCenterViewModel: ObservableObject {
   @Published var isAuthenticated = false
   
@@ -102,11 +102,11 @@ class GameCenterViewModel: ObservableObject {
 
  
 
-#### **3\. SwiftUI View에서 인증 처리**
+#### **(3) SwiftUI View에서 인증 처리**
 
 `GameCenterViewModel`을 사용하여 Game Center에 사용자를 인증하는 과정을 SwiftUI 뷰에 추가할 수 있습니다.
 
-```
+```swift
 import SwiftUI
 
 struct ContentView: View {
@@ -129,7 +129,7 @@ struct ContentView: View {
 
  
 
-#### **4\. 리더보드 및 도전 과제 구현**
+#### **(4) 리더보드 및 도전 과제 구현**
 
 Game Center의 리더보드나 도전 과제를 사용하려면, 인증된 후 사용자의 점수를 보고하거나 도전 과제를 달성하는 등의 추가 코드를 작성해야 합니다.
 
@@ -137,7 +137,7 @@ Game Center의 리더보드나 도전 과제를 사용하려면, 인증된 후 �
 
 ##### **리더보드에 점수 보고 예제:**
 
-```
+```swift
 /// 리더보드에 점수 제출
 func reportScore(leaderboardID: String, score: Int) {
   GKLeaderboard.submitScore(
@@ -158,7 +158,7 @@ func reportScore(leaderboardID: String, score: Int) {
 
 ##### **도전 과제 구현 예제:**
 
-```
+```swift
 @Published var achievements = [GKAchievement]()
 
 /// Game Center에서 업적 로드
@@ -196,7 +196,7 @@ func reportAchievement(identifier: String, percentComplete: Double) {
 
 위 함수들을 `GameCenterViewModel`에 추가한 뒤, 뷰에서 표시하는 방법은 다음과 같습니다.
 
-```
+```swift
 // 뷰의 body에서
 
 Button(action: {
@@ -218,14 +218,13 @@ Button(action: {
 
  
 
-#### **5\. Game Center 대시보드 띄우기 버튼 만들기**
+#### **(5) Game Center 대시보드 띄우기 버튼 만들기**
 
 - GameCenter 뷰에 대한 `UIViewControllerRepresentable` 작성
 - 대시보드 띄우는 버튼 만들기
 
- 
 
-```
+```swift
 import SwiftUI
 import GameKit
 
@@ -277,7 +276,7 @@ struct GameCenterDashboardRepresentedView: UIViewControllerRepresentable {
 
 ```
 
-```
+```swift
 struct ContentView: View {
   @StateObject private var gameCenterViewModel = GameCenterViewModel()
   @State private var showDashboard = false
@@ -307,7 +306,7 @@ struct ContentView: View {
 
 <iframe width="480" height="461" src="https://giphy.com/embed/U4P9bXHGli5SkPcP3Q" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
 
-### **요약**
+## **요약**
 
 1. Apple Developer 계정 및 Xcode 프로젝트 설정
 2. `GameKit` 프레임워크 가져오기
@@ -315,7 +314,6 @@ struct ContentView: View {
 4. 리더보드 및 도전 과제 구현
 5. 대시보드 띄우기
 
-이렇게 하면 SwiftUI 기반의 iOS 프로젝트에서 Game Center를 연동할 수 있습니다.
 
  
 

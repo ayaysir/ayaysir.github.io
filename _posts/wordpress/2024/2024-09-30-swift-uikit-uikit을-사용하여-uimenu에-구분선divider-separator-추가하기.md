@@ -8,19 +8,21 @@ categories:
 
 - **출처**: [Create Dividers in UIMenu using UIKit](https://www.swiftjectivec.com/add-a-divider-in-context-menu-using-uikit/)
 
-### **시나리오**
+## **시나리오**
 
 `UIKit`을 사용하여 `UIMenu` 내에 구분선을 추가하는 방법
 
  
 
-\[caption id="attachment\_6860" align="alignnone" width="314"\] ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-30-pm-11.26.22-copy.jpg) 구분선이 있는 컨텍스트 메뉴\[/caption\]
+![구분선이 있는 컨텍스트 메뉴](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-30-pm-11.26.22-copy.jpg)  
+*구분선이 있는 컨텍스트 메뉴*
 
+## **구현방법**
  
 
 버튼을 누르면 컨텍스트 메뉴가 뜨며, 메뉴가 표시될 때 구분선이 존재합니다:
 
-```
+```swift
 import UIKit
 
 class ContextDividerViewController: UIViewController {
@@ -59,7 +61,7 @@ class ContextDividerViewController: UIViewController {
 }
 ```
 
-**세부 사항**
+### **세부 사항**
 
 1. 구분선을 사용하려면 최소한 구분선 위와 아래에 하나 이상의 항목이 필요합니다. 그렇지 않으면 나눌 것이 없겠죠.
 2. 구분선은 여기에서 만들어집니다. .`displayInline` 옵션을 사용하는 **UIMenu**가 필요하며, 자식 요소를 전달하면 됩니다.

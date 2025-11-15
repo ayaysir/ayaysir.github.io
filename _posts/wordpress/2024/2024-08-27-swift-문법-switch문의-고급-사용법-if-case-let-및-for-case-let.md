@@ -6,13 +6,13 @@ categories:
   - "Swift"
 ---
 
-- [Swift 기초 (2): if 문, for ~ in 문, while 문, switch 문](http://yoonbumtae.com/?p=2109)
+- [Swift 기초 (2): if 문, for ~ in 문, while 문, switch 문](/posts/swift-기초-2-if-문-for-in-문-while-문-switch-문/)
 
-### **1\. Switch 문을 사용한 튜플 매칭 이해하기**
+## **1\. Switch 문을 사용한 튜플 매칭 이해하기**
 
 Swift의 `switch` 문은 특정 값에 대해 다양한 경우를 다룰 수 있도록 해줍니다. 특히 튜플을 사용할 때 매우 유용합니다. 이번 섹션에서는 `switch` 문이 튜플을 어떻게 처리하는지 살펴보겠습니다.
 
-```
+```swift
 func getPoint(somePoint: (Int, Int)) {
     switch somePoint {
     case (0, 0):
@@ -35,7 +35,7 @@ getPoint(somePoint: (1, 3))    // (1, 3) is outside of the box
 getPoint(somePoint: (1, 2))    // (1, 2) is inside the box
 ```
 
-##### **설명:**
+### **설명:**
 
 - `getPoint(somePoint:)` 함수는 `(Int, Int)` 형태의 튜플을 매개변수로 받아, 그 튜플이 어디에 위치하는지 출력합니다.
 - `(0, 0)`은 원점(origin)이며, 이 경우 "is at the origin"이 출력됩니다.
@@ -46,13 +46,11 @@ getPoint(somePoint: (1, 2))    // (1, 2) is inside the box
 
  
 
- 
-
-### **2\. 값 바인딩과 Switch 문**
+## **2\. 값 바인딩과 Switch 문**
 
 다음 섹션에서는 `switch` 문에서 값 바인딩을 사용하여 각 케이스에서 변수를 사용해 값을 출력하는 방법을 살펴보겠습니다.
 
-```
+```swift
 func getPoint2(somePoint:(Int,Int)) {
     switch somePoint {
     case (0, 0):
@@ -75,7 +73,7 @@ getPoint2(somePoint: (1, 3))    // (1, 3) is outside of the box
 getPoint2(somePoint: (1, 2))    // (1, 2) is inside the box
 ```
 
-##### **설명:**
+### **설명:**
 
 - `let x` 또는 `let y`를 사용해 `somePoint`의 값을 변수로 바인딩할 수 있습니다.
 - `(let x, 0)`에서는 y 값이 0일 때 x 값을 바인딩하고, 이를 출력합니다.
@@ -83,13 +81,11 @@ getPoint2(somePoint: (1, 2))    // (1, 2) is inside the box
 
  
 
- 
-
-### **3\. Where 절을 사용한 추가 조건 적용**
+## **3\. Where 절을 사용한 추가 조건 적용**
 
 이번 섹션에서는 `where` 절을 사용해 `switch` 문 내에서 추가적인 조건을 적용하는 방법을 알아보겠습니다.
 
-```
+```swift
 func wherePoint(point:(Int,Int)) {
     switch point {
     case let (x, y) where x == y:
@@ -106,7 +102,7 @@ wherePoint(point: (3, -3))   // (3, -3) is on the line x == -y
 wherePoint(point: (3, 2))    // (3, 2) is just some arbitrary point
 ```
 
-##### **설명:**
+### **설명:**
 
 - `where` 절을 사용하면 특정 조건을 충족하는 경우에만 해당 `case`가 실행되도록 할 수 있습니다.
 - `(x == y)`인 경우, 점이 `x == y` 선 위에 있다는 메시지를 출력합니다.
@@ -115,15 +111,13 @@ wherePoint(point: (3, 2))    // (3, 2) is just some arbitrary point
 
  
 
- 
-
-### **4\. Switch 문에서의 열거형(Enumeration) 처리**
+## **4\. Switch 문에서의 열거형(Enumeration) 처리**
 
 이번 섹션에서는 `switch` 문을 사용하여 열거형을 처리하는 방법을 알아보겠습니다. Swift의 열거형은 정해진 몇 가지 값 중 하나를 가질 수 있는 타입을 정의할 때 유용합니다.
 
-##### **사전 코드:**
+### **사전 코드:**
 
-```
+```swift
 enum JustError: Error {
     case fatalError
 }
@@ -154,11 +148,10 @@ let result2 = Result {
 
 ```
 
- 
 
-##### **본 코드:**
+### **본 코드:**
 
-```
+```swift
 switch result2 {
 case .success(let data):
     print("success", data) // "success 1234567\n"
@@ -174,7 +167,7 @@ switch result2 {
 }
 ```
 
-##### **설명:**
+### **설명:**
 
 - 열거형 `result2`의 값이 `success`인 경우, `data`를 출력합니다.
 - `failure`인 경우, `error`를 출력합니다.
@@ -182,13 +175,11 @@ switch result2 {
 
  
 
- 
-
-### **5\. `if case` 문을 활용한 값 매칭**
+## **5\. `if case` 문을 활용한 값 매칭**
 
 마지막으로, `if case` 문을 사용하여 특정 케이스에 대해 조건을 확인하는 방법을 알아보겠습니다.
 
-```
+```swift
 if case let .success(data) = result {
     print("success", data)
 }
@@ -198,14 +189,14 @@ if case .success(let data) = result {
 }
 ```
 
-##### **설명:**
+### **설명:**
 
 - `if case` 문을 사용하면 `switch` 문을 사용하지 않고도 특정 케이스와 매칭할 수 있습니다.
 - 예를 들어, `result`가 `success`일 때만 `data`를 출력할 수 있습니다.
 
  
 
-```
+```swift
 let scoresIncludeNil = [1, 13, 6, 5, nil, 30, 4, nil]
 for case let score? in scoresIncludeNil where score >= 5 {
     print("5점 초과 스코어", score)
@@ -225,7 +216,7 @@ for case let score? in scoresIncludeNil where score >= 5 {
 
 * * *
 
-### **참고) if case let, for case let**
+## **(참고) if case let, for case let**
 
  
 
@@ -247,7 +238,7 @@ if case let .success(value) = result {
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - `Result`라는 열거형(enum)이 있고, 두 가지 상태(`success`, `failure`)를 가질 수 있습니다.
 - `result`라는 변수는 `Result.success(200)`로 초기화되어 있습니다.
@@ -269,7 +260,7 @@ for case let .success(value) in items {
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - `items`라는 배열이 있고, `Result.success`와 `Result.failure`가 섞여 있습니다.
 - `for case let .success(value) in items`는 `items` 배열을 순회하면서 `success`에 해당하는 항목만 선택하고, 그 값을 `value`에 바인딩합니다.
@@ -286,7 +277,7 @@ for case let .success(value) in items {
 
 ### **4\. 추가 예시: `if case let`**
 
-```
+```swift
 let optionalNumber: Int? = 42
 
 if case let number? = optionalNumber {
@@ -299,7 +290,7 @@ if case let number? = optionalNumber {
 
 ### **5\. 추가 예시: `for case let`**
 
-```
+```swift
 let mixedValues: [Int?] = [nil, 42, nil, 7, nil, 100]
 
 for case let number? in mixedValues {

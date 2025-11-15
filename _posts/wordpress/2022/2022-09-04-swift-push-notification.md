@@ -350,7 +350,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
  
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 

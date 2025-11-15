@@ -93,7 +93,7 @@ private func setBrightness(_ displayBrightness: CGFloat) {
 
 `Swift Playground App` 프로젝트를 생성한 뒤 `ContentView`를 아래와 같이 채웁니다.
 
-```
+```swift
 import SwiftUI
 import AVFoundation
 

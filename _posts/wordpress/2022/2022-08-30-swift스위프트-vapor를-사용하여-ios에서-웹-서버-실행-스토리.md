@@ -157,7 +157,7 @@ func start() {
 
 `ViewController.swift`를 열고 서버를 초기화하는 `server.start()`를 `viewDidLoad(_:)`에서 호출합니다.
 
-```
+```swift
 import UIKit
 
 class ViewController: UIViewController {
@@ -589,7 +589,7 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 <!-- http://www.giphy.com/gifs/sDYwNFulSvl1RsmmUm -->
 ![](https://)
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 

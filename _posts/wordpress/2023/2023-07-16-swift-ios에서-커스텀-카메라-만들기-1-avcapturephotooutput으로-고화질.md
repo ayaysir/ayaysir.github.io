@@ -294,7 +294,7 @@ captureSession.startRunning()
 
 ![](https://media.giphy.com/media/BB1NydxehhNcdofc2S/giphy.gif)
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 
@@ -399,7 +399,7 @@ func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo:
 
 #### **뷰 컨트롤러 전체 코드**
 
-```
+```swift
 import UIKit
 import AVFoundation
 import Photos

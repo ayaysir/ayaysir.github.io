@@ -40,7 +40,7 @@ Swift에서 진동(Vibration 또는 Haptic)을 구현하는 방법입니다. 진
 
 아래 코드를 `Vibration.swift`라는 이름의 파일로 프로젝트에 추가합니다. ([출처](https://stackoverflow.com/questions/26455880/how-to-make-iphone-vibrate-using-swift))
 
-```
+```swift
 import UIKit
 import AVFoundation
 
@@ -137,7 +137,7 @@ iOS 프로젝트를 생성한 뒤, 메인 화면에 피커 뷰(`UIPickerView`) �
 
 뷰 컨트롤러 코드를 작성합니다.
 
-```
+```swift
 import UIKit
 
 class ViewController: UIViewController {

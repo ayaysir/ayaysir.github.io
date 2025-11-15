@@ -24,7 +24,7 @@ UIKit 프로젝트에서 `SwiftUI로 만든 View`를 삽입하는 방법과 더�
 
 ##### **1) SwiftUI로 View 작성**
 
-```
+```swift
 import SwiftUI
 
 struct CustomMusicSliderView: View {

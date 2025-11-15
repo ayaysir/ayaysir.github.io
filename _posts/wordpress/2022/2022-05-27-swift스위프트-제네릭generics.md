@@ -174,7 +174,7 @@ intStack.items // [3, 6, 2]
 
  
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 

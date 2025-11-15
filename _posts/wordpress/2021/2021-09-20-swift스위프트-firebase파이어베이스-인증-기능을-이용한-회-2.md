@@ -28,7 +28,7 @@ categories:
 
 아래 함수는 `UIImage`를 받아 가로 또는 세로의 최대 사이즈가 `maxSize`인 섬네일을 생성합니다.
 
-```
+```swift
 import UIKit
 
 func makeImageThumbnail(image: UIImage, maxSize: Int = 100) -> UIImage? {
@@ -278,7 +278,7 @@ var block: FileCompletionBlock?
 
 ##### **2\. 커스텀 타입 ImageWithName 생성**
 
-```
+```swift
 import UIKit
 
 struct ImageWithName {
@@ -295,7 +295,7 @@ struct ImageWithName {
 
 ##### **3\. 클래스 FirebaseFileManager 추가 - 핵심 업로드 로직**
 
-```
+```swift
 import UIKit
 import Firebase
 
@@ -525,7 +525,7 @@ func startUploading(images: [ImageWithName], completion: @escaping FileCompletio
 
 #### **전체 코드 (이전 내용 포함)**
 
-```
+```swift
 import UIKit
 import Firebase
 import Photos

@@ -57,7 +57,7 @@ Create ML로 만든 모델 파일을 이용해 이미지 분류 앱을 제작합
 
 먼저 뷰 컨트롤러에 다음 import들을 추가합니다.
 
-```
+```swift
 import UIKit
 import CoreML
 import Vision // 이미지 고급 처리
@@ -199,7 +199,7 @@ func updateClassifications(for image: UIImage) {
 
 **CGImagePropertyOrientation에 대한 extension**
 
-```
+```swift
 import UIKit
 import ImageIO
 
@@ -338,7 +338,7 @@ func processClassifications(for request: VNRequest, error: Error?) {
 
 **CGImagePropertyOrientation의 extension**
 
-```
+```swift
 import UIKit
 import ImageIO
 
@@ -369,7 +369,7 @@ extension CGImagePropertyOrientation {
 
 **뷰 컨트롤러**
 
-```
+```swift
 import UIKit
 import CoreML
 import Vision // 이미지 고급 처리

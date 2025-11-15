@@ -89,7 +89,7 @@ By contrast, if you take an average work to be about five characters, and you as
 
 반면에, 평균적인 단어가 5자라고 가정하고 모든 문자가 서로 뒤에 따라 올 수 있다고 가정하면, 일반적인 말의 정보 흐름율은 50~75비트/초 사이입니다.
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
 > 앞서 스티븐 호킹은 일반적인 경우의 보 속도(baud rate)를 분당 120~180 단어라고 정의했습니다.
 > 

@@ -24,7 +24,7 @@ SwiftUI에서는 직접적으로 기능을 제공하지 않는 것처럼 보이�
 
 먼저 기본 `ContentView` 레이아웃을 생성합니다.
 
-```
+```swift
 import SwiftUI
 
 struct ContentView: View {

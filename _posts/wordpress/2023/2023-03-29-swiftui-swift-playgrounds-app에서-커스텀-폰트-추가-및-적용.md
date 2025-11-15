@@ -49,7 +49,7 @@ categories:
 
 프로젝트 내에 아래 구조체를 등록합니다.
 
-```
+```swift
 import SwiftUI
 
 public struct FontManager {
@@ -82,7 +82,7 @@ public struct FontManager {
 
 ##### **3) MyApp (앱 시작 부분 `@main`)에 생성자를 추가합니다.**
 
-```
+```swift
 import SwiftUI
 
 @main

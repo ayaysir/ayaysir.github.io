@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-#### **참고**
+**참고**
 
 - [Swift(스위프트): 로컬 알림(Local Notification)을 스케줄에 맞춰 반복 발신하기 (및 한계점)](http://yoonbumtae.com/?p=5064)
 - [Swift: \[ChatGPT가 말하는\] 로컬 알림(로컬 노티피케이션) 기능의 한계점과 극복 방안](http://yoonbumtae.com/?p=6854)
@@ -14,23 +14,24 @@ categories:
 
 * * *
 
-### **시나리오**
+## **시나리오**
 
-#### **앱 설명**
+### **앱 설명**
 
 - 하루에 한 번 공부 자료가 업데이트 되는 어학 앱이 있습니다.
 - 월요일 ~ 금요일에만 업데이트가 되고, 주말에는 업데이트가 되지 않습니다.
 
  
 
-#### **목표**
+### **목표**
 
-\[caption id="attachment\_6864" align="alignnone" width="377"\] ![](/assets/img/wp-content/uploads/2024/10/screenshot-2024-10-06-pm-5.07.57-copy.jpg) 평일 특정 시간에 30분 간격으로 앱을 열 것을 종용하는 알림을 보냄\[/caption\]
+![평일 특정 시간에 30분 간격으로 앱을 열 것을 종용하는 알림을 보냄](/assets/img/wp-content/uploads/2024/10/screenshot-2024-10-06-pm-5.07.57-copy.jpg)   
+*평일 특정 시간에 30분 간격으로 앱을 열 것을 종용하는 알림을 보냄*
 
  
 
-\[caption id="attachment\_6856" align="alignnone" width="570"\] ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-29-pm-3.05.20-copy.jpg) 알림 스케줄\[/caption\]
-
+![알림 스케줄](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-29-pm-3.05.20-copy.jpg)   
+*알림 스케줄*
  
 
 - 월요일 ~ 금요일에 오전 9:30분부터 오후 9:30분까지 30분 간격으로 앱을 열어 공부하라는 [로컬 알림(Local Notification)](https://developer.apple.com/documentation/usernotifications/scheduling-a-notification-locally-from-your-app)을 보냅니다.
@@ -40,24 +41,23 @@ categories:
 
  
 
-### **방법**
+## **방법**
 
 1. 앱을 열면 그 날에는 더 이상 알림이 울릴 필요가 없으므로 당일의 남은 알림은 모두 삭제합니다.
 2. 로컬 알림의 최대 개수가 허용하는 범위 (64개) 내로  다음 날 부터의 알림을 등록합니다.
 
  
 
-### **구현**
+## **구현**
 
-```
+```swift
 import UIKit
 ```
 
  
+### **알림 등록**
 
-#### **알림 등록**
-
-```
+```swift
 static func scheduleLocalNotifications() {
     let center = UNUserNotificationCenter.current()
     
@@ -140,9 +140,9 @@ static func scheduleLocalNotifications() {
 
  
 
-#### **당일 알림 삭제**
+### **당일 알림 삭제**
 
-```
+```swift
 static func removeTodayNotificationsAfterCurrentTime() {
     let currentDate = Date()
     let calendar = Calendar.current
@@ -184,9 +184,9 @@ static func removeTodayNotificationsAfterCurrentTime() {
 
  
 
-#### **뷰 컨트롤러에서 사용 (UIKit)**
+### **뷰 컨트롤러에서 사용 (UIKit)**
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
     

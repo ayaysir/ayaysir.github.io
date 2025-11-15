@@ -203,7 +203,7 @@ export default App
 
 리액트 이벤트 React ReactJS 이벤트 폼 이벤트 변경 이벤트 클릭 이벤트 event click Event Form Event onChange onClick ChangeEvent FormEvent TSX JSX
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
 ##### **방법 2 - 콜백 함수의 파라미터로 이벤트 타입만 사용하고, 블록 내에서 e.target 등에 as HTMLInputElement와 같이 지정하는 방법**
 

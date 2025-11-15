@@ -275,7 +275,7 @@ struct LoginViewModel {
 
 ##### **ViewController.swift**
 
-```
+```swift
 import UIKit
 import RxSwift
 import RxCocoa

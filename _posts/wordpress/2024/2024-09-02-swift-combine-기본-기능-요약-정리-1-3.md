@@ -7,13 +7,13 @@ categories:
 ---
 
 - **출처:** [https://icksw.tistory.com/category/iOS/Combine](https://icksw.tistory.com/category/iOS/Combine)
-- **주의:** 아래 포스트는 ChatGPT를 이용하여 요약하였으므로 틀린 내용이 있을 수 있습니다.
+- **주의:** 아래 포스트는 김생성씨의 도움을 받아 요약하였으므로 틀린 내용이 있을 수 있습니다.
 
- 
+## 기초
 
 ### **1\. Combine 프레임워크를 사용하여 커스텀 Publisher 생성**
 
-```
+```swift
 class HandsUp: Publisher {
     typealias Output = String
     // Never: The return type of functions that do not return normally, that is, a type with no values.
@@ -71,7 +71,7 @@ _ = handsUpPublisher.sink(receiveCompletion: { _ in
 
 ### **2\. Future: 단일 이벤트와 종료 혹은 실패를 제공하는 publisher**
 
-```
+```swift
 // 1
 let future = Future<String, Error> { promise in
     promise(.success("Future: Success"))
@@ -117,7 +117,7 @@ _ = futureWithNever.sink {
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **Future**는 Combine의 Publisher 중 하나로, 단일 이벤트와 종료 또는 실패를 제공합니다. 이 Publisher는 단일 값을 emit하고 종료하거나, 오류가 발생하면 실패를 emit합니다.
 - 첫 번째 예제에서는 `Future`가 성공적인 결과를 emit하고, `Future: Success`라는 메시지가 출력됩니다.
@@ -128,7 +128,7 @@ _ = futureWithNever.sink {
 
 ### **3\. Just: 단일 이벤트 발생 후 종료**
 
-```
+```swift
 let just = Just<String>("Monika")
 
 _ = just.sink {
@@ -144,7 +144,7 @@ _ = just.sink {
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **Just**는 Combine의 Publisher 중 하나로, 단일 값을 emit하고 종료합니다. `Just`는 하나의 이벤트를 방출한 후, 완료 상태로 종료됩니다.
 - 위의 예제에서는 `Just`가 `"Monika"`라는 값을 emit하고, 이 값이 출력됩니다. 이후 `JustResult: finished`라는 메시지가 출력됩니다.
@@ -154,7 +154,7 @@ _ = just.sink {
 
 ### **4\. Deferred: 구독이 이뤄질 때 publisher가 만들어질 수 있도록 하는 publisher**
 
-```
+```swift
 class PutYourHandsUp: Publisher {
     typealias Output = String
     typealias Failure = Never
@@ -193,7 +193,7 @@ _ = deferredPYHUPublisher.sink(receiveValue: {
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **Deferred**는 Combine의 Publisher를 구독할 때마다 새로 생성할 수 있도록 합니다. 이렇게 하면 Publisher가 실제로 생성되고 초기화되는 시점을 구독 시점으로 지연시킬 수 있습니다.
 - 위의 예제에서는 `PutYourHandsUp`라는 커스텀 Publisher를 사용하여, 구독이 이루어질 때까지 Publisher가 생성되지 않도록 합니다.
@@ -204,7 +204,7 @@ _ = deferredPYHUPublisher.sink(receiveValue: {
 
 ### **5\. Empty: 이벤트 없이 종료**
 
-```
+```swift
 let empty = Empty<String, Never>()
 _ = empty.sink(receiveCompletion: { result in
     print("Empty: receiveCompletion:", result)
@@ -218,7 +218,7 @@ _ = empty.sink(receiveCompletion: { result in
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **Empty**는 Combine의 Publisher 중 하나로, 아무런 값을 emit하지 않고 즉시 완료 상태로 종료됩니다. 이 Publisher는 값이 필요 없는 경우나, 단순히 종료 상태를 전달하고자 할 때 유용합니다.
 - 위의 예제에서는 `Empty` Publisher를 사용하여 어떤 값도 emit하지 않고, 완료 상태만을 전달합니다. `receiveCompletion`의 출력에서 `finished`가 나타나며, `receiveValue`의 출력은 없습니다.
@@ -228,7 +228,7 @@ _ = empty.sink(receiveCompletion: { result in
 
 ### **6\. Fail: 오류와 함께 종료**
 
-```
+```swift
 let failed = Fail<String, Error>(error: NSError(domain: "Failed", code: -1))
 _ = failed.sink(receiveCompletion: { result in
     print("Fail: receiveCompletion:", result)
@@ -242,7 +242,7 @@ _ = failed.sink(receiveCompletion: { result in
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **Fail**은 Combine의 Publisher 중 하나로, 즉시 오류를 발생시키고 종료됩니다. 이 Publisher는 값이 필요 없고, 실패 상태만을 전달해야 할 때 사용됩니다.
 - 위의 예제에서는 `Fail` Publisher를 사용하여 오류를 방출합니다. 이 오류는 `NSError`로 정의되며, 오류 도메인은 "Failed", 코드 값은 `-1`입니다.
@@ -252,7 +252,7 @@ _ = failed.sink(receiveCompletion: { result in
 
 ### **7\. Record: 입력과 완료를 기록해 다른 subscriber에서 반복될 수 있는 publisher**
 
-```
+```swift
 let record = Record<String, Error> { recording in
     print("===== Make Record ===== ")
     recording.receive("LeBao")
@@ -278,7 +278,7 @@ for _ in 1...3 {
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **Record**는 Combine의 Publisher로, 이벤트와 완료 상태를 기록하여 여러 구독자에게 반복적으로 제공할 수 있습니다. 이 Publisher는 입력된 모든 값을 기록하여 이후의 구독자들이 동일한 값을 받을 수 있도록 합니다.
 - 위의 예제에서는 `Record`를 사용하여 문자열 값을 방출하고, 완료 상태로 오류를 발생시킵니다. 기록된 값과 완료 상태는 여러 번의 구독 시 반복해서 제공됩니다.
@@ -288,7 +288,7 @@ for _ in 1...3 {
 
 ### **8\. AnyPublisher: 유형 추상화를 위한 Publisher**
 
-```
+```swift
 let originalPublisher = [1, nil, 3].publisher
 let anyPublisher = originalPublisher.eraseToAnyPublisher()
 /*
@@ -302,19 +302,17 @@ anyPublisher.sink { receivedValue in
 
  ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-02-pm-5.44.59.jpg)
 
-##### **설명:**
+#### **설명:**
 
 - **AnyPublisher**는 Combine의 Publisher의 타입을 추상화하여 다양한 모듈 간의 API 경계에서 일관성을 유지할 수 있게 합니다. `eraseToAnyPublisher()` 메서드는 특정 Publisher의 실제 유형을 숨기고, 이를 `AnyPublisher`로 변환하여 추상화된 형태로 제공합니다.
 - 위의 예제에서는 배열 `[1, nil, 3]`을 Publisher로 변환한 후, `eraseToAnyPublisher()`를 사용하여 `AnyPublisher`로 변환합니다. 이를 통해 Publisher의 실제 타입을 숨기고 `AnyPublisher` 타입으로 추상화된 Publisher를 제공합니다.
 - 코드의 마지막 부분에서 `AnyPublisher`의 값을 구독하고 출력합니다. 이 방식은 내부 구현에 대한 정보를 숨기면서 외부에 일관된 인터페이스를 제공할 수 있습니다.
 
- 
 
-* * *
 
 ### **9\. Demand Custom Subscriber: IntSubscriber 구현**
 
-```
+```swift
 class IntSubscriber: Subscriber {
     
     typealias Input = Int
@@ -355,7 +353,7 @@ intArray.publisher.subscribe(intSubscriber)
 
  ![](/assets/img/wp-content/uploads/2024/09/screenshot-2024-09-02-pm-5.44.50.jpg)
 
-##### **설명:**
+#### **설명:**
 
 - **IntSubscriber**는 Combine의 `Subscriber` 프로토콜을 구현한 사용자 정의 구독자입니다. 이 구독자는 `Int` 타입의 값을 수신하고, `Never` 타입의 실패를 허용합니다.
 - `receive(subscription:)` 메서드는 구독 요청을 수행하며, 최대 한 개의 요소를 요청합니다. `request(.max(1))`은 Publisher에게 한 번의 값을 더 요청하겠다는 의미입니다.
@@ -368,7 +366,7 @@ intArray.publisher.subscribe(intSubscriber)
 
 ### **10\. AnyCancellable: 구독 취소 및 이벤트 처리**
 
-```
+```swift
 let subject1 = PassthroughSubject<Int, Never>()
 let anyCancellable1 = subject1
     .handleEvents(receiveCancel: {
@@ -393,7 +391,7 @@ received value: 1
 Subject 1 is cancelled.
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **AnyCancellable**는 Combine에서 구독을 취소할 수 있는 객체를 제공합니다. 구독을 취소하면 Publisher로부터 더 이상 값을 수신하지 않습니다.
 - 위의 예제에서는 `PassthroughSubject`를 생성하고, 이를 `handleEvents(receiveCancel:)`와 `sink`를 사용하여 구독합니다. `handleEvents(receiveCancel:)`는 구독이 취소될 때 특정 작업을 수행하도록 합니다. 여기서는 "Subject 1 is cancelled."를 출력합니다.
@@ -405,14 +403,12 @@ Subject 1 is cancelled.
 
 ### **11\. Publisher와 Subscriber의 상호작용: 값과 완료 이벤트 전달**
 
-```
-/*
  1. Publisher는 값이나 completion event를 Subscriber에게 전달합니다.
  2. Subscriber는 Subscription을 통해 Publisher에게 값을 요청합니다.
  3. Subscription은 Publisher와 Subscriber 사이를 연결합니다.
  4. Subscription은 cancel()을 통해 취소할 수 있으며 이때 호출될 클로저를 설정할 수 있습니다.
- */
 
+```swift
 let anyPublisher1 = [1, nil, 3].publisher
     .flatMap { value -> AnyPublisher<Int, Never> in
         if let value {
@@ -437,7 +433,7 @@ anyPublisher1.sink {
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - 이 예제는 Combine의 Publisher와 Subscriber 간의 상호작용을 설명합니다. Publisher는 값을 발행하거나 완료 이벤트를 전달하고, Subscriber는 이를 수신하고 처리합니다.
 - **Publisher**는 값이나 완료 이벤트를 Subscriber에게 전달합니다. 이 예제에서는 배열 \[1, nil, 3\]을 Publisher로 변환합니다.
@@ -448,13 +444,13 @@ anyPublisher1.sink {
 
  
 
-* * *
+
 
 ## **Subject들**
 
 ### **12\. CurrentValueSubject: 최신 값과 함께 구독**
 
-```
+```swift
 let currentValueSubject = CurrentValueSubject<String, Never>("1")
 currentValueSubject
     .sink { completion in
@@ -497,7 +493,7 @@ currentValueSubject.send(completion: .finished)
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **CurrentValueSubject**는 Combine에서 현재 값을 보유하고 있는 Publisher입니다. 구독자는 현재 값과 이후 발행되는 값 모두를 수신할 수 있습니다.
 - 위의 예제에서는 `CurrentValueSubject`를 사용하여 문자열 값을 보유하고 초기 값으로 "1"을 설정합니다.
@@ -506,13 +502,13 @@ currentValueSubject.send(completion: .finished)
 - 세 번째 `sink`는 취소되지 않았으므로, 현재 값과 이후 발행되는 값 및 완료 상태를 모두 수신합니다.
 - 결과적으로, 각 구독자는 초기 값 "1"과 이후 발행된 값 "2" 및 "3", 그리고 완료 상태를 출력합니다. 취소된 구독자는 값과 완료 상태를 수신하지 않습니다.
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 
 ### **13\. PassthroughSubject: 값을 전파하는 Publisher**
 
-```
+```swift
 /*
  정의를 보니 "downstream의 subscriber들에게 값을 전파한다"라고 되어있네요.
  그리고 아까 알아본 CurrentValuSubject와 다르게 생성할 때 딱히 초기값이 필요하지 않다고 합니다.
@@ -553,7 +549,7 @@ passthroughSubject.send(completion: .finished)
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **PassthroughSubject**는 값을 전파하는 Publisher로, 구독자가 값을 수신하기 전에 값을 전달할 수 있습니다. 초기값을 필요로 하지 않으며, 최신 값을 저장하지 않습니다.
 - 이 예제에서 `PassthroughSubject`를 사용하여 두 개의 `sink` 구독자를 생성합니다. 이 구독자들은 각각 `PassthroughSubject`가 발행하는 값을 수신하고, 완료 상태를 출력합니다.
@@ -564,7 +560,7 @@ passthroughSubject.send(completion: .finished)
 
 ### **14\. Assign: 객체의 프로퍼티에 값을 할당하는 Subscriber**
 
-```
+```swift
 class SampleObject {
     var intValue: Int {
         didSet {
@@ -598,7 +594,7 @@ print("Final IntValue:", sampleObject.intValue)
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **Assign**는 Combine에서 제공하는 Subscriber로, Publisher가 발행하는 값을 특정 객체의 프로퍼티에 직접 할당합니다. 이를 통해 Publisher의 값을 객체의 프로퍼티에 쉽게 바인딩할 수 있습니다.
 - 예제에서는 `SampleObject`라는 클래스를 정의하고, `intValue` 프로퍼티의 값을 변경할 때마다 출력하도록 설정합니다. 객체가 메모리에서 해제될 때 "SampleObject deinit"을 출력합니다.
@@ -610,7 +606,7 @@ print("Final IntValue:", sampleObject.intValue)
 
 ### **15\. Demand: Subscriber의 요구 횟수 조절**
 
-```
+```swift
 // Demand는 누적되는 값이다, 음수를 넣어서 감소시킬 수는 없다! 정도만 알면 사용할 때 큰 문제는 없겠어요.
 class DemandTestSubscriber: Subscriber {
     typealias Input = Int
@@ -659,7 +655,7 @@ print("==================")
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **Demand**는 Combine의 Subscriber가 Publisher에게 얼마나 많은 값을 요청할 것인지를 조절하는 메커니즘입니다. `Subscribers.Demand`를 사용하여 요청할 최대 값의 수를 설정하거나, 추가 값을 요청하지 않도록 설정할 수 있습니다.
 - 예제에서는 `DemandTestSubscriber`가 `Subscription`을 수신하고, 초기 요청 횟수를 1로 설정합니다. 이후에는 값이 333일 때만 추가로 요청 횟수를 1 증가시키고, 그 외의 값은 요청하지 않습니다.
@@ -669,7 +665,7 @@ print("==================")
 
 ### **16\. Demand: 무제한 요청 설정**
 
-```
+```swift
 class DemandTestSubscriber2: Subscriber {
     typealias Input = Int
     typealias Failure = Never
@@ -715,7 +711,7 @@ print("==================")
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **Demand**는 Combine의 Subscriber가 Publisher에게 요청하는 값의 수를 조절하는 메커니즘입니다. `Subscribers.Demand`를 사용하여 요청할 최대 값의 수를 설정할 수 있으며, 무제한으로 요청할 수도 있습니다.
 - 예제에서는 `DemandTestSubscriber2`가 `Subscription`을 수신하고, 무제한으로 값을 요청합니다. `subscription.request(.unlimited)`를 호출하여 무제한으로 요청을 설정합니다.
@@ -725,7 +721,7 @@ print("==================")
 
 ### **17\. Completion: 커스텀 오류와 완성 상태 처리**
 
-```
+```swift
 // custom Error를 만듭니다.
 enum PinguError: Error {
     case pinguIsBaboo
@@ -780,7 +776,7 @@ anySubject1.send(completion: .failure(.pinguIsBaboo))
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - **Completion** 이벤트는 Publisher가 이벤트 스트림을 완료하거나 실패를 알릴 때 발생합니다. 이 예제에서는 커스텀 오류 `PinguError`를 정의하여 Subscriber가 이를 처리하도록 설정합니다.
 - `PinguSubscriber` 클래스는 `Subscriber` 프로토콜을 채택하고, `receive(completion:)` 메소드에서 커스텀 오류를 확인하여 적절한 메시지를 출력합니다. 만약 오류가 `.pinguIsBaboo`인 경우, "Pingu는 바보입니다."라는 메시지를 출력합니다.
@@ -789,13 +785,13 @@ anySubject1.send(completion: .failure(.pinguIsBaboo))
 
  
 
-* * *
+
 
  
 
 ### **18\. 클래스로 정의되어야 하는 Custom Subscription**
 
-```
+```swift
 /*
  Subscription에는 특정 Subscriber가 Publisher를 subscribe 할 때 정의되는 ID가 있어서 Class로만 정의해야 한다고 합니다. 또한 Subscription을 cancel 하는 작업은 스레드로부터 안전해야 한다고 하며 cancel은 한 번만 할 수 있다고 해요. Subscription을 cancel 하면 Subscriber를 연결해서 할당된 모든 리소스도 해제된다고 합니다.
  */
@@ -888,7 +884,7 @@ print("=================================")
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - `PandaSubscription` 클래스는 커스텀 `Subscription`을 정의합니다. 이 클래스는 특정 `Subscriber`와 `YoutubeSubscriber`의 배열을 사용하여 데이터를 전송하고, `request(_:)` 메소드를 통해 데이터를 요청합니다.
 - `PandaPublisher`는 커스텀 `Publisher`로, `receive(subscriber:)` 메소드를 통해 `PandaSubscription`을 생성하고 `Subscriber`에 전달합니다.
@@ -901,7 +897,7 @@ print("=================================")
 
 ### **19\. Publisher의 map 연산자 사용**
 
-```
+```swift
 let intPublisher = [1, 2, 3, 4, 5, 6, 7].publisher
 intPublisher
     .map { element in
@@ -912,7 +908,7 @@ intPublisher
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - 이 코드는 `Publisher`의 `map` 연산자를 사용하여 입력된 배열의 각 요소를 두 배로 변환합니다.
 - `[1, 2, 3, 4, 5, 6, 7].publisher`는 배열을 `Publisher`로 변환합니다.
@@ -923,7 +919,7 @@ intPublisher
 
 ### **20\. KeyPath를 이용한 매핑**
 
-```
+```swift
 struct Point {
     let x: Int
     let y: Int
@@ -945,7 +941,7 @@ pointPublisher.send(Point(x: 344, y: 483, z: 932))
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - 이 코드는 `PassthroughSubject`를 사용하여 `Point` 구조체를 전달하는 `Publisher`를 생성합니다.
 - `map` 연산자를 이용해 `KeyPath`를 사용하여 `x`, `y`, `z` 프로퍼티를 추출합니다.
@@ -956,7 +952,7 @@ pointPublisher.send(Point(x: 344, y: 483, z: 932))
 
 ### **21\. TryMap**
 
-```
+```swift
 func checkNil(_ element: Int?) throws -> Int {
     guard let element else {
         throw PinguError.elementIsNil
@@ -992,7 +988,7 @@ TryMapPublisher sink: elementIsNil
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - `checkNil` 함수는 옵셔널 `Int` 값을 받아, 값이 없으면 `PinguError.elementIsNil` 오류를 던집니다.
 - `tryMapPublisher`는 옵셔널 `Int` 값이 포함된 배열로부터 `Publisher`를 생성합니다.
@@ -1004,7 +1000,7 @@ TryMapPublisher sink: elementIsNil
 
 ### **22\. MapError**
 
-```
+```swift
 enum PandaError: Error {
     case thisIsBlackBear
 }
@@ -1030,7 +1026,7 @@ TryMapPublisher sink: thisIsBlackBear
 
 ```
 
-##### **설명:**
+#### **설명:**
 
 - `PandaError` 열거형은 사용자 정의 오류 타입으로, 하나의 오류 케이스 `thisIsBlackBear`를 정의합니다.
 - `tryMapPublisher`는 이전 코드와 동일하게 옵셔널 값을 처리합니다.
@@ -1041,7 +1037,7 @@ TryMapPublisher sink: thisIsBlackBear
 
 ### **23\. Scan**
 
-```
+```swift
 pandaPublisher
     .scan(0) { accumulatedResult, currentSubscriber in
         print("accumulatedResult: \(accumulatedResult), currentSubscriber: \(currentSubscriber)")
@@ -1071,7 +1067,7 @@ pandaPublisher
 
 ### **24\. TryScan**
 
-```
+```swift
 tryMapPublisher
     .tryScan(0) { accResult, currValue in
         try accResult + checkNil(currValue)
@@ -1101,13 +1097,13 @@ tryMapPublisher
     - \[TryScan\] 3
     - \[TryScan\] failure(\_\_lldb\_expr\_61.PinguError.elementIsNil)
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 
 ### **25\. SetFailureType**
 
-```
+```swift
 let stfPublisher = [1, 2, 3, 4].publisher
 let pinguErrorPublisher = PassthroughSubject<Int, PinguError>()
 
@@ -1128,7 +1124,7 @@ pinguErrorPublisher.send(0)
 
 ```
 
-**설명:**
+#### **설명:**
 
 - `setFailureType` 연산자는 Publisher의 실패 타입을 설정하는 데 사용됩니다. 이는 여러 Publisher를 조합할 때 Output과 Failure 타입이 일치해야 하는 경우 유용합니다.
 - 위 코드에서는 `stfPublisher`의 실패 타입을 `PinguError`로 설정한 후, `combineLatest` 연산자를 사용하여 `pinguErrorPublisher`와 결합합니다.
@@ -1140,7 +1136,7 @@ pinguErrorPublisher.send(0)
 
 ### **26\. Filter, TryFilter**
 
-```
+```swift
 [1, 2, 3, 4, 5, 6, 7].publisher
     .filter { $0 % 2 == 0 }
     .sink { _ in
@@ -1152,7 +1148,7 @@ pinguErrorPublisher.send(0)
 
 ```
 
-```
+```swift
 [2, 2, 4, 4, 5, 6].publisher
     .tryFilter { element in
         if element % 2 == 0 {
@@ -1198,7 +1194,7 @@ pinguErrorPublisher.send(0)
 
 ### **27\. CompactMap, TryCompactMap**
 
-```
+```swift
 ["100", "235456", "a.b", "4443", "eefef", "45678.5"].publisher
     .compactMap { Int($0) }
     .sink(receiveCompletion: { _ in print() }, receiveValue: { print($0, terminator: " ") })
@@ -1206,7 +1202,7 @@ pinguErrorPublisher.send(0)
 
 ```
 
-```
+```swift
 ["100", "235456", "a.b", "4443", "babo", "45678.5"].publisher
     .tryCompactMap {
         if $0 == "babo" {
@@ -1241,7 +1237,7 @@ pinguErrorPublisher.send(0)
 
 ### **28\. RemoveDuplicates, TryRemoveDuplicates**
 
-```
+```swift
 struct Name {
     let lastName: String
     let firstName: String
@@ -1275,7 +1271,7 @@ struct Name {
 
 ```
 
-```
+```swift
 [1, 2, 2, 3, 3]
     .publisher
     .tryRemoveDuplicates { prev, curr in
@@ -1309,7 +1305,7 @@ struct Name {
 
 ### **29\. ReplaceEmpty**
 
-```
+```swift
 Empty<[String], Never>()
     .replaceEmpty(with: ["EE", "EE"])
     .sink { print("[ReplaceEmpty]", $0) }
@@ -1339,7 +1335,7 @@ Empty<[String], Never>()
 
 ### **30\. ReplaceError**
 
-```
+```swift
 ["1", "2", "a.b", "3"].publisher
     .tryCompactMap {
         if Int($0) != nil {
@@ -1388,7 +1384,7 @@ Empty<[String], Never>()
 
 ### **31\. Catch**
 
-```
+```swift
 ["1", "2", "a.b", "3"].publisher
     .tryCompactMap {
         if Int($0) != nil {
@@ -1432,7 +1428,7 @@ Empty<[String], Never>()
 
  
 
-* * *
+
 
 ### Reducing Elements로 분류된 Publisher
 
@@ -1459,7 +1455,7 @@ Empty<[String], Never>()
 
 ### **32\. Collect**
 
-```
+```swift
 [1, 2, 3, 4, 5].publisher
     .collect()
     .sink { print("[Collect]", $0) }
@@ -1476,7 +1472,7 @@ Empty<[String], Never>()
 
 ### **33\. CollectByCount**
 
-```
+```swift
 [1, 2, 3, 4, 5, 6, 7].publisher
     .collect(3)
     .sink { print("[CollectByCount]", $0) }
@@ -1501,7 +1497,7 @@ Empty<[String], Never>()
 
 ### **34\. CollectByTime**
 
-```
+```swift
 var cbtSubscription = Set()
 let timerPublisher = Timer.publish(every: 1, on: .main, in: .default)
 timerPublisher
@@ -1532,7 +1528,7 @@ timerPublisher
 
 ### **35\. IgnoreOutput**
 
-```
+```swift
 [1, 2, 3, 4, 5].publisher
     .ignoreOutput()
     .sink(receiveCompletion: { print("[IgnoreOutput]", $0) },
@@ -1560,7 +1556,7 @@ timerPublisher
     - - `scan`은 누적 결과를 매번 방출하는 반면, `reduce`는 모든 누적이 완료된 후에 최종 결과를 한번에 방출합니다.
         - 예시 코드:
     
-    ```
+    ```swift
     pandaPublisher
         .scan(0) { accumulatedResult, currentSubscriber in
             print("accumulatedResult: \(accumulatedResult), currentSubscriber: \(currentSubscriber)")
@@ -1584,7 +1580,7 @@ timerPublisher
 
 ### **36\. TryReduce**
 
-```
+```swift
 [1, 2, 3, -10, 4].publisher
     .tryReduce(0) { reduceValue, newValue in
         if reduceValue + newValue < 0 {
@@ -1606,13 +1602,10 @@ timerPublisher
 - `tryReduce` 연산자는 `reduce`와 유사하게 작동하지만, 클로저 내부에서 오류를 발생시킬 수 있습니다. 특정 조건을 만족하지 못할 경우 오류를 발생시키고 스트림을 종료시킵니다.
 - 위의 예제에서는, 누적 값이 음수가 되면 `PinguError.pinguIsBaboo` 오류를 발생시킵니다. 오류가 발생한 경우, `receiveCompletion` 클로저에서 `failure`와 함께 오류 정보가 출력됩니다.
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
- 
 
-* * *
-
-### **요소에 수학적 연산 적용하기**
+### **분류: 요소에 수학적 연산 적용하기**
 
 - `Count`
 - `Comparison`
@@ -1630,7 +1623,7 @@ timerPublisher
 
 ### **37\. Count**
 
-```
+```swift
 [Int](repeating: 0, count: 123).publisher
     .count()
     .sink { print("[Count]", $0) }
@@ -1650,7 +1643,7 @@ timerPublisher
 
 ### **38\. Max**
 
-```
+```swift
 [5, 4, 107, 2, 1].publisher
     .max()
     .sink { print("[Max]", $0) }
@@ -1708,7 +1701,7 @@ struct Panda: Ikimono {
 
 ### **39\. Min**
 
-```
+```swift
 [5, 4, 107, 2, 1].publisher
     .min()
     .sink { print("[Min]", $0) }
@@ -1754,11 +1747,7 @@ struct Panda: Ikimono {
 
  
 
-* * *
-
- 
-
-### **요소에 일치 기준(Matching Criteria) 적용하기**
+### **분류: 요소에 일치 기준(Matching Criteria) 적용하기**
 
 - `Contains`
 - `ContainsWhere`
@@ -1780,7 +1769,7 @@ struct Panda: Ikimono {
 
 ### **40\. Contains**
 
-```
+```swift
 [192, 199, 196, 100, 104].publisher
     .contains(196)
     .sink { print("[Contains]", $0) } // [Contains] true
@@ -1798,7 +1787,7 @@ struct Panda: Ikimono {
 
 ### **41\. Contains Where**
 
-```
+```swift
 ["murmur", "twins", "another"].publisher
     .contains(where: { $0.count == 5 })
     .sink { print("[Contains]", $0) } // [Contains] true (-> twins를 읽음)
@@ -1812,7 +1801,7 @@ struct Panda: Ikimono {
 
 ### **42\. TryContains**
 
-```
+```swift
 // TryContainsWhere: 값 탐색 중 true가 나오면 이후 과정은 무시, 값 탐생 중 true가 나오지 않은 상태에서 에러 발생시 throw
 [2, 4, 8, 12, -105, 3, 6, 8].publisher
     .tryContains {
@@ -1862,7 +1851,7 @@ struct Panda: Ikimono {
 
 ### **43\. AllSatisfy**
 
-```
+```swift
 [2, 4, 6, 8, 10].publisher
     .allSatisfy { $0 % 2 == 0 }
     .sink { print("[AllSatisfy]", $0) } // [AllSatisfy] true
@@ -1923,9 +1912,7 @@ struct Panda: Ikimono {
 
  
 
-* * *
-
-### **요소에 시퀀스 연산 적용하기**
+### **분류: 요소에 시퀀스 연산 적용하기**
 
 - `DropUntilOutput`
 - `Drop`
@@ -1954,7 +1941,7 @@ struct Panda: Ikimono {
 
 ### **44\. Drop Until Output**
 
-```
+```swift
 // Upstream
 let synthPublisher = PassthroughSubject<Int, Never>()
 // Downstream
@@ -1992,7 +1979,7 @@ for i in 1...8 {
 
 ### **45\. Drop First**
 
-```
+```swift
 ["A", "B", "C", "D", "E"].publisher
     .dropFirst(3)
     .sink { "DropFirst".printWithResult($0) }
@@ -2011,7 +1998,7 @@ for i in 1...8 {
 
 ### **46\. Drop While**
 
-```
+```swift
 ["3", "4", "Crunchy", "Nuts", "5"].publisher
     .drop { Int($0) != nil }
     .sink { "DropWhile".printWithResult($0) }
@@ -2031,7 +2018,7 @@ for i in 1...8 {
 
 ### **47\. Try Drop While**
 
-```
+```swift
 ["3", "4", "G", "Crunchy", "Nuts", "5"].publisher
     .tryDrop {
         if $0 == "G" {
@@ -2056,7 +2043,7 @@ for i in 1...8 {
 
 ### **48\. Append**
 
-```
+```swift
 [1, 2, 3, 4].publisher
     .append(5, 6)
     .append([7, 8, 9])
@@ -2075,11 +2062,11 @@ for i in 1...8 {
 - `append(_:)` 연산자는 Upstream의 값 뒤에 지정된 값을 추가합니다.
 - 예제에서는 배열의 끝에 `5, 6`과 `[7, 8, 9]`를 추가합니다.
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
 ### **49\. Prepend**
 
-```
+```swift
 [1, 2, 3, 4].publisher
     .prepend(5, 6)
     .prepend([7, 8, 9])
@@ -2102,7 +2089,7 @@ for i in 1...8 {
 
 ### **50\. Prefix**
 
-```
+```swift
 [1, 2, 3, 4, 3, 2, 1].publisher
     .prefix(3)
     .sink { "Prefix".printWithResult($0) }
@@ -2122,7 +2109,7 @@ for i in 1...8 {
 
 ### **51\. Prefix While**
 
-```
+```swift
 "FLYANDFLY".split(separator: "").publisher
     .prefix { $0 != "A" }
     .sink { "Prefix".printWithResult($0) }
@@ -2142,7 +2129,7 @@ for i in 1...8 {
 
 ### **52\. Try Prefix While**
 
-```
+```swift
 "FLY_ANDFLY".split(separator: "").publisher
     .tryPrefix {
         if $0.rangeOfCharacter(from: .alphanumerics) != nil {
@@ -2167,7 +2154,7 @@ for i in 1...8 {
 
 ### **53\. Prefix Until Output From**
 
-```
+```swift
 // Upstream Publisher
 let flowWaterPublisher = PassthroughSubject<Int, Never>()
 // Blocking Publisher
@@ -2201,11 +2188,7 @@ for i in 1...15 {
 
  
 
-* * *
-
- 
-
-### **특정 요소 선택하기**
+### **분류: 특정 요소 선택하기**
 
 - `First`
 - `FirstWhere`
@@ -2230,7 +2213,7 @@ for i in 1...15 {
 
 ### **54\. First**
 
-```
+```swift
 "FIRST".split(separator: "").publisher
     .first()
     .sink { "First".printWithResult($0) } // F
@@ -2244,7 +2227,7 @@ for i in 1...15 {
 
 ### **55\. First Where**
 
-```
+```swift
 [1, 3, 5, 2, 4, 5, 7, 8].publisher
     .first { $0 % 2 == 0 }
     .sink { "First".printWithResult($0) } // 2
@@ -2258,7 +2241,7 @@ for i in 1...15 {
 
 ### **56\. Try First Where**
 
-```
+```swift
 "FIRST".split(separator: "").publisher
     .tryFirst {
         if $0 == "S" {
@@ -2278,7 +2261,7 @@ for i in 1...15 {
 
 ### **57\. Last**
 
-```
+```swift
 let lastArrayPublisher = "LAST".split(separator: "").publisher
 lastArrayPublisher
     .last()
@@ -2310,7 +2293,7 @@ lastArrayPublisher
 
 ### **58\. Output**
 
-```
+```swift
 [0, 2, 163, 4, 8].publisher
     .output(at: 2) // 인덱스
     .sink { "Last at".printWithResult($0) } // 163
@@ -2350,11 +2333,9 @@ lastArrayPublisher
 - `output(in:)` 연산자는 지정된 범위의 인덱스에서 값을 방출합니다.
 - 예제에서는 인덱스 2에서의 값과 범위 2부터 6까지의 값을 방출합니다.
 
- 
 
-* * *
 
-### **여러 퍼블리셔로부터 요소 결합하기**
+### **분류: 여러 퍼블리셔로부터 요소 결합하기**
 
 - `CombineLatest`: 여러 퍼블리셔로부터 마지막 요소를 모으고 재퍼블리싱
 - `Merge`: 여러 퍼블리셔를 재조립된 스트림으로 취급하여 재퍼블리싱
@@ -2379,7 +2360,7 @@ lastArrayPublisher
 
 ### **59\. combineLatest(\_ other:, \_ transform:)**
 
-```
+```swift
 var firstCombinePublisher = PassthroughSubject<String, Never>()
 var secondCombinePublisher = PassthroughSubject<String, Never>()
 
@@ -2419,7 +2400,7 @@ secondCombinePublisher.send(completion: .finished)
 
 ### **60\. combineLatest(\_ other:) -> 튜플 형태로만 내보낼 수 있음**
 
-```
+```swift
 firstCombinePublisher = PassthroughSubject<String, Never>()
 secondCombinePublisher = PassthroughSubject<String, Never>()
 
@@ -2452,13 +2433,13 @@ secondCombinePublisher.send(completion: .finished)
 - 위 예제에서는 `firstCombinePublisher`와 `secondCombinePublisher`의 최신 값을 결합하여 방출하며, 각 퍼블리셔에서 새로운 값이 방출될 때마다 튜플로 결합된 결과가 방출됩니다.
 - 퍼블리셔가 모두 마감되면, `finished` 이벤트가 방출됩니다.
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 
 ### **61\. combineLatest(\_ publisher1:, \_ publisher2:, \_ transform:)**
 
-```
+```swift
 var thirdCombinePublisher = PassthroughSubject<String, Never>()
 /*
  B   O   U   N      C        Y
@@ -2582,7 +2563,7 @@ thirdCombinePublisher.send(completion: .finished)
 
 ### **62\. combineLatest(\_ publisher1:, \_ publisher2:, \_ publisher3:, \_ transform:)**
 
-```
+```swift
 firstCombinePublisher = PassthroughSubject<String, Never>()
 secondCombinePublisher = PassthroughSubject<String, Never>()
 thirdCombinePublisher = PassthroughSubject<String, Never>()
@@ -2674,7 +2655,7 @@ combine4Order.forEach { combineIndex in
 
 ### **63\. merge(with other:)**
 
-```
+```swift
 var firstMergePublisher = PassthroughSubject<Int, Never>()
 var secondMergePublisher = PassthroughSubject<Int, Never>()
 
@@ -2702,7 +2683,7 @@ secondMergePublisher.send(19433338)
 
 ### **64\. MergeMany**
 
-```
+```swift
 var mergePublishers: [PassthroughSubject<Int, Never>] = (0..<20).map { index in
     PassthroughSubject<Int, Never>()
 }
@@ -2727,7 +2708,7 @@ print()
 
 ### **65\. zip(\_ other:)**
 
-```
+```swift
 var firstZipPub = PassthroughSubject<Int, Never>()
 var secondZipPub = PassthroughSubject<Int, Never>()
 
@@ -2774,7 +2755,7 @@ for i in 3...9 {
 
 ### **66\. zip(\_ other:, \_ transform:)**
 
-```
+```swift
 firstZipPub = PassthroughSubject<Int, Never>()
 secondZipPub = PassthroughSubject<Int, Never>()
 var thirdZipPub = PassthroughSubject<Int, Never>()
@@ -2809,11 +2790,9 @@ for i in 1...3 {
 - `zip(_ other:, _ transform:)` 연산자는 여러 개의 퍼블리셔에서 방출된 값들을 결합하여 처리합니다. 변환 클로저를 사용하여 결합된 값을 새로운 형태로 변환합니다.
 - 예제에서는 `firstZipPub`, `secondZipPub`, `thirdZipPub`에서 방출된 값들이 각각 짝지어 결합된 후, 변환 클로저를 통해 새로운 형태로 방출됩니다.
 
- 
 
-* * *
 
-### **새 퍼블리셔에 구독하여 요소 재퍼블리싱하기**
+### **분류: 새 퍼블리셔에 구독하여 요소 재퍼블리싱하기**
 
 - `FlatMap`
 - `SwitchToLatest`
@@ -2829,7 +2808,7 @@ for i in 1...3 {
 
 `flatMap` 연산자는 퍼블리셔가 방출하는 퍼블리셔들을 플랫하게 병합합니다. 즉, 퍼블리셔가 방출하는 퍼블리셔에서 방출된 값을 모두 병합하여 처리합니다.
 
-```
+```swift
 typealias PassThruSubjString = PassthroughSubject<String, Never>
 
 let fmPub1 = PassThruSubjString()
@@ -2873,7 +2852,7 @@ fmPub2.send("ZZZZ")
 
 ### **68\. flatMap 예제: 아스키코드 정수 배열 변환**
 
-```
+```swift
 let decodeOnlyAlphabet: ([Int]) -> AnyPublisher<String, Never> = { codes in
     Just(
         codes
@@ -2911,7 +2890,7 @@ intArrayFMPublisher.send(completion: .finished)
 
 `switchToLatest` 연산자는 퍼블리셔가 방출하는 퍼블리셔들 중에서 최신의 퍼블리셔에서 방출된 값만을 처리합니다.
 
-```
+```swift
 typealias PssthrusbjInt = PassthroughSubject<Int, Never>
 let slPub1 = PssthrusbjInt()
 let slPub2 = PssthrusbjInt()
@@ -2954,7 +2933,7 @@ slPubs.send(completion: .finished)
 
 ### **70\. switchToLatest 예제: 이전 요청 무시**
 
-```
+```swift
 var utSubsc = Set()
 func userTapMockUp() {
     let url = URL(string: "https://source.unsplash.com/random")!
@@ -2998,9 +2977,9 @@ userTapMockUp()
 
  
 
-* * *
 
-### **오류 처리하기**
+
+### **분류: 오류 처리하기**
 
 - `AssertNoFailure`
 - `Catch`
@@ -3022,7 +3001,7 @@ userTapMockUp()
 
 `assertNoFailure` 연산자는 퍼블리셔가 방출하는 값에서 오류가 발생하지 않음을 보장합니다. 만약 오류가 발생하면 `fatalError`를 호출하여 앱이 종료됩니다.
 
-```
+```swift
 let intPub1 = PassthroughSubject<Int, PinguError>()
 
 intPub1
@@ -3044,7 +3023,7 @@ intPub1.send(2)
 
 `catch` 연산자는 오류가 발생했을 때 대체 값을 방출하도록 합니다. 예를 들어, 오류가 발생하면 `Just` 퍼블리셔를 사용하여 기본 값을 방출할 수 있습니다.
 
-```
+```swift
 [4, 6, 0, 1, 3, 7].publisher
     .tryMap {
         guard $0 != 0 else { throw PinguError.pinguIsBaboo }
@@ -3065,7 +3044,7 @@ intPub1.send(2)
 - `catch` 연산자는 `tryMap`에서 발생한 오류를 처리하여 기본 값인 `-999`를 방출합니다.
 - 오류가 발생한 후, 대체 값이 방출되고 스트림이 정상적으로 종료됩니다.
 
-\[the\_ad id="3020"\]
+<!-- \[the\_ad id="3020"\] -->
 
  
 
@@ -3073,7 +3052,7 @@ intPub1.send(2)
 
 `tryCatch` 연산자는 오류가 발생했을 때 대체 퍼블리셔를 방출합니다. 또한, 오류를 변환하여 다른 퍼블리셔를 방출할 수도 있습니다.
 
-```
+```swift
 let intPub2 = [4, 6, 0, 1, 3, 7].publisher
 let anotherIntPub2 = [99, 999, 9999].publisher
 
@@ -3115,7 +3094,7 @@ intPub2
 
 `retry` 연산자는 오류가 발생했을 때 일정 횟수만큼 재시도합니다. 재시도가 끝나면 오류를 방출합니다.
 
-```
+```swift
 var retryCount: Int = 0
 func retryTest() throws {
     if retryCount < 2 {
@@ -3158,9 +3137,9 @@ func retryTest() throws {
 
  
 
-* * *
 
-### **타이밍 제어하기**
+
+### **분류: 타이밍 제어하기**
 
 - `MeasureInterval`
 - `Debounce`
@@ -3184,7 +3163,7 @@ func retryTest() throws {
 
 `measureInterval(using:options:)` 연산자는 퍼블리셔의 값을 방출한 시간 간격을 측정합니다. 주어진 스케줄러를 사용하여 시간 간격을 계산합니다.
 
-```
+```swift
 var miSubsc = Set<AnyCancellable>()
 let miPub = PassthroughSubject<Int, Never>()
 
@@ -3219,7 +3198,7 @@ miPub.send(56245)
 
 `debounce(for:scheduler:options:)` 연산자는 값의 수신이 멈춘 후 일정 시간이 지나면 가장 최근의 값을 Downstream으로 전달합니다.
 
-```
+```swift
 var dbcSubsc = Set<AnyCancellable>()
 let operationQueue: OperationQueue = {
     let operaionQueue = OperationQueue()
@@ -3269,7 +3248,7 @@ for bounce in bounces {
 
 `delay(for:tolerance:scheduler:options:)` 연산자는 주어진 시간 동안 값을 지연시킵니다.
 
-```
+```swift
 var delaySubsc = Set<AnyCancellable>()
 let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
@@ -3321,7 +3300,7 @@ Timer.publish(every: 1, on: .main, in: .default)
 
 `throttle(for:scheduler:latest:)` 연산자는 지정된 시간 간격마다 Upstream 퍼블리셔가 보낸 가장 최근 값 혹은 가장 첫 번째 값을 Downstream으로 전달합니다.
 
-```
+```swift
 var thrSubsc = Set<AnyCancellable>()
 let thrOpQue: OperationQueue = {
     let operationQueue = OperationQueue()
@@ -3387,7 +3366,7 @@ for throttle in throttles {
 
 `timeout(_:scheduler:options:customError:)` 연산자는 주어진 시간 내에 값을 받지 못할 경우 에러를 발생시킵니다.
 
-```
+```swift
 struct TimeoutError: Error {}
 let ttIntPublisher = PassthroughSubject<Int, TimeoutError>()
 ttIntPublisher
@@ -3418,9 +3397,9 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
 
  
 
-* * *
 
-### **인코딩 및 디코딩**
+
+### **분류: 인코딩 및 디코딩**
 
 - `Encode`
 - `Decode`
@@ -3438,7 +3417,7 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
 
 `encode(encoder:)` 연산자는 퍼블리셔에서 발행된 값을 지정된 인코더를 사용하여 인코딩합니다.
 
-```
+```swift
 struct GiantPanda: Codable {
     let name: String
     let age: Int
@@ -3474,7 +3453,7 @@ gPandaPub.send(.init(name: "FuBao", age: 3, address: "용인시"))
 
 `decode(type:decoder:)` 연산자는 데이터 타입을 지정하여 데이터를 디코딩합니다.
 
-```
+```swift
 let gPandaDataPub = PassthroughSubject<Data, Never>()
 gPandaDataPub
     .decode(type: GiantPanda.self, decoder: JSONDecoder())

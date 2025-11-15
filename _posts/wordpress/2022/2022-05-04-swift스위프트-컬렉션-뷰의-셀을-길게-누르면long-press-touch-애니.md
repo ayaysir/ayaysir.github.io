@@ -30,7 +30,7 @@ categories:
 
 #### **기존 프로젝트**
 
-```
+```swift
 import UIKit
 
 struct ImageInfo {
@@ -321,7 +321,7 @@ if let indexPath = collectionView.indexPathForItem(at: location) {
 
 #### **전체 코드**
 
-```
+```swift
 import UIKit
 
 struct ImageInfo {

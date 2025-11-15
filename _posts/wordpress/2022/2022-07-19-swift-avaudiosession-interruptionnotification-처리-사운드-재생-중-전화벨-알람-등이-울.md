@@ -10,7 +10,7 @@ categories:
 
 사운드 재생 중 전화벨, 알람 등이 울렸을 때 해야 될 작업은 어떻게 처리할까요? 뷰 컨트롤러에 아래 코드를 추가합니다.
 
-```
+```swift
 import UIKit
 import AVFAudio
 

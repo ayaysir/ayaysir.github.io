@@ -201,7 +201,7 @@ class Throttle: DelayWork {
 
  ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-13-오전-12.15.55.jpg)
 
-```
+```swift
 import UIKit
 
 class DelayWorkViewController: UIViewController {

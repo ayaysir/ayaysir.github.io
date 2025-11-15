@@ -40,7 +40,7 @@ pod 'Mantis'
 
 ##### **2) 설치가 완료되었다면 프로젝트를 열고 뷰 컨트롤러에 `Mantis`를 `import` 합니다.**
 
-```
+```swift
 import UIKit
 import Mantis
 ```

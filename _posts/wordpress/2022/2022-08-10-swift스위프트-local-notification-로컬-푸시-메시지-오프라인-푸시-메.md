@@ -34,7 +34,7 @@ Local notification(로컬 노티피케이션) 흔히 푸시 알람, 푸시 메�
 
 `ViewDidLoad(_:)`에 아래 코드를 추가합니다.
 
-```
+```swift
 import UIKit
 let userNotiCenter = UNUserNotificationCenter.current()
 let notiAuthOptions = UNAuthorizationOptions(arrayLiteral: [.alert, .badge, .sound])

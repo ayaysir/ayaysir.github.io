@@ -24,7 +24,7 @@ categories:
 
 여기서는 1번을 다룹니다.
 
-<!-- \[the\_ad id="3020"\] -->
+<!-- <!-- \[the\_ad id="3020"\] --> -->
 
 ## 주의사항
 
@@ -256,7 +256,7 @@ public class UserController {
 
 ```
 
-<!-- \[the\_ad id="3020"\] -->
+<!-- <!-- \[the\_ad id="3020"\] --> -->
 
 #### 시큐리티 config (일부)
 
@@ -393,7 +393,7 @@ public class LoginSuccessForOAauthHandler implements AuthenticationSuccessHandle
 
 `th:if` 또는 `th:unless`를 사용해 로그인 상황에 따라 나오는 부분을 다르게 했습니다.
 
-<!-- \[the\_ad id="3020"\] -->
+<!-- <!-- \[the\_ad id="3020"\] --> -->
 
 #### assign-naver.html (네이버 아이디와 연동 여부를 물음)
 

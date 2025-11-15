@@ -72,7 +72,7 @@ CocoaPods로도 추가할 수는 있지만 `pod 'ENSwiftSideMenu'`
 
 이 코드는 1번 섹션에서 만들었던 Navigation Controller와 연결할 코드입니다.
 
-```
+```swift
 import UIKit
 
 class MenuNavigationController: ENSideMenuNavigationController {
@@ -175,7 +175,7 @@ toggleSideMenuView()
 
 예제 코드는 다음과 같습니다. (버튼을 사용한 사이드 메뉴)
 
-```
+```swift
 import UIKit
 
 class MenuState {

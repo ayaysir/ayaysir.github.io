@@ -138,7 +138,7 @@ authUI.providers = providers
 
 (이메일 로그인 및 구글, 애플 소셜 로그인을 추가한 FirebaseUI 뷰 컨트롤러
 
-```
+```swift
 import UIKit
 import FirebaseEmailAuthUI
 import FirebaseGoogleAuthUI
