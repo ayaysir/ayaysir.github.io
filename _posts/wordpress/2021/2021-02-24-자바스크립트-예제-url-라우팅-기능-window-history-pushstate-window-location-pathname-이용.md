@@ -16,11 +16,11 @@ React나 Vue 등의 SPA에서 볼 수 있는 SPA 라우팅을 흉내내는 예�
 
 해당 앱을 실행하면 설정 창이 나옵니다. 여기서 `index.html` 파일이 있는 디렉토리를 선택하고 `Show Advanced Options` 를 클릭하면 고급 설정창이 나옵니다.
 
- ![](/assets/img/wp-content/uploads/2021/02/-2021-02-25-오전-12.01.37-e1614179040829.jpg)
+ ![](/assets/img/wp-content/uploads/2021/02/-2021-02-25-am-12.01.37-e1614179040829.jpg)
 
 고급 설정창에서 `Enable mod-rewrite (for SPA)`를 활성화합니다.
 
- ![](/assets/img/wp-content/uploads/2021/02/-2021-02-25-오전-12.02.38-e1614179057248.jpg)
+ ![](/assets/img/wp-content/uploads/2021/02/-2021-02-25-am-12.02.38-e1614179057248.jpg)
 
  
 
@@ -28,7 +28,7 @@ React나 Vue 등의 SPA에서 볼 수 있는 SPA 라우팅을 흉내내는 예�
 
 이 객체에서 URL과 관련된 다양한 정보를 얻을 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2021/02/-2021-02-25-오전-12.12.26-e1614179565441.png)
+ ![](/assets/img/wp-content/uploads/2021/02/-2021-02-25-am-12.12.26-e1614179565441.png)
 
  
 
@@ -76,7 +76,7 @@ async function fetchUser(userId) {
 
 이렇게 하면 URL을 직접 입력했을 때, 그 사람에 대한 정보를 보여주게 됩니다.
 
- ![](/assets/img/wp-content/uploads/2021/02/-2021-02-25-오전-12.17.07-e1614179885348.png)
+ ![](/assets/img/wp-content/uploads/2021/02/-2021-02-25-am-12.17.07-e1614179885348.png)
 
 <iframe width="480" height="402" src="https://giphy.com/embed/RkH8KdMfhHlQeWKwn5" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
 

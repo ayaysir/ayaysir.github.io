@@ -8,7 +8,7 @@ categories:
 
 ### **Locus iste**
 
- ![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-16-오전-2.03.55-copy.jpg)
+ ![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-16-am-2.03.55-copy.jpg)
 
 **`Locus iste`**(이 장소), 카탈로그 번호 WAB 23은 안톤 브루크너 ([Anton Bruckner](https://en.wikipedia.org/wiki/Anton_Bruckner); 1824~1896)가 1869년에 작곡한 종교 모테트(motet)입니다. 이 작품의 텍스트(가사)는 교회 봉납식을 매년 축하하기 위한 라틴어 화답송(gradual) "[Locus iste](https://en.wikipedia.org/wiki/Locus_iste)"입니다. 시작 구절(incipit)의 "Locus iste a Deo factus est"라는 문구는 "이 곳은 신에 의해 만들어졌다"라는 뜻입니다. 브루크너는 자신이 대성당 오르간 연주자로 활동했던 오스트리아 린츠의 새 대성당에서 열린 Votivkapelle(보티프카펠레; 봉헌 예배당)의 봉헌을 위해 이 곡을 무반주 4개의 성부(SATB)로 설정했습니다. 브루크너가 비엔나에서 작곡한 최초의 모테트입니다. 이 작품은 다른 세 개의 화답송 모테트와 함께 1886년에 출판되었습니다.
 

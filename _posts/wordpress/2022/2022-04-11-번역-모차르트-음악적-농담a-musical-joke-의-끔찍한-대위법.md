@@ -225,7 +225,7 @@ categories:
 
  
 
-\[the\_ad id="3513"\]
+<!-- \[the\_ad id="3513"\] -->
 
 * * *
 
@@ -321,7 +321,7 @@ categories:
 
  
 
-\[the\_ad id="1801"\]
+<!-- \[the\_ad id="1801"\] -->
 
  
 

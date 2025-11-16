@@ -12,7 +12,7 @@ categories:
 
 `TimeZone.current.identifier`와 `TimeZone.abbreviationDictionary`를 사용하면 시간대 약어를 표시할 수 있습니다.
 
-```
+```swift
 func dateString(timestamp: Int) -> String {
     let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
     let formatter = DateFormatter()

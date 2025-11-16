@@ -26,7 +26,7 @@ categories:
 
 {% youtube "https://www.youtube.com/watch?v=wy9gt_3gmjM" %}
 
-> #### ** ![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-13-오전-1.39.26-copy.jpg)**
+> #### ** ![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-13-am-1.39.26-copy.jpg)**
 
 #### **새로운 템포의 결정**
 
@@ -44,7 +44,7 @@ categories:
 
 ♩ = 84 (4분음표 = 84)의 템포에서 4/4박자의 2분음표 2개가 새로운 템포의 3분음표 2개와 동일한 길이로 연주되려면 해당 템포는 다음과 같이 구합니다.
 
- ![](/assets/img/wp-content/uploads/2022/10/-2023-12-13-오전-1.06.00-e1702397269159.png)
+ ![](/assets/img/wp-content/uploads/2022/10/-2023-12-13-am-1.06.00-e1702397269159.png)
 
 왼쪽은 이전 템포 ♩ = 84에서의 2분음표를 뜻하고 오른쪽 점 2분음표는 새롭게 계산할 부분으로, 앞으로 진행되는 마디에서 점 2분음표 (4분음표 \* 3)는 ♩ = 84에서 2분음표(4분음표 \*2)와 동일한 빠르기를 지닌다는 뜻입니다.
 
@@ -82,7 +82,7 @@ categories:
 
 현대적인 개념과 미터법 변조 표기법이 나오기 전에 작곡가들은 두 배 속도와 절반 속도에 대해 _doppio piu mosso_(두 배 빠르게) 및 _doppio piu lento_(두 배 느리게)라는 용어를 사용했으며 나중에는 다음과 같은 표시를 사용했습니다.
 
- ![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-13-오전-1.31.37.png)
+ ![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-13-am-1.31.37.png)
 
 현대에는 다음과 같이 표기될 수 있습니다.  [![eighth note](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Figure_rythmique_croche_hampe_haut.svg/10px-Figure_rythmique_croche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_croche_hampe_haut.svg "eighth note")\= [![quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "quarter note")
 

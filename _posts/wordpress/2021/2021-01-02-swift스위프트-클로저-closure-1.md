@@ -38,7 +38,7 @@ let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
 
  
 
-```
+```swift
 func backward(_ s1: String, _ s2: String) -> Bool {
     return s1 > s2
 }
@@ -123,7 +123,7 @@ reversedNames = names.sorted(by: >)
 
 만약 함수의 마지막 인수가 클로저 표현식을 넘기는 경우라면, _트레일링 클로저_를 사용하는 것이 보다 유용할 수 있습니다. 트레일링 클로저는 함수 호출 괄호`()` 뒤에 중괄호 `{...}`를 사용하여 클로저를 작성하며, 인수 레이블(argument label)도 작성할 필요가 없습니다. 경우에 따라 함수는 여러 개의 트레일링 클로저를 가질 수도 있습니다.
 
-```
+```swift
 func someFunctionThatTakesAClosure(closure: () -> Void) {
     // 함수 본문은 여기에 작성
 }
@@ -194,7 +194,7 @@ let strings = numbers.map { (number) -> String in
 
 함수에 여러 클로저를 사용하는 경우. 첫 번째 트레일링 클로저의 인수 이름을 생략하고, 나머지 트레일링 클로저에는 레이블을 지정합니다. 예를 들어, 아래 함수는 사진 갤러리에 대한 그림을 로딩합니다.
 
-```
+```swift
 func loadPicture(from server: Server, completion: (Picture) -> Void, onFailure: () -> Void) {
     if let picture = download("photo.jpg", from: server) {
         completion(picture)

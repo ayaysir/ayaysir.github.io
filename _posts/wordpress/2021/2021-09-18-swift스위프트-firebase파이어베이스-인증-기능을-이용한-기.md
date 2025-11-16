@@ -170,8 +170,8 @@ import Firebase
 
 3\. 이메일과 비밀번호를 입력 후 로그인 버튼을 누르면 로그인 작업을 실행하는 코드를 작성합니다.
 
-```
-@IBAction func btnActSubmit(_ sender: UIButton) {
+```swift
+@IBAction  func btnActSubmit(_ sender: UIButton) {
     guard let userEmail = txtUserEmail.text else { return }
     guard let userPassword = txtUserPassword.text else  { return }
     
@@ -260,8 +260,8 @@ override func viewWillDisappear(_ animated: Bool) {
 
 5\. 로그아웃 버튼에 로그아웃 이벤트를 작성합니다.
 
-```
-@IBAction func btnActSignOut(_ sender: UIButton) {
+```swift
+@IBAction  func btnActSignOut(_ sender: UIButton) {
     do {
         try Auth.auth().signOut()
     } catch {

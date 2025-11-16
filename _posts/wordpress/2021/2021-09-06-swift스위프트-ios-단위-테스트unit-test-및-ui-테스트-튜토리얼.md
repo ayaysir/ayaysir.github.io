@@ -49,7 +49,7 @@ iOS 단위 테스트는 거창하지 않지만 테스트를 통해 앱이 버그
 
 ##### **BullsEyeGame.swift**
 
-```
+```swift
 import Foundation
 
 class BullsEyeGame {
@@ -148,7 +148,7 @@ FIRST 원칙을 따르면 테스트가 앱의 장애물이 되는 것이 아니�
 
  
 
-\[the\_ad id="1801"\]
+<!-- \[the\_ad id="1801"\] -->
 
  
 
@@ -253,7 +253,7 @@ try super.tearDownWithError()
 
 `BullsEyeTests` 끝에 다음 코드를 추가하여 `guess`에 대한 예상 점수를 제대로 계산하는지 테스트합니다.
 
-```
+```swift
 func testScoreIsComputedWhenGuessIsHigherThanTarget() throws {
   // given
   let guess = sut.targetValue + 5
@@ -290,7 +290,7 @@ func testScoreIsComputedWhenGuessIsHigherThanTarget() throws {
 
 다음 테스트를 추가합니다.
 
-```
+```swift
 func testScoreIsComputedWhenGuessIsLowerThanTarget() {
   // given
   let guess = sut.targetValue - 5
@@ -332,7 +332,7 @@ let difference = abs(targetValue - guess)
 
  
 
-\[the\_ad id="1801"\]
+<!-- \[the\_ad id="1801"\] -->
 
  
 
@@ -428,7 +428,7 @@ let url = URL(string: "http://www.notexistrandomnumberapi.con/test")!
 
 그런 다음 클래스에 다음 테스트를 추가합니다.
 
-```
+```swift
 func testApiCallCompletes() throws {
   // given
   let urlString = "http://www.notexistrandomnumberapi.con/test"
@@ -488,7 +488,7 @@ try XCTSkipUnless(
 
  
 
-\[the\_ad id="1801"\]
+<!-- \[the\_ad id="1801"\] -->
 
  
 
@@ -544,7 +544,7 @@ override func tearDownWithError() throws {
 
 가짜를 설정하려면 `BullsEyeFakeTests.swift`로 이동하여 새 테스트를 추가하세요.
 
-```
+```swift
 func testStartNewRoundUsesRandomValueFromApiRequest() {
   // given
   // 1
@@ -647,7 +647,7 @@ override func tearDownWithError() throws {
 
 이제 템플릿의 두 가지 기본 테스트 방법을 다음으로 바꿉니다.
 
-```
+```swift
 func testGameStyleCanBeChanged() {
   // given
   let segmentedControl = UISegmentedControl()
@@ -679,7 +679,7 @@ func testGameStyleCanBeChanged() {
 
  
 
-\[the\_ad id="1801"\]
+<!-- \[the\_ad id="1801"\] -->
 
  
 
@@ -715,7 +715,7 @@ app.launch()
 
 두 개의 기존 테스트를 제거하고 `testGameStyleSwitch()`라는 새 테스트를 추가하세요.
 
-```
+```swift
 func testGameStyleSwitch() {    
 }
 ```
@@ -798,7 +798,7 @@ if slideButton.isSelected {
 
 `BullsEyeTests`에 다음 테스트를 추가하십시오.
 
-```
+```swift
 func testScoreIsComputedPerformance() {
   measure(
     metrics: [
@@ -836,7 +836,7 @@ func testScoreIsComputedPerformance() {
 
  
 
-\[the\_ad id="1801"\]
+<!-- \[the\_ad id="1801"\] -->
 
  
 

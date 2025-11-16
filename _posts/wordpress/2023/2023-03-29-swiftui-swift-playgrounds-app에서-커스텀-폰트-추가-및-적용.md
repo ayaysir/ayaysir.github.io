@@ -6,22 +6,22 @@ categories:
   - "SwiftUI"
 ---
 
-#### **개요**
+## **개요**
 
 **Swift Playgrounds App**에서 커스텀 폰트 적용 및 사운드 파일 추가
 
 참고로 여기서 Swift Playgrounds App이란 다음과 같이 Xcode에서
 
-- `File > New > Project...`  ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.49-copy.jpg)
-- `iOS > Swift Playgrounds App`  ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.59-copy.jpg)
+- `File > New > Project...`  
+![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.49-copy.jpg)
+- `iOS > Swift Playgrounds App`  
+![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.59-copy.jpg)
 
 으로 생성한 프로젝트 및 앱을 뜻합니다.
 
- 
+## **커스텀 폰트 추가**
 
-#### **커스텀 폰트 추가**
-
-##### **1) `Resources` 폴더안에 폰트 파일을 추가합니다.**
+### **(1) `Resources` 폴더안에 폰트 파일을 추가합니다.**
 
 해당 폴더가 없다면 새로 생성합니다.
 
@@ -41,11 +41,11 @@ categories:
 > 
 > 빌드 후 앱이 설치된 시뮬레이터의 폴더로 이동하면 앱 패키지 내에 해당 파일이 추가된 것을 알 수 있습니다.
 > 
->  ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-오전-12.11.48-copy.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-am-12.11.48-copy.jpg)
 
  
 
-##### **2) FontManager 등록**
+### **(2) FontManager 등록**
 
 프로젝트 내에 아래 구조체를 등록합니다.
 
@@ -80,7 +80,7 @@ public struct FontManager {
 
  
 
-##### **3) MyApp (앱 시작 부분 `@main`)에 생성자를 추가합니다.**
+### **(3) MyApp (앱 시작 부분 `@main`)에 생성자를 추가합니다.**
 
 ```swift
 import SwiftUI
@@ -104,9 +104,9 @@ struct MyApp: App {
 
  
 
-##### **4) ContentView 등에서 다음과 같이 사용합니다.**
+### **(4) ContentView 등에서 다음과 같이 사용합니다.**
 
-```
+```swift
 Text("ENTER YOUR TEXTS HERE")
     .font(.custom("NeoDunggeunmoPro-Regular", size: 30))
     .foregroundColor(.white)
@@ -114,4 +114,4 @@ Text("ENTER YOUR TEXTS HERE")
 
 - `.font(.custom("커스텀_폰트_이름"), size: 30))`
 
- ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-오전-12.08.34-copy.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-am-12.08.34-copy.jpg)

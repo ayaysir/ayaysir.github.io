@@ -224,7 +224,7 @@ for case let score? in scoresIncludeNil where score >= 5 {
 
 `if case let`은 `if`문에서 특정 패턴이 일치하는 경우에만 조건을 만족하도록 합니다. 이 조건이 만족되면, 해당 값을 변수에 바인딩해서 사용할 수 있습니다.
 
-```
+```swift
 enum Result {
     case success(Int)
     case failure(String)

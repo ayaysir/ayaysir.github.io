@@ -129,7 +129,7 @@ import CoreData
 
 쓰기 기능을 먼저 작성하겠습니다.
 
-```
+```swift
 func saveCoreData(name: String, email: String) -> Bool {
     // App Delegate 호출
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
@@ -170,7 +170,7 @@ func saveCoreData(name: String, email: String) -> Bool {
 
 다음으로 읽기 기능을 추가합니다.
 
-```
+```swift
 func readCoreData() throws -> [NSManagedObject]? {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
     let managedContext = appDelegate.persistentContainer.viewContext
@@ -203,7 +203,7 @@ func readCoreData() throws -> [NSManagedObject]? {
 
 여기까지 작성 후 하드코딩으로 정보를 저장하고 출력해 보겠습니다. `ViewController`의 `viewDidLoad()` 메소드에 다음 코드를 작성합니다.
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -225,7 +225,7 @@ override func viewDidLoad() {
 
 다음은 삭제입니다. 삭제 기준으로 `id`를 설정하겠습니다.
 
-```
+```swift
 func deleteCoreData(id: UUID) -> Bool {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
     let managedContext = appDelegate.persistentContainer.viewContext
@@ -253,7 +253,7 @@ func deleteCoreData(id: UUID) -> Bool {
 
 또는 객체 자체를 넘겨 삭제할 수도 있습니다.
 
-```
+```swift
 func deleteCoreData(object: NSManagedObject) -> Bool {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
     let managedContext = appDelegate.persistentContainer.viewContext
@@ -277,7 +277,7 @@ func deleteCoreData(object: NSManagedObject) -> Bool {
 
 마지막으로 업데이트 코드입니다. 업데이트도 아이디를 통해 업데이트 하는 것과, 객체 자체를 넘겨 업데이트 하는 방식 두 가지 모두 작성해 보겠습니다.
 
-```
+```swift
 func updateCoreData(id: UUID, name: String, email: String) -> Bool {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
     let managedContext = appDelegate.persistentContainer.viewContext
@@ -300,7 +300,7 @@ func updateCoreData(id: UUID, name: String, email: String) -> Bool {
 }
 ```
 
-```
+```swift
 func updateCoreData(object: NSManagedObject, name: String, email: String) -> Bool {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
     let managedContext = appDelegate.persistentContainer.viewContext

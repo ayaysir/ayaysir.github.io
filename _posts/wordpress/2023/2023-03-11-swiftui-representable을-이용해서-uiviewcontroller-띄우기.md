@@ -6,9 +6,9 @@ categories:
   - "SwiftUI"
 ---
 
-\[rcblock id="5440"\]
+<!-- \[rcblock id="5440"\] -->
 
-#### **소개**
+## **소개**
 
 _**SwiftUI**_ 환경에서 _**UIKit**_을 이용해 만든 `UIViewController`를 띄우는 방법에 대한 소개입니다.
 
@@ -16,9 +16,9 @@ _**SwiftUI**_ 환경에서 _**UIKit**_을 이용해 만든 `UIViewController`를
 
  
 
-#### **방법**
+## **만드는 방법**
 
-##### **1: UIViewControllerRepresentable을 준수하는 구조체 생성**
+### **1: UIViewControllerRepresentable을 준수하는 구조체 생성**
 
 아래와 같이 `UIViewControllerRepresentable`를 준수(conform)하는 구조체(`struct`)를 생성합니다.
 
@@ -26,26 +26,25 @@ _**SwiftUI**_ 환경에서 _**UIKit**_을 이용해 만든 `UIViewController`를
 
 일반적으로 `[컨트롤러 이름] + View` 라는 이름으로 구조체 이름을 작성하지만 여기서는 편의를 위해 임의로 `MPMediaPickerControllerRP`라는 이름으로 작성했습니다.
 
-```
+```swift
 struct MPMediaPickerControllerRP: UIViewControllerRepresentable {
-    
     // ... //
 }
 ```
 
  
 
-##### **2: typealias로 나타내고자 하는 UIViewController 지정**
+### **2: typealias로 나타내고자 하는 UIViewController 지정**
 
 `MPMediaPickerControllerRP` 구조체 안에 `typealias`를 추가합니다.
 
-```
+```swift
 typealias UIViewControllerType = MPMediaPickerController
 ```
 
  
 
-##### **3: makeUIViewController와 updateUIViewController 추가**
+### **3: makeUIViewController와 updateUIViewController 추가**
 
 - **makeUIViewController**
     - `UIViewController`를 생성하고 초기화를 수행하는 함수입니다.
@@ -57,9 +56,8 @@ typealias UIViewControllerType = MPMediaPickerController
 
 이 예제에서는 `makeUIViewController`만 사용합니다.
 
-```
+```swift
 struct MPMediaPickerControllerRP: UIViewControllerRepresentable {
-    
     // ... //
     
     let picker = MPMediaPickerController(mediaTypes: .music)
@@ -81,9 +79,9 @@ struct MPMediaPickerControllerRP: UIViewControllerRepresentable {
 
  
 
-##### **4: 버튼을 누르면 MPMediaPickerControllerRP가 나타나도록 하기**
+### **4: 버튼을 누르면 MPMediaPickerControllerRP가 나타나도록 하기**
 
-```
+```swift
 struct ContentView: View {
     /*
      @State로 선언한 프로퍼티는 값이 변경되면 뷰 계층 구조의 부분을 업데이트
@@ -118,11 +116,11 @@ struct ContentView: View {
 
  
 
-#### **Delegate 사용하기**
+## **Delegate 사용하기**
 
 `MPMediaPickerController`에는 다음과 같은 `delegate` 함수가 있습니다.
 
-```
+```swift
 func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
     // ... //
 }
@@ -136,7 +134,7 @@ func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems media
 
  
 
-##### **사전 작업**
+### **사전 작업**
 
 노래의 메타데이터를 담은 구조체 `MediaMetadata`를 생성합니다.
 
@@ -154,13 +152,13 @@ struct MediaMetadata {
 
  
 
-##### **1: Representable 구조체 안에 Coordinator 이너 클래스 생성**
+### **1: Representable 구조체 안에 Coordinator 이너 클래스 생성**
 
-##### **2: Coordinator 클래스 안에 사용하고자 하는 딜리게이트 함수 추가**
+### **2: Coordinator 클래스 안에 사용하고자 하는 딜리게이트 함수 추가**
 
-##### **3: 생성자에서 metadataCallback과 delegate = self 연결**
+### **3: 생성자에서 metadataCallback과 delegate = self 연결**
 
-```
+```swift
 struct MPMediaPickerControllerRP: UIViewControllerRepresentable {
     
     // ... //
@@ -205,9 +203,9 @@ struct MPMediaPickerControllerRP: UIViewControllerRepresentable {
 
  
 
-##### **4: Representable 구조체 안에 makeCoordinator() 함수 추가**
+### **4: Representable 구조체 안에 makeCoordinator() 함수 추가**
 
-```
+```swift
 // Representable에서 delegate 사용
 func makeCoordinator() -> Coordinator {
     Coordinator(picker, metadataCallback: metadataCallback)
@@ -218,9 +216,9 @@ func makeCoordinator() -> Coordinator {
 
  
 
-##### **5: MPMediaPickerControllerRP()에 metadataCallback 부분 (트레일링 클로저) 추가하기**
+### **5: MPMediaPickerControllerRP()에 metadataCallback 부분 (트레일링 클로저) 추가하기**
 
-```
+```swift
 Button {
     isOpenMusicPickerView = true
 } label: {
@@ -243,11 +241,11 @@ Button {
  
 
 <!-- https://giphy.com/gifs/EIAJUrg6zH5Hj5i2Rw -->
-![](https://)
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTN6eWNrenJ2Zm9ydHF1eDltanJnYWZpdGc4ZjI2b285b2dkNzJ5MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EIAJUrg6zH5Hj5i2Rw/giphy.gif)
 
  
 
-##### **전체 코드 (ContentView.swift)**
+## **전체 코드 (ContentView.swift)**
 
 ```swift
 import SwiftUI
@@ -419,7 +417,7 @@ struct ContentView_Previews: PreviewProvider {
 
  
 
-##### **출처**
+## **출처**
 
 - [Implement delegates within SwiftUI Views](https://stackoverflow.com/questions/57281389/implement-delegates-within-swiftui-views)
 - [\[iOS\] SwiftUI와 UIKit 함께 사용하기](https://mildwhale.tistory.com/37)

@@ -55,7 +55,7 @@ categories:
 
 최소 힙(min heap)을 이용한 우선순위 큐입니다.
 
-```
+```swift
 struct PriorityQueue<T: Comparable> {
     private var elements: [T] = []
 

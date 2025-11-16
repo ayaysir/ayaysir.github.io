@@ -6,7 +6,7 @@ categories:
   - "SwiftUI"
 ---
 
-### **소개**
+## **소개**
 
 SwiftUI상에서 내비게이션 (앞, 뒤로 이동하는 뷰들의 집합)을 구현하는 방법입니다. 참고로 iOS 16.0을 기준으로 방법이 매우 다릅니다.
 
@@ -17,7 +17,7 @@ SwiftUI상에서 내비게이션 (앞, 뒤로 이동하는 뷰들의 집합)을 
 - 세 번째 화면에서는 `Jacob [색상]` 이라는 이름이 표시됩니다.
 
 <!-- http://www.giphy.com/gifs/UjmLm56fvyQJiaPRjs -->
-![](https://)
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnNoMGdycnNkOHgwMzV4OGtnejZyM2F3YzY1YXYzNHlpam5tbXdpbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UjmLm56fvyQJiaPRjs/giphy.gif)
 
  
 
@@ -31,7 +31,7 @@ SwiftUI상에서 내비게이션 (앞, 뒤로 이동하는 뷰들의 집합)을 
 
  
 
-#### **iOS 16.0 이상에서 내비게이션: NavigationStack**
+## **iOS 16.0 이상에서 내비게이션: NavigationStack**
 
 `NavigationStack`을 사용한 뒤 안에 `Button` 또는 `List`를 넣어 사용합니다. 일반적으로 `List`를 사용합니다.
 
@@ -39,7 +39,7 @@ SwiftUI상에서 내비게이션 (앞, 뒤로 이동하는 뷰들의 집합)을 
 
 먼저 `NavigationStack`을 `body`의 최외곽에 추가합니다.
 
-```
+```swift
 var body: some View {
     // ... //
     if #available(iOS 16.0, *) {
@@ -61,7 +61,7 @@ var body: some View {
 
 다음 `List` 안에 `NavigationLink(_:value:)`를 추가합니다.
 
-```
+```swift
 NavigationStack {
     List {
         // NavigationLink은 밖에 있으면 버튼, List 안에 있으면 목록 형태로 자동 변형
@@ -115,9 +115,9 @@ List {
 
  
 
-##### **ColorDetail.swift (두 번째 화면)**
+#### **ColorDetail.swift (두 번째 화면)**
 
-```
+```swift
 struct ColorDetail: View {
     var color: Color
     @Binding var message: String
@@ -160,9 +160,9 @@ struct ColorDetail: View {
 
  ![](/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.43.16.png)
 
-##### **JacobDetail.swift**
+#### **JacobDetail.swift**
 
-```
+```swift
 struct JacobDetail: View {
     var lastName: String
     @Binding var message: String
@@ -190,7 +190,7 @@ struct JacobDetail: View {
 
  
 
-#### **iOS 16.0 미만에서 내비게이션: NavigationView**
+### **iOS 16.0 미만에서 내비게이션: NavigationView**
 
 `NavigationStack`은 iOS 16.0 이상에서만 사용할 수 있으므로 단독으로 사용할 수 없습니다. 그 미만의 버전에서는 `NavigationView`를 사용해야 합니다.
 
@@ -245,7 +245,7 @@ if #available(iOS 16.0, *) {
 
  
 
-#### **전체 코드**
+### **전체 코드**
 
 ```swift
 import SwiftUI

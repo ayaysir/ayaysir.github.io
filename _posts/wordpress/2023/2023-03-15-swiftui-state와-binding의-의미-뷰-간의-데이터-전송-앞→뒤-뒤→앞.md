@@ -6,12 +6,12 @@ categories:
   - "SwiftUI"
 ---
 
-### **@State**
+## **@State**
 
 - 뷰 계층 구조(view hierarchy)에서 데이터를 저장할 수 있도록 상태(state)를 지정할 때 사용합니다.
 - 변수 앞에 `@State`를 붙입니다.
 
- 
+
 
 > UIKit 을 사용했을 때는 어떠한 변수에 변화가 생기면 해당 변화를 직접 관찰하고 반영 해 주어야 했는데 SwiftUI 에서는 property wrapper 를 활용해 이러한 작업을 자동화 할 수 있도록 했다.
 > 
@@ -27,11 +27,11 @@ categories:
 
  
 
-#### **@State의 예제**
+### **@State의 예제**
 
 > 바인딩을 사용하여 `View`와 해당 `@State` 변수가 속한 모델 간의 양방향 연결을 만듭니다.예를 들어, `Toggle`과 `@State Bool` 속성 간에 바인딩을 만들 수 있습니다.토글 컨트롤과 상호 작용하면 `Bool` 값이 변경되고 `Bool` 값을 변경하면 토글이 표시된 상태를 업데이트합니다.
 
-```
+```swift
 struct PlayButton: View {
     @State private var isPlaying: Bool = false // Create the state.
 
@@ -44,11 +44,11 @@ struct PlayButton: View {
 ```
 
 <!-- http://www.giphy.com/gifs/M1YL5UJsNSlK1PKdWq -->
-![](https://)
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHUwMncwb3hjcDZuczRnZjhzczBhaXUyYW5wN2UyeGNmNDg0anJ1eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M1YL5UJsNSlK1PKdWq/giphy.gif)
 
  
 
-#### **@State 변수명 앞에 붙이는 달러(`$`) 표시의 의미**
+### **@State 변수명 앞에 붙이는 달러(`$`) 표시의 의미**
 
 > `$`는 속성 래퍼 (property wrappers; 이전에는 "property delegates"라고 했음)와 함께 사용됩니다.
 > 
@@ -64,7 +64,7 @@ struct PlayButton: View {
 
  
 
-#### **@Binding**
+## **@Binding**
 
 > `@State` 로 선언된 속성을 다른 뷰에서 사용하려 한다면 `@Binding` 을 사용해 줄 수 있다. 사용시에는 앞에 `$`를 사용해 Bining 변수임을 나타낸다. `@State` 로 선언된 속성에 변경이 생기면 `@Binding` 변수에서 이를 인지하고 해당 값에 따른 뷰 변화를 바로 반영할 수 있도록 하는 방식이다.
 > 
@@ -85,7 +85,7 @@ struct PlayButton: View {
 
  
 
-```
+```swift
 struct ContentView: View {
     // ... //
     @State var showAnotherView: Bool = false
@@ -117,8 +117,8 @@ struct ContentView: View {
 
 `차원 이동` 버튼을 누르면 `sheet` 형태로 `새로운View`가 나타납니다.
 
-\[gallery link="none" columns="2" size="full" ids="5375,5376"\]
-
+<!-- \[gallery link="none" columns="2" size="full" ids="5375,5376"\] -->
+![](/assets/img/DevLog/swiftui-views-1.jpg)
  
 
 #### **데이터 전달: 앞 → 뒤**
@@ -127,7 +127,7 @@ View의 `파라미터`를 이용합니다.
 
 기초 뷰의 이름은 `ContentView`, 새로 띄울 뷰의 이름은 `AnotherView` 입니다.
 
-```
+```swift
 struct AnotherView: View {
     @State var name = ""
     // ... //
@@ -147,7 +147,7 @@ struct AnotherView: View {
 }
 ```
 
-```
+```swift
 struct ContentView: View {
     @State var name: String = ""
     @State var anotherName: String = ""
@@ -185,15 +185,15 @@ struct ContentView: View {
 
  
 
-<iframe width="396" height="480" src="https://giphy.com/embed/Z5hd83BolfewktMsuM" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
-
+<!-- <iframe width="396" height="480" src="https://giphy.com/embed/Z5hd83BolfewktMsuM" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDB2dHQwanBjanM5ZWc5ODZhNzA0YzIyMDJ4a3dmZnhnaTFsaTJ3eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Z5hd83BolfewktMsuM/giphy.gif)
  
 
 #### **뒤 → 앞**
 
 `@Binding`을 이용합니다.
 
-```
+```swift
 struct AnotherView: View {
     @State var name = ""
     @Binding var anotherName: String
@@ -218,7 +218,7 @@ struct AnotherView: View {
 
  
 
-```
+```swift
 struct ContentView: View {
     @State var name: String = ""
     @State var anotherName: String = ""
@@ -257,4 +257,4 @@ struct ContentView: View {
  
 
 <!-- http://www.giphy.com/gifs/CW9TRkvJCMLLythIlV -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjZkeGN4cGFiNTZwZ2p4MXo5ZGw3NW0wMGY4OGFoZzM5aGRvdzRldSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CW9TRkvJCMLLythIlV/giphy.gif)

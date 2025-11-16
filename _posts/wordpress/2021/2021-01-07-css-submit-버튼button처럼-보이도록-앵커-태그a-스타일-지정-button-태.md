@@ -46,7 +46,7 @@ categories:
 
 스타일을 적용한 후의 결과는 다음과 같습니다.
 
- ![](/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-08-오전-12.00.59.png)
+ ![](/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-08-am-12.00.59.png)
 
  
 

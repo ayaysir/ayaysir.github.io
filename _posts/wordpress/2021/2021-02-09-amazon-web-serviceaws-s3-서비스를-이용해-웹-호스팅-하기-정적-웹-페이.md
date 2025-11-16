@@ -62,7 +62,7 @@ AWS(Amazon Web Service) S3 서비스는 파일을 업로드/다운로드 하는 
 
 ##### **8) 다음, `[Generate Policy]` 버튼을 클릭한 다음, 출력되는 JSON 을 복사합니다.**
 
- ![](/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-09-pm-11.59.41.png) ![](/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-오전-12.02.09.png)
+ ![](/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-09-pm-11.59.41.png) ![](/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.02.09.png)
 
  
 
@@ -102,6 +102,6 @@ AWS(Amazon Web Service) S3 서비스는 파일을 업로드/다운로드 하는 
 
 ##### **13) 다시 속성 탭의 `정적 웹 사이트 호스팅` 란으로 이동하면, URL이 생성된 것을 볼 수 있습니다. 이 URL에 접속하여 인덱스 문서 및 라우팅 기능이 정상 동작하는지 확인합니다.**
 
- ![](/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-오전-12.10.16.png)
+ ![](/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.10.16.png)
 
- ![](/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-오전-12.09.40.png)  ![](/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-오전-12.09.55.png)
+ ![](/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.09.40.png)  ![](/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.09.55.png)

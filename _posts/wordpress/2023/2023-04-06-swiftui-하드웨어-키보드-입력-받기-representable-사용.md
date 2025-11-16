@@ -6,7 +6,7 @@ categories:
   - "SwiftUI"
 ---
 
-\[rcblock id="5440"\]
+<!-- \[rcblock id="5440"\] -->
 
 ### **소개**
 
@@ -53,7 +53,7 @@ struct ContentView: View {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-07-오전-12.06.47.png)
+ ![](/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-07-am-12.06.47.png)
 
 키보드를 누르면 위의 `From SwiftUI Button` 대신 입력된 키보드의 문자가 출력될 것입니다.
 
@@ -111,7 +111,7 @@ class KeyEventViewController: UIViewController {
 
 `UIViewControllerRepresentable`을 준수(conform)하는 함수를 작성합니다.
 
-```
+```swift
 struct KeyboardView: UIViewControllerRepresentable {
     typealias UIViewControllerType = KeyEventViewController
     typealias KeyboardHandler = (String) -> ()
@@ -142,7 +142,7 @@ struct KeyboardView: UIViewControllerRepresentable {
 
 ##### **5) 코디네이터 작성**
 
-```
+```swift
 func makeCoordinator() -> Coordinator {
     Coordinator(viewController, keyboardHandler: keyboardHandler)
 }
@@ -179,7 +179,7 @@ class Coordinator: KeyEventVCDelegate {
 
 ##### **6) ContentView에 키보드 입력 부분 추가**
 
-```
+```swift
 struct ContentView: View {
     @State var pressedKeyStr = ""
     

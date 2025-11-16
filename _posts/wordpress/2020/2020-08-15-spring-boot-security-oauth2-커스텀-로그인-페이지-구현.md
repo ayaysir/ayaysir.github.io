@@ -22,7 +22,7 @@ tags:
 
 OAuth 2.0으로 외부 로그인을 구현한 상태에서 아무 설정도 하지 않은 기본 로그인 페이지(`"/login"`)는 다음과 같습니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-오전-11.42.48.png)
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-am-11.42.48.png)
 
  
 

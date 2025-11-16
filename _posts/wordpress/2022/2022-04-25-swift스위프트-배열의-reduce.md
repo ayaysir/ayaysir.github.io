@@ -20,7 +20,7 @@ Swift의 reduce는 두 가지 형태가 있습니다.
 
 ##### **제 1형태**
 
-```
+```swift
 func reduce<Result>(_ initialResult: Result, _ nextPartialResult: (Result, Element) throws -> Result) rethrows -> Result
 ```
 
@@ -31,7 +31,7 @@ func reduce<Result>(_ initialResult: Result, _ nextPartialResult: (Result, Eleme
 
 ##### **제 2형태**
 
-```
+```swift
 func reduce<Result>(into initialResult: Result, _ updateAccumulatingResult: (inout Result, Element) throws -> ()) rethrows -> Result
 
 ```
@@ -181,7 +181,7 @@ names.reduce(into: [String: Int]()) { partialResult, currentValue in
 
 ##### **예제 5) Person을 나이(age)별로 분류**
 
-```
+```swift
 struct Person {
     let name: String
     let age: Int
@@ -215,7 +215,7 @@ people.reduce(into: [Int: [Person]]() ) { partialResult, currentPerson in
 
 #### **예제 6) 객체에서 배열을 뽑아 연결하기**
 
-```
+```swift
 struct Reader {
     let name: String
     let books: [String]

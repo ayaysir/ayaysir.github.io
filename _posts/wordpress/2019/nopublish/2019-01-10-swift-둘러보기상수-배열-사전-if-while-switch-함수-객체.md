@@ -10,7 +10,7 @@ tags:
 
 **상수**: 상수는 변수와 다르게 한 번 만들고 나면 변경하는 것이 불가능합니다.
 
-```
+```swift
 import Foundation 
  
 let apples = 3
@@ -46,7 +46,7 @@ My name is Kim.
 
 **배열** **및** **Dictionary**: Dictionary는 자바스크립트의 객체, 자바의 맵과 비슷한 개념입니다.
 
-```
+```swift
 import Foundation 
  
 var shoppingList = ["catfish", "water", "tulips", "blue paint"]
@@ -83,7 +83,7 @@ print(occupations)  // [:]
 
 **for ~ in, while, if ~ else, nil**: 조건문에 괄호를 붙이지 않습니다, **옵셔널 변수(Optional variables)**: 기본값은 `nil` 입니다. `nil`은 옵셔널 값에서 `null`과 비슷한 개념인데 일반(non-optional) 변수에서는 `nil`을 사용할 수 없습니다. ([http://monibu1548.github.io/2018/05/12/swift-optional/](http://monibu1548.github.io/2018/05/12/swift-optional/) 참고)
 
-```
+```swift
 import Foundation 
  
 let individualScores = [75, 43, 103, 87, 12]
@@ -210,7 +210,7 @@ print(vegetableComment)   // Is it a spicy red pepper?
 
 **함수(function)**
 
-```
+```swift
 func greet(name: String, day: String) -> String {
         return "Hello \(name), today is \(day)."
 }
@@ -317,7 +317,7 @@ print(sortedNumbers)    // [38, 17, 11, 9]
 
 **객체, 클래스**
 
-```
+```swift
 import Foundation 
  
   // ======== 클래스 ======== 

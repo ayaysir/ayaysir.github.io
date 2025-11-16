@@ -18,19 +18,19 @@ tags:
 
 ##### 1\. 소프트웨어 인스트러먼트(Software Instruments) 트랙을 추가한 다음 Orchestral > Percussion 경로로 이동하여 Crotales 악기로 변경합니다.
 
- ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-오전-11.53.06.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-am-11.53.06.png)
 
  
 
 ##### 2\. 이 악기 트랙에서 마우스 오른쪽 버튼을 클릭한 다음 Summing 트랙 스택을 생성합니다.
 
- ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-오전-11.52.35.png) ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-오전-11.57.13.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-am-11.52.35.png) ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-am-11.57.13.png)
 
  
 
 ##### 3\. Summing 스택 안에 Crotales 트랙을 하나 더 생성합니다.
 
- ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-오전-11.58.57.png)
+ ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-am-11.58.57.png)
 
  
 

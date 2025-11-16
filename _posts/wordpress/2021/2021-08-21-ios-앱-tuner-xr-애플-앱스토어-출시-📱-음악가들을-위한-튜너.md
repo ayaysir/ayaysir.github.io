@@ -8,7 +8,7 @@ categories:
 
 ### **Tuner XR**
 
- ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-21-오전-10.44.57.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-21-am-10.44.57.jpg)
 
 #### **사용 도구**
 
@@ -65,7 +65,7 @@ Tuner XR을 사용하면 바로크 시대와 현대를 아우르는 다양한 �
 
 #### **스크린샷**
 
- ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-21-오전-10.44.14.jpg)  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-21-오전-10.44.19.jpg)  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-21-오전-10.44.27.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-21-am-10.44.14.jpg)  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-21-am-10.44.19.jpg)  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-21-am-10.44.27.jpg)
 
  
 

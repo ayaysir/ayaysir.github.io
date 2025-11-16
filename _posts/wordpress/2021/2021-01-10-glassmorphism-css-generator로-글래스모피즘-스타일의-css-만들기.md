@@ -18,7 +18,7 @@ categories:
 
  
 
- ![](/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-11-오전-12.03.26.jpg)
+ ![](/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-11-am-12.03.26.jpg)
 
 - `Blur value` - 블러 강도를 조절합니다. 높을수록 흐려지고, 낮을수록 선명해집니다.
 - `Transparency` - 반투명 강도를 조정합니다. 높을수록 반투명 강도도 높아집니다.

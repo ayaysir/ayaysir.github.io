@@ -18,7 +18,7 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2022/08/simulator_screenshot_CE6B8D15-1746-4467-AB71-2011072FC37D-e1661872266956.png)
 
- ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-31-오전-12.24.44.png)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-31-am-12.24.44.png)
 
  
 
@@ -44,9 +44,9 @@ Xcode를 연 후 `Swift Package Manager`에서 이러한 패키지의 최신 버
 
 `File > Add Packages...` 를 클릭하고 좌측 상단의 `Recently Used` 버튼 클릭, 우측 상단의 검색창에 git 주소 입력 후 `Add Pacakage` 버튼을 눌러 설치합니다.
 
- ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-29-오전-2.14.31.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-29-am-2.14.31.jpg)
 
- ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-29-오전-2.14.54.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-29-am-2.14.54.jpg)
 
  
 
@@ -130,7 +130,7 @@ private func configure(_ app: Application) {
 
 서버를 테스트하려면 먼저 시작할 방법이 필요합니다. `configure` 함수 아래에 새 함수를 추가하고 이름을 `start()`로 지정합니다.
 
-```
+```swift
 func start() {
     // 1
     Task(priority: .background) {
@@ -176,13 +176,13 @@ class ViewController: UIViewController {
 
 콘솔을 보면 다음과 같이 표시됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-29-오전-2.41.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-29-am-2.41.52.jpg)
 
  
 
 동일한 컴퓨터의 웹 브라우저에서 `localhost:8080`으로 이동하면 다음 오류 메시지가 표시됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-29-오전-2.42.08.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-29-am-2.42.08.jpg)
 
 이것은 해당 경로에서 서비스를 제공할 수 있는 것들을 아무것도 찾을 수 없다는 서버의 응답입니다. 아직 경로를 생성하지 않았기 때문에 예상되는 결과였고 위 메시지를 받았다면 성공입니다.
 
@@ -192,7 +192,7 @@ class ViewController: UIViewController {
 
 **사전 작업 1:** 문서 디렉토리를 가져올 수 있는 아래 URL의 `extension`을 `URL+Extensions.swift` 파일에 추가합니다.
 
-```
+```swift
 import Foundation
 
 extension URL {
@@ -285,7 +285,7 @@ struct FileWebRouteCollection: RouteCollection {
 
 사실 이것은 이 프로젝트에서 서버에 필요한 유일한 View 경로입니다. 업로드된 파일의 전체 목록을 표시하고, 사용자가 새 파일을 업로드하고 다운로드할 수도 있습니다.
 
-```
+```swift
 func filesViewHandler(_ req: Request) async throws -> View {
     let documentsDirectory = try URL.documentsDirectory()
     let fileUrls = try documentsDirectory.visibleContents()
@@ -301,7 +301,7 @@ func filesViewHandler(_ req: Request) async throws -> View {
 
 다음 코드를 `FileWebRouteCollection.swift` 파일의 하단에 추가합니다.
 
-```
+```swift
 struct FileContext: Encodable {
     var filenames: [String]
 }
@@ -323,7 +323,7 @@ struct FileContext: Encodable {
 
 이제 `boot` 함수 안에 액세스할 수 있도록 새 경로(routes)를 추가합니다.
 
-```
+```swift
 func boot(routes: RoutesBuilder) throws {
     routes.get(use: filesViewHandler)
     // ... //
@@ -360,7 +360,7 @@ try app.register(collection: FileWebRouteCollection())
 
 `FileWebRouteCollection.swift`를 열고 파일 맨 아래의 `FileContext` 구조체(`struct`) 밑에 `FileUploadPostData` 구조체를 만듭니다.
 
-```
+```swift
 struct FileUploadPostData: Content {
   var file: File
 }
@@ -370,7 +370,7 @@ struct FileUploadPostData: Content {
 
 `FileWebRouteCollection` 구조체 내에 파일 업로드를 처리하는 새 함수 `uploadFilePostHandler`를 추가합니다.
 
-```
+```swift
 func uploadFilePostHandler(_ req: Request) throws -> Response {
   // 1
   let fileData = try req.content.decode(FileUploadPostData.self)
@@ -444,7 +444,7 @@ var fileURLs: [URL] = []
 
 `FileServer.swift` 파일 내에 `loadFiles()`라는 이름의 새 함수를 만듭니다.
 
-```
+```swift
 func loadFiles() {
     do {
         let documentsDirectory = try FileManager.default.url(
@@ -467,7 +467,7 @@ func loadFiles() {
 
 이것을 호출하기에 좋은 장소는 `ViewController.swift` 내의 `viewDidLoad` 메소드입니다. 그렇게 하면 앱이 시작될 때 파일 목록이 채워집니다.
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -498,7 +498,7 @@ override func viewDidLoad() {
 
 위의 사전 작업을 마친 후 아래 `extension`을 추가합니다.
 
-```
+```swift
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         server.fileURLs.count
@@ -550,7 +550,7 @@ var previewURL: URL!
 
 아래 `extension`을 추가합니다.
 
-```
+```swift
 extension ViewController: QLPreviewControllerDelegate, QLPreviewControllerDataSource {
     
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
@@ -572,7 +572,7 @@ extension ViewController: QLPreviewControllerDelegate, QLPreviewControllerDataSo
 
 셀을 클릭했을 때 할 작업을 작성합니다. tableView delegate, dataSource가 있는 `extension` 안에 아래 함수를 추가합니다.
 
-```
+```swift
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     previewURL = server.fileURLs[indexPath.row]
     
@@ -599,7 +599,7 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 그 전에 아래 `extension`을 추가합니다.
 
-```
+```swift
 import Foundation
 
 extension Notification.Name {
@@ -623,7 +623,7 @@ NotificationCenter.default.addObserver(forName: .serverFilesChanged, object: nil
 
 이 알림을 트리거하려면 `FileWebRouteCollection.swift`를 열고 `FileWebRouteCollection` 구조체 맨 하단에 다음과 같이 `notifyFileChange()`라는 새 함수를 추가하세요.
 
-```
+```swift
 func notifyFileChange() {
     DispatchQueue.main.async {
         NotificationCenter.default.post(name: .serverFilesChanged, object: nil)
@@ -635,7 +635,7 @@ func notifyFileChange() {
 
 문서 디렉토리 내의 파일이 변경될 때마다 반드시 호출하도록 해야 합니다. 이를 수행하는 좋은 위치는 `uploadFilePostHandler` 함수 내의 `return` 문 바로 직전입니다.
 
-```
+```swift
 func uploadFilePostHandler(_ req: Request) throws -> Response {
     let fileData = try req.content.decode(FileUploadPostData.self)
     let writeURL = try URL.documentsDirectory().appendingPathComponent(fileData.file.filename)
@@ -658,7 +658,7 @@ func uploadFilePostHandler(_ req: Request) throws -> Response {
 
 `FileWebRouteCollection.swift`를 열고 동명의 구조체 안에 `downloadFileHandler`라는 새 핸들러를 만듭니다.
 
-```
+```swift
 func downloadFileHandler(_ req: Request) throws -> Response {
     guard let filename = req.parameters.get("filename") else {
         throw Abort(.badRequest)
@@ -694,7 +694,7 @@ routes.get(":filename", use: downloadFileHandler)
 
 `FileWebRouteCollection.swift`를 열고 동명의 구조체 안에 삭제 요청을 처리할 새 핸들러를 추가하세요.
 
-```
+```swift
 func deleteFileHandler(_ req: Request) throws -> Response {
     guard let filename = req.parameters.get("filename") else {
         throw Abort(.badRequest)
@@ -724,7 +724,7 @@ routes.get("delete", ":filename", use: deleteFileHandler)
 
 파일 삭제는 앱에서 수행할 수 있어야 합니다. `FileServer.swift`를 열고 동명의 클래스 하단에 새로운 삭제 함수를 추가하세요:
 
-```
+```swift
 func deleteFile(at offset: Int) {
     // 1
     let urlsToDelete = fileURLs[offset]
@@ -747,7 +747,7 @@ func deleteFile(at offset: Int) {
 
 뷰 컨틀로러의 테이블 뷰 관련 `extension`에 다음을 추가합니다.
 
-```
+```swift
 func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
         server.deleteFile(at: indexPath.row)
@@ -766,7 +766,7 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
 
 #### **서버 제목 표시하기**
 
- ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-31-오전-12.05.23.png)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-31-am-12.05.23.png)
 
 ```
 lblTitle.text = ProcessInfo().hostName + ":\(server.port)"

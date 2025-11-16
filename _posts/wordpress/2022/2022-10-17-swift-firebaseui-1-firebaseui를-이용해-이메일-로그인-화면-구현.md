@@ -112,7 +112,7 @@ override func viewDidAppear(_ animated: Bool) {
 
 #### **추가 구현 1: 로그인 여부 표시 및 현재 유저의 이메일 표시**
 
- ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-오전-3.07.28.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-am-3.07.28.jpg)
 
  
 
@@ -141,8 +141,8 @@ override func viewWillAppear(_ animated: Bool) {
 
 로그인/아웃 버튼에 대한 `@IBAction`을 추가합니다.
 
-```
-@IBAction func btnActLogInout(_ sender: UIButton) {
+```swift
+@IBAction  func btnActLogInout(_ sender: UIButton) {
     if Auth.auth().currentUser == nil {
         viewDidAppear(true)
         return
@@ -236,7 +236,7 @@ self.present(naviVC, animated: true)
 
 아래 `UIAdaptivePresentationControllerDelegate`를 준수하는 `extension`을 추가합니다.
 
-```
+```swift
 extension ViewController: UIAdaptivePresentationControllerDelegate {
     
     func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {

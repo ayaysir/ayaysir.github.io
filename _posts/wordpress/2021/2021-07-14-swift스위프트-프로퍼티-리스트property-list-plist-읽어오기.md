@@ -42,7 +42,7 @@ categories:
 
 먼저 위 프로퍼티 리스트의 타입을 참고하여 두 개의 `struct` 를 만듭니다.
 
-```
+```swift
 struct Root: Decodable {
     let animals: [Animal]
 }
@@ -56,7 +56,7 @@ struct Animal: Decodable {
 
 그리고 프로젝트 루트 폴더에 있는 plist 파일을 읽어와 `[Animal]` 타입으로 리턴하는 함수를 작성합니다.
 
-```
+```swift
 func parsePlistExample() throws -> [Animal] {
     let url = Bundle.main.url(forResource: "testprops", withExtension: "plist")!
     do {

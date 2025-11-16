@@ -27,7 +27,7 @@ categories:
 
 먼저 `UITextField`의 `extension`을 생성하고 다음 변수(computed property)를 추가합니다.
 
-```
+```swift
 extension UITextField {
     @IBInspectable var wanryoAccesory: Bool{
         get {

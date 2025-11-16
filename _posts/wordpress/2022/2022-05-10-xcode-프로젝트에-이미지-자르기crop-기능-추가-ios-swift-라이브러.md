@@ -49,7 +49,7 @@ import Mantis
 
 ##### **3) `CropViewControllerDelegate`를 구현하는 아래 `extension`을 추가합니다.**
 
-```
+```swift
 extension PhotoViewController: CropViewControllerDelegate {
 
     func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation, cropInfo: CropInfo) {
@@ -118,7 +118,7 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
 
 ##### **5) `4번`에서 삭제한 부분을 `cropViewControllerDidCrop`로 옮깁니다.**
 
-```
+```swift
 func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation, cropInfo: CropInfo) {
     
     // 기존 작업 부분

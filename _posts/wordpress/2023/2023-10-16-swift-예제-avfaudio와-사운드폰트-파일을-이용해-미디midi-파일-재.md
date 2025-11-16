@@ -40,7 +40,7 @@ https://gist.github.com/ayaysir/715b2a9bde0a498a17390d648cd8d6f0
 
 재생 파일 변경 방법
 
-```
+```swift
 func changeAndPlayMIDIFile(_ fileNameWithoutExt: String) {
     DispatchQueue.global().async { [weak self] in
         guard let self, let soundfontURL else {

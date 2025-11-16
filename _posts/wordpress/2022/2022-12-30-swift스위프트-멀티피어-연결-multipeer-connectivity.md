@@ -35,7 +35,7 @@ import MultipeerConnectivity
 
 뷰 컨트롤러(`ViewController.swift`)에 아래 멤버 변수를 추가합니다.
 
-```
+```swift
 private var session: MCSession!
 private var advertiser: MCNearbyServiceAdvertiser!
 // private var browser: MCNearbyServiceBrowser!
@@ -51,7 +51,7 @@ private var browserVC: MCBrowserViewController!
 
 info.plist에 아래 항목들을 추가합니다. 아래 두 항목은 필수로 입력해야 멀티피어 통신이 가능합니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-2.21.31.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-2.21.31.jpg)
 
 - **Privacy - Local Network Usage Description**
     - `NSLocalNetworkUsageDescription`
@@ -74,7 +74,7 @@ info.plist에 아래 항목들을 추가합니다. 아래 두 항목은 필수�
 
 이번 예제는 `Chat-service`라는 이름으로 타입을 지정하겠습니다. `ChatServiceType`를 뷰 컨트롤러의 멤버 변수로 추가합니다.
 
-```
+```swift
 private let ChatServiceType = "Chat-service"
 ```
 
@@ -84,7 +84,7 @@ private let ChatServiceType = "Chat-service"
 
 장치의 이름을 표시 이름으로 지정합니다. `localPeerId`를 뷰 컨트롤러의 멤버 변수로 추가합니다.
 
-```
+```swift
 private let localPeerID = MCPeerID(displayName: UIDevice.current.name)
 ```
 
@@ -128,7 +128,7 @@ advertiser.startAdvertisingPeer()
 
 다음 `MCNearbyServiceAdvertiserDelegate`를 준수하는 뷰 컨트롤러의 `extension`을 추가합니다.
 
-```
+```swift
 extension ViewController: MCNearbyServiceAdvertiserDelegate {
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
         // ... 잠시 후 작성 ... //
@@ -206,7 +206,7 @@ session.delegate = self
 
 다음 `MCNearbyServiceAdvertiserDelegate`를 준수하는 뷰 컨트롤러의 `extension`을 추가합니다.
 
-```
+```swift
 extension ViewController: MCSessionDelegate {
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         switch state {
@@ -317,7 +317,7 @@ present(browserViewController, animated: true)
 
 브라우저가 피어에 대한 연결을 마치고 난 뒤 UI 작업을 처리해야 하는데, 해당 부분은 다음과 같이 `MCBrowserViewControllerDelegate`를 준수하는 `extension`으로 추가합니다.
 
-```
+```swift
 extension ViewController: MCBrowserViewControllerDelegate {
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
         browserViewController.dismiss(animated: true)
@@ -335,10 +335,10 @@ extension ViewController: MCBrowserViewControllerDelegate {
 
 스토리보드에 버튼(`UIButton`)과 스위치(`UISwitch`)를 추가하고, `@IBAction`으로 연결한 뒤 아래 코드를 작성합니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-1.36.56.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-1.36.56.jpg)
 
-```
-@IBAction func btnActShowBrowserVC(_ sender: Any) {
+```swift
+@IBAction  func btnActShowBrowserVC(_ sender: Any) {
     browserVC = MCBrowserViewController(serviceType: ChatServiceType, session: session)
     browserVC.delegate = self
     present(browserVC, animated: true)
@@ -363,7 +363,7 @@ extension ViewController: MCBrowserViewControllerDelegate {
 <!-- https://giphy.com/gifs/2DElddPef27Dd8zVWS -->
 ![](https://)
 
-\[caption id="attachment\_5200" align="alignnone" width="264"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-1.34.02.jpg) YES를 누르면 연결됩니다.\[/caption\]
+\[caption id="attachment\_5200" align="alignnone" width="264"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-1.34.02.jpg) YES를 누르면 연결됩니다.\[/caption\]
 
  
 
@@ -446,7 +446,7 @@ do {
 
 뷰 컨트롤러의 멤버 변수로 아래를 추가합니다.
 
-```
+```swift
 private var peers: [MCPeerID] = []
 private var chatList: [String] = [] {
     didSet {
@@ -465,9 +465,9 @@ private var chatList: [String] = [] {
 
 스토리보드에 텍스트 뷰, 텍스트 필드 및 버튼을 추가하고, `@IBAction`으로 연결한 뒤 아래 코드를 작성합니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-2.09.33.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-2.09.33.jpg)
 
- ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-2.10.21.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-2.10.21.jpg)
 
 ```
 @IBOutlet weak var txfMessage: UITextField!
@@ -502,7 +502,7 @@ private var chatList: [String] = [] {
 
 `MCSessionDelegate` 메소드의 `session( ...didReceiveData...fromPeer...)` 부분을 다음과 같이 작성합니다.
 
-```
+```swift
 func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
     switch state {
     case MCSessionState.connected:
@@ -523,7 +523,7 @@ func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSes
 
  
 
-```
+```swift
 func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
     let message = String( data: data, encoding: .utf8) ?? ""
     chatList.append("\(peerID.displayName): \(message)")
@@ -621,7 +621,7 @@ func session(
 }
 ```
 
-```
+```swift
 func session(
     _ session: MCSession,
     didFinishReceivingResourceWithName resourceName: String,
@@ -665,7 +665,7 @@ private var isHosting = false
 
 누군가를 초대하는 작업을 마친 경우 내가 방장이 되므로 **_'MCBrowser를 선택하는 작업을 마치는 메서드'_**에서 이를 알려줍니다.
 
-```
+```swift
 extension ViewController: MCBrowserViewControllerDelegate {
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
         browserViewController.dismiss(animated: true)
@@ -680,7 +680,7 @@ extension ViewController: MCBrowserViewControllerDelegate {
 
 방장으로부터 초대를 받은 경우 나는 방장이 아니므로 _**'초대를 받은 후 작업을 처리하는 메소드'**_에서 이를 알려줍니다.
 
-```
+```swift
 extension ViewController: MCNearbyServiceAdvertiserDelegate {
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
         // ... //
@@ -695,7 +695,7 @@ extension ViewController: MCNearbyServiceAdvertiserDelegate {
 
 다음 채팅 목록을 리소스 형태로 전송하는 메서드를 추가합니다. 뷰 컨트롤러 안에 `sendHIstory` 함수를 작성합니다.
 
-```
+```swift
 func sendHistory(to peer: MCPeerID) {
     // 1. Create the URL in your temporary directory.
     let tempFile = URL(fileURLWithPath: NSTemporaryDirectory())
@@ -726,7 +726,7 @@ func sendHistory(to peer: MCPeerID) {
 
 `MCSessionDelegate` 부분의 `func session(...didChange...)` 부분에 아래 코드를 추가합니다. 피어와 연결에 성공하였을 때 내가 방장인 경우, 채팅 히스토리를 피어에게 보냅니다.
 
-```
+```swift
 func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
     switch state {
     case MCSessionState.connected:
@@ -751,7 +751,7 @@ func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSes
 
 리소스를 전송받으면 해당 리소스 파일을 다시 채팅 목록(`chatList` 배열)으로 변환해야 합니다. `MCSessionDelegate`의 확장 부분에 있는 `session(...didFinishReceivingResourceWithName...at localURL...)` 메서드에 아래 내용을 추가합니다.
 
-```
+```swift
 func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
     guard let localURL = localURL,
           let data = try? Data(contentsOf: localURL),

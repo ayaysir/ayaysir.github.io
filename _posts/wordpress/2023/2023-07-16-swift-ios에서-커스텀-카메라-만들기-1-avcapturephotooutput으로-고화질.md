@@ -98,7 +98,7 @@ override func viewDidAppear(_ animated: Bool) {
 
 권한 설정 부분 `checkCameraPermissions()`은 아래 코드를 뷰 컨트롤러 내에 추가하면 되고 분량상 자세한 내용은 다루지 않겠습니다.
 
-```
+```swift
 func checkCameraPermissions() {
     let cameraAuthStatus =  AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
     switch cameraAuthStatus {
@@ -128,13 +128,13 @@ func checkCameraPermissions() {
 
 카메라 세팅은 다음 단계로 진행됩니다.
 
-\[the\_ad id="3513"\]
+<!-- \[the\_ad id="3513"\] -->
 
 ##### **1: setupPhotoCamera() 추가**
 
 먼저 메인 스레드가 아닌 다른 스레드에서 코드가 실행될 수 있도록 합니다. 그 이유는 실행 코드 중 `AVCaptureSession.startRunning()`이 해당 작업이 실행될 때까지 시스템 흐름이 멈추는 블록 호출(block call)이기 때문에 메인 스레드에 추가할 경우 UI가 멈출 수 있는 위험이 있기 때문입니다.
 
-```
+```swift
 func setupPhotoCamera() {
     // 메인 스레드에서 실행 방지 - startRunning()이 차단 호출(block call)이기 때문
     DispatchQueue.global(qos: .userInitiated).async { [unowned self] in
@@ -259,7 +259,7 @@ DispatchQueue.main.async { [unowned self] in
 
 다음 뷰 컨트롤러 내에 `setCameraPreview()` 함수를 추가합니다.
 
-```
+```swift
 func setCameraPreview() {
     previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
     view.layer.insertSublayer(previewLayer, above: imgViewGuideOverlay.layer)
@@ -302,8 +302,8 @@ captureSession.startRunning()
 
 카메라 전/후면을 변경하는 코드는 다음과 같습니다. 전후 방향을 바꾸는 해당 `UIButton`의 이벤트로 지정합니다.
 
-```
-@IBAction func btnActChangeCameraPosition(_ sender: UIButton) {
+```swift
+@IBAction  func btnActChangeCameraPosition(_ sender: UIButton) {
     captureSession.beginConfiguration()
     
     switch captureSession.inputs[0] {
@@ -330,8 +330,8 @@ captureSession.startRunning()
 
 `capturePhoto(with:delegate:)`를 호출하면 카메라의 셔터 버튼을 누른 것과 같이 해당 이미지가 캡처됩니다. 참고로 기본 카메라에서 기능을 빌려오는 것이기 때문에 기본 카메라에서 무음 상태에서도 셔터음이 울린다면 여기서도 동일하게 울립니다.
 
-```
-@IBAction func btnActShutter(_ sender: UIButton) {
+```swift
+@IBAction  func btnActShutter(_ sender: UIButton) {
     photoOutput.capturePhoto(with: photoSettings, delegate: self)
 }
 ```
@@ -340,7 +340,7 @@ captureSession.startRunning()
 
 해당 대리자를 준수하는 뷰 컨트롤러의 `extension`을 추가합니다.
 
-```
+```swift
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     
 }

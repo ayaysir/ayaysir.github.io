@@ -88,8 +88,8 @@ import Photos
 @IBOutlet weak var imgProfilePicture: UIImageView!
 ```
 
-```
-@IBAction func btnActTakePhoto(_ sender: UIButton) {
+```swift
+@IBAction  func btnActTakePhoto(_ sender: UIButton) {
     // 카메라
 }
 
@@ -131,7 +131,7 @@ userProfileThumbnail = makeImageThumbnail(image: #imageLiteral(resourceName: "sa
 
 아래 `extension`을 추가합니다.
 
-```
+```swift
 extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -214,8 +214,8 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
 
 ##### **4\. 카메라, 라이브러리 버튼에 이벤트 할당**
 
-```
-@IBAction func btnActTakePhoto(_ sender: UIButton) {
+```swift
+@IBAction  func btnActTakePhoto(_ sender: UIButton) {
     if UIImagePickerController.isSourceTypeAvailable(.camera) {
         self.imagePickerController.sourceType = .camera
         doTaskByCameraAuthorization()
@@ -461,7 +461,7 @@ private func uploadImage(forIndex index:Int, images: [ImageWithName]) {
 
 ##### **5\. 뷰 컨트롤러에 시작 함수 startUploading 추가**
 
-```
+```swift
 func startUploading(images: [ImageWithName], completion: @escaping FileCompletionBlock) {
     if images.count == 0 {
         completion()
@@ -480,8 +480,8 @@ func startUploading(images: [ImageWithName], completion: @escaping FileCompletio
 
 ##### **6\. 회원가입 제출 버튼에 업로드 관련 부분 추가**
 
-```
-@IBAction func btnActSubmit(_ sender: UIButton) {
+```swift
+@IBAction  func btnActSubmit(_ sender: UIButton) {
     // ...... //
     
     Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] authResult, error in

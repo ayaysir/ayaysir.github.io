@@ -18,7 +18,7 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2021/09/computer.jpg)
 
-```
+```swift
 import Foundation
 
 class CPUCore: Codable {
@@ -58,7 +58,7 @@ class Computer: Codable {
 
 구조체인 `struct`를 제외한 나머지 클래스에 해당 내용을 작성합니다. 구조체는 클래스 상속이 불가능하며 `NSCoding`도 클래스에서만 구현 가능하도록 되어 있기 때문에 프로토콜 구현 역시 불가능합니다.
 
-```
+```swift
 import Foundation
 
 class CPUCore: NSObject, NSCoding, NSSecureCoding, Codable {
@@ -110,7 +110,7 @@ class Computer: NSObject, NSCoding, NSSecureCoding, Codable {
 
 `encode` 함수에 다음과 같은 코드를 작성합니다.
 
-```
+```swift
 func encode(with coder: NSCoder) {
     guard let name = name else { return }
     guard let cpu = cpu else { return }
@@ -161,7 +161,7 @@ required convenience init?(coder: NSCoder) {
 
 `CPU` 구조체에 대한 `extension`을 추가한 뒤, 아래와 같은 코드를 작성합니다.
 
-```
+```swift
 extension CPU {
     var encoder: CPUCoder {
         return CPUCoder(cpu: self)
@@ -211,7 +211,7 @@ extension CPU {
 
 다시 `Computer`의 `encode` 함수를 살펴보면
 
-```
+```swift
 func encode(with coder: NSCoder) {
     guard let name = name else { return }
     guard let cpu = cpu else { return }
@@ -285,7 +285,7 @@ class CPUCore: NSObject, NSCoding, NSSecureCoding, Codable {
 
 다음은 이렇게 재정의된 클래스(+구조체)들을 이용해 저장 장치에 인코딩한 파일을 저장하고 불러오는 과정입니다.
 
-```
+```swift
 import Foundation
 
 class FileUtil {
@@ -299,7 +299,7 @@ class FileUtil {
 
 ```
 
-```
+```swift
 override func viewDidLoad() {
 
     let cpu = CPU(clock: 1, cores: [CPUCore(), CPUCore(), CPUCore(), CPUCore()])
@@ -341,7 +341,7 @@ override func viewDidLoad() {
 
 #### **전체 코드**
 
-```
+```swift
 import Foundation
 
 class CPUCore: NSObject, NSCoding, NSSecureCoding, Codable {

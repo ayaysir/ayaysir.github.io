@@ -6,7 +6,7 @@ categories:
   - "SwiftUI"
 ---
 
-\[rcblock id="5440"\]
+<!-- \[rcblock id="5440"\] -->
 
 ### **소개**
 
@@ -27,7 +27,7 @@ SwiftUI 내부에 웹 뷰(`WKWebView`)를 추가하는 방법입니다. 원래 �
 
 ##### **1) UIViewRepresentable을 준수(conform)하고 웹 뷰를 감싸는 WebView를 추가합니다.**
 
-```
+```swift
 struct WebView: UIViewRepresentable {
     typealias UIViewType = WKWebView
     
@@ -118,7 +118,7 @@ class WebViewData: ObservableObject {
 
 ##### **2) WebView 내에 WebViewData에 대한 상태 변수 추가**
 
-```
+```swift
 struct WebView: UIViewRepresentable {
     // ... //
     @StateObject var data: WebViewData
@@ -178,7 +178,7 @@ class Coordinator: NSObject, WKNavigationDelegate {
 
 ##### **4) WebView 내에 updateUIView를 작성합니다.**
 
-```
+```swift
 func updateUIView(_ uiView: UIViewType, context: Context) {
     guard data.shouldUpdateView else {
         data.shouldUpdateView = false
@@ -202,7 +202,7 @@ func updateUIView(_ uiView: UIViewType, context: Context) {
 
 ##### **5) SwiftUI의 뷰(ContentView 등) 내부에 WebViewData를 추가합니다.**
 
-```
+```swift
 struct ContentView: View {
     // ... //
     @StateObject var webViewData = WebViewData()
@@ -228,7 +228,7 @@ var body: some View {
 
 `webViewData`를 이용합니다.
 
-```
+```swift
 Button {
     webViewData.functionCaller.send(
         """

@@ -175,7 +175,7 @@ Daily Record는 "Freestyler"를 "최고의 올드스쿨 트랙(cracking old-skoo
 
 비디오는 어린 소년(Marlo)이 MiniDisc(Sony Walkman MZ-R55) 플레이어에서 "Freestyler"를 들으면서 기차를 타는 동안 노래의 전주에서 화려하게 춤을 추는 것으로 시작됩니다. Marlo의 Sony MiniDisc 리모콘에 개인 일시 중지, 되감기 또는 빨리 감기 기능을 부여하는 캐릭터가 기차에서 그의 맞은편에 앉아 있으며, 이 캐릭터는 Bomfunk MC's의 리드 싱어인 Raymond Ebanks(B.O. Dubb)가 연기하였습니다.
 
-\[caption id="attachment\_5717" align="alignnone" width="418"\] ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-23-오전-2.06.43-copy.jpg) Raymond Ebanks\[/caption\]
+\[caption id="attachment\_5717" align="alignnone" width="418"\] ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-23-am-2.06.43-copy.jpg) Raymond Ebanks\[/caption\]
 
  
 

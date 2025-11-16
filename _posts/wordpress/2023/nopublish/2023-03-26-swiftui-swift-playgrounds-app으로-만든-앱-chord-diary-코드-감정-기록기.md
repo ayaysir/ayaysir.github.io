@@ -52,7 +52,7 @@ categories:
 
 #### **프로젝트 구조**
 
- ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-27-오전-1.34.16-copy.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-27-am-1.34.16-copy.jpg)
 
 - **주요 코드**는 `Chord_Todo` 폴더 내에 있습니다.
     - `MainView`: 각종 뷰가 조합된 메인 화면

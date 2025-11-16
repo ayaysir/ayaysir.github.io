@@ -22,10 +22,10 @@ GoogleTranslate(텍스트, 출발어, 도착어)
 
  
 
- ![](/assets/img/wp-content/uploads/2021/03/-2021-03-10-오전-12.13.38-e1615302842681.png)
+ ![](/assets/img/wp-content/uploads/2021/03/-2021-03-10-am-12.13.38-e1615302842681.png)
 
  
 
 ##### **참고: 언어 코드**
 
- ![](/assets/img/wp-content/uploads/2021/03/-2021-03-10-오전-12.16.26-e1615303022980.png)
+ ![](/assets/img/wp-content/uploads/2021/03/-2021-03-10-am-12.16.26-e1615303022980.png)

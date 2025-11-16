@@ -99,7 +99,7 @@ private func vcInstance(name: String) -> UIViewController{
 
 `UIPageViewControllerDataSource`, `UIPageViewControllerDelegate`을 구현하는 페이지 뷰 컨트롤러의 extension을 생성합니다.
 
-```
+```swift
 extension PageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -136,7 +136,7 @@ if let firstVC = vcArray.first {
 
 위의 프로토콜 stub의 구체적인 내용을 구현합니다. 먼저 이전 페이지로 넘기는 액션입니다.
 
-```
+```swift
 func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
     // 배열에서 현재 페이지의 컨트롤러를 찾아서 해당 인덱스를 현재 인덱스로 기록
     guard let vcIndex = vcArray.firstIndex(of: viewController) else { return nil }
@@ -168,7 +168,7 @@ func pageViewController(_ pageViewController: UIPageViewController, viewControll
 
 다음 페이지로 넘기는 액션입니다.
 
-```
+```swift
 func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
     guard let vcIndex = vcArray.firstIndex(of: viewController) else { return nil }
     

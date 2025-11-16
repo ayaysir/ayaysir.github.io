@@ -243,7 +243,7 @@ RxSwift의 기본 개념을 이용한 사용자 이름 필드와 패스워드 �
 
 ##### **LoginViewModel.swift**
 
-```
+```swift
 import Foundation
 import RxSwift
 import RxRelay

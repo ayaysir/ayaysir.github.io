@@ -40,7 +40,7 @@ categories:
 
 먼저 프로젝트에 아래 `enum`을 추가합니다.
 
-```
+```swift
 enum Identifiers {
     static let viewAction = "VIEW_IDENTIFIER"
     static let archiveAction = "ARCHIVE_IDENTIFER"
@@ -103,7 +103,7 @@ UNUserNotificationCenter.current().setNotificationCategories([newsCategory])
 
 알림이 표시되면 알림을 아래로 당기거나 또는 길게 눌러서 Actionable Notifications를 표시합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-오전-12.23.30.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.23.30.jpg)
 
 버튼을 탭하면 앱이 시작되지만 아직 아무 작업도 수행되지 않습니다. 뉴스 항목을 표시하도록 하려면 대리자(delegate)에서 더 많은 이벤트 처리를 핸들링해야 합니다.
 
@@ -117,7 +117,7 @@ UNUserNotificationCenter.current().setNotificationCategories([newsCategory])
 
 먼저, `NotificationCenter`를 사용할 것이므로 `Notification.Name`의 `extension`에 새로운 이름을 추가합니다.
 
-```
+```swift
 extension Notification.Name {
     static let refreshTextView = Notification.Name("RefreshTextView")
     static let viewSafari = Notification.Name("ViewSafari")
@@ -128,7 +128,7 @@ extension Notification.Name {
 
 `AppDelegate.swift`로 돌아가서 `UNUserNotificationCenterDelegate extension` 안의 `...didReceive...` 함수에 다음과 같이 추가하세요.
 
-```
+```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     // Case 2: 앱이 백그라운드(background) 모드이거나 완전히 닫혔을 때(killed or terminated) 되었을 때
     let content = response.notification.request.content
@@ -202,9 +202,9 @@ NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:))
 }
 ```
 
-\[caption id="attachment\_4722" align="alignnone" width="386"\] ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-오전-12.52.43.jpg) `[보기]` 버튼을 클릭하면\[/caption\]
+\[caption id="attachment\_4722" align="alignnone" width="386"\] ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.52.43.jpg) `[보기]` 버튼을 클릭하면\[/caption\]
 
-\[caption id="attachment\_4723" align="alignnone" width="419"\] ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-오전-12.53.29.jpg) 페이로드에 첨부한 `URL`로 접속됨 (`SFSafariViewController` 사용)\[/caption\]
+\[caption id="attachment\_4723" align="alignnone" width="419"\] ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.53.29.jpg) 페이로드에 첨부한 `URL`로 접속됨 (`SFSafariViewController` 사용)\[/caption\]
 
  
 
@@ -216,27 +216,27 @@ NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:))
 
 푸시 알림을 보내려면 인증 키가 필요합니다. **Certificates, Identifiers & Profiles**을 선택한 다음 왼쪽 창에서 `Key`를 찾습니다. 키 제목의 오른쪽에는 `+` 버튼이 있습니다. 클릭합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-오전-1.07.05.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-1.07.05.jpg)
 
 적절한 키 이름을 지정합니다. Key Service에서 `Apple Push Notifications service(APNs)`을 선택합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-오전-1.07.28.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-1.07.28.jpg)
 
  
 
 `Continue`를 클릭하고 다음 화면에서 `Register`를 클릭하여 새 키를 만듭니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-오전-1.07.47.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-1.07.47.jpg)
 
 `Download`를 클릭합니다. 다운로드한 파일의 이름은 `AuthKey_4SVKWF966R.p8`의 형태와 같습니다. 이 파일을 보관하세요. 알림을 보내려면 이 파일이 필요합니다. 파일 이름의 `4SVKWF966R` 부분은 Key ID입니다. 이것도 필요합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-오전-1.07.58.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-1.07.58.jpg)
 
 필요한 마지막 조각은 Team ID입니다. 회원 센터의 [Membership 페이지](https://developer.apple.com/account/#!/membership)로 이동합니다. Team ID를 메모합니다.
 
  
 
- ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-오전-1.17.38.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-1.17.38.jpg)
 
  
 
@@ -250,7 +250,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:))
 
 PushNotifications 유틸리티를 시작하고 다음 단계를 완료합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/scr-2022-09-06-오전-1.21.58.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/scr-2022-09-06-am-1.21.58.jpg)
 
 1. `Authentication`에서 `Token`을 선택합니다.
 2. `Select P8` 버튼을 클릭하고 이전 섹션의 `.p8` 파일을 선택합니다.
@@ -306,7 +306,7 @@ PushNotifications 유틸리티를 시작하고 다음 단계를 완료합니다.
 
 `AppDelegate.swift`로 돌아가서 클래스 안에 아래 함수를 추가하세요.
 
-```
+```swift
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     // Silent Push Notification
     guard let aps = userInfo["aps"] as? [AnyHashable: Any] else {

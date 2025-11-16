@@ -16,7 +16,7 @@ categories:
 
 - [첫 vite 프로젝트 만들어보기](https://vitejs-kr.github.io/guide/#scaffolding-your-first-vite-project)
 
- ![](/assets/img/wp-content/uploads/2022/04/screenshot-2022-04-20-오전-12.20.42.jpg)
+ ![](/assets/img/wp-content/uploads/2022/04/screenshot-2022-04-20-am-12.20.42.jpg)
 
  
 

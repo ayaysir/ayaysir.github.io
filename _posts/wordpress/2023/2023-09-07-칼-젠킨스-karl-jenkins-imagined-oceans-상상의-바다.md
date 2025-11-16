@@ -31,7 +31,7 @@ categories:
 
 1998년에 발매된 Imagined Oceans는 웨일즈 작곡가 [칼 젠킨스](https://ko.wikipedia.org/wiki/%EC%B9%BC_%EC%A0%B1%ED%82%A8%EC%8A%A4) (Karl Jenkins)의 앨범입니다. 이 작품은 트랙 제목이 붙은 13개의 달의 바다(lunar mare) 에서 영감을 받았습니다. 음악 스타일은 Jenkins의 Adiemus 작곡과 유사하며 각 트랙은 다양한 음악적 기법을 통해 라틴어 이름의 의미를 탐구합니다. 대부분의 Adiemus 작품과 달리 Imagined Oceans의 가사는 꾸며낸 텍스트가 아닌 트랙 제목의 음절로 구성됩니다.
 
-\[caption id="attachment\_5877" align="alignnone" width="1057"\] ![](/assets/img/wp-content/uploads/2023/09/screenshot-2023-09-08-오전-12.35.38-copy.jpg) 트랙 2번 총보의 일부. 달의 이름 Mare Serenitatis(평온의 바다)가 보컬로 연주되고 있습니다\[/caption\]
+\[caption id="attachment\_5877" align="alignnone" width="1057"\] ![](/assets/img/wp-content/uploads/2023/09/screenshot-2023-09-08-am-12.35.38-copy.jpg) 트랙 2번 총보의 일부. 달의 이름 Mare Serenitatis(평온의 바다)가 보컬로 연주되고 있습니다\[/caption\]
 
  
 

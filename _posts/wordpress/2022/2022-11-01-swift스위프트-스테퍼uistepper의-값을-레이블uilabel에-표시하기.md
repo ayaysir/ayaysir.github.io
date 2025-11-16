@@ -17,7 +17,7 @@ InterfaceBuilder의 스토리보드에서 `UIStepper`는 아래 그림과 같이
 > 
 > 1) 스토리보드에서 UIStepper 컴포넌트를 선택한 후 우측 `Attribute Inspector`에서 설정
 > 
->  ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.10.00.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.10.00.jpg)
 > 
 > 2) 프로그래밍 방식으로 설정
 > 
@@ -46,19 +46,19 @@ InterfaceBuilder의 스토리보드에서 `UIStepper`는 아래 그림과 같이
 
 **1)** 스토리보드에 레이블과 스테퍼를 배치한 후 각각 `@IBOutlet`으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.00.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg)
 
  
 
 **2)** 스토리보드에 스테퍼를 `@IBAction`으로 뷰 컨트롤러 코드와 연결합니다. `stepperActCount` 메서드는 버튼이 눌렸을 때 실행됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.04.38.jpg)
+ ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.04.38.jpg)
 
  
 
 **3)** 초기값을 레이블에 표시하도록 설정합니다. `viewDidLoad(_:)`에 아래 코드를 추가합니다.
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -70,8 +70,8 @@ override func viewDidLoad() {
 
 **4)** 값이 증감될때마다(=>스테퍼 버튼을 누를때마다) 레이블에 표시되는 값이 업데이트되도록 합니다. @IBAction 함수인 `stepperActCount` 내에 다음과 같이 작성합니다.
 
-```
-@IBAction func stepperActCount(_ sender: UIStepper) {
+```swift
+@IBAction  func stepperActCount(_ sender: UIStepper) {
     lblCount.text = "\(sender.value)"
 }
 ```
@@ -110,7 +110,7 @@ pod 'RxCocoa'
 
 **1)** 스토리보드에 레이블과 스테퍼를 배치한 후 각각 `@IBOutlet`으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.
 
- ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.00.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg)
 
  
 

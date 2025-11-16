@@ -20,7 +20,7 @@ categories:
 
 > **참고)** 손전등 앱(정확히 말하면 손전등 기능만 있는 앱)은 최신 [앱 스토어 심사 지침](https://developer.apple.com/kr/app-store/review/guidelines#spam)에서 스팸 앱으로 분류됩니다.
 > 
->  ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-09-오전-12.13.55-copy.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-09-am-12.13.55-copy.jpg)
 
  
 

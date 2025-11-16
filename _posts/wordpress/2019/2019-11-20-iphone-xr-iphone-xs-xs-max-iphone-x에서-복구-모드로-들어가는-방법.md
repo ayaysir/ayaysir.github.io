@@ -10,7 +10,7 @@ categories:
 
 복구 모드를 효과적으로 사용하려면 USB 케이블과 최신 버전의 iTunes 또는 MacOS Catalina 이상이 설치된 컴퓨터가 필요합니다. 복구 모드를 사용하기 전에 iTunes를 업데이트 하세요. 또한 프로세스를 시작하기 전에 iPhone XR, iPhone XS, iPhone XS Max 또는 iPhone X의 백업이 사용 가능한지 확인해야합니다. 복구 모드를 사용하거나 백업하지 않고 복원을 시도하면 데이터가 영구적으로 손실될 수 있습니다.
 
-<!-- \[the\_ad id="1801"\] -->
+<!-- <!-- \[the\_ad id="1801"\] --> -->
 
 ## **iPhone XR, XS, XS Max, X에서 복구 모드로 들어가는 방법**
 

@@ -224,7 +224,7 @@ Create ML로 만든 이미지 분류기의 단점은 사진의 두 종이 복수
 
 Precision과 Recall을 고려하여 선택된 모델을 파일로 추출합니다. `Output` 탭을 클릭한 뒤 `Get` 버튼을 누르고 .mlmodel 파일로 저장합니다.
 
- ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-08-오전-12.43.52.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-08-am-12.43.52.jpg)
 
  ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-08-pm-11.47.01.png)
 

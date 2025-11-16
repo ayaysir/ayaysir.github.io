@@ -114,7 +114,7 @@ struct EmployeeData: Codable {
 
 `APIService` 클래스는 `URLSession` 클래스를 사용하여 직원 데이터를 가져오는 간단한 클래스입니다. 여기에서 모든 네트워킹 모델을 사용하여 서버에서 데이터를 가져올 수 있습니다. 뷰모델 클래스에서 `APIService` 클래스를 호출합니다.
 
-```
+```swift
 import Foundation
 
 class APIService: NSObject {
@@ -145,7 +145,7 @@ MVVM 바인딩은 우리 프로젝트에서 중요한 역할을 합니다. 뷰�
 
  
 
-```
+```swift
 import Foundation
 
 class EmployeesViewModel: NSObject {
@@ -241,7 +241,7 @@ class ViewController: UIViewController {
 
 UI를 업데이트하기 위해 뷰 컨트롤러에 테이블 뷰 코드를 작성할 수도 있지만 뷰 컨트롤러를 덜 지저분한 모듈식으로 만들기 위해 여기에서 `UITableViewDataSource`에서 확장되는 별도의 클래스 `EmployeeTableViewDataSource`를 만들것입니다.
 
-```
+```swift
 import Foundation
 import UIKit
 

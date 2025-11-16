@@ -81,7 +81,7 @@ export default App
 
 > 'e' 매개 변수에는 암시적으로 'any' 형식이 포함됩니다.ts(7006)
 
-\[the\_ad id="3513"\]
+<!-- \[the\_ad id="3513"\] -->
 
  
 
@@ -134,7 +134,7 @@ const handleTextField = (e: ChangeEvent<HTMLInputElement>) => {
 }
 ```
 
- ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-오전-1.49.44.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-am-1.49.44.jpg)
 
 - 위와 같이 변경 이벤트에는 `ChangeEvent`가 사용되며, 제네릭 부분에 이벤트가 발생하는 HTML 요소의 타입(`HTML element interfaces`)을 지정합니다.
     - 예를 들어 `<input>` 태그에는 `HTMLInputElement`,

@@ -23,7 +23,7 @@ categories:
 
 `swap`(교환) 함수를 구현하고자 합니다. swap은 단순히 두 변수의 값을 바꾸는 것 뿐으로 거의 대부분의 타입에서 사용 가능한 기능입니다. 예를 들어 `Int`, `String`, `Double` 및 기타 등등이 전부 swap 가능한 타입들입니다. 일단 `Int` 타입에 대한 `swap(_:_:)` 함수를 일반적인 방식으로 구현하면 다음과 같습니다.
 
-```
+```swift
 func swapTwoInts(_ a: inout Int, _ b: inout Int) {
     let temporaryA = a
     a = b
@@ -40,7 +40,7 @@ print("someInt:", someInt, "anotherInt:", anotherInt)
 
 `Int`를 구현했으니 다음은 `String`, `Double`에 대한 `swap` 함수도 구현해 보겠습니다.
 
-```
+```swift
 func swapTwoStrings(_ a: inout String, _ b: inout String) {
     let temporaryA = a
     a = b
@@ -70,7 +70,7 @@ func swapTwoDoubles(_ a: inout Double, _ b: inout Double) {
 
 위의 `swap` 함수들에서 다른 것은 파라미터 타입뿐이고, 안의 로직은 동일합니다. 제네릭 함수는 함수에 가상의 타입을 부여한 뒤, 이것을 파라미터로 받고 처리합니다.
 
-```
+```swift
 func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
     let temporaryA = a
     a = b
@@ -136,7 +136,7 @@ print(someDouble, ":", anotherDouble)
 
 제네릭이 아닌 일반적인 `Int` 타입의 스택은 다음과 같습니다.
 
-```
+```swift
 struct IntStack {
     var items: [Int] = []
     mutating func push(_ item: Int) {
@@ -180,7 +180,7 @@ intStack.items // [3, 6, 2]
 
 제네릭을 적용해 위의 `Stack`을 재작성하면 다음과 같습니다.
 
-```
+```swift
 struct Stack<Element> {
     var items: [Element] = []
     mutating func push(_ item: Element) {
@@ -231,7 +231,7 @@ stackOfStrings.items
 
 앞의 `Stack` 예제에서 `struct` 부분에 제네릭이 선언되었다면, 확장(`extension`)에서는 따로 제네릭을 추가하지 않아도(`extension`에서는 제네릭 추가도 불가능합니다.) 제네릭 사용이 가능합니다.
 
-```
+```swift
 extension Stack {
     // pop 하지 않고 최상위 요소를 반환
     var topItem: Element? {
@@ -254,7 +254,7 @@ stackOfStrings.topItem // "tres"
 
 #### **타입 제약 조건의 문법**
 
-```
+```swift
 func someFunction<T: SomeClass, U: SomeProtocol>(someT: T, someU: U) {
     // function body goes here
 }
@@ -270,7 +270,7 @@ func someFunction<T: SomeClass, U: SomeProtocol>(someT: T, someU: U) {
 
 아래 함수는 배열에 어떠한 값이 있다면 몇 번째 인덱스에 있는지를 반환하는 제네릭과 무관한 함수입니다.
 
-```
+```swift
 func findIndex(ofString valueToFind: String, in array: [String]) -> Int? {
     for (index, value) in array.enumerated() {
         if value == valueToFind {
@@ -291,7 +291,7 @@ if let foundIndex = findIndex(ofString: "llama", in: strings) {
 
 그래서 아래와 같이 제네릭 함수를 작성하였는데, 컴파일 오류가 발생합니다.
 
-```
+```swift
 func findIndex<T>(of valueToFind: T, in array:[T]) -> Int? {
     for (index, value) in array.enumerated() {
         // 컴파일 오류: Binary operator '==' cannot be applied to two 'T' operands
@@ -307,7 +307,7 @@ func findIndex<T>(of valueToFind: T, in array:[T]) -> Int? {
 
 위 `findIndex`함수의 로직에 따르면 `vlaue == valueToFind` 가 필요하므로 이 두 변수의 타입이 `Equatable` 프로토콜을 준수하도록 제약 조건을 지정한다면 컴파일러 오류는 발생하지 않습니다.
 
-```
+```swift
 func findIndex<T: Equatable>(of valueToFind: T, in array:[T]) -> Int? { ... }
 ```
 
@@ -346,7 +346,7 @@ protocol Container {
 
 제네릭 아닌 struct인 `IntStack`을 `Container`를 준수하도록 구현합니다.
 
-```
+```swift
 struct IntStack: Container {
     // original IntStack implementation
     var items: [Int] = []
@@ -382,7 +382,7 @@ struct IntStack: Container {
 
 제네릭 타입에 연관 타입을 사용한 프로토콜을 구현하는 것도 가능합니다. 즉, 연관 타입 자리를 대체할 수 있는 타입에는 제네릭 타입의 placeholder도 포함됩니다.
 
-```
+```swift
 struct Stack<Element>: Container {
     // original Stack<Element> implementation
     var items: [Element] = []
@@ -414,7 +414,7 @@ struct Stack<Element>: Container {
 
 사실 위의 `Container` 프로토콜은 `Array`에서 제공하는 기능을 포함하고 있습니다. 실제로 `append`, `count`, `subscript`등의 기능은 `Array`에 구현되어 있고 대부분 자주 사용하는 기능입니다. 따라서 `Array`의 `extension`에 `Container` 프르토콜을 준수하도록 추가할 수 있습니다. 다음과 같이 빈 확장을 추가합니다.
 
-```
+```swift
 extension Array: Container {}
 ```
 
@@ -439,7 +439,7 @@ protocol Container {
 
  
 
-\[the\_ad id="3513"\]
+<!-- \[the\_ad id="3513"\] -->
 
 #### **연관 타입의 제약 조건에 프로토콜 사용**
 
@@ -511,7 +511,7 @@ let suffix = stackOfInts.suffix(2)
 
 ##### **where Suffix.Item == Item의 의미**
 
- ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-27-오전-9.20.03.jpg)
+ ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-27-am-9.20.03.jpg)
 
 `where Suffix.Item == Item`의 의미는 다음과 같습니다. `SuffixableContainer`를 구현하는 `DoubleStack`이라는 구조체를 만들었습니다. `Container`에 정의되어 있는 `append(_:)` 메서드와 `subscript`에 모두 `Double` 타입을 지정하였습니다. 앞서 언급한 컴파일러의 추론 기능으로 인해 `DoubleStack`의 연관 타입 `Item`은 `Double`로 추론이 된 상태입니다.
 
@@ -532,7 +532,7 @@ let suffix = stackOfInts.suffix(2)
 
 검사할 두 개의 컨테이너는 동일한 유형의 컨테이너일 필요는 없지만 동일한 타입의 항목을 보유해야 합니다. 이 요구 사항은 형식 제약 조건과 일반 `where` 절의 조합을 통해 표현됩니다.
 
-```
+```swift
 func allItemsMatch<C1: Container, C2: Container>
     (_ someContainer: C1, _ anotherContainer: C2) -> Bool
     where C1.Item == C2.Item, C1.Item: Equatable {
@@ -563,7 +563,7 @@ func allItemsMatch<C1: Container, C2: Container>
 
 함수의 사용 예는 다음과 같습니다.
 
-```
+```swift
 extension Array: Container {}
 
 // Stack
@@ -591,7 +591,7 @@ if allItemsMatch(stackOfStrings, arrayOfStrings) {
 
 `extension`에 `where` 절을 사용할 수 있습니다. 아래는 스택의 최상위 항목과 주어진 아이템이 일치하는지 검사하는 함수 `isTop(_:)`가 포함된 `extension`입니다.
 
-```
+```swift
 struct Stack<Element>: Container { ... }
 
 extension Stack where Element: Equatable {
@@ -624,7 +624,7 @@ if stackOfStrings.isTop("tres") {
 
 만약 `Equatable`이 아닌 값을 조회하려고 하면 컴파일 에러가 발생합니다.
 
-```
+```swift
 struct NotEquatable { }
 var notEquatableStack = Stack<NotEquatable>()
 let notEquatableValue = NotEquatable()
@@ -637,7 +637,7 @@ notEquatableStack.isTop(notEquatableValue)
 
 프로토콜의 `extension`에도 제네릭 `where` 절을 사용할 수 있습니다. 아래 예제는 이전 예제의 `Container` 프로토콜을 확장하여 컨테이너의 첫째 값이 주어진 아이템과 일치하는지 여부를 검사하는 `startsWith(_:)` 메서드를 추가합니다.
 
-```
+```swift
 extension Container where Item: Equatable {
     func startsWith(_ item: Item) -> Bool {
         return count >= 1 && self[0] == item
@@ -664,7 +664,7 @@ if [9, 9, 9].startsWith(42) {
 
 아래 코드는 컨테이너의 아이템 타입이 `Double`인 경우 평균을 구하는 `average()` 메서드가 포함된 `extension`입니다.
 
-```
+```swift
 extension Container where Item == Double {
     func average() -> Double {
         var sum = 0.0
@@ -679,7 +679,7 @@ print([1260.0, 1200.0, 98.6, 37.0].average())
 // 결과: "648.9"
 ```
 
-\[the\_ad id="1801"\]
+<!-- \[the\_ad id="1801"\] -->
 
  
 
@@ -687,7 +687,7 @@ print([1260.0, 1200.0, 98.6, 37.0].average())
 
 앞서 살펴본 `avarage()` 메서드는 `Item`이 `Double`이어야 함을 요구했습니다. 또 하나의 메서드를 추가하고자 하는데, 이번에는 특정 컨테이너의 마지막 아이템이 주어진 아이템과 일치하는지를 검사하는 `endsWith(_:)` 메서드를 추가하고 싶습니다. `extenson`을 사용한 `where`절을 사용하면 다음과 같습니다.
 
-```
+```swift
 extension Container where Item == Int {
     func average() -> Double {
         var sum = 0.0
@@ -711,7 +711,7 @@ extension Container where Item: Equatable {
 
 컨텍스트적 `where` 절은 아래와 같이 메서드에 `where`절을 붙이는 방식입니다.
 
-```
+```swift
 extension Container {
     // 평균 구하기
     func average() -> Double where Item == Int {
@@ -769,7 +769,7 @@ protocol ComparableContainer: Container where Item: Comparable { }
 
 #### **Subscript에 제네릭 타입 사용**
 
-```
+```swift
 extension Container {
     subscript<Indices: Sequence>(indices: Indices) -> [Item]
         where Indices.Iterator.Element == Int {

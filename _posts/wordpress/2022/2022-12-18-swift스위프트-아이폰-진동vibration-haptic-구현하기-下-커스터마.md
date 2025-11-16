@@ -354,7 +354,7 @@ func hapticBeethoven5() {
 
 뷰 컨트롤러의 멤버 변수로 위에서 만든 `CustomHaptics`를 추가합니다.
 
-```
+```swift
 private var customHaptics: CustomHaptics?
 ```
 
@@ -364,8 +364,8 @@ private var customHaptics: CustomHaptics?
 
 버튼 이벤트에 아래와 같이 예제 햅틱 메서드를 지정합니다.
 
-```
-@IBAction func btnActCustomHaptics1(_ sender: UIButton) {
+```swift
+@IBAction  func btnActCustomHaptics1(_ sender: UIButton) {
     customHaptics?.haptic1()
 }
 

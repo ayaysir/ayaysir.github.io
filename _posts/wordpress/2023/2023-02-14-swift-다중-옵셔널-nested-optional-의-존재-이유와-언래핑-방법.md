@@ -6,11 +6,11 @@ categories:
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
 Swift에는 다음과 같은 특이한 형태의 자료형이 있습니다.
 
-```
+```swift
 var nestedOptionalString: String?? = "이중 옵셔널은 왜 있음?"
 print(nestedOptionalString)
 ```
@@ -23,11 +23,11 @@ print(nestedOptionalString)
 
  
 
-#### **다중 옵셔널 (중첩된 옵셔널; Nested Optionals)**
+## **다중 옵셔널 (중첩된 옵셔널; Nested Optionals)**
 
 `Dictionary`에 대한 확장을 만들고 아래 `valuesForKey(...)` 함수를 추가합니다.
 
-```
+```swift
 extension Dictionary {
   func valuesForKeys(_ keys: [Key]) -> [Value?] {
     return keys.map { self[$0] }
@@ -39,16 +39,15 @@ extension Dictionary {
 
 아래는 사용 예시입니다.
 
-```
+```swift
 let dict = [
     "A": "Amir",
     "B": "Bertha",
     "C": "Ching",
 ]
-
 ```
 
-```
+```swift
 print(
     dict.valuesForKeys(["A", "C"]),
     // [Optional("Amir"), Optional("Ching")]
@@ -65,7 +64,7 @@ print(
 
 이제 각 결과의 `last` 요소를 요청하면 어떻게 될까요?
 
-```
+```swift
 print(
     dict.valuesForKeys(["A", "C"]).last,
     // Optional(Optional("Ching"))
@@ -82,7 +81,7 @@ print(
 
 `last`가 어떻게 선언되었는지 정의를 보면 다음과 같습니다.
 
-```
+```swift
 var last: T? { get }
 ```
 
@@ -90,11 +89,11 @@ var last: T? { get }
 
  
 
-**\[심화\]** 그렇다면 `Optional(nil)`은 무엇을 의미할까요?
+### **\[심화\]** 그렇다면 `Optional(nil)`은 무엇을 의미할까요?
 
 Objective-C에서 우리는 자리 표시자(placeholder)로 `NSNull`을 사용할 예정임을 상기하세요. 이 세 가지 호출의 Objective-C 버전은 다음과 같습니다.
 
-```
+```objc
 [dict valuesForKeys:@[@"A", @"C"] notFoundMarker:[NSNull null]].lastObject
 // @"Ching"
 
@@ -109,9 +108,9 @@ Swift와 Objective-C의 경우 모두 반환 값의 `nil`은 "_배열이 비어 
 
  
 
-#### **다중 옵셔널에 대한 언래핑(unwrapping) 방법**
+## **다중 옵셔널에 대한 언래핑(unwrapping) 방법**
 
-```
+```swift
 let a: String?? = "hello"
 ```
 
@@ -119,9 +118,9 @@ let a: String?? = "hello"
 
  
 
-##### **1\. 옵셔널 바인딩을 두 번 하기**
+### **1\. 옵셔널 바인딩을 두 번 하기**
 
-```
+```swift
 if let temp = a, let value = temp {
     print(value) // "hello"
 }
@@ -129,19 +128,19 @@ if let temp = a, let value = temp {
 
  
 
-##### **2\. 강제로 언래핑을 두 번 하기 (비추천)**
+### **2\. 강제로 언래핑을 두 번 하기 (비추천)**
 
 옵셔널 변수에 느낌표(`!`)를  붙이면 강제 언래핑이 되는데, 이것을 두 번 붙이는 방법입니다. 강제 언래핑은 변수의 값이 `nil`인 경우 컴파일 에러가 발생하므로 결과가 반드시 `nil`이 아니라고 확신할 수 있을 때에만 사용해야 됩니다.
 
-```
+```swift
 print(value!!)  // don't do this - you're just asking for a crash
 ```
 
  
 
-##### **3\. 패턴 매칭(pattern matching)을 시용하는 방법**
+### **3\. 패턴 매칭(pattern matching)을 시용하는 방법**
 
-```
+```swift
 if case let value?? = a {
     print(value) // "hello"
 }
@@ -153,7 +152,7 @@ if case let value?? = a {
 
 위의 코드는 다음과 동일합니다.
 
-```
+```swift
 if case .some(.some(let value)) = a {
     print(value) // "hello"
 }
@@ -161,13 +160,13 @@ if case .some(.some(let value)) = a {
 
  
 
-##### **4\. nil 부수기 연산자(nil coalescing operator)를 두 번 사용**
+### **4\. nil 부수기 연산자(nil coalescing operator)를 두 번 사용**
 
 `??`은 _nil coalescing operator_라고 하는데 어떠한 옵셔널 변수가 `nil`이 아니라면 해당 변수를 옵셔널을 제거시키고, `nil`이라면 해당 연산자 뒤에 있는 기본값을 사용합니다.
 
 이것을 두 번 사용합니다.
 
-```
+```swift
 print((a ?? "") ?? "")  // "hello"
 ```
 
@@ -175,9 +174,9 @@ print((a ?? "") ?? "")  // "hello"
 
  
 
-##### **5\. nil 부수기 연산자를 옵셔널 바인딩에 사용**
+### **5\. nil 부수기 연산자를 옵셔널 바인딩에 사용**
 
-```
+```swift
 if let value = a ?? nil {
     print(value)  // "hello"
 }
@@ -191,7 +190,7 @@ if let value = a ?? nil {
 
  
 
-##### **6\. flatMap을 사용하기**
+#### **6\. flatMap을 사용하기**
 
 ```
 if let value = a.flatMap({ $0 }) {
@@ -203,11 +202,11 @@ if let value = a.flatMap({ $0 }) {
 
  
 
-##### **7\. 조건부 캐스팅**
+### **7\. 조건부 캐스팅**
 
 조건부 캐스팅(conditional cast)을 사용하여 다중 옵셔널 값을 특정 타입으로 캐스팅을 합니다. 놀랍게도 이것은 모든 단계의 중첩 옵션을 제거합니다.
 
-```
+```swift
 let a: String?? = "hello"
 let b: String??????? = "bye"
 
@@ -225,7 +224,7 @@ if let value = b as? String {
 
  
 
-##### **출처**
+## **출처**
 
 - [Optionals Case Study: valuesForKeys](https://developer.apple.com/swift/blog/?id=12)
 - [How to unwrap double optionals?](https://stackoverflow.com/questions/33049246/how-to-unwrap-double-optionals)

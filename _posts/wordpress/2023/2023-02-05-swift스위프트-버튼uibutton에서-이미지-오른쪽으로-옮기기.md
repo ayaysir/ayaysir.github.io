@@ -6,15 +6,16 @@ categories:
   - "Swift UIKit"
 ---
 
-### **소개**
+## **소개**
 
 인터페이스 빌더 (Interface Builder)에서 GUI 방식으로 버튼(`UIButton`)에서 레이블(텍스트) 옆에 이미지를 추가하고, 이미지의 위치를 왼쪽 또는 오른쪽으로 이동시키며, 마지막으로 이미지와 텍스트 간 간격을 띄우는 방법에 대해 알아보겠습니다.
 
-\[caption id="attachment\_5279" align="alignnone" width="477"\] ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-05-pm-10.19.53.jpg) 이미지가 부착된 `Prev`, `Next` 버튼\[/caption\]
+![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-05-pm-10.19.53.jpg)  
+*이미지가 부착된 `Prev`, `Next` 버튼*
 
- 
+## 절차 
 
-#### **버튼에 이미지 아이콘 추가하기**
+### **버튼에 이미지 아이콘 추가하기**
 
  ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-05-pm-10.20.03.jpg)
 
@@ -25,7 +26,7 @@ categories:
 
  
 
-#### **버튼의 이미지를 왼쪽 또는 오른쪽으로 이동**
+### **버튼의 이미지를 왼쪽 또는 오른쪽으로 이동**
 
 `Prev` 버튼은 이미지가 왼쪽에 있고, `Next` 버튼은 오른쪽에 있습니다.
 
@@ -38,15 +39,16 @@ categories:
 
  
 
-#### **버튼에서 이미지와 레이블 사이의 간격 띄우기**
+### **버튼에서 이미지와 레이블 사이의 간격 띄우기**
 
 간격을 설정하지 않은 것과 설정한 것의 차이를 아래 스크린샷을 보고 비교해보세요.
 
-\[caption id="attachment\_5283" align="alignnone" width="190"\] ![](/assets/img/wp-content/uploads/2023/02/-2023-02-05-pm-10.28.31-e1675603845762.png) 간격 없음\[/caption\]
+![](/assets/img/wp-content/uploads/2023/02/-2023-02-05-pm-10.28.31-e1675603845762.png)  
+*간격 없음*
 
-\[caption id="attachment\_5282" align="alignnone" width="195"\] ![](/assets/img/wp-content/uploads/2023/02/-2023-02-05-pm-10.28.36-e1675603867549.png) 간격 있음 `(Title Insets, Left: 10)`\[/caption\]
+![](/assets/img/wp-content/uploads/2023/02/-2023-02-05-pm-10.28.36-e1675603867549.png)  
+*간격 있음 `(Title Insets, Left: 10)`*
 
- 
 
 인터페이스 빌더 상에서 조절하는 방법은 다음과 같습니다.
 
@@ -57,4 +59,5 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-05-pm-10.33.55.jpg)
 
-iOS 프로그래밍 스위프트 Swift 버튼 이미지 간격 스페이스 아이오에스 macOS 아이폰 아이패드 Xcode 엑스코드 이미지 버튼 간격
+
+<p style="font-size: 2px;">iOS 프로그래밍 스위프트 Swift 버튼 이미지 간격 스페이스 아이오에스 macOS 아이폰 아이패드 Xcode 엑스코드 이미지 버튼 간격</p>

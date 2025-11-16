@@ -65,7 +65,7 @@ Reality Composer 앱으로 만든 프로젝트를 Swift iOS 프로젝트에 추�
 
 먼저 뷰 컨트롤러 코드에서 `let boxAnchor = try! Experience.loadBox()` 을 지우거나 코멘트 처리합니다. 기본 Experience 파일을 로드하지 않습니다.
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
     

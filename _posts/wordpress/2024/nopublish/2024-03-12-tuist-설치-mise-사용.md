@@ -24,7 +24,7 @@ $ chmod +x ~/.local/bin/mise
 $ ~/.local/bin/mise --version
 ```
 
- ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-오전-1.27.18.png)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-am-1.27.18.png)
 
  
 
@@ -32,7 +32,7 @@ $ ~/.local/bin/mise --version
 
 아래 `echo` 명령어 중 현재 사용중인 셸을 연결합니다. 확인은 터미널 상단 창 제목에서 확인합니다.
 
- ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-오전-1.29.30.png)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-am-1.29.30.png)
 
 ```
 # note this assumes mise is located at ~/.local/bin/mise
@@ -50,7 +50,7 @@ echo '~/.local/bin/mise activate fish | source' >> ~/.config/fish/config.fish
 $ mise install tuist
 ```
 
- ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-오전-1.30.59.png)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-am-1.30.59.png)
 
 ##### **\*\*중요\*\* 다음 명령어를 입력해 Tuist를 전체 위치에서 활성화합니다.**
 
@@ -58,7 +58,7 @@ $ mise install tuist
 $ mise use -g tuist
 ```
 
- ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-오전-1.36.05.png)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-am-1.36.05.png)
 
  
 
@@ -68,7 +68,7 @@ $ mise use -g tuist
 $ tuist version
 ```
 
- ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-오전-1.33.07.png)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-am-1.33.07.png)
 
  
 
@@ -131,7 +131,7 @@ Project generated.
 Total time taken: 0.476s
 ```
 
- ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-오전-1.56.15-copy.jpg)
+ ![](/assets/img/wp-content/uploads/2024/03/screenshot-2024-03-13-am-1.56.15-copy.jpg)
 
 SwiftUI 기반으로 프로젝트가 생성되었습니다.
 

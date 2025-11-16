@@ -126,7 +126,7 @@ urlComponents.queryItems // 밑에
 
 이 JSON을 Swift에서 다루고 싶다고 할 때 아래와 같이 `struct`를 만들어 사용할 수 있습니다.
 
-```
+```swift
 struct Response: Codable {
     let resultCount: Int
     let tracks: [Track]
@@ -138,7 +138,7 @@ struct Response: Codable {
 }
 ```
 
-```
+```swift
 struct Track: Codable {
     let title: String   // trackName
     let artistName: String  // artistName

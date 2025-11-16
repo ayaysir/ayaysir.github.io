@@ -48,8 +48,8 @@ Identity Inspector에서 뷰 컨트롤러(`SignUpViewController`)를 커스텀 �
 @IBOutlet weak var imgProfilePicture: UIImageView!
 ```
 
-```
-@IBAction func btnActCancel(_ sender: UIButton) {
+```swift
+@IBAction  func btnActCancel(_ sender: UIButton) {
 }
 
 @IBAction func btnActReset(_ sender: UIButton) {
@@ -88,7 +88,7 @@ var selectedInteresting: String!
 
 `viewDidLoad()` 에 딜리게이트, 데이터소스를 연결하는 코드 및 초기화 코드를 작성합니다.
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -117,8 +117,8 @@ override func viewDidLoad() {
 
 취소 버튼과 리셋 버튼에 대한 이벤트를 작성합니다. 취소 버튼을 누르면 회원 가입 창이 사라지고, 리셋 버튼을 누르면 모든 필드가 처음 상태로 돌아갑니다.
 
-```
-@IBAction func btnActCancel(_ sender: UIButton) {
+```swift
+@IBAction  func btnActCancel(_ sender: UIButton) {
     self.dismiss(animated: true, completion: nil)
 }
 
@@ -143,7 +143,7 @@ override func viewDidLoad() {
 
 관심분야 Picker View에 목록을 추가하는 `extension`을 작성합니다.
 
-```
+```swift
 extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     // 컴포넌트(열) 개수
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -171,7 +171,7 @@ extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 비밀번호 일치 여부를 검사하려면 `UITextFieldDelegate`가 필요합니다. 아래 `extension`을 추가합니다.
 
-```
+```swift
 extension SignUpViewController: UITextFieldDelegate {
     
     func setLabelPasswordConfirm(_ password: String, _ passwordConfirm: String)  {
@@ -258,8 +258,8 @@ extension SignUpViewController: UITextFieldDelegate {
 
 회원가입 정보를 Firebase로 전송하는 `@IBAction` 함수를 작성합니다.
 
-```
-@IBAction func btnActSubmit(_ sender: UIButton) {
+```swift
+@IBAction  func btnActSubmit(_ sender: UIButton) {
     guard let userEmail = txtUserEmail.text,
           let userPassword = txtPassword.text,
           let userPasswordConfirm = txtPasswordConfirm.text else {

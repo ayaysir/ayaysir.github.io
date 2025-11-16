@@ -58,7 +58,7 @@ protocol ObjectSavable {
 
 `ObjectSavable` 프로토콜이 준비되었습니다. `UserDefaults` 클래스를 준수하고 요구 사항에 대한 구현을 제공하겠습니다.
 
-```
+```swift
 extension UserDefaults: ObjectSavable {
     func setObject<Object>(_ object: Object, forKey: String) throws where Object: Encodable {
         let encoder = JSONEncoder()
@@ -92,7 +92,7 @@ extension UserDefaults: ObjectSavable {
 
 에러를 관리하기 위해 `LocalizedError` 프로토콜을 준수하는 `String` 타입의 `enum`인 `ObjectSavableError`를 만들겠습니다.
 
-```
+```swift
 enum ObjectSavableError: String, LocalizedError {
     case unableToEncode = "Unable to encode object into data"
     case noValue = "No data object found for the given key"
@@ -112,7 +112,7 @@ enum ObjectSavableError: String, LocalizedError {
 
 다음과 같이 구조체 `Book` 을 선언합니다.
 
-```
+```swift
 struct Book: Codable {
     var title: String
     var authorName: String
@@ -163,7 +163,7 @@ do {
 
 #### **전체 코드**
 
-```
+```swift
 import Foundation
 
 protocol ObjectSavable {

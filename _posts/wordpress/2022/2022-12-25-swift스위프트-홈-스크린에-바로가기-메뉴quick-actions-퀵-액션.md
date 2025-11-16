@@ -213,7 +213,7 @@ _**SceneDelegate.swift**_ 파일을 열고 `SceneDelegate` 클래스의 하단�
 
 `windowScene(...perfomActionFor...)` 부분을 아래와 같이 작성합니다.
 
-```
+```swift
 func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
     if let userInfo = shortcutItem.userInfo {
         print(userInfo)

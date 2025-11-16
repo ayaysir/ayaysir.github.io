@@ -6,39 +6,41 @@ categories:
   - "Swift"
 ---
 
-##### **이전 글**
+**이전 글**
 
-- [Swift(스위프트): 달력 그리기 (1) → 달력 데이터 분석](http://yoonbumtae.com/?p=5271)
+- [Swift(스위프트): 달력 그리기 (1) → 달력 데이터 분석](/posts/swift스위프트-달력-그리기-1-달력-데이터-분석/)
 
  
 
-### **소개**
+## **소개**
 
-_이전 글 [달력 그리기 (1)](http://yoonbumtae.com/?p=5271) 포스트에 대한 내용이 먼저 숙지되어야 진행할 수 있습니다._
+_이전 글과 내용이 이어집니다._
 
 이전 포스트에서 달력의 데이터를 마련하는 방법에 대해 알아봤는데, 이를 바탕으로 스토리보드 인터페이스 빌더(Interface Builder)를 이용해 GUI 방식으로 달력을 그리는 방법에 대해 알아보겠습니다.
 
 컬렉션 뷰(`UICollectionView`)를 이용하며, 컬렉션 뷰의 사이즈를 조정하면 해당 사이즈에 맞게 자동으로 달력의 레이아웃도 조절되는 것에 중점을 맞추겠습니다.
 
-\[caption id="attachment\_5286" align="alignnone" width="414"\] ![](/assets/img/wp-content/uploads/2023/02/Simulator-Screen-Shot-iPhone-11-2023-02-05-at-22.48.29-copy.jpg) 컬렉션 뷰의 사이즈에 맞춰 달력을 그립니다.\[/caption\]
+![컬렉션 뷰의 사이즈에 맞춰 달력을 그립니다.](/assets/img/wp-content/uploads/2023/02/Simulator-Screen-Shot-iPhone-11-2023-02-05-at-22.48.29-copy.jpg)  
+*컬렉션 뷰의 사이즈에 맞춰 달력을 그립니다.*
 
  
 
-\[caption id="attachment\_5287" align="alignnone" width="707"\] ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-05-pm-10.49.45.jpg) 컬렉션 뷰의 사이즈를 줄이면 달력 레이아웃도 자동으로 맞춰 줄어듭니다.\[/caption\]
+![컬렉션 뷰의 사이즈를 줄이면 달력 레이아웃도 자동으로 맞춰 줄어듭니다.](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-05-pm-10.49.45.jpg)  
+*컬렉션 뷰의 사이즈를 줄이면 달력 레이아웃도 자동으로 맞춰 줄어듭니다.*
 
  
 
-##### **출처**
+### **출처**
 
 - [Creating a Custom Calendar Control for iOS](https://www.kodeco.com/10787749-creating-a-custom-calendar-control-for-ios)
 
- 
+## **절차**
 
-#### **스토리보드의 뷰 컨트롤러에 요소 추가**
+### **스토리보드의 뷰 컨트롤러에 요소 추가**
 
 뷰 컨트롤러에 아래와 같이 요소들을 추가합니다.
 
- ![](/assets/img/wp-content/uploads/2023/02/달력-스크린샷-2023-02-05-pm-11.15.09.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/calendar-screenshot-2023-02-05-pm-11.15.09.jpg)
 
 - **제목**
     - `2023년 2월`과 같이 현재 연월을 표시합니다.
@@ -55,14 +57,16 @@ _이전 글 [달력 그리기 (1)](http://yoonbumtae.com/?p=5271) 포스트에 �
 
 **참고**
 
-- [iOS 프로그래밍: 컬렉션 뷰 (Swift, 스토리보드) – 컬렉션 뷰 추가, 커스텀 셀 작성](http://yoonbumtae.com/?p=3418)
-- [Swift(스위프트): 버튼(UIButton)에서 이미지 오른쪽으로 옮기기 / 이미지와 레이블 간 간격 띄우기 (스토리보드)](http://yoonbumtae.com/?p=5278)
+- [iOS 프로그래밍: 컬렉션 뷰 (Swift, 스토리보드) – 컬렉션 뷰 추가, 커스텀 셀 작성](/posts/ios-프로그래밍-컬렉션-뷰-swift-스토리보드-컬렉션-뷰/)
+- [Swift(스위프트): 버튼(UIButton)에서 이미지 오른쪽으로 옮기기 / 이미지와 레이블 간 간격 띄우기 (스토리보드)](/posts/swift스위프트-버튼uibutton에서-이미지-오른쪽으로-옮기기/)
 
  
 
-#### **스토리보드와 뷰 컨트롤러 코드 간 연결**
+### **스토리보드와 뷰 컨트롤러 코드 간 연결**
 
- ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-pm-11.41.00.jpg) ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-pm-11.41.20.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/Calnedar_screenshot-2023-02-05-pm-11.41.00.jpg) 
+ 
+ ![](/assets/img/wp-content/uploads/2023/02/Calnedar_screenshot-2023-02-05-pm-11.41.20.jpg)
 
 - **@IBOutlet**
     - `calendarCollectionView`: 달력의 컬렉션 뷰
@@ -75,30 +79,32 @@ _이전 글 [달력 그리기 (1)](http://yoonbumtae.com/?p=5271) 포스트에 �
 
 **참고**
 
-- [iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기](http://yoonbumtae.com/?p=2160)
+- [iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기](/posts/ios-프로그래밍-스토리보드에서-요소를-추가한-뒤-아웃/)
 
  
 
-#### **컬렉션 뷰 셀에 식별자(Identifier)와 클래스 지정하기**
+### **컬렉션 뷰 셀에 식별자(Identifier)와 클래스 지정하기**
 
 날짜 표시 칸으로 사용되는 컬렉션 뷰 셀은 고유의 형식을 지녀야 하기 때문에 커스터마이징 할 필요가 있습니다.
 
 컬렉션 뷰의 셀(하나만 있음)을 클릭하고 오른쪽 설정 패널에서
 
-- `Identity Inspector`에서 `Custom Class`를 `DayCell`로 지정  ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-pm-11.41.41.jpg)
-- `Attribute Inspector`에서 `Identifier`를 `DayCell`로 지정  ![](/assets/img/wp-content/uploads/2023/02/Calnedar_스크린샷-2023-02-05-pm-11.41.37.jpg)
+- `Identity Inspector`에서 `Custom Class`를 `DayCell`로 지정   
+![](/assets/img/wp-content/uploads/2023/02/Calnedar_screenshot-2023-02-05-pm-11.41.41.jpg)
+- `Attribute Inspector`에서 `Identifier`를 `DayCell`로 지정  
+![](/assets/img/wp-content/uploads/2023/02/Calnedar_screenshot-2023-02-05-pm-11.41.37.jpg)
 
 합니다.
 
-\[the\_ad id="3513"\]
+<!-- \[the\_ad id="3513"\] -->
 
  
 
-#### **프로젝트에 달력 데이터 생성 클래스 (CalendarData) 추가**
+### **프로젝트에 달력 데이터 생성 클래스 (CalendarData) 추가**
 
-[이전 포스트](http://yoonbumtae.com/?p=5271)의 내용을 바탕으로 데이터 생성 과정을 클래스화시킨 아래 코드를 프로젝트에 추가합니다.
+[이전 포스트](/posts/swift스위프트-달력-그리기-1-달력-데이터-분석/)의 내용을 바탕으로 데이터 생성 과정을 클래스화시킨 아래 코드를 프로젝트에 추가합니다.
 
-```
+```swift
 import Foundation
 
 struct Day {
@@ -302,17 +308,17 @@ class CalendarData {
 
 ```
 
-- 달력 데이터 클래스에 대한 구현 방법 및 자세한 원리는 [이전 포스트](http://yoonbumtae.com/?p=5271)에 설명되어 있습니다.
+
 
 <!-- \[the\_ad id="3020"\] -->
 
  
 
-#### **CalendarData의 인스턴스 변수를 뷰 컨트롤러에 추가**
+### **CalendarData의 인스턴스 변수를 뷰 컨트롤러에 추가**
 
 뷰 컨트롤러의 멤버 변수로 아래를 추가합니다.
 
-```
+```swift
 private var calendarData: CalendarData!
 ```
 
@@ -320,13 +326,13 @@ private var calendarData: CalendarData!
 
  
 
-#### **DayCell 클래스 작성**
+### **DayCell 클래스 작성**
 
 달력의 셀에 대한 커스텀 클래스가 필요합니다. 프로젝트에 다음 코드를 추가하고, `@IBOutlet` 연결을 수행합니다. (연결되지 않으면 프로젝트 창을 껐다 켜면 됩니다.)
 
- ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-06-오전-12.04.29.jpg)
+ ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-06-am-12.04.29.jpg)
 
-```
+```swift
 class DayCell: UICollectionViewCell {
     @IBOutlet weak var lblNumber: UILabel!
     
@@ -347,9 +353,9 @@ class DayCell: UICollectionViewCell {
 
  
 
-#### **뷰 컨트롤러의 viewDidLoad(\_:) 내부에 내용 추가**
+### **뷰 컨트롤러의 viewDidLoad(\_:) 내부에 내용 추가**
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -380,7 +386,7 @@ override func viewDidLoad() {
 1. 컬렉션 뷰를 변경된 데이터 기준으로 다시 로드 (`reloadData()`)
 2. 달력의 제목을 변경
 
-```
+```swift
 calendarData = CalendarData(baseDate: Date(), changedBaseDateHandler: { date in
     self.calendarCollectionView.reloadData()
     self.lblCalendarTitle.text = self.calendarData.localizedCalendarTitle
@@ -389,12 +395,12 @@ calendarData = CalendarData(baseDate: Date(), changedBaseDateHandler: { date in
 
  
 
-#### **기준 일자 변경 부분 구현 - Prev, Next 버튼**
+### **기준 일자 변경 부분 구현 - Prev, Next 버튼**
 
 `Prev`, `Next` 버튼을 누르면 달력의 표시 월(month)가 바뀌어야 합니다. `calendarData.baseDate`를 변경해서 기준 일자를 변경합니다. 기준 일자가 변경되면 위 섹션에서 지정한 핸들러 `changedBaseDateHandler`가 실행되면서 달력을 다시 그립니다.
 
-```
-@IBAction func btnActPrevMonth(_ sender: Any) {
+```swift
+@IBAction  func btnActPrevMonth(_ sender: Any) {
     calendarData.moveMonth(value: -1)
 }
 
@@ -405,7 +411,7 @@ calendarData = CalendarData(baseDate: Date(), changedBaseDateHandler: { date in
 
 참고로 `CalendarData`의 `moveMonth`는 아래와 같이 되어 있습니다.
 
-```
+```swift
 func moveMonth(value: Int) {
     baseDate = calendar.date(byAdding: .month, value: value, to: baseDate) ?? baseDate
 }
@@ -413,11 +419,11 @@ func moveMonth(value: Int) {
 
  
 
-#### **셀이 달력의 한 줄(Line)을 7칸씩 채우도록 Flow Layout 조절**
+### **셀이 달력의 한 줄(Line)을 7칸씩 채우도록 Flow Layout 조절**
 
 `UICollectionViewDelegateFlowLayout`의 `collectionView(...sizeForItemAt...)`을 이용하면 한 셀의 너비(width)와 높이(height)를 지정할 수 있습니다. `UICollectionViewDelegateFlowLayout`을 준수하는 아래 `extension`을 추가합니다.
 
-```
+```swift
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = Int(calendarCollectionView.frame.width / 7)
@@ -442,13 +448,13 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
 
  
 
-#### **컬렉션 뷰의 DataSource, Delegate 구현**
+### **컬렉션 뷰의 DataSource, Delegate 구현**
 
 실제 달력의 내용을 채우는 과정은 `DataSource` 프로토콜에서 지정된 메서드를 이용해야 합니다.
 
 `UICollectionViewDelegate`, `UICollectionViewDataSource`를 준수하는 `extension`을 추가한 뒤, 다음과 같이 코드를 작성합니다.
 
-```
+```swift
 extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     // 1
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -492,22 +498,22 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
     - 각 셀의 인스턴스 및 표시될 내용을 지정하는 부분입니다.
 3. **...viewForSupplementaryElementOfKind...**
     - 셀의 헤더 뷰를 표시하려면 이 부분을 반드시 추가해야 합니다.
-    - 헤더 뷰의 `Identifier`를 `CalendarHeaderView`로 지정합니다. ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-06-오전-12.20.12.jpg)
+    - 헤더 뷰의 `Identifier`를 `CalendarHeaderView`로 지정합니다. ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-06-am-12.20.12.jpg)
     - `kind`가 헤더 뷰(`.elementKindSectionHeader`)인 경우, `collectionView. dequeueReusableSupplementaryView`를 통해 헤더 뷰 인스턴스를 반환합니다.
     - 참고: [iOS ) UICollectionReusableView](https://zeddios.tistory.com/998)
 4. **...didSelectItemAt...**
     - 셀을 선택한 경우 해당 셀에 해당하는 날짜를 하이라이트 표시합니다.
 
-\[the\_ad id="1801"\]
+<!-- \[the\_ad id="1801"\] -->
 
  
 
-#### **동작 확인**
+## **동작 확인**
 
 빌드 및 실행하고, 아래와 같이 동작하는지 확인합니다.
 
 <!-- http://www.giphy.com/gifs/SyXQOKZlvxk1eiorIb -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHNjY3p3ZHU4aTd4ZWRrM2w0MjJnaXk2NjNoMWswN2x5MXdtZmNqNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SyXQOKZlvxk1eiorIb/giphy.gif)
 
 - 달력이 칸수에 맞게 제대로 그려집니다.
 - `Prev`, `Next` 버튼을 클릭하면 이전 달 또는 다음 달로 이동합니다.
@@ -516,6 +522,7 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewData
 
  
 
-##### **전체 코드**
+## **전체 코드**
 
-https://gist.github.com/ayaysir/7323ed9e717c7fdb868342376c05e21a
+<!-- https://gist.github.com/ayaysir/7323ed9e717c7fdb868342376c05e21a -->
+{% gist "7323ed9e717c7fdb868342376c05e21a" %}

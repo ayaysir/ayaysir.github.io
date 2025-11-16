@@ -143,7 +143,7 @@ import UserNotifications
 
 그런 다음 `AppDelegate` 끝에 다음 메서드를 추가합니다.
 
-```
+```swift
 func registerForPushNotifications() {
     // 1 - UNUserNotificationCenter는 푸시 알림을 포함하여 앱의 모든 알림 관련 활동을 처리합니다.
     UNUserNotificationCenter.current()
@@ -159,7 +159,7 @@ func registerForPushNotifications() {
 
  ![](/assets/img/wp-content/uploads/2022/08/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-08-10-%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE-10.11.59.jpg)
 
-\[the\_ad id="3513"\]
+<!-- \[the\_ad id="3513"\] -->
 
  
 
@@ -181,7 +181,7 @@ registerForPushNotifications()
 
 `Allow`를 탭하면 이제 앱에서 알림을 표시할 수 있습니다. 그러나 사용자가 권한을 거부하면 어떻게 될까요? `AppDelegate` 내부에 다음 메서드를 추가합니다.
 
-```
+```swift
 func getNotificationSettings() {
     UNUserNotificationCenter.current().getNotificationSettings { settings in
         print("Notification settings: \(settings)")
@@ -195,7 +195,7 @@ func getNotificationSettings() {
 
 `registerForPushNotifications()`에서 `requestAuthorization(options:completionHandler:)`에 아래 하이라이트 부분을 추가합니다.
 
-```
+```swift
 func registerForPushNotifications() {
     // 1 - UNUserNotificationCenter는 푸시 알림을 포함하여 앱의 모든 알림 관련 활동을 처리합니다.
     UNUserNotificationCenter.current()
@@ -231,7 +231,7 @@ DispatchQueue.main.async {
 
 `AppDelegate` 끝에 다음을 추가합니다.
 
-```
+```swift
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
     let token = tokenParts.joined()
@@ -247,7 +247,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 
 바로 밑에 다음 코드를 추가합니다.
 
-```
+```swift
 func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
     print("Failed to register: \(error)")
 }
@@ -367,7 +367,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
 먼저 전역함수 `receivePushNotiNews`를 프로젝트에 추가합니다. 이 함수는 받은 알림을 `UserDefaults`에 저장하는 역할을 합니다.
 
-```
+```swift
 func receivePushNotiNews(title: String, body: String, linkURL: String) {
     let newsText = "\(title) : \(body) (\(linkURL)) : \(Date())"
     var newsList = UserDefaults.standard.array(forKey: "NewsList") ?? [String]()
@@ -389,7 +389,7 @@ UNUserNotificationCenter.current().delegate = self
 
 `NotificationCenter`를 사용할 것이므로 아래 `extension`도 프로젝트에 추가합니다.
 
-```
+```swift
 import Foundation
 
 extension Notification.Name {
@@ -421,7 +421,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotif
 
 `refreshView()`의 코드를 클래스 내부에 추가합니다.
 
-```
+```swift
 func refreshTextView() {
     let newsList = UserDefaults.standard.array(forKey: "NewsList") as? [String] ?? [String]()
     txvLogs.text = newsList.reversed().joined(separator: "\n\n")
@@ -442,7 +442,7 @@ func refreshTextView() {
 
 ##### **Case 1: 앱이 열린 상태일 때**
 
-```
+```swift
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -475,7 +475,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 바로 위의 `extension` 안에 다음 함수를 추가합니다.
 
-```
+```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     // Case 2: 앱이 백그라운드(background) 모드이거나 완전히 닫혔을 때(killed or terminated) 되었을 때
     let content = response.notification.request.content

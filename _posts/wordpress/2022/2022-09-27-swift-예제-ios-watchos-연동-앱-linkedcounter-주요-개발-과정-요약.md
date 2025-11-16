@@ -108,7 +108,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
 
 - 먼저 애플 워치를 고려하지 않고 아이폰 단독 앱을 개발합니다. 스토리보드 구조는 아래와 같습니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-28-오전-12.09.37.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-28-am-12.09.37.jpg)
 
  
 
@@ -127,7 +127,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
     - `Interfaces`는 앱을 열었을 때 바로 첫 화면을 표시하는 부분입니다.
     - 여기서 UI 컴포넌트를 추가하고, 연동 작업은 WatchKit Extension의 **_InterfaceController.swift_**에서 작성합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-28-오전-12.16.11.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-28-am-12.16.11.jpg)
 
  
 
@@ -257,7 +257,7 @@ override func willActivate() {
 - `session.sendMessage(...)` 메서드를 이용합니다.
     - `["request": "totalCount_get"]`이라는 메시지를 아이폰 앱으로 보냅니다.
 
-```
+```swift
 func sendMessage(_ message: [String : Any], 
                    replyHandler: (([String : Any]) -> Void)?, 
                    errorHandler: ((Error) -> Void)? = nil)
@@ -289,7 +289,7 @@ session.sendMessage(makeRequest("totalCount_get")) { response in
 - 아이폰 프로젝트에 **_SessionHandler.swift_** 파일을 생성하고 아래 코드를 추가합니다.
 - `WCSessionDelegate`의 `extension` 안에 있는 `func session(...didReceiveMessage...)` 부분이 요청을 처리하는 곳입니다.
 
-```
+```swift
 import Foundation
 import WatchConnectivity
 
@@ -423,7 +423,7 @@ connectivityHandler.session.sendMessage(makeRequestForSendToWatch(totalCount: st
 }
 ```
 
-```
+```swift
 func makeRequestForSendToWatch(totalCount: Double, plusCount: Double, targetCount: Double? = nil) -> [String: Any] {
     var dict = [
         "totalCount": totalCount,
@@ -784,7 +784,7 @@ extension InterfaceController: WCSessionDelegate {
         
     - `CLKComplicationTemplate`를 나중에 컴플레이케이션 표시 시간을 정하는 딜리게이트 메소드에서 지정합니다.
 
-```
+```swift
 extension ComplicationController {
     
     func makeTemplate(image: UIImage, complication: CLKComplication) -> CLKComplicationTemplate? {
@@ -815,7 +815,7 @@ extension ComplicationController {
 
 - 다음 `func getCurrentTimelineEntry(...withHandler...)`에 기본 컴플리케이션을 추가합니다.
 
-```
+```swift
 func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
     // Call the handler with the current timeline entry
     
@@ -850,7 +850,7 @@ _버튼을 눌러 앱을 닫으면, 처음에는 기본 내용 별표(★)가 �
 
  
 
-```
+```swift
 func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
     // Call the handler with the timeline entries after the given date
 
@@ -888,7 +888,7 @@ func getTimelineEntries(for complication: CLKComplication, after date: Date, lim
 
 - 마지막으로, 시스템에 타임라인 종료 시점을 알려줍니다.
 
-```
+```swift
 func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
     // Call the handler with the last entry date you can currently provide or nil if you can't support future timelines
     let after = Date().timeIntervalSince1970 + (60 * 60) * 60

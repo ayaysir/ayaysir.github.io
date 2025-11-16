@@ -10,13 +10,13 @@ categories:
 
 텍스트 뷰 등에서 텍스트를 선택하면 아래와 같은 메뉴가 나옵니다.
 
- ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-오전-1.23.15.jpg)
+ ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-am-1.23.15.jpg)
 
  
 
 여기에 기존에 없는 메뉴를 추가하고 싶다면 어떻게 해야 할까요? 아래 스크린샷에서 `단어장에 추가` 메뉴는 iOS에 없는 메뉴로 제가 새로 추가한 것입니다.
 
- ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-오전-1.22.49.jpg)
+ ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-am-1.22.49.jpg)
 
  
 
@@ -26,7 +26,7 @@ categories:
 
 `addCustomMenu()`  함수를 추가하고, 뷰 컨트롤러의 `viewDidLoad(_:)`에 `addCustomMenu()`를 실행하도록 추가합니다.
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
 

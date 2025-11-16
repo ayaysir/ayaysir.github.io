@@ -6,7 +6,7 @@ categories:
   - "Logic Pro"
 ---
 
-#### **소개**
+## **소개**
 
 아래 참고 링크의 포스트와의 차이점은 위의 기능은 오디오 트랙이 두 개 필요하며 (원음 + MR) 역위상을 이용해 보컬+코러스만 추출하는 기능이지만
 
@@ -14,21 +14,21 @@ categories:
 
  
 
-##### **참고**
+### **참고**
 
 - [Logic Pro X: 역위상(Phase Inverting; 페이즈 인버팅) 기능을 이용하여 보컬+코러스만 추출](http://yoonbumtae.com/?p=2289)
 
  
 
-#### **방법**
+## **방법**
 
-**1: 오디오 트랙을 추가합니다.**
+### **1: 오디오 트랙을 추가합니다.**
 
  ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-21-pm-11.35.27.jpg)
 
  
 
-**2: Audio Effect Plug-in 영역에 `Gain`(Utility > Gain > 스테레오 Stereo)을 추가합니다.**
+### **2: Audio Effect Plug-in 영역에 `Gain`(Utility > Gain > 스테레오 Stereo)을 추가합니다.**
 
  ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-21-pm-11.35.38.jpg)
 
@@ -36,7 +36,7 @@ categories:
 
  
 
-**3: Gain 플러그인 설정 중에서 `Phase Invert` 부분을 찾은 뒤, `L` 또는 `R` 둘 중 하나만 체크합니다.**
+### **3: Gain 플러그인 설정 중에서 `Phase Invert` 부분을 찾은 뒤, `L` 또는 `R` 둘 중 하나만 체크합니다.**
 
  ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-21-pm-11.21.44.jpg)
 
@@ -44,7 +44,7 @@ L과 R 둘 다 모두 체크하면 L, R에 각각 적용된 역위상이 서로 
 
  
 
-**4: `MONO`를 `ON` 합니다.**
+### **4: `MONO`를 `ON` 합니다.**
 
  ![](/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-21-pm-11.21.44-copy.jpg)
 

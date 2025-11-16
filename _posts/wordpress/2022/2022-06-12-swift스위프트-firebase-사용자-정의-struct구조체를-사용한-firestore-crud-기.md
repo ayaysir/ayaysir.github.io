@@ -59,7 +59,7 @@ pod 'FirebaseFirestoreSwift'
 
 #### **프로젝트에 코드 추가: import 설정 및 클래스 작성**
 
-```
+```swift
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
@@ -161,7 +161,7 @@ service cloud.firestore {
 
 #### **사용자 정의 struct 만들기**
 
-```
+```swift
 struct Person: Codable {
 
     // @DocumentID가 붙은 경우 Read시 해당 문서의 ID를 자동으로 할당
@@ -198,7 +198,7 @@ struct Person: Codable {
 
 ##### **Create**
 
-```
+```swift
 func addPost(personRequest request: Person) {
     
     var ref: DocumentReference? = nil
@@ -244,7 +244,7 @@ func addPost(personRequest request: Person) {
 
 ##### **Update**
 
-```
+```swift
 func updatePost(documentID: String, originalPersonRequest request: Person) {
     
     do {
@@ -281,7 +281,7 @@ func updatePost(documentID: String, originalPersonRequest request: Person) {
 
 ##### **Delete**
 
-```
+```swift
 func deletePost(documentID: String) {
     
     personsRef.document(documentID).delete() { err in
@@ -301,7 +301,7 @@ func deletePost(documentID: String) {
 
 ##### **Read (문서 하나)**
 
-```
+```swift
 func read(documentID: String, completionHandler: ((_ person: Person) -> ())?) {
     personsRef.document(documentID).getDocument { document, err in
         guard let document = document else {
@@ -328,7 +328,7 @@ func read(documentID: String, completionHandler: ((_ person: Person) -> ())?) {
 
 ##### **Read (컬렉션 내의 문서 전체)**
 
-```
+```swift
 func readAll() {
     // 서버 업로드 시간 기준으로 내림차순
     let query: Query = personsRef.order(by: Person.CodingKeys.serverTS.rawValue, descending: true)
@@ -366,7 +366,7 @@ func readAll() {
 
 위에서 만든 클래스를 바탕으로 실제 실행 가능한 영역에서 데이터베이스 CRUD를 수행합니다.
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
     FirebasePractice.shared.signInAnonymously { user in

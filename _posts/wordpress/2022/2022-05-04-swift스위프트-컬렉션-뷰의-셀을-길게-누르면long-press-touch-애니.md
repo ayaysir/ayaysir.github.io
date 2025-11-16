@@ -153,7 +153,7 @@ class ImageViewModel {
 
 ##### **1) viewDidLoad()에 다음 부분을 추가합니다.**
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
     setupLongGestureRecognizerOnCollection()
@@ -164,7 +164,7 @@ override func viewDidLoad() {
 
 ##### **2) ViewController에 UIGestureRecognizerDelegate 프로토콜을 구현하는 다음 extension 및 함수를 추가합니다.**
 
-```
+```swift
 extension ViewController: UIGestureRecognizerDelegate {
 
     // long press 이벤트 부여

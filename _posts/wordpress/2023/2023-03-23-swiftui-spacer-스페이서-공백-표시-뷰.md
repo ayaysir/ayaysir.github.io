@@ -6,7 +6,7 @@ categories:
   - "SwiftUI"
 ---
 
-### **소개**
+## **소개**
 
 SwiftUI에서, 스페이서(`Spacer`)는 공백을 표시하는 `View`입니다.
 
@@ -16,7 +16,7 @@ SwiftUI에서, 스페이서(`Spacer`)는 공백을 표시하는 `View`입니다.
 
 > **참고)** `ZStack`에서도 코드는 동작하지만 `ZStack`은 Z축의 스택이기 때문에 아래처럼 겹쳐 보입니다.
 > 
-> ```
+> ```swift
 > struct StacksView: View {
 >     var body: some View {
 >         ZStack {
@@ -34,9 +34,9 @@ SwiftUI에서, 스페이서(`Spacer`)는 공백을 표시하는 `View`입니다.
 
  
 
-#### **Spacer의 기본 사용법**
+## **Spacer의 기본 사용법**
 
-```
+```swift
 HStack {
     Text("가나다")
     Spacer()
@@ -51,7 +51,7 @@ HStack {
 - `Text`와 `Image`간 `Spacer`를 사용하면 텍스트, 이미지 부분을 제외한 나머지 영역 전부를 `Spacer`가 차지하게 됩니다.
 - 다음과 같이 여러 `Spacer`를 사용할 수 있습니다.  ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-23-pm-10.14.03-copy.jpg)
     
-    ```
+    ```swift
     HStack {
         Text("가나다")
         Spacer()
@@ -66,19 +66,19 @@ HStack {
 
  
 
-> **참고)** `Spacer` 또한 `View`이기 때문에 스택 당 최대 뷰의 개수 `10개`를 초과하면 오류가 발생합니다.
+<!-- > **참고)** `Spacer` 또한 `View`이기 때문에 스택 당 최대 뷰의 개수 `10개`를 초과하면 오류가 발생합니다.
 > 
->  ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-23-pm-10.08.17-copy.jpg)
+>  ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-23-pm-10.08.17-copy.jpg) -->
 
  
 
-#### **Spacer의 공백 너비를 조절하는 방법**
+## **Spacer의 공백 너비를 조절하는 방법**
 
-##### **1) minLength 파라미터 지정**
+### **1) minLength 파라미터 지정**
 
 `minLength`를 지정하면 최소 너비(또는 높이)를 지정할 수 있습니다. 공백의 크기가 `minLength`보다 크다면 해당 크기로 표시되지만 공백의 크기가 `minLength`보다 작아지는 경우 `minLength`로 고정됩니다.
 
-```
+```swift
 HStack {
     Text("가나다")
     Spacer(minLength: 300)
@@ -90,21 +90,21 @@ HStack {
 }
 ```
 
-\[caption id="attachment\_5391" align="alignnone" width="430"\] ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-23-pm-10.16.15-copy-1.jpg) `minLength`를 지정한 경우\[/caption\]
+![minLength를 지정한 경우](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-23-pm-10.16.15-copy-1.jpg)  
+*`minLength`를 지정한 경우*
 
  
-
-\[caption id="attachment\_5389" align="alignnone" width="434"\] ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-23-pm-10.14.03-copy.jpg) `minLength`가 없는 경우\[/caption\]
-
+![`minLength`가 없는 경우](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-23-pm-10.14.03-copy.jpg)  
+*`minLength`가 없는 경우*
  
 
-##### **2) frame에서 size를 지정**
+### **2) frame에서 size를 지정**
 
 `HStack`이라면 `width`, `VStack`이라면 `height`를 지정하면 됩니다.
 
-**HStack(가로 스택)은 width**
+#### **HStack(가로 스택)은 width**
 
-```
+```swift
 HStack {
     Text("가나다")
     Spacer()
@@ -121,17 +121,17 @@ HStack {
 
  
 
-**VStack(세로 스택)은 height**
+#### **VStack(세로 스택)은 height**
 
- ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-23-pm-10.24.06-copy.jpg)
+![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-23-pm-10.24.06-copy.jpg)
 
  
 
-##### **참고: Spacer 없이 Stack 내의 View간 간격을 조절하는 방법**
+## **참고: Spacer 없이 Stack 내의 View간 간격을 조절하는 방법**
 
 `spacing` 파라미터를 사용하면 됩니다.
 
-```
+```swift
 VStack(spacing: 50) {
     Text("가나다")
     Image(systemName: "play.fill")

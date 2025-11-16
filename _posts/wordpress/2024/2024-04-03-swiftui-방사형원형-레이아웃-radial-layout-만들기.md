@@ -45,7 +45,7 @@ struct RadialLayout: Layout {
 
 루프의 모든 항목을 사용자 정의 위치에 배치해 보겠습니다.
 
-```
+```swift
 func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
     let radius = bounds.width / 3.0
     let angle: CGFloat = Angle.degrees(360.0 / CGFloat(subviews.count)).radians

@@ -68,7 +68,7 @@ struct CustomMusicSliderView_Previews: PreviewProvider {
 
 ##### **4) UIHostingController 추가**
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -177,7 +177,7 @@ class CustomMusicSliderViewModel: ObservableObject {
 
 ##### **2) SwiftUI View가 해당 뷰 모델을 참고하도록 변경**
 
-```
+```swift
 struct CustomMusicSliderView: View {
     @StateObject var viewModel: CustomMusicSliderViewModel
     
@@ -217,7 +217,7 @@ class ViewController: UIViewController {
 
 다음, `viewDidLoad`에서 초기화합니다.
 
-```
+```swift
 override func viewDidLoad() {
     super.viewDidLoad()
        

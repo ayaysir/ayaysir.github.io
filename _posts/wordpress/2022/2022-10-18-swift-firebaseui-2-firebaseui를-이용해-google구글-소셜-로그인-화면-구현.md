@@ -82,7 +82,7 @@ authUI.providers = providers
 
  
 
-\[caption id="attachment\_4977" align="alignnone" width="406"\] ![](/assets/img/wp-content/uploads/2022/10/mosaic-스크린샷-2022-10-18-pm-11.47.44.jpg) 구글 계정 선택\[/caption\]
+\[caption id="attachment\_4977" align="alignnone" width="406"\] ![](/assets/img/wp-content/uploads/2022/10/mosaic-screenshot-2022-10-18-pm-11.47.44.jpg) 구글 계정 선택\[/caption\]
 
  
 
@@ -97,16 +97,16 @@ authUI.providers = providers
 
  
 
-\[caption id="attachment\_4984" align="alignnone" width="400"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-pm-11.53.38.jpg) 1. 이메일 계정으로 구글 지메일을 사용해 가입\[/caption\]
+\[caption id="attachment\_4984" align="alignnone" width="400"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.53.38.jpg) 1. 이메일 계정으로 구글 지메일을 사용해 가입\[/caption\]
 
  
 
-\[caption id="attachment\_4983" align="alignnone" width="824"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-pm-11.55.30.jpg) 2. 가입한 후 계정 상태, 제공업체는 이메일\[/caption\]
+\[caption id="attachment\_4983" align="alignnone" width="824"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.55.30.jpg) 2. 가입한 후 계정 상태, 제공업체는 이메일\[/caption\]
 
  
 
-\[caption id="attachment\_4982" align="alignnone" width="855"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-pm-11.56.05.jpg) 3.동일한 구글 아이디의 계정으로 로그인하면 제공 업체가 구글로 바뀌며, UID는 그대로\[/caption\]
+\[caption id="attachment\_4982" align="alignnone" width="855"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.56.05.jpg) 3.동일한 구글 아이디의 계정으로 로그인하면 제공 업체가 구글로 바뀌며, UID는 그대로\[/caption\]
 
  
 
-\[caption id="attachment\_4985" align="alignnone" width="316"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-스크린샷-2022-10-18-pm-11.56.24.jpg) 4. 제공업체가 구글인 상태에서 이메일 계정 로그인을 시도하면 구글로 로그인하라는 경고창이 뜸\[/caption\]
+\[caption id="attachment\_4985" align="alignnone" width="316"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.56.24.jpg) 4. 제공업체가 구글인 상태에서 이메일 계정 로그인을 시도하면 구글로 로그인하라는 경고창이 뜸\[/caption\]

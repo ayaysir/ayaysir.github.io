@@ -10,7 +10,7 @@ categories:
 
 - [Swift 기초 (4): 클래스, 옵셔널과 nil](http://yoonbumtae.com/?p=2114)
 
-```
+```swift
 struct Person {
     var name: String
     var job: String
@@ -80,7 +80,7 @@ computer2.cpu // AMD
 
 구조체는 프로토콜(`protocol`)만 구현할 수 있고, 다른 클래스나 구조체로부터 상속을 하거나 받는 행위를 일절 할 수 없습니다.
 
-```
+```swift
 struct Student: Person {
     // 불가능
 }

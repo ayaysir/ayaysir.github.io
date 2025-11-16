@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
 Swift에서 `URL(string:)`를 사용하여 텍스트로 된 주소를 이용해 `URL` 인스턴스를 생성하려고 하는데 한글 등이 포함되어 있으면 `nil`이 반환되는 경우가 있습니다. 일반적으로 URL은 _**Percent Encoding**_이라고 하는 특수한 인코딩을 사용하며 Swift의 `URL`은 자동 인코딩을 지원하지 않기 때문에 퍼센트 인코딩에서 허용하지 않는 문자를 입력하면 에러가 발생하는 것입니다.
 
@@ -22,11 +22,11 @@ Swift에서 `URL(string:)`를 사용하여 텍스트로 된 주소를 이용해 
 
  
 
-### **방법**
+## **방법**
 
 원래 스트링에 `.addingPercentEncoding`을 추가합니다.
 
-```
+```swift
 import Foundation
 
 let original = "https://ko.wikipedia.org/wiki/퍼센트_인코딩"
@@ -38,7 +38,7 @@ print(escaped!)
     - URL쿼리문에서 사용하는 문자 (`:`이나 `/` 등)을 허용하는 옵션인 `.urlQueryAllowed`를 선택했습니다.
 - 참고로 아래와 같은 다양한 종류가 있습니다.
     
-    ```
+    ```swift
     /// Returns a character set containing the characters in Unicode General Category Cc and Cf.
     public static var controlCharacters: CharacterSet { get }
     
@@ -103,7 +103,7 @@ print(escaped!)
     public static var urlFragmentAllowed: CharacterSet { get }
     ```
     
-     
+### 출력 결과     
 
 출력 결과는 다음과 같습니다.
 
@@ -111,11 +111,11 @@ print(escaped!)
 https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%84%BC%ED%8A%B8_%EC%9D%B8%EC%BD%94%EB%94%A9
 ```
 
- 
+### extension으로 추가
 
 자주 사용하는 경우 `extension`으로 추가할 수도 있습니다.
 
-```
+```swift
 extension String {
     var urlEncoded: String? {
         return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -129,7 +129,7 @@ extension String {
 
  
 
-참고
+### 참고
 
 - [Swift - encoded URL](https://stackoverflow.com/questions/24551816/swift-encode-url)
 - [Swift(스위프트): URL 관련 기능 요약 (URL, URLComponents, URLSession)](http://yoonbumtae.com/?p=3499)

@@ -32,7 +32,7 @@ textA4FreqOutlet.delegate = self
 
 3) `UITextFieldDelegate`를 상속받는 뷰 컨트롤러의 `extension`을 생성하고 다음 코드를 작성합니다.
 
-```
+```swift
 extension ViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // 백스페이스
@@ -86,7 +86,7 @@ extension ViewController: UITextFieldDelegate {
 
  
 
-```
+```swift
 extension String  {
     var isNumber: Bool {
         return !isEmpty && rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil

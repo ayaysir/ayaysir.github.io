@@ -253,7 +253,7 @@ Stuart는 정확히 어떤 종류의 애완 동물입니까? 그는 물론 쿠�
 
 이 예제에서 할 수 있는 마지막 개선 사항이 있습니다. `PetViewModel`의 클래스 닫는 중괄호 바로 뒤에 다음 `extension`을 추가합니다.
 
-```
+```swift
 extension PetViewModel {
     public func configure(_ view: PetView) {
         view.nameLabel.text = viewModel.name

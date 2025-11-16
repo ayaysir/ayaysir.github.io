@@ -37,7 +37,7 @@ function sendToNativeApp(event) {
 
 Swift 네이티브 앱의 뷰 컨트롤러의 클래스 선언부분 또는 `extension` 선언 부분에 `WKScriptMessageHandler` 프로토콜을 추가합니다.
 
-```
+```swift
 extension ViewController: WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
     
     // ... //
@@ -47,7 +47,7 @@ extension ViewController: WKUIDelegate, WKNavigationDelegate, WKScriptMessageHan
 
 이 프로토콜은 다음 protocol stub을 요구합니다. IDE의 지시에 따라 추가해줍니다.
 
-```
+```swift
 func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
     
     // ... //
@@ -59,7 +59,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 
 Swift 네이티브 앱의 뷰 컨트롤러에 다음을 추가합니다. (하이라이트 부분)
 
-```
+```swift
 func loadHelpPage() {
     if #available(iOS 14.0, *) {
         webView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
@@ -92,7 +92,7 @@ func loadHelpPage() {
 
 `func userContentController(...)` 부분에 구분자를 찾고 실행해야 할 작업을 기재합니다.
 
-```
+```swift
 func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
     
     switch message.name {
@@ -119,7 +119,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 
  
 
- ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-오전-1.24.36.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-am-1.24.36.jpg)
 
 자바스크립트에서 `sendToNativeApp` 함수를 실행하면 네이티브 앱에서 경고창이 뜨게 됩니다.
 
@@ -154,7 +154,7 @@ webView.configuration.userContentController.addUserScript(injectionScript)
 
  
 
- ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-오전-1.30.32.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-am-1.30.32.jpg)
 
 실행되면 웹 페이지의 제목이 위와 같이 바뀝니다.
 
@@ -179,7 +179,7 @@ webView.configuration.userContentController.addUserScript(script)
 webView.configuration.userContentController.add(self, name: "logHandler")
 ```
 
-```
+```swift
 func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
     
     switch message.name {
@@ -200,4 +200,4 @@ console.log("success")
 
  
 
- ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-오전-1.32.19.jpg)
+ ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-am-1.32.19.jpg)

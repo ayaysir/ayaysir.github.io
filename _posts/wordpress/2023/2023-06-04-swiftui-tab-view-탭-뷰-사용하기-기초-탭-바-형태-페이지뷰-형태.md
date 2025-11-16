@@ -59,7 +59,7 @@ TabView {
 }
 ```
 
-```
+```swift
 struct MyCustomView: View {
     @State var text = "empty"
     

@@ -16,15 +16,15 @@ Create ML로 만든 모델 파일을 이용해 이미지 분류 앱을 제작합
 
 ##### **1: 모델 파일(\*.mlmodel)을 프로젝트에 추가합니다.**
 
- ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-1.56.12.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.56.12.jpg)
 
  
 
 ##### **2: 메인 스토리보드에서 뷰 컨트롤러에 UI 요소를 추가합니다.**
 
- ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-1.57.01.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.57.01.jpg)
 
- ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-1.58.57.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.58.57.jpg)
 
  
 
@@ -68,7 +68,7 @@ import ImageIO
 
 다음 뷰 컨트롤러에 아래 함수를 추가합니다.
 
-```
+```swift
 func presentPhotoPicker(sourceType: UIImagePickerControllerSourceType) {
     let picker = UIImagePickerController()
     picker.delegate = self
@@ -86,7 +86,7 @@ func presentPhotoPicker(sourceType: UIImagePickerControllerSourceType) {
 
 `UIImagePickerControllerDelegated`와 `UINavigationControllerDelegate`를 준수하는 `extension`을 추가합니다. 그 안에 이미지를 찍었거나, 혹은 선택하고 나서 할 작업을 지정하는 메서드 `func imagePickerController(...didFinishPickingMediaWithInfo...)`에 해야 될 작업에 대한 코드를 작성합니다.
 
-```
+```swift
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: - Handling Image Picker Selection
 
@@ -116,8 +116,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
 카메라 및 사진 라이브러리 버튼의 `@IBAction` 함수 안에 다음 부분을 추가합니다.
 
-```
-@IBAction func takePicture(_ sender: UIBarButtonItem) {
+```swift
+@IBAction  func takePicture(_ sender: UIBarButtonItem) {
     // 카메라를 사용할 수 있는 경우에만 source picker에 대한 옵션을 표시합니다.
     guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
         return
@@ -258,7 +258,7 @@ lazy var classificationRequest: VNCoreMLRequest = {
 
 앞서 1단계에서 모델 파일을 프로젝트에 추가했는데, 모델 파일을 추가하면 자동으로 해당 파일 이름과 똑같은 이름의 클래스가 자동으로 생성됩니다. 파일 이름을 바꾸면 클래스 이름도 자동으로 바뀝니다.
 
- ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-2.48.31.jpg)
+ ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-2.48.31.jpg)
 
 자동 생성된 `LivestocksClassifier` 클래스를 사용할 것입니다.
 

@@ -199,7 +199,7 @@ class Throttle: DelayWork {
 
 버튼을 빠르게 반복 클릭하면 Debounce 및 Throttle 이 적용되는 예제입니다.
 
- ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-13-오전-12.15.55.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-13-am-12.15.55.jpg)
 
 ```swift
 import UIKit

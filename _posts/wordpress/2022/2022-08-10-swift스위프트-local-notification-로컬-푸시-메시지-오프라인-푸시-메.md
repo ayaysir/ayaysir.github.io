@@ -218,7 +218,7 @@ let trigger = UNCalendarNotificationTrigger(dateMatching: alarmDateComponents, r
 
 `AppDelegate.swift` 파일에 아래 `extension`을 추가합니다.
 
-```
+```swift
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     // 앱이 열린 도중에 메시지 받았을 때
@@ -260,7 +260,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
  
 
- ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-11-오전-12.08.06.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-11-am-12.08.06.jpg)
 
 위 코드가 동작하지 않을 경우
 

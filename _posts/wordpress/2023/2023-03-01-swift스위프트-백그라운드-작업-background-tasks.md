@@ -6,26 +6,29 @@ categories:
   - "Swift"
 ---
 
-#### **소개**
+## **소개**
 
 BackgroundTasks는 앱이 백그라운드에서 작업을 할 수 있게 하는 프레임워크입니다. (iOS 13부터 이용 가능)
 
-스토리보드 기준으로 설명합니다.
+UIKit/스토리보드 기준으로 설명합니다.
 
  
 
-#### **분류**
+## **분류**
 
 작업의 복잡도, 에너지 양(배터리 소모정도)에 따라 두 가지로 분류합니다.
 
-1. **App Refresh Task** 상대적으로 가벼운 작업(단순 API 호출 또는 저장 등)에 사용합니다. 실행 빈도가 높고, 사용자가 기기를 사용하는 중에도 작업이 실행됩니다.
-2. **Processing Task** 상대적으로 무거운 작업(DB 등)에 사용합니다. 옵션으로 배터리 충전이 요구되는지, 네트워크 연결이 요구되는지를 지정할 수 있습니다. 보통 충전중이고 기기가 idle인 상태에서 작업이 실행됩니다.
+### 1. **App Refresh Task** 
+상대적으로 가벼운 작업(단순 API 호출 또는 저장 등)에 사용합니다. 실행 빈도가 높고, 사용자가 기기를 사용하는 중에도 작업이 실행됩니다.
+
+### 2. **Processing Task** 
+상대적으로 무거운 작업(DB 등)에 사용합니다. 옵션으로 배터리 충전이 요구되는지, 네트워크 연결이 요구되는지를 지정할 수 있습니다. 보통 충전중이고 기기가 idle인 상태에서 작업이 실행됩니다.
 
  
 
-#### **구현 방법**
+## **구현 방법**
 
-##### **1: 백그라운드 작업에 대한 권한 추가**
+### **1: 백그라운드 작업에 대한 권한 추가**
 
 프로젝트 설정 메뉴에서 `Signing and Capabilities` 탭 > `+ Capability` 로 `Background Mode`를 추가한 뒤
 
@@ -34,13 +37,13 @@ BackgroundTasks는 앱이 백그라운드에서 작업을 할 수 있게 하는 
 
 를 체크합니다.
 
- ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-오전-1.59.24.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-am-1.59.24.jpg)
 
- ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-오전-1.56.53.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-am-1.56.53.jpg)
 
  
 
-##### **2: Info.plist에 식별자(identifier) 추가**
+### **2: Info.plist에 식별자(identifier) 추가**
 
 `Info.plist` 파일을 연 뒤, `BGTaskSchedulerPermittedIdentifiers`(Permitted background task scheduler Identifiers) 키를 추가합니다. 그 배열(`Array`) 하위 요소로 `String` 타입의 백그라운드 식별자를 추가합니다.
 
@@ -48,11 +51,11 @@ BackgroundTasks는 앱이 백그라운드에서 작업을 할 수 있게 하는 
 
 - **예)** _com.example.ExampleApp.refresh\_badge(process)_
 
- ![](/assets/img/wp-content/uploads/2023/03/mosaic-스크린샷-2023-02-25-오전-1.58.03.jpg)
+ ![](/assets/img/wp-content/uploads/2023/03/mosaic-screenshot-2023-02-25-am-1.58.03.jpg)
 
  
 
-##### **3: AppDelegate의 ...didFinishLaunchingWithOptions... 안에 작업(task) 등록**
+### **3: AppDelegate의 ...didFinishLaunchingWithOptions... 안에 작업(task) 등록**
 
 `BGTaskScheduler.shared.register(...)`를 이용해 백그라운드 작업들을 등록합니다.
 
@@ -90,19 +93,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
  
 
-* * *
+### **4: handleAppRefresh, handlerProcessingTask 함수 구현**
 
-> **🚧 이 글은 작성중입니다.**
-> 
-> ![](http://yoonbumtae.com/2001/internet/con14.gif)
-> 
-> 빠른 시일 내에 포스트 작성을 완료하겠습니다.
-
- 
-
-##### **4: handleAppRefresh, handlerProcessingTask 함수 구현**
-
-```
+```swift
 func handleAppRefresh(task: BGAppRefreshTask) {
     // 다음 동작 수행, 반복시 필요
     scheduleAppRefresh()
@@ -117,7 +110,7 @@ func handleAppRefresh(task: BGAppRefreshTask) {
 }
 ```
 
-```
+```swift
 func handleProcessingTask(task: BGProcessingTask) {
     task.expirationHandler = {
         task.setTaskCompleted(success: false)
@@ -132,11 +125,11 @@ func handleProcessingTask(task: BGProcessingTask) {
 
  
 
-##### **5: 스케줄러 함수 scheduleAppRefresh, scheduleProcessingTaskIfNeeded  작성**
+### **5: 스케줄러 함수 scheduleAppRefresh, scheduleProcessingTaskIfNeeded  작성**
 
 `AppDelegate` 클래스 내부에 작성합니다.
 
-```
+```swift
 func scheduleAppRefresh() {
     let request = BGAppRefreshTaskRequest(identifier: "com.example.ExampleApp.refresh_badge")
     
@@ -149,7 +142,7 @@ func scheduleAppRefresh() {
 }
 ```
 
-```
+```swift
 func scheduleProcessingTaskIfNeeded() {
     let request = BGProcessingTaskRequest(identifier: "com.example.ExampleApp.refresh_process")
     request.requiresExternalPower = false
@@ -168,9 +161,9 @@ func scheduleProcessingTaskIfNeeded() {
 
  
 
-##### **6: SceneDelegate 클래스의 sceneDidEnterBackground(...) 메서드 내에 스케줄러 호출 부분 작성**
+### **6: SceneDelegate 클래스의 sceneDidEnterBackground(...) 메서드 내에 스케줄러 호출 부분 작성**
 
-```
+```swift
 func sceneDidEnterBackground(_ scene: UIScene) {
     // Called as the scene transitions from the foreground to the background.
     // Use this method to save data, release shared resources, and store enough scene-specific state information
@@ -186,7 +179,7 @@ func sceneDidEnterBackground(_ scene: UIScene) {
 
  
 
-#### **강제로 백그라운드 작업 트리거**
+## **강제로 백그라운드 작업 트리거**
 
 1. `scheduleAppRefresh`, `scheduleProcessingTaskIfNeeded` 함수에서
     - `submit(_:)`에 대한 성공적인 호출 후 실행되는 코드(`try BGTaskScheduler.shared.submit(request)`)에 중단점(breakpoint)을 설정합니다.
@@ -204,11 +197,11 @@ func sceneDidEnterBackground(_ scene: UIScene) {
 
 아래 스크린샷은 백그라운드 작업이 실행할 때마다 텍스트 파일에 로그를 기록하도록 한 경우에서 해당 로그의 기록입니다. (App Background는 앱 리프레시 작업, Processing Task는 프로세싱 작업)
 
- ![](/assets/img/wp-content/uploads/2023/03/IMG_9D2611C16F79-1-중간.jpeg)
+ ![](/assets/img/wp-content/uploads/2023/03/IMG_9D2611C16F79-1-middle.jpeg)
 
  
 
-##### **출처**
+### **출처**
 
 - [\[iOS\] BackgroundTasks Framework 간단 정리](https://lemon-dev.tistory.com/entry/iOS-BackgroundTask-Framework-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC)
 - [Starting and Terminating Tasks During Development](https://developer.apple.com/documentation/backgroundtasks/starting_and_terminating_tasks_during_development)

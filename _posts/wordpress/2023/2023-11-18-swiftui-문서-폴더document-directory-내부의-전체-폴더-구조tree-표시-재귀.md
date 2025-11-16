@@ -8,7 +8,7 @@ categories:
 
 #### **폴더(디렉토리) 표시용 모델 생성**
 
-```
+```swift
 import Foundation
 
 struct Folder: Codable, Equatable, Hashable, Identifiable, FileSystem {
@@ -27,7 +27,7 @@ struct Folder: Codable, Equatable, Hashable, Identifiable, FileSystem {
     - 밑에서 `List > children`기능을 이용할 때 배열 원소 개수가 0이라도 하위 목록 열기 토글이 표시되며,
     - 배열 변수 자체가 `nil`이여야만 하위 목록 열기 토글이 표시되지 않습니다.
 
- ![](/assets/img/wp-content/uploads/2023/11/screenshot-2023-11-19-오전-2.41.37-copy.jpg)
+ ![](/assets/img/wp-content/uploads/2023/11/screenshot-2023-11-19-am-2.41.37-copy.jpg)
 
  
 
@@ -63,7 +63,7 @@ struct SelectFolderView: View {
 
 #### **뷰모델 생성**
 
-```
+```swift
 import Foundation
 
 class SelectFolderViewModel: ObservableObject {

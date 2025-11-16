@@ -6,7 +6,7 @@ categories:
   - "SwiftUI"
 ---
 
-\[rcblock id="5440"\]
+<!-- \[rcblock id="5440"\] -->
 
 ### **개요: SwiftUI와 UIKit을 연결하고 컨트롤하기**
 
@@ -192,7 +192,7 @@ class CustomWKWebView: WKWebView, WebViewProvider {
 
 ##### **Step 4-2: 기존에 있던 WebViewRepresentable 뷰를 새로운 커스텀 타입에 맞춰 변경시킵니다.**
 
-```
+```swift
 struct WebViewRepresentable: UIViewRepresentable {
     typealias UIViewType = CustomWKWebView
     
