@@ -573,6 +573,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -585,6 +617,17 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -709,7 +752,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1010 words"
+  title="1018 words"
 >
   <em>5 min</em> read</span>
 
@@ -743,7 +786,7 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Swift에서 <code class="language-plaintext highlighter-rouge">URL(string:)</code>를 사용하여 텍스트로 된 주소를 이용해 <code class="language-plaintext highlighter-rouge">URL</code> 인스턴스를 생성하려고 하는데 한글 등이 포함되어 있으면 <code class="language-plaintext highlighter-rouge">nil</code>이 반환되는 경우가 있습니다. 일반적으로 URL은 _<strong>Percent Encoding</strong>_이라고 하는 특수한 인코딩을 사용하며 Swift의 <code class="language-plaintext highlighter-rouge">URL</code>은 자동 인코딩을 지원하지 않기 때문에 퍼센트 인코딩에서 허용하지 않는 문자를 입력하면 에러가 발생하는 것입니다.</p>
 
@@ -763,22 +806,22 @@
 
 <p> </p>
 
-<h3 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>원래 스트링에 <code class="language-plaintext highlighter-rouge">.addingPercentEncoding</code>을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>import Foundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
 
-let original = "https://ko.wikipedia.org/wiki/퍼센트_인코딩"
-let escaped = originalString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) // Optional
-print(escaped!)
+<span class="k">let</span> <span class="nv">original</span> <span class="o">=</span> <span class="s">"https://ko.wikipedia.org/wiki/퍼센트_인코딩"</span>
+<span class="k">let</span> <span class="nv">escaped</span> <span class="o">=</span> <span class="n">originalString</span><span class="o">.</span><span class="nf">addingPercentEncoding</span><span class="p">(</span><span class="nv">withAllowedCharacters</span><span class="p">:</span> <span class="o">.</span><span class="n">urlQueryAllowed</span><span class="p">)</span> <span class="c1">// Optional</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">escaped</span><span class="o">!</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -790,8 +833,8 @@ print(escaped!)
   <li>
     <p>참고로 아래와 같은 다양한 종류가 있습니다.</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+    <div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -854,73 +897,73 @@ print(escaped!)
 60
 61
 62
-</pre></td><td class="rouge-code"><pre>  /// Returns a character set containing the characters in Unicode General Category Cc and Cf.
-  public static var controlCharacters: CharacterSet { get }
+</pre></td><td class="rouge-code"><pre>  <span class="c1">/// Returns a character set containing the characters in Unicode General Category Cc and Cf.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">controlCharacters</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the characters in Unicode General Category Zs and `CHARACTER TABULATION (U+0009)`.
-  public static var whitespaces: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the characters in Unicode General Category Zs and `CHARACTER TABULATION (U+0009)`.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">whitespaces</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing characters in Unicode General Category Z*, `U+000A ~ U+000D`, and `U+0085`.
-  public static var whitespacesAndNewlines: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing characters in Unicode General Category Z*, `U+000A ~ U+000D`, and `U+0085`.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">whitespacesAndNewlines</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the characters in the category of Decimal Numbers.
-  public static var decimalDigits: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the characters in the category of Decimal Numbers.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">decimalDigits</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the characters in Unicode General Category L* &amp; M*.
-  public static var letters: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the characters in Unicode General Category L* &amp; M*.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">letters</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the characters in Unicode General Category Ll.
-  public static var lowercaseLetters: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the characters in Unicode General Category Ll.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">lowercaseLetters</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the characters in Unicode General Category Lu and Lt.
-  public static var uppercaseLetters: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the characters in Unicode General Category Lu and Lt.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">uppercaseLetters</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the characters in Unicode General Category M*.
-  public static var nonBaseCharacters: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the characters in Unicode General Category M*.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">nonBaseCharacters</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the characters in Unicode General Categories L*, M*, and N*.
-  public static var alphanumerics: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the characters in Unicode General Categories L*, M*, and N*.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">alphanumerics</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing individual Unicode characters that can also be represented as composed character sequences (such as for letters with accents), by the definition of "standard decomposition" in version 3.2 of the Unicode character encoding standard.
-  public static var decomposables: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing individual Unicode characters that can also be represented as composed character sequences (such as for letters with accents), by the definition of "standard decomposition" in version 3.2 of the Unicode character encoding standard.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">decomposables</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing values in the category of Non-Characters or that have not yet been defined in version 3.2 of the Unicode standard.
-  public static var illegalCharacters: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing values in the category of Non-Characters or that have not yet been defined in version 3.2 of the Unicode standard.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">illegalCharacters</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the characters in Unicode General Category P*.
-  public static var punctuationCharacters: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the characters in Unicode General Category P*.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">punctuationCharacters</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the characters in Unicode General Category Lt.
-  public static var capitalizedLetters: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the characters in Unicode General Category Lt.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">capitalizedLetters</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the characters in Unicode General Category S*.
-  public static var symbols: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the characters in Unicode General Category S*.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">symbols</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns a character set containing the newline characters (`U+000A ~ U+000D`, `U+0085`, `U+2028`, and `U+2029`).
-  public static var newlines: CharacterSet { get }
+  <span class="c1">/// Returns a character set containing the newline characters (`U+000A ~ U+000D`, `U+0085`, `U+2028`, and `U+2029`).</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">newlines</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns the character set for characters allowed in a user URL subcomponent.
-  public static var urlUserAllowed: CharacterSet { get }
+  <span class="c1">/// Returns the character set for characters allowed in a user URL subcomponent.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">urlUserAllowed</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns the character set for characters allowed in a password URL subcomponent.
-  public static var urlPasswordAllowed: CharacterSet { get }
+  <span class="c1">/// Returns the character set for characters allowed in a password URL subcomponent.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">urlPasswordAllowed</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns the character set for characters allowed in a host URL subcomponent.
-  public static var urlHostAllowed: CharacterSet { get }
+  <span class="c1">/// Returns the character set for characters allowed in a host URL subcomponent.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">urlHostAllowed</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns the character set for characters allowed in a path URL component.
-  public static var urlPathAllowed: CharacterSet { get }
+  <span class="c1">/// Returns the character set for characters allowed in a path URL component.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">urlPathAllowed</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns the character set for characters allowed in a query URL component.
-  public static var urlQueryAllowed: CharacterSet { get }
+  <span class="c1">/// Returns the character set for characters allowed in a query URL component.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">urlQueryAllowed</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
     
-  /// Returns the character set for characters allowed in a fragment URL component.
-  public static var urlFragmentAllowed: CharacterSet { get }
+  <span class="c1">/// Returns the character set for characters allowed in a fragment URL component.</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">urlFragmentAllowed</span><span class="p">:</span> <span class="kt">CharacterSet</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
-
-    <p> </p>
   </li>
 </ul>
+
+<h3 id="출력-결과----"><span class="me-2">출력 결과     </span><a href="#출력-결과----" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>출력 결과는 다음과 같습니다.</p>
 
@@ -930,22 +973,22 @@ print(escaped!)
 </pre></td><td class="rouge-code"><pre>https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%84%BC%ED%8A%B8_%EC%9D%B8%EC%BD%94%EB%94%A9
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="extension으로-추가"><span class="me-2">extension으로 추가</span><a href="#extension으로-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>자주 사용하는 경우 <code class="language-plaintext highlighter-rouge">extension</code>으로 추가할 수도 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>extension String {
-    var urlEncoded: String? {
-        return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">urlEncoded</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="nf">addingPercentEncoding</span><span class="p">(</span><span class="nv">withAllowedCharacters</span><span class="p">:</span> <span class="o">.</span><span class="n">urlQueryAllowed</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -954,7 +997,7 @@ print(escaped!)
 
 <p> </p>
 
-<p>참고</p>
+<h3 id="참고"><span class="me-2">참고</span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><a href="https://stackoverflow.com/questions/24551816/swift-encode-url">Swift - encoded URL</a></li>

@@ -1968,8 +1968,8 @@ func setDynamicQuickActions(_ value: Int) {
 
 <p><code class="language-plaintext highlighter-rouge">windowScene(...perfomActionFor...)</code> 부분을 아래와 같이 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2000,36 +2000,36 @@ func setDynamicQuickActions(_ value: Int) {
 28
 29
 30
-</pre></td><td class="rouge-code"><pre>func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -&gt; Void) {
-    if let userInfo = shortcutItem.userInfo {
-        print(userInfo)
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">windowScene</span><span class="p">(</span><span class="n">_</span> <span class="nv">windowScene</span><span class="p">:</span> <span class="kt">UIWindowScene</span><span class="p">,</span> <span class="n">performActionFor</span> <span class="nv">shortcutItem</span><span class="p">:</span> <span class="kt">UIApplicationShortcutItem</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">userInfo</span> <span class="o">=</span> <span class="n">shortcutItem</span><span class="o">.</span><span class="n">userInfo</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">userInfo</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // 경고창
-    let alert = UIAlertController(title: "Quick Actions Tutorial", message: "Quick Action Identifier: \(shortcutItem.type)", preferredStyle: .alert)
-    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-    alert.addAction(action)
+    <span class="c1">// 경고창</span>
+    <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Quick Actions Tutorial"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"Quick Action Identifier: </span><span class="se">\(</span><span class="n">shortcutItem</span><span class="o">.</span><span class="n">type</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">action</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"OK"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
     
-    DispatchQueue.main.async {
-        self.window?.rootViewController?.present(alert, animated: true)
-    }
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // Shortcut Item Type(고유 이름)마다 해야할 작업 작성
-    switch shortcutItem.type {
-    case "com.mycompany.myapp.openfavorites":
-        break
-    case "com.mycompany.myapp.newmessage":
-        break
-    case "com.mycompany.myapp.dynamic":
-        if let userInfo = shortcutItem.userInfo {
-            let result = Int(userInfo["result"] as! String)!
-            let message = userInfo["message"] as! String
-            print(result, message)
-        }
-    default:
-        break
-    }
-}
+    <span class="c1">// Shortcut Item Type(고유 이름)마다 해야할 작업 작성</span>
+    <span class="k">switch</span> <span class="n">shortcutItem</span><span class="o">.</span><span class="n">type</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s">"com.mycompany.myapp.openfavorites"</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">case</span> <span class="s">"com.mycompany.myapp.newmessage"</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">case</span> <span class="s">"com.mycompany.myapp.dynamic"</span><span class="p">:</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">userInfo</span> <span class="o">=</span> <span class="n">shortcutItem</span><span class="o">.</span><span class="n">userInfo</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">userInfo</span><span class="p">[</span><span class="s">"result"</span><span class="p">]</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">)</span><span class="o">!</span>
+            <span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="n">userInfo</span><span class="p">[</span><span class="s">"message"</span><span class="p">]</span> <span class="k">as!</span> <span class="kt">String</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

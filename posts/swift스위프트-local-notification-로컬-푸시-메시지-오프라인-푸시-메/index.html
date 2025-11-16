@@ -1546,8 +1546,8 @@ let trigger = UNCalendarNotificationTrigger(dateMatching: alarmDateComponents, r
 
 <p><code class="language-plaintext highlighter-rouge">AppDelegate.swift</code> 파일에 아래 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1577,35 +1577,35 @@ let trigger = UNCalendarNotificationTrigger(dateMatching: alarmDateComponents, r
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>extension AppDelegate: UNUserNotificationCenterDelegate {
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UNUserNotificationCenterDelegate</span> <span class="p">{</span>
     
-    // 앱이 열린 도중에 메시지 받았을 때
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -&gt; Void) {
+    <span class="c1">// 앱이 열린 도중에 메시지 받았을 때</span>
+    <span class="kd">func</span> <span class="nf">userNotificationCenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">UNUserNotificationCenter</span><span class="p">,</span>
+                                <span class="n">willPresent</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">UNNotification</span><span class="p">,</span>
+                                <span class="n">withCompletionHandler</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UNNotificationPresentationOptions</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
         
-        // Here we actually handle the notification
-        print("willPresent - identifier: \(notification.request.identifier)")
-        print("willPresent - UserInfo: \(notification.request.content.userInfo)")
+        <span class="c1">// Here we actually handle the notification</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"willPresent - identifier: </span><span class="se">\(</span><span class="n">notification</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">identifier</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"willPresent - UserInfo: </span><span class="se">\(</span><span class="n">notification</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
         
-        // 이 부분은 앱이 열려있는 상태에서도 Local Notification이 오도록 함
-        // 제거할 경우 앱이 열려있는 상태에서는 Local Notification이 나타나지 않음 (나머자 부분은 실행됨)
-        completionHandler([.banner, .badge, .sound])
-    }
+        <span class="c1">// 이 부분은 앱이 열려있는 상태에서도 Local Notification이 오도록 함</span>
+        <span class="c1">// 제거할 경우 앱이 열려있는 상태에서는 Local Notification이 나타나지 않음 (나머자 부분은 실행됨)</span>
+        <span class="nf">completionHandler</span><span class="p">([</span><span class="o">.</span><span class="n">banner</span><span class="p">,</span> <span class="o">.</span><span class="n">badge</span><span class="p">,</span> <span class="o">.</span><span class="n">sound</span><span class="p">])</span>
+    <span class="p">}</span>
 
-    // 메시지를 클릭(터치)했을 때
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -&gt; Void) {
+    <span class="c1">// 메시지를 클릭(터치)했을 때</span>
+    <span class="kd">func</span> <span class="nf">userNotificationCenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">UNUserNotificationCenter</span><span class="p">,</span>
+                                <span class="n">didReceive</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">UNNotificationResponse</span><span class="p">,</span>
+                                <span class="n">withCompletionHandler</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
 
-        let identifier = response.notification.request.identifier
-        let userInfo = response.notification.request.content.userInfo
-        print("didReceive - identifier: \(identifier)")
-        print("didReceive - UserInfo: \(userInfo)")
+        <span class="k">let</span> <span class="nv">identifier</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">notification</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">identifier</span>
+        <span class="k">let</span> <span class="nv">userInfo</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">notification</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">userInfo</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"didReceive - identifier: </span><span class="se">\(</span><span class="n">identifier</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"didReceive - UserInfo: </span><span class="se">\(</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
         
-        completionHandler()
-    }
-}
+        <span class="nf">completionHandler</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1626,7 +1626,7 @@ let trigger = UNCalendarNotificationTrigger(dateMatching: alarmDateComponents, r
 
 <p> </p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-11-오전-12.08.06.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-11-오전-12.08.06.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-11-am-12.08.06.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-11-am-12.08.06.jpg" alt="" loading="lazy"></a></p>
 
 <p>위 코드가 동작하지 않을 경우</p>
 

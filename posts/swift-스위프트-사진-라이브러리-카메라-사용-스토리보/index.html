@@ -895,8 +895,8 @@ let imagePickerController = UIImagePickerController()
 
 <p><code class="language-plaintext highlighter-rouge">viewDidLoad</code>에 컨트롤러와 <code class="language-plaintext highlighter-rouge">delegate</code>를 연결합니다. 또한 앱을 최초로 실행했을 때 권한 허용 여부를 묻는 메시지를 출력하는 코드를 작성합니다. (<code class="language-plaintext highlighter-rouge">import Photos</code> 필요)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -910,19 +910,19 @@ let imagePickerController = UIImagePickerController()
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>override func viewDidLoad() {
-    super.viewDidLoad()
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
     
-    // 사진: 이미지 피커에 딜리게이트 생성
-    imagePickerController.delegate = self
+    <span class="c1">// 사진: 이미지 피커에 딜리게이트 생성</span>
+    <span class="n">imagePickerController</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
     
-    // 사진, 카메라 권한 (최초 요청)
-    PHPhotoLibrary.requestAuthorization { status in
-    }
-    AVCaptureDevice.requestAccess(for: .video) { granted in
-    }
+    <span class="c1">// 사진, 카메라 권한 (최초 요청)</span>
+    <span class="kt">PHPhotoLibrary</span><span class="o">.</span><span class="n">requestAuthorization</span> <span class="p">{</span> <span class="n">status</span> <span class="k">in</span>
+    <span class="p">}</span>
+    <span class="kt">AVCaptureDevice</span><span class="o">.</span><span class="nf">requestAccess</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">video</span><span class="p">)</span> <span class="p">{</span> <span class="n">granted</span> <span class="k">in</span>
+    <span class="p">}</span>
 
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

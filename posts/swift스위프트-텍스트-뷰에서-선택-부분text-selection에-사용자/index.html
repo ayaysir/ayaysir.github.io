@@ -837,13 +837,13 @@
 
 <p>텍스트 뷰 등에서 텍스트를 선택하면 아래와 같은 메뉴가 나옵니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-오전-1.23.15.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-오전-1.23.15.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-am-1.23.15.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-am-1.23.15.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>여기에 기존에 없는 메뉴를 추가하고 싶다면 어떻게 해야 할까요? 아래 스크린샷에서 <code class="language-plaintext highlighter-rouge">단어장에 추가</code> 메뉴는 iOS에 없는 메뉴로 제가 새로 추가한 것입니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-오전-1.22.49.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-오전-1.22.49.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-am-1.22.49.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-17-am-1.22.49.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -853,8 +853,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">addCustomMenu()</code>  함수를 추가하고, 뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">viewDidLoad(_:)</code>에 <code class="language-plaintext highlighter-rouge">addCustomMenu()</code>를 실행하도록 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -865,16 +865,16 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>override func viewDidLoad() {
-    super.viewDidLoad()
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
 
-    addCustomMenu()
-}
+    <span class="nf">addCustomMenu</span><span class="p">()</span>
+<span class="p">}</span>
 
-private func addCustomMenu() {
-    let addToDictionary = UIMenuItem(title: "단어장에 추가", action: #selector(addToDictionary))
-    UIMenuController.shared.menuItems = [addToDictionary]
-}
+<span class="kd">private</span> <span class="kd">func</span> <span class="nf">addCustomMenu</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">addToDictionary</span> <span class="o">=</span> <span class="kt">UIMenuItem</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"단어장에 추가"</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">addToDictionary</span><span class="p">))</span>
+    <span class="kt">UIMenuController</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">menuItems</span> <span class="o">=</span> <span class="p">[</span><span class="n">addToDictionary</span><span class="p">]</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

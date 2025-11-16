@@ -924,8 +924,8 @@
 
 <p>따라서 이미지 품질을 손상시키지 않고 그레이스케일을 추가하려면 이 기능을 적용하면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -939,22 +939,22 @@
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>func grayscale(image: UIImage, filterName: String = "CIPhotoEffectNoir") -&gt; UIImage? {
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">grayscale</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">filterName</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"CIPhotoEffectNoir"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
     
-    let context = CIContext(options: nil)
-    if let filter = CIFilter(name: filterName) {
-        filter.setValue(CIImage(image: image), forKey: kCIInputImageKey)
-        if let output = filter.outputImage {
-            if let cgImage = context.createCGImage(output, from: output.extent) {
-                return UIImage(cgImage: cgImage)
-            }
-        }
-    }
-    return nil
-}
+    <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="kt">CIContext</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">filter</span> <span class="o">=</span> <span class="kt">CIFilter</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">filterName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">filter</span><span class="o">.</span><span class="nf">setValue</span><span class="p">(</span><span class="kt">CIImage</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">image</span><span class="p">),</span> <span class="nv">forKey</span><span class="p">:</span> <span class="n">kCIInputImageKey</span><span class="p">)</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">output</span> <span class="o">=</span> <span class="n">filter</span><span class="o">.</span><span class="n">outputImage</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">cgImage</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="nf">createCGImage</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">output</span><span class="o">.</span><span class="n">extent</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">cgImage</span><span class="p">:</span> <span class="n">cgImage</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">nil</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2022/04/-2022-04-23-오전-12.04.55-e1650640833532.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/04/-2022-04-23-오전-12.04.55-e1650640833532.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/04/-2022-04-23-am-12.04.55-e1650640833532.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/04/-2022-04-23-am-12.04.55-e1650640833532.jpg" alt="" loading="lazy"></a></p>
 
 <p>이 효과는 잘 작동하지만 모든 <code class="language-plaintext highlighter-rouge">CIFilter</code>와 마찬가지로 문제는 소요 시간에 있습니다. <code class="language-plaintext highlighter-rouge">CIPhotoEffectNoir</code>(또는 기타)로 이미지를 변경하는 데 몇 초가 걸립니다. <code class="language-plaintext highlighter-rouge">CIFilter</code>가 이미지 품질을 유지하기 때문입니다. 따라서 한 번에 둘 이상의 이미지를 변환하려면 시간이 걸립니다.</p>
 
@@ -968,8 +968,8 @@
 
 <p>함수를 살펴보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -990,29 +990,29 @@
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>func convertToGrayScale(image: UIImage) -&gt; UIImage? {
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">convertToGrayScale</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
     
-    let imageRect: CGRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-    let colorSpace = CGColorSpaceCreateDeviceGray()
-    let width = image.size.width
-    let height = image.size.height
-    let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
-    let context = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
+    <span class="k">let</span> <span class="nv">imageRect</span><span class="p">:</span> <span class="kt">CGRect</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">colorSpace</span> <span class="o">=</span> <span class="kt">CGColorSpaceCreateDeviceGray</span><span class="p">()</span>
+    <span class="k">let</span> <span class="nv">width</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span>
+    <span class="k">let</span> <span class="nv">height</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">height</span>
+    <span class="k">let</span> <span class="nv">bitmapInfo</span> <span class="o">=</span> <span class="kt">CGBitmapInfo</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="kt">CGImageAlphaInfo</span><span class="o">.</span><span class="k">none</span><span class="o">.</span><span class="n">rawValue</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="kt">CGContext</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">Int</span><span class="p">(</span><span class="n">width</span><span class="p">),</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">Int</span><span class="p">(</span><span class="n">height</span><span class="p">),</span> <span class="nv">bitsPerComponent</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nv">bytesPerRow</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">space</span><span class="p">:</span> <span class="n">colorSpace</span><span class="p">,</span> <span class="nv">bitmapInfo</span><span class="p">:</span> <span class="n">bitmapInfo</span><span class="o">.</span><span class="n">rawValue</span><span class="p">)</span>
     
-    if let cgImg = image.cgImage {
-        context?.draw(cgImg, in: imageRect)
-        if let makeImg = context?.makeImage() {
-            let imageRef = makeImg
-            let newImage = UIImage(cgImage: imageRef)
-            return newImage
-        }
-    }
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">cgImg</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">cgImage</span> <span class="p">{</span>
+        <span class="n">context</span><span class="p">?</span><span class="o">.</span><span class="nf">draw</span><span class="p">(</span><span class="n">cgImg</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="n">imageRect</span><span class="p">)</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">makeImg</span> <span class="o">=</span> <span class="n">context</span><span class="p">?</span><span class="o">.</span><span class="nf">makeImage</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">imageRef</span> <span class="o">=</span> <span class="n">makeImg</span>
+            <span class="k">let</span> <span class="nv">newImage</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">cgImage</span><span class="p">:</span> <span class="n">imageRef</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">newImage</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    return UIImage()
-}
+    <span class="k">return</span> <span class="kt">UIImage</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2022/04/-2022-04-23-오전-12.16.54-e1650640803570.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/04/-2022-04-23-오전-12.16.54-e1650640803570.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/04/-2022-04-23-am-12.16.54-e1650640803570.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/04/-2022-04-23-am-12.16.54-e1650640803570.jpg" alt="" loading="lazy"></a></p>
 
 <p>훨씬 빠르게 작동하지만 한계도 있습니다. 투명 요소가 포함된 이미지에는 <code class="language-plaintext highlighter-rouge">CGImageAlphaInfo.none</code>을 사용할 수 없습니다. 이는 모든 PNG가 투명도 없이 이미지로 변환된다는 것을 의미합니다. 이미지의 배경색을 지우면 검은색으로 바뀝니다.</p>
 
@@ -1026,18 +1026,18 @@
 
 <p>마지막으로 이미지를 그레이스케일로 변환하는 가장 간단한 방법을 보여 드리겠습니다. 이것은 SwiftUI에서만 작동하므로 스토리보드에서는 사용할 수 없습니다. <code class="language-plaintext highlighter-rouge">View</code>에 <code class="language-plaintext highlighter-rouge">grayscale</code>이라는 옵션을 추가하기만 하면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>func grayscale(_ amount: Double) -&gt; some View
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">grayscale</span><span class="p">(</span><span class="n">_</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>여기서 “<code class="language-plaintext highlighter-rouge">amount</code>“는 보기에 적용하려는 그레이스케일의 강도입니다. 이 옵션은 구현하기가 매우 쉽지만 이미지를 <code class="language-plaintext highlighter-rouge">CGColorSpace</code> 객체로 변환하는 것만큼 빠르게 작동하지 않는다는 점을 기억해야 합니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1052,19 +1052,19 @@
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>struct Saturation: View {
-    var body: some View {
-        HStack {
-            ForEach(0..&lt;6) {
-                Color.red.frame(width: 60, height: 60, alignment: .center)
-                    .grayscale(Double($0) * 0.1999)
-                    .overlay(Text("\(Double($0) * 0.1999 * 100, specifier: "%.4f")%"),
-                             alignment: .bottom)
-                    .border(Color.gray)
-            }
-        }
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">Saturation</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">HStack</span> <span class="p">{</span>
+            <span class="kt">ForEach</span><span class="p">(</span><span class="mi">0</span><span class="o">..&lt;</span><span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Color</span><span class="o">.</span><span class="n">red</span><span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span> <span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">grayscale</span><span class="p">(</span><span class="kt">Double</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1999</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">overlay</span><span class="p">(</span><span class="kt">Text</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="kt">Double</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1999</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">specifier</span><span class="p">:</span> <span class="s">"%.4f"</span><span class="se">)</span><span class="s">%"</span><span class="p">),</span>
+                             <span class="nv">alignment</span><span class="p">:</span> <span class="o">.</span><span class="n">bottom</span><span class="p">)</span>
+                    <span class="o">.</span><span class="nf">border</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

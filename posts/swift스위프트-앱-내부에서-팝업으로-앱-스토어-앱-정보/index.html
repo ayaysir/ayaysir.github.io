@@ -931,8 +931,8 @@
 
 <h4 id="2-아래-extension-을-추가합니다"><span class="me-2"><strong>2: 아래 extension 을 추가합니다.</strong></span><a href="#2-아래-extension-을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -958,31 +958,31 @@
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>extension ExampleViewController: SKStoreProductViewControllerDelegate {
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ExampleViewController</span><span class="p">:</span> <span class="kt">SKStoreProductViewControllerDelegate</span> <span class="p">{</span>
     
-    func popupAppStore(identifier: Any) {
-        let parametersDictionary = [SKStoreProductParameterITunesItemIdentifier: identifier]
-        let store = SKStoreProductViewController()
-        store.delegate = self
+    <span class="kd">func</span> <span class="nf">popupAppStore</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">parametersDictionary</span> <span class="o">=</span> <span class="p">[</span><span class="kt">SKStoreProductParameterITunesItemIdentifier</span><span class="p">:</span> <span class="n">identifier</span><span class="p">]</span>
+        <span class="k">let</span> <span class="nv">store</span> <span class="o">=</span> <span class="kt">SKStoreProductViewController</span><span class="p">()</span>
+        <span class="n">store</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
         
-        /*
+        <span class="cm">/*
          Attempt to load the selected product from the App Store. Display the store product view controller if success and print an error message,
          otherwise.
-         */
-        store.loadProduct(withParameters: parametersDictionary) { [unowned self] (result: Bool, error: Error?) in
-            if result {
-                self.present(store, animated: true, completion: {
-                    print("The store view controller was presented.")
-                })
-            } else {
-                if let error = error {
-                    // 에러 발생 또는 시뮬레이터의 경우 여기에 해야할 작업 작성
-                    print("Error: \(error)")
-                }
-            }
-        }
-    }
-}
+         */</span>
+        <span class="n">store</span><span class="o">.</span><span class="nf">loadProduct</span><span class="p">(</span><span class="nv">withParameters</span><span class="p">:</span> <span class="n">parametersDictionary</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">unowned</span> <span class="k">self</span><span class="p">]</span> <span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"The store view controller was presented."</span><span class="p">)</span>
+                <span class="p">})</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+                    <span class="c1">// 에러 발생 또는 시뮬레이터의 경우 여기에 해야할 작업 작성</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1013,13 +1013,13 @@
 
 <p><strong>1) 앱 스토어 커넥트의 앱 정보 메뉴에서 보기</strong></p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-29-오전-3.49.34.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-29-오전-3.49.34.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-29-am-3.49.34.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-29-am-3.49.34.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p><strong>2) 앱 스토어의 URL에서 ‘id’ 를 제외한 나머지 숫자</strong></p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-29-오전-3.50.20.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-29-오전-3.50.20.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-29-am-3.50.20.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-29-am-3.50.20.jpg" alt="" loading="lazy"></a></p>
 
   </div>
 

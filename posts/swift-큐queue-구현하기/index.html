@@ -1025,8 +1025,8 @@ queue // []
   <li>출처: ChatGPT</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1064,43 +1064,43 @@ queue // []
 35
 36
 37
-</pre></td><td class="rouge-code"><pre>struct Queue&lt;T&gt; {
-    private class Node {
-        var value: T
-        var next: Node?
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">Queue</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">class</span> <span class="kt">Node</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span>
+        <span class="k">var</span> <span class="nv">next</span><span class="p">:</span> <span class="kt">Node</span><span class="p">?</span>
 
-        init(_ value: T) {
-            self.value = value
-        }
-    }
+        <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    private var head: Node?
-    private var tail: Node?
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">head</span><span class="p">:</span> <span class="kt">Node</span><span class="p">?</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">tail</span><span class="p">:</span> <span class="kt">Node</span><span class="p">?</span>
 
-    mutating func enqueue(_ element: T) {
-        let newNode = Node(element)
-        if head == nil {
-            head = newNode
-            tail = newNode
-        } else {
-            tail?.next = newNode
-            tail = newNode
-        }
-    }
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">enqueue</span><span class="p">(</span><span class="n">_</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">newNode</span> <span class="o">=</span> <span class="kt">Node</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">head</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">newNode</span>
+            <span class="n">tail</span> <span class="o">=</span> <span class="n">newNode</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">tail</span><span class="p">?</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">newNode</span>
+            <span class="n">tail</span> <span class="o">=</span> <span class="n">newNode</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    mutating func dequeue() -&gt; T? {
-        let value = head?.value
-        head = head?.next
-        if head == nil {
-            tail = nil
-        }
-        return value
-    }
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">dequeue</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">value</span> <span class="o">=</span> <span class="n">head</span><span class="p">?</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="p">?</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">if</span> <span class="n">head</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="n">tail</span> <span class="o">=</span> <span class="kc">nil</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">value</span>
+    <span class="p">}</span>
 
-    var isEmpty: Bool {
-        return head == nil
-    }
-}
+    <span class="k">var</span> <span class="nv">isEmpty</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">head</span> <span class="o">==</span> <span class="kc">nil</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1122,8 +1122,8 @@ queue // []
   <li>기본적인 기능인 <code class="language-plaintext highlighter-rouge">enqueue</code>, <code class="language-plaintext highlighter-rouge">dequeue</code>와 큐가 비어있는지 여부를 알려주는 <code class="language-plaintext highlighter-rouge">isEmpty</code>가 있습니다.</li>
   <li><strong>enqueue(_:)</strong>
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">head</code>가 비어있다면(<code class="language-plaintext highlighter-rouge">nil</code>) <code class="language-plaintext highlighter-rouge">head</code>, <code class="language-plaintext highlighter-rouge">tail</code>에 새로 입력한 값 노드를 대입합니다.  <a href="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-오전-2.03.48-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-오전-2.03.48-copy.jpg" alt="" loading="lazy"></a></li>
-      <li><code class="language-plaintext highlighter-rouge">head</code>가 이미 존재한다면 기존 <code class="language-plaintext highlighter-rouge">tail</code>의 <code class="language-plaintext highlighter-rouge">next</code>에 새 값 노드를 지정하고, 이 새 값 노드를 새로운 <code class="language-plaintext highlighter-rouge">tail</code>로 지정합니다.  <a href="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-오전-2.08.52-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-오전-2.08.52-copy.jpg" alt="" loading="lazy"></a></li>
+      <li><code class="language-plaintext highlighter-rouge">head</code>가 비어있다면(<code class="language-plaintext highlighter-rouge">nil</code>) <code class="language-plaintext highlighter-rouge">head</code>, <code class="language-plaintext highlighter-rouge">tail</code>에 새로 입력한 값 노드를 대입합니다.  <a href="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-am-2.03.48-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-am-2.03.48-copy.jpg" alt="" loading="lazy"></a></li>
+      <li><code class="language-plaintext highlighter-rouge">head</code>가 이미 존재한다면 기존 <code class="language-plaintext highlighter-rouge">tail</code>의 <code class="language-plaintext highlighter-rouge">next</code>에 새 값 노드를 지정하고, 이 새 값 노드를 새로운 <code class="language-plaintext highlighter-rouge">tail</code>로 지정합니다.  <a href="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-am-2.08.52-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-am-2.08.52-copy.jpg" alt="" loading="lazy"></a></li>
     </ul>
   </li>
   <li><strong>dequeue()</strong>
@@ -1177,7 +1177,7 @@ gptQueue.isEmpty // true
 
 <h4 id="대용량-자료-처리시-시간-차이-분석"><span class="me-2"><strong>대용량 자료 처리시 시간 차이 분석</strong></span><a href="#대용량-자료-처리시-시간-차이-분석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<h4><a href="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-오전-2.26.20-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-오전-2.26.20-copy.jpg" alt="" loading="lazy"></a></h4>
+<h4><a href="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-am-2.26.20-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-am-2.26.20-copy.jpg" alt="" loading="lazy"></a></h4>
 
   </div>
 

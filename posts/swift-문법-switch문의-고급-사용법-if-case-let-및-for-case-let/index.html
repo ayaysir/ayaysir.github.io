@@ -1237,8 +1237,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">if case let</code>은 <code class="language-plaintext highlighter-rouge">if</code>문에서 특정 패턴이 일치하는 경우에만 조건을 만족하도록 합니다. 이 조건이 만족되면, 해당 값을 변수에 바인딩해서 사용할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1250,16 +1250,16 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>enum Result {
-    case success(Int)
-    case failure(String)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">enum</span> <span class="kt">Result</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nf">success</span><span class="p">(</span><span class="kt">Int</span><span class="p">)</span>
+    <span class="k">case</span> <span class="nf">failure</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span>
+<span class="p">}</span>
 
-let result = Result.success(200)
+<span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">Result</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
 
-if case let .success(value) = result {
-    print("Success with value \(value)")
-}
+<span class="k">if</span> <span class="k">case</span> <span class="kd">let</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">=</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Success with value </span><span class="se">\(</span><span class="n">value</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

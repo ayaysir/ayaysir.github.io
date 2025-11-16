@@ -1394,16 +1394,16 @@
 
 <p>뷰 컨트롤러(<code class="language-plaintext highlighter-rouge">ViewController.swift</code>)에 아래 멤버 변수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>private var session: MCSession!
-private var advertiser: MCNearbyServiceAdvertiser!
-// private var browser: MCNearbyServiceBrowser!
-private var browserVC: MCBrowserViewController!
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="k">var</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="o">!</span>
+<span class="kd">private</span> <span class="k">var</span> <span class="nv">advertiser</span><span class="p">:</span> <span class="kt">MCNearbyServiceAdvertiser</span><span class="o">!</span>
+<span class="c1">// private var browser: MCNearbyServiceBrowser!</span>
+<span class="kd">private</span> <span class="k">var</span> <span class="nv">browserVC</span><span class="p">:</span> <span class="kt">MCBrowserViewController</span><span class="o">!</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1417,7 +1417,7 @@ private var browserVC: MCBrowserViewController!
 
 <p>info.plist에 아래 항목들을 추가합니다. 아래 두 항목은 필수로 입력해야 멀티피어 통신이 가능합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-2.21.31.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-2.21.31.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-2.21.31.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-2.21.31.jpg" alt="" loading="lazy"></a></p>
 
 <ul>
   <li><strong>Privacy - Local Network Usage Description</strong>
@@ -1448,10 +1448,10 @@ private var browserVC: MCBrowserViewController!
 
 <p>이번 예제는 <code class="language-plaintext highlighter-rouge">Chat-service</code>라는 이름으로 타입을 지정하겠습니다. <code class="language-plaintext highlighter-rouge">ChatServiceType</code>를 뷰 컨트롤러의 멤버 변수로 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>private let ChatServiceType = "Chat-service"
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="k">let</span> <span class="nv">ChatServiceType</span> <span class="o">=</span> <span class="s">"Chat-service"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1460,10 +1460,10 @@ private var browserVC: MCBrowserViewController!
 
 <p>장치의 이름을 표시 이름으로 지정합니다. <code class="language-plaintext highlighter-rouge">localPeerId</code>를 뷰 컨트롤러의 멤버 변수로 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>private let localPeerID = MCPeerID(displayName: UIDevice.current.name)
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="k">let</span> <span class="nv">localPeerID</span> <span class="o">=</span> <span class="kt">MCPeerID</span><span class="p">(</span><span class="nv">displayName</span><span class="p">:</span> <span class="kt">UIDevice</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1529,18 +1529,18 @@ advertiser.startAdvertisingPeer()
 
 <p>다음 <code class="language-plaintext highlighter-rouge">MCNearbyServiceAdvertiserDelegate</code>를 준수하는 뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>extension ViewController: MCNearbyServiceAdvertiserDelegate {
-    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -&gt; Void) {
-        // ... 잠시 후 작성 ... //
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MCNearbyServiceAdvertiserDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">advertiser</span><span class="p">(</span><span class="n">_</span> <span class="nv">advertiser</span><span class="p">:</span> <span class="kt">MCNearbyServiceAdvertiser</span><span class="p">,</span> <span class="n">didReceiveInvitationFromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span> <span class="n">withContext</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?,</span> <span class="nv">invitationHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">MCSession</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ... 잠시 후 작성 ... //</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1667,8 +1667,8 @@ session.delegate = self
 
 <p>다음 <code class="language-plaintext highlighter-rouge">MCNearbyServiceAdvertiserDelegate</code>를 준수하는 뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1699,36 +1699,36 @@ session.delegate = self
 28
 29
 30
-</pre></td><td class="rouge-code"><pre>extension ViewController: MCSessionDelegate {
-    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        switch state {
-        case MCSessionState.connected:
-            print("Connected: \(peerID.displayName)")
-        case MCSessionState.connecting:
-            print("Connecting: \(peerID.displayName)")
-        case MCSessionState.notConnected:
-            print("Not Connected: \(peerID.displayName)")
-        @unknown default:
-            break
-        }
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MCSessionDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span> <span class="n">peer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span> <span class="n">didChange</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">MCSessionState</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">state</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="kt">MCSessionState</span><span class="o">.</span><span class="nv">connected</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Connected: </span><span class="se">\(</span><span class="n">peerID</span><span class="o">.</span><span class="n">displayName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">case</span> <span class="kt">MCSessionState</span><span class="o">.</span><span class="nv">connecting</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Connecting: </span><span class="se">\(</span><span class="n">peerID</span><span class="o">.</span><span class="n">displayName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">case</span> <span class="kt">MCSessionState</span><span class="o">.</span><span class="nv">notConnected</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Not Connected: </span><span class="se">\(</span><span class="n">peerID</span><span class="o">.</span><span class="n">displayName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        print(#function, peerID, data)
-    }
+    <span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span> <span class="n">didReceive</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">fromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="k">#function</span><span class="p">,</span> <span class="n">peerID</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-        print(#function, peerID)
-    }
+    <span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span> <span class="n">didReceive</span> <span class="nv">stream</span><span class="p">:</span> <span class="kt">InputStream</span><span class="p">,</span> <span class="n">withName</span> <span class="nv">streamName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">fromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="k">#function</span><span class="p">,</span> <span class="n">peerID</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
-        print(#function, peerID)
-    }
+    <span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span> <span class="n">didStartReceivingResourceWithName</span> <span class="nv">resourceName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">fromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span> <span class="n">with</span> <span class="nv">progress</span><span class="p">:</span> <span class="kt">Progress</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="k">#function</span><span class="p">,</span> <span class="n">peerID</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-        print(#function, peerID)
-    }
-}
+    <span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span> <span class="n">didFinishReceivingResourceWithName</span> <span class="nv">resourceName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">fromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span> <span class="n">at</span> <span class="nv">localURL</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?,</span> <span class="n">withError</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="k">#function</span><span class="p">,</span> <span class="n">peerID</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1865,8 +1865,8 @@ present(browserViewController, animated: true)
 
 <p>브라우저가 피어에 대한 연결을 마치고 난 뒤 UI 작업을 처리해야 하는데, 해당 부분은 다음과 같이 <code class="language-plaintext highlighter-rouge">MCBrowserViewControllerDelegate</code>를 준수하는 <code class="language-plaintext highlighter-rouge">extension</code>으로 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1876,15 +1876,15 @@ present(browserViewController, animated: true)
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>extension ViewController: MCBrowserViewControllerDelegate {
-    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        browserViewController.dismiss(animated: true)
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MCBrowserViewControllerDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">browserViewControllerDidFinish</span><span class="p">(</span><span class="n">_</span> <span class="nv">browserViewController</span><span class="p">:</span> <span class="kt">MCBrowserViewController</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">browserViewController</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        browserViewController.dismiss(animated: true)
-    }
-}
+    <span class="kd">func</span> <span class="nf">browserViewControllerWasCancelled</span><span class="p">(</span><span class="n">_</span> <span class="nv">browserViewController</span><span class="p">:</span> <span class="kt">MCBrowserViewController</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">browserViewController</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1893,10 +1893,10 @@ present(browserViewController, animated: true)
 
 <p>스토리보드에 버튼(<code class="language-plaintext highlighter-rouge">UIButton</code>)과 스위치(<code class="language-plaintext highlighter-rouge">UISwitch</code>)를 추가하고, <code class="language-plaintext highlighter-rouge">@IBAction</code>으로 연결한 뒤 아래 코드를 작성합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-1.36.56.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-1.36.56.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-1.36.56.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-1.36.56.jpg" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1910,19 +1910,19 @@ present(browserViewController, animated: true)
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>@IBAction func btnActShowBrowserVC(_ sender: Any) {
-    browserVC = MCBrowserViewController(serviceType: ChatServiceType, session: session)
-    browserVC.delegate = self
-    present(browserVC, animated: true)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">btnActShowBrowserVC</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">browserVC</span> <span class="o">=</span> <span class="kt">MCBrowserViewController</span><span class="p">(</span><span class="nv">serviceType</span><span class="p">:</span> <span class="kt">ChatServiceType</span><span class="p">,</span> <span class="nv">session</span><span class="p">:</span> <span class="n">session</span><span class="p">)</span>
+    <span class="n">browserVC</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="nf">present</span><span class="p">(</span><span class="n">browserVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="p">}</span>
 
-@IBAction func btnActStartAdvertising(_ sender: UISwitch) {
-    if sender.isOn {
-        advertiser.startAdvertisingPeer()
-    } else {
-        advertiser.stopAdvertisingPeer()
-    }
-}
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActStartAdvertising</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISwitch</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">sender</span><span class="o">.</span><span class="n">isOn</span> <span class="p">{</span>
+        <span class="n">advertiser</span><span class="o">.</span><span class="nf">startAdvertisingPeer</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">advertiser</span><span class="o">.</span><span class="nf">stopAdvertisingPeer</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1937,7 +1937,7 @@ present(browserViewController, animated: true)
 <!-- https://giphy.com/gifs/2DElddPef27Dd8zVWS -->
 <p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
 
-<p>[caption id=”attachment_5200” align=”alignnone” width=”264”] <a href="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-1.34.02.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-1.34.02.jpg" alt="" loading="lazy"></a> YES를 누르면 연결됩니다.[/caption]</p>
+<p>[caption id=”attachment_5200” align=”alignnone” width=”264”] <a href="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-1.34.02.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-1.34.02.jpg" alt="" loading="lazy"></a> YES를 누르면 연결됩니다.[/caption]</p>
 
 <p> </p>
 
@@ -2065,8 +2065,8 @@ do {
 
 <p>뷰 컨트롤러의 멤버 변수로 아래를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2075,14 +2075,14 @@ do {
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>private var peers: [MCPeerID] = []
-private var chatList: [String] = [] {
-    didSet {
-        DispatchQueue.main.async { [unowned self] in
-            txvChatList.text = chatList.joined(separator: "\n")
-        }
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="k">var</span> <span class="nv">peers</span><span class="p">:</span> <span class="p">[</span><span class="kt">MCPeerID</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="kd">private</span> <span class="k">var</span> <span class="nv">chatList</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">{</span>
+    <span class="k">didSet</span> <span class="p">{</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="p">[</span><span class="k">unowned</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+            <span class="n">txvChatList</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">chatList</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2098,9 +2098,9 @@ private var chatList: [String] = [] {
 
 <p>스토리보드에 텍스트 뷰, 텍스트 필드 및 버튼을 추가하고, <code class="language-plaintext highlighter-rouge">@IBAction</code>으로 연결한 뒤 아래 코드를 작성합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-2.09.33.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-2.09.33.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-2.09.33.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-2.09.33.jpg" alt="" loading="lazy"></a></p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-2.10.21.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-오전-2.10.21.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-2.10.21.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-2.10.21.jpg" alt="" loading="lazy"></a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -2164,8 +2164,8 @@ private var chatList: [String] = [] {
 
 <p><code class="language-plaintext highlighter-rouge">MCSessionDelegate</code> 메소드의 <code class="language-plaintext highlighter-rouge">session( ...didReceiveData...fromPeer...)</code> 부분을 다음과 같이 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2180,20 +2180,20 @@ private var chatList: [String] = [] {
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-    switch state {
-    case MCSessionState.connected:
-        print("Connected: \(peerID.displayName)")
-        // peer 추가
-        peers.append(peerID)
-    case MCSessionState.connecting:
-        print("Connecting: \(peerID.displayName)")
-    case MCSessionState.notConnected:
-        print("Not Connected: \(peerID.displayName)")
-    @unknown default:
-        break
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span> <span class="n">peer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span> <span class="n">didChange</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">MCSessionState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">state</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="kt">MCSessionState</span><span class="o">.</span><span class="nv">connected</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Connected: </span><span class="se">\(</span><span class="n">peerID</span><span class="o">.</span><span class="n">displayName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="c1">// peer 추가</span>
+        <span class="n">peers</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">peerID</span><span class="p">)</span>
+    <span class="k">case</span> <span class="kt">MCSessionState</span><span class="o">.</span><span class="nv">connecting</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Connecting: </span><span class="se">\(</span><span class="n">peerID</span><span class="o">.</span><span class="n">displayName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="kt">MCSessionState</span><span class="o">.</span><span class="nv">notConnected</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Not Connected: </span><span class="se">\(</span><span class="n">peerID</span><span class="o">.</span><span class="n">displayName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2202,16 +2202,16 @@ private var chatList: [String] = [] {
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-    let message = String( data: data, encoding: .utf8) ?? ""
-    chatList.append("\(peerID.displayName): \(message)")
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span> <span class="n">didReceive</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">fromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span> <span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="nv">encoding</span><span class="p">:</span> <span class="o">.</span><span class="n">utf8</span><span class="p">)</span> <span class="p">??</span> <span class="s">""</span>
+    <span class="n">chatList</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">peerID</span><span class="o">.</span><span class="n">displayName</span><span class="se">)</span><span class="s">: </span><span class="se">\(</span><span class="n">message</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2354,8 +2354,8 @@ func session(
 }
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2373,23 +2373,23 @@ func session(
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>func session(
-    _ session: MCSession,
-    didFinishReceivingResourceWithName resourceName: String,
-    fromPeer peerID: MCPeerID,
-    at localURL: URL?,
-    withError error: Error?
-) {
-    let destinationURL = URL(fileURLWithPath: "/path/to/destination")
-    let error: Error? = nil
-    do {
-        try FileManager.default.moveItem(
-            at: localURL,
-            to: destinationURL)
-    } catch {
-        print("[Error] \(error)")
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">session</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span>
+    <span class="n">didFinishReceivingResourceWithName</span> <span class="nv">resourceName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="n">fromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span>
+    <span class="n">at</span> <span class="nv">localURL</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?,</span>
+    <span class="n">withError</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">destinationURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"/path/to/destination"</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="kt">FileManager</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">moveItem</span><span class="p">(</span>
+            <span class="nv">at</span><span class="p">:</span> <span class="n">localURL</span><span class="p">,</span>
+            <span class="nv">to</span><span class="p">:</span> <span class="n">destinationURL</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"[Error] </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2427,8 +2427,8 @@ private var isHosting = false
 
 <p>누군가를 초대하는 작업을 마친 경우 내가 방장이 되므로 <strong><em>‘MCBrowser를 선택하는 작업을 마치는 메서드’</em></strong>에서 이를 알려줍니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2437,22 +2437,22 @@ private var isHosting = false
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>extension ViewController: MCBrowserViewControllerDelegate {
-    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        browserViewController.dismiss(animated: true)
-        isHosting = true
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MCBrowserViewControllerDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">browserViewControllerDidFinish</span><span class="p">(</span><span class="n">_</span> <span class="nv">browserViewController</span><span class="p">:</span> <span class="kt">MCBrowserViewController</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">browserViewController</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="n">isHosting</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
     
-    // ... //
-}
+    <span class="c1">// ... //</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>방장으로부터 초대를 받은 경우 나는 방장이 아니므로 _<strong>‘초대를 받은 후 작업을 처리하는 메소드’</strong>_에서 이를 알려줍니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2461,22 +2461,22 @@ private var isHosting = false
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>extension ViewController: MCNearbyServiceAdvertiserDelegate {
-    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -&gt; Void) {
-        // ... //
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MCNearbyServiceAdvertiserDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">advertiser</span><span class="p">(</span><span class="n">_</span> <span class="nv">advertiser</span><span class="p">:</span> <span class="kt">MCNearbyServiceAdvertiser</span><span class="p">,</span> <span class="n">didReceiveInvitationFromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span> <span class="n">withContext</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?,</span> <span class="nv">invitationHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">,</span> <span class="kt">MCSession</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ... //</span>
         
-        present(alertController, animated: true)
-        isHosting = false
-    }
-}
+        <span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="n">isHosting</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>다음 채팅 목록을 리소스 형태로 전송하는 메서드를 추가합니다. 뷰 컨트롤러 안에 <code class="language-plaintext highlighter-rouge">sendHIstory</code> 함수를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2497,26 +2497,26 @@ private var isHosting = false
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>func sendHistory(to peer: MCPeerID) {
-    // 1. Create the URL in your temporary directory.
-    let tempFile = URL(fileURLWithPath: NSTemporaryDirectory())
-        .appendingPathComponent("messages.data")
-    guard let historyData = try? JSONEncoder().encode(chatList) else { return }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">sendHistory</span><span class="p">(</span><span class="n">to</span> <span class="nv">peer</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 1. Create the URL in your temporary directory.</span>
+    <span class="k">let</span> <span class="nv">tempFile</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="kt">NSTemporaryDirectory</span><span class="p">())</span>
+        <span class="o">.</span><span class="nf">appendingPathComponent</span><span class="p">(</span><span class="s">"messages.data"</span><span class="p">)</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">historyData</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">JSONEncoder</span><span class="p">()</span><span class="o">.</span><span class="nf">encode</span><span class="p">(</span><span class="n">chatList</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
     
-    // 2. Write the chat history to a file at this URL.
-    try? historyData.write(to: tempFile)
+    <span class="c1">// 2. Write the chat history to a file at this URL.</span>
+    <span class="k">try</span><span class="p">?</span> <span class="n">historyData</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">tempFile</span><span class="p">)</span>
     
-    // 3. Use MCSession to send a resource instead of Data.
-    session?.sendResource(
-        at: tempFile,
-        withName: "Chat_History",
-        toPeer: peer
-    ) { error in
-        if let error = error {
-            print(error.localizedDescription)
-        }
-    }
-}
+    <span class="c1">// 3. Use MCSession to send a resource instead of Data.</span>
+    <span class="n">session</span><span class="p">?</span><span class="o">.</span><span class="nf">sendResource</span><span class="p">(</span>
+        <span class="nv">at</span><span class="p">:</span> <span class="n">tempFile</span><span class="p">,</span>
+        <span class="nv">withName</span><span class="p">:</span> <span class="s">"Chat_History"</span><span class="p">,</span>
+        <span class="nv">toPeer</span><span class="p">:</span> <span class="n">peer</span>
+    <span class="p">)</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ol>
@@ -2529,8 +2529,8 @@ private var isHosting = false
 
 <p><code class="language-plaintext highlighter-rouge">MCSessionDelegate</code> 부분의 <code class="language-plaintext highlighter-rouge">func session(...didChange...)</code> 부분에 아래 코드를 추가합니다. 피어와 연결에 성공하였을 때 내가 방장인 경우, 채팅 히스토리를 피어에게 보냅니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2549,32 +2549,32 @@ private var isHosting = false
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-    switch state {
-    case MCSessionState.connected:
-        // peer 추가
-        peers.append(peerID)
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span> <span class="n">peer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span> <span class="n">didChange</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">MCSessionState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">state</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="kt">MCSessionState</span><span class="o">.</span><span class="nv">connected</span><span class="p">:</span>
+        <span class="c1">// peer 추가</span>
+        <span class="n">peers</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">peerID</span><span class="p">)</span>
         
-        // 채팅 히스토리 보냄
-        if isHosting{ 
-            sendHistory(to: peerID)
-        }
-    case MCSessionState.connecting:
-        print("Connecting: \(peerID.displayName)")
-    case MCSessionState.notConnected:
-        print("Not Connected: \(peerID.displayName)")
-    @unknown default:
-        break
-    }
-}
+        <span class="c1">// 채팅 히스토리 보냄</span>
+        <span class="k">if</span> <span class="n">isHosting</span><span class="p">{</span> 
+            <span class="nf">sendHistory</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">peerID</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="k">case</span> <span class="kt">MCSessionState</span><span class="o">.</span><span class="nv">connecting</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Connecting: </span><span class="se">\(</span><span class="n">peerID</span><span class="o">.</span><span class="n">displayName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="kt">MCSessionState</span><span class="o">.</span><span class="nv">notConnected</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Not Connected: </span><span class="se">\(</span><span class="n">peerID</span><span class="o">.</span><span class="n">displayName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>리소스를 전송받으면 해당 리소스 파일을 다시 채팅 목록(<code class="language-plaintext highlighter-rouge">chatList</code> 배열)으로 변환해야 합니다. <code class="language-plaintext highlighter-rouge">MCSessionDelegate</code>의 확장 부분에 있는 <code class="language-plaintext highlighter-rouge">session(...didFinishReceivingResourceWithName...at localURL...)</code> 메서드에 아래 내용을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2586,17 +2586,17 @@ private var isHosting = false
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-    guard let localURL = localURL,
-          let data = try? Data(contentsOf: localURL),
-          let chatList = try? JSONDecoder().decode([String].self, from: data) else {
-        return
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span> <span class="n">didFinishReceivingResourceWithName</span> <span class="nv">resourceName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">fromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span> <span class="n">at</span> <span class="nv">localURL</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?,</span> <span class="n">withError</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">localURL</span> <span class="o">=</span> <span class="n">localURL</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">localURL</span><span class="p">),</span>
+          <span class="k">let</span> <span class="nv">chatList</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">([</span><span class="kt">String</span><span class="p">]</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    DispatchQueue.main.async {
-        self.chatList.insert(contentsOf: chatList, at: 0)
-    }
-}
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">chatList</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">chatList</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ol>

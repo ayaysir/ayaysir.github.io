@@ -781,8 +781,8 @@
   <div class="content">
     <h4 id="폴더디렉토리-표시용-모델-생성"><span class="me-2"><strong>폴더(디렉토리) 표시용 모델 생성</strong></span><a href="#폴더디렉토리-표시용-모델-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -795,18 +795,18 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>import Foundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
 
-struct Folder: Codable, Equatable, Hashable, Identifiable, FileSystem {
-    static func == (lhs: Folder, rhs: Folder) -&gt; Bool {
-        lhs.id == rhs.id &amp;&amp; lhs.fileURL == rhs.fileURL
-    }
+<span class="kd">struct</span> <span class="kt">Folder</span><span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">Identifiable</span><span class="p">,</span> <span class="kt">FileSystem</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Folder</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Folder</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="n">lhs</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">id</span> <span class="o">&amp;&amp;</span> <span class="n">lhs</span><span class="o">.</span><span class="n">fileURL</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">fileURL</span>
+    <span class="p">}</span>
     
-    var id: UUID
-    var fileURL: URL
-    var fileName: String
-    var subfolder: [Folder]?
-}
+    <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">UUID</span>
+    <span class="k">var</span> <span class="nv">fileURL</span><span class="p">:</span> <span class="kt">URL</span>
+    <span class="k">var</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">subfolder</span><span class="p">:</span> <span class="p">[</span><span class="kt">Folder</span><span class="p">]?</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -818,7 +818,7 @@ struct Folder: Codable, Equatable, Hashable, Identifiable, FileSystem {
   </li>
 </ul>
 
-<p><a href="/assets/img/wp-content/uploads/2023/11/screenshot-2023-11-19-오전-2.41.37-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/11/screenshot-2023-11-19-오전-2.41.37-copy.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2023/11/screenshot-2023-11-19-am-2.41.37-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/11/screenshot-2023-11-19-am-2.41.37-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -878,8 +878,8 @@ struct Folder: Codable, Equatable, Hashable, Identifiable, FileSystem {
 
 <h4 id="뷰모델-생성"><span class="me-2"><strong>뷰모델 생성</strong></span><a href="#뷰모델-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -932,57 +932,57 @@ struct Folder: Codable, Equatable, Hashable, Identifiable, FileSystem {
 50
 51
 52
-</pre></td><td class="rouge-code"><pre>import Foundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
 
-class SelectFolderViewModel: ObservableObject {
-    @Published private(set) var directoryList: [Folder] = []
+<span class="kd">class</span> <span class="kt">SelectFolderViewModel</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+    <span class="kd">@Published</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">directoryList</span><span class="p">:</span> <span class="p">[</span><span class="kt">Folder</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
     
-    init() {
-        guard let documentDirectoryURL = FileManager.documentDirectoryURL else {
-            return
-        }
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">documentDirectoryURL</span> <span class="o">=</span> <span class="kt">FileManager</span><span class="o">.</span><span class="n">documentDirectoryURL</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        var rootFolder: Folder = .init(id: .init(), fileURL: documentDirectoryURL, fileName: "Root", subfolder: [])
-        directoryListRecursively(parentFolder: &amp;rootFolder, nextURL: documentDirectoryURL)
+        <span class="k">var</span> <span class="nv">rootFolder</span><span class="p">:</span> <span class="kt">Folder</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(),</span> <span class="nv">fileURL</span><span class="p">:</span> <span class="n">documentDirectoryURL</span><span class="p">,</span> <span class="nv">fileName</span><span class="p">:</span> <span class="s">"Root"</span><span class="p">,</span> <span class="nv">subfolder</span><span class="p">:</span> <span class="p">[])</span>
+        <span class="nf">directoryListRecursively</span><span class="p">(</span><span class="nv">parentFolder</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">rootFolder</span><span class="p">,</span> <span class="nv">nextURL</span><span class="p">:</span> <span class="n">documentDirectoryURL</span><span class="p">)</span>
         
-        if let documents = rootFolder.subfolder?.first {
-            directoryList = [documents]
-        }
-    }
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">documents</span> <span class="o">=</span> <span class="n">rootFolder</span><span class="o">.</span><span class="n">subfolder</span><span class="p">?</span><span class="o">.</span><span class="n">first</span> <span class="p">{</span>
+            <span class="n">directoryList</span> <span class="o">=</span> <span class="p">[</span><span class="n">documents</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    func directoryContents(at targetDirectoryURL: URL) throws -&gt; [URL] {
-        return try FileManager.default.contentsOfDirectory(
-            at: targetDirectoryURL,
-            includingPropertiesForKeys: nil
-        ).filter {
-            $0.hasDirectoryPath
-        }
-    }
+    <span class="kd">func</span> <span class="nf">directoryContents</span><span class="p">(</span><span class="n">at</span> <span class="nv">targetDirectoryURL</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">URL</span><span class="p">]</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">try</span> <span class="kt">FileManager</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">contentsOfDirectory</span><span class="p">(</span>
+            <span class="nv">at</span><span class="p">:</span> <span class="n">targetDirectoryURL</span><span class="p">,</span>
+            <span class="nv">includingPropertiesForKeys</span><span class="p">:</span> <span class="kc">nil</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span>
+            <span class="nv">$0</span><span class="o">.</span><span class="n">hasDirectoryPath</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    func directoryListRecursively(parentFolder: inout Folder, nextURL: URL) {
-        guard let directoryContents = try? directoryContents(at: nextURL) else {
-            return
-        }
+    <span class="kd">func</span> <span class="nf">directoryListRecursively</span><span class="p">(</span><span class="nv">parentFolder</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Folder</span><span class="p">,</span> <span class="nv">nextURL</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">directoryContents</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="nf">directoryContents</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">nextURL</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        guard parentFolder.subfolder != nil else {
-            return
-        }
+        <span class="k">guard</span> <span class="n">parentFolder</span><span class="o">.</span><span class="n">subfolder</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        // guard let을 쓰지 않고 강제 언래핑 하는 이유: 배열에 직접 접근해서 값을 바꾸려고
+        <span class="c1">// guard let을 쓰지 않고 강제 언래핑 하는 이유: 배열에 직접 접근해서 값을 바꾸려고</span>
         
-        if directoryContents.isEmpty {
-            parentFolder.subfolder!.append(.init(id: .init(), fileURL: nextURL, fileName: nextURL.lastPathComponent, subfolder: nil))
-            return
-        }
+        <span class="k">if</span> <span class="n">directoryContents</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">{</span>
+            <span class="n">parentFolder</span><span class="o">.</span><span class="n">subfolder</span><span class="o">!.</span><span class="nf">append</span><span class="p">(</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(),</span> <span class="nv">fileURL</span><span class="p">:</span> <span class="n">nextURL</span><span class="p">,</span> <span class="nv">fileName</span><span class="p">:</span> <span class="n">nextURL</span><span class="o">.</span><span class="n">lastPathComponent</span><span class="p">,</span> <span class="nv">subfolder</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        parentFolder.subfolder!.append(.init(id: .init(), fileURL: nextURL, fileName: nextURL.lastPathComponent, subfolder: []))
+        <span class="n">parentFolder</span><span class="o">.</span><span class="n">subfolder</span><span class="o">!.</span><span class="nf">append</span><span class="p">(</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(),</span> <span class="nv">fileURL</span><span class="p">:</span> <span class="n">nextURL</span><span class="p">,</span> <span class="nv">fileName</span><span class="p">:</span> <span class="n">nextURL</span><span class="o">.</span><span class="n">lastPathComponent</span><span class="p">,</span> <span class="nv">subfolder</span><span class="p">:</span> <span class="p">[]))</span>
         
-        let lastCount = parentFolder.subfolder!.count - 1
-        for directoryContent in directoryContents {
-            directoryListRecursively(parentFolder: &amp;parentFolder.subfolder![lastCount], nextURL: directoryContent.absoluteURL)
-        }
-    }
-}
+        <span class="k">let</span> <span class="nv">lastCount</span> <span class="o">=</span> <span class="n">parentFolder</span><span class="o">.</span><span class="n">subfolder</span><span class="o">!.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">directoryContent</span> <span class="k">in</span> <span class="n">directoryContents</span> <span class="p">{</span>
+            <span class="nf">directoryListRecursively</span><span class="p">(</span><span class="nv">parentFolder</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">parentFolder</span><span class="o">.</span><span class="n">subfolder</span><span class="o">!</span><span class="p">[</span><span class="n">lastCount</span><span class="p">],</span> <span class="nv">nextURL</span><span class="p">:</span> <span class="n">directoryContent</span><span class="o">.</span><span class="n">absoluteURL</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

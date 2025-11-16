@@ -814,8 +814,8 @@
 
 <h4 id="3-viewcontroller-코드-작성"><span class="me-2"><strong>3) ViewController 코드 작성</strong></span><a href="#3-viewcontroller-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -931,120 +931,120 @@
 113
 114
 115
-</pre></td><td class="rouge-code"><pre>import Foundation
-import UIKit
-import AVFoundation
-import CoreAudio
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">AVFoundation</span>
+<span class="kd">import</span> <span class="kt">CoreAudio</span>
 
-class ViewController: UIViewController {
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
     
-    var recorder: AVAudioRecorder!
-    var levelTimer = Timer()
+    <span class="k">var</span> <span class="nv">recorder</span><span class="p">:</span> <span class="kt">AVAudioRecorder</span><span class="o">!</span>
+    <span class="k">var</span> <span class="nv">levelTimer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="p">()</span>
     
-    @IBOutlet weak var lblDecibel: UILabel!
-    @IBOutlet weak var lblLoudState: UILabel!
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">lblDecibel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">lblLoudState</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initRecord()
-    }
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="nf">initRecord</span><span class="p">()</span>
+    <span class="p">}</span>
     
-    func initRecord() {
+    <span class="kd">func</span> <span class="nf">initRecord</span><span class="p">()</span> <span class="p">{</span>
         
-        switch AVAudioSession.sharedInstance().recordPermission {
-        case AVAudioSessionRecordPermission.granted:
-            record()
-        case AVAudioSessionRecordPermission.denied:
-            recordNotAllowed()
-        case AVAudioSessionRecordPermission.undetermined:
-            AVAudioSession.sharedInstance().requestRecordPermission({ (granted) in
-                print(granted)
-                if granted {
-                    // timer는 main thread 에서 실행됨
-                    // 그러나 requestRecordPermission 의 클로저 함수는 별도의 스레드에서 실행되므로
-                    // 강제로 main 에서 실행되도록 한다.
-                    // 
-                    DispatchQueue.main.sync {
-                        self.record()
-                    }
-                } else {
-                    self.recordNotAllowed()
-                }
-            })
-        default:
-            break
-        }
-    }
-    
-    
-    func recordNotAllowed() {
-        print("permission denied")
-    }
-    
-    func record() {
-        
-        let audioSession = AVAudioSession.sharedInstance()
-        
-        // userDomainMask에 녹음 파일 생성
-        let documents = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])
-        let url = documents.appendingPathComponent("record.caf")
-        print("이 URL을 복사한 뒤 Finder - '이동' 메뉴 - '폴더로 가기'를 사용해 이동하세요.",
-              documents.absoluteString.replacingOccurrences(of: "file://", with: "")
-        )
-        
-        // 녹음 세팅
-        let recordSettings: [String: Any] = [
-            AVFormatIDKey:              kAudioFormatAppleIMA4,
-            AVSampleRateKey:            16000, // 44100.0(표준), 32kHz, 24, 16, 12
-            AVNumberOfChannelsKey:      1, // 1: 모노 2: 스테레오(표준)
-            AVEncoderBitRateKey:        9600, // 32k, 96, 128(표준), 160, 192, 256, 320
-            AVLinearPCMBitDepthKey:     8, // 4, 8, 11, 12, 16(표준), 18,
-            AVEncoderAudioQualityKey:   AVAudioQuality.max.rawValue
-        ]
-        
-        do {
-            try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
-            try audioSession.setActive(true)
-            try recorder = AVAudioRecorder(url:url, settings: recordSettings)
-        } catch {
-            return
-        }
-        
-        recorder.prepareToRecord()
-        recorder.isMeteringEnabled = true
-        recorder.record()
-        
-        // 타이머는 main thread 에서 실행됨
-        levelTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(levelTimerCallback), userInfo: nil, repeats: true)
-    }
-    
-    @objc func levelTimerCallback() {
-        recorder.updateMeters()
-        
-        let level = recorder.averagePower(forChannel: 0)
-        
-        lblDecibel.text = String(format: "%.0f dBFS",  level)
-        
-        // do whatever you want with isLoud
-        if level &lt; -48 {
-            lblLoudState.text = "조용함"
-        } else if level &lt; -30 {
-            lblLoudState.text = "약간의 소음 있음"
-        } else if level &lt; -10 {
-            lblLoudState.text = "통상적인 소음 있음"
-        } else {
-            lblLoudState.text = "시끄러움"
-        }
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        <span class="k">switch</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="n">recordPermission</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="kt">AVAudioSessionRecordPermission</span><span class="o">.</span><span class="nv">granted</span><span class="p">:</span>
+            <span class="nf">record</span><span class="p">()</span>
+        <span class="k">case</span> <span class="kt">AVAudioSessionRecordPermission</span><span class="o">.</span><span class="nv">denied</span><span class="p">:</span>
+            <span class="nf">recordNotAllowed</span><span class="p">()</span>
+        <span class="k">case</span> <span class="kt">AVAudioSessionRecordPermission</span><span class="o">.</span><span class="nv">undetermined</span><span class="p">:</span>
+            <span class="kt">AVAudioSession</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="nf">requestRecordPermission</span><span class="p">({</span> <span class="p">(</span><span class="n">granted</span><span class="p">)</span> <span class="k">in</span>
+                <span class="nf">print</span><span class="p">(</span><span class="n">granted</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">granted</span> <span class="p">{</span>
+                    <span class="c1">// timer는 main thread 에서 실행됨</span>
+                    <span class="c1">// 그러나 requestRecordPermission 의 클로저 함수는 별도의 스레드에서 실행되므로</span>
+                    <span class="c1">// 강제로 main 에서 실행되도록 한다.</span>
+                    <span class="c1">// </span>
+                    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">sync</span> <span class="p">{</span>
+                        <span class="k">self</span><span class="o">.</span><span class="nf">record</span><span class="p">()</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">self</span><span class="o">.</span><span class="nf">recordNotAllowed</span><span class="p">()</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+        <span class="k">default</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
     
-}
+    <span class="kd">func</span> <span class="nf">recordNotAllowed</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"permission denied"</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">record</span><span class="p">()</span> <span class="p">{</span>
+        
+        <span class="k">let</span> <span class="nv">audioSession</span> <span class="o">=</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span>
+        
+        <span class="c1">// userDomainMask에 녹음 파일 생성</span>
+        <span class="k">let</span> <span class="nv">documents</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="kt">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="kt">FileManager</span><span class="o">.</span><span class="kt">SearchPathDirectory</span><span class="o">.</span><span class="n">documentDirectory</span><span class="p">,</span> <span class="kt">FileManager</span><span class="o">.</span><span class="kt">SearchPathDomainMask</span><span class="o">.</span><span class="n">userDomainMask</span><span class="p">,</span> <span class="kc">true</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="n">documents</span><span class="o">.</span><span class="nf">appendingPathComponent</span><span class="p">(</span><span class="s">"record.caf"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"이 URL을 복사한 뒤 Finder - '이동' 메뉴 - '폴더로 가기'를 사용해 이동하세요."</span><span class="p">,</span>
+              <span class="n">documents</span><span class="o">.</span><span class="n">absoluteString</span><span class="o">.</span><span class="nf">replacingOccurrences</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"file://"</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span>
+        <span class="p">)</span>
+        
+        <span class="c1">// 녹음 세팅</span>
+        <span class="k">let</span> <span class="nv">recordSettings</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="kt">AVFormatIDKey</span><span class="p">:</span>              <span class="n">kAudioFormatAppleIMA4</span><span class="p">,</span>
+            <span class="kt">AVSampleRateKey</span><span class="p">:</span>            <span class="mi">16000</span><span class="p">,</span> <span class="c1">// 44100.0(표준), 32kHz, 24, 16, 12</span>
+            <span class="kt">AVNumberOfChannelsKey</span><span class="p">:</span>      <span class="mi">1</span><span class="p">,</span> <span class="c1">// 1: 모노 2: 스테레오(표준)</span>
+            <span class="kt">AVEncoderBitRateKey</span><span class="p">:</span>        <span class="mi">9600</span><span class="p">,</span> <span class="c1">// 32k, 96, 128(표준), 160, 192, 256, 320</span>
+            <span class="kt">AVLinearPCMBitDepthKey</span><span class="p">:</span>     <span class="mi">8</span><span class="p">,</span> <span class="c1">// 4, 8, 11, 12, 16(표준), 18,</span>
+            <span class="kt">AVEncoderAudioQualityKey</span><span class="p">:</span>   <span class="kt">AVAudioQuality</span><span class="o">.</span><span class="n">max</span><span class="o">.</span><span class="n">rawValue</span>
+        <span class="p">]</span>
+        
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="n">audioSession</span><span class="o">.</span><span class="nf">setCategory</span><span class="p">(</span><span class="kt">AVAudioSession</span><span class="o">.</span><span class="kt">Category</span><span class="o">.</span><span class="n">playAndRecord</span><span class="p">)</span>
+            <span class="k">try</span> <span class="n">audioSession</span><span class="o">.</span><span class="nf">setActive</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+            <span class="k">try</span> <span class="n">recorder</span> <span class="o">=</span> <span class="kt">AVAudioRecorder</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span><span class="n">url</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="n">recordSettings</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+        
+        <span class="n">recorder</span><span class="o">.</span><span class="nf">prepareToRecord</span><span class="p">()</span>
+        <span class="n">recorder</span><span class="o">.</span><span class="n">isMeteringEnabled</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">recorder</span><span class="o">.</span><span class="nf">record</span><span class="p">()</span>
+        
+        <span class="c1">// 타이머는 main thread 에서 실행됨</span>
+        <span class="n">levelTimer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="o">.</span><span class="nf">scheduledTimer</span><span class="p">(</span><span class="nv">timeInterval</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">levelTimerCallback</span><span class="p">),</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">levelTimerCallback</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">recorder</span><span class="o">.</span><span class="nf">updateMeters</span><span class="p">()</span>
+        
+        <span class="k">let</span> <span class="nv">level</span> <span class="o">=</span> <span class="n">recorder</span><span class="o">.</span><span class="nf">averagePower</span><span class="p">(</span><span class="nv">forChannel</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        
+        <span class="n">lblDecibel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="s">"%.0f dBFS"</span><span class="p">,</span>  <span class="n">level</span><span class="p">)</span>
+        
+        <span class="c1">// do whatever you want with isLoud</span>
+        <span class="k">if</span> <span class="n">level</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">48</span> <span class="p">{</span>
+            <span class="n">lblLoudState</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"조용함"</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">level</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">30</span> <span class="p">{</span>
+            <span class="n">lblLoudState</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"약간의 소음 있음"</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">level</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">10</span> <span class="p">{</span>
+            <span class="n">lblLoudState</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"통상적인 소음 있음"</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">lblLoudState</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"시끄러움"</span>
+        <span class="p">}</span>
+        
+    <span class="p">}</span>
+    
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">didReceiveMemoryWarning</span><span class="p">()</span>
+        <span class="c1">// Dispose of any resources that can be recreated.</span>
+    <span class="p">}</span>
+    
+    
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

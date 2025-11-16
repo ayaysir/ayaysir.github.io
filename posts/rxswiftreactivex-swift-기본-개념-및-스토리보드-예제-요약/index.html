@@ -1952,8 +1952,8 @@ let result = eventStream.map {
 
 <h5 id="loginviewmodelswift"><span class="me-2"><strong>LoginViewModel.swift</strong></span><a href="#loginviewmodelswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1972,23 +1972,23 @@ let result = eventStream.map {
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>import Foundation
-import RxSwift
-import RxRelay
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">import</span> <span class="kt">RxSwift</span>
+<span class="kd">import</span> <span class="kt">RxRelay</span>
 
-struct LoginViewModel {
-    var username = BehaviorRelay&lt;String&gt;(value: "")
-    var password = BehaviorRelay&lt;String&gt;(value: "")
+<span class="kd">struct</span> <span class="kt">LoginViewModel</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">username</span> <span class="o">=</span> <span class="kt">BehaviorRelay</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">password</span> <span class="o">=</span> <span class="kt">BehaviorRelay</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span>
     
-    // 사용자 이름과 비밀번호가 유효한지 체크하는 computed property
-    var isValid: Observable&lt;Bool&gt; {
-        // combineLatest: BehaviorRelay에서 이벤트가 발생할 때마다
-        // 각 시퀀스의 가장 최근의 값들을 결합해서 다룰 수 있게 한다.
-        return Observable.combineLatest(username.asObservable(), password.asObservable()) { usernameStr, passwordStr in
-            usernameStr.count &gt;= 4 &amp;&amp; passwordStr.count &gt;= 4
-        }
-    }
-}
+    <span class="c1">// 사용자 이름과 비밀번호가 유효한지 체크하는 computed property</span>
+    <span class="k">var</span> <span class="nv">isValid</span><span class="p">:</span> <span class="kt">Observable</span><span class="o">&lt;</span><span class="kt">Bool</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="c1">// combineLatest: BehaviorRelay에서 이벤트가 발생할 때마다</span>
+        <span class="c1">// 각 시퀀스의 가장 최근의 값들을 결합해서 다룰 수 있게 한다.</span>
+        <span class="k">return</span> <span class="kt">Observable</span><span class="o">.</span><span class="nf">combineLatest</span><span class="p">(</span><span class="n">username</span><span class="o">.</span><span class="nf">asObservable</span><span class="p">(),</span> <span class="n">password</span><span class="o">.</span><span class="nf">asObservable</span><span class="p">())</span> <span class="p">{</span> <span class="n">usernameStr</span><span class="p">,</span> <span class="n">passwordStr</span> <span class="k">in</span>
+            <span class="n">usernameStr</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">passwordStr</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">4</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

@@ -838,7 +838,7 @@
 
 <p><strong>2) 소리 파일을 드래그 앤 드롭으로 프로젝트 내에 추가합니다.</strong></p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/09/mosiac-스크린샷-2022-09-08-pm-6.04.04.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/09/mosiac-스크린샷-2022-09-08-pm-6.04.04.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/09/mosiac-screenshot-2022-09-08-pm-6.04.04.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/09/mosiac-screenshot-2022-09-08-pm-6.04.04.jpg" alt="" loading="lazy"></a></p>
 
 <p>[caption id=”attachment_4739” align=”alignnone” width=”746”] <a href="/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-08-pm-6.03.40.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-08-pm-6.03.40.jpg" alt="" loading="lazy"></a> Finish 버튼 클릭[/caption]</p>
 
@@ -860,8 +860,8 @@
 
 <p><strong>4) 재생 및 정지 함수를 추가합니다.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -882,26 +882,26 @@
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>func playSound() {
-    let soundName = "파일이름"
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">playSound</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">soundName</span> <span class="o">=</span> <span class="s">"파일이름"</span>
 
-    // forResource: 파일 이름(확장자 제외) , withExtension: 확장자(mp3, wav 등) 입력
-    guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
-        return
-    }
+    <span class="c1">// forResource: 파일 이름(확장자 제외) , withExtension: 확장자(mp3, wav 등) 입력</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="n">soundName</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"mp3"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    do {
-        player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-        player?.numberOfLoops = -1
-        player?.play()
-    } catch let error {
-        print(error.localizedDescription)
-    }
-}
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="n">player</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">AVAudioPlayer</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> <span class="nv">fileTypeHint</span><span class="p">:</span> <span class="kt">AVFileType</span><span class="o">.</span><span class="n">mp3</span><span class="o">.</span><span class="n">rawValue</span><span class="p">)</span>
+        <span class="n">player</span><span class="p">?</span><span class="o">.</span><span class="n">numberOfLoops</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">player</span><span class="p">?</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="k">let</span> <span class="nv">error</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-func stopSound() {
-    player?.stop()
-}
+<span class="kd">func</span> <span class="nf">stopSound</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">player</span><span class="p">?</span><span class="o">.</span><span class="nf">stop</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

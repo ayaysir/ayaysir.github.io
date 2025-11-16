@@ -1518,24 +1518,24 @@
 
 <h5 id="1-viewdidload에-다음-부분을-추가합니다"><span class="me-2"><strong>1) viewDidLoad()에 다음 부분을 추가합니다.</strong></span><a href="#1-viewdidload에-다음-부분을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>override func viewDidLoad() {
-    super.viewDidLoad()
-    setupLongGestureRecognizerOnCollection()
-}
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    <span class="nf">setupLongGestureRecognizerOnCollection</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <h5 id="2-viewcontroller에-uigesturerecognizerdelegate-프로토콜을-구현하는-다음-extension-및-함수를-추가합니다"><span class="me-2"><strong>2) ViewController에 UIGestureRecognizerDelegate 프로토콜을 구현하는 다음 extension 및 함수를 추가합니다.</strong></span><a href="#2-viewcontroller에-uigesturerecognizerdelegate-프로토콜을-구현하는-다음-extension-및-함수를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1550,20 +1550,20 @@
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>extension ViewController: UIGestureRecognizerDelegate {
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIGestureRecognizerDelegate</span> <span class="p">{</span>
 
-    // long press 이벤트 부여
-    private func setupLongGestureRecognizerOnCollection() {
+    <span class="c1">// long press 이벤트 부여</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupLongGestureRecognizerOnCollection</span><span class="p">()</span> <span class="p">{</span>
         
-        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
-        longPressedGesture.minimumPressDuration = 0.5
-        longPressedGesture.delegate = self
-        longPressedGesture.delaysTouchesBegan = true
-        collectionView.addGestureRecognizer(longPressedGesture)
-    }
+        <span class="k">let</span> <span class="nv">longPressedGesture</span> <span class="o">=</span> <span class="kt">UILongPressGestureRecognizer</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">handleLongPress</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:)))</span>
+        <span class="n">longPressedGesture</span><span class="o">.</span><span class="n">minimumPressDuration</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="n">longPressedGesture</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+        <span class="n">longPressedGesture</span><span class="o">.</span><span class="n">delaysTouchesBegan</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">collectionView</span><span class="o">.</span><span class="nf">addGestureRecognizer</span><span class="p">(</span><span class="n">longPressedGesture</span><span class="p">)</span>
+    <span class="p">}</span>
   
-    // .... //
-}
+    <span class="c1">// .... //</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

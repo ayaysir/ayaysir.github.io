@@ -935,8 +935,8 @@
 
 <h5 id="3-cropviewcontrollerdelegate를-구현하는-아래-extension을-추가합니다"><span class="me-2"><strong>3) <code class="language-plaintext highlighter-rouge">CropViewControllerDelegate</code>를 구현하는 아래 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</strong></span><a href="#3-cropviewcontrollerdelegate를-구현하는-아래-extension을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -960,28 +960,28 @@
 21
 22
 23
-</pre></td><td class="rouge-code"><pre>extension PhotoViewController: CropViewControllerDelegate {
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">PhotoViewController</span><span class="p">:</span> <span class="kt">CropViewControllerDelegate</span> <span class="p">{</span>
 
-    func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation, cropInfo: CropInfo) {
+    <span class="kd">func</span> <span class="nf">cropViewControllerDidCrop</span><span class="p">(</span><span class="n">_</span> <span class="nv">cropViewController</span><span class="p">:</span> <span class="kt">CropViewController</span><span class="p">,</span> <span class="nv">cropped</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">transformation</span><span class="p">:</span> <span class="kt">Transformation</span><span class="p">,</span> <span class="nv">cropInfo</span><span class="p">:</span> <span class="kt">CropInfo</span><span class="p">)</span> <span class="p">{</span>
 
-        // 이미지 크롭 후 할 작업 추가
+        <span class="c1">// 이미지 크롭 후 할 작업 추가</span>
 
-        cropViewController.dismiss(animated: true, completion: nil)
-    }
+        <span class="n">cropViewController</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func cropViewControllerDidCancel(_ cropViewController: CropViewController, original: UIImage) {
+    <span class="kd">func</span> <span class="nf">cropViewControllerDidCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">cropViewController</span><span class="p">:</span> <span class="kt">CropViewController</span><span class="p">,</span> <span class="nv">original</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">)</span> <span class="p">{</span>
 
-        cropViewController.dismiss(animated: true, completion: nil)
-    }
+        <span class="n">cropViewController</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
         
-    private func openCropVC(image: UIImage) {
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">openCropVC</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">)</span> <span class="p">{</span>
         
-        let cropViewController = Mantis.cropViewController(image: image)
-        cropViewController.delegate = self
-        cropViewController.modalPresentationStyle = .fullScreen
-        self.present(cropViewController, animated: true)
-    }
-}
+        <span class="k">let</span> <span class="nv">cropViewController</span> <span class="o">=</span> <span class="kt">Mantis</span><span class="o">.</span><span class="nf">cropViewController</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
+        <span class="n">cropViewController</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+        <span class="n">cropViewController</span><span class="o">.</span><span class="n">modalPresentationStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">fullScreen</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">cropViewController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1060,8 +1060,8 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
 
 <h5 id="5-4번에서-삭제한-부분을-cropviewcontrollerdidcrop로-옮깁니다"><span class="me-2"><strong>5) <code class="language-plaintext highlighter-rouge">4번</code>에서 삭제한 부분을 <code class="language-plaintext highlighter-rouge">cropViewControllerDidCrop</code>로 옮깁니다.</strong></span><a href="#5-4번에서-삭제한-부분을-cropviewcontrollerdidcrop로-옮깁니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1069,13 +1069,13 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>func cropViewControllerDidCrop(_ cropViewController: CropViewController, cropped: UIImage, transformation: Transformation, cropInfo: CropInfo) {
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">cropViewControllerDidCrop</span><span class="p">(</span><span class="n">_</span> <span class="nv">cropViewController</span><span class="p">:</span> <span class="kt">CropViewController</span><span class="p">,</span> <span class="nv">cropped</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">transformation</span><span class="p">:</span> <span class="kt">Transformation</span><span class="p">,</span> <span class="nv">cropInfo</span><span class="p">:</span> <span class="kt">CropInfo</span><span class="p">)</span> <span class="p">{</span>
     
-    // 기존 작업 부분
-    imgView.image = cropped
+    <span class="c1">// 기존 작업 부분</span>
+    <span class="n">imgView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">cropped</span>
     
-    cropViewController.dismiss(animated: true, completion: nil)
-}
+    <span class="n">cropViewController</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

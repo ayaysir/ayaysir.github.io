@@ -1344,8 +1344,8 @@ end
 
 <p>3. 이메일과 비밀번호를 입력 후 로그인 버튼을 누르면 로그인 작업을 실행하는 코드를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1360,20 +1360,20 @@ end
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>@IBAction func btnActSubmit(_ sender: UIButton) {
-    guard let userEmail = txtUserEmail.text else { return }
-    guard let userPassword = txtUserPassword.text else  { return }
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">btnActSubmit</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">userEmail</span> <span class="o">=</span> <span class="n">txtUserEmail</span><span class="o">.</span><span class="n">text</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">userPassword</span> <span class="o">=</span> <span class="n">txtUserPassword</span><span class="o">.</span><span class="n">text</span> <span class="k">else</span>  <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
     
-    Auth.auth().signIn(withEmail: userEmail, password: userPassword) { [weak self] authResult, error in
-        guard self != nil else { return }
+    <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="nf">signIn</span><span class="p">(</span><span class="nv">withEmail</span><span class="p">:</span> <span class="n">userEmail</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="n">userPassword</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">authResult</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="k">self</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
         
-        if authResult != nil {
-            print("로그인 되었습니다")
-        } else {
-            print("로그인되지 않았습니다.", error?.localizedDescription ?? "")
-        }
-    }
-}
+        <span class="k">if</span> <span class="n">authResult</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"로그인 되었습니다"</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"로그인되지 않았습니다."</span><span class="p">,</span> <span class="n">error</span><span class="p">?</span><span class="o">.</span><span class="n">localizedDescription</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1476,8 +1476,8 @@ viewUserInfo.isHidden = true
 
 <p>5. 로그아웃 버튼에 로그아웃 이벤트를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1485,13 +1485,13 @@ viewUserInfo.isHidden = true
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>@IBAction func btnActSignOut(_ sender: UIButton) {
-    do {
-        try Auth.auth().signOut()
-    } catch {
-        print(error.localizedDescription)
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">btnActSignOut</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="nf">signOut</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>로그아웃이 완료되면 위의 인증 상태 리스너에 의해 사용자 정보 창이 가려지고 로그인 폼이 다시 나타나게 됩니다.</p>

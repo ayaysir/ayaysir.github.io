@@ -1094,7 +1094,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="7789 words"
+  title="7785 words"
 >
   <em>43 min</em> read</span>
 
@@ -1127,8 +1127,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">swap</code>(교환) 함수를 구현하고자 합니다. swap은 단순히 두 변수의 값을 바꾸는 것 뿐으로 거의 대부분의 타입에서 사용 가능한 기능입니다. 예를 들어 <code class="language-plaintext highlighter-rouge">Int</code>, <code class="language-plaintext highlighter-rouge">String</code>, <code class="language-plaintext highlighter-rouge">Double</code> 및 기타 등등이 전부 swap 가능한 타입들입니다. 일단 <code class="language-plaintext highlighter-rouge">Int</code> 타입에 대한 <code class="language-plaintext highlighter-rouge">swap(_:_:)</code> 함수를 일반적인 방식으로 구현하면 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1141,24 +1141,24 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>func swapTwoInts(_ a: inout Int, _ b: inout Int) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">swapTwoInts</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">temporaryA</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">temporaryA</span>
+<span class="p">}</span>
 
-var someInt = 3
-var anotherInt = 107
-swapTwoInts(&amp;someInt, &amp;anotherInt)
-print("someInt:", someInt, "anotherInt:", anotherInt)
+<span class="k">var</span> <span class="nv">someInt</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">var</span> <span class="nv">anotherInt</span> <span class="o">=</span> <span class="mi">107</span>
+<span class="nf">swapTwoInts</span><span class="p">(</span><span class="o">&amp;</span><span class="n">someInt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">anotherInt</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"someInt:"</span><span class="p">,</span> <span class="n">someInt</span><span class="p">,</span> <span class="s">"anotherInt:"</span><span class="p">,</span> <span class="n">anotherInt</span><span class="p">)</span>
 
-// 결과: someInt: 107 anotherInt: 3
+<span class="c1">// 결과: someInt: 107 anotherInt: 3</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">Int</code>를 구현했으니 다음은 <code class="language-plaintext highlighter-rouge">String</code>, <code class="language-plaintext highlighter-rouge">Double</code>에 대한 <code class="language-plaintext highlighter-rouge">swap</code> 함수도 구현해 보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1170,17 +1170,17 @@ print("someInt:", someInt, "anotherInt:", anotherInt)
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>func swapTwoStrings(_ a: inout String, _ b: inout String) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">swapTwoStrings</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">temporaryA</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">temporaryA</span>
+<span class="p">}</span>
 
-func swapTwoDoubles(_ a: inout Double, _ b: inout Double) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
-}
+<span class="kd">func</span> <span class="nf">swapTwoDoubles</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Double</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Double</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">temporaryA</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">temporaryA</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>지금은 타입이 3개이지만, 만약 다른 타입들에 대해서도 swap을 하고 싶다면 이와 같은 방식으로 함수들을 타입 개수만큼 무한히 작성해야 합니다.</p>
@@ -1201,18 +1201,18 @@ func swapTwoDoubles(_ a: inout Double, _ b: inout Double) {
 
 <p>위의 <code class="language-plaintext highlighter-rouge">swap</code> 함수들에서 다른 것은 파라미터 타입뿐이고, 안의 로직은 동일합니다. 제네릭 함수는 함수에 가상의 타입을 부여한 뒤, 이것을 파라미터로 받고 처리합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>func swapTwoValues&lt;T&gt;(_ a: inout T, _ b: inout T) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="n">swapTwoValues</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">T</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">temporaryA</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">temporaryA</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1302,8 +1302,8 @@ print(someDouble, ":", anotherDouble)
 
 <p>제네릭이 아닌 일반적인 <code class="language-plaintext highlighter-rouge">Int</code> 타입의 스택은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1313,15 +1313,15 @@ print(someDouble, ":", anotherDouble)
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>struct IntStack {
-    var items: [Int] = []
-    mutating func push(_ item: Int) {
-        items.append(item)
-    }
-    mutating func pop() -&gt; Int {
-        return items.removeLast()
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">IntStack</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">push</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">items</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">pop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1367,8 +1367,8 @@ intStack.items // [3, 6, 2]
 
 <p>제네릭을 적용해 위의 <code class="language-plaintext highlighter-rouge">Stack</code>을 재작성하면 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1378,15 +1378,15 @@ intStack.items // [3, 6, 2]
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>struct Stack&lt;Element&gt; {
-    var items: [Element] = []
-    mutating func push(_ item: Element) {
-        items.append(item)
-    }
-    mutating func pop() -&gt; Element {
-        return items.removeLast()
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">Stack</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">push</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Element</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">items</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">pop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Element</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1449,8 +1449,8 @@ stackOfStrings.items
 
 <p>앞의 <code class="language-plaintext highlighter-rouge">Stack</code> 예제에서 <code class="language-plaintext highlighter-rouge">struct</code> 부분에 제네릭이 선언되었다면, 확장(<code class="language-plaintext highlighter-rouge">extension</code>)에서는 따로 제네릭을 추가하지 않아도(<code class="language-plaintext highlighter-rouge">extension</code>에서는 제네릭 추가도 불가능합니다.) 제네릭 사용이 가능합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1459,14 +1459,14 @@ stackOfStrings.items
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>extension Stack {
-    // pop 하지 않고 최상위 요소를 반환
-    var topItem: Element? {
-        return items.isEmpty ? nil : items[items.count - 1]
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">Stack</span> <span class="p">{</span>
+    <span class="c1">// pop 하지 않고 최상위 요소를 반환</span>
+    <span class="k">var</span> <span class="nv">topItem</span><span class="p">:</span> <span class="kt">Element</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">?</span> <span class="nv">nil</span> <span class="p">:</span> <span class="n">items</span><span class="p">[</span><span class="n">items</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-stackOfStrings.topItem // "tres"
+<span class="n">stackOfStrings</span><span class="o">.</span><span class="n">topItem</span> <span class="c1">// "tres"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1483,14 +1483,14 @@ stackOfStrings.topItem // "tres"
 
 <h4 id="타입-제약-조건의-문법"><span class="me-2"><strong>타입 제약 조건의 문법</strong></span><a href="#타입-제약-조건의-문법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>func someFunction&lt;T: SomeClass, U: SomeProtocol&gt;(someT: T, someU: U) {
-    // function body goes here
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="n">someFunction</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">SomeClass</span><span class="p">,</span> <span class="kt">U</span><span class="p">:</span> <span class="kt">SomeProtocol</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">someT</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">someU</span><span class="p">:</span> <span class="kt">U</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// function body goes here</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1505,8 +1505,8 @@ stackOfStrings.topItem // "tres"
 
 <p>아래 함수는 배열에 어떠한 값이 있다면 몇 번째 인덱스에 있는지를 반환하는 제네릭과 무관한 함수입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1521,28 +1521,28 @@ stackOfStrings.topItem // "tres"
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>func findIndex(ofString valueToFind: String, in array: [String]) -&gt; Int? {
-    for (index, value) in array.enumerated() {
-        if value == valueToFind {
-            return index
-        }
-    }
-    return nil
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">findIndex</span><span class="p">(</span><span class="n">ofString</span> <span class="nv">valueToFind</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">in</span> <span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">array</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">valueToFind</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">index</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">nil</span>
+<span class="p">}</span>
 
-let strings = ["cat", "dog", "llama", "parakeet", "terrapin"]
-if let foundIndex = findIndex(ofString: "llama", in: strings) {
-    print("llama의 인덱스는 \(foundIndex)번째입니다.")
-}
-// 결과: llama의 인덱스는 2번째입니다.
+<span class="k">let</span> <span class="nv">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">"cat"</span><span class="p">,</span> <span class="s">"dog"</span><span class="p">,</span> <span class="s">"llama"</span><span class="p">,</span> <span class="s">"parakeet"</span><span class="p">,</span> <span class="s">"terrapin"</span><span class="p">]</span>
+<span class="k">if</span> <span class="k">let</span> <span class="nv">foundIndex</span> <span class="o">=</span> <span class="nf">findIndex</span><span class="p">(</span><span class="nv">ofString</span><span class="p">:</span> <span class="s">"llama"</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="n">strings</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"llama의 인덱스는 </span><span class="se">\(</span><span class="n">foundIndex</span><span class="se">)</span><span class="s">번째입니다."</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 결과: llama의 인덱스는 2번째입니다.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>어떠한 값의 인덱스를 찾는 기능의 함수는 <code class="language-plaintext highlighter-rouge">String</code>이 아니더라도 다양한 타입에 적용 가능합니다. 따라서 이 함수를 제네릭 함수로 재작성하고자 합니다.</p>
 
 <p>그래서 아래와 같이 제네릭 함수를 작성하였는데, 컴파일 오류가 발생합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1552,25 +1552,25 @@ if let foundIndex = findIndex(ofString: "llama", in: strings) {
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>func findIndex&lt;T&gt;(of valueToFind: T, in array:[T]) -&gt; Int? {
-    for (index, value) in array.enumerated() {
-        // 컴파일 오류: Binary operator '==' cannot be applied to two 'T' operands
-        if value == valueToFind {
-            return index
-        }
-    }
-    return nil
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="n">findIndex</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">of</span> <span class="nv">valueToFind</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="k">in</span> <span class="nv">array</span><span class="p">:[</span><span class="kt">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">array</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 컴파일 오류: Binary operator '==' cannot be applied to two 'T' operands</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">valueToFind</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">index</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">nil</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>사실 <code class="language-plaintext highlighter-rouge">==</code> 연산자는 모든 타입에서 이용 가능하지 않습니다. 원시적인 타입의 값들을 제외한 대부분의 타입의 경우 그 복잡성으로 인해 Swift의 컴파일러에서 해당 타입의 인스턴스가 같은지 여부를 알 수 없습니다. 이 문제를 해결하기 위해 Swift에서는 <code class="language-plaintext highlighter-rouge">Equatable</code>이라는 프로토콜을 제공합니다. 이 프로토콜은 <code class="language-plaintext highlighter-rouge">==</code> 연산자와 <code class="language-plaintext highlighter-rouge">!=</code> 연산자가 성립하려면 어떤 조건이어야 하는지를 개발자가 구현할 것을 요구하고 있으며, 따라서 이 프로토콜을 준수하는 타입이라면 해당 타입은 동등 비교가 가능한 타입이라는 것을 의미하는 것입니다.</p>
 
 <p>위 <code class="language-plaintext highlighter-rouge">findIndex</code>함수의 로직에 따르면 <code class="language-plaintext highlighter-rouge">vlaue == valueToFind</code> 가 필요하므로 이 두 변수의 타입이 <code class="language-plaintext highlighter-rouge">Equatable</code> 프로토콜을 준수하도록 제약 조건을 지정한다면 컴파일러 오류는 발생하지 않습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>func findIndex&lt;T: Equatable&gt;(of valueToFind: T, in array:[T]) -&gt; Int? { ... }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="n">findIndex</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">of</span> <span class="nv">valueToFind</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="k">in</span> <span class="nv">array</span><span class="p">:[</span><span class="kt">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>제약 조건을 지정하므로서 컴파일 오류도 방지하고 함수 사용자에게 어떠한 프로토콜을 준수하는 타입이 필요한지 알려주는 기능도 있어 매우 편리하다고 할 수 있습니다.</p>
@@ -1626,8 +1626,8 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p>제네릭 아닌 struct인 <code class="language-plaintext highlighter-rouge">IntStack</code>을 <code class="language-plaintext highlighter-rouge">Container</code>를 준수하도록 구현합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1650,28 +1650,28 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 20
 21
 22
-</pre></td><td class="rouge-code"><pre>struct IntStack: Container {
-    // original IntStack implementation
-    var items: [Int] = []
-    mutating func push(_ item: Int) {
-        items.append(item)
-    }
-    mutating func pop() -&gt; Int {
-        return items.removeLast()
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">IntStack</span><span class="p">:</span> <span class="kt">Container</span> <span class="p">{</span>
+    <span class="c1">// original IntStack implementation</span>
+    <span class="k">var</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">push</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">items</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">pop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+    <span class="p">}</span>
 
-    // Container protocol을 준수하여 구현
-    // typealias Item = Int
-    mutating func append(_ item: Int) {
-        self.push(item)
-    }
-    var count: Int {
-        return items.count
-    }
-    subscript(i: Int) -&gt; Int {
-        return items[i]
-    }
-}
+    <span class="c1">// Container protocol을 준수하여 구현</span>
+    <span class="c1">// typealias Item = Int</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">append</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
+    <span class="nf">subscript</span><span class="p">(</span><span class="nv">i</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1693,8 +1693,8 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p>제네릭 타입에 연관 타입을 사용한 프로토콜을 구현하는 것도 가능합니다. 즉, 연관 타입 자리를 대체할 수 있는 타입에는 제네릭 타입의 placeholder도 포함됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1716,27 +1716,27 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>struct Stack&lt;Element&gt;: Container {
-    // original Stack&lt;Element&gt; implementation
-    var items: [Element] = []
-    mutating func push(_ item: Element) {
-        items.append(item)
-    }
-    mutating func pop() -&gt; Element {
-        return items.removeLast()
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">Stack</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Container</span> <span class="p">{</span>
+    <span class="c1">// original Stack&lt;Element&gt; implementation</span>
+    <span class="k">var</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">push</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Element</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">items</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">pop</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Element</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+    <span class="p">}</span>
 
-    // conformance to the Container protocol
-    mutating func append(_ item: Element) {
-        self.push(item)
-    }
-    var count: Int {
-        return items.count
-    }
-    subscript(i: Int) -&gt; Element {
-        return items[i]
-    }
-}
+    <span class="c1">// conformance to the Container protocol</span>
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">append</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Element</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
+    <span class="nf">subscript</span><span class="p">(</span><span class="nv">i</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Element</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>연관 타입 <code class="language-plaintext highlighter-rouge">Item</code>이 제네릭 타입의 placeholder인 <code class="language-plaintext highlighter-rouge">Element</code>로 대체되었습니다.</p>
@@ -1747,10 +1747,10 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p>사실 위의 <code class="language-plaintext highlighter-rouge">Container</code> 프로토콜은 <code class="language-plaintext highlighter-rouge">Array</code>에서 제공하는 기능을 포함하고 있습니다. 실제로 <code class="language-plaintext highlighter-rouge">append</code>, <code class="language-plaintext highlighter-rouge">count</code>, <code class="language-plaintext highlighter-rouge">subscript</code>등의 기능은 <code class="language-plaintext highlighter-rouge">Array</code>에 구현되어 있고 대부분 자주 사용하는 기능입니다. 따라서 <code class="language-plaintext highlighter-rouge">Array</code>의 <code class="language-plaintext highlighter-rouge">extension</code>에 <code class="language-plaintext highlighter-rouge">Container</code> 프르토콜을 준수하도록 추가할 수 있습니다. 다음과 같이 빈 확장을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>extension Array: Container {}
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">Array</span><span class="p">:</span> <span class="kt">Container</span> <span class="p">{}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">Array</code>의 기존 <code class="language-plaintext highlighter-rouge">append(_:)</code> 메서드와 아래 첨자는 위의 일반 <code class="language-plaintext highlighter-rouge">Stack</code> 유형과 마찬가지로 Swift가 Item에 사용할 적절한 타입을 유추할 수 있도록 합니다. 이 확장을 정의한 후에는 모든 <code class="language-plaintext highlighter-rouge">Array</code>를 <code class="language-plaintext highlighter-rouge">Container</code>로 사용할 수 있습니다.</p>
@@ -1786,7 +1786,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p> </p>
 
-<p>[the_ad id=”3513”]</p>
+<!-- \[the\_ad id="3513"\] -->
 
 <h4 id="연관-타입의-제약-조건에-프로토콜-사용"><span class="me-2"><strong>연관 타입의 제약 조건에 프로토콜 사용</strong></span><a href="#연관-타입의-제약-조건에-프로토콜-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
@@ -1912,7 +1912,7 @@ let suffix = stackOfInts.suffix(2)
 
 <h5 id="where-suffixitem--item의-의미"><span class="me-2"><strong>where Suffix.Item == Item의 의미</strong></span><a href="#where-suffixitem--item의-의미" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<p><a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-27-오전-9.20.03.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-27-오전-9.20.03.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-27-am-9.20.03.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-27-am-9.20.03.jpg" alt="" loading="lazy"></a></p>
 
 <p><code class="language-plaintext highlighter-rouge">where Suffix.Item == Item</code>의 의미는 다음과 같습니다. <code class="language-plaintext highlighter-rouge">SuffixableContainer</code>를 구현하는 <code class="language-plaintext highlighter-rouge">DoubleStack</code>이라는 구조체를 만들었습니다. <code class="language-plaintext highlighter-rouge">Container</code>에 정의되어 있는 <code class="language-plaintext highlighter-rouge">append(_:)</code> 메서드와 <code class="language-plaintext highlighter-rouge">subscript</code>에 모두 <code class="language-plaintext highlighter-rouge">Double</code> 타입을 지정하였습니다. 앞서 언급한 컴파일러의 추론 기능으로 인해 <code class="language-plaintext highlighter-rouge">DoubleStack</code>의 연관 타입 <code class="language-plaintext highlighter-rouge">Item</code>은 <code class="language-plaintext highlighter-rouge">Double</code>로 추론이 된 상태입니다.</p>
 
@@ -1935,8 +1935,8 @@ let suffix = stackOfInts.suffix(2)
 
 <p>검사할 두 개의 컨테이너는 동일한 유형의 컨테이너일 필요는 없지만 동일한 타입의 항목을 보유해야 합니다. 이 요구 사항은 형식 제약 조건과 일반 <code class="language-plaintext highlighter-rouge">where</code> 절의 조합을 통해 표현됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1956,25 +1956,25 @@ let suffix = stackOfInts.suffix(2)
 17
 18
 19
-</pre></td><td class="rouge-code"><pre>func allItemsMatch&lt;C1: Container, C2: Container&gt;
-    (_ someContainer: C1, _ anotherContainer: C2) -&gt; Bool
-    where C1.Item == C2.Item, C1.Item: Equatable {
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="n">allItemsMatch</span><span class="o">&lt;</span><span class="kt">C1</span><span class="p">:</span> <span class="kt">Container</span><span class="p">,</span> <span class="kt">C2</span><span class="p">:</span> <span class="kt">Container</span><span class="o">&gt;</span>
+    <span class="p">(</span><span class="n">_</span> <span class="nv">someContainer</span><span class="p">:</span> <span class="kt">C1</span><span class="p">,</span> <span class="n">_</span> <span class="nv">anotherContainer</span><span class="p">:</span> <span class="kt">C2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+    <span class="k">where</span> <span class="kt">C1</span><span class="o">.</span><span class="kt">Item</span> <span class="o">==</span> <span class="kt">C2</span><span class="o">.</span><span class="kt">Item</span><span class="p">,</span> <span class="kt">C1</span><span class="o">.</span><span class="kt">Item</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
 
-        // 두 컨테이너에 동일한 개수의 항목이 포함되어 있는지 확인합니다.
-        if someContainer.count != anotherContainer.count {
-            return false
-        }
+        <span class="c1">// 두 컨테이너에 동일한 개수의 항목이 포함되어 있는지 확인합니다.</span>
+        <span class="k">if</span> <span class="n">someContainer</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="n">anotherContainer</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span>
 
-        // 항목의 각 쌍을 확인하여 동일한지 확인합니다.
-        for i in 0..&lt;someContainer.count {
-            if someContainer[i] != anotherContainer[i] {
-                return false
-            }
-        }
+        <span class="c1">// 항목의 각 쌍을 확인하여 동일한지 확인합니다.</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">someContainer</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">someContainer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">anotherContainer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-        // 모든 항목이 일치하므로 true를 반환합니다.
-        return true
-}
+        <span class="c1">// 모든 항목이 일치하므로 true를 반환합니다.</span>
+        <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1988,8 +1988,8 @@ let suffix = stackOfInts.suffix(2)
 
 <p>함수의 사용 예는 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2007,23 +2007,23 @@ let suffix = stackOfInts.suffix(2)
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>extension Array: Container {}
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">Array</span><span class="p">:</span> <span class="kt">Container</span> <span class="p">{}</span>
 
-// Stack
-var stackOfStrings = Stack&lt;String&gt;()
-stackOfStrings.push("uno")
-stackOfStrings.push("dos")
-stackOfStrings.push("tres")
+<span class="c1">// Stack</span>
+<span class="k">var</span> <span class="nv">stackOfStrings</span> <span class="o">=</span> <span class="kt">Stack</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="n">stackOfStrings</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="s">"uno"</span><span class="p">)</span>
+<span class="n">stackOfStrings</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="s">"dos"</span><span class="p">)</span>
+<span class="n">stackOfStrings</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="s">"tres"</span><span class="p">)</span>
 
-// 배열(Array)
-var arrayOfStrings = ["uno", "dos", "tres"]
+<span class="c1">// 배열(Array)</span>
+<span class="k">var</span> <span class="nv">arrayOfStrings</span> <span class="o">=</span> <span class="p">[</span><span class="s">"uno"</span><span class="p">,</span> <span class="s">"dos"</span><span class="p">,</span> <span class="s">"tres"</span><span class="p">]</span>
 
-if allItemsMatch(stackOfStrings, arrayOfStrings) {
-    print("All items match.")
-} else {
-    print("Not all items match.")
-}
-// 결과: "All items match."
+<span class="k">if</span> <span class="nf">allItemsMatch</span><span class="p">(</span><span class="n">stackOfStrings</span><span class="p">,</span> <span class="n">arrayOfStrings</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"All items match."</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Not all items match."</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 결과: "All items match."</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">Stack</code>과 <code class="language-plaintext highlighter-rouge">Array</code>는 다른 타입이지만 둘 다 <code class="language-plaintext highlighter-rouge">Container</code> 프로토콜을 준수하며 둘 다 동일한 타입 <code class="language-plaintext highlighter-rouge">String</code>의 값을 포함합니다. 따라서 이 두 <code class="language-plaintext highlighter-rouge">Container</code>를 파라미터로 사용하여 <code class="language-plaintext highlighter-rouge">allItemsMatch(_:_:)</code> 함수를 호출할 수 있습니다.</p>
@@ -2034,8 +2034,8 @@ if allItemsMatch(stackOfStrings, arrayOfStrings) {
 
 <p><code class="language-plaintext highlighter-rouge">extension</code>에 <code class="language-plaintext highlighter-rouge">where</code> 절을 사용할 수 있습니다. 아래는 스택의 최상위 항목과 주어진 아이템이 일치하는지 검사하는 함수 <code class="language-plaintext highlighter-rouge">isTop(_:)</code>가 포함된 <code class="language-plaintext highlighter-rouge">extension</code>입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2047,16 +2047,16 @@ if allItemsMatch(stackOfStrings, arrayOfStrings) {
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>struct Stack&lt;Element&gt;: Container { ... }
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">Stack</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">Container</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
 
-extension Stack where Element: Equatable {
-    func isTop(_ item: Element) -&gt; Bool {
-        guard let topItem = items.last else {
-            return false
-        }
-        return topItem == item
-    }
-}
+<span class="kd">extension</span> <span class="kt">Stack</span> <span class="k">where</span> <span class="kt">Element</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">isTop</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Element</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">topItem</span> <span class="o">=</span> <span class="n">items</span><span class="o">.</span><span class="n">last</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">topItem</span> <span class="o">==</span> <span class="n">item</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2088,38 +2088,38 @@ extension Stack where Element: Equatable {
 
 <p>만약 <code class="language-plaintext highlighter-rouge">Equatable</code>이 아닌 값을 조회하려고 하면 컴파일 에러가 발생합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>struct NotEquatable { }
-var notEquatableStack = Stack&lt;NotEquatable&gt;()
-let notEquatableValue = NotEquatable()
-notEquatableStack.push(notEquatableValue)
-notEquatableStack.isTop(notEquatableValue)
-// Error: Referencing instance method 'isTop' on 'Stack' requires that 'NotEquatable' conform to 'Equatable'
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">NotEquatable</span> <span class="p">{</span> <span class="p">}</span>
+<span class="k">var</span> <span class="nv">notEquatableStack</span> <span class="o">=</span> <span class="kt">Stack</span><span class="o">&lt;</span><span class="kt">NotEquatable</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">notEquatableValue</span> <span class="o">=</span> <span class="kt">NotEquatable</span><span class="p">()</span>
+<span class="n">notEquatableStack</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="n">notEquatableValue</span><span class="p">)</span>
+<span class="n">notEquatableStack</span><span class="o">.</span><span class="nf">isTop</span><span class="p">(</span><span class="n">notEquatableValue</span><span class="p">)</span>
+<span class="c1">// Error: Referencing instance method 'isTop' on 'Stack' requires that 'NotEquatable' conform to 'Equatable'</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>프로토콜의 <code class="language-plaintext highlighter-rouge">extension</code>에도 제네릭 <code class="language-plaintext highlighter-rouge">where</code> 절을 사용할 수 있습니다. 아래 예제는 이전 예제의 <code class="language-plaintext highlighter-rouge">Container</code> 프로토콜을 확장하여 컨테이너의 첫째 값이 주어진 아이템과 일치하는지 여부를 검사하는 <code class="language-plaintext highlighter-rouge">startsWith(_:)</code> 메서드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>extension Container where Item: Equatable {
-    func startsWith(_ item: Item) -&gt; Bool {
-        return count &gt;= 1 &amp;&amp; self[0] == item
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">Container</span> <span class="k">where</span> <span class="kt">Item</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">startsWith</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Item</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="k">self</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>역시 <code class="language-plaintext highlighter-rouge">==</code> 가 필요하기 때문에 <code class="language-plaintext highlighter-rouge">Equatable</code> 타입이 요구되므로 <code class="language-plaintext highlighter-rouge">where</code>절로 해당 조건을 추가합니다.</p>
@@ -2148,8 +2148,8 @@ notEquatableStack.isTop(notEquatableValue)
 
 <p>아래 코드는 컨테이너의 아이템 타입이 <code class="language-plaintext highlighter-rouge">Double</code>인 경우 평균을 구하는 <code class="language-plaintext highlighter-rouge">average()</code> 메서드가 포함된 <code class="language-plaintext highlighter-rouge">extension</code>입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2162,21 +2162,21 @@ notEquatableStack.isTop(notEquatableValue)
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>extension Container where Item == Double {
-    func average() -&gt; Double {
-        var sum = 0.0
-        for index in 0..&lt;count {
-            sum += self[index]
-        }
-        return sum / Double(count)
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">Container</span> <span class="k">where</span> <span class="kt">Item</span> <span class="o">==</span> <span class="kt">Double</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">average</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Double</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">sum</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">count</span> <span class="p">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="k">self</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">sum</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-print([1260.0, 1200.0, 98.6, 37.0].average())
-// 결과: "648.9"
+<span class="nf">print</span><span class="p">([</span><span class="mf">1260.0</span><span class="p">,</span> <span class="mf">1200.0</span><span class="p">,</span> <span class="mf">98.6</span><span class="p">,</span> <span class="mf">37.0</span><span class="p">]</span><span class="o">.</span><span class="nf">average</span><span class="p">())</span>
+<span class="c1">// 결과: "648.9"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>[the_ad id=”1801”]</p>
+<!-- \[the\_ad id="1801"\] -->
 
 <p> </p>
 
@@ -2184,8 +2184,8 @@ print([1260.0, 1200.0, 98.6, 37.0].average())
 
 <p>앞서 살펴본 <code class="language-plaintext highlighter-rouge">avarage()</code> 메서드는 <code class="language-plaintext highlighter-rouge">Item</code>이 <code class="language-plaintext highlighter-rouge">Double</code>이어야 함을 요구했습니다. 또 하나의 메서드를 추가하고자 하는데, 이번에는 특정 컨테이너의 마지막 아이템이 주어진 아이템과 일치하는지를 검사하는 <code class="language-plaintext highlighter-rouge">endsWith(_:)</code> 메서드를 추가하고 싶습니다. <code class="language-plaintext highlighter-rouge">extenson</code>을 사용한 <code class="language-plaintext highlighter-rouge">where</code>절을 사용하면 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2203,22 +2203,22 @@ print([1260.0, 1200.0, 98.6, 37.0].average())
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>extension Container where Item == Int {
-    func average() -&gt; Double {
-        var sum = 0.0
-        for index in 0..&lt;count {
-            sum += Double(self[index])
-        }
-        return sum / Double(count)
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">Container</span> <span class="k">where</span> <span class="kt">Item</span> <span class="o">==</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">average</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Double</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">sum</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">count</span> <span class="p">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="kt">Double</span><span class="p">(</span><span class="k">self</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">sum</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-// 새로 추가
-extension Container where Item: Equatable {
-    func endsWith(_ item: Item) -&gt; Bool {
-        return count &gt;= 1 &amp;&amp; self[count-1] == item
-    }
-}
+<span class="c1">// 새로 추가</span>
+<span class="kd">extension</span> <span class="kt">Container</span> <span class="k">where</span> <span class="kt">Item</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">endsWith</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Item</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="k">self</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2226,8 +2226,8 @@ extension Container where Item: Equatable {
 
 <p>컨텍스트적 <code class="language-plaintext highlighter-rouge">where</code> 절은 아래와 같이 메서드에 <code class="language-plaintext highlighter-rouge">where</code>절을 붙이는 방식입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2249,27 +2249,27 @@ extension Container where Item: Equatable {
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>extension Container {
-    // 평균 구하기
-    func average() -&gt; Double where Item == Int {
-        var sum = 0.0
-        for index in 0..&lt;count {
-            sum += Double(self[index])
-        }
-        return sum / Double(count)
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">Container</span> <span class="p">{</span>
+    <span class="c1">// 평균 구하기</span>
+    <span class="kd">func</span> <span class="nf">average</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Double</span> <span class="k">where</span> <span class="kt">Item</span> <span class="o">==</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">sum</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">count</span> <span class="p">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="kt">Double</span><span class="p">(</span><span class="k">self</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">sum</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // 끝 요소 확인
-    func endsWith(_ item: Item) -&gt; Bool where Item: Equatable {
-        return count &gt;= 1 &amp;&amp; self[count-1] == item
-    }
-}
+    <span class="c1">// 끝 요소 확인</span>
+    <span class="kd">func</span> <span class="nf">endsWith</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Item</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="k">where</span> <span class="kt">Item</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="k">self</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-let numbersInt = [1260, 1200, 98, 37]
-print(numbers.average())
-// 결과: "648.75"
-print(numbers.endsWith(37))
-// 결과: "true"
+<span class="k">let</span> <span class="nv">numbersInt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1260</span><span class="p">,</span> <span class="mi">1200</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">37</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numbers</span><span class="o">.</span><span class="nf">average</span><span class="p">())</span>
+<span class="c1">// 결과: "648.75"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numbers</span><span class="o">.</span><span class="nf">endsWith</span><span class="p">(</span><span class="mi">37</span><span class="p">))</span>
+<span class="c1">// 결과: "true"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이렇게 하면 함수 호출 단위로 타입 추론을 하기 때문에 확장에 <code class="language-plaintext highlighter-rouge">where</code>절을 지정할 필요가 없습니다. 이제 번거롭게 <code class="language-plaintext highlighter-rouge">extension</code>을 매번 추가하지 않아도 됩니다..</p>
@@ -2318,8 +2318,8 @@ print(numbers.endsWith(37))
 
 <h4 id="subscript에-제네릭-타입-사용"><span class="me-2"><strong>Subscript에 제네릭 타입 사용</strong></span><a href="#subscript에-제네릭-타입-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2330,16 +2330,16 @@ print(numbers.endsWith(37))
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>extension Container {
-    subscript&lt;Indices: Sequence&gt;(indices: Indices) -&gt; [Item]
-        where Indices.Iterator.Element == Int {
-            var result: [Item] = []
-            for index in indices {
-                result.append(self[index])
-            }
-            return result
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">Container</span> <span class="p">{</span>
+    <span class="kd">subscript</span><span class="o">&lt;</span><span class="kt">Indices</span><span class="p">:</span> <span class="kt">Sequence</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">indices</span><span class="p">:</span> <span class="kt">Indices</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Item</span><span class="p">]</span>
+        <span class="k">where</span> <span class="kt">Indices</span><span class="o">.</span><span class="kt">Iterator</span><span class="o">.</span><span class="kt">Element</span> <span class="o">==</span> <span class="kt">Int</span> <span class="p">{</span>
+            <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">Item</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="n">indices</span> <span class="p">{</span>
+                <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="k">self</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">result</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

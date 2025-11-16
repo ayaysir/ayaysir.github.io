@@ -1629,10 +1629,10 @@
 
 <p><code class="language-plaintext highlighter-rouge">CanvasView.swift</code>를 열고 클래스 맨 위에 다음 상수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>private let forceSensitivity: CGFloat = 4.0
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="k">let</span> <span class="nv">forceSensitivity</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">4.0</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1778,10 +1778,10 @@ for touch in touches {
 
 <p>직접 확인하려면 <code class="language-plaintext highlighter-rouge">guard</code> 문 바로 뒤에 있는 <code class="language-plaintext highlighter-rouge">touchMoved(_:with:)</code> 상단에 다음을 추가하세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>print(touch.azimuthUnitVector(in: self))
+</pre></td><td class="rouge-code"><pre><span class="nf">print</span><span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="nf">azimuthUnitVector</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="k">self</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1826,10 +1826,10 @@ for touch in touches {
 
 <p><code class="language-plaintext highlighter-rouge">CanvasView</code> 상단에 이 속성을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>private var pencilTexture = UIColor(patternImage: UIImage(named: "PencilTexture")!)
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="k">var</span> <span class="nv">pencilTexture</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">patternImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"PencilTexture"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1868,10 +1868,10 @@ pencilTexture.setStroke()
 
 <p>펜슬이 음영을 표현할 만큼 충분히 기울어져 있는지 확인하려면 <code class="language-plaintext highlighter-rouge">CanvasView</code> 상단에 다음 상수를 추가하세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>private let tiltThreshold = π/6  // 30º
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="k">let</span> <span class="nv">tiltThreshold</span> <span class="o">=</span> <span class="n">π</span><span class="sr">/6  //</span> <span class="mi">30</span><span class="n">º</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 값을 다르게 잡고 있기 때문에 작동하지 않는 경우 해당 값을 적절하게 변경할 수 있습니다.</p>
@@ -2036,10 +2036,10 @@ if touch.altitudeAngle &lt; tiltThreshold {
 
 <p><code class="language-plaintext highlighter-rouge">CanvasView</code> 클래스의 상단 멤버 변수 부분에 다음을 추가하세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>private let minLineWidth: CGFloat = 5
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="k">let</span> <span class="nv">minLineWidth</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

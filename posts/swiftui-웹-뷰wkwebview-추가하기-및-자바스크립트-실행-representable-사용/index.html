@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="[rcblock id=”5440”]" />
-<meta property="og:description" content="[rcblock id=”5440”]" />
+<meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
+<meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/swiftui-%EC%9B%B9-%EB%B7%B0wkwebview-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0-%EB%B0%8F-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89-representable-%EC%82%AC%EC%9A%A9/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/swiftui-%EC%9B%B9-%EB%B7%B0wkwebview-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0-%EB%B0%8F-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89-representable-%EC%82%AC%EC%9A%A9/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-07T00:00:00+09:00","datePublished":"2023-04-07T00:00:00+09:00","description":"[rcblock id=”5440”]","headline":"SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/swiftui-%EC%9B%B9-%EB%B7%B0wkwebview-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0-%EB%B0%8F-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89-representable-%EC%82%AC%EC%9A%A9/"},"url":"https://ayaysir.github.io/posts/swiftui-%EC%9B%B9-%EB%B7%B0wkwebview-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0-%EB%B0%8F-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89-representable-%EC%82%AC%EC%9A%A9/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-07T00:00:00+09:00","datePublished":"2023-04-07T00:00:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/swiftui-%EC%9B%B9-%EB%B7%B0wkwebview-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0-%EB%B0%8F-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89-representable-%EC%82%AC%EC%9A%A9/"},"url":"https://ayaysir.github.io/posts/swiftui-%EC%9B%B9-%EB%B7%B0wkwebview-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0-%EB%B0%8F-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89-representable-%EC%82%AC%EC%9A%A9/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -926,7 +926,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1649 words"
+  title="1647 words"
 >
   <em>9 min</em> read</span>
 
@@ -960,7 +960,7 @@
   
 
   <div class="content">
-    <p>[rcblock id=”5440”]</p>
+    <!-- \[rcblock id="5440"\] -->
 
 <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -983,8 +983,8 @@
 
 <h5 id="1-uiviewrepresentable을-준수conform하고-웹-뷰를-감싸는-webview를-추가합니다"><span class="me-2"><strong>1) UIViewRepresentable을 준수(conform)하고 웹 뷰를 감싸는 WebView를 추가합니다.</strong></span><a href="#1-uiviewrepresentable을-준수conform하고-웹-뷰를-감싸는-webview를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1013,34 +1013,34 @@
 26
 27
 28
-</pre></td><td class="rouge-code"><pre>struct WebView: UIViewRepresentable {
-    typealias UIViewType = WKWebView
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">WebView</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span> <span class="p">{</span>
+    <span class="kd">typealias</span> <span class="kt">UIViewType</span> <span class="o">=</span> <span class="kt">WKWebView</span>
     
-    var url: URL?
+    <span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?</span>
     
-    func makeUIView(context: Context) -&gt; UIViewType {
-        let preferences = WKPreferences()
-        preferences.javaScriptCanOpenWindowsAutomatically = false  // JavaScript가 사용자 상호 작용없이 창을 열 수 있는지 여부
+    <span class="kd">func</span> <span class="nf">makeUIView</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewType</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">preferences</span> <span class="o">=</span> <span class="kt">WKPreferences</span><span class="p">()</span>
+        <span class="n">preferences</span><span class="o">.</span><span class="n">javaScriptCanOpenWindowsAutomatically</span> <span class="o">=</span> <span class="kc">false</span>  <span class="c1">// JavaScript가 사용자 상호 작용없이 창을 열 수 있는지 여부</span>
         
-        let configuration = WKWebViewConfiguration()
-        configuration.preferences = preferences
+        <span class="k">let</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="kt">WKWebViewConfiguration</span><span class="p">()</span>
+        <span class="n">configuration</span><span class="o">.</span><span class="n">preferences</span> <span class="o">=</span> <span class="n">preferences</span>
         
-        let webView = WKWebView(frame: CGRect.zero, configuration: configuration)
-        webView.allowsBackForwardNavigationGestures = true    // 가로로 스와이프 동작이 페이지 탐색을 앞뒤로 트리거하는지 여부
-        webView.scrollView.isScrollEnabled = true    // 웹보기와 관련된 스크롤보기에서 스크롤 가능 여부
+        <span class="k">let</span> <span class="nv">webView</span> <span class="o">=</span> <span class="kt">WKWebView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="o">.</span><span class="n">zero</span><span class="p">,</span> <span class="nv">configuration</span><span class="p">:</span> <span class="n">configuration</span><span class="p">)</span>
+        <span class="n">webView</span><span class="o">.</span><span class="n">allowsBackForwardNavigationGestures</span> <span class="o">=</span> <span class="kc">true</span>    <span class="c1">// 가로로 스와이프 동작이 페이지 탐색을 앞뒤로 트리거하는지 여부</span>
+        <span class="n">webView</span><span class="o">.</span><span class="n">scrollView</span><span class="o">.</span><span class="n">isScrollEnabled</span> <span class="o">=</span> <span class="kc">true</span>    <span class="c1">// 웹보기와 관련된 스크롤보기에서 스크롤 가능 여부</span>
         
-        if let url = url {
-            webView.load(URLRequest(url: url))    // 지정된 URL 요청 개체에서 참조하는 웹 콘텐츠를 로드하고 탐색
-        }
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="n">url</span> <span class="p">{</span>
+            <span class="n">webView</span><span class="o">.</span><span class="nf">load</span><span class="p">(</span><span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">))</span>    <span class="c1">// 지정된 URL 요청 개체에서 참조하는 웹 콘텐츠를 로드하고 탐색</span>
+        <span class="p">}</span>
         
-        return webView
-    }
+        <span class="k">return</span> <span class="n">webView</span>
+    <span class="p">}</span>
     
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        // ... 잠시 후 작성 ... //
-    }
+    <span class="kd">func</span> <span class="nf">updateUIView</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiView</span><span class="p">:</span> <span class="kt">UIViewType</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ... 잠시 후 작성 ... //</span>
+    <span class="p">}</span>
 
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1133,18 +1133,18 @@ class WebViewData: ObservableObject {
 
 <h5 id="2-webview-내에-webviewdata에-대한-상태-변수-추가"><span class="me-2"><strong>2) WebView 내에 WebViewData에 대한 상태 변수 추가</strong></span><a href="#2-webview-내에-webviewdata에-대한-상태-변수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>struct WebView: UIViewRepresentable {
-    // ... //
-    @StateObject var data: WebViewData
-    // ... //
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">WebView</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span> <span class="p">{</span>
+    <span class="c1">// ... //</span>
+    <span class="kd">@StateObject</span> <span class="k">var</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">WebViewData</span>
+    <span class="c1">// ... //</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1240,8 +1240,8 @@ class Coordinator: NSObject, WKNavigationDelegate {
 
 <h5 id="4-webview-내에-updateuiview를-작성합니다"><span class="me-2"><strong>4) WebView 내에 updateUIView를 작성합니다.</strong></span><a href="#4-webview-내에-updateuiview를-작성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1251,15 +1251,15 @@ class Coordinator: NSObject, WKNavigationDelegate {
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>func updateUIView(_ uiView: UIViewType, context: Context) {
-    guard data.shouldUpdateView else {
-        data.shouldUpdateView = false
-        return
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">updateUIView</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiView</span><span class="p">:</span> <span class="kt">UIViewType</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="n">data</span><span class="o">.</span><span class="n">shouldUpdateView</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">shouldUpdateView</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    context.coordinator.tieFunctionCaller(data: data)
-    context.coordinator.webView = uiView
-}
+    <span class="n">context</span><span class="o">.</span><span class="n">coordinator</span><span class="o">.</span><span class="nf">tieFunctionCaller</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">coordinator</span><span class="o">.</span><span class="n">webView</span> <span class="o">=</span> <span class="n">uiView</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1279,18 +1279,18 @@ class Coordinator: NSObject, WKNavigationDelegate {
 
 <h5 id="5-swiftui의-뷰contentview-등-내부에-webviewdata를-추가합니다"><span class="me-2"><strong>5) SwiftUI의 뷰(ContentView 등) 내부에 WebViewData를 추가합니다.</strong></span><a href="#5-swiftui의-뷰contentview-등-내부에-webviewdata를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>struct ContentView: View {
-    // ... //
-    @StateObject var webViewData = WebViewData()
-    // ... //
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="c1">// ... //</span>
+    <span class="kd">@StateObject</span> <span class="k">var</span> <span class="nv">webViewData</span> <span class="o">=</span> <span class="kt">WebViewData</span><span class="p">()</span>
+    <span class="c1">// ... //</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1315,8 +1315,8 @@ class Coordinator: NSObject, WKNavigationDelegate {
 
 <p><code class="language-plaintext highlighter-rouge">webViewData</code>를 이용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1326,15 +1326,15 @@ class Coordinator: NSObject, WKNavigationDelegate {
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>Button {
-    webViewData.functionCaller.send(
-        """
-        document.querySelector("button[id^='playbut']").click()
-        """
-    )
-} label: {
-    Image(systemName: "play.fill")
-}
+</pre></td><td class="rouge-code"><pre><span class="kt">Button</span> <span class="p">{</span>
+    <span class="n">webViewData</span><span class="o">.</span><span class="n">functionCaller</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span>
+        <span class="s">"""
+        document.querySelector("</span><span class="n">button</span><span class="p">[</span><span class="n">id</span><span class="o">^=</span><span class="err">'</span><span class="n">playbut</span><span class="err">'</span><span class="p">]</span><span class="s">").click()
+        """</span>
+    <span class="p">)</span>
+<span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+    <span class="kt">Image</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"play.fill"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">evaluateJavaScript</code>가 실행되기 까지의 과정을 간략하게 설명하면 다음과 같습니다.</p>

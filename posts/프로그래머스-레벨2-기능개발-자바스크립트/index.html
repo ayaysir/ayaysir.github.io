@@ -1012,8 +1012,8 @@
 
 <h5 id="swift"><span class="me-2"><strong>Swift</strong></span><a href="#swift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1059,51 +1059,51 @@
 43
 44
 45
-</pre></td><td class="rouge-code"><pre>import Foundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
 
-func solution(_ progresses:[Int], _ speeds:[Int]) -&gt; [Int] {
-    if progresses.count &lt;= 1 {
-        return [progresses.count]
-    }
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">progresses</span><span class="p">:[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">_</span> <span class="nv">speeds</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">progresses</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">progresses</span><span class="o">.</span><span class="n">count</span><span class="p">]</span>
+    <span class="p">}</span>
     
-    var remainDays: [Int] = []
+    <span class="k">var</span> <span class="nv">remainDays</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
     
-    for i in 0..&lt;progresses.count {
-        let remainDay = Int(ceil(Double(100 - progresses[i]) / Double(speeds[i])))
-        remainDays.append(remainDay)
-    }
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">progresses</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">remainDay</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="nf">ceil</span><span class="p">(</span><span class="kt">Double</span><span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="n">progresses</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span><span class="n">speeds</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+        <span class="n">remainDays</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">remainDay</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    var result: [Int] = []
-    var distNum = 1
-    var baseValue = 0
+    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">var</span> <span class="nv">distNum</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">var</span> <span class="nv">baseValue</span> <span class="o">=</span> <span class="mi">0</span>
     
-    for i in 0..&lt;remainDays.count {
-        if i == 0 {
-            baseValue = remainDays[i]
-            continue
-        }
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">remainDays</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">baseValue</span> <span class="o">=</span> <span class="n">remainDays</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">continue</span>
+        <span class="p">}</span>
         
-        if baseValue &gt;= remainDays[i] {
-            distNum += 1
+        <span class="k">if</span> <span class="n">baseValue</span> <span class="o">&gt;=</span> <span class="n">remainDays</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">distNum</span> <span class="o">+=</span> <span class="mi">1</span>
             
-            if i &gt;= remainDays.count - 1 {
-                result.append(distNum)
-                // 더 이상 진행되지 않음
-            }
-        } else {
-            result.append(distNum)
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">remainDays</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+                <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">distNum</span><span class="p">)</span>
+                <span class="c1">// 더 이상 진행되지 않음</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">distNum</span><span class="p">)</span>
             
-            if i &lt; remainDays.count - 1 {
-                distNum = 1
-                baseValue = remainDays[i]
-            } else {
-                result.append(1)
-            }
-        }
-    }
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">remainDays</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+                <span class="n">distNum</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">baseValue</span> <span class="o">=</span> <span class="n">remainDays</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    return result
-}
+    <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

@@ -740,8 +740,8 @@
 
 <p>먼저 위 프로퍼티 리스트의 타입을 참고하여 두 개의 <code class="language-plaintext highlighter-rouge">struct</code> 를 만듭니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -749,21 +749,21 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>struct Root: Decodable {
-    let animals: [Animal]
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">Root</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">animals</span><span class="p">:</span> <span class="p">[</span><span class="kt">Animal</span><span class="p">]</span>
+<span class="p">}</span>
 
-struct Animal: Decodable {
-    let name, picture: String
-}
+<span class="kd">struct</span> <span class="kt">Animal</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">picture</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>그리고 프로젝트 루트 폴더에 있는 plist 파일을 읽어와 <code class="language-plaintext highlighter-rouge">[Animal]</code> 타입으로 리턴하는 함수를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -774,16 +774,16 @@ struct Animal: Decodable {
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>func parsePlistExample() throws -&gt; [Animal] {
-    let url = Bundle.main.url(forResource: "testprops", withExtension: "plist")!
-    do {
-        let data = try Data(contentsOf: url)
-        let result = try PropertyListDecoder().decode(Root.self, from: data)
-        return result.animals as [Animal]
-    } catch {
-        throw error
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">parsePlistExample</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Animal</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"testprops"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"plist"</span><span class="p">)</span><span class="o">!</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">PropertyListDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Root</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">animals</span> <span class="k">as</span> <span class="p">[</span><span class="kt">Animal</span><span class="p">]</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">error</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -808,71 +815,6 @@
     <!-- combine -->
     
   
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
 
   
 
@@ -891,16 +833,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -1044,8 +976,40 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1062,7 +1026,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): 백그라운드 작업 (Background Tasks)</h1>
     
@@ -1136,7 +1100,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1347 words"
+  title="1318 words"
 >
   <em>7 min</em> read</span>
 
@@ -1146,30 +1110,53 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): 백그라운드 작업 (Background Tasks)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): 백그라운드 작업 (Background Tasks)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>BackgroundTasks는 앱이 백그라운드에서 작업을 할 수 있게 하는 프레임워크입니다. (iOS 13부터 이용 가능)</p>
 
-<p>스토리보드 기준으로 설명합니다.</p>
+<p>UIKit/스토리보드 기준으로 설명합니다.</p>
 
 <p> </p>
 
-<h4 id="분류"><span class="me-2"><strong>분류</strong></span><a href="#분류" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="분류"><span class="me-2"><strong>분류</strong></span><a href="#분류" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>작업의 복잡도, 에너지 양(배터리 소모정도)에 따라 두 가지로 분류합니다.</p>
 
-<ol>
-  <li><strong>App Refresh Task</strong> 상대적으로 가벼운 작업(단순 API 호출 또는 저장 등)에 사용합니다. 실행 빈도가 높고, 사용자가 기기를 사용하는 중에도 작업이 실행됩니다.</li>
-  <li><strong>Processing Task</strong> 상대적으로 무거운 작업(DB 등)에 사용합니다. 옵션으로 배터리 충전이 요구되는지, 네트워크 연결이 요구되는지를 지정할 수 있습니다. 보통 충전중이고 기기가 idle인 상태에서 작업이 실행됩니다.</li>
-</ol>
+<h3 id="1-app-refresh-task"><span class="me-2">1. <strong>App Refresh Task</strong></span><a href="#1-app-refresh-task" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>상대적으로 가벼운 작업(단순 API 호출 또는 저장 등)에 사용합니다. 실행 빈도가 높고, 사용자가 기기를 사용하는 중에도 작업이 실행됩니다.</p>
+
+<h3 id="2-processing-task"><span class="me-2">2. <strong>Processing Task</strong></span><a href="#2-processing-task" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>상대적으로 무거운 작업(DB 등)에 사용합니다. 옵션으로 배터리 충전이 요구되는지, 네트워크 연결이 요구되는지를 지정할 수 있습니다. 보통 충전중이고 기기가 idle인 상태에서 작업이 실행됩니다.</p>
 
 <p> </p>
 
-<h4 id="구현-방법"><span class="me-2"><strong>구현 방법</strong></span><a href="#구현-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="구현-방법"><span class="me-2"><strong>구현 방법</strong></span><a href="#구현-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-백그라운드-작업에-대한-권한-추가"><span class="me-2"><strong>1: 백그라운드 작업에 대한 권한 추가</strong></span><a href="#1-백그라운드-작업에-대한-권한-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-백그라운드-작업에-대한-권한-추가"><span class="me-2"><strong>1: 백그라운드 작업에 대한 권한 추가</strong></span><a href="#1-백그라운드-작업에-대한-권한-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>프로젝트 설정 메뉴에서 <code class="language-plaintext highlighter-rouge">Signing and Capabilities</code> 탭 &gt; <code class="language-plaintext highlighter-rouge">+ Capability</code> 로 <code class="language-plaintext highlighter-rouge">Background Mode</code>를 추가한 뒤</p>
 
@@ -1180,13 +1167,13 @@
 
 <p>를 체크합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-오전-1.59.24.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-오전-1.59.24.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-am-1.59.24.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-am-1.59.24.jpg" alt="" loading="lazy"></a></p>
 
-<p><a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-오전-1.56.53.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-오전-1.56.53.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-am-1.56.53.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-02-25-am-1.56.53.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="2-infoplist에-식별자identifier-추가"><span class="me-2"><strong>2: Info.plist에 식별자(identifier) 추가</strong></span><a href="#2-infoplist에-식별자identifier-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-infoplist에-식별자identifier-추가"><span class="me-2"><strong>2: Info.plist에 식별자(identifier) 추가</strong></span><a href="#2-infoplist에-식별자identifier-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">Info.plist</code> 파일을 연 뒤, <code class="language-plaintext highlighter-rouge">BGTaskSchedulerPermittedIdentifiers</code>(Permitted background task scheduler Identifiers) 키를 추가합니다. 그 배열(<code class="language-plaintext highlighter-rouge">Array</code>) 하위 요소로 <code class="language-plaintext highlighter-rouge">String</code> 타입의 백그라운드 식별자를 추가합니다.</p>
 
@@ -1196,11 +1183,11 @@
   <li><strong>예)</strong> <em>com.example.ExampleApp.refresh_badge(process)</em></li>
 </ul>
 
-<p><a href="/assets/img/wp-content/uploads/2023/03/mosaic-스크린샷-2023-02-25-오전-1.58.03.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/mosaic-스크린샷-2023-02-25-오전-1.58.03.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2023/03/mosaic-screenshot-2023-02-25-am-1.58.03.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/mosaic-screenshot-2023-02-25-am-1.58.03.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="3-appdelegate의-didfinishlaunchingwithoptions-안에-작업task-등록"><span class="me-2"><strong>3: AppDelegate의 …didFinishLaunchingWithOptions… 안에 작업(task) 등록</strong></span><a href="#3-appdelegate의-didfinishlaunchingwithoptions-안에-작업task-등록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-appdelegate의-didfinishlaunchingwithoptions-안에-작업task-등록"><span class="me-2"><strong>3: AppDelegate의 …didFinishLaunchingWithOptions… 안에 작업(task) 등록</strong></span><a href="#3-appdelegate의-didfinishlaunchingwithoptions-안에-작업task-등록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">BGTaskScheduler.shared.register(...)</code>를 이용해 백그라운드 작업들을 등록합니다.</p>
 
@@ -1271,22 +1258,10 @@
 
 <p> </p>
 
-<hr />
+<h3 id="4-handleapprefresh-handlerprocessingtask-함수-구현"><span class="me-2"><strong>4: handleAppRefresh, handlerProcessingTask 함수 구현</strong></span><a href="#4-handleapprefresh-handlerprocessingtask-함수-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<blockquote>
-  <p><strong>🚧 이 글은 작성중입니다.</strong></p>
-
-  <p><a href="http://yoonbumtae.com/2001/internet/con14.gif" class="popup img-link shimmer"><img src="http://yoonbumtae.com/2001/internet/con14.gif" alt="" loading="lazy"></a></p>
-
-  <p>빠른 시일 내에 포스트 작성을 완료하겠습니다.</p>
-</blockquote>
-
-<p> </p>
-
-<h5 id="4-handleapprefresh-handlerprocessingtask-함수-구현"><span class="me-2"><strong>4: handleAppRefresh, handlerProcessingTask 함수 구현</strong></span><a href="#4-handleapprefresh-handlerprocessingtask-함수-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1299,22 +1274,22 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>func handleAppRefresh(task: BGAppRefreshTask) {
-    // 다음 동작 수행, 반복시 필요
-    scheduleAppRefresh()
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">handleAppRefresh</span><span class="p">(</span><span class="nv">task</span><span class="p">:</span> <span class="kt">BGAppRefreshTask</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 다음 동작 수행, 반복시 필요</span>
+    <span class="nf">scheduleAppRefresh</span><span class="p">()</span>
     
-    task.expirationHandler = {
-        task.setTaskCompleted(success: false)
-    }
+    <span class="n">task</span><span class="o">.</span><span class="n">expirationHandler</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">task</span><span class="o">.</span><span class="nf">setTaskCompleted</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // 가벼운 백그라운드 작업 작성
+    <span class="c1">// 가벼운 백그라운드 작업 작성</span>
     
-    task.setTaskCompleted(success: false)
-}
+    <span class="n">task</span><span class="o">.</span><span class="nf">setTaskCompleted</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1323,14 +1298,14 @@
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>func handleProcessingTask(task: BGProcessingTask) {
-    task.expirationHandler = {
-        task.setTaskCompleted(success: false)
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">handleProcessingTask</span><span class="p">(</span><span class="nv">task</span><span class="p">:</span> <span class="kt">BGProcessingTask</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">expirationHandler</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">task</span><span class="o">.</span><span class="nf">setTaskCompleted</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // 무거운 백그라운드 작업 작성
-    task.setTaskCompleted(success: true)
-}
+    <span class="c1">// 무거운 백그라운드 작업 작성</span>
+    <span class="n">task</span><span class="o">.</span><span class="nf">setTaskCompleted</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1339,12 +1314,12 @@
 
 <p> </p>
 
-<h5 id="5-스케줄러-함수-scheduleapprefresh-scheduleprocessingtaskifneeded-작성"><span class="me-2"><strong>5: 스케줄러 함수 scheduleAppRefresh, scheduleProcessingTaskIfNeeded  작성</strong></span><a href="#5-스케줄러-함수-scheduleapprefresh-scheduleprocessingtaskifneeded-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-스케줄러-함수-scheduleapprefresh-scheduleprocessingtaskifneeded-작성"><span class="me-2"><strong>5: 스케줄러 함수 scheduleAppRefresh, scheduleProcessingTaskIfNeeded  작성</strong></span><a href="#5-스케줄러-함수-scheduleapprefresh-scheduleprocessingtaskifneeded-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">AppDelegate</code> 클래스 내부에 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1355,20 +1330,20 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>func scheduleAppRefresh() {
-    let request = BGAppRefreshTaskRequest(identifier: "com.example.ExampleApp.refresh_badge")
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">scheduleAppRefresh</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">BGAppRefreshTaskRequest</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="s">"com.example.ExampleApp.refresh_badge"</span><span class="p">)</span>
     
-    do {
-        try BGTaskScheduler.shared.submit(request)
-        // Set a breakpoint in the code that executes after a successful call to submit(_:).
-    } catch {
-        print("\(Date()): Could not schedule app refresh: \(error)")
-    }
-}
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="kt">BGTaskScheduler</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">submit</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="c1">// Set a breakpoint in the code that executes after a successful call to submit(_:).</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="kt">Date</span><span class="p">()</span><span class="se">)</span><span class="s">: Could not schedule app refresh: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1381,18 +1356,18 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>func scheduleProcessingTaskIfNeeded() {
-    let request = BGProcessingTaskRequest(identifier: "com.example.ExampleApp.refresh_process")
-    request.requiresExternalPower = false
-    request.requiresNetworkConnectivity = false
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">scheduleProcessingTaskIfNeeded</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">BGProcessingTaskRequest</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="s">"com.example.ExampleApp.refresh_process"</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">requiresExternalPower</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">requiresNetworkConnectivity</span> <span class="o">=</span> <span class="kc">false</span>
     
-    do {
-        try BGTaskScheduler.shared.submit(request)
-        // Set a breakpoint in the code that executes after a successful call to submit(_:).
-    } catch {
-        print("\(Date()): Could not schedule processing task: \(error)")
-    }
-}
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="kt">BGTaskScheduler</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">submit</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="c1">// Set a breakpoint in the code that executes after a successful call to submit(_:).</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="kt">Date</span><span class="p">()</span><span class="se">)</span><span class="s">: Could not schedule processing task: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1401,10 +1376,10 @@
 
 <p> </p>
 
-<h5 id="6-scenedelegate-클래스의-scenedidenterbackground-메서드-내에-스케줄러-호출-부분-작성"><span class="me-2"><strong>6: SceneDelegate 클래스의 sceneDidEnterBackground(…) 메서드 내에 스케줄러 호출 부분 작성</strong></span><a href="#6-scenedelegate-클래스의-scenedidenterbackground-메서드-내에-스케줄러-호출-부분-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="6-scenedelegate-클래스의-scenedidenterbackground-메서드-내에-스케줄러-호출-부분-작성"><span class="me-2"><strong>6: SceneDelegate 클래스의 sceneDidEnterBackground(…) 메서드 내에 스케줄러 호출 부분 작성</strong></span><a href="#6-scenedelegate-클래스의-scenedidenterbackground-메서드-내에-스케줄러-호출-부분-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1414,15 +1389,15 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>func sceneDidEnterBackground(_ scene: UIScene) {
-    // Called as the scene transitions from the foreground to the background.
-    // Use this method to save data, release shared resources, and store enough scene-specific state information
-    // to restore the scene back to its current state.
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">sceneDidEnterBackground</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Called as the scene transitions from the foreground to the background.</span>
+    <span class="c1">// Use this method to save data, release shared resources, and store enough scene-specific state information</span>
+    <span class="c1">// to restore the scene back to its current state.</span>
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    appDelegate.scheduleAppRefresh()
-    appDelegate.scheduleProcessingTaskIfNeeded()
-}
+    <span class="k">let</span> <span class="nv">appDelegate</span> <span class="o">=</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">delegate</span> <span class="k">as!</span> <span class="kt">AppDelegate</span>
+    <span class="n">appDelegate</span><span class="o">.</span><span class="nf">scheduleAppRefresh</span><span class="p">()</span>
+    <span class="n">appDelegate</span><span class="o">.</span><span class="nf">scheduleProcessingTaskIfNeeded</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1431,7 +1406,7 @@
 
 <p> </p>
 
-<h4 id="강제로-백그라운드-작업-트리거"><span class="me-2"><strong>강제로 백그라운드 작업 트리거</strong></span><a href="#강제로-백그라운드-작업-트리거" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="강제로-백그라운드-작업-트리거"><span class="me-2"><strong>강제로 백그라운드 작업 트리거</strong></span><a href="#강제로-백그라운드-작업-트리거" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">scheduleAppRefresh</code>, <code class="language-plaintext highlighter-rouge">scheduleProcessingTaskIfNeeded</code> 함수에서
@@ -1458,11 +1433,11 @@
 
 <p>아래 스크린샷은 백그라운드 작업이 실행할 때마다 텍스트 파일에 로그를 기록하도록 한 경우에서 해당 로그의 기록입니다. (App Background는 앱 리프레시 작업, Processing Task는 프로세싱 작업)</p>
 
-<p><a href="/assets/img/wp-content/uploads/2023/03/IMG_9D2611C16F79-1-중간.jpeg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/IMG_9D2611C16F79-1-중간.jpeg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2023/03/IMG_9D2611C16F79-1-middle.jpeg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/IMG_9D2611C16F79-1-middle.jpeg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><a href="https://lemon-dev.tistory.com/entry/iOS-BackgroundTask-Framework-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC">[iOS] BackgroundTasks Framework 간단 정리</a></li>
@@ -2433,6 +2408,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

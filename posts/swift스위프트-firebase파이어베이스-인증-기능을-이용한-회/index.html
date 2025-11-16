@@ -1272,8 +1272,8 @@
 @IBOutlet weak var imgProfilePicture: UIImageView!
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1282,14 +1282,14 @@
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>@IBAction func btnActCancel(_ sender: UIButton) {
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">btnActCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
 
-@IBAction func btnActReset(_ sender: UIButton) {
-}
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActReset</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
 
-@IBAction func btnActSubmit(_ sender: UIButton) {
-}
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActSubmit</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1326,8 +1326,8 @@ var selectedInteresting: String!
 
 <p><code class="language-plaintext highlighter-rouge">viewDidLoad()</code> 에 딜리게이트, 데이터소스를 연결하는 코드 및 초기화 코드를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1348,26 +1348,26 @@ var selectedInteresting: String!
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>override func viewDidLoad() {
-    super.viewDidLoad()
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
     
-    // 피커뷰 딜리게이트, 데이터소스 연결
-    pkvInteresting.delegate = self
-    pkvInteresting.dataSource = self
+    <span class="c1">// 피커뷰 딜리게이트, 데이터소스 연결</span>
+    <span class="n">pkvInteresting</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="n">pkvInteresting</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span>
     
-    // 텍스트 필드에 대한 딜리게이트, 데이터소스 연결 - 유효성 검사에서 필요함
-    txtUserEmail.delegate = self
-    txtPassword.delegate = self
-    txtPasswordConfirm.delegate = self
+    <span class="c1">// 텍스트 필드에 대한 딜리게이트, 데이터소스 연결 - 유효성 검사에서 필요함</span>
+    <span class="n">txtUserEmail</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="n">txtPassword</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="n">txtPasswordConfirm</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
     
-    ...
+    <span class="o">...</span>
 
-    // 멤버 변수 초기화
-    selectedInteresting = interestingList[0]
+    <span class="c1">// 멤버 변수 초기화</span>
+    <span class="n">selectedInteresting</span> <span class="o">=</span> <span class="n">interestingList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    // 패스워드 일치 여부를 표시하는 레이블을 빈 텍스트로
-    lblPasswordConfirmed.text = ""
-}
+    <span class="c1">// 패스워드 일치 여부를 표시하는 레이블을 빈 텍스트로</span>
+    <span class="n">lblPasswordConfirmed</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1376,8 +1376,8 @@ var selectedInteresting: String!
 
 <p>취소 버튼과 리셋 버튼에 대한 이벤트를 작성합니다. 취소 버튼을 누르면 회원 가입 창이 사라지고, 리셋 버튼을 누르면 모든 필드가 처음 상태로 돌아갑니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1390,18 +1390,18 @@ var selectedInteresting: String!
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>@IBAction func btnActCancel(_ sender: UIButton) {
-    self.dismiss(animated: true, completion: nil)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">btnActCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
 
-@IBAction func btnActReset(_ sender: UIButton) {
-    txtUserEmail.text = ""
-    txtPassword.text = ""
-    txtPasswordConfirm.text = ""
-    lblPasswordConfirmed.text = ""
-    pkvInteresting.selectedRow(inComponent: 0)
-    // -- 사진 초기화 --
-}
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActReset</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">txtUserEmail</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="n">txtPassword</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="n">txtPasswordConfirm</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="n">lblPasswordConfirmed</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="n">pkvInteresting</span><span class="o">.</span><span class="nf">selectedRow</span><span class="p">(</span><span class="nv">inComponent</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="c1">// -- 사진 초기화 --</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1417,8 +1417,8 @@ var selectedInteresting: String!
 
 <p>관심분야 Picker View에 목록을 추가하는 <code class="language-plaintext highlighter-rouge">extension</code>을 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1440,35 +1440,35 @@ var selectedInteresting: String!
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>extension SignUpViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    // 컴포넌트(열) 개수
-    func numberOfComponents(in pickerView: UIPickerView) -&gt; Int {
-        return 1
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">SignUpViewController</span><span class="p">:</span> <span class="kt">UIPickerViewDelegate</span><span class="p">,</span> <span class="kt">UIPickerViewDataSource</span> <span class="p">{</span>
+    <span class="c1">// 컴포넌트(열) 개수</span>
+    <span class="kd">func</span> <span class="nf">numberOfComponents</span><span class="p">(</span><span class="k">in</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="p">}</span>
     
-    // 리스트(행) 개수
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -&gt; Int {
-        return interestingList.count
-    }
+    <span class="c1">// 리스트(행) 개수</span>
+    <span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">numberOfRowsInComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">interestingList</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
     
-    // 피커뷰 목록 표시
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&gt; String? {
-        return interestingList[row]
-    }
+    <span class="c1">// 피커뷰 목록 표시</span>
+    <span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">titleForRow</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">forComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">interestingList</span><span class="p">[</span><span class="n">row</span><span class="p">]</span>
+    <span class="p">}</span>
     
-    // 특정 피커뷰 선택시 selectedInteresting에 할당
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedInteresting = interestingList[row]
-    }
-}
+    <span class="c1">// 특정 피커뷰 선택시 selectedInteresting에 할당</span>
+    <span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">didSelectRow</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">inComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">selectedInteresting</span> <span class="o">=</span> <span class="n">interestingList</span><span class="p">[</span><span class="n">row</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>비밀번호 일치 여부를 검사하려면 <code class="language-plaintext highlighter-rouge">UITextFieldDelegate</code>가 필요합니다. 아래 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1515,51 +1515,51 @@ var selectedInteresting: String!
 44
 45
 46
-</pre></td><td class="rouge-code"><pre>extension SignUpViewController: UITextFieldDelegate {
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">SignUpViewController</span><span class="p">:</span> <span class="kt">UITextFieldDelegate</span> <span class="p">{</span>
     
-    func setLabelPasswordConfirm(_ password: String, _ passwordConfirm: String)  {
+    <span class="kd">func</span> <span class="nf">setLabelPasswordConfirm</span><span class="p">(</span><span class="n">_</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">passwordConfirm</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>  <span class="p">{</span>
         
-        guard passwordConfirm != "" else {
-            lblPasswordConfirmed.text = ""
-            return
-        }
+        <span class="k">guard</span> <span class="n">passwordConfirm</span> <span class="o">!=</span> <span class="s">""</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">lblPasswordConfirmed</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        if password == passwordConfirm {
-            lblPasswordConfirmed.textColor = .green
-            lblPasswordConfirmed.text = "패스워드가 일치합니다."
-        } else {
-            lblPasswordConfirmed.textColor = .red
-            lblPasswordConfirmed.text = "패스워드가 일치하지 않습니다."
-        }
-    }
+        <span class="k">if</span> <span class="n">password</span> <span class="o">==</span> <span class="n">passwordConfirm</span> <span class="p">{</span>
+            <span class="n">lblPasswordConfirmed</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">green</span>
+            <span class="n">lblPasswordConfirmed</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"패스워드가 일치합니다."</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">lblPasswordConfirmed</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">red</span>
+            <span class="n">lblPasswordConfirmed</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"패스워드가 일치하지 않습니다."</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    func textFieldShouldReturn(_ textField: UITextField) -&gt; Bool {
+    <span class="kd">func</span> <span class="nf">textFieldShouldReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">textField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
         
-        switch textField {
-        case txtUserEmail:
-            txtPassword.becomeFirstResponder()
-        case txtPassword:
-            txtPasswordConfirm.becomeFirstResponder()
-        default:
-            textField.resignFirstResponder()
-        }
+        <span class="k">switch</span> <span class="n">textField</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nv">txtUserEmail</span><span class="p">:</span>
+            <span class="n">txtPassword</span><span class="o">.</span><span class="nf">becomeFirstResponder</span><span class="p">()</span>
+        <span class="k">case</span> <span class="nv">txtPassword</span><span class="p">:</span>
+            <span class="n">txtPasswordConfirm</span><span class="o">.</span><span class="nf">becomeFirstResponder</span><span class="p">()</span>
+        <span class="k">default</span><span class="p">:</span>
+            <span class="n">textField</span><span class="o">.</span><span class="nf">resignFirstResponder</span><span class="p">()</span>
+        <span class="p">}</span>
         
-        return false
-    }
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -&gt; Bool {
-        if textField == txtPasswordConfirm {
-            guard let password = txtPassword.text,
-                  let passwordConfirmBefore = txtPasswordConfirm.text else {
-                return true
-            }
-            let passwordConfirm = string.isEmpty ? passwordConfirmBefore[0..&lt;(passwordConfirmBefore.count - 1)] : passwordConfirmBefore + string
-            setLabelPasswordConfirm(password, passwordConfirm)
+    <span class="kd">func</span> <span class="nf">textField</span><span class="p">(</span><span class="n">_</span> <span class="nv">textField</span><span class="p">:</span> <span class="kt">UITextField</span><span class="p">,</span> <span class="n">shouldChangeCharactersIn</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSRange</span><span class="p">,</span> <span class="n">replacementString</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">textField</span> <span class="o">==</span> <span class="n">txtPasswordConfirm</span> <span class="p">{</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">password</span> <span class="o">=</span> <span class="n">txtPassword</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+                  <span class="k">let</span> <span class="nv">passwordConfirmBefore</span> <span class="o">=</span> <span class="n">txtPasswordConfirm</span><span class="o">.</span><span class="n">text</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">true</span>
+            <span class="p">}</span>
+            <span class="k">let</span> <span class="nv">passwordConfirm</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">?</span> <span class="n">passwordConfirmBefore</span><span class="p">[</span><span class="mi">0</span><span class="o">..&lt;</span><span class="p">(</span><span class="n">passwordConfirmBefore</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span> <span class="p">:</span> <span class="n">passwordConfirmBefore</span> <span class="o">+</span> <span class="n">string</span>
+            <span class="nf">setLabelPasswordConfirm</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">passwordConfirm</span><span class="p">)</span>
             
-        }
-        return true
-    }
-}
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1612,8 +1612,8 @@ var selectedInteresting: String!
 
 <p>회원가입 정보를 Firebase로 전송하는 <code class="language-plaintext highlighter-rouge">@IBAction</code> 함수를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1630,22 +1630,22 @@ var selectedInteresting: String!
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>@IBAction func btnActSubmit(_ sender: UIButton) {
-    guard let userEmail = txtUserEmail.text,
-          let userPassword = txtPassword.text,
-          let userPasswordConfirm = txtPasswordConfirm.text else {
-        return
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">btnActSubmit</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">userEmail</span> <span class="o">=</span> <span class="n">txtUserEmail</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">userPassword</span> <span class="o">=</span> <span class="n">txtPassword</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">userPasswordConfirm</span> <span class="o">=</span> <span class="n">txtPasswordConfirm</span><span class="o">.</span><span class="n">text</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    guard userPassword != ""
-            &amp;&amp; userPasswordConfirm != ""
-            &amp;&amp; userPassword == userPasswordConfirm else {
-        simpleAlert(self, message: "패스워드가 일치하지 않습니다.")
-        return
-    }
+    <span class="k">guard</span> <span class="n">userPassword</span> <span class="o">!=</span> <span class="s">""</span>
+            <span class="o">&amp;&amp;</span> <span class="n">userPasswordConfirm</span> <span class="o">!=</span> <span class="s">""</span>
+            <span class="o">&amp;&amp;</span> <span class="n">userPassword</span> <span class="o">==</span> <span class="n">userPasswordConfirm</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nf">simpleAlert</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"패스워드가 일치하지 않습니다."</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    .......
-}
+    <span class="o">.......</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

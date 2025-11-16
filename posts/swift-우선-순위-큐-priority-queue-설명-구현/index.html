@@ -1056,8 +1056,8 @@
 
 <p>최소 힙(min heap)을 이용한 우선순위 큐입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1154,71 +1154,71 @@
 94
 95
 96
-</pre></td><td class="rouge-code"><pre>struct PriorityQueue&lt;T: Comparable&gt; {
-    private var elements: [T] = []
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">PriorityQueue</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">Comparable</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">elements</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
-    var isEmpty: Bool {
-        return elements.isEmpty
-    }
+    <span class="k">var</span> <span class="nv">isEmpty</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">elements</span><span class="o">.</span><span class="n">isEmpty</span>
+    <span class="p">}</span>
 
-    var count: Int {
-        return elements.count
-    }
+    <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">elements</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
 
-    mutating func enqueue(_ element: T) {
-        elements.append(element)
-        heapifyUp()
-    }
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">enqueue</span><span class="p">(</span><span class="n">_</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">elements</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="nf">heapifyUp</span><span class="p">()</span>
+    <span class="p">}</span>
 
-    mutating func dequeue() -&gt; T? {
-        guard !isEmpty else { return nil }
+    <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">dequeue</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="o">!</span><span class="n">isEmpty</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">nil</span> <span class="p">}</span>
 
-        elements.swapAt(0, count - 1)
-        let dequeuedElement = elements.removeLast()
-        heapifyDown()
-        return dequeuedElement
-    }
+        <span class="n">elements</span><span class="o">.</span><span class="nf">swapAt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">dequeuedElement</span> <span class="o">=</span> <span class="n">elements</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+        <span class="nf">heapifyDown</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">dequeuedElement</span>
+    <span class="p">}</span>
 
-    private mutating func heapifyUp() {
-        var currentIndex = count - 1
-        var parentIndex = self.parentIndex(of: currentIndex)
+    <span class="kd">private</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">heapifyUp</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">currentIndex</span> <span class="o">=</span> <span class="n">count</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">var</span> <span class="nv">parentIndex</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="nf">parentIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">currentIndex</span><span class="p">)</span>
 
-        while currentIndex &gt; 0 &amp;&amp; elements[currentIndex] &lt; elements[parentIndex] {
-            // 부모 인덱스의 값보다 자식 인덱스의 값이 작으면 스왑 (최소 힙을 유지하기 위해)
-            elements.swapAt(currentIndex, parentIndex)
-            currentIndex = parentIndex
-            parentIndex = self.parentIndex(of: currentIndex)
-        }
-    }
+        <span class="k">while</span> <span class="n">currentIndex</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">elements</span><span class="p">[</span><span class="n">currentIndex</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">[</span><span class="n">parentIndex</span><span class="p">]</span> <span class="p">{</span>
+            <span class="c1">// 부모 인덱스의 값보다 자식 인덱스의 값이 작으면 스왑 (최소 힙을 유지하기 위해)</span>
+            <span class="n">elements</span><span class="o">.</span><span class="nf">swapAt</span><span class="p">(</span><span class="n">currentIndex</span><span class="p">,</span> <span class="n">parentIndex</span><span class="p">)</span>
+            <span class="n">currentIndex</span> <span class="o">=</span> <span class="n">parentIndex</span>
+            <span class="n">parentIndex</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="nf">parentIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">currentIndex</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    private mutating func heapifyDown() {
-        var currentIndex = 0
+    <span class="kd">private</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">heapifyDown</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">currentIndex</span> <span class="o">=</span> <span class="mi">0</span>
 
-        while true {
-            let leftChildIndex = leftChildIndex(of: currentIndex)
-            let rightChildIndex = rightChildIndex(of: currentIndex)
+        <span class="k">while</span> <span class="kc">true</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">leftChildIndex</span> <span class="o">=</span> <span class="nf">leftChildIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">currentIndex</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">rightChildIndex</span> <span class="o">=</span> <span class="nf">rightChildIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">currentIndex</span><span class="p">)</span>
 
-            var minIndex = currentIndex
+            <span class="k">var</span> <span class="nv">minIndex</span> <span class="o">=</span> <span class="n">currentIndex</span>
 
-            // minIndex의 값보다 왼쪽 자식 인덱스의 값이 작다면 =&gt; minIndex를 갱신
-            if leftChildIndex &lt; count &amp;&amp; elements[leftChildIndex] &lt; elements[minIndex] {
-                minIndex = leftChildIndex
-            }
+            <span class="c1">// minIndex의 값보다 왼쪽 자식 인덱스의 값이 작다면 =&gt; minIndex를 갱신</span>
+            <span class="k">if</span> <span class="n">leftChildIndex</span> <span class="o">&lt;</span> <span class="n">count</span> <span class="o">&amp;&amp;</span> <span class="n">elements</span><span class="p">[</span><span class="n">leftChildIndex</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">[</span><span class="n">minIndex</span><span class="p">]</span> <span class="p">{</span>
+                <span class="n">minIndex</span> <span class="o">=</span> <span class="n">leftChildIndex</span>
+            <span class="p">}</span>
 
-            if rightChildIndex &lt; count &amp;&amp; elements[rightChildIndex] &lt; elements[minIndex] {
-                minIndex = rightChildIndex
-            }
+            <span class="k">if</span> <span class="n">rightChildIndex</span> <span class="o">&lt;</span> <span class="n">count</span> <span class="o">&amp;&amp;</span> <span class="n">elements</span><span class="p">[</span><span class="n">rightChildIndex</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="p">[</span><span class="n">minIndex</span><span class="p">]</span> <span class="p">{</span>
+                <span class="n">minIndex</span> <span class="o">=</span> <span class="n">rightChildIndex</span>
+            <span class="p">}</span>
 
-            // 어떠한 조건도 만족하지 않는다면 (minIndex가 변경되지 않은 상태라면) 중지
-            if minIndex == currentIndex {
-                break
-            }
+            <span class="c1">// 어떠한 조건도 만족하지 않는다면 (minIndex가 변경되지 않은 상태라면) 중지</span>
+            <span class="k">if</span> <span class="n">minIndex</span> <span class="o">==</span> <span class="n">currentIndex</span> <span class="p">{</span>
+                <span class="k">break</span>
+            <span class="p">}</span>
 
-            // 작은 값과 현재 값을 스왑
-            elements.swapAt(currentIndex, minIndex)
-            currentIndex = minIndex
+            <span class="c1">// 작은 값과 현재 값을 스왑</span>
+            <span class="n">elements</span><span class="o">.</span><span class="nf">swapAt</span><span class="p">(</span><span class="n">currentIndex</span><span class="p">,</span> <span class="n">minIndex</span><span class="p">)</span>
+            <span class="n">currentIndex</span> <span class="o">=</span> <span class="n">minIndex</span>
             
-            /*
+            <span class="cm">/*
              예)
                       10 (currentIndex)
                      /  \
@@ -1230,26 +1230,26 @@
                     /  \
                    15   10
                       
-             */
-        }
-    }
+             */</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    private func parentIndex(of index: Int) -&gt; Int {
-        guard index &gt; 0 else {
-            return 0
-        }
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">parentIndex</span><span class="p">(</span><span class="n">of</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="p">}</span>
         
-        return (index - 1) / 2
-    }
+        <span class="nf">return</span> <span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="p">}</span>
 
-    private func leftChildIndex(of index: Int) -&gt; Int {
-        return 2 * index + 1
-    }
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">leftChildIndex</span><span class="p">(</span><span class="n">of</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">}</span>
 
-    private func rightChildIndex(of index: Int) -&gt; Int {
-        return 2 * index + 2
-    }
-}
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">rightChildIndex</span><span class="p">(</span><span class="n">of</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

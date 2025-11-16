@@ -851,8 +851,8 @@
 
 <p>재생 파일 변경 방법</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -869,22 +869,22 @@
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>func changeAndPlayMIDIFile(_ fileNameWithoutExt: String) {
-    DispatchQueue.global().async { [weak self] in
-        guard let self, let soundfontURL else {
-            return
-        }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">changeAndPlayMIDIFile</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileNameWithoutExt</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span><span class="p">,</span> <span class="k">let</span> <span class="nv">soundfontURL</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        if let midiFile = Bundle.main.url(forResource: fileNameWithoutExt, withExtension: "mid") {
-            midiPlayer = try? .init(contentsOf: midiFile, soundBankURL: soundfontURL)
-            self.fileNameWithoutExt = fileNameWithoutExt
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">midiFile</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="n">fileNameWithoutExt</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"mid"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">midiPlayer</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">midiFile</span><span class="p">,</span> <span class="nv">soundBankURL</span><span class="p">:</span> <span class="n">soundfontURL</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">fileNameWithoutExt</span> <span class="o">=</span> <span class="n">fileNameWithoutExt</span>
             
-            midiPlayer?.play {
-                // 재생 완료되면 할 작업 핸들러
-            }
-        }
-    }
-}
+            <span class="n">midiPlayer</span><span class="p">?</span><span class="o">.</span><span class="n">play</span> <span class="p">{</span>
+                <span class="c1">// 재생 완료되면 할 작업 핸들러</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>

@@ -1246,8 +1246,8 @@
 
 <p>루프의 모든 항목을 사용자 정의 위치에 배치해 보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1266,23 +1266,23 @@
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-    let radius = bounds.width / 3.0
-    let angle: CGFloat = Angle.degrees(360.0 / CGFloat(subviews.count)).radians
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">placeSubviews</span><span class="p">(</span><span class="k">in</span> <span class="nv">bounds</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">,</span> <span class="nv">proposal</span><span class="p">:</span> <span class="kt">ProposedViewSize</span><span class="p">,</span> <span class="nv">subviews</span><span class="p">:</span> <span class="kt">Subviews</span><span class="p">,</span> <span class="nv">cache</span><span class="p">:</span> <span class="nf">inout</span> <span class="p">())</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">radius</span> <span class="o">=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mf">3.0</span>
+    <span class="k">let</span> <span class="nv">angle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="kt">Angle</span><span class="o">.</span><span class="nf">degrees</span><span class="p">(</span><span class="mf">360.0</span> <span class="o">/</span> <span class="kt">CGFloat</span><span class="p">(</span><span class="n">subviews</span><span class="o">.</span><span class="n">count</span><span class="p">))</span><span class="o">.</span><span class="n">radians</span>
     
-    subviews.enumerated().forEach { index, subview in
-        // Position
-        var point = CGPoint(x: 0, y: -radius)
-            .applying(.init(rotationAngle: angle * CGFloat(index)))
+    <span class="n">subviews</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span><span class="o">.</span><span class="n">forEach</span> <span class="p">{</span> <span class="n">index</span><span class="p">,</span> <span class="n">subview</span> <span class="k">in</span>
+        <span class="c1">// Position</span>
+        <span class="k">var</span> <span class="nv">point</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="o">-</span><span class="n">radius</span><span class="p">)</span>
+            <span class="o">.</span><span class="nf">applying</span><span class="p">(</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">rotationAngle</span><span class="p">:</span> <span class="n">angle</span> <span class="o">*</span> <span class="kt">CGFloat</span><span class="p">(</span><span class="n">index</span><span class="p">)))</span>
         
-        // Center
-        point.x += bounds.midX
-        point.y += bounds.midY
+        <span class="c1">// Center</span>
+        <span class="n">point</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">midX</span>
+        <span class="n">point</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">bounds</span><span class="o">.</span><span class="n">midY</span>
         
-        // Place subviews
-        subview.place(at: point, anchor: .center, proposal: .unspecified)
-    }
-}
+        <span class="c1">// Place subviews</span>
+        <span class="n">subview</span><span class="o">.</span><span class="nf">place</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">point</span><span class="p">,</span> <span class="nv">anchor</span><span class="p">:</span> <span class="o">.</span><span class="n">center</span><span class="p">,</span> <span class="nv">proposal</span><span class="p">:</span> <span class="o">.</span><span class="n">unspecified</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

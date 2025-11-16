@@ -2260,7 +2260,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="8864 words"
+  title="8854 words"
 >
   <em>49 min</em> read</span>
 
@@ -2343,8 +2343,8 @@
 
 <h5 id="bullseyegameswift"><span class="me-2"><strong>BullsEyeGame.swift</strong></span><a href="#bullseyegameswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2408,68 +2408,68 @@
 61
 62
 63
-</pre></td><td class="rouge-code"><pre>import Foundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
 
-class BullsEyeGame {
-  var round = 0
-  let startValue = 50
-  var targetValue = 50
-  var scoreRound = 0
-  var scoreTotal = 0
+<span class="kd">class</span> <span class="kt">BullsEyeGame</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">round</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">let</span> <span class="nv">startValue</span> <span class="o">=</span> <span class="mi">50</span>
+  <span class="k">var</span> <span class="nv">targetValue</span> <span class="o">=</span> <span class="mi">50</span>
+  <span class="k">var</span> <span class="nv">scoreRound</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">var</span> <span class="nv">scoreTotal</span> <span class="o">=</span> <span class="mi">0</span>
 
-  var urlSession: URLSessionProtocol = URLSession.shared
+  <span class="k">var</span> <span class="nv">urlSession</span><span class="p">:</span> <span class="kt">URLSessionProtocol</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span>
 
-  init() {
-    startNewGame()
-  }
+  <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">startNewGame</span><span class="p">()</span>
+  <span class="p">}</span>
 
-  func startNewGame() {
-    round = 1
-    scoreTotal = 0
-  }
+  <span class="kd">func</span> <span class="nf">startNewGame</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">round</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">scoreTotal</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="p">}</span>
 
-  func startNewRound(completion: @escaping () -&gt; Void) {
-    round += 1
-    scoreRound = 0
-    getRandomNumber { newTarget in
-      self.targetValue = newTarget
-      DispatchQueue.main.async {
-        completion()
-      }
-    }
-  }
+  <span class="kd">func</span> <span class="nf">startNewRound</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">round</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">scoreRound</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">getRandomNumber</span> <span class="p">{</span> <span class="n">newTarget</span> <span class="k">in</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">targetValue</span> <span class="o">=</span> <span class="n">newTarget</span>
+      <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="nf">completion</span><span class="p">()</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-  @discardableResult
-  func check(guess: Int) -&gt; Int {
-    let difference = guess - targetValue
-    // let difference = abs(targetValue - guess)
-    scoreRound = 100 - difference
-    scoreTotal += scoreRound
-    return difference
-  }
+  <span class="kd">@discardableResult</span>
+  <span class="kd">func</span> <span class="nf">check</span><span class="p">(</span><span class="nv">guess</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">difference</span> <span class="o">=</span> <span class="n">guess</span> <span class="o">-</span> <span class="n">targetValue</span>
+    <span class="c1">// let difference = abs(targetValue - guess)</span>
+    <span class="n">scoreRound</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">difference</span>
+    <span class="n">scoreTotal</span> <span class="o">+=</span> <span class="n">scoreRound</span>
+    <span class="k">return</span> <span class="n">difference</span>
+  <span class="p">}</span>
 
-  func getRandomNumber(completion: @escaping (Int) -&gt; Void) {
-    guard let url = URL(string: "http://www.randomnumberapi.com/api/v1.0/random?min=0&amp;max=100&amp;count=1") else {
-      return
-    }
-    let task = urlSession.dataTask(with: url) { data, _, error in
-      do {
-        guard
-          let data = data,
-          error == nil,
-          let newTarget = try JSONDecoder().decode([Int].self, from: data).first
-        else {
-          print("에러가 발생했습니다.", error?.localizedDescription ?? "")
-          return
-        }
-        completion(newTarget)
-      } catch {
-        print("Decoding of random numbers failed.")
-      }
-    }
-    task.resume()
-  }
-}
+  <span class="kd">func</span> <span class="nf">getRandomNumber</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"http://www.randomnumberapi.com/api/v1.0/random?min=0&amp;max=100&amp;count=1"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="n">urlSession</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+      <span class="k">do</span> <span class="p">{</span>
+        <span class="k">guard</span>
+          <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span>
+          <span class="n">error</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">newTarget</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">([</span><span class="kt">Int</span><span class="p">]</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
+        <span class="k">else</span> <span class="p">{</span>
+          <span class="nf">print</span><span class="p">(</span><span class="s">"에러가 발생했습니다."</span><span class="p">,</span> <span class="n">error</span><span class="p">?</span><span class="o">.</span><span class="n">localizedDescription</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+          <span class="k">return</span>
+        <span class="p">}</span>
+        <span class="nf">completion</span><span class="p">(</span><span class="n">newTarget</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Decoding of random numbers failed."</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2512,7 +2512,7 @@ class BullsEyeGame {
 
 <p> </p>
 
-<p>[the_ad id=”1801”]</p>
+<!-- \[the\_ad id="1801"\] -->
 
 <p> </p>
 
@@ -2634,8 +2634,8 @@ try super.tearDownWithError()
 
 <p><code class="language-plaintext highlighter-rouge">BullsEyeTests</code> 끝에 다음 코드를 추가하여 <code class="language-plaintext highlighter-rouge">guess</code>에 대한 예상 점수를 제대로 계산하는지 테스트합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2646,16 +2646,16 @@ try super.tearDownWithError()
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>func testScoreIsComputedWhenGuessIsHigherThanTarget() throws {
-  // given
-  let guess = sut.targetValue + 5
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">testScoreIsComputedWhenGuessIsHigherThanTarget</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+  <span class="c1">// given</span>
+  <span class="k">let</span> <span class="nv">guess</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="n">targetValue</span> <span class="o">+</span> <span class="mi">5</span>
   
-  // when
-  sut.check(guess: guess)
+  <span class="c1">// when</span>
+  <span class="n">sut</span><span class="o">.</span><span class="nf">check</span><span class="p">(</span><span class="nv">guess</span><span class="p">:</span> <span class="n">guess</span><span class="p">)</span>
   
-  // then
-  XCTAssertEqual(sut.scoreRound, 95, "guess로 계산된 점수가 잘못되었습니다.")
-}
+  <span class="c1">// then</span>
+  <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">sut</span><span class="o">.</span><span class="n">scoreRound</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="s">"guess로 계산된 점수가 잘못되었습니다."</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>테스트 메서드의 이름은 항상 <code class="language-plaintext highlighter-rouge">test</code>로 시작하고 그 뒤에 테스트 대상에 대한 설명을 적습니다.</p>
@@ -2686,8 +2686,8 @@ try super.tearDownWithError()
 
 <p>다음 테스트를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2699,16 +2699,16 @@ try super.tearDownWithError()
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>func testScoreIsComputedWhenGuessIsLowerThanTarget() {
-  // given
-  let guess = sut.targetValue - 5
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">testScoreIsComputedWhenGuessIsLowerThanTarget</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// given</span>
+  <span class="k">let</span> <span class="nv">guess</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="n">targetValue</span> <span class="o">-</span> <span class="mi">5</span>
 
-  // when
-  sut.check(guess: guess)
+  <span class="c1">// when</span>
+  <span class="n">sut</span><span class="o">.</span><span class="nf">check</span><span class="p">(</span><span class="nv">guess</span><span class="p">:</span> <span class="n">guess</span><span class="p">)</span>
 
-  // then
-  XCTAssertEqual(sut.scoreRound, 95, "guess로 계산된 점수가 잘못되었습니다.")
-}
+  <span class="c1">// then</span>
+  <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">sut</span><span class="o">.</span><span class="n">scoreRound</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="s">"guess로 계산된 점수가 잘못되었습니다."</span><span class="p">)</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2742,7 +2742,7 @@ try super.tearDownWithError()
 
 <p> </p>
 
-<p>[the_ad id=”1801”]</p>
+<!-- \[the\_ad id="1801"\] -->
 
 <p> </p>
 
@@ -2886,8 +2886,8 @@ func testValidApiCallGetsHTTPStatusCode200() throws {
 
 <p>그런 다음 클래스에 다음 테스트를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2909,27 +2909,27 @@ func testValidApiCallGetsHTTPStatusCode200() throws {
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>func testApiCallCompletes() throws {
-  // given
-  let urlString = "http://www.notexistrandomnumberapi.con/test"
-  let url = URL(string: urlString)!
-  let promise = expectation(description: "Completion handler invoked")
-  var statusCode: Int?
-  var responseError: Error?
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">testApiCallCompletes</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+  <span class="c1">// given</span>
+  <span class="k">let</span> <span class="nv">urlString</span> <span class="o">=</span> <span class="s">"http://www.notexistrandomnumberapi.con/test"</span>
+  <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">urlString</span><span class="p">)</span><span class="o">!</span>
+  <span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"Completion handler invoked"</span><span class="p">)</span>
+  <span class="k">var</span> <span class="nv">statusCode</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>
+  <span class="k">var</span> <span class="nv">responseError</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?</span>
 
-  // when
-  let dataTask = sut.dataTask(with: url) { _, response, error in
-    statusCode = (response as? HTTPURLResponse)?.statusCode
-    responseError = error
-    promise.fulfill()
-  }
-  dataTask.resume()
-  wait(for: [promise], timeout: 5)
+  <span class="c1">// when</span>
+  <span class="k">let</span> <span class="nv">dataTask</span> <span class="o">=</span> <span class="n">sut</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="n">statusCode</span> <span class="o">=</span> <span class="p">(</span><span class="n">response</span> <span class="k">as?</span> <span class="kt">HTTPURLResponse</span><span class="p">)?</span><span class="o">.</span><span class="n">statusCode</span>
+    <span class="n">responseError</span> <span class="o">=</span> <span class="n">error</span>
+    <span class="n">promise</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+  <span class="p">}</span>
+  <span class="n">dataTask</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+  <span class="nf">wait</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="n">promise</span><span class="p">],</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
 
-  // then
-  XCTAssertNil(responseError)
-  XCTAssertEqual(statusCode, 200)
-}
+  <span class="c1">// then</span>
+  <span class="kt">XCTAssertNil</span><span class="p">(</span><span class="n">responseError</span><span class="p">)</span>
+  <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="n">statusCode</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>주요 차이점은 <code class="language-plaintext highlighter-rouge">complete handler</code>를 입력하기만 하면 <code class="language-plaintext highlighter-rouge">expectation</code>이 충족되고 이 작업이 수행되는 데 약 1초밖에 걸리지 않는다는 것입니다. 요청이 실패하면 Assertion이 실패합니다.</p>
@@ -2974,7 +2974,7 @@ func testValidApiCallGetsHTTPStatusCode200() throws {
 
 <p> </p>
 
-<p>[the_ad id=”1801”]</p>
+<!-- \[the\_ad id="1801"\] -->
 
 <p> </p>
 
@@ -3044,8 +3044,8 @@ override func tearDownWithError() throws {
 
 <p>가짜를 설정하려면 <code class="language-plaintext highlighter-rouge">BullsEyeFakeTests.swift</code>로 이동하여 새 테스트를 추가하세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3074,34 +3074,34 @@ override func tearDownWithError() throws {
 26
 27
 28
-</pre></td><td class="rouge-code"><pre>func testStartNewRoundUsesRandomValueFromApiRequest() {
-  // given
-  // 1
-  let stubbedData = "[1]".data(using: .utf8)
-  let urlString = 
-    "http://www.randomnumberapi.com/api/v1.0/random?min=0&amp;max=100&amp;count=1"
-  let url = URL(string: urlString)!
-  let stubbedResponse = HTTPURLResponse(
-    url: url, 
-    statusCode: 200, 
-    httpVersion: nil, 
-    headerFields: nil)
-  let urlSessionStub = URLSessionStub(
-    data: stubbedData,
-    response: stubbedResponse, 
-    error: nil)
-  sut.urlSession = urlSessionStub
-  let promise = expectation(description: "Value Received")
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">testStartNewRoundUsesRandomValueFromApiRequest</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// given</span>
+  <span class="c1">// 1</span>
+  <span class="k">let</span> <span class="nv">stubbedData</span> <span class="o">=</span> <span class="s">"[1]"</span><span class="o">.</span><span class="nf">data</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="o">.</span><span class="n">utf8</span><span class="p">)</span>
+  <span class="k">let</span> <span class="nv">urlString</span> <span class="o">=</span> 
+    <span class="s">"http://www.randomnumberapi.com/api/v1.0/random?min=0&amp;max=100&amp;count=1"</span>
+  <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">urlString</span><span class="p">)</span><span class="o">!</span>
+  <span class="k">let</span> <span class="nv">stubbedResponse</span> <span class="o">=</span> <span class="kt">HTTPURLResponse</span><span class="p">(</span>
+    <span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> 
+    <span class="nv">statusCode</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> 
+    <span class="nv">httpVersion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> 
+    <span class="nv">headerFields</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+  <span class="k">let</span> <span class="nv">urlSessionStub</span> <span class="o">=</span> <span class="kt">URLSessionStub</span><span class="p">(</span>
+    <span class="nv">data</span><span class="p">:</span> <span class="n">stubbedData</span><span class="p">,</span>
+    <span class="nv">response</span><span class="p">:</span> <span class="n">stubbedResponse</span><span class="p">,</span> 
+    <span class="nv">error</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+  <span class="n">sut</span><span class="o">.</span><span class="n">urlSession</span> <span class="o">=</span> <span class="n">urlSessionStub</span>
+  <span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="nf">expectation</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="s">"Value Received"</span><span class="p">)</span>
 
-  // when
-  sut.startNewRound {
-    // then
-    // 2
-    XCTAssertEqual(self.sut.targetValue, 1)
-    promise.fulfill()
-  }
-  wait(for: [promise], timeout: 5)
-}
+  <span class="c1">// when</span>
+  <span class="n">sut</span><span class="o">.</span><span class="n">startNewRound</span> <span class="p">{</span>
+    <span class="c1">// then</span>
+    <span class="c1">// 2</span>
+    <span class="kt">XCTAssertEqual</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">sut</span><span class="o">.</span><span class="n">targetValue</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">promise</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">()</span>
+  <span class="p">}</span>
+  <span class="nf">wait</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="n">promise</span><span class="p">],</span> <span class="nv">timeout</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 테스트는 두 가지 작업을 수행합니다.</p>
@@ -3210,8 +3210,8 @@ override func tearDownWithError() throws {
 
 <p>이제 템플릿의 두 가지 기본 테스트 방법을 다음으로 바꿉니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3233,27 +3233,27 @@ override func tearDownWithError() throws {
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>func testGameStyleCanBeChanged() {
-  // given
-  let segmentedControl = UISegmentedControl()
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">testGameStyleCanBeChanged</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// given</span>
+  <span class="k">let</span> <span class="nv">segmentedControl</span> <span class="o">=</span> <span class="kt">UISegmentedControl</span><span class="p">()</span>
 
-  // when
-  XCTAssertEqual(
-    mockUserDefaults.gameStyleChanged, 
-    0, 
-    "gameStyleChanged should be 0 before sendActions")
-  segmentedControl.addTarget(
-    sut,
-    action: #selector(ViewController.chooseGameStyle(_:)),
-    for: .valueChanged)
-  segmentedControl.sendActions(for: .valueChanged)
+  <span class="c1">// when</span>
+  <span class="kt">XCTAssertEqual</span><span class="p">(</span>
+    <span class="n">mockUserDefaults</span><span class="o">.</span><span class="n">gameStyleChanged</span><span class="p">,</span> 
+    <span class="mi">0</span><span class="p">,</span> 
+    <span class="s">"gameStyleChanged should be 0 before sendActions"</span><span class="p">)</span>
+  <span class="n">segmentedControl</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span>
+    <span class="n">sut</span><span class="p">,</span>
+    <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="kt">ViewController</span><span class="o">.</span><span class="nf">chooseGameStyle</span><span class="p">(</span><span class="nv">_</span><span class="p">:)),</span>
+    <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
+  <span class="n">segmentedControl</span><span class="o">.</span><span class="nf">sendActions</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
 
-  // then
-  XCTAssertEqual(
-    mockUserDefaults.gameStyleChanged, 
-    1, 
-    "gameStyle user default wasn't changed")
-}
+  <span class="c1">// then</span>
+  <span class="kt">XCTAssertEqual</span><span class="p">(</span>
+    <span class="n">mockUserDefaults</span><span class="o">.</span><span class="n">gameStyleChanged</span><span class="p">,</span> 
+    <span class="mi">1</span><span class="p">,</span> 
+    <span class="s">"gameStyle user default wasn't changed"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -3264,7 +3264,7 @@ override func tearDownWithError() throws {
 
 <p> </p>
 
-<p>[the_ad id=”1801”]</p>
+<!-- \[the\_ad id="1801"\] -->
 
 <p> </p>
 
@@ -3308,12 +3308,12 @@ app.launch()
 
 <p>두 개의 기존 테스트를 제거하고 <code class="language-plaintext highlighter-rouge">testGameStyleSwitch()</code>라는 새 테스트를 추가하세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>func testGameStyleSwitch() {    
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">testGameStyleSwitch</span><span class="p">()</span> <span class="p">{</span>    
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -3426,8 +3426,8 @@ if slideButton.isSelected {
 
 <p><code class="language-plaintext highlighter-rouge">BullsEyeTests</code>에 다음 테스트를 추가하십시오.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3440,18 +3440,18 @@ if slideButton.isSelected {
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>func testScoreIsComputedPerformance() {
-  measure(
-    metrics: [
-      XCTClockMetric(), 
-      XCTCPUMetric(),
-      XCTStorageMetric(), 
-      XCTMemoryMetric()
-    ]
-  ) {
-    sut.check(guess: 100)
-  }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">testScoreIsComputedPerformance</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">measure</span><span class="p">(</span>
+    <span class="nv">metrics</span><span class="p">:</span> <span class="p">[</span>
+      <span class="kt">XCTClockMetric</span><span class="p">(),</span> 
+      <span class="kt">XCTCPUMetric</span><span class="p">(),</span>
+      <span class="kt">XCTStorageMetric</span><span class="p">(),</span> 
+      <span class="kt">XCTMemoryMetric</span><span class="p">()</span>
+    <span class="p">]</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="n">sut</span><span class="o">.</span><span class="nf">check</span><span class="p">(</span><span class="nv">guess</span><span class="p">:</span> <span class="mi">100</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 테스트는 여러 측정항목을 측정합니다.</p>
@@ -3479,7 +3479,7 @@ if slideButton.isSelected {
 
 <p> </p>
 
-<p>[the_ad id=”1801”]</p>
+<!-- \[the\_ad id="1801"\] -->
 
 <p> </p>
 

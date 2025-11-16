@@ -1019,15 +1019,15 @@
 
 <p>먼저 딜리게이트를 구현하는 뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>extension ViewController: WKUIDelegate, WKNavigationDelegate {
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">WKUIDelegate</span><span class="p">,</span> <span class="kt">WKNavigationDelegate</span> <span class="p">{</span>
     
-}
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1035,8 +1035,8 @@
 
 <p>다음 웹킷뷰를 초기화하는 함수를 작성합니다. 하이라이트 부분이 자바스크립트를 활성화시키는 부분입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1056,24 +1056,24 @@
 17
 18
 19
-</pre></td><td class="rouge-code"><pre>func loadHelpPage() {
-    // 웹 파일 로딩
-    webView.uiDelegate = self
-    webView.navigationDelegate = self
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">loadHelpPage</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 웹 파일 로딩</span>
+    <span class="n">webView</span><span class="o">.</span><span class="n">uiDelegate</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="n">webView</span><span class="o">.</span><span class="n">navigationDelegate</span> <span class="o">=</span> <span class="k">self</span>
 
-    let pageName = "index"
-    guard let url = Bundle.main.url(forResource: pageName, withExtension: "html", subdirectory: "webpage") else {
-        return
-    }
-    webView.loadFileURL(url, allowingReadAccessTo: url)
+    <span class="k">let</span> <span class="nv">pageName</span> <span class="o">=</span> <span class="s">"index"</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="n">pageName</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"html"</span><span class="p">,</span> <span class="nv">subdirectory</span><span class="p">:</span> <span class="s">"webpage"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="n">webView</span><span class="o">.</span><span class="nf">loadFileURL</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">allowingReadAccessTo</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
     
-    if #available(iOS 14.0, *) {
-        webView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
-    } else {
-        // Fallback on earlier versions
-        webView.configuration.preferences.javaScriptEnabled = true
-    }
-}
+    <span class="k">if</span> <span class="k">#available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">14.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">webView</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">defaultWebpagePreferences</span><span class="o">.</span><span class="n">allowsContentJavaScript</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Fallback on earlier versions</span>
+        <span class="n">webView</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">preferences</span><span class="o">.</span><span class="n">javaScriptEnabled</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1123,8 +1123,8 @@
 
 <p>위의 <code class="language-plaintext highlighter-rouge">extension</code> 안에 아래 코드를 작성합니다. (<code class="language-plaintext highlighter-rouge">runJavaScriptAlertPanelWithMessage</code>)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1136,17 +1136,17 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -&gt; Void) {
-    let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-    let alertAction = UIAlertAction(title: "확인", style: .default, handler: {_ in
-        completionHandler()
-    })
-    alert.addAction(alertAction)
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">webView</span><span class="p">(</span><span class="n">_</span> <span class="nv">webView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="p">,</span> <span class="n">runJavaScriptAlertPanelWithMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">initiatedByFrame</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt">WKFrameInfo</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Alert"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">alertAction</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"확인"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span><span class="n">_</span> <span class="k">in</span>
+        <span class="nf">completionHandler</span><span class="p">()</span>
+    <span class="p">})</span>
+    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">alertAction</span><span class="p">)</span>
     
-    DispatchQueue.main.async {
-        self.present(alert, animated: true, completion: nil)
-    }
-}
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>여기서 <code class="language-plaintext highlighter-rouge">message</code>, <code class="language-plaintext highlighter-rouge">completeHandler</code> 변수를 사용해서 얼럿 띄우는 것을 구현해야 합니다. <code class="language-plaintext highlighter-rouge">message</code>는 자바스크립트의 <code class="language-plaintext highlighter-rouge">alert("...")</code> 에 작성된 메시지이고, <code class="language-plaintext highlighter-rouge">completeHandler</code>는 작업을 완료하는 콜백 함수입니다. 이 변수들을 사용해 일반적인 iOS의 얼럿 형태로 코드를 작성했습니다.</p>
@@ -1169,8 +1169,8 @@
 
 <p>confirm (<code class="language-plaintext highlighter-rouge">runJavaScriptConfirmPanelWithMessage</code>)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1187,22 +1187,22 @@
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -&gt; Void) {
-    let alert = UIAlertController(title: "Confirm", message: message, preferredStyle: .alert)
-    let noAction = UIAlertAction(title: "아니오", style: .default) { _ in
-        completionHandler(false)
-    }
-    let yesAction = UIAlertAction(title: "예", style: .default) { _ in
-        completionHandler(true)
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">webView</span><span class="p">(</span><span class="n">_</span> <span class="nv">webView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="p">,</span> <span class="n">runJavaScriptConfirmPanelWithMessage</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">initiatedByFrame</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt">WKFrameInfo</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Confirm"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">noAction</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"아니오"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+        <span class="nf">completionHandler</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">let</span> <span class="nv">yesAction</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"예"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+        <span class="nf">completionHandler</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    alert.addAction(noAction)
-    alert.addAction(yesAction)
+    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">noAction</span><span class="p">)</span>
+    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">yesAction</span><span class="p">)</span>
     
-    DispatchQueue.main.async {
-        self.present(alert, animated: true, completion: nil)
-    }
-}
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>앞의 <code class="language-plaintext highlighter-rouge">alert</code>과의 차이점은 <code class="language-plaintext highlighter-rouge">completionHandler</code>의 파라미터에 <code class="language-plaintext highlighter-rouge">Bool</code> 값이 들어가서 <code class="language-plaintext highlighter-rouge">true</code>/<code class="language-plaintext highlighter-rouge">false</code>로 예/아니오를 구현하는 데에 있습니다.</p>
@@ -1231,8 +1231,8 @@ if(isConfirm) {
 
 <p>prompt (<code class="language-plaintext highlighter-rouge">runJavaScriptTextInputPanelWithPrompt</code>)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1252,25 +1252,25 @@ if(isConfirm) {
 17
 18
 19
-</pre></td><td class="rouge-code"><pre>func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -&gt; Void) {
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">webView</span><span class="p">(</span><span class="n">_</span> <span class="nv">webView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="p">,</span> <span class="n">runJavaScriptTextInputPanelWithPrompt</span> <span class="nv">prompt</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">defaultText</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="n">initiatedByFrame</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt">WKFrameInfo</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
     
-    let alert = UIAlertController(title: "Prompt", message: "메시지를 입력하세요.", preferredStyle: .alert)
-    alert.addTextField { textField in
-        textField.placeholder = defaultText
-    }
-    let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-        if let text = alert.textFields?[0].text {
-            completionHandler(text != "" ? text : defaultText)
-        } else {
-            completionHandler(defaultText)
-        }
-    }
-    alert.addAction(okAction)
+    <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Prompt"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"메시지를 입력하세요."</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+    <span class="n">alert</span><span class="o">.</span><span class="n">addTextField</span> <span class="p">{</span> <span class="n">textField</span> <span class="k">in</span>
+        <span class="n">textField</span><span class="o">.</span><span class="n">placeholder</span> <span class="o">=</span> <span class="n">defaultText</span>
+    <span class="p">}</span>
+    <span class="k">let</span> <span class="nv">okAction</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"OK"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">alert</span><span class="o">.</span><span class="n">textFields</span><span class="p">?[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="p">{</span>
+            <span class="nf">completionHandler</span><span class="p">(</span><span class="n">text</span> <span class="o">!=</span> <span class="s">""</span> <span class="p">?</span> <span class="nv">text</span> <span class="p">:</span> <span class="n">defaultText</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">completionHandler</span><span class="p">(</span><span class="n">defaultText</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">okAction</span><span class="p">)</span>
     
-    DispatchQueue.main.async {
-        self.present(alert, animated: true, completion: nil)
-    }
-}
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">text</code> 또는 <code class="language-plaintext highlighter-rouge">defaultText</code>에서 메시지를 받으면, 메시지를 원문 또는 가공하여 <code class="language-plaintext highlighter-rouge">completHandlert(text)</code>으로 보내면 자바스크립트가 네이티브 앱으로부터 메시지를 받는 형식입니다.</p>

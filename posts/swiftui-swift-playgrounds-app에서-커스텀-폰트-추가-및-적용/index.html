@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -956,16 +963,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -1056,6 +1053,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1072,7 +1079,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>SwiftUI: Swift Playgrounds App에서 커스텀 폰트 추가 및 적용</h1>
     
@@ -1146,7 +1153,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="582 words"
+  title="581 words"
 >
   <em>3 min</em> read</span>
 
@@ -1156,26 +1163,48 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">SwiftUI: Swift Playgrounds App에서 커스텀 폰트 추가 및 적용</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">SwiftUI: Swift Playgrounds App에서 커스텀 폰트 추가 및 적용</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="개요"><span class="me-2"><strong>개요</strong></span><a href="#개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="개요"><span class="me-2"><strong>개요</strong></span><a href="#개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><strong>Swift Playgrounds App</strong>에서 커스텀 폰트 적용 및 사운드 파일 추가</p>
 
 <p>참고로 여기서 Swift Playgrounds App이란 다음과 같이 Xcode에서</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">File &gt; New &gt; Project...</code>  <a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.49-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.49-copy.jpg" alt="" loading="lazy"></a></li>
-  <li><code class="language-plaintext highlighter-rouge">iOS &gt; Swift Playgrounds App</code>  <a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.59-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.59-copy.jpg" alt="" loading="lazy"></a></li>
+  <li><code class="language-plaintext highlighter-rouge">File &gt; New &gt; Project...</code><br />
+<a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.49-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.49-copy.jpg" alt="" loading="lazy"></a></li>
+  <li><code class="language-plaintext highlighter-rouge">iOS &gt; Swift Playgrounds App</code><br />
+<a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.59-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-29-pm-11.51.59-copy.jpg" alt="" loading="lazy"></a></li>
 </ul>
 
 <p>으로 생성한 프로젝트 및 앱을 뜻합니다.</p>
 
-<p> </p>
+<h2 id="커스텀-폰트-추가"><span class="me-2"><strong>커스텀 폰트 추가</strong></span><a href="#커스텀-폰트-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="커스텀-폰트-추가"><span class="me-2"><strong>커스텀 폰트 추가</strong></span><a href="#커스텀-폰트-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<h5 id="1-resources-폴더안에-폰트-파일을-추가합니다"><span class="me-2"><strong>1) <code class="language-plaintext highlighter-rouge">Resources</code> 폴더안에 폰트 파일을 추가합니다.</strong></span><a href="#1-resources-폴더안에-폰트-파일을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-resources-폴더안에-폰트-파일을-추가합니다"><span class="me-2"><strong>(1) <code class="language-plaintext highlighter-rouge">Resources</code> 폴더안에 폰트 파일을 추가합니다.</strong></span><a href="#1-resources-폴더안에-폰트-파일을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>해당 폴더가 없다면 새로 생성합니다.</p>
 
@@ -1196,12 +1225,12 @@
 
   <p>빌드 후 앱이 설치된 시뮬레이터의 폴더로 이동하면 앱 패키지 내에 해당 파일이 추가된 것을 알 수 있습니다.</p>
 
-  <p><a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-오전-12.11.48-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-오전-12.11.48-copy.jpg" alt="" loading="lazy"></a></p>
+  <p><a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-am-12.11.48-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-am-12.11.48-copy.jpg" alt="" loading="lazy"></a></p>
 </blockquote>
 
 <p> </p>
 
-<h5 id="2-fontmanager-등록"><span class="me-2"><strong>2) FontManager 등록</strong></span><a href="#2-fontmanager-등록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-fontmanager-등록"><span class="me-2"><strong>(2) FontManager 등록</strong></span><a href="#2-fontmanager-등록" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>프로젝트 내에 아래 구조체를 등록합니다.</p>
 
@@ -1264,7 +1293,7 @@
 
 <p> </p>
 
-<h5 id="3-myapp-앱-시작-부분-main에-생성자를-추가합니다"><span class="me-2"><strong>3) MyApp (앱 시작 부분 <code class="language-plaintext highlighter-rouge">@main</code>)에 생성자를 추가합니다.</strong></span><a href="#3-myapp-앱-시작-부분-main에-생성자를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-myapp-앱-시작-부분-main에-생성자를-추가합니다"><span class="me-2"><strong>(3) MyApp (앱 시작 부분 <code class="language-plaintext highlighter-rouge">@main</code>)에 생성자를 추가합니다.</strong></span><a href="#3-myapp-앱-시작-부분-main에-생성자를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1304,23 +1333,23 @@
 
 <p> </p>
 
-<h5 id="4-contentview-등에서-다음과-같이-사용합니다"><span class="me-2"><strong>4) ContentView 등에서 다음과 같이 사용합니다.</strong></span><a href="#4-contentview-등에서-다음과-같이-사용합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-contentview-등에서-다음과-같이-사용합니다"><span class="me-2"><strong>(4) ContentView 등에서 다음과 같이 사용합니다.</strong></span><a href="#4-contentview-등에서-다음과-같이-사용합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>Text("ENTER YOUR TEXTS HERE")
-    .font(.custom("NeoDunggeunmoPro-Regular", size: 30))
-    .foregroundColor(.white)
+</pre></td><td class="rouge-code"><pre><span class="kt">Text</span><span class="p">(</span><span class="s">"ENTER YOUR TEXTS HERE"</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">font</span><span class="p">(</span><span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="s">"NeoDunggeunmoPro-Regular"</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="mi">30</span><span class="p">))</span>
+    <span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">.font(.custom("커스텀_폰트_이름"), size: 30))</code></li>
 </ul>
 
-<p><a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-오전-12.08.34-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-오전-12.08.34-copy.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-am-12.08.34-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/03/screenshot-2023-03-30-am-12.08.34-copy.jpg" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -2286,6 +2315,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

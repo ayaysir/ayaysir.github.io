@@ -1252,8 +1252,8 @@
 
 <h3 id="step-4-버튼에-highprioritygesture를-사용해-드래그를-우선적으로-인식하도록-바꾸기"><span class="me-2"><strong>Step 4: 버튼에 highPriorityGesture를 사용해 드래그를 우선적으로 인식하도록 바꾸기</strong></span><a href="#step-4-버튼에-highprioritygesture를-사용해-드래그를-우선적으로-인식하도록-바꾸기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1263,15 +1263,15 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>Button {
-  currentButtonIndex = index
-} label: {
-  ...
-}
-.highPriorityGesture(DragGesture(minimumDistance: 0, coordinateSpace: .global)
-  .updating($dragLocation) { value, state, _ in
-    state = value.location
-  })
+</pre></td><td class="rouge-code"><pre><span class="kt">Button</span> <span class="p">{</span>
+  <span class="n">currentButtonIndex</span> <span class="o">=</span> <span class="n">index</span>
+<span class="p">}</span> <span class="nv">label</span><span class="p">:</span> <span class="p">{</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+<span class="o">.</span><span class="nf">highPriorityGesture</span><span class="p">(</span><span class="kt">DragGesture</span><span class="p">(</span><span class="nv">minimumDistance</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">coordinateSpace</span><span class="p">:</span> <span class="o">.</span><span class="n">global</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">updating</span><span class="p">(</span><span class="n">$dragLocation</span><span class="p">)</span> <span class="p">{</span> <span class="n">value</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">_</span> <span class="k">in</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">location</span>
+  <span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>버튼은 기본적으로 탭(클릭)을 우선적으로 인식하므로, <code class="language-plaintext highlighter-rouge">highPriorityGesture</code> 변경자를 이용해 드래그 제스처(<code class="language-plaintext highlighter-rouge">DragGesture</code>)를 우선적으로 인식하도록 지정합니다.</p>

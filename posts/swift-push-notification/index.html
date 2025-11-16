@@ -2107,7 +2107,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="5227 words"
+  title="5225 words"
 >
   <em>29 min</em> read</span>
 
@@ -2292,8 +2292,8 @@
 
 <p>그런 다음 <code class="language-plaintext highlighter-rouge">AppDelegate</code> 끝에 다음 메서드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2303,22 +2303,22 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>func registerForPushNotifications() {
-    // 1 - UNUserNotificationCenter는 푸시 알림을 포함하여 앱의 모든 알림 관련 활동을 처리합니다.
-    UNUserNotificationCenter.current()
-    // 2 -알림을 표시하기 위한 승인을 요청합니다. 전달된 옵션은 앱에서 사용하려는 알림 유형을 나타냅니다. 여기에서 알림(alert), 소리(sound) 및 배지(badge)를 요청합니다.
-        .requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
-            // 3 - 완료 핸들러는 인증이 성공했는지 여부를 나타내는 Bool을 수신합니다. 인증 결과를 표시합니다.
-            print("Permission granted: \(granted)")
-        }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">registerForPushNotifications</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 1 - UNUserNotificationCenter는 푸시 알림을 포함하여 앱의 모든 알림 관련 활동을 처리합니다.</span>
+    <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span>
+    <span class="c1">// 2 -알림을 표시하기 위한 승인을 요청합니다. 전달된 옵션은 앱에서 사용하려는 알림 유형을 나타냅니다. 여기에서 알림(alert), 소리(sound) 및 배지(badge)를 요청합니다.</span>
+        <span class="o">.</span><span class="nf">requestAuthorization</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">alert</span><span class="p">,</span> <span class="o">.</span><span class="n">sound</span><span class="p">,</span> <span class="o">.</span><span class="n">badge</span><span class="p">])</span> <span class="p">{</span> <span class="n">granted</span><span class="p">,</span> <span class="n">_</span> <span class="k">in</span>
+            <span class="c1">// 3 - 완료 핸들러는 인증이 성공했는지 여부를 나타내는 Bool을 수신합니다. 인증 결과를 표시합니다.</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Permission granted: </span><span class="se">\(</span><span class="n">granted</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">requestAuthorization(options:completionHandler:)</code>에 전달하는 <code class="language-plaintext highlighter-rouge">options</code>에는 <code class="language-plaintext highlighter-rouge">UNAuthorizationOptions</code>의 모든 조합이 포함될 수 있습니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2022/08/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-08-10-%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE-10.11.59.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-08-10-%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE-10.11.59.jpg" alt="" loading="lazy"></a></p>
 
-<p>[the_ad id=”3513”]</p>
+<!-- \[the\_ad id="3513"\] -->
 
 <p> </p>
 
@@ -2342,18 +2342,18 @@
 
 <p><code class="language-plaintext highlighter-rouge">Allow</code>를 탭하면 이제 앱에서 알림을 표시할 수 있습니다. 그러나 사용자가 권한을 거부하면 어떻게 될까요? <code class="language-plaintext highlighter-rouge">AppDelegate</code> 내부에 다음 메서드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>func getNotificationSettings() {
-    UNUserNotificationCenter.current().getNotificationSettings { settings in
-        print("Notification settings: \(settings)")
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">getNotificationSettings</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span><span class="o">.</span><span class="n">getNotificationSettings</span> <span class="p">{</span> <span class="n">settings</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Notification settings: </span><span class="se">\(</span><span class="n">settings</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 메서드는 사용자가 부여한 설정을 반환합니다. 지금은 <code class="language-plaintext highlighter-rouge">print</code> 문만 있지만 이 작업에 대해 더 많은 작업을 수행하기 위해 다시 여기로 돌아올 것입니다.</p>
@@ -2362,8 +2362,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">registerForPushNotifications()</code>에서 <code class="language-plaintext highlighter-rouge">requestAuthorization(options:completionHandler:)</code>에 아래 하이라이트 부분을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2376,18 +2376,18 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>func registerForPushNotifications() {
-    // 1 - UNUserNotificationCenter는 푸시 알림을 포함하여 앱의 모든 알림 관련 활동을 처리합니다.
-    UNUserNotificationCenter.current()
-    // 2 -알림을 표시하기 위한 승인을 요청합니다. 전달된 옵션은 앱에서 사용하려는 알림 유형을 나타냅니다. 여기에서 알림(alert), 소리(sound) 및 배지(badge)를 요청합니다.
-        .requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
-            // 3 - 완료 핸들러는 인증이 성공했는지 여부를 나타내는 Bool을 수신합니다. 인증 결과를 표시합니다.
-            print("Permission granted: \(granted)")
-            // 추가
-            guard granted else { return }
-            self.getNotificationSettings()
-        }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">registerForPushNotifications</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 1 - UNUserNotificationCenter는 푸시 알림을 포함하여 앱의 모든 알림 관련 활동을 처리합니다.</span>
+    <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span>
+    <span class="c1">// 2 -알림을 표시하기 위한 승인을 요청합니다. 전달된 옵션은 앱에서 사용하려는 알림 유형을 나타냅니다. 여기에서 알림(alert), 소리(sound) 및 배지(badge)를 요청합니다.</span>
+        <span class="o">.</span><span class="nf">requestAuthorization</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">alert</span><span class="p">,</span> <span class="o">.</span><span class="n">sound</span><span class="p">,</span> <span class="o">.</span><span class="n">badge</span><span class="p">])</span> <span class="p">{</span> <span class="n">granted</span><span class="p">,</span> <span class="n">_</span> <span class="k">in</span>
+            <span class="c1">// 3 - 완료 핸들러는 인증이 성공했는지 여부를 나타내는 Bool을 수신합니다. 인증 결과를 표시합니다.</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Permission granted: </span><span class="se">\(</span><span class="n">granted</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="c1">// 추가</span>
+            <span class="k">guard</span> <span class="n">granted</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">getNotificationSettings</span><span class="p">()</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>완료 핸들러(completion handler)에서 <code class="language-plaintext highlighter-rouge">getNotificationSettings()</code>에 대한 호출을 추가했습니다. 이는 사용자가 언제든지 설정 앱으로 이동하여 알림 권한을 변경할 수 있기 때문에 중요합니다. <code class="language-plaintext highlighter-rouge">guard</code> 문은 권한이 부여되지 않은 경우 이 호출을 피합니다.</p>
@@ -2416,18 +2416,18 @@ DispatchQueue.main.async {
 
 <p><code class="language-plaintext highlighter-rouge">AppDelegate</code> 끝에 다음을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-    let token = tokenParts.joined()
-    print("Device Token: \(token)")
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didRegisterForRemoteNotificationsWithDeviceToken</span> <span class="nv">deviceToken</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">tokenParts</span> <span class="o">=</span> <span class="n">deviceToken</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">data</span> <span class="k">in</span> <span class="kt">String</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="s">"%02.2hhx"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">let</span> <span class="nv">token</span> <span class="o">=</span> <span class="n">tokenParts</span><span class="o">.</span><span class="nf">joined</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Device Token: </span><span class="se">\(</span><span class="n">token</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 메서드는 <code class="language-plaintext highlighter-rouge">registerForRemoteNotifications()</code>가 성공할 때마다 iOS에서 호출됩니다. 코드가 난해해 보일 수 있지만 단순히 수신된 <code class="language-plaintext highlighter-rouge">deviceToken</code>을 String으로 변환합니다. APN 서비스에서 제공하며 특정 기기에서 이 앱을 고유하게 식별합니다.</p>
@@ -2438,14 +2438,14 @@ DispatchQueue.main.async {
 
 <p>바로 밑에 다음 코드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-    print("Failed to register: \(error)")
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFailToRegisterForRemoteNotificationsWithError</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Failed to register: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 메서드는 <code class="language-plaintext highlighter-rouge">registerForRemoteNotifications()</code>가 실패하면 <code class="language-plaintext highlighter-rouge">iOS</code>에서 호출됩니다. 지금은 error를 표시하고 있습니다.</p>
@@ -2588,8 +2588,8 @@ DispatchQueue.main.async {
 
 <p>먼저 전역함수 <code class="language-plaintext highlighter-rouge">receivePushNotiNews</code>를 프로젝트에 추가합니다. 이 함수는 받은 알림을 <code class="language-plaintext highlighter-rouge">UserDefaults</code>에 저장하는 역할을 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2597,12 +2597,12 @@ DispatchQueue.main.async {
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>func receivePushNotiNews(title: String, body: String, linkURL: String) {
-    let newsText = "\(title) : \(body) (\(linkURL)) : \(Date())"
-    var newsList = UserDefaults.standard.array(forKey: "NewsList") ?? [String]()
-    newsList.append(newsText)
-    UserDefaults.standard.set(newsList, forKey: "NewsList")
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">receivePushNotiNews</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">linkURL</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">newsText</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">title</span><span class="se">)</span><span class="s"> : </span><span class="se">\(</span><span class="n">body</span><span class="se">)</span><span class="s"> (</span><span class="se">\(</span><span class="n">linkURL</span><span class="se">)</span><span class="s">) : </span><span class="se">\(</span><span class="kt">Date</span><span class="p">()</span><span class="se">)</span><span class="s">"</span>
+    <span class="k">var</span> <span class="nv">newsList</span> <span class="o">=</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">array</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"NewsList"</span><span class="p">)</span> <span class="p">??</span> <span class="p">[</span><span class="kt">String</span><span class="p">]()</span>
+    <span class="n">newsList</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">newsText</span><span class="p">)</span>
+    <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="n">newsList</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="s">"NewsList"</span><span class="p">)</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2620,19 +2620,19 @@ DispatchQueue.main.async {
 
 <p><code class="language-plaintext highlighter-rouge">NotificationCenter</code>를 사용할 것이므로 아래 <code class="language-plaintext highlighter-rouge">extension</code>도 프로젝트에 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>import Foundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
 
-extension Notification.Name {
-    static let refreshTextView = Notification.Name("RefreshTextView")
-}
+<span class="kd">extension</span> <span class="kt">Notification</span><span class="o">.</span><span class="kt">Name</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">refreshTextView</span> <span class="o">=</span> <span class="kt">Notification</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"RefreshTextView"</span><span class="p">)</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2667,16 +2667,16 @@ NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotif
 
 <p><code class="language-plaintext highlighter-rouge">refreshView()</code>의 코드를 클래스 내부에 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>func refreshTextView() {
-    let newsList = UserDefaults.standard.array(forKey: "NewsList") as? [String] ?? [String]()
-    txvLogs.text = newsList.reversed().joined(separator: "\n\n")
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">refreshTextView</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">newsList</span> <span class="o">=</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">array</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"NewsList"</span><span class="p">)</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">??</span> <span class="p">[</span><span class="kt">String</span><span class="p">]()</span>
+    <span class="n">txvLogs</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">newsList</span><span class="o">.</span><span class="nf">reversed</span><span class="p">()</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2697,8 +2697,8 @@ NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotif
 
 <h5 id="case-1-앱이-열린-상태일-때"><span class="me-2"><strong>Case 1: 앱이 열린 상태일 때</strong></span><a href="#case-1-앱이-열린-상태일-때" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2713,20 +2713,20 @@ NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotif
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>extension AppDelegate: UNUserNotificationCenterDelegate {
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UNUserNotificationCenterDelegate</span> <span class="p">{</span>
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -&gt; Void) {
-        // Case 1: 앱이 열린 상태일 때
-        let content = notification.request.content
-        receivePushNotiNews(title: "[Case 1] " + content.title, body: content.body, linkURL: content.userInfo["link_url"] as! String)
-        NotificationCenter.default.post(name: .refreshTextView, object: nil)
+    <span class="kd">func</span> <span class="nf">userNotificationCenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">UNUserNotificationCenter</span><span class="p">,</span> <span class="n">willPresent</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">UNNotification</span><span class="p">,</span> <span class="n">withCompletionHandler</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UNNotificationPresentationOptions</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Case 1: 앱이 열린 상태일 때</span>
+        <span class="k">let</span> <span class="nv">content</span> <span class="o">=</span> <span class="n">notification</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">content</span>
+        <span class="nf">receivePushNotiNews</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"[Case 1] "</span> <span class="o">+</span> <span class="n">content</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">body</span><span class="p">:</span> <span class="n">content</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="nv">linkURL</span><span class="p">:</span> <span class="n">content</span><span class="o">.</span><span class="n">userInfo</span><span class="p">[</span><span class="s">"link_url"</span><span class="p">]</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">)</span>
+        <span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="o">.</span><span class="n">refreshTextView</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
         
-        // 앱이 열린 상태에서도 푸시 알림을 표시하고 싶으면 아래 코멘트 해제
-        // completionHandler([.banner, .badge, .sound])
-    }
+        <span class="c1">// 앱이 열린 상태에서도 푸시 알림을 표시하고 싶으면 아래 코멘트 해제</span>
+        <span class="c1">// completionHandler([.banner, .badge, .sound])</span>
+    <span class="p">}</span>
     
-    // ... //
-}
+    <span class="c1">// ... //</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2750,8 +2750,8 @@ NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotif
 
 <p>바로 위의 <code class="language-plaintext highlighter-rouge">extension</code> 안에 다음 함수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2760,14 +2760,14 @@ NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotif
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -&gt; Void) {
-    // Case 2: 앱이 백그라운드(background) 모드이거나 완전히 닫혔을 때(killed or terminated) 되었을 때
-    let content = response.notification.request.content
-    receivePushNotiNews(title: "[Case 2] " + content.title, body: content.body, linkURL: content.userInfo["link_url"] as! String)
-    NotificationCenter.default.post(name: .refreshTextView, object: nil)
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">userNotificationCenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">UNUserNotificationCenter</span><span class="p">,</span> <span class="n">didReceive</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">UNNotificationResponse</span><span class="p">,</span> <span class="n">withCompletionHandler</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Case 2: 앱이 백그라운드(background) 모드이거나 완전히 닫혔을 때(killed or terminated) 되었을 때</span>
+    <span class="k">let</span> <span class="nv">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">notification</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">content</span>
+    <span class="nf">receivePushNotiNews</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"[Case 2] "</span> <span class="o">+</span> <span class="n">content</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">body</span><span class="p">:</span> <span class="n">content</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="nv">linkURL</span><span class="p">:</span> <span class="n">content</span><span class="o">.</span><span class="n">userInfo</span><span class="p">[</span><span class="s">"link_url"</span><span class="p">]</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">)</span>
+    <span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="o">.</span><span class="n">refreshTextView</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
     
-    completionHandler()
-}
+    <span class="nf">completionHandler</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>작동 원리는 Case 1과 같습니다.</p>

@@ -666,8 +666,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">TimeZone.current.identifier</code>와 <code class="language-plaintext highlighter-rouge">TimeZone.abbreviationDictionary</code>를 사용하면 시간대 약어를 표시할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -680,17 +680,17 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>func dateString(timestamp: Int) -&gt; String {
-    let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
-    let formatter = DateFormatter()
-    formatter.timeZone = .autoupdatingCurrent
-    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-    let timezoneAbbr = TimeZone.abbreviationDictionary.first { $1 == formatter.timeZone.identifier }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">dateString</span><span class="p">(</span><span class="nv">timestamp</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">(</span><span class="nv">timeIntervalSince1970</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">(</span><span class="n">timestamp</span><span class="p">))</span>
+    <span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
+    <span class="n">formatter</span><span class="o">.</span><span class="n">timeZone</span> <span class="o">=</span> <span class="o">.</span><span class="n">autoupdatingCurrent</span>
+    <span class="n">formatter</span><span class="o">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">"yyyy-MM-dd HH:mm:ss"</span>
+    <span class="k">let</span> <span class="nv">timezoneAbbr</span> <span class="o">=</span> <span class="kt">TimeZone</span><span class="o">.</span><span class="n">abbreviationDictionary</span><span class="o">.</span><span class="n">first</span> <span class="p">{</span> <span class="nv">$1</span> <span class="o">==</span> <span class="n">formatter</span><span class="o">.</span><span class="n">timeZone</span><span class="o">.</span><span class="n">identifier</span> <span class="p">}</span>
 
-    // timezoneAbbr?.value는 Asia/Seoul, timezoneAbbr?.key는 KST로 표시
-    // .value는 timeZone.identifier와 동일
-    return formatter.string(from: date) + " (\(timezoneAbbr?.value ?? "Unknown"))"
-}
+    <span class="c1">// timezoneAbbr?.value는 Asia/Seoul, timezoneAbbr?.key는 KST로 표시</span>
+    <span class="c1">// .value는 timeZone.identifier와 동일</span>
+    <span class="k">return</span> <span class="n">formatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span> <span class="o">+</span> <span class="s">" (</span><span class="se">\(</span><span class="n">timezoneAbbr</span><span class="p">?</span><span class="o">.</span><span class="n">value</span> <span class="p">??</span> <span class="s">"Unknown"</span><span class="se">)</span><span class="s">)"</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

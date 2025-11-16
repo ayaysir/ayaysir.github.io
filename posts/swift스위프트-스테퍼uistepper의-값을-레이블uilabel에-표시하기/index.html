@@ -1007,7 +1007,7 @@
 
   <p>1) 스토리보드에서 UIStepper 컴포넌트를 선택한 후 우측 <code class="language-plaintext highlighter-rouge">Attribute Inspector</code>에서 설정</p>
 
-  <p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.10.00.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.10.00.jpg" alt="" loading="lazy"></a></p>
+  <p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.10.00.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.10.00.jpg" alt="" loading="lazy"></a></p>
 
   <p>2) 프로그래밍 방식으로 설정</p>
 
@@ -1050,44 +1050,44 @@ stepperCount.maximumValue = 10000.0
 
 <p><strong>1)</strong> 스토리보드에 레이블과 스테퍼를 배치한 후 각각 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.00.52.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.00.52.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p><strong>2)</strong> 스토리보드에 스테퍼를 <code class="language-plaintext highlighter-rouge">@IBAction</code>으로 뷰 컨트롤러 코드와 연결합니다. <code class="language-plaintext highlighter-rouge">stepperActCount</code> 메서드는 버튼이 눌렸을 때 실행됩니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.04.38.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.04.38.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.04.38.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.04.38.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p><strong>3)</strong> 초기값을 레이블에 표시하도록 설정합니다. <code class="language-plaintext highlighter-rouge">viewDidLoad(_:)</code>에 아래 코드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>override func viewDidLoad() {
-    super.viewDidLoad()
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
 
-    lblCount.text = "\(stepperCount.value)"   
-}
+    <span class="n">lblCount</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">stepperCount</span><span class="o">.</span><span class="n">value</span><span class="se">)</span><span class="s">"</span>   
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p><strong>4)</strong> 값이 증감될때마다(=&gt;스테퍼 버튼을 누를때마다) 레이블에 표시되는 값이 업데이트되도록 합니다. @IBAction 함수인 <code class="language-plaintext highlighter-rouge">stepperActCount</code> 내에 다음과 같이 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>@IBAction func stepperActCount(_ sender: UIStepper) {
-    lblCount.text = "\(sender.value)"
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">stepperActCount</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIStepper</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lblCount</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">sender</span><span class="o">.</span><span class="n">value</span><span class="se">)</span><span class="s">"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1134,7 +1134,7 @@ pod 'RxCocoa'
 
 <p><strong>1)</strong> 스토리보드에 레이블과 스테퍼를 배치한 후 각각 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.00.52.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-오전-1.00.52.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 

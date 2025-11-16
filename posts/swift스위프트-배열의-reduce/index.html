@@ -941,10 +941,10 @@
 
 <h5 id="제-1형태"><span class="me-2"><strong>제 1형태</strong></span><a href="#제-1형태" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>func reduce&lt;Result&gt;(_ initialResult: Result, _ nextPartialResult: (Result, Element) throws -&gt; Result) rethrows -&gt; Result
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="n">reduce</span><span class="o">&lt;</span><span class="kt">Result</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">initialResult</span><span class="p">:</span> <span class="kt">Result</span><span class="p">,</span> <span class="n">_</span> <span class="nv">nextPartialResult</span><span class="p">:</span> <span class="p">(</span><span class="kt">Result</span><span class="p">,</span> <span class="kt">Element</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="p">)</span> <span class="k">rethrows</span> <span class="o">-&gt;</span> <span class="kt">Result</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -956,11 +956,11 @@
 
 <h5 id="제-2형태"><span class="me-2"><strong>제 2형태</strong></span><a href="#제-2형태" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>func reduce&lt;Result&gt;(into initialResult: Result, _ updateAccumulatingResult: (inout Result, Element) throws -&gt; ()) rethrows -&gt; Result
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="n">reduce</span><span class="o">&lt;</span><span class="kt">Result</span><span class="o">&gt;</span><span class="p">(</span><span class="n">into</span> <span class="nv">initialResult</span><span class="p">:</span> <span class="kt">Result</span><span class="p">,</span> <span class="n">_</span> <span class="nv">updateAccumulatingResult</span><span class="p">:</span> <span class="p">(</span><span class="k">inout</span> <span class="kt">Result</span><span class="p">,</span> <span class="kt">Element</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">rethrows</span> <span class="o">-&gt;</span> <span class="kt">Result</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1202,8 +1202,8 @@ names.reduce(into: [String: Int]()) { partialResult, currentValue in
 
 <h5 id="예제-5-person을-나이age별로-분류"><span class="me-2"><strong>예제 5) Person을 나이(age)별로 분류</strong></span><a href="#예제-5-person을-나이age별로-분류" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1214,16 +1214,16 @@ names.reduce(into: [String: Int]()) { partialResult, currentValue in
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>struct Person {
-    let name: String
-    let age: Int
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">Person</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">age</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">}</span>
 
-let people = [
-    Person(name: "Alice", age: 21),
-    Person(name: "Max", age: 20),
-    Person(name: "Jane", age: 20),
-]
+<span class="k">let</span> <span class="nv">people</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Alice"</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="mi">21</span><span class="p">),</span>
+    <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Max"</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">),</span>
+    <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Jane"</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">),</span>
+<span class="p">]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -1260,8 +1260,8 @@ people.reduce(into: [Int: [Person]]() ) { partialResult, currentPerson in
 
 <h4 id="예제-6-객체에서-배열을-뽑아-연결하기"><span class="me-2"><strong>예제 6) 객체에서 배열을 뽑아 연결하기</strong></span><a href="#예제-6-객체에서-배열을-뽑아-연결하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1273,17 +1273,17 @@ people.reduce(into: [Int: [Person]]() ) { partialResult, currentPerson in
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>struct Reader {
-    let name: String
-    let books: [String]
-    let age: Int
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">Reader</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">books</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+    <span class="k">let</span> <span class="nv">age</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">}</span>
 
-let readers = [
-    Reader(name: "Anna", books: ["Bible", "Harry Potter"], age: 21),
-    Reader(name: "Bob", books: ["War and Peace", "Romeo and Juliet"], age: 21),
-    Reader(name: "Anna", books: ["The Lord of the Rings", "The Shining"], age: 21),
-]
+<span class="k">let</span> <span class="nv">readers</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="kt">Reader</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Anna"</span><span class="p">,</span> <span class="nv">books</span><span class="p">:</span> <span class="p">[</span><span class="s">"Bible"</span><span class="p">,</span> <span class="s">"Harry Potter"</span><span class="p">],</span> <span class="nv">age</span><span class="p">:</span> <span class="mi">21</span><span class="p">),</span>
+    <span class="kt">Reader</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Bob"</span><span class="p">,</span> <span class="nv">books</span><span class="p">:</span> <span class="p">[</span><span class="s">"War and Peace"</span><span class="p">,</span> <span class="s">"Romeo and Juliet"</span><span class="p">],</span> <span class="nv">age</span><span class="p">:</span> <span class="mi">21</span><span class="p">),</span>
+    <span class="kt">Reader</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Anna"</span><span class="p">,</span> <span class="nv">books</span><span class="p">:</span> <span class="p">[</span><span class="s">"The Lord of the Rings"</span><span class="p">,</span> <span class="s">"The Shining"</span><span class="p">],</span> <span class="nv">age</span><span class="p">:</span> <span class="mi">21</span><span class="p">),</span>
+<span class="p">]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">

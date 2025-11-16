@@ -1186,15 +1186,15 @@
 
 <h5 id="1-모델-파일mlmodel을-프로젝트에-추가합니다"><span class="me-2"><strong>1: 모델 파일(*.mlmodel)을 프로젝트에 추가합니다.</strong></span><a href="#1-모델-파일mlmodel을-프로젝트에-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-1.56.12.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-1.56.12.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.56.12.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.56.12.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <h5 id="2-메인-스토리보드에서-뷰-컨트롤러에-ui-요소를-추가합니다"><span class="me-2"><strong>2: 메인 스토리보드에서 뷰 컨트롤러에 UI 요소를 추가합니다.</strong></span><a href="#2-메인-스토리보드에서-뷰-컨트롤러에-ui-요소를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-1.57.01.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-1.57.01.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.57.01.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.57.01.jpg" alt="" loading="lazy"></a></p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-1.58.57.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-1.58.57.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.58.57.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.58.57.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1261,20 +1261,20 @@
 
 <p>다음 뷰 컨트롤러에 아래 함수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>func presentPhotoPicker(sourceType: UIImagePickerControllerSourceType) {
-    let picker = UIImagePickerController()
-    picker.delegate = self
-    picker.sourceType = sourceType
-    present(picker, animated: true)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">presentPhotoPicker</span><span class="p">(</span><span class="nv">sourceType</span><span class="p">:</span> <span class="kt">UIImagePickerControllerSourceType</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">UIImagePickerController</span><span class="p">()</span>
+    <span class="n">picker</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="n">picker</span><span class="o">.</span><span class="n">sourceType</span> <span class="o">=</span> <span class="n">sourceType</span>
+    <span class="nf">present</span><span class="p">(</span><span class="n">picker</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1291,8 +1291,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">UIImagePickerControllerDelegated</code>와 <code class="language-plaintext highlighter-rouge">UINavigationControllerDelegate</code>를 준수하는 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다. 그 안에 이미지를 찍었거나, 혹은 선택하고 나서 할 작업을 지정하는 메서드 <code class="language-plaintext highlighter-rouge">func imagePickerController(...didFinishPickingMediaWithInfo...)</code>에 해야 될 작업에 대한 코드를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1306,18 +1306,18 @@
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    // MARK: - Handling Image Picker Selection
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIImagePickerControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span> <span class="p">{</span>
+    <span class="c1">// MARK: - Handling Image Picker Selection</span>
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        picker.dismiss(animated: true)
+    <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">UIImagePickerController</span><span class="p">,</span> <span class="n">didFinishPickingMediaWithInfo</span> <span class="nv">info</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="p">{</span>
+        <span class="n">picker</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
         
-        // `imagePickerController(:didFinishPickingMediaWithInfo:)`는 원본 이미지를 제공할 것입니다.
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imageView.image = image
-        updateClassifications(for: image)
-    }
-}
+        <span class="c1">// `imagePickerController(:didFinishPickingMediaWithInfo:)`는 원본 이미지를 제공할 것입니다.</span>
+        <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="kt">UIImagePickerControllerOriginalImage</span><span class="p">]</span> <span class="k">as!</span> <span class="kt">UIImage</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+        <span class="nf">updateClassifications</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1349,8 +1349,8 @@
 
 <p>카메라 및 사진 라이브러리 버튼의 <code class="language-plaintext highlighter-rouge">@IBAction</code> 함수 안에 다음 부분을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1363,18 +1363,18 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>@IBAction func takePicture(_ sender: UIBarButtonItem) {
-    // 카메라를 사용할 수 있는 경우에만 source picker에 대한 옵션을 표시합니다.
-    guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-        return
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">takePicture</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 카메라를 사용할 수 있는 경우에만 source picker에 대한 옵션을 표시합니다.</span>
+    <span class="k">guard</span> <span class="kt">UIImagePickerController</span><span class="o">.</span><span class="nf">isSourceTypeAvailable</span><span class="p">(</span><span class="o">.</span><span class="n">camera</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    presentPhotoPicker(sourceType: .camera)
-}
+    <span class="nf">presentPhotoPicker</span><span class="p">(</span><span class="nv">sourceType</span><span class="p">:</span> <span class="o">.</span><span class="n">camera</span><span class="p">)</span>
+<span class="p">}</span>
 
-@IBAction func choosePicture(_ sender: UIBarButtonItem) {
-    presentPhotoPicker(sourceType: .photoLibrary)
-}
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">choosePicture</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">presentPhotoPicker</span><span class="p">(</span><span class="nv">sourceType</span><span class="p">:</span> <span class="o">.</span><span class="n">photoLibrary</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1596,7 +1596,7 @@ lazy var classificationRequest: VNCoreMLRequest = {
 
 <p>앞서 1단계에서 모델 파일을 프로젝트에 추가했는데, 모델 파일을 추가하면 자동으로 해당 파일 이름과 똑같은 이름의 클래스가 자동으로 생성됩니다. 파일 이름을 바꾸면 클래스 이름도 자동으로 바뀝니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-2.48.31.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-오전-2.48.31.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-2.48.31.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-2.48.31.jpg" alt="" loading="lazy"></a></p>
 
 <p>자동 생성된 <code class="language-plaintext highlighter-rouge">LivestocksClassifier</code> 클래스를 사용할 것입니다.</p>
 

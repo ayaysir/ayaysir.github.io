@@ -573,74 +573,6 @@
   
 
   
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -692,6 +624,21 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -736,8 +683,72 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
 
 
@@ -828,7 +839,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1688 words"
+  title="1687 words"
 >
   <em>9 min</em> read</span>
 
@@ -862,16 +873,16 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Swift에는 다음과 같은 특이한 형태의 자료형이 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>var nestedOptionalString: String?? = "이중 옵셔널은 왜 있음?"
-print(nestedOptionalString)
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">nestedOptionalString</span><span class="p">:</span> <span class="kt">String</span><span class="p">??</span> <span class="o">=</span> <span class="s">"이중 옵셔널은 왜 있음?"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">nestedOptionalString</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-14-pm-4.02.06.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-14-pm-4.02.06.png" alt="" loading="lazy"></a></p>
@@ -882,46 +893,44 @@ print(nestedOptionalString)
 
 <p> </p>
 
-<h4 id="다중-옵셔널-중첩된-옵셔널-nested-optionals"><span class="me-2"><strong>다중 옵셔널 (중첩된 옵셔널; Nested Optionals)</strong></span><a href="#다중-옵셔널-중첩된-옵셔널-nested-optionals" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="다중-옵셔널-중첩된-옵셔널-nested-optionals"><span class="me-2"><strong>다중 옵셔널 (중첩된 옵셔널; Nested Optionals)</strong></span><a href="#다중-옵셔널-중첩된-옵셔널-nested-optionals" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">Dictionary</code>에 대한 확장을 만들고 아래 <code class="language-plaintext highlighter-rouge">valuesForKey(...)</code> 함수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>extension Dictionary {
-  func valuesForKeys(_ keys: [Key]) -&gt; [Value?] {
-    return keys.map { self[$0] }
-  }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">Dictionary</span> <span class="p">{</span>
+  <span class="kd">func</span> <span class="nf">valuesForKeys</span><span class="p">(</span><span class="n">_</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt">Key</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Value</span><span class="p">?]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">keys</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="k">self</span><span class="p">[</span><span class="nv">$0</span><span class="p">]</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 함수는 <code class="language-plaintext highlighter-rouge">keys</code>에 키(타입앨리어스 <code class="language-plaintext highlighter-rouge">Key</code>)를 배열로 입력하면 해당하는 키에 대응되는 값(타입앨리어스 <code class="language-plaintext highlighter-rouge">Value</code>)을 배열로 반환합니다.</p>
 
 <p>아래는 사용 예시입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6
-</pre></td><td class="rouge-code"><pre>let dict = [
-    "A": "Amir",
-    "B": "Bertha",
-    "C": "Ching",
-]
-
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">dict</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">"A"</span><span class="p">:</span> <span class="s">"Amir"</span><span class="p">,</span>
+    <span class="s">"B"</span><span class="p">:</span> <span class="s">"Bertha"</span><span class="p">,</span>
+    <span class="s">"C"</span><span class="p">:</span> <span class="s">"Ching"</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -932,24 +941,24 @@ print(nestedOptionalString)
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>print(
-    dict.valuesForKeys(["A", "C"]),
-    // [Optional("Amir"), Optional("Ching")]
+</pre></td><td class="rouge-code"><pre><span class="nf">print</span><span class="p">(</span>
+    <span class="n">dict</span><span class="o">.</span><span class="nf">valuesForKeys</span><span class="p">([</span><span class="s">"A"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">]),</span>
+    <span class="c1">// [Optional("Amir"), Optional("Ching")]</span>
     
-    dict.valuesForKeys(["B", "D"]),
-    // [Optional("Bertha"), nil]
+    <span class="n">dict</span><span class="o">.</span><span class="nf">valuesForKeys</span><span class="p">([</span><span class="s">"B"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">]),</span>
+    <span class="c1">// [Optional("Bertha"), nil]</span>
     
-    dict.valuesForKeys([])
-    // []
-)
+    <span class="n">dict</span><span class="o">.</span><span class="nf">valuesForKeys</span><span class="p">([])</span>
+    <span class="c1">// []</span>
+<span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>이제 각 결과의 <code class="language-plaintext highlighter-rouge">last</code> 요소를 요청하면 어떻게 될까요?</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -960,38 +969,38 @@ print(nestedOptionalString)
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>print(
-    dict.valuesForKeys(["A", "C"]).last,
-    // Optional(Optional("Ching"))
+</pre></td><td class="rouge-code"><pre><span class="nf">print</span><span class="p">(</span>
+    <span class="n">dict</span><span class="o">.</span><span class="nf">valuesForKeys</span><span class="p">([</span><span class="s">"A"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">])</span><span class="o">.</span><span class="n">last</span><span class="p">,</span>
+    <span class="c1">// Optional(Optional("Ching"))</span>
 
-    dict.valuesForKeys(["B", "D"]).last,
-    // Optional(nil)
+    <span class="n">dict</span><span class="o">.</span><span class="nf">valuesForKeys</span><span class="p">([</span><span class="s">"B"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">])</span><span class="o">.</span><span class="n">last</span><span class="p">,</span>
+    <span class="c1">// Optional(nil)</span>
 
-    dict.valuesForKeys([]).last
-    // nil
-)
+    <span class="n">dict</span><span class="o">.</span><span class="nf">valuesForKeys</span><span class="p">([])</span><span class="o">.</span><span class="n">last</span>
+    <span class="c1">// nil</span>
+<span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이상합니다. 첫 번째 경우에는 2단계 레벨의 <code class="language-plaintext highlighter-rouge">Optional</code>이 있습니다. 두 번째 경우에는 일반적인 1단계의 <code class="language-plaintext highlighter-rouge">optional(nil)</code>입니다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">last</code>가 어떻게 선언되었는지 정의를 보면 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>var last: T? { get }
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">last</span><span class="p">:</span> <span class="kt">T</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이는 <code class="language-plaintext highlighter-rouge">last</code> 속성의 유형이 배열 요소 타입의 옵셔널 버전(<code class="language-plaintext highlighter-rouge">T?</code>)임을 나타냅니다. 이 경우는 원소의 타입이 옵셔널(<code class="language-plaintext highlighter-rouge">String?</code>)입니다. 따라서 <code class="language-plaintext highlighter-rouge">valuesForKey(...)</code>의 결과에 대한 <code class="language-plaintext highlighter-rouge">last</code>는 이중으로 중첩된 옵셔널 타입(Doubly-nested optional type)인 <code class="language-plaintext highlighter-rouge">String??</code>이 됨을 알 수 있습니다.</p>
 
 <p> </p>
 
-<p><strong>[심화]</strong> 그렇다면 <code class="language-plaintext highlighter-rouge">Optional(nil)</code>은 무엇을 의미할까요?</p>
+<h3 id="심화-그렇다면-optionalnil은-무엇을-의미할까요"><span class="me-2"><strong>[심화]</strong> 그렇다면 <code class="language-plaintext highlighter-rouge">Optional(nil)</code>은 무엇을 의미할까요?</span><a href="#심화-그렇다면-optionalnil은-무엇을-의미할까요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Objective-C에서 우리는 자리 표시자(placeholder)로 <code class="language-plaintext highlighter-rouge">NSNull</code>을 사용할 예정임을 상기하세요. 이 세 가지 호출의 Objective-C 버전은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-objc highlighter-rouge"><div class="code-header">
+        <span data-label-text="Objective-C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1000,68 +1009,68 @@ print(nestedOptionalString)
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>[dict valuesForKeys:@[@"A", @"C"] notFoundMarker:[NSNull null]].lastObject
-// @"Ching"
+</pre></td><td class="rouge-code"><pre><span class="p">[</span><span class="n">dict</span> <span class="nf">valuesForKeys</span><span class="p">:@[</span><span class="s">@"A"</span><span class="p">,</span> <span class="s">@"C"</span><span class="p">]</span> <span class="nf">notFoundMarker</span><span class="p">:[</span><span class="n">NSNull</span> <span class="nf">null</span><span class="p">]].</span><span class="n">lastObject</span>
+<span class="c1">// @"Ching"</span>
 
-[dict valuesForKeys:@[@"B", @"D"] notFoundMarker:[NSNull null]].lastObject
-// NSNull
+<span class="p">[</span><span class="n">dict</span> <span class="nf">valuesForKeys</span><span class="p">:@[</span><span class="s">@"B"</span><span class="p">,</span> <span class="s">@"D"</span><span class="p">]</span> <span class="nf">notFoundMarker</span><span class="p">:[</span><span class="n">NSNull</span> <span class="nf">null</span><span class="p">]].</span><span class="n">lastObject</span>
+<span class="c1">// NSNull</span>
 
-[dict valuesForKeys:@[] notFoundMarker:[NSNull null]].lastObject
-// nil
+<span class="p">[</span><span class="n">dict</span> <span class="nf">valuesForKeys</span><span class="p">:@[]</span> <span class="nf">notFoundMarker</span><span class="p">:[</span><span class="n">NSNull</span> <span class="nf">null</span><span class="p">]].</span><span class="n">lastObject</span>
+<span class="c1">// nil</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Swift와 Objective-C의 경우 모두 반환 값의 <code class="language-plaintext highlighter-rouge">nil</code>은 “<em>배열이 비어 있으므로 마지막 요소가 없음</em>“을 의미합니다. <code class="language-plaintext highlighter-rouge">Optional(nil)</code>(또는 Objective-C의 <code class="language-plaintext highlighter-rouge">NSNull</code>)의 반환 값은 “<em>이 배열의 마지막 요소가 존재하지만 그 마지막 요소는 부재(absence)를 나타냅니다.</em>“를 의미합니다. Objective-C는 이를 수행하기 위해  placeholder object(<code class="language-plaintext highlighter-rouge">NSNull</code>)에 의존해야 하지만 Swift는 타입 시스템(type system)에서 이를 나타낼 수 있습니다.</p>
 
 <p> </p>
 
-<h4 id="다중-옵셔널에-대한-언래핑unwrapping-방법"><span class="me-2"><strong>다중 옵셔널에 대한 언래핑(unwrapping) 방법</strong></span><a href="#다중-옵셔널에-대한-언래핑unwrapping-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="다중-옵셔널에-대한-언래핑unwrapping-방법"><span class="me-2"><strong>다중 옵셔널에 대한 언래핑(unwrapping) 방법</strong></span><a href="#다중-옵셔널에-대한-언래핑unwrapping-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>let a: String?? = "hello"
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">String</span><span class="p">??</span> <span class="o">=</span> <span class="s">"hello"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위와 같은 <code class="language-plaintext highlighter-rouge">String??</code> 타입의 변수 a를 언래핑(unwrapping)하는 방법입니다.</p>
 
 <p> </p>
 
-<h5 id="1-옵셔널-바인딩을-두-번-하기"><span class="me-2"><strong>1. 옵셔널 바인딩을 두 번 하기</strong></span><a href="#1-옵셔널-바인딩을-두-번-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-옵셔널-바인딩을-두-번-하기"><span class="me-2"><strong>1. 옵셔널 바인딩을 두 번 하기</strong></span><a href="#1-옵셔널-바인딩을-두-번-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>if let temp = a, let value = temp {
-    print(value) // "hello"
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">let</span> <span class="nv">temp</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="k">let</span> <span class="nv">value</span> <span class="o">=</span> <span class="n">temp</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1">// "hello"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="2-강제로-언래핑을-두-번-하기-비추천"><span class="me-2"><strong>2. 강제로 언래핑을 두 번 하기 (비추천)</strong></span><a href="#2-강제로-언래핑을-두-번-하기-비추천" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-강제로-언래핑을-두-번-하기-비추천"><span class="me-2"><strong>2. 강제로 언래핑을 두 번 하기 (비추천)</strong></span><a href="#2-강제로-언래핑을-두-번-하기-비추천" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>옵셔널 변수에 느낌표(<code class="language-plaintext highlighter-rouge">!</code>)를  붙이면 강제 언래핑이 되는데, 이것을 두 번 붙이는 방법입니다. 강제 언래핑은 변수의 값이 <code class="language-plaintext highlighter-rouge">nil</code>인 경우 컴파일 에러가 발생하므로 결과가 반드시 <code class="language-plaintext highlighter-rouge">nil</code>이 아니라고 확신할 수 있을 때에만 사용해야 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>print(value!!)  // don't do this - you're just asking for a crash
+</pre></td><td class="rouge-code"><pre><span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="o">!!</span><span class="p">)</span>  <span class="c1">// don't do this - you're just asking for a crash</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="3-패턴-매칭pattern-matching을-시용하는-방법"><span class="me-2"><strong>3. 패턴 매칭(pattern matching)을 시용하는 방법</strong></span><a href="#3-패턴-매칭pattern-matching을-시용하는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-패턴-매칭pattern-matching을-시용하는-방법"><span class="me-2"><strong>3. 패턴 매칭(pattern matching)을 시용하는 방법</strong></span><a href="#3-패턴-매칭pattern-matching을-시용하는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>if case let value?? = a {
-    print(value) // "hello"
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">case</span> <span class="k">let</span> <span class="nv">value</span><span class="p">??</span> <span class="o">=</span> <span class="n">a</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1">// "hello"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1072,28 +1081,28 @@ print(nestedOptionalString)
 
 <p>위의 코드는 다음과 동일합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>if case .some(.some(let value)) = a {
-    print(value) // "hello"
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">case</span> <span class="o">.</span><span class="nf">some</span><span class="p">(</span><span class="o">.</span><span class="nf">some</span><span class="p">(</span><span class="k">let</span> <span class="nv">value</span><span class="p">))</span> <span class="o">=</span> <span class="n">a</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1">// "hello"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="4-nil-부수기-연산자nil-coalescing-operator를-두-번-사용"><span class="me-2"><strong>4. nil 부수기 연산자(nil coalescing operator)를 두 번 사용</strong></span><a href="#4-nil-부수기-연산자nil-coalescing-operator를-두-번-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-nil-부수기-연산자nil-coalescing-operator를-두-번-사용"><span class="me-2"><strong>4. nil 부수기 연산자(nil coalescing operator)를 두 번 사용</strong></span><a href="#4-nil-부수기-연산자nil-coalescing-operator를-두-번-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">??</code>은 _nil coalescing operator_라고 하는데 어떠한 옵셔널 변수가 <code class="language-plaintext highlighter-rouge">nil</code>이 아니라면 해당 변수를 옵셔널을 제거시키고, <code class="language-plaintext highlighter-rouge">nil</code>이라면 해당 연산자 뒤에 있는 기본값을 사용합니다.</p>
 
 <p>이것을 두 번 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>print((a ?? "") ?? "")  // "hello"
+</pre></td><td class="rouge-code"><pre><span class="nf">print</span><span class="p">((</span><span class="n">a</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>  <span class="c1">// "hello"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
@@ -1102,16 +1111,16 @@ print(nestedOptionalString)
 
 <p> </p>
 
-<h5 id="5-nil-부수기-연산자를-옵셔널-바인딩에-사용"><span class="me-2"><strong>5. nil 부수기 연산자를 옵셔널 바인딩에 사용</strong></span><a href="#5-nil-부수기-연산자를-옵셔널-바인딩에-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-nil-부수기-연산자를-옵셔널-바인딩에-사용"><span class="me-2"><strong>5. nil 부수기 연산자를 옵셔널 바인딩에 사용</strong></span><a href="#5-nil-부수기-연산자를-옵셔널-바인딩에-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>if let value = a ?? nil {
-    print(value)  // "hello"
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">let</span> <span class="nv">value</span> <span class="o">=</span> <span class="n">a</span> <span class="p">??</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1">// "hello"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
@@ -1124,7 +1133,7 @@ print(nestedOptionalString)
 
 <p> </p>
 
-<h5 id="6-flatmap을-사용하기"><span class="me-2"><strong>6. flatMap을 사용하기</strong></span><a href="#6-flatmap을-사용하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="6-flatmap을-사용하기"><span class="me-2"><strong>6. flatMap을 사용하기</strong></span><a href="#6-flatmap을-사용하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1142,12 +1151,12 @@ print(nestedOptionalString)
 
 <p> </p>
 
-<h5 id="7-조건부-캐스팅"><span class="me-2"><strong>7. 조건부 캐스팅</strong></span><a href="#7-조건부-캐스팅" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="7-조건부-캐스팅"><span class="me-2"><strong>7. 조건부 캐스팅</strong></span><a href="#7-조건부-캐스팅" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>조건부 캐스팅(conditional cast)을 사용하여 다중 옵셔널 값을 특정 타입으로 캐스팅을 합니다. 놀랍게도 이것은 모든 단계의 중첩 옵션을 제거합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1161,24 +1170,24 @@ print(nestedOptionalString)
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>let a: String?? = "hello"
-let b: String??????? = "bye"
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">String</span><span class="p">??</span> <span class="o">=</span> <span class="s">"hello"</span>
+<span class="k">let</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">String</span><span class="p">???????</span> <span class="o">=</span> <span class="s">"bye"</span>
 
-if let value = a as? String {
-    print(value)  // "hello"
-}
+<span class="k">if</span> <span class="k">let</span> <span class="nv">value</span> <span class="o">=</span> <span class="n">a</span> <span class="k">as?</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1">// "hello"</span>
+<span class="p">}</span>
 
-print(b as Any)  
-// "Optional(Optional(Optional(Optional(Optional(Optional(Optional("bye")))))))"
+<span class="nf">print</span><span class="p">(</span><span class="n">b</span> <span class="k">as</span> <span class="kt">Any</span><span class="p">)</span>  
+<span class="c1">// "Optional(Optional(Optional(Optional(Optional(Optional(Optional("bye")))))))"</span>
 
-if let value = b as? String {
-    print(value)  // "bye"
-}
+<span class="k">if</span> <span class="k">let</span> <span class="nv">value</span> <span class="o">=</span> <span class="n">b</span> <span class="k">as?</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1">// "bye"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://developer.apple.com/swift/blog/?id=12">Optionals Case Study: valuesForKeys</a></li>

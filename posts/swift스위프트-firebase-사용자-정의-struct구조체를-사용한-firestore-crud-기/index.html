@@ -1690,8 +1690,8 @@ pod 'FirebaseFirestoreSwift'
 
 <h4 id="프로젝트에-코드-추가-import-설정-및-클래스-작성"><span class="me-2"><strong>프로젝트에 코드 추가: import 설정 및 클래스 작성</strong></span><a href="#프로젝트에-코드-추가-import-설정-및-클래스-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1718,32 +1718,32 @@ pod 'FirebaseFirestoreSwift'
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>import Foundation
-import FirebaseAuth
-import FirebaseFirestore
-import FirebaseFirestoreSwift
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">import</span> <span class="kt">FirebaseAuth</span>
+<span class="kd">import</span> <span class="kt">FirebaseFirestore</span>
+<span class="kd">import</span> <span class="kt">FirebaseFirestoreSwift</span>
 
-class FirebasePractice {
+<span class="kd">class</span> <span class="kt">FirebasePractice</span> <span class="p">{</span>
     
-    static let shared = FirebasePractice()
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span> <span class="o">=</span> <span class="kt">FirebasePractice</span><span class="p">()</span>
     
-    var db: Firestore!
-    var personsRef: CollectionReference!
+    <span class="k">var</span> <span class="nv">db</span><span class="p">:</span> <span class="kt">Firestore</span><span class="o">!</span>
+    <span class="k">var</span> <span class="nv">personsRef</span><span class="p">:</span> <span class="kt">CollectionReference</span><span class="o">!</span>
     
-    init() {
-        // [START setup]
-        let settings = FirestoreSettings()
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// [START setup]</span>
+        <span class="k">let</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">FirestoreSettings</span><span class="p">()</span>
         
-        Firestore.firestore().settings = settings
+        <span class="kt">Firestore</span><span class="o">.</span><span class="nf">firestore</span><span class="p">()</span><span class="o">.</span><span class="n">settings</span> <span class="o">=</span> <span class="n">settings</span>
         
-        // [END setup]
-        db = Firestore.firestore()
+        <span class="c1">// [END setup]</span>
+        <span class="n">db</span> <span class="o">=</span> <span class="kt">Firestore</span><span class="o">.</span><span class="nf">firestore</span><span class="p">()</span>
         
-        personsRef = db.collection("persons")
-    }
+        <span class="n">personsRef</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="nf">collection</span><span class="p">(</span><span class="s">"persons"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // ... //
-}
+    <span class="c1">// ... //</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1858,8 +1858,8 @@ service cloud.firestore {
 
 <h4 id="사용자-정의-struct-만들기"><span class="me-2"><strong>사용자 정의 struct 만들기</strong></span><a href="#사용자-정의-struct-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1881,27 +1881,27 @@ service cloud.firestore {
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>struct Person: Codable {
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">Person</span><span class="p">:</span> <span class="kt">Codable</span> <span class="p">{</span>
 
-    // @DocumentID가 붙은 경우 Read시 해당 문서의 ID를 자동으로 할당
-    @DocumentID var documentID: String?
+    <span class="c1">// @DocumentID가 붙은 경우 Read시 해당 문서의 ID를 자동으로 할당</span>
+    <span class="kd">@DocumentID</span> <span class="k">var</span> <span class="nv">documentID</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
     
-    // @ServerTimestamp가 붙은 경우 Create, Update시 서버 시간을 자동으로 입력함 (FirebaseFirestoreSwift 디펜던시 필요)
-    @ServerTimestamp var serverTS: Timestamp?
+    <span class="c1">// @ServerTimestamp가 붙은 경우 Create, Update시 서버 시간을 자동으로 입력함 (FirebaseFirestoreSwift 디펜던시 필요)</span>
+    <span class="kd">@ServerTimestamp</span> <span class="k">var</span> <span class="nv">serverTS</span><span class="p">:</span> <span class="kt">Timestamp</span><span class="p">?</span>
 
-    var name, job: String
-    var devices: [String]
-    var authorUID: String = ""
+    <span class="k">var</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">job</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">devices</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">authorUID</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
     
-    // 왼쪽: Swift 내에서 사용하는 변수이름 / 오른쪽: Firebase에서 사용하는 변수이름
-    enum CodingKeys: String, CodingKey {
-        case documentID = "document_id"
-        case serverTS = "server_ts"
-        case authorUID = "author_uid"
+    <span class="c1">// 왼쪽: Swift 내에서 사용하는 변수이름 / 오른쪽: Firebase에서 사용하는 변수이름</span>
+    <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">documentID</span> <span class="o">=</span> <span class="s">"document_id"</span>
+        <span class="k">case</span> <span class="n">serverTS</span> <span class="o">=</span> <span class="s">"server_ts"</span>
+        <span class="k">case</span> <span class="n">authorUID</span> <span class="o">=</span> <span class="s">"author_uid"</span>
         
-        case name, job, devices
-    }
-}
+        <span class="k">case</span> <span class="n">name</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">devices</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1925,8 +1925,8 @@ service cloud.firestore {
 
 <h5 id="create"><span class="me-2"><strong>Create</strong></span><a href="#create" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1959,38 +1959,38 @@ service cloud.firestore {
 30
 31
 32
-</pre></td><td class="rouge-code"><pre>func addPost(personRequest request: Person) {
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">addPost</span><span class="p">(</span><span class="n">personRequest</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">Person</span><span class="p">)</span> <span class="p">{</span>
     
-    var ref: DocumentReference? = nil
+    <span class="k">var</span> <span class="nv">ref</span><span class="p">:</span> <span class="kt">DocumentReference</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
     
-    do {
-        ref = personsRef.document()
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="n">ref</span> <span class="o">=</span> <span class="n">personsRef</span><span class="o">.</span><span class="nf">document</span><span class="p">()</span>
         
-        guard let ref = ref else {
-            print("Reference is not exist.")
-            return
-        }
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">ref</span> <span class="o">=</span> <span class="n">ref</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Reference is not exist."</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        // 사용자 uid 추가
-        guard let currentUser = currentUser else {
-            return
-        }
+        <span class="c1">// 사용자 uid 추가</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">currentUser</span> <span class="o">=</span> <span class="n">currentUser</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        var request = request
-        request.authorUID = currentUser.uid
+        <span class="k">var</span> <span class="nv">request</span> <span class="o">=</span> <span class="n">request</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">authorUID</span> <span class="o">=</span> <span class="n">currentUser</span><span class="o">.</span><span class="n">uid</span>
         
-        try ref.setData(from: request) { err in
-            if let err = err {
-                print("Firestore&gt;&gt; Error adding document: \(err)")
-                return
-            }
+        <span class="k">try</span> <span class="n">ref</span><span class="o">.</span><span class="nf">setData</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">request</span><span class="p">)</span> <span class="p">{</span> <span class="n">err</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">err</span> <span class="o">=</span> <span class="n">err</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; Error adding document: </span><span class="se">\(</span><span class="n">err</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
             
-            print("Firestore&gt;&gt; Document added with ID: \(ref.documentID)")
-        }
-    } catch  {
-        print("Firestore&gt;&gt; Error from addPost-setData: ", error)
-    }
-}
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; Document added with ID: </span><span class="se">\(</span><span class="n">ref</span><span class="o">.</span><span class="n">documentID</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span>  <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; Error from addPost-setData: "</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2015,8 +2015,8 @@ service cloud.firestore {
 
 <h5 id="update"><span class="me-2"><strong>Update</strong></span><a href="#update" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2038,26 +2038,26 @@ service cloud.firestore {
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>func updatePost(documentID: String, originalPersonRequest request: Person) {
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">updatePost</span><span class="p">(</span><span class="nv">documentID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">originalPersonRequest</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">Person</span><span class="p">)</span> <span class="p">{</span>
     
-    do {
-        // serverTS에는 값이 들어있으므로 업데이트시 시간이 바뀌지 않는다.
-        // serverTS를 nil로 하면 새로운 시간이 부여된다.
-        var request = request
-        request.serverTS = nil
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="c1">// serverTS에는 값이 들어있으므로 업데이트시 시간이 바뀌지 않는다.</span>
+        <span class="c1">// serverTS를 nil로 하면 새로운 시간이 부여된다.</span>
+        <span class="k">var</span> <span class="nv">request</span> <span class="o">=</span> <span class="n">request</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">serverTS</span> <span class="o">=</span> <span class="kc">nil</span>
         
-        try personsRef.document(documentID).setData(from: request) { err in
-            if let err = err {
-                print("Firestore&gt;&gt; Error updating document: \(err)")
-                return
-            }
+        <span class="k">try</span> <span class="n">personsRef</span><span class="o">.</span><span class="nf">document</span><span class="p">(</span><span class="n">documentID</span><span class="p">)</span><span class="o">.</span><span class="nf">setData</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">request</span><span class="p">)</span> <span class="p">{</span> <span class="n">err</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">err</span> <span class="o">=</span> <span class="n">err</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; Error updating document: </span><span class="se">\(</span><span class="n">err</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
             
-            print("Firestore&gt;&gt; Document updating with ID: \(documentID)")
-        }
-    } catch {
-        print("Firestore&gt;&gt; Error from updatePost-setData: ", error)
-    }
-}
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; Document updating with ID: </span><span class="se">\(</span><span class="n">documentID</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; Error from updatePost-setData: "</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2085,8 +2085,8 @@ service cloud.firestore {
 
 <h5 id="delete"><span class="me-2"><strong>Delete</strong></span><a href="#delete" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2098,17 +2098,17 @@ service cloud.firestore {
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>func deletePost(documentID: String) {
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">deletePost</span><span class="p">(</span><span class="nv">documentID</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
     
-    personsRef.document(documentID).delete() { err in
-        if let err = err {
-            print("Firestore&gt;&gt; Error deleting document: \(err)")
-            return
-        }
+    <span class="n">personsRef</span><span class="o">.</span><span class="nf">document</span><span class="p">(</span><span class="n">documentID</span><span class="p">)</span><span class="o">.</span><span class="nf">delete</span><span class="p">()</span> <span class="p">{</span> <span class="n">err</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">err</span> <span class="o">=</span> <span class="n">err</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; Error deleting document: </span><span class="se">\(</span><span class="n">err</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        print("Firestore&gt;&gt; Document deleted with ID: \(documentID)")
-    }
-}
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; Document deleted with ID: </span><span class="se">\(</span><span class="n">documentID</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2119,8 +2119,8 @@ service cloud.firestore {
 
 <h5 id="read-문서-하나"><span class="me-2"><strong>Read (문서 하나)</strong></span><a href="#read-문서-하나" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2134,19 +2134,19 @@ service cloud.firestore {
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>func read(documentID: String, completionHandler: ((_ person: Person) -&gt; ())?) {
-    personsRef.document(documentID).getDocument { document, err in
-        guard let document = document else {
-            print("Firestore&gt;&gt; document is nil")
-            return
-        }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">read</span><span class="p">(</span><span class="nv">documentID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">person</span><span class="p">:</span> <span class="kt">Person</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="p">{</span>
+    <span class="n">personsRef</span><span class="o">.</span><span class="nf">document</span><span class="p">(</span><span class="n">documentID</span><span class="p">)</span><span class="o">.</span><span class="n">getDocument</span> <span class="p">{</span> <span class="n">document</span><span class="p">,</span> <span class="n">err</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">document</span> <span class="o">=</span> <span class="n">document</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; document is nil"</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        if let person = try? document.data(as: Person.self) {
-            print("Firestore&gt;&gt;", #function, person.documentID!, person)
-            completionHandler?(person)
-        }
-    }
-}
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">person</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">document</span><span class="o">.</span><span class="nf">data</span><span class="p">(</span><span class="nv">as</span><span class="p">:</span> <span class="kt">Person</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt;"</span><span class="p">,</span> <span class="k">#function</span><span class="p">,</span> <span class="n">person</span><span class="o">.</span><span class="n">documentID</span><span class="o">!</span><span class="p">,</span> <span class="n">person</span><span class="p">)</span>
+            <span class="nf">completionHandler</span><span class="p">?(</span><span class="n">person</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2165,8 +2165,8 @@ service cloud.firestore {
 
 <h5 id="read-컬렉션-내의-문서-전체"><span class="me-2"><strong>Read (컬렉션 내의 문서 전체)</strong></span><a href="#read-컬렉션-내의-문서-전체" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2190,29 +2190,29 @@ service cloud.firestore {
 21
 22
 23
-</pre></td><td class="rouge-code"><pre>func readAll() {
-    // 서버 업로드 시간 기준으로 내림차순
-    let query: Query = personsRef.order(by: Person.CodingKeys.serverTS.rawValue, descending: true)
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">readAll</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 서버 업로드 시간 기준으로 내림차순</span>
+    <span class="k">let</span> <span class="nv">query</span><span class="p">:</span> <span class="kt">Query</span> <span class="o">=</span> <span class="n">personsRef</span><span class="o">.</span><span class="nf">order</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="kt">Person</span><span class="o">.</span><span class="kt">CodingKeys</span><span class="o">.</span><span class="n">serverTS</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">descending</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
 
-    query.getDocuments { snapshot, error in
-        if let error = error {
-            print("Firestore&gt;&gt; read failed", error)
-            return
-        }
+    <span class="n">query</span><span class="o">.</span><span class="n">getDocuments</span> <span class="p">{</span> <span class="n">snapshot</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; read failed"</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
 
-        guard let snapshot = snapshot else {
-            print("Firestore&gt;&gt; QuerySnapshot is nil")
-            return
-        }
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">snapshot</span> <span class="o">=</span> <span class="n">snapshot</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt; QuerySnapshot is nil"</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
 
-        snapshot.documents.compactMap { documentSnapshot in
-            try? documentSnapshot.data(as: Person.self)
-        }.forEach {
-            // local 저장된 상태에 원격 서버로 업로드되지 않은 경우 timestamp가 nil이 되는 경우가 있음
-            print("Firestore&gt;&gt;", #function, $0.documentID!, $0.name, $0.serverTS ?? "-")
-        }
-    }
-}
+        <span class="n">snapshot</span><span class="o">.</span><span class="n">documents</span><span class="o">.</span><span class="n">compactMap</span> <span class="p">{</span> <span class="n">documentSnapshot</span> <span class="k">in</span>
+            <span class="k">try</span><span class="p">?</span> <span class="n">documentSnapshot</span><span class="o">.</span><span class="nf">data</span><span class="p">(</span><span class="nv">as</span><span class="p">:</span> <span class="kt">Person</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+        <span class="p">}</span><span class="o">.</span><span class="n">forEach</span> <span class="p">{</span>
+            <span class="c1">// local 저장된 상태에 원격 서버로 업로드되지 않은 경우 timestamp가 nil이 되는 경우가 있음</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Firestore&gt;&gt;"</span><span class="p">,</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">$0</span><span class="o">.</span><span class="n">documentID</span><span class="o">!</span><span class="p">,</span> <span class="nv">$0</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nv">$0</span><span class="o">.</span><span class="n">serverTS</span> <span class="p">??</span> <span class="s">"-"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2235,8 +2235,8 @@ service cloud.firestore {
 
 <p>위에서 만든 클래스를 바탕으로 실제 실행 가능한 영역에서 데이터베이스 CRUD를 수행합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2266,35 +2266,35 @@ service cloud.firestore {
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>override func viewDidLoad() {
-    super.viewDidLoad()
-    FirebasePractice.shared.signInAnonymously { user in
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    <span class="kt">FirebasePractice</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">signInAnonymously</span> <span class="p">{</span> <span class="n">user</span> <span class="k">in</span>
         
-        // 새로운 Person 생성
-        let person = Person(name: "Person \(Int.random(in: 1...1000))", job: "engineer", devices: ["driver", "drill"])
+        <span class="c1">// 새로운 Person 생성</span>
+        <span class="k">let</span> <span class="nv">person</span> <span class="o">=</span> <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Person </span><span class="se">\(</span><span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">1</span><span class="o">...</span><span class="mi">1000</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">job</span><span class="p">:</span> <span class="s">"engineer"</span><span class="p">,</span> <span class="nv">devices</span><span class="p">:</span> <span class="p">[</span><span class="s">"driver"</span><span class="p">,</span> <span class="s">"drill"</span><span class="p">])</span>
 
-        // Create
-        FirebasePractice.shared.addPost(personRequest: person)
+        <span class="c1">// Create</span>
+        <span class="kt">FirebasePractice</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">addPost</span><span class="p">(</span><span class="nv">personRequest</span><span class="p">:</span> <span class="n">person</span><span class="p">)</span>
         
-        // Read &amp; Update &amp; Delete 대상 문서의 ID
-        let targetDocID = "UIS6MGyb79CY4vscxjag"
+        <span class="c1">// Read &amp; Update &amp; Delete 대상 문서의 ID</span>
+        <span class="k">let</span> <span class="nv">targetDocID</span> <span class="o">=</span> <span class="s">"UIS6MGyb79CY4vscxjag"</span>
 
-        // Read(한 개) &amp; Update
-        FirebasePractice.shared.read(documentID: targetDocID) { person in
-            var person = person
-            // 새로운 서버시간 부여
-            person.serverTS = nil
-            person.name = "New Person"
-            FirebasePractice.shared.updatePost(documentID: targetDocID, originalPersonRequest: person)
-        }
+        <span class="c1">// Read(한 개) &amp; Update</span>
+        <span class="kt">FirebasePractice</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="nv">documentID</span><span class="p">:</span> <span class="n">targetDocID</span><span class="p">)</span> <span class="p">{</span> <span class="n">person</span> <span class="k">in</span>
+            <span class="k">var</span> <span class="nv">person</span> <span class="o">=</span> <span class="n">person</span>
+            <span class="c1">// 새로운 서버시간 부여</span>
+            <span class="n">person</span><span class="o">.</span><span class="n">serverTS</span> <span class="o">=</span> <span class="kc">nil</span>
+            <span class="n">person</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">"New Person"</span>
+            <span class="kt">FirebasePractice</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">updatePost</span><span class="p">(</span><span class="nv">documentID</span><span class="p">:</span> <span class="n">targetDocID</span><span class="p">,</span> <span class="nv">originalPersonRequest</span><span class="p">:</span> <span class="n">person</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        // Read(컬렉션 내 전체 문서)
-        FirebasePractice.shared.readAll()
+        <span class="c1">// Read(컬렉션 내 전체 문서)</span>
+        <span class="kt">FirebasePractice</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">readAll</span><span class="p">()</span>
 
-        // Delete
-        FirebasePractice.shared.deletePost(documentID: targetDocID)
-    }
-}
+        <span class="c1">// Delete</span>
+        <span class="kt">FirebasePractice</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">deletePost</span><span class="p">(</span><span class="nv">documentID</span><span class="p">:</span> <span class="n">targetDocID</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

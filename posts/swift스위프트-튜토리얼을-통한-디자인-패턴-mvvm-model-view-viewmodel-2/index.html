@@ -1185,8 +1185,8 @@ struct EmployeeData: Codable {
 
 <p><code class="language-plaintext highlighter-rouge">APIService</code> 클래스는 <code class="language-plaintext highlighter-rouge">URLSession</code> 클래스를 사용하여 직원 데이터를 가져오는 간단한 클래스입니다. 여기에서 모든 네트워킹 모델을 사용하여 서버에서 데이터를 가져올 수 있습니다. 뷰모델 클래스에서 <code class="language-plaintext highlighter-rouge">APIService</code> 클래스를 호출합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1205,24 +1205,24 @@ struct EmployeeData: Codable {
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>import Foundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
 
-class APIService: NSObject {
+<span class="kd">class</span> <span class="kt">APIService</span><span class="p">:</span> <span class="kt">NSObject</span> <span class="p">{</span>
     
-    private let sourcesURL = URL(string: "http://dummy.restapiexample.com/api/v1/employees")!
+    <span class="kd">private</span> <span class="k">let</span> <span class="nv">sourcesURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"http://dummy.restapiexample.com/api/v1/employees"</span><span class="p">)</span><span class="o">!</span>
     
-    func apiToGetEmployeeData(completion : @escaping (Employees) -&gt; ()) {
-        URLSession.shared.dataTask(with: sourcesURL) { (data, urlResponse, error) in
-            if let data = data {
+    <span class="kd">func</span> <span class="nf">apiToGetEmployeeData</span><span class="p">(</span><span class="nv">completion</span> <span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Employees</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="p">{</span>
+        <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">sourcesURL</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">urlResponse</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="p">{</span>
                 
-                let jsonDecoder = JSONDecoder()
+                <span class="k">let</span> <span class="nv">jsonDecoder</span> <span class="o">=</span> <span class="kt">JSONDecoder</span><span class="p">()</span>
                 
-                let empData = try! jsonDecoder.decode(Employees.self, from: data)
-                    completion(empData)
-            }
-        }.resume()
-    }
-}
+                <span class="k">let</span> <span class="nv">empData</span> <span class="o">=</span> <span class="k">try!</span> <span class="n">jsonDecoder</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Employees</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+                    <span class="nf">completion</span><span class="p">(</span><span class="n">empData</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>일단 뷰모델 클래스에서 API 리스폰스를 받았습니다. 이제 뷰 컨트롤러와 뷰모델을 바인딩할 차례입니다.</p>
@@ -1235,8 +1235,8 @@ class APIService: NSObject {
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1262,31 +1262,31 @@ class APIService: NSObject {
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>import Foundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
 
-class EmployeesViewModel: NSObject {
+<span class="kd">class</span> <span class="kt">EmployeesViewModel</span><span class="p">:</span> <span class="kt">NSObject</span> <span class="p">{</span>
     
-    private var apiService: APIService!
-    private(set) var empData: Employees! {
-        didSet {
-            self.bindEmployeeViewModelToController()
-        }
-    }
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">apiService</span><span class="p">:</span> <span class="kt">APIService</span><span class="o">!</span>
+    <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">empData</span><span class="p">:</span> <span class="kt">Employees</span><span class="o">!</span> <span class="p">{</span>
+        <span class="k">didSet</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">bindEmployeeViewModelToController</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    var bindEmployeeViewModelToController : (() -&gt; ()) = {}
+    <span class="k">var</span> <span class="nv">bindEmployeeViewModelToController</span> <span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="o">=</span> <span class="p">{}</span>
     
-    override init() {
-        super.init()
-        self.apiService =  APIService()
-        callFuncToGetEmpData()
-    }
+    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">apiService</span> <span class="o">=</span>  <span class="kt">APIService</span><span class="p">()</span>
+        <span class="nf">callFuncToGetEmpData</span><span class="p">()</span>
+    <span class="p">}</span>
     
-    func callFuncToGetEmpData() {
-        self.apiService.apiToGetEmployeeData { (empData) in
-            self.empData = empData
-        }
-    }
-}
+    <span class="kd">func</span> <span class="nf">callFuncToGetEmpData</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">apiService</span><span class="o">.</span><span class="n">apiToGetEmployeeData</span> <span class="p">{</span> <span class="p">(</span><span class="n">empData</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">empData</span> <span class="o">=</span> <span class="n">empData</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">bindEmployeeViewModelToController</code>라는 이름으로 뷰모델 클래스에 프로퍼티를 생성합니다. (12번 라인) 이 프로퍼티는 뷰 컨트롤러에서 클래스에서 호출해야 합니다.</p>
@@ -1401,8 +1401,8 @@ class EmployeesViewModel: NSObject {
 
 <p>UI를 업데이트하기 위해 뷰 컨트롤러에 테이블 뷰 코드를 작성할 수도 있지만 뷰 컨트롤러를 덜 지저분한 모듈식으로 만들기 위해 여기에서 <code class="language-plaintext highlighter-rouge">UITableViewDataSource</code>에서 확장되는 별도의 클래스 <code class="language-plaintext highlighter-rouge">EmployeeTableViewDataSource</code>를 만들것입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1432,35 +1432,35 @@ class EmployeesViewModel: NSObject {
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>import Foundation
-import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">import</span> <span class="kt">UIKit</span>
 
-class EmployeeTableViewDataSource&lt;CELL : UITableViewCell, T&gt; : NSObject, UITableViewDataSource {
+<span class="kd">class</span> <span class="kt">EmployeeTableViewDataSource</span><span class="o">&lt;</span><span class="kt">CELL</span> <span class="p">:</span> <span class="kt">UITableViewCell</span><span class="p">,</span> <span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span> <span class="p">{</span>
     
-    private var cellIdentifier : String!
-    private var items : [T]!
-    var configureCell : (CELL, T) -&gt; () = {_, _ in }
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">cellIdentifier</span> <span class="p">:</span> <span class="kt">String</span><span class="o">!</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">items</span> <span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span><span class="o">!</span>
+    <span class="k">var</span> <span class="nv">configureCell</span> <span class="p">:</span> <span class="p">(</span><span class="kt">CELL</span><span class="p">,</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span> <span class="o">=</span> <span class="p">{</span><span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="k">in</span> <span class="p">}</span>
     
     
-    init(cellIdentifier: String, items: [T], configureCell: @escaping (CELL, T) -&gt; ()) {
-        self.cellIdentifier = cellIdentifier
-        self.items =  items
-        self.configureCell = configureCell
-    }
+    <span class="nf">init</span><span class="p">(</span><span class="nv">cellIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">],</span> <span class="nv">configureCell</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">CELL</span><span class="p">,</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">cellIdentifier</span> <span class="o">=</span> <span class="n">cellIdentifier</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span>  <span class="n">items</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">configureCell</span> <span class="o">=</span> <span class="n">configureCell</span>
+    <span class="p">}</span>
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
-        items.count
-    }
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="n">items</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
         
-         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CELL
+         <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="n">cellIdentifier</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">CELL</span>
         
-        let item = self.items[indexPath.row]
-        self.configureCell(cell, item)
-        return cell
-    }
-}
+        <span class="k">let</span> <span class="nv">item</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">items</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">configureCell</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cell</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

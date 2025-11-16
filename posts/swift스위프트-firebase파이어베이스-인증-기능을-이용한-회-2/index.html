@@ -1542,8 +1542,8 @@
 </pre></td><td class="rouge-code"><pre>@IBOutlet weak var imgProfilePicture: UIImageView!
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1551,13 +1551,13 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>@IBAction func btnActTakePhoto(_ sender: UIButton) {
-    // 카메라
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">btnActTakePhoto</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 카메라</span>
+<span class="p">}</span>
 
-@IBAction func btnActFromLoadPhoto(_ sender: UIButton) {
-    // 사진 보관함
-}
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActFromLoadPhoto</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 사진 보관함</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1605,8 +1605,8 @@ userProfileThumbnail = makeImageThumbnail(image: #imageLiteral(resourceName: "sa
 
 <p>아래 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1673,71 +1673,71 @@ userProfileThumbnail = makeImageThumbnail(image: #imageLiteral(resourceName: "sa
 64
 65
 66
-</pre></td><td class="rouge-code"><pre>extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">SignUpViewController</span><span class="p">:</span> <span class="kt">UIImagePickerControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span> <span class="p">{</span>
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imgProfilePicture.image = image
-            userProfileThumbnail = makeImageThumbnail(image: image, maxSize: 200)
-        }
-        dismiss(animated: true, completion: nil)
-    }
+    <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">UIImagePickerController</span><span class="p">,</span> <span class="n">didFinishPickingMediaWithInfo</span> <span class="nv">info</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIImagePickerController</span><span class="o">.</span><span class="kt">InfoKey</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="kt">UIImagePickerController</span><span class="o">.</span><span class="kt">InfoKey</span><span class="o">.</span><span class="n">originalImage</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">UIImage</span> <span class="p">{</span>
+            <span class="n">imgProfilePicture</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+            <span class="n">userProfileThumbnail</span> <span class="o">=</span> <span class="nf">makeImageThumbnail</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">image</span><span class="p">,</span> <span class="nv">maxSize</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    private func openSetting(action: UIAlertAction) -&gt; Void {
-        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-            return
-        }
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">openSetting</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="kt">UIAlertAction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">settingsUrl</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">openSettingsURLString</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
 
-        if UIApplication.shared.canOpenURL(settingsUrl) {
-            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                print("Settings opened: \(success)") // Prints true
-            })
-        }
-    }
+        <span class="k">if</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">canOpenURL</span><span class="p">(</span><span class="n">settingsUrl</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="n">settingsUrl</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span> <span class="k">in</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Settings opened: </span><span class="se">\(</span><span class="n">success</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="c1">// Prints true</span>
+            <span class="p">})</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    func doTaskByPhotoAuthorization() {
-        switch PHPhotoLibrary.authorizationStatus() {
-        case .notDetermined:
-            print("photo auth &gt;&gt;&gt; not determined")
-            simpleDestructiveYesAndNo(self, message: "사진 권한 설정을 변경하시겠습니까?", title: "권한 정보 없음", yesHandler: openSetting)
-        case .restricted:
-            print("photo auth &gt;&gt;&gt; restricted")
-            simpleAlert(self, message: "시스템에 의해 거부되었습니다.")
-        case .denied:
-            print("photo auth &gt;&gt;&gt; denied")
-            simpleDestructiveYesAndNo(self, message: "사진 기능 권한이 거부되어 사용할 수 없습니다. 사진 권한 설정을 변경하시겠습니까?", title: "권한 거부됨", yesHandler: openSetting(action:))
-        case .authorized:
-            print("photo auth &gt;&gt;&gt; authorized")
-            self.present(self.imagePickerController, animated: true, completion: nil)
-        case .limited:
-            print("photo auth &gt;&gt;&gt; limited")
-            self.present(self.imagePickerController, animated: true, completion: nil)
-        @unknown default:
-            print("photo auth &gt;&gt;&gt; unknown")
-            simpleAlert(self, message: "unknown")
-        }
-    }
+    <span class="kd">func</span> <span class="nf">doTaskByPhotoAuthorization</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="kt">PHPhotoLibrary</span><span class="o">.</span><span class="nf">authorizationStatus</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">notDetermined</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"photo auth &gt;&gt;&gt; not determined"</span><span class="p">)</span>
+            <span class="nf">simpleDestructiveYesAndNo</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"사진 권한 설정을 변경하시겠습니까?"</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="s">"권한 정보 없음"</span><span class="p">,</span> <span class="nv">yesHandler</span><span class="p">:</span> <span class="n">openSetting</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">restricted</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"photo auth &gt;&gt;&gt; restricted"</span><span class="p">)</span>
+            <span class="nf">simpleAlert</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"시스템에 의해 거부되었습니다."</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">denied</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"photo auth &gt;&gt;&gt; denied"</span><span class="p">)</span>
+            <span class="nf">simpleDestructiveYesAndNo</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"사진 기능 권한이 거부되어 사용할 수 없습니다. 사진 권한 설정을 변경하시겠습니까?"</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="s">"권한 거부됨"</span><span class="p">,</span> <span class="nv">yesHandler</span><span class="p">:</span> <span class="nf">openSetting</span><span class="p">(</span><span class="nv">action</span><span class="p">:))</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">authorized</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"photo auth &gt;&gt;&gt; authorized"</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">imagePickerController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">limited</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"photo auth &gt;&gt;&gt; limited"</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">imagePickerController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"photo auth &gt;&gt;&gt; unknown"</span><span class="p">)</span>
+            <span class="nf">simpleAlert</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"unknown"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    func doTaskByCameraAuthorization() {
-        switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
-        case .notDetermined:
-            print("camera auth &gt;&gt;&gt; not determined")
-            simpleDestructiveYesAndNo(self, message: "카메라 권한 설정을 변경하시겠습니까?", title: "권한 정보 없음", yesHandler: openSetting)
-        case .restricted:
-            print("camera auth &gt;&gt;&gt; restricted")
-            simpleAlert(self, message: "시스템에 의해 거부되었습니다.")
-        case .denied:
-            print("camera auth &gt;&gt;&gt; denied")
-            simpleDestructiveYesAndNo(self, message: "카메라 기능 권한이 거부되어 사용할 수 없습니다. 카메라 권한 설정을 변경하시겠습니까?", title: "권한 거부됨", yesHandler: openSetting(action:))
-        case .authorized:
-            print("camera auth &gt;&gt;&gt; authorized")
-            self.present(self.imagePickerController, animated: true, completion: nil)
-        @unknown default:
-            print("camera auth &gt;&gt;&gt; unknown")
-            simpleAlert(self, message: "unknown")
-        }
-    }
-}
+    <span class="kd">func</span> <span class="nf">doTaskByCameraAuthorization</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="kt">AVCaptureDevice</span><span class="o">.</span><span class="nf">authorizationStatus</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="kt">AVMediaType</span><span class="o">.</span><span class="n">video</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">notDetermined</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"camera auth &gt;&gt;&gt; not determined"</span><span class="p">)</span>
+            <span class="nf">simpleDestructiveYesAndNo</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"카메라 권한 설정을 변경하시겠습니까?"</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="s">"권한 정보 없음"</span><span class="p">,</span> <span class="nv">yesHandler</span><span class="p">:</span> <span class="n">openSetting</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">restricted</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"camera auth &gt;&gt;&gt; restricted"</span><span class="p">)</span>
+            <span class="nf">simpleAlert</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"시스템에 의해 거부되었습니다."</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">denied</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"camera auth &gt;&gt;&gt; denied"</span><span class="p">)</span>
+            <span class="nf">simpleDestructiveYesAndNo</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"카메라 기능 권한이 거부되어 사용할 수 없습니다. 카메라 권한 설정을 변경하시겠습니까?"</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="s">"권한 거부됨"</span><span class="p">,</span> <span class="nv">yesHandler</span><span class="p">:</span> <span class="nf">openSetting</span><span class="p">(</span><span class="nv">action</span><span class="p">:))</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">authorized</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"camera auth &gt;&gt;&gt; authorized"</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">imagePickerController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"camera auth &gt;&gt;&gt; unknown"</span><span class="p">)</span>
+            <span class="nf">simpleAlert</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"unknown"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1763,8 +1763,8 @@ userProfileThumbnail = makeImageThumbnail(image: #imageLiteral(resourceName: "sa
 
 <h5 id="4-카메라-라이브러리-버튼에-이벤트-할당"><span class="me-2"><strong>4. 카메라, 라이브러리 버튼에 이벤트 할당</strong></span><a href="#4-카메라-라이브러리-버튼에-이벤트-할당" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1778,19 +1778,19 @@ userProfileThumbnail = makeImageThumbnail(image: #imageLiteral(resourceName: "sa
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>@IBAction func btnActTakePhoto(_ sender: UIButton) {
-    if UIImagePickerController.isSourceTypeAvailable(.camera) {
-        self.imagePickerController.sourceType = .camera
-        doTaskByCameraAuthorization()
-    } else {
-        simpleAlert(self, message: "카메라 사용이 불가능합니다.")
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">btnActTakePhoto</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="kt">UIImagePickerController</span><span class="o">.</span><span class="nf">isSourceTypeAvailable</span><span class="p">(</span><span class="o">.</span><span class="n">camera</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">imagePickerController</span><span class="o">.</span><span class="n">sourceType</span> <span class="o">=</span> <span class="o">.</span><span class="n">camera</span>
+        <span class="nf">doTaskByCameraAuthorization</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nf">simpleAlert</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"카메라 사용이 불가능합니다."</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-@IBAction func btnActFromLoadPhoto(_ sender: UIButton) {
-    self.imagePickerController.sourceType = .photoLibrary
-    doTaskByPhotoAuthorization()
-}
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActFromLoadPhoto</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">imagePickerController</span><span class="o">.</span><span class="n">sourceType</span> <span class="o">=</span> <span class="o">.</span><span class="n">photoLibrary</span>
+    <span class="nf">doTaskByPhotoAuthorization</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2178,8 +2178,8 @@ let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
 
 <h5 id="5-뷰-컨트롤러에-시작-함수-startuploading-추가"><span class="me-2"><strong>5. 뷰 컨트롤러에 시작 함수 startUploading 추가</strong></span><a href="#5-뷰-컨트롤러에-시작-함수-startuploading-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2189,15 +2189,15 @@ let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>func startUploading(images: [ImageWithName], completion: @escaping FileCompletionBlock) {
-    if images.count == 0 {
-        completion()
-        return;
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">startUploading</span><span class="p">(</span><span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">ImageWithName</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">FileCompletionBlock</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">images</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="nf">completion</span><span class="p">()</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
     
-    block = completion
-    uploadImage(forIndex: 0, images: images)
-}
+    <span class="n">block</span> <span class="o">=</span> <span class="n">completion</span>
+    <span class="nf">uploadImage</span><span class="p">(</span><span class="nv">forIndex</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">images</span><span class="p">:</span> <span class="n">images</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2209,8 +2209,8 @@ let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
 
 <h5 id="6-회원가입-제출-버튼에-업로드-관련-부분-추가"><span class="me-2"><strong>6. 회원가입 제출 버튼에 업로드 관련 부분 추가</strong></span><a href="#6-회원가입-제출-버튼에-업로드-관련-부분-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2229,24 +2229,24 @@ let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>@IBAction func btnActSubmit(_ sender: UIButton) {
-    // ...... //
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">btnActSubmit</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...... //</span>
     
-    Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] authResult, error in
-        // ...... //
+    <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="nf">createUser</span><span class="p">(</span><span class="nv">withEmail</span><span class="p">:</span> <span class="n">userEmail</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="n">userPassword</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">self</span><span class="p">]</span> <span class="n">authResult</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="c1">// ...... //</span>
         
-        // 이미지 업로드
-        let images = [
-            ImageWithName(name: "\(user.uid)/thumb_\(user.uid)", image: userProfileThumbnail, fileExt: "jpg"),
-            ImageWithName(name: "\(user.uid)/original_\(user.uid)", image: imgProfilePicture.image!, fileExt: "png")
-        ]
-        startUploading(images: images) {
-            simpleAlert(self, message: "\(user.email!) 님의 회원가입이 완료되었습니다.", title: "완료") { action in
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-}
+        <span class="c1">// 이미지 업로드</span>
+        <span class="k">let</span> <span class="nv">images</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="kt">ImageWithName</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">user</span><span class="o">.</span><span class="n">uid</span><span class="se">)</span><span class="s">/thumb_</span><span class="se">\(</span><span class="n">user</span><span class="o">.</span><span class="n">uid</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="n">userProfileThumbnail</span><span class="p">,</span> <span class="nv">fileExt</span><span class="p">:</span> <span class="s">"jpg"</span><span class="p">),</span>
+            <span class="kt">ImageWithName</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">user</span><span class="o">.</span><span class="n">uid</span><span class="se">)</span><span class="s">/original_</span><span class="se">\(</span><span class="n">user</span><span class="o">.</span><span class="n">uid</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="n">imgProfilePicture</span><span class="o">.</span><span class="n">image</span><span class="o">!</span><span class="p">,</span> <span class="nv">fileExt</span><span class="p">:</span> <span class="s">"png"</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="nf">startUploading</span><span class="p">(</span><span class="nv">images</span><span class="p">:</span> <span class="n">images</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nf">simpleAlert</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="o">!</span><span class="se">)</span><span class="s"> 님의 회원가입이 완료되었습니다."</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="s">"완료"</span><span class="p">)</span> <span class="p">{</span> <span class="n">action</span> <span class="k">in</span>
+                <span class="k">self</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

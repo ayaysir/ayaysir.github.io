@@ -703,11 +703,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -726,32 +721,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -833,6 +802,87 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -857,6 +907,11 @@
     
 
     
+  
+
+  
+  
+
   
 
 
@@ -947,7 +1002,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3668 words"
+  title="3688 words"
 >
   <em>20 min</em> read</span>
 
@@ -981,21 +1036,21 @@
   
 
   <div class="content">
-    <h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p><strong>출처</strong></p>
 
 <ul>
   <li><a href="https://www.kodeco.com/10787749-creating-a-custom-calendar-control-for-ios">Creating a Custom Calendar Control for iOS</a></li>
 </ul>
 
-<p> </p>
+<p><strong>다음 글</strong></p>
 
-<h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p><a href="/posts/swift스위프트-달력-그리기-2-interface-builder-스토리보드-gui-방식/">다음 글 » Swift(스위프트): 달력 그리기 (2) → Interface Builder 스토리보드 GUI 방식으로 그리기</a></p>
+
+<h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래와 같은 달력을 그리고자 합니다.</p>
 
-<p> </p>
-
-<p><a href="/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-03-오전-1.29.37-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-03-오전-1.29.37-copy.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-03-am-1.29.37-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-03-am-1.29.37-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p>달력을 보면 일요일 ~ 토요일 순으로 해당 날짜가 적혀 있습니다. 괄호 안은 해당 달에 속하지 않는 이전 달 또는 다음달 날짜가 적혀있습니다. 예를 들어 <code class="language-plaintext highlighter-rouge">2023년 2월(February)</code>을 보면 첫 주의 <code class="language-plaintext highlighter-rouge">(29) (30) (31)</code>은 <code class="language-plaintext highlighter-rouge">1월</code>에 속해있으며 마지막 주의 <code class="language-plaintext highlighter-rouge">(1) (2) (3) (4)</code>는 <code class="language-plaintext highlighter-rouge">3월</code>에 속해 있습니다. (각 월간 달력과 비교해보세요.)</p>
 
@@ -1005,14 +1060,16 @@
 
 <p> </p>
 
-<h3 id="달력-데이터-분석"><span class="me-2"><strong>달력 데이터 분석</strong></span><a href="#달력-데이터-분석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="달력-데이터-분석"><span class="me-2"><strong>달력 데이터 분석</strong></span><a href="#달력-데이터-분석" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="사전-준비"><span class="me-2"><strong>사전 준비</strong></span><a href="#사전-준비" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="사전-준비"><span class="me-2"><strong>사전 준비</strong></span><a href="#사전-준비" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h4 id="day-구조체"><span class="me-2">Day 구조체</span><a href="#day-구조체" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>한 달을 표시하려면 일(days) 목록이 필요합니다. <code class="language-plaintext highlighter-rouge">Day</code> 구조체를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1028,21 +1085,21 @@
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>struct Day {
-    /// Date 인스턴스.
-    let date: Date
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">Day</span> <span class="p">{</span>
+    <span class="c1">/// Date 인스턴스.</span>
+    <span class="k">let</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span>
     
-    /// 화면에 표시될 숫자.
-    /// 예) Date 인스턴스가 2022년 1월 25일이라면 -&gt; 25
-    let number: String
+    <span class="c1">/// 화면에 표시될 숫자.</span>
+    <span class="c1">/// 예) Date 인스턴스가 2022년 1월 25일이라면 -&gt; 25</span>
+    <span class="k">let</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">String</span>
     
-    /// 이 날짜가 선택되었는지 여부.
-    let isSelected: Bool
+    <span class="c1">/// 이 날짜가 선택되었는지 여부.</span>
+    <span class="k">let</span> <span class="nv">isSelected</span><span class="p">:</span> <span class="kt">Bool</span>
     
-    /// 이 날짜가 현재 달 내에 있는지 추적.
-    /// 예) 1월 달력을 그리고자 할 떄 Date 인스턴스가 1월 25일이라면 true, 2월 1일이라면 false
-    let isWithinDisplayedMonth: Bool
-}
+    <span class="c1">/// 이 날짜가 현재 달 내에 있는지 추적.</span>
+    <span class="c1">/// 예) 1월 달력을 그리고자 할 떄 Date 인스턴스가 1월 25일이라면 true, 2월 1일이라면 false</span>
+    <span class="k">let</span> <span class="nv">isWithinDisplayedMonth</span><span class="p">:</span> <span class="kt">Bool</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1050,12 +1107,12 @@
   <li>어느 특정 월에 대한 데이터가 <code class="language-plaintext highlighter-rouge">[Days]</code> 형태로 관리됩니다.</li>
 </ul>
 
-<p> </p>
+<h4 id="monthmetadata-구조체"><span class="me-2">MonthMetadata 구조체</span><a href="#monthmetadata-구조체" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>그 밑에 <code class="language-plaintext highlighter-rouge">MonthMetadata</code> 구조체를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1067,43 +1124,43 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>struct MonthMetadata {
-    /// 해당 달의 총 일수, 예를 들어 1월은 31일까지 있으므로 31
-    let numberOfDays: Int
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">MonthMetadata</span> <span class="p">{</span>
+    <span class="c1">/// 해당 달의 총 일수, 예를 들어 1월은 31일까지 있으므로 31</span>
+    <span class="k">let</span> <span class="nv">numberOfDays</span><span class="p">:</span> <span class="kt">Int</span>
     
-    /// 해당 달의 첫 Date
-    let firstDay: Date
+    <span class="c1">/// 해당 달의 첫 Date</span>
+    <span class="k">let</span> <span class="nv">firstDay</span><span class="p">:</span> <span class="kt">Date</span>
     
-    /// 해당 달의 첫 Date가 무슨 요일인지 반환, 일 ~ 토 =&gt; 1 ~ 7
-    /// 예) 수요일이라면 4
-    let firstDayWeekday: Int
-}
+    <span class="c1">/// 해당 달의 첫 Date가 무슨 요일인지 반환, 일 ~ 토 =&gt; 1 ~ 7</span>
+    <span class="c1">/// 예) 수요일이라면 4</span>
+    <span class="k">let</span> <span class="nv">firstDayWeekday</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li>이 구조체는 기준 데이트(Base Date; 보통 현재 시각에 대한 Date 인스턴스를 기준 데이트로 합니다.)를 토대로 월별 메타데이터를 생성하는데 사용됩니다..</li>
 </ul>
 
-<p> </p>
+<h4 id="calendardataerror"><span class="me-2">CalendarDataError</span><a href="#calendardataerror" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>그 밑에 <code class="language-plaintext highlighter-rouge">CalendarDataError</code>를 추가합니다. 메타데이터 생성에 실패했을 때 발생하는 에러로, 나중에 사용될 것입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>enum CalendarDataError: Error {
-    case metadataGeneration
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">enum</span> <span class="kt">CalendarDataError</span><span class="p">:</span> <span class="kt">Error</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">metadataGeneration</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h4 id="날짜-관련-변수-추가"><span class="me-2">날짜 관련 변수 추가 </span><a href="#날짜-관련-변수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>달력 생성에 사용할 날짜 관련 변수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1123,25 +1180,25 @@
 17
 18
 19
-</pre></td><td class="rouge-code"><pre>private let baseDate = Date()
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="k">let</span> <span class="nv">baseDate</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">()</span>
 
-private let calendar = Calendar(identifier: .gregorian)
+<span class="kd">private</span> <span class="k">let</span> <span class="nv">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="o">.</span><span class="n">gregorian</span><span class="p">)</span>
 
-private let selectedDate: Date = baseDate
+<span class="kd">private</span> <span class="k">let</span> <span class="nv">selectedDate</span><span class="p">:</span> <span class="kt">Date</span> <span class="o">=</span> <span class="n">baseDate</span>
 
-private var dateFormatter_OnlyD: DateFormatter = {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "d"
-    return dateFormatter
-}()
+<span class="kd">private</span> <span class="k">var</span> <span class="nv">dateFormatter_OnlyD</span><span class="p">:</span> <span class="kt">DateFormatter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">dateFormatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
+    <span class="n">dateFormatter</span><span class="o">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">"d"</span>
+    <span class="k">return</span> <span class="n">dateFormatter</span>
+<span class="p">}()</span>
 
-private var dateFormatter_CalendarTitle: DateFormatter = {
-    let dateFormatter = DateFormatter()
-    dateFormatter.calendar = Calendar(identifier: .gregorian)
-    dateFormatter.locale = Locale.autoupdatingCurrent
-    dateFormatter.setLocalizedDateFormatFromTemplate("MMMM y")
-    return dateFormatter
-}()
+<span class="kd">private</span> <span class="k">var</span> <span class="nv">dateFormatter_CalendarTitle</span><span class="p">:</span> <span class="kt">DateFormatter</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">dateFormatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
+    <span class="n">dateFormatter</span><span class="o">.</span><span class="n">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="o">.</span><span class="n">gregorian</span><span class="p">)</span>
+    <span class="n">dateFormatter</span><span class="o">.</span><span class="n">locale</span> <span class="o">=</span> <span class="kt">Locale</span><span class="o">.</span><span class="n">autoupdatingCurrent</span>
+    <span class="n">dateFormatter</span><span class="o">.</span><span class="nf">setLocalizedDateFormatFromTemplate</span><span class="p">(</span><span class="s">"MMMM y"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dateFormatter</span>
+<span class="p">}()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1167,12 +1224,12 @@ private var dateFormatter_CalendarTitle: DateFormatter = {
 
 <p> </p>
 
-<h4 id="메타데이터-생성"><span class="me-2"><strong>메타데이터 생성</strong></span><a href="#메타데이터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="메타데이터-생성"><span class="me-2"><strong>메타데이터 생성</strong></span><a href="#메타데이터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>다음 함수들을 이용해 메타데이터를 생성할 것입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1189,21 +1246,21 @@ private var dateFormatter_CalendarTitle: DateFormatter = {
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>///  1. Date를 기준으로 월별 메타데이터인 MonthMetaData 인스턴스를 생성.
-func monthMetadata(for baseDate: Date) throws -&gt; MonthMetadata {
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">///  1. Date를 기준으로 월별 메타데이터인 MonthMetaData 인스턴스를 생성.</span>
+<span class="kd">func</span> <span class="nf">monthMetadata</span><span class="p">(</span><span class="k">for</span> <span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">MonthMetadata</span> <span class="p">{</span>
+<span class="p">}</span>
 
-/// 2. Adds or subtracts an offset from a Date to produce a new one, and return its result.
-func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedMonth: Bool) -&gt; Day {
-}
+<span class="c1">/// 2. Adds or subtracts an offset from a Date to produce a new one, and return its result.</span>
+<span class="kd">func</span> <span class="nf">generateDay</span><span class="p">(</span><span class="n">offsetBy</span> <span class="nv">dayOffset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="k">for</span> <span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="nv">isWithinDisplayedMonth</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Day</span> <span class="p">{</span>
+<span class="p">}</span>
 
-/// 3. Takes the first day of the displayed month and returns an array of Day objects.
-func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date) -&gt; [Day] {
-}
+<span class="c1">/// 3. Takes the first day of the displayed month and returns an array of Day objects.</span>
+<span class="kd">func</span> <span class="nf">generateStartOfNextMonth</span><span class="p">(</span><span class="n">using</span> <span class="nv">firstDayOfDisplayedMonth</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="p">{</span>
+<span class="p">}</span>
 
-/// 4. Takes in a Date and returns an array of Days.
-func generateDaysInMonth(for baseDate: Date) -&gt; [Day] {
-}
+<span class="c1">/// 4. Takes in a Date and returns an array of Days.</span>
+<span class="kd">func</span> <span class="nf">generateDaysInMonth</span><span class="p">(</span><span class="k">for</span> <span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="p">{</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1218,12 +1275,12 @@ func generateDaysInMonth(for baseDate: Date) -&gt; [Day] {
 
 <p> </p>
 
-<h5 id="월별-메타데이터-생성"><span class="me-2"><strong>월별 메타데이터 생성</strong></span><a href="#월별-메타데이터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="월별-메타데이터-생성"><span class="me-2"><strong>월별 메타데이터 생성</strong></span><a href="#월별-메타데이터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>현재 <code class="language-plaintext highlighter-rouge">baseDate</code>를 기준으로 <code class="language-plaintext highlighter-rouge">MonthMetadata</code>를 생성합니다. <code class="language-plaintext highlighter-rouge">monthMetadata(...)</code> 함수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1245,27 +1302,27 @@ func generateDaysInMonth(for baseDate: Date) -&gt; [Day] {
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>///  Date를 기준으로 월별 메타데이터인 MonthMetaData 인스턴스를 생성.
-func monthMetadata(for baseDate: Date) throws -&gt; MonthMetadata {
-    // You ask the calendar for the number of days in baseDate‘s month, then you get the first day of that month.
-    guard
-        let numberOfDaysInMonth = calendar.range(of: .day, in: .month, for: baseDate)?.count,
-        let firstDayOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: baseDate))
-    else {
-        // Both of the previous calls return optional values. If either returns nil, the code throws an error and returns.
-        throw CalendarDataError.metadataGeneration
-    }
+</pre></td><td class="rouge-code"><pre><span class="c1">///  Date를 기준으로 월별 메타데이터인 MonthMetaData 인스턴스를 생성.</span>
+<span class="kd">func</span> <span class="nf">monthMetadata</span><span class="p">(</span><span class="k">for</span> <span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">MonthMetadata</span> <span class="p">{</span>
+    <span class="c1">// You ask the calendar for the number of days in baseDate‘s month, then you get the first day of that month.</span>
+    <span class="k">guard</span>
+        <span class="k">let</span> <span class="nv">numberOfDaysInMonth</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">range</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)?</span><span class="o">.</span><span class="n">count</span><span class="p">,</span>
+        <span class="k">let</span> <span class="nv">firstDayOfMonth</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">dateComponents</span><span class="p">([</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="o">.</span><span class="n">month</span><span class="p">],</span> <span class="nv">from</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">))</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Both of the previous calls return optional values. If either returns nil, the code throws an error and returns.</span>
+        <span class="k">throw</span> <span class="kt">CalendarDataError</span><span class="o">.</span><span class="n">metadataGeneration</span>
+    <span class="p">}</span>
     
-    // You get the weekday value, a number between one and seven that represents which day of the week the first day of the month falls on.
-    // weekday: 주일, 평일: 일요일 이외의 6일간을 가리키는 경우와 토·일요일 이외의 5일간을 가리키는 경우가 있음.
-    let firstDayWeekday: Int = calendar.component(.weekday, from: firstDayOfMonth)
+    <span class="c1">// You get the weekday value, a number between one and seven that represents which day of the week the first day of the month falls on.</span>
+    <span class="c1">// weekday: 주일, 평일: 일요일 이외의 6일간을 가리키는 경우와 토·일요일 이외의 5일간을 가리키는 경우가 있음.</span>
+    <span class="k">let</span> <span class="nv">firstDayWeekday</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">component</span><span class="p">(</span><span class="o">.</span><span class="n">weekday</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">firstDayOfMonth</span><span class="p">)</span>
     
-    // Finally, you use these values to create an instance of MonthMetadata and return it.
-    return MonthMetadata(
-        numberOfDays: numberOfDaysInMonth,
-        firstDay: firstDayOfMonth,
-        firstDayWeekday: firstDayWeekday)
-}
+    <span class="c1">// Finally, you use these values to create an instance of MonthMetadata and return it.</span>
+    <span class="k">return</span> <span class="kt">MonthMetadata</span><span class="p">(</span>
+        <span class="nv">numberOfDays</span><span class="p">:</span> <span class="n">numberOfDaysInMonth</span><span class="p">,</span>
+        <span class="nv">firstDay</span><span class="p">:</span> <span class="n">firstDayOfMonth</span><span class="p">,</span>
+        <span class="nv">firstDayWeekday</span><span class="p">:</span> <span class="n">firstDayWeekday</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1282,14 +1339,16 @@ func monthMetadata(for baseDate: Date) throws -&gt; MonthMetadata {
 
 <p> </p>
 
-<h5 id="해당-달의-days-목록-생성"><span class="me-2"><strong>해당 달의 [Days] 목록 생성</strong></span><a href="#해당-달의-days-목록-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="해당-달의-days-목록-생성"><span class="me-2"><strong>해당 달의 [Days] 목록 생성</strong></span><a href="#해당-달의-days-목록-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>이제 가장 중요한 <code class="language-plaintext highlighter-rouge">Day</code> 목록을 생성하는 단계입니다.</p>
 
+<h4 id="generateday-추가"><span class="me-2">generateDay 추가</span><a href="#generateday-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
 <p>먼저  <code class="language-plaintext highlighter-rouge">generateDay</code> 함수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1300,16 +1359,16 @@ func monthMetadata(for baseDate: Date) throws -&gt; MonthMetadata {
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>/// Adds or subtracts an offset from a Date to produce a new one, and return its result.
-func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedMonth: Bool) -&gt; Day {
-    let date = calendar.date(byAdding: .day, value: dayOffset, to: baseDate) ?? baseDate
+</pre></td><td class="rouge-code"><pre><span class="c1">/// Adds or subtracts an offset from a Date to produce a new one, and return its result.</span>
+<span class="kd">func</span> <span class="nf">generateDay</span><span class="p">(</span><span class="n">offsetBy</span> <span class="nv">dayOffset</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="k">for</span> <span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="nv">isWithinDisplayedMonth</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Day</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">date</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">dayOffset</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)</span> <span class="p">??</span> <span class="n">baseDate</span>
     
-    return Day(
-        date: date,
-        number: dateFormatter_OnlyD.string(from: date),
-        isSelected: calendar.isDate(date, inSameDayAs: selectedDate),
-        isWithinDisplayedMonth: isWithinDisplayedMonth)
-}
+    <span class="k">return</span> <span class="kt">Day</span><span class="p">(</span>
+        <span class="nv">date</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
+        <span class="nv">number</span><span class="p">:</span> <span class="n">dateFormatter_OnlyD</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">date</span><span class="p">),</span>
+        <span class="nv">isSelected</span><span class="p">:</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">isDate</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="nv">inSameDayAs</span><span class="p">:</span> <span class="n">selectedDate</span><span class="p">),</span>
+        <span class="nv">isWithinDisplayedMonth</span><span class="p">:</span> <span class="n">isWithinDisplayedMonth</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1328,12 +1387,12 @@ func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedM
   </li>
 </ul>
 
-<p> </p>
+<h4 id="generatestartofnextmonth-추가"><span class="me-2">generateStartOfNextMonth 추가</span><a href="#generatestartofnextmonth-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>다음 <code class="language-plaintext highlighter-rouge">generateStartOfNextMonth</code> 함수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1363,35 +1422,35 @@ func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedM
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>/// Takes the first day of the displayed month and returns an array of Day objects.
-func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date) -&gt; [Day] {
-    // Retrieve the last day of the displayed month. If this fails, you return an empty array.
-    guard let lastDayInMonth = calendar.date(
-        byAdding: DateComponents(month: 1, day: -1),
-        to: firstDayOfDisplayedMonth) else {
-        return []
-    }
+</pre></td><td class="rouge-code"><pre><span class="c1">/// Takes the first day of the displayed month and returns an array of Day objects.</span>
+<span class="kd">func</span> <span class="nf">generateStartOfNextMonth</span><span class="p">(</span><span class="n">using</span> <span class="nv">firstDayOfDisplayedMonth</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="p">{</span>
+    <span class="c1">// Retrieve the last day of the displayed month. If this fails, you return an empty array.</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">lastDayInMonth</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span>
+        <span class="nv">byAdding</span><span class="p">:</span> <span class="kt">DateComponents</span><span class="p">(</span><span class="nv">month</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">day</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+        <span class="nv">to</span><span class="p">:</span> <span class="n">firstDayOfDisplayedMonth</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="p">}</span>
     
-    // Calculate the number of extra days you need to fill the last row of the calendar.
-    // For instance, if the last day of the month is a Saturday, the result is zero and you return an empty array.
-    let additionalDays = 7 - calendar.component(.weekday, from: lastDayInMonth)
-    guard additionalDays &gt; 0 else {
-        return []
-    }
+    <span class="c1">// Calculate the number of extra days you need to fill the last row of the calendar.</span>
+    <span class="c1">// For instance, if the last day of the month is a Saturday, the result is zero and you return an empty array.</span>
+    <span class="k">let</span> <span class="nv">additionalDays</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">-</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">component</span><span class="p">(</span><span class="o">.</span><span class="n">weekday</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">lastDayInMonth</span><span class="p">)</span>
+    <span class="k">guard</span> <span class="n">additionalDays</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="p">}</span>
     
-    /*
+    <span class="cm">/*
      Create a Range&lt;Int&gt; from one to the value of additionalDays, as in the previous section.
      Then, it transforms this into an array of Days.
      This time, generateDay(offsetBy:for:isWithinDisplayedMonth:) adds the current day in the loop to lastDayInMonth
      to generate the days at the beginning of the next month.
-     */
-    let days: [Day] = (1...additionalDays)
-        .map {
-            generateDay(offsetBy: $0, for: lastDayInMonth, isWithinDisplayedMonth: false)
-        }
+     */</span>
+    <span class="k">let</span> <span class="nv">days</span><span class="p">:</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">additionalDays</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">map</span> <span class="p">{</span>
+            <span class="nf">generateDay</span><span class="p">(</span><span class="nv">offsetBy</span><span class="p">:</span> <span class="nv">$0</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">lastDayInMonth</span><span class="p">,</span> <span class="nv">isWithinDisplayedMonth</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+        <span class="p">}</span>
     
-    return days
-}
+    <span class="k">return</span> <span class="n">days</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1419,12 +1478,12 @@ func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date) -&gt; [Day] 
   <li>이 방법의 결과는 <code class="language-plaintext highlighter-rouge">generateDaysInMonth(for:)</code>에서 생성한 <code class="language-plaintext highlighter-rouge">Days</code> 배열과 결합하여 사용됩니다.</li>
 </ul>
 
-<p> </p>
+<h4 id="monthmetadatafor-추가"><span class="me-2">monthMetadata(for:) 추가</span><a href="#monthmetadatafor-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>다음 실제로 사용할 함수인 <code class="language-plaintext highlighter-rouge">monthMetadata(for:)</code> 를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1459,40 +1518,40 @@ func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date) -&gt; [Day] 
 32
 33
 34
-</pre></td><td class="rouge-code"><pre>/// Takes in a Date and returns an array of Days.
-func generateDaysInMonth(for baseDate: Date) -&gt; [Day] {
-    // Retrieve the metadata you need about the month, using monthMetadata(for:).
-    // If something goes wrong here, the app can’t function. As a result, it terminates with a fatalError.
-    guard let metadata = try? monthMetadata(for: baseDate) else {
-        fatalError("An error occurred when generating the metadata for \(baseDate)")
-    }
+</pre></td><td class="rouge-code"><pre><span class="c1">/// Takes in a Date and returns an array of Days.</span>
+<span class="kd">func</span> <span class="nf">generateDaysInMonth</span><span class="p">(</span><span class="k">for</span> <span class="nv">baseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="p">{</span>
+    <span class="c1">// Retrieve the metadata you need about the month, using monthMetadata(for:).</span>
+    <span class="c1">// If something goes wrong here, the app can’t function. As a result, it terminates with a fatalError.</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">metadata</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="nf">monthMetadata</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nf">fatalError</span><span class="p">(</span><span class="s">"An error occurred when generating the metadata for </span><span class="se">\(</span><span class="n">baseDate</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    let numberOfDaysInMonth = metadata.numberOfDays
-    let offsetInInitialRow = metadata.firstDayWeekday
-    let firstDayOfMonth = metadata.firstDay
+    <span class="k">let</span> <span class="nv">numberOfDaysInMonth</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">numberOfDays</span>
+    <span class="k">let</span> <span class="nv">offsetInInitialRow</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">firstDayWeekday</span>
+    <span class="k">let</span> <span class="nv">firstDayOfMonth</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">firstDay</span>
     
-    /*
+    <span class="cm">/*
      If a month starts on a day other than Sunday, you add the last few days from the previous month at the beginning.
      This avoids gaps in a month’s first row. Here, you create a Range&lt;Int&gt; that handles this scenario.
      For example, if a month starts on Friday, offsetInInitialRow would add five extra days to even up the row.
      You then transform this range into [Day], using map(_:).
-     */
-    var days: [Day] = (1..&lt;(numberOfDaysInMonth + offsetInInitialRow))
-        .map { day in
-            // Check if the current day in the loop is within the current month or part of the previous month.
-            let isWithinDisplayedMonth = day &gt;= offsetInInitialRow
+     */</span>
+    <span class="k">var</span> <span class="nv">days</span><span class="p">:</span> <span class="p">[</span><span class="kt">Day</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">..&lt;</span><span class="p">(</span><span class="n">numberOfDaysInMonth</span> <span class="o">+</span> <span class="n">offsetInInitialRow</span><span class="p">))</span>
+        <span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">day</span> <span class="k">in</span>
+            <span class="c1">// Check if the current day in the loop is within the current month or part of the previous month.</span>
+            <span class="k">let</span> <span class="nv">isWithinDisplayedMonth</span> <span class="o">=</span> <span class="n">day</span> <span class="o">&gt;=</span> <span class="n">offsetInInitialRow</span>
             
-            // Calculate the offset that day is from the first day of the month. If day is in the previous month, this value will be negative.
-            let dayOffset = isWithinDisplayedMonth ? day - offsetInInitialRow : -(offsetInInitialRow - day)
+            <span class="c1">// Calculate the offset that day is from the first day of the month. If day is in the previous month, this value will be negative.</span>
+            <span class="k">let</span> <span class="nv">dayOffset</span> <span class="o">=</span> <span class="n">isWithinDisplayedMonth</span> <span class="p">?</span> <span class="n">day</span> <span class="o">-</span> <span class="nv">offsetInInitialRow</span> <span class="p">:</span> <span class="o">-</span><span class="p">(</span><span class="n">offsetInInitialRow</span> <span class="o">-</span> <span class="n">day</span><span class="p">)</span>
             
-            // Call generateDay(offsetBy:for:isWithinDisplayedMonth:), which adds or subtracts an offset from a Date to produce a new one, and return its result.
-            return generateDay(offsetBy: dayOffset, for: firstDayOfMonth, isWithinDisplayedMonth: isWithinDisplayedMonth)
-        }
+            <span class="c1">// Call generateDay(offsetBy:for:isWithinDisplayedMonth:), which adds or subtracts an offset from a Date to produce a new one, and return its result.</span>
+            <span class="k">return</span> <span class="nf">generateDay</span><span class="p">(</span><span class="nv">offsetBy</span><span class="p">:</span> <span class="n">dayOffset</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">firstDayOfMonth</span><span class="p">,</span> <span class="nv">isWithinDisplayedMonth</span><span class="p">:</span> <span class="n">isWithinDisplayedMonth</span><span class="p">)</span>
+        <span class="p">}</span>
     
-    days += generateStartOfNextMonth(using: firstDayOfMonth)
+    <span class="n">days</span> <span class="o">+=</span> <span class="nf">generateStartOfNextMonth</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">firstDayOfMonth</span><span class="p">)</span>
     
-    return days
-}
+    <span class="k">return</span> <span class="n">days</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1517,20 +1576,21 @@ func generateDaysInMonth(for baseDate: Date) -&gt; [Day] {
 
 <p>아래는 이해를 돕기 위한 다이어그램입니다.</p>
 
-<p>[caption id=”attachment_5274” align=”alignnone” width=”650”] <a href="/assets/img/wp-content/uploads/2023/02/calendar-data-sketch-650x135-1.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/02/calendar-data-sketch-650x135-1.jpg" alt="" loading="lazy"></a> 2020년 5월 첫째주 4월 26일부터 5월 2일까지[/caption]</p>
-
-<p> </p>
+<p><a href="/assets/img/wp-content/uploads/2023/02/calendar-data-sketch-650x135-1.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/02/calendar-data-sketch-650x135-1.jpg" alt="2020년 5월 첫째주 4월 26일부터 5월 2일까지
+" loading="lazy"></a><br />
+<em>2020년 5월 첫째주 4월 26일부터 5월 2일까지</em>
+ </p>
 
 <p>달력을 그리기 위한 데이터 생성 부분이 완성되었습니다.</p>
 
 <p> </p>
 
-<h4 id="달력-그리기"><span class="me-2"><strong>달력 그리기</strong></span><a href="#달력-그리기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="달력-그리기"><span class="me-2"><strong>달력 그리기</strong></span><a href="#달력-그리기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이를 바탕으로 콘솔에 <code class="language-plaintext highlighter-rouge">print</code>하는 방식으로 임시로 달력을 그려보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1564,39 +1624,39 @@ func generateDaysInMonth(for baseDate: Date) -&gt; [Day] {
 31
 32
 33
-</pre></td><td class="rouge-code"><pre>let targetMonths = [
-    calendar.date(byAdding: .month, value: -1, to: baseDate),
-    baseDate,
-    calendar.date(byAdding: .month, value: +1, to: baseDate),
-]
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">targetMonths</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">),</span>
+    <span class="n">baseDate</span><span class="p">,</span>
+    <span class="n">calendar</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">),</span>
+<span class="p">]</span>
 
-for month in targetMonths {
-    guard let baseDate = month else { fatalError() }
+<span class="k">for</span> <span class="n">month</span> <span class="k">in</span> <span class="n">targetMonths</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">baseDate</span> <span class="o">=</span> <span class="n">month</span> <span class="k">else</span> <span class="p">{</span> <span class="nf">fatalError</span><span class="p">()</span> <span class="p">}</span>
     
-    let days = generateDaysInMonth(for: baseDate)
+    <span class="k">let</span> <span class="nv">days</span> <span class="o">=</span> <span class="nf">generateDaysInMonth</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)</span>
     
-    let lineText = "-------------------------------"
+    <span class="k">let</span> <span class="nv">lineText</span> <span class="o">=</span> <span class="s">"-------------------------------"</span>
     
     
-    // 제목
-    print("\(dateFormatter_CalendarTitle.string(from: baseDate))")
-    print()
+    <span class="c1">// 제목</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">dateFormatter_CalendarTitle</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">baseDate</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">()</span>
 
-    // 요일
-    let weekdayText = ["일", "월", "화", "수", "목", "금", "토"]
-    print(weekdayText.joined(separator: "\t"))
-    print(lineText)
+    <span class="c1">// 요일</span>
+    <span class="k">let</span> <span class="nv">weekdayText</span> <span class="o">=</span> <span class="p">[</span><span class="s">"일"</span><span class="p">,</span> <span class="s">"월"</span><span class="p">,</span> <span class="s">"화"</span><span class="p">,</span> <span class="s">"수"</span><span class="p">,</span> <span class="s">"목"</span><span class="p">,</span> <span class="s">"금"</span><span class="p">,</span> <span class="s">"토"</span><span class="p">]</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">weekdayText</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">lineText</span><span class="p">)</span>
 
-    // 숫자
-    for (index, day) in days.enumerated() {
-        print(day.isWithinDisplayedMonth ? day.number : "(\(day.number))", terminator: "\t")
-        if (index + 1) % 7 == 0 {
-            print("\n\(lineText)")
-        }
-    }
+    <span class="c1">// 숫자</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span> <span class="k">in</span> <span class="n">days</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">isWithinDisplayedMonth</span> <span class="p">?</span> <span class="n">day</span><span class="o">.</span><span class="nv">number</span> <span class="p">:</span> <span class="s">"(</span><span class="se">\(</span><span class="n">day</span><span class="o">.</span><span class="n">number</span><span class="se">)</span><span class="s">)"</span><span class="p">,</span> <span class="nv">terminator</span><span class="p">:</span> <span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n\(</span><span class="n">lineText</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    print("\n\n")
-}
+    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1630,21 +1690,22 @@ for month in targetMonths {
 
 <p> </p>
 
-<p><a href="/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-03-오전-1.29.37-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-03-오전-1.29.37-copy.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-03-am-1.29.37-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/02/screenshot-2023-02-03-am-1.29.37-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p>다음 포스트는 위의 내용을 기반으로 스토리보드의 <code class="language-plaintext highlighter-rouge">UICollectionView</code>에서 달력을 표시하는 방법에 대해 알아보겠습니다.</p>
 
 <p> </p>
 
-<h5 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>https://gist.github.com/ayaysir/1bdd12f065ab62473f38383d7e52e013</p>
+<!-- https://gist.github.com/ayaysir/1bdd12f065ab62473f38383d7e52e013 -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/1bdd12f065ab62473f38383d7e52e013.js"> </script>
 
 <p> </p>
 
 <p> </p>
 
-<h5 id="다음-글-swift스위프트-달력-그리기-2--interface-builder-스토리보드-gui-방식으로-그리기"><span class="me-2"><strong><a href="http://yoonbumtae.com/?p=5277">다음 글 » Swift(스위프트): 달력 그리기 (2) → Interface Builder 스토리보드 GUI 방식으로 그리기</a></strong></span><a href="#다음-글-swift스위프트-달력-그리기-2--interface-builder-스토리보드-gui-방식으로-그리기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
   </div>
 

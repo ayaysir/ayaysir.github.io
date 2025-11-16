@@ -924,8 +924,8 @@
 
 <h4 id="1-아래-코드를-프로젝트-내에-추가합니다"><span class="me-2"><strong>1: 아래 코드를 프로젝트 내에 추가합니다.</strong></span><a href="#1-아래-코드를-프로젝트-내에-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -950,29 +950,29 @@
 22
 23
 24
-</pre></td><td class="rouge-code"><pre>import Foundation
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Foundation</span>
 
-func checkAppFirstrunOrUpdateStatus(firstrun: () -&gt; (), updated: () -&gt; (), nothingChanged: () -&gt; ()) {
-    let currentVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
-    let versionOfLastRun = UserDefaults.standard.object(forKey: "VersionOfLastRun") as? String
-    // print(#function, currentVersion ?? "", versionOfLastRun ?? "")
+<span class="kd">func</span> <span class="nf">checkAppFirstrunOrUpdateStatus</span><span class="p">(</span><span class="nv">firstrun</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(),</span> <span class="nv">updated</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(),</span> <span class="nv">nothingChanged</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">currentVersion</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">object</span><span class="p">(</span><span class="nv">forInfoDictionaryKey</span><span class="p">:</span> <span class="s">"CFBundleShortVersionString"</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">versionOfLastRun</span> <span class="o">=</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">object</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"VersionOfLastRun"</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">String</span>
+    <span class="c1">// print(#function, currentVersion ?? "", versionOfLastRun ?? "")</span>
 
-    if versionOfLastRun == nil {
-        // First start after installing the app
-        firstrun()
+    <span class="k">if</span> <span class="n">versionOfLastRun</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="c1">// First start after installing the app</span>
+        <span class="nf">firstrun</span><span class="p">()</span>
 
-    } else if versionOfLastRun != currentVersion {
-        // App was updated since last run
-        updated()
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">versionOfLastRun</span> <span class="o">!=</span> <span class="n">currentVersion</span> <span class="p">{</span>
+        <span class="c1">// App was updated since last run</span>
+        <span class="nf">updated</span><span class="p">()</span>
 
-    } else {
-        // nothing changed
-        nothingChanged()
-    }
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// nothing changed</span>
+        <span class="nf">nothingChanged</span><span class="p">()</span>
+    <span class="p">}</span>
 
-    UserDefaults.standard.set(currentVersion, forKey: "VersionOfLastRun")
-    UserDefaults.standard.synchronize()
-}
+    <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="n">currentVersion</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="s">"VersionOfLastRun"</span><span class="p">)</span>
+    <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">synchronize</span><span class="p">()</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

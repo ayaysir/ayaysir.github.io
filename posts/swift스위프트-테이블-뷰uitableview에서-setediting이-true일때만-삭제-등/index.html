@@ -981,7 +981,7 @@
 
 <p>제목이 대체 무슨 말인가 하면</p>
 
-<p>아래 화면과 같이 <code class="language-plaintext highlighter-rouge">Edit</code> 버튼이 있어 에디트 모드가 따로 있는 예제 앱이 있습니다. 테이블 뷰의 에디트 모드가 모든 열(<code class="language-plaintext highlighter-rouge">row</code>)에 활성화되어 있는 상태입니다.  <a href="/assets/img/wp-content/uploads/2022/05/-2022-05-30-오전-3.30.50-e1653849960422.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/-2022-05-30-오전-3.30.50-e1653849960422.jpg" alt="" loading="lazy"></a></p>
+<p>아래 화면과 같이 <code class="language-plaintext highlighter-rouge">Edit</code> 버튼이 있어 에디트 모드가 따로 있는 예제 앱이 있습니다. 테이블 뷰의 에디트 모드가 모든 열(<code class="language-plaintext highlighter-rouge">row</code>)에 활성화되어 있는 상태입니다.  <a href="/assets/img/wp-content/uploads/2022/05/-2022-05-30-am-3.30.50-e1653849960422.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/-2022-05-30-am-3.30.50-e1653849960422.jpg" alt="" loading="lazy"></a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1001,8 +1001,8 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 
 <p><code class="language-plaintext highlighter-rouge">barBtnEdit</code>는 화면 오른쪽의 <code class="language-plaintext highlighter-rouge">Edit</code> 버튼에 대한 액션입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1014,24 +1014,24 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>@IBAction func barBtnActEdit(_ sender: UIBarButtonItem) {
-    if tableView.isEditing {
-        // Edit mode off
-        tableView.setEditing(false, animated: true)
-        sender.title = "Edit"
-    } else {
-        // Edit mode on
-        tableView.setEditing(true, animated: true)
-        sender.title = "Done"
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">barBtnActEdit</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">tableView</span><span class="o">.</span><span class="n">isEditing</span> <span class="p">{</span>
+        <span class="c1">// Edit mode off</span>
+        <span class="n">tableView</span><span class="o">.</span><span class="nf">setEditing</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="n">sender</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"Edit"</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Edit mode on</span>
+        <span class="n">tableView</span><span class="o">.</span><span class="nf">setEditing</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="n">sender</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">"Done"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p><code class="language-plaintext highlighter-rouge">tableView.setEditing(_:animated:)</code> 를 통해 Edit Mode를 <code class="language-plaintext highlighter-rouge">true</code>로 하면 아래와 같은 화면이 나옵니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2022/05/-2022-05-30-오전-3.31.16-e1653849999668.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/-2022-05-30-오전-3.31.16-e1653849999668.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/05/-2022-05-30-am-3.31.16-e1653849999668.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/-2022-05-30-am-3.31.16-e1653849999668.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 

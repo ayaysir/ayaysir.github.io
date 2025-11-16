@@ -1942,8 +1942,8 @@
 
 <p>눌렀다면 다음 부분이 추가될 것입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1951,13 +1951,13 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
-    // ... code ...
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="c1">// ... code ...</span>
+<span class="p">}</span>
 
-func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell {
-    // ... code ...
-}
+<span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+    <span class="c1">// ... code ...</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>두 함수 모두 <code class="language-plaintext highlighter-rouge">UICollectionViewDataSource</code>와 관련된 부분입니다.</p>
@@ -1970,8 +1970,8 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 
 <p>예제 코드를 작성하면 아래와 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1984,18 +1984,18 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
-    return 10
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">10</span>
+<span class="p">}</span>
 
-func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as?
-            UICollectionViewCell else {
-        return UICollectionViewCell()
-    }
+<span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withReuseIdentifier</span><span class="p">:</span> <span class="s">"cell"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span>
+            <span class="kt">UICollectionViewCell</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">UICollectionViewCell</span><span class="p">()</span>
+    <span class="p">}</span>
     
-    return cell
-}
+    <span class="k">return</span> <span class="n">cell</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2061,7 +2061,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 
 <p>먼저 <code class="language-plaintext highlighter-rouge">Assets.xcassets</code>에 사진 파일들을 저장합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-오전-12.29.20.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-오전-12.29.20.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-am-12.29.20.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-am-12.29.20.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -2069,7 +2069,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 
 <p>컬렉션 뷰 내의 셀의 사이즈를 조정하고, <code class="language-plaintext highlighter-rouge">Image</code> 오브젝트와 <code class="language-plaintext highlighter-rouge">Label</code> 오브젝트를 추가합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-오전-12.26.35.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-오전-12.26.35.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-am-12.26.35.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-am-12.26.35.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -2107,14 +2107,14 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 
 <p>메인 스토리보드에서 <code class="language-plaintext highlighter-rouge">Assistant</code>를 활성화한 뒤, 오브젝트와 <code class="language-plaintext highlighter-rouge">@IBOutlet</code> 을 연결합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-오전-12.31.11.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-오전-12.31.11.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-am-12.31.11.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-09-am-12.31.11.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>다음, <code class="language-plaintext highlighter-rouge">ImageInfo</code> 구조체를 생성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2127,17 +2127,17 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>struct ImageInfo {
-    let name: String
+</pre></td><td class="rouge-code"><pre><span class="kd">struct</span> <span class="kt">ImageInfo</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
     
-    var image: UIImage? {
-        return UIImage(named: "\(name).jpg")
-    }
+    <span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">.jpg"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    init (name: String) {
-        self.name = name
-    }
-}
+    <span class="nf">init</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2463,7 +2463,7 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2021/01/-2021-01-09-오전-12.15.38-e1610119142720.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/01/-2021-01-09-오전-12.15.38-e1610119142720.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/01/-2021-01-09-am-12.15.38-e1610119142720.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/01/-2021-01-09-am-12.15.38-e1610119142720.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -2509,8 +2509,8 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
 </pre></td><td class="rouge-code"><pre>let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2524,19 +2524,19 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -&gt; CGSize {
-    let width = collectionView.frame.width
-    let height = collectionView.frame.height
-    let itemsPerRow: CGFloat = 2
-    let widthPadding = sectionInsets.left * (itemsPerRow + 1)
-    let itemsPerColumn: CGFloat = 3
-    let heightPadding = sectionInsets.top * (itemsPerColumn + 1)
-    let cellWidth = (width - widthPadding) / itemsPerRow
-    let cellHeight = (height - heightPadding) / itemsPerColumn
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">layout</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="kt">UICollectionViewLayout</span><span class="p">,</span> <span class="n">sizeForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGSize</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">width</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">width</span>
+    <span class="k">let</span> <span class="nv">height</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">height</span>
+    <span class="k">let</span> <span class="nv">itemsPerRow</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">let</span> <span class="nv">widthPadding</span> <span class="o">=</span> <span class="n">sectionInsets</span><span class="o">.</span><span class="k">left</span> <span class="o">*</span> <span class="p">(</span><span class="n">itemsPerRow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">itemsPerColumn</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">let</span> <span class="nv">heightPadding</span> <span class="o">=</span> <span class="n">sectionInsets</span><span class="o">.</span><span class="n">top</span> <span class="o">*</span> <span class="p">(</span><span class="n">itemsPerColumn</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">cellWidth</span> <span class="o">=</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">widthPadding</span><span class="p">)</span> <span class="o">/</span> <span class="n">itemsPerRow</span>
+    <span class="k">let</span> <span class="nv">cellHeight</span> <span class="o">=</span> <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="n">heightPadding</span><span class="p">)</span> <span class="o">/</span> <span class="n">itemsPerColumn</span>
     
-    return CGSize(width: cellWidth, height: cellHeight)
+    <span class="k">return</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="n">cellWidth</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">cellHeight</span><span class="p">)</span>
     
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>

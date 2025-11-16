@@ -765,28 +765,28 @@
 
 <p>Swift의 함수는 자바스크립트의 함수와 개념적으로 매우 비슷합니다. 키워드로 <code class="language-plaintext highlighter-rouge">func</code>를 시용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>func 함수이름(파라미터1: 자료형, 파라미터2: 자료형...) -&gt; 리턴시자료형 {....return xxx....}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">함수이름</span><span class="p">(</span><span class="nv">파라미터1</span><span class="p">:</span> <span class="n">자료형</span><span class="p">,</span> <span class="nv">파라미터2</span><span class="p">:</span> <span class="n">자료형</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">리턴시자료형</span> <span class="p">{</span><span class="o">....</span><span class="k">return</span> <span class="n">xxx</span><span class="o">....</span><span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>아래 예제는 함수의 기초 사용 형태입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>func greet(name: String, day: String) -&gt; String {
-    return "안녕하세요. \(name)씨, 오늘은 \(day)요일입니다."
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">day</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"안녕하세요. </span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">씨, 오늘은 </span><span class="se">\(</span><span class="n">day</span><span class="se">)</span><span class="s">요일입니다."</span>
+<span class="p">}</span>
 
-print (greet(name: "박똑딱", day: "화"))
+<span class="nf">print</span> <span class="p">(</span><span class="nf">greet</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"박똑딱"</span><span class="p">,</span> <span class="nv">day</span><span class="p">:</span> <span class="s">"화"</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
@@ -797,16 +797,16 @@ print (greet(name: "박똑딱", day: "화"))
 
 <p>리턴이 필요 없는 경우 아래와 같이 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>func greetNoReturn(name: String, day: String) {
-    print("안녕하세요. \(name)씨, 오늘은 \(day)요일입니다.")
-}
-greetNoReturn(name: "노리턴", day: "일")
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">greetNoReturn</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">day</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"안녕하세요. </span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">씨, 오늘은 </span><span class="se">\(</span><span class="n">day</span><span class="se">)</span><span class="s">요일입니다."</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">greetNoReturn</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"노리턴"</span><span class="p">,</span> <span class="nv">day</span><span class="p">:</span> <span class="s">"일"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
@@ -817,16 +817,16 @@ greetNoReturn(name: "노리턴", day: "일")
 
 <p><strong>퀴즈1.</strong> 인사말에 ‘오늘의 특별한 점심’을 포함하도록 매개변수를 추가하고 <code class="language-plaintext highlighter-rouge">String</code> 타입으로 인사말을 리턴하는 함수를 만드시오.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>func greet2(menu: String) -&gt; String {
-    return "안녕하세요. 오늘의 특별한 점심은 \(menu)입니다."
-}
-greet2(menu: "치킨")
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">greet2</span><span class="p">(</span><span class="nv">menu</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"안녕하세요. 오늘의 특별한 점심은 </span><span class="se">\(</span><span class="n">menu</span><span class="se">)</span><span class="s">입니다."</span>
+<span class="p">}</span>
+<span class="nf">greet2</span><span class="p">(</span><span class="nv">menu</span><span class="p">:</span> <span class="s">"치킨"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -835,18 +835,18 @@ greet2(menu: "치킨")
 
 <p>매개변수 이름 앞에 <code class="language-plaintext highlighter-rouge">_</code> 를 붙이고 <strong>한 칸 띄우면</strong> 나중에 사용할 때 변수 이름을 따로 붙이지 않아도 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>func greet(_ name: String, _ day: String) -&gt; String {
-    return "안녕하세요. \(name)씨, 오늘은 \(day)요일입니다."
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="n">_</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">day</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"안녕하세요. </span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">씨, 오늘은 </span><span class="se">\(</span><span class="n">day</span><span class="se">)</span><span class="s">요일입니다."</span>
+<span class="p">}</span>
 
-print (greet("이뚝떡", "수"))
+<span class="nf">print</span> <span class="p">(</span><span class="nf">greet</span><span class="p">(</span><span class="s">"이뚝떡"</span><span class="p">,</span> <span class="s">"수"</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
@@ -857,18 +857,18 @@ print (greet("이뚝떡", "수"))
 
 <p>_ 대신 <code class="language-plaintext highlighter-rouge">다른 이름</code>을 입력하면 <strong>별칭</strong>이 되며, 함수를 가져다 사용할 시 별칭을 입력하여 사용할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>func greet(이름 name: String, 요일 day: String) -&gt; String {
-    return "안녕하세요. \(name)씨, 오늘은 \(day)요일입니다."
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">greet</span><span class="p">(</span><span class="n">이름</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">요일</span> <span class="nv">day</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"안녕하세요. </span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">씨, 오늘은 </span><span class="se">\(</span><span class="n">day</span><span class="se">)</span><span class="s">요일입니다."</span>
+<span class="p">}</span>
 
-print (greet(이름: "박똑띡", 요일: "목"))
+<span class="nf">print</span> <span class="p">(</span><span class="nf">greet</span><span class="p">(</span><span class="nv">이름</span><span class="p">:</span> <span class="s">"박똑띡"</span><span class="p">,</span> <span class="nv">요일</span><span class="p">:</span> <span class="s">"목"</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
@@ -885,16 +885,16 @@ print (greet(이름: "박똑띡", 요일: "목"))
 
 <p>스위프트는 여러 개의 변수를 배열처럼 리턴할 수 있습니다. 하지만 배열과는 다르게 말 그대로 여러 개를 한 번에 리턴하므로 리턴된 변수도 여러개입니다. 이것을 튜플이라 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>func getGasPrices(_ basePrice: Double) -&gt; (Double, Double, Double){
-    return (basePrice * 3.59, basePrice * 3.69, basePrice * 3.79)
-}
-print( getGasPrices(1021.1) )
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">getGasPrices</span><span class="p">(</span><span class="n">_</span> <span class="nv">basePrice</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Double</span><span class="p">,</span> <span class="kt">Double</span><span class="p">,</span> <span class="kt">Double</span><span class="p">){</span>
+    <span class="nf">return</span> <span class="p">(</span><span class="n">basePrice</span> <span class="o">*</span> <span class="mf">3.59</span><span class="p">,</span> <span class="n">basePrice</span> <span class="o">*</span> <span class="mf">3.69</span><span class="p">,</span> <span class="n">basePrice</span> <span class="o">*</span> <span class="mf">3.79</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span> <span class="nf">getGasPrices</span><span class="p">(</span><span class="mf">1021.1</span><span class="p">)</span> <span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
@@ -907,8 +907,8 @@ print( getGasPrices(1021.1) )
 
 <p>함수 안에 또 다른 함수를 지정하고 사용할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -929,26 +929,26 @@ print( getGasPrices(1021.1) )
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>func calc(_ num1 : Int, _ num2 : Int, operand: String) -&gt; Int {
-    var result = 0
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">calc</span><span class="p">(</span><span class="n">_</span> <span class="nv">num1</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">num2</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">operand</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">result</span> <span class="o">=</span> <span class="mi">0</span>
     
-    func add() {
-        result = num1 + num2
-    }
-    func doNothing() {
+    <span class="kd">func</span> <span class="nf">add</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">doNothing</span><span class="p">()</span> <span class="p">{</span>
         
-    }
+    <span class="p">}</span>
     
-    switch operand{
-    case "+":
-        add()
-    default:
-        doNothing()
-    }
+    <span class="k">switch</span> <span class="n">operand</span><span class="p">{</span>
+    <span class="k">case</span> <span class="s">"+"</span><span class="p">:</span>
+        <span class="nf">add</span><span class="p">()</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="nf">doNothing</span><span class="p">()</span>
+    <span class="p">}</span>
     
-    return result
-}
-calc(10, 5, operand: "+") // 15
+    <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
+<span class="nf">calc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="nv">operand</span><span class="p">:</span> <span class="s">"+"</span><span class="p">)</span> <span class="c1">// 15</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -959,8 +959,8 @@ calc(10, 5, operand: "+") // 15
 
 <p>아래는 어느 함수가 자신 안에 있는 다른 중첩 함수를 리턴합니다. 이것에 대해 함수를 실행 후 그 리턴값을 특정 변수에 옮겨담으면, 그 변수가 안에 있는 중첩 함수를 대신하게 되는 형태입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -970,15 +970,15 @@ calc(10, 5, operand: "+") // 15
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>func makeIncrementer() -&gt; ((Int) -&gt; Int) {
-    func addOne(number: Int) -&gt; Int {
-        return number + 1
-    }
-    return addOne
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">makeIncrementer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">((</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">addOne</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">addOne</span>
+<span class="p">}</span>
 
-var increment = makeIncrementer() // addOne을 리턴시키고 increment에 적재
-print( increment(15) )   // 16
+<span class="k">var</span> <span class="nv">increment</span> <span class="o">=</span> <span class="nf">makeIncrementer</span><span class="p">()</span> <span class="c1">// addOne을 리턴시키고 increment에 적재</span>
+<span class="nf">print</span><span class="p">(</span> <span class="nf">increment</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="p">)</span>   <span class="c1">// 16</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/01/screenshot-2020-01-18-pm-11.17.22.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/01/screenshot-2020-01-18-pm-11.17.22.png" alt="" loading="lazy"></a></p>
@@ -987,8 +987,8 @@ print( increment(15) )   // 16
 
 <p>퀴즈 1. 연산자(<code class="language-plaintext highlighter-rouge">operand</code>)를 지정하면 매개 변수로 숫자 2개를 받으며 해당 사칙연산을 시행하는 함수를 리턴하는 <code class="language-plaintext highlighter-rouge">calc2</code> 함수를 작성하시오.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1018,43 +1018,43 @@ print( increment(15) )   // 16
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>func calc2(operand: String) -&gt; ((Int, Int) -&gt; Int) {
-    func add(_ num1: Int, _ num2: Int) -&gt; Int {
-        return num1 + num2
-    }
-    func subst(_ num1: Int, _ num2: Int) -&gt; Int {
-        return num1 - num2
-    }
-    func prod(_ num1: Int, _ num2: Int) -&gt; Int {
-        return num1 * num2
-    }
-    func divi(_ num1: Int, _ num2: Int) -&gt; Int {
-        return num1 / num2
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">calc2</span><span class="p">(</span><span class="nv">operand</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">((</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">_</span> <span class="nv">num1</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">num2</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">subst</span><span class="p">(</span><span class="n">_</span> <span class="nv">num1</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">num2</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">prod</span><span class="p">(</span><span class="n">_</span> <span class="nv">num1</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">num2</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+    <span class="p">}</span>
+    <span class="kd">func</span> <span class="nf">divi</span><span class="p">(</span><span class="n">_</span> <span class="nv">num1</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">num2</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+    <span class="p">}</span>
     
-    switch operand{
-        case "-":
-        return subst
-        case "*":
-        return prod
-        case "/":
-        return divi
-    default:
-        return add
-    }
-}
-(calc2(operand: "*"))(3, 6) // 18
-(calc2(operand: "-"))(3, 6) // -3
-(calc2(operand: "+"))(3, 6) // 9
-(calc2(operand: "/"))(6, 3) // 2
+    <span class="k">switch</span> <span class="n">operand</span><span class="p">{</span>
+        <span class="k">case</span> <span class="s">"-"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">subst</span>
+        <span class="k">case</span> <span class="s">"*"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">prod</span>
+        <span class="k">case</span> <span class="s">"/"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">divi</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">add</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">(</span><span class="nf">calc2</span><span class="p">(</span><span class="nv">operand</span><span class="p">:</span> <span class="s">"*"</span><span class="p">))(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// 18</span>
+<span class="p">(</span><span class="nf">calc2</span><span class="p">(</span><span class="nv">operand</span><span class="p">:</span> <span class="s">"-"</span><span class="p">))(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// -3</span>
+<span class="p">(</span><span class="nf">calc2</span><span class="p">(</span><span class="nv">operand</span><span class="p">:</span> <span class="s">"+"</span><span class="p">))(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// 9</span>
+<span class="p">(</span><span class="nf">calc2</span><span class="p">(</span><span class="nv">operand</span><span class="p">:</span> <span class="s">"/"</span><span class="p">))(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// 2</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>아래는 특정 함수에서 다른 함수를 인자로 받아 사용하는 경우입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1074,25 +1074,25 @@ print( increment(15) )   // 16
 17
 18
 19
-</pre></td><td class="rouge-code"><pre>func hasAnyMatches(list: [Int], condition: (Int) -&gt; Bool) -&gt; Bool {
-    for item in list{
-        if condition(item){
-            return true
-        }
-    }
-    return false
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">hasAnyMatches</span><span class="p">(</span><span class="nv">list</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">],</span> <span class="nv">condition</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">list</span><span class="p">{</span>
+        <span class="k">if</span> <span class="nf">condition</span><span class="p">(</span><span class="n">item</span><span class="p">){</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span>
 
-func lessThanTen(number: Int) -&gt; Bool {
-    return number &lt; 10 // number가 10보다 작으면 true 반환
-}
-func lessThanFive(number: Int) -&gt; Bool {
-    return number &lt; 5
-}
+<span class="kd">func</span> <span class="nf">lessThanTen</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="c1">// number가 10보다 작으면 true 반환</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">lessThanFive</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">5</span>
+<span class="p">}</span>
 
-var numbers = [20, 19, 7, 12, 25]
-hasAnyMatches(list: numbers, condition: lessThanTen) // true
-hasAnyMatches(list: numbers, condition: lessThanFive) // false
+<span class="k">var</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="nf">hasAnyMatches</span><span class="p">(</span><span class="nv">list</span><span class="p">:</span> <span class="n">numbers</span><span class="p">,</span> <span class="nv">condition</span><span class="p">:</span> <span class="n">lessThanTen</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nf">hasAnyMatches</span><span class="p">(</span><span class="nv">list</span><span class="p">:</span> <span class="n">numbers</span><span class="p">,</span> <span class="nv">condition</span><span class="p">:</span> <span class="n">lessThanFive</span><span class="p">)</span> <span class="c1">// false</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1147,8 +1147,8 @@ print(result2)
 
 <p><strong>퀴즈 1.</strong> 위의 코드를 참조해 짝수일 경우 0을 반환하도록 수정하되, 클로저 표현식을 사용하지 말고 일반 함수를 사용해서 작성하시오.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1159,16 +1159,16 @@ print(result2)
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>func iter3(number: Int) -&gt; Int {
-    var result = number
-    if number % 2 == 0 {
-        result = 0
-    }
-    return result
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">iter3</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">number</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
 
-var result3 = numbers2.map(iter3)
-print(result3)
+<span class="k">var</span> <span class="nv">result3</span> <span class="o">=</span> <span class="n">numbers2</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">iter3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result3</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>[19, 0, 37, 0]</p>

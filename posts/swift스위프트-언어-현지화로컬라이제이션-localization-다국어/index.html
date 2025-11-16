@@ -1740,7 +1740,7 @@
 
 <p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-01-pm-11.33.29.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-01-pm-11.33.29.jpg" alt="" loading="lazy"></a></p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-12.08.56.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-12.08.56.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-am-12.08.56.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-am-12.08.56.jpg" alt="" loading="lazy"></a></p>
 
 <p>앱을 실행하고 언어를 변경하면 위와 같이 영어와 한국어가 다르게 표기되는것을 볼 수 있습니다.</p>
 
@@ -1756,8 +1756,8 @@
 
 <p>먼저 아래와 같은 <code class="language-plaintext highlighter-rouge">String</code>의 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1770,17 +1770,17 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>extension String {
+</pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">String</span> <span class="p">{</span>
     
-    var localized: String {
-        return NSLocalizedString(self, tableName: "Localizable", value: self, comment: "")
-    }
+    <span class="k">var</span> <span class="nv">localized</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">tableName</span><span class="p">:</span> <span class="s">"Localizable"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">comment</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    func localizedFormat(_ arguments: CVarArg...) -&gt; String {
-        let localizedValue = self.localized
-        return String(format: localizedValue, arguments: arguments)
-    }
-}
+    <span class="kd">func</span> <span class="nf">localizedFormat</span><span class="p">(</span><span class="n">_</span> <span class="nv">arguments</span><span class="p">:</span> <span class="kt">CVarArg</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">localizedValue</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">localized</span>
+        <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="n">localizedValue</span><span class="p">,</span> <span class="nv">arguments</span><span class="p">:</span> <span class="n">arguments</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1788,10 +1788,10 @@
 
 <p><code class="language-plaintext highlighter-rouge">NSLocalizedString</code> 함수는 키, 원문을 저장하여 언어별 빌드마다 번역된 결과를 제공하는 역할을 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>func NSLocalizedString(_ key: String, tableName: String? = nil, bundle: Bundle = Bundle.main, value: String = "", comment: String) -&gt; String
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="n">_</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tableName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span> <span class="nv">comment</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1805,27 +1805,27 @@
 
 <p>번역 테이블 파일을 생성합니다. 프로젝트에서 새 파일을 생성합니다. <code class="language-plaintext highlighter-rouge">Strings FIle</code>을 선택합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-1.05.33.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-1.05.33.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-am-1.05.33.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-am-1.05.33.jpg" alt="" loading="lazy"></a></p>
 
 <p>파일 이름을 <code class="language-plaintext highlighter-rouge">Localizable.strings</code>로 설정합니다. (대소문자 및 철자 주의)</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-12.44.05.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-12.44.05.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-12.44.05.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-12.44.05.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p><code class="language-plaintext highlighter-rouge">Localizable.strings</code> 파일을 연 뒤 Xcode 창 오른쪽의 <code class="language-plaintext highlighter-rouge">File Inspector</code>에서 <code class="language-plaintext highlighter-rouge">Localize...</code> 버튼을 클릭합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-1.06.00.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-1.06.00.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-am-1.06.00.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-am-1.06.00.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p>아래와 같은 창이 나오면 <code class="language-plaintext highlighter-rouge">Base</code> 가 있는 경우 <code class="language-plaintext highlighter-rouge">Base</code>, 없는 경우 개발 언어인 <code class="language-plaintext highlighter-rouge">English</code> 를 선택합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-12.46.35.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-12.46.35.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-12.46.35.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-12.46.35.jpg" alt="" loading="lazy"></a></p>
 
 <p>File Inspector으로 다시 돌아가서 번역 대상 언어를 선택합니다. <code class="language-plaintext highlighter-rouge">English</code>는 번역할 필요가 없으므로 체크 해제합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-1.07.49.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-오전-1.07.49.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-am-1.07.49.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-30-am-1.07.49.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1927,7 +1927,7 @@ guard txfPostTitle.text! != "" else {
 
 <h3 id="5-infoplist-로컬라이징"><span class="me-2"><strong>5. info.plist 로컬라이징</strong></span><a href="#5-infoplist-로컬라이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-1.21.56.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-1.21.56.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-1.21.56.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-1.21.56.jpg" alt="" loading="lazy"></a></p>
 
 <p>위 그림은 <code class="language-plaintext highlighter-rouge">info.plist</code> 파일에서 카메라, 사진 라이브러리 사용자 권한을 묻는 메시지를 적는 곳입니다. 여기에 작성된 문구도 당연히 현지화를 해야 합니다.</p>
 
@@ -1945,7 +1945,7 @@ guard txfPostTitle.text! != "" else {
 
 <p><code class="language-plaintext highlighter-rouge">info.plist</code> 에서 마우스 오른쪽 버튼 클릭후 <code class="language-plaintext highlighter-rouge">Source Code</code> 로 열기를 선택합니다. (원래 표 형태로 보고 싶은 경우 <code class="language-plaintext highlighter-rouge">Property List</code> 선택)</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-1.26.13.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-오전-1.26.13.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-1.26.13.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-1.26.13.png" alt="" loading="lazy"></a></p>
 
 <p>XML 형태의 프로퍼티 리스트가 표시됩니다.</p>
 
