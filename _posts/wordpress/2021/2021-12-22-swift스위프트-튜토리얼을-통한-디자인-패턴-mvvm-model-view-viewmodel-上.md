@@ -93,7 +93,7 @@ public class Pet {
 
 플레이그라운드 끝에 다음 코드를 추가합니다.
 
-```
+```swift
 // MARK: - ViewModel
 public class PetViewModel {
     
@@ -152,7 +152,7 @@ public class PetViewModel {
 
 이제 애완 동물의 정보를 표시하기 위해 `UIView`가 필요합니다. 플레이그라운드 끝에 다음 코드를 추가합니다.
 
-```
+```swift
 // MARK: - View
 public class PetView: UIView {
     public let imageView: UIImageView
@@ -210,7 +210,7 @@ public class PetView: UIView {
 
  
 
-```
+```swift
 // MARK: - Example
 // 1
 let birthday = Date(timeIntervalSinceNow: (-2 * 86400 * 366))

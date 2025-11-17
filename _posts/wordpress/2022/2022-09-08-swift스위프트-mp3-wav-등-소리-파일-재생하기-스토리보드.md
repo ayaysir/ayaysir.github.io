@@ -32,7 +32,7 @@ import AVFoundation
 
 **3) 뷰 컨트롤러에 `AVAudioPlayer` 타입의 멤버 변수를 추가합니다.**
 
-```
+```swift
 class ViewController: UIViewController {
     
     private var player: AVAudioPlayer?

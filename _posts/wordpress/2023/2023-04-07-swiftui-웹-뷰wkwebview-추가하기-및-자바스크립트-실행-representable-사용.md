@@ -8,24 +8,20 @@ categories:
 
 <!-- \[rcblock id="5440"\] -->
 
-### **소개**
+## **소개**
 
 SwiftUI 내부에 웹 뷰(`WKWebView`)를 추가하는 방법입니다. 원래 웹 페이지를 표시하는 `WKWebView`는 `UIKit`과 호환되는 요소인데, 찾아본 결과 SwiftUI에는 웹을 표시할 수 있는 뷰가 없는 것처럼 보여서 역시 Representable을 이용해서 간접적으로 추가하는 방법을 설명하겠습니다.
-
- 
-
-### **방법**
 
 두 가지 방법을 알아보겠습니다.
 
 1. 단순히 SwiftUI에 웹 뷰를 추가하는 방법입니다.
 2. 위 예제의 웹 뷰에서 `evaluateJavaScript(_:)`를 원하는 시점에 실행할 수 있도록 합니다.
-
  
 
-#### **웹 뷰를 추가하는 방법**
+## **방법 1: 웹 뷰를 추가하는 방법**
 
-##### **1) UIViewRepresentable을 준수(conform)하고 웹 뷰를 감싸는 WebView를 추가합니다.**
+
+### **1) UIViewRepresentable을 준수(conform)하고 웹 뷰를 감싸는 WebView를 추가합니다.**
 
 ```swift
 struct WebView: UIViewRepresentable {
@@ -65,9 +61,9 @@ struct WebView: UIViewRepresentable {
 
  
 
-##### **2) SwiftUI의 뷰(ContentView 등) 내부에 위의 Representable을 추가합니다.**
+### **2) SwiftUI의 뷰(ContentView 등) 내부에 위의 Representable을 추가합니다.**
 
-```
+```swift
 var body: some View {
     // ... //
     WebView(url: URL(string: "https://www.website.con"))
@@ -81,7 +77,7 @@ var body: some View {
 
  
 
-#### **웹 뷰에서 evaluateJavaScript(\_:)를 원하는 시점에 실행**
+## **웹 뷰에서 evaluateJavaScript(\_:)를 원하는 시점에 실행**
 
 SwiftUI 환경에서 `ContentView` 내부에 버튼이 있는데 이 버튼을 누르면 웹 페이지에서 특정 자바스크립트 코드를 실행하고 싶다면 어떻게 할까요?
 
@@ -89,9 +85,9 @@ SwiftUI 환경에서 `ContentView` 내부에 버튼이 있는데 이 버튼을 �
 
  
 
-##### **1) WebViewData 클래스를 추가**
+### **1) WebViewData 클래스를 추가**
 
-```
+```swift
 import Combine
 // ... //
 
@@ -116,7 +112,7 @@ class WebViewData: ObservableObject {
 
  
 
-##### **2) WebView 내에 WebViewData에 대한 상태 변수 추가**
+#### **2) WebView 내에 WebViewData에 대한 상태 변수 추가**
 
 ```swift
 struct WebView: UIViewRepresentable {
@@ -128,9 +124,9 @@ struct WebView: UIViewRepresentable {
 
  
 
-##### **3) WebView 내에 코디네이터를 추가**
+#### **3) WebView 내에 코디네이터를 추가**
 
-```
+```swift
 import Combine
 // ... //
 
@@ -176,7 +172,7 @@ class Coordinator: NSObject, WKNavigationDelegate {
 
  
 
-##### **4) WebView 내에 updateUIView를 작성합니다.**
+#### **4) WebView 내에 updateUIView를 작성합니다.**
 
 ```swift
 func updateUIView(_ uiView: UIViewType, context: Context) {
@@ -200,7 +196,7 @@ func updateUIView(_ uiView: UIViewType, context: Context) {
 
  
 
-##### **5) SwiftUI의 뷰(ContentView 등) 내부에 WebViewData를 추가합니다.**
+#### **5) SwiftUI의 뷰(ContentView 등) 내부에 WebViewData를 추가합니다.**
 
 ```swift
 struct ContentView: View {
@@ -212,9 +208,9 @@ struct ContentView: View {
 
  
 
-##### **6) SwiftUI의 뷰(ContentView 등) 내부에 WebView를 추가합니다.**
+#### **6) SwiftUI의 뷰(ContentView 등) 내부에 WebView를 추가합니다.**
 
-```
+```swift
 var body: some View {
         WebView(url: URL(string: "https://example.con"), data: webViewData)
 }
@@ -224,7 +220,7 @@ var body: some View {
 
  
 
-##### **7) 버튼을 누르면 특정 자바스크립트가 실행되도록 하기**
+#### **7) 버튼을 누르면 특정 자바스크립트가 실행되도록 하기**
 
 `webViewData`를 이용합니다.
 
@@ -253,6 +249,6 @@ Button {
 
  
 
-#### **전체 코드**
+### **전체 코드**
 
 https://gist.github.com/ayaysir/925f2497e33efe252836300c575b334a

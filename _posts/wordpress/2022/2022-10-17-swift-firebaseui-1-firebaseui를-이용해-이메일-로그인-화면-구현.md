@@ -51,7 +51,7 @@ import UIKit
 import FirebaseEmailAuthUI
 ```
 
-```
+```swift
 override func viewDidAppear(_ animated: Bool) {
     
     guard Auth.auth().currentUser == nil else {
@@ -118,7 +118,7 @@ override func viewDidAppear(_ animated: Bool) {
 
 `viewWillAppear`에 로그인 여부를 감지하는 리스너를 추가합니다.
 
-```
+```swift
 override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     

@@ -27,7 +27,7 @@ SwiftUI상에서 내비게이션 (앞, 뒤로 이동하는 뷰들의 집합)을 
 - 세 번째 화면에서 `[왜곡]` 버튼을 누르면 파발 메시지가 왜곡되어 첫 번째 화면으로 재전달됩니다.
 
 <!-- http://www.giphy.com/gifs/TJikax42WUZzg13lsu -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExN21yaWlyeWYzdW41bTV1YzRrejA3Y2RjeWhpanE3djhlNmZyNWNlMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TJikax42WUZzg13lsu/giphy.gif)
 
  
 
@@ -80,13 +80,14 @@ NavigationStack {
 - `NavigationLink`의 첫 번째 파라미터는 버튼(링크) 이름, 두 번째 `value:` 파라미터는 다음으로 이동하는 View에 전달할 값을 입력합니다. 다양한 타입의 값을 입력하는 것이 가능합니다.
     - 위의 예제에서는 `Color` 타입의 값을 전달합니다.
 
-\[caption id="attachment\_5426" align="alignnone" width="193"\] ![](/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.25.10-copy.jpg) `List`와 `NavigationLink`\[/caption\]
+![List와 NavigationLink](/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.25.10-copy.jpg)  
+*`List`와 `NavigationLink`*
 
  
 
 위의 `NavigationLink`를 클릭하면 수행할 작업을 추가합니다. `navigationDestination`이라는 메서드를 `List` 바로 다음(밑)에 추가합니다.
 
-```
+```swift
 @State var message: String = ""
 // ... //
 
@@ -196,7 +197,7 @@ struct JacobDetail: View {
 
 또한 윗 섹션에서 사용된 `NavigationLink(_:value:)` 마찬가지로 iOS 16.0 이상에서만 사용할 수 있으므로 대신 `NavigationLink(_:destination:)`을 사용합니다.
 
-```
+```swift
 if #available(iOS 16.0, *) {
     // ... //
 } else {
@@ -227,7 +228,7 @@ if #available(iOS 16.0, *) {
 
 `ColorDetail.swift`도 이전 버전이 호환되도록 `else` 문을 추가합니다.
 
-```
+```swift
 if #available(iOS 16.0, *) {
     // NavigationStack or NavigationView 없어도 됨
     NavigationLink("Go to Jacob Link", value: color.description).navigationDestination(for: String.self) { lastName in
@@ -245,7 +246,7 @@ if #available(iOS 16.0, *) {
 
  
 
-### **전체 코드**
+## **전체 코드**
 
 ```swift
 import SwiftUI

@@ -626,7 +626,7 @@ var mockUserDefaults: MockUserDefaults!
 
 `setUpWithError()` 및 `tearDownWithError()`를 다음으로 교체합니다.
 
-```
+```swift
 override func setUpWithError() throws {
   try super.setUpWithError()
   sut = UIStoryboard(name: "Main", bundle: nil)

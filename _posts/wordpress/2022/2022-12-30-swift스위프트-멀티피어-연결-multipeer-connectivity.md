@@ -400,7 +400,7 @@ do {
 
 메시지는 `MCSessionDelegate` 메소드의 `session( ...didReceiveData...fromPeer...)`를 통해 수신됩니다. 이전 코드 예제에서 보낸 메시지를 디코딩하는 방법은 다음과 같습니다.
 
-```
+```swift
 // MARK: - MCSessionDelegate
 func session(
     _ session: MCSession,
@@ -561,7 +561,7 @@ stream.open()
 
 스트림은 `-session:didReceiveStream:withName:fromPeer:`를 사용하여 `MCSessionDelegate`에 의해 수신됩니다.
 
-```
+```swift
 // MARK: - MCSessionDelegate
 func session(
     _ session: MCSession,
@@ -609,7 +609,7 @@ let progress = session.sendResource(
 
 의 두 메서드에서 발생합니다.
 
-```
+```swift
 // MARK: - MCSessionDelegate
 func session(
     _ session: MCSession,

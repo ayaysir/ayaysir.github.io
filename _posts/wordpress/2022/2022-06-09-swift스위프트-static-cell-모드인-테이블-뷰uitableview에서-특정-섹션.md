@@ -55,7 +55,7 @@ private let showBanner = false
 
  
 
-```
+```swift
 override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     if !showBanner && section == bannerAdPath.section {
         return 0.1
@@ -120,7 +120,7 @@ override func tableView(_ tableView: UITableView, titleForHeaderInSection sectio
 
 앞 단락과 같은 원리를 이용합니다.
 
-```
+```swift
 override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     if indexPath == IndexPath(row: 0, section: 0) {
         return 500

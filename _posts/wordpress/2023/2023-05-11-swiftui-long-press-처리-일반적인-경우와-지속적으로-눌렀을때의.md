@@ -6,7 +6,7 @@ categories:
   - "SwiftUI"
 ---
 
-### **소개**
+## **소개**
 
 SwiftUI에서 일반 탭 외에 길게 눌렀을때의 동작을 어떻게 처리하는지 알아보겠습닌다. 먼저 **Long Press**라는 동작에 대한 이해가 선행되어야 합니다.
 
@@ -16,15 +16,15 @@ SwiftUI에서 일반 탭 외에 길게 눌렀을때의 동작을 어떻게 처�
 아래 그림을 보면 일반적인 minimum duration이 1초로 설정된 Long Press의 동작이 어떤 것인지 알 수 있습니다. 일반적인 Long Press는 아무리 길게 눌러도 1초가 지나면 동작이 끝납니다. 아래 Continous Press Button은 특수한 처리를 한 경우로 구현 방법은 후술합니다.
 
 <!-- http://www.giphy.com/gifs/6xTD4wTGxqpY3N3rC6 -->
-![](https://)
+![](https://giphy.com/gifs/6xTD4wTGxqpY3N3rC6)
 
  
 
-#### **Long Press** 
+## **Long Press** 
 
 `some Gesture` 타입의 `longPress` 계산된 변수를 SwiftUI View 구조체 내에 추가합니다.
 
-```
+```swift
 @GestureState private var isDetectingLongPress = false
 
 var longPress: some Gesture {
@@ -47,7 +47,7 @@ var longPress: some Gesture {
 
 위의 `longPress`는 제스처와 관련된 다양한 곳에서 사용할 수 있습니다.
 
-```
+```swift
 VStack {
     Image(systemName: isDetectingLongPress ? "globe" : "pause.fill")
     Button {} label: {
@@ -63,13 +63,13 @@ VStack {
 
  
 
-#### **특수한 경우: Continuous Press**
+### **특수한 경우: Continuous Press**
 
 위의 예는 아무리 버튼을 길게 눌러도 minimum duration이 지나면 동작이 완료됩니다. 이것 대신 만약 버튼을 누르고 있을 때 updating이 지속되고 버튼을 떼야만 onEnded가 실행되는 것으로 하고 싶다면 어떻게 해야할까요?
 
 sequenced gesture 기능을 이용해 Long Press 전에 Drag Gesture를 추가하면 이 문제를 해결할 수 있습니다.
 
-```
+```swift
 @GestureState private var isDetectingContinuousPress = false
 
 var continuousPress: some Gesture {
@@ -108,7 +108,7 @@ var continuousPress: some Gesture {
 
 위의 `continuousPress` 제스처 또한 다양한 곳에서 사용할 수 있습니다.
 
-```
+```swift
 VStack {
     Image(systemName: isDetectingContinuousPress ? "globe" : "pause.fill")
     Button {} label: {
@@ -124,12 +124,12 @@ VStack {
 
  
 
-##### **전체 코드**
+#### **전체 코드**
 
 https://gist.github.com/ayaysir/05e509370e3ffb91706f83391930489e
 
  
 
-##### **출처**
+#### **출처**
 
 - [How do I make a SwiftUI gesture that keeps running code while the view is pressed](https://stackoverflow.com/a/61524230/21519873)

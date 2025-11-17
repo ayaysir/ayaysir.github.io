@@ -60,7 +60,7 @@ categories:
 
 모델은 단순 데이터를 나타냅니다. 단순히 데이터를 보유하고 비즈니스 로직과 아무 관련이 없습니다. 우리가 API에서 기대하는 단순한 데이터 구조라고 간단히 말할 수 있습니다. 여기에서 위 URL에 대한 리스폰스를 확인한 뒤 이 리스폰스에 대응하는 모델 클래스를 생성합니다. 직접 모델을 만들거나 [온라인 모델 생성기 사이트](https://app.quicktype.io/)를 사용할 수 있습니다.
 
-```
+```swift
 // MARK: - Employee
 struct Employees: Codable {
     let status: String

@@ -87,7 +87,7 @@ struct Student: Person {
 // error: Inheritance from non-protocol type 'Person'
 ```
 
-```
+```swift
 protocol Mouse {
     func leftClick() -> Any
     func rightClick() -> Any

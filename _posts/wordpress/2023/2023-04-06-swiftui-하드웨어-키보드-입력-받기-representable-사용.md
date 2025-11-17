@@ -8,7 +8,7 @@ categories:
 
 <!-- \[rcblock id="5440"\] -->
 
-### **소개**
+## **소개**
 
 SwiftUI 앱에서 하드웨어 키보드의 입력을 받는 방법입니다.
 
@@ -18,9 +18,9 @@ SwiftUI에서는 직접적으로 기능을 제공하지 않는 것처럼 보이�
 
  
 
-#### **방법**
+### **방법**
 
-##### **1) 기본 ContentView 작성**
+### **1) 기본 ContentView 작성**
 
 먼저 기본 `ContentView` 레이아웃을 생성합니다.
 
@@ -59,9 +59,9 @@ struct ContentView: View {
 
  
 
-##### **2) 키보드 이벤트에 대한 대리자(delegate) 생성**
+### **2) 키보드 이벤트에 대한 대리자(delegate) 생성**
 
-```
+```swift
 protocol KeyEventVCDelegate: AnyObject {
     func didKeyPressBegan(key: UIKey)
 }
@@ -73,7 +73,7 @@ protocol KeyEventVCDelegate: AnyObject {
 
  
 
-##### **3) 키보드 이벤트를 처리하는 뷰 컨트롤러(UIViewController) 작성**
+#### **3) 키보드 이벤트를 처리하는 뷰 컨트롤러(UIViewController) 작성**
 
 ```
 class KeyEventViewController: UIViewController {
@@ -107,7 +107,7 @@ class KeyEventViewController: UIViewController {
 
  
 
-##### **4) KeyEventViewController에 대한 래핑 구조체(struct) 작성**
+#### **4) KeyEventViewController에 대한 래핑 구조체(struct) 작성**
 
 `UIViewControllerRepresentable`을 준수(conform)하는 함수를 작성합니다.
 
@@ -140,7 +140,7 @@ struct KeyboardView: UIViewControllerRepresentable {
 
  
 
-##### **5) 코디네이터 작성**
+#### **5) 코디네이터 작성**
 
 ```swift
 func makeCoordinator() -> Coordinator {
@@ -177,7 +177,7 @@ class Coordinator: KeyEventVCDelegate {
 
  
 
-##### **6) ContentView에 키보드 입력 부분 추가**
+#### **6) ContentView에 키보드 입력 부분 추가**
 
 ```swift
 struct ContentView: View {

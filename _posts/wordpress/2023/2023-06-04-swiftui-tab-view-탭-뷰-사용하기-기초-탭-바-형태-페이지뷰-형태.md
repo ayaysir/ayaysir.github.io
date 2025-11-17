@@ -10,14 +10,16 @@ categories:
 
 _**SwiftUI**_의 `TabView`를 이용해 다음 두 가지 형태의 뷰를 만들 수 있습니다.
 
-1. **탭 바가 있는 뷰 형태**  ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-11.23.49-copy.jpg)
-2. **페이지 인디케이터가 있는 페이지 뷰 형태** ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjIyMjVhYjQ1YThmOTJkZjE0OWI5ZmMzMzRlZGY3NjBmYzhmODBhNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/WXuD4g170EIFry3x1y/giphy.gif)
+1. **탭 바가 있는 뷰 형태**   
+![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-11.23.49-copy.jpg)
+2. **페이지 인디케이터가 있는 페이지 뷰 형태**  
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjIyMjVhYjQ1YThmOTJkZjE0OWI5ZmMzMzRlZGY3NjBmYzhmODBhNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/WXuD4g170EIFry3x1y/giphy.gif)
 
  
 
-#### **기본 형태**
+## **기본 형태**
 
-```
+```swift
 TabView {
     MyCustomView()
     MyCustomView()
@@ -34,11 +36,11 @@ TabView {
 
 탭뷰 탭 뷰 TabView Tab View SwiftUI 스위프트 UI SwiftUI 스위프트유아이 페이지뷰 페이지 인디케이터
 
-#### **탭 바 만들기**
+## **탭 바 만들기**
 
 `body` 안에 다음과 같이 추가합니다.
 
-```
+```swift
 TabView {
     MyCustomView(text: "A").tabItem {
         Image(systemName: "snowflake")
@@ -83,7 +85,7 @@ struct MyCustomView: View {
 
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2JiMDZkZTE5ZDlmZjAzMzcyNjc3ZDRmYWVlYmI4ZTUzZDdkYjQwNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/ouTGFBY48y2jcE7DqN/giphy.gif)
 
-> **참고)** 한 화면에서 탭 바의 최대 아이콘 개수는 5개까지 권장되며, 5개 초과는 사용자 경험 측면에서 덜 바람직하다고 알려져 있습니다.
+> **(참고)** 한 화면에서 탭 바의 최대 아이콘 개수는 5개까지 권장되며, 5개 초과는 사용자 경험 측면에서 덜 바람직하다고 알려져 있습니다.
 
  
 
@@ -91,11 +93,11 @@ struct MyCustomView: View {
 
  ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-11.44.40-copy.jpg)
 
-#### **페이지 뷰 만들기**
+## **페이지 뷰 만들기**
 
 `body` 안에 다음과 같이 추가합니다.
 
-```
+```swift
 TabView {
     MyCustomView(text: "A")
     MyCustomView(text: "B")
@@ -118,6 +120,6 @@ TabView {
 
  
 
-##### **추가 링크**
+### **추가 링크**
 
 - [SwiftUI custom TabBar Icons](https://stackoverflow.com/questions/59215407/swiftui-custom-tabbar-icons?rq=4)

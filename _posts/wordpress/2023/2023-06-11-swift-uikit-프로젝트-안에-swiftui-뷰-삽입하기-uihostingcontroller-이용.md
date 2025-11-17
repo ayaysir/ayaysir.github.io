@@ -6,11 +6,11 @@ categories:
   - "SwiftUI"
 ---
 
-### **소개**
+## **소개**
 
-- [SwiftUI: Representable을 이용해서 UIViewController 띄우기](http://yoonbumtae.com/?p=5349)
+<!-- - [SwiftUI: Representable을 이용해서 UIViewController 띄우기](http://yoonbumtae.com/?p=5349)
 - [SwiftUI: 하드웨어 키보드 입력 받기 (Representable 사용)](http://yoonbumtae.com/?p=5430)
-- [SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)](http://yoonbumtae.com/?p=5436)
+- [SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)](http://yoonbumtae.com/?p=5436) -->
 
  
 
@@ -20,9 +20,9 @@ UIKit 프로젝트에서 `SwiftUI로 만든 View`를 삽입하는 방법과 더�
 
  
 
-#### **SwiftUI의 View를 UIKit 프로젝트 내에 추가**
+## **SwiftUI의 View를 UIKit 프로젝트 내에 추가하는 방법**
 
-##### **1) SwiftUI로 View 작성**
+### **1) SwiftUI로 View 작성**
 
 ```swift
 import SwiftUI
@@ -44,11 +44,12 @@ struct CustomMusicSliderView_Previews: PreviewProvider {
 
 저는 아래 스크린샷과 같은 음악 플레이어를 구현하기 위해 [Custom-Slider-Control](https://github.com/pratikg29/Custom-Slider-Control)이라는 SwiftUI로 작성된 예제 코드를 인터넷에서 퍼온 뒤 이를 바탕으로 `CustomMusicSliderView`의 코드를 작성했습니다. 본문 내용은 분량상 생략하며 자세한 구현 방법은 위의 링크를 참고해주세요.
 
-\[caption id="attachment\_5707" align="alignnone" width="390"\] ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-11-pm-10.26.07-copy.jpg) 빨간색 박스 부분이 SwiftUI로 만들어진 `View`입니다.\[/caption\]
+![빨간색 박스 부분이 SwiftUI로 만들어진 `View`입니다.](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-11-pm-10.26.07-copy.jpg)  
+*빨간색 박스 부분이 SwiftUI로 만들어진 `View`입니다.*
 
  
 
-##### **2) 스토리보드에 View 부분 추가**
+### **2) 스토리보드에 View 부분 추가**
 
  ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-11-pm-10.28.58-copy.jpg)
 
@@ -56,7 +57,7 @@ struct CustomMusicSliderView_Previews: PreviewProvider {
 
  
 
-##### **3) @IBOutlet으로 View을 뷰 컨트롤러 코드와 연결**
+### **3) @IBOutlet으로 View을 뷰 컨트롤러 코드와 연결**
 
  ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-11-pm-10.31.35-copy.jpg)
 
@@ -66,7 +67,7 @@ struct CustomMusicSliderView_Previews: PreviewProvider {
 
  
 
-##### **4) UIHostingController 추가**
+### **4) UIHostingController 추가**
 
 ```swift
 override func viewDidLoad() {
@@ -83,7 +84,7 @@ override func viewDidLoad() {
 
  
 
-##### **5) UIKit용 View 추출 및 화면에 추가**
+### **5) UIKit용 View 추출 및 화면에 추가**
 
 `viewDidLoad` 에 추가합니다.
 
@@ -109,9 +110,9 @@ viewCustomSlider.backgroundColor = .clear
 
  
 
-##### **6) 제약 수동 설정 및 호스팅 컨트롤러를 didMove 하기**
+### **6) 제약 수동 설정 및 호스팅 컨트롤러를 didMove 하기**
 
-```
+```swift
 NSLayoutConstraint.activate([
       embedSliderView.topAnchor.constraint(equalTo: viewCustomSlider.topAnchor),
       embedSliderView.bottomAnchor.constraint(equalTo: viewCustomSlider.bottomAnchor),
@@ -134,7 +135,7 @@ sliderVC.didMove(toParent: self)
 
  
 
-#### **UIKit 프로젝트 내에 추가된 SwiftUI View의 상태(state) 조작**
+## **UIKit 프로젝트 내에 추가된 SwiftUI View의 상태(state) 조작**
 
 음악 플레이어의 슬라이더이므로 음악이 재생될 때 현재 진행된 시간의 위치가 아래 움짤처럼 반영이 되어야 할 것입니다.
 
@@ -146,7 +147,7 @@ sliderVC.didMove(toParent: self)
 
  
 
-##### **1) ObservableObject 클래스 작성**
+### **1) ObservableObject 클래스 작성**
 
 CustomMusicSliderView의 뷰 모델이 될 `CustomMusicSliderViewModel` 클래스를 생성합니다. 이 클래스는 `ObservableObject`를 준수(conform)해야 합니다.
 
@@ -175,7 +176,7 @@ class CustomMusicSliderViewModel: ObservableObject {
 
  
 
-##### **2) SwiftUI View가 해당 뷰 모델을 참고하도록 변경**
+### **2) SwiftUI View가 해당 뷰 모델을 참고하도록 변경**
 
 ```swift
 struct CustomMusicSliderView: View {
@@ -200,7 +201,7 @@ struct CustomMusicSliderView: View {
 
  
 
-##### **3) UIKit 뷰 컨트롤러에 CustomMusicSliderViewModel 추가**
+### **3) UIKit 뷰 컨트롤러에 CustomMusicSliderViewModel 추가**
 
 먼저 뷰 컨트롤러의 멤버 변수로 `viewModel`을 추가합니다.
 
@@ -236,7 +237,7 @@ override func viewDidLoad() {
 
  
 
-##### **4) UIHostingController 재설정**
+### **4) UIHostingController 재설정**
 
 2번에서 `@StateObejct`인 `viewModel`이 추가되었으므로 `UIHostingController`를초기화할 때의 `rootView`에도 반영해야 합니다.
 
@@ -247,11 +248,11 @@ let sliderVC = UIHostingController(rootView: CustomMusicSliderView(viewModel: se
 
  
 
-##### **5) viewModel을 통한 데이터 전달 및 상태 변경**
+### **5) viewModel을 통한 데이터 전달 및 상태 변경**
 
 뷰 컨트롤러의 `viewDidLoad`에 다음 타이머를 추가합니다.
 
-```
+```swift
 Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [unowned self] timer in
     if let player = musicManager.player {
         viewModel.inRange = 0 ... player.duration
@@ -271,6 +272,6 @@ Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [unowned self] time
 
  
 
-##### **출처**
+### **출처**
 
 - [In SwiftUI, how to use UIHostingController inside an UIView or as an UIView?](https://stackoverflow.com/questions/56819063/in-swiftui-how-to-use-uihostingcontroller-inside-an-uiview-or-as-an-uiview)

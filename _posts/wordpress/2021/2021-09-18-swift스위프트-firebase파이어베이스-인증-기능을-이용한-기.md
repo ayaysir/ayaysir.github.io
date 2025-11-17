@@ -220,7 +220,7 @@ var handle: AuthStateDidChangeListenerHandle!
 
 다음 `viewWillAppear(_:)` 에 인증 상태 리스너를 작성합니다.
 
-```
+```swift
 override func viewWillAppear(_ animated: Bool) {
     handle = Auth.auth().addStateDidChangeListener { auth, user in
         if let user = user {
@@ -248,7 +248,7 @@ override func viewWillAppear(_ animated: Bool) {
 
 뷰가 사라질 때에는 인증 상태 리스너를 해지해야 합니다. `viewWillDisappear(_:)` 을 아래와 같이 작성합니다.
 
-```
+```swift
 override func viewWillDisappear(_ animated: Bool) {
     Auth.auth().removeStateDidChangeListener(handle!)
 }

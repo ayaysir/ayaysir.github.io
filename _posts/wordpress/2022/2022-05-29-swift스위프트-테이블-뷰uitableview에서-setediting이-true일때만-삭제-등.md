@@ -69,7 +69,7 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 
 원래는 테이블 뷰 셀에서 스와이프시 사용자 커스텀 버튼을 만들고 표시할 때 사용하는 메서드입니다. 검색해보면 다양한 사용법을 확인할 수 있습니다만, 여기서는 단순히 스와이프 방지용으로만 사용하겠습니다.
 
-```
+```swift
 override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
     print(#function, indexPath)
     

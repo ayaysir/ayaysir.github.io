@@ -114,7 +114,7 @@ struct WebContentView: View {
 
 ##### **Step 1: 실행할 명령들을 정의한 Provider 프로토콜을 작성합니다.**
 
-```
+```swift
 protocol WebViewProvider {
     func move(urlString: String)
     func evaluateJS(_ script: String)
@@ -125,7 +125,7 @@ protocol WebViewProvider {
 
 ##### **Step 2: 위의 Provider를 가지고 있는 Controller 프로토콜을 작성합니다.**
 
-```
+```swift
 protocol WebViewConnector {
     var provider: (any WebViewProvider)? { get set }
 }

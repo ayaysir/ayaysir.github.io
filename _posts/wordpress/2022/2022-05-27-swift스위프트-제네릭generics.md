@@ -327,7 +327,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 연관 타입은 프로토콜에서 사용하는 것으로, 프로토콜의 변수 및 메서드 등이 특정 타입에 국한되지 않고 다양한 타입에서 사용될 것이라고 예상될 때 타입을 연관 타입으로 지정하면 해당 프로토콜을 준수하는 클래스나 구조체 등에서 구체적 타입을 자유롭게 지정할 수 있습니다.
 
-```
+```swift
 protocol Container {
     associatedtype Item
     mutating func append(_ item: Item)
@@ -424,7 +424,7 @@ extension Array: Container {}
 
 #### **연관 타입에 제약 조건 추가**
 
-```
+```swift
 protocol Container {
     associatedtype Item: Equatable
     mutating func append(_ item: Item)
@@ -445,7 +445,7 @@ protocol Container {
 
 아래 `SuffixableContaner` 프로토콜은 `Container`의 기능에 컨테이너 끝에서 주어진 수의 요소를 반환하여 `Suffix` 유형의 인스턴스에 저장하는 `suffix(_:)` 메서드를 추가한 프로토콜입니다.
 
-```
+```swift
 protocol SuffixableContainer: Container {
     associatedtype Suffix: SuffixableContainer where Suffix.Item == Item
     func suffix(_ size: Int) -> Suffix
@@ -464,7 +464,7 @@ protocol SuffixableContainer: Container {
 
 앞서 정의한 `Stack` 타입을 `SuffixContainer`를 준수하여 확장합니다.
 
-```
+```swift
 protocol Container {
     associatedtype Item
     // ... //
@@ -745,7 +745,7 @@ print(numbers.endsWith(37))
 
 아래 코드는 `Iterator`라는 연관 타입을 추가하는데, `IteratorProtocol`을 준수하고 `Iterator`의 `Element`는 `Container`의 `Item`과 동일해야 한다는 조건을 지정하고 있습니다.
 
-```
+```swift
 protocol Container2 {
     associatedtype Item
     mutating func append(_ item: Item)
@@ -761,7 +761,7 @@ protocol Container2 {
 
 다른 프로토콜에서 상속하는 프로토콜의 경우 프로토콜 선언에 `where` 절을 포함하여 상속된 관련 유형에 제약 조건을 추가합니다. 예를 들어 다음 코드는 `Item`(Container의 연관 타입)이 `Comparable`을 준수하도록 요구하는 `ComparableContainer` 프로토콜을 선언합니다.
 
-```
+```swift
 protocol ComparableContainer: Container where Item: Comparable { }
 ```
 

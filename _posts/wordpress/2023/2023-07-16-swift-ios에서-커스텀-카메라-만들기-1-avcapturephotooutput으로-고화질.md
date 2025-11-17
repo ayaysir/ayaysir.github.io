@@ -10,7 +10,7 @@ categories:
 
 이전에도 한 차례 커스텀 카메라에 대해 다룬적이 있는데 해당 방식은 비디오의 프레임을 캡처해서 저장하는 방식이었습니다.
 
-- [Swift: iOS에서 커스텀 카메라 만들기 (1) - 비디오 캡처 방식 활용](http://yoonbumtae.com/?p=5762)
+- [Swift: iOS에서 커스텀 카메라 만들기 (1) - 비디오 캡처 방식 활용](/posts/swift-ios에서-커스텀-카메라-만들기)
 
 이러한 방식에 대한 장점도 많이 있지만, 해상도가 상대적으로 낮은 단점도 있어서 다른 방식인 `AVCapturePhotoOutput`을 이용해 고화질의 사진을 얻는 방법에 대해 알아보겠습니다.
 
@@ -18,9 +18,9 @@ categories:
 
  
 
-### **방법**
+## **방법**
 
-#### **Step 0: Info.plist의 권한 설정 및 import**
+### **Step 0: Info.plist의 권한 설정 및 import**
 
 아래와 같이 `Info.plist` 파일에 두 개의 권한 허용 여부를 묻는 메시지를 추가합니다.
 
@@ -40,9 +40,9 @@ categories:
 
  
 
-#### **Step 1: 뷰 컨트롤러에 카메라, 이미지 관련 멤버 변수 추가**
+### **Step 1: 뷰 컨트롤러에 카메라, 이미지 관련 멤버 변수 추가**
 
-```
+```swift
 // MARK: - Vars
 var previewLayer: AVCaptureVideoPreviewLayer!
 var captureSession: AVCaptureSession!
@@ -87,7 +87,7 @@ var photoOutput: AVCapturePhotoOutput = AVCapturePhotoOutput()
 
 해당 과정을 코드로 기록하면 다음과 같습니다.
 
-```
+```swift
 override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     

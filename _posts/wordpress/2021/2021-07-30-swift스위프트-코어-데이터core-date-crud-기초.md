@@ -30,7 +30,7 @@ Core Data를 통해 iOS, macOS 등의 애플리케이션 내에 오프라인으�
 
 AppDelegate.swift의 `AppDelegate` 클래스 내에 아래 코드를 추가합니다.
 
-```
+```swift
 // MARK: - Core Data stack
 
 lazy var persistentContainer: NSPersistentContainer = {

@@ -34,7 +34,7 @@ iOS는 `Int`, `String`, `Float`, `Double`, `Bool`, `URL`, `Data` 또는 이러�
 
 `UserDefaults`에서 사용자 정의 개체를 저장하고 검색할 수 있는 메서드 요구 사항을 선언하는 프로토콜 ObjectSavable을 정의해 보겠습니다.
 
-```
+```swift
 protocol ObjectSavable {
     func setObject<Object>(_ object: Object, forKey: String) throws where Object: Encodable
     func getObject<Object>(forKey: String, castTo type: Object.Type) throws -> Object where Object: Decodable
