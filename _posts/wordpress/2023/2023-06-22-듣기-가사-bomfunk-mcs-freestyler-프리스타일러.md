@@ -6,7 +6,7 @@ categories:
   - "가사"
 ---
 
-### Freestyler
+## Freestyler
 
 - **발매**: 1999년 10월 30일
 - **아티스트**: Bomfunk MC's
@@ -17,165 +17,212 @@ categories:
 
  
 
-#### **공식 뮤직비디오**
+## **공식 뮤직비디오**
 
 {% youtube "https://www.youtube.com/watch?v=ymNFyxvIdaM" %}
 
  
 
-#### **가사**
+## **가사**
 
 > **가사의 의미는 무엇인가요?**
 > 
 > 뮤직 비디오를 보세요. 저는 그 주제가 음악을 통제하는 것과 그것을 포기하는 것의 힘에 대한 것이라고 생각합니다. 정말 쉽습니다. 특히 이 아이팟(iPod) 세대에 알맞다고 할 수 있습니다. 당신이 거의 해야 할 것, 스스로를 위해 노력하세요.
 
-Freestyler 프리스타일러 (자유로운 스타일을 추구하는 자)
+Freestyler  
+프리스타일러 (자유로운 스타일을 추구하는 자)
 
-Rock the microphone 마이크를 흔들어라
+Rock the microphone  
+마이크를 흔들어라
 
-Straight from the top of my dome 나의 꼭대기에서 바로
+Straight from the top of my dome  
+나의 꼭대기에서 바로
 
-Freestyler 프리스타일러
+Freestyler  
+프리스타일러
 
-Rock the microphone 마이크를 흔들어라
+Rock the microphone  
+마이크를 흔들어라
 
-Carry on with the freestyler 프리스타일러와 함께하라
+Carry on with the freestyler  
+프리스타일러와 함께하라
 
- 
+<br> 
 
-I got to throw on and go on 나는 내던지고 계속해야 한다
+I got to throw on and go on  
+나는 내던지고 계속해야 한다
 
-You know I gots to flow on 너는 내가 플로우를 타야 하는 것을 알고 있다
+You know I gots to flow on  
+너는 내가 플로우를 타야 하는 것을 알고 있다
 
-Selectors on the radio play us 라디오의 선택자가 우리를 움직이게 한다
+Selectors on the radio play us  
+라디오의 선택자가 우리를 움직이게 한다
 
-'Cause we're friendly for ozone 우리는 오존과 친숙하니까
+'Cause we're friendly for ozone  
+우리는 오존과 친숙하니까
 
-But that's not all so hold on tight 하지만 그것이 전부는 아니니까 꽉 붙잡아라
+But that's not all so hold on tight  
+하지만 그것이 전부는 아니니까 꽉 붙잡아라
 
-As I rock the mic right 마이크를 오른쪽으로 돌리며
+As I rock the mic right  
+마이크를 오른쪽으로 돌리며
 
-Oh, excuse me, pardon 오, 잠시만, 실례합니다
+Oh, excuse me, pardon  
+오, 잠시만, 실례합니다
 
-As I synchronise with the analysed 분석된 것과 동기화되며
+As I synchronise with the analysed  
+분석된 것과 동기화되며
 
-Upcomin' vibes, the session 다가오는 바이브, 세션
+Upcomin' vibes, the session  
+다가오는 바이브, 세션
 
-Let there be a lesson, question 가르침과 질문이 있게 하라
+Let there be a lesson, question  
+가르침과 질문이 있게 하라
 
-You carry protection 너는 보호를 받고 있거나
+You carry protection  
+너는 보호를 받고 있거나
 
-Or will your heart go on 마음이 계속될 것이다
+Or will your heart go on  
+마음이 계속될 것이다
 
-Like Celine Dion 셀린 디옹처럼
+Like Celine Dion  
+셀린 디옹처럼
 
-Karma Chameleon 카르마 카멜레온 (\*유명 히트곡 제목)
+Karma Chameleon  
+카르마 카멜레온 (\*유명 히트곡 제목)
 
- 
+<br>
 
-Yeah, straight from the top of my dome 그래, 나의 꼭대기에서 바로
+Yeah, straight from the top of my dome  
+그래, 나의 꼭대기에서 바로
 
-As I rock, rock, rock, rock, rock the microphone 마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
+As I rock, rock, rock, rock, rock the microphone  
+마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
 
-Yeah, straight from the top of my dome 그래, 나의 꼭대기에서 바로
+Yeah, straight from the top of my dome  
+그래, 나의 꼭대기에서 바로
 
-As I rock, rock, rock, rock, rock the microphone 마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
+As I rock, rock, rock, rock, rock the microphone  
+마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
 
- 
-
-Hit me 나를 봐라
-
- 
-
-Styles, steelos 스타일, 스틸로(\*스페인어 "stilo"에서 나온 말로서 "style\[스타일\]"을 뜻하는 단어)
-
-We bring many kilos 우리는 많은 것을 가져오기 때문에
-
-So you could pick yours from the various 너는 다양한 것 중에서 너의 것을 고를 수 있다
-
-Ambitious, nutritious, delicious, delirious or vicious 야심적이거나, 영양가 있거나, 맛있거나, 섬망이 있거나, 악랄하거나
-
-Just tell us, we deliver anything 말만 해라, 우리는 모든 것을 가져다 줄 것이다
-
-From acappellas to propellers 아카펠라부터 프로펠러까지
-
-[Suckers](https://rapdictionary.com/meaning/sucker/) get jealous but they're soft like marshmallows \*\*은 질투하지만 마시멜로처럼 부드럽지
-
-You know they can't handle us like Debbie does Dallas 데비가 댈러스를 하는 것처럼(\*영화 제목) 그들이 우리를 다룰 수 없다는 걸 알잖아
-
-Yeah, we come scandalous so who the fuck is Alice 그래, 우리는 스캔들이 되고 있어 그래서 \*\* 앨리스가 누구야?
-
-She from Buckingham Palace? 그 여자는 버킹엄 궁전에서 왔나?
-
- 
-
-Yeah, straight from the top of my dome 그래, 나의 꼭대기에서 바로
-
-As I rock, rock, rock, rock, rock the microphone 마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
-
-Yeah, straight from the top of my dome 그래, 나의 꼭대기에서 바로
-
-As I rock, rock, rock, rock, rock the microphone 마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
-
- 
+<br> 
 
 Hit me 나를 봐라
 
- 
+<br>
 
-Freestyler 프리스타일러 (자유로운 스타일을 추구하는 자)
+Styles, steelos  
+스타일, 스틸로(\*스페인어 "stilo"에서 나온 말로서 "style\[스타일\]"을 뜻하는 단어)
 
-Rock the microphone 마이크를 흔들어라
+We bring many kilos  
+우리는 많은 것을 가져오기 때문에
 
-Carry on with the freestyler 프리스타일러와 함께하라
+So you could pick yours from the various  
+너는 다양한 것 중에서 너의 것을 고를 수 있다
 
- 
+Ambitious, nutritious, delicious, delirious or vicious  
+야심적이거나, 영양가 있거나, 맛있거나, 섬망이 있거나, 악랄하거나
 
-Yeah, straight from the top of my dome 그래, 나의 꼭대기에서 바로
+Just tell us, we deliver anything  
+말만 해라, 우리는 모든 것을 가져다 줄 것이다
 
-As I rock, rock, rock, rock, rock the microphone 마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
+From acappellas to propellers  
+아카펠라부터 프로펠러까지
 
-Yeah, straight from the top of my dome 그래, 나의 꼭대기에서 바로
+[Suckers](https://rapdictionary.com/meaning/sucker/) get jealous but they're soft like marshmallows  
+\*\*은 질투하지만 마시멜로처럼 부드럽지
 
-As I rock, rock, rock, rock, rock the microphone 마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
+You know they can't handle us like Debbie does Dallas  
+데비가 댈러스를 하는 것처럼(\*영화 제목) 그들이 우리를 다룰 수 없다는 걸 알잖아
 
- 
+Yeah, we come scandalous so who the fuck is Alice  
+그래, 우리는 스캔들이 되고 있어 그래서 \*\* 앨리스가 누구야?
+
+She from Buckingham Palace?  
+그 여자는 버킹엄 궁전에서 왔나?
+
+<br> 
+
+Yeah, straight from the top of my dome  
+그래, 나의 꼭대기에서 바로
+
+As I rock, rock, rock, rock, rock the microphone  
+마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
+
+Yeah, straight from the top of my dome  
+그래, 나의 꼭대기에서 바로
+
+As I rock, rock, rock, rock, rock the microphone  
+마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
+
+<br> 
 
 Hit me 나를 봐라
 
- 
+<br>
 
-#### **트리비아**
+Freestyler 프리스타일러  
+(자유로운 스타일을 추구하는 자)
+
+Rock the microphone  
+마이크를 흔들어라
+
+Carry on with the freestyler  
+프리스타일러와 함께하라
+
+<br> 
+
+Yeah, straight from the top of my dome  
+그래, 나의 꼭대기에서 바로
+
+As I rock, rock, rock, rock, rock the microphone  
+마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
+
+Yeah, straight from the top of my dome  
+그래, 나의 꼭대기에서 바로
+
+As I rock, rock, rock, rock, rock the microphone  
+마이크를 흔들고, 흔들고, 흔들고, 흔들고, 흔들면서
+
+<br> 
+
+Hit me 나를 봐라
+
+<br>
+
+## **트리비아**
 
 "프리스타일러(Freestyler)"는 핀란드 힙합 그룹 Bomfunk MC's의 곡입니다. 1999년 10월 30일 핀란드에서 데뷔 정규 앨범 In Stereo(1999)의 세 번째 싱글로 발매되었으며 2000년 2월에 전세계로 발매되었습니다. "Freestyler"는 핀란드 싱글 차트에서 4위에 올랐고 호주, 독일, 이탈리아, 뉴질랜드를 포함한 10개 이상의 국가에서 차트 1위를 차지했습니다. 이 노래는 또한 덴마크, 아이슬란드, 아일랜드, 그리고 영국 차트의 상위 10위 안에 들었습니다.
 
  
 
-##### **구성**
+## **구성**
 
 "Freestyler"는 드럼 & 베이스(drum and bass), 힙합의 영향을 받은 영국 댄스 문화와 일렉트로닉 댄스 음악의 강한 영향을 받은 브레이크비트 곡입니다. E단조, 164 BPM의 템포로 작곡되었습니다.
 
  
 
-#### **주요 반응**
+## **주요 반응**
 
 Daily Record는 "Freestyler"를 "최고의 올드스쿨 트랙(cracking old-skool track)"이라고 설명했습니다. CMJ New Music Monthly는 이 트랙을 "하우스업 된 샘플링 슬라이드 기타, 탄력적인 신스 베이스 및 캐리비안에서 영향을 받은 댄스 기반의 힙합적 혼합, 자연스러운 댄스 플로어"이라고 설명했습니다.
 
  
 
-#### **뮤직 비디오**
+## **뮤직 비디오**
 
 {% youtube "https://www.youtube.com/watch?v=ymNFyxvIdaM" %}
 
 이 노래의 뮤직 비디오는 주로 하카니에미 지하철역에서 촬영되었습니다. 하카니에미 역은 핀란드 헬싱키 지하철 노선의 지하역이자 플랫폼이 해발 21m 아래에 있습니다. 비디오에 등장하는 "어린 소년"은 핀란드 모델이자 뮤지션인 Marlo Snellman으로 나중에 "Dust"라는 자신의 싱글을 발표하고 'Hipsters', 'Okta' 등 자신의 프로젝트에서 프로듀서로 활동했습니다. 촬영 당시 15세였으며 그의 어머니인 핀란드 모델계 거물 Laila Snellman을 통해 역할을 맡게 되었습니다.
 
-\[caption id="attachment\_5716" align="alignnone" width="402"\] ![](/assets/img/wp-content/uploads/2023/06/Marlo.webp) Marlo Snellman\[/caption\]
+![Marlo Snellman](/assets/img/wp-content/uploads/2023/06/Marlo.webp)  
+*Marlo Snellman*
 
  
 
 비디오는 어린 소년(Marlo)이 MiniDisc(Sony Walkman MZ-R55) 플레이어에서 "Freestyler"를 들으면서 기차를 타는 동안 노래의 전주에서 화려하게 춤을 추는 것으로 시작됩니다. Marlo의 Sony MiniDisc 리모콘에 개인 일시 중지, 되감기 또는 빨리 감기 기능을 부여하는 캐릭터가 기차에서 그의 맞은편에 앉아 있으며, 이 캐릭터는 Bomfunk MC's의 리드 싱어인 Raymond Ebanks(B.O. Dubb)가 연기하였습니다.
 
-\[caption id="attachment\_5717" align="alignnone" width="418"\] ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-23-am-2.06.43-copy.jpg) Raymond Ebanks\[/caption\]
+![Raymond Ebanks](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-23-am-2.06.43-copy.jpg)  
+*Raymond Ebanks*
 
  
 
@@ -187,7 +234,7 @@ Daily Record는 "Freestyler"를 "최고의 올드스쿨 트랙(cracking old-skoo
 
  
 
-#### **패러디: 빅장스타일러**
+## **패러디: 빅장스타일러**
 
 만화가 김성모의 밈들은 지금도 매우 유명하지만 2000년대 초반에도 이미 한 차례 메가히트를 쳤던 적이 있습니다. 이로 인해 여러 패러디물이 나오게 되었는데, 그 중 길엔이라는 닉네임을 가진 아티스트가 프리스타일 곡에 김성모의 밈을 이용해 개사한 음원을 배포한 것이 인기를 끌게 되었습니다. 너무 오래 전의 일이기 때문에 지금은 기억하는 사람이 거의 없지만 당시에는 컬트적인 인기를 끌었었죠.
 

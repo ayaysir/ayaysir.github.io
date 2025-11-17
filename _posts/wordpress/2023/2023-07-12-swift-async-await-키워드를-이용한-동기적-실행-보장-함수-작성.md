@@ -6,15 +6,17 @@ categories:
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
 이른바 '콜백 지옥'을 해결하기 위해 Swift 5.5 버전부터 등장한 키워드입니다. 자바스크립트 ES6에서 도입된 `async`및 `await`와 목적이 거의 같습니다.
 
-- [자바스크립트: 콜백, Promise, async - await 기초](http://yoonbumtae.com/?p=1071)
+<!-- - [자바스크립트: 콜백, Promise, async - await 기초](http://yoonbumtae.com/?p=1071) -->
 
 > **콜백 지옥(Callback Hell)**
 > 
-> 콜백 지옥은 JavaScript를 이용한 비동기 프로그래밍시 발생하는 문제로서, **함수의 매개 변수로 넘겨지는 콜백 함수가 반복되어 코드의 들여쓰기 수준이 감당하기 힘들 정도로 깊어지는 현상**을 말한다.  ![](/assets/img/wp-content/uploads/2023/07/image.jpg)
+> 콜백 지옥은 JavaScript를 이용한 비동기 프로그래밍시 발생하는 문제로서, **함수의 매개 변수로 넘겨지는 콜백 함수가 반복되어 코드의 들여쓰기 수준이 감당하기 힘들 정도로 깊어지는 현상**을 말한다.  
+
+![](/assets/img/wp-content/uploads/2023/07/image.jpg)
 
  
 
@@ -22,11 +24,11 @@ JSON을 읽어오는데 서버 상황이 안좋아 2초가 걸리는 작업을 3
 
  
 
-#### **기존 코드(콜백, 클로저, 컴플리션 핸들러 등)**
+## **기존 코드(콜백, 클로저, 컴플리션 핸들러 등)**
 
 아래는 네트워크 `URL`로부터 JSON을 읽어온 뒤 `completion` 클로저를 이용해 핸들러 작업을 처리하는 함수입니다.
 
-```
+```swift
 /// URL로부터 JSON을 읽어와 [String: Any]? 형태의 파라미터를 받는 클로저로 처리할 수 있는 함수
 func fetchData(_ urlString: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
     let url = URL(string: urlString)!
@@ -56,7 +58,7 @@ func fetchData(_ urlString: String, completion: @escaping ([String: Any]?, Error
 
 위 함수를 이용한 3연속 JSON 동기적 호출은 다음과 같습니다.
 
-```
+```swift
 fetchData("https://reqres.in/api/users?delay=2") { dict, error in
     debugPrint("page 1:", dict!["support"]!)
 
@@ -77,11 +79,11 @@ fetchData("https://reqres.in/api/users?delay=2") { dict, error in
 
  
 
-#### **async/await를 도입한 코드**
+## **async/await를 도입한 코드**
 
 이것을 도입하면 콜백 지옥이 해결됩니다.
 
-```
+```swift
 /// URL로부터 JSON을 읽어와 [String: Any]를 반환하는 async 함수
 func fetchDataAsync(_ urlString: String) async throws -> [String: Any] {
     let url = URL(string: urlString)!

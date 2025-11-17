@@ -112,7 +112,7 @@ class WebViewData: ObservableObject {
 
  
 
-#### **2) WebView 내에 WebViewData에 대한 상태 변수 추가**
+### **2) WebView 내에 WebViewData에 대한 상태 변수 추가**
 
 ```swift
 struct WebView: UIViewRepresentable {
@@ -124,7 +124,7 @@ struct WebView: UIViewRepresentable {
 
  
 
-#### **3) WebView 내에 코디네이터를 추가**
+### **3) WebView 내에 코디네이터를 추가**
 
 ```swift
 import Combine
@@ -172,7 +172,7 @@ class Coordinator: NSObject, WKNavigationDelegate {
 
  
 
-#### **4) WebView 내에 updateUIView를 작성합니다.**
+### **4) WebView 내에 updateUIView를 작성합니다.**
 
 ```swift
 func updateUIView(_ uiView: UIViewType, context: Context) {
@@ -196,7 +196,7 @@ func updateUIView(_ uiView: UIViewType, context: Context) {
 
  
 
-#### **5) SwiftUI의 뷰(ContentView 등) 내부에 WebViewData를 추가합니다.**
+### **5) SwiftUI의 뷰(ContentView 등) 내부에 WebViewData를 추가합니다.**
 
 ```swift
 struct ContentView: View {
@@ -208,7 +208,7 @@ struct ContentView: View {
 
  
 
-#### **6) SwiftUI의 뷰(ContentView 등) 내부에 WebView를 추가합니다.**
+### **6) SwiftUI의 뷰(ContentView 등) 내부에 WebView를 추가합니다.**
 
 ```swift
 var body: some View {
@@ -220,7 +220,7 @@ var body: some View {
 
  
 
-#### **7) 버튼을 누르면 특정 자바스크립트가 실행되도록 하기**
+### **7) 버튼을 누르면 특정 자바스크립트가 실행되도록 하기**
 
 `webViewData`를 이용합니다.
 
@@ -245,10 +245,11 @@ Button {
  
 
 <!-- http://www.giphy.com/gifs/uiSo2m6jk28v4uUf0H -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXFldjN6bjJnNnZ4c2RteTBxNGk0cnUxbmN6MDdpcHpxN2gzMDVlOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uiSo2m6jk28v4uUf0H/giphy.gif)
 
  
 
-### **전체 코드**
+## **전체 코드**
 
-https://gist.github.com/ayaysir/925f2497e33efe252836300c575b334a
+<!-- https://gist.github.com/ayaysir/925f2497e33efe252836300c575b334a -->
+{% gist "925f2497e33efe252836300c575b334a" %}

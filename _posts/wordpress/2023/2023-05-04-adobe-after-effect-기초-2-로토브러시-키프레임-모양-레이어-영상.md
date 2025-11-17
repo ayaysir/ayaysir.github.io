@@ -6,15 +6,15 @@ categories:
   - "그래픽"
 ---
 
-### **로토 브러시**
+## **로토 브러시**
 
 로토브러시를 통해 움직이는 인물이나 물체의 모션만 따올 수 있습니다.
 
  
 
-#### **사전작업**
+### **사전작업**
 
-##### **영상을 컴포지션화**
+#### **영상을 컴포지션화**
 
 - 임포트한 영상을 아래 컴포지션 버튼으로 옮깁니다.
 
@@ -24,7 +24,7 @@ categories:
 
  
 
-##### **레이어 패널 선택**
+#### **레이어 패널 선택**
 
 컴포지션 화면에서 레이어를 더블 클릭하면 레이어 패널이 열립니다.
 
@@ -35,7 +35,7 @@ categories:
 
  
 
-##### **로토브러시 아이콘 선택**
+#### **로토브러시 아이콘 선택**
 
  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-05-am-1.41.15-copy.jpg)
 
@@ -44,9 +44,9 @@ categories:
 
  
 
-#### **로토 브러시 사용하기**
+### **로토 브러시 사용하기**
 
-##### **브러시 크기 조절**
+#### **브러시 크기 조절**
 
  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-05-am-1.41.36-copy.jpg)
 
@@ -55,7 +55,7 @@ categories:
 
  
 
-##### **움직이는 인물의 로토 브러시 따오기**
+#### **움직이는 인물의 로토 브러시 따오기**
 
 브러시 크기를 조절한 후, 인물 위 뼈대를 그리면 분홍색 선으로 로토 브러시가 따집니다.
 
@@ -65,7 +65,7 @@ categories:
 
  
 
-##### **원하지 않은 부분이 추가된 경우**
+#### **원하지 않은 부분이 추가된 경우**
 
 - `option`(윈도우 Alt) 키를 누르면 빼기 모드로 전환됩니다.
 
@@ -74,7 +74,7 @@ categories:
 > 화면 이동 팁: `트랙패드 또는 마우스 휠`을 이용해서 확대/축소할 수 있으며, 화면상에서 `스페이스 바`를 누르면 이동 모드로 전환됩니다.
 
 <!-- http://www.giphy.com/gifs/KcbMJzH015pmif9hM0 -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmw1YXV3aml0bWJiY2x0ZWhsZWYxYnBsdzl6Zjd4bHJ1aTN5YnM0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KcbMJzH015pmif9hM0/giphy.gif)
 
  
 
@@ -98,7 +98,7 @@ categories:
 
  
 
-#### **파이널 컴포지션 생성**
+### **파이널 컴포지션 생성**
 
 인물은 제외하고 배경만 수정해서 보여줄 수 있습니다.
 
@@ -124,7 +124,7 @@ categories:
 
 `배경 2` 레이어에 `효과 및 사전 설정`을 추가합니다. `Lumetri 색상` 및 `곡선`을 추가합니다.
 
-##### **Lumetri 색상**
+#### **Lumetri 색상**
 
  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-05-am-2.28.10-copy.jpg)
 
@@ -132,7 +132,7 @@ categories:
 
  
 
-##### **곡선**
+#### **곡선**
 
  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-05-am-2.28.54-copy.jpg)
 
@@ -147,17 +147,17 @@ categories:
 
 어도비 애프터 이펙트 애펙 After Effect Adobe 튜토리얼 기초 강의 강좌 배우기
 
-* * *
 
-### **키 프레임**
+
+## **키 프레임**
 
 지금 현재 시간대에서 내가 설정한 특정 값을 꼭 찝어서 저장하는 것입니다.
 
  
 
-#### **키 프레임 추가**
+### **키 프레임 추가**
 
-**1) 텍스트를 클릭한 뒤, 단축키 `P`를 눌러 위치 속성을 띄웁니다.**
+#### **텍스트를 클릭한 뒤, 단축키 `P`를 눌러 위치 속성을 띄웁니다.**
 
  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-05-am-3.06.40-copy.jpg)
 
@@ -178,7 +178,7 @@ categories:
 예제에서는 `0프레임`에서는 글자 위치가 화면 바깥에 있고, `35프레임`에는 위치가 화면 안에 들어와 있는 경우 아래와 같이 선형 애니메이션이 생깁니다.
 
 <!-- http://www.giphy.com/gifs/k6FBRo8o3Uyzto9Zei -->
-![](https://)
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExam50dTU1amFldHpteXIxOW5jdW5jMnJycDF6YzI4azVrOGQ0cHp1OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/k6FBRo8o3Uyzto9Zei/giphy.gif)
 
  
 
@@ -192,7 +192,7 @@ categories:
 
  
 
-#### **키프레임 보간**
+### **키프레임 보간**
 
 보간 기능을 이용해 애니메이션을 더 부드럽게 만들 수 있습니다.
 
@@ -212,7 +212,7 @@ categories:
 
  
 
-#### **모션 그래프 조정**
+### **모션 그래프 조정**
 
 변경하고자 하는 키프레임 아이콘(배지어 보간됨) 양쪽을 클릭합니다.
 
@@ -230,7 +230,7 @@ categories:
 
  
 
-#### **모션 블러 (동작 흐림)**
+### **모션 블러 (동작 흐림)**
 
 움직임의 잔상을 만들어 속도감 있는 연출이 가능합니다.
 
@@ -248,9 +248,9 @@ categories:
 
  
 
-* * *
 
-### **모양 레이어**
+
+## **모양 레이어**
 
 모양 레이어는 각종 도형을 추가하고 속성을 변경할 수 있습니다.
 
@@ -258,7 +258,7 @@ categories:
 
  
 
-#### **모양 레이어 추가**
+### **모양 레이어 추가**
 
 `레이어 > 새로 만들기 > 모양 레이어` 메뉴를 눌러 추가합니다.
 
@@ -278,9 +278,9 @@ categories:
 
  
 
-* * *
 
-### **영상 파일 출력**
+
+## **영상 파일 출력**
 
 아래 빨간 박스가 출력 영역입니다. 마우스로 조정하거나 현재 위치 표시기(파란색 막대)에서 단축키 `B`(시작 부분) 또는 `N`(끝 부분)을 눌러 조정합니다.
 
@@ -312,9 +312,9 @@ mp4 파일로 내보내기 되었습니다.
 
  
 
-* * *
 
-##### **키프레임 및 모양 레이어가 적용된 결과물**
+
+## **키프레임 및 모양 레이어가 적용된 결과물**
 
 <!-- https://giphy.com/gifs/hfGe1vCQJGWvYTbViz -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2ZxZnljMTlvbGxydm82c2F2dTl4ZnZuaTIyamExd2tmaDcxNWI0diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hfGe1vCQJGWvYTbViz/giphy.gif)

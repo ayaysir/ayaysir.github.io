@@ -6,7 +6,7 @@ categories:
   - "SwiftUI"
 ---
 
-#### **요약**
+## **요약**
 
 - 세로 간의 여백은 `LazyVGrid`의 `spacing` 파라미터에서 지정합니다.
 - 가로 간의 여백은 `GridItem`의 `spacing`에서 지정합니다.
@@ -14,7 +14,7 @@ categories:
 
  
 
-#### **코드**
+## **코드**
 
 ```swift
 import SwiftUI

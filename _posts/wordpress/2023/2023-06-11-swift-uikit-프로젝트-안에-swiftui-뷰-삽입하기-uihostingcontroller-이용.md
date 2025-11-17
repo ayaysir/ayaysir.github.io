@@ -88,7 +88,7 @@ override func viewDidLoad() {
 
 `viewDidLoad` 에 추가합니다.
 
-```
+```swift
 let embedSliderView = sliderVC.view!
 embedSliderView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -151,7 +151,7 @@ sliderVC.didMove(toParent: self)
 
 CustomMusicSliderView의 뷰 모델이 될 `CustomMusicSliderViewModel` 클래스를 생성합니다. 이 클래스는 `ObservableObject`를 준수(conform)해야 합니다.
 
-```
+```swift
 class CustomMusicSliderViewModel: ObservableObject {
     typealias DragHandler = ((Double) -> Void)
     
@@ -205,13 +205,12 @@ struct CustomMusicSliderView: View {
 
 먼저 뷰 컨트롤러의 멤버 변수로 `viewModel`을 추가합니다.
 
-```
+```swift
 class ViewController: UIViewController {
     /// UIHosting 조정용
     var viewModel: CustomMusicSliderViewModel!
     
 }
-
 ```
 
  
@@ -272,6 +271,6 @@ Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [unowned self] time
 
  
 
-### **출처**
+## **출처**
 
 - [In SwiftUI, how to use UIHostingController inside an UIView or as an UIView?](https://stackoverflow.com/questions/56819063/in-swiftui-how-to-use-uihostingcontroller-inside-an-uiview-or-as-an-uiview)

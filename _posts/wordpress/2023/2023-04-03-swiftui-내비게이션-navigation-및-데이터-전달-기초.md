@@ -35,7 +35,7 @@ SwiftUI상에서 내비게이션 (앞, 뒤로 이동하는 뷰들의 집합)을 
 
 `NavigationStack`을 사용한 뒤 안에 `Button` 또는 `List`를 넣어 사용합니다. 일반적으로 `List`를 사용합니다.
 
- 
+### **NavStackView (메인 페이지)**
 
 먼저 `NavigationStack`을 `body`의 최외곽에 추가합니다.
 
@@ -116,7 +116,7 @@ List {
 
  
 
-#### **ColorDetail.swift (두 번째 화면)**
+### **ColorDetail.swift (두 번째 화면, 상세 페이지)**
 
 ```swift
 struct ColorDetail: View {
@@ -161,7 +161,7 @@ struct ColorDetail: View {
 
  ![](/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.43.16.png)
 
-#### **JacobDetail.swift**
+### **JacobDetail.swift (세번째 상세 페이지)**
 
 ```swift
 struct JacobDetail: View {
@@ -187,11 +187,11 @@ struct JacobDetail: View {
  
 
 <!-- http://www.giphy.com/gifs/TJikax42WUZzg13lsu -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHducnlzOHdraHByZzU0NnZwb2c0ZjlpdHh6eDVoNnljanhsbnB0ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TJikax42WUZzg13lsu/giphy.gif)
 
  
 
-### **iOS 16.0 미만에서 내비게이션: NavigationView**
+## **iOS 16.0 미만에서 내비게이션: NavigationView**
 
 `NavigationStack`은 iOS 16.0 이상에서만 사용할 수 있으므로 단독으로 사용할 수 없습니다. 그 미만의 버전에서는 `NavigationView`를 사용해야 합니다.
 
@@ -242,7 +242,7 @@ if #available(iOS 16.0, *) {
 ```
 
 <!-- https://giphy.com/gifs/iIDyddQQzHTqLqMv18 -->
-![](https://)
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnRwc2lwMHZka2pmeHljNTYyaDZxODVlaGkyN240cmJxaHQ4MnJ0MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iIDyddQQzHTqLqMv18/giphy.gif)
 
  
 

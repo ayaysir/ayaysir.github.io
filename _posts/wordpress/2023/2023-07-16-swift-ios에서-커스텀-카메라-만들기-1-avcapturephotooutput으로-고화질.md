@@ -78,7 +78,7 @@ var photoOutput: AVCapturePhotoOutput = AVCapturePhotoOutput()
 
  
 
-#### **Step 2: viewDidAppear(:\_)에 카메라 세팅 코드 작성**
+### **Step 2: viewDidAppear(:\_)에 카메라 세팅 코드 작성**
 
 카메라에 접근하기 위해 다음 두 가지 작업이 필요합니다.
 
@@ -124,13 +124,12 @@ func checkCameraPermissions() {
 }
 ```
 
- 
 
 카메라 세팅은 다음 단계로 진행됩니다.
 
 <!-- \[the\_ad id="3513"\] -->
 
-##### **1: setupPhotoCamera() 추가**
+#### **1: setupPhotoCamera() 추가**
 
 먼저 메인 스레드가 아닌 다른 스레드에서 코드가 실행될 수 있도록 합니다. 그 이유는 실행 코드 중 `AVCaptureSession.startRunning()`이 해당 작업이 실행될 때까지 시스템 흐름이 멈추는 블록 호출(block call)이기 때문에 메인 스레드에 추가할 경우 UI가 멈출 수 있는 위험이 있기 때문입니다.
 
@@ -147,9 +146,9 @@ func setupPhotoCamera() {
 
  
 
-##### **2: 카메라 세션 초기화 및 구성사항(configuration) 시작**
+#### **2: 카메라 세션 초기화 및 구성사항(configuration) 시작**
 
-```
+```swift
 // 세션 초기화
 captureSession = AVCaptureSession()
 // 구성(configuration) 시작
@@ -162,9 +161,9 @@ captureSession.beginConfiguration()
 
  
 
-##### **3: 세션이 사진 프리셋을 지원하는 경우 해당 프리셋을 설정**
+#### **3: 세션이 사진 프리셋을 지원하는 경우 해당 프리셋을 설정**
 
-```
+```swift
 if captureSession.canSetSessionPreset(.photo) {
     captureSession.sessionPreset = .photo
 }
@@ -172,18 +171,18 @@ if captureSession.canSetSessionPreset(.photo) {
 
  
 
-##### **4: 광역 색상 지원 설정**
+#### **4: 광역 색상 지원 설정**
 
-```
+```swift
 // 사용 가능한 경우 세션이 자동으로 광역 색상을 사용해야 하는지 여부를 지정합니다. (기본값 true)
 captureSession.automaticallyConfiguresCaptureDeviceForWideColor = true
 ```
 
  
 
-##### **5: 디바이스 변수에 전/후면 카메라 디바이스를 지정**
+#### **5: 디바이스 변수에 전/후면 카메라 디바이스를 지정**
 
-```
+```swift
 // 후면 카메라 디바이스
 guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
     return
@@ -199,9 +198,9 @@ guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .v
 
  
 
-##### **6: 카메라 인풋을 기기로부터 받도록 지정하고, 세션의 인풋 목록에 추가**
+#### **6: 카메라 인풋을 기기로부터 받도록 지정하고, 세션의 인풋 목록에 추가**
 
-```
+```swift
 // 생성된 captureSession에 device input을 생성 및 연결하고,
 // device output을 연결하는 코드입니다.
 do {
@@ -221,9 +220,9 @@ do {
 
  
 
-##### **7: photoOutput을 캡처 세션의 아웃풋 목록에 추가**
+#### **7: photoOutput을 캡처 세션의 아웃풋 목록에 추가**
 
-```
+```swift
 // 고해상도의 이미지 캡처 가능 설정
 // 16.0에서 deprecated됨
 if #unavailable(iOS 16.0) {
@@ -240,13 +239,13 @@ captureSession.addOutput(photoOutput)
 
  
 
-##### **8: 카메라 미리보기 화면 추가**
+#### **8: 카메라 미리보기 화면 추가**
 
 카메라를 미리보기 할 수 없다면 내가 도대체 어떤 대상을 찍고 있고 어떤 모습으로 찍히는지 전혀 알 수 없을 것입니다.
 
 아래 코드를 `setupPhotoCamera()` 내부에 추가합니다.
 
-```
+```swift
 // Preview 화면 추가
 DispatchQueue.main.async { [unowned self] in
     setCameraPreview()
@@ -275,9 +274,9 @@ func setCameraPreview() {
 
  
 
-##### **9: 구성 사항 커밋 및 캡처 세션 실행**
+#### **9: 구성 사항 커밋 및 캡처 세션 실행**
 
-```
+```swift
 // commit configuration: 단일 atomic 업데이트에서 실행 중인 캡처 세션의 구성에 대한 하나 이상의 변경 사항을 커밋합니다.
 captureSession.commitConfiguration()
 // 캡처 세션 실행
@@ -298,7 +297,7 @@ captureSession.startRunning()
 
  
 
-##### **10: 카메라 전/후면 전환 버튼 이벤트에 해당 기능 작성**
+#### **10: 카메라 전/후면 전환 버튼 이벤트에 해당 기능 작성**
 
 카메라 전/후면을 변경하는 코드는 다음과 같습니다. 전후 방향을 바꾸는 해당 `UIButton`의 이벤트로 지정합니다.
 
@@ -326,7 +325,7 @@ captureSession.startRunning()
 
  
 
-#### **Step 3: 카메라 셔터 버튼 이벤트 코드 작성**
+### **Step 3: 카메라 셔터 버튼 이벤트 코드 작성**
 
 `capturePhoto(with:delegate:)`를 호출하면 카메라의 셔터 버튼을 누른 것과 같이 해당 이미지가 캡처됩니다. 참고로 기본 카메라에서 기능을 빌려오는 것이기 때문에 기본 카메라에서 무음 상태에서도 셔터음이 울린다면 여기서도 동일하게 울립니다.
 
@@ -348,13 +347,13 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
 
  
 
-#### **Step 4: 사진을 라이브러리에 저장 기능 추가**
+### **Step 4: 사진을 라이브러리에 저장 기능 추가**
 
 사진을 찍은 뒤 후처리까지 완료되면 `photoOutput(...didFinishProcessingPhoto...)`에 해당 사진이 `photo` 변수로 저장되어 있습니다. 이것을 라이브러리에 저장하도록 리퀘스트하면 됩니다.
 
 `extension` 내부에 다음 메서드를 추가합니다.
 
-```
+```swift
 /// capturePhoto 이후에 capture process 가 완료된 이미지를 저장하는 메서드
 func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
     guard error == nil else {
@@ -397,7 +396,7 @@ func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo:
 
  
 
-#### **뷰 컨트롤러 전체 코드**
+## **뷰 컨트롤러 전체 코드**
 
 ```swift
 import UIKit
@@ -588,5 +587,4 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         }
     }
 }
-
 ```

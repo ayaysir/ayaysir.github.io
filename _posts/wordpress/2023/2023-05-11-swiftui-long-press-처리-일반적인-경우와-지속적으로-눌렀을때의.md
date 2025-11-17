@@ -59,11 +59,11 @@ VStack {
 아래 그림에서 `Long Press Button`이 해당 예입니다.
 
 <!-- http://www.giphy.com/gifs/6xTD4wTGxqpY3N3rC6 -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXYyeXZjaDZuZHlhODBxaGdsZXBieHo3MTAwenNidzFzZGYzYnF5cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6xTD4wTGxqpY3N3rC6/giphy.gif)
 
  
 
-### **특수한 경우: Continuous Press**
+## **특수한 경우: Continuous Press**
 
 위의 예는 아무리 버튼을 길게 눌러도 minimum duration이 지나면 동작이 완료됩니다. 이것 대신 만약 버튼을 누르고 있을 때 updating이 지속되고 버튼을 떼야만 onEnded가 실행되는 것으로 하고 싶다면 어떻게 해야할까요?
 
@@ -120,16 +120,16 @@ VStack {
 아래 그림에서 `Continuous Press Button`이 해당 예입니다.
 
 <!-- http://www.giphy.com/gifs/6xTD4wTGxqpY3N3rC6 -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGd0YTd3OW9xdXZ3bXVnNHB6Z2w2dWY1eG16YWxlOWM1bmwyd3M4MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6xTD4wTGxqpY3N3rC6/giphy.gif)
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
 https://gist.github.com/ayaysir/05e509370e3ffb91706f83391930489e
 
  
 
-#### **출처**
+## **출처**
 
 - [How do I make a SwiftUI gesture that keeps running code while the view is pressed](https://stackoverflow.com/a/61524230/21519873)

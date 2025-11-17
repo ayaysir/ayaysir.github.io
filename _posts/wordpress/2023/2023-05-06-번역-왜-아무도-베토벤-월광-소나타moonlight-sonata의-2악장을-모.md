@@ -11,19 +11,21 @@ categories:
 
  
 
-### **소개**
+## **소개**
 
 만약 여러분이 지금 이 비디오의 배경에 있는 음악(월광 소나타 1악장)을 인식하지 못한다면,  여러분은 지금까지 쓰여진 가장 유명한 클래식 피아노 음악 중 하나(기본적으로 인터넷의 모든 웹사이트에 따르면)를 알지 못하는 것입니다. 그리고 저는 여러분이 (월광 소나타를 알지도 못하면서) 클래식 피아노 음악에 관한 유튜브 채널을 보고 있다는 사실에 대해 약간 혼란스럽고 놀랄 것입니다.
 
 월광 소나타가 유명해진 이유는 모두가 알고 있기 때문만은 아닙니다. 모든 사람들이 이 작품에 대해 자세히 알고 있다는 것입니다.
 
-\[caption id="attachment\_5596" align="alignnone" width="480"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0002-copy.jpg) 1악장\[/caption\]
+![1악장](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0002-copy.jpg)  
+*1악장*
 
 이 느린 악장은 모두 같은 소리여서 기본적으로 어떤 부분을 던지더라도 여러분은 아마도 고개를 끄덕이고 "월광 소나타"라고 말할 것입니다.
 
  
 
-\[caption id="attachment\_5597" align="alignnone" width="480"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0003-copy.jpg) 3악장\[/caption\]
+![3악장](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0003-copy.jpg)  
+*3악장*
 
 (월광 소나타 3악장) 그런 다음 바로 인식할 수 있는 빠른 악장은 기본적으로 약간의 자랑을 하고 싶어하는 피아니스트들에게 인기가 있습니다. 제가 자랑을 하거나 뭐 그런 것을 하는 것은 아니지만, 이 채널에서 꽤 멋진 녹음이 있다고 들었습니다.
 
@@ -31,7 +33,8 @@ categories:
 
 월광 소나타에는 실제로 세 개의 악장이 있고 우리는 그 중 느린 첫 번째 악장과 빠른 세 번째 악장만 다루었습니다.
 
-\[caption id="attachment\_5598" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0004.jpg) 2악장???\[/caption\]
+![2악장???](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0004.jpg)  
+*2악장???*
 
  
 
@@ -43,23 +46,25 @@ categories:
 
  
 
-#### **도대체 소나타가 뭐길래?**
+## **도대체 소나타가 뭐길래?**
 
-쿨하고 펑키한 악기가 널리 생산되기 이전에는 많은 음악이 단순히 노래(song)로 쓰여졌고 음악가들은 이름을 짓는 데 매우 창의적이기 때문에 많은 성악이 칸타타(cantata; 노래한다는 뜻의 이탈리아어 _cantare_에서 유래)라는 이름으로 붙여졌습니다.
+쿨하고 펑키한 악기가 널리 생산되기 이전에는 많은 음악이 단순히 노래(song)로 쓰여졌고 음악가들은 이름을 짓는 데 매우 창의적이기 때문에 많은 성악이 칸타타(cantata; 노래한다는 뜻의 이탈리아어 *cantare*에서 유래)라는 이름으로 붙여졌습니다.
 
 하지만 그 후 새로운 펑키한 악기가 꽤 인기를 얻었기 때문에 이러한 음악에 대한 새로운 이름이 필요했습니다.
 
-그래서 칸타타와 달리 소나타(sonata)라는 이름이 생겼는데 그 근본적 의미는 문자 그대로 소리를 내는 것(이탈리아어 _sonare_에서 유래)입니다.
+그래서 칸타타와 달리 소나타(sonata)라는 이름이 생겼는데 그 근본적 의미는 문자 그대로 소리를 내는 것(이탈리아어 *sonare*에서 유래)입니다.
 
 분명히 부실한 설명이지만 소나타는 하이든과 모차르트의 고전 시대에 도래되었을 것입니다.
 
-\[caption id="attachment\_5599" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0005.jpg) 하이든과 모차르트\[/caption\]
+![하이든과 모차르트](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0005.jpg)  
+*하이든과 모차르트*
 
  
 
 소나타라는 단어는 더 복잡한 의미를 갖기 시작합니다. 기악이 점점 더 많은 주목을 받고 있기 때문에 이제 소나타는 다양성을 위해 `빠르게 - 느리게 - 빠르게`의 템포로 변화하는 세 가지 악장으로 구성된 작품으로 성장했습니다.
 
-\[caption id="attachment\_5600" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0006.jpg) 빠르게 - 느리게 - 빠르게\\\[/caption\]
+![빠르게 - 느리게 - 빠르게](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0006.jpg)  
+*빠르게 - 느리게 - 빠르게*
 
  
 
@@ -73,11 +78,12 @@ categories:
 
 사실 대부분의 경우 세 번째 악장은 웅장한 피날레가 아니라 미뉴에트와 트리오와 같은 짧은 `ABA` 댄스 악장에 가깝습니다.
 
-\[caption id="attachment\_5601" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0007.jpg) 1악장의 내부가 소나타 형식으로 발전\[/caption\]
+![1악장의 내부가 소나타 형식으로 발전](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0007.jpg)  
+*1악장의 내부가 소나타 형식으로 발전*
 
  
 
-#### **베토벤이 변화시킨 소나타**
+## **베토벤이 변화시킨 소나타**
 
 하지만 베토벤이 나타나고 나서 이러한 구조는 약간 흔들리기 시작합니다. 베토벤은 원조 중이병 환자(edgelord)였고 그가 하고 싶은 대로 했기 때문입니다.
 
@@ -95,19 +101,21 @@ categories:
 
 2악장부터 3악장, 4악장까지 이르는 템포의 가속을 볼 수 있는데, 이는 전체 소나타의 추진력이 피날레로 이어지고 있음을 보여줍니다.
 
-\[caption id="attachment\_5612" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0010.jpg) 2악장부터 3악장, 4악장까지 이르는 템포의 가속\[/caption\]
+![2악장부터 3악장, 4악장까지 이르는 템포의 가속](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0010.jpg)  
+*2악장부터 3악장, 4악장까지 이르는 템포의 가속*
 
 이 4악장 구조는 이후 거의 새로운 표준이 되었으며 대부분의 사람들은 클래식 음악의 가장 중요한 장르 중 하나에 대한 새로운 표준을 만드는 것으로 충분하지만 베토벤은 거기서 멈추지 않았습니다.
 
  
 
-#### **계속되는 베토벤의 실험**
+## **계속되는 베토벤의 실험**
 
 그는 무려 31편의 소나타를 작곡했으며, 작품의 구조에 대한 수많은 실험을 수행하였습니다. 그 중 월광 소나타는 그의 가장 대담한 시도 중 하나입니다.
 
 그는 본질적으로 4악장 소나타 구조를 취하지만 여기에서 1악장을 완전히 잘라냅니다.
 
-\[caption id="attachment\_5613" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0011.jpg) 1악장 삭제됨\[/caption\]
+![1악장 삭제됨](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0011.jpg)  
+*1악장 삭제됨*
 
  
 
@@ -123,13 +131,15 @@ categories:
 
 그래서 구조적으로 월광 소나타의 2악장은 약간의 호흡, 전환, 음악적 쉼표(musical comma)에 불과합니다. 스포트라이트를 받으려는 의도가 결코 아닙니다. 사실 나쁜 악장은 아니지만 간주(interlude)라는 의도된 목적에 거의 완벽합니다.
 
-\[caption id="attachment\_5614" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0013.jpg) 1악장과 3악장을 위해 희생된 2악장\[/caption\]
+![1악장과 3악장을 위해 희생된 2악장](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0013.jpg)  
+*1악장과 3악장을 위해 희생된 2악장*
 
  
 
-따라서 월광 소나타의 2악장이 다른 악장만큼 유명하지 않은 이유를 묻는 것은, Billy Eilish가 투명 치아 교정기(Invisalign)을 꺼내는 13초 인트로 트랙이 **_Bad Guy_**만큼 유명하지 않은 이유를 묻는 것과 같습니다.
+따라서 월광 소나타의 2악장이 다른 악장만큼 유명하지 않은 이유를 묻는 것은, Billy Eilish가 투명 치아 교정기(Invisalign)을 꺼내는 13초 인트로 트랙이 **Bad Guy**만큼 유명하지 않은 이유를 묻는 것과 같습니다.
 
-\[caption id="attachment\_5602" align="alignnone" width="576"\] ![](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0014.jpg) Billie Eilish의 앨범\[/caption\]
+![Billie Eilish의 앨범](/assets/img/wp-content/uploads/2023/05/y2mate.com-why-NO-ONE-knows-Moonlight-Sonatas-second-movement_1080p_0014.jpg)  
+*Billie Eilish의 앨범*
 
  
 
@@ -137,7 +147,7 @@ categories:
 
  
 
-#### **마무리**
+## **마무리**
 
 글쎄요, 유감입니다. 거의 1년 전에 1악장과 3악장을 녹음했고 일부 사람들이 알아차렸듯이 나는 아직 2악장을 녹음하지 않았습니다.
 
@@ -145,9 +155,8 @@ categories:
 
 제가 할 수 있는 한 많은 사랑을 드리기 위해 노력했고, 2악장의 작지만 절제된 기질에도 불구하고 여러분도 똑같이 즐겨주셨으면 합니다.
 
-* * *
 
-### **월광 소나타 2악장 연주**
+## **월광 소나타 2악장 연주**
 
 {% youtube "https://youtu.be/bSlgAOBr7VA?t=382" %}
 
@@ -155,7 +164,7 @@ categories:
 
  
 
-> **작품 해설**
+### **작품 해설**
 > 
 >  
 > 
@@ -189,7 +198,7 @@ categories:
 > 
 >  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-06-pm-6.12.44-copy.jpg)
 > 
-> 이제 `ABA`의 `B` 섹션인 트리오가 있습니다. 좋은 점은 멜로디가 너무 offbeat(박자가 정박에 나오지 않음)하다는 것... 거의 모든 멜로디 음표는 소절의 \*마지막\* 박자에 있습니다. 베토벤은 이러한 배경 동작에서도 약간 허세를 부려야(edgy) 했습니다!
+> 이제 `ABA`의 `B` 섹션인 트리오가 있습니다. 좋은 점은 멜로디가 너무 offbeat(박자가 정박에 나오지 않음)하다는 것... 거의 모든 멜로디 음표는 소절의 *마지막* 박자에 있습니다. 베토벤은 이러한 배경 동작에서도 약간 허세를 부려야(edgy) 했습니다!
 > 
 >  
 > 
@@ -213,7 +222,7 @@ categories:
 > 
 > 우리는 모든 것을 다시 시작하기 위해 오프닝 미뉴에트로 돌아갑니다 :,)
 > 
-> 엘리제: 이리와 베토벤: 못해요, 2악장 쓰고 있어요. 엘리제: 부모님이 집에 안계셔... 베토벤: \*도돌이표를 붙이고\* ㅇㅋ 작곡이 완료되었습니다.
+> 엘리제: 이리와 베토벤: 못해요, 2악장 쓰고 있어요. 엘리제: 부모님이 집에 안계셔... 베토벤: *도돌이표를 붙이고* ㅇㅋ 작곡이 완료되었습니다.
 > 
 > 그래도 진지하게 너무 귀여운 악장인 것 같아요 :) 귀에 쏙쏙 들어오고 장난기 넘치네요... 베토벤의 카와이한 면모. ...m-uwu-nlight 소나타?
 > 

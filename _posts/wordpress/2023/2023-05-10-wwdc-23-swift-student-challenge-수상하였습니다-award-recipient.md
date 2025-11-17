@@ -6,7 +6,7 @@ categories:
   - "diary.dev"
 ---
 
-### **소개**
+## **소개**
 
 이번에 애플에서 주최한 [WWDC23 Swift Student Challenge](https://developer.apple.com/kr/wwdc23/swift-student-challenge/)(스위프트 스튜던트 챌린지)에 응모하였는데 운이 좋아서 수상하였습니다. 영어로 Award Recipient라고 나와있는데 비공식 용어로는 Winner로 일컫기도 합니다.
 
@@ -20,7 +20,7 @@ categories:
 
 이 앱은 음악 이론 중 음정(interval)을 다마고치 형식을 통해 쉽고 재밌게(?) 배우게 하고자 하는 목적으로 제작되었습니다.
 
-> **우승작 앱에 대한 간단한 소개**
+## **우승작 앱에 대한 간단한 소개**
 > 
 > 음악 이론 중 음정(interval)을 다마고치 형식을 통해 쉽고 재밌게(?) 배우게 하고자 하는 목적으로 제작하였습니다. 음정에는 성질(quality)라는 요소가 있는데, 장, 단, 완전, 증, 감 등이라는 이름으로 불림. 음정을 이루는 음 두 개를 피아노 건반을 이용해 입력하면 이러한 성질을 토대로 캐릭터(요정)을 행복하게 하거나, 위생 또는 건강을 증진시키거나 포만감을 채우게 할 수 있습니다.
 > 
@@ -32,23 +32,36 @@ categories:
 
 다만 한 가지 굉장히 신경을 쓴 기능이 있는데 그것만 설명하자면 `View Detail` 페이지입니다. 어떠한 음정을 View Detail 버튼을 누르면 해당 음정이 어떤 과정으로 도출되는지에 대한 설명이 나오는데, 겉보기는 일반적인 보고서 형식이지만 실제로는 모든 음정의 경우에 대응하여 해당 음정에 맞는 설명이 문장 형식으로 나오도록 프로그래밍 하였습니다.
 
-\[gallery link="none" columns="2" size="full" type="slideshow" ids="5651,5652,5653,5654"\]
+#### 관련 스크린샷
+
+<!-- \[gallery link="none" columns="2" size="full" type="slideshow" ids="5651,5652,5653,5654"\] -->
+![](/assets/img/wp-content/uploads/2023/05/ssc-gallery/ssc-1-1.jpg)
+![](/assets/img/wp-content/uploads/2023/05/ssc-gallery/ssc-1-2.jpg)
+![](/assets/img/wp-content/uploads/2023/05/ssc-gallery/ssc-1-3.jpg)
+![](/assets/img/wp-content/uploads/2023/05/ssc-gallery/ssc-1-4.jpg)
+ 
+
+### **앱 스크린샷**
+
+<!-- \[gallery type="slideshow" columns="2" link="none" size="full" ids="5642,5643,5644,5645"\] -->
+
+![](/assets/img/wp-content/uploads/2023/05/ssc-gallery/ssc-2-1.jpg)
+![](/assets/img/wp-content/uploads/2023/05/ssc-gallery/ssc-2-2.jpg)
+![](/assets/img/wp-content/uploads/2023/05/ssc-gallery/ssc-2-3.jpg)
+![](/assets/img/wp-content/uploads/2023/05/ssc-gallery/ssc-2-4.jpg)
+
+
+### **튜토리얼/매뉴얼**
+
+ ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.04-copy.jpg)  
+ ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.10-copy.jpg)  
+ ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.14-copy.jpg)  
+ ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.22-copy.jpg)  
+ ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.28-copy.jpg)
 
  
 
-#### **스크린샷**
-
-\[gallery type="slideshow" columns="2" link="none" size="full" ids="5642,5643,5644,5645"\]
-
- 
-
-#### **튜토리얼/매뉴얼**
-
- ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.04-copy.jpg)  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.10-copy.jpg)  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.14-copy.jpg)  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.22-copy.jpg)  ![](/assets/img/wp-content/uploads/2023/05/screenshot-2023-05-10-pm-6.44.28-copy.jpg)
-
- 
-
-#### **느낀점**
+### **느낀점**
 
 - 코드 퀄리티는 아주 좋을 필요는 없습니다.
     - 프로젝트 내부에 수준이 낮은 코드들이 일부 있었고

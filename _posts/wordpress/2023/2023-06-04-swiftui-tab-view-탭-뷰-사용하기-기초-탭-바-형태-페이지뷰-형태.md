@@ -110,7 +110,10 @@ TabView {
 
 - `tabViewStyle`을 `.page`로 지정하면 탭 바가 사라지고 좌우 스와이프를 이용해 페이지를 넘길 수 있습니다.
 - 페이지 인디케이터를 표시하려면 `indexViewStyle`을 위 코드와 같이 지정해야 합니다.
-- 탭 바에서 사용했던 `.tabItem` 부분은 옵션입니다. 이미지 한 개를 사용할 수 있으며 아래와 같이 인디케이터가 그림 아이콘 형태로 표시됩니다.  ![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-11.48.46.png)
+- 탭 바에서 사용했던 `.tabItem` 부분은 옵션입니다. 이미지 한 개를 사용할 수 있으며 아래와 같이 인디케이터가 그림 아이콘 형태로 표시됩니다.  
+![](/assets/img/wp-content/uploads/2023/06/screenshot-2023-06-04-pm-11.48.46.png)
+
+### 넘기는 모습
 
 ![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzllYzUxYWVjNGJlZTNhZTA0OTliZjY5OWE5MmJiZGE0MTAzOWM0NiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/ihcOVdvzjkg1TitSi7/giphy.gif)
 
@@ -120,6 +123,6 @@ TabView {
 
  
 
-### **추가 링크**
+## **추가 링크**
 
 - [SwiftUI custom TabBar Icons](https://stackoverflow.com/questions/59215407/swiftui-custom-tabbar-icons?rq=4)

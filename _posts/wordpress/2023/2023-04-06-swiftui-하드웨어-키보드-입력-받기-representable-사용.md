@@ -73,9 +73,9 @@ protocol KeyEventVCDelegate: AnyObject {
 
  
 
-#### **3) 키보드 이벤트를 처리하는 뷰 컨트롤러(UIViewController) 작성**
+### **3) 키보드 이벤트를 처리하는 뷰 컨트롤러(UIViewController) 작성**
 
-```
+```swift
 class KeyEventViewController: UIViewController {
     weak var delegate: KeyEventVCDelegate?
     
@@ -107,7 +107,7 @@ class KeyEventViewController: UIViewController {
 
  
 
-#### **4) KeyEventViewController에 대한 래핑 구조체(struct) 작성**
+### **4) KeyEventViewController에 대한 래핑 구조체(struct) 작성**
 
 `UIViewControllerRepresentable`을 준수(conform)하는 함수를 작성합니다.
 
@@ -140,7 +140,7 @@ struct KeyboardView: UIViewControllerRepresentable {
 
  
 
-#### **5) 코디네이터 작성**
+### **5) 코디네이터 작성**
 
 ```swift
 func makeCoordinator() -> Coordinator {
@@ -177,7 +177,7 @@ class Coordinator: KeyEventVCDelegate {
 
  
 
-#### **6) ContentView에 키보드 입력 부분 추가**
+### **6) ContentView에 키보드 입력 부분 추가**
 
 ```swift
 struct ContentView: View {
@@ -224,4 +224,4 @@ struct ContentView: View {
  
 
 <!-- http://www.giphy.com/gifs/lOwSPlC2J9Yz5oewYl -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGx5dHFibWYyZW1sdXk2dGdyZWo2cnNqZHZxcWNoNXR0YWtpY3ViNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lOwSPlC2J9Yz5oewYl/giphy.gif)
