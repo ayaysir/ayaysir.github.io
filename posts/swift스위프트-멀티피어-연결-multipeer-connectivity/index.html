@@ -1989,8 +1989,8 @@ do {
 
 <p>메시지는 <code class="language-plaintext highlighter-rouge">MCSessionDelegate</code> 메소드의 <code class="language-plaintext highlighter-rouge">session( ...didReceiveData...fromPeer...)</code>를 통해 수신됩니다. 이전 코드 예제에서 보낸 메시지를 디코딩하는 방법은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2002,17 +2002,17 @@ do {
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>// MARK: - MCSessionDelegate
-func session(
-    _ session: MCSession,
-    didReceive data: Data,
-    fromPeer peerID: MCPeerID
-) {
-    let message = String(
-        data: data,
-        encoding: .utf8)
-    print("\(message ?? "")")
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// MARK: - MCSessionDelegate</span>
+<span class="kd">func</span> <span class="nf">session</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span>
+    <span class="n">didReceive</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span>
+    <span class="n">fromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span>
+        <span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span>
+        <span class="nv">encoding</span><span class="p">:</span> <span class="o">.</span><span class="n">utf8</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">message</span> <span class="p">??</span> <span class="s">""</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2257,8 +2257,8 @@ stream.open()
 
 <p>스트림은 <code class="language-plaintext highlighter-rouge">-session:didReceiveStream:withName:fromPeer:</code>를 사용하여 <code class="language-plaintext highlighter-rouge">MCSessionDelegate</code>에 의해 수신됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2272,19 +2272,19 @@ stream.open()
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>// MARK: - MCSessionDelegate
-func session(
-    _ session: MCSession,
-    didReceive stream: InputStream,
-    withName streamName: String,
-    fromPeer peerID: MCPeerID
-) {
-    stream.delegate = self
-    stream.schedule(
-        in: .main,
-        forMode: .default)
-    stream.open()
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// MARK: - MCSessionDelegate</span>
+<span class="kd">func</span> <span class="nf">session</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span>
+    <span class="n">didReceive</span> <span class="nv">stream</span><span class="p">:</span> <span class="kt">InputStream</span><span class="p">,</span>
+    <span class="n">withName</span> <span class="nv">streamName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="n">fromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="n">stream</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="n">stream</span><span class="o">.</span><span class="nf">schedule</span><span class="p">(</span>
+        <span class="nv">in</span><span class="p">:</span> <span class="o">.</span><span class="n">main</span><span class="p">,</span>
+        <span class="nv">forMode</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span>
+    <span class="n">stream</span><span class="o">.</span><span class="nf">open</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>입력 및 출력 스트림을 모두 사용하려면 먼저 예약하고 열어야 합니다. 완료되면 다른 바인딩된 쌍과 마찬가지로 스트림을 읽고 쓸 수 있습니다.</p>
@@ -2332,8 +2332,8 @@ let progress = session.sendResource(
 
 <p>의 두 메서드에서 발생합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2343,15 +2343,15 @@ let progress = session.sendResource(
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>// MARK: - MCSessionDelegate
-func session(
-    _ session: MCSession,
-    didStartReceivingResourceWithName resourceName: String,
-    fromPeer peerID: MCPeerID,
-    with progress: Progress
-) {
-    // 진행률(progress)에 따른 작업
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// MARK: - MCSessionDelegate</span>
+<span class="kd">func</span> <span class="nf">session</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">MCSession</span><span class="p">,</span>
+    <span class="n">didStartReceivingResourceWithName</span> <span class="nv">resourceName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="n">fromPeer</span> <span class="nv">peerID</span><span class="p">:</span> <span class="kt">MCPeerID</span><span class="p">,</span>
+    <span class="n">with</span> <span class="nv">progress</span><span class="p">:</span> <span class="kt">Progress</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 진행률(progress)에 따른 작업</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">

@@ -703,37 +703,6 @@
   
 
   
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -763,8 +732,29 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -860,9 +850,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1090 words"
+  title="1074 words"
 >
-  <em>6 min</em> read</span>
+  <em>5 min</em> read</span>
 
         </div>
       </div>
@@ -894,19 +884,19 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이른바 ‘콜백 지옥’을 해결하기 위해 Swift 5.5 버전부터 등장한 키워드입니다. 자바스크립트 ES6에서 도입된 <code class="language-plaintext highlighter-rouge">async</code>및 <code class="language-plaintext highlighter-rouge">await</code>와 목적이 거의 같습니다.</p>
 
-<ul>
-  <li><a href="http://yoonbumtae.com/?p=1071">자바스크립트: 콜백, Promise, async - await 기초</a></li>
-</ul>
+<!-- - [자바스크립트: 콜백, Promise, async - await 기초](http://yoonbumtae.com/?p=1071) -->
 
 <blockquote>
   <p><strong>콜백 지옥(Callback Hell)</strong></p>
 
-  <p>콜백 지옥은 JavaScript를 이용한 비동기 프로그래밍시 발생하는 문제로서, <strong>함수의 매개 변수로 넘겨지는 콜백 함수가 반복되어 코드의 들여쓰기 수준이 감당하기 힘들 정도로 깊어지는 현상</strong>을 말한다.  <a href="/assets/img/wp-content/uploads/2023/07/image.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/07/image.jpg" alt="" loading="lazy"></a></p>
+  <p>콜백 지옥은 JavaScript를 이용한 비동기 프로그래밍시 발생하는 문제로서, <strong>함수의 매개 변수로 넘겨지는 콜백 함수가 반복되어 코드의 들여쓰기 수준이 감당하기 힘들 정도로 깊어지는 현상</strong>을 말한다.</p>
 </blockquote>
+
+<p><a href="/assets/img/wp-content/uploads/2023/07/image.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/07/image.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -914,12 +904,12 @@
 
 <p> </p>
 
-<h4 id="기존-코드콜백-클로저-컴플리션-핸들러-등"><span class="me-2"><strong>기존 코드(콜백, 클로저, 컴플리션 핸들러 등)</strong></span><a href="#기존-코드콜백-클로저-컴플리션-핸들러-등" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="기존-코드콜백-클로저-컴플리션-핸들러-등"><span class="me-2"><strong>기존 코드(콜백, 클로저, 컴플리션 핸들러 등)</strong></span><a href="#기존-코드콜백-클로저-컴플리션-핸들러-등" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래는 네트워크 <code class="language-plaintext highlighter-rouge">URL</code>로부터 JSON을 읽어온 뒤 <code class="language-plaintext highlighter-rouge">completion</code> 클로저를 이용해 핸들러 작업을 처리하는 함수입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -943,37 +933,37 @@
 21
 22
 23
-</pre></td><td class="rouge-code"><pre>/// URL로부터 JSON을 읽어와 [String: Any]? 형태의 파라미터를 받는 클로저로 처리할 수 있는 함수
-func fetchData(_ urlString: String, completion: @escaping ([String: Any]?, Error?) -&gt; Void) {
-    let url = URL(string: urlString)!
+</pre></td><td class="rouge-code"><pre><span class="c1">/// URL로부터 JSON을 읽어와 [String: Any]? 형태의 파라미터를 받는 클로저로 처리할 수 있는 함수</span>
+<span class="kd">func</span> <span class="nf">fetchData</span><span class="p">(</span><span class="n">_</span> <span class="nv">urlString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">([</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">urlString</span><span class="p">)</span><span class="o">!</span>
     
-    let task = URLSession.shared.dataTask(with: url) { data, response, error in
-        // let shorthand: Swift version 5.7부터 도입
-        guard let data else {
-            return
-        }
+    <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="c1">// let shorthand: Swift version 5.7부터 도입</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        do {
-            if let array = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
-                completion(array, nil)
-            }
-        } catch {
-            print(error)
-            completion(nil, error)
-        }
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">array</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">JSONSerialization</span><span class="o">.</span><span class="nf">jsonObject</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="o">.</span><span class="n">allowFragments</span><span class="p">)</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="p">{</span>
+                <span class="nf">completion</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+            <span class="nf">completion</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+        <span class="p">}</span>
         
-    }
+    <span class="p">}</span>
     
-    task.resume()
-}
+    <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>네트워크로부터 데이터를 가져오는 작업은 비동기로 이루어지기 때문에 이후 작업을 동기적으로 처리하기 위해서는 클로저(다른 이름으로 콜백, 컴플리션 핸들러 등등)를 이용해야 했습니다.</p>
 
 <p>위 함수를 이용한 3연속 JSON 동기적 호출은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -986,17 +976,17 @@ func fetchData(_ urlString: String, completion: @escaping ([String: Any]?, Error
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>fetchData("https://reqres.in/api/users?delay=2") { dict, error in
-    debugPrint("page 1:", dict!["support"]!)
+</pre></td><td class="rouge-code"><pre><span class="nf">fetchData</span><span class="p">(</span><span class="s">"https://reqres.in/api/users?delay=2"</span><span class="p">)</span> <span class="p">{</span> <span class="n">dict</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="nf">debugPrint</span><span class="p">(</span><span class="s">"page 1:"</span><span class="p">,</span> <span class="n">dict</span><span class="o">!</span><span class="p">[</span><span class="s">"support"</span><span class="p">]</span><span class="o">!</span><span class="p">)</span>
 
-    fetchData("https://reqres.in/api/users?delay=2") { dict, error in
-        debugPrint("page 2:", dict!["support"]!)
+    <span class="nf">fetchData</span><span class="p">(</span><span class="s">"https://reqres.in/api/users?delay=2"</span><span class="p">)</span> <span class="p">{</span> <span class="n">dict</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="nf">debugPrint</span><span class="p">(</span><span class="s">"page 2:"</span><span class="p">,</span> <span class="n">dict</span><span class="o">!</span><span class="p">[</span><span class="s">"support"</span><span class="p">]</span><span class="o">!</span><span class="p">)</span>
 
-        fetchData("https://reqres.in/api/users?delay=2") { dict, error in
-            debugPrint("page 3:", dict!["support"]!)
-        }
-    }
-}
+        <span class="nf">fetchData</span><span class="p">(</span><span class="s">"https://reqres.in/api/users?delay=2"</span><span class="p">)</span> <span class="p">{</span> <span class="n">dict</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+            <span class="nf">debugPrint</span><span class="p">(</span><span class="s">"page 3:"</span><span class="p">,</span> <span class="n">dict</span><span class="o">!</span><span class="p">[</span><span class="s">"support"</span><span class="p">]</span><span class="o">!</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1006,12 +996,12 @@ func fetchData(_ urlString: String, completion: @escaping ([String: Any]?, Error
 
 <p> </p>
 
-<h4 id="asyncawait를-도입한-코드"><span class="me-2"><strong>async/await를 도입한 코드</strong></span><a href="#asyncawait를-도입한-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="asyncawait를-도입한-코드"><span class="me-2"><strong>async/await를 도입한 코드</strong></span><a href="#asyncawait를-도입한-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이것을 도입하면 콜백 지옥이 해결됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1029,23 +1019,23 @@ func fetchData(_ urlString: String, completion: @escaping ([String: Any]?, Error
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>/// URL로부터 JSON을 읽어와 [String: Any]를 반환하는 async 함수
-func fetchDataAsync(_ urlString: String) async throws -&gt; [String: Any] {
-    let url = URL(string: urlString)!
+</pre></td><td class="rouge-code"><pre><span class="c1">/// URL로부터 JSON을 읽어와 [String: Any]를 반환하는 async 함수</span>
+<span class="kd">func</span> <span class="nf">fetchDataAsync</span><span class="p">(</span><span class="n">_</span> <span class="nv">urlString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">urlString</span><span class="p">)</span><span class="o">!</span>
     
-    // try를 제외한 경우: Call can throw, but it is not marked with 'try' and the error is not handled
-    let (data, _) = try await URLSession.shared.data(from: url)
+    <span class="c1">// try를 제외한 경우: Call can throw, but it is not marked with 'try' and the error is not handled</span>
+    <span class="k">let</span> <span class="p">(</span><span class="nv">data</span><span class="p">,</span> <span class="nv">_</span><span class="p">)</span> <span class="o">=</span> <span class="k">try</span> <span class="k">await</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">data</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
     
-    do {
-        if let array = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
-            return array
-        }
-    } catch {
-        throw error
-    }
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">array</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">JSONSerialization</span><span class="o">.</span><span class="nf">jsonObject</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="o">.</span><span class="n">allowFragments</span><span class="p">)</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">array</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">error</span>
+    <span class="p">}</span>
     
-    return [:]
-}
+    <span class="k">return</span> <span class="p">[:]</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

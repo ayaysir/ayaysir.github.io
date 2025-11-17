@@ -1052,8 +1052,8 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 
 <p>원래는 테이블 뷰 셀에서 스와이프시 사용자 커스텀 버튼을 만들고 표시할 때 사용하는 메서드입니다. 검색해보면 다양한 사용법을 확인할 수 있습니다만, 여기서는 단순히 스와이프 방지용으로만 사용하겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1078,30 +1078,30 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 22
 23
 24
-</pre></td><td class="rouge-code"><pre>override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -&gt; UISwipeActionsConfiguration? {
-    print(#function, indexPath)
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">trailingSwipeActionsConfigurationForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UISwipeActionsConfiguration</span><span class="p">?</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="k">#function</span><span class="p">,</span> <span class="n">indexPath</span><span class="p">)</span>
     
-    if tableView.isEditing {
+    <span class="k">if</span> <span class="n">tableView</span><span class="o">.</span><span class="n">isEditing</span> <span class="p">{</span>
         
-        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
-            print("index path of delete: \(indexPath)")
-            let cell = tableView.cellForRow(at: indexPath)
-            let entity = cell.infoViewModel.entity
+        <span class="k">let</span> <span class="nv">delete</span> <span class="o">=</span> <span class="kt">UIContextualAction</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">destructive</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="s">"Delete"</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">sourceView</span><span class="p">,</span> <span class="n">completionHandler</span><span class="p">)</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"index path of delete: </span><span class="se">\(</span><span class="n">indexPath</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">cellForRow</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">entity</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">infoViewModel</span><span class="o">.</span><span class="n">entity</span>
 			
-             // ..뷰모델, DB 등에서 삭제하는 작업.. //
+             <span class="c1">// ..뷰모델, DB 등에서 삭제하는 작업.. //</span>
 			
-             tableView.deleteRows(at: [indexPath], with: .fade)
-        }
+             <span class="n">tableView</span><span class="o">.</span><span class="nf">deleteRows</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="p">[</span><span class="n">indexPath</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">fade</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        let swipeAction = UISwipeActionsConfiguration(actions: [delete])
-        swipeAction.performsFirstActionWithFullSwipe = false // This is the line which disables full swipe
-        return swipeAction
-    } else {
-        let config = UISwipeActionsConfiguration()
-        config.performsFirstActionWithFullSwipe = false
-        return config
-    }
-}
+        <span class="k">let</span> <span class="nv">swipeAction</span> <span class="o">=</span> <span class="kt">UISwipeActionsConfiguration</span><span class="p">(</span><span class="nv">actions</span><span class="p">:</span> <span class="p">[</span><span class="n">delete</span><span class="p">])</span>
+        <span class="n">swipeAction</span><span class="o">.</span><span class="n">performsFirstActionWithFullSwipe</span> <span class="o">=</span> <span class="kc">false</span> <span class="c1">// This is the line which disables full swipe</span>
+        <span class="k">return</span> <span class="n">swipeAction</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">config</span> <span class="o">=</span> <span class="kt">UISwipeActionsConfiguration</span><span class="p">()</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">performsFirstActionWithFullSwipe</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">config</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

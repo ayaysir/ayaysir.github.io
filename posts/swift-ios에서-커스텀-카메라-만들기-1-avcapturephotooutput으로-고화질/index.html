@@ -786,21 +786,17 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
       
-        
-        
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -827,17 +823,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1020,6 +1005,11 @@
     
 
     
+  
+
+  
+  
+
   
 
 
@@ -1110,7 +1100,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4002 words"
+  title="4000 words"
 >
   <em>22 min</em> read</span>
 
@@ -1149,7 +1139,7 @@
 <p>이전에도 한 차례 커스텀 카메라에 대해 다룬적이 있는데 해당 방식은 비디오의 프레임을 캡처해서 저장하는 방식이었습니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=5762">Swift: iOS에서 커스텀 카메라 만들기 (1) - 비디오 캡처 방식 활용</a></li>
+  <li><a href="/posts/swift-ios에서-커스텀-카메라-만들기">Swift: iOS에서 커스텀 카메라 만들기 (1) - 비디오 캡처 방식 활용</a></li>
 </ul>
 
 <p>이러한 방식에 대한 장점도 많이 있지만, 해상도가 상대적으로 낮은 단점도 있어서 다른 방식인 <code class="language-plaintext highlighter-rouge">AVCapturePhotoOutput</code>을 이용해 고화질의 사진을 얻는 방법에 대해 알아보겠습니다.</p>
@@ -1158,9 +1148,9 @@
 
 <p> </p>
 
-<h3 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="step-0-infoplist의-권한-설정-및-import"><span class="me-2"><strong>Step 0: Info.plist의 권한 설정 및 import</strong></span><a href="#step-0-infoplist의-권한-설정-및-import" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="step-0-infoplist의-권한-설정-및-import"><span class="me-2"><strong>Step 0: Info.plist의 권한 설정 및 import</strong></span><a href="#step-0-infoplist의-권한-설정-및-import" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>아래와 같이 <code class="language-plaintext highlighter-rouge">Info.plist</code> 파일에 두 개의 권한 허용 여부를 묻는 메시지를 추가합니다.</p>
 
@@ -1190,10 +1180,10 @@
 
 <p> </p>
 
-<h4 id="step-1뷰-컨트롤러에-카메라-이미지-관련-멤버-변수-추가"><span class="me-2"><strong>Step 1: 뷰 컨트롤러에 카메라, 이미지 관련 멤버 변수 추가</strong></span><a href="#step-1뷰-컨트롤러에-카메라-이미지-관련-멤버-변수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="step-1뷰-컨트롤러에-카메라-이미지-관련-멤버-변수-추가"><span class="me-2"><strong>Step 1: 뷰 컨트롤러에 카메라, 이미지 관련 멤버 변수 추가</strong></span><a href="#step-1뷰-컨트롤러에-카메라-이미지-관련-멤버-변수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1216,28 +1206,28 @@
 20
 21
 22
-</pre></td><td class="rouge-code"><pre>// MARK: - Vars
-var previewLayer: AVCaptureVideoPreviewLayer!
-var captureSession: AVCaptureSession!
-var backCameraInput: AVCaptureDeviceInput!
-var frontCameraInput: AVCaptureDeviceInput!
+</pre></td><td class="rouge-code"><pre><span class="c1">// MARK: - Vars</span>
+<span class="k">var</span> <span class="nv">previewLayer</span><span class="p">:</span> <span class="kt">AVCaptureVideoPreviewLayer</span><span class="o">!</span>
+<span class="k">var</span> <span class="nv">captureSession</span><span class="p">:</span> <span class="kt">AVCaptureSession</span><span class="o">!</span>
+<span class="k">var</span> <span class="nv">backCameraInput</span><span class="p">:</span> <span class="kt">AVCaptureDeviceInput</span><span class="o">!</span>
+<span class="k">var</span> <span class="nv">frontCameraInput</span><span class="p">:</span> <span class="kt">AVCaptureDeviceInput</span><span class="o">!</span>
 
-var photoSettings: AVCapturePhotoSettings {
-    // NSInvalidArgumentException', reason: '*** -[AVCapturePhotoOutput capturePhotoWithSettings:delegate:]
-    // Settings may not be re-used'
+<span class="k">var</span> <span class="nv">photoSettings</span><span class="p">:</span> <span class="kt">AVCapturePhotoSettings</span> <span class="p">{</span>
+    <span class="c1">// NSInvalidArgumentException', reason: '*** -[AVCapturePhotoOutput capturePhotoWithSettings:delegate:]</span>
+    <span class="c1">// Settings may not be re-used'</span>
     
-    var settings = AVCapturePhotoSettings()
-    // photoOutput 의 codec의 hevc 가능시 photoSettings의 codec을 hevc로 설정하는 코드입니다.
-    // hevc 불가능한 경우에는 jpeg codec을 사용하도록 합니다.
-    if photoOutput.availablePhotoCodecTypes.contains(.hevc) {
-        settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.hevc])
-    } else {
-        settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-    }
+    <span class="k">var</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">AVCapturePhotoSettings</span><span class="p">()</span>
+    <span class="c1">// photoOutput 의 codec의 hevc 가능시 photoSettings의 codec을 hevc로 설정하는 코드입니다.</span>
+    <span class="c1">// hevc 불가능한 경우에는 jpeg codec을 사용하도록 합니다.</span>
+    <span class="k">if</span> <span class="n">photoOutput</span><span class="o">.</span><span class="n">availablePhotoCodecTypes</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="o">.</span><span class="n">hevc</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="kt">AVCapturePhotoSettings</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="p">[</span><span class="kt">AVVideoCodecKey</span><span class="p">:</span> <span class="kt">AVVideoCodecType</span><span class="o">.</span><span class="n">hevc</span><span class="p">])</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="kt">AVCapturePhotoSettings</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="p">[</span><span class="kt">AVVideoCodecKey</span><span class="p">:</span> <span class="kt">AVVideoCodecType</span><span class="o">.</span><span class="n">jpeg</span><span class="p">])</span>
+    <span class="p">}</span>
     
-    return settings
-}
-var photoOutput: AVCapturePhotoOutput = AVCapturePhotoOutput()
+    <span class="k">return</span> <span class="n">settings</span>
+<span class="p">}</span>
+<span class="k">var</span> <span class="nv">photoOutput</span><span class="p">:</span> <span class="kt">AVCapturePhotoOutput</span> <span class="o">=</span> <span class="kt">AVCapturePhotoOutput</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1259,7 +1249,7 @@ var photoOutput: AVCapturePhotoOutput = AVCapturePhotoOutput()
 
 <p> </p>
 
-<h4 id="step-2-viewdidappear_에-카메라-세팅-코드-작성"><span class="me-2"><strong>Step 2: viewDidAppear(:_)에 카메라 세팅 코드 작성</strong></span><a href="#step-2-viewdidappear_에-카메라-세팅-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="step-2-viewdidappear_에-카메라-세팅-코드-작성"><span class="me-2"><strong>Step 2: viewDidAppear(:_)에 카메라 세팅 코드 작성</strong></span><a href="#step-2-viewdidappear_에-카메라-세팅-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>카메라에 접근하기 위해 다음 두 가지 작업이 필요합니다.</p>
 
@@ -1270,20 +1260,20 @@ var photoOutput: AVCapturePhotoOutput = AVCapturePhotoOutput()
 
 <p>해당 과정을 코드로 기록하면 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidAppear</span><span class="p">(</span><span class="n">animated</span><span class="p">)</span>
     
-    checkCameraPermissions()
-    setupPhotoCamera()
-}
+    <span class="nf">checkCameraPermissions</span><span class="p">()</span>
+    <span class="nf">setupPhotoCamera</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>권한 설정 부분 <code class="language-plaintext highlighter-rouge">checkCameraPermissions()</code>은 아래 코드를 뷰 컨트롤러 내에 추가하면 되고 분량상 자세한 내용은 다루지 않겠습니다.</p>
@@ -1338,13 +1328,11 @@ var photoOutput: AVCapturePhotoOutput = AVCapturePhotoOutput()
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
-
 <p>카메라 세팅은 다음 단계로 진행됩니다.</p>
 
 <!-- \[the\_ad id="3513"\] -->
 
-<h5 id="1-setupphotocamera-추가"><span class="me-2"><strong>1: setupPhotoCamera() 추가</strong></span><a href="#1-setupphotocamera-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="1-setupphotocamera-추가"><span class="me-2"><strong>1: setupPhotoCamera() 추가</strong></span><a href="#1-setupphotocamera-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>먼저 메인 스레드가 아닌 다른 스레드에서 코드가 실행될 수 있도록 합니다. 그 이유는 실행 코드 중 <code class="language-plaintext highlighter-rouge">AVCaptureSession.startRunning()</code>이 해당 작업이 실행될 때까지 시스템 흐름이 멈추는 블록 호출(block call)이기 때문에 메인 스레드에 추가할 경우 UI가 멈출 수 있는 위험이 있기 때문입니다.</p>
 
@@ -1368,19 +1356,19 @@ var photoOutput: AVCapturePhotoOutput = AVCapturePhotoOutput()
 
 <p> </p>
 
-<h5 id="2-카메라-세션-초기화-및-구성사항configuration-시작"><span class="me-2"><strong>2: 카메라 세션 초기화 및 구성사항(configuration) 시작</strong></span><a href="#2-카메라-세션-초기화-및-구성사항configuration-시작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="2-카메라-세션-초기화-및-구성사항configuration-시작"><span class="me-2"><strong>2: 카메라 세션 초기화 및 구성사항(configuration) 시작</strong></span><a href="#2-카메라-세션-초기화-및-구성사항configuration-시작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>// 세션 초기화
-captureSession = AVCaptureSession()
-// 구성(configuration) 시작
-captureSession.beginConfiguration()
+</pre></td><td class="rouge-code"><pre><span class="c1">// 세션 초기화</span>
+<span class="n">captureSession</span> <span class="o">=</span> <span class="kt">AVCaptureSession</span><span class="p">()</span>
+<span class="c1">// 구성(configuration) 시작</span>
+<span class="n">captureSession</span><span class="o">.</span><span class="nf">beginConfiguration</span><span class="p">()</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1391,36 +1379,36 @@ captureSession.beginConfiguration()
 
 <p> </p>
 
-<h5 id="3-세션이-사진-프리셋을-지원하는-경우-해당-프리셋을-설정"><span class="me-2"><strong>3: 세션이 사진 프리셋을 지원하는 경우 해당 프리셋을 설정</strong></span><a href="#3-세션이-사진-프리셋을-지원하는-경우-해당-프리셋을-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="3-세션이-사진-프리셋을-지원하는-경우-해당-프리셋을-설정"><span class="me-2"><strong>3: 세션이 사진 프리셋을 지원하는 경우 해당 프리셋을 설정</strong></span><a href="#3-세션이-사진-프리셋을-지원하는-경우-해당-프리셋을-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>if captureSession.canSetSessionPreset(.photo) {
-    captureSession.sessionPreset = .photo
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="n">captureSession</span><span class="o">.</span><span class="nf">canSetSessionPreset</span><span class="p">(</span><span class="o">.</span><span class="n">photo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">captureSession</span><span class="o">.</span><span class="n">sessionPreset</span> <span class="o">=</span> <span class="o">.</span><span class="n">photo</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="4-광역-색상-지원-설정"><span class="me-2"><strong>4: 광역 색상 지원 설정</strong></span><a href="#4-광역-색상-지원-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="4-광역-색상-지원-설정"><span class="me-2"><strong>4: 광역 색상 지원 설정</strong></span><a href="#4-광역-색상-지원-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>// 사용 가능한 경우 세션이 자동으로 광역 색상을 사용해야 하는지 여부를 지정합니다. (기본값 true)
-captureSession.automaticallyConfiguresCaptureDeviceForWideColor = true
+</pre></td><td class="rouge-code"><pre><span class="c1">// 사용 가능한 경우 세션이 자동으로 광역 색상을 사용해야 하는지 여부를 지정합니다. (기본값 true)</span>
+<span class="n">captureSession</span><span class="o">.</span><span class="n">automaticallyConfiguresCaptureDeviceForWideColor</span> <span class="o">=</span> <span class="kc">true</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="5-디바이스-변수에-전후면-카메라-디바이스를-지정"><span class="me-2"><strong>5: 디바이스 변수에 전/후면 카메라 디바이스를 지정</strong></span><a href="#5-디바이스-변수에-전후면-카메라-디바이스를-지정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="5-디바이스-변수에-전후면-카메라-디바이스를-지정"><span class="me-2"><strong>5: 디바이스 변수에 전/후면 카메라 디바이스를 지정</strong></span><a href="#5-디바이스-변수에-전후면-카메라-디바이스를-지정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1430,15 +1418,15 @@ captureSession.automaticallyConfiguresCaptureDeviceForWideColor = true
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>// 후면 카메라 디바이스
-guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
-    return
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 후면 카메라 디바이스</span>
+<span class="k">guard</span> <span class="k">let</span> <span class="nv">backCamera</span> <span class="o">=</span> <span class="kt">AVCaptureDevice</span><span class="o">.</span><span class="nf">default</span><span class="p">(</span><span class="o">.</span><span class="n">builtInWideAngleCamera</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">video</span><span class="p">,</span> <span class="nv">position</span><span class="p">:</span> <span class="o">.</span><span class="n">back</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+<span class="p">}</span>
 
-// 전면 카메라 디바이스
-guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else {
-    return
-}
+<span class="c1">// 전면 카메라 디바이스</span>
+<span class="k">guard</span> <span class="k">let</span> <span class="nv">frontCamera</span> <span class="o">=</span> <span class="kt">AVCaptureDevice</span><span class="o">.</span><span class="nf">default</span><span class="p">(</span><span class="o">.</span><span class="n">builtInWideAngleCamera</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">video</span><span class="p">,</span> <span class="nv">position</span><span class="p">:</span> <span class="o">.</span><span class="n">front</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1447,10 +1435,10 @@ guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .v
 
 <p> </p>
 
-<h5 id="6-카메라-인풋을-기기로부터-받도록-지정하고-세션의-인풋-목록에-추가"><span class="me-2"><strong>6: 카메라 인풋을 기기로부터 받도록 지정하고, 세션의 인풋 목록에 추가</strong></span><a href="#6-카메라-인풋을-기기로부터-받도록-지정하고-세션의-인풋-목록에-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="6-카메라-인풋을-기기로부터-받도록-지정하고-세션의-인풋-목록에-추가"><span class="me-2"><strong>6: 카메라 인풋을 기기로부터 받도록 지정하고, 세션의 인풋 목록에 추가</strong></span><a href="#6-카메라-인풋을-기기로부터-받도록-지정하고-세션의-인풋-목록에-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1463,17 +1451,17 @@ guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .v
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>// 생성된 captureSession에 device input을 생성 및 연결하고,
-// device output을 연결하는 코드입니다.
-do {
-    backCameraInput = try AVCaptureDeviceInput(device: backCamera)
-    frontCameraInput = try AVCaptureDeviceInput(device: frontCamera)
+</pre></td><td class="rouge-code"><pre><span class="c1">// 생성된 captureSession에 device input을 생성 및 연결하고,</span>
+<span class="c1">// device output을 연결하는 코드입니다.</span>
+<span class="k">do</span> <span class="p">{</span>
+    <span class="n">backCameraInput</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">AVCaptureDeviceInput</span><span class="p">(</span><span class="nv">device</span><span class="p">:</span> <span class="n">backCamera</span><span class="p">)</span>
+    <span class="n">frontCameraInput</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">AVCaptureDeviceInput</span><span class="p">(</span><span class="nv">device</span><span class="p">:</span> <span class="n">frontCamera</span><span class="p">)</span>
         
-    // captureSession에 cameraInput을 받도록 설정
-    captureSession.addInput(backCameraInput)
-} catch  {
-    debugPrint("Camera Input Error:", error.localizedDescription)
-}
+    <span class="c1">// captureSession에 cameraInput을 받도록 설정</span>
+    <span class="n">captureSession</span><span class="o">.</span><span class="nf">addInput</span><span class="p">(</span><span class="n">backCameraInput</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">catch</span>  <span class="p">{</span>
+    <span class="nf">debugPrint</span><span class="p">(</span><span class="s">"Camera Input Error:"</span><span class="p">,</span> <span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1487,10 +1475,10 @@ do {
 
 <p> </p>
 
-<h5 id="7-photooutput을-캡처-세션의-아웃풋-목록에-추가"><span class="me-2"><strong>7: photoOutput을 캡처 세션의 아웃풋 목록에 추가</strong></span><a href="#7-photooutput을-캡처-세션의-아웃풋-목록에-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="7-photooutput을-캡처-세션의-아웃풋-목록에-추가"><span class="me-2"><strong>7: photoOutput을 캡처 세션의 아웃풋 목록에 추가</strong></span><a href="#7-photooutput을-캡처-세션의-아웃풋-목록에-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1499,14 +1487,14 @@ do {
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>// 고해상도의 이미지 캡처 가능 설정
-// 16.0에서 deprecated됨
-if #unavailable(iOS 16.0) {
-    photoOutput.isHighResolutionCaptureEnabled = true
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 고해상도의 이미지 캡처 가능 설정</span>
+<span class="c1">// 16.0에서 deprecated됨</span>
+<span class="k">if</span> <span class="k">#unavailable</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">16.0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">photoOutput</span><span class="o">.</span><span class="n">isHighResolutionCaptureEnabled</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">}</span>
 
-// CaptureSession에 photoOutput을 추가
-captureSession.addOutput(photoOutput)
+<span class="c1">// CaptureSession에 photoOutput을 추가</span>
+<span class="n">captureSession</span><span class="o">.</span><span class="nf">addOutput</span><span class="p">(</span><span class="n">photoOutput</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1520,22 +1508,22 @@ captureSession.addOutput(photoOutput)
 
 <p> </p>
 
-<h5 id="8-카메라-미리보기-화면-추가"><span class="me-2"><strong>8: 카메라 미리보기 화면 추가</strong></span><a href="#8-카메라-미리보기-화면-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="8-카메라-미리보기-화면-추가"><span class="me-2"><strong>8: 카메라 미리보기 화면 추가</strong></span><a href="#8-카메라-미리보기-화면-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>카메라를 미리보기 할 수 없다면 내가 도대체 어떤 대상을 찍고 있고 어떤 모습으로 찍히는지 전혀 알 수 없을 것입니다.</p>
 
 <p>아래 코드를 <code class="language-plaintext highlighter-rouge">setupPhotoCamera()</code> 내부에 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>// Preview 화면 추가
-DispatchQueue.main.async { [unowned self] in
-    setCameraPreview()
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// Preview 화면 추가</span>
+<span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="p">[</span><span class="k">unowned</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+    <span class="nf">setCameraPreview</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1574,18 +1562,18 @@ DispatchQueue.main.async { [unowned self] in
 
 <p> </p>
 
-<h5 id="9-구성-사항-커밋-및-캡처-세션-실행"><span class="me-2"><strong>9: 구성 사항 커밋 및 캡처 세션 실행</strong></span><a href="#9-구성-사항-커밋-및-캡처-세션-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="9-구성-사항-커밋-및-캡처-세션-실행"><span class="me-2"><strong>9: 구성 사항 커밋 및 캡처 세션 실행</strong></span><a href="#9-구성-사항-커밋-및-캡처-세션-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>// commit configuration: 단일 atomic 업데이트에서 실행 중인 캡처 세션의 구성에 대한 하나 이상의 변경 사항을 커밋합니다.
-captureSession.commitConfiguration()
-// 캡처 세션 실행
-captureSession.startRunning()
+</pre></td><td class="rouge-code"><pre><span class="c1">// commit configuration: 단일 atomic 업데이트에서 실행 중인 캡처 세션의 구성에 대한 하나 이상의 변경 사항을 커밋합니다.</span>
+<span class="n">captureSession</span><span class="o">.</span><span class="nf">commitConfiguration</span><span class="p">()</span>
+<span class="c1">// 캡처 세션 실행</span>
+<span class="n">captureSession</span><span class="o">.</span><span class="nf">startRunning</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1604,7 +1592,7 @@ captureSession.startRunning()
 
 <p> </p>
 
-<h5 id="10-카메라-전후면-전환-버튼-이벤트에-해당-기능-작성"><span class="me-2"><strong>10: 카메라 전/후면 전환 버튼 이벤트에 해당 기능 작성</strong></span><a href="#10-카메라-전후면-전환-버튼-이벤트에-해당-기능-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="10-카메라-전후면-전환-버튼-이벤트에-해당-기능-작성"><span class="me-2"><strong>10: 카메라 전/후면 전환 버튼 이벤트에 해당 기능 작성</strong></span><a href="#10-카메라-전후면-전환-버튼-이벤트에-해당-기능-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>카메라 전/후면을 변경하는 코드는 다음과 같습니다. 전후 방향을 바꾸는 해당 <code class="language-plaintext highlighter-rouge">UIButton</code>의 이벤트로 지정합니다.</p>
 
@@ -1652,7 +1640,7 @@ captureSession.startRunning()
 
 <p> </p>
 
-<h4 id="step-3-카메라-셔터-버튼-이벤트-코드-작성"><span class="me-2"><strong>Step 3: 카메라 셔터 버튼 이벤트 코드 작성</strong></span><a href="#step-3-카메라-셔터-버튼-이벤트-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="step-3-카메라-셔터-버튼-이벤트-코드-작성"><span class="me-2"><strong>Step 3: 카메라 셔터 버튼 이벤트 코드 작성</strong></span><a href="#step-3-카메라-셔터-버튼-이벤트-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">capturePhoto(with:delegate:)</code>를 호출하면 카메라의 셔터 버튼을 누른 것과 같이 해당 이미지가 캡처됩니다. 참고로 기본 카메라에서 기능을 빌려오는 것이기 때문에 기본 카메라에서 무음 상태에서도 셔터음이 울린다면 여기서도 동일하게 울립니다.</p>
 
@@ -1682,14 +1670,14 @@ captureSession.startRunning()
 
 <p> </p>
 
-<h4 id="step-4-사진을-라이브러리에-저장-기능-추가"><span class="me-2"><strong>Step 4: 사진을 라이브러리에 저장 기능 추가</strong></span><a href="#step-4-사진을-라이브러리에-저장-기능-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="step-4-사진을-라이브러리에-저장-기능-추가"><span class="me-2"><strong>Step 4: 사진을 라이브러리에 저장 기능 추가</strong></span><a href="#step-4-사진을-라이브러리에-저장-기능-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>사진을 찍은 뒤 후처리까지 완료되면 <code class="language-plaintext highlighter-rouge">photoOutput(...didFinishProcessingPhoto...)</code>에 해당 사진이 <code class="language-plaintext highlighter-rouge">photo</code> 변수로 저장되어 있습니다. 이것을 라이브러리에 저장하도록 리퀘스트하면 됩니다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">extension</code> 내부에 다음 메서드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1710,26 +1698,26 @@ captureSession.startRunning()
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>/// capturePhoto 이후에 capture process 가 완료된 이미지를 저장하는 메서드
-func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-    guard error == nil else {
-        print("Error capturing photo:", error!.localizedDescription)
-        return
-    }
+</pre></td><td class="rouge-code"><pre><span class="c1">/// capturePhoto 이후에 capture process 가 완료된 이미지를 저장하는 메서드</span>
+<span class="kd">func</span> <span class="nf">photoOutput</span><span class="p">(</span><span class="n">_</span> <span class="nv">output</span><span class="p">:</span> <span class="kt">AVCapturePhotoOutput</span><span class="p">,</span> <span class="n">didFinishProcessingPhoto</span> <span class="nv">photo</span><span class="p">:</span> <span class="kt">AVCapturePhoto</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="n">error</span> <span class="o">==</span> <span class="kc">nil</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Error capturing photo:"</span><span class="p">,</span> <span class="n">error</span><span class="o">!.</span><span class="n">localizedDescription</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    // 권한 요청
-    PHPhotoLibrary.requestAuthorization { status in
-        guard status == .authorized else {
-            return
-        }
+    <span class="c1">// 권한 요청</span>
+    <span class="kt">PHPhotoLibrary</span><span class="o">.</span><span class="n">requestAuthorization</span> <span class="p">{</span> <span class="n">status</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="n">status</span> <span class="o">==</span> <span class="o">.</span><span class="n">authorized</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        // 사진 앨범에 저장
-        PHPhotoLibrary.shared().performChanges({
-            let creationRequest = PHAssetCreationRequest.forAsset()
-            creationRequest.addResource(with: .photo, data: photo.fileDataRepresentation()!, options: nil)
-        }, completionHandler: nil)
-    }
-}
+        <span class="c1">// 사진 앨범에 저장</span>
+        <span class="kt">PHPhotoLibrary</span><span class="o">.</span><span class="nf">shared</span><span class="p">()</span><span class="o">.</span><span class="nf">performChanges</span><span class="p">({</span>
+            <span class="k">let</span> <span class="nv">creationRequest</span> <span class="o">=</span> <span class="kt">PHAssetCreationRequest</span><span class="o">.</span><span class="nf">forAsset</span><span class="p">()</span>
+            <span class="n">creationRequest</span><span class="o">.</span><span class="nf">addResource</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">photo</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="n">photo</span><span class="o">.</span><span class="nf">fileDataRepresentation</span><span class="p">()</span><span class="o">!</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="p">},</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1766,7 +1754,7 @@ func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo:
 
 <p> </p>
 
-<h4 id="뷰-컨트롤러-전체-코드"><span class="me-2"><strong>뷰 컨트롤러 전체 코드</strong></span><a href="#뷰-컨트롤러-전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="뷰-컨트롤러-전체-코드"><span class="me-2"><strong>뷰 컨트롤러 전체 코드</strong></span><a href="#뷰-컨트롤러-전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1958,7 +1946,6 @@ func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo:
 186
 187
 188
-189
 </pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 <span class="kd">import</span> <span class="kt">AVFoundation</span>
 <span class="kd">import</span> <span class="kt">Photos</span>
@@ -2147,7 +2134,6 @@ func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo:
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>

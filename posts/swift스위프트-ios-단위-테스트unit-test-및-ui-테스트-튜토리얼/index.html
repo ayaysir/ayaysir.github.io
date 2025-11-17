@@ -3174,8 +3174,8 @@ var mockUserDefaults: MockUserDefaults!
 
 <p><code class="language-plaintext highlighter-rouge">setUpWithError()</code> 및 <code class="language-plaintext highlighter-rouge">tearDownWithError()</code>를 다음으로 교체합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3190,19 +3190,19 @@ var mockUserDefaults: MockUserDefaults!
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>override func setUpWithError() throws {
-  try super.setUpWithError()
-  sut = UIStoryboard(name: "Main", bundle: nil)
-    .instantiateInitialViewController() as? ViewController
-  mockUserDefaults = MockUserDefaults(suiteName: "testing")
-  sut.defaults = mockUserDefaults
-}
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">setUpWithError</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="k">super</span><span class="o">.</span><span class="nf">setUpWithError</span><span class="p">()</span>
+  <span class="n">sut</span> <span class="o">=</span> <span class="kt">UIStoryboard</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Main"</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">instantiateInitialViewController</span><span class="p">()</span> <span class="k">as?</span> <span class="kt">ViewController</span>
+  <span class="n">mockUserDefaults</span> <span class="o">=</span> <span class="kt">MockUserDefaults</span><span class="p">(</span><span class="nv">suiteName</span><span class="p">:</span> <span class="s">"testing"</span><span class="p">)</span>
+  <span class="n">sut</span><span class="o">.</span><span class="n">defaults</span> <span class="o">=</span> <span class="n">mockUserDefaults</span>
+<span class="p">}</span>
 
-override func tearDownWithError() throws {
-  sut = nil
-  mockUserDefaults = nil
-  try super.tearDownWithError()
-}
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">tearDownWithError</span><span class="p">()</span> <span class="k">throws</span> <span class="p">{</span>
+  <span class="n">sut</span> <span class="o">=</span> <span class="kc">nil</span>
+  <span class="n">mockUserDefaults</span> <span class="o">=</span> <span class="kc">nil</span>
+  <span class="k">try</span> <span class="k">super</span><span class="o">.</span><span class="nf">tearDownWithError</span><span class="p">()</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 

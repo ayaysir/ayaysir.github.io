@@ -992,21 +992,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -1066,8 +1051,24 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
   
 
   
@@ -1163,7 +1164,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2086 words"
+  title="2105 words"
 >
   <em>11 min</em> read</span>
 
@@ -1222,7 +1223,7 @@
 </ul>
 
 <!-- http://www.giphy.com/gifs/TJikax42WUZzg13lsu -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExN21yaWlyeWYzdW41bTV1YzRrejA3Y2RjeWhpanE3djhlNmZyNWNlMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TJikax42WUZzg13lsu/giphy.gif" class="popup img-link shimmer"><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExN21yaWlyeWYzdW41bTV1YzRrejA3Y2RjeWhpanE3djhlNmZyNWNlMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TJikax42WUZzg13lsu/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1230,7 +1231,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">NavigationStack</code>을 사용한 뒤 안에 <code class="language-plaintext highlighter-rouge">Button</code> 또는 <code class="language-plaintext highlighter-rouge">List</code>를 넣어 사용합니다. 일반적으로 <code class="language-plaintext highlighter-rouge">List</code>를 사용합니다.</p>
 
-<p> </p>
+<h3 id="navstackview-메인-페이지"><span class="me-2"><strong>NavStackView (메인 페이지)</strong></span><a href="#navstackview-메인-페이지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>먼저 <code class="language-plaintext highlighter-rouge">NavigationStack</code>을 <code class="language-plaintext highlighter-rouge">body</code>의 최외곽에 추가합니다.</p>
 
@@ -1308,14 +1309,15 @@
   </li>
 </ul>
 
-<p>[caption id=”attachment_5426” align=”alignnone” width=”193”] <a href="/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.25.10-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.25.10-copy.jpg" alt="" loading="lazy"></a> <code class="language-plaintext highlighter-rouge">List</code>와 <code class="language-plaintext highlighter-rouge">NavigationLink</code>[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.25.10-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.25.10-copy.jpg" alt="List와 NavigationLink" loading="lazy"></a><br />
+<em><code class="language-plaintext highlighter-rouge">List</code>와 <code class="language-plaintext highlighter-rouge">NavigationLink</code></em></p>
 
 <p> </p>
 
 <p>위의 <code class="language-plaintext highlighter-rouge">NavigationLink</code>를 클릭하면 수행할 작업을 추가합니다. <code class="language-plaintext highlighter-rouge">navigationDestination</code>이라는 메서드를 <code class="language-plaintext highlighter-rouge">List</code> 바로 다음(밑)에 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1328,17 +1330,17 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>@State var message: String = ""
-// ... //
+</pre></td><td class="rouge-code"><pre><span class="kd">@State</span> <span class="k">var</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+<span class="c1">// ... //</span>
 
-List {
-    // ... //
-}
-// List 아래 위치
-.navigationTitle("조선시대 성문")
-.navigationDestination(for: Color.self) { color in
-    ColorDetail(color: color, message: $message)
-}
+<span class="kt">List</span> <span class="p">{</span>
+    <span class="c1">// ... //</span>
+<span class="p">}</span>
+<span class="c1">// List 아래 위치</span>
+<span class="o">.</span><span class="nf">navigationTitle</span><span class="p">(</span><span class="s">"조선시대 성문"</span><span class="p">)</span>
+<span class="o">.</span><span class="nf">navigationDestination</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">color</span> <span class="k">in</span>
+    <span class="kt">ColorDetail</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="n">color</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1364,7 +1366,7 @@ List {
 
 <p> </p>
 
-<h4 id="colordetailswift-두-번째-화면"><span class="me-2"><strong>ColorDetail.swift (두 번째 화면)</strong></span><a href="#colordetailswift-두-번째-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="colordetailswift-두-번째-화면-상세-페이지"><span class="me-2"><strong>ColorDetail.swift (두 번째 화면, 상세 페이지)</strong></span><a href="#colordetailswift-두-번째-화면-상세-페이지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1448,7 +1450,7 @@ List {
 
 <p><a href="/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.43.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/04/screenshot-2023-04-03-pm-7.43.16.png" alt="" loading="lazy"></a></p>
 
-<h4 id="jacobdetailswift"><span class="me-2"><strong>JacobDetail.swift</strong></span><a href="#jacobdetailswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="jacobdetailswift-세번째-상세-페이지"><span class="me-2"><strong>JacobDetail.swift (세번째 상세 페이지)</strong></span><a href="#jacobdetailswift-세번째-상세-페이지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1495,18 +1497,18 @@ List {
 <p> </p>
 
 <!-- http://www.giphy.com/gifs/TJikax42WUZzg13lsu -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHducnlzOHdraHByZzU0NnZwb2c0ZjlpdHh6eDVoNnljanhsbnB0ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TJikax42WUZzg13lsu/giphy.gif" class="popup img-link shimmer"><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHducnlzOHdraHByZzU0NnZwb2c0ZjlpdHh6eDVoNnljanhsbnB0ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TJikax42WUZzg13lsu/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h3 id="ios-160-미만에서-내비게이션-navigationview"><span class="me-2"><strong>iOS 16.0 미만에서 내비게이션: NavigationView</strong></span><a href="#ios-160-미만에서-내비게이션-navigationview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="ios-160-미만에서-내비게이션-navigationview"><span class="me-2"><strong>iOS 16.0 미만에서 내비게이션: NavigationView</strong></span><a href="#ios-160-미만에서-내비게이션-navigationview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">NavigationStack</code>은 iOS 16.0 이상에서만 사용할 수 있으므로 단독으로 사용할 수 없습니다. 그 미만의 버전에서는 <code class="language-plaintext highlighter-rouge">NavigationView</code>를 사용해야 합니다.</p>
 
 <p>또한 윗 섹션에서 사용된 <code class="language-plaintext highlighter-rouge">NavigationLink(_:value:)</code> 마찬가지로 iOS 16.0 이상에서만 사용할 수 있으므로 대신 <code class="language-plaintext highlighter-rouge">NavigationLink(_:destination:)</code>을 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1531,38 +1533,38 @@ List {
 22
 23
 24
-</pre></td><td class="rouge-code"><pre>if #available(iOS 16.0, *) {
-    // ... //
-} else {
-    // Fallback on earlier versions
-    NavigationView {
-        List {
-            NavigationLink("동대문") {
-                ColorDetail(color: Color.mint, message: $message)
-            }
-            NavigationLink("서대문") {
-                ColorDetail(color: Color.pink, message: $message)
-            }
-            NavigationLink("남대문") {
-                ColorDetail(color: Color.cyan, message: $message)
-            }
-            NavigationLink("북대문") {
-                ColorDetail(color: Color.teal, message: $message)
-            }
-            TextField("파발로 보낼 말을 입력", text: $message)
-        }
-        .navigationTitle("조선시대 성문")
-        .navigationViewStyle(.stack) // 추가
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">#available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">16.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ... //</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Fallback on earlier versions</span>
+    <span class="kt">NavigationView</span> <span class="p">{</span>
+        <span class="kt">List</span> <span class="p">{</span>
+            <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"동대문"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">ColorDetail</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">mint</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"서대문"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">ColorDetail</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">pink</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"남대문"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">ColorDetail</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">cyan</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"북대문"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">ColorDetail</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="o">.</span><span class="n">teal</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="kt">TextField</span><span class="p">(</span><span class="s">"파발로 보낼 말을 입력"</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="o">.</span><span class="nf">navigationTitle</span><span class="p">(</span><span class="s">"조선시대 성문"</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">navigationViewStyle</span><span class="p">(</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span> <span class="c1">// 추가</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p><code class="language-plaintext highlighter-rouge">ColorDetail.swift</code>도 이전 버전이 호환되도록 <code class="language-plaintext highlighter-rouge">else</code> 문을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1573,24 +1575,24 @@ List {
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>if #available(iOS 16.0, *) {
-    // NavigationStack or NavigationView 없어도 됨
-    NavigationLink("Go to Jacob Link", value: color.description).navigationDestination(for: String.self) { lastName in
-        JacobDetail(lastName: lastName.capitalized, message: $message)
-    }
-} else {
-    // Fallback on earlier versions
-    NavigationLink("Go to Jacob Link") {
-        JacobDetail(lastName: color.description.capitalized, message: $message)
-    }}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">#available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">16.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// NavigationStack or NavigationView 없어도 됨</span>
+    <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"Go to Jacob Link"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">color</span><span class="o">.</span><span class="n">description</span><span class="p">)</span><span class="o">.</span><span class="nf">navigationDestination</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="kt">String</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">lastName</span> <span class="k">in</span>
+        <span class="kt">JacobDetail</span><span class="p">(</span><span class="nv">lastName</span><span class="p">:</span> <span class="n">lastName</span><span class="o">.</span><span class="n">capitalized</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Fallback on earlier versions</span>
+    <span class="kt">NavigationLink</span><span class="p">(</span><span class="s">"Go to Jacob Link"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">JacobDetail</span><span class="p">(</span><span class="nv">lastName</span><span class="p">:</span> <span class="n">color</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">capitalized</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">$message</span><span class="p">)</span>
+    <span class="p">}}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <!-- https://giphy.com/gifs/iIDyddQQzHTqLqMv18 -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnRwc2lwMHZka2pmeHljNTYyaDZxODVlaGkyN240cmJxaHQ4MnJ0MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iIDyddQQzHTqLqMv18/giphy.gif" class="popup img-link shimmer"><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnRwc2lwMHZka2pmeHljNTYyaDZxODVlaGkyN240cmJxaHQ4MnJ0MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iIDyddQQzHTqLqMv18/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h3 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>

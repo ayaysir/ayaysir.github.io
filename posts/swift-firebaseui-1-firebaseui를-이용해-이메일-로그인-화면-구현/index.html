@@ -1120,8 +1120,8 @@ pod 'FirebaseUI'
 <span class="kd">import</span> <span class="kt">FirebaseEmailAuthUI</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1148,32 +1148,32 @@ pod 'FirebaseUI'
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>override func viewDidAppear(_ animated: Bool) {
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
     
-    guard Auth.auth().currentUser == nil else {
-        return
-    }
+    <span class="k">guard</span> <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="n">currentUser</span> <span class="o">==</span> <span class="kc">nil</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    let authUI = FUIAuth.defaultAuthUI()
-    // authUI?.delegate = self
+    <span class="k">let</span> <span class="nv">authUI</span> <span class="o">=</span> <span class="kt">FUIAuth</span><span class="o">.</span><span class="nf">defaultAuthUI</span><span class="p">()</span>
+    <span class="c1">// authUI?.delegate = self</span>
     
     
-    let providers = [FUIEmailAuth()]
-    authUI?.providers = providers
+    <span class="k">let</span> <span class="nv">providers</span> <span class="o">=</span> <span class="p">[</span><span class="kt">FUIEmailAuth</span><span class="p">()]</span>
+    <span class="n">authUI</span><span class="p">?</span><span class="o">.</span><span class="n">providers</span> <span class="o">=</span> <span class="n">providers</span>
     
-    // ⚠️: 이용약관과 개인정보보정책은 반드시 쌍으로 추가해야 함
-    // 이용약관
-    let kFirebaseTermsOfService = URL(string: "https://firebase.google.com/terms/")!
-    authUI?.tosurl = kFirebaseTermsOfService
+    <span class="c1">// ⚠️: 이용약관과 개인정보보정책은 반드시 쌍으로 추가해야 함</span>
+    <span class="c1">// 이용약관</span>
+    <span class="k">let</span> <span class="nv">kFirebaseTermsOfService</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://firebase.google.com/terms/"</span><span class="p">)</span><span class="o">!</span>
+    <span class="n">authUI</span><span class="p">?</span><span class="o">.</span><span class="n">tosurl</span> <span class="o">=</span> <span class="n">kFirebaseTermsOfService</span>
     
-    // 개인정보 보호정책
-    let kFirebasePrivacyPolicy = URL(string: "https://policies.google.com/privacy")!
-    authUI?.privacyPolicyURL = kFirebasePrivacyPolicy
+    <span class="c1">// 개인정보 보호정책</span>
+    <span class="k">let</span> <span class="nv">kFirebasePrivacyPolicy</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://policies.google.com/privacy"</span><span class="p">)</span><span class="o">!</span>
+    <span class="n">authUI</span><span class="p">?</span><span class="o">.</span><span class="n">privacyPolicyURL</span> <span class="o">=</span> <span class="n">kFirebasePrivacyPolicy</span>
     
-    let authViewController = authUI?.authViewController() // 기본 제공 뷰 컨트롤러
+    <span class="k">let</span> <span class="nv">authViewController</span> <span class="o">=</span> <span class="n">authUI</span><span class="p">?</span><span class="o">.</span><span class="nf">authViewController</span><span class="p">()</span> <span class="c1">// 기본 제공 뷰 컨트롤러</span>
     
-    self.present(authViewController!, animated: true)
-}
+    <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">authViewController</span><span class="o">!</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1219,8 +1219,8 @@ pod 'FirebaseUI'
 
 <p><code class="language-plaintext highlighter-rouge">viewWillAppear</code>에 로그인 여부를 감지하는 리스너를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1234,19 +1234,19 @@ pod 'FirebaseUI'
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">animated</span><span class="p">)</span>
     
-    handle = Auth.auth().addStateDidChangeListener { auth, user in
-        if let user = user, let email = user.email {
-            self.lblUserStatus.text = "Logined: \(email)"
-            self.btnLogInOut.setTitle("Log Out", for: .normal)
-        } else {
-            self.lblUserStatus.text = "Not Logined:"
-            self.btnLogInOut.setTitle("Log In", for: .normal)
-        }
-    }
-}
+    <span class="n">handle</span> <span class="o">=</span> <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="n">addStateDidChangeListener</span> <span class="p">{</span> <span class="n">auth</span><span class="p">,</span> <span class="n">user</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">user</span> <span class="o">=</span> <span class="n">user</span><span class="p">,</span> <span class="k">let</span> <span class="nv">email</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">lblUserStatus</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Logined: </span><span class="se">\(</span><span class="n">email</span><span class="se">)</span><span class="s">"</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">btnLogInOut</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">"Log Out"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">lblUserStatus</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Not Logined:"</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">btnLogInOut</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">"Log In"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

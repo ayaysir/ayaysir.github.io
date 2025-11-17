@@ -638,11 +638,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -661,32 +656,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -836,6 +805,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -926,7 +905,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1647 words"
+  title="1649 words"
 >
   <em>9 min</em> read</span>
 
@@ -962,26 +941,21 @@
   <div class="content">
     <!-- \[rcblock id="5440"\] -->
 
-<h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>SwiftUI 내부에 웹 뷰(<code class="language-plaintext highlighter-rouge">WKWebView</code>)를 추가하는 방법입니다. 원래 웹 페이지를 표시하는 <code class="language-plaintext highlighter-rouge">WKWebView</code>는 <code class="language-plaintext highlighter-rouge">UIKit</code>과 호환되는 요소인데, 찾아본 결과 SwiftUI에는 웹을 표시할 수 있는 뷰가 없는 것처럼 보여서 역시 Representable을 이용해서 간접적으로 추가하는 방법을 설명하겠습니다.</p>
-
-<p> </p>
-
-<h3 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>두 가지 방법을 알아보겠습니다.</p>
 
 <ol>
   <li>단순히 SwiftUI에 웹 뷰를 추가하는 방법입니다.</li>
-  <li>위 예제의 웹 뷰에서 <code class="language-plaintext highlighter-rouge">evaluateJavaScript(_:)</code>를 원하는 시점에 실행할 수 있도록 합니다.</li>
+  <li>위 예제의 웹 뷰에서 <code class="language-plaintext highlighter-rouge">evaluateJavaScript(_:)</code>를 원하는 시점에 실행할 수 있도록 합니다.
+ </li>
 </ol>
 
-<p> </p>
+<h2 id="방법-1-웹-뷰를-추가하는-방법"><span class="me-2"><strong>방법 1: 웹 뷰를 추가하는 방법</strong></span><a href="#방법-1-웹-뷰를-추가하는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="웹-뷰를-추가하는-방법"><span class="me-2"><strong>웹 뷰를 추가하는 방법</strong></span><a href="#웹-뷰를-추가하는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<h5 id="1-uiviewrepresentable을-준수conform하고-웹-뷰를-감싸는-webview를-추가합니다"><span class="me-2"><strong>1) UIViewRepresentable을 준수(conform)하고 웹 뷰를 감싸는 WebView를 추가합니다.</strong></span><a href="#1-uiviewrepresentable을-준수conform하고-웹-뷰를-감싸는-webview를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-uiviewrepresentable을-준수conform하고-웹-뷰를-감싸는-webview를-추가합니다"><span class="me-2"><strong>1) UIViewRepresentable을 준수(conform)하고 웹 뷰를 감싸는 WebView를 추가합니다.</strong></span><a href="#1-uiviewrepresentable을-준수conform하고-웹-뷰를-감싸는-webview를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1055,20 +1029,20 @@
 
 <p> </p>
 
-<h5 id="2-swiftui의-뷰contentview-등-내부에-위의-representable을-추가합니다"><span class="me-2"><strong>2) SwiftUI의 뷰(ContentView 등) 내부에 위의 Representable을 추가합니다.</strong></span><a href="#2-swiftui의-뷰contentview-등-내부에-위의-representable을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-swiftui의-뷰contentview-등-내부에-위의-representable을-추가합니다"><span class="me-2"><strong>2) SwiftUI의 뷰(ContentView 등) 내부에 위의 Representable을 추가합니다.</strong></span><a href="#2-swiftui의-뷰contentview-등-내부에-위의-representable을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>var body: some View {
-    // ... //
-    WebView(url: URL(string: "https://www.website.con"))
-    // ... //
-}
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="c1">// ... //</span>
+    <span class="kt">WebView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://www.website.con"</span><span class="p">))</span>
+    <span class="c1">// ... //</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">url</code> 파라미터에 <code class="language-plaintext highlighter-rouge">URL</code>을 입력해서 유효한 주소인 경우 웹 페이지가 표시됩니다. 아래 스크린샷은 SwiftUI의 뷰 내부에 <code class="language-plaintext highlighter-rouge">WebView</code>를 삽입한 예제입니다.</p>
@@ -1077,7 +1051,7 @@
 
 <p> </p>
 
-<h4 id="웹-뷰에서-evaluatejavascript_를-원하는-시점에-실행"><span class="me-2"><strong>웹 뷰에서 evaluateJavaScript(_:)를 원하는 시점에 실행</strong></span><a href="#웹-뷰에서-evaluatejavascript_를-원하는-시점에-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="웹-뷰에서-evaluatejavascript_를-원하는-시점에-실행"><span class="me-2"><strong>웹 뷰에서 evaluateJavaScript(_:)를 원하는 시점에 실행</strong></span><a href="#웹-뷰에서-evaluatejavascript_를-원하는-시점에-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>SwiftUI 환경에서 <code class="language-plaintext highlighter-rouge">ContentView</code> 내부에 버튼이 있는데 이 버튼을 누르면 웹 페이지에서 특정 자바스크립트 코드를 실행하고 싶다면 어떻게 할까요?</p>
 
@@ -1085,10 +1059,10 @@
 
 <p> </p>
 
-<h5 id="1-webviewdata-클래스를-추가"><span class="me-2"><strong>1) WebViewData 클래스를 추가</strong></span><a href="#1-webviewdata-클래스를-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-webviewdata-클래스를-추가"><span class="me-2"><strong>1) WebViewData 클래스를 추가</strong></span><a href="#1-webviewdata-클래스를-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1096,13 +1070,13 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>import Combine
-// ... //
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Combine</span>
+<span class="c1">// ... //</span>
 
-class WebViewData: ObservableObject {
-    var functionCaller = PassthroughSubject&lt;String, Never&gt;()
-    var shouldUpdateView = true
-}
+<span class="kd">class</span> <span class="kt">WebViewData</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">functionCaller</span> <span class="o">=</span> <span class="kt">PassthroughSubject</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Never</span><span class="o">&gt;</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">shouldUpdateView</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1131,7 +1105,7 @@ class WebViewData: ObservableObject {
 
 <p> </p>
 
-<h5 id="2-webview-내에-webviewdata에-대한-상태-변수-추가"><span class="me-2"><strong>2) WebView 내에 WebViewData에 대한 상태 변수 추가</strong></span><a href="#2-webview-내에-webviewdata에-대한-상태-변수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-webview-내에-webviewdata에-대한-상태-변수-추가"><span class="me-2"><strong>2) WebView 내에 WebViewData에 대한 상태 변수 추가</strong></span><a href="#2-webview-내에-webviewdata에-대한-상태-변수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1149,10 +1123,10 @@ class WebViewData: ObservableObject {
 
 <p> </p>
 
-<h5 id="3-webview-내에-코디네이터를-추가"><span class="me-2"><strong>3) WebView 내에 코디네이터를 추가</strong></span><a href="#3-webview-내에-코디네이터를-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-webview-내에-코디네이터를-추가"><span class="me-2"><strong>3) WebView 내에 코디네이터를 추가</strong></span><a href="#3-webview-내에-코디네이터를-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1179,32 +1153,32 @@ class WebViewData: ObservableObject {
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>import Combine
-// ... //
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Combine</span>
+<span class="c1">// ... //</span>
 
-func makeCoordinator() -&gt; Coordinator {
-    return Coordinator(self)
-}
+<span class="kd">func</span> <span class="nf">makeCoordinator</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Coordinator</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">Coordinator</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+<span class="p">}</span>
 
-class Coordinator: NSObject, WKNavigationDelegate {
-    /// WebView Representable
-    var parentWebView: WebView
-    var webView: WKWebView? = nil
+<span class="kd">class</span> <span class="kt">Coordinator</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">WKNavigationDelegate</span> <span class="p">{</span>
+    <span class="c1">/// WebView Representable</span>
+    <span class="k">var</span> <span class="nv">parentWebView</span><span class="p">:</span> <span class="kt">WebView</span>
+    <span class="k">var</span> <span class="nv">webView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
     
-    private var cancellable: AnyCancellable?
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">cancellable</span><span class="p">:</span> <span class="kt">AnyCancellable</span><span class="p">?</span>
     
-    init(_ parentWebView: WebView) {
-        self.parentWebView = parentWebView
-        super.init()
-    }
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">parentWebView</span><span class="p">:</span> <span class="kt">WebView</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">parentWebView</span> <span class="o">=</span> <span class="n">parentWebView</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+    <span class="p">}</span>
     
-    func tieFunctionCaller(data: WebViewData) {
-        print("Passthrough:", #function)
-        cancellable = data.functionCaller.sink(receiveValue: { js in
-            self.webView?.evaluateJavaScript(js)
-        })
-    }
-}
+    <span class="kd">func</span> <span class="nf">tieFunctionCaller</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">WebViewData</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Passthrough:"</span><span class="p">,</span> <span class="k">#function</span><span class="p">)</span>
+        <span class="n">cancellable</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">functionCaller</span><span class="o">.</span><span class="nf">sink</span><span class="p">(</span><span class="nv">receiveValue</span><span class="p">:</span> <span class="p">{</span> <span class="n">js</span> <span class="k">in</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">webView</span><span class="p">?</span><span class="o">.</span><span class="nf">evaluateJavaScript</span><span class="p">(</span><span class="n">js</span><span class="p">)</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1238,7 +1212,7 @@ class Coordinator: NSObject, WKNavigationDelegate {
 
 <p> </p>
 
-<h5 id="4-webview-내에-updateuiview를-작성합니다"><span class="me-2"><strong>4) WebView 내에 updateUIView를 작성합니다.</strong></span><a href="#4-webview-내에-updateuiview를-작성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-webview-내에-updateuiview를-작성합니다"><span class="me-2"><strong>4) WebView 내에 updateUIView를 작성합니다.</strong></span><a href="#4-webview-내에-updateuiview를-작성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1277,7 +1251,7 @@ class Coordinator: NSObject, WKNavigationDelegate {
 
 <p> </p>
 
-<h5 id="5-swiftui의-뷰contentview-등-내부에-webviewdata를-추가합니다"><span class="me-2"><strong>5) SwiftUI의 뷰(ContentView 등) 내부에 WebViewData를 추가합니다.</strong></span><a href="#5-swiftui의-뷰contentview-등-내부에-webviewdata를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-swiftui의-뷰contentview-등-내부에-webviewdata를-추가합니다"><span class="me-2"><strong>5) SwiftUI의 뷰(ContentView 등) 내부에 WebViewData를 추가합니다.</strong></span><a href="#5-swiftui의-뷰contentview-등-내부에-webviewdata를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1295,23 +1269,23 @@ class Coordinator: NSObject, WKNavigationDelegate {
 
 <p> </p>
 
-<h5 id="6-swiftui의-뷰contentview-등-내부에-webview를-추가합니다"><span class="me-2"><strong>6) SwiftUI의 뷰(ContentView 등) 내부에 WebView를 추가합니다.</strong></span><a href="#6-swiftui의-뷰contentview-등-내부에-webview를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="6-swiftui의-뷰contentview-등-내부에-webview를-추가합니다"><span class="me-2"><strong>6) SwiftUI의 뷰(ContentView 등) 내부에 WebView를 추가합니다.</strong></span><a href="#6-swiftui의-뷰contentview-등-내부에-webview를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>var body: some View {
-        WebView(url: URL(string: "https://example.con"), data: webViewData)
-}
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">WebView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://example.con"</span><span class="p">),</span> <span class="nv">data</span><span class="p">:</span> <span class="n">webViewData</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>앞 섹션과의 차이점은 <code class="language-plaintext highlighter-rouge">WebView</code>의 파라미터로 <code class="language-plaintext highlighter-rouge">data</code>가 추가된 점입니다. 여기서 <code class="language-plaintext highlighter-rouge">webViewData</code> 상태 변수를 추가합니다.</p>
 
 <p> </p>
 
-<h5 id="7-버튼을-누르면-특정-자바스크립트가-실행되도록-하기"><span class="me-2"><strong>7) 버튼을 누르면 특정 자바스크립트가 실행되도록 하기</strong></span><a href="#7-버튼을-누르면-특정-자바스크립트가-실행되도록-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="7-버튼을-누르면-특정-자바스크립트가-실행되도록-하기"><span class="me-2"><strong>7) 버튼을 누르면 특정 자바스크립트가 실행되도록 하기</strong></span><a href="#7-버튼을-누르면-특정-자바스크립트가-실행되도록-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">webViewData</code>를 이용합니다.</p>
 
@@ -1348,13 +1322,16 @@ class Coordinator: NSObject, WKNavigationDelegate {
 <p> </p>
 
 <!-- http://www.giphy.com/gifs/uiSo2m6jk28v4uUf0H -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXFldjN6bjJnNnZ4c2RteTBxNGk0cnUxbmN6MDdpcHpxN2gzMDVlOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uiSo2m6jk28v4uUf0H/giphy.gif" class="popup img-link shimmer"><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXFldjN6bjJnNnZ4c2RteTBxNGk0cnUxbmN6MDdpcHpxN2gzMDVlOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uiSo2m6jk28v4uUf0H/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>https://gist.github.com/ayaysir/925f2497e33efe252836300c575b334a</p>
+<!-- https://gist.github.com/ayaysir/925f2497e33efe252836300c575b334a -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/925f2497e33efe252836300c575b334a.js"> </script>
+
 
   </div>
 

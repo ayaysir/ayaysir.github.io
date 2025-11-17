@@ -736,8 +736,8 @@ computer2.cpu // AMD
 <span class="c1">// error: Inheritance from non-protocol type 'Person'</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -756,24 +756,24 @@ computer2.cpu // AMD
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>protocol Mouse {
-    func leftClick() -&gt; Any
-    func rightClick() -&gt; Any
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">protocol</span> <span class="kt">Mouse</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">leftClick</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Any</span>
+    <span class="kd">func</span> <span class="nf">rightClick</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Any</span>
+<span class="p">}</span>
 
-// 프로토콜은 가능
-struct Daiso5000Mouse: Mouse {
-    func leftClick() -&gt; Any {
-        return "left"
-    }
+<span class="c1">// 프로토콜은 가능</span>
+<span class="kd">struct</span> <span class="kt">Daiso5000Mouse</span><span class="p">:</span> <span class="kt">Mouse</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">leftClick</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Any</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"left"</span>
+    <span class="p">}</span>
     
-    func rightClick() -&gt; Any {
-        return "right"
-    }
-}
+    <span class="kd">func</span> <span class="nf">rightClick</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Any</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"right"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-let mouse1 = Daiso5000Mouse()
-mouse1.leftClick() // left
+<span class="k">let</span> <span class="nv">mouse1</span> <span class="o">=</span> <span class="kt">Daiso5000Mouse</span><span class="p">()</span>
+<span class="n">mouse1</span><span class="o">.</span><span class="nf">leftClick</span><span class="p">()</span> <span class="c1">// left</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

@@ -638,11 +638,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -687,6 +682,72 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -695,81 +756,10 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
 
@@ -896,7 +886,7 @@
   <div class="content">
     <!-- \[rcblock id="5440"\] -->
 
-<h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>SwiftUI 앱에서 하드웨어 키보드의 입력을 받는 방법입니다.</p>
 
@@ -906,9 +896,9 @@
 
 <p> </p>
 
-<h4 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="1-기본-contentview-작성"><span class="me-2"><strong>1) 기본 ContentView 작성</strong></span><a href="#1-기본-contentview-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-기본-contentview-작성"><span class="me-2"><strong>1) 기본 ContentView 작성</strong></span><a href="#1-기본-contentview-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>먼저 기본 <code class="language-plaintext highlighter-rouge">ContentView</code> 레이아웃을 생성합니다.</p>
 
@@ -974,16 +964,16 @@
 
 <p> </p>
 
-<h5 id="2-키보드-이벤트에-대한-대리자delegate-생성"><span class="me-2"><strong>2) 키보드 이벤트에 대한 대리자(delegate) 생성</strong></span><a href="#2-키보드-이벤트에-대한-대리자delegate-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-키보드-이벤트에-대한-대리자delegate-생성"><span class="me-2"><strong>2) 키보드 이벤트에 대한 대리자(delegate) 생성</strong></span><a href="#2-키보드-이벤트에-대한-대리자delegate-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>protocol KeyEventVCDelegate: AnyObject {
-    func didKeyPressBegan(key: UIKey)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">protocol</span> <span class="kt">KeyEventVCDelegate</span><span class="p">:</span> <span class="kt">AnyObject</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">didKeyPressBegan</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">UIKey</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">UIViewControllerRepresentable</code>과 더불어 위의 대리자의 <code class="language-plaintext highlighter-rouge">didKeyPressBegan</code> 함수+ <code class="language-plaintext highlighter-rouge">Coordinator</code>를 통해 SwiftUI 상에서 키보드 입력에 대한 처리가 가능하게 됩니다.</p>
@@ -994,10 +984,10 @@
 
 <p> </p>
 
-<h5 id="3-키보드-이벤트를-처리하는-뷰-컨트롤러uiviewcontroller-작성"><span class="me-2"><strong>3) 키보드 이벤트를 처리하는 뷰 컨트롤러(UIViewController) 작성</strong></span><a href="#3-키보드-이벤트를-처리하는-뷰-컨트롤러uiviewcontroller-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-키보드-이벤트를-처리하는-뷰-컨트롤러uiviewcontroller-작성"><span class="me-2"><strong>3) 키보드 이벤트를 처리하는 뷰 컨트롤러(UIViewController) 작성</strong></span><a href="#3-키보드-이벤트를-처리하는-뷰-컨트롤러uiviewcontroller-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1019,27 +1009,27 @@
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>class KeyEventViewController: UIViewController {
-    weak var delegate: KeyEventVCDelegate?
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">KeyEventViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">KeyEventVCDelegate</span><span class="p">?</span>
     
-    override func pressesBegan(_ presses: Set&lt;UIPress&gt;, with event: UIPressesEvent?) {
-        for press in presses {
-            guard let key = press.key else {
-                continue
-            }
-            delegate?.didKeyPressBegan(key: key)
-        }
-    }
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">pressesBegan</span><span class="p">(</span><span class="n">_</span> <span class="nv">presses</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">UIPress</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">with</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">UIPressesEvent</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">press</span> <span class="k">in</span> <span class="n">presses</span> <span class="p">{</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">key</span> <span class="o">=</span> <span class="n">press</span><span class="o">.</span><span class="n">key</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">continue</span>
+            <span class="p">}</span>
+            <span class="n">delegate</span><span class="p">?</span><span class="o">.</span><span class="nf">didKeyPressBegan</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="n">key</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    override func pressesEnded(_ presses: Set&lt;UIPress&gt;, with event: UIPressesEvent?) {
-        // for press in presses {
-        //     guard let key = press.key else {
-        //         continue
-        //     }
-        //     print(key)
-        // }
-    }
-}
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">pressesEnded</span><span class="p">(</span><span class="n">_</span> <span class="nv">presses</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">UIPress</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">with</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">UIPressesEvent</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="c1">// for press in presses {</span>
+        <span class="c1">//     guard let key = press.key else {</span>
+        <span class="c1">//         continue</span>
+        <span class="c1">//     }</span>
+        <span class="c1">//     print(key)</span>
+        <span class="c1">// }</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1058,7 +1048,7 @@
 
 <p> </p>
 
-<h5 id="4-keyeventviewcontroller에-대한-래핑-구조체struct-작성"><span class="me-2"><strong>4) KeyEventViewController에 대한 래핑 구조체(struct) 작성</strong></span><a href="#4-keyeventviewcontroller에-대한-래핑-구조체struct-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-keyeventviewcontroller에-대한-래핑-구조체struct-작성"><span class="me-2"><strong>4) KeyEventViewController에 대한 래핑 구조체(struct) 작성</strong></span><a href="#4-keyeventviewcontroller에-대한-래핑-구조체struct-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">UIViewControllerRepresentable</code>을 준수(conform)하는 함수를 작성합니다.</p>
 
@@ -1115,7 +1105,7 @@
 
 <p> </p>
 
-<h5 id="5-코디네이터-작성"><span class="me-2"><strong>5) 코디네이터 작성</strong></span><a href="#5-코디네이터-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-코디네이터-작성"><span class="me-2"><strong>5) 코디네이터 작성</strong></span><a href="#5-코디네이터-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1181,7 +1171,7 @@
 
 <p> </p>
 
-<h5 id="6-contentview에-키보드-입력-부분-추가"><span class="me-2"><strong>6) ContentView에 키보드 입력 부분 추가</strong></span><a href="#6-contentview에-키보드-입력-부분-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="6-contentview에-키보드-입력-부분-추가"><span class="me-2"><strong>6) ContentView에 키보드 입력 부분 추가</strong></span><a href="#6-contentview에-키보드-입력-부분-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1268,7 +1258,7 @@
 <p> </p>
 
 <!-- http://www.giphy.com/gifs/lOwSPlC2J9Yz5oewYl -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGx5dHFibWYyZW1sdXk2dGdyZWo2cnNqZHZxcWNoNXR0YWtpY3ViNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lOwSPlC2J9Yz5oewYl/giphy.gif" class="popup img-link shimmer"><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGx5dHFibWYyZW1sdXk2dGdyZWo2cnNqZHZxcWNoNXR0YWtpY3ViNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lOwSPlC2J9Yz5oewYl/giphy.gif" alt="" loading="lazy"></a></p>
 
   </div>
 

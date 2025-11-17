@@ -786,16 +786,16 @@
 
 <p><code class="language-plaintext highlighter-rouge">UserDefaults</code>에서 사용자 정의 개체를 저장하고 검색할 수 있는 메서드 요구 사항을 선언하는 프로토콜 ObjectSavable을 정의해 보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>protocol ObjectSavable {
-    func setObject&lt;Object&gt;(_ object: Object, forKey: String) throws where Object: Encodable
-    func getObject&lt;Object&gt;(forKey: String, castTo type: Object.Type) throws -&gt; Object where Object: Decodable
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">protocol</span> <span class="kt">ObjectSavable</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="n">setObject</span><span class="o">&lt;</span><span class="kt">Object</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Object</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="k">where</span> <span class="kt">Object</span><span class="p">:</span> <span class="kt">Encodable</span>
+    <span class="kd">func</span> <span class="n">getObject</span><span class="o">&lt;</span><span class="kt">Object</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">castTo</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">Object</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Object</span> <span class="k">where</span> <span class="kt">Object</span><span class="p">:</span> <span class="kt">Decodable</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

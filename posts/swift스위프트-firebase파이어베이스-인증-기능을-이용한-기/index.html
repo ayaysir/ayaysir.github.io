@@ -1416,8 +1416,8 @@ viewUserInfo.isHidden = true
 
 <p>다음 <code class="language-plaintext highlighter-rouge">viewWillAppear(_:)</code> 에 인증 상태 리스너를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1431,19 +1431,19 @@ viewUserInfo.isHidden = true
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>override func viewWillAppear(_ animated: Bool) {
-    handle = Auth.auth().addStateDidChangeListener { auth, user in
-        if let user = user {
-            self.viewUserInfo.isHidden = false
-            self.viewSignUpForm.isHidden = true
-            self.lblUserEmail.text = user.email
-        } else {
-            self.viewUserInfo.isHidden = true
-            self.viewSignUpForm.isHidden = false
-            self.lblUserEmail.text = ""
-        }
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">handle</span> <span class="o">=</span> <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="n">addStateDidChangeListener</span> <span class="p">{</span> <span class="n">auth</span><span class="p">,</span> <span class="n">user</span> <span class="k">in</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">user</span> <span class="o">=</span> <span class="n">user</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewUserInfo</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewSignUpForm</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">lblUserEmail</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewUserInfo</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">viewSignUpForm</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">lblUserEmail</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1460,14 +1460,14 @@ viewUserInfo.isHidden = true
 
 <p>뷰가 사라질 때에는 인증 상태 리스너를 해지해야 합니다. <code class="language-plaintext highlighter-rouge">viewWillDisappear(_:)</code> 을 아래와 같이 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>override func viewWillDisappear(_ animated: Bool) {
-    Auth.auth().removeStateDidChangeListener(handle!)
-}
+</pre></td><td class="rouge-code"><pre><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillDisappear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="nf">removeStateDidChangeListener</span><span class="p">(</span><span class="n">handle</span><span class="o">!</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
