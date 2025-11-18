@@ -2081,8 +2081,8 @@ class FileServer {
 
 <p><code class="language-plaintext highlighter-rouge">init</code>(이니셜라이저) 아래에 구성 함수를 추가하세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2100,23 +2100,23 @@ class FileServer {
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>private func configure(_ app: Application) {
-    // 1
-    app.http.server.configuration.hostname = "0.0.0.0"
-    app.http.server.configuration.port = port
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="kd">func</span> <span class="nf">configure</span><span class="p">(</span><span class="n">_</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">Application</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 1</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s">"0.0.0.0"</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
     
-    // 2
-    app.views.use(.leaf)
+    <span class="c1">// 2</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">views</span><span class="o">.</span><span class="nf">use</span><span class="p">(</span><span class="o">.</span><span class="n">leaf</span><span class="p">)</span>
     
-    // 3
-    app.leaf.cache.isEnabled = app.environment.isRelease
+    <span class="c1">// 3</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">leaf</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">isEnabled</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">environment</span><span class="o">.</span><span class="n">isRelease</span>
     
-    // 4
-    app.leaf.configuration.rootDirectory = Bundle.main.bundlePath
+    <span class="c1">// 4</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">leaf</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">rootDirectory</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">bundlePath</span>
     
-    // 5
-    app.routes.defaultMaxBodySize = "50MB"
-}
+    <span class="c1">// 5</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">defaultMaxBodySize</span> <span class="o">=</span> <span class="s">"50MB"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

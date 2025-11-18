@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,10 +638,48 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -678,37 +723,10 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
 
@@ -725,7 +743,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift 예제: AVFAudio와 사운드폰트 파일을 이용해 미디(MIDI) 파일 재생</h1>
     
@@ -799,7 +817,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="389 words"
+  title="391 words"
 >
   <em>2 min</em> read</span>
 
@@ -809,9 +827,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift 예제: AVFAudio와 사운드폰트 파일을 이용해 미디(MIDI) 파일 재생</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift 예제: AVFAudio와 사운드폰트 파일을 이용해 미디(MIDI) 파일 재생</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>애플 기본 제공 라이브러리인 <code class="language-plaintext highlighter-rouge">AVFAudio</code>를 이용해 미디(확장자 <code class="language-plaintext highlighter-rouge">*.mid</code>) 파일을 재생합니다. 사운드폰트(<code class="language-plaintext highlighter-rouge">*.sf2</code>)를 이용해 플레이하므로 적절한 사운드폰트가 필요합니다. 오류가 발생하는 사운드폰트가 많으므로 다양하게 테스트하는 것을 권장합니다.</p>
 
@@ -821,15 +861,15 @@
 
 <p> </p>
 
-<h4 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-프로젝트에-사운드폰트-및-예제-미디파일-추가"><span class="me-2"><strong>1: 프로젝트에 사운드폰트 및 예제 미디파일 추가</strong></span><a href="#1-프로젝트에-사운드폰트-및-예제-미디파일-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-프로젝트에-사운드폰트-및-예제-미디파일-추가"><span class="me-2"><strong>1: 프로젝트에 사운드폰트 및 예제 미디파일 추가</strong></span><a href="#1-프로젝트에-사운드폰트-및-예제-미디파일-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2023/10/screenshot-2023-10-16-pm-6.05.59-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/10/screenshot-2023-10-16-pm-6.05.59-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="2-뷰모델conductor-및-뷰-만들기-swiftui-기준"><span class="me-2"><strong>2: 뷰모델(conductor) 및 뷰 만들기 (SwiftUI 기준)</strong></span><a href="#2-뷰모델conductor-및-뷰-만들기-swiftui-기준" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-뷰모델conductor-및-뷰-만들기-swiftui-기준"><span class="me-2"><strong>2: 뷰모델(conductor) 및 뷰 만들기 (SwiftUI 기준)</strong></span><a href="#2-뷰모델conductor-및-뷰-만들기-swiftui-기준" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>이번 예제는 <code class="language-plaintext highlighter-rouge">SwiftUI</code>를 사용하지만 <code class="language-plaintext highlighter-rouge">MIDIFilePlayConductor</code>만 활용해서 <code class="language-plaintext highlighter-rouge">UIKit</code>에서도 사용할 수 있습니다.</li>
@@ -840,7 +880,7 @@
 <p>https://gist.github.com/ayaysir/715b2a9bde0a498a17390d648cd8d6f0</p>
 
 <blockquote>
-  <p>참고) 기본 라이브러리를 사용한 미디 재생은 시뮬레이터에서는 사운드폰트가 적용되지 않고  비프음만 나오므로 <strong>실제 기기에서 테스트</strong>해야 됩니다.</p>
+  <p>참고) 기본 라이브러리를 사용한 미디 재생은 시뮬레이터에서는 사운드폰트가 적용되지 않고 비프음만 나오므로 <strong>실제 기기에서 테스트</strong>해야 됩니다.</p>
 </blockquote>
 
 <p> </p>
@@ -849,7 +889,7 @@
 
 <p> </p>
 
-<p>재생 파일 변경 방법</p>
+<h2 id="참고-재생-파일-변경-방법"><span class="me-2">참고: 재생 파일 변경 방법</span><a href="#참고-재생-파일-변경-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1851,6 +1891,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

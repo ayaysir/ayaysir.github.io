@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -761,42 +768,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -826,6 +797,43 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -839,6 +847,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -855,7 +873,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift UIKit: PDFKit에서 PDF 파일의 Annotation 지우개 구현</h1>
     
@@ -929,7 +947,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="578 words"
+  title="579 words"
 >
   <em>3 min</em> read</span>
 
@@ -939,9 +957,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift UIKit: PDFKit에서 PDF 파일의 Annotation 지우개 구현</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift UIKit: PDFKit에서 PDF 파일의 Annotation 지우개 구현</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>인터넷에서 <code class="language-plaintext highlighter-rouge">PDFKit</code>과 <code class="language-plaintext highlighter-rouge">Annotation</code>을 다루는 예제를 찾았는데 이 저장소가 지우개 기능이 제대로 구현이 안되어 있기 때문에 참고용으로 포스트를 작성합니다.</p>
 
@@ -949,9 +989,9 @@
   <li><a href="https://github.com/poluektov/pdfkit-ink-annotations">https://github.com/poluektov/pdfkit-ink-annotations</a></li>
 </ul>
 
-<p> </p>
+<h2 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="step-1-메인-화면에-지우개-버튼-추가"><span class="me-2"><strong>Step 1: 메인 화면에 지우개 버튼 추가</strong></span><a href="#step-1-메인-화면에-지우개-버튼-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-1-메인-화면에-지우개-버튼-추가"><span class="me-2"><strong>Step 1: 메인 화면에 지우개 버튼 추가</strong></span><a href="#step-1-메인-화면에-지우개-버튼-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Main.storyboard</code> 파일을 연 뒤 <code class="language-plaintext highlighter-rouge">Bar Button Item</code>과 <code class="language-plaintext highlighter-rouge">Flexible Space</code>를 추가한 뒤 화면 하단의 툴바에 삽입합니다.</li>
@@ -967,22 +1007,22 @@
 
 <p> </p>
 
-<h5 id="step-2-옵션-pdfdrawerswift-파일에서-removeannotationatpointpointpage-변경"><span class="me-2"><strong>Step 2: [옵션] PDFDrawer.swift 파일에서 removeAnnotationAtPoint(point:page:) 변경</strong></span><a href="#step-2-옵션-pdfdrawerswift-파일에서-removeannotationatpointpointpage-변경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-2-옵션-pdfdrawerswift-파일에서-removeannotationatpointpointpage-변경"><span class="me-2"><strong>Step 2: [옵션] PDFDrawer.swift 파일에서 removeAnnotationAtPoint(point:page:) 변경</strong></span><a href="#step-2-옵션-pdfdrawerswift-파일에서-removeannotationatpointpointpage-변경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>private func removeAnnotationAtPoint(point: CGPoint, page: PDFPage) {
-    if let selectedAnnotation = page.annotationWithHitTest(at: point) {
-        // selectedAnnotation.page?.removeAnnotation(selectedAnnotation) // 원래 코드
-        page.removeAnnotation(selectedAnnotation)
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="kd">func</span> <span class="nf">removeAnnotationAtPoint</span><span class="p">(</span><span class="nv">point</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="kt">PDFPage</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">selectedAnnotation</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="nf">annotationWithHitTest</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">point</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// selectedAnnotation.page?.removeAnnotation(selectedAnnotation) // 원래 코드</span>
+        <span class="n">page</span><span class="o">.</span><span class="nf">removeAnnotation</span><span class="p">(</span><span class="n">selectedAnnotation</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -999,7 +1039,7 @@
 
 <p> </p>
 
-<h5 id="step-3-pdfpageselectionswift-파일의-annotationwithhittestat-변경"><span class="me-2"><strong>Step 3: PDFPage+Selection.swift 파일의 annotationWithHitTest(at:) 변경</strong></span><a href="#step-3-pdfpageselectionswift-파일의-annotationwithhittestat-변경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-3-pdfpageselectionswift-파일의-annotationwithhittestat-변경"><span class="me-2"><strong>Step 3: PDFPage+Selection.swift 파일의 annotationWithHitTest(at:) 변경</strong></span><a href="#step-3-pdfpageselectionswift-파일의-annotationwithhittestat-변경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1041,8 +1081,8 @@
 
 <p>원래 저장소에서는 다음과 같이 되어있습니다 <strong>(에러 코드)</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1063,26 +1103,26 @@
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>if annotation.contains(point: at) {...}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="n">annotation</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">point</span><span class="p">:</span> <span class="n">at</span><span class="p">)</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
 
-// =========== 임의로 구현된 contains 메서드 ❌ (오류 발생) =========== //
+<span class="c1">// =========== 임의로 구현된 contains 메서드 ❌ (오류 발생) =========== //</span>
 
-import UIKit
-import PDFKit
-import Foundation
+<span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">PDFKit</span>
+<span class="kd">import</span> <span class="kt">Foundation</span>
 
-extension PDFAnnotation {
+<span class="kd">extension</span> <span class="kt">PDFAnnotation</span> <span class="p">{</span>
     
-    func contains(point: CGPoint) -&gt; Bool {
-        var hitPath: CGPath?
+    <span class="kd">func</span> <span class="nf">contains</span><span class="p">(</span><span class="nv">point</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">hitPath</span><span class="p">:</span> <span class="kt">CGPath</span><span class="p">?</span>
         
-        if let path = paths?.first {
-            hitPath = path.cgPath.copy(strokingWithWidth: 10.0, lineCap: .round, lineJoin: .round, miterLimit: 0)
-        }
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">path</span> <span class="o">=</span> <span class="n">paths</span><span class="p">?</span><span class="o">.</span><span class="n">first</span> <span class="p">{</span>
+            <span class="n">hitPath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">cgPath</span><span class="o">.</span><span class="nf">copy</span><span class="p">(</span><span class="nv">strokingWithWidth</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span> <span class="nv">lineCap</span><span class="p">:</span> <span class="o">.</span><span class="n">round</span><span class="p">,</span> <span class="nv">lineJoin</span><span class="p">:</span> <span class="o">.</span><span class="n">round</span><span class="p">,</span> <span class="nv">miterLimit</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        return hitPath?.contains(point) ?? false
-    }
-}
+        <span class="k">return</span> <span class="n">hitPath</span><span class="p">?</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">point</span><span class="p">)</span> <span class="p">??</span> <span class="kc">false</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>하지만 이 코드는 파라미터로 받은 <code class="language-plaintext highlighter-rouge">point</code>와 <code class="language-plaintext highlighter-rouge">hitPath</code>의 좌표가 가르키는 부분이 완전히 달라서 동작하지 않습니다. 이 부분은 이제 필요가 없으므로 이 메서드가 있는 <code class="language-plaintext highlighter-rouge">PDFAnnotationWithPath.swift</code> 파일은 지워도 무방합니다.</p>
@@ -1090,7 +1130,7 @@ extension PDFAnnotation {
 <p> </p>
 
 <!-- https://giphy.com/gifs/sEjBvwFkB3y7zAufQ7 -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2R0dDg1b2pvYmJ5d3dxZ29rd3RzaGpvYzgxdHEybW5rcDAyNHd2aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sEjBvwFkB3y7zAufQ7/giphy.gif" class="popup img-link shimmer"><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2R0dDg1b2pvYmJ5d3dxZ29rd3RzaGpvYzgxdHEybW5rcDAyNHd2aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sEjBvwFkB3y7zAufQ7/giphy.gif" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -2056,6 +2096,12 @@ extension PDFAnnotation {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

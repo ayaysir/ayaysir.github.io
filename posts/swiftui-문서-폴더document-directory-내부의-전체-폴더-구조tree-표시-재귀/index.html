@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,16 +638,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -670,8 +667,29 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -693,7 +711,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>SwiftUI: 문서 폴더(Document Directory) 내부의 전체 폴더 구조(tree) 표시 (재귀 사용)</h1>
     
@@ -767,7 +785,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="754 words"
+  title="744 words"
 >
   <em>4 min</em> read</span>
 
@@ -777,9 +795,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">SwiftUI: 문서 폴더(Document Directory) 내부의 전체 폴더 구조(tree) 표시 (재귀 사용)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">SwiftUI: 문서 폴더(Document Directory) 내부의 전체 폴더 구조(tree) 표시 (재귀 사용)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="폴더디렉토리-표시용-모델-생성"><span class="me-2"><strong>폴더(디렉토리) 표시용 모델 생성</strong></span><a href="#폴더디렉토리-표시용-모델-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="폴더디렉토리-표시용-모델-생성"><span class="me-2"><strong>폴더(디렉토리) 표시용 모델 생성</strong></span><a href="#폴더디렉토리-표시용-모델-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -822,7 +862,7 @@
 
 <p> </p>
 
-<p>트리 표시 뷰 생성</p>
+<h2 id="트리-표시-뷰-생성"><span class="me-2"><strong>트리 표시 뷰 생성</strong></span><a href="#트리-표시-뷰-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -876,7 +916,7 @@
 
 <p> </p>
 
-<h4 id="뷰모델-생성"><span class="me-2"><strong>뷰모델 생성</strong></span><a href="#뷰모델-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="뷰모델-생성"><span class="me-2"><strong>뷰모델 생성</strong></span><a href="#뷰모델-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -989,14 +1029,10 @@
 <p> </p>
 
 <ul>
-  <li><strong>directoryContents(at:)</strong></li>
-  <li>
+  <li><strong>directoryContents(at:)</strong>
     <ul>
-      <li>현재 위치에서 하위 폴더 목록을 가져옵니다.
-        <ul>
-          <li>하나도 없다면 <code class="language-plaintext highlighter-rouge">Optional</code>의 빈 배열을 가져오고, 아니라면 옵셔널의 URL 배열을 리턴 (<code class="language-plaintext highlighter-rouge">nil</code>이 되는 경우는 없음)</li>
-        </ul>
-      </li>
+      <li>현재 위치에서 하위 폴더 목록을 가져옵니다.</li>
+      <li>하나도 없다면 <code class="language-plaintext highlighter-rouge">Optional</code>의 빈 배열을 가져오고, 아니라면 옵셔널의 URL 배열을 리턴 (<code class="language-plaintext highlighter-rouge">nil</code>이 되는 경우는 없음)</li>
     </ul>
   </li>
   <li><strong>directoryListRecursively(parentFolder:nextURL:)</strong>
@@ -1028,7 +1064,7 @@
 
 <p> </p>
 
-<p><em>자세한 설명은 나중에…</em></p>
+<!-- _자세한 설명은 나중에..._ -->
 
 <!-- \[rcblock id="5348"\] -->
 
@@ -1996,6 +2032,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

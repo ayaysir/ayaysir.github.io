@@ -2100,8 +2100,8 @@ let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
 
 <h5 id="4-뷰-컨트롤러에-firebase-이미지-업로드-함수-추가"><span class="me-2"><strong>4. 뷰 컨트롤러에 Firebase 이미지 업로드 함수 추가</strong></span><a href="#4-뷰-컨트롤러에-firebase-이미지-업로드-함수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2134,38 +2134,38 @@ let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
 30
 31
 32
-</pre></td><td class="rouge-code"><pre>private func uploadImage(forIndex index:Int, images: [ImageWithName]) {
+</pre></td><td class="rouge-code"><pre><span class="kd">private</span> <span class="kd">func</span> <span class="nf">uploadImage</span><span class="p">(</span><span class="n">forIndex</span> <span class="nv">index</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">ImageWithName</span><span class="p">])</span> <span class="p">{</span>
     
-    if index &lt; images.count {
-        /// Perform uploading
+    <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">images</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+        <span class="c1">/// Perform uploading</span>
         
-        let imageInfo = images[index]
-        let name = imageInfo.name
-        let image = imageInfo.image
-        let fileExt = imageInfo.fileExt
-        let quality = imageInfo.compressionQuality
+        <span class="k">let</span> <span class="nv">imageInfo</span> <span class="o">=</span> <span class="n">images</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="n">imageInfo</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="n">imageInfo</span><span class="o">.</span><span class="n">image</span>
+        <span class="k">let</span> <span class="nv">fileExt</span> <span class="o">=</span> <span class="n">imageInfo</span><span class="o">.</span><span class="n">fileExt</span>
+        <span class="k">let</span> <span class="nv">quality</span> <span class="o">=</span> <span class="n">imageInfo</span><span class="o">.</span><span class="n">compressionQuality</span>
         
-        guard let data = fileExt == "jpg"
-                ? image.jpegData(compressionQuality: quality)
-                : image.pngData() else {
-            return
-        }
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">fileExt</span> <span class="o">==</span> <span class="s">"jpg"</span>
+                <span class="p">?</span> <span class="n">image</span><span class="o">.</span><span class="nf">jpegData</span><span class="p">(</span><span class="nv">compressionQuality</span><span class="p">:</span> <span class="n">quality</span><span class="p">)</span>
+                <span class="p">:</span> <span class="n">image</span><span class="o">.</span><span class="nf">pngData</span><span class="p">()</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        let fileName = "\(name).\(fileExt)"
+        <span class="k">let</span> <span class="nv">fileName</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">.</span><span class="se">\(</span><span class="n">fileExt</span><span class="se">)</span><span class="s">"</span>
         
-        FirebaseFileManager.shared.setChild("images/users")
-        FirebaseFileManager.shared.upload(data: data, withName: fileName, block: { (url) in
-            /// After successfully uploading call this method again by increment the **index = index + 1**
-            print(url ?? "Couldn't not upload. You can either check the error or just skip this.")
-            self.uploadImage(forIndex: index + 1, images: images)
-        })
-        return;
-    }
+        <span class="kt">FirebaseFileManager</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">setChild</span><span class="p">(</span><span class="s">"images/users"</span><span class="p">)</span>
+        <span class="kt">FirebaseFileManager</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">upload</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="nv">withName</span><span class="p">:</span> <span class="n">fileName</span><span class="p">,</span> <span class="nv">block</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">in</span>
+            <span class="c1">/// After successfully uploading call this method again by increment the **index = index + 1**</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">url</span> <span class="p">??</span> <span class="s">"Couldn't not upload. You can either check the error or just skip this."</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">uploadImage</span><span class="p">(</span><span class="nv">forIndex</span><span class="p">:</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">images</span><span class="p">:</span> <span class="n">images</span><span class="p">)</span>
+        <span class="p">})</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
     
-    if block != nil {
-        block!()
-    }
-}
+    <span class="k">if</span> <span class="n">block</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nf">block</span><span class="o">!</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

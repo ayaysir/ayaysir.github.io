@@ -1426,8 +1426,8 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 
 <h5 id="abstract-class-만들기"><span class="me-2"><strong>Abstract Class 만들기</strong></span><a href="#abstract-class-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1443,21 +1443,21 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>class DelayWork {
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">DelayWork</span> <span class="p">{</span>
     
-    typealias Handler = ((Date) -&gt; Void)
+    <span class="kd">typealias</span> <span class="kt">Handler</span> <span class="o">=</span> <span class="p">((</span><span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
     
-    var workItem: DispatchWorkItem?
-    let delay: Int!
-    let handler: Handler?
+    <span class="k">var</span> <span class="nv">workItem</span><span class="p">:</span> <span class="kt">DispatchWorkItem</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">delay</span><span class="p">:</span> <span class="kt">Int</span><span class="o">!</span>
+    <span class="k">let</span> <span class="nv">handler</span><span class="p">:</span> <span class="kt">Handler</span><span class="p">?</span>
     
-    init(milliseconds delay: Int, handler: Handler?) {
-        self.delay = delay
-        self.handler = handler
-    }
+    <span class="nf">init</span><span class="p">(</span><span class="n">milliseconds</span> <span class="nv">delay</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kt">Handler</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">delay</span> <span class="o">=</span> <span class="n">delay</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">handler</span> <span class="o">=</span> <span class="n">handler</span>
+    <span class="p">}</span>
     
-    func run() {}
-}
+    <span class="kd">func</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1486,8 +1486,8 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 
 <h5 id="debounce-구현"><span class="me-2"><strong>Debounce 구현</strong></span><a href="#debounce-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1501,19 +1501,19 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>class Debounce: DelayWork {
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">Debounce</span><span class="p">:</span> <span class="kt">DelayWork</span> <span class="p">{</span>
     
-    override func run() {
-        self.workItem?.cancel()
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">workItem</span><span class="p">?</span><span class="o">.</span><span class="nf">cancel</span><span class="p">()</span>
         
-        let workItem = DispatchWorkItem { [weak self] in
-            self?.handler?(Date())
-        }
-        self.workItem = workItem
+        <span class="k">let</span> <span class="nv">workItem</span> <span class="o">=</span> <span class="kt">DispatchWorkItem</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="nf">handler</span><span class="p">?(</span><span class="kt">Date</span><span class="p">())</span>
+        <span class="p">}</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">workItem</span> <span class="o">=</span> <span class="n">workItem</span>
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(delay), execute: workItem)
-    }
-}
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="nf">milliseconds</span><span class="p">(</span><span class="n">delay</span><span class="p">),</span> <span class="nv">execute</span><span class="p">:</span> <span class="n">workItem</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1545,8 +1545,8 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 
 <h5 id="throttle-구현"><span class="me-2"><strong>Throttle 구현</strong></span><a href="#throttle-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1563,22 +1563,22 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>class Throttle: DelayWork {
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">Throttle</span><span class="p">:</span> <span class="kt">DelayWork</span> <span class="p">{</span>
     
-    override func run() {
-        if self.workItem == nil {
-            handler?(Date())
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">workItem</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="nf">handler</span><span class="p">?(</span><span class="kt">Date</span><span class="p">())</span>
             
-            let workItem = DispatchWorkItem { [weak self] in
-                self?.workItem?.cancel()
-                self?.workItem = nil
-            }
-            self.workItem = workItem
+            <span class="k">let</span> <span class="nv">workItem</span> <span class="o">=</span> <span class="kt">DispatchWorkItem</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+                <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">workItem</span><span class="p">?</span><span class="o">.</span><span class="nf">cancel</span><span class="p">()</span>
+                <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">workItem</span> <span class="o">=</span> <span class="kc">nil</span>
+            <span class="p">}</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">workItem</span> <span class="o">=</span> <span class="n">workItem</span>
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(delay), execute: workItem)
-        }
-    }
-}
+            <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="nf">milliseconds</span><span class="p">(</span><span class="n">delay</span><span class="p">),</span> <span class="nv">execute</span><span class="p">:</span> <span class="n">workItem</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

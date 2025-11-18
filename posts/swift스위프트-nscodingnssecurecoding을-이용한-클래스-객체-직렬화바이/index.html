@@ -1089,8 +1089,8 @@
 
 <p>아래와 같은 코드가 추가됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1105,19 +1105,19 @@
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>class Computer: NSObject, NSCoding, NSSecureCoding, Codable {
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">Computer</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt">NSSecureCoding</span><span class="p">,</span> <span class="kt">Codable</span> <span class="p">{</span>
     
     
-    func encode(with coder: NSCoder) {
+    <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">with</span> <span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
 
-    }
+    <span class="p">}</span>
     
-    required init?(coder: NSCoder) {
+    <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
 
-    }
+    <span class="p">}</span>
     
-    static var supportsSecureCoding: Bool = true
-}
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">supportsSecureCoding</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1338,8 +1338,8 @@ required convenience init?(coder: NSCoder) {
 
 <p><code class="language-plaintext highlighter-rouge">CPUCore</code> 클래스도 위와 마찬가지로 <code class="language-plaintext highlighter-rouge">NSCoding</code>과 관련된 내용을 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1374,40 +1374,40 @@ required convenience init?(coder: NSCoder) {
 32
 33
 34
-</pre></td><td class="rouge-code"><pre>class CPUCore: NSObject, NSCoding, NSSecureCoding, Codable {
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">CPUCore</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt">NSSecureCoding</span><span class="p">,</span> <span class="kt">Codable</span> <span class="p">{</span>
     
-    var constant: Int = 1494
-    var coreID = UUID().uuidString
+    <span class="k">var</span> <span class="nv">constant</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1494</span>
+    <span class="k">var</span> <span class="nv">coreID</span> <span class="o">=</span> <span class="kt">UUID</span><span class="p">()</span><span class="o">.</span><span class="n">uuidString</span>
     
-    static var supportsSecureCoding: Bool = true
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">supportsSecureCoding</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
     
-    override init() {
-        super.init()
-    }
+    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+    <span class="p">}</span>
     
-    init(constant: Int, coreID: String) {
-        super.init()
-        self.constant = constant
-        self.coreID = coreID
-    }
+    <span class="nf">init</span><span class="p">(</span><span class="nv">constant</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">coreID</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">constant</span> <span class="o">=</span> <span class="n">constant</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">coreID</span> <span class="o">=</span> <span class="n">coreID</span>
+    <span class="p">}</span>
     
-    func encode(with coder: NSCoder) {
-        coder.encode(constant, forKey: "constant")
-        coder.encode(coreID, forKey: "coreID")
-    }
+    <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">with</span> <span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">coder</span><span class="o">.</span><span class="nf">encode</span><span class="p">(</span><span class="n">constant</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="s">"constant"</span><span class="p">)</span>
+        <span class="n">coder</span><span class="o">.</span><span class="nf">encode</span><span class="p">(</span><span class="n">coreID</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="s">"coreID"</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    required init?(coder: NSCoder) {
-        super.init()
+    <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
         
-        let constant = coder.decodeInteger(forKey: "constant")
-        guard let coreID = coder.decodeObject(forKey: "coreID") as? String else {
-            return
-        }
+        <span class="k">let</span> <span class="nv">constant</span> <span class="o">=</span> <span class="n">coder</span><span class="o">.</span><span class="nf">decodeInteger</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"constant"</span><span class="p">)</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">coreID</span> <span class="o">=</span> <span class="n">coder</span><span class="o">.</span><span class="nf">decodeObject</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"coreID"</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">String</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
         
-        self.constant = constant
-        self.coreID = coreID
-    }
-}
+        <span class="k">self</span><span class="o">.</span><span class="n">constant</span> <span class="o">=</span> <span class="n">constant</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">coreID</span> <span class="o">=</span> <span class="n">coreID</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

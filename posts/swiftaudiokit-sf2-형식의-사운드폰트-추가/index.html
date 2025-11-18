@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -696,16 +703,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -796,6 +793,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -812,7 +819,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift+AudioKit: SF2 형식의 사운드폰트 추가</h1>
     
@@ -886,7 +893,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="366 words"
+  title="384 words"
 >
   <em>2 min</em> read</span>
 
@@ -896,36 +903,59 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift+AudioKit: SF2 형식의 사운드폰트 추가</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift+AudioKit: SF2 형식의 사운드폰트 추가</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><strong><a href="https://github.com/AudioKit">AudioKit</a></strong>에서 <code class="language-plaintext highlighter-rouge">sf2</code> 확장자 형식의 MIDI 사운드폰트를 프로젝트에 추가하고 연결하는 방법입니다.</p>
+<p><a href="https://github.com/AudioKit">AudioKit</a>에서 <code class="language-plaintext highlighter-rouge">sf2</code> 확장자 형식의 MIDI 사운드폰트를 프로젝트에 추가하고 연결하는 방법입니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=5358">Swift(스위프트): 오디오 라이브러리 AudioKit 프레임워크 소개</a></li>
+  <li><a href="/posts/swift스위프트-오디오-라이브러리-audiokit-프레임워크-소개/">Swift(스위프트): 오디오 라이브러리 AudioKit 프레임워크 소개</a></li>
+  <li><a href="/posts/MultiTrackMIDIPlayer/">AudioKit으로 만드는 다중트랙 미디 재생기 (MultiTrack MIDI Player)</a></li>
 </ul>
 
 <p> </p>
 
-<h4 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-capabilities--background-modes에서-audio-추가"><span class="me-2"><strong>1) Capabilities &gt; Background Modes에서 Audio 추가</strong></span><a href="#1-capabilities--background-modes에서-audio-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-capabilities--background-modes에서-audio-추가"><span class="me-2"><strong>(1) Capabilities &gt; Background Modes에서 Audio 추가</strong></span><a href="#1-capabilities--background-modes에서-audio-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-20-pm-4.35.40-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-20-pm-4.35.40-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="2-사운드폰트-파일을-프로젝트-내에-추가"><span class="me-2"><strong>2) 사운드폰트 파일을 프로젝트 내에 추가</strong></span><a href="#2-사운드폰트-파일을-프로젝트-내에-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-사운드폰트-파일을-프로젝트-내에-추가"><span class="me-2"><strong>(2) 사운드폰트 파일을 프로젝트 내에 추가</strong></span><a href="#2-사운드폰트-파일을-프로젝트-내에-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-20-pm-4.38.09-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-20-pm-4.38.09-copy.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="3-사운드-컨덕터observableobject-생성"><span class="me-2"><strong>3) 사운드 컨덕터(ObservableObject) 생성</strong></span><a href="#3-사운드-컨덕터observableobject-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-사운드-컨덕터observableobject-생성"><span class="me-2"><strong>(3) 사운드 컨덕터(ObservableObject) 생성</strong></span><a href="#3-사운드-컨덕터observableobject-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -954,46 +984,46 @@
 26
 27
 28
-</pre></td><td class="rouge-code"><pre>class InstrumentSFZConductor: ObservableObject, HasAudioEngine {
-    let engine = AudioEngine()
-    var instrument = MIDISampler()
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">InstrumentSFZConductor</span><span class="p">:</span> <span class="kt">ObservableObject</span><span class="p">,</span> <span class="kt">HasAudioEngine</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">engine</span> <span class="o">=</span> <span class="kt">AudioEngine</span><span class="p">()</span>
+    <span class="k">var</span> <span class="nv">instrument</span> <span class="o">=</span> <span class="kt">MIDISampler</span><span class="p">()</span>
     
-    func noteOn(pitch: Pitch, point _: CGPoint) {
-        instrument.play(noteNumber: MIDINoteNumber(pitch.midiNoteNumber), velocity: 90, channel: 1)
-    }
+    <span class="kd">func</span> <span class="nf">noteOn</span><span class="p">(</span><span class="nv">pitch</span><span class="p">:</span> <span class="kt">Pitch</span><span class="p">,</span> <span class="n">point</span> <span class="nv">_</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">instrument</span><span class="o">.</span><span class="nf">play</span><span class="p">(</span><span class="nv">noteNumber</span><span class="p">:</span> <span class="kt">MIDINoteNumber</span><span class="p">(</span><span class="n">pitch</span><span class="o">.</span><span class="n">midiNoteNumber</span><span class="p">),</span> <span class="nv">velocity</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="nv">channel</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
 
-    func noteOff(pitch: Pitch) {
-        instrument.stop(noteNumber: MIDINoteNumber(pitch.midiNoteNumber), channel: 1)
-    }
+    <span class="kd">func</span> <span class="nf">noteOff</span><span class="p">(</span><span class="nv">pitch</span><span class="p">:</span> <span class="kt">Pitch</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">instrument</span><span class="o">.</span><span class="nf">stop</span><span class="p">(</span><span class="nv">noteNumber</span><span class="p">:</span> <span class="kt">MIDINoteNumber</span><span class="p">(</span><span class="n">pitch</span><span class="o">.</span><span class="n">midiNoteNumber</span><span class="p">),</span> <span class="nv">channel</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
 
-    init() {
-        do {
-            if let fileURL = Bundle.main.url(forResource: "GeneralUser GS MuseScore v1.442", withExtension: "sf2") {
-                try instrument.loadMelodicSoundFont(url: fileURL, preset: 5)
-            } else {
-                Log("Could not find file")
-            }
-            instrument.volume = 1
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">fileURL</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"GeneralUser GS MuseScore v1.442"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"sf2"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">try</span> <span class="n">instrument</span><span class="o">.</span><span class="nf">loadMelodicSoundFont</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">fileURL</span><span class="p">,</span> <span class="nv">preset</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="kt">Log</span><span class="p">(</span><span class="s">"Could not find file"</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="n">instrument</span><span class="o">.</span><span class="n">volume</span> <span class="o">=</span> <span class="mi">1</span>
             
-            engine.output = instrument
-            try engine.start()
-        } catch {
-            Log("AudioKit did not start!")
-        }
-    }
-}
+            <span class="n">engine</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">instrument</span>
+            <span class="k">try</span> <span class="n">engine</span><span class="o">.</span><span class="nf">start</span><span class="p">()</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+            <span class="kt">Log</span><span class="p">(</span><span class="s">"AudioKit did not start!"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">ObservableObject</code>인 이유는 SwiftUI에서 사용하기 위한 목적이지만 UIKit에서도 사용 가능합니다.</p>
 
 <p> </p>
 
-<h5 id="4-noteon-noteoff-메서드로-소리-발생-및-중지"><span class="me-2"><strong>4) noteOn, noteOff 메서드로 소리 발생 및 중지</strong></span><a href="#4-noteon-noteoff-메서드로-소리-발생-및-중지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-noteon-noteoff-메서드로-소리-발생-및-중지"><span class="me-2"><strong>(4) noteOn, noteOff 메서드로 소리 발생 및 중지</strong></span><a href="#4-noteon-noteoff-메서드로-소리-발생-및-중지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>SwiftUI 프로젝트인 경우 AudioKit의 유틸리티인 <a href="https://github.com/AudioKit/Keyboard">Keyboard</a>(SPM에서 설치 필요)를 이용하여 키보드를 누르면 해당 메서드가 실행되도록 할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1011,23 +1041,23 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>import Keyboard
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Keyboard</span>
 
-struct ContentView: View {
-    @StateObject var conductor = InstrumentSFZConductor()
+<span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@StateObject</span> <span class="k">var</span> <span class="nv">conductor</span> <span class="o">=</span> <span class="kt">InstrumentSFZConductor</span><span class="p">()</span>
     
-    var body: some View {
-        VStack {
-            // ... //
-            Keyboard(
-                layout: .piano(pitchRange: Pitch(36)...Pitch(59)),
-                noteOn: conductor.noteOn(pitch:point:),
-                noteOff: conductor.noteOff(pitch:)
-            )
-            .frame(minWidth: 100, minHeight: 100)
-        }
-    }
-}
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="c1">// ... //</span>
+            <span class="kt">Keyboard</span><span class="p">(</span>
+                <span class="nv">layout</span><span class="p">:</span> <span class="o">.</span><span class="nf">piano</span><span class="p">(</span><span class="nv">pitchRange</span><span class="p">:</span> <span class="kt">Pitch</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span><span class="o">...</span><span class="kt">Pitch</span><span class="p">(</span><span class="mi">59</span><span class="p">)),</span>
+                <span class="nv">noteOn</span><span class="p">:</span> <span class="n">conductor</span><span class="o">.</span><span class="nf">noteOn</span><span class="p">(</span><span class="nv">pitch</span><span class="p">:</span><span class="nv">point</span><span class="p">:),</span>
+                <span class="nv">noteOff</span><span class="p">:</span> <span class="n">conductor</span><span class="o">.</span><span class="nf">noteOff</span><span class="p">(</span><span class="nv">pitch</span><span class="p">:)</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">minWidth</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">minHeight</span><span class="p">:</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-20-pm-4.45.09-copy.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-20-pm-4.45.09-copy.jpg" alt="" loading="lazy"></a></p>
@@ -1996,6 +2026,12 @@ struct ContentView: View {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
