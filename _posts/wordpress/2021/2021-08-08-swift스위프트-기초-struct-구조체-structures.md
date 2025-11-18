@@ -60,7 +60,7 @@ person2.name // bb
 
 반면 클래스는 주소를 할당하기 때문에 두 변수가 같은 인스턴스를 참조하게 됩니다.
 
-```
+```swift
 class Computer {
     var cpu: String
     

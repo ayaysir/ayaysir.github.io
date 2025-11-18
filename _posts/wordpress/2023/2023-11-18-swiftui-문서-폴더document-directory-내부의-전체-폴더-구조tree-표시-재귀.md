@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-#### **폴더(디렉토리) 표시용 모델 생성**
+## **폴더(디렉토리) 표시용 모델 생성**
 
 ```swift
 import Foundation
@@ -31,7 +31,7 @@ struct Folder: Codable, Equatable, Hashable, Identifiable, FileSystem {
 
  
 
-트리 표시 뷰 생성
+## **트리 표시 뷰 생성**
 
 ```swift
 import SwiftUI
@@ -61,7 +61,7 @@ struct SelectFolderView: View {
 
  
 
-#### **뷰모델 생성**
+## **뷰모델 생성**
 
 ```swift
 import Foundation
@@ -120,9 +120,9 @@ class SelectFolderViewModel: ObservableObject {
 
  
 
-- **directoryContents(at:)**
-- - 현재 위치에서 하위 폴더 목록을 가져옵니다.
-    - 하나도 없다면 `Optional`의 빈 배열을 가져오고, 아니라면 옵셔널의 URL 배열을 리턴 (`nil`이 되는 경우는 없음)
+- **directoryContents(at:)** 
+  - 현재 위치에서 하위 폴더 목록을 가져옵니다.
+  - 하나도 없다면 `Optional`의 빈 배열을 가져오고, 아니라면 옵셔널의 URL 배열을 리턴 (`nil`이 되는 경우는 없음)
 - **directoryListRecursively(parentFolder:nextURL:)**
     - 하위 디렉토리(들)가 있다면
         - `nextURL`이 들어있는 `Folder` 오브젝트를 새로 생성한 뒤 부모 폴더의 `subfolder`에 삽입하고
@@ -139,6 +139,6 @@ class SelectFolderViewModel: ObservableObject {
 
  
 
-_자세한 설명은 나중에..._
+<!-- _자세한 설명은 나중에..._ -->
 
 <!-- \[rcblock id="5348"\] -->

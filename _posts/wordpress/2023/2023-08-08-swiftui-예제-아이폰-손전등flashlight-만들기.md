@@ -6,7 +6,7 @@ categories:
   - "SwiftUI"
 ---
 
-### **소개**
+## **소개**
 
 아이폰 손전등에는 다음 3가지 기능이 필요합니다.
 
@@ -18,17 +18,17 @@ categories:
 
 모든 기능은 실제 아이폰 기기에서만 실행할 수 있습니다.
 
-> **참고)** 손전등 앱(정확히 말하면 손전등 기능만 있는 앱)은 최신 [앱 스토어 심사 지침](https://developer.apple.com/kr/app-store/review/guidelines#spam)에서 스팸 앱으로 분류됩니다.
+> **(참고)** 손전등 앱(정확히 말하면 손전등 기능만 있는 앱)은 최신 [앱 스토어 심사 지침](https://developer.apple.com/kr/app-store/review/guidelines#spam)에서 스팸 앱으로 분류됩니다.
 > 
 >  ![](/assets/img/wp-content/uploads/2023/08/screenshot-2023-08-09-am-12.13.55-copy.jpg)
 
  
 
-#### **방법**
+## **방법**
 
-##### **1\. 플래시 켜기 및 밝기 조절**
+### **1\. 플래시 켜기 및 밝기 조절**
 
-```
+```swift
 import AVFoundation
 
 private func setTorch(_ torchBrightness: Float) {
@@ -49,10 +49,9 @@ private func setTorch(_ torchBrightness: Float) {
 ```
 
  
+### **2\. (옵션) 디스플레이 전면의 화면 밝기 조정**
 
-##### **2\. (옵션) 디스플레이 전면의 화면 밝기 조정**
-
-```
+```swift
 private func setBrightness(_ displayBrightness: CGFloat) {
     UIScreen.main.brightness = displayBrightness
 }
@@ -60,13 +59,13 @@ private func setBrightness(_ displayBrightness: CGFloat) {
 
  
 
-##### **3\. (옵션) scenePhase를 통한 백그라운드 시 화면 밝기 원래대로 돌려놓기**
+### **3\. (옵션) scenePhase를 통한 백그라운드 시 화면 밝기 원래대로 돌려놓기**
 
 앱을 켜면 화면 밝기가 최대가 되어도 앱을 끄거나 백그라운드 모드로 나가면 앱을 실행하기 이전의 화면 밝기로 되돌아가야 합니다.
 
 앱의 상태는 `scenePhase`로 감지할 수 있습니다.
 
-```
+```swift
 @Environment(\.scenePhase) var scenePhase
 
 // ... //
@@ -89,7 +88,7 @@ private func setBrightness(_ displayBrightness: CGFloat) {
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
 `Swift Playground App` 프로젝트를 생성한 뒤 `ContentView`를 아래와 같이 채웁니다.
 

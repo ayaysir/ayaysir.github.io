@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-#### **소개**
+## **소개**
 
 애플 기본 제공 라이브러리인 `AVFAudio`를 이용해 미디(확장자 `*.mid`) 파일을 재생합니다. 사운드폰트(`*.sf2`)를 이용해 플레이하므로 적절한 사운드폰트가 필요합니다. 오류가 발생하는 사운드폰트가 많으므로 다양하게 테스트하는 것을 권장합니다.
 
@@ -14,15 +14,15 @@ categories:
 
  
 
-#### **절차**
+## **절차**
 
-##### **1: 프로젝트에 사운드폰트 및 예제 미디파일 추가**
+### **1: 프로젝트에 사운드폰트 및 예제 미디파일 추가**
 
  ![](/assets/img/wp-content/uploads/2023/10/screenshot-2023-10-16-pm-6.05.59-copy.jpg)
 
  
 
-##### **2: 뷰모델(conductor) 및 뷰 만들기 (SwiftUI 기준)**
+### **2: 뷰모델(conductor) 및 뷰 만들기 (SwiftUI 기준)**
 
 - 이번 예제는 `SwiftUI`를 사용하지만 `MIDIFilePlayConductor`만 활용해서 `UIKit`에서도 사용할 수 있습니다.
 - 미디 파일은 `url`을 사용할 수 있으므로 `Document` 폴더 등에서 불러올 수 있습니다.
@@ -30,7 +30,7 @@ categories:
 
 https://gist.github.com/ayaysir/715b2a9bde0a498a17390d648cd8d6f0
 
-> 참고) 기본 라이브러리를 사용한 미디 재생은 시뮬레이터에서는 사운드폰트가 적용되지 않고  비프음만 나오므로 **실제 기기에서 테스트**해야 됩니다.
+> 참고) 기본 라이브러리를 사용한 미디 재생은 시뮬레이터에서는 사운드폰트가 적용되지 않고 비프음만 나오므로 **실제 기기에서 테스트**해야 됩니다.
 
  
 
@@ -38,7 +38,7 @@ https://gist.github.com/ayaysir/715b2a9bde0a498a17390d648cd8d6f0
 
  
 
-재생 파일 변경 방법
+## 참고: 재생 파일 변경 방법
 
 ```swift
 func changeAndPlayMIDIFile(_ fileNameWithoutExt: String) {

@@ -16,7 +16,7 @@ categories:
 
 **1) 뷰 컨트롤러에 `import AVFoundation`를 추가합니다.**
 
-```
+```swift
 import AVFoundation
 ```
 

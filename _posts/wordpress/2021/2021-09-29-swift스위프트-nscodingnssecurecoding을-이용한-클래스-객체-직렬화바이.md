@@ -85,7 +85,7 @@ class Computer: NSObject, NSCoding, NSSecureCoding, Codable {
 
 아래와 같은 코드가 추가됩니다.
 
-```
+```swift
 class Computer: NSObject, NSCoding, NSSecureCoding, Codable {
     
     
@@ -238,7 +238,7 @@ self.init(name: (decodedName as? String), cpu: decodedCPUCoder?.cpu )
 
 `CPUCore` 클래스도 위와 마찬가지로 `NSCoding`과 관련된 내용을 작성합니다.
 
-```
+```swift
 class CPUCore: NSObject, NSCoding, NSSecureCoding, Codable {
     
     var constant: Int = 1494

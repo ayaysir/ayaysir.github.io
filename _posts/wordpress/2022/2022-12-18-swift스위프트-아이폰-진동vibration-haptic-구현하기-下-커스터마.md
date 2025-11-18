@@ -98,7 +98,7 @@ init?() {
 
 엔진이 멈추거나(stop) 리셋할 필요가 있는 경우를 대비해 콜백 부분을 작성합니다.
 
-```
+```swift
 private func handleEngineStop() {
     // The engine stopped; print out why
     engine?.stoppedHandler = { reason in
@@ -222,7 +222,7 @@ CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 0.6, d
 
 이러한 `[CHHapticEvent]` 배열을 이용하여 복수의 이벤트를 발생시킬 수 있습니다. 클래스 안에 다음의 메서드를 추가합니다.
 
-```
+```swift
 private func startEvents(_ events: [CHHapticEvent]) {
     do {
         let pattern = try CHHapticPattern(events: events, parameters: [])

@@ -12,7 +12,7 @@ categories:
 
 클래스에서만 사용 가능한 프로토콜입니다.
 
-```
+```swift
 class Contact: ObservableObject {
     @Published var name: String
     @Published var age: Int
@@ -52,7 +52,7 @@ print(john.haveBirthday())
 
 예를 들어 다음과 같은 관찰 가능한 오브젝트가 있는 경우
 
-```
+```swift
 class Bag: ObservableObject {
     var items = [String]()
 }
@@ -62,7 +62,7 @@ class Bag: ObservableObject {
 
 항목에서 아이템이 추가되거나 제거될 때마다 변경되었다는 통지가 전송되도록 하려면 다음과 같이 `@Published`로 표시합니다.
 
-```
+```swift
 class Bag: ObservableObject {
     @Published var items = [String]()
 }

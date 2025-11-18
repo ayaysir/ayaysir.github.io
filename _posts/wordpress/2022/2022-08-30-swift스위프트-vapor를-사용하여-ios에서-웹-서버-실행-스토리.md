@@ -90,7 +90,7 @@ class FileServer {
 
 `init`(이니셜라이저) 아래에 구성 함수를 추가하세요.
 
-```
+```swift
 private func configure(_ app: Application) {
     // 1
     app.http.server.configuration.hostname = "0.0.0.0"

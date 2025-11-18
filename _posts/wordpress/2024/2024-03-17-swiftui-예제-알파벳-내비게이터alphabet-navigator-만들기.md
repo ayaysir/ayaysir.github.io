@@ -172,7 +172,7 @@ ForEach(alphabet, id: \.self) { letter in
     - `withAnimation`으로 감싸면 스크롤 애니메이션이 되면서 자연스럽게 이동하고, 사용하지 않으면 애니메이션 없이 바로 이동합니다.
 
 <!-- http://www.giphy.com/gifs/wzVgF4cP4A0mChZtwb -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzY2MmdzNWpkajRvZXY3cXFwNXprZ3ZrZDV4djB2MDBjOXFzbXFkMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wzVgF4cP4A0mChZtwb/giphy.gif)
 
 _탭(클릭)하면 해당 알파벳 헤더로 이동합니다._
 
@@ -277,7 +277,7 @@ struct AlphabetNavigator: View {
  
 
 <!-- http://www.giphy.com/gifs/PywKnLLMIQPLM3RW1F -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3plOWFlN3N4YzJxOW01YWtjY3U0aTE0OWxueWVmeGF4ZG9pcGI3dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PywKnLLMIQPLM3RW1F/giphy.gif)
 
 _탭뿐만 아니라 드래그로도 이동할 수 있습니다. 실제 기기라면 진동도 울립니다._
 

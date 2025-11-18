@@ -7,25 +7,24 @@ categories:
   - "코딩테스트"
 ---
 
-##### **이전 글**
+**이전 글**
 
-- [Swift: 큐(queue) 구현하기](http://yoonbumtae.com/?p=5968)
+- [Swift: 큐(queue) 구현하기](/posts/swift-큐queue-구현하기)
 
  
 
-### **우선순위 큐 (Priority Queue)**
-
-#### **힙 (Heap)**
+## 힙 (Heap)
 
 우선순위 큐 구현에서 가장 많이 사용하는 자료구조가 힙(Heap) 구조이므로 먼저 힙에 대해 아는 것이 좋습니다.
 
 힙은 최댓값 및 최솟값을 찾아내는 연산을 빠르게 하기 위해 고안된 완전이진트리(complete binary tree)를 기본으로 한 자료구조(tree-based structure)입니다. 힙의 속성으로는 A가 B의 부모노드(parent node) 이면, A의 키(key)값과 B의 키값 사이에는 대소(크거나 작은)관계가 성립합니다.
 
-\[caption id="attachment\_5975" align="alignnone" width="440"\] ![](/assets/img/wp-content/uploads/2023/12/Max-Heap.svg_.png) 최대 힙 (Max Heap)\[/caption\]
+![최대 힙 (Max Heap)](/assets/img/wp-content/uploads/2023/12/Max-Heap.svg_.png)  
+*최대 힙 (Max Heap)*
 
  
 
-힙에는 두가지 종류가 있으며, 부모노드의 키값이 자식노드의 키 값보다 항상 큰 힙을 **'최대 힙(max heap)'**, 부모노드의 키 값이 자식노드의 키 값보다 항상 작은 힙을 **'최소 힙(min heap)'**이라고 부릅니다.
+힙에는 두가지 종류가 있으며, 부모노드의 키값이 자식노드의 키 값보다 항상 큰 힙을 '최대 힙(max heap)', 부모노드의 키 값이 자식노드의 키 값보다 항상 작은 힙을 '최소 힙(min heap)'이라고 부릅니다.
 
  ![](/assets/img/wp-content/uploads/2023/12/MinHeapAndMaxHeap1.png)
 
@@ -33,7 +32,7 @@ categories:
 
  
 
-#### **우선순위 큐**
+## 우선순위 큐
 
 우선순위 큐(Priority queue)란 일반적인 큐(또는 스택일 수도 있음)에서 우선 순위가 부여된 자료형을 뜻합니다. 일반적인 큐와 달리 각 원소들은 우선순위를 갖고 있습니다. 우선순위 큐에서, 높은 우선순위를 가진 원소는 낮은 우선순위를 가진 원소보다 먼저 처리됩니다. 일반 큐에서는 `dequeue`를 하면 가장 먼저 삽입된 원소가 반환되지만 우선순위 큐에서는 `dequeue`를 하면 우선순위가 가장 높은 원소가 반환됩니다. 만약 두 원소가 같은 우선순위를 가진다면 그들은 큐에서 그들의 순서(선입선출)에 의해 처리됩니다.
 
@@ -45,13 +44,11 @@ categories:
 
 우선순위 큐는 다양한 곳에서 사용될 수 있는데, 가장 대표적인 사용 예로 다익스트라 알고리즘(Dijkstra Algorithm)에서 우선순위 큐를 사용하고 있습니다.
 
-> [데이크스트라 알고리즘(](https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%81%AC%EC%8A%A4%ED%8A%B8%EB%9D%BC_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)영어: Dijkstra algorithm) 또는 다익스트라 알고리즘은 도로 교통망 같은 곳에서 나타날 수 있는 **_그래프에서 꼭짓점 간의 최단 경로를 찾는_** 알고리즘이다. 이 알고리즘은 컴퓨터 과학자 에츠허르 데이크스트라가 1956년에 고안했으며 삼 년 뒤에 발표했다
+> [데이크스트라 알고리즘(](https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%81%AC%EC%8A%A4%ED%8A%B8%EB%9D%BC_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)영어: Dijkstra algorithm) 또는 다익스트라 알고리즘은 도로 교통망 같은 곳에서 나타날 수 있는 _그래프에서 꼭짓점 간의 최단 경로를 찾는_ 알고리즘이다. 이 알고리즘은 컴퓨터 과학자 에츠허르 데이크스트라가 1956년에 고안했으며 삼 년 뒤에 발표했다
 
  
 
-#### **구현**
-
-- 출처: ChatGPT
+## 구현
 
 최소 힙(min heap)을 이용한 우선순위 큐입니다.
 
@@ -161,19 +158,19 @@ struct PriorityQueue<T: Comparable> {
     - 우선순위가 높은 원소를 반환합니다. 위의 코드는 최소 힙으로 `Comparable` 상 가장 작은 값이 반환됩니다.
     - 반환하기 전에 첫번째 원소와 끝 원소를 스왑하는데, 이는 `dequeue` 과정에서 시간 복잡도가 늘어나는 것을 방지하기 위함입니다. `removeLast`는 `O(1)` 인데 반해, `removeFirst`는 `O(n)`의 시간 복잡도를 가집니다.
     - `heapifyDown`을 실행해 힙 구조를 유지합니다.
-- **heapifyUp**
+- heapifyUp
     - `private` 메서드로 현재 인덱스(=>`enqueue` 과정에서 새로 append된 원소의 인덱스)의 값을 최소 힙 조건이 만족하는 곳까지 반복해서 위로 끌어올립니다.
-- **heapifyDown**
+- heapifyDown
     - `private` 메서드로 현재 인덱스(=>`dequeue` 과정에서 스왑되고 난 후 첫번째 인덱스)를 최소 힙 조건이 만족할 때까지 반복해서 밑으로 끌어내립니다.
-- **parentIndex(of:)**
+- parentIndex(of:)
     - 특정 인덱스로부터 부모 인덱스를 구하는 공식입니다.
-    - **`(index - 1) / 2`**
-- **leftChildIndex(of:)**
+    - `(index - 1) / 2`
+- leftChildIndex(of:)
     - 특정 인덱스로부터 왼쪽 자식의 인덱스를 구하는 공식입니다.
-    - **`2 * index + 1`**
-- **rightChildIndex(of:)**
+    - `2 * index + 1`
+- rightChildIndex(of:)
     - 특정 인덱스로부터 오른쪽 자식의 인덱스를 구하는 공식입니다.
-    - **`2 * index + 2`**
+    - `2 * index + 2`
 
 힙 구조에서 특정 노드의 부모 또는 자식 인덱스를 구하는 공식은 유용하게 쓰이므로 알아두면 좋습니다.
 
@@ -181,9 +178,9 @@ struct PriorityQueue<T: Comparable> {
 
  
 
-##### **예제**
+## 예제
 
-```
+```swift
 var pq: PriorityQueue<Int> = .init()
 pq.enqueue(5)
 pq.enqueue(77)
@@ -209,4 +206,4 @@ while !pq.isEmpty {
 
 - 예제는 제너릭 타입으로 `Int`를 사용했지만 `Comaprable`을 준수하는 타입은 전부 사용할 수 있습니다.
 - 값을 `enqueue`하면 저절로 값이 작은 원소가 힙 상단에 위치하게 됩니다.
-- `dequeue`하면 우선순위가 가장 높은 (=> `Comparable` 상 값이 _**가장 작은**_) 원소가 반환됩니다.
+- `dequeue`하면 우선순위가 가장 높은 (=> `Comparable` 상 값이 _가장 작은_) 원소가 반환됩니다.

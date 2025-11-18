@@ -6,7 +6,9 @@ categories:
   - "Band Music"
 ---
 
-### **Second Suite in F for Military Band** **군악대를 위한 바장조 두 번째 모음곡**
+**Second Suite in F for Military Band** **군악대를 위한 바장조 두 번째 모음곡**
+
+## 소개
 
 {% youtube "https://www.youtube.com/watch?v=04U-PQuDq-s" %}
 
@@ -20,11 +22,11 @@ categories:
 
  
 
-#### **편성**
+## **편성**
 
 첫 번째 모음곡의 탄력적 스코어링과 달리 홀스트는 두 번째 모음곡의 악보에 훨씬 더 구체적으로 명시했습니다. 그의 원본 원고에는 다음 악기 편성이 명시되어 있습니다.
 
-##### **목관 (Woodwinds)**
+### **목관 (Woodwinds)**
 
 - Flutes
 - Piccolo in D♭
@@ -36,7 +38,7 @@ categories:
 - Alto saxophone in E♭
 - Tenor saxophone in B♭
 
-##### **금관 (Brass)**
+### **금관 (Brass)**
 
 - 2 cornets in B♭
 - 4 horns in E♭ and F
@@ -45,7 +47,7 @@ categories:
 - Euphonium
 - Tubas
 
-##### **타악기 (Percussion)**
+### **타악기 (Percussion)**
 
 - Snare drum
 - Bass drum
@@ -54,6 +56,7 @@ categories:
 - Tambourine
 - Anvil
 
+### 추가 사항
 _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가되었습니다.
 
 - Alto clarinet in E♭
@@ -67,17 +70,21 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
  
 
-#### **구조**
+## **구조**
 
 홀스트의 두 번째 모음곡은 4악장으로 구성되어 있으며 모두 특정 영국 민요를 기반으로 합니다.
 
  
 
-##### **악장 I: "행진곡: 모리스의 춤, 스완지 마을, 클로디 강 둑"** **(March: Morris dance, Swansea Town, Claudy Banks)**
+### **악장 I: "행진곡: 모리스의 춤, 스완지 마을, 클로디 강 둑"** **(March: Morris dance, Swansea Town, Claudy Banks)**
 
  ![](/assets/img/wp-content/uploads/2023/08/qco6ccld.png)
 
-\[audio mp3="http://yoonbumtae.com/wp-content/uploads/2023/08/HolstSecondSuite-Piano-1-.mp3"\]\[/audio\]
+
+<audio controls>
+  <source src='/assets/img/wp-content/uploads/2023/08/HolstSecondSuite-Piano-1-.mp3' type='audio/mpeg'>
+  브라우저가 audio 태그를 지원하지 않습니다.
+</audio>
 
 1악장 "행진곡"은 밴드의 저음 악기와 고음 악기 사이의 단순한 5개 음의 모티브로 시작됩니다. 첫 번째 민요는 모리스 춤곡인 "Glorishears"를 사용한 전통적인 영국 브라스 밴드(British Brass Band) 행진곡의 형태로 들립니다.
 
@@ -93,23 +100,31 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
  
 
-##### **악장 II: 무언가(無言歌) '나는 내 사랑을 사랑하겠어'**  **(Song Without Words, 'I'll Love My Love')**
+### **악장 II: 무언가(無言歌) '나는 내 사랑을 사랑하겠어'**  **(Song Without Words, 'I'll Love My Love')**
 
  ![](/assets/img/wp-content/uploads/2023/08/9nly78h1.png)
 
-\[audio mp3="http://yoonbumtae.com/wp-content/uploads/2023/08/Holst-2.mp3"\]\[/audio\]
+
+<audio controls>
+  <source src='/assets/img/wp-content/uploads/2023/08/Holst-2.mp3' type='audio/mpeg'>
+  브라우저가 audio 태그를 지원하지 않습니다.
+</audio>
 
 홀스트는 네 번째 민요인 "I'll Love My Love"를 첫 번째 악장과 극명한 대조를 이루는 위치에 배치했습니다. 악장은 프렌치 호른의 화음으로 시작하여 F Dorian(바 도리안 스케일)의 흐르는 반주 위에서 오보에와 함께 클라리넷 독주로 이어집니다. 그런 다음 솔로는 트럼펫으로 반복되어 강렬의 원호(arc of intensity)를 형성합니다. 작품의 클라이막스는 32마디의 페르마타이고, 이어서 작품의 마지막 마디에 트럼펫 픽업이 이어집니다.
 
-\[caption id="attachment\_5852" align="alignnone" width="581"\] ![](/assets/img/wp-content/uploads/2023/08/f-dorian-mode-on-treble-clef.png) F Dorian Mode\[/caption\]
+![F Dorian Mode](/assets/img/wp-content/uploads/2023/08/f-dorian-mode-on-treble-clef.png)  
+*F Dorian Mode*
 
  
 
-##### **악장 III: 대장장이의 노래** **(Song of the Blacksmith)**
+### **악장 III: 대장장이의 노래** **(Song of the Blacksmith)**
 
  ![](/assets/img/wp-content/uploads/2023/08/h0ti7bv4.png)
 
-\[audio mp3="http://yoonbumtae.com/wp-content/uploads/2023/08/h0ti7bv4.mp3"\]\[/audio\]
+<audio controls>
+  <source src='/assets/img/wp-content/uploads/2023/08/h0ti7bv4.mp3' type='audio/mpeg'>
+  브라우저가 audio 태그를 지원하지 않습니다.
+</audio>
 
 이어 홀스트는 민요 "대장장이가 나에게 구애했어(A Blacksmith Courted Me)"를 특징으로 하는 다소 경쾌한 느낌으로 세 번째 악장에 배치하여 느리고 슬픈 두 번째 악장과 대조시킵니다.
 
@@ -117,21 +132,26 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 > 단조(鍛造): 금속(金屬)을 불에 달구어 불려서 일정(一定)한 형체(形體)로 만드는 일.
 
-\[caption id="attachment\_5847" align="alignnone" width="241"\] ![](/assets/img/wp-content/uploads/2023/08/anvil.png) 앤빌 (Anvil)\[/caption\]
+![앤빌 (Anvil)](/assets/img/wp-content/uploads/2023/08/anvil.png)  
+*앤빌 (Anvil)*
 
  
 
 마지막 D(라) 장조 코드는 마지막 악장의 길을 여는 영광과 천상의 사운드를 가지고 있습니다. 이 화음은 예상치 못한 채 등장하기 때문에 매우 효과적으로 작동합니다. 음악이 갑자기 상대 단조(relative minor)의 장조로 이동하고 전체 악장은 F(바) 장조가 됩니다.
 
-\[caption id="attachment\_5854" align="alignnone" width="198"\] ![](/assets/img/wp-content/uploads/2023/08/-2023-08-31-pm-5.20.19-copy-e1693470117581.jpg) 3악장 B♭ 코넷(Cornet) 1, 2 파트와 B♭ 트럼펫(Trumpet)의 마지막 두 마디\[/caption\]
+![3악장 B♭ 코넷(Cornet) 1, 2 파트와 B♭ 트럼펫(Trumpet)의 마지막 두 마디](/assets/img/wp-content/uploads/2023/08/-2023-08-31-pm-5.20.19-copy-e1693470117581.jpg)  
+*3악장 B♭ 코넷(Cornet) 1, 2 파트와 B♭ 트럼펫(Trumpet)의 마지막 두 마디*
 
  
 
-##### **악장 IV: "다가슨 환상곡"** **(Fantasia on the Dargason)**
+### **악장 IV: "다가슨 환상곡"** **(Fantasia on the Dargason)**
 
  ![](/assets/img/wp-content/uploads/2023/08/m2mkoh36.png)
 
-\[audio mp3="http://yoonbumtae.com/wp-content/uploads/2023/08/Holst-4.mp3"\]\[/audio\]
+<audio controls>
+  <source src='/assets/img/wp-content/uploads/2023/08/Holst-4.mp3' type='audio/mpeg'>
+  브라우저가 audio 태그를 지원하지 않습니다.
+</audio>
 
 이 악장은 민요에 기반한 것이 아니라 1651년 Playford의 Dancing Master의 두 곡조(tune)를 기반으로 합니다.
 
@@ -143,7 +163,8 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
 다르가슨(Dargason)이라는 이름은 아마도 큰 곰을 닮은 괴물에 대해 이야기하는 아일랜드 전설에서 유래했을 수 있습니다(비록 생물에 대한 설명의 대부분은 시간이 지남에 따라 사라졌지만). 다르가슨은 아일랜드 시골을 괴롭혔습니다. 18세기 후반 아일랜드 봉기 당시 다르가손은 영국군 진영을 공격해 많은 군인을 죽인 것으로 추정됩니다. 이 이야기를 토대로 다르가슨은 난쟁이나 요정을 의미하는 고대 영어 단어에서 파생되었을 가능성이 높으며, 이 곡은 적어도 16세기부터 영어(또는 웨일스어)로 간주되었습니다. "Sedony"(또는 Sedany) 또는 "Welsh Sedony"라고도 합니다.
 
-\[caption id="attachment\_5864" align="alignnone" width="221"\] ![](/assets/img/wp-content/uploads/2023/08/IMG_1776.jpeg) 큰 곰을 닮은 괴물 (추정)\[/caption\]
+![큰 곰을 닮은 괴물 (추정)](/assets/img/wp-content/uploads/2023/08/IMG_1776.jpeg)  
+*큰 곰을 닮은 괴물 (추정)*
 
  
 
@@ -153,6 +174,6 @@ _**Boosey & Hawkes**_가 출판한 1948년 총보에는 다음 악기가 추가�
 
  
 
-##### **출처**
+## **출처**
 
 - 위키피디아 [Second Suite in F for Military Band](https://en.wikipedia.org/wiki/Second_Suite_in_F_for_Military_Band)

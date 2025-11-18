@@ -8,17 +8,17 @@ categories:
 
 <!-- \[rcblock id="5440"\] -->
 
-### **개요: SwiftUI와 UIKit을 연결하고 컨트롤하기**
+## **개요: SwiftUI와 UIKit을 연결하고 컨트롤하기**
 
 이미 이 주제와 관련하여 포스트를 작성한 적이 있습니다.
 
-- [SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)](http://yoonbumtae.com/?p=5436)
+- [SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)](/posts/swiftui-웹-뷰wkwebview-추가하기-및-자바스크립트-실행-representable-사용/)
 
-그런데 위의 방법은 `Combine`의 `PassthroughSubject`를 이용하기 때문에 너무 비직관적이고 이해하기 어려워서 뷰모델만 사용한 그나마 약간 간략화된 방법을 소개하려고 합니다. (이 방법도 딱히 쉬운건 아닙니다.)
+그런데 위의 방법은 `Combine`의 `PassthroughSubject`를 이용하기 때문에 Combine을 사용하지 않는 방법에 대해 소개합니다.
 
  
 
-#### **배경**
+## **배경**
 
 SwiftUI에서 WebKitView를 이용해 웹 페이지를 띄우는 앱을 만드려고 합니다. 추가하고 싶은 기능은 다음과 같습니다.
 
@@ -96,7 +96,7 @@ struct WebContentView: View {
 
  
 
-#### **방법**
+## **방법**
 
 1. 실행할 명령들을 정의한 `Provider` 프로토콜을 작성합니다.
 2. 위의 `Provider`를 가지고 있는 `Controller` 프로토콜을 작성합니다.
@@ -112,7 +112,7 @@ struct WebContentView: View {
 
  
 
-##### **Step 1: 실행할 명령들을 정의한 Provider 프로토콜을 작성합니다.**
+### **Step 1: 실행할 명령들을 정의한 Provider 프로토콜을 작성합니다.**
 
 ```swift
 protocol WebViewProvider {
@@ -123,7 +123,7 @@ protocol WebViewProvider {
 
  
 
-##### **Step 2: 위의 Provider를 가지고 있는 Controller 프로토콜을 작성합니다.**
+### **Step 2: 위의 Provider를 가지고 있는 Controller 프로토콜을 작성합니다.**
 
 ```swift
 protocol WebViewConnector {
@@ -135,9 +135,9 @@ protocol WebViewConnector {
 
  
 
-##### **Step 3: ObservableObject와 Controller를 내려받은 뷰모델 클래스를 생성합니다.**
+### **Step 3: ObservableObject와 Controller를 내려받은 뷰모델 클래스를 생성합니다.**
 
-```
+```swift
 final class WebViewNexus: ObservableObject, WebViewConnector {
     @Published var provider: (WebViewProvider)?
     
@@ -155,9 +155,9 @@ final class WebViewNexus: ObservableObject, WebViewConnector {
 
  
 
-##### **Step 4: WKWebView를 상속받은 새 UIKit의 뷰 클래스를 생성합니다.**
+### **Step 4: WKWebView를 상속받은 새 UIKit의 뷰 클래스를 생성합니다.**
 
-```
+```swift
 class CustomWKWebView: WKWebView, WebViewProvider {
     var connector: any WebViewConnector
     
@@ -190,7 +190,7 @@ class CustomWKWebView: WKWebView, WebViewProvider {
 
  
 
-##### **Step 4-2: 기존에 있던 WebViewRepresentable 뷰를 새로운 커스텀 타입에 맞춰 변경시킵니다.**
+### **Step 4-2: 기존에 있던 WebViewRepresentable 뷰를 새로운 커스텀 타입에 맞춰 변경시킵니다.**
 
 ```swift
 struct WebViewRepresentable: UIViewRepresentable {
@@ -242,7 +242,7 @@ struct WebViewRepresentable: UIViewRepresentable {
 
  
 
-##### **Step 5: SwiftUI의 뷰에서 뷰모델 클래스를 초기화(initializaiton)하고, 해당 뷰모델 변수를 통해 원하는 작업을 실행합니다.**
+### **Step 5: SwiftUI의 뷰에서 뷰모델 클래스를 초기화(initializaiton)하고, 해당 뷰모델 변수를 통해 원하는 작업을 실행합니다.**
 
 ```swift
 import SwiftUI
@@ -287,7 +287,7 @@ struct WebContentView: View {
 ```
 
 <!-- https://giphy.com/gifs/2xc0CYz4TsyZCyPQEm -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXlxZW05ZndiMHNhenV0NzNjeWR3ejg2eTlrdGplcmFwaHdlaWowMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2xc0CYz4TsyZCyPQEm/giphy.gif)
 
  
 

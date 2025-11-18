@@ -143,7 +143,7 @@ categories:
 결과물은 다음과 같습니다.
 
 <!-- http://www.giphy.com/gifs/YjYuh6MpbXJH9wqYLR -->
-![](https://)
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWRrNjZ1Y293MHh4b2h1MHd3OXNjNWIwMXo2aGF3dzNuejhvYXE2bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YjYuh6MpbXJH9wqYLR/giphy.gif)
 
 어도비 애프터 이펙트 애펙 After Effect Adobe 튜토리얼 기초 강의 강좌 배우기
 

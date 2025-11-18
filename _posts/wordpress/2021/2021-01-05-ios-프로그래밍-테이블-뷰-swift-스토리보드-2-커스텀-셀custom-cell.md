@@ -42,7 +42,7 @@ categories:
 
 다음, `ViewController` 파일에 새로운 클래스를 방금 작성했던 `ListCell` 이라는 이름으로 생성합니다. 그리고 `@IBOutlet` 이라는 컴파일러에게 지정하는 특별 예약어를 붙인 다음, `weak` 키워드를 붙이고 (참고: [weak와 strong의 차이점](https://soooprmx.com/archives/5123)) 앞서 제작했던 커스텀 셀의 요소대로 새로운 변수를 생성합니다. 앞에서는 이미지 뷰 하나와 레이블 2개를 만들었으므로 대응해서 추가합니다.
 
-```
+```swift
 class ListCell: UITableViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!

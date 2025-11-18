@@ -6,9 +6,11 @@ categories:
   - "음악이론"
 ---
 
-### **메트릭 모듈레이션(Metric Modulation; 박자 변조)**
+**메트릭 모듈레이션(Metric Modulation; 박자 변조)**
 
 - 출처: [Metric modulation](https://en.wikipedia.org/wiki/Metric_modulation)
+
+## 메트릭 모듈레이션이란?
 
 음악에서 메트릭 모듈레이션(metric modulation)는 템포(tempo)와 [박자(meter)](https://en.wikipedia.org/wiki/Metre_\(music\))의 변화에 대한 공식입니다.
 
@@ -18,7 +20,10 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2022/10/Metric_modulation_Bach.png)
 
-\[audio ogg="http://yoonbumtae.com/wp-content/uploads/2022/10/Metric\_modulation\_Bach.mid.ogg"\]\[/audio\]
+<audio controls>
+  <source src="/assets/img/wp-content/uploads/2022/10/Metric_modulation_Bach.mid.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
 
  
 
@@ -28,7 +33,7 @@ categories:
 
 > #### ** ![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-13-am-1.39.26-copy.jpg)**
 
-#### **새로운 템포의 결정**
+## **새로운 템포의 결정**
 
 다음 공식은 메트릭 모듈레이션 전후에 템포를 결정하는 방법과 전후에 각 소절에 관련 음표 값이 몇 개 있는지를 결정하는 방법을 보여줍니다.
 
@@ -36,7 +41,7 @@ categories:
 
  
 
-##### **예제 1**
+### **예제**
 
  ![](/assets/img/wp-content/uploads/2022/10/Metric_modulation_23.png)
 
@@ -54,7 +59,7 @@ categories:
 
 ♩ = 126 (4분음표 = 126)인 이 템포는 (([![half note](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Figure_rythmique_blanche_hampe_haut.svg/6px-Figure_rythmique_blanche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_blanche_hampe_haut.svg "half note") = [![dotted half note](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Figure_rythmique_blanche_hampe_haut.svg/6px-Figure_rythmique_blanche_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_blanche_hampe_haut.svg "dotted half note").) = ([![quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "quarter note") = [![dotted quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "dotted quarter note").)). 과 동일합니다. (84 \* 3) / 2 대신 (84 \* 1.5) / 1로 계산해도 126이라는 동일한 수치가 나옵니다. 
 
- 
+## **변화 케이스**
 
 템포 변조는 인식된 비트 박자(subdivisons)와 새 템포에 속하는 모든 잠재적 박자 사이의 계층적 관계에 변화를 일으킵니다. 학자 Benadon은 템포 네트워크 및 비트 분할 공간과 같은 템포 변조의 일부 구성적 사용을 탐구했습니다.
 
@@ -72,7 +77,7 @@ categories:
 
  
 
-#### **악보 표기법**
+## **악보 표기법**
 
 박자 변조는 일반적으로 `'음표 길이' = '음표 길이'`으로 표시됩니다. 예를 들어,
 
@@ -88,4 +93,4 @@ categories:
 
 _l'istesso tempo_(이전과 똑같은 템포로)라는 문구는 현재 박자 변조 표시로 표기할 수 있는 내용에 사용되었습니다.
 
-예) **2/****4** to **6/****8** ([![quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "quarter note")\=[![dotted quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "dotted quarter note").), 는 _l'istesso tempo_로 나타낼 수 있으며 비트가 동일한 속도임을 나타냅니다.
+예) `2/4` to `6/8` ([![quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "quarter note")\=[![dotted quarter note](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure_rythmique_noire_hampe_haut.svg/6px-Figure_rythmique_noire_hampe_haut.svg.png)](https://en.wikipedia.org/wiki/File:Figure_rythmique_noire_hampe_haut.svg "dotted quarter note").), 는 *l'istesso tempo*로 나타낼 수 있으며 비트가 동일한 속도임을 나타냅니다.

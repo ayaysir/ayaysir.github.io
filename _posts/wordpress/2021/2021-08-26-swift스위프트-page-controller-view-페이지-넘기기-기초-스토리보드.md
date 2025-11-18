@@ -40,7 +40,7 @@ iOS로 된 전자책이나 앨범 등을 만들 때 이미지를 좌우로 스�
 
 UIPageViewController를 상속받는 페이지뷰 컨트롤러 소스코드를 생성합니다.
 
-```
+```swift
 class PageViewController: UIPageViewController {
 
     override func viewDidLoad() {

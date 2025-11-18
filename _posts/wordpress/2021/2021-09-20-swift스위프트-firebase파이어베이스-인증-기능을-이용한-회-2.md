@@ -418,7 +418,7 @@ let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
 
 ##### **4\. 뷰 컨트롤러에 Firebase 이미지 업로드 함수 추가**
 
-```
+```swift
 private func uploadImage(forIndex index:Int, images: [ImageWithName]) {
     
     if index < images.count {

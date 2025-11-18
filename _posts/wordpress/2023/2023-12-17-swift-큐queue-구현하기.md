@@ -7,7 +7,7 @@ categories:
   - "코딩테스트"
 ---
 
-### **큐(Queue)**
+## **큐(Queue)**
 
 [큐(queue)](https://ko.wikipedia.org/wiki/%ED%81%90_\(%EC%9E%90%EB%A3%8C_%EA%B5%AC%EC%A1%B0\))는 기본적인 자료 구조의 한가지로, 먼저 집어 넣은 데이터가 먼저 나오는 `FIFO`(First In First Out)구조로 저장하는 형식을 말합니다. 나중에 집어 넣은 데이터가 먼저 나오는 스택과는 반대되는 개념입니다. 프린터의 출력 처리나 운영체제의 메시지 처리기, 프로세스 관리 등 데이터가 입력된 시간 순서대로 처리해야 할 필요가 있는 상황에 이용됩니다.
 
@@ -15,7 +15,7 @@ categories:
 
  
 
-#### **기본 배열을 큐로 사용**
+## **기본 배열을 큐로 사용**
 
 Swift에서는 `Array`를 이용해 큐의 대부분의 기능을 구현할 수 있습니다.
 
@@ -24,7 +24,7 @@ Swift에서는 `Array`를 이용해 큐의 대부분의 기능을 구현할 수 
 
  
 
-```
+```swift
 var queue: [Int] = []
 
 queue.append(1)
@@ -37,15 +37,13 @@ queue.removeFirst() // 3
 queue // []
 ```
 
-하지만 기본 배열의 문제점은 처리 속도가 느리다는 점입니다. 특히  [removeFirst의 시간 복잡도가 O(n)](https://developer.apple.com/documentation/swift/array/removefirst\(_:\))인 것도 한 몫 합니다. 배열의 원소 개수가 매우 크다면 작업을 할 때마다 느려지는 문제가 발생할 수 있습니다.
+하지만 기본 배열의 문제점은 처리 속도가 느리다는 점입니다. 특히 [removeFirst의 시간 복잡도가 O(n)](https://developer.apple.com/documentation/swift/array/removefirst\(_:\))인 것도 한 몫 합니다. 배열의 원소 개수가 매우 크다면 작업을 할 때마다 느려지는 문제가 발생할 수 있습니다.
 
 이러한 점을 방지하기 위해 큐를 구조체를 직접 만들어 사용할 수 있습니다.
 
  
 
-#### **커스텀 큐 구현하기**
-
-- 출처: ChatGPT
+## **커스텀 큐 구현하기**
 
 ```swift
 struct Queue<T> {
@@ -124,6 +122,6 @@ gptQueue.isEmpty // true
 
  
 
-#### **대용량 자료 처리시 시간 차이 분석**
+## **대용량 자료 처리시 시간 차이 분석**
 
-####  ![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-am-2.26.20-copy.jpg)
+![](/assets/img/wp-content/uploads/2023/12/screenshot-2023-12-18-am-2.26.20-copy.jpg)

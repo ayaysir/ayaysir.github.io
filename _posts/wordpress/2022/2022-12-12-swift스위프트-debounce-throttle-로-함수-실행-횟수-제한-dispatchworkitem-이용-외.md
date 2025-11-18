@@ -97,7 +97,7 @@ Debounce와 Throttle은 `DispatchWorkItem`의 `cancel()` 작업을 이용해 �
 
 ##### **Abstract Class 만들기**
 
-```
+```swift
 class DelayWork {
     
     typealias Handler = ((Date) -> Void)
@@ -130,7 +130,7 @@ class DelayWork {
 
 ##### **Debounce 구현**
 
-```
+```swift
 class Debounce: DelayWork {
     
     override func run() {
@@ -161,7 +161,7 @@ class Debounce: DelayWork {
 
 ##### **Throttle 구현**
 
-```
+```swift
 class Throttle: DelayWork {
     
     override func run() {

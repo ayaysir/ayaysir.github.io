@@ -144,4 +144,4 @@ VStack {
 ```
 
 <!-- http://www.giphy.com/gifs/NKqUVz2JyUoZ7WN0IJ -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXE0cnJhcG1icWg3dWpzeW45YjdkYzdyNmc4Zm1qaHpvY2txbWZ0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NKqUVz2JyUoZ7WN0IJ/giphy.gif)

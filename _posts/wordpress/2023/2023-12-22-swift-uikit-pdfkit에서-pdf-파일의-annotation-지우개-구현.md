@@ -6,15 +6,16 @@ categories:
   - "SwiftUI"
 ---
 
-#### **소개**
+## **소개**
 
 인터넷에서 `PDFKit`과 `Annotation`을 다루는 예제를 찾았는데 이 저장소가 지우개 기능이 제대로 구현이 안되어 있기 때문에 참고용으로 포스트를 작성합니다.
 
 - [https://github.com/poluektov/pdfkit-ink-annotations](https://github.com/poluektov/pdfkit-ink-annotations)
 
- 
 
-##### **Step 1: 메인 화면에 지우개 버튼 추가**
+## **절차**
+
+### **Step 1: 메인 화면에 지우개 버튼 추가**
 
 - `Main.storyboard` 파일을 연 뒤 `Bar Button Item`과 `Flexible Space`를 추가한 뒤 화면 하단의 툴바에 삽입합니다.
 - `Bar Button Item`의 텍스트를 `Eraser`로 변경하고 `Assistant` 에디터를 열어 `DocumentDrawingViewController`의 `changeDrawingTool(sender:)`에 연결합니다.
@@ -28,9 +29,9 @@ categories:
 
  
 
-##### **Step 2: \[옵션\] PDFDrawer.swift 파일에서 removeAnnotationAtPoint(point:page:) 변경**
+### **Step 2: \[옵션\] PDFDrawer.swift 파일에서 removeAnnotationAtPoint(point:page:) 변경**
 
-```
+```swift
 private func removeAnnotationAtPoint(point: CGPoint, page: PDFPage) {
     if let selectedAnnotation = page.annotationWithHitTest(at: point) {
         // selectedAnnotation.page?.removeAnnotation(selectedAnnotation) // 원래 코드
@@ -48,7 +49,7 @@ private func removeAnnotationAtPoint(point: CGPoint, page: PDFPage) {
 
  
 
-##### **Step 3: PDFPage+Selection.swift 파일의 annotationWithHitTest(at:) 변경**
+### **Step 3: PDFPage+Selection.swift 파일의 annotationWithHitTest(at:) 변경**
 
 ```swift
 import UIKit
@@ -74,7 +75,7 @@ extension PDFPage {
 
 원래 저장소에서는 다음과 같이 되어있습니다 **(에러 코드)**
 
-```
+```swift
 if annotation.contains(point: at) {...}
 
 // =========== 임의로 구현된 contains 메서드 ❌ (오류 발생) =========== //
@@ -102,4 +103,4 @@ extension PDFAnnotation {
  
 
 <!-- https://giphy.com/gifs/sEjBvwFkB3y7zAufQ7 -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2R0dDg1b2pvYmJ5d3dxZ29rd3RzaGpvYzgxdHEybW5rcDAyNHd2aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sEjBvwFkB3y7zAufQ7/giphy.gif)

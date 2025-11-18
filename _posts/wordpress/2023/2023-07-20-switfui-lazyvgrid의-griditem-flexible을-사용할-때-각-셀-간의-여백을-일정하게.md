@@ -22,7 +22,7 @@ import SwiftUI
 struct AlbumListView: View {
     let MARGIN: CGFloat = 10
     @State private var columnCount = 3.0
-    
+    git 
     // 화면을 그리드형식으로 꽉채워줌
     var columns: [GridItem] {
         return (1...Int(columnCount)).map { _ in
