@@ -765,7 +765,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2098 words"
+  title="2100 words"
 >
   <em>11 min</em> read</span>
 
@@ -1175,15 +1175,15 @@ T:
 Q: 1/4=120
 M:  3/4
 L:  1/4
-R: 연습문제 5
+R: 연습문제 5 해답
 K: Bm 
 "Bm" d c B- | "F#" B ^A f- | "Bm" f e d- | "A" d c a- | "D" a g f- | "Em" f e B ||
 w: ~3 ~지 ~1 | ~걸(sus4) ~3 ~1 | ~5 ~지 ~3 | ~걸(sus4) ~3 ~1 | ~5 ~지 ~3 | ~걸(9th) ~1 ~5 || 
 </code></pre>
 
-<link rel="stylesheet" id="style1-css" href="http://yoonbumtae.com/wp-content/plugins/abc-notation/abcjs-audio.css?ver=6.8.3" type="text/css" media="all" />
+<link rel="stylesheet" id="style1-css" href="https://cdn.jsdelivr.net/npm/abcjs@6.5.2/abcjs-audio.min.css" type="text/css" media="all" />
 
-<script type="text/javascript" src="http://yoonbumtae.com/wp-content/plugins/abc-notation/abcjs-basic-min.js?ver=6.8.3" id="abcjs-plugin-js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/abcjs@6.5.2/dist/abcjs-basic-min.min.js" id="abcjs-plugin-js"></script>
 
 <script>
 function CursorControl(selector) {
@@ -1239,6 +1239,14 @@ function CursorControl(selector) {
   };
 }
 
+/*
+- code class 'pre > code.language-abc' 를 순회해서 code.textContent만 저장
+- code 태그 위의 pre는 삭제하고 그 부분을 
+   <div id="abcjs-notation-0"></div>
+   <div id="abcjs-midi-0"><div>
+  로 대체(인덱스에 따라 0부터 증가)
+- 아래 코드를 실행
+*/
 document.addEventListener("DOMContentLoaded", function () {
     // 1) pre > code.language-abc 모두 순회
   document.querySelectorAll('pre > code.language-abc').forEach((codeEl, idx) => {
