@@ -94,7 +94,7 @@ function getJsonUsePureJSCallback(obj) {
 
 **JQuery**를 이용한 방법은 다음과 같습니다. JQuery는 JSONP를 잘 지원합니다.
 
-```
+```js
 function getJsonpUseJQuery1() {
     $.ajax({
         url: "http://yoonbumtae.com/util/misc/jsonp-example/",
@@ -112,7 +112,7 @@ function getJsonpUseJQuery1() {
 
  
 
-```
+```js
 function getJsonpUseJQuery2() {
     $.getJSON("http://yoonbumtae.com/util/misc/jsonp-example/?callback=?", res => {
         console.log("JQuery 2", res)

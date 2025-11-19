@@ -10,14 +10,14 @@ categories:
 
 미리보기 이미지가 표시될 이미지 태그를 생성하고, `input file` 태그를 생성하고, 자바스크립트의 `FileReader()`를 통해 이미지가 로딩되면 이미지 태그의 `src` 속성이 교체되도록 합니다.
 
-```
+```html
 <div class="image-container">
     <img style="width: 500px;" id="preview-image" src="https://dummyimage.com/500x500/ffffff/000000.png&text=preview+image">
     <input style="display: block;" type="file" id="input-image">
 </div>
 ```
 
-```
+```js
 function readImage(input) {
 
     // 인풋 태그에 파일이 있는 경우
@@ -83,13 +83,13 @@ inputImage.addEventListener("change", e => {
 
  
 
-```
+```html
 <input style="display: block;" type="file" id="input-multiple-image" multiple>
 <div id="multiple-container">
 </div>
 ```
 
-```
+```js
 function readMultipleImage(input) {
 
     const multipleContainer = document.getElementById("multiple-container")

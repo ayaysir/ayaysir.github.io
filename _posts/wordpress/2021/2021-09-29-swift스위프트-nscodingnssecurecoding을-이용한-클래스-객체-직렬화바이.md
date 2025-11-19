@@ -228,7 +228,7 @@ func encode(with coder: NSCoder) {
 
  
 
-```
+```swift
 self.init(name: (decodedName as? String), cpu: decodedCPUCoder?.cpu )
 ```
 

@@ -204,7 +204,7 @@ public class EndpointConfig
 
 #### 3\. 나머지 클라이언트 측 웹 페이지 작성
 
-```
+```html
 <!DOCTYPE html>
 <html>
 

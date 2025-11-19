@@ -6,13 +6,13 @@ categories:
   - "Swift"
 ---
 
-\[rcblock id="4384"\]
+<!-- \[rcblock id="4384"\] -->
 
-#### **원문**
+**원문**
 
 - [MVVM in iOS Swift](https://medium.com/@abhilash.mathur1891/mvvm-in-ios-swift-aa1448a66fb4)
 
- 
+## 소개
 
  ![](/assets/img/wp-content/uploads/2022/01/1_pFVk0tVSIkeSYD7RZ2sVaw.png)
 
@@ -20,13 +20,13 @@ categories:
 
 아키텍처 패턴을 사용하는 것이 좋다는 것을 알고 있지만, 모든 프로젝트에서 아키텍처 패턴을 엄격하게 따르지는 않아야 합니다. 모든 아키텍처 패턴이 대부분을 커버할 만큼 충분히 좋은 것은 아닙니다. 모든 아키텍처 패턴에는 장단점이 있습니다. 프로젝트에 많은 모듈이 있는 경우 해당 모듈에 따라 아키텍처 패턴도 결정할 수 있습니다. 일부 모듈은 MVVM과 잘 어울리지만 새 모듈은 MVVM과 잘 작동하지 않을 수 있으므로 대신 MVP(Model-View-Presenter), VIPER(View-Interactor-Presenter-Entity-Routing)와 같은 다른 아키텍처 패턴을 사용하세요. 따라서 단일 아키텍처 패턴에 완전히 의존해서는 안 되며 대신 모듈에 따라 확인할 수도 있습니다.
 
-(참고: [MVC, MVVM, MVP, VIPER, VIP를 알아봅시다.](https://dev-leeyang.tistory.com/21))
+ - 참고: [MVC, MVVM, MVP, VIPER, VIP를 알아봅시다.](https://dev-leeyang.tistory.com/21)
 
 인터넷을 통해 MVVM 패턴의 정의와 단점 및 장점을 설명하는 많은 글들이 있습니다. 따라서 여기에서는 정의를 나열하는 대신 패턴의 실제 구현에 더 중점을 둘 것입니다.
 
  
 
-#### **시작하기**
+## **시작하기**
 
 이 프로젝트에서는 MVVM 디자인 패턴을 사용하여 간단한 애플리케이션을 빌드합니다. 대부분의 애플리케이션에는 서버(API)에서 데이터를 가져와 UI에 표시해야 하는 뷰 컨트롤러(UI)가 있습니다. MVVM 패턴을 사용하여 동일한 동작을 구현합니다.
 
@@ -42,9 +42,9 @@ categories:
 
  
 
-#### **MVVM 구성 요소의 개요와 역할**
+## **MVVM 구성 요소의 개요와 역할**
 
-- 뷰 컨트롤러 (View Controller): UI 관련 작업만 수행합니다. 예를 들어 정보 표시 및 가져오기 등의 작업이 있습니다.. 뷰 컨트롤러는 뷰 레이어의 일부입니다.
+- 뷰 컨트롤러 (View Controller): UI 관련 작업만 수행합니다. 예를 들어 정보 표시 및 가져오기 등의 작업이 있습니다. 뷰 컨트롤러는 뷰 레이어의 일부입니다.
 - 뷰모델 (View Model): 뷰 컨트롤러로부터 정보를 수신하고 이 모든 정보를 처리한 뒤 뷰 컨트롤러로 다시 보냅니다.
 - 모델 (Model): MVC에서와 같은 모델입니다. 뷰모델에서 사용하고 뷰모델이 새 업데이트 정보를 보낼 때마다 모델도 업데이트합니다.
 
@@ -56,12 +56,12 @@ categories:
 
  
 
-#### **모델 (Model)**
+### **모델 (Model)**
 
 모델은 단순 데이터를 나타냅니다. 단순히 데이터를 보유하고 비즈니스 로직과 아무 관련이 없습니다. 우리가 API에서 기대하는 단순한 데이터 구조라고 간단히 말할 수 있습니다. 여기에서 위 URL에 대한 리스폰스를 확인한 뒤 이 리스폰스에 대응하는 모델 클래스를 생성합니다. 직접 모델을 만들거나 [온라인 모델 생성기 사이트](https://app.quicktype.io/)를 사용할 수 있습니다.
 
 ```swift
-// MARK: - Employee
+// MARK: - Employees
 struct Employees: Codable {
     let status: String
     let data: [EmployeeData]
@@ -98,13 +98,13 @@ struct EmployeeData: Codable {
 
  
 
-#### **뷰모델 (View Model)**
+### **뷰모델 (View Model)**
 
-뷰 모델은 이 아키텍처 패턴의 주요 구성 요소입니다. 뷰모델은 뷰가 무엇인지 또는 뷰가 무엇을 하는지 결코 알지 못합니다. 이것은 이 아키텍처를 더욱 테스트 가능한 상태(more testable)로 만들고 뷰에서 복잡성(complexity)을 제거합니다.
+뷰 모델은 이 아키텍처 패턴의 주요 구성 요소입니다. 뷰모델은 *뷰가 무엇인지 또는 뷰가 무엇을 하는지 결코 알지 못합*니다. 이것은 이 아키텍처를 더욱 테스트 가능한 상태(more testable)로 만들고 뷰에서 복잡성(complexity)을 제거합니다.
 
 뷰모델(`EmployeesViewModel`)에서 `APIService` 클래스를 호출하여 서버에서 데이터를 가져옵니다.
 
- ![](/assets/img/wp-content/uploads/2022/01/1_5JmqmJnowCuBs4wJMHqlFQ-e1642952809116.png)
+ ![APIService 호출](/assets/img/wp-content/uploads/2022/01/1_5JmqmJnowCuBs4wJMHqlFQ-e1642952809116.png)
 
 뷰모델 클래스에 이 코드를 작성하면 `APIService` 클래스를 구현하지 않았기 때문에 오류가 발생합니다. 이제 `APIService` 클래스를 구현해 보겠습니다.
 
@@ -139,7 +139,7 @@ class APIService: NSObject {
 
  
 
-#### **MVVM 바인딩**
+## **MVVM 바인딩**
 
 MVVM 바인딩은 우리 프로젝트에서 중요한 역할을 합니다. 뷰모델과 뷰 컨트롤러 간에 통신하는 방법이 중요합니다. 우리는 여러 가지 방법으로 바인딩을 할 수 있습니다.
 
@@ -149,7 +149,6 @@ MVVM 바인딩은 우리 프로젝트에서 중요한 역할을 합니다. 뷰�
 import Foundation
 
 class EmployeesViewModel: NSObject {
-    
     private var apiService: APIService!
     private(set) var empData: Employees! {
         didSet {
@@ -187,7 +186,7 @@ class EmployeesViewModel: NSObject {
 
 뷰모델 클래스에서 데이터를 수신하려면 뷰 컨트롤러 클래스 내부에 뷰모델 속성을 연결해야 합니다.
 
-```
+```swift
 self.employeeViewModel.bindEmployeeViewModelToController = {
     self.updateDataSource()
 }
@@ -199,7 +198,6 @@ self.employeeViewModel.bindEmployeeViewModelToController = {
 import UIKit
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var employeeTableView: UITableView!
     
     private var employeeViewModel: EmployeesViewModel!
@@ -213,7 +211,6 @@ class ViewController: UIViewController {
     }
     
     func callToViewModelForUIUpdate(){
-        
         self.employeeViewModel =  EmployeesViewModel()
         self.employeeViewModel.bindEmployeeViewModelToController = {
             self.updateDataSource()
@@ -221,7 +218,6 @@ class ViewController: UIViewController {
     }
     
     func updateDataSource(){
-        
         self.dataSource = EmployeeTableViewDataSource(cellIdentifier: "EmployeeTableViewCell", items: self.employeeViewModel.empData.data, configureCell: { (cell, evm) in
             cell.employeeIdLabel.text = evm.id
             cell.employeeNameLabel.text = evm.employeeName
@@ -232,12 +228,10 @@ class ViewController: UIViewController {
             self.employeeTableView.reloadData()
         }
     }
-    
 }
 
 ```
 
- 
 
 UI를 업데이트하기 위해 뷰 컨트롤러에 테이블 뷰 코드를 작성할 수도 있지만 뷰 컨트롤러를 덜 지저분한 모듈식으로 만들기 위해 여기에서 `UITableViewDataSource`에서 확장되는 별도의 클래스 `EmployeeTableViewDataSource`를 만들것입니다.
 
@@ -246,7 +240,6 @@ import Foundation
 import UIKit
 
 class EmployeeTableViewDataSource<CELL : UITableViewCell, T> : NSObject, UITableViewDataSource {
-    
     private var cellIdentifier : String!
     private var items : [T]!
     var configureCell : (CELL, T) -> () = {_, _ in }
@@ -283,8 +276,8 @@ class EmployeeTableViewDataSource<CELL : UITableViewCell, T> : NSObject, UITable
 
  
 
-#### **소스 코드**
+## **소스 코드**
 
 이 데모 앱의 소스 코드는 [MVVM\_Swift 저장소](https://github.com/AbMathur/MVVM_Swift.git)로 GitHub에 있습니다. 저장소를 Clone하고 MVVM 앱으로 플레이할 수 있습니다.
 
-\[rcblock id="4384"\]
+<!-- \[rcblock id="4384"\] -->

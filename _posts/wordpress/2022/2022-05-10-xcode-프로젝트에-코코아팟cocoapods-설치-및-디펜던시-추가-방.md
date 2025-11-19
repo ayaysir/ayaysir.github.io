@@ -6,15 +6,15 @@ categories:
   - "Swift"
 ---
 
-# **Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가**
+**Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가**
 
 Xcode를 이용해서 iOS 프로젝트 등을 개발할 때 서드파티 라이브러리를 사용할 일이 많은데, 대다수 라이브러리들이 `CocoaPods`(코코아팟)라는 디펜던시 관리자를 이용해 프로젝트 내에 설치해야 합니다.
 
- 
+## **절차**
 
-## **1\. CocoaPods가 설치되지 않았다면 터미널 실행 후 아래 커맨드를 이용해 설치합니다.**
+### **1\. CocoaPods가 설치되지 않았다면 터미널 실행 후 아래 커맨드를 이용해 설치합니다.**
 
-**인텔(Intel) CPU가 설치된 맥**
+#### **인텔(Intel) CPU가 설치된 맥**
 
 ```sh
 sudo gem install cocoapods
@@ -22,7 +22,7 @@ sudo gem install cocoapods
 
  
 
-**애플 실리콘 (M 시리즈) CPU가 설치된 맥 ([Homebrew](https://brew.sh/index_ko)를 통한 설치가 가능한 환경이어야 함)**
+#### **애플 실리콘 (M 시리즈) CPU가 설치된 맥 ([Homebrew](https://brew.sh/index_ko)를 통한 설치가 가능한 환경이어야 함)**
 
 ```sh
 brew install cocoapods
@@ -30,7 +30,7 @@ brew install cocoapods
 
  
 
-## **2\. 터미널을 실행한 뒤, Xcode 프로젝트의 루트 폴더로 이동한 다음, CocoaPods 초기화를 진행합니다.**
+### **2\. 터미널을 실행한 뒤, Xcode 프로젝트의 루트 폴더로 이동한 다음, CocoaPods 초기화를 진행합니다.**
 
 ```sh
 pod init
@@ -57,7 +57,7 @@ pod init
 
 
  
-## **3\. 초기화가 완료되면, 프로젝트 루트 폴더에 `Podfile`이라는 파일이 생성됩니다. 텍스트 편집기로 해당 파일을 연 뒤, 다음과 같이 추가합니다.**
+### **3\. 초기화가 완료되면, 프로젝트 루트 폴더에 `Podfile`이라는 파일이 생성됩니다. 텍스트 편집기로 해당 파일을 연 뒤, 다음과 같이 추가합니다.**
 
 ```ruby
 # Uncomment the next line to define a global platform for your project
@@ -102,7 +102,7 @@ end
 
  
 
-## **4\. 터미널로 돌아간 뒤, 프로젝트 루트 위치에서 아래 명령을 실행합니다.**
+### **4\. 터미널로 돌아간 뒤, 프로젝트 루트 위치에서 아래 명령을 실행합니다.**
 
 ```sh
 pod install
@@ -110,6 +110,8 @@ pod install
 
  
 
-## **5\. 설치가 완료되면 프로젝트 루트 폴더에 `[프로젝트명].xcworkspace` 라는 파일이 생성됩니다. 이후 프로젝트의 모든 작업은 이 워크스페이스 파일을 열어 진행해야 합니다.**
+### **5\. 설치가 완료되면 프로젝트 루트 폴더에 `[프로젝트명].xcworkspace` 라는 파일이 생성됩니다.**
+
+이후 프로젝트의 모든 작업은 이 워크스페이스 파일을 열어 진행해야 합니다.
 
  ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-10-pm-11.33.46.jpg)

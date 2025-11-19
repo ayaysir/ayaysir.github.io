@@ -6,19 +6,22 @@ categories:
   - "Swift UIKit"
 ---
 
-##### **출처**
+**출처**
 
 - [How do I disable the full swipe on a tableview cell in iOS11](https://stackoverflow.com/questions/46414707/how-do-i-disable-the-full-swipe-on-a-tableview-cell-in-ios11)
 
  
 
-### **Swift(스위프트): 테이블 뷰(UITableView)에서 setEditing이 true일때만 삭제 등 작업 가능하게 하기**
+## **Swift(스위프트): 테이블 뷰(UITableView)에서 setEditing이 true일때만 삭제 등 작업 가능하게 하기**
 
 제목이 대체 무슨 말인가 하면
 
-아래 화면과 같이 `Edit` 버튼이 있어 에디트 모드가 따로 있는 예제 앱이 있습니다. 테이블 뷰의 에디트 모드가 모든 열(`row`)에 활성화되어 있는 상태입니다.  ![](/assets/img/wp-content/uploads/2022/05/-2022-05-30-am-3.30.50-e1653849960422.jpg)
+아래 화면과 같이 `Edit` 버튼이 있어 에디트 모드가 따로 있는 예제 앱이 있습니다. 테이블 뷰의 에디트 모드가 모든 열(`row`)에 활성화되어 있는 상태입니다.  
 
-```
+
+![](/assets/img/wp-content/uploads/2022/05/-2022-05-30-am-3.30.50-e1653849960422.jpg)
+
+```swift
 // Override to support conditional editing of the table view.
 override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     // Return false if you do not want the specified item to be editable.
@@ -55,7 +58,7 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 에디트 모드인 이 화면에서만 삭제 등의 작업을 진행하고 싶은데, 문제는 평상시 모드(`isEditing = false`)에서도 스와이프 하면 삭제 메뉴가 나타납니다.
 
 <!-- http://www.giphy.com/gifs/KhpWcDkCCIKjxG0Z5m -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWs4aHI0ZjlxMnFoZWxweTJzMTJ2a21ubTJzNHZ6b291YXo1YmFvdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KhpWcDkCCIKjxG0Z5m/giphy.gif)
 
  
 
@@ -63,7 +66,7 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 
  
 
-#### **trailingSwipeActionsConfigurationForRowAt**
+## **trailingSwipeActionsConfigurationForRowAt**
 
 이 부분은 스와이프를 오른쪽 구석(`trailing`)에서 시작할 경우에 표시할 커스텀 버튼 등을 만드는 곳입니다.
 
@@ -110,6 +113,6 @@ override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurat
  
 
 <!-- http://www.giphy.com/gifs/a0TpAI0XWhigJH4ouu -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWFjZWV2dWp0OXdmNHdrNXN5NW5tcnRhYTFyYTFzZGpiYnY0bmhkdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a0TpAI0XWhigJH4ouu/giphy.gif)
 
 이제 에디트 모드일 때에만 삭제 버튼이 활성화되고, 비에디트 모드인 경우 스와이프해도 아무 액션이 나타나지 않습니다.

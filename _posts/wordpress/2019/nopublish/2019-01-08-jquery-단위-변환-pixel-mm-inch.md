@@ -27,7 +27,7 @@ Therefore one pixel is equal to
 
 DPI는 사용자의 환경에 따라 달라지는데 여기서는 96으로 가정합니다.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 

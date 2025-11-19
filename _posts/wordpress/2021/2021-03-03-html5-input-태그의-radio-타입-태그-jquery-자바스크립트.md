@@ -12,7 +12,7 @@ input 태그에서 radio 타입은 checkbox와 다르게 특정 그룹 내 여�
 
 #### **기본 형태**
 
-```
+```html
 <input type="radio" value="1" name="score"> 1 
 <input type="radio" value="2" name="score"> 2
 <input type="radio" value="3" name="score"> 3 
@@ -36,7 +36,7 @@ input 태그에서 radio 타입은 checkbox와 다르게 특정 그룹 내 여�
 
 `checked` 속성을 추가하면 해당 라디오에 기본으로 체크가 됩니다.
 
-```
+```html
 <input type="radio" value="3" name="score" checked> 3
 ```
 

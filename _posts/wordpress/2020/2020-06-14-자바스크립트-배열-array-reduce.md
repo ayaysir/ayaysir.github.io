@@ -28,7 +28,7 @@ arr.reduce((accumulator, currentValue, opt_currentIndex, opt_array) => {
 
 #### **예제 1: 배열의 숫자 더하기**
 
-```
+```js
 const arr = [0, 1, 4, 6, 8, 10]
 const output = arr.reduce((accumulator, curretnValue) => accumulator + curretnValue) // 29
 ```
@@ -41,7 +41,7 @@ const output = arr.reduce((accumulator, curretnValue) => accumulator + curretnVa
 
 반드시 `initialValue`를 지정해야 합니다. `initialValue`는 반드시 숫자여야 할 필요는 없으며, 필요에 따라 다양한 자료형으로 선언 가능합니다.
 
-```
+```js
 const xyArr = [{
     x: 1,
     y: 0
@@ -75,7 +75,7 @@ console.log(sum2) // 16
 
 #### **예제 3: 배열 펼치기**
 
-```
+```js
 const flattend = [[0, 4], ["x", "y"], ["zz"]].reduce((acc, v) => {
     return acc.concat(v)
 })
@@ -85,7 +85,7 @@ const flattend = [[0, 4], ["x", "y"], ["zz"]].reduce((acc, v) => {
 
  
 
-```
+```js
 const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice', 'Alice']
 const count = names.reduce((allNames, name) => {
     if(name in allNames) {// in: v 키(key)가 allNames 객체 안에 있는지 확인
@@ -104,7 +104,7 @@ const count = names.reduce((allNames, name) => {
 
 #### **예제 4: 속성으로 객체 분류하기**
 
-```
+```js
 const people = [{
         name: 'Alice',
         age: 21
@@ -138,7 +138,7 @@ console.log(groupBy(people, "age"))
 
 #### **예제 5: 객체에서 배열을 뽑아 연결하기 (초기값과 획장 연산자 `...` 이용)**
 
-```
+```js
 const friends = [{
     name: 'Anna',
     books: ['Bible', 'Harry Potter'],
@@ -154,7 +154,7 @@ const friends = [{
 }]
 ```
 
-```
+```js
 const books = friends.reduce((acc, v) => {
     return [...acc, ...v.books] // acc의 모든 원소를 나열하고, v의 books에 있는 모든 원소도 나열
 }, [])
@@ -166,7 +166,7 @@ const books = friends.reduce((acc, v) => {
 
 사전에 배열을 미리 정렬합니다.
 
-```
+```js
 const dArr = [1, 2, 1, 6, 2, 2, 3, 5, 4, 5, 3, 4, 4, 7, 4, 4]
 const result = dArr.sort().reduce((acc, v) => {
     const len = acc.length
@@ -183,6 +183,6 @@ console.log(result)
 
 ##### 참고: `Array.from` 과 `Set`을 이용한 중복제거
 
-```
+```js
 const result = Array.from(new Set(dArr))
 ```

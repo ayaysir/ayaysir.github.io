@@ -14,7 +14,7 @@ categories:
 
 먼저 자바스크립트에서 브라우저의 언어를 알아내는 방법은 다음과 같습니다.
 
-```
+```js
 function getLanguage() {
   return navigator.language || navigator.userLanguage;
 }

@@ -22,7 +22,7 @@ function* generator1() {
 
 `yield` 키워드는 사용자가 명시적으로 다음 값을 호출할 때 반환할 값 앞에 붙이는 키워드입니다. 그러면 다음값을 호출하는 방법은 무엇일까요? `generator()` 함수를 실행한 형태에서 뒤에 `.next()`를 붙이면 `yield` 값이 순차적으로 반환이 됩니다.
 
-```
+```js
 const gen1 = generator1()
 console.log(gen1.next(), gen1.next(), gen1.next())
 ```
@@ -48,7 +48,7 @@ for(let num of generator1()) {
 
 제너레이터 순회 종료를 하는 방법으로 `.return()`을 사용하는 방법이 있습니다.
 
-```
+```js
 const gen1 = generator1()
 console.log(gen1.next(), gen1.return(-Infinity), gen1.next())
 ```
@@ -73,7 +73,7 @@ function* idMaker(){
 }
 ```
 
-```
+```js
 const idm = idMaker()
 console.log(idm.next(), idm.next()) // 1, 2
 ```
@@ -98,7 +98,7 @@ function* generator2(startNum = 15) {
 }
 ```
 
-```
+```js
 const gen2 = generator2(20)
 console.log(gen2.next(), gen2.next())
 console.log(gen2.throw("err"), gen2.next())

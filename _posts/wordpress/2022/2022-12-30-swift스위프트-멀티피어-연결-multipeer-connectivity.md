@@ -104,7 +104,7 @@ private let localPeerID = MCPeerID(displayName: UIDevice.current.name)
 
 아래 코드를 `viewDidLoad(:_)`에 추가합니다.
 
-```
+```swift
 self.advertiser = MCNearbyServiceAdvertiser(
     peer: localPeerID,
     discoveryInfo: nil,
@@ -183,7 +183,7 @@ present(alertController, animated: true)
 
 `viewDidLoad()`에 아래 부분을 추가합니다.
 
-```
+```swift
 self.session = MCSession(
     peer: localPeerID,
     securityIdentity: nil,

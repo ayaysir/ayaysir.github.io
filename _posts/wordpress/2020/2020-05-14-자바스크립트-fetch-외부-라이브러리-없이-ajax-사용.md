@@ -44,7 +44,7 @@ fetch("https://reqres.in/api/users?page=2", {
 
 #### **POST 예제**
 
-```
+```js
 const postTest = (name, job) => {
     fetch("https://reqres.in/api/users", {
         method: "post",
@@ -98,7 +98,7 @@ const postTest = (name, job) => {
 
 #### **POST 예제** **(async - await)**
 
-```
+```js
 const postTest = async (name, job) => {
     const fetchObj = {
         method: "post",

@@ -43,7 +43,7 @@ D . .
 G . .`
 ```
 
-```
+```js
 function traverseTree(inputStr) {
     const spl = inputStr.split(/\n/)
     const nodeCount = spl[0]

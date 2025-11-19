@@ -68,7 +68,7 @@ $ npm install // 노드모듈 인스톨
 
 개인적으로 맨땅에서 웹팩 프로젝트를 생성하는 것이 어렵게 느껴지는 이유가 웹팩을 설치한다고 해서 config 파일을 자동으로 만들어주는 것은 아니기 때문입니다.
 
-```
+```js
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
@@ -218,7 +218,7 @@ export default function App() {
 
 **index.html**
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>

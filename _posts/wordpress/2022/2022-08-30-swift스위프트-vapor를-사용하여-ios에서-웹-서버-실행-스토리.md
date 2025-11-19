@@ -218,8 +218,8 @@ extension URL {
 
 **사전 작업 2:** 아래 파일을 `Server/Views` 그룹 밑에 `files.leaf`라는 이름으로 추가합니다. 이 파일은 HTML의 프론트엔드 부분을 렌더링해서 출력하는 파일입니다.
 
-```
-<!doctype html>
+```html
+<!DOCTYPE html>
 
 <html lang="en">
   <head>

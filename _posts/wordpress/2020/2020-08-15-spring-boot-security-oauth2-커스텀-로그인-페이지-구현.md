@@ -147,7 +147,7 @@ public class LoginController {
 
 ##### **3) 뷰 페이지 구현 (oauth-login.html)**
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>

@@ -27,7 +27,7 @@ MMD Loader는 three.js 마스터 소스에 기본적으로 내장되어 있으�
 
 주요 개념은 카메라(camera), 장면(scene), 물체(object), 조명(light), 재질(material), 각종 도형 등이 있으며 그 외에 컨트롤, 헬퍼 등을 알고 있어야 한다.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 

@@ -19,7 +19,7 @@ categories:
 
 **자바스크립트**
 
-```
+```js
 const names = ["James", "Thomas", "Joseph", "Jacob"]
 names.filter(x => console.log(x))
 ```
@@ -59,7 +59,7 @@ public class StreamTest {
 
 **자바스크립트**
 
-```
+```js
 const names = ["James", "Thomas", "Joseph", "Jacob"]
 const filtered = names.filter(x => x.indexOf("J") !== -1)
 console.log(filtered)
@@ -106,7 +106,7 @@ List<String> filtered2 = stream.collect(Collectors.toCollection(LinkedList::new)
 
 **자바스크립트**
 
-```
+```js
 const numArr1 = [3, 7, 23, 9, 11, 4]
 
 numArr1.slice().sort().forEach(e => console.log(e)) // 3, 4, 7, 9, 11, 23
@@ -143,7 +143,7 @@ public class StreamTest {
 
 **자바스크립트**
 
-```
+```js
 const names = ["James", "Thomas", "Joseph", "Jacob"]
 
 names.map(x => x + " Simpson").forEach(e => console.log(e))
@@ -185,7 +185,7 @@ public class StreamTest {
 
 **자바스크립트**
 
-```
+```js
 const nums = [1, 7, 49, 3, 93, 68, 10, 33, 12]
 const max = nums.reduce((max, current) => Math.max(max, current))
 console.log(max) // 93

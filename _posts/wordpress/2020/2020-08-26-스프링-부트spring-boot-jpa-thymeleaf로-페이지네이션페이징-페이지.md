@@ -151,7 +151,7 @@ public class IndexController {
 
 페이지별 게시물 목록은 JPA에서 처리했기 때문에 알아서 잘 내려올 것이지만, 페이지 블럭 부분은 별도로 만들어줘야 합니다. Thymeleaf와 [부트스트랩](https://getbootstrap.com/docs/4.0/components/pagination/)이 사용되었습니다.
 
-```
+```html
 <div class="row" th:if="${pageInfo ne null}">
     <div class="col-12">
         <ul class="pagination pagination justify-content-center">

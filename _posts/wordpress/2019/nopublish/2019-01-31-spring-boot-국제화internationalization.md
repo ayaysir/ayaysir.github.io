@@ -137,7 +137,7 @@ public class InternationalController {
 
 ##### 3\. HTML (뷰) 생성 (**Thymeleaf** 사용)
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>

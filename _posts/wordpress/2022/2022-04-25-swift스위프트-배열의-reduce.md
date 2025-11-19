@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-### **Swift: 배열의 reduce**
+## **Swift: 배열의 reduce**
 
 스위프트(Swift)에서 배열(Array)의 `reduce` 기능은 배열을 순회하면서 누산기(`accumulator`)에 값을 계속 쌓아놓고 최종적으로 누산기의 값을 반환하는 reducer의 기능을 수행하는 고차 함수입니다. reducer의 사전적 의미와 매칭이 잘 안되는데 어떤 물질에서 원액(누산기의 값)만 추출한다는 의미로 생각하면 될 것 같습니다.
 
@@ -14,11 +14,11 @@ categories:
 
  
 
-#### **형태**
+## **형태**
 
 Swift의 reduce는 두 가지 형태가 있습니다.
 
-##### **제 1형태**
+### **제 1형태**
 
 ```swift
 func reduce<Result>(_ initialResult: Result, _ nextPartialResult: (Result, Element) throws -> Result) rethrows -> Result
@@ -29,11 +29,10 @@ func reduce<Result>(_ initialResult: Result, _ nextPartialResult: (Result, Eleme
 
  
 
-##### **제 2형태**
+### **제 2형태**
 
 ```swift
 func reduce<Result>(into initialResult: Result, _ updateAccumulatingResult: (inout Result, Element) throws -> ()) rethrows -> Result
-
 ```
 
 - `initialResult` 초기 누적 값으로 사용할 값입니다.
@@ -45,17 +44,17 @@ func reduce<Result>(into initialResult: Result, _ updateAccumulatingResult: (ino
 
 예제 코드를 보면 차이점을 바로 알 수 있습니다.
 
- 
+## **예제**
 
 아래 예제들은 자바스크립트의 배열 reduce 에서도 동일한 예제로 다루고 있으니 자바스크립트에 관심있으면 읽어보는 것을 추천드립니다.
 
-- [자바스크립트: 배열 Array.reduce](http://yoonbumtae.com/?p=2496)
+- [자바스크립트: 배열 Array.reduce](/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4-array-reduce/)
 
  
 
-#### **예제 1) 배열의 숫자 더하기**
+### **예제 1) 배열의 숫자 더하기**
 
-```
+```swift
 let arr = [0, 1, 4, 6, 8, 10]
 let sum = arr.reduce(0) { partialResult, currentValue in
     return partialResult + currentValue
@@ -64,7 +63,7 @@ let sum = arr.reduce(0) { partialResult, currentValue in
 // 합계(sum): 29
 ```
 
-```
+```swift
 let sum2 = arr.reduce(into: 0) { partialResult, currentValue in
     partialResult += currentValue
 }
@@ -74,9 +73,9 @@ let sum2 = arr.reduce(into: 0) { partialResult, currentValue in
 
  
 
-#### **예제 2) 배열 내 객체의 숫자 더하기**
+### **예제 2) 배열 내 객체의 숫자 더하기**
 
-```
+```swift
 let xyArr = [
     ["x": 1, "y": 0],
     ["x": 2, "y": 5],
@@ -84,7 +83,7 @@ let xyArr = [
 ]
 ```
 
-```
+```swift
 // x 값만 더하기 (1형태)
 let xSum = xyArr.reduce(0) { partialResult, currentValue in
     return partialResult +  currentValue["x"]!
@@ -102,7 +101,7 @@ let xSum2 = xyArr.reduce(into: 0) { partialResult, currentValue in
 
  
 
-```
+```swift
 // x, y 각각 더하고 딕셔너리로 결과 반환 (1형태)
 let xySum = xyArr.reduce(["x": 0, "y": 0]) { partialResult, currentValue in
     // partialResult["x"]! += 1
@@ -130,9 +129,9 @@ let xySum2 = xyArr.reduce(into: ["x": 0, "y": 0]) { partialResult, currentValue 
 
  
 
-#### **예제 3) 2차원 배열 펼치기 (1차원으로 평탄화)**
+### **예제 3) 2차원 배열 펼치기 (1차원으로 평탄화)**
 
-```
+```swift
 let twoDimArray: [[Any]] = [[0, 4], ["x", "y"], ["zz"]]
 
 // 1형태
@@ -153,9 +152,9 @@ twoDimArray.reduce(into: []) { partialResult, currentValue in
 
  
 
-#### **예제 4) 중복 원소 몇 개인지 세기**
+### **예제 4) 중복 원소 몇 개인지 세기**
 
-```
+```swift
 let names = ["Alice", "Bob", "Tiff", "Bruce", "Alice", "Alice", "Tiff"]
 
 // 1형태
@@ -179,7 +178,7 @@ names.reduce(into: [String: Int]()) { partialResult, currentValue in
 
  
 
-##### **예제 5) Person을 나이(age)별로 분류**
+### **예제 5) Person을 나이(age)별로 분류**
 
 ```swift
 struct Person {
@@ -194,7 +193,7 @@ let people = [
 ]
 ```
 
-```
+```swift
 // 1형태
 people.reduce( [Int: [Person]]() ) { partialResult, currentPerson in
     var partialResult = partialResult
@@ -209,11 +208,12 @@ people.reduce(into: [Int: [Person]]() ) { partialResult, currentPerson in
 
 ```
 
-\[caption id="attachment\_4392" align="alignnone" width="456"\] ![](/assets/img/wp-content/uploads/2022/04/screenshot-2022-04-25-pm-9.20.15.png) \[Int: \[Person\]\] 타입의 결과\[/caption\] 
+![](/assets/img/wp-content/uploads/2022/04/screenshot-2022-04-25-pm-9.20.15.png) 
+*`[Int: [Person]]` 타입의 결과*
 
  
 
-#### **예제 6) 객체에서 배열을 뽑아 연결하기**
+### **예제 6) 객체에서 배열을 뽑아 연결하기**
 
 ```swift
 struct Reader {
@@ -229,7 +229,7 @@ let readers = [
 ]
 ```
 
-```
+```swift
 // 1형태
 readers.reduce([]) { partialResult, currentReader in
     return partialResult + currentReader.books
@@ -246,9 +246,9 @@ readers.reduce(into: []) { partialResult, currentReader in
 
  
 
-#### **예제 7) 배열의 중복값 제거**
+### **예제 7) 배열의 중복값 제거**
 
-```
+```swift
 let numArr = [1, 2, 1, 6, 2, 2, 3, 5, 4, 5, 3, 4, 4, 7, 4, 4]
 
 // 1형태
@@ -280,5 +280,5 @@ numArr.sorted().reduce(into: [Int]()) { partialResult, currentValue in
 - 참고) `Set`을 이용한 중복제거 - `Set(numArr).sorted()`
 
  
-
-스위프트 Swift 리듀스 reduce 리듀서 reducer array 배열 맵 map 사전 딕셔너리 dict dictionary reduce int string accumulator
+<span style="font-size: 2px;">
+스위프트 Swift 리듀스 reduce 리듀서 reducer array 배열 맵 map 사전 딕셔너리 dict dictionary reduce int string accumulator</span>

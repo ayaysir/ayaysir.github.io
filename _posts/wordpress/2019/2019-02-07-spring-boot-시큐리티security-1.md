@@ -404,7 +404,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 뷰 페이지(Thymeleaf)를 작성합니다. 다른 설정을 하지 않았다면 **src/main/resources/template/** 폴더 밑에 **home.html**이라는 이름으로 작성합니다.
 
-```
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"  
     xmlns:th="http://www.thymeleaf.org"

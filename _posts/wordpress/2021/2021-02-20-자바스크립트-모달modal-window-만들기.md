@@ -25,7 +25,7 @@ categories:
 
 일단 아무 기능이 없는 모달창을 만들어 보겠습니다.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -152,7 +152,7 @@ categories:
 }
 ```
 
-```
+```js
 const modal = document.getElementById("modal")
 const btnModal = document.getElementById("btn-modal")
 btnModal.addEventListener("click", e => {
@@ -166,7 +166,7 @@ btnModal.addEventListener("click", e => {
 
 X(클로즈) 버튼에 위 예제와 반대되는 이벤트를 부여합니다.
 
-```
+```js
 const closeBtn = modal.querySelector(".close-area")
 closeBtn.addEventListener("click", e => {
     modal.style.display = "none"
@@ -210,7 +210,7 @@ window.addEventListener("keyup", e => {
 
 **전체 자바스크립트 코드는 다음과 같습니다.**
 
-```
+```js
 const loremIpsum = document.getElementById("lorem-ipsum")
 
 fetch("https://baconipsum.com/api/?type=all-meat&paras=200&format=html")

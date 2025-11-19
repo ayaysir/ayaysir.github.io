@@ -21,7 +21,7 @@ categories:
 
 #### **Debounce**
 
-```
+```js
 function debounce(callback, limit = 100) {
     let timeout
     return function(...args) {
@@ -43,7 +43,7 @@ function debounce(callback, limit = 100) {
 
 #### **Throttle**
 
-```
+```js
 function throttle(callback, limit = 100) {
     let waiting = false
     return function() {

@@ -437,7 +437,7 @@ HTML 뷰에서도 처리하였지만 업로드된 파일이 0개이면 작업을
 
 ##### **다음은 업로드 뷰 페이지(Thymeleaf) 입니다.**
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 

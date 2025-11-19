@@ -16,7 +16,7 @@ tags:
 
 이벤트 객체 `$event`를 사용하여 이벤트 핸들러를 가져올 수 있습니다.
 
-```
+```html
 <div id="foo" v-on:click="select($event)">...</div>
 ```
 
@@ -39,7 +39,7 @@ export default {
 
 첫 번째 코드는 다음과 같이 줄여쓸 수 있습니다. `v-on:click`은 `@click`으로 줄일 수 있고, `select`의 파라미터를 생략하면 자동으로 이벤트 객체를 넘겨줍니다.
 
-```
+```html
 <div id="foo" @click="select">...</div>
 ```
 
@@ -47,7 +47,7 @@ export default {
 
 단, 위의 경우 파라미터가 1개인 경우만 사용할 수 있습니다. 파라미터가 여러 개라면 아래와 같이 사용하세요.
 
-```
+```html
 <div id="foo" @click="select(bar, $event)">...</div>
 ```
 

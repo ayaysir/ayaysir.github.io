@@ -22,7 +22,7 @@ categories:
 
  
 
-```
+```js
 const N = 5
 
 // 배열 생성
@@ -62,7 +62,7 @@ function rotateArr(originalArr) {
 
  
 
-```
+```js
 const rotatedArr = Array.from(Array(N), () => new Array(5).fill(null))
 
 for (let row = 0; row < N; row++) {
@@ -81,7 +81,7 @@ for (let row = 0; row < N; row++) {
 
 이 공식들을 이용해서 배열을 회전하는 모든 경우의 수에 대응할 수 있는 함수 코드를 추가합니다.
 
-```
+```js
 function viewArr(arr, title) {
     let text = ""
     for (let i = 0; i < N; i++) {

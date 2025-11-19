@@ -9,7 +9,7 @@ categories:
 
 JQuery UI (일반 JQuery와는 별개인 파생 프로젝트, [https://jqueryui.com/](https://jqueryui.com/)) Selectable과 Sortable 동시에 사용하기 예제이다.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>

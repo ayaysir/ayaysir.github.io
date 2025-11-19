@@ -6,13 +6,13 @@ categories:
   - "JavaScript"
 ---
 
-### **타입스크립트(TypeScript): HTML 요소에 이벤트 추가**
+## **타입스크립트(TypeScript): HTML 요소에 이벤트 추가**
 
 이벤트 할당 방법은 자바스크립트와 본질적으로는 동일하지만, 일반 자바스크립트와 다른 점이라면 타입스크립트 코드에서는 변수가 어떤 타입인지를 명시해야 한다는 점입니다. 타입을 제대로 지정하지 않을 경우 코드상에서 빨간 밑줄로 표시되는 에러가 발생합니다.
 
- 
+### **절차**
 
-#### **1: Typescript 프로젝트를 생성합니다. npm과 vite를 이용하면 타입스크립트 프로젝트를 만들 수 있습니다.**
+### **1: Typescript 프로젝트를 생성합니다. npm과 vite를 이용하면 타입스크립트 프로젝트를 만들 수 있습니다.**
 
 - [첫 vite 프로젝트 만들어보기](https://vitejs-kr.github.io/guide/#scaffolding-your-first-vite-project)
 
@@ -20,9 +20,9 @@ categories:
 
  
 
-#### **2: HTML 파일(index.html)을 작성합니다.**
+### **2: HTML 파일(index.html)을 작성합니다.**
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,13 +43,13 @@ categories:
 
  
 
-#### **3: HTML 파일에 요소를 추가하고 그 요소에 이벤트 부여하기**
+### **3: HTML 파일에 요소를 추가하고 그 요소에 이벤트 부여하기**
 
 아래에 나오는 모든 HTML 소스코드는 **_index.html_** 파일의 `<body>` 태그 내에 추가합니다. 타입스크립트 소스코드는 **_main.ts_** 파일에 추가합니다.
 
- 
 
-##### **예제 1) 클릭 이벤트**
+
+#### **예제 1) 클릭 이벤트**
 
 <!-- http://www.giphy.com/gifs/RN87K9Hk1i0glMwNui -->
 ![](https://)
@@ -58,7 +58,7 @@ categories:
 
  
 
-```
+```html
 <div
   id="box"
   style="height: 200px; width: 200px; background-color: blue"
@@ -69,7 +69,7 @@ categories:
 
  
 
-```
+```js
 const box = document.getElementById("box")
 box?.addEventListener("click", (ev: Event) => {
   ev.preventDefault()
@@ -91,14 +91,14 @@ box?.addEventListener("click", (ev: Event) => {
 
  
 
-##### **예제 2) 체크박스 변경(change) 이벤트** 
+#### **예제 2) 체크박스 변경(change) 이벤트** 
 
 <!-- http://www.giphy.com/gifs/bX0HSb5cii4wyhMI9x -->
-![](https://)
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWhyNDcwcG85Z2NyeHlwYjM5NXNuc2ZjZGo5MGQyZTdyYm96cWRkNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bX0HSb5cii4wyhMI9x/giphy.gif)
 
  
 
-```
+```html
 <input id="input-check" type="checkbox">
 <span id="display-check"></span>
 ```
@@ -107,7 +107,7 @@ box?.addEventListener("click", (ev: Event) => {
 
  
 
-```
+```js
 const displayCheck = document.getElementById("display-check")
 const inputCheck = document.getElementById("input-check")
 inputCheck?.addEventListener("change", (ev: Event) => {
@@ -128,11 +128,11 @@ inputCheck?.addEventListener("change", (ev: Event) => {
 
  
 
-##### **예제 3) 키보드 입력(keydown) 이벤트**
+#### **예제 3) 키보드 입력(keydown) 이벤트**
 
  
 
-```
+```html
 <p id="display-count">keydown 횟수</p>
 ```
 
@@ -140,7 +140,7 @@ inputCheck?.addEventListener("change", (ev: Event) => {
 
  
 
-```
+```js
 const displayCount = document.getElementById("display-count")
 let count = 0
 window.addEventListener("keydown", (ev: Event) => {
@@ -156,10 +156,10 @@ window.addEventListener("keydown", (ev: Event) => {
 
  
 
-##### **예제 4) instanceof를 사용해 요소 타입별로 구분하여 실행하기**
+#### **예제 4) instanceof를 사용해 요소 타입별로 구분하여 실행하기**
 
 <!-- http://www.giphy.com/gifs/d6UgCZSScXxqDnLSRV -->
-![](https://)
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExajdtdXM3czQ0b3FkZHllcThoNHd1NW5rdnc5OW41d3Blazh6anZ0ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d6UgCZSScXxqDnLSRV/giphy.gif)
 
 이 예제는 `textbox`라는 클래스를 가진 각각 다른 타입의 HTML 요소 3개(`input`, `textarea`, `div`)에 같은 이벤트 함수를 지정한 뒤, 해당 이벤트가 실행된 요소의 하위 타입을 구분해서 각 타입별로 다른 내용을 실행하는 예제입니다.
 
@@ -167,7 +167,7 @@ window.addEventListener("keydown", (ev: Event) => {
 
  
 
-```
+```html
 <p id="display-current-element"></p>
 <input class="textbox" type="text">
 <textarea class="textbox"></textarea>
@@ -178,7 +178,7 @@ window.addEventListener("keydown", (ev: Event) => {
 
  
 
-```
+```js
 const displayCurrentElement = document.getElementById("display-current-element")
 const handleClickEvent = (ev: Event) => {
   if(ev.target instanceof HTMLInputElement) {
@@ -207,5 +207,5 @@ changeElements.forEach((value: Element) => {
     - `change` 클래스를 가지는 모든 요소에 이벤트를 할당합니다.
 
  
-
-타입스크립트 이벤트 ts event type TypeScript Event TS 타입스크립트 클릭 변경 click change 이벤트 타입
+<span style="font-size: 2px;">
+타입스크립트 이벤트 ts event type TypeScript Event TS 타입스크립트 클릭 변경 click change 이벤트 타입</span>

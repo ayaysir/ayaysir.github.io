@@ -6,20 +6,20 @@ categories:
   - "Swift"
 ---
 
-##### **출처**
+**출처**
 
 - [Generics - The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/Generics.html) 
 
  
 
-#### **제네릭 (Generics)**
+## **제네릭 (Generics)**
 
 - 데이터 형식에 의존하지 않고, 하나의 값이 여러 다른 데이터 타입들을 가질 수 있는 기술에 중점을 두어 재사용성을 높일 수 있는 프로그래밍 방식입니다.
-- 예를 들어, Swift의 Array와 Dictionary 유형은 모두 제네릭 컬렉션입니다.
+- 예를 들어, Swift의 `Array`와 `Dictionary` 유형은 모두 제네릭 컬렉션입니다.
 
  
 
-#### **제네릭이 해결하는 문제**
+## **제네릭이 해결하는 문제**
 
 `swap`(교환) 함수를 구현하고자 합니다. swap은 단순히 두 변수의 값을 바꾸는 것 뿐으로 거의 대부분의 타입에서 사용 가능한 기능입니다. 예를 들어 `Int`, `String`, `Double` 및 기타 등등이 전부 swap 가능한 타입들입니다. 일단 `Int` 타입에 대한 `swap(_:_:)` 함수를 일반적인 방식으로 구현하면 다음과 같습니다.
 
@@ -66,7 +66,7 @@ func swapTwoDoubles(_ a: inout Double, _ b: inout Double) {
 
  
 
-#### **제네릭 함수**
+## **제네릭 함수**
 
 위의 `swap` 함수들에서 다른 것은 파라미터 타입뿐이고, 안의 로직은 동일합니다. 제네릭 함수는 함수에 가상의 타입을 부여한 뒤, 이것을 파라미터로 받고 처리합니다.
 
@@ -90,9 +90,9 @@ func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
     - 이제 이 파라미터에는 `a`, `b` 가 같은 타입인 한 아무 타입이나 입력할 수 있습니다. 단 둘이 다른 타입은 안됩니다. (둘 다 `T`타입이므로 같은 타입을 입력해야 함)
 - 이 예제에서는 제네릭 타입이 `T` 하나이지만, 여러 타입을 지정하는 것도 가능합니다. 예)  `<T, U, V>`
 
- 
+<br>
 
-```
+```swift
 var someString = "Javelin"
 var anotherString = "Stinger"
 swapTwoValues(&someString, &anotherString)
@@ -115,7 +115,7 @@ print(someDouble, ":", anotherDouble)
 
  
 
-#### **제네릭 타입**
+## **제네릭 타입**
 
 - 제네릭 함수와 마찬가지로, `class`, `struct`, `enum` 및 모든 타입 등에서도 사용자 정의의 제네릭 타입을 정의하는 것이 가능합니다.
 - 앞서 언급한 `Array`, `Dictionary` 등이 대표적인 제네릭 타입입니다.
@@ -199,7 +199,7 @@ struct Stack<Element> {
 
  
 
-```
+```swift
 var stackOfStrings = Stack<String>()
 stackOfStrings.push("uno")
 stackOfStrings.push("dos")
@@ -219,15 +219,17 @@ stackOfStrings.items
 
  
 
-\[caption id="attachment\_4507" align="alignnone" width="1520"\] ![](/assets/img/wp-content/uploads/2022/05/stackPushedFourStrings_2x.png) 최초 스택에 push하는 과정\[/caption\]
+![최초 스택에 push하는 과정](/assets/img/wp-content/uploads/2022/05/stackPushedFourStrings_2x.png)  
+*최초 스택에 push하는 과정*
 
  
 
-\[caption id="attachment\_4508" align="alignnone" width="904"\] ![](/assets/img/wp-content/uploads/2022/05/stackPoppedOneString_2x.png) 스택 최상단의 값 "cuatro"를 pop 하는 과정\[/caption\]
+![스택 최상단의 값 "cuatro"를 pop 하는 과정](/assets/img/wp-content/uploads/2022/05/stackPoppedOneString_2x.png)  
+*스택 최상단의 값 "cuatro"를 pop 하는 과정*
 
  
 
-#### **제네릭 타입의 확장**
+## **제네릭 타입의 확장**
 
 앞의 `Stack` 예제에서 `struct` 부분에 제네릭이 선언되었다면, 확장(`extension`)에서는 따로 제네릭을 추가하지 않아도(`extension`에서는 제네릭 추가도 불가능합니다.) 제네릭 사용이 가능합니다.
 
@@ -244,7 +246,7 @@ stackOfStrings.topItem // "tres"
 
  
 
-#### **타입 제약 조건(Type Constaints)**
+## **타입 제약 조건(Type Constaints)**
 
 - 앞의 예의 제네릭 타입들은 모든 타입을 사용하는 것이 가능했지만, 경우에 따라 일부 타입으로 제한해야 하는 경우도 있습니다. 이러한 경우를 타입 제약 조건이라고 합니다.
 - 타입의 제약 조건은 해당 타입이 특정 클래스를 상속하거나, 또는 프로토콜을 준수하는 것으로 실현할 수 있습니다.
@@ -252,7 +254,7 @@ stackOfStrings.topItem // "tres"
 
  
 
-#### **타입 제약 조건의 문법**
+## **타입 제약 조건의 문법**
 
 ```swift
 func someFunction<T: SomeClass, U: SomeProtocol>(someT: T, someU: U) {
@@ -266,7 +268,7 @@ func someFunction<T: SomeClass, U: SomeProtocol>(someT: T, someU: U) {
 
  
 
-#### **타입 제약 조건의 실제 적용 예**
+## **타입 제약 조건의 실제 적용 예**
 
 아래 함수는 배열에 어떠한 값이 있다면 몇 번째 인덱스에 있는지를 반환하는 제네릭과 무관한 함수입니다.
 
@@ -313,7 +315,7 @@ func findIndex<T: Equatable>(of valueToFind: T, in array:[T]) -> Int? { ... }
 
 제약 조건을 지정하므로서 컴파일 오류도 방지하고 함수 사용자에게 어떠한 프로토콜을 준수하는 타입이 필요한지 알려주는 기능도 있어 매우 편리하다고 할 수 있습니다.
 
-```
+```swift
 let doubleIndex = findIndex(of: 9.3, in: [3.14159, 0.1, 0.25])
 // 9.3은 in 배열에 없으므로 doubleIndex는 nil이 반환됩니다.
 
@@ -323,7 +325,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
  
 
-#### **연관 타입 (Associated Type)**
+## **연관 타입 (Associated Type)**
 
 연관 타입은 프로토콜에서 사용하는 것으로, 프로토콜의 변수 및 메서드 등이 특정 타입에 국한되지 않고 다양한 타입에서 사용될 것이라고 예상될 때 타입을 연관 타입으로 지정하면 해당 프로토콜을 준수하는 클래스나 구조체 등에서 구체적 타입을 자유롭게 지정할 수 있습니다.
 
@@ -410,7 +412,7 @@ struct Stack<Element>: Container {
 
  
 
-#### **기존 타입을 확장하여 연관 타입 지정**
+## **기존 타입을 확장하여 연관 타입 지정**
 
 사실 위의 `Container` 프로토콜은 `Array`에서 제공하는 기능을 포함하고 있습니다. 실제로 `append`, `count`, `subscript`등의 기능은 `Array`에 구현되어 있고 대부분 자주 사용하는 기능입니다. 따라서 `Array`의 `extension`에 `Container` 프르토콜을 준수하도록 추가할 수 있습니다. 다음과 같이 빈 확장을 추가합니다.
 
@@ -422,7 +424,7 @@ extension Array: Container {}
 
  
 
-#### **연관 타입에 제약 조건 추가**
+## **연관 타입에 제약 조건 추가**
 
 ```swift
 protocol Container {
@@ -441,7 +443,7 @@ protocol Container {
 
 <!-- \[the\_ad id="3513"\] -->
 
-#### **연관 타입의 제약 조건에 프로토콜 사용**
+## **연관 타입의 제약 조건에 프로토콜 사용**
 
 아래 `SuffixableContaner` 프로토콜은 `Container`의 기능에 컨테이너 끝에서 주어진 수의 요소를 반환하여 `Suffix` 유형의 인스턴스에 저장하는 `suffix(_:)` 메서드를 추가한 프로토콜입니다.
 
@@ -509,7 +511,7 @@ let suffix = stackOfInts.suffix(2)
 
  
 
-##### **where Suffix.Item == Item의 의미**
+### **where Suffix.Item == Item의 의미**
 
  ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-27-am-9.20.03.jpg)
 
@@ -521,7 +523,7 @@ let suffix = stackOfInts.suffix(2)
 
  
 
-#### **제네릭에서의 where**
+## **제네릭에서의 where**
 
 - 제네릭에서 `where`절을 사용하면 연관 타입이 특정 프로토콜을 준수해야 하거나 특정 형식 파라미터와 연결된 형식이 같아야 한다고 요구사항을 지정할 수 있습니다.
 - 제네릭 `where`절은 `where`키워드로 시작하고 그 뒤에 연관 타입에 대한 제약 조건 또는 어떠한 타입과 연관 타입 간의 동등 관계가 옵니다.
@@ -587,7 +589,7 @@ if allItemsMatch(stackOfStrings, arrayOfStrings) {
 
  
 
-#### **제네릭 where 절이 있는 extension**
+## **제네릭 where 절이 있는 extension**
 
 `extension`에 `where` 절을 사용할 수 있습니다. 아래는 스택의 최상위 항목과 주어진 아이템이 일치하는지 검사하는 함수 `isTop(_:)`가 포함된 `extension`입니다.
 
@@ -683,7 +685,7 @@ print([1260.0, 1200.0, 98.6, 37.0].average())
 
  
 
-#### **컨텍스트(상황, 문맥)적 where 절**
+## **컨텍스트(상황, 문맥)적 where 절**
 
 앞서 살펴본 `avarage()` 메서드는 `Item`이 `Double`이어야 함을 요구했습니다. 또 하나의 메서드를 추가하고자 하는데, 이번에는 특정 컨테이너의 마지막 아이템이 주어진 아이템과 일치하는지를 검사하는 `endsWith(_:)` 메서드를 추가하고 싶습니다. `extenson`을 사용한 `where`절을 사용하면 다음과 같습니다.
 
@@ -739,7 +741,7 @@ print(numbers.endsWith(37))
 
  
 
-#### **연관 타입과 where 절**
+## **연관 타입과 where 절**
 
 `SuffixableContainer` 코드에서 언급했듯이, 연관 타입에도 `where`절을 사용할 수 있습니다.
 
@@ -767,7 +769,7 @@ protocol ComparableContainer: Container where Item: Comparable { }
 
  
 
-#### **Subscript에 제네릭 타입 사용**
+## **Subscript에 제네릭 타입 사용**
 
 ```swift
 extension Container {

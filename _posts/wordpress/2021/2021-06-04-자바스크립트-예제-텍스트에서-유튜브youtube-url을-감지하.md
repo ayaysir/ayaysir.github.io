@@ -29,7 +29,7 @@ const youtubeUrl = /(http:|https:)?(\/\/)?(www\.)?(youtube.com|youtu.be)\/(watch
 
 ##### **2\. 해당 텍스트를 DOM 으로부터 불러온 뒤, innerHTML을 replace 합니다.**
 
-```
+```html
 <div id="content">
 유튜브 영상에서 주소를 복사한 후 글 아무데나 삽입하면 됩니다.
 
@@ -39,7 +39,7 @@ https://yㅇutu.be/J0dHN1yC0NI
 </div>
 ```
 
-```
+```js
 const content = document.querySelector("#content")
 
 // str.replace(regexp|substr, newSubstr|function)
@@ -54,7 +54,7 @@ const wrappedContent = content.innerHTML.replace(youtubeUrlExp, youtubeParser)
 
 ##### **3\. 텍스트를 대체하는 함수를 만듭니다. (youtubeParser)**
 
-```
+```js
 function youtubeParser(url, ...groups) {
   const container = `
     <div class="video-container">

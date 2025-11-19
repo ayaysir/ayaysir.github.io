@@ -6,21 +6,20 @@ categories:
   - "React.js"
 ---
 
-리액트가 아닌 일반 타입스크립트에 대한 이벤트 처리는 아래를 참고하세요,
+리액트가 아닌 일반 타입스크립트에 대한 이벤트 처리는 아래를 참고하세요.
 
-- [타입스크립트(TypeScript): HTML 요소에 이벤트 추가](http://yoonbumtae.com/?p=4367)
+- [타입스크립트(TypeScript): HTML 요소에 이벤트 추가](/posts/타입스크립트typescript-html-요소에-이벤트-추가/)
 
  
 
-## **리액트 + 타입스크립트 (React + TypeScript): HTML 요소, 폼의 이벤트 처리**
+## **오류 발생하는 기존 코드**
 
 아래와 같이 폼에 대한 이벤트 처리를 하는 JSX를 사용한 리액트 Hook이 있다고 가정합니다.
 
-```
+```tsx
 import { useState } from 'react'
 
 function App() {
-
   const [text, setText] = useState("")
   const [keydownCount, setKeydownCount] = useState(0)
   const [isChecked, setChecked] = useState(false)
@@ -71,7 +70,7 @@ export default App
 ```
 
 <!-- http://www.giphy.com/gifs/7Y2H2DRhbm736ZhNzF -->
-![](https://)
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmRzMjMwbHQxbHpzYmpteHp4NTJnY2sxenE0MHQ4bHRsZnBsMGJyayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7Y2H2DRhbm736ZhNzF/giphy.gif)
 
  
 
@@ -85,7 +84,7 @@ export default App
 
  
 
-### **해결 방법**
+## **해결 방법 1**
 
 이를 해결하려면 `e` 변수에 타입을 지정해서 알려주면 됩니다. 리액트에서는 `React.ChangeEvent`와 `React.FormEvent` 등 이벤트 관련 타입을 지원합니다.
 
@@ -97,15 +96,15 @@ export default App
 
  
 
-#### **Step 1: ChangeEvent, FormEvent를 import 합니다.**
+### **Step 1: ChangeEvent, FormEvent를 import 합니다.**
 
-```
+```tsx
 import React, { ChangeEvent, FormEvent, FormEvent, KeyboardEvent, MouseEvent, useState } from 'react'
 ```
 
  
 
-#### **Step 2: hook 내에 이벤트 함수를 작성합니다.**
+### **Step 2: hook 내에 이벤트 함수를 작성합니다.**
 
 먼저 이벤트가 무슨 타입인지 알아낸 뒤, 그 이벤트가 발생하는 HTML 요소의 타입을 알아낸 다음 파라미터 등에 지정합니다.
 
@@ -126,9 +125,9 @@ import React, { ChangeEvent, FormEvent, FormEvent, KeyboardEvent, MouseEvent, us
 
  
 
-##### **방법1 - 콜백 함수의 파라미터로 이벤트 타입 + 제네릭을 사용**
+### **방법1 - 콜백 함수의 파라미터로 이벤트 타입 + 제네릭을 사용**
 
-```
+```tsx
 const handleTextField = (e: ChangeEvent<HTMLInputElement>) => {
   setText(e.target.value)
 }
@@ -150,7 +149,7 @@ const handleTextField = (e: ChangeEvent<HTMLInputElement>) => {
 
 제네릭을 적용한 방식의 코드는 다음과 같습니다.
 
-```
+```tsx
 import { ChangeEvent, FormEvent, KeyboardEvent, MouseEvent, useState } from 'react'
 
 function App() {
@@ -205,7 +204,7 @@ export default App
 
 <!-- \[the\_ad id="3020"\] -->
 
-##### **방법 2 - 콜백 함수의 파라미터로 이벤트 타입만 사용하고, 블록 내에서 e.target 등에 as HTMLInputElement와 같이 지정하는 방법**
+## **방법 2 - 콜백 함수의 파라미터로 이벤트 타입만 사용하고, 블록 내에서 e.target 등에 as HTMLInputElement와 같이 지정하는 방법**
 
 제네릭을 사용하지 않으면 `e.target`이 무슨 요소인지 알 수 없으므로 `value`가 없다는 문법 오류가 발생합니다.
 
@@ -215,7 +214,7 @@ export default App
 
 이를 방지하려면 `e.target`의 타입을 `as`로 지정해주면 됩니다. 제네릭의 타입이 `as`로 옮겨간 것 뿐입니다.
 
-```
+```tsx
 const handleTextArea = (e: ChangeEvent) => {
   const target = (e.target as HTMLInputElement)
   setText(target.value)
@@ -224,7 +223,7 @@ const handleTextArea = (e: ChangeEvent) => {
 
  
 
-##### **방법3 - 콜백 함수의 파라미터로 이벤트 타입만 사용하고, 블록 내에서 e.target 등에 instanceof HTMLInputElement와 같이 지정하는 방법**
+## **방법3 - 콜백 함수의 파라미터로 이벤트 타입만 사용하고, 블록 내에서 e.target 등에 instanceof HTMLInputElement와 같이 지정하는 방법**
 
 위의 Hook 예제를 보면 인풋 필드 `<input>`과 텍스트 구역 `<textarea>`의 `onChange`가 똑같이 `setText(e.target.value)` 를 실행하고 있습니다. 그러나 이를 실행할 콜백 함수는 `handleTextField`와 `handleTextArea`로 나뉘어져 있습니다.
 
@@ -236,7 +235,7 @@ const handleTextArea = (e: ChangeEvent) => {
 
 이를 `instanceof` 문법을 사용하면 같은 함수를 쓸 수 있게 됩니다. `[변수명] instanceof [타입명]`와 같이 사용하면 타입의 일치 여부에 따라 `true`/`false`를 반환합니다. 이를 통해 해당 변수가 찾고자 하는 타입과 일치하는지 여부를 알 수 있으며, `if`문을 사용해 해당 타입별로 실행 내용을 다르게 지정하면 됩니다.
 
-```
+```tsx
 const handleText = (e: ChangeEvent) => {
 
   let value: string | null = null
@@ -263,19 +262,23 @@ const handleText = (e: ChangeEvent) => {
 
  
 
-\[caption id="attachment\_4450" align="alignnone" width="580"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.35.47.jpg) `instanceof` 효과로 인한 타입 자동 지정 1\[/caption\]
+![`instanceof` 효과로 인한 타입 자동 지정 1](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.35.47.jpg)  
+*`instanceof` 효과로 인한 타입 자동 지정 1*
 
  
 
-\[caption id="attachment\_4451" align="alignnone" width="617"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.36.18.jpg) `instanceof` 효과로 인한 타입 자동 지정 2\[/caption\]
+![`instanceof` 효과로 인한 타입 자동 지정 2](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.36.18.jpg)  
+*`instanceof` 효과로 인한 타입 자동 지정 2*
 
  
 
-\[caption id="attachment\_4452" align="alignnone" width="620"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.37.02.jpg) `value`는 `null`의 가능성이 있음\[/caption\]
+![`value`는 `null`의 가능성이 있음](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.37.02.jpg)  
+*`value`는 `null`의 가능성이 있음*
 
  
 
-\[caption id="attachment\_4453" align="alignnone" width="281"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.37.18.jpg) `&&` 연산자로 인한 타입 자동 지정 및 `null` 가능성 제거\[/caption\]
+![`&&` 연산자로 인한 타입 자동 지정 및 `null` 가능성 제거](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-09-pm-9.37.18.jpg)  
+*`&&` 연산자로 인한 타입 자동 지정 및 `null` 가능성 제거*
 
  
 

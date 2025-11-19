@@ -16,7 +16,7 @@ categories:
 
 아래는 이벤트 버블링이 적용되는 코드입니다. `<a>` 만 클릭해도 모든 이벤트가 발동됩니다.
 
-```
+```js
 const vacation = document.querySelector(".vacation")
 const expand = document.querySelector(".expand")
 
@@ -35,7 +35,7 @@ vacation.addEventListener("click", event => {
 
 이 코드의 버블링을 막은 결과는 다음과 같습니다.
 
-```
+```js
 const vacation = document.querySelector(".vacation")
 const expand = document.querySelector(".expand")
 
@@ -67,7 +67,7 @@ vacation.addEventListener("click", event => {
 </ul>
 ```
 
-```
+```js
 const vacation = document.querySelector(".vacation")
 const expand = document.querySelector(".expand")
 const $ul = document.querySelector("ul")
@@ -120,7 +120,7 @@ $ul.addEventListener("click", event => {
 </ul>
 ```
 
-```
+```js
 const btnAddItem = document.querySelector("#btn-add-item")
 const itemBox = document.querySelector("#item-box")
 

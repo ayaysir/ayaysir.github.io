@@ -522,7 +522,7 @@ public class IndexController {
 }
 ```
 
-```
+```html
 <div class="row">
     <div class="col-md-10">
         <div th:if="${not #strings.isEmpty(userName)}">

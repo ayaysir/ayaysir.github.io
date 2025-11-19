@@ -30,7 +30,7 @@ _.throttle(콜백함수, 밀리세컨드)
 
 #### **예제 1: debounce (실시간 아이디 검사)**
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -62,7 +62,7 @@ _.throttle(콜백함수, 밀리세컨드)
 </html>
 ```
 
-```
+```js
 const usernames = ["admin", "test", "test2", "user", "username", "user1", "user2", "user3", "lodash"]
 
 let testCount = 1
@@ -108,7 +108,7 @@ https://gph.is/g/4g1NLj5
 
 #### **예제 2: throttle (마우스 움직임 감지)**
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>

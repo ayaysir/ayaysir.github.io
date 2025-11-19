@@ -234,7 +234,7 @@ if($httpcode == 200) {
 
 자바스크립트에서 원래 API 주소 대신 중계 페이지의 URL을 사용합니다.
 
-```
+```js
 const q = prompt("검색어 입력?")
 
 // const originalUrl = "https://stdict.korean.go.kr/api/search.do?key=[API_KEY]&type_search=search&req_type=json&q=오픈";

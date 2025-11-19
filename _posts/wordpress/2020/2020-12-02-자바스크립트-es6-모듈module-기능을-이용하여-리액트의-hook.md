@@ -30,7 +30,7 @@ categories:
 
 #### **1) 메인 html을 작성합니다. (index.html)**
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -71,7 +71,7 @@ render(document.querySelector("#app"), App())
 
 #### **3) util.js 작성**
 
-```
+```js
 const stateArr = []
 
 function render(parentElement, element) {

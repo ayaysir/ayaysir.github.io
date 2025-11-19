@@ -39,7 +39,7 @@ public class IndexController {
 
 ##### **resources/templates/index.html**
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>

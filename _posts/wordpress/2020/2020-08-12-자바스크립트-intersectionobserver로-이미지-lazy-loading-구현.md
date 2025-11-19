@@ -10,7 +10,7 @@ categories:
 
 일반적인 HTML 문서에서 `<img src="...">`를 사용하면 브라우저는 일괄적으로 이미지 로딩을 시도하게 됩니다.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +64,7 @@ let observer = new IntersectionObserver(callback, options);
 
 콜백 함수는 일반적으로 다음과 같이 작성합니다.
 
-```
+```js
 const callback = (entries, observer) => {
 
   // IntersectionObserverEntry 객체 리스트와 observer 본인(self)를 받음
@@ -91,7 +91,7 @@ const callback = (entries, observer) => {
 
 첫 HTML 예제를 lazy-loading을 적용하면 다음과 같습니다.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -14,7 +14,7 @@ URL의 쿼리 파라미터란 아래 빨간색 박스처럼 `?` 뒤에 지정�
 
 #### **ES6 이상인 경우**
 
-```
+```js
 const urlParams = new URLSearchParams(window.location.search);
 const uwasaKeyword = urlParams.get('uwasaKeyword');
 ```
@@ -27,7 +27,7 @@ const uwasaKeyword = urlParams.get('uwasaKeyword');
 
 호환성을 고려할 때는 이 방법을 사용해야 합니다. 다음과 같은 함수를 생성합니다.
 
-```
+```js
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),

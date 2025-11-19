@@ -28,7 +28,7 @@ tags:
 </head>
 ```
 
-```
+```html
 <div th:fragment="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
         ....
@@ -36,7 +36,7 @@ tags:
 </div>
 ```
 
-```
+```html
 <div th:fragment="footer">
     <footer class="row mt-2">
         <div class="col-md-12">
@@ -50,7 +50,7 @@ tags:
 
 참고로 **common.html**의 전체 내용은 다음과 같습니다.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="html-head">

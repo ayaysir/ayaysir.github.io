@@ -6,13 +6,13 @@ categories:
   - "Swift"
 ---
 
-#### **원문**
+**원문**
 
 - [Save custom objects into UserDefaults using Codable in Swift 5.1 (Protocol Oriented Approach)](https://medium.com/@ankit.bhana19/save-custom-objects-into-userdefaults-using-codable-in-swift-5-1-protocol-oriented-approach-ae36175180d8)
 
  
 
-### **Swift(스위프트): Codable을 사용하여 사용자 정의 오브젝트를 UserDefaults에 저장 (프로토콜 지향 접근 방식)**
+## **소개**
 
 iOS는 `Int`, `String`, `Float`, `Double`, `Bool`, `URL`, `Data` 또는 이러한 유형의 컬렉션과 같은 UserDefaults에 직접 저장할 수 있는 여러 유형의 객체를 지원합니다.
 
@@ -30,7 +30,7 @@ iOS는 `Int`, `String`, `Float`, `Double`, `Bool`, `URL`, `Data` 또는 이러�
 
  
 
-#### **프로토콜 정의**
+## **프로토콜 정의**
 
 `UserDefaults`에서 사용자 정의 개체를 저장하고 검색할 수 있는 메서드 요구 사항을 선언하는 프로토콜 ObjectSavable을 정의해 보겠습니다.
 
@@ -48,13 +48,11 @@ protocol ObjectSavable {
 
 > 메타타입(`Metatype`) 유형은 클래스(`class`) 타입, 구조체(`struct`)  타입, `enum` 타입 및 프로토콜(`protocol`) 타입을 포함한 모든 타입의 타입(type of any type,을 나타냅니다.
 > 
->  
-> 
 > [Apple Documentation](https://docs.swift.org/swift-book/ReferenceManual/Types.html)
 
  
 
-#### **UserDefaults 확장 구현**
+## **UserDefaults 확장 구현**
 
 `ObjectSavable` 프로토콜이 준비되었습니다. `UserDefaults` 클래스를 준수하고 요구 사항에 대한 구현을 제공하겠습니다.
 
@@ -106,7 +104,7 @@ enum ObjectSavableError: String, LocalizedError {
 
  
 
-#### **실제 사용 예제**
+## **실제 사용 예제**
 
 이제 위의 방법을 사용하여 오브젝트를 저장하고 검색하는 방법을 살펴보겠습니다.
 
@@ -122,7 +120,7 @@ struct Book: Codable {
 
  
 
-##### **저장 (Save)**
+### **저장 (Save)**
 
 `Book`의 오브젝트를 만들고 `setObject` 메서드에 키와 함께 전달합니다. 이 방법은 실패 시 에러가 발생할 수 있으므로 `do-catch` 문을 사용합니다.
 
@@ -138,11 +136,11 @@ do {
 
  
 
-##### **검색 (Retrieve)**
+### **검색 (Retrieve)**
 
 `forKey`에 키 이름을 입력하고, castTo에 저장된 오브젝트의 타입을 `[타입이름].self` 형식으로 입력합니다
 
-```
+```swift
 let userDefaults = UserDefaults.standard
 do {
     let playingItMyWay = try userDefaults.getObject(forKey: "MyFavouriteBook", castTo: Book.self)
@@ -155,13 +153,12 @@ do {
 // Book(title: "Playing It My Way", authorName: "Sachin Tendulkar & Boria Mazumder", pageCount: 486)
 ```
 
+
+이것이 사용자 정의 유형을 `UserDefaults`에 저장하고 검색하는 방법입니다.
+
  
 
-이것이 사용자 정의 유형을 `UserDefaults`에 저장하고 검색하는 방법입니다.🎉.
-
- 
-
-#### **전체 코드**
+## **전체 코드**
 
 ```swift
 import Foundation

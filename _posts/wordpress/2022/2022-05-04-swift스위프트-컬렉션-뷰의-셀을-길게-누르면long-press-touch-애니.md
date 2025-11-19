@@ -6,35 +6,30 @@ categories:
   - "Swift"
 ---
 
-#### **참고**
+**참고**
 
 - [iOS 프로그래밍: 컬렉션 뷰 (Swift, 스토리보드) – 컬렉션 뷰 추가, 커스텀 셀 작성](http://yoonbumtae.com/?p=3418)
 
  
-
-### **Swift(스위프트): 컬렉션 뷰의 셀을 길게 누르면(long press touch) 애니메이션 나타나도록 하기**
-
-#### **개요**
+## **개요**
 
 기존의 프로젝트 코드를 기반으로 롱 프레스 터치(길게 터치하기) 작업을 추가하고, 롱 프레스 시에 셀이 살짝 작아졌다 놓으면 다시 원상 복귀하는 애니메이션이 추가되도록 만들어 보겠습니다.
 
-\[caption id="attachment\_4421" align="alignnone" width="384"\] ![](/assets/img/wp-content/uploads/2022/05/Simulator-Screen-Shot-iPhone-13-Pro-2022-05-04-at-23.03.04.jpg) 기존 프로젝트의 기기 스크린샷\[/caption\]
-
+![](/assets/img/wp-content/uploads/2022/05/Simulator-Screen-Shot-iPhone-13-Pro-2022-05-04-at-23.03.04.jpg)   
+*기존 프로젝트의 기기 스크린샷*
  
 
 ![](https://media.giphy.com/media/SyGH9NSGZnaJVqE4on/giphy.gif)
-
-변경 사항 적용된 프로젝트
+*변경 사항 적용된 프로젝트*
 
  
 
-#### **기존 프로젝트**
+## **코드: 기존 프로젝트**
 
 ```swift
 import UIKit
 
 struct ImageInfo {
-    
     let name: String
     
     var image: UIImage? {
@@ -47,7 +42,6 @@ struct ImageInfo {
 }
 
 class ViewController: UIViewController {
-    
     let viewModel = ImageViewModel() // 뷰모델 변수를 추가합니다.
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -59,7 +53,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.countOfImageList // 뷰모델에서 카운트 가져옴
     }
@@ -87,12 +80,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         dialog.addAction(action)
 
         self.present(dialog, animated: true, completion: nil)
-
     }
 }
 
 class Cell: UICollectionViewCell {
-    
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -104,7 +95,6 @@ class Cell: UICollectionViewCell {
 
 // view model
 class ImageViewModel {
-    
     let imageInfoList: [ImageInfo] = [
         ImageInfo(name: "Chrysanthemum"),
         ImageInfo(name: "Desert"),
@@ -127,31 +117,26 @@ class ImageViewModel {
 
 ```
 
- 
+![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-11.07.56.jpg)   
+*컬렉션 뷰 @IBOutlet 연결*
 
-\[caption id="attachment\_4422" align="alignnone" width="948"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-11.07.56.jpg) 컬렉션 뷰 @IBOutlet 연결\[/caption\]
 
- 
-
- 
-
-\[caption id="attachment\_4419" align="alignnone" width="821"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.58.13.jpg) 셀 요소 @IBOutlet 연결\[/caption\]
-
+![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.58.13.jpg)   
+*셀 요소 @IBOutlet 연결*
  
 
  
-
-\[caption id="attachment\_4420" align="alignnone" width="969"\] ![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.59.14.jpg) asset에 이미지 추가\[/caption\]
-
+![](/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.59.14.jpg)   
+*asset에 이미지 추가*
  
 
  
 
  
 
-#### **추가 코드**
+## **애니메이션 추가하기**
 
-##### **1) viewDidLoad()에 다음 부분을 추가합니다.**
+### **1) viewDidLoad()에 다음 부분을 추가합니다.**
 
 ```swift
 override func viewDidLoad() {
@@ -162,14 +147,13 @@ override func viewDidLoad() {
 
  
 
-##### **2) ViewController에 UIGestureRecognizerDelegate 프로토콜을 구현하는 다음 extension 및 함수를 추가합니다.**
+### **2) ViewController에 UIGestureRecognizerDelegate 프로토콜을 구현하는 다음 extension 및 함수를 추가합니다.**
 
 ```swift
 extension ViewController: UIGestureRecognizerDelegate {
 
     // long press 이벤트 부여
     private func setupLongGestureRecognizerOnCollection() {
-        
         let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
         longPressedGesture.minimumPressDuration = 0.5
         longPressedGesture.delegate = self
@@ -196,26 +180,22 @@ extension ViewController: UIGestureRecognizerDelegate {
 
  
 
-##### **3) handleLongPress(gestureRecognizer:) 추가**
+### **3) handleLongPress(gestureRecognizer:) 추가**
 
-```
-    // long press 이벤트 액션
-    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
-        
-        let location = gestureRecognizer.location(in: collectionView)
-        // let collectionView = gestureRecognizer.view as! UICollectionView
-        
-        if gestureRecognizer.state == .began {
-            
-            // 롱 프레스 터치가 시작될 떄
+```swift
+// long press 이벤트 액션
+@objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+    let location = gestureRecognizer.location(in: collectionView)
+    // let collectionView = gestureRecognizer.view as! UICollectionView
+    
+    if gestureRecognizer.state == .began {
+        // 롱 프레스 터치가 시작될 떄
 
-        } else if gestureRecognizer.state == .ended {
+    } else if gestureRecognizer.state == .ended {
+        // 롱 프레스 터치가 끝날 떄
 
-            // 롱 프레스 터치가 끝날 떄
-
-        } else {
-            return
-        }
+    } else {
+        return
     }
 }
 ```
@@ -229,9 +209,9 @@ extension ViewController: UIGestureRecognizerDelegate {
 
  
 
-##### **4) .began 부분을 구현합니다.**
+### **4) .began 부분을 구현합니다.**
 
-```
+```swift
 if gestureRecognizer.state == .began {
     
     if let indexPath = collectionView.indexPathForItem(at: location) {
@@ -259,17 +239,17 @@ if gestureRecognizer.state == .began {
 
  
 
-##### **5) ViewController에 currentLongPressedCell 변수를 추가합니다.**
+### **5) ViewController에 currentLongPressedCell 변수를 추가합니다.**
 
-```
+```swift
 var currentLongPressedCell: Cell?
 ```
 
  
 
-##### **6) .ended 부분을 구현합니다.**
+### **6) .ended 부분을 구현합니다.**
 
-```
+```swift
 if let indexPath = collectionView.indexPathForItem(at: location) {
     print("Long press at item end: \(indexPath.row)")
     
@@ -279,7 +259,6 @@ if let indexPath = collectionView.indexPathForItem(at: location) {
             cell.transform = .init(scaleX: 1, y: 1)
             
             if cell == collectionView.cellForItem(at: indexPath) as? Cell {
-                
                 let imageInfo = self.viewModel.imageInfo(at: indexPath.item)
                 
                 let dialog = UIAlertController(title: "\(imageInfo.name)", message: "롱 프레스 터치로 실행된 경고창입니다.", preferredStyle: .alert)
@@ -311,7 +290,7 @@ if let indexPath = collectionView.indexPathForItem(at: location) {
 
  
 
-#### **최종 결과물**
+## **최종 결과물**
 
 ![](https://media.giphy.com/media/SyGH9NSGZnaJVqE4on/giphy.gif)
 
@@ -319,13 +298,12 @@ if let indexPath = collectionView.indexPathForItem(at: location) {
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
 ```swift
 import UIKit
 
 struct ImageInfo {
-    
     let name: String
     
     var image: UIImage? {
@@ -338,7 +316,6 @@ struct ImageInfo {
 }
 
 class ViewController: UIViewController {
-    
     let viewModel = ImageViewModel() // 뷰모델 변수를 추가합니다.
     
     var currentLongPressedCell: Cell?
@@ -355,7 +332,6 @@ class ViewController: UIViewController {
 extension ViewController: UIGestureRecognizerDelegate {
     // long press 이벤트 부여
     private func setupLongGestureRecognizerOnCollection() {
-        
         let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
         longPressedGesture.minimumPressDuration = 0.5
         longPressedGesture.delegate = self
@@ -365,7 +341,6 @@ extension ViewController: UIGestureRecognizerDelegate {
     
     // long press 이벤트 액션
     @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
-        
         let location = gestureRecognizer.location(in: gestureRecognizer.view)
         let collectionView = gestureRecognizer.view as! UICollectionView
         
@@ -383,7 +358,6 @@ extension ViewController: UIGestureRecognizerDelegate {
                 }
             }
         } else if gestureRecognizer.state == .ended {
-            
             if let indexPath = collectionView.indexPathForItem(at: location) {
                 print("Long press at item end: \(indexPath.row)")
                 
@@ -413,7 +387,6 @@ extension ViewController: UIGestureRecognizerDelegate {
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.countOfImageList // 뷰모델에서 카운트 가져옴
     }
@@ -446,7 +419,6 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 }
 
 class Cell: UICollectionViewCell {
-    
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -458,7 +430,6 @@ class Cell: UICollectionViewCell {
 
 // view model
 class ImageViewModel {
-    
     let imageInfoList: [ImageInfo] = [
         ImageInfo(name: "Chrysanthemum"),
         ImageInfo(name: "Desert"),

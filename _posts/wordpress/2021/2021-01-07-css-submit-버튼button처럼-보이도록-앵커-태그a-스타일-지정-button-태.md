@@ -8,7 +8,7 @@ categories:
 
 "제출(submit)" 버튼(`button`)과 "취소(cancel)" 앵커(`a`)가 있는 폼이 있습니다. HTML은 다음과 같습니다.
 
-```
+```html
 <input type="submit" value="Submit" />
 <a href="some_url">Cancel</a>
 ```

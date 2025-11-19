@@ -98,7 +98,7 @@ async function fetchUser(userId) {
 
  
 
-```
+```js
 function setURL(value) {
     history.pushState(null, "", value)
     fetchUser(value)
@@ -126,7 +126,7 @@ btnPrev.addEventListener("click", e => {
 
 #### **전체 코드**
 
-```
+```js
 function $(selector) {
     return document.querySelector(selector)
 }
@@ -185,7 +185,7 @@ btnPrev.addEventListener("click", e => {
 })
 ```
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 

@@ -18,13 +18,13 @@ categories:
 
 다음 자바스크립트에서 위의 `pre` 태그를 불러옵니다.
 
-```
+```js
 const consoleDiv = document.getElementById("console")
 ```
 
 아래의 `consoleToHtml` 함수를 작성합니다.
 
-```
+```js
 const consoleToHtml = function() {
     consoleDiv.textContent += `${(new Date()).toLocaleString("ko-KR")} >>>`
     Array.from(arguments).forEach(el => {

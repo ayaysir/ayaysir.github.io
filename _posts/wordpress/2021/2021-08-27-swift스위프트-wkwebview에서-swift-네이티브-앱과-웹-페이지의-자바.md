@@ -17,7 +17,7 @@ categories:
 
 웹 페이지의 자바스크립트 부분에 다음을 추가합니다.
 
-```
+```js
 const is_iOS = navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true
 function sendToNativeApp(event) {
   if(is_iOS) {
@@ -129,7 +129,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 
 예를 들어 네이티브 앱에서 아래 자바스크립트 함수를 실행하고 싶다고 한다면
 
-```
+```js
 function start(msg) {
     document.getElementById("title").textContent = msg
 }
