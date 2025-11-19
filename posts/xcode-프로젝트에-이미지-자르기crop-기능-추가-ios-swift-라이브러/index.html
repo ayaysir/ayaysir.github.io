@@ -638,11 +638,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -661,21 +656,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -757,8 +737,29 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -849,7 +850,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1079 words"
+  title="1076 words"
 >
   <em>5 min</em> read</span>
 
@@ -888,7 +889,7 @@
 <p>카메라 또는 사진을 선택하면 화면에 보여주는 프로젝트가 있는데, 여기서 선택 후 화면에 표시하기 전 크롭(crop) 기능을 이용해 이미지를 자르는 기능을 추가하고자 합니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=4427">Swift(스위프트): 카메라 및 사진 라이브러리 권한 물어보기 + UIImagePickerController를 이용한 사진 추가 (스토리보드)</a></li>
+  <li><a href="/posts/swift%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-%EC%B9%B4%EB%A9%94%EB%9D%BC-%EB%B0%8F-%EC%82%AC%EC%A7%84-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EA%B6%8C%ED%95%9C-%EB%AC%BC%EC%96%B4%EB%B3%B4/">Swift(스위프트): 카메라 및 사진 라이브러리 권한 물어보기 + UIImagePickerController를 이용한 사진 추가 (스토리보드)</a></li>
 </ul>
 
 <p> </p>
@@ -901,27 +902,28 @@
 
 <p>아래 코드 목록에서 <code class="language-plaintext highlighter-rouge">PhotoViewController.swift</code>를 사용합니다.</p>
 
-<p>https://gist.github.com/ayaysir/c1ba58ea822ebd80ca6eb39262e52efb</p>
+<!-- https://gist.github.com/ayaysir/c1ba58ea822ebd80ca6eb39262e52efb -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/c1ba58ea822ebd80ca6eb39262e52efb.js"> </script>
 
 <p> </p>
+<h2 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-mantis-라이브러리를-cocoapodsswift-packages-등을-이용해-설치합니다"><span class="me-2"><strong>1) Mantis 라이브러리를 CocoaPods, Swift Packages 등을 이용해 설치합니다.</strong></span><a href="#1-mantis-라이브러리를-cocoapodsswift-packages-등을-이용해-설치합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-mantis-라이브러리를-cocoapodsswift-packages-등을-이용해-설치합니다"><span class="me-2"><strong>1) Mantis 라이브러리를 CocoaPods, Swift Packages 등을 이용해 설치합니다.</strong></span><a href="#1-mantis-라이브러리를-cocoapodsswift-packages-등을-이용해-설치합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=4457">Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</a></li>
+  <li><a href="/posts/xcode-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-%EC%BD%94%EC%BD%94%EC%95%84%ED%8C%9Fcocoapods-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EB%94%94%ED%8E%9C%EB%8D%98%EC%8B%9C-%EC%B6%94%EA%B0%80-%EB%B0%A9/">Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</a></li>
 </ul>
 
-<p> </p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-ruby highlighter-rouge"><div class="code-header">
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>pod 'Mantis'
+</pre></td><td class="rouge-code"><pre><span class="n">pod</span> <span class="s1">'Mantis'</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="2-설치가-완료되었다면-프로젝트를-열고-뷰-컨트롤러에-mantis를-import-합니다"><span class="me-2"><strong>2) 설치가 완료되었다면 프로젝트를 열고 뷰 컨트롤러에 <code class="language-plaintext highlighter-rouge">Mantis</code>를 <code class="language-plaintext highlighter-rouge">import</code> 합니다.</strong></span><a href="#2-설치가-완료되었다면-프로젝트를-열고-뷰-컨트롤러에-mantis를-import-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-설치가-완료되었다면-프로젝트를-열고-뷰-컨트롤러에-mantis를-import-합니다"><span class="me-2"><strong>2) 설치가 완료되었다면 프로젝트를 열고 뷰 컨트롤러에 <code class="language-plaintext highlighter-rouge">Mantis</code>를 <code class="language-plaintext highlighter-rouge">import</code> 합니다.</strong></span><a href="#2-설치가-완료되었다면-프로젝트를-열고-뷰-컨트롤러에-mantis를-import-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -933,7 +935,7 @@
 
 <p> </p>
 
-<h5 id="3-cropviewcontrollerdelegate를-구현하는-아래-extension을-추가합니다"><span class="me-2"><strong>3) <code class="language-plaintext highlighter-rouge">CropViewControllerDelegate</code>를 구현하는 아래 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</strong></span><a href="#3-cropviewcontrollerdelegate를-구현하는-아래-extension을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-cropviewcontrollerdelegate를-구현하는-아래-extension을-추가합니다"><span class="me-2"><strong>3) <code class="language-plaintext highlighter-rouge">CropViewControllerDelegate</code>를 구현하는 아래 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</strong></span><a href="#3-cropviewcontrollerdelegate를-구현하는-아래-extension을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -957,11 +959,7 @@
 18
 19
 20
-21
-22
-23
 </pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">PhotoViewController</span><span class="p">:</span> <span class="kt">CropViewControllerDelegate</span> <span class="p">{</span>
-
     <span class="kd">func</span> <span class="nf">cropViewControllerDidCrop</span><span class="p">(</span><span class="n">_</span> <span class="nv">cropViewController</span><span class="p">:</span> <span class="kt">CropViewController</span><span class="p">,</span> <span class="nv">cropped</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">transformation</span><span class="p">:</span> <span class="kt">Transformation</span><span class="p">,</span> <span class="nv">cropInfo</span><span class="p">:</span> <span class="kt">CropInfo</span><span class="p">)</span> <span class="p">{</span>
 
         <span class="c1">// 이미지 크롭 후 할 작업 추가</span>
@@ -970,12 +968,10 @@
     <span class="p">}</span>
     
     <span class="kd">func</span> <span class="nf">cropViewControllerDidCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">cropViewController</span><span class="p">:</span> <span class="kt">CropViewController</span><span class="p">,</span> <span class="nv">original</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">)</span> <span class="p">{</span>
-
         <span class="n">cropViewController</span><span class="o">.</span><span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
     <span class="p">}</span>
         
     <span class="kd">private</span> <span class="kd">func</span> <span class="nf">openCropVC</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">)</span> <span class="p">{</span>
-        
         <span class="k">let</span> <span class="nv">cropViewController</span> <span class="o">=</span> <span class="kt">Mantis</span><span class="o">.</span><span class="nf">cropViewController</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
         <span class="n">cropViewController</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
         <span class="n">cropViewController</span><span class="o">.</span><span class="n">modalPresentationStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">fullScreen</span>
@@ -1009,10 +1005,10 @@
 
 <p> </p>
 
-<h5 id="4-기존-이미지-피커-컨트롤러-부분에서-크롭-뷰-컨트롤러를-띄우도록-변경합니다"><span class="me-2"><strong>4) 기존 이미지 피커 컨트롤러 부분에서 크롭 뷰 컨트롤러를 띄우도록 변경합니다.</strong></span><a href="#4-기존-이미지-피커-컨트롤러-부분에서-크롭-뷰-컨트롤러를-띄우도록-변경합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-기존-이미지-피커-컨트롤러-부분에서-크롭-뷰-컨트롤러를-띄우도록-변경합니다"><span class="me-2"><strong>4) 기존 이미지 피커 컨트롤러 부분에서 크롭 뷰 컨트롤러를 띄우도록 변경합니다.</strong></span><a href="#4-기존-이미지-피커-컨트롤러-부분에서-크롭-뷰-컨트롤러를-띄우도록-변경합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1029,26 +1025,22 @@
 14
 15
 16
-17
-18
-</pre></td><td class="rouge-code"><pre>// 3) 이미지 피커 관련 프로토콜을 클래스 상속 목록에 추가
-extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+</pre></td><td class="rouge-code"><pre><span class="c1">// 3) 이미지 피커 관련 프로토콜을 클래스 상속 목록에 추가</span>
+<span class="kd">extension</span> <span class="kt">PhotoViewController</span><span class="p">:</span> <span class="kt">UIImagePickerControllerDelegate</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span> <span class="p">{</span>
     
-    // 4) 카메라 또는 사진 라이브러리에서 사진을 찍거나 선택했을 경우 실행할 내용 작성
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if let image = info[.originalImage] as? UIImage {
-//            imgView.image = image // &lt;- 삭제하고 cropViewControllerDidCrop에서 실행
+    <span class="c1">// 4) 카메라 또는 사진 라이브러리에서 사진을 찍거나 선택했을 경우 실행할 내용 작성</span>
+    <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">UIImagePickerController</span><span class="p">,</span> <span class="n">didFinishPickingMediaWithInfo</span> <span class="nv">info</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIImagePickerController</span><span class="o">.</span><span class="kt">InfoKey</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="o">.</span><span class="n">originalImage</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">UIImage</span> <span class="p">{</span>
+<span class="c1">//            imgView.image = image // &lt;- 삭제하고 cropViewControllerDidCrop에서 실행</span>
             
-            dismiss(animated: true) {
-                self.openCropVC(image: image)
-            }
+            <span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="nf">openCropVC</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
+            <span class="p">}</span>
             
-        }
-        dismiss(animated: true, completion: nil)
-    }
-}
-
+        <span class="p">}</span>
+        <span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1058,7 +1050,7 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
 
 <p> </p>
 
-<h5 id="5-4번에서-삭제한-부분을-cropviewcontrollerdidcrop로-옮깁니다"><span class="me-2"><strong>5) <code class="language-plaintext highlighter-rouge">4번</code>에서 삭제한 부분을 <code class="language-plaintext highlighter-rouge">cropViewControllerDidCrop</code>로 옮깁니다.</strong></span><a href="#5-4번에서-삭제한-부분을-cropviewcontrollerdidcrop로-옮깁니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-4번에서-삭제한-부분을-cropviewcontrollerdidcrop로-옮깁니다"><span class="me-2"><strong>5) <code class="language-plaintext highlighter-rouge">4번</code>에서 삭제한 부분을 <code class="language-plaintext highlighter-rouge">cropViewControllerDidCrop</code>로 옮깁니다.</strong></span><a href="#5-4번에서-삭제한-부분을-cropviewcontrollerdidcrop로-옮깁니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1068,9 +1060,7 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
 4
 5
 6
-7
 </pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">cropViewControllerDidCrop</span><span class="p">(</span><span class="n">_</span> <span class="nv">cropViewController</span><span class="p">:</span> <span class="kt">CropViewController</span><span class="p">,</span> <span class="nv">cropped</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span> <span class="nv">transformation</span><span class="p">:</span> <span class="kt">Transformation</span><span class="p">,</span> <span class="nv">cropInfo</span><span class="p">:</span> <span class="kt">CropInfo</span><span class="p">)</span> <span class="p">{</span>
-    
     <span class="c1">// 기존 작업 부분</span>
     <span class="n">imgView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">cropped</span>
     
@@ -1084,18 +1074,18 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
 
 <p>예를 들어 원래는 크롭 뷰 컨트롤러에서 다양한 이미지 비율을 지원하지만, 이를 무시하고 강제적으로 이미지 자르기 비율을 <code class="language-plaintext highlighter-rouge">1:1</code>로 고정하려면 <code class="language-plaintext highlighter-rouge">openCropVC</code> 함수에 아래와 같은 코드를 추가하면 됩니다. 사용자 프로필 사진 등 비율이 강제되는 사진 자르기 기능에 적합합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>cropViewController.config.presetFixedRatioType = .alwaysUsingOnePresetFixedRatio(ratio: 1.0)
+</pre></td><td class="rouge-code"><pre><span class="n">cropViewController</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">presetFixedRatioType</span> <span class="o">=</span> <span class="o">.</span><span class="nf">alwaysUsingOnePresetFixedRatio</span><span class="p">(</span><span class="nv">ratio</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="실행-화면"><span class="me-2"><strong>실행 화면</strong></span><a href="#실행-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="실행-화면"><span class="me-2"><strong>실행 화면</strong></span><a href="#실행-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <!-- http://www.giphy.com/gifs/PIW6cAxBkqAL2UN35P -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWM0d3BnZXBpZGRwdHNtMmI1cnhvaGxvdGE1bHE0aTQxOWNrOHlwdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PIW6cAxBkqAL2UN35P/giphy.gif" class="popup img-link shimmer"><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWM0d3BnZXBpZGRwdHNtMmI1cnhvaGxvdGE1bHE0aTQxOWNrOHlwdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PIW6cAxBkqAL2UN35P/giphy.gif" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -2101,18 +2091,6 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

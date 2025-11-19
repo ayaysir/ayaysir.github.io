@@ -827,8 +827,8 @@
 
 <p>만약 <code class="language-plaintext highlighter-rouge">phone_book</code>의 전화번호들이 공백이 없다는 게 확실하면, <code class="language-plaintext highlighter-rouge">phoneNumberWithoutSpace</code> 변수를 별도로 만들지 않고 <code class="language-plaintext highlighter-rouge">phoneNumber</code>를 그대로 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -852,28 +852,28 @@
 21
 22
 23
-</pre></td><td class="rouge-code"><pre>function solution(phone_book) {
-    const hashMap = {}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">phone_book</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">hashMap</span> <span class="o">=</span> <span class="p">{}</span>
     
-    for(let phoneNumber of phone_book) {
-        hashMap[phoneNumber] = 1
-    }
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">phoneNumber</span> <span class="k">of</span> <span class="nx">phone_book</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">hashMap</span><span class="p">[</span><span class="nx">phoneNumber</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="p">}</span>
     
-    for(let phoneNumber of phone_book) {
-        let temp = ""
-        const phoneNumberWithoutSpace = phoneNumber.replace(/\s/g, "")
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">phoneNumber</span> <span class="k">of</span> <span class="nx">phone_book</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">temp</span> <span class="o">=</span> <span class="dl">""</span>
+        <span class="kd">const</span> <span class="nx">phoneNumberWithoutSpace</span> <span class="o">=</span> <span class="nx">phoneNumber</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">""</span><span class="p">)</span>
         
-        for(let number of phoneNumberWithoutSpace) {
-            temp += number
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">number</span> <span class="k">of</span> <span class="nx">phoneNumberWithoutSpace</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">temp</span> <span class="o">+=</span> <span class="nx">number</span>
             
-            if(hashMap[temp] &amp;&amp; temp != phoneNumberWithoutSpace) {
-                return false
-            }
-        }
-    }
+            <span class="k">if</span><span class="p">(</span><span class="nx">hashMap</span><span class="p">[</span><span class="nx">temp</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">temp</span> <span class="o">!=</span> <span class="nx">phoneNumberWithoutSpace</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    return true
-}
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -5034,18 +5034,6 @@
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

@@ -904,8 +904,8 @@
 
 <h4 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -946,46 +946,46 @@
 38
 39
 40
-</pre></td><td class="rouge-code"><pre>function solution(priorities, location) {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">priorities</span><span class="p">,</span> <span class="nx">location</span><span class="p">)</span> <span class="p">{</span>
     
-    if(priorities.length === 1) {
-        return 1
-    }
+    <span class="k">if</span><span class="p">(</span><span class="nx">priorities</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="p">}</span>
     
-    const prObjs = priorities.map((el, i) =&gt; {
-        return {
-            isLocation: i === location,
-            prior: el
-        }
-    })
+    <span class="kd">const</span> <span class="nx">prObjs</span> <span class="o">=</span> <span class="nx">priorities</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">el</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="na">isLocation</span><span class="p">:</span> <span class="nx">i</span> <span class="o">===</span> <span class="nx">location</span><span class="p">,</span>
+            <span class="na">prior</span><span class="p">:</span> <span class="nx">el</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
     
-    let currIdx = 0
-    let order = 1
-    const printed = []
+    <span class="kd">let</span> <span class="nx">currIdx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="kd">let</span> <span class="nx">order</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="kd">const</span> <span class="nx">printed</span> <span class="o">=</span> <span class="p">[]</span>
 
-    while(true) {
-        let isMax = true
-        const shifted = prObjs.splice(0, 1)[0] // shift()와 동일
+    <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">isMax</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="kd">const</span> <span class="nx">shifted</span> <span class="o">=</span> <span class="nx">prObjs</span><span class="p">.</span><span class="nf">splice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// shift()와 동일</span>
 
-        for(let i = 0; i &lt; prObjs.length; i++) {
-            if(shifted.prior &lt; prObjs[i].prior) {
-                isMax = false
-                prObjs.push(shifted)
-                break
-            }
-        }
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">prObjs</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">shifted</span><span class="p">.</span><span class="nx">prior</span> <span class="o">&lt;</span> <span class="nx">prObjs</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">prior</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">isMax</span> <span class="o">=</span> <span class="kc">false</span>
+                <span class="nx">prObjs</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">shifted</span><span class="p">)</span>
+                <span class="k">break</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-        if(isMax) {
-            if(shifted.isLocation) {
-                return order
-            } else {
-                // 출력된 문서를 보관하는 배열에 담을 수도 있으나 문제 풀이에는 영향이 없음
-                order += 1
-            }
-        }
-    }
+        <span class="k">if</span><span class="p">(</span><span class="nx">isMax</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">shifted</span><span class="p">.</span><span class="nx">isLocation</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">order</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// 출력된 문서를 보관하는 배열에 담을 수도 있으나 문제 풀이에는 영향이 없음</span>
+                <span class="nx">order</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -5259,18 +5259,6 @@
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

@@ -1058,16 +1058,16 @@ async function fetchUser(userId) {
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>function setURL(value) {
-    history.pushState(null, "", value)
-    fetchUser(value)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">setURL</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">history</span><span class="p">.</span><span class="nf">pushState</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="dl">""</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+    <span class="nf">fetchUser</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -1104,8 +1104,8 @@ btnPrev.addEventListener("click", e =&gt; {
 
 <h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1162,66 +1162,66 @@ btnPrev.addEventListener("click", e =&gt; {
 54
 55
 56
-</pre></td><td class="rouge-code"><pre>function $(selector) {
-    return document.querySelector(selector)
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="nx">selector</span><span class="p">)</span>
+<span class="p">}</span>
 
-const id = $(".id")
-const profile = $(".profile")
-const email = $(".email")
-const fullname = $(".fullname")
-const loading = $(".loading")
-const container = $(".container")
+<span class="kd">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.id</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">profile</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.profile</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">email</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.email</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">fullname</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.fullname</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">loading</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.loading</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.container</span><span class="dl">"</span><span class="p">)</span>
 
-// URL로 주소 입력하기
-let [, service, value] = window.location.pathname.split("/")
-if (service === "user") {
-    fetchUser(value)
-}
+<span class="c1">// URL로 주소 입력하기</span>
+<span class="kd">let</span> <span class="p">[,</span> <span class="nx">service</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">)</span>
+<span class="k">if </span><span class="p">(</span><span class="nx">service</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">fetchUser</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">}</span>
 
-function setURL(value) {
-    history.pushState(null, "", value)
-    fetchUser(value)
-}
+<span class="kd">function</span> <span class="nf">setURL</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">history</span><span class="p">.</span><span class="nf">pushState</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="dl">""</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+    <span class="nf">fetchUser</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">}</span>
 
-async function fetchUser(userId) {
-    loading.style.display = "flex"
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">fetchUser</span><span class="p">(</span><span class="nx">userId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">loading</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">flex</span><span class="dl">"</span>
     
-    try {
-        const response = await fetch(`https://reqres.in/api/users/${userId}?delay=1`)
-        const json = await response.json()
-        const data = json.data
-        loading.style.display = "none"
-        container.style.display = "block"
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="s2">`https://reqres.in/api/users/</span><span class="p">${</span><span class="nx">userId</span><span class="p">}</span><span class="s2">?delay=1`</span><span class="p">)</span>
+        <span class="kd">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
+        <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">data</span>
+        <span class="nx">loading</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+        <span class="nx">container</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span>
         
-        profile.src = data.avatar
-        email.textContent = data.email
-        email.setAttribute("href", `mailto:${data.email}`)
-        fullname.textContent = `${data.first_name} ${data.last_name}`
-        id.textContent = `${data.id}. ${data.first_name} ${data.last_name}`
-    } catch(err) {
-        alert("오류가 발생했습니다.")
-        value = 1
-        setURL(value)
-    }        
+        <span class="nx">profile</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">avatar</span>
+        <span class="nx">email</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">email</span>
+        <span class="nx">email</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">href</span><span class="dl">"</span><span class="p">,</span> <span class="s2">`mailto:</span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">email</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+        <span class="nx">fullname</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">first_name</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">last_name</span><span class="p">}</span><span class="s2">`</span>
+        <span class="nx">id</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">. </span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">first_name</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">last_name</span><span class="p">}</span><span class="s2">`</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">오류가 발생했습니다.</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">value</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="nf">setURL</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+    <span class="p">}</span>        
         
-}
+<span class="p">}</span>
 
-const btnNext = $(".btn-next")
-const btnPrev = $(".btn-prev")
-btnNext.addEventListener("click", e =&gt; {
-    value = Number(value) + 1
-    setURL(value)
+<span class="kd">const</span> <span class="nx">btnNext</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.btn-next</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">btnPrev</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.btn-prev</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">btnNext</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">value</span> <span class="o">=</span> <span class="nc">Number</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nf">setURL</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
 
-})
-btnPrev.addEventListener("click", e =&gt; {
-    value = Number(value) - 1
-    setURL(value)
-})
+<span class="p">})</span>
+<span class="nx">btnPrev</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">value</span> <span class="o">=</span> <span class="nc">Number</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="nf">setURL</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1271,55 +1271,55 @@ btnPrev.addEventListener("click", e =&gt; {
 47
 48
 49
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
 
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Show User&lt;/title&gt;
-    &lt;style&gt;
-        .loading {
-            display: none; 
-            width: 100%; 
-            height: 100%; 
-            justify-content: center; 
-            flex-direction: column; 
-            align-items: center;
-            position: absolute;
-            left: 0;
-            top: 0;
-            background-color: rgba(0, 0, 0, 0.1)
-        }
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Show User<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+        <span class="nc">.loading</span> <span class="p">{</span>
+            <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> 
+            <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> 
+            <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> 
+            <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> 
+            <span class="nl">flex-direction</span><span class="p">:</span> <span class="nb">column</span><span class="p">;</span> 
+            <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+            <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+            <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+            <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+            <span class="nl">background-color</span><span class="p">:</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        .container {
-            display: none;
-        }
+        <span class="nc">.container</span> <span class="p">{</span>
+            <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+        <span class="p">}</span>
         
-        .profile {
-            border-radius: 5px;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
+        <span class="nc">.profile</span> <span class="p">{</span>
+            <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 
-&lt;body&gt;
-    &lt;div class="loading"&gt;loading...&lt;/div&gt;
-    &lt;div class="container"&gt;
-        &lt;h3 class="id"&gt;&lt;/h3&gt;
-        &lt;img src="" class="profile" alt=""&gt;
-        &lt;ul&gt;
-            &lt;li&gt;email: &lt;a href="mailto:" class="email"&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;name: &lt;span class="fullname"&gt;&lt;/span&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;button class="btn-prev"&gt;PREV&lt;/button&gt;
-        &lt;button class="btn-next"&gt;NEXT&lt;/button&gt;
-    &lt;/div&gt;
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"loading"</span><span class="nt">&gt;</span>loading...<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"id"</span><span class="nt">&gt;&lt;/h3&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"profile"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>email: <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"mailto:"</span> <span class="na">class=</span><span class="s">"email"</span><span class="nt">&gt;&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>name: <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"fullname"</span><span class="nt">&gt;&lt;/span&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn-prev"</span><span class="nt">&gt;</span>PREV<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn-next"</span><span class="nt">&gt;</span>NEXT<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
 
-    &lt;script&gt;    
-        // ............... //
-    &lt;/script&gt;
-&lt;/body&gt;
+    <span class="nt">&lt;script&gt;</span>    
+        <span class="c1">// ............... //</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 
-&lt;/html&gt;
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -5577,18 +5577,6 @@ btnPrev.addEventListener("click", e =&gt; {
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

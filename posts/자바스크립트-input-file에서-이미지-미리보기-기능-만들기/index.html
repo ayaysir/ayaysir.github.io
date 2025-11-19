@@ -848,20 +848,20 @@
 
 <p>미리보기 이미지가 표시될 이미지 태그를 생성하고, <code class="language-plaintext highlighter-rouge">input file</code> 태그를 생성하고, 자바스크립트의 <code class="language-plaintext highlighter-rouge">FileReader()</code>를 통해 이미지가 로딩되면 이미지 태그의 <code class="language-plaintext highlighter-rouge">src</code> 속성이 교체되도록 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>&lt;div class="image-container"&gt;
-    &lt;img style="width: 500px;" id="preview-image" src="https://dummyimage.com/500x500/ffffff/000000.png&amp;text=preview+image"&gt;
-    &lt;input style="display: block;" type="file" id="input-image"&gt;
-&lt;/div&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"image-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">style=</span><span class="s">"width: 500px;"</span> <span class="na">id=</span><span class="s">"preview-image"</span> <span class="na">src=</span><span class="s">"https://dummyimage.com/500x500/ffffff/000000.png&amp;text=preview+image"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">style=</span><span class="s">"display: block;"</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">id=</span><span class="s">"input-image"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -888,32 +888,32 @@
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>function readImage(input) {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">readImage</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
 
-    // 인풋 태그에 파일이 있는 경우
-    if(input.files &amp;&amp; input.files[0]) {
+    <span class="c1">// 인풋 태그에 파일이 있는 경우</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">files</span> <span class="o">&amp;&amp;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
 
-        // 이미지 파일인지 검사 (생략)
+        <span class="c1">// 이미지 파일인지 검사 (생략)</span>
 
-        // FileReader 인스턴스 생성
-        const reader = new FileReader()
+        <span class="c1">// FileReader 인스턴스 생성</span>
+        <span class="kd">const</span> <span class="nx">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileReader</span><span class="p">()</span>
 
-        // 이미지가 로드가 된 경우
-        reader.onload = e =&gt; {
-            const previewImage = document.getElementById("preview-image")
-            previewImage.src = e.target.result
-        }
+        <span class="c1">// 이미지가 로드가 된 경우</span>
+        <span class="nx">reader</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">previewImage</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">preview-image</span><span class="dl">"</span><span class="p">)</span>
+            <span class="nx">previewImage</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">result</span>
+        <span class="p">}</span>
 
-        // reader가 이미지 읽도록 하기
-        reader.readAsDataURL(input.files[0])
-    }
-}
+        <span class="c1">// reader가 이미지 읽도록 하기</span>
+        <span class="nx">reader</span><span class="p">.</span><span class="nf">readAsDataURL</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-// input file에 change 이벤트 부여
-const inputImage = document.getElementById("input-image")
-inputImage.addEventListener("change", e =&gt; {
-    readImage(e.target)
-})
+<span class="c1">// input file에 change 이벤트 부여</span>
+<span class="kd">const</span> <span class="nx">inputImage</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">input-image</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">inputImage</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">change</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">readImage</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>[caption id=”attachment_3305” align=”alignnone” width=”479”] <a href="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.09.58.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.09.58.png" alt="" loading="lazy"></a> 초기 화면[/caption]</p>
@@ -970,18 +970,18 @@ inputImage.addEventListener("change", e =&gt; {
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>&lt;input style="display: block;" type="file" id="input-multiple-image" multiple&gt;
-&lt;div id="multiple-container"&gt;
-&lt;/div&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;input</span> <span class="na">style=</span><span class="s">"display: block;"</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">id=</span><span class="s">"input-multiple-image"</span> <span class="na">multiple</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"multiple-container"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1041,65 +1041,65 @@ inputImage.addEventListener("change", e =&gt; {
 57
 58
 59
-</pre></td><td class="rouge-code"><pre>function readMultipleImage(input) {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">readMultipleImage</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
 
-    const multipleContainer = document.getElementById("multiple-container")
+    <span class="kd">const</span> <span class="nx">multipleContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">multiple-container</span><span class="dl">"</span><span class="p">)</span>
     
-    // 인풋 태그에 파일들이 있는 경우
-    if(input.files) {
-        // 이미지 파일 검사 (생략)
+    <span class="c1">// 인풋 태그에 파일들이 있는 경우</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">files</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 이미지 파일 검사 (생략)</span>
 
-        console.log(input.files)
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">files</span><span class="p">)</span>
 
-        // 유사배열을 배열로 변환 (forEach문으로 처리하기 위해)
-        const fileArr = Array.from(input.files)
+        <span class="c1">// 유사배열을 배열로 변환 (forEach문으로 처리하기 위해)</span>
+        <span class="kd">const</span> <span class="nx">fileArr</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">files</span><span class="p">)</span>
 
-        const $colDiv1 = document.createElement("div")
-        const $colDiv2 = document.createElement("div")
-        $colDiv1.classList.add("column")
-        $colDiv2.classList.add("column")
+        <span class="kd">const</span> <span class="nx">$colDiv1</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">)</span>
+        <span class="kd">const</span> <span class="nx">$colDiv2</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">$colDiv1</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">column</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">$colDiv2</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">column</span><span class="dl">"</span><span class="p">)</span>
 
-        fileArr.forEach((file, index) =&gt; {
-            const reader = new FileReader()
+        <span class="nx">fileArr</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">file</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileReader</span><span class="p">()</span>
 
-            const $imgDiv = document.createElement("div")   
-            const $img = document.createElement("img")
-            $img.classList.add("image")
+            <span class="kd">const</span> <span class="nx">$imgDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">div</span><span class="dl">"</span><span class="p">)</span>   
+            <span class="kd">const</span> <span class="nx">$img</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">img</span><span class="dl">"</span><span class="p">)</span>
+            <span class="nx">$img</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">image</span><span class="dl">"</span><span class="p">)</span>
 
-            const $label = document.createElement("label")
-            $label.classList.add("image-label")
-            $label.textContent = file.name
+            <span class="kd">const</span> <span class="nx">$label</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">label</span><span class="dl">"</span><span class="p">)</span>
+            <span class="nx">$label</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">image-label</span><span class="dl">"</span><span class="p">)</span>
+            <span class="nx">$label</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">file</span><span class="p">.</span><span class="nx">name</span>
 
-            $imgDiv.appendChild($img)
-            $imgDiv.appendChild($label)
+            <span class="nx">$imgDiv</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">$img</span><span class="p">)</span>
+            <span class="nx">$imgDiv</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">$label</span><span class="p">)</span>
 
-            reader.onload = e =&gt; {
-                $img.src = e.target.result
+            <span class="nx">reader</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">$img</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">result</span>
                 
-                $imgDiv.style.width = ($img.naturalWidth) * 0.2 + "px"
-                $imgDiv.style.height = ($img.naturalHeight) * 0.2 + "px"
-            }
+                <span class="nx">$imgDiv</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="p">(</span><span class="nx">$img</span><span class="p">.</span><span class="nx">naturalWidth</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.2</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">px</span><span class="dl">"</span>
+                <span class="nx">$imgDiv</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="p">(</span><span class="nx">$img</span><span class="p">.</span><span class="nx">naturalHeight</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.2</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">px</span><span class="dl">"</span>
+            <span class="p">}</span>
             
-            console.log(file.name)
-            if(index % 2 == 0) {
-                $colDiv1.appendChild($imgDiv)
-            } else {
-                $colDiv2.appendChild($imgDiv)
-            }
+            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">$colDiv1</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">$imgDiv</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">$colDiv2</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">$imgDiv</span><span class="p">)</span>
+            <span class="p">}</span>
             
-            reader.readAsDataURL(file)
-        })
+            <span class="nx">reader</span><span class="p">.</span><span class="nf">readAsDataURL</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span>
+        <span class="p">})</span>
 
-        multipleContainer.appendChild($colDiv1)
-        multipleContainer.appendChild($colDiv2)
+        <span class="nx">multipleContainer</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">$colDiv1</span><span class="p">)</span>
+        <span class="nx">multipleContainer</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">$colDiv2</span><span class="p">)</span>
 
-    }
-}
+    <span class="p">}</span>
+<span class="p">}</span>
 
-const inputMultipleImage = document.getElementById("input-multiple-image")
-inputMultipleImage.addEventListener("change", e =&gt; {
-    readMultipleImage(e.target)
-})
+<span class="kd">const</span> <span class="nx">inputMultipleImage</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">input-multiple-image</span><span class="dl">"</span><span class="p">)</span>
+<span class="nx">inputMultipleImage</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">change</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">readMultipleImage</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-2.47.17.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-2.47.17.jpg" alt="" loading="lazy"></a></p>
@@ -4843,18 +4843,6 @@ inputMultipleImage.addEventListener("change", e =&gt; {
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

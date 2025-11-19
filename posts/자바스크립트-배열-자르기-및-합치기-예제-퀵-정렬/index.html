@@ -1071,8 +1071,8 @@ console.log(
 
 <h4 id="예제-0-중복을-허용하지-않는-임의의-숫자-추출기-셔플링-기법-이용"><span class="me-2"><strong>예제 0: 중복을 허용하지 않는 임의의 숫자 추출기 (셔플링 기법 이용)</strong></span><a href="#예제-0-중복을-허용하지-않는-임의의-숫자-추출기-셔플링-기법-이용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1093,26 +1093,26 @@ console.log(
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>function numberSampler(maxNum, size) {
-    if(maxNum &lt; size){
-        alert("size는 maxNum보다 작거나 같아야 합니다.")
-        return false
-    }
-    var arr = []
-    for(var i = 0; i &lt; maxNum; i++){
-        arr[i] = parseInt(i) + 1
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">numberSampler</span><span class="p">(</span><span class="nx">maxNum</span><span class="p">,</span> <span class="nx">size</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">maxNum</span> <span class="o">&lt;</span> <span class="nx">size</span><span class="p">){</span>
+        <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">size는 maxNum보다 작거나 같아야 합니다.</span><span class="dl">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">maxNum</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">parseInt</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">}</span>
 
-    // Shuffling
-    for(var i = 0; i &lt; 10000; i++){
-        var tempPos = parseInt(Math.random() * arr.length)
-        var tempEl = arr[tempPos]
-        arr[tempPos] = arr[0]
-        arr[0] = tempEl
-    }
-    // 배열 자르기 0~ 19(size 직전까지)
-    return arr.slice(0, size)
-}
+    <span class="c1">// Shuffling</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">tempPos</span> <span class="o">=</span> <span class="nf">parseInt</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">tempEl</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">tempPos</span><span class="p">]</span>
+        <span class="nx">arr</span><span class="p">[</span><span class="nx">tempPos</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tempEl</span>
+    <span class="p">}</span>
+    <span class="c1">// 배열 자르기 0~ 19(size 직전까지)</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">size</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -1129,8 +1129,8 @@ console.log(
 
 <p>퀵 정렬에 대한 설명은 <a href="https://ko.wikipedia.org/wiki/%ED%80%B5_%EC%A0%95%EB%A0%AC">위키백과 링크</a>를 참고하세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1152,27 +1152,27 @@ console.log(
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>function quickSort(arr) {
-    if(arr.length &lt;= 1) {
-        return arr
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">quickSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">arr</span>
+    <span class="p">}</span>
     
-    var leftArr = [], rightArr = []
-    var pivot = arr[0]
+    <span class="kd">var</span> <span class="nx">leftArr</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">rightArr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="kd">var</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     
-    for(var i = 1; i &lt; arr.length; i++) {
-        if(arr[i] &lt;= pivot) {
-            leftArr.push(arr[i])
-        } else {
-            rightArr.push(arr[i])
-        }
-    }
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">pivot</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">leftArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">rightArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    // 배열 합치기
-    // Python 3: quickSort(leftArr) + [pivot] + quickSort(rightArr)
-    return quickSort(leftArr).concat([pivot], quickSort(rightArr)) 
+    <span class="c1">// 배열 합치기</span>
+    <span class="c1">// Python 3: quickSort(leftArr) + [pivot] + quickSort(rightArr)</span>
+    <span class="k">return</span> <span class="nf">quickSort</span><span class="p">(</span><span class="nx">leftArr</span><span class="p">).</span><span class="nf">concat</span><span class="p">([</span><span class="nx">pivot</span><span class="p">],</span> <span class="nf">quickSort</span><span class="p">(</span><span class="nx">rightArr</span><span class="p">))</span> 
     
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -1193,8 +1193,8 @@ console.log(unsortedArr, quickSort(unsortedArr))
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/Merge-sort-example-300px.gif" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/Merge-sort-example-300px.gif" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1244,55 +1244,55 @@ console.log(unsortedArr, quickSort(unsortedArr))
 47
 48
 49
-</pre></td><td class="rouge-code"><pre>function mergeSort(arr) {
-    var merger = function(iLeft, iRight) {
-        var mergedArr = []
-        var leftPoint = 0,
-            rightPoint = 0
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">merger</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">iLeft</span><span class="p">,</span> <span class="nx">iRight</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">mergedArr</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="kd">var</span> <span class="nx">leftPoint</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nx">rightPoint</span> <span class="o">=</span> <span class="mi">0</span>
 
-        // case1 - left/right의 포인터가 둘 다 비교하는 배열 내에 있는 경우
-        while (iLeft.length &gt; leftPoint &amp;&amp; iRight.length &gt; rightPoint) {
-            if (iLeft[leftPoint] &lt;= iRight[rightPoint]) {
-                mergedArr.push(iLeft[leftPoint])
-                leftPoint += 1
-            } else {
-                mergedArr.push(iRight[rightPoint])
-                rightPoint += 1
-            }
-        }
+        <span class="c1">// case1 - left/right의 포인터가 둘 다 비교하는 배열 내에 있는 경우</span>
+        <span class="k">while </span><span class="p">(</span><span class="nx">iLeft</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="nx">leftPoint</span> <span class="o">&amp;&amp;</span> <span class="nx">iRight</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="nx">rightPoint</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if </span><span class="p">(</span><span class="nx">iLeft</span><span class="p">[</span><span class="nx">leftPoint</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">iRight</span><span class="p">[</span><span class="nx">rightPoint</span><span class="p">])</span> <span class="p">{</span>
+                <span class="nx">mergedArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">iLeft</span><span class="p">[</span><span class="nx">leftPoint</span><span class="p">])</span>
+                <span class="nx">leftPoint</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">mergedArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">iRight</span><span class="p">[</span><span class="nx">rightPoint</span><span class="p">])</span>
+                <span class="nx">rightPoint</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-        // case2 - left 포인터는 아직 left 배열 내에 있는데 right 배열에는 비교 대상이 없는 경우
-        // 예를 들어: left는 [0, 2, 5, ...], right는 [1] 인 경우를 생각하면 됨
-        while (iLeft.length &gt; leftPoint) {
-            mergedArr.push(iLeft[leftPoint])
-            leftPoint += 1
-        }
+        <span class="c1">// case2 - left 포인터는 아직 left 배열 내에 있는데 right 배열에는 비교 대상이 없는 경우</span>
+        <span class="c1">// 예를 들어: left는 [0, 2, 5, ...], right는 [1] 인 경우를 생각하면 됨</span>
+        <span class="k">while </span><span class="p">(</span><span class="nx">iLeft</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="nx">leftPoint</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">mergedArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">iLeft</span><span class="p">[</span><span class="nx">leftPoint</span><span class="p">])</span>
+            <span class="nx">leftPoint</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="p">}</span>
 
-        // case3 - case 2의 반대상황
-        // 예를 들어: left는 [1], right는 [0, 2, 5, ...] 인 경우를 생각하면 됨
-        while (iRight.length &gt; rightPoint) {
-            mergedArr.push(iRight[rightPoint])
-            rightPoint += 1
-        }
+        <span class="c1">// case3 - case 2의 반대상황</span>
+        <span class="c1">// 예를 들어: left는 [1], right는 [0, 2, 5, ...] 인 경우를 생각하면 됨</span>
+        <span class="k">while </span><span class="p">(</span><span class="nx">iRight</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="nx">rightPoint</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">mergedArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">iRight</span><span class="p">[</span><span class="nx">rightPoint</span><span class="p">])</span>
+            <span class="nx">rightPoint</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="p">}</span>
 
-        return mergedArr
-    }
+        <span class="k">return</span> <span class="nx">mergedArr</span>
+    <span class="p">}</span>
 
-    var splitter = function(iArr) {
-        if (iArr.length &lt;= 1) {
-            return iArr
-        }
+    <span class="kd">var</span> <span class="nx">splitter</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">iArr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if </span><span class="p">(</span><span class="nx">iArr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">iArr</span>
+        <span class="p">}</span>
 
-        var mid = parseInt(iArr.length / 2)
-        var left = splitter(iArr.slice(0, mid))
-        var right = splitter(iArr.slice(mid, iArr.length))
+        <span class="kd">var</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nf">parseInt</span><span class="p">(</span><span class="nx">iArr</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">left</span> <span class="o">=</span> <span class="nf">splitter</span><span class="p">(</span><span class="nx">iArr</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">mid</span><span class="p">))</span>
+        <span class="kd">var</span> <span class="nx">right</span> <span class="o">=</span> <span class="nf">splitter</span><span class="p">(</span><span class="nx">iArr</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="nx">mid</span><span class="p">,</span> <span class="nx">iArr</span><span class="p">.</span><span class="nx">length</span><span class="p">))</span>
 
-        return merger(left, right)
-    }
+        <span class="k">return</span> <span class="nf">merger</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span>
+    <span class="p">}</span>
 
-    // 메인 함수 실행
-    return splitter(arr)
-}
+    <span class="c1">// 메인 함수 실행</span>
+    <span class="k">return</span> <span class="nf">splitter</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -4077,18 +4077,6 @@ console.log(unsortedArr, mergeSort(unsortedArr))
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

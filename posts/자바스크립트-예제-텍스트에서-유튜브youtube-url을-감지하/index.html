@@ -957,8 +957,8 @@ const youtubeUrl = /(http:|https:)?(\/\/)?(www\.)?(youtube.com|youtu.be)\/(watch
 
 <h5 id="2-해당-텍스트를-dom-으로부터-불러온-뒤-innerhtml을-replace-합니다"><span class="me-2"><strong>2. 해당 텍스트를 DOM 으로부터 불러온 뒤, innerHTML을 replace 합니다.</strong></span><a href="#2-해당-텍스트를-dom-으로부터-불러온-뒤-innerhtml을-replace-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -966,25 +966,25 @@ const youtubeUrl = /(http:|https:)?(\/\/)?(www\.)?(youtube.com|youtu.be)\/(watch
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>&lt;div id="content"&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
 유튜브 영상에서 주소를 복사한 후 글 아무데나 삽입하면 됩니다.
 
 https://www.yㅇutube.com/watch?v=WZiD8_XHENA
 
 https://yㅇutu.be/J0dHN1yC0NI
-&lt;/div&gt;
+<span class="nt">&lt;/div&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>const content = document.querySelector("#content")
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">content</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#content</span><span class="dl">"</span><span class="p">)</span>
 
-// str.replace(regexp|substr, newSubstr|function)
-const wrappedContent = content.innerHTML.replace(youtubeUrlExp, youtubeParser)
+<span class="c1">// str.replace(regexp|substr, newSubstr|function)</span>
+<span class="kd">const</span> <span class="nx">wrappedContent</span> <span class="o">=</span> <span class="nx">content</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="nx">youtubeUrlExp</span><span class="p">,</span> <span class="nx">youtubeParser</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>정규식에서 매칭된 결과를 영상 재생이 가능한 태그로 대체할 것입니다. 참고로 <code class="language-plaintext highlighter-rouge">replace</code>에서 대체할 텍스트 대신 함수를 사용하는 것이 가능합니다. 함수는 매치된 텍스트 및 그룹화된 텍스트(정규식인 경우)를 파라미터로 받아 사용이 가능합니다.</p>
@@ -995,8 +995,8 @@ const wrappedContent = content.innerHTML.replace(youtubeUrlExp, youtubeParser)
 
 <h5 id="3-텍스트를-대체하는-함수를-만듭니다-youtubeparser"><span class="me-2"><strong>3. 텍스트를 대체하는 함수를 만듭니다. (youtubeParser)</strong></span><a href="#3-텍스트를-대체하는-함수를-만듭니다-youtubeparser" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1010,18 +1010,18 @@ const wrappedContent = content.innerHTML.replace(youtubeUrlExp, youtubeParser)
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>function youtubeParser(url, ...groups) {
-  const container = `
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">youtubeParser</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">...</span><span class="nx">groups</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="s2">`
     &lt;div class="video-container"&gt;
       &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/#ID#" title="YouTube video player"
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen&gt;&lt;/iframe&gt;
-    &lt;/div&gt;`
+    &lt;/div&gt;`</span>
   
-  return groups &amp;&amp; groups[6].length == 11
-    ? container.replace("#ID#", groups[6])
-    : url;
-}
+  <span class="k">return</span> <span class="nx">groups</span> <span class="o">&amp;&amp;</span> <span class="nx">groups</span><span class="p">[</span><span class="mi">6</span><span class="p">].</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">11</span>
+    <span class="p">?</span> <span class="nx">container</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="dl">"</span><span class="s2">#ID#</span><span class="dl">"</span><span class="p">,</span> <span class="nx">groups</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+    <span class="p">:</span> <span class="nx">url</span><span class="p">;</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -5448,18 +5448,6 @@ const wrappedContent = content.innerHTML.replace(youtubeUrlExp, youtubeParser)
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

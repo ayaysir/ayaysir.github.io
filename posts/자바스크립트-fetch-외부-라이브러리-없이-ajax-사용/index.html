@@ -851,8 +851,8 @@
 
 <h4 id="post-예제"><span class="me-2"><strong>POST 예제</strong></span><a href="#post-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -871,24 +871,24 @@
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>const postTest = (name, job) =&gt; {
-    fetch("https://reqres.in/api/users", {
-        method: "post",
-        // 헤더가 없으면 post가 안됨
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "name": name,
-            "job": job
-        })
-    }).then(resp =&gt; {
-        console.log(resp)
-        return resp.json()
-    }).then(data =&gt; {
-        alert(JSON.stringify(data))
-    })
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">postTest</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">job</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nf">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://reqres.in/api/users</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">,</span>
+        <span class="c1">// 헤더가 없으면 post가 안됨</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">({</span>
+            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="nx">name</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">job</span><span class="dl">"</span><span class="p">:</span> <span class="nx">job</span>
+        <span class="p">})</span>
+    <span class="p">}).</span><span class="nf">then</span><span class="p">(</span><span class="nx">resp</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">resp</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nx">resp</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
+    <span class="p">}).</span><span class="nf">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nf">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+    <span class="p">})</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-14-pm-12.44.42.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/05/screenshot-2020-05-14-pm-12.44.42.png" alt="" loading="lazy"></a></p>
@@ -937,8 +937,8 @@
 
 <h4 id="post-예제async---await"><span class="me-2"><strong>POST 예제</strong> <strong>(async - await)</strong></span><a href="#post-예제async---await" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -957,24 +957,24 @@
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>const postTest = async (name, job) =&gt; {
-    const fetchObj = {
-        method: "post",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "name": name,
-            "job": job
-        })
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">postTest</span> <span class="o">=</span> <span class="k">async </span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">job</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">fetchObj</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span>
+        <span class="p">},</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">({</span>
+            <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="nx">name</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">job</span><span class="dl">"</span><span class="p">:</span> <span class="nx">job</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
 
-    // then을 하나의 const 변수에 대응
-    const init = await fetch("https://reqres.in/api/users", fetchObj)
-    const data = await init.json()
-    alert(JSON.stringify(data))
+    <span class="c1">// then을 하나의 const 변수에 대응</span>
+    <span class="kd">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://reqres.in/api/users</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchObj</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">init</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
 
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -3790,18 +3790,6 @@
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

@@ -852,8 +852,8 @@
 
 <h4 id="코드-자바스크립트"><span class="me-2"><strong>코드 (자바스크립트)</strong></span><a href="#코드-자바스크립트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -894,46 +894,46 @@
 38
 39
 40
-</pre></td><td class="rouge-code"><pre>function matchName(name1, name2) {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">matchName</span><span class="p">(</span><span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">)</span> <span class="p">{</span>
     
-    name1 = name1.split('').map(c =&gt; c.toUpperCase())
-    name2 = name2.split('').map(c =&gt; c.toUpperCase())
-    const nameLength = name1.length + name2.length
+    <span class="nx">name1</span> <span class="o">=</span> <span class="nx">name1</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">''</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="nx">c</span> <span class="o">=&gt;</span> <span class="nx">c</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">())</span>
+    <span class="nx">name2</span> <span class="o">=</span> <span class="nx">name2</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">''</span><span class="p">).</span><span class="nf">map</span><span class="p">(</span><span class="nx">c</span> <span class="o">=&gt;</span> <span class="nx">c</span><span class="p">.</span><span class="nf">toUpperCase</span><span class="p">())</span>
+    <span class="kd">const</span> <span class="nx">nameLength</span> <span class="o">=</span> <span class="nx">name1</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="nx">name2</span><span class="p">.</span><span class="nx">length</span>
     
-    const minLen = Math.min(name1.length, name2.length)
-    const weight = [3, 2, 1, 2, 4, 3, 1, 3, 1, 1, 3, 1, 3, 2, 1, 2, 2, 2, 1, 2, 1, 1, 1, 2, 2, 1]
+    <span class="kd">const</span> <span class="nx">minLen</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">min</span><span class="p">(</span><span class="nx">name1</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">name2</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">weight</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
     
-    // 문자열 배열 생성
-    const nameArr = []
-    for(let i = 0; i &lt; minLen; i++) {
-        nameArr.push(name1[i])
-        nameArr.push(name2[i])
-    }
-    const remainName = name1.slice(minLen)[0] != undefined ? name1 : name2
-    for(let c of remainName.slice(minLen)) {
-        nameArr.push(c)
-    }
+    <span class="c1">// 문자열 배열 생성</span>
+    <span class="kd">const</span> <span class="nx">nameArr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">minLen</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">nameArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">name1</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+        <span class="nx">nameArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">name2</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">remainName</span> <span class="o">=</span> <span class="nx">name1</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="nx">minLen</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">undefined</span> <span class="p">?</span> <span class="nx">name1</span> <span class="p">:</span> <span class="nx">name2</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">c</span> <span class="k">of</span> <span class="nx">remainName</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="nx">minLen</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">nameArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // 최초 점수 배열 생성
-    const scoreArr = (_ =&gt; {
-        const array = []
-        for(let c of nameArr) {
-            array.push(weight[c.charCodeAt(0) - "A".charCodeAt(0)])
-        }
-        return array
-    })();
+    <span class="c1">// 최초 점수 배열 생성</span>
+    <span class="kd">const</span> <span class="nx">scoreArr</span> <span class="o">=</span> <span class="p">(</span><span class="nx">_</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">c</span> <span class="k">of</span> <span class="nx">nameArr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">array</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">weight</span><span class="p">[</span><span class="nx">c</span><span class="p">.</span><span class="nf">charCodeAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">.</span><span class="nf">charCodeAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)])</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">array</span>
+    <span class="p">})();</span>
     
-    // 점수 계산
-    for(let i = 0; i &lt; nameLength - 2; i++) {
-        for(let j = 0; j &lt; nameLength - i - 1; j++) {
-            scoreArr[j] += scoreArr[j + 1]
-            // scoreArr[j] %= 10 // 여기에 넣지 않아도 최종 결과에서 한 번만 해당 자리수를 추출하면 됨
-        }
-    }
+    <span class="c1">// 점수 계산</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">nameLength</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">nameLength</span> <span class="o">-</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">scoreArr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">scoreArr</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="c1">// scoreArr[j] %= 10 // 여기에 넣지 않아도 최종 결과에서 한 번만 해당 자리수를 추출하면 됨</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
     
-    // 특정 자리수 추출 방법: 일의 자리는 % 10, 십의 자리는 나누기 10 해서 몫만 취한 후 % 10
-    return (scoreArr[0] % 10 * 10 + scoreArr[1] % 10) + "%"
-}
+    <span class="c1">// 특정 자리수 추출 방법: 일의 자리는 % 10, 십의 자리는 나누기 10 해서 몫만 취한 후 % 10</span>
+    <span class="k">return </span><span class="p">(</span><span class="nx">scoreArr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="nx">scoreArr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">%</span><span class="dl">"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -3781,18 +3781,6 @@ console.log(matchName("ere", "gcx"))
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

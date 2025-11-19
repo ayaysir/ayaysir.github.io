@@ -768,11 +768,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -791,21 +786,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -825,26 +805,15 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
+  
 
-      
-      
-      
+  
+  
 
-      
-    
-
-    
   
 
 
@@ -969,7 +938,7 @@
   
 
   <div class="content">
-    <h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p><strong>출처</strong></p>
 
 <ul>
   <li><a href="https://stackoverflow.com/questions/46414707/how-do-i-disable-the-full-swipe-on-a-tableview-cell-in-ios11">How do I disable the full swipe on a tableview cell in iOS11</a></li>
@@ -977,24 +946,26 @@
 
 <p> </p>
 
-<h3 id="swift스위프트-테이블-뷰uitableview에서-setediting이-true일때만-삭제-등-작업-가능하게-하기"><span class="me-2"><strong>Swift(스위프트): 테이블 뷰(UITableView)에서 setEditing이 true일때만 삭제 등 작업 가능하게 하기</strong></span><a href="#swift스위프트-테이블-뷰uitableview에서-setediting이-true일때만-삭제-등-작업-가능하게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="swift스위프트-테이블-뷰uitableview에서-setediting이-true일때만-삭제-등-작업-가능하게-하기"><span class="me-2"><strong>Swift(스위프트): 테이블 뷰(UITableView)에서 setEditing이 true일때만 삭제 등 작업 가능하게 하기</strong></span><a href="#swift스위프트-테이블-뷰uitableview에서-setediting이-true일때만-삭제-등-작업-가능하게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>제목이 대체 무슨 말인가 하면</p>
 
-<p>아래 화면과 같이 <code class="language-plaintext highlighter-rouge">Edit</code> 버튼이 있어 에디트 모드가 따로 있는 예제 앱이 있습니다. 테이블 뷰의 에디트 모드가 모든 열(<code class="language-plaintext highlighter-rouge">row</code>)에 활성화되어 있는 상태입니다.  <a href="/assets/img/wp-content/uploads/2022/05/-2022-05-30-am-3.30.50-e1653849960422.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/-2022-05-30-am-3.30.50-e1653849960422.jpg" alt="" loading="lazy"></a></p>
+<p>아래 화면과 같이 <code class="language-plaintext highlighter-rouge">Edit</code> 버튼이 있어 에디트 모드가 따로 있는 예제 앱이 있습니다. 테이블 뷰의 에디트 모드가 모든 열(<code class="language-plaintext highlighter-rouge">row</code>)에 활성화되어 있는 상태입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<p><a href="/assets/img/wp-content/uploads/2022/05/-2022-05-30-am-3.30.50-e1653849960422.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/-2022-05-30-am-3.30.50-e1653849960422.jpg" alt="" loading="lazy"></a></p>
+
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>// Override to support conditional editing of the table view.
-override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -&gt; Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// Override to support conditional editing of the table view.</span>
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">canEditRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="c1">// Return false if you do not want the specified item to be editable.</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1038,7 +1009,7 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 <p>에디트 모드인 이 화면에서만 삭제 등의 작업을 진행하고 싶은데, 문제는 평상시 모드(<code class="language-plaintext highlighter-rouge">isEditing = false</code>)에서도 스와이프 하면 삭제 메뉴가 나타납니다.</p>
 
 <!-- http://www.giphy.com/gifs/KhpWcDkCCIKjxG0Z5m -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWs4aHI0ZjlxMnFoZWxweTJzMTJ2a21ubTJzNHZ6b291YXo1YmFvdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KhpWcDkCCIKjxG0Z5m/giphy.gif" class="popup img-link shimmer"><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWs4aHI0ZjlxMnFoZWxweTJzMTJ2a21ubTJzNHZ6b291YXo1YmFvdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KhpWcDkCCIKjxG0Z5m/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1046,7 +1017,7 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 
 <p> </p>
 
-<h4 id="trailingswipeactionsconfigurationforrowat"><span class="me-2"><strong>trailingSwipeActionsConfigurationForRowAt</strong></span><a href="#trailingswipeactionsconfigurationforrowat" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="trailingswipeactionsconfigurationforrowat"><span class="me-2"><strong>trailingSwipeActionsConfigurationForRowAt</strong></span><a href="#trailingswipeactionsconfigurationforrowat" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 부분은 스와이프를 오른쪽 구석(<code class="language-plaintext highlighter-rouge">trailing</code>)에서 시작할 경우에 표시할 커스텀 버튼 등을 만드는 곳입니다.</p>
 
@@ -1129,7 +1100,7 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 <p> </p>
 
 <!-- http://www.giphy.com/gifs/a0TpAI0XWhigJH4ouu -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWFjZWV2dWp0OXdmNHdrNXN5NW5tcnRhYTFyYTFzZGpiYnY0bmhkdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a0TpAI0XWhigJH4ouu/giphy.gif" class="popup img-link shimmer"><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWFjZWV2dWp0OXdmNHdrNXN5NW5tcnRhYTFyYTFzZGpiYnY0bmhkdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a0TpAI0XWhigJH4ouu/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p>이제 에디트 모드일 때에만 삭제 버튼이 활성화되고, 비에디트 모드인 경우 스와이프해도 아무 액션이 나타나지 않습니다.</p>
 
@@ -2137,18 +2108,6 @@ override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexP
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

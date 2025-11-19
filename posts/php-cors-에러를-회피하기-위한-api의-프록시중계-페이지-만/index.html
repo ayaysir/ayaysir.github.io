@@ -1748,8 +1748,8 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
 <p>자바스크립트에서 원래 API 주소 대신 중계 페이지의 URL을 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1771,27 +1771,27 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>const q = prompt("검색어 입력?")
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">q</span> <span class="o">=</span> <span class="nf">prompt</span><span class="p">(</span><span class="dl">"</span><span class="s2">검색어 입력?</span><span class="dl">"</span><span class="p">)</span>
 
-// const originalUrl = "https://stdict.korean.go.kr/api/search.do?key=[API_KEY]&amp;type_search=search&amp;req_type=json&amp;q=오픈";
-// 삭제
+<span class="c1">// const originalUrl = "https://stdict.korean.go.kr/api/search.do?key=[API_KEY]&amp;type_search=search&amp;req_type=json&amp;q=오픈";</span>
+<span class="c1">// 삭제</span>
 
-const proxyUrl = "http://[내_주소]/proxy/?certkey_no=4422&amp;key=[API_KEY]&amp;type_search=search&amp;req_type=json&amp;q=" + q;
-// 새로운 API 주소로 사용
+<span class="kd">const</span> <span class="nx">proxyUrl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://[내_주소]/proxy/?certkey_no=4422&amp;key=[API_KEY]&amp;type_search=search&amp;req_type=json&amp;q=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">q</span><span class="p">;</span>
+<span class="c1">// 새로운 API 주소로 사용</span>
 
-(async function() {
-    try {
-        const init = await fetch(proxyUrl, {
-            method: "get"
-        })
-        const data = await init.json()
-        console.log(data)
+<span class="p">(</span><span class="k">async</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="nx">proxyUrl</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">get</span><span class="dl">"</span>
+        <span class="p">})</span>
+        <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">init</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
         
-        // ... //
-    } catch (exc) {
-        console.warn(exc)
-    }
-})();
+        <span class="c1">// ... //</span>
+    <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">exc</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">warn</span><span class="p">(</span><span class="nx">exc</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})();</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>CORS 문제가 발생하지 않고 API 호출이 정상적으로 동작하는지 확인합니다.</p>
@@ -2811,18 +2811,6 @@ const proxyUrl = "http://[내_주소]/proxy/?certkey_no=4422&amp;key=[API_KEY]&a
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

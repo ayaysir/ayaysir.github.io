@@ -868,8 +868,8 @@
 
 <p>웹 페이지의 자바스크립트 부분에 다음을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -877,13 +877,13 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>const is_iOS = navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true
-function sendToNativeApp(event) {
-  if(is_iOS) {
-      // receiveFromJS - 네이티브 앱에서 사용할 함수 이름
-      webkit.messageHandlers.receiveFromJS.postMessage("자바스크립트로부터")
-  }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">is_iOS</span> <span class="o">=</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/iPhone|iPad|iPod/i</span><span class="p">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="p">?</span> <span class="kc">false</span> <span class="p">:</span> <span class="kc">true</span>
+<span class="kd">function</span> <span class="nf">sendToNativeApp</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">is_iOS</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// receiveFromJS - 네이티브 앱에서 사용할 함수 이름</span>
+      <span class="nx">webkit</span><span class="p">.</span><span class="nx">messageHandlers</span><span class="p">.</span><span class="nx">receiveFromJS</span><span class="p">.</span><span class="nf">postMessage</span><span class="p">(</span><span class="dl">"</span><span class="s2">자바스크립트로부터</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1052,14 +1052,14 @@ function sendToNativeApp(event) {
 
 <p>예를 들어 네이티브 앱에서 아래 자바스크립트 함수를 실행하고 싶다고 한다면</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>function start(msg) {
-    document.getElementById("title").textContent = msg
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">start</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">msg</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -5759,18 +5759,6 @@ console.log("success")
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

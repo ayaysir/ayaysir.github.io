@@ -1141,8 +1141,8 @@ function getCoordBySquareIndex(i) {
 
 <p>목록이 행렬 정보를 표시하도록 변경합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1150,13 +1150,13 @@ function getCoordBySquareIndex(i) {
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>const moves = history.map((step, move) =&gt; {
-  // 1. 이동 기록 목록에서 특정 형식(행, 열)으로 각 이동의 위치를 표시해주세요.
-  const { x, y } = getCoordBySquareIndex(step.currentSquareIndex); // 1
-  const desc = move ?
-        `Go to move #${move} - (${x}, ${y})` :
-        'Go to game start';
-  // ... 이하 생략 ... //
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">moves</span> <span class="o">=</span> <span class="nx">history</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">step</span><span class="p">,</span> <span class="nx">move</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// 1. 이동 기록 목록에서 특정 형식(행, 열)으로 각 이동의 위치를 표시해주세요.</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">getCoordBySquareIndex</span><span class="p">(</span><span class="nx">step</span><span class="p">.</span><span class="nx">currentSquareIndex</span><span class="p">);</span> <span class="c1">// 1</span>
+  <span class="kd">const</span> <span class="nx">desc</span> <span class="o">=</span> <span class="nx">move</span> <span class="p">?</span>
+        <span class="s2">`Go to move #</span><span class="p">${</span><span class="nx">move</span><span class="p">}</span><span class="s2"> - (</span><span class="p">${</span><span class="nx">x</span><span class="p">}</span><span class="s2">, </span><span class="p">${</span><span class="nx">y</span><span class="p">}</span><span class="s2">)`</span> <span class="p">:</span>
+        <span class="dl">'</span><span class="s1">Go to game start</span><span class="dl">'</span><span class="p">;</span>
+  <span class="c1">// ... 이하 생략 ... //</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1167,8 +1167,8 @@ function getCoordBySquareIndex(i) {
 
 <p><code class="language-plaintext highlighter-rouge">Game</code> 컴포넌트에서 <code class="language-plaintext highlighter-rouge">this.state.stepNumber</code>와 <code class="language-plaintext highlighter-rouge">move</code> 가 같다면 현재 선택된 아이템입니다. 1번 문제의 <code class="language-plaintext highlighter-rouge">moves</code> 함수의 <code class="language-plaintext highlighter-rouge">render()</code> 부분에서 <code class="language-plaintext highlighter-rouge">style</code> 객체를 이용해 다음과 같이 바꿔줍니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1183,20 +1183,20 @@ function getCoordBySquareIndex(i) {
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>const moves = history.map((step, move) =&gt; {
-  // ... //
-  // *2. 이동 목록에서 현재 선택된 아이템을 굵게 표시해주세요.
-  return (
-    &lt;li key={move}&gt;
-      &lt;button 
-        onClick={() =&gt; this.jumpTo(move)}
-        style={ {"fontWeight": (this.state.stepNumber === move ? "bold" : "normal")} }
-      &gt;
-        {desc}
-      &lt;/button&gt;
-    &lt;/li&gt;
-  );
-});
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">moves</span> <span class="o">=</span> <span class="nx">history</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">step</span><span class="p">,</span> <span class="nx">move</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// ... //</span>
+  <span class="c1">// *2. 이동 목록에서 현재 선택된 아이템을 굵게 표시해주세요.</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">move</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> 
+        <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nf">jumpTo</span><span class="p">(</span><span class="nx">move</span><span class="p">)}</span>
+        <span class="nx">style</span><span class="o">=</span><span class="p">{</span> <span class="p">{</span><span class="dl">"</span><span class="s2">fontWeight</span><span class="dl">"</span><span class="p">:</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">stepNumber</span> <span class="o">===</span> <span class="nx">move</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">bold</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">normal</span><span class="dl">"</span><span class="p">)}</span> <span class="p">}</span>
+      <span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">desc</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">});</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1377,8 +1377,8 @@ const toggleMoves = () =&gt; {
 
 <p>먼저 <code class="language-plaintext highlighter-rouge">calculateWinner</code> 함수의 변경이 필요합니다. 특정 플레이어가 이겼을 경우 어느 블록이 승리의 원인이 되었는지는 알려주는 <code class="language-plaintext highlighter-rouge">winningIndex</code> 변수를 추가해서 객체 형태로 리턴하도록 변경합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1406,32 +1406,32 @@ const toggleMoves = () =&gt; {
 25
 26
 27
-</pre></td><td class="rouge-code"><pre>function calculateWinner(squares) {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">calculateWinner</span><span class="p">(</span><span class="nx">squares</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">lines</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+  <span class="p">];</span>
   
-  for (let i = 0; i &lt; lines.length; i++) {
-    const [a, b, c] = lines[i];
-    // 한 라인이 O , X 일치하는 경우
-    if (squares[a]  &amp;&amp; 
-        squares[a] === squares[b] &amp;&amp; 
-        squares[a] === squares[c]) {
-      return {
-        player: squares[a],
-        winningIndex: [a, b, c]
-      };
-    }
-  }
-  return null;
-}
+  <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">lines</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="nx">lines</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="c1">// 한 라인이 O , X 일치하는 경우</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">squares</span><span class="p">[</span><span class="nx">a</span><span class="p">]</span>  <span class="o">&amp;&amp;</span> 
+        <span class="nx">squares</span><span class="p">[</span><span class="nx">a</span><span class="p">]</span> <span class="o">===</span> <span class="nx">squares</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span> <span class="o">&amp;&amp;</span> 
+        <span class="nx">squares</span><span class="p">[</span><span class="nx">a</span><span class="p">]</span> <span class="o">===</span> <span class="nx">squares</span><span class="p">[</span><span class="nx">c</span><span class="p">])</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">player</span><span class="p">:</span> <span class="nx">squares</span><span class="p">[</span><span class="nx">a</span><span class="p">],</span>
+        <span class="na">winningIndex</span><span class="p">:</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">]</span>
+      <span class="p">};</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1477,8 +1477,8 @@ if (winner) {
 }
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1486,13 +1486,13 @@ if (winner) {
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>&lt;div className="game-board"&gt;
-  &lt;Board 
-    squares={current.squares}
-    onClick={(i) =&gt; this.handleClick(i)}
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">"game-board"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Board</span> 
+    <span class="na">squares=</span><span class="s">{current.squares}</span>
+    <span class="na">onClick=</span><span class="s">{(i)</span> <span class="err">=</span><span class="nt">&gt;</span> this.handleClick(i)}
     winningIndex={winningIndex}
   /&gt;
-&lt;/div&gt;
+<span class="nt">&lt;/div&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1529,8 +1529,8 @@ if (winner) {
 
 <p><strong>Square 컴포넌트</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1541,16 +1541,16 @@ if (winner) {
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>function Square({ value, onClick, backgroundColor }) {
-  return (
-    &lt;button 
-      className="square" 
-      onClick={onClick}
-      style=&gt;
-      {value}
-    &lt;/button&gt;
-  );
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">Square</span><span class="p">({</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">onClick</span><span class="p">,</span> <span class="nx">backgroundColor</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">button</span> 
+      <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">square</span><span class="dl">"</span> 
+      <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onClick</span><span class="p">}</span>
+      <span class="nx">style</span><span class="o">=&gt;</span>
+      <span class="p">{</span><span class="nx">value</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-01-am-2.20.59.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-01-am-2.20.59.png" alt="" loading="lazy"></a></p>
@@ -8390,18 +8390,6 @@ if (winner) {
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -8438,7 +8426,7 @@ if (winner) {
 
               <h4 class="pt-0 my-2">리액트 + 타입스크립트 (React + TypeScript): HTML 요소, 폼의 이벤트 처리</h4>
               <div class="text-muted">
-                <p>리액트가 아닌 일반 타입스크립트에 대한 이벤트 처리는 아래를 참고하세요,  - [타입스크립트(TypeScript): HTML 요소에 이벤트 추가](http://yoonbumtae.com/?p=4367)     ## **리액트 + 타입스크립트 (React + TypeScript): HTML 요소, 폼의 이벤트 처리**  아래와 같이 폼에 대한 이벤트 처...</p>
+                <p>리액트가 아닌 일반 타입스크립트에 대한 이벤트 처리는 아래를 참고하세요.  - [타입스크립트(TypeScript): HTML 요소에 이벤트 추가](/posts/타입스크립트typescript-html-요소에-이벤트-추가/)     ## **오류 발생하는 기존 코드**  아래와 같이 폼에 대한 이벤트 처리를 하는 JSX를 사용한 리액트 Hook이 있다고 ...</p>
               </div>
             </div>
           </a>

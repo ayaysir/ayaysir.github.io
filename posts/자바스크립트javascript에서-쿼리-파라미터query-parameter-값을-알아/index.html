@@ -722,12 +722,12 @@
 
 <h4 id="es6-이상인-경우"><span class="me-2"><strong>ES6 이상인 경우</strong></span><a href="#es6-이상인-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>const urlParams = new URLSearchParams(window.location.search);
-const uwasaKeyword = urlParams.get('uwasaKeyword');
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">urlParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">uwasaKeyword</span> <span class="o">=</span> <span class="nx">urlParams</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">uwasaKeyword</span><span class="dl">'</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">URLSearchParams</code>는 최신 스펙으로 인터넷 익스플로러에서는 지원하지 않습니다. (<a href="https://caniuse.com/urlsearchparams">브라우저별 호환성 확인</a>)</p>
@@ -738,8 +738,8 @@ const uwasaKeyword = urlParams.get('uwasaKeyword');
 
 <p>호환성을 고려할 때는 이 방법을 사용해야 합니다. 다음과 같은 함수를 생성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -748,14 +748,14 @@ const uwasaKeyword = urlParams.get('uwasaKeyword');
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>function getParameterByName(name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, '\\$&amp;');
-    var regex = new RegExp('[?&amp;]' + name + '(=([^&amp;#]*)|&amp;|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">getParameterByName</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">url</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[\[\]]</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">'</span><span class="se">\\</span><span class="s1">$&amp;</span><span class="dl">'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">regex</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="s1">[?&amp;]</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">(=([^&amp;#]*)|&amp;|#|$)</span><span class="dl">'</span><span class="p">),</span>
+        <span class="nx">results</span> <span class="o">=</span> <span class="nx">regex</span><span class="p">.</span><span class="nf">exec</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">results</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">results</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="k">return</span> <span class="dl">''</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nf">decodeURIComponent</span><span class="p">(</span><span class="nx">results</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\+</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">));</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -4545,18 +4545,6 @@ var qux = getParameterByName('qux'); // null (아예 없는 파라미터)
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

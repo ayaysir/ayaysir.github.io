@@ -1241,32 +1241,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1447,6 +1421,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1495,30 +1491,13 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
   
 
 
@@ -1609,7 +1588,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4205 words"
+  title="4191 words"
 >
   <em>23 min</em> read</span>
 
@@ -1643,13 +1622,13 @@
   
 
   <div class="content">
-    <h2 id="rxswiftreactivex--swift-기본-개념-및-스토리보드-예제"><span class="me-2"><strong>RxSwift(ReactiveX + Swift): 기본 개념 및 스토리보드 예제</strong></span><a href="#rxswiftreactivex--swift-기본-개념-및-스토리보드-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <p><strong>RxSwift(ReactiveX + Swift): 기본 개념 및 스토리보드 예제</strong></p>
 
 <p> </p>
 
-<h3 id="기본-용어"><span class="me-2"><strong>기본 용어</strong></span><a href="#기본-용어" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="기본-용어"><span class="me-2"><strong>기본 용어</strong></span><a href="#기본-용어" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="명령형-프로그래밍-imperative-programming"><span class="me-2"><strong>명령형 프로그래밍 (Imperative Programming)</strong></span><a href="#명령형-프로그래밍-imperative-programming" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="명령형-프로그래밍-imperative-programming"><span class="me-2"><strong>명령형 프로그래밍 (Imperative Programming)</strong></span><a href="#명령형-프로그래밍-imperative-programming" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>컴퓨터가 실행할 명령을 순차적으로 작성하는 프로그래밍 방식입니다.</li>
@@ -1658,10 +1637,10 @@
 
 <p> </p>
 
-<h5 id="예제-코드"><span class="me-2"><strong>예제 코드</strong></span><a href="#예제-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="예제-코드"><span class="me-2"><strong>예제 코드</strong></span><a href="#예제-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1671,20 +1650,20 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-var numbersLessThanFive: [Int] = []
-for index in 0..&lt;numbers.count {
-    if numbers[index] &gt; 5 {
-        numbersLessThanFive.append(numbers[index])
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="k">var</span> <span class="nv">numbersLessThanFive</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">numbers</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">numbers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="p">{</span>
+        <span class="n">numbersLessThanFive</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-// 결과: [1, 2, 3, 4]
+<span class="c1">// 결과: [1, 2, 3, 4]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="함수형-프로그래밍-functional-programming"><span class="me-2"><strong>함수형 프로그래밍 (Functional Programming)</strong></span><a href="#함수형-프로그래밍-functional-programming" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="함수형-프로그래밍-functional-programming"><span class="me-2"><strong>함수형 프로그래밍 (Functional Programming)</strong></span><a href="#함수형-프로그래밍-functional-programming" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>자료 처리를 수학적 함수의 계산으로 취급하고 상태 변화(changing state)와 가변 데이터(mutable data)를 멀리하는 프로그래밍 방식입니다.</li>
@@ -1693,23 +1672,23 @@ for index in 0..&lt;numbers.count {
 
 <p> </p>
 
-<h5 id="예제-코드-1"><span class="me-2"><strong>예제 코드</strong></span><a href="#예제-코드-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="예제-코드-1"><span class="me-2"><strong>예제 코드</strong></span><a href="#예제-코드-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-let numberLessThanFive = numbers.filter { $0 &lt; 5 }
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">numberLessThanFive</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">}</span>
 
-// 결과: [1, 2, 3, 4]
+<span class="c1">// 결과: [1, 2, 3, 4]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="반응형-프로그래밍-reactive-programming"><span class="me-2"><strong>반응형 프로그래밍 (Reactive Programming)</strong></span><a href="#반응형-프로그래밍-reactive-programming" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="반응형-프로그래밍-reactive-programming"><span class="me-2"><strong>반응형 프로그래밍 (Reactive Programming)</strong></span><a href="#반응형-프로그래밍-reactive-programming" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>데이터 스트림 및 변경 전파와 관련된 선언적 프로그래밍 패러다임입니다.</li>
@@ -1720,10 +1699,10 @@ let numberLessThanFive = numbers.filter { $0 &lt; 5 }
 
 <p> </p>
 
-<h5 id="예제-코드-2"><span class="me-2"><strong>예제 코드</strong></span><a href="#예제-코드-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="예제-코드-2"><span class="me-2"><strong>예제 코드</strong></span><a href="#예제-코드-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1734,21 +1713,21 @@ let numberLessThanFive = numbers.filter { $0 &lt; 5 }
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>let twoDimensionalArray = [
-    [1,2],
-    [3,4],
-    [5,6],
-]
-let flatArray = twoDimensionalArray.flatMap { array in
-    return array.map { $0 * 2 }
-}
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">twoDimensionalArray</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="k">let</span> <span class="nv">flatArray</span> <span class="o">=</span> <span class="n">twoDimensionalArray</span><span class="o">.</span><span class="n">flatMap</span> <span class="p">{</span> <span class="n">array</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="n">array</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">}</span>
+<span class="p">}</span>
 
-// 결과: [2, 4, 6, 8, 10, 12]
+<span class="c1">// 결과: [2, 4, 6, 8, 10, 12]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="이벤트-스트림-event-stream"><span class="me-2"><strong>이벤트 스트림 (Event Stream)</strong></span><a href="#이벤트-스트림-event-stream" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="이벤트-스트림-event-stream"><span class="me-2"><strong>이벤트 스트림 (Event Stream)</strong></span><a href="#이벤트-스트림-event-stream" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>시간이 지나면서 발생하는 이벤트들의 흐름입니다.</li>
@@ -1757,8 +1736,8 @@ let flatArray = twoDimensionalArray.flatMap { array in
   <li>이벤트 스트림은 속성(property)을 가지지 않으며(=이벤트의 발생 시간 및 타입이 명시되지 않음),이벤트의 발생 시기는 불규칙하게 발생될 수 있습니다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1767,21 +1746,22 @@ let flatArray = twoDimensionalArray.flatMap { array in
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>let eventStream = ["1", "2", "abc", "3", "4", "cdg", "6", 기타등등...]
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">eventStream</span> <span class="o">=</span> <span class="p">[</span><span class="s">"1"</span><span class="p">,</span> <span class="s">"2"</span><span class="p">,</span> <span class="s">"abc"</span><span class="p">,</span> <span class="s">"3"</span><span class="p">,</span> <span class="s">"4"</span><span class="p">,</span> <span class="s">"cdg"</span><span class="p">,</span> <span class="s">"6"</span><span class="p">,</span> <span class="n">기타등등</span><span class="o">...</span><span class="p">]</span>
 
-let result = eventStream.map {
-    // Step 1: 맵 내부에서 배열 요소를 분석하여 Int로 변환 가능한 요소들을 Int의 호환 타입으로 변환합니다.
-}.filter {
-    // Step 2: 1단계에서 걸러내지 못한 Int가 아닌 요소들을 걸러내고 순수 Int 배열로 만듭니다.
-    // Step 3: 2단계 배열의 모든 요소들을 더한 값을 반환합니다.
-}.reduce(0, +)
+<span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">eventStream</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span>
+    <span class="c1">// Step 1: 맵 내부에서 배열 요소를 분석하여 Int로 변환 가능한 요소들을 Int의 호환 타입으로 변환합니다.</span>
+<span class="p">}</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span>
+    <span class="c1">// Step 2: 1단계에서 걸러내지 못한 Int가 아닌 요소들을 걸러내고 순수 Int 배열로 만듭니다.</span>
+    <span class="c1">// Step 3: 2단계 배열의 모든 요소들을 더한 값을 반환합니다.</span>
+<span class="p">}</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<p>[caption id=”attachment_4480” align=”alignnone” width=”808”] <a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-20-pm-7.29.16.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-20-pm-7.29.16.jpg" alt="" loading="lazy"></a> 이벤트 스트림의 흐름을 그림으로 나타낸것을 마블 다이어그램(Marble Diagram)이라고 합니다. 동그라미 모양이 이벤트 발생, X 표시는 에러의 발생, 세로 막대기는 이벤트 스트림의 완료를 의미합니다.[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-20-pm-7.29.16.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-20-pm-7.29.16.jpg" alt="" loading="lazy"></a> <br />
+<em>이벤트 스트림의 흐름을 그림으로 나타낸것을 마블 다이어그램(Marble Diagram)이라고 합니다. 동그라미 모양이 이벤트 발생, X 표시는 에러의 발생, 세로 막대기는 이벤트 스트림의 완료를 의미합니다.</em></p>
 
-<h4 id="상태-state"><span class="me-2"><strong>상태 (State)</strong></span><a href="#상태-state" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="상태-state"><span class="me-2"><strong>상태 (State)</strong></span><a href="#상태-state" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>예를 들면, 네트워크에서 데이터를 가져오거나, 소리를 재생하거나, 사용자 입력을 기다리거나 하는 등 언제든지 발생할 수 있는 애플리케이션의 동작 및 상황을 상태(state)라고 합니다.</li>
@@ -1790,7 +1770,7 @@ let result = eventStream.map {
 
 <p> </p>
 
-<h4 id="순수-함수-pure-function"><span class="me-2"><strong>순수 함수 (Pure Function)</strong></span><a href="#순수-함수-pure-function" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="순수-함수-pure-function"><span class="me-2"><strong>순수 함수 (Pure Function)</strong></span><a href="#순수-함수-pure-function" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>동일한 입력이라면 항상 동일한 출력 반환을 보장해야 합니다.</li>
@@ -1800,7 +1780,7 @@ let result = eventStream.map {
 
 <p> </p>
 
-<h4 id="부수-효과-side-effect"><span class="me-2"><strong>부수 효과 (Side Effect)</strong></span><a href="#부수-효과-side-effect" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="부수-효과-side-effect"><span class="me-2"><strong>부수 효과 (Side Effect)</strong></span><a href="#부수-효과-side-effect" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>함수가 실행되었는데 그 실행으로 인해 함수 외부에 있는 값 등이 변경되었다면 이것을 ‘부수 효과가 발생했다’고 합니다.</li>
@@ -1810,7 +1790,7 @@ let result = eventStream.map {
 
 <p> </p>
 
-<h4 id="불변성-immutability"><span class="me-2"><strong>불변성 (Immutability)</strong></span><a href="#불변성-immutability" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="불변성-immutability"><span class="me-2"><strong>불변성 (Immutability)</strong></span><a href="#불변성-immutability" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>멑티스레드 환경에서는, 변수형 데이터 타입(variable datatype)보다 상수형 데이터타입(constant datatype)이 우수하다고 알려져 있습니다.
@@ -1827,11 +1807,11 @@ let result = eventStream.map {
 
 <p> </p>
 
-<h3 id="reactivex의-주요-개념-및-패턴"><span class="me-2"><strong>ReactiveX의 주요 개념 및 패턴</strong></span><a href="#reactivex의-주요-개념-및-패턴" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="reactivex의-주요-개념-및-패턴"><span class="me-2"><strong>ReactiveX의 주요 개념 및 패턴</strong></span><a href="#reactivex의-주요-개념-및-패턴" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p> </p>
 
-<h4 id="옵저버-패턴-observer-pattern"><span class="me-2"><strong>옵저버 패턴 (Observer Pattern)</strong></span><a href="#옵저버-패턴-observer-pattern" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="옵저버-패턴-observer-pattern"><span class="me-2"><strong>옵저버 패턴 (Observer Pattern)</strong></span><a href="#옵저버-패턴-observer-pattern" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>객체의 상태 변화를 관찰하는 관찰자(Observer)들의 목록을 객체에 등록하여 상태 변화가 있을 때마다 메서드 등을 통해 객체가 직접 목록의 각 옵저버에게 통지하도록 하는 디자인 패턴입니다.</li>
@@ -1843,7 +1823,7 @@ let result = eventStream.map {
 
 <p> </p>
 
-<h4 id="반복자-패턴-iterator-pattern"><span class="me-2"><strong>반복자 패턴 (Iterator Pattern)</strong></span><a href="#반복자-패턴-iterator-pattern" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="반복자-패턴-iterator-pattern"><span class="me-2"><strong>반복자 패턴 (Iterator Pattern)</strong></span><a href="#반복자-패턴-iterator-pattern" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>컬렉션의 구현 방법을 노출시키지 않으면서도 그 안에 들어있는 모든 항목에 접근할 수 있는 방법을 제공하는 패턴을 의미합니다.</li>
@@ -1854,7 +1834,7 @@ let result = eventStream.map {
 
 <p> </p>
 
-<h4 id="옵저버블-observable"><span class="me-2"><strong>옵저버블 (Observable)</strong></span><a href="#옵저버블-observable" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="옵저버블-observable"><span class="me-2"><strong>옵저버블 (Observable)</strong></span><a href="#옵저버블-observable" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>옵저버블 시퀀스(Observable Sequence)의 핵심 개념이며 말 그대로 ‘관측 가능한’ 모든 요소입니다. 이벤트를 발생시킵니다.</li>
@@ -1865,7 +1845,7 @@ let result = eventStream.map {
 
 <p> </p>
 
-<h4 id="subject"><span class="me-2"><strong>Subject</strong></span><a href="#subject" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="subject"><span class="me-2"><strong>Subject</strong></span><a href="#subject" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">Subject</code>라는 이름의 옵저버 자체 또는 옵저버블 시퀀스(Observalble Sequence)인 Subject라는 특별한 타입이 존재합니다.</p>
 
@@ -1904,7 +1884,7 @@ let result = eventStream.map {
 
 <p> </p>
 
-<h4 id="railway-oriented-programming"><span class="me-2"><strong>Railway-oriented Programming</strong> </span><a href="#railway-oriented-programming" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="railway-oriented-programming"><span class="me-2"><strong>Railway-oriented Programming</strong> </span><a href="#railway-oriented-programming" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>요약하자면, 기찻길을 이어붙이듯이 함수들을 연결해 “happy path”를 구현하자는 패러다임이며, 이러한 기찻길을 구성할 수 있는 함수는 당연히 부수효과가 없고 입력값과 출력값이 항상 동일한 순수 함수여야 한다는 것입니다.</p>
 
@@ -1944,13 +1924,14 @@ let result = eventStream.map {
 
 <p> </p>
 
-<h3 id="예제-swift스토리보드의-로그인-화면"><span class="me-2"><strong>예제: Swift+스토리보드의 로그인 화면</strong></span><a href="#예제-swift스토리보드의-로그인-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="예제-swift스토리보드의-로그인-화면"><span class="me-2"><strong>예제: Swift+스토리보드의 로그인 화면</strong></span><a href="#예제-swift스토리보드의-로그인-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>RxSwift의 기본 개념을 이용한 사용자 이름 필드와 패스워드 필드의 글자 수가 모두 4자인 이상인 경우에만 로그인 버튼이 활성화되는 예제입니다. 텍스트 필드에 값이 입력될때마다 실시간으로 구독자에게 해당 조건이 만족하는지 전송되며 구독자는 필드에 값이 입력되는 대로 정보를 받아 조건이 만족하는대로 로그인 버튼의 활성화할 수 있습니다.</p>
 
-<p>[caption id=”attachment_4484” align=”alignnone” width=”856”] <a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-20-pm-11.12.41.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-20-pm-11.12.41.jpg" alt="" loading="lazy"></a> <code class="language-plaintext highlighter-rouge">@IBOutlet</code> 연결[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-20-pm-11.12.41.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-20-pm-11.12.41.jpg" alt="" loading="lazy"></a> <br />
+<em><code class="language-plaintext highlighter-rouge">@IBOutlet</code> 연결</em></p>
 
-<h5 id="loginviewmodelswift"><span class="me-2"><strong>LoginViewModel.swift</strong></span><a href="#loginviewmodelswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="loginviewmodelswift"><span class="me-2"><strong>LoginViewModel.swift</strong></span><a href="#loginviewmodelswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -2002,11 +1983,12 @@ let result = eventStream.map {
   </li>
 </ul>
 
-<p>[caption id=”attachment_4477” align=”alignnone” width=”580”] <a href="/assets/img/wp-content/uploads/2022/05/99361F4A5B47841627.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/99361F4A5B47841627.png" alt="" loading="lazy"></a> 참고: <code class="language-plaintext highlighter-rouge">combineLatest</code>[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/05/99361F4A5B47841627.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/99361F4A5B47841627.png" alt="" loading="lazy"></a> <br />
+<em>참고: <code class="language-plaintext highlighter-rouge">combineLatest</code></em></p>
 
 <p> </p>
 
-<h5 id="viewcontrollerswift"><span class="me-2"><strong>ViewController.swift</strong></span><a href="#viewcontrollerswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="viewcontrollerswift"><span class="me-2"><strong>ViewController.swift</strong></span><a href="#viewcontrollerswift" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -2060,13 +2042,11 @@ let result = eventStream.map {
 48
 49
 50
-51
 </pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 <span class="kd">import</span> <span class="kt">RxSwift</span>
 <span class="kd">import</span> <span class="kt">RxCocoa</span>
 
 <span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
-    
     <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">txfUsername</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span>
     <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">txfPassword</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span>
     <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">btnLogin</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span>
@@ -2129,7 +2109,7 @@ let result = eventStream.map {
 <p> </p>
 
 <!-- http://www.giphy.com/gifs/83zY8HsjQnCRdeYNPD -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzd5ajg2MWxzdDV1enFicGgwMDNuNml5aTNrcWo3Mm9yZnQ5ZmR2aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/83zY8HsjQnCRdeYNPD/giphy.gif" class="popup img-link shimmer"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzd5ajg2MWxzdDV1enFicGgwMDNuNml5aTNrcWo3Mm9yZnQ5ZmR2aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/83zY8HsjQnCRdeYNPD/giphy.gif" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -3135,18 +3115,6 @@ let result = eventStream.map {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

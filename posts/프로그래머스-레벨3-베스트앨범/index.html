@@ -970,8 +970,8 @@
 
 <h4 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1020,54 +1020,54 @@
 46
 47
 48
-</pre></td><td class="rouge-code"><pre>function solution(genres, plays) {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">genres</span><span class="p">,</span> <span class="nx">plays</span><span class="p">)</span> <span class="p">{</span>
     
-    const answer = []
+    <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[]</span>
     
-    const songs = {}
-    const playCount = {}
+    <span class="kd">const</span> <span class="nx">songs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="kd">const</span> <span class="nx">playCount</span> <span class="o">=</span> <span class="p">{}</span>
     
-    // songs, playCount 객체 생성
-    genres.forEach((genre, idx) =&gt; {
+    <span class="c1">// songs, playCount 객체 생성</span>
+    <span class="nx">genres</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">genre</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         
-        if(!songs[genre]) songs[genre] = []
-        if(playCount[genre] == null || playCount[genre] == undefined) {
-            playCount[genre] = 0
-        }
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">songs</span><span class="p">[</span><span class="nx">genre</span><span class="p">])</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">genre</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">playCount</span><span class="p">[</span><span class="nx">genre</span><span class="p">]</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">playCount</span><span class="p">[</span><span class="nx">genre</span><span class="p">]</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">playCount</span><span class="p">[</span><span class="nx">genre</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="p">}</span>
         
-        const info = {
-            genre,
-            play: plays[idx],
-            index: idx
-        }
-        songs[genre].push(info)
-        playCount[genre] += plays[idx]
-    })
+        <span class="kd">const</span> <span class="nx">info</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">genre</span><span class="p">,</span>
+            <span class="na">play</span><span class="p">:</span> <span class="nx">plays</span><span class="p">[</span><span class="nx">idx</span><span class="p">],</span>
+            <span class="na">index</span><span class="p">:</span> <span class="nx">idx</span>
+        <span class="p">}</span>
+        <span class="nx">songs</span><span class="p">[</span><span class="nx">genre</span><span class="p">].</span><span class="nf">push</span><span class="p">(</span><span class="nx">info</span><span class="p">)</span>
+        <span class="nx">playCount</span><span class="p">[</span><span class="nx">genre</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">plays</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span>
+    <span class="p">})</span>
     
-    // 재생수 객체를 배열로 변환
-    const playCountArr = []
-    for(let key in playCount) {
-        playCountArr.push({
-            genre: key,
-            count: playCount[key]
-        })
-    }
+    <span class="c1">// 재생수 객체를 배열로 변환</span>
+    <span class="kd">const</span> <span class="nx">playCountArr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">playCount</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">playCountArr</span><span class="p">.</span><span class="nf">push</span><span class="p">({</span>
+            <span class="na">genre</span><span class="p">:</span> <span class="nx">key</span><span class="p">,</span>
+            <span class="na">count</span><span class="p">:</span> <span class="nx">playCount</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
     
-    // 재생수 배열을 내림차순 정렬 - 장르의 플레이 횟수대로 내림차순 정렬됨
-    playCountArr.sort((a, b) =&gt; b.count - a.count)
+    <span class="c1">// 재생수 배열을 내림차순 정렬 - 장르의 플레이 횟수대로 내림차순 정렬됨</span>
+    <span class="nx">playCountArr</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">count</span> <span class="o">-</span> <span class="nx">a</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span>
     
-    // playCountArr 배열을 순회하면서 장르마다 가장 재생수가 많은 곡 2곡씩 push
-    playCountArr.forEach(el =&gt; {
-        const targetGenre = songs[el.genre] 
-        targetGenre.sort((a, b) =&gt; b.play - a.play)
-        targetGenre[0] &amp;&amp; answer.push(targetGenre[0].index)
-        targetGenre[1] &amp;&amp; answer.push(targetGenre[1].index)
-    })
+    <span class="c1">// playCountArr 배열을 순회하면서 장르마다 가장 재생수가 많은 곡 2곡씩 push</span>
+    <span class="nx">playCountArr</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nx">el</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">targetGenre</span> <span class="o">=</span> <span class="nx">songs</span><span class="p">[</span><span class="nx">el</span><span class="p">.</span><span class="nx">genre</span><span class="p">]</span> 
+        <span class="nx">targetGenre</span><span class="p">.</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">play</span> <span class="o">-</span> <span class="nx">a</span><span class="p">.</span><span class="nx">play</span><span class="p">)</span>
+        <span class="nx">targetGenre</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">targetGenre</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">index</span><span class="p">)</span>
+        <span class="nx">targetGenre</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">targetGenre</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">index</span><span class="p">)</span>
+    <span class="p">})</span>
     
-    console.log(songs, playCountArr, answer)
-    return answer
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">songs</span><span class="p">,</span> <span class="nx">playCountArr</span><span class="p">,</span> <span class="nx">answer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">answer</span>
     
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2021/02/-2021-02-18-pm-9.03.41-e1613649838770.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/-2021-02-18-pm-9.03.41-e1613649838770.png" alt="" loading="lazy"></a></p>
@@ -5245,18 +5245,6 @@
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -761,16 +768,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -991,19 +988,18 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1020,7 +1016,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): 제네릭(Generics) - 제네릭 타입, 제네릭 함수, 연관 타입(Associated Type), where 조건절</h1>
     
@@ -1094,7 +1090,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="7785 words"
+  title="7774 words"
 >
   <em>43 min</em> read</span>
 
@@ -1104,9 +1100,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): 제네릭(Generics) - 제네릭 타입, 제네릭 함수, 연관 타입(Associated Type), where 조건절</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): 제네릭(Generics) - 제네릭 타입, 제네릭 함수, 연관 타입(Associated Type), where 조건절</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p><strong>출처</strong></p>
 
 <ul>
   <li><a href="https://docs.swift.org/swift-book/LanguageGuide/Generics.html">Generics - The Swift Programming Language</a> </li>
@@ -1114,16 +1132,16 @@
 
 <p> </p>
 
-<h4 id="제네릭-generics"><span class="me-2"><strong>제네릭 (Generics)</strong></span><a href="#제네릭-generics" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="제네릭-generics"><span class="me-2"><strong>제네릭 (Generics)</strong></span><a href="#제네릭-generics" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>데이터 형식에 의존하지 않고, 하나의 값이 여러 다른 데이터 타입들을 가질 수 있는 기술에 중점을 두어 재사용성을 높일 수 있는 프로그래밍 방식입니다.</li>
-  <li>예를 들어, Swift의 Array와 Dictionary 유형은 모두 제네릭 컬렉션입니다.</li>
+  <li>예를 들어, Swift의 <code class="language-plaintext highlighter-rouge">Array</code>와 <code class="language-plaintext highlighter-rouge">Dictionary</code> 유형은 모두 제네릭 컬렉션입니다.</li>
 </ul>
 
 <p> </p>
 
-<h4 id="제네릭이-해결하는-문제"><span class="me-2"><strong>제네릭이 해결하는 문제</strong></span><a href="#제네릭이-해결하는-문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="제네릭이-해결하는-문제"><span class="me-2"><strong>제네릭이 해결하는 문제</strong></span><a href="#제네릭이-해결하는-문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">swap</code>(교환) 함수를 구현하고자 합니다. swap은 단순히 두 변수의 값을 바꾸는 것 뿐으로 거의 대부분의 타입에서 사용 가능한 기능입니다. 예를 들어 <code class="language-plaintext highlighter-rouge">Int</code>, <code class="language-plaintext highlighter-rouge">String</code>, <code class="language-plaintext highlighter-rouge">Double</code> 및 기타 등등이 전부 swap 가능한 타입들입니다. 일단 <code class="language-plaintext highlighter-rouge">Int</code> 타입에 대한 <code class="language-plaintext highlighter-rouge">swap(_:_:)</code> 함수를 일반적인 방식으로 구현하면 다음과 같습니다.</p>
 
@@ -1197,7 +1215,7 @@
 
 <p> </p>
 
-<h4 id="제네릭-함수"><span class="me-2"><strong>제네릭 함수</strong></span><a href="#제네릭-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="제네릭-함수"><span class="me-2"><strong>제네릭 함수</strong></span><a href="#제네릭-함수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>위의 <code class="language-plaintext highlighter-rouge">swap</code> 함수들에서 다른 것은 파라미터 타입뿐이고, 안의 로직은 동일합니다. 제네릭 함수는 함수에 가상의 타입을 부여한 뒤, 이것을 파라미터로 받고 처리합니다.</p>
 
@@ -1235,10 +1253,10 @@
   <li>이 예제에서는 제네릭 타입이 <code class="language-plaintext highlighter-rouge">T</code> 하나이지만, 여러 타입을 지정하는 것도 가능합니다. 예)  <code class="language-plaintext highlighter-rouge">&lt;T, U, V&gt;</code></li>
 </ul>
 
-<p> </p>
+<p><br /></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1251,17 +1269,17 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>var someString = "Javelin"
-var anotherString = "Stinger"
-swapTwoValues(&amp;someString, &amp;anotherString)
-print(someString, ":", anotherString)
-// 결과: Stinger : Javelin
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">someString</span> <span class="o">=</span> <span class="s">"Javelin"</span>
+<span class="k">var</span> <span class="nv">anotherString</span> <span class="o">=</span> <span class="s">"Stinger"</span>
+<span class="nf">swapTwoValues</span><span class="p">(</span><span class="o">&amp;</span><span class="n">someString</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">anotherString</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">someString</span><span class="p">,</span> <span class="s">":"</span><span class="p">,</span> <span class="n">anotherString</span><span class="p">)</span>
+<span class="c1">// 결과: Stinger : Javelin</span>
 
-var someDouble = 1338.4434
-var anotherDouble = 4.7237
-swapTwoValues(&amp;someDouble, &amp;anotherDouble)
-print(someDouble, ":", anotherDouble)
-// 결과: 4.7237 : 1338.4434
+<span class="k">var</span> <span class="nv">someDouble</span> <span class="o">=</span> <span class="mf">1338.4434</span>
+<span class="k">var</span> <span class="nv">anotherDouble</span> <span class="o">=</span> <span class="mf">4.7237</span>
+<span class="nf">swapTwoValues</span><span class="p">(</span><span class="o">&amp;</span><span class="n">someDouble</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">anotherDouble</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">someDouble</span><span class="p">,</span> <span class="s">":"</span><span class="p">,</span> <span class="n">anotherDouble</span><span class="p">)</span>
+<span class="c1">// 결과: 4.7237 : 1338.4434</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1275,7 +1293,7 @@ print(someDouble, ":", anotherDouble)
 
 <p> </p>
 
-<h4 id="제네릭-타입"><span class="me-2"><strong>제네릭 타입</strong></span><a href="#제네릭-타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="제네릭-타입"><span class="me-2"><strong>제네릭 타입</strong></span><a href="#제네릭-타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>제네릭 함수와 마찬가지로, <code class="language-plaintext highlighter-rouge">class</code>, <code class="language-plaintext highlighter-rouge">struct</code>, <code class="language-plaintext highlighter-rouge">enum</code> 및 모든 타입 등에서도 사용자 정의의 제네릭 타입을 정의하는 것이 가능합니다.</li>
@@ -1401,8 +1419,8 @@ intStack.items // [3, 6, 2]
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1418,34 +1436,36 @@ intStack.items // [3, 6, 2]
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>var stackOfStrings = Stack&lt;String&gt;()
-stackOfStrings.push("uno")
-stackOfStrings.push("dos")
-stackOfStrings.push("tres")
-stackOfStrings.push("cuatro")
-// the stack now contains 4 strings
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">stackOfStrings</span> <span class="o">=</span> <span class="kt">Stack</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="n">stackOfStrings</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="s">"uno"</span><span class="p">)</span>
+<span class="n">stackOfStrings</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="s">"dos"</span><span class="p">)</span>
+<span class="n">stackOfStrings</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="s">"tres"</span><span class="p">)</span>
+<span class="n">stackOfStrings</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="s">"cuatro"</span><span class="p">)</span>
+<span class="c1">// the stack now contains 4 strings</span>
 
-stackOfStrings.items
-// ["uno", "dos", "tres", "cuatro"]
+<span class="n">stackOfStrings</span><span class="o">.</span><span class="n">items</span>
+<span class="c1">// ["uno", "dos", "tres", "cuatro"]</span>
 
-let fromTheTop = stackOfStrings.pop()
-// 팝(popped)된 fromTheTop 의 값은 "cuatro", 이후 스택은 3개의 값을 담고 있음
+<span class="k">let</span> <span class="nv">fromTheTop</span> <span class="o">=</span> <span class="n">stackOfStrings</span><span class="o">.</span><span class="nf">pop</span><span class="p">()</span>
+<span class="c1">// 팝(popped)된 fromTheTop 의 값은 "cuatro", 이후 스택은 3개의 값을 담고 있음</span>
 
-stackOfStrings.items
-// ["uno", "dos", "tres"]
+<span class="n">stackOfStrings</span><span class="o">.</span><span class="n">items</span>
+<span class="c1">// ["uno", "dos", "tres"]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<p>[caption id=”attachment_4507” align=”alignnone” width=”1520”] <a href="/assets/img/wp-content/uploads/2022/05/stackPushedFourStrings_2x.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/stackPushedFourStrings_2x.png" alt="" loading="lazy"></a> 최초 스택에 push하는 과정[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/05/stackPushedFourStrings_2x.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/stackPushedFourStrings_2x.png" alt="최초 스택에 push하는 과정" loading="lazy"></a><br />
+<em>최초 스택에 push하는 과정</em></p>
 
 <p> </p>
 
-<p>[caption id=”attachment_4508” align=”alignnone” width=”904”] <a href="/assets/img/wp-content/uploads/2022/05/stackPoppedOneString_2x.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/stackPoppedOneString_2x.png" alt="" loading="lazy"></a> 스택 최상단의 값 “cuatro”를 pop 하는 과정[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/05/stackPoppedOneString_2x.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/stackPoppedOneString_2x.png" alt="스택 최상단의 값 &quot;cuatro&quot;를 pop 하는 과정" loading="lazy"></a><br />
+<em>스택 최상단의 값 “cuatro”를 pop 하는 과정</em></p>
 
 <p> </p>
 
-<h4 id="제네릭-타입의-확장"><span class="me-2"><strong>제네릭 타입의 확장</strong></span><a href="#제네릭-타입의-확장" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="제네릭-타입의-확장"><span class="me-2"><strong>제네릭 타입의 확장</strong></span><a href="#제네릭-타입의-확장" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>앞의 <code class="language-plaintext highlighter-rouge">Stack</code> 예제에서 <code class="language-plaintext highlighter-rouge">struct</code> 부분에 제네릭이 선언되었다면, 확장(<code class="language-plaintext highlighter-rouge">extension</code>)에서는 따로 제네릭을 추가하지 않아도(<code class="language-plaintext highlighter-rouge">extension</code>에서는 제네릭 추가도 불가능합니다.) 제네릭 사용이 가능합니다.</p>
 
@@ -1471,7 +1491,7 @@ stackOfStrings.items
 
 <p> </p>
 
-<h4 id="타입-제약-조건type-constaints"><span class="me-2"><strong>타입 제약 조건(Type Constaints)</strong></span><a href="#타입-제약-조건type-constaints" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="타입-제약-조건type-constaints"><span class="me-2"><strong>타입 제약 조건(Type Constaints)</strong></span><a href="#타입-제약-조건type-constaints" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>앞의 예의 제네릭 타입들은 모든 타입을 사용하는 것이 가능했지만, 경우에 따라 일부 타입으로 제한해야 하는 경우도 있습니다. 이러한 경우를 타입 제약 조건이라고 합니다.</li>
@@ -1481,7 +1501,7 @@ stackOfStrings.items
 
 <p> </p>
 
-<h4 id="타입-제약-조건의-문법"><span class="me-2"><strong>타입 제약 조건의 문법</strong></span><a href="#타입-제약-조건의-문법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="타입-제약-조건의-문법"><span class="me-2"><strong>타입 제약 조건의 문법</strong></span><a href="#타입-제약-조건의-문법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1501,7 +1521,7 @@ stackOfStrings.items
 
 <p> </p>
 
-<h4 id="타입-제약-조건의-실제-적용-예"><span class="me-2"><strong>타입 제약 조건의 실제 적용 예</strong></span><a href="#타입-제약-조건의-실제-적용-예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="타입-제약-조건의-실제-적용-예"><span class="me-2"><strong>타입 제약 조건의 실제 적용 예</strong></span><a href="#타입-제약-조건의-실제-적용-예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래 함수는 배열에 어떠한 값이 있다면 몇 번째 인덱스에 있는지를 반환하는 제네릭과 무관한 함수입니다.</p>
 
@@ -1575,23 +1595,23 @@ stackOfStrings.items
 
 <p>제약 조건을 지정하므로서 컴파일 오류도 방지하고 함수 사용자에게 어떠한 프로토콜을 준수하는 타입이 필요한지 알려주는 기능도 있어 매우 편리하다고 할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>let doubleIndex = findIndex(of: 9.3, in: [3.14159, 0.1, 0.25])
-// 9.3은 in 배열에 없으므로 doubleIndex는 nil이 반환됩니다.
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">doubleIndex</span> <span class="o">=</span> <span class="nf">findIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="mf">9.3</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.14159</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">])</span>
+<span class="c1">// 9.3은 in 배열에 없으므로 doubleIndex는 nil이 반환됩니다.</span>
 
-let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
-// Andrea는 in 배열 2번 인덱스에 있으므로 stringIndex 2가 반환됩니다.
+<span class="k">let</span> <span class="nv">stringIndex</span> <span class="o">=</span> <span class="nf">findIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"Andrea"</span><span class="p">,</span> <span class="nv">in</span><span class="p">:</span> <span class="p">[</span><span class="s">"Mike"</span><span class="p">,</span> <span class="s">"Malcolm"</span><span class="p">,</span> <span class="s">"Andrea"</span><span class="p">])</span>
+<span class="c1">// Andrea는 in 배열 2번 인덱스에 있으므로 stringIndex 2가 반환됩니다.</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="연관-타입-associated-type"><span class="me-2"><strong>연관 타입 (Associated Type)</strong></span><a href="#연관-타입-associated-type" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="연관-타입-associated-type"><span class="me-2"><strong>연관 타입 (Associated Type)</strong></span><a href="#연관-타입-associated-type" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>연관 타입은 프로토콜에서 사용하는 것으로, 프로토콜의 변수 및 메서드 등이 특정 타입에 국한되지 않고 다양한 타입에서 사용될 것이라고 예상될 때 타입을 연관 타입으로 지정하면 해당 프로토콜을 준수하는 클래스나 구조체 등에서 구체적 타입을 자유롭게 지정할 수 있습니다.</p>
 
@@ -1743,7 +1763,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p> </p>
 
-<h4 id="기존-타입을-확장하여-연관-타입-지정"><span class="me-2"><strong>기존 타입을 확장하여 연관 타입 지정</strong></span><a href="#기존-타입을-확장하여-연관-타입-지정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="기존-타입을-확장하여-연관-타입-지정"><span class="me-2"><strong>기존 타입을 확장하여 연관 타입 지정</strong></span><a href="#기존-타입을-확장하여-연관-타입-지정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>사실 위의 <code class="language-plaintext highlighter-rouge">Container</code> 프로토콜은 <code class="language-plaintext highlighter-rouge">Array</code>에서 제공하는 기능을 포함하고 있습니다. 실제로 <code class="language-plaintext highlighter-rouge">append</code>, <code class="language-plaintext highlighter-rouge">count</code>, <code class="language-plaintext highlighter-rouge">subscript</code>등의 기능은 <code class="language-plaintext highlighter-rouge">Array</code>에 구현되어 있고 대부분 자주 사용하는 기능입니다. 따라서 <code class="language-plaintext highlighter-rouge">Array</code>의 <code class="language-plaintext highlighter-rouge">extension</code>에 <code class="language-plaintext highlighter-rouge">Container</code> 프르토콜을 준수하도록 추가할 수 있습니다. 다음과 같이 빈 확장을 추가합니다.</p>
 
@@ -1757,7 +1777,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p> </p>
 
-<h4 id="연관-타입에-제약-조건-추가"><span class="me-2"><strong>연관 타입에 제약 조건 추가</strong></span><a href="#연관-타입에-제약-조건-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="연관-타입에-제약-조건-추가"><span class="me-2"><strong>연관 타입에 제약 조건 추가</strong></span><a href="#연관-타입에-제약-조건-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1788,7 +1808,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <!-- \[the\_ad id="3513"\] -->
 
-<h4 id="연관-타입의-제약-조건에-프로토콜-사용"><span class="me-2"><strong>연관 타입의 제약 조건에 프로토콜 사용</strong></span><a href="#연관-타입의-제약-조건에-프로토콜-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="연관-타입의-제약-조건에-프로토콜-사용"><span class="me-2"><strong>연관 타입의 제약 조건에 프로토콜 사용</strong></span><a href="#연관-타입의-제약-조건에-프로토콜-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래 <code class="language-plaintext highlighter-rouge">SuffixableContaner</code> 프로토콜은 <code class="language-plaintext highlighter-rouge">Container</code>의 기능에 컨테이너 끝에서 주어진 수의 요소를 반환하여 <code class="language-plaintext highlighter-rouge">Suffix</code> 유형의 인스턴스에 저장하는 <code class="language-plaintext highlighter-rouge">suffix(_:)</code> 메서드를 추가한 프로토콜입니다.</p>
 
@@ -1910,7 +1930,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p> </p>
 
-<h5 id="where-suffixitem--item의-의미"><span class="me-2"><strong>where Suffix.Item == Item의 의미</strong></span><a href="#where-suffixitem--item의-의미" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="where-suffixitem--item의-의미"><span class="me-2"><strong>where Suffix.Item == Item의 의미</strong></span><a href="#where-suffixitem--item의-의미" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-27-am-9.20.03.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-27-am-9.20.03.jpg" alt="" loading="lazy"></a></p>
 
@@ -1922,7 +1942,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p> </p>
 
-<h4 id="제네릭에서의-where"><span class="me-2"><strong>제네릭에서의 where</strong></span><a href="#제네릭에서의-where" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="제네릭에서의-where"><span class="me-2"><strong>제네릭에서의 where</strong></span><a href="#제네릭에서의-where" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>제네릭에서 <code class="language-plaintext highlighter-rouge">where</code>절을 사용하면 연관 타입이 특정 프로토콜을 준수해야 하거나 특정 형식 파라미터와 연결된 형식이 같아야 한다고 요구사항을 지정할 수 있습니다.</li>
@@ -2030,7 +2050,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p> </p>
 
-<h4 id="제네릭-where-절이-있는-extension"><span class="me-2"><strong>제네릭 where 절이 있는 extension</strong></span><a href="#제네릭-where-절이-있는-extension" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="제네릭-where-절이-있는-extension"><span class="me-2"><strong>제네릭 where 절이 있는 extension</strong></span><a href="#제네릭-where-절이-있는-extension" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">extension</code>에 <code class="language-plaintext highlighter-rouge">where</code> 절을 사용할 수 있습니다. 아래는 스택의 최상위 항목과 주어진 아이템이 일치하는지 검사하는 함수 <code class="language-plaintext highlighter-rouge">isTop(_:)</code>가 포함된 <code class="language-plaintext highlighter-rouge">extension</code>입니다.</p>
 
@@ -2180,7 +2200,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p> </p>
 
-<h4 id="컨텍스트상황-문맥적-where-절"><span class="me-2"><strong>컨텍스트(상황, 문맥)적 where 절</strong></span><a href="#컨텍스트상황-문맥적-where-절" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="컨텍스트상황-문맥적-where-절"><span class="me-2"><strong>컨텍스트(상황, 문맥)적 where 절</strong></span><a href="#컨텍스트상황-문맥적-where-절" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>앞서 살펴본 <code class="language-plaintext highlighter-rouge">avarage()</code> 메서드는 <code class="language-plaintext highlighter-rouge">Item</code>이 <code class="language-plaintext highlighter-rouge">Double</code>이어야 함을 요구했습니다. 또 하나의 메서드를 추가하고자 하는데, 이번에는 특정 컨테이너의 마지막 아이템이 주어진 아이템과 일치하는지를 검사하는 <code class="language-plaintext highlighter-rouge">endsWith(_:)</code> 메서드를 추가하고 싶습니다. <code class="language-plaintext highlighter-rouge">extenson</code>을 사용한 <code class="language-plaintext highlighter-rouge">where</code>절을 사용하면 다음과 같습니다.</p>
 
@@ -2276,7 +2296,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p> </p>
 
-<h4 id="연관-타입과-where-절"><span class="me-2"><strong>연관 타입과 where 절</strong></span><a href="#연관-타입과-where-절" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="연관-타입과-where-절"><span class="me-2"><strong>연관 타입과 where 절</strong></span><a href="#연관-타입과-where-절" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">SuffixableContainer</code> 코드에서 언급했듯이, 연관 타입에도 <code class="language-plaintext highlighter-rouge">where</code>절을 사용할 수 있습니다.</p>
 
@@ -2316,7 +2336,7 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 <p> </p>
 
-<h4 id="subscript에-제네릭-타입-사용"><span class="me-2"><strong>Subscript에 제네릭 타입 사용</strong></span><a href="#subscript에-제네릭-타입-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="subscript에-제네릭-타입-사용"><span class="me-2"><strong>Subscript에 제네릭 타입 사용</strong></span><a href="#subscript에-제네릭-타입-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -3319,6 +3339,12 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -3352,18 +3378,6 @@ let stringIndex = findIndex(of: "Andrea", in: ["Mike", "Malcolm", "Andrea"])
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

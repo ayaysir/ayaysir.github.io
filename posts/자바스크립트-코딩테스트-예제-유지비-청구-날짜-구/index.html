@@ -782,8 +782,8 @@
 
 <h3 id="풀이-자바스크립트"><span class="me-2"><strong>풀이 (자바스크립트)</strong></span><a href="#풀이-자바스크립트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -812,34 +812,34 @@
 26
 27
 28
-</pre></td><td class="rouge-code"><pre>function solution(day, k) {
-    let answer = []
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">day</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[]</span>
     
-    const MONTHS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    <span class="kd">const</span> <span class="nx">MONTHS</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
     
-    // month 증가시 일수 누적
-    let sumOfDay = 0
+    <span class="c1">// month 증가시 일수 누적</span>
+    <span class="kd">let</span> <span class="nx">sumOfDay</span> <span class="o">=</span> <span class="mi">0</span>
     
-    // 1월부터 12월까지 순회
-    for(let i = 0, len = MONTHS.length; i &lt; len; i++) {
+    <span class="c1">// 1월부터 12월까지 순회</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">MONTHS</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         
-        // 1월인 경우(else) day + k 더한 값에 1 빼기 -&gt; 나머지를 통해 요일을 구하기 위함
-        // 예: day = 6(일요일), k = 1인 경우 6 + 1 - 1 = 6
-        // 예: day = 6(일요일), k = 1인 경우 6 + 25 - 1 = 30
-        if(i != 0)  sumOfDay += MONTHS[i - 1]
-        else    sumOfDay = day + k - 1
+        <span class="c1">// 1월인 경우(else) day + k 더한 값에 1 빼기 -&gt; 나머지를 통해 요일을 구하기 위함</span>
+        <span class="c1">// 예: day = 6(일요일), k = 1인 경우 6 + 1 - 1 = 6</span>
+        <span class="c1">// 예: day = 6(일요일), k = 1인 경우 6 + 25 - 1 = 30</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>  <span class="nx">sumOfDay</span> <span class="o">+=</span> <span class="nx">MONTHS</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span>    <span class="nx">sumOfDay</span> <span class="o">=</span> <span class="nx">day</span> <span class="o">+</span> <span class="nx">k</span> <span class="o">-</span> <span class="mi">1</span>
     
-        // 누적 일수를 7로 나눈 나머지가 해당 달 지급일의 요일
-        let currentDay = sumOfDay % 7
+        <span class="c1">// 누적 일수를 7로 나눈 나머지가 해당 달 지급일의 요일</span>
+        <span class="kd">let</span> <span class="nx">currentDay</span> <span class="o">=</span> <span class="nx">sumOfDay</span> <span class="o">%</span> <span class="mi">7</span>
         
-        // 토, 일이면 1 push, 아니면 0 push
-        if(currentDay == 5 || currentDay == 6)  answer.push(1)
-        else    answer.push(0)
+        <span class="c1">// 토, 일이면 1 push, 아니면 0 push</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">currentDay</span> <span class="o">==</span> <span class="mi">5</span> <span class="o">||</span> <span class="nx">currentDay</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span>  <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span>    <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         
-    }
+    <span class="p">}</span>
     
-    return answer
-}
+    <span class="k">return</span> <span class="nx">answer</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 문제는 요일 구하기 문제이지만 <code class="language-plaintext highlighter-rouge">Date()</code> 등을 사용해서는 안됩니다. 이 문제에서 나오는 날짜 정보들은 현실의 요일이 아니라 실존하지 않는 가상의 주어진 날짜를 사용하기 때문입니다. 따라서 <code class="language-plaintext highlighter-rouge">Date()</code> 등의 날짜 함수를 사용하지 않고 만든 다음 구현하면 됩니다.</p>
@@ -4381,18 +4381,6 @@
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

@@ -759,8 +759,8 @@
 
 <p>색상에 16진수(예: <code class="language-plaintext highlighter-rouge">#ffffff</code>) 형태로 주어졌을 때 영상의 밝기차에 대한 정보(<code class="language-plaintext highlighter-rouge">luma</code>)를 결정하는 함수는 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -774,19 +774,19 @@
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>function getTextColorByBackgroundColor(hexColor) {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">getTextColorByBackgroundColor</span><span class="p">(</span><span class="nx">hexColor</span><span class="p">)</span> <span class="p">{</span>
 
-    const c = hexColor.substring(1)      // 색상 앞의 # 제거
-    const rgb = parseInt(c, 16)   // rrggbb를 10진수로 변환
-    const r = (rgb &gt;&gt; 16) &amp; 0xff  // red 추출
-    const g = (rgb &gt;&gt;  8) &amp; 0xff  // green 추출
-    const b = (rgb &gt;&gt;  0) &amp; 0xff  // blue 추출
+    <span class="kd">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">hexColor</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>      <span class="c1">// 색상 앞의 # 제거</span>
+    <span class="kd">const</span> <span class="nx">rgb</span> <span class="o">=</span> <span class="nf">parseInt</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>   <span class="c1">// rrggbb를 10진수로 변환</span>
+    <span class="kd">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="p">(</span><span class="nx">rgb</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xff</span>  <span class="c1">// red 추출</span>
+    <span class="kd">const</span> <span class="nx">g</span> <span class="o">=</span> <span class="p">(</span><span class="nx">rgb</span> <span class="o">&gt;&gt;</span>  <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xff</span>  <span class="c1">// green 추출</span>
+    <span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">(</span><span class="nx">rgb</span> <span class="o">&gt;&gt;</span>  <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xff</span>  <span class="c1">// blue 추출</span>
 
-    const luma = 0.2126 * r + 0.7152 * g + 0.0722 * b // per ITU-R BT.709
+    <span class="kd">const</span> <span class="nx">luma</span> <span class="o">=</span> <span class="mf">0.2126</span> <span class="o">*</span> <span class="nx">r</span> <span class="o">+</span> <span class="mf">0.7152</span> <span class="o">*</span> <span class="nx">g</span> <span class="o">+</span> <span class="mf">0.0722</span> <span class="o">*</span> <span class="nx">b</span> <span class="c1">// per ITU-R BT.709</span>
 
-    // 색상 선택
-    return luma &lt; 127.5 ? "white" : "black" // 글자색이
-}
+    <span class="c1">// 색상 선택</span>
+    <span class="k">return</span> <span class="nx">luma</span> <span class="o">&lt;</span> <span class="mf">127.5</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span> <span class="c1">// 글자색이</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">#000000</code>(검정)색일 때 <code class="language-plaintext highlighter-rouge">luma</code>는 <code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">#FFFFFF</code>(흰색)일 때 <code class="language-plaintext highlighter-rouge">luma</code>는 <code class="language-plaintext highlighter-rouge">254.99</code> 이므로 <code class="language-plaintext highlighter-rouge">0</code>에 가까울 수록 배경색은 어둡고 <code class="language-plaintext highlighter-rouge">255</code>에 가까울수록 배경색은 밝은 색입니다. 상황에 따라 결정하면 될 것 같습니다.</p>
@@ -4206,18 +4206,6 @@
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

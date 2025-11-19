@@ -785,8 +785,8 @@ function game() {
 
 <p>방향키의 이벤트가 설정된 <code class="language-plaintext highlighter-rouge">keyPush</code> 함수에서 방향키를 눌렀을 때 <code class="language-plaintext highlighter-rouge">position</code> 이 아닌 <code class="language-plaintext highlighter-rouge">velocity</code>가 조정되도록 변경합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -807,34 +807,34 @@ function game() {
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>function keyPush(evt) {
-    switch (evt.keyCode) {
-        case 37:
-            velocityX = -1;
-            velocityY = 0;
-            break;
-        case 38:
-            velocityX = 0;
-            velocityY = -1;
-            break;
-        case 39:
-            velocityX = 1;
-            velocityY = 0;
-            break;
-        case 40:
-            velocityX = 0;
-            velocityY = 1;
-            break;
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">keyPush</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch </span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">keyCode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">37</span><span class="p">:</span>
+            <span class="nx">velocityX</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="nx">velocityY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">38</span><span class="p">:</span>
+            <span class="nx">velocityX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="nx">velocityY</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">39</span><span class="p">:</span>
+            <span class="nx">velocityX</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="nx">velocityY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">40</span><span class="p">:</span>
+            <span class="nx">velocityX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="nx">velocityY</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <h4 id="game-함수에-velocity에-따라-position이-동적으로-변하도록-코드-추가"><span class="me-2"><strong>game 함수에 velocity에 따라 position이 동적으로 변하도록 코드 추가</strong></span><a href="#game-함수에-velocity에-따라-position이-동적으로-변하도록-코드-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -859,30 +859,30 @@ function game() {
 22
 23
 24
-</pre></td><td class="rouge-code"><pre>function game() {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">game</span><span class="p">()</span> <span class="p">{</span>
     
-    positionX += velocityX
-    positionY += velocityY
+    <span class="nx">positionX</span> <span class="o">+=</span> <span class="nx">velocityX</span>
+    <span class="nx">positionY</span> <span class="o">+=</span> <span class="nx">velocityY</span>
 
-    if (positionX &lt; 0) {
-        positionX = tileCount - 1
-    }
-    if (positionX &gt; tileCount - 1) {
-        positionX = 0
-    }
-    if (positionY &lt; 0) {
-        positionY = tileCount - 1
-    }
-    if (positionY &gt; tileCount - 1) {
-        positionY = 0
-    }
+    <span class="k">if </span><span class="p">(</span><span class="nx">positionX</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">positionX</span> <span class="o">=</span> <span class="nx">tileCount</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">positionX</span> <span class="o">&gt;</span> <span class="nx">tileCount</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">positionX</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">positionY</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">positionY</span> <span class="o">=</span> <span class="nx">tileCount</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">positionY</span> <span class="o">&gt;</span> <span class="nx">tileCount</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">positionY</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
     
-    ctx.fillStyle = "black"
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
 
-    ctx.fillStyle = "lime"
-    ctx.fillRect(positionX * gridSize, positionY * gridSize, gridSize - 2, gridSize - 2)
-}
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">lime</span><span class="dl">"</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">fillRect</span><span class="p">(</span><span class="nx">positionX</span> <span class="o">*</span> <span class="nx">gridSize</span><span class="p">,</span> <span class="nx">positionY</span> <span class="o">*</span> <span class="nx">gridSize</span><span class="p">,</span> <span class="nx">gridSize</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">gridSize</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>게임의 프레임이 진행될 때마다 포지션이 <code class="language-plaintext highlighter-rouge">velocity</code> 쪽으로 가속하여 이동하도록 위의 하이라이트 부분을 추가합니다.</p>
@@ -917,8 +917,8 @@ let appleX = 15, appleY = 15
 
 <p>사과는 빨간색 블록으로 하고 이것을 그리는 코드를 <code class="language-plaintext highlighter-rouge">game</code> 함수 내에 작성해 보도록 하겠습니다. <code class="language-plaintext highlighter-rouge">game</code> 함수의 최하단에 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -927,14 +927,14 @@ let appleX = 15, appleY = 15
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>function game() {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">game</span><span class="p">()</span> <span class="p">{</span>
     
-    // ......
+    <span class="c1">// ......</span>
 
-    // 사과 그리기
-    ctx.fillStyle = "red"
-    ctx.fillRect(ax * gridSize, ay * gridSize, gridSize - 2, gridSize - 2)
-}
+    <span class="c1">// 사과 그리기</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">fillRect</span><span class="p">(</span><span class="nx">ax</span> <span class="o">*</span> <span class="nx">gridSize</span><span class="p">,</span> <span class="nx">ay</span> <span class="o">*</span> <span class="nx">gridSize</span><span class="p">,</span> <span class="nx">gridSize</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">gridSize</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/11/screenshot-2020-11-26-pm-1.38.29.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/11/screenshot-2020-11-26-pm-1.38.29.png" alt="" loading="lazy"></a></p>
@@ -945,8 +945,8 @@ let appleX = 15, appleY = 15
 
 <p>뱀이 사과를 먹는다면 사과는 없어지고 다른 랜덤한 위치에서 생성되도록 하는 부분입니다. 사과 그리기 부분 위에 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -960,19 +960,19 @@ let appleX = 15, appleY = 15
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>function game() {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">game</span><span class="p">()</span> <span class="p">{</span>
     
-    // ...
+    <span class="c1">// ...</span>
     
-    if(appleX === positionX &amp;&amp; appleY === positionY) {
-        appleX = Math.floor(Math.random() * tileCount)
-        appleY = Math.floor(Math.random() * tileCount)
-    }
+    <span class="k">if</span><span class="p">(</span><span class="nx">appleX</span> <span class="o">===</span> <span class="nx">positionX</span> <span class="o">&amp;&amp;</span> <span class="nx">appleY</span> <span class="o">===</span> <span class="nx">positionY</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">appleX</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">tileCount</span><span class="p">)</span>
+        <span class="nx">appleY</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">tileCount</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // 사과 그리기
-    ctx.fillStyle = "red"
-    ctx.fillRect(appleX * gridSize, appleY * gridSize, gridSize - 2, gridSize - 2)
-}
+    <span class="c1">// 사과 그리기</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nf">fillRect</span><span class="p">(</span><span class="nx">appleX</span> <span class="o">*</span> <span class="nx">gridSize</span><span class="p">,</span> <span class="nx">appleY</span> <span class="o">*</span> <span class="nx">gridSize</span><span class="p">,</span> <span class="nx">gridSize</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">gridSize</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">positionXY</code>가 <code class="language-plaintext highlighter-rouge">appleXY</code>의 위치와 같다면, 랜덤 기능을 사용하여 새로운 위치에 <code class="language-plaintext highlighter-rouge">apple</code> 을 지정하도록 합니다.</p>
@@ -4582,18 +4582,6 @@ let appleX = 15, appleY = 15
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

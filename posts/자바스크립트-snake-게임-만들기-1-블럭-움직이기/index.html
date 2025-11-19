@@ -831,8 +831,8 @@
 
 <h4 id="html5-뼈대-만들기"><span class="me-2"><strong>HTML5 뼈대 만들기</strong></span><a href="#html5-뼈대-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -843,16 +843,16 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -951,8 +951,8 @@ const gridSize = 20, tileCount = 20
 
 <p>방향키를 누르면 블럭이 ‘한 칸’ 이동하는 이벤트 함수를 구현하도록 하겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -973,26 +973,26 @@ const gridSize = 20, tileCount = 20
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>function keyPush(evt) {
-    switch(evt.keyCode) {
-        case 37:
-            positionX += -1;
-            positionY += 0;
-            break;
-        case 38:
-            positionX += 0;
-            positionY += -1;
-            break;
-        case 39:
-            positionX += 1;
-            positionY += 0;
-            break;
-        case 40:
-            positionX += 0;
-            positionY += 1;
-            break;   
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">keyPush</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">keyCode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">37</span><span class="p">:</span>
+            <span class="nx">positionX</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="nx">positionY</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">38</span><span class="p">:</span>
+            <span class="nx">positionX</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="nx">positionY</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">39</span><span class="p">:</span>
+            <span class="nx">positionX</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="nx">positionY</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">40</span><span class="p">:</span>
+            <span class="nx">positionX</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="nx">positionY</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>   
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">evt.keyCode</code>에는 현재 눌린 키코드가 들어 있습니다. 왼쪽 방향키부터 시계 방향으로 <code class="language-plaintext highlighter-rouge">37</code>(왼쪽), <code class="language-plaintext highlighter-rouge">38</code>(위), <code class="language-plaintext highlighter-rouge">39</code>(오른쪽), <code class="language-plaintext highlighter-rouge">40</code>(아래)으로 할당되어 있습니다. <code class="language-plaintext highlighter-rouge">switch</code> 분기문을 이용해 각 코드에 대한 이벤트를 부여합니다.</p>
@@ -1005,16 +1005,16 @@ const gridSize = 20, tileCount = 20
 
 <p>15fps로 실행될 <code class="language-plaintext highlighter-rouge">game</code> 함수를 만듭니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>function game() {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">game</span><span class="p">()</span> <span class="p">{</span>
     
-    // ........... //
-}
+    <span class="c1">// ........... //</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1099,8 +1099,8 @@ if(positionY &gt; tileCount - 1) {
 
 <p>이번에 완성된 전체 코드는 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1173,77 +1173,77 @@ if(positionY &gt; tileCount - 1) {
 70
 71
 72
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
 
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 
-&lt;body&gt;
-    &lt;canvas id="game-canvas" width="400" height="400"&gt;&lt;/canvas&gt;
-    &lt;script&gt;
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"game-canvas"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"400"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
         
-        const canvas = document.getElementById("game-canvas")
-        const ctx = canvas.getContext("2d")
+        <span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">game-canvas</span><span class="dl">"</span><span class="p">)</span>
+        <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nf">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">)</span>
             
-        window.onload = () =&gt; {
-            document.addEventListener("keydown", keyPush)
+        <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">keydown</span><span class="dl">"</span><span class="p">,</span> <span class="nx">keyPush</span><span class="p">)</span>
             
-            setInterval(game, 1000 / 15)
-        }
+            <span class="nf">setInterval</span><span class="p">(</span><span class="nx">game</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">/</span> <span class="mi">15</span><span class="p">)</span>
+        <span class="p">}</span>
         
         
-        let positionX = 0, positionY = 0
-        const gridSize = 20, tileCount = 20
+        <span class="kd">let</span> <span class="nx">positionX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">positionY</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="kd">const</span> <span class="nx">gridSize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="nx">tileCount</span> <span class="o">=</span> <span class="mi">20</span>
         
-        function game() {
+        <span class="kd">function</span> <span class="nf">game</span><span class="p">()</span> <span class="p">{</span>
             
-            if(positionX &lt; 0) {
-                positionX = tileCount - 1
-            }
-            if(positionX &gt; tileCount - 1) {
-                positionX = 0
-            }
-            if(positionY &lt; 0) {
-                positionY = tileCount - 1
-            }
-            if(positionY &gt; tileCount - 1) {
-                positionY = 0
-            }
+            <span class="k">if</span><span class="p">(</span><span class="nx">positionX</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">positionX</span> <span class="o">=</span> <span class="nx">tileCount</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="p">}</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">positionX</span> <span class="o">&gt;</span> <span class="nx">tileCount</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">positionX</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="p">}</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">positionY</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">positionY</span> <span class="o">=</span> <span class="nx">tileCount</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="p">}</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">positionY</span> <span class="o">&gt;</span> <span class="nx">tileCount</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">positionY</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="p">}</span>
             
-            ctx.fillStyle = "black"
-            ctx.fillRect(0, 0, canvas.width, canvas.height)
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nf">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
             
-            ctx.fillStyle = "lime"
-            ctx.fillRect(positionX * gridSize, positionY * gridSize, gridSize - 2, gridSize - 2)
-        }
+            <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">lime</span><span class="dl">"</span>
+            <span class="nx">ctx</span><span class="p">.</span><span class="nf">fillRect</span><span class="p">(</span><span class="nx">positionX</span> <span class="o">*</span> <span class="nx">gridSize</span><span class="p">,</span> <span class="nx">positionY</span> <span class="o">*</span> <span class="nx">gridSize</span><span class="p">,</span> <span class="nx">gridSize</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">gridSize</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        function keyPush(evt) {
-            switch(evt.keyCode) {
-                case 37:
-                    positionX += -1;
-                    positionY += 0;
-                    break;
-                case 38:
-                    positionX += 0;
-                    positionY += -1;
-                    break;
-                case 39:
-                    positionX += 1;
-                    positionY += 0;
-                    break;
-                case 40:
-                    positionX += 0;
-                    positionY += 1;
-                    break;   
-            }
-        }
-    &lt;/script&gt;
-&lt;/body&gt;
+        <span class="kd">function</span> <span class="nf">keyPush</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">switch</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">keyCode</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="mi">37</span><span class="p">:</span>
+                    <span class="nx">positionX</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+                    <span class="nx">positionY</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="mi">38</span><span class="p">:</span>
+                    <span class="nx">positionX</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+                    <span class="nx">positionY</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="mi">39</span><span class="p">:</span>
+                    <span class="nx">positionX</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="nx">positionY</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="mi">40</span><span class="p">:</span>
+                    <span class="nx">positionX</span> <span class="o">+=</span> <span class="mi">0</span><span class="p">;</span>
+                    <span class="nx">positionY</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>   
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 
-&lt;/html&gt;
+<span class="nt">&lt;/html&gt;</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -4838,18 +4838,6 @@ if(positionY &gt; tileCount - 1) {
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

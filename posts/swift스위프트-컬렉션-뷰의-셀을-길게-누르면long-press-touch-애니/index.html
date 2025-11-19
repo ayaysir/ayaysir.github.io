@@ -963,11 +963,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -975,43 +970,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1150,6 +1108,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1240,7 +1208,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2487 words"
+  title="2418 words"
 >
   <em>13 min</em> read</span>
 
@@ -1274,31 +1242,27 @@
   
 
   <div class="content">
-    <h4 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <p><strong>참고</strong></p>
 
 <ul>
   <li><a href="http://yoonbumtae.com/?p=3418">iOS 프로그래밍: 컬렉션 뷰 (Swift, 스토리보드) – 컬렉션 뷰 추가, 커스텀 셀 작성</a></li>
 </ul>
 
 <p> </p>
-
-<h3 id="swift스위프트-컬렉션-뷰의-셀을-길게-누르면long-press-touch-애니메이션-나타나도록-하기"><span class="me-2"><strong>Swift(스위프트): 컬렉션 뷰의 셀을 길게 누르면(long press touch) 애니메이션 나타나도록 하기</strong></span><a href="#swift스위프트-컬렉션-뷰의-셀을-길게-누르면long-press-touch-애니메이션-나타나도록-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<h4 id="개요"><span class="me-2"><strong>개요</strong></span><a href="#개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="개요"><span class="me-2"><strong>개요</strong></span><a href="#개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>기존의 프로젝트 코드를 기반으로 롱 프레스 터치(길게 터치하기) 작업을 추가하고, 롱 프레스 시에 셀이 살짝 작아졌다 놓으면 다시 원상 복귀하는 애니메이션이 추가되도록 만들어 보겠습니다.</p>
 
-<p>[caption id=”attachment_4421” align=”alignnone” width=”384”] <a href="/assets/img/wp-content/uploads/2022/05/Simulator-Screen-Shot-iPhone-13-Pro-2022-05-04-at-23.03.04.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/Simulator-Screen-Shot-iPhone-13-Pro-2022-05-04-at-23.03.04.jpg" alt="" loading="lazy"></a> 기존 프로젝트의 기기 스크린샷[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/05/Simulator-Screen-Shot-iPhone-13-Pro-2022-05-04-at-23.03.04.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/Simulator-Screen-Shot-iPhone-13-Pro-2022-05-04-at-23.03.04.jpg" alt="" loading="lazy"></a> <br />
+<em>기존 프로젝트의 기기 스크린샷</em>
+ </p>
+
+<p><a href="https://media.giphy.com/media/SyGH9NSGZnaJVqE4on/giphy.gif" class="popup img-link shimmer"><img src="https://media.giphy.com/media/SyGH9NSGZnaJVqE4on/giphy.gif" alt="" loading="lazy"></a>
+<em>변경 사항 적용된 프로젝트</em></p>
 
 <p> </p>
 
-<p><a href="https://media.giphy.com/media/SyGH9NSGZnaJVqE4on/giphy.gif" class="popup img-link shimmer"><img src="https://media.giphy.com/media/SyGH9NSGZnaJVqE4on/giphy.gif" alt="" loading="lazy"></a></p>
-
-<p>변경 사항 적용된 프로젝트</p>
-
-<p> </p>
-
-<h4 id="기존-프로젝트"><span class="me-2"><strong>기존 프로젝트</strong></span><a href="#기존-프로젝트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="코드-기존-프로젝트"><span class="me-2"><strong>코드: 기존 프로젝트</strong></span><a href="#코드-기존-프로젝트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1390,16 +1354,9 @@
 86
 87
 88
-89
-90
-91
-92
-93
-94
 </pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
 <span class="kd">struct</span> <span class="kt">ImageInfo</span> <span class="p">{</span>
-    
     <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
     
     <span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
@@ -1412,7 +1369,6 @@
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
-    
     <span class="k">let</span> <span class="nv">viewModel</span> <span class="o">=</span> <span class="kt">ImageViewModel</span><span class="p">()</span> <span class="c1">// 뷰모델 변수를 추가합니다.</span>
     
     <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="o">!</span>
@@ -1424,7 +1380,6 @@
 <span class="p">}</span>
 
 <span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span> <span class="p">{</span>
-    
     <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">viewModel</span><span class="o">.</span><span class="n">countOfImageList</span> <span class="c1">// 뷰모델에서 카운트 가져옴</span>
     <span class="p">}</span>
@@ -1452,12 +1407,10 @@
         <span class="n">dialog</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 
         <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">dialog</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-
     <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="kt">Cell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
-    
     <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">imgView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span>
     <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">nameLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
     
@@ -1469,7 +1422,6 @@
 
 <span class="c1">// view model</span>
 <span class="kd">class</span> <span class="kt">ImageViewModel</span> <span class="p">{</span>
-    
     <span class="k">let</span> <span class="nv">imageInfoList</span><span class="p">:</span> <span class="p">[</span><span class="kt">ImageInfo</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
         <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Chrysanthemum"</span><span class="p">),</span>
         <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Desert"</span><span class="p">),</span>
@@ -1492,31 +1444,25 @@
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<p><a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-11.07.56.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-11.07.56.jpg" alt="" loading="lazy"></a> <br />
+<em>컬렉션 뷰 @IBOutlet 연결</em></p>
 
-<p>[caption id=”attachment_4422” align=”alignnone” width=”948”] <a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-11.07.56.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-11.07.56.jpg" alt="" loading="lazy"></a> 컬렉션 뷰 @IBOutlet 연결[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.58.13.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.58.13.jpg" alt="" loading="lazy"></a> <br />
+<em>셀 요소 @IBOutlet 연결</em>
+ </p>
 
-<p> </p>
-
-<p> </p>
-
-<p>[caption id=”attachment_4419” align=”alignnone” width=”821”] <a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.58.13.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.58.13.jpg" alt="" loading="lazy"></a> 셀 요소 @IBOutlet 연결[/caption]</p>
-
-<p> </p>
-
-<p> </p>
-
-<p>[caption id=”attachment_4420” align=”alignnone” width=”969”] <a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.59.14.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.59.14.jpg" alt="" loading="lazy"></a> asset에 이미지 추가[/caption]</p>
+<p> 
+<a href="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.59.14.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/05/screenshot-2022-05-04-pm-10.59.14.jpg" alt="" loading="lazy"></a> <br />
+<em>asset에 이미지 추가</em>
+ </p>
 
 <p> </p>
 
 <p> </p>
 
-<p> </p>
+<h2 id="애니메이션-추가하기"><span class="me-2"><strong>애니메이션 추가하기</strong></span><a href="#애니메이션-추가하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="추가-코드"><span class="me-2"><strong>추가 코드</strong></span><a href="#추가-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<h5 id="1-viewdidload에-다음-부분을-추가합니다"><span class="me-2"><strong>1) viewDidLoad()에 다음 부분을 추가합니다.</strong></span><a href="#1-viewdidload에-다음-부분을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-viewdidload에-다음-부분을-추가합니다"><span class="me-2"><strong>1) viewDidLoad()에 다음 부분을 추가합니다.</strong></span><a href="#1-viewdidload에-다음-부분을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1532,7 +1478,7 @@
 
 <p> </p>
 
-<h5 id="2-viewcontroller에-uigesturerecognizerdelegate-프로토콜을-구현하는-다음-extension-및-함수를-추가합니다"><span class="me-2"><strong>2) ViewController에 UIGestureRecognizerDelegate 프로토콜을 구현하는 다음 extension 및 함수를 추가합니다.</strong></span><a href="#2-viewcontroller에-uigesturerecognizerdelegate-프로토콜을-구현하는-다음-extension-및-함수를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-viewcontroller에-uigesturerecognizerdelegate-프로토콜을-구현하는-다음-extension-및-함수를-추가합니다"><span class="me-2"><strong>2) ViewController에 UIGestureRecognizerDelegate 프로토콜을 구현하는 다음 extension 및 함수를 추가합니다.</strong></span><a href="#2-viewcontroller에-uigesturerecognizerdelegate-프로토콜을-구현하는-다음-extension-및-함수를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1549,12 +1495,10 @@
 11
 12
 13
-14
 </pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIGestureRecognizerDelegate</span> <span class="p">{</span>
 
     <span class="c1">// long press 이벤트 부여</span>
     <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupLongGestureRecognizerOnCollection</span><span class="p">()</span> <span class="p">{</span>
-        
         <span class="k">let</span> <span class="nv">longPressedGesture</span> <span class="o">=</span> <span class="kt">UILongPressGestureRecognizer</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">handleLongPress</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:)))</span>
         <span class="n">longPressedGesture</span><span class="o">.</span><span class="n">minimumPressDuration</span> <span class="o">=</span> <span class="mf">0.5</span>
         <span class="n">longPressedGesture</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
@@ -1589,10 +1533,10 @@
 
 <p> </p>
 
-<h5 id="3-handlelongpressgesturerecognizer-추가"><span class="me-2"><strong>3) handleLongPress(gestureRecognizer:) 추가</strong></span><a href="#3-handlelongpressgesturerecognizer-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-handlelongpressgesturerecognizer-추가"><span class="me-2"><strong>3) handleLongPress(gestureRecognizer:) 추가</strong></span><a href="#3-handlelongpressgesturerecognizer-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1608,29 +1552,21 @@
 13
 14
 15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre>    // long press 이벤트 액션
-    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
-        
-        let location = gestureRecognizer.location(in: collectionView)
-        // let collectionView = gestureRecognizer.view as! UICollectionView
-        
-        if gestureRecognizer.state == .began {
-            
-            // 롱 프레스 터치가 시작될 떄
+</pre></td><td class="rouge-code"><pre><span class="c1">// long press 이벤트 액션</span>
+<span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">handleLongPress</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="kt">UILongPressGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">location</span> <span class="o">=</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="nf">location</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">collectionView</span><span class="p">)</span>
+    <span class="c1">// let collectionView = gestureRecognizer.view as! UICollectionView</span>
+    
+    <span class="k">if</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="o">.</span><span class="n">began</span> <span class="p">{</span>
+        <span class="c1">// 롱 프레스 터치가 시작될 떄</span>
 
-        } else if gestureRecognizer.state == .ended {
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="o">.</span><span class="n">ended</span> <span class="p">{</span>
+        <span class="c1">// 롱 프레스 터치가 끝날 떄</span>
 
-            // 롱 프레스 터치가 끝날 떄
-
-        } else {
-            return
-        }
-    }
-}
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1647,10 +1583,10 @@
 
 <p> </p>
 
-<h5 id="4-began-부분을-구현합니다"><span class="me-2"><strong>4) .began 부분을 구현합니다.</strong></span><a href="#4-began-부분을-구현합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-began-부분을-구현합니다"><span class="me-2"><strong>4) .began 부분을 구현합니다.</strong></span><a href="#4-began-부분을-구현합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1665,20 +1601,20 @@
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>if gestureRecognizer.state == .began {
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="o">.</span><span class="n">began</span> <span class="p">{</span>
     
-    if let indexPath = collectionView.indexPathForItem(at: location) {
-        print("Long press at item began: \(indexPath.row)")
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">indexPathForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">location</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Long press at item began: </span><span class="se">\(</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
         
-        // animation
-        UIView.animate(withDuration: 0.2) {
-            if let cell = collectionView.cellForItem(at: indexPath) as? Cell {
-                self.currentLongPressedCell = cell
-                cell.transform = .init(scaleX: 0.95, y: 0.95)
-            }
-        }
-    }
-}
+        <span class="c1">// animation</span>
+        <span class="kt">UIView</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">withDuration</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">cellForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">Cell</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">currentLongPressedCell</span> <span class="o">=</span> <span class="n">cell</span>
+                <span class="n">cell</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">scaleX</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1703,20 +1639,20 @@
 
 <p> </p>
 
-<h5 id="5-viewcontroller에-currentlongpressedcell-변수를-추가합니다"><span class="me-2"><strong>5) ViewController에 currentLongPressedCell 변수를 추가합니다.</strong></span><a href="#5-viewcontroller에-currentlongpressedcell-변수를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-viewcontroller에-currentlongpressedcell-변수를-추가합니다"><span class="me-2"><strong>5) ViewController에 currentLongPressedCell 변수를 추가합니다.</strong></span><a href="#5-viewcontroller에-currentlongpressedcell-변수를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>var currentLongPressedCell: Cell?
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">currentLongPressedCell</span><span class="p">:</span> <span class="kt">Cell</span><span class="p">?</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="6-ended-부분을-구현합니다"><span class="me-2"><strong>6) .ended 부분을 구현합니다.</strong></span><a href="#6-ended-부분을-구현합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="6-ended-부분을-구현합니다"><span class="me-2"><strong>6) .ended 부분을 구현합니다.</strong></span><a href="#6-ended-부분을-구현합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1738,29 +1674,27 @@
 19
 20
 21
-22
-</pre></td><td class="rouge-code"><pre>if let indexPath = collectionView.indexPathForItem(at: location) {
-    print("Long press at item end: \(indexPath.row)")
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">indexPathForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">location</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Long press at item end: </span><span class="se">\(</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
     
-    // animation
-    UIView.animate(withDuration: 0.2) {
-        if let cell = self.currentLongPressedCell  {
-            cell.transform = .init(scaleX: 1, y: 1)
+    <span class="c1">// animation</span>
+    <span class="kt">UIView</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">withDuration</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">currentLongPressedCell</span>  <span class="p">{</span>
+            <span class="n">cell</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">scaleX</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
             
-            if cell == collectionView.cellForItem(at: indexPath) as? Cell {
+            <span class="k">if</span> <span class="n">cell</span> <span class="o">==</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">cellForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">Cell</span> <span class="p">{</span>
+                <span class="k">let</span> <span class="nv">imageInfo</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="o">.</span><span class="nf">imageInfo</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">item</span><span class="p">)</span>
                 
-                let imageInfo = self.viewModel.imageInfo(at: indexPath.item)
-                
-                let dialog = UIAlertController(title: "\(imageInfo.name)", message: "롱 프레스 터치로 실행된 경고창입니다.", preferredStyle: .alert)
-                let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+                <span class="k">let</span> <span class="nv">dialog</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">imageInfo</span><span class="o">.</span><span class="n">name</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"롱 프레스 터치로 실행된 경고창입니다."</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+                <span class="k">let</span> <span class="nv">action</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"확인"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">UIAlertAction</span><span class="o">.</span><span class="kt">Style</span><span class="o">.</span><span class="k">default</span><span class="p">)</span>
 
-                dialog.addAction(action)
+                <span class="n">dialog</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 
-                self.present(dialog, animated: true, completion: nil)
-            }
-        }
-    }
-}
+                <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">dialog</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1788,7 +1722,7 @@
 
 <p> </p>
 
-<h4 id="최종-결과물"><span class="me-2"><strong>최종 결과물</strong></span><a href="#최종-결과물" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="최종-결과물"><span class="me-2"><strong>최종 결과물</strong></span><a href="#최종-결과물" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="https://media.giphy.com/media/SyGH9NSGZnaJVqE4on/giphy.gif" class="popup img-link shimmer"><img src="https://media.giphy.com/media/SyGH9NSGZnaJVqE4on/giphy.gif" alt="" loading="lazy"></a></p>
 
@@ -1796,7 +1730,7 @@
 
 <p> </p>
 
-<h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1949,18 +1883,9 @@
 147
 148
 149
-150
-151
-152
-153
-154
-155
-156
-157
 </pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 
 <span class="kd">struct</span> <span class="kt">ImageInfo</span> <span class="p">{</span>
-    
     <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
     
     <span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span>
@@ -1973,7 +1898,6 @@
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
-    
     <span class="k">let</span> <span class="nv">viewModel</span> <span class="o">=</span> <span class="kt">ImageViewModel</span><span class="p">()</span> <span class="c1">// 뷰모델 변수를 추가합니다.</span>
     
     <span class="k">var</span> <span class="nv">currentLongPressedCell</span><span class="p">:</span> <span class="kt">Cell</span><span class="p">?</span>
@@ -1990,7 +1914,6 @@
 <span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIGestureRecognizerDelegate</span> <span class="p">{</span>
     <span class="c1">// long press 이벤트 부여</span>
     <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupLongGestureRecognizerOnCollection</span><span class="p">()</span> <span class="p">{</span>
-        
         <span class="k">let</span> <span class="nv">longPressedGesture</span> <span class="o">=</span> <span class="kt">UILongPressGestureRecognizer</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">handleLongPress</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:)))</span>
         <span class="n">longPressedGesture</span><span class="o">.</span><span class="n">minimumPressDuration</span> <span class="o">=</span> <span class="mf">0.5</span>
         <span class="n">longPressedGesture</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
@@ -2000,7 +1923,6 @@
     
     <span class="c1">// long press 이벤트 액션</span>
     <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">handleLongPress</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="kt">UILongPressGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
-        
         <span class="k">let</span> <span class="nv">location</span> <span class="o">=</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="nf">location</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
         <span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">view</span> <span class="k">as!</span> <span class="kt">UICollectionView</span>
         
@@ -2018,7 +1940,6 @@
                 <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="o">.</span><span class="n">ended</span> <span class="p">{</span>
-            
             <span class="k">if</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">indexPathForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">location</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nf">print</span><span class="p">(</span><span class="s">"Long press at item end: </span><span class="se">\(</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
                 
@@ -2048,7 +1969,6 @@
 <span class="p">}</span>
 
 <span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDelegate</span> <span class="p">{</span>
-    
     <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">viewModel</span><span class="o">.</span><span class="n">countOfImageList</span> <span class="c1">// 뷰모델에서 카운트 가져옴</span>
     <span class="p">}</span>
@@ -2081,7 +2001,6 @@
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="kt">Cell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
-    
     <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">imgView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span>
     <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">nameLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
     
@@ -2093,7 +2012,6 @@
 
 <span class="c1">// view model</span>
 <span class="kd">class</span> <span class="kt">ImageViewModel</span> <span class="p">{</span>
-    
     <span class="k">let</span> <span class="nv">imageInfoList</span><span class="p">:</span> <span class="p">[</span><span class="kt">ImageInfo</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
         <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Chrysanthemum"</span><span class="p">),</span>
         <span class="kt">ImageInfo</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Desert"</span><span class="p">),</span>
@@ -3120,18 +3038,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -9034,11 +8940,11 @@
 
   
     <a
-      href="/posts/css-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%98%88%EC%A0%9C-%EC%8A%A4%EC%BC%88%EB%A0%88%ED%86%A4-%EB%A1%9C%EB%94%A9skeleton-loading/"
+      href="/posts/jsx-%EB%93%B1%EC%9D%98-%EC%86%8C%EC%8A%A4-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%B0%8F-%EB%AC%B8%EB%B2%95-%ED%95%98%EC%9D%B4%EB%9D%BC%EC%9D%B4%ED%8C%85-%EC%B2%98%EB%A6%AC%EB%90%9C/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>CSS + 자바스크립트 예제: 스켈레톤 로딩(Skeleton Loading)</p>
+      <p>JSX 등의 소스 코드를 디자인 및 문법 하이라이팅 처리된 이미지로 저장 (carbon.now.sh)</p>
     </a>
   
 

@@ -1087,8 +1087,8 @@ public class LoginController {
 
 <h5 id="3-뷰-페이지-구현-oauth-loginhtml"><span class="me-2"><strong>3) 뷰 페이지 구현 (oauth-login.html)</strong></span><a href="#3-뷰-페이지-구현-oauth-loginhtml" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1114,31 +1114,31 @@ public class LoginController {
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="ko" xmlns:th="http://www.thymeleaf.org"&gt;
-&lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
-    &lt;meta name="description" content=""&gt;
-    &lt;meta name="author" content=""&gt;
-    &lt;title&gt;로그인 (Please sign in)&lt;/title&gt;
-    &lt;link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"&gt;
-    &lt;link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div class="container"&gt;
-    &lt;h2 class="form-signin-heading"&gt;로그인이 필요한 페이지입니다.&lt;/h2&gt;
-    &lt;p&gt;(Login with OAuth 2.0)&lt;/p&gt;
-    &lt;p&gt;외부 로그인 계정을 선택해주세요.&lt;/p&gt;
-    &lt;table class="table table-striped" th:each="url : ${urls}"&gt;
-        &lt;tr&gt;
-            &lt;td&gt;&lt;a href="#" th:href="${url.value}" th:text="${url.key}"&gt;Naver&lt;/a&gt;&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span> <span class="na">xmlns:th=</span><span class="s">"http://www.thymeleaf.org"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>로그인 (Please sign in)<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>
+          <span class="na">integrity=</span><span class="s">"sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https://getbootstrap.com/docs/4.0/examples/signin/signin.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"form-signin-heading"</span><span class="nt">&gt;</span>로그인이 필요한 페이지입니다.<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>(Login with OAuth 2.0)<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>외부 로그인 계정을 선택해주세요.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-striped"</span> <span class="na">th:each=</span><span class="s">"url : ${urls}"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">th:href=</span><span class="s">"${url.value}"</span> <span class="na">th:text=</span><span class="s">"${url.key}"</span><span class="nt">&gt;</span>Naver<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Thymeleaf를 사용하였습니다. <code class="language-plaintext highlighter-rouge">Map</code> 타입의 <code class="language-plaintext highlighter-rouge">urls</code> 변수에 담긴 키-값을 반복합니다. <code class="language-plaintext highlighter-rouge">url.key</code>는 서비스 이름, <code class="language-plaintext highlighter-rouge">url.value</code>는 링크 주소입니다.</p>
@@ -4430,18 +4430,6 @@ public class LoginController {
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

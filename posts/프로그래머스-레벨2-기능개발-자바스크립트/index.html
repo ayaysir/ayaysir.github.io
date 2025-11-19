@@ -914,8 +914,8 @@
 
 <h5 id="javascript-es6"><span class="me-2"><strong>JavaScript ES6</strong></span><a href="#javascript-es6" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -960,50 +960,50 @@
 42
 43
 44
-</pre></td><td class="rouge-code"><pre>function solution(progresses, speeds) {
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">progresses</span><span class="p">,</span> <span class="nx">speeds</span><span class="p">)</span> <span class="p">{</span>
     
-    if(progresses.length == 1) {
-        return [1]
-    }
+    <span class="k">if</span><span class="p">(</span><span class="nx">progresses</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">}</span>
     
-    const answer = []
-    const remainDate = []
+    <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="kd">const</span> <span class="nx">remainDate</span> <span class="o">=</span> <span class="p">[]</span>
     
-    for(let i = 0; i &lt; progresses.length; i++) {
-        let x = (progresses[i] - 100) / speeds[i]
-        remainDate[i] = Math.ceil(Math.abs(x))
-    }
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">progresses</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">(</span><span class="nx">progresses</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="nx">speeds</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+        <span class="nx">remainDate</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+    <span class="p">}</span>
     
-    let distNum = 1
-    const remainLen = remainDate.length
-    remainDate.reduce((acc, val, idx) =&gt; {
-        if(idx == 0) {
-            return val
-        }
+    <span class="kd">let</span> <span class="nx">distNum</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="kd">const</span> <span class="nx">remainLen</span> <span class="o">=</span> <span class="nx">remainDate</span><span class="p">.</span><span class="nx">length</span>
+    <span class="nx">remainDate</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">val</span><span class="p">,</span> <span class="nx">idx</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">val</span>
+        <span class="p">}</span>
         
-        if(acc &gt;= val) {
-            if(idx != remainLen - 1) {
-                distNum++
-                return acc
-            } else {
-                answer.push(++distNum)
-                return
-            }
-        }
+        <span class="k">if</span><span class="p">(</span><span class="nx">acc</span> <span class="o">&gt;=</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">idx</span> <span class="o">!=</span> <span class="nx">remainLen</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">distNum</span><span class="o">++</span>
+                <span class="k">return</span> <span class="nx">acc</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="o">++</span><span class="nx">distNum</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
         
-        if(acc &lt; val) {
-            answer.push(distNum)
-            if(idx != remainLen -1) {
-                distNum = 1
-                return val
-            } else {
-                answer.push(1)
-                return
-            }
-        }
+        <span class="k">if</span><span class="p">(</span><span class="nx">acc</span> <span class="o">&lt;</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">distNum</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">idx</span> <span class="o">!=</span> <span class="nx">remainLen</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">distNum</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">return</span> <span class="nx">val</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
         
-    }, 0)
-}
+    <span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -5360,18 +5360,6 @@
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

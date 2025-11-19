@@ -696,16 +696,16 @@
 
 <p>다음 자바스크립트에서 위의 <code class="language-plaintext highlighter-rouge">pre</code> 태그를 불러옵니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>const consoleDiv = document.getElementById("console")
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">consoleDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">console</span><span class="dl">"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>아래의 <code class="language-plaintext highlighter-rouge">consoleToHtml</code> 함수를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -715,15 +715,15 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>const consoleToHtml = function() {
-    consoleDiv.textContent += `${(new Date()).toLocaleString("ko-KR")} &gt;&gt;&gt;`
-    Array.from(arguments).forEach(el =&gt; {
-        consoleDiv.textContent += " "
-        const insertValue = typeof el === "object" ? JSON.stringify(el) : el
-        consoleDiv.textContent += insertValue
-    })
-    consoleDiv.textContent += "\n"
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">consoleToHtml</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">consoleDiv</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">+=</span> <span class="s2">`</span><span class="p">${(</span><span class="k">new</span> <span class="nc">Date</span><span class="p">()).</span><span class="nf">toLocaleString</span><span class="p">(</span><span class="dl">"</span><span class="s2">ko-KR</span><span class="dl">"</span><span class="p">)}</span><span class="s2"> &gt;&gt;&gt;`</span>
+    <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">arguments</span><span class="p">).</span><span class="nf">forEach</span><span class="p">(</span><span class="nx">el</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">consoleDiv</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span>
+        <span class="kd">const</span> <span class="nx">insertValue</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">el</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">object</span><span class="dl">"</span> <span class="p">?</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">:</span> <span class="nx">el</span>
+        <span class="nx">consoleDiv</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">+=</span> <span class="nx">insertValue</span>
+    <span class="p">})</span>
+    <span class="nx">consoleDiv</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">+=</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -5367,18 +5367,6 @@
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

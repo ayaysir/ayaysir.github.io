@@ -894,10 +894,10 @@ const date2 = new Date('12/15/2022')
 
 <h5 id="단계-2-두-날짜-사이의-밀리초-간격-구하기"><span class="me-2"><strong>단계 2: 두 날짜 사이의 밀리초 간격 구하기</strong></span><a href="#단계-2-두-날짜-사이의-밀리초-간격-구하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>const diffTime = Math.abs(date2 - date1)
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">diffTime</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="nx">date2</span> <span class="o">-</span> <span class="nx">date1</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -906,10 +906,10 @@ const date2 = new Date('12/15/2022')
 
 <p>예를 들어 차이가 <code class="language-plaintext highlighter-rouge">392083200000ms</code>인 경우 이 값을 <code class="language-plaintext highlighter-rouge">86,400,000ms(=1000*60*60*24)</code>로 나누면 <code class="language-plaintext highlighter-rouge">4538일</code>이 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">diffDays</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="nx">diffTime</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <!-- \[the\_ad id="3513"\] -->
@@ -960,18 +960,18 @@ const date2 = new Date('12/15/2022')
 
 <h4 id="연-단위-차이를-구하는-다른-방법"><span class="me-2"><strong>연 단위 차이를 구하는 다른 방법</strong></span><a href="#연-단위-차이를-구하는-다른-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>const date1Year = date1.getFullYear()
-const date2Year = date2.getFullYear()
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">date1Year</span> <span class="o">=</span> <span class="nx">date1</span><span class="p">.</span><span class="nf">getFullYear</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">date2Year</span> <span class="o">=</span> <span class="nx">date2</span><span class="p">.</span><span class="nf">getFullYear</span><span class="p">()</span>
 
-// 연 단위 (근사치) 구하기
-const yearDiff = Math.abs(date1Year - date2Year)
+<span class="c1">// 연 단위 (근사치) 구하기</span>
+<span class="kd">const</span> <span class="nx">yearDiff</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="nx">date1Year</span> <span class="o">-</span> <span class="nx">date2Year</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>두 연도를 구한 뒤 그 차이를 이용하는 방식입니다. 예를 들어 <code class="language-plaintext highlighter-rouge">2022년</code>과 <code class="language-plaintext highlighter-rouge">2010년</code>의 차이는 <code class="language-plaintext highlighter-rouge">12년</code>입니다.</p>
@@ -1998,18 +1998,6 @@ const monthDiff = yearDiff * 12 + Math.abs(date1.getMonth() - date2.getMonth())
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

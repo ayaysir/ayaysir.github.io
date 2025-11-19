@@ -793,8 +793,8 @@
 
 <h4 id="1-메인-html을-작성합니다-indexhtml"><span class="me-2"><strong>1) 메인 html을 작성합니다. (index.html)</strong></span><a href="#1-메인-html을-작성합니다-indexhtml" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -810,20 +810,20 @@
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
 
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;숫자 카운터&lt;/title&gt;
-&lt;/head&gt;
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>숫자 카운터<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 
-&lt;body&gt;
-    &lt;div id="app"&gt;&lt;/div&gt;
-    &lt;script type="module" src="./main.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span> <span class="na">src=</span><span class="s">"./main.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 
-&lt;/html&gt;
+<span class="nt">&lt;/html&gt;</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -858,8 +858,8 @@ render(document.querySelector("#app"), App())
 
 <h4 id="3-utiljs-작성"><span class="me-2"><strong>3) util.js 작성</strong></span><a href="#3-utiljs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -883,29 +883,29 @@ render(document.querySelector("#app"), App())
 21
 22
 23
-</pre></td><td class="rouge-code"><pre>const stateArr = []
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">stateArr</span> <span class="o">=</span> <span class="p">[]</span>
 
-function render(parentElement, element) {
-    parentElement.appendChild(element)
-}
+<span class="kd">function</span> <span class="nf">render</span><span class="p">(</span><span class="nx">parentElement</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">parentElement</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span>
+<span class="p">}</span>
 
-const makeStateSetter = (wrapObj) =&gt; {
+<span class="kd">const</span> <span class="nx">makeStateSetter</span> <span class="o">=</span> <span class="p">(</span><span class="nx">wrapObj</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     
-    return (anotherValue) =&gt; {
-        wrapObj.value = anotherValue
-    }
-}
+    <span class="k">return </span><span class="p">(</span><span class="nx">anotherValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">wrapObj</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">anotherValue</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-function useState(initialValue) {
-    const wrapObj = {
-        value: initialValue,
-    }
-    stateArr.push(wrapObj)
+<span class="kd">function</span> <span class="nf">useState</span><span class="p">(</span><span class="nx">initialValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">wrapObj</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">value</span><span class="p">:</span> <span class="nx">initialValue</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="nx">stateArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">wrapObj</span><span class="p">)</span>
     
-    return [wrapObj, makeStateSetter(wrapObj)]
-}
+    <span class="k">return</span> <span class="p">[</span><span class="nx">wrapObj</span><span class="p">,</span> <span class="nf">makeStateSetter</span><span class="p">(</span><span class="nx">wrapObj</span><span class="p">)]</span>
+<span class="p">}</span>
 
-export {render, useState}
+<span class="k">export</span> <span class="p">{</span><span class="nx">render</span><span class="p">,</span> <span class="nx">useState</span><span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -4741,18 +4741,6 @@ export default function Counter() {
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

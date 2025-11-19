@@ -667,8 +667,8 @@
 
 <h4 id="debounce"><span class="me-2"><strong>Debounce</strong></span><a href="#debounce" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -678,15 +678,15 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>function debounce(callback, limit = 100) {
-    let timeout
-    return function(...args) {
-        clearTimeout(timeout)
-        timeout = setTimeout(() =&gt; {
-            callback.apply(this, args)
-        }, limit)
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">debounce</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">limit</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">timeout</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">clearTimeout</span><span class="p">(</span><span class="nx">timeout</span><span class="p">)</span>
+        <span class="nx">timeout</span> <span class="o">=</span> <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">callback</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span>
+        <span class="p">},</span> <span class="nx">limit</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -701,8 +701,8 @@
 
 <h4 id="throttle"><span class="me-2"><strong>Throttle</strong></span><a href="#throttle" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -715,18 +715,18 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>function throttle(callback, limit = 100) {
-    let waiting = false
-    return function() {
-        if(!waiting) {
-            callback.apply(this, arguments)
-            waiting = true
-            setTimeout(() =&gt; {
-                waiting = false
-            }, limit)
-        }
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">throttle</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">limit</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">waiting</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">waiting</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">callback</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
+            <span class="nx">waiting</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">waiting</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="p">},</span> <span class="nx">limit</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -4853,18 +4853,6 @@ window.addEventListener("mousemove", throttle(() =&gt; {
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

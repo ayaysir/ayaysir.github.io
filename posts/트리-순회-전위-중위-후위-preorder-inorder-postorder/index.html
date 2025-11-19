@@ -814,8 +814,8 @@ D . .
 G . .`
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -853,43 +853,43 @@ G . .`
 35
 36
 37
-</pre></td><td class="rouge-code"><pre>function traverseTree(inputStr) {
-    const spl = inputStr.split(/\n/)
-    const nodeCount = spl[0]
-    const treeArr = spl.slice(1)
-    const treeObj = {}
-    treeArr.forEach(el =&gt; {
-        const elSpl = el.split(/ /)
-        treeObj[elSpl[0]] = elSpl.slice(1) 
-    })
-    console.log(treeArr, treeObj)
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">traverseTree</span><span class="p">(</span><span class="nx">inputStr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">spl</span> <span class="o">=</span> <span class="nx">inputStr</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\n</span><span class="sr">/</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">nodeCount</span> <span class="o">=</span> <span class="nx">spl</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="kd">const</span> <span class="nx">treeArr</span> <span class="o">=</span> <span class="nx">spl</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">treeObj</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="nx">treeArr</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nx">el</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">elSpl</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/ /</span><span class="p">)</span>
+        <span class="nx">treeObj</span><span class="p">[</span><span class="nx">elSpl</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nx">elSpl</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="p">})</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">treeArr</span><span class="p">,</span> <span class="nx">treeObj</span><span class="p">)</span>
     
     
-    const order = (node, order) =&gt; {
-        const outArr = []
+    <span class="kd">const</span> <span class="nx">order</span> <span class="o">=</span> <span class="p">(</span><span class="nx">node</span><span class="p">,</span> <span class="nx">order</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">outArr</span> <span class="o">=</span> <span class="p">[]</span>
         
-        // outArr.push())의 위치에 따라 전위, 중위, 후위 출력이 결정됨
-        const orderRecursive = (node, order) =&gt; {
+        <span class="c1">// outArr.push())의 위치에 따라 전위, 중위, 후위 출력이 결정됨</span>
+        <span class="kd">const</span> <span class="nx">orderRecursive</span> <span class="o">=</span> <span class="p">(</span><span class="nx">node</span><span class="p">,</span> <span class="nx">order</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
              
-            const nodeLeft = treeObj[node][0]
-            const nodeRight = treeObj[node][1]
+            <span class="kd">const</span> <span class="nx">nodeLeft</span> <span class="o">=</span> <span class="nx">treeObj</span><span class="p">[</span><span class="nx">node</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="kd">const</span> <span class="nx">nodeRight</span> <span class="o">=</span> <span class="nx">treeObj</span><span class="p">[</span><span class="nx">node</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
             
-            order == "pre" &amp;&amp; outArr.push(node)
-            if(nodeLeft != ".") {
-                orderRecursive(nodeLeft, order)
-            }
-            order == "in" &amp;&amp; outArr.push(node)
-            if(nodeRight != ".") {
-                orderRecursive(nodeRight, order)
-            }
-            order == "post" &amp;&amp; outArr.push(node)
-        }
-        orderRecursive(node, order)
-        return outArr.join("")
+            <span class="nx">order</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">pre</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">outArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">nodeLeft</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">.</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nf">orderRecursive</span><span class="p">(</span><span class="nx">nodeLeft</span><span class="p">,</span> <span class="nx">order</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="nx">order</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">in</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">outArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">nodeRight</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">.</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nf">orderRecursive</span><span class="p">(</span><span class="nx">nodeRight</span><span class="p">,</span> <span class="nx">order</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="nx">order</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">outArr</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nf">orderRecursive</span><span class="p">(</span><span class="nx">node</span><span class="p">,</span> <span class="nx">order</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nx">outArr</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
         
-    }
-    return order("A", "pre") + "\n" + order("A", "in") + "\n" + order("A", "post")
-}
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nf">order</span><span class="p">(</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pre</span><span class="dl">"</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="nf">order</span><span class="p">(</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">in</span><span class="dl">"</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="nf">order</span><span class="p">(</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">post</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -3701,18 +3701,6 @@ G . .`
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

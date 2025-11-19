@@ -742,8 +742,8 @@
 
 <p>이 배열을 블롭 데이터로 변환한 후 <code class="language-plaintext highlighter-rouge">&lt;audio&gt;</code> 의 <code class="language-plaintext highlighter-rouge">src</code>에 적용하면 녹음 파일이 재생됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -754,16 +754,16 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>const audio = document.createElement('audio')
-...
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">audio</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">audio</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">...</span>
 
-audio.controls = true
-const blob = new Blob(chunks, {
-    'type': 'audio/ogg codecs=opus'
-})
-...
-const audioURL = URL.createObjectURL(blob)
-audio.src = audioURL
+<span class="nx">audio</span><span class="p">.</span><span class="nx">controls</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="kd">const</span> <span class="nx">blob</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Blob</span><span class="p">(</span><span class="nx">chunks</span><span class="p">,</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">audio/ogg codecs=opus</span><span class="dl">'</span>
+<span class="p">})</span>
+<span class="p">...</span>
+<span class="kd">const</span> <span class="nx">audioURL</span> <span class="o">=</span> <span class="nx">URL</span><span class="p">.</span><span class="nf">createObjectURL</span><span class="p">(</span><span class="nx">blob</span><span class="p">)</span>
+<span class="nx">audio</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">audioURL</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -3688,18 +3688,6 @@ audio.src = audioURL
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

@@ -935,8 +935,8 @@ $ npm install // 노드모듈 인스톨
 
 <p>개인적으로 맨땅에서 웹팩 프로젝트를 생성하는 것이 어렵게 느껴지는 이유가 웹팩을 설치한다고 해서 config 파일을 자동으로 만들어주는 것은 아니기 때문입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -998,67 +998,67 @@ $ npm install // 노드모듈 인스톨
 59
 60
 61
-</pre></td><td class="rouge-code"><pre>const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require("path");
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">html-webpack-plugin</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">MiniCssExtractPlugin</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">mini-css-extract-plugin</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">path</span><span class="dl">"</span><span class="p">);</span>
 
-const basePath = __dirname;
+<span class="kd">const</span> <span class="nx">basePath</span> <span class="o">=</span> <span class="nx">__dirname</span><span class="p">;</span>
 
-module.exports = {
-  context: path.join(basePath, "src"),
-  resolve: {
-    extensions: [".js", ".ts", ".tsx"]
-  },
-  entry: ["@babel/polyfill", "./index.ts"],
-  output: {
-    path: path.join(basePath, "dist"),
-    filename: "bundle.js"
-  },
-  devtool: "source-map",
-  devServer: {
-    contentBase: "./dist", // Content base
-    inline: true, // Enable watch and live reload
-    host: "localhost",
-    port: 8080,
-    stats: "errors-only"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
-        loader: "awesome-typescript-loader",
-        options: {
-          useBabel: true,
-          babelCore: "@babel/core" // needed for Babel v7
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: "file-loader",
-        options: {
-          name: "assets/img/[name].[ext]?[hash]"
-        }
-      }
-    ]
-  },
-  plugins: [
-    //Generate index.html in /dist =&gt; https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: "index.html", //Name of file in ./dist/
-      template: "index.html", //Name of template in ./src
-      hash: true
-    }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
-  ]
-};
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">context</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nx">basePath</span><span class="p">,</span> <span class="dl">"</span><span class="s2">src</span><span class="dl">"</span><span class="p">),</span>
+  <span class="na">resolve</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">extensions</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">.js</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">.ts</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">.tsx</span><span class="dl">"</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">@babel/polyfill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./index.ts</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nx">basePath</span><span class="p">,</span> <span class="dl">"</span><span class="s2">dist</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bundle.js</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="na">devtool</span><span class="p">:</span> <span class="dl">"</span><span class="s2">source-map</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">contentBase</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./dist</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// Content base</span>
+    <span class="na">inline</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// Enable watch and live reload</span>
+    <span class="na">host</span><span class="p">:</span> <span class="dl">"</span><span class="s2">localhost</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">port</span><span class="p">:</span> <span class="mi">8080</span><span class="p">,</span>
+    <span class="na">stats</span><span class="p">:</span> <span class="dl">"</span><span class="s2">errors-only</span><span class="dl">"</span>
+  <span class="p">},</span>
+  <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.(</span><span class="sr">ts|tsx</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span>
+        <span class="na">exclude</span><span class="p">:</span> <span class="sr">/node_modules/</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">awesome-typescript-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">useBabel</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="na">babelCore</span><span class="p">:</span> <span class="dl">"</span><span class="s2">@babel/core</span><span class="dl">"</span> <span class="c1">// needed for Babel v7</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">css$/</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="nx">MiniCssExtractPlugin</span><span class="p">.</span><span class="nx">loader</span><span class="p">,</span> <span class="dl">"</span><span class="s2">css-loader</span><span class="dl">"</span><span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.(</span><span class="sr">png|jpg|gif|svg</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span>
+        <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">file-loader</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">assets/img/[name].[ext]?[hash]</span><span class="dl">"</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+    <span class="c1">//Generate index.html in /dist =&gt; https://github.com/ampedandwired/html-webpack-plugin</span>
+    <span class="k">new</span> <span class="nc">HtmlWebpackPlugin</span><span class="p">({</span>
+      <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index.html</span><span class="dl">"</span><span class="p">,</span> <span class="c1">//Name of file in ./dist/</span>
+      <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index.html</span><span class="dl">"</span><span class="p">,</span> <span class="c1">//Name of template in ./src</span>
+      <span class="na">hash</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}),</span>
+    <span class="k">new</span> <span class="nc">MiniCssExtractPlugin</span><span class="p">({</span>
+      <span class="na">filename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">[name].css</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">chunkFilename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">[id].css</span><span class="dl">"</span>
+    <span class="p">})</span>
+  <span class="p">]</span>
+<span class="p">};</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1186,8 +1186,8 @@ document.getElementById("app")!.appendChild(App())
 
 <p><strong>index.html</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1206,24 +1206,24 @@ document.getElementById("app")!.appendChild(App())
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        body {
-            margin: 0;
-            padding: 0;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id="app"&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+        <span class="nt">body</span> <span class="p">{</span>
+            <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+            <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -5212,18 +5212,6 @@ document.getElementById("app")!.appendChild(App())
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

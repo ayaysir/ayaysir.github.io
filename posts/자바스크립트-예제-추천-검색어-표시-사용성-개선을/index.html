@@ -794,8 +794,8 @@
 
 <h5 id="기본-html은-다음과-같습니다"><span class="me-2"><strong>기본 HTML은 다음과 같습니다.</strong></span><a href="#기본-html은-다음과-같습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -872,90 +872,90 @@
 74
 75
 76
-</pre></td><td class="rouge-code"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;검색하기&lt;/title&gt;
-    &lt;style&gt;
-        header {
-            display: flex;
-            width: 600px;
-            flex-direction: column;
-            justify-content: center;
-        }
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>검색하기<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+        <span class="nt">header</span> <span class="p">{</span>
+            <span class="nl">display</span><span class="p">:</span> <span class="nb">flex</span><span class="p">;</span>
+            <span class="nl">width</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span>
+            <span class="nl">flex-direction</span><span class="p">:</span> <span class="nb">column</span><span class="p">;</span>
+            <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        .keywords {
-            z-index: 1;
-            background-color: white;
-            display: none;
-            position: absolute;
-            top: 110px;
-            width: 600px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+        <span class="nc">.keywords</span> <span class="p">{</span>
+            <span class="nl">z-index</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+            <span class="nl">background-color</span><span class="p">:</span> <span class="nx">white</span><span class="p">;</span>
+            <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+            <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+            <span class="nl">top</span><span class="p">:</span> <span class="m">110px</span><span class="p">;</span>
+            <span class="nl">width</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span>
+            <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nx">#ccc</span><span class="p">;</span>
+            <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        .keywords li:hover,
-        .keywords .selected {
-            cursor: pointer;
-            background-color: lightskyblue;
-            color: white;
-        }
+        <span class="nc">.keywords</span> <span class="nt">li</span><span class="nd">:hover</span><span class="o">,</span>
+        <span class="nc">.keywords</span> <span class="nc">.selected</span> <span class="p">{</span>
+            <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+            <span class="nl">background-color</span><span class="p">:</span> <span class="nx">lightskyblue</span><span class="p">;</span>
+            <span class="nl">color</span><span class="p">:</span> <span class="nx">white</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        .keywords .active {
-            background-color: lightskyblue;
-            color: white;
-        }
+        <span class="nc">.keywords</span> <span class="nc">.active</span> <span class="p">{</span>
+            <span class="nl">background-color</span><span class="p">:</span> <span class="nx">lightskyblue</span><span class="p">;</span>
+            <span class="nl">color</span><span class="p">:</span> <span class="nx">white</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        .keywords ul {
-            padding: 0;
-            margin: 0;
-        }
+        <span class="nc">.keywords</span> <span class="nt">ul</span> <span class="p">{</span>
+            <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+            <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        .keywords li {
-            list-style: none;
-            padding-left: 10px;
-        }
+        <span class="nc">.keywords</span> <span class="nt">li</span> <span class="p">{</span>
+            <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+            <span class="nl">padding-left</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+        <span class="p">}</span>
         
-        table {
-            margin-top: 10px;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
+        <span class="nt">table</span> <span class="p">{</span>
+            <span class="nl">margin-top</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 
-&lt;body&gt;
-    &lt;header&gt;
-        &lt;h1&gt;검색하기&lt;/h1&gt;
-        &lt;input class="keyword" autocomplete="off" /&gt;
-    &lt;/header&gt;
-    &lt;div class="keywords"&gt;
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;header&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>검색하기<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"keyword"</span> <span class="na">autocomplete=</span><span class="s">"off"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"keywords"</span><span class="nt">&gt;</span>
 
-    &lt;/div&gt;
-    &lt;div class="search-results"&gt;
-        &lt;table border=1&gt;
-            &lt;tr&gt;
-                &lt;th width="120px" height="50px"&gt;가&lt;/th&gt;
-                &lt;th width="120px" height="50px"&gt;나&lt;/th&gt;
-                &lt;th width="120px" height="50px"&gt;다&lt;/th&gt;
-                &lt;th width="120px" height="50px"&gt;라&lt;/th&gt;
-                &lt;th width="120px" height="50px"&gt;마&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-    &lt;/div&gt;
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"search-results"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">1</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;tr&gt;</span>
+                <span class="nt">&lt;th</span> <span class="na">width=</span><span class="s">"120px"</span> <span class="na">height=</span><span class="s">"50px"</span><span class="nt">&gt;</span>가<span class="nt">&lt;/th&gt;</span>
+                <span class="nt">&lt;th</span> <span class="na">width=</span><span class="s">"120px"</span> <span class="na">height=</span><span class="s">"50px"</span><span class="nt">&gt;</span>나<span class="nt">&lt;/th&gt;</span>
+                <span class="nt">&lt;th</span> <span class="na">width=</span><span class="s">"120px"</span> <span class="na">height=</span><span class="s">"50px"</span><span class="nt">&gt;</span>다<span class="nt">&lt;/th&gt;</span>
+                <span class="nt">&lt;th</span> <span class="na">width=</span><span class="s">"120px"</span> <span class="na">height=</span><span class="s">"50px"</span><span class="nt">&gt;</span>라<span class="nt">&lt;/th&gt;</span>
+                <span class="nt">&lt;th</span> <span class="na">width=</span><span class="s">"120px"</span> <span class="na">height=</span><span class="s">"50px"</span><span class="nt">&gt;</span>마<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
     
-    &lt;script&gt;
-        // .......... //  
-    &lt;/script&gt;
-&lt;/body&gt;&lt;/html&gt;
+    <span class="nt">&lt;script&gt;</span>
+        <span class="c1">// .......... //  </span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;&lt;/html&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <h5 id="script의-전체-내용은-다음과-같습니다"><span class="me-2"><strong>script의 전체 내용은 다음과 같습니다.</strong></span><a href="#script의-전체-내용은-다음과-같습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1035,84 +1035,84 @@
 77
 78
 79
-</pre></td><td class="rouge-code"><pre>const getData = async () =&gt; {
-    const response = await fetch("https://reqres.in/api/users?page=1")
-    return response.json()
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">getData</span> <span class="o">=</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://reqres.in/api/users?page=1</span><span class="dl">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
+<span class="p">}</span>
 
-const keyword = document.querySelector(".keyword")
-const keywords = document.querySelector(".keywords")
+<span class="kd">const</span> <span class="nx">keyword</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.keyword</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">keywords</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.keywords</span><span class="dl">"</span><span class="p">)</span>
 
-function closeKeywords() {
-    keywords.style.display = "none"
-    keywords.innerHTML = ""
-}
+<span class="kd">function</span> <span class="nf">closeKeywords</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">keywords</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+    <span class="nx">keywords</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">""</span>
+<span class="p">}</span>
 
-keyword.addEventListener("keyup", async (e) =&gt; { 
+<span class="nx">keyword</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">keyup</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> 
     
-    const selectedKeyword = keywords.querySelector("li.selected")
+    <span class="kd">const</span> <span class="nx">selectedKeyword</span> <span class="o">=</span> <span class="nx">keywords</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">li.selected</span><span class="dl">"</span><span class="p">)</span>
     
-    // li.selected 가 없는 경우에만 api에서 데이터를 가져옴
-    if(keyword.value.length &gt; 2 &amp;&amp; !selectedKeyword) {
-        console.log("=== API 호출 ===")
-        const list = (await getData()).data
+    <span class="c1">// li.selected 가 없는 경우에만 api에서 데이터를 가져옴</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">keyword</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">selectedKeyword</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">=== API 호출 ===</span><span class="dl">"</span><span class="p">)</span>
+        <span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">(</span><span class="k">await</span> <span class="nf">getData</span><span class="p">()).</span><span class="nx">data</span>
         
-        keywords.innerHTML = ""
+        <span class="nx">keywords</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">""</span>
         
-        const $ul = document.createElement("ul")
-        for(let person of list) {
-            const $li = document.createElement("li")
-            $li.textContent = `${person.first_name} ${person.last_name}`
-            $ul.append($li)
-        }
-        keywords.append($ul)
+        <span class="kd">const</span> <span class="nx">$ul</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">ul</span><span class="dl">"</span><span class="p">)</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">person</span> <span class="k">of</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">$li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">)</span>
+            <span class="nx">$li</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">person</span><span class="p">.</span><span class="nx">first_name</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">person</span><span class="p">.</span><span class="nx">last_name</span><span class="p">}</span><span class="s2">`</span>
+            <span class="nx">$ul</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nx">$li</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nx">keywords</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nx">$ul</span><span class="p">)</span>
         
-        keywords.style.display = "block" 
-    } 
-    if(keyword.value.length === 0) {
-        keywords.innerHTML = ""
-    }
+        <span class="nx">keywords</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span> 
+    <span class="p">}</span> 
+    <span class="k">if</span><span class="p">(</span><span class="nx">keyword</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">keywords</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">""</span>
+    <span class="p">}</span>
     
-    // 요구사항 1 - esc를 누르면 추천 검색어 창이 닫여야 합니다.
-    if(e.key === "Escape") {
-        closeKeywords()
-    }
+    <span class="c1">// 요구사항 1 - esc를 누르면 추천 검색어 창이 닫여야 합니다.</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Escape</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">closeKeywords</span><span class="p">()</span>
+    <span class="p">}</span>
     
-    // console.log(e.key)
+    <span class="c1">// console.log(e.key)</span>
     
-    // 요구사항 2 - 키보드의 위, 아래 키를 누르면 추천 검색어 하이라이트가 옮겨지고 엔터를 누르면 하이라이트가 위치한 검색어가 입력창에 반영되어야 합니다.
+    <span class="c1">// 요구사항 2 - 키보드의 위, 아래 키를 누르면 추천 검색어 하이라이트가 옮겨지고 엔터를 누르면 하이라이트가 위치한 검색어가 입력창에 반영되어야 합니다.</span>
     
-    const keywordsList = keywords.querySelectorAll("li")
+    <span class="kd">const</span> <span class="nx">keywordsList</span> <span class="o">=</span> <span class="nx">keywords</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">)</span>
     
-    if((e.key === "ArrowUp" || e.key === "ArrowDown") &amp;&amp; keywords.style.display === "block") {
-        let target
-        const initIndex = e.key === "ArrowUp" ? keywordsList.length - 1 : 0
-        const adjacentSibling = selectedKeyword &amp;&amp; (e.key === "ArrowUp" ? selectedKeyword.previousElementSibling : selectedKeyword.nextElementSibling)
+    <span class="k">if</span><span class="p">((</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">ArrowUp</span><span class="dl">"</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">ArrowDown</span><span class="dl">"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">keywords</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">target</span>
+        <span class="kd">const</span> <span class="nx">initIndex</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">ArrowUp</span><span class="dl">"</span> <span class="p">?</span> <span class="nx">keywordsList</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span>
+        <span class="kd">const</span> <span class="nx">adjacentSibling</span> <span class="o">=</span> <span class="nx">selectedKeyword</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">ArrowUp</span><span class="dl">"</span> <span class="p">?</span> <span class="nx">selectedKeyword</span><span class="p">.</span><span class="nx">previousElementSibling</span> <span class="p">:</span> <span class="nx">selectedKeyword</span><span class="p">.</span><span class="nx">nextElementSibling</span><span class="p">)</span>
         
-        if(adjacentSibling) {
-            target = adjacentSibling
-        } else {
-            target = keywordsList.item(initIndex)
-        } 
+        <span class="k">if</span><span class="p">(</span><span class="nx">adjacentSibling</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">target</span> <span class="o">=</span> <span class="nx">adjacentSibling</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">target</span> <span class="o">=</span> <span class="nx">keywordsList</span><span class="p">.</span><span class="nf">item</span><span class="p">(</span><span class="nx">initIndex</span><span class="p">)</span>
+        <span class="p">}</span> 
         
-        selectedKeyword &amp;&amp; selectedKeyword.classList.remove("selected")
-        target.classList.add("selected")
-        keyword.value = target.textContent
-    }
-})
+        <span class="nx">selectedKeyword</span> <span class="o">&amp;&amp;</span> <span class="nx">selectedKeyword</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="dl">"</span><span class="s2">selected</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">selected</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">keyword</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">target</span><span class="p">.</span><span class="nx">textContent</span>
+    <span class="p">}</span>
+<span class="p">})</span>
 
-document.addEventListener("click", e =&gt; {
-    // 요구사항 3 - 마우스로 다른 곳을 클릭하여 input이 focus를 잃어버리는 경우 추천 검색어 창이 닫여야 합니다.
-    const closestKeywords = e.target.closest(".keywords") // 부모 요소 중에 keywords 클래스를 가진 부모가 있는지 확인
-    if(!closestKeywords &amp;&amp; keywords.style.display === "block") {
-        closeKeywords()
-    }
-})
+<span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 요구사항 3 - 마우스로 다른 곳을 클릭하여 input이 focus를 잃어버리는 경우 추천 검색어 창이 닫여야 합니다.</span>
+    <span class="kd">const</span> <span class="nx">closestKeywords</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nf">closest</span><span class="p">(</span><span class="dl">"</span><span class="s2">.keywords</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// 부모 요소 중에 keywords 클래스를 가진 부모가 있는지 확인</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">closestKeywords</span> <span class="o">&amp;&amp;</span> <span class="nx">keywords</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">closeKeywords</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">})</span>
 
-keywords.addEventListener("click", e =&gt; {
-    // 요구사항 4 - 마우스로 추천 검색어를 누르면 커서가 위치한 검색어가 입력창에 반영되어야 합니다.
-    keyword.value = e.target.textContent
-})
+<span class="nx">keywords</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 요구사항 4 - 마우스로 추천 검색어를 누르면 커서가 위치한 검색어가 입력창에 반영되어야 합니다.</span>
+    <span class="nx">keyword</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">textContent</span>
+<span class="p">})</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1129,16 +1129,16 @@ keywords.addEventListener("click", e =&gt; {
 
 <p>을 의미합니다. 닫힘 기능이 있는 함수를 먼저 만듭니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>function closeKeywords() {
-    keywords.style.display = "none"
-    keywords.innerHTML = ""
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">closeKeywords</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">keywords</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+    <span class="nx">keywords</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">""</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>그 다음 검색어 입력창에 <code class="language-plaintext highlighter-rouge">keyup</code> 이벤트를 부여하고, 해당 키가 <code class="language-plaintext highlighter-rouge">ESC</code>인 경우 추천어 검색창을 닫도록 합니다.</p>
@@ -5378,18 +5378,6 @@ if((e.key === "ArrowUp" || e.key === "ArrowDown") &amp;&amp; keywords.style.disp
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

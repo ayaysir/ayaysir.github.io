@@ -1244,8 +1244,8 @@
 
 <h4 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1276,36 +1276,36 @@
 28
 29
 30
-</pre></td><td class="rouge-code"><pre>function solution(msg) {
-    var answer = [];
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">solution</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
     
-    // 사전 작성
-    const dict = {}
-    for(let i = 1; i &lt;= 26; i++) {
-        dict[String.fromCharCode(i + 64)] = i
-    }
-    let maxIdx = 26
+    <span class="c1">// 사전 작성</span>
+    <span class="kd">const</span> <span class="nx">dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">26</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">dict</span><span class="p">[</span><span class="nb">String</span><span class="p">.</span><span class="nf">fromCharCode</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">64</span><span class="p">)]</span> <span class="o">=</span> <span class="nx">i</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">maxIdx</span> <span class="o">=</span> <span class="mi">26</span>
     
-    let idx = 0
-    let msgLen = msg.length
-    while(idx &lt; msgLen) {
-        let currentMaxStr = ""
-        for(let j = idx; j &lt; msgLen; j++) {
-            const target = msg.substring(idx, j + 1)
-            if(dict[target]) {
-                currentMaxStr = target
-            } else {
-                dict[target] = ++maxIdx
-                break
-            }
-        }
-        answer.push(dict[currentMaxStr])
-        // idx를 currentMaxStr 만큼 증가
-        idx += currentMaxStr.length
-    }
+    <span class="kd">let</span> <span class="nx">idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="kd">let</span> <span class="nx">msgLen</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">length</span>
+    <span class="k">while</span><span class="p">(</span><span class="nx">idx</span> <span class="o">&lt;</span> <span class="nx">msgLen</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">currentMaxStr</span> <span class="o">=</span> <span class="dl">""</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">idx</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">msgLen</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="nx">idx</span><span class="p">,</span> <span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">dict</span><span class="p">[</span><span class="nx">target</span><span class="p">])</span> <span class="p">{</span>
+                <span class="nx">currentMaxStr</span> <span class="o">=</span> <span class="nx">target</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">dict</span><span class="p">[</span><span class="nx">target</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="nx">maxIdx</span>
+                <span class="k">break</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="nx">answer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">dict</span><span class="p">[</span><span class="nx">currentMaxStr</span><span class="p">])</span>
+        <span class="c1">// idx를 currentMaxStr 만큼 증가</span>
+        <span class="nx">idx</span> <span class="o">+=</span> <span class="nx">currentMaxStr</span><span class="p">.</span><span class="nx">length</span>
+    <span class="p">}</span>
     
-    return answer;
-}
+    <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>일단 정답 처리된 코드입니다. 밑에부터는 각 부분별 분석입니다.</p>
@@ -4315,18 +4315,6 @@ while (idx &lt; msgLen) {
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
