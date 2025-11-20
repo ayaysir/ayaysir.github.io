@@ -1119,8 +1119,8 @@
 
 <p>아래 코드는 텍스트와 이미지를 첨부해서 공유 메뉴를 표시합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1131,16 +1131,16 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>@IBOutlet weak var imgPhoto: UIImageView!
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">imgPhoto</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span>
 
-// (...) //
+<span class="c1">// (...) //</span>
 
-var shareList = [Any]()
-shareList.append(imgPhoto.image!)
-shareList.append("이미지와 텍스트 - 나의 App에서 보냄")
+<span class="k">var</span> <span class="nv">shareList</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]()</span>
+<span class="n">shareList</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">imgPhoto</span><span class="o">.</span><span class="n">image</span><span class="o">!</span><span class="p">)</span>
+<span class="n">shareList</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="s">"이미지와 텍스트 - 나의 App에서 보냄"</span><span class="p">)</span>
 
-let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
-showActivityVC(self, activityItems: shareList, sourceRect: cell!.frame)
+<span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">cellForRow</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">(</span><span class="nv">row</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">section</span><span class="p">:</span> <span class="mi">0</span><span class="p">))</span>
+<span class="nf">showActivityVC</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">activityItems</span><span class="p">:</span> <span class="n">shareList</span><span class="p">,</span> <span class="nv">sourceRect</span><span class="p">:</span> <span class="n">cell</span><span class="o">!.</span><span class="n">frame</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2022/12/IMG_BF9B2B2E0412-1.jpeg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/IMG_BF9B2B2E0412-1.jpeg" alt="" loading="lazy"></a></p>

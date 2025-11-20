@@ -1854,8 +1854,8 @@
 
 <p>뷰 컨트롤러에 다음 코드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1888,38 +1888,38 @@
 30
 31
 32
-</pre></td><td class="rouge-code"><pre>@IBOutlet weak var lblCount: UILabel!
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">lblCount</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
 
-func setDynamicQuickActions(_ value: Int) {
-    let items: [UIApplicationShortcutItem] = (2...5).map { multiple in
-        let result = value * multiple
-        // userInfo의 값(value)는 NSSecureCoding을 준수해야 함
-        let userInfo = [
-            "value": NSString(string: "\(value)"),
-            "multiple": NSString(string: "\(multiple)"),
-            "result": NSString(string: "\(result)"),
-            "message": "from dynamic quick action" as NSString
-        ]
+<span class="kd">func</span> <span class="nf">setDynamicQuickActions</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationShortcutItem</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">...</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">multiple</span> <span class="k">in</span>
+        <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="n">multiple</span>
+        <span class="c1">// userInfo의 값(value)는 NSSecureCoding을 준수해야 함</span>
+        <span class="k">let</span> <span class="nv">userInfo</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s">"value"</span><span class="p">:</span> <span class="kt">NSString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">value</span><span class="se">)</span><span class="s">"</span><span class="p">),</span>
+            <span class="s">"multiple"</span><span class="p">:</span> <span class="kt">NSString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">multiple</span><span class="se">)</span><span class="s">"</span><span class="p">),</span>
+            <span class="s">"result"</span><span class="p">:</span> <span class="kt">NSString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">result</span><span class="se">)</span><span class="s">"</span><span class="p">),</span>
+            <span class="s">"message"</span><span class="p">:</span> <span class="s">"from dynamic quick action"</span> <span class="k">as</span> <span class="kt">NSString</span>
+        <span class="p">]</span>
         
-        return UIApplicationShortcutItem(
-            type: "com.mycompany.myapp.dynamic",
-            localizedTitle: "\(result)",
-            localizedSubtitle: "\(value) * \(multiple) = \(result)",
-            icon: UIApplicationShortcutIcon(templateImageName: "Custom-Punched"),
-            userInfo: userInfo
-        )
-    }
+        <span class="k">return</span> <span class="kt">UIApplicationShortcutItem</span><span class="p">(</span>
+            <span class="nv">type</span><span class="p">:</span> <span class="s">"com.mycompany.myapp.dynamic"</span><span class="p">,</span>
+            <span class="nv">localizedTitle</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">result</span><span class="se">)</span><span class="s">"</span><span class="p">,</span>
+            <span class="nv">localizedSubtitle</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">value</span><span class="se">)</span><span class="s"> * </span><span class="se">\(</span><span class="n">multiple</span><span class="se">)</span><span class="s"> = </span><span class="se">\(</span><span class="n">result</span><span class="se">)</span><span class="s">"</span><span class="p">,</span>
+            <span class="nv">icon</span><span class="p">:</span> <span class="kt">UIApplicationShortcutIcon</span><span class="p">(</span><span class="nv">templateImageName</span><span class="p">:</span> <span class="s">"Custom-Punched"</span><span class="p">),</span>
+            <span class="nv">userInfo</span><span class="p">:</span> <span class="n">userInfo</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
     
-    // 기존 static quick action은 지워지지 않음
-    UIApplication.shared.shortcutItems = items
-}
+    <span class="c1">// 기존 static quick action은 지워지지 않음</span>
+    <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">shortcutItems</span> <span class="o">=</span> <span class="n">items</span>
+<span class="p">}</span>
 
-@IBAction func stepperActionChangeCount(_ sender: UIStepper) {
-    let value = Int(sender.value)
-    lblCount.text = "\(value)"
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">stepperActionChangeCount</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIStepper</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">value</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">sender</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">lblCount</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">value</span><span class="se">)</span><span class="s">"</span>
     
-    setDynamicQuickActions(value)
-}
+    <span class="nf">setDynamicQuickActions</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

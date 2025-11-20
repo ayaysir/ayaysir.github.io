@@ -1613,37 +1613,6 @@
   
 
   
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -1842,8 +1811,61 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
 
 
@@ -1934,7 +1956,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="6017 words"
+  title="5994 words"
 >
   <em>33 min</em> read</span>
 
@@ -1968,17 +1990,17 @@
   
 
   <div class="content">
-    <h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p><strong>출처</strong></p>
 
 <ul>
   <li><a href="https://www.raywenderlich.com/31498014-running-a-web-server-on-ios-with-vapor">Running a Web Server on iOS with Vapor</a></li>
 </ul>
 
-<p>원문에서 SwiftUI 부분을 Storyboard로 변경하였습니다.</p>
+<p>원문에서 SwiftUI 부분을 UIKit Storyboard로 변경하였습니다.</p>
 
 <p> </p>
 
-<h3 id="vapor를-사용하여-ios에서-웹-서버-실행"><span class="me-2"><strong>Vapor를 사용하여 iOS에서 웹 서버 실행</strong></span><a href="#vapor를-사용하여-ios에서-웹-서버-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="vapor를-사용하여-ios에서-웹-서버-실행"><span class="me-2"><strong>Vapor를 사용하여 iOS에서 웹 서버 실행</strong></span><a href="#vapor를-사용하여-ios에서-웹-서버-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2022/08/simulator_screenshot_CE6B8D15-1746-4467-AB71-2011072FC37D-e1661872266956.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/simulator_screenshot_CE6B8D15-1746-4467-AB71-2011072FC37D-e1661872266956.png" alt="" loading="lazy"></a></p>
 
@@ -1997,7 +2019,7 @@
 
 <p> </p>
 
-<h4 id="시작하기"><span class="me-2"><strong>시작하기</strong></span><a href="#시작하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="시작하기"><span class="me-2"><strong>시작하기</strong></span><a href="#시작하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 프로젝트는 두 개의 Swift 패키지인 <strong><em>Vapor</em></strong>와 <strong><em>Leaf</em></strong>만 사용합니다. 핵심 Vapor 패키지에는 서버에 백엔드를 구축하는 데 필요한 모든 것이 포함되어 있으며 Leaf 패키지를 사용하면 프론트엔드에 대한 웹페이지를 만들 수 있습니다.</p>
 
@@ -2018,12 +2040,12 @@
 
 <p> </p>
 
-<h4 id="서버-생성"><span class="me-2"><strong>서버 생성</strong></span><a href="#서버-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="서버-생성"><span class="me-2"><strong>서버 생성</strong></span><a href="#서버-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">Server</code> 그룹 안에 새 파일을 만들고 이름을 <code class="language-plaintext highlighter-rouge">FileServer.swift</code>로 지정한 뒤, 다음 코드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2044,26 +2066,26 @@
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>import Vapor
-import Leaf
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Vapor</span>
+<span class="kd">import</span> <span class="kt">Leaf</span>
 
-class FileServer {
-    // 1
-    var app: Application
+<span class="kd">class</span> <span class="kt">FileServer</span> <span class="p">{</span>
+    <span class="c1">// 1</span>
+    <span class="k">var</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">Application</span>
     
-    // 2
-    let port: Int
+    <span class="c1">// 2</span>
+    <span class="k">let</span> <span class="nv">port</span><span class="p">:</span> <span class="kt">Int</span>
     
-    init(port: Int) {
-        self.port = port
+    <span class="nf">init</span><span class="p">(</span><span class="nv">port</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
         
-        // 3
-        app = Application(.development)
+        <span class="c1">// 3</span>
+        <span class="n">app</span> <span class="o">=</span> <span class="kt">Application</span><span class="p">(</span><span class="o">.</span><span class="n">development</span><span class="p">)</span>
         
-        // 4
-        configure(app)
-    }
-}
+        <span class="c1">// 4</span>
+        <span class="nf">configure</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위의 코드가 하는 일은 다음과 같습니다.</p>
@@ -2077,7 +2099,7 @@ class FileServer {
 
 <p> </p>
 
-<h4 id="서버-구성"><span class="me-2"><strong>서버 구성</strong></span><a href="#서버-구성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="서버-구성"><span class="me-2"><strong>서버 구성</strong></span><a href="#서버-구성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">init</code>(이니셜라이저) 아래에 구성 함수를 추가하세요.</p>
 
@@ -2137,7 +2159,7 @@ class FileServer {
 
 <p> </p>
 
-<h4 id="서버-시작"><span class="me-2"><strong>서버 시작</strong></span><a href="#서버-시작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="서버-시작"><span class="me-2"><strong>서버 시작</strong></span><a href="#서버-시작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>서버를 테스트하려면 먼저 시작할 방법이 필요합니다. <code class="language-plaintext highlighter-rouge">configure</code> 함수 아래에 새 함수를 추가하고 이름을 <code class="language-plaintext highlighter-rouge">start()</code>로 지정합니다.</p>
 
@@ -2228,9 +2250,9 @@ class FileServer {
 
 <p> </p>
 
-<h4 id="경로-생성"><span class="me-2"><strong>경로 생성</strong></span><a href="#경로-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="경로-생성"><span class="me-2"><strong>경로 생성</strong></span><a href="#경로-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><strong>사전 작업 1:</strong> 문서 디렉토리를 가져올 수 있는 아래 URL의 <code class="language-plaintext highlighter-rouge">extension</code>을 <code class="language-plaintext highlighter-rouge">URL+Extensions.swift</code> 파일에 추가합니다.</p>
+<h3 id="사전-작업-1-문서-디렉토리를-가져올-수-있는-아래-url의-extension을-urlextensionsswift-파일에-추가합니다"><span class="me-2"><strong>사전 작업 1:</strong> 문서 디렉토리를 가져올 수 있는 아래 URL의 <code class="language-plaintext highlighter-rouge">extension</code>을 <code class="language-plaintext highlighter-rouge">URL+Extensions.swift</code> 파일에 추가합니다.</span><a href="#사전-작업-1-문서-디렉토리를-가져올-수-있는-아래-url의-extension을-urlextensionsswift-파일에-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -2276,7 +2298,7 @@ class FileServer {
 
 <p> </p>
 
-<p><strong>사전 작업 2:</strong> 아래 파일을 <code class="language-plaintext highlighter-rouge">Server/Views</code> 그룹 밑에 <code class="language-plaintext highlighter-rouge">files.leaf</code>라는 이름으로 추가합니다. 이 파일은 HTML의 프론트엔드 부분을 렌더링해서 출력하는 파일입니다.</p>
+<h3 id="사전-작업-2-아래-파일을-serverviews-그룹-밑에-filesleaf라는-이름으로-추가합니다-이-파일은-html의-프론트엔드-부분을-렌더링해서-출력하는-파일입니다"><span class="me-2"><strong>사전 작업 2:</strong> 아래 파일을 <code class="language-plaintext highlighter-rouge">Server/Views</code> 그룹 밑에 <code class="language-plaintext highlighter-rouge">files.leaf</code>라는 이름으로 추가합니다. 이 파일은 HTML의 프론트엔드 부분을 렌더링해서 출력하는 파일입니다.</span><a href="#사전-작업-2-아래-파일을-serverviews-그룹-밑에-filesleaf라는-이름으로-추가합니다-이-파일은-html의-프론트엔드-부분을-렌더링해서-출력하는-파일입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-html highlighter-rouge"><div class="code-header">
         <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
@@ -2360,7 +2382,7 @@ class FileServer {
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="본-작업"><span class="me-2"><strong>본 작업</strong></span><a href="#본-작업" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>이 섹션에서는 서버로 들어오는 요청을 처리하기 위해 4개의 경로를 생성합니다.</p>
 
@@ -2368,8 +2390,8 @@ class FileServer {
 
 <p><code class="language-plaintext highlighter-rouge">RouteCollection</code>을 준수하고 <code class="language-plaintext highlighter-rouge">boot()</code> 프로토콜 메서드를 추가하여 파일을 시작합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2378,13 +2400,13 @@ class FileServer {
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>import Vapor
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Vapor</span>
 
-struct FileWebRouteCollection: RouteCollection {
-    func boot(routes: RoutesBuilder) throws {
-        // &lt;code&gt; //
-    }
-}
+<span class="kd">struct</span> <span class="kt">FileWebRouteCollection</span><span class="p">:</span> <span class="kt">RouteCollection</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">boot</span><span class="p">(</span><span class="nv">routes</span><span class="p">:</span> <span class="kt">RoutesBuilder</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
+        <span class="c1">// &lt;code&gt; //</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2432,15 +2454,10 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p><code class="language-plaintext highlighter-rouge">Server/Views/files.leaf</code> 파일을 살펴보면 24 라인부터 작성된 <code class="language-plaintext highlighter-rouge">FileContext</code>의 <code class="language-plaintext highlighter-rouge">filenames</code> 속성을 볼 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre>...
+<pre><code class="language-leaf">...
 #for(filename in filenames):
 ...
-</pre></td></tr></tbody></table></code></div></div>
+</code></pre>
 
 <p>이렇게 하면 사용자에게 모든 파일 이름이 목록으로 표시되고 여기에서 특정 파일을 클릭하여 다운로드할 수 있습니다.</p>
 
@@ -2486,7 +2503,7 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p> </p>
 
-<h4 id="파일-업로드"><span class="me-2"><strong>파일 업로드</strong></span><a href="#파일-업로드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="파일-업로드"><span class="me-2"><strong>파일 업로드</strong></span><a href="#파일-업로드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">FileWebRouteCollection.swift</code>를 열고 파일 맨 아래의 <code class="language-plaintext highlighter-rouge">FileContext</code> 구조체(<code class="language-plaintext highlighter-rouge">struct</code>) 밑에 <code class="language-plaintext highlighter-rouge">FileUploadPostData</code> 구조체를 만듭니다.</p>
 
@@ -2547,10 +2564,10 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p>새로운 <code class="language-plaintext highlighter-rouge">POST</code> 경로를 <code class="language-plaintext highlighter-rouge">boot()</code> 안에 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>routes.post(use: uploadFilePostHandler)
+</pre></td><td class="rouge-code"><pre><span class="n">routes</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">use</span><span class="p">:</span> <span class="n">uploadFilePostHandler</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2561,16 +2578,16 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p>첫 번째 입력 필드는 <code class="language-plaintext highlighter-rouge">name</code>(이름)과 <code class="language-plaintext highlighter-rouge">type</code>(유형) 모두에 대해 “<code class="language-plaintext highlighter-rouge">file</code>“입니다. Vapor는 이 <code class="language-plaintext highlighter-rouge">name</code> 매개변수를 사용하여 요청의 파일 데이터를 <code class="language-plaintext highlighter-rouge">FileUploadPostData.file</code> 속성에 매핑합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>&lt;form method="POST" action="/" enctype="multipart/form-data"&gt;
-  &lt;input type="file" name="file"&gt;
-  &lt;input type="submit" class="btn btn-primary" value="Upload"/&gt;
-&lt;/form&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">action=</span><span class="s">"/"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">name=</span><span class="s">"file"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">value=</span><span class="s">"Upload"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2583,7 +2600,7 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p> </p>
 
-<h4 id="파일-미리보기"><span class="me-2"><strong>파일 미리보기</strong></span><a href="#파일-미리보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="파일-미리보기"><span class="me-2"><strong>파일 미리보기</strong></span><a href="#파일-미리보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>프로젝트의 iOS 측에서 업로드된 파일 목록에 액세스할 수 있어야 합니다. 이 가이드에서는 <code class="language-plaintext highlighter-rouge">FileServer</code>를 사용합니다. 그러나 훨씬 더 큰 프로젝트에서는 해당 책임을 전용 파일 관리 오브젝트로 옮기는 것이 좋습니다.</p>
 
@@ -2591,10 +2608,10 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p><code class="language-plaintext highlighter-rouge">FileServer.swift</code>를 열고 클래스 상단 근처에 새 속성을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>var fileURLs: [URL] = []
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">fileURLs</span><span class="p">:</span> <span class="p">[</span><span class="kt">URL</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이것은 앱의 문서 디렉토리에 저장된 모든 파일에 대한 단일 정보 소스입니다.</p>
@@ -2663,19 +2680,25 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p>다음 뷰 컨트롤러 안에 테이블 뷰를 추가하고, 업로드된 파일 목록이 나타나도록 합니다.</p>
 
-<p>[caption id=”attachment_4681” align=”alignnone” width=”600”] <a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.21.08.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.21.08.jpg" alt="" loading="lazy"></a> 뷰 컨트롤러 안에 Table View(<code class="language-plaintext highlighter-rouge">UITableView</code>)를 추가합니다.[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.21.08.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.21.08.jpg" alt="뷰 컨트롤러 안에 Table View(UITableView)를 추가합니다." loading="lazy"></a><br />
+<em>뷰 컨트롤러 안에 Table View(UITableView)를 추가합니다.</em></p>
 
-<p> </p>
+<p><br /></p>
 
-<p>[caption id=”attachment_4682” align=”alignnone” width=”652”] <a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.22.09.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.22.09.jpg" alt="" loading="lazy"></a> 테이블 뷰를 ViewController.swift 파일과 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 연결합니다.[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.22.09.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.22.09.jpg" alt="테이블 뷰를 ViewController.swift 파일과 @IBOutlet으로 연결합니다." loading="lazy"></a><br />
+<em>테이블 뷰를 ViewController.swift 파일과 @IBOutlet으로 연결합니다.</em></p>
 
-<p> </p>
+<p><br /></p>
 
-<p>[caption id=”attachment_4683” align=”alignnone” width=”361”] <a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.23.28.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.23.28.jpg" alt="" loading="lazy"></a> <code class="language-plaintext highlighter-rouge">viewDidLoad</code> 안에 <code class="language-plaintext highlighter-rouge">delegate</code>, <code class="language-plaintext highlighter-rouge">dataSource</code>를 <code class="language-plaintext highlighter-rouge">self</code>와 연결합니다.[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.23.28.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.23.28.jpg" alt="viewDidLoad 안에 delegate, dataSource를 self와 연결합니다." loading="lazy"></a><br />
+<em>viewDidLoad 안에 delegate, dataSource를 self와 연결합니다.</em></p>
 
-<p> </p>
+<p><br /></p>
 
-<p>[caption id=”attachment_4684” align=”alignnone” width=”466”] <a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.26.26.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.26.26.jpg" alt="" loading="lazy"></a> 테이블 뷰에 Prototype Cell을 1개 추가하고, Style을 Basic으로, identifier를 <code class="language-plaintext highlighter-rouge">FileNameCell</code>로 지정합니다.[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.26.26.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.26.26.jpg" alt="테이블 뷰에 Prototype Cell을 1개 추가하고, Style은 Basic으로 identifier를 FileNameCell로 지정합니다." loading="lazy"></a><br />
+<em>테이블 뷰에 Prototype Cell을 1개 추가하고, Style은 Basic으로 identifier를 FileNameCell로 지정합니다.</em></p>
+
+<p><br /></p>
 
 <p> </p>
 
@@ -2735,20 +2758,20 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p>뷰 컨트롤러 파일에 <code class="language-plaintext highlighter-rouge">import QuickLook</code>을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>import QuickLook
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">QuickLook</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>뷰 컨트롤러의 멤버 변수로 아래를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>var previewURL: URL!
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">previewURL</span><span class="p">:</span> <span class="kt">URL</span><span class="o">!</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2771,9 +2794,7 @@ struct FileWebRouteCollection: RouteCollection {
 12
 13
 14
-15
 </pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">QLPreviewControllerDelegate</span><span class="p">,</span> <span class="kt">QLPreviewControllerDataSource</span> <span class="p">{</span>
-    
     <span class="kd">func</span> <span class="nf">numberOfPreviewItems</span><span class="p">(</span><span class="k">in</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">QLPreviewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
         <span class="mi">1</span>
     <span class="p">}</span>
@@ -2818,7 +2839,7 @@ struct FileWebRouteCollection: RouteCollection {
 <p> </p>
 
 <!-- http://www.giphy.com/gifs/sDYwNFulSvl1RsmmUm -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODd5cTFkY2cyaGhnN3hjaGd1eDZtdzZ6YjkwMzBubGkzNzN5czFpYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sDYwNFulSvl1RsmmUm/giphy.gif" class="popup img-link shimmer"><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODd5cTFkY2cyaGhnN3hjaGd1eDZtdzZ6YjkwMzBubGkzNzN5czFpYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sDYwNFulSvl1RsmmUm/giphy.gif" alt="" loading="lazy"></a></p>
 
 <!-- \[the\_ad id="3020"\] -->
 
@@ -2850,16 +2871,16 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p>뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">viewDidLoad</code> 안에 다음 옵저버를 추가하세요. 파일이 업로드되면 목록을 다시 불러오고 테이블 뷰를 새로고침합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>NotificationCenter.default.addObserver(forName: .serverFilesChanged, object: nil, queue: .main) { _ in
-    self.server.loadFiles()
-    self.tbvFileList.reloadData()
-}
+</pre></td><td class="rouge-code"><pre><span class="kt">NotificationCenter</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="nv">forName</span><span class="p">:</span> <span class="o">.</span><span class="n">serverFilesChanged</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">queue</span><span class="p">:</span> <span class="o">.</span><span class="n">main</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="nf">loadFiles</span><span class="p">()</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">tbvFileList</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2912,7 +2933,7 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p> </p>
 
-<h4 id="파일-다운로드"><span class="me-2"><strong>파일 다운로드</strong></span><a href="#파일-다운로드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="파일-다운로드"><span class="me-2"><strong>파일 다운로드</strong></span><a href="#파일-다운로드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>파일 호스팅 서버는 사람들이 해당 파일을 다운로드할 수 있는 기능이 없으면 아무 것도 아닙니다. 이미 대부분의 작업을 완료했기 때문에 다운로드를 활성화하는 것은 매우 쉽습니다. 이러한 요청을 처리하기 위한 새로운 경로만 있으면 됩니다.</p>
 
@@ -2940,10 +2961,10 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p>마지막으로 파일 상단의 <code class="language-plaintext highlighter-rouge">boot(routes:)</code> 함수 내 경로(route) 빌더에 추가하여 컬렉션에 새 다운로드 경로를 등록합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>routes.get(":filename", use: downloadFileHandler)
+</pre></td><td class="rouge-code"><pre><span class="n">routes</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s">":filename"</span><span class="p">,</span> <span class="nv">use</span><span class="p">:</span> <span class="n">downloadFileHandler</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>콜론(<code class="language-plaintext highlighter-rouge">:</code>) 구문은 이 특정 URL 경로 구성요소를 매개변수로 표시하고 리퀘스트를 통해 해당 값을 노출합니다. 명시적인 다른 경로 구성 요소와 달리 이 구성 요소는 모든 문자열 값이 될 수 있습니다. 예를 들어 <code class="language-plaintext highlighter-rouge">ExampleFile.txt</code>라는 파일을 다운로드하려면 브라우저에서 <code class="language-plaintext highlighter-rouge">myServer:8080/ExampleFile.txt</code>를 엽니다. Vapor는 <code class="language-plaintext highlighter-rouge">ExampleFile.txt</code> 부분을 가져와 <code class="language-plaintext highlighter-rouge">req.parameters.get("filename")</code>을 통해 액세스할 수 있도록 합니다.</p>
@@ -2958,7 +2979,7 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p> </p>
 
-<h4 id="웹에서-파일-삭제"><span class="me-2"><strong>웹에서 파일 삭제</strong></span><a href="#웹에서-파일-삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="웹에서-파일-삭제"><span class="me-2"><strong>웹에서 파일 삭제</strong></span><a href="#웹에서-파일-삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>기기에서 허용 가능한 수준의 저장 공간을 유지하려면 서버의 파일을 정리하는 방법이 필요합니다. 웹 페이지의 삭제 버튼은 <code class="language-plaintext highlighter-rouge">files.leaf</code> 파일 안에 이미 준비가 되어있고 기능만 구현하면 됩니다.</p>
 
@@ -2992,17 +3013,17 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p>다음 코드를 <code class="language-plaintext highlighter-rouge">boot(routes:)</code> 함수에 추가하여 삭제 경로를 등록합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>routes.get("delete", ":filename", use: deleteFileHandler)
+</pre></td><td class="rouge-code"><pre><span class="n">routes</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"delete"</span><span class="p">,</span> <span class="s">":filename"</span><span class="p">,</span> <span class="nv">use</span><span class="p">:</span> <span class="n">deleteFileHandler</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 새 경로는 추가 경로 구성 요소가 있다는 점을 제외하고 다운로드 경로와 유사합니다. 이전과 동일한 예를 사용하면 myServer:8080/ExampleFile.txt에서 이름이 ExampleFile.txt인 파일을 다운로드할 수 있지만 myServer:8080/delete/ExampleFile.txt로 이동하여 동일한 파일을 삭제할 수 있습니다. 웹 페이지에서 삭제 버튼을 클릭했을 때와 동일한 요청입니다.</p>
 
 <p> </p>
 
-<h4 id="앱에서-파일-삭제"><span class="me-2"><strong>앱에서 파일 삭제</strong></span><a href="#앱에서-파일-삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="앱에서-파일-삭제"><span class="me-2"><strong>앱에서 파일 삭제</strong></span><a href="#앱에서-파일-삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>파일 삭제는 앱에서 수행할 수 있어야 합니다. <code class="language-plaintext highlighter-rouge">FileServer.swift</code>를 열고 동명의 클래스 하단에 새로운 삭제 함수를 추가하세요:</p>
 
@@ -3067,7 +3088,7 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p> </p>
 
-<h4 id="서버-제목-표시하기"><span class="me-2"><strong>서버 제목 표시하기</strong></span><a href="#서버-제목-표시하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="서버-제목-표시하기"><span class="me-2"><strong>서버 제목 표시하기</strong></span><a href="#서버-제목-표시하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-31-am-12.05.23.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-31-am-12.05.23.png" alt="" loading="lazy"></a></p>
 
@@ -3083,7 +3104,7 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p> </p>
 
-<h4 id="인터넷을-통한-액세스"><span class="me-2"><strong>인터넷을 통한 액세스</strong></span><a href="#인터넷을-통한-액세스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="인터넷을-통한-액세스"><span class="me-2"><strong>인터넷을 통한 액세스</strong></span><a href="#인터넷을-통한-액세스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>보안에 관한 한마디: 예방 조치를 취하고 앱을 무인 실행 상태로 두지 않아야 합니다.</p>
 
@@ -3093,7 +3114,7 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p> </p>
 
-<h4 id="다음-뭘-해야-되나요"><span class="me-2"><strong>다음 뭘 해야 되나요?</strong></span><a href="#다음-뭘-해야-되나요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="다음-뭘-해야-되나요"><span class="me-2"><strong>다음 뭘 해야 되나요?</strong></span><a href="#다음-뭘-해야-되나요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 튜토리얼은 프론트엔드와 백엔드 시스템을 동일한 프로젝트에 결합할 때 가능한 것의 시작에 불과합니다. 이것을 타사 서비스를 거치지 않고 멀티플레이어 게임이나 스트리밍 비디오 콘텐츠에 사용할 수 있는 방법을 고려하세요.</p>
 
@@ -3107,7 +3128,7 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p> </p>
 
-<h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://github.com/ayaysir/iOS-FileServerExample-Storyboard">https://github.com/ayaysir/iOS-FileServerExample-Storyboard</a></li>
@@ -3115,7 +3136,8 @@ struct FileWebRouteCollection: RouteCollection {
 
 <p> </p>
 
-<p>[rcblock id=”4560”]</p>
+<!-- \[rcblock id="4560"\] -->
+
 
   </div>
 

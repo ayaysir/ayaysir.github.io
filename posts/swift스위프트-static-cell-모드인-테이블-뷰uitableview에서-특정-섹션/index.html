@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -956,10 +963,48 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -1003,48 +1048,10 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
 
@@ -1061,7 +1068,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기 + 특정 행의 크기만 조절</h1>
     
@@ -1135,7 +1142,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1135 words"
+  title="1121 words"
 >
   <em>6 min</em> read</span>
 
@@ -1145,9 +1152,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기 + 특정 행의 크기만 조절</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기 + 특정 행의 크기만 조절</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="swift스위프트-static-cell-모드인-테이블-뷰uitableview에서-특정-섹션-감추기"><span class="me-2"><strong>Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기</strong></span><a href="#swift스위프트-static-cell-모드인-테이블-뷰uitableview에서-특정-섹션-감추기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <p><strong>Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기</strong></p>
 
 <p>Static Cell 모드란 아래와 같이 content mode가 <code class="language-plaintext highlighter-rouge">Static Cells</code>로 지정된 경우로 데이터 모델에 따라 셀의 개수등이 변동하는 일반적인 테이블 뷰와 달리 셀의 개수, 위치 등이 고정되어 있는 경우를 말합니다. 이 경우 코드 작성 대신 스토리보드에서 셀 개수, 섹션 개수를 설정하게 됩니다.</p>
 
@@ -1159,9 +1188,9 @@
 
 <p><a href="/assets/img/wp-content/uploads/2022/06/-2022-06-10-am-2.24.05-e1654797567600.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/-2022-06-10-am-2.24.05-e1654797567600.jpg" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-먼저-해당-셀의-indexpath와-표시-여부에-대한-bool-변수를-생성합니다"><span class="me-2"><strong>1: 먼저 해당 셀의 IndexPath와 표시 여부에 대한 Bool 변수를 생성합니다.</strong></span><a href="#1-먼저-해당-셀의-indexpath와-표시-여부에-대한-bool-변수를-생성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-먼저-해당-셀의-indexpath와-표시-여부에-대한-bool-변수를-생성합니다"><span class="me-2"><strong>1: 먼저 해당 셀의 IndexPath와 표시 여부에 대한 Bool 변수를 생성합니다.</strong></span><a href="#1-먼저-해당-셀의-indexpath와-표시-여부에-대한-bool-변수를-생성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1182,7 +1211,7 @@
 
 <p> </p>
 
-<h5 id="2-super-클래스의-메서드를-override-합니다"><span class="me-2"><strong>2: super 클래스의 메서드를 override 합니다.</strong></span><a href="#2-super-클래스의-메서드를-override-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-super-클래스의-메서드를-override-합니다"><span class="me-2"><strong>2: super 클래스의 메서드를 override 합니다.</strong></span><a href="#2-super-클래스의-메서드를-override-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>대상 메서드는</p>
 
@@ -1298,21 +1327,17 @@
   </li>
 </ul>
 
-<p> </p>
+<p><a href="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.43.17.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.43.17.jpg" alt="섹션 숨김 1" loading="lazy"></a><br />
+<em>섹션 숨김 1</em></p>
 
-<p>[caption id=”attachment_4525” align=”alignnone” width=”406”] <a href="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.43.17.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.43.17.jpg" alt="" loading="lazy"></a> 섹션 숨김 1[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.52.47.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.52.47.jpg" alt="섹션 숨김 2" loading="lazy"></a><br />
+<em>섹션 숨김 2</em></p>
 
-<p> </p>
+<p><a href="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.53.16.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.53.16.jpg" alt="배너 광고 표시됨: 빨간 글씨는 잘못 삽입된것으로 `showBanner = true` 입니다." loading="lazy"></a><br />
+<em>배너 광고 표시됨: 빨간 글씨는 잘못 삽입된것으로 <code class="language-plaintext highlighter-rouge">showBanner = true</code> 입니다.</em>
+ </p>
 
-<p>[caption id=”attachment_4526” align=”alignnone” width=”399”] <a href="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.52.47.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.52.47.jpg" alt="" loading="lazy"></a> 섹션 숨김 2[/caption]</p>
-
-<p> </p>
-
-<p>[caption id=”attachment_4527” align=”alignnone” width=”393”] <a href="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.53.16.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.53.16.jpg" alt="" loading="lazy"></a> 배너 광고 표시됨: 빨간 글씨는 잘못 삽입된것으로 <code class="language-plaintext highlighter-rouge">showBanner = true</code> 입니다.[/caption]</p>
-
-<p> </p>
-
-<h4 id="추가-예제-특정-섹션section의-행row만-세로-크기-조절하기"><span class="me-2"><strong>추가 예제: 특정 섹션(section)의 행(row)만 세로 크기 조절하기</strong></span><a href="#추가-예제-특정-섹션section의-행row만-세로-크기-조절하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="추가-예제-특정-섹션section의-행row만-세로-크기-조절하기"><span class="me-2"><strong>추가 예제: 특정 섹션(section)의 행(row)만 세로 크기 조절하기</strong></span><a href="#추가-예제-특정-섹션section의-행row만-세로-크기-조절하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>앞 단락과 같은 원리를 이용합니다.</p>
 
@@ -1340,7 +1365,7 @@
 
 <p> </p>
 
-<h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://stackoverflow.com/questions/17761878/hide-sections-of-a-static-tableview">Hide sections of a Static TableView</a></li>
@@ -2310,6 +2335,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

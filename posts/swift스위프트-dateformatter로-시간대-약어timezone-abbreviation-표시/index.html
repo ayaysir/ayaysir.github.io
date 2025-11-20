@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,42 +498,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -556,8 +527,34 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -574,7 +571,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): DateFormatter로 시간대 약어(Timezone abbreviation) 표시</h1>
     
@@ -648,7 +645,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="140 words"
+  title="139 words"
 >
   <em>1 min</em> read</span>
 
@@ -658,11 +655,33 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): DateFormatter로 시간대 약어(Timezone abbreviation) 표시</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): DateFormatter로 시간대 약어(Timezone abbreviation) 표시</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="swift스위프트-dateformatter로-시간대-약어timezone-abbreviation-표시"><span class="me-2"><strong>Swift(스위프트): DateFormatter로 시간대 약어(Timezone abbreviation) 표시</strong></span><a href="#swift스위프트-dateformatter로-시간대-약어timezone-abbreviation-표시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <p><strong>Swift(스위프트): DateFormatter로 시간대 약어(Timezone abbreviation) 표시</strong></p>
 
-<p> </p>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">TimeZone.current.identifier</code>와 <code class="language-plaintext highlighter-rouge">TimeZone.abbreviationDictionary</code>를 사용하면 시간대 약어를 표시할 수 있습니다.</p>
 
@@ -679,7 +698,6 @@
 9
 10
 11
-12
 </pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">dateString</span><span class="p">(</span><span class="nv">timestamp</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">(</span><span class="nv">timeIntervalSince1970</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">(</span><span class="n">timestamp</span><span class="p">))</span>
     <span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
@@ -691,10 +709,7 @@
     <span class="c1">// .value는 timeZone.identifier와 동일</span>
     <span class="k">return</span> <span class="n">formatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span> <span class="o">+</span> <span class="s">" (</span><span class="se">\(</span><span class="n">timezoneAbbr</span><span class="p">?</span><span class="o">.</span><span class="n">value</span> <span class="p">??</span> <span class="s">"Unknown"</span><span class="se">)</span><span class="s">)"</span>
 <span class="p">}</span>
-
 </pre></td></tr></tbody></table></code></div></div>
-
-<p> </p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -708,16 +723,16 @@
 
 <p> </p>
 
-<h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://stackoverflow.com/questions/66115906/getting-timezone-abbreviations-in-swift">Getting timezone abbreviations in Swift</a></li>
 </ul>
 
-<h5 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=2173">Swift: DateFormatter 날짜 한글로 표기</a></li>
+  <li><a href="/posts/swift-dateformatter-%EB%82%A0%EC%A7%9C-%ED%95%9C%EA%B8%80%EB%A1%9C-%ED%91%9C%EA%B8%B0/">Swift: DateFormatter 날짜 한글로 표기</a></li>
 </ul>
 
   </div>
@@ -1684,6 +1699,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

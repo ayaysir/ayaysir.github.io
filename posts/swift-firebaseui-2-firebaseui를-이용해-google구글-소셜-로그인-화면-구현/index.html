@@ -1520,8 +1520,8 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 <p>뷰 컨트롤러에서 <code class="language-plaintext highlighter-rouge">providers</code> 배열에 구글 <code class="language-plaintext highlighter-rouge">FUIGoogleAuth(authUI: authUI)</code> 을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1532,16 +1532,16 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>guard let authUI = FUIAuth.defaultAuthUI() else {
-    return
-}
-authUI.delegate = self
+</pre></td><td class="rouge-code"><pre><span class="k">guard</span> <span class="k">let</span> <span class="nv">authUI</span> <span class="o">=</span> <span class="kt">FUIAuth</span><span class="o">.</span><span class="nf">defaultAuthUI</span><span class="p">()</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+<span class="p">}</span>
+<span class="n">authUI</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
 
-let providers: [FUIAuthProvider] = [
-    FUIEmailAuth(),
-    FUIGoogleAuth(authUI: authUI),
-]
-authUI.providers = providers
+<span class="k">let</span> <span class="nv">providers</span><span class="p">:</span> <span class="p">[</span><span class="kt">FUIAuthProvider</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="kt">FUIEmailAuth</span><span class="p">(),</span>
+    <span class="kt">FUIGoogleAuth</span><span class="p">(</span><span class="nv">authUI</span><span class="p">:</span> <span class="n">authUI</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">authUI</span><span class="o">.</span><span class="n">providers</span> <span class="o">=</span> <span class="n">providers</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

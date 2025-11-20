@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1021,42 +1028,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -1086,6 +1057,21 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -1130,8 +1116,40 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1148,7 +1166,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Xcode: cmd + / 단축키를 눌렀을 때 코멘트(주석) 위치를 현재 들여쓰기에 맞추기 (CommentHere)</h1>
     
@@ -1222,7 +1240,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="558 words"
+  title="563 words"
 >
   <em>3 min</em> read</span>
 
@@ -1232,9 +1250,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Xcode: cmd + / 단축키를 눌렀을 때 코멘트(주석) 위치를 현재 들여쓰기에 맞추기 (CommentHere)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Xcode: cmd + / 단축키를 눌렀을 때 코멘트(주석) 위치를 현재 들여쓰기에 맞추기 (CommentHere)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="xcode-cmd---단축키를-눌렀을-때-코멘트주석-위치를-현재-들여쓰기에-맞추기"><span class="me-2"><strong>Xcode: cmd + / 단축키를 눌렀을 때 코멘트(주석) 위치를 현재 들여쓰기에 맞추기</strong></span><a href="#xcode-cmd---단축키를-눌렀을-때-코멘트주석-위치를-현재-들여쓰기에-맞추기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="xcode-cmd---단축키를-눌렀을-때-코멘트주석-위치를-현재-들여쓰기에-맞추기"><span class="me-2"><strong>Xcode: cmd + / 단축키를 눌렀을 때 코멘트(주석) 위치를 현재 들여쓰기에 맞추기</strong></span><a href="#xcode-cmd---단축키를-눌렀을-때-코멘트주석-위치를-현재-들여쓰기에-맞추기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>보통 프로그래밍을 할 떄 쓰는 에디터 등에서 현재 라인의 코드를 주석처리하는 단축키는 <code class="language-plaintext highlighter-rouge">command(윈도우의 경우 Ctrl) + /</code> 를 누르면 해당 라인이 주석 처리가 됩니다.</p>
 
@@ -1252,35 +1292,33 @@
 
 <p>Xcode는 기본적으로 두 번째 케이스를 지원하지 않으므로, 외부 플러그인을 설치해야 합니다.</p>
 
-<p> </p>
+<h2 id="플러그인extension-설치"><span class="me-2"><strong>플러그인(Extension) 설치</strong></span><a href="#플러그인extension-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="0-xcode를-종료합니다"><span class="me-2"><strong>0. Xcode를 종료합니다.</strong></span><a href="#0-xcode를-종료합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="0-xcode를-종료합니다"><span class="me-2"><strong>0. Xcode를 종료합니다.</strong></span><a href="#0-xcode를-종료합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p> </p>
-
-<h5 id="1-맥-앱-스토어app-store에서-commenthere라는-앱을-설치합니다"><span class="me-2"><strong>1. 맥 앱 스토어(App Store)에서 <a href="https://apps.apple.com/us/app/comment-here/id1406737173?mt=12">CommentHere</a>라는 앱을 설치합니다.</strong></span><a href="#1-맥-앱-스토어app-store에서-commenthere라는-앱을-설치합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-맥-앱-스토어app-store에서-commenthere라는-앱을-설치합니다"><span class="me-2"><strong>1. 맥 앱 스토어(App Store)에서 <a href="https://apps.apple.com/us/app/comment-here/id1406737173?mt=12">CommentHere</a>라는 앱을 설치합니다.</strong></span><a href="#1-맥-앱-스토어app-store에서-commenthere라는-앱을-설치합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.14.56.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.14.56.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="2-설치가-온료되면-launchpad-또는-응용-프로그램-폴더에서-commenthere-아이콘을-클릭하면-사용-설명법이-나옵니다"><span class="me-2"><strong>2. 설치가 온료되면 LaunchPad 또는 응용 프로그램 폴더에서 <code class="language-plaintext highlighter-rouge">CommentHere</code> 아이콘을 클릭하면 사용 설명법이 나옵니다.</strong></span><a href="#2-설치가-온료되면-launchpad-또는-응용-프로그램-폴더에서-commenthere-아이콘을-클릭하면-사용-설명법이-나옵니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-설치가-완료되면-launchpad-또는-응용-프로그램-폴더에서-commenthere-아이콘을-클릭하면-사용-설명법이-나옵니다"><span class="me-2"><strong>2. 설치가 완료되면 LaunchPad 또는 응용 프로그램 폴더에서 <code class="language-plaintext highlighter-rouge">CommentHere</code> 아이콘을 클릭하면 사용 설명법이 나옵니다.</strong></span><a href="#2-설치가-완료되면-launchpad-또는-응용-프로그램-폴더에서-commenthere-아이콘을-클릭하면-사용-설명법이-나옵니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.15.54.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.15.54.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p>xcode 코멘트 위치 들여쓰기 주석 xcode 주석 위치 들여쓰기 엑스코드 주석 코멘트 커멘트 주석처리</p>
+<p><span style="font-size: 2pt;">xcode 코멘트 위치 들여쓰기 주석 xcode 주석 위치 들여쓰기 엑스코드 주석 코멘트 커멘트 주석처리</span></p>
 
 <p> </p>
 
-<h5 id="3-open-system-preferences-for-extensions-버튼을-클릭한-뒤-xcode-source-editor--comment-here-체크박스를-클릭합니다"><span class="me-2"><strong>3. <code class="language-plaintext highlighter-rouge">Open System Preferences for Extensions</code> 버튼을 클릭한 뒤 <code class="language-plaintext highlighter-rouge">Xcode Source Editor &gt; Comment Here</code> 체크박스를 클릭합니다.</strong></span><a href="#3-open-system-preferences-for-extensions-버튼을-클릭한-뒤-xcode-source-editor--comment-here-체크박스를-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-open-system-preferences-for-extensions-버튼을-클릭한-뒤-xcode-source-editor--comment-here-체크박스를-클릭합니다"><span class="me-2"><strong>3. <code class="language-plaintext highlighter-rouge">Open System Preferences for Extensions</code> 버튼을 클릭한 뒤 <code class="language-plaintext highlighter-rouge">Xcode Source Editor &gt; Comment Here</code> 체크박스를 클릭합니다.</strong></span><a href="#3-open-system-preferences-for-extensions-버튼을-클릭한-뒤-xcode-source-editor--comment-here-체크박스를-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.17.34.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.17.34.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="4-xcode를-실행한-뒤-코드-에디터에서-editor-메뉴--comment-here--toggle-comment를-클릭하면-들여쓰기에-맞춘-주석-처리가-됩니다"><span class="me-2"><strong>4. Xcode를 실행한 뒤, 코드 에디터에서 <code class="language-plaintext highlighter-rouge">Editor 메뉴 &gt; Comment Here &gt; Toggle Comment</code>를 클릭하면 들여쓰기에 맞춘 주석 처리가 됩니다.</strong> </span><a href="#4-xcode를-실행한-뒤-코드-에디터에서-editor-메뉴--comment-here--toggle-comment를-클릭하면-들여쓰기에-맞춘-주석-처리가-됩니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-xcode를-실행한-뒤-코드-에디터에서-editor-메뉴--comment-here--toggle-comment를-클릭하면-들여쓰기에-맞춘-주석-처리가-됩니다"><span class="me-2"><strong>4. Xcode를 실행한 뒤, 코드 에디터에서 <code class="language-plaintext highlighter-rouge">Editor 메뉴 &gt; Comment Here &gt; Toggle Comment</code>를 클릭하면 들여쓰기에 맞춘 주석 처리가 됩니다.</strong> </span><a href="#4-xcode를-실행한-뒤-코드-에디터에서-editor-메뉴--comment-here--toggle-comment를-클릭하면-들여쓰기에-맞춘-주석-처리가-됩니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.21.50.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.21.50.jpg" alt="" loading="lazy"></a></p>
 
@@ -1288,9 +1326,10 @@
 
 <p> </p>
 
-<h5 id="5-xcode의-preferences-창을-연-뒤-key-binding-탭에서-comment로-검색-후-comment-here--toggle-comment-의-단축키를-command---로-설정합니다"><span class="me-2"><strong>5. Xcode의 Preferences 창을 연 뒤, Key Binding 탭에서 comment로 검색 후, <code class="language-plaintext highlighter-rouge">Comment Here &gt; Toggle Comment</code> 의 단축키를 <code class="language-plaintext highlighter-rouge">command + /</code> 로 설정합니다.</strong></span><a href="#5-xcode의-preferences-창을-연-뒤-key-binding-탭에서-comment로-검색-후-comment-here--toggle-comment-의-단축키를-command---로-설정합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-xcode의-preferences-창을-연-뒤-key-binding-탭에서-comment로-검색-후-comment-here--toggle-comment-의-단축키를-command---로-설정합니다"><span class="me-2"><strong>5. Xcode의 Preferences 창을 연 뒤, Key Binding 탭에서 comment로 검색 후, <code class="language-plaintext highlighter-rouge">Comment Here &gt; Toggle Comment</code> 의 단축키를 <code class="language-plaintext highlighter-rouge">command + /</code> 로 설정합니다.</strong></span><a href="#5-xcode의-preferences-창을-연-뒤-key-binding-탭에서-comment로-검색-후-comment-here--toggle-comment-의-단축키를-command---로-설정합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.24.40.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.24.40.jpg" alt="" loading="lazy"></a>  <a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.25.57.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.25.57.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.24.40.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.24.40.jpg" alt="" loading="lazy"></a><br />
+ <a href="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.25.57.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-03-am-2.25.57.jpg" alt="" loading="lazy"></a></p>
 
 <p>이렇게 하면 단축키로도 해당 기능을 사용할 수 있게 됩니다.</p>
 
@@ -2258,6 +2297,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

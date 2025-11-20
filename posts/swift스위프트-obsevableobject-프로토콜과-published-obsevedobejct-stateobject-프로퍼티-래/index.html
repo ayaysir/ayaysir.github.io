@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,16 +573,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -655,6 +652,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -671,7 +678,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>SwiftUI: ObservableObject 프로토콜과 @Published, @ObsevedObejct, @StateObject 프로퍼티 래퍼</h1>
     
@@ -745,7 +752,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1703 words"
+  title="1728 words"
 >
   <em>9 min</em> read</span>
 
@@ -755,9 +762,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">SwiftUI: ObservableObject 프로토콜과 @Published, @ObsevedObejct, @StateObject 프로퍼티 래퍼</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">SwiftUI: ObservableObject 프로토콜과 @Published, @ObsevedObejct, @StateObject 프로퍼티 래퍼</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="observableobject란"><span class="me-2"><strong>ObservableObject란?</strong></span><a href="#observableobject란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="observableobject란"><span class="me-2"><strong>ObservableObject란?</strong></span><a href="#observableobject란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>기본적으로 <code class="language-plaintext highlighter-rouge">ObservableObject</code>는 <code class="language-plaintext highlighter-rouge">@Published</code> 프로퍼티 래퍼가 붙은 값이 변경되기 전에, 변경된 값을 방출(emit)하는 <code class="language-plaintext highlighter-rouge">objectWillChange</code> 퍼블리셔를 사용할 수 있도록 하는 프로토콜입니다.</p>
 
@@ -823,7 +852,7 @@
 
 <p> </p>
 
-<h4 id="published-속성-래퍼property-wrapper란"><span class="me-2"><strong>@Published 속성 래퍼(Property Wrapper)란?</strong></span><a href="#published-속성-래퍼property-wrapper란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="published-속성-래퍼property-wrapper란"><span class="me-2"><strong>@Published 속성 래퍼(Property Wrapper)란?</strong></span><a href="#published-속성-래퍼property-wrapper란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">@Published</code>는 SwiftUI에서 가장 유용한 속성 래퍼 중 하나이며 변경이 발생할 때 자동으로 알리는 관찰 가능한 오브젝트(observable object)를 만들 수 있습니다. SwiftUI는 이러한 변경 사항을 자동으로 모니터링하고 데이터에 의존하는 모든 View의 <code class="language-plaintext highlighter-rouge">body</code> 속성을 다시 호출합니다.</p>
 
@@ -861,7 +890,7 @@
 
 <p> </p>
 
-<h5 id="published-예제"><span class="me-2">@Published 예제</span><a href="#published-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="published-예제"><span class="me-2">@Published 예제</span><a href="#published-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">@Published</code> 속성이 있는 속성을 게시(publish)하면 이 유형의 퍼블리셔(publisher)가 생성됩니다. 다음과 같이 <code class="language-plaintext highlighter-rouge">$</code> 연산자를 사용하여 퍼블리셔에 액세스합니다.</p>
 
@@ -937,15 +966,23 @@
 
 <p> </p>
 
-<h4 id="observedobject와-stateobject"><span class="me-2"><strong>@ObservedObject와 @StateObject</strong></span><a href="#observedobject와-stateobject" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="observedobject와-stateobject"><span class="me-2"><strong>@ObservedObject와 @StateObject</strong></span><a href="#observedobject와-stateobject" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><code class="language-plaintext highlighter-rouge">ObservableObject</code> 프로토콜은 데이터를 저장할 수 있는 일종의 클래스와 함께 사용됩니다. <code class="language-plaintext highlighter-rouge">@ObservedObject</code> 는 관찰 가능한 오브젝트의 인스턴스를 저장하기 위해 View의 내부에서 사용되며 <code class="language-plaintext highlighter-rouge">@Published</code>는 뷰가 변경될 때 업데이트되도록 해야 하는 관찰 가능한 오브젝트의 내부의 모든 속성에 추가됩니다.</p>
+<!-- `ObservableObject` 프로토콜은 데이터를 저장할 수 있는 일종의 클래스와 함께 사용됩니다. `@ObservedObject` 는 관찰 가능한 오브젝트의 인스턴스를 저장하기 위해 View의 내부에서 사용되며 `@Published`는 뷰가 변경될 때 업데이트되도록 해야 하는 관찰 가능한 오브젝트의 내부의 모든 속성에 추가됩니다.
 
-<p><code class="language-plaintext highlighter-rouge">@ObservedObject</code>를 다른 곳에서 전달된 View에만 사용하는 것이 정말 중요합니다. 왜냐하면 <code class="language-plaintext highlighter-rouge">@ObservedObject</code>는 값이 변경될 때 뷰를 무효화(invalidate-현재의 뷰를 없애고 새로 드로잉)하기 때문입니다.</p>
+`@ObservedObject`를 **다른 곳에서 전달된 View에만 사용하는 것**이 정말 중요합니다. 왜냐하면 `@ObservedObject`는 값이 변경될 때 뷰를 무효화(invalidate-현재의 뷰를 없애고 새로 드로잉)하기 때문입니다.
 
-<p>반면 이를 보완하기 위해 iOS14 에서 추가된 <code class="language-plaintext highlighter-rouge">@StateObject</code>는 단 한 번 인스턴스가 생성되며, View를 처음부터 새로 그리지 않고, <code class="language-plaintext highlighter-rouge">ObservableObject</code> 에서의 데이터가 변할 때, 그 <code class="language-plaintext highlighter-rouge">ObservableObject</code> 의 데이터가 들어간 부분만 View를 다시 그린다는 차이점이 있습니다.</p>
+반면 이를 보완하기 위해 iOS14 에서 추가된 `@StateObject`는 단 한 번 인스턴스가 생성되며, View를 처음부터 새로 그리지 않고, `ObservableObject` 에서의 데이터가 변할 때, 그 `ObservableObject` 의 데이터가 들어간 부분만 View를 다시 그린다는 차이점이 있습니다.
 
-<p>관찰 가능한 오브젝트의 초기 인스턴스를 생성할 때 <code class="language-plaintext highlighter-rouge">@ObservedObject</code>를 사용해서는 안 됩니다. 이것은 <code class="language-plaintext highlighter-rouge">@StateObject</code>로 지정해야 합니다.</p>
+관찰 가능한 오브젝트의 초기 인스턴스를 생성할 때 `@ObservedObject`를 사용해서는 안 됩니다. 이것은 `@StateObject`로 지정해야 합니다. -->
+
+<p><code class="language-plaintext highlighter-rouge">ObservableObject</code> 프로토콜은 데이터를 저장하고 변경 사항을 알릴 수 있는 클래스와 함께 사용됩니다. <code class="language-plaintext highlighter-rouge">@ObservedObject</code> 는 외부에서 전달된 관찰 가능한 오브젝트를 View에서 관찰하기 위해 사용되며, <code class="language-plaintext highlighter-rouge">@Published</code>는 해당 오브젝트의 속성이 변경될 때 뷰가 업데이트되도록 하는 데 필요한 속성에만 추가됩니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">@ObservedObject</code>는 부모나 다른 곳에서 전달된 객체를 관찰할 때만 사용해야 합니다. 왜냐하면 <code class="language-plaintext highlighter-rouge">@ObservedObject</code>를 사용해 뷰 내부에서 직접 객체를 생성하면, 뷰가 재생성될 때마다 인스턴스가 다시 만들어질 수 있기 때문입니다.</p>
+
+<p>이를 보완하기 위해 iOS 14에서 추가된 <code class="language-plaintext highlighter-rouge">@StateObject</code>는 뷰가 해당 객체의 소유자가 되어 한 번만 인스턴스를 생성하도록 보장합니다. 뷰가 재구성되어도 같은 인스턴스가 유지되며, <code class="language-plaintext highlighter-rouge">ObservableObject</code> 내부 데이터가 바뀌면 해당 데이터가 반영된 UI 부분만 다시 그려집니다.</p>
+
+<p>따라서 관찰 가능한 오브젝트의 초기 인스턴스를 생성할 때는 <code class="language-plaintext highlighter-rouge">@ObservedObject</code>가 아니라 <code class="language-plaintext highlighter-rouge">@StateObject</code>를 사용해야 합니다.</p>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1048,11 +1085,11 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <!-- http://www.giphy.com/gifs/fxKmTvvJs2EmqSKpWV -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTZuZ281bzJsdTUyYTRnZzduYXZhZHYzbnV6eGQ4a204aGkzbGcydSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fxKmTvvJs2EmqSKpWV/giphy.gif" class="popup img-link shimmer"><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTZuZ281bzJsdTUyYTRnZzduYXZhZHYzbnV6eGQ4a204aGkzbGcydSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fxKmTvvJs2EmqSKpWV/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h4 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-observedobject-to-manage-state-from-external-objects">https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-observedobject-to-manage-state-from-external-objects</a></li>
@@ -2026,6 +2063,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

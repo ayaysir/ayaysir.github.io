@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -696,16 +703,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -748,6 +745,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -769,7 +776,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): 버튼에서 메뉴 표시 기초 (UIButton 또는 UIBarButtonItem에서 UIMenu를 표시하는 방법) - 스토리보드</h1>
     
@@ -853,9 +860,33 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): 버튼에서 메뉴 표시 기초 (UIButton 또는 UIBarButtonItem에서 UIMenu를 표시하는 방법) - 스토리보드</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): 버튼에서 메뉴 표시 기초 (UIButton 또는 UIBarButtonItem에서 UIMenu를 표시하는 방법) - 스토리보드</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p><a href="https://nemecek.be/blog/85/how-to-show-uimenu-from-uibutton-or-uibarbuttonitem">출처 바로가기</a></p>
+    <ul>
+  <li><a href="https://nemecek.be/blog/85/how-to-show-uimenu-from-uibutton-or-uibarbuttonitem">출처 바로가기</a></li>
+</ul>
 
 <p> </p>
 
@@ -865,12 +896,12 @@
 
 <p> </p>
 
-<h4 id="uimenu의-예제"><span class="me-2"><strong>UIMenu의 예제</strong></span><a href="#uimenu의-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="uimenu의-예제"><span class="me-2"><strong>UIMenu의 예제</strong></span><a href="#uimenu의-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">viewDidLoad(_:)</code>에 다음 코드를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -885,33 +916,33 @@
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>var menuItems: [UIAction] {
-    return [
-        UIAction(title: "Standard item", image: UIImage(systemName: "sun.max"), handler: { (_) in   
-        }),
-        UIAction(title: "Disabled item", image: UIImage(systemName: "moon"), attributes: .disabled, handler: { (_) in 
-        }),
-        UIAction(title: "Delete..", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { (_) in  
-        })
-    ]
-}
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">menuItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIAction</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="kt">UIAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Standard item"</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"sun.max"</span><span class="p">),</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">in</span>   
+        <span class="p">}),</span>
+        <span class="kt">UIAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Disabled item"</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"moon"</span><span class="p">),</span> <span class="nv">attributes</span><span class="p">:</span> <span class="o">.</span><span class="n">disabled</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">in</span> 
+        <span class="p">}),</span>
+        <span class="kt">UIAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Delete.."</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"trash"</span><span class="p">),</span> <span class="nv">attributes</span><span class="p">:</span> <span class="o">.</span><span class="n">destructive</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">in</span>  
+        <span class="p">})</span>
+    <span class="p">]</span>
+<span class="p">}</span>
 
-var demoMenu: UIMenu {
-    return UIMenu(title: "My menu", image: nil, identifier: nil, options: [], children: menuItems)
-}
+<span class="k">var</span> <span class="nv">demoMenu</span><span class="p">:</span> <span class="kt">UIMenu</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">UIMenu</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"My menu"</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">children</span><span class="p">:</span> <span class="n">menuItems</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="uibarbuttonitem에-uimenu-추가"><span class="me-2"><strong>UIBarButtonItem에 UIMenu 추가</strong></span><a href="#uibarbuttonitem에-uimenu-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="uibarbuttonitem에-uimenu-추가"><span class="me-2"><strong>UIBarButtonItem에 UIMenu 추가</strong></span><a href="#uibarbuttonitem에-uimenu-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>현재 뷰 컨트롤러에 내비게이션 아이템이 있는 경우, 아래 코드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Menu", image: nil, primaryAction: nil, menu: demoMenu)
+</pre></td><td class="rouge-code"><pre><span class="n">navigationItem</span><span class="o">.</span><span class="n">rightBarButtonItem</span> <span class="o">=</span> <span class="kt">UIBarButtonItem</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Menu"</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">primaryAction</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">menu</span><span class="p">:</span> <span class="n">demoMenu</span><span class="p">)</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -923,8 +954,8 @@ var demoMenu: UIMenu {
 
 <p>사용자가 만든 Bar Button Item에 메뉴를 추가하는 방법은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -932,37 +963,37 @@ var demoMenu: UIMenu {
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>@IBOutlet weak var barBtnSetAlarm: UIBarButtonItem!
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">barBtnSetAlarm</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="o">!</span>
 
-override func viewDidLoad() {
-    super.viewDidLoad()
-    // ... //
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    <span class="c1">// ... //</span>
 
-    barBtnSetAlarm.menu = demoMenu
+    <span class="n">barBtnSetAlarm</span><span class="o">.</span><span class="n">menu</span> <span class="o">=</span> <span class="n">demoMenu</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="uibutton--uimenu"><span class="me-2"><strong>UIButton + UIMenu</strong></span><a href="#uibutton--uimenu" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="uibutton--uimenu"><span class="me-2"><strong>UIButton + UIMenu</strong></span><a href="#uibutton--uimenu" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">UIMenu</code>를 탭한 즉시 표시하려면 <code class="language-plaintext highlighter-rouge">showsMenuAsPrimaryAction</code>을 <code class="language-plaintext highlighter-rouge">true</code>로 설정해야 합니다. 그렇지 않으면 길게 눌러야 메뉴가 나타납니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>@IBOutlet var showMenuButton: UIButton!
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">showMenuButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span>
 
-func configureButtonMenu() {
-    showMenuButton.menu = demoMenu
-    showMenuButton.showsMenuAsPrimaryAction = true
-}
+<span class="kd">func</span> <span class="nf">configureButtonMenu</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">showMenuButton</span><span class="o">.</span><span class="n">menu</span> <span class="o">=</span> <span class="n">demoMenu</span>
+    <span class="n">showMenuButton</span><span class="o">.</span><span class="n">showsMenuAsPrimaryAction</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="https://media.giphy.com/media/kekY3B1bfdPrPwJOeZ/giphy.gif" class="popup img-link shimmer"><img src="https://media.giphy.com/media/kekY3B1bfdPrPwJOeZ/giphy.gif" alt="" loading="lazy"></a></p>
@@ -1935,6 +1966,12 @@ func configureButtonMenu() {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
