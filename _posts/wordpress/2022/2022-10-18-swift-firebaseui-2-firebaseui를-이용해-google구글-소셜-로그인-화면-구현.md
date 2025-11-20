@@ -63,7 +63,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 뷰 컨트롤러에서 `providers` 배열에 구글 `FUIGoogleAuth(authUI: authUI)` 을 추가합니다.
 
-```
+```swift
 guard let authUI = FUIAuth.defaultAuthUI() else {
     return
 }

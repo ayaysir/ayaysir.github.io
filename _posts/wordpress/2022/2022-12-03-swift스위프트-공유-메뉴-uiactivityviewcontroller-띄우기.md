@@ -61,7 +61,7 @@ func showActivityVC(_ controller: UIViewController,
 
 아래 코드는 텍스트와 이미지를 첨부해서 공유 메뉴를 표시합니다.
 
-```
+```swift
 @IBOutlet weak var imgPhoto: UIImageView!
 
 // (...) //

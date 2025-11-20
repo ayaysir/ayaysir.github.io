@@ -83,7 +83,7 @@ function traverseTree(inputStr) {
 }
 ```
 
-```
+```js
 console.log(traverseTree(input1))
 ```
 

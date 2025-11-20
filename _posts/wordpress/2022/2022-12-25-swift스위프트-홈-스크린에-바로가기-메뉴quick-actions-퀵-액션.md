@@ -146,7 +146,7 @@ Dynamic 퀵 액션은 앱 내부에서 코드로 작성하여 추가할 수 있�
 
 뷰 컨트롤러에 다음 코드를 추가합니다.
 
-```
+```swift
 @IBOutlet weak var lblCount: UILabel!
 
 func setDynamicQuickActions(_ value: Int) {

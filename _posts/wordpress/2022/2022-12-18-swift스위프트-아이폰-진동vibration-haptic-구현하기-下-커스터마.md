@@ -53,7 +53,7 @@ var engine: CHHapticEngine?
 
 해당 엔진의 인스턴스를 생성하기 전에 다음과 같은 코드를 사용하여 현재 장치에서 햅틱이 지원되는지 확인해야 합니다.
 
-```
+```swift
 guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
 ```
 

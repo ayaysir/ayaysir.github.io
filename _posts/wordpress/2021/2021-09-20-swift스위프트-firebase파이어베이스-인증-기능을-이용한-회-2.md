@@ -84,7 +84,7 @@ import Photos
 
 이미지 뷰는 `@IBOutlet`, 버튼은 `@IBAction`으로 연결합니다.
 
-```
+```swift
 @IBOutlet weak var imgProfilePicture: UIImageView!
 ```
 

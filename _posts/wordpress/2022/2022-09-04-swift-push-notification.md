@@ -6,7 +6,8 @@ categories:
   - "Swift UIKit"
 ---
 
-\[rcblock id="4769"\]
+<!-- \[rcblock id="4769"\] -->
+
 
 **출처**
 
@@ -14,7 +15,7 @@ categories:
 
  
 
-### **개요**
+## **개요**
 
 Push notification(푸시 노티피케이션) 흔히 푸시 알림, 푸시 메시지로 일컫는 기기 메시지의 형태인데 네트워크를 통해 정보를 전송받으면 그 정보를 바탕으로 앱에서 메시지를 그대로 표시하거나 또는 가공하여 표시합니다.
 
@@ -26,7 +27,7 @@ Push notification(푸시 노티피케이션) 흔히 푸시 알림, 푸시 메시
 
  
 
-### **푸시 알림 튜토리얼**
+## **푸시 알림 튜토리얼**
 
 iOS 개발자는 사람들이 멋진 앱을 지속적으로 사용하는 것을 좋아합니다. 그러나 사용자는 때때로 앱을 닫고 다른 활동을 하고 있습니다. 다행히도 푸시 알림을 통해 개발자는 사용자가 앱을 적극적으로 사용하지 않을 때도 사용자에게 다가가 작은 작업을 수행할 수 있습니다! 이 자습서에서는 다음 방법을 배웁니다.
 
@@ -37,7 +38,7 @@ iOS 개발자는 사람들이 멋진 앱을 지속적으로 사용하는 것을 
 
  
 
-### **시작하기**
+## **시작하기**
 
 푸시 알림이란 앱이 실행되고 있지 않거나 전화기가 잠자기 상태인 경우에도 Apple 푸시 알림 서비스(APN; Apple Push Notification Service)를 통해 앱으로 전송되는 메시지입니다. 푸시 알림을 어떻게 사용할 수 있을까요?
 
@@ -79,23 +80,24 @@ iOS 개발자는 사람들이 멋진 앱을 지속적으로 사용하는 것을 
 
  
 
-스토리보드 기반의 iOS SingleApp 프로젝트를 생성합니다.
+UIKit 스토리보드 기반의 iOS SingleApp 프로젝트를 생성합니다.
 
- ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-10.58.50.jpg) ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-10.59.20.jpg)
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-10.58.50.jpg) 
+ ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-10.59.20.jpg)
 
  
 
  
 
-### **푸시 알림 보내기 및 받기**
+## **푸시 알림 보내기 및 받기**
 
-#### **앱 구성**
+### **앱 구성**
 
 푸시 알림은 보안이 매우 중요합니다. 다른 사람이 앱을 통해 사용자에게 푸시 알림을 보내는 것을 원하지 않습니다. 푸시 알림을 안전하게 수신하도록 앱을 구성하려면 여러 작업을 수행해야 합니다.
 
  
 
-#### **푸시 알림 서비스 활성화**
+### **푸시 알림 서비스 활성화**
 
 Xcode의 프로젝트 탐색기의 프로젝트 설정의 `General` 탭에서 번들 식별자를 고유값으로 변경하여 Apple의 푸시 알림 서버가 푸시를 이 앱으로 보낼 수 있도록 합니다.
 
@@ -127,7 +129,7 @@ Xcode의 프로젝트 탐색기의 프로젝트 설정의 `General` 탭에서 �
 
  
 
-#### **사용자 알림 권한 요청**
+### **사용자 알림 권한 요청**
 
 푸시 알림을 등록하려면 두 단계를 거쳐야 합니다. 먼저 알림을 표시하려면 사용자의 권한을 받아야 합니다. 권한을 획득하였다면 원격 푸시 알림을 수신하도록 기기를 등록할 수 있습니다. 이후 시스템은 이 장치에 대한 "주소"로 생각할 수 있는 장치 토큰(Device Token)을 제공합니다.
 
@@ -135,7 +137,7 @@ Xcode의 프로젝트 탐색기의 프로젝트 설정의 `General` 탭에서 �
 
 `AppDelegate.swift`를 열고 파일 상단에 다음을 추가합니다.
 
-```
+```swift
 import UserNotifications
 ```
 
@@ -165,7 +167,7 @@ func registerForPushNotifications() {
 
 `application(_:didFinishLaunchingWithOptions:)` 내의 끝 `return`문 바로 직전에 다음을 추가합니다.
 
-```
+```swift
 registerForPushNotifications()
 ```
 
@@ -214,11 +216,11 @@ func registerForPushNotifications() {
 
  
 
-#### **APN 서비스에 등록**
+### **APN 서비스에 등록**
 
 이제 권한이 있으므로 원격 푸시 알림을 등록합니다. `getNotificationSettings()`에서 클로저 내부의 `print`문 아래에 다음을 추가합니다.
 
-```
+```swift
 guard settings.authorizationStatus == .authorized else { return }
 DispatchQueue.main.async {
     UIApplication.shared.registerForRemoteNotifications()
@@ -267,7 +269,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
 텍스트 편집기를 사용하여 Xcode의 `simctl` 유틸리티에 전달할 `first.apn`이라는 파일을 만듭니다. (터미널로 접근할 수 있으면 위치 상관 없음) 다음 JSON 텍스트를 붙여넣고 파일을 저장합니다.
 
-```
+```json
 {
   "aps": {
     "alert" : {
@@ -306,9 +308,9 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
  
 
-#### **기본 푸시 알림 분석**
+### **기본 푸시 알림 분석**
 
-```
+```json
 {
   "aps": {
     "alert" : {
@@ -344,7 +346,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
  
 
-### **푸시 알림 처리**
+## **푸시 알림 처리**
 
 이 섹션에서는 앱이 알림을 수신하고 사용자가 알림을 탭할 때 작업을 수행하는 방법을 배웁니다.
 
@@ -354,7 +356,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
  
 
-#### **푸시 알림을 받으면 어떻게 되는지 이해하기**
+### **푸시 알림을 받으면 어떻게 되는지 이해하기**
 
 앱이 푸시 알림을 수신하면 iOS는 `UIApplicationDelegate`에서 상황에 맞는 메서드를 호출합니다.
 
@@ -408,7 +410,7 @@ extension Notification.Name {
 
 `viewDidLoad`에 아래 코드를 추가합니다.
 
-```
+```swift
 refreshTextView()
 NotificationCenter.default.addObserver(self, selector: #selector(didRecieveNotification(_:)), name: .refreshTextView, object: nil)
 ```
@@ -432,7 +434,7 @@ func refreshTextView() {
 
 `didRecieveNotification` 함수를 추가합니다. 셀렉터 함수이므로 `@objc`를 붙여줍니다.
 
-```
+```swift
 @objc func didRecieveNotification(_ notification: Notification) {
     refreshTextView()
 }
@@ -440,7 +442,7 @@ func refreshTextView() {
 
  
 
-##### **Case 1: 앱이 열린 상태일 때**
+#### **Case 1: 앱이 열린 상태일 때**
 
 ```swift
 extension AppDelegate: UNUserNotificationCenterDelegate {
@@ -471,7 +473,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
  
 
-##### **Case 2: 앱이 백그라운드(background) 모드이거나 완전히 닫혔을 때(killed or terminated) 되었을 때**
+#### **Case 2: 앱이 백그라운드(background) 모드이거나 완전히 닫혔을 때(killed or terminated) 되었을 때**
 
 바로 위의 `extension` 안에 다음 함수를 추가합니다.
 
@@ -489,26 +491,27 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 작동 원리는 Case 1과 같습니다.
 
 <!-- http://www.giphy.com/gifs/JdcJf23PuganowYdRY -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHdpdHB1aHNwNjc2OTBxZzJxeHh6cHZiMTQ0bWJ0Zjhlb25ibHRxMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JdcJf23PuganowYdRY/giphy.gif)
 
-\[caption id="attachment\_4702" align="alignnone" width="372"\] ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-20.46.10-copy.jpg) 앱이 완전히 종료된 상태를 만드려면 위의 그림처럼 앱을 종료합니다.\[/caption\]
+![앱이 완전히 종료된 상태를 만드려면 위의 그림처럼 앱을 종료합니다.](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-20.46.10-copy.jpg)  
+*앱이 완전히 종료된 상태를 만드려면 위의 그림처럼 앱을 종료합니다.*
 
- 
+![앱이 완전히 종료된 상태에서 푸시 알림을 클릭하면](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-20.41.38-copy.jpg)  
+*앱이 완전히 종료된 상태에서 푸시 알림을 클릭하면*
 
-\[caption id="attachment\_4700" align="alignnone" width="372"\] ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-20.41.38-copy.jpg) 앱이 완전히 종료된 상태에서 푸시 알림을 클릭하면\[/caption\]
-
- 
-
-\[caption id="attachment\_4701" align="alignnone" width="372"\] ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-22.51.20-copy.jpg) 앱이 열리면서 목록이 갱신됩니다.\[/caption\]
-
+![앱이 열리면서 목록이 갱신됩니다.](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-11-2022-09-04-at-22.51.20-copy.jpg)  
+*앱이 열리면서 목록이 갱신됩니다.*
  
 
 > 참고: 푸시 알림의 도착은 보장되지 않습니다. 이 앱에서는 전체 뉴스 목록을 갖는 것이 그다지 중요하지 않기 때문에 그 점에서는 괜찮습니다. 하지만 일반적으로 푸시 알림을 콘텐츠를 전달하는 유일한 방법으로 사용해서는 안 됩니다. 대신 푸시 알림은 사용 가능한 새 콘텐츠가 있음을 알리고 앱이 소스(예: REST API)에서 콘텐츠를 다운로드할 수 있도록 해야 합니다.
 
  
 
-#### [**(下편에서 계속됩니다.)**](http://yoonbumtae.com/?p=4719)
+## 다음 글
+
+ [**(下편에서 계속됩니다.)**](/posts/swift%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-%EC%9B%90%EA%B2%A9-%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BCpush-notification-%EA%B8%B0%EC%B4%88-%EB%B0%8F-%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BC%EC%9D%98/)
 
  
 
-\[rcblock id="4560"\]
+<!-- \[rcblock id="4560"\] -->
+

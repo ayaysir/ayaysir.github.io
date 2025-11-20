@@ -7,11 +7,11 @@ categories:
   - "Firebase"
 ---
 
-### **Swift(스위프트) + Firebase: 사용자 정의 struct(구조체)를 사용한 Firestore CRUD 기초**
+**Swift(스위프트) + Firebase: 사용자 정의 struct(구조체)를 사용한 Firestore CRUD 기초**
 
 
 
-#### **실시간 데이터베이스 vs Cloud Firstore 비교**
+## **실시간 데이터베이스 vs Cloud Firstore 비교**
 
 Firebase에서는 두 가지 형태의 데이터베이스를 제공합니다 이 글에서는 Cloud Firestore에 대해 알아봅니다.
 
@@ -19,13 +19,15 @@ Firebase에서는 두 가지 형태의 데이터베이스를 제공합니다 이
 
  
 
-#### **Firestore에서 자료를 저장하는 일반적인 형태**
+## **Firestore에서 자료를 저장하는 일반적인 형태**
 
-![컬렉션 - 문서 - 필드](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-4.32.03.jpg) *컬렉션 - 문서 - 필드*
+![컬렉션 - 문서 - 필드](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-4.32.03.jpg) 
+*컬렉션 - 문서 - 필드*
 
  
 
-![문서 내부에 컬랙션 생성](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-4.32.30.jpg) *문서 내부에 컬랙션 생성*
+![문서 내부에 컬랙션 생성](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-4.32.30.jpg) 
+*문서 내부에 컬랙션 생성*
 
  
 
@@ -35,11 +37,11 @@ Firebase에서는 두 가지 형태의 데이터베이스를 제공합니다 이
 
  
 
-#### **Xcode 프로젝트에 Firebase 라이브러리 설치하기 (CocoaPods)**
+## **Xcode 프로젝트에 Firebase 라이브러리 설치하기 (CocoaPods)**
 
 - [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](http://yoonbumtae.com/?p=4457)
 
-```
+```ruby
 # add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
 # or pod ‘Firebase/AnalyticsWithoutAdIdSupport’
@@ -57,7 +59,7 @@ pod 'FirebaseFirestoreSwift'
 
  
 
-#### **프로젝트에 코드 추가: import 설정 및 클래스 작성**
+## **프로젝트에 코드 추가: import 설정 및 클래스 작성**
 
 ```swift
 import Foundation
@@ -93,7 +95,7 @@ class FirebasePractice {
 
  
 
-#### **익명 로그인 기능 추가**
+## **익명 로그인 기능 추가**
 
 익명 로그인을 사용하면 아이디, 비밀번호를 지정하지 않고도 특정 앱을 이용하는 사용자가 접근 권한을 획득할 수 있습니다. 굳이 로그인이 필요하지 않지만 외부 접근으로부터 보호가 필요한 간단한 기능 등을 만들 때 사용할 수 있습니다. (예: 쇼핑 앱의 장바구니)
 
@@ -105,7 +107,7 @@ class FirebasePractice {
 
 프로젝트에 아래와 같은 메서드를 만들어 인증 절차를 수행할 수 있도록 합니다.
 
-```
+```swift
 /// 로그인 되어있는 경우 User 반환
 var currentUser: User? {
     return Auth.auth().currentUser
@@ -124,16 +126,15 @@ func signInAnonymously(completionHandler: @escaping (_ user: User) -> ()) {
 
 위 메서드의 사용예는 다음과 같습니다. (뷰 컨트롤러의 `ViewDidLoad(_:)`등과 같이 실행 가능한 영역에 추가)
 
-```
+```swift
 FirebasePractice.shared.signInAnonymously { user in
-    
     // ... 작업 추가 ... //
 }
 ```
 
  
 
-#### **Firestore 보안 규칙 추가**
+## **Firestore 보안 규칙 추가**
 
 익명 로그인으로 권한을 획득한 사람만 접근 가능하도록 보안 규칙을 추가합니다. 읽기는 외부인도 모두 가능하도록 하되, 나머지 Create, Update, Delete는 익명 유저만 가능하게 하겠습니다.
 
@@ -159,7 +160,7 @@ service cloud.firestore {
 
  
 
-#### **사용자 정의 struct 만들기**
+## **사용자 정의 struct 만들기**
 
 ```swift
 struct Person: Codable {
@@ -194,9 +195,9 @@ struct Person: Codable {
 
  
 
-#### **CRUD 기능 구현**
+## **CRUD 기능 구현**
 
-##### **Create**
+### **Create**
 
 ```swift
 func addPost(personRequest request: Person) {
@@ -242,7 +243,7 @@ func addPost(personRequest request: Person) {
 
  
 
-##### **Update**
+### **Update**
 
 ```swift
 func updatePost(documentID: String, originalPersonRequest request: Person) {
@@ -279,11 +280,10 @@ func updatePost(documentID: String, originalPersonRequest request: Person) {
 
  
 
-##### **Delete**
+### **Delete**
 
 ```swift
 func deletePost(documentID: String) {
-    
     personsRef.document(documentID).delete() { err in
         if let err = err {
             print("Firestore>> Error deleting document: \(err)")
@@ -299,7 +299,7 @@ func deletePost(documentID: String) {
 
  
 
-##### **Read (문서 하나)**
+### **Read (문서 하나)**
 
 ```swift
 func read(documentID: String, completionHandler: ((_ person: Person) -> ())?) {
@@ -326,7 +326,7 @@ func read(documentID: String, completionHandler: ((_ person: Person) -> ())?) {
 
  
 
-##### **Read (컬렉션 내의 문서 전체)**
+### **Read (컬렉션 내의 문서 전체)**
 
 ```swift
 func readAll() {
@@ -362,7 +362,7 @@ func readAll() {
 
  
 
-#### **실행하기**
+## **실행하기**
 
 위에서 만든 클래스를 바탕으로 실제 실행 가능한 영역에서 데이터베이스 CRUD를 수행합니다.
 
@@ -400,33 +400,33 @@ override func viewDidLoad() {
 
  
 
-#### **실행 화면**
+## **실행 화면**
 
-##### **Create**
+### **Create**
 
  ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-5.14.23.jpg)
 
  
 
-##### **Read(한 개) & Update**
+### **Read(한 개) & Update**
 
-\[caption id="attachment\_4545" align="alignnone" width="745"\] ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.07.27.jpg) 업데이트 전\[/caption\]
+![업데이트 전](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.07.27.jpg)  
+*업데이트 전*
+
+![업데이트 후](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.08.16.jpg)  
+*업데이트 후*
 
  
 
-\[caption id="attachment\_4546" align="alignnone" width="764"\] ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.08.16.jpg) 업데이트 후\[/caption\]
-
- 
-
-##### **Read(컬렉션 내 전체 문서)**
+### **Read(컬렉션 내 전체 문서)**
 
  ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.35.29.jpg)
 
-참고: [Firestore timestamp getting null](https://stackoverflow.com/questions/47771044/firestore-timestamp-getting-null)
+- 참고: [Firestore timestamp getting null](https://stackoverflow.com/questions/47771044/firestore-timestamp-getting-null)
 
  
 
-##### **Delete**
+### **Delete**
 
  ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-12-pm-7.19.38.jpg)
 
@@ -438,6 +438,6 @@ override func viewDidLoad() {
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
 https://gist.github.com/ayaysir/3d311ba88484c1d188d011e1346ec696

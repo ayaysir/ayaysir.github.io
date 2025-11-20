@@ -6,21 +6,19 @@ categories:
   - "Swift UIKit"
 ---
 
-\[rcblock id="4769"\]
+<!-- \[rcblock id="4769"\] -->
+
 
  
 
 **출처**
 
 - [push-notifications-tutorial-getting-started](https://www.raywenderlich.com/11395893-push-notifications-tutorial-getting-started)
+- [(上편 바로가기)](/posts/swift-push-notification)
 
  
 
-##### [(上편 바로가기)](http://yoonbumtae.com/?p=4692)
-
- 
-
-### **실행 가능한 알림(Actionable Notifications) 작업**
+## **실행 가능한 알림(Actionable Notifications) 작업**
 
 실행 가능한 알림(Actionable Notifications)을 사용하면 알림 자체에 사용자 정의 버튼을 추가할 수 있습니다. 이메일 알림이나 트윗에서 그 자리에서 "답장" 또는 "즐겨찾기"를 하는 것을 본 적이 있을 것입니다.
 
@@ -52,7 +50,7 @@ enum Identifiers {
 
 `registerForPushNotifications()`에서 `guard` 문 바로 아래와 `getNotificationSettings()`의 위 사이에 다음을 삽입합니다.
 
-```
+```swift
 // 1
 let viewAction = UNNotificationAction(
     identifier: Identifiers.viewAction,
@@ -87,7 +85,7 @@ UNUserNotificationCenter.current().setNotificationCategories([newsCategory])
 
 앱을 백그라운드로 만든 다음 `xcrun simctl` 유틸리티를 통해 다음 페이로드를 보냅니다.
 
-```
+```json
 {
   "aps": {
     "alert" : {
@@ -160,7 +158,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 
 뷰 컨트롤러의 `viewDidLoad` 안에 새로운 노티피케이션 옵저버를 추가합니다.
 
-```
+```swift
 NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:)), name: .viewSafari, object: nil)
 ```
 
@@ -172,7 +170,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:))
 
 뷰 컨트롤러 안에 셀렉터 함수 `openSafari`를 추가합니다.
 
-```
+```swift
 @objc func openSafari(_ notification: Notification) {
     guard let url = notification.object as? URL else {
         return
@@ -202,9 +200,11 @@ NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:))
 }
 ```
 
-\[caption id="attachment\_4722" align="alignnone" width="386"\] ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.52.43.jpg) `[보기]` 버튼을 클릭하면\[/caption\]
+![`[보기]` 버튼을 클릭하면](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.52.43.jpg)  
+*`[보기]` 버튼을 클릭하면*
 
-\[caption id="attachment\_4723" align="alignnone" width="419"\] ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.53.29.jpg) 페이로드에 첨부한 `URL`로 접속됨 (`SFSafariViewController` 사용)\[/caption\]
+![페이로드에 첨부한 `URL`로 접속됨 (`SFSafariViewController` 사용)](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.53.29.jpg)  
+*페이로드에 첨부한 `URL`로 접속됨 (`SFSafariViewController` 사용)*
 
  
 
@@ -257,7 +257,7 @@ PushNotifications 유틸리티를 시작하고 다음 단계를 완료합니다.
 3. 해당 필드에 **Key ID**와 **Team ID**를 입력합니다.
 4. 본문 아래에 앱의 **번들 ID**와 **기기 토큰**을 입력합니다. 요청 본문을 다음과 같이 변경합니다.
 
-```
+```json
 {
   "aps": {
     "alert" : {
@@ -365,4 +365,5 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 
  
 
-\[rcblock id="4560"\]
+<!-- \[rcblock id="4560"\] -->
+

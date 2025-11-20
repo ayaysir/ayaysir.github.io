@@ -6,23 +6,23 @@ categories:
   - "포트폴리오"
 ---
 
-### **UltimateScale**
+**UltimateScale**
 
 UtimateScale은 음악 스케일(음계) 학습 도우미입니다.
 
-#### **앱스토어 링크**
+## **App Store 링크**
 
 [UltimateScale 한국 앱 스토어 링크](https://apps.apple.com/kr/app/ultimatescale/id1631310626) (모든 국가 출시)
 
  
 
-#### **깃허브 링크**
+## **깃허브 링크**
 
 [https://github.com/ayaysir/MusicScale](https://github.com/ayaysir/MusicScale)
 
  
 
-#### **특징 및 사용 기술**
+## **특징 및 사용 기술**
 
 - **애플 앱스토어의 검수에 통과하였습니다.**
 - `Core Graphics`를 통한 뷰 드로잉 (피아노 건반)
@@ -35,7 +35,7 @@ UtimateScale은 음악 스케일(음계) 학습 도우미입니다.
 
  
 
-#### **앱 소개**
+## **앱 소개**
 
 UtimateScale은 다양한 키를 지원하는 내장 신디사이저 키보드와, 퀴즈를 통한 효율적인 학습이 가능한 스케일(음계) 학습 도우미입니다.
 
@@ -58,14 +58,14 @@ UtimateScale은 다양한 키를 지원하는 내장 신디사이저 키보드�
 
  
 
-#### **도움말 보기**
+## **도움말 보기**
 
 - [User Guide (영문)](https://github.com/ayaysir/MusicScale/blob/main/MusicScale/ResourceData/Manual%20JPEG/README-EN.md)
 - [User Guide (한글 PDF)](https://github.com/ayaysir/MusicScale/raw/main/MusicScale/ResourceData/MusicScale%20-%20ko.pdf)
 
  
 
-#### **스크린샷**
+## **스크린샷**
 
  ![](/assets/img/wp-content/uploads/2022/07/screenshot-2022-07-12-am-2.34.44.jpg)
 
@@ -73,6 +73,5 @@ UtimateScale은 다양한 키를 지원하는 내장 신디사이저 키보드�
 
  
 
-* * *
+<!-- \[rcblock id="4560"\] -->
 
-\[rcblock id="4560"\]

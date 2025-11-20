@@ -469,7 +469,7 @@ private var chatList: [String] = [] {
 
  ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-2.10.21.jpg)
 
-```
+```swift
 @IBOutlet weak var txfMessage: UITextField!
 @IBOutlet weak var txvChatList: UITextView!
 

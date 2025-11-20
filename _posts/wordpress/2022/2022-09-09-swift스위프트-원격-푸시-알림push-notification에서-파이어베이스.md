@@ -6,18 +6,18 @@ categories:
   - "Swift UIKit"
 ---
 
-\[rcblock id="4769"\]
+<!-- \[rcblock id="4769"\] -->
+
+## **이전 글**
+ 
+**이 글의 내용을 진행하려면 이전에 작성한 푸시 알림 관련 글을 먼저 읽어야 합니다.**
+
+- [Swift(스위프트): 원격 푸시 알림(Push Notification) 기초 및 푸시 알림의 모의 테스트 방법 上편 (스토리보드)](/posts/swift-push-notification)
+- [Swift(스위프트): 원격 푸시 알림(Push Notification) 기초 및 푸시 알림의 모의 테스트 방법 下편 (스토리보드)](/posts/swift%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-%EC%9B%90%EA%B2%A9-%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BCpush-notification-%EA%B8%B0%EC%B4%88-%EB%B0%8F-%ED%91%B8%EC%8B%9C-%EC%95%8C%EB%A6%BC%EC%9D%98/)
 
  
 
-##### **이 글의 내용을 진행하려면 이전에 작성한 푸시 알림 관련 글을 먼저 읽어야 합니다.**
-
-- [Swift(스위프트): 원격 푸시 알림(Push Notification) 기초 및 푸시 알림의 모의 테스트 방법 上편 (스토리보드)](http://yoonbumtae.com/?p=4692)
-- [Swift(스위프트): 원격 푸시 알림(Push Notification) 기초 및 푸시 알림의 모의 테스트 방법 下편 (스토리보드)](http://yoonbumtae.com/?p=4719)
-
- 
-
-### **Firebase Messaging 서비스로 실제 푸시 알림(Push Notification) 보내기**
+## **Firebase Messaging 서비스로 실제 푸시 알림(Push Notification) 보내기**
 
 푸시 알림(Push Notification)의 진행 과정은 다음과 같습니다.
 
@@ -29,9 +29,9 @@ categories:
 
 이 중에서 2번의 서버를 실제로 만들고 서비스하려면 상당히 전문적인 지식이 필요합니다. 그래서 보통 직접 만들기보다 웹 서비스에서 제공하는 메시징 배포 서버를 사용하며 여기서도 구글의 [Firebase Messaging](https://firebase.google.com/docs/cloud-messaging) 이라는 서비스를 이용해서 푸시 알림을 보내도록 하겠습다.
 
- 
+## **방법**
 
-#### **1: Firebase Console에서 프로젝트 생성 후 앱 추가**
+### **1: Firebase Console에서 프로젝트 생성 후 앱 추가**
 
 Firebase에서 프로젝트를 생성합니다. 프로젝트 생성 과정 중 `GoogleService-Info.plist`를 iOS앱 프로젝트 내에 추가하라고 하는데 파일을 드래그해 추가해줍니다. 그 후 Firebase 프로젝트 내에 iOS 앱을 추가합니다.
 
@@ -39,16 +39,15 @@ Firebase에서 프로젝트를 생성합니다. 프로젝트 생성 과정 중 `
 
  
 
-#### **2: 프로젝트 설정 > 클라우드 메시징 탭에 APN 인증 키 추가**
+### **2: 프로젝트 설정 > 클라우드 메시징 탭에 APN 인증 키 추가**
 
 다음 프로젝트 `설정`(위 스크린샷의 톱니바퀴 모양 버튼)에 들어간 뒤 개발자 센터에서 발급받은 iOS 푸시 알림의 키의 `.p8` 파일을 업로드하고 ID 정보를 입력합니다.  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-09-pm-10.14.58.jpg)
 
  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-09-pm-10.11.11.jpg)
 
  
+ #### **참고: Key ID 발급 및 Team ID 확인**
 
-> **참고: Key ID 발급 및 Team ID 확인**
-> 
 >  
 > 
 > [Apple Developer Member Center](https://developer.apple.com/account)로 이동하여 로그인합니다.
@@ -85,13 +84,13 @@ Firebase에서 프로젝트를 생성합니다. 프로젝트 생성 과정 중 `
 
  
 
-#### **3: 앱 내에 Firebase 관련 부분 추가**
+### **3: 앱 내에 Firebase 관련 부분 추가**
 
 앱 프로젝트에 _**CocoaPods**_ 또는 **_Swift Package Manager(SPM)_**를 이용해 `FirebaseCore`와 `FirebaseMessaging` 디펜던시를 추가합니다. 제 컴퓨터에서는 SPM이 불안정해서 CocoaPods로 설치하였습니다.
 
-- [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](http://yoonbumtae.com/?p=4457)
+- [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](/posts/xcode-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-%EC%BD%94%EC%BD%94%EC%95%84%ED%8C%9Fcocoapods-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EB%94%94%ED%8E%9C%EB%8D%98%EC%8B%9C-%EC%B6%94%EA%B0%80-%EB%B0%A9/)
 
-```
+```ruby
 pod 'FirebaseCore'
 pod 'FirebaseMessaging'
 ```
@@ -100,7 +99,7 @@ pod 'FirebaseMessaging'
 
 워크스페이스 파일로 프로젝트를 다시 연 후 `AppDelegate.swift` 파일에 아래 `import`들을 추가합니다.
 
-```
+```swift
 import FirebaseCore
 import FirebaseMessaging
 ```
@@ -114,7 +113,7 @@ import FirebaseMessaging
 
  
 
-```
+```swift
 //
 //  AppDelegate.swift
 //
@@ -388,4 +387,5 @@ func receivePushNotiNews(title: String, body: String, linkURL: String) {
 
  
 
-\[rcblock id="4560"\]
+<!-- \[rcblock id="4560"\] -->
+

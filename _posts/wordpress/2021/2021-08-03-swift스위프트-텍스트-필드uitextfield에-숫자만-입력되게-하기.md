@@ -14,7 +14,7 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-6.52.54.jpg)
 
-```
+```swift
 @IBOutlet weak var textFieldOutlet: UITextField!
 ```
 

@@ -6,21 +6,23 @@ categories:
   - "Swift"
 ---
 
-\[rcblock id="4769"\]
+<!-- \[rcblock id="4769"\] -->
+
 
  
 
-### **Swift: Local Notification (로컬 푸시 메시지, 오프라인 푸시 메시지)**
+**Swift: Local Notification (로컬 푸시 메시지, 오프라인 푸시 메시지)**
 
 Local notification(로컬 노티피케이션) 흔히 푸시 알람, 푸시 메시지로 일컫는 기기 메시지의 형태인데 외부 네트워크를 거치는 형태가 아닌 기기 내부에서 발신하는 오프라인 푸시 알람입니다.
 
-\[caption id="attachment\_3905" align="alignnone" width="331"\] ![](/assets/img/wp-content/uploads/2021/08/IMG_3480-e1629469919284.jpg) Local Notification\[/caption\]
+![Local Notification](/assets/img/wp-content/uploads/2021/08/IMG_3480-e1629469919284.jpg)  
+*Local Notification*
 
 위 스크린샷은 로컬 노티피케이션의 예제로 제목과, 메시지 및 사진 섬네일이 첨부되어 있습니다.
 
-이하 편의상 Local Notification을 _푸시 메시지_라고 부르겠습니다.
+이하 편의상 Local Notification을 ***푸시 메시지***라고 부르겠습니다.
 
-#### **기본**
+## **기본**
 
 1. 앱에서 알림 권한 허용을 요청합니다.
 2. `UNMutableNotificationContent` 인스턴스에 푸시 메시지의 제목, 내용, 필요한 경우 사진 및 커스텀 소리 등을 추가합니다.
@@ -28,9 +30,9 @@ Local notification(로컬 노티피케이션) 흔히 푸시 알람, 푸시 메�
 4. 푸시 메시지를 터치(클릭)했을 경우 실행할 작업을 작성합니다.
 5. 등록된 푸시 메시지를 취소(삭제)합니다.
 
- 
+## **방법**
 
-#### **1: 앱 알림 권한 허용 요청**
+### **1: 앱 알림 권한 허용 요청**
 
 `ViewDidLoad(_:)`에 아래 코드를 추가합니다.
 
@@ -55,9 +57,9 @@ userNotiCenter.requestAuthorization(options: notiAuthOptions) { (success, error)
 
  
 
-#### **2: UNMutableNotificationContent 생성**
+### **2: UNMutableNotificationContent 생성**
 
-##### **제목과 내용 (title & body)**
+#### **제목과 내용 (title & body)**
 
  ![](/assets/img/wp-content/uploads/2021/08/IMG_3480-e1629469919284.jpg)
 
@@ -66,7 +68,7 @@ userNotiCenter.requestAuthorization(options: notiAuthOptions) { (success, error)
 
  
 
-```
+```swift
 let notiContent = UNMutableNotificationContent()
 
 notiContent.title = "창문 앞의 디퓨저"
@@ -75,21 +77,21 @@ notiContent.body = "창문 앞의 디퓨저 스틱을 교체해야 합니다."
 
  
 
-##### **User Info 추가**
+#### **User Info 추가**
 
 푸시 메시지에 담고 싶은 정보가 있다면 `[``AnyHashable : Any``]` 타입의 배열을 만들고 그 안에 키-값 형태로 정보를 입력합니다. 보통 키는 `String`을 사용합니다.
 
 해당 `userInfo`는 나중에 푸시 메시지를 터치(클릭)했을 때 꺼내서 사용할 수 있습니다.
 
-```
+```swift
 notiContent.userInfo = ["category": "diffuser", "count": 15]
 ```
 
  
 
-##### **사진 또는 비디오 섬네일**
+#### **사진 또는 비디오 섬네일**
 
-```
+```swift
 do {
     // 1. 프로젝트에 Tulips.jpg 추가
     // 2. imageUrl 생성 후 첨부
@@ -107,7 +109,7 @@ do {
 
  ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-10-pm-10.35.16.jpg)
 
-##### **재생 소리 설정**
+### **재생 소리 설정**
 
 아무것도 지정하지 않으면 메시지가 표시되면서 기본 사운드가 재생됩니다.
 
@@ -121,7 +123,7 @@ notiContent.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue:
 
  
 
-##### **배지(badge) 등록하기**
+### **배지(badge) 등록하기**
 
 ```
 let newNumber = UserDefaults.standard.integer(forKey: "AppBadgeNumber") + 1
@@ -141,13 +143,13 @@ UIApplication.shared.applicationIconBadgeNumber = 0
 
  
 
-#### **3: 메시지 트리거링 및 요청**
+### **3: 메시지 트리거링 및 요청**
 
-##### **등록 후 기준으로 트리거링 및 요청**
+#### **등록 후 기준으로 트리거링 및 요청**
 
 등록 후 일정 시간이 지나면 푸시 메시지가 표시되게 하는 방법입니다. 아래 코드는 앱 실행 후 3초 후 푸시 메시지를 발생시킵니다.
 
-```
+```swift
 // 알림이 trigger되는 시간 설정 (초단위) - 반드시 0보다 큰 값이어야 함
 // repeats가 true인 경우 해당 시간마다 메시지가 반복 표시됨 - timeInterval은 최소 60 이상이어야 함
 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
@@ -178,13 +180,13 @@ userNotiCenter.add(request) { (error) in
 
  
 
-##### **특정 시간 스케줄을 기준으로 트리거링**
+#### **특정 시간 스케줄을 기준으로 트리거링**
 
 예를 들어 푸시 메시지를 등록할 때 _XX년 XX월 XX일_에 알람을 울리게 하고 싶은 경우 아래와 같은 방법을 사용합니다.
 
 다음 알람 등록 trigger를 작성합니다.
 
-```
+```swift
 // 오늘 날짜와 대상 날짜의 차이를 계산한 후, dayToSeond(20)등의 형태로 입력
 let targetDate = Date(timeIntervalSince1970: 1661869178) // 2022-08-30
 var alarmDateComponents = Calendar.current.dateComponents([.second, .month, .day, .hour, .minute, .year], from: targetDate)
@@ -214,7 +216,7 @@ let trigger = UNCalendarNotificationTrigger(dateMatching: alarmDateComponents, r
 
  
 
-#### **4: 푸시 메시지를 터치(클릭)했을 경우 실행할 작업을 작성**
+### **4: 푸시 메시지를 터치(클릭)했을 경우 실행할 작업을 작성**
 
 `AppDelegate.swift` 파일에 아래 `extension`을 추가합니다.
 
@@ -267,7 +269,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 - `AppDelegate.swift` 파일 상단에 `import UserNotifications` 추가
 - `func application(...didFinishLaunchingWithOptions...)` 안에 에 다음 부분 추가
 
-```
+```swift
 UNUserNotificationCenter.current().delegate = self
 ```
 
@@ -275,19 +277,19 @@ UNUserNotificationCenter.current().delegate = self
 
  
 
-#### **5: 등록된 Local Notification 삭제(스케줄 취소)**
+### **5: 등록된 Local Notification 삭제(스케줄 취소)**
 
-##### **모든 푸시 메시지 일괄 삭제 및 스케줄 취소**
+#### **모든 푸시 메시지 일괄 삭제 및 스케줄 취소**
 
-```
+```swift
 UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
 ```
 
  
 
-##### **특정 identifier를 가진 푸시 메시지 삭제 및 스케줄 취소**
+#### **특정 identifier를 가진 푸시 메시지 삭제 및 스케줄 취소**
 
-```
+```swift
 let userNotiCenter = UNUserNotificationCenter.current()
 userNotiCenter.removePendingNotificationRequests(withIdentifiers: [id1, id2, id3])
 

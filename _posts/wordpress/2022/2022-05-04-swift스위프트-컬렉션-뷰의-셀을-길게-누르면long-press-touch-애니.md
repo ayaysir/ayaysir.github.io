@@ -8,7 +8,7 @@ categories:
 
 **참고**
 
-- [iOS 프로그래밍: 컬렉션 뷰 (Swift, 스토리보드) – 컬렉션 뷰 추가, 커스텀 셀 작성](http://yoonbumtae.com/?p=3418)
+- [iOS 프로그래밍: 컬렉션 뷰 (Swift, 스토리보드) – 컬렉션 뷰 추가, 커스텀 셀 작성](/posts/ios-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%BB%AC%EB%A0%89%EC%85%98-%EB%B7%B0-swift-%EC%8A%A4%ED%86%A0%EB%A6%AC%EB%B3%B4%EB%93%9C-%EC%BB%AC%EB%A0%89%EC%85%98-%EB%B7%B0/)
 
  
 ## **개요**

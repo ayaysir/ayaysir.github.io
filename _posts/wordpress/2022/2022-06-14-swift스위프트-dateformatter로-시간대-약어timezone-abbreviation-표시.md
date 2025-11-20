@@ -6,9 +6,9 @@ categories:
   - "Swift"
 ---
 
-#### **Swift(스위프트): DateFormatter로 시간대 약어(Timezone abbreviation) 표시**
+**Swift(스위프트): DateFormatter로 시간대 약어(Timezone abbreviation) 표시**
 
- 
+## **방법**
 
 `TimeZone.current.identifier`와 `TimeZone.abbreviationDictionary`를 사용하면 시간대 약어를 표시할 수 있습니다.
 
@@ -24,10 +24,7 @@ func dateString(timestamp: Int) -> String {
     // .value는 timeZone.identifier와 동일
     return formatter.string(from: date) + " (\(timezoneAbbr?.value ?? "Unknown"))"
 }
-
 ```
-
- 
 
 ```
 1655192817
@@ -37,10 +34,10 @@ func dateString(timestamp: Int) -> String {
 
  
 
-##### **출처**
+## **출처**
 
 - [Getting timezone abbreviations in Swift](https://stackoverflow.com/questions/66115906/getting-timezone-abbreviations-in-swift)
 
-##### **참고**
+## **참고**
 
-- [Swift: DateFormatter 날짜 한글로 표기](http://yoonbumtae.com/?p=2173)
+- [Swift: DateFormatter 날짜 한글로 표기](/posts/swift-dateformatter-%EB%82%A0%EC%A7%9C-%ED%95%9C%EA%B8%80%EB%A1%9C-%ED%91%9C%EA%B8%B0/)

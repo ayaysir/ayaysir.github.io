@@ -30,7 +30,7 @@ Create ML로 만든 모델 파일을 이용해 이미지 분류 앱을 제작합
 
 ##### **3: UI 요소를 `@IBOutlet` 또는 `@IBAction`으로 뷰 컨트롤러 코드와 연결합니다.**
 
-```
+```swift
 @IBOutlet weak var imageView: UIImageView!
 @IBOutlet weak var cameraButton: UIBarButtonItem!
 @IBOutlet weak var classificationLabel: UILabel!

@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-[출처 바로가기](https://nemecek.be/blog/85/how-to-show-uimenu-from-uibutton-or-uibarbuttonitem)
+- [출처 바로가기](https://nemecek.be/blog/85/how-to-show-uimenu-from-uibutton-or-uibarbuttonitem)
 
  
 
@@ -16,11 +16,11 @@ iOS 14에서는 UIBarButtons 및 UIButtons에서 메뉴를 표시할 수 있습�
 
  
 
-#### **UIMenu의 예제**
+## **UIMenu의 예제**
 
 `viewDidLoad(_:)`에 다음 코드를 작성합니다.
 
-```
+```swift
 var menuItems: [UIAction] {
     return [
         UIAction(title: "Standard item", image: UIImage(systemName: "sun.max"), handler: { (_) in   
@@ -39,11 +39,11 @@ var demoMenu: UIMenu {
 
  
 
-#### **UIBarButtonItem에 UIMenu 추가**
+## **UIBarButtonItem에 UIMenu 추가**
 
 현재 뷰 컨트롤러에 내비게이션 아이템이 있는 경우, 아래 코드를 추가합니다.
 
-```
+```swift
 navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Menu", image: nil, primaryAction: nil, menu: demoMenu)
 
 ```
@@ -56,7 +56,7 @@ navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Menu", image: nil, p
 
 사용자가 만든 Bar Button Item에 메뉴를 추가하는 방법은 다음과 같습니다.
 
-```
+```swift
 @IBOutlet weak var barBtnSetAlarm: UIBarButtonItem!
 
 override func viewDidLoad() {
@@ -68,13 +68,13 @@ override func viewDidLoad() {
 
  
 
-#### **UIButton + UIMenu**
+## **UIButton + UIMenu**
 
 `UIMenu`를 탭한 즉시 표시하려면 `showsMenuAsPrimaryAction`을 `true`로 설정해야 합니다. 그렇지 않으면 길게 눌러야 메뉴가 나타납니다.
 
  
 
-```
+```swift
 @IBOutlet var showMenuButton: UIButton!
 
 func configureButtonMenu() {

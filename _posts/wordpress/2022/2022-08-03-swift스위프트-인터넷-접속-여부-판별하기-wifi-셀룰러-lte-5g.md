@@ -6,19 +6,21 @@ categories:
   - "Swift"
 ---
 
+## **사용 상황**
+
 iOS 앱에서 인터넷에 접속되어 있는지 (온라인, 오프라인) 여부를 확인하려면 어떻게 해야할까요?
 
 해당 방법은 아래와 같습니다.
 
  
 
-##### **Swift(스위프트): 인터넷 접속 여부 판별하기 (와이파이 WiFi & 셀룰러 LTE, 5G 등)**
+**Swift(스위프트): 인터넷 접속 여부 판별하기 (와이파이 WiFi & 셀룰러 LTE, 5G 등)**
 
-#### **1\. 인터넷 접속 여부만 판별**
+## **방법 1: 인터넷 접속 여부만 판별**
 
 WiFi, 셀룰러 모두 사용 가능하나 인터넷 연결 여부만 판별하며 어디서 접속했는지(와이파인지 셀룰러인지) 구분하지 않습니다. [출처](https://stackoverflow.com/questions/30743408)
 
-```
+```swift
 //
 //  Reachability.swift
 //
@@ -66,7 +68,7 @@ public class Reachability {
 
 `viewDidLoad`등 실행 가능한 영역에서 아래와 같이 사용합니다.
 
-```
+```swift
 if Reachability.isConnectedToNetwork() {
     // 인터넷 접속된 경우
 } else { // 오프라인인 경우 }
@@ -74,11 +76,11 @@ if Reachability.isConnectedToNetwork() {
 
  
 
-#### **2\. 셀룰러, 와이파이 구분하기**
+## **방법 2: 셀룰러, 와이파이 구분하기**
 
 [출처](https://stackoverflow.com/questions/37919315/how-can-i-check-mobile-data-or-wifi-is-on-or-off-ios-swift)
 
-```
+```swift
 import SystemConfiguration
 
 protocol Utilities {}
@@ -135,7 +137,7 @@ extension NSObject: Utilities {
 
 `viewDidLoad`등 실행 가능한 영역에서 아래와 같이 사용합니다.
 
-```
+```swift
 switch currentReachabilityStatus {
 case .notReachable:
     // 인터넷 연결 안됨

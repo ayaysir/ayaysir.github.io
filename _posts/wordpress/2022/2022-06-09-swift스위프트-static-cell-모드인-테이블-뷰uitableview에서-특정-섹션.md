@@ -6,7 +6,7 @@ categories:
   - "Swift UIKit"
 ---
 
-#### **Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기**
+**Swift(스위프트): Static cell 모드인 테이블 뷰(UITableView)에서 특정 섹션 감추기**
 
 Static Cell 모드란 아래와 같이 content mode가 `Static Cells`로 지정된 경우로 데이터 모델에 따라 셀의 개수등이 변동하는 일반적인 테이블 뷰와 달리 셀의 개수, 위치 등이 고정되어 있는 경우를 말합니다. 이 경우 코드 작성 대신 스토리보드에서 셀 개수, 섹션 개수를 설정하게 됩니다.
 
@@ -18,9 +18,9 @@ Static Cell 모드란 아래와 같이 content mode가 `Static Cells`로 지정�
 
  ![](/assets/img/wp-content/uploads/2022/06/-2022-06-10-am-2.24.05-e1654797567600.jpg)
 
- 
+## **절차**
 
-##### **1: 먼저 해당 셀의 IndexPath와 표시 여부에 대한 Bool 변수를 생성합니다.**
+### **1: 먼저 해당 셀의 IndexPath와 표시 여부에 대한 Bool 변수를 생성합니다.**
 
 ```swift
 private let bannerAdPath = IndexPath(row: 0, section: 5)
@@ -36,7 +36,7 @@ private let showBanner = false
 
  
 
-##### **2: super 클래스의 메서드를 override 합니다.**
+### **2: super 클래스의 메서드를 override 합니다.**
 
 대상 메서드는
 
@@ -102,21 +102,19 @@ override func tableView(_ tableView: UITableView, titleForHeaderInSection sectio
     - 예를 들어 `override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat` 함수 내부의 `else`문에는 `super.tableView(tableView, heightForHeaderInSection: section)` 메서드를 호출합니다.
     - 다른 함수도 위와 같은 원리를 이용해 `else` 부분을 작성합니다.
 
+
+
+![섹션 숨김 1](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.43.17.jpg)  
+*섹션 숨김 1*
+
+![섹션 숨김 2](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.52.47.jpg)  
+*섹션 숨김 2*
+
+![배너 광고 표시됨: 빨간 글씨는 잘못 삽입된것으로 `showBanner = true` 입니다.](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.53.16.jpg)  
+*배너 광고 표시됨: 빨간 글씨는 잘못 삽입된것으로 `showBanner = true` 입니다.*
  
 
-\[caption id="attachment\_4525" align="alignnone" width="406"\] ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.43.17.jpg) 섹션 숨김 1\[/caption\]
-
- 
-
-\[caption id="attachment\_4526" align="alignnone" width="399"\] ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.52.47.jpg) 섹션 숨김 2\[/caption\]
-
- 
-
-\[caption id="attachment\_4527" align="alignnone" width="393"\] ![](/assets/img/wp-content/uploads/2022/06/screenshot-2022-06-10-am-2.53.16.jpg) 배너 광고 표시됨: 빨간 글씨는 잘못 삽입된것으로 `showBanner = true` 입니다.\[/caption\]
-
- 
-
-#### **추가 예제: 특정 섹션(section)의 행(row)만 세로 크기 조절하기**
+## **추가 예제: 특정 섹션(section)의 행(row)만 세로 크기 조절하기**
 
 앞 단락과 같은 원리를 이용합니다.
 
@@ -136,6 +134,6 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
 
  
 
-##### **출처**
+## **출처**
 
 - [Hide sections of a Static TableView](https://stackoverflow.com/questions/17761878/hide-sections-of-a-static-tableview)

@@ -52,7 +52,7 @@ private func addCustomMenu() {
 
 셀렉터 함수(`@objc`)를 작성합니다.
 
-```
+```swift
 @objc func addToDictionary() {
     if let range = txvNotepad.selectedTextRange,
        let selectedText = txvNotepad.text(in: range) {

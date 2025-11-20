@@ -6,15 +6,16 @@ categories:
   - "Swift UIKit"
 ---
 
-### **Swift(스위프트): mp3 등 소리 파일 재생하기 (스토리보드)**
+**Swift(스위프트): mp3 등 소리 파일 재생하기 (스토리보드)**
 
 앱에서 MP3, WAV 등 음악 파일 또는 소리 효과음 파일을 재생하려면 어떻게 해야 할까요?
 
 방법은 아래와 같습니다.
 
- 
 
-**1) 뷰 컨트롤러에 `import AVFoundation`를 추가합니다.**
+## **방법**
+
+### **1) 뷰 컨트롤러에 `import AVFoundation`를 추가합니다.**
 
 ```swift
 import AVFoundation
@@ -22,15 +23,15 @@ import AVFoundation
 
  
 
-**2) 소리 파일을 드래그 앤 드롭으로 프로젝트 내에 추가합니다.**
+### **2) 소리 파일을 드래그 앤 드롭으로 프로젝트 내에 추가합니다.**
 
  ![](/assets/img/wp-content/uploads/2022/09/mosiac-screenshot-2022-09-08-pm-6.04.04.jpg)
 
-\[caption id="attachment\_4739" align="alignnone" width="746"\] ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-08-pm-6.03.40.jpg) Finish 버튼 클릭\[/caption\]
-
+![Finish 버튼 클릭](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-08-pm-6.03.40.jpg)  
+*Finish 버튼 클릭*
  
 
-**3) 뷰 컨트롤러에 `AVAudioPlayer` 타입의 멤버 변수를 추가합니다.**
+### **3) 뷰 컨트롤러에 `AVAudioPlayer` 타입의 멤버 변수를 추가합니다.**
 
 ```swift
 class ViewController: UIViewController {
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
 
  
 
-**4) 재생 및 정지 함수를 추가합니다.**
+### **4) 재생 및 정지 함수를 추가합니다.**
 
 ```swift
 func playSound() {
@@ -78,17 +79,17 @@ func stopSound() {
 
  
 
-**5) 원하는 부분에 위 함수를 실행합니다. 예를 들면 버튼을 클릭했을 경우 소리가 나오게 하고 싶은 경우 버튼 이벤트 안에 `playSound()`를 추가합니다.**
+### **5) 원하는 부분에 위 함수를 실행합니다. 예를 들면 버튼을 클릭했을 경우 소리가 나오게 하고 싶은 경우 버튼 이벤트 안에 `playSound()`를 추가합니다.**
 
-- [iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기](http://yoonbumtae.com/?p=2160)
-
- 
+- [iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기](/posts/ios-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%8A%A4%ED%86%A0%EB%A6%AC%EB%B3%B4%EB%93%9C%EC%97%90%EC%84%9C-%EC%9A%94%EC%86%8C%EB%A5%BC-%EC%B6%94%EA%B0%80%ED%95%9C-%EB%92%A4-%EC%95%84%EC%9B%83/)
 
  
 
-##### **참고: 무음모드에서 소리 나오게 하기**
+ 
 
-```
+## **참고: 무음모드에서 소리 나오게 하기**
+
+```swift
 // 무음모드에서 소리가 나게 하기
 do {
     try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
@@ -100,4 +101,5 @@ do {
 
  
 
-\[rcblock id="4560"\]
+<!-- \[rcblock id="4560"\] -->
+

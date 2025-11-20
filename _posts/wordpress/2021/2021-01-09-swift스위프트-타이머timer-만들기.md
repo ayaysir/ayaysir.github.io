@@ -152,7 +152,7 @@ timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selecto
 
 타이머는 `onTimerFires()` 함수를 매 초마다 무기한으로 호출합니다. 해당 함수는 다음과 같습니다.
 
-```
+```swift
 @objc func onTimerFires()
 {
     timeLeft -= 1

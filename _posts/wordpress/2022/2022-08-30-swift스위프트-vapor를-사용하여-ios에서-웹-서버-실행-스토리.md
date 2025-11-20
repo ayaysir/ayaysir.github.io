@@ -6,15 +6,15 @@ categories:
   - "Swift UIKit"
 ---
 
-##### **출처**
+**출처**
 
 - [Running a Web Server on iOS with Vapor](https://www.raywenderlich.com/31498014-running-a-web-server-on-ios-with-vapor)
 
-원문에서 SwiftUI 부분을 Storyboard로 변경하였습니다.
+원문에서 SwiftUI 부분을 UIKit Storyboard로 변경하였습니다.
 
  
 
-### **Vapor를 사용하여 iOS에서 웹 서버 실행**
+## **Vapor를 사용하여 iOS에서 웹 서버 실행**
 
  ![](/assets/img/wp-content/uploads/2022/08/simulator_screenshot_CE6B8D15-1746-4467-AB71-2011072FC37D-e1661872266956.png)
 
@@ -31,7 +31,7 @@ Vapor를 사용하면 iOS 앱이 클라이언트이자 서버가 되어 데이�
 
  
 
-#### **시작하기**
+## **시작하기**
 
 이 프로젝트는 두 개의 Swift 패키지인 **_Vapor_**와 **_Leaf_**만 사용합니다. 핵심 Vapor 패키지에는 서버에 백엔드를 구축하는 데 필요한 모든 것이 포함되어 있으며 Leaf 패키지를 사용하면 프론트엔드에 대한 웹페이지를 만들 수 있습니다.
 
@@ -50,11 +50,11 @@ Xcode를 연 후 `Swift Package Manager`에서 이러한 패키지의 최신 버
 
  
 
-#### **서버 생성**
+## **서버 생성**
 
 `Server` 그룹 안에 새 파일을 만들고 이름을 `FileServer.swift`로 지정한 뒤, 다음 코드를 추가합니다.
 
-```
+```swift
 import Vapor
 import Leaf
 
@@ -86,7 +86,7 @@ class FileServer {
 
  
 
-#### **서버 구성**
+## **서버 구성**
 
 `init`(이니셜라이저) 아래에 구성 함수를 추가하세요.
 
@@ -126,7 +126,7 @@ private func configure(_ app: Application) {
 
  
 
-#### **서버 시작**
+## **서버 시작**
 
 서버를 테스트하려면 먼저 시작할 방법이 필요합니다. `configure` 함수 아래에 새 함수를 추가하고 이름을 `start()`로 지정합니다.
 
@@ -188,9 +188,9 @@ class ViewController: UIViewController {
 
  
 
-#### **경로 생성**
+## **경로 생성**
 
-**사전 작업 1:** 문서 디렉토리를 가져올 수 있는 아래 URL의 `extension`을 `URL+Extensions.swift` 파일에 추가합니다.
+### **사전 작업 1:** 문서 디렉토리를 가져올 수 있는 아래 URL의 `extension`을 `URL+Extensions.swift` 파일에 추가합니다.
 
 ```swift
 import Foundation
@@ -216,7 +216,7 @@ extension URL {
 
  
 
-**사전 작업 2:** 아래 파일을 `Server/Views` 그룹 밑에 `files.leaf`라는 이름으로 추가합니다. 이 파일은 HTML의 프론트엔드 부분을 렌더링해서 출력하는 파일입니다.
+### **사전 작업 2:** 아래 파일을 `Server/Views` 그룹 밑에 `files.leaf`라는 이름으로 추가합니다. 이 파일은 HTML의 프론트엔드 부분을 렌더링해서 출력하는 파일입니다.
 
 ```html
 <!DOCTYPE html>
@@ -260,7 +260,7 @@ extension URL {
 
 ```
 
- 
+### **본 작업**
 
 이 섹션에서는 서버로 들어오는 요청을 처리하기 위해 4개의 경로를 생성합니다.
 
@@ -268,7 +268,7 @@ extension URL {
 
 `RouteCollection`을 준수하고 `boot()` 프로토콜 메서드를 추가하여 파일을 시작합니다.
 
-```
+```swift
 import Vapor
 
 struct FileWebRouteCollection: RouteCollection {
@@ -311,7 +311,7 @@ struct FileContext: Encodable {
 
 `Server/Views/files.leaf` 파일을 살펴보면 24 라인부터 작성된 `FileContext`의 `filenames` 속성을 볼 수 있습니다.
 
-```
+```leaf
 ...
 #for(filename in filenames):
 ...
@@ -356,7 +356,7 @@ try app.register(collection: FileWebRouteCollection())
 
  
 
-#### **파일 업로드**
+## **파일 업로드**
 
 `FileWebRouteCollection.swift`를 열고 파일 맨 아래의 `FileContext` 구조체(`struct`) 밑에 `FileUploadPostData` 구조체를 만듭니다.
 
@@ -397,7 +397,7 @@ func uploadFilePostHandler(_ req: Request) throws -> Response {
 
 새로운 `POST` 경로를 `boot()` 안에 추가합니다.
 
-```
+```swift
 routes.post(use: uploadFilePostHandler)
 ```
 
@@ -409,7 +409,7 @@ routes.post(use: uploadFilePostHandler)
 
 첫 번째 입력 필드는 `name`(이름)과 `type`(유형) 모두에 대해 "`file`"입니다. Vapor는 이 `name` 매개변수를 사용하여 요청의 파일 데이터를 `FileUploadPostData.file` 속성에 매핑합니다.
 
-```
+```html
 <form method="POST" action="/" enctype="multipart/form-data">
   <input type="file" name="file">
   <input type="submit" class="btn btn-primary" value="Upload"/>
@@ -426,7 +426,7 @@ routes.post(use: uploadFilePostHandler)
 
  
 
-#### **파일 미리보기**
+## **파일 미리보기**
 
 프로젝트의 iOS 측에서 업로드된 파일 목록에 액세스할 수 있어야 합니다. 이 가이드에서는 `FileServer`를 사용합니다. 그러나 훨씬 더 큰 프로젝트에서는 해당 책임을 전용 파일 관리 오브젝트로 옮기는 것이 좋습니다.
 
@@ -434,7 +434,7 @@ routes.post(use: uploadFilePostHandler)
 
 `FileServer.swift`를 열고 클래스 상단 근처에 새 속성을 추가합니다.
 
-```
+```swift
 var fileURLs: [URL] = []
 ```
 
@@ -480,19 +480,25 @@ override func viewDidLoad() {
 
 다음 뷰 컨트롤러 안에 테이블 뷰를 추가하고, 업로드된 파일 목록이 나타나도록 합니다.
 
-\[caption id="attachment\_4681" align="alignnone" width="600"\] ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.21.08.jpg) 뷰 컨트롤러 안에 Table View(`UITableView`)를 추가합니다.\[/caption\]
+![뷰 컨트롤러 안에 Table View(UITableView)를 추가합니다.](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.21.08.jpg)  
+*뷰 컨트롤러 안에 Table View(UITableView)를 추가합니다.*
 
- 
+<br>
 
-\[caption id="attachment\_4682" align="alignnone" width="652"\] ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.22.09.jpg) 테이블 뷰를 ViewController.swift 파일과 `@IBOutlet`으로 연결합니다.\[/caption\]
+![테이블 뷰를 ViewController.swift 파일과 @IBOutlet으로 연결합니다.](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.22.09.jpg)  
+*테이블 뷰를 ViewController.swift 파일과 @IBOutlet으로 연결합니다.*
 
- 
+<br>
 
-\[caption id="attachment\_4683" align="alignnone" width="361"\] ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.23.28.jpg) `viewDidLoad` 안에 `delegate`, `dataSource`를 `self`와 연결합니다.\[/caption\]
+![viewDidLoad 안에 delegate, dataSource를 self와 연결합니다.](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.23.28.jpg)  
+*viewDidLoad 안에 delegate, dataSource를 self와 연결합니다.*
 
- 
+<br>
 
-\[caption id="attachment\_4684" align="alignnone" width="466"\] ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.26.26.jpg) 테이블 뷰에 Prototype Cell을 1개 추가하고, Style을 Basic으로, identifier를 `FileNameCell`로 지정합니다.\[/caption\]
+![테이블 뷰에 Prototype Cell을 1개 추가하고, Style은 Basic으로 identifier를 FileNameCell로 지정합니다.](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-30-pm-10.26.26.jpg)  
+*테이블 뷰에 Prototype Cell을 1개 추가하고, Style은 Basic으로 identifier를 FileNameCell로 지정합니다.*
+
+<br>
 
  
 
@@ -534,7 +540,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
 뷰 컨트롤러 파일에 `import QuickLook`을 추가합니다.
 
-```
+```swift
 import QuickLook
 ```
 
@@ -542,7 +548,7 @@ import QuickLook
 
 뷰 컨트롤러의 멤버 변수로 아래를 추가합니다.
 
-```
+```swift
 var previewURL: URL!
 ```
 
@@ -552,7 +558,6 @@ var previewURL: URL!
 
 ```swift
 extension ViewController: QLPreviewControllerDelegate, QLPreviewControllerDataSource {
-    
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
         1
     }
@@ -587,7 +592,7 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
  
 
 <!-- http://www.giphy.com/gifs/sDYwNFulSvl1RsmmUm -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODd5cTFkY2cyaGhnN3hjaGd1eDZtdzZ6YjkwMzBubGkzNzN5czFpYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sDYwNFulSvl1RsmmUm/giphy.gif)
 
 <!-- \[the\_ad id="3020"\] -->
 
@@ -612,7 +617,7 @@ extension Notification.Name {
 
 뷰 컨트롤러의 `viewDidLoad` 안에 다음 옵저버를 추가하세요. 파일이 업로드되면 목록을 다시 불러오고 테이블 뷰를 새로고침합니다.
 
-```
+```swift
 NotificationCenter.default.addObserver(forName: .serverFilesChanged, object: nil, queue: .main) { _ in
     self.server.loadFiles()
     self.tbvFileList.reloadData()
@@ -652,7 +657,7 @@ func uploadFilePostHandler(_ req: Request) throws -> Response {
 
  
 
-#### **파일 다운로드**
+## **파일 다운로드**
 
 파일 호스팅 서버는 사람들이 해당 파일을 다운로드할 수 있는 기능이 없으면 아무 것도 아닙니다. 이미 대부분의 작업을 완료했기 때문에 다운로드를 활성화하는 것은 매우 쉽습니다. 이러한 요청을 처리하기 위한 새로운 경로만 있으면 됩니다.
 
@@ -672,7 +677,7 @@ func downloadFileHandler(_ req: Request) throws -> Response {
 
 마지막으로 파일 상단의 `boot(routes:)` 함수 내 경로(route) 빌더에 추가하여 컬렉션에 새 다운로드 경로를 등록합니다.
 
-```
+```swift
 routes.get(":filename", use: downloadFileHandler)
 ```
 
@@ -688,7 +693,7 @@ routes.get(":filename", use: downloadFileHandler)
 
  
 
-#### **웹에서 파일 삭제**
+## **웹에서 파일 삭제**
 
 기기에서 허용 가능한 수준의 저장 공간을 유지하려면 서버의 파일을 정리하는 방법이 필요합니다. 웹 페이지의 삭제 버튼은 `files.leaf` 파일 안에 이미 준비가 되어있고 기능만 구현하면 됩니다.
 
@@ -712,7 +717,7 @@ func deleteFileHandler(_ req: Request) throws -> Response {
 
 다음 코드를 `boot(routes:)` 함수에 추가하여 삭제 경로를 등록합니다.
 
-```
+```swift
 routes.get("delete", ":filename", use: deleteFileHandler)
 ```
 
@@ -720,7 +725,7 @@ routes.get("delete", ":filename", use: deleteFileHandler)
 
  
 
-#### **앱에서 파일 삭제**
+## **앱에서 파일 삭제**
 
 파일 삭제는 앱에서 수행할 수 있어야 합니다. `FileServer.swift`를 열고 동명의 클래스 하단에 새로운 삭제 함수를 추가하세요:
 
@@ -764,7 +769,7 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
 
  
 
-#### **서버 제목 표시하기**
+## **서버 제목 표시하기**
 
  ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-31-am-12.05.23.png)
 
@@ -776,7 +781,7 @@ lblTitle.text = ProcessInfo().hostName + ":\(server.port)"
 
  
 
-#### **인터넷을 통한 액세스**
+## **인터넷을 통한 액세스**
 
 보안에 관한 한마디: 예방 조치를 취하고 앱을 무인 실행 상태로 두지 않아야 합니다.
 
@@ -786,7 +791,7 @@ lblTitle.text = ProcessInfo().hostName + ":\(server.port)"
 
  
 
-#### **다음 뭘 해야 되나요?**
+## **다음 뭘 해야 되나요?**
 
 이 튜토리얼은 프론트엔드와 백엔드 시스템을 동일한 프로젝트에 결합할 때 가능한 것의 시작에 불과합니다. 이것을 타사 서비스를 거치지 않고 멀티플레이어 게임이나 스트리밍 비디오 콘텐츠에 사용할 수 있는 방법을 고려하세요.
 
@@ -798,10 +803,11 @@ lblTitle.text = ProcessInfo().hostName + ":\(server.port)"
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
 - [https://github.com/ayaysir/iOS-FileServerExample-Storyboard](https://github.com/ayaysir/iOS-FileServerExample-Storyboard)
 
  
 
-\[rcblock id="4560"\]
+<!-- \[rcblock id="4560"\] -->
+

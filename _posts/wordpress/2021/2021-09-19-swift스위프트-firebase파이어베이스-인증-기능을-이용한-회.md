@@ -39,7 +39,7 @@ Identity Inspector에서 뷰 컨트롤러(`SignUpViewController`)를 커스텀 �
 
 - [iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기](http://yoonbumtae.com/?p=2160)
 
-```
+```swift
 @IBOutlet weak var txtUserEmail: UITextField!
 @IBOutlet weak var txtPassword: UITextField!
 @IBOutlet weak var txtPasswordConfirm: UITextField!

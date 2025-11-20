@@ -6,17 +6,17 @@ categories:
   - "음악이론"
 ---
 
-### **\[번역\] Interactive Circle of Fifths 사용자 가이드**
+**\[번역\] Interactive Circle of Fifths 사용자 가이드**
 
-#### **원문 및 참고**
+**원문 및 참고**
 
 - [Interactive Circle of Fifths User's Guide](https://randscullard.com/CircleOfFifths/UserGuide.htm)
 - [Interactive Circle of Fifths](https://randscullard.com/CircleOfFifths/)
-- [\[음악\] 5도권 정의 및 활용](http://yoonbumtae.com/?p=1550)
+- [\[음악\] 5도권 정의 및 활용](/posts/%EC%9D%8C%EC%95%85-5%EB%8F%84%EA%B6%8C-%EC%A0%95%EC%9D%98-%EB%B0%8F-%ED%99%9C%EC%9A%A9/)
 
  
 
-#### **소개**
+## **소개**
 
 [Interactive Circle of Fifths](http://randscullard.com/CircleOfFifths/)(이하 Circle)는 음악가가 다음을 수행할 수 있도록 설계된 도구입니다.
 
@@ -31,9 +31,10 @@ categories:
 
  
 
-#### **기본 사용법**
+## **기본 사용법**
 
- ![](/assets/img/wp-content/uploads/2022/07/UserGuide_ClickTable.gif)Circle은 `C Major`의 키를 선택한 상태에서 시작합니다. 다른 토닉(Tonic)을 선택하려면 마우스로 `Tonic` 테이블의 항목을 클릭하세요. 마찬가지로 다른 모드(Mode)를 선택하려면 `Mode` 테이블을 클릭합니다. 클릭 횟수를 줄이기 위해 테이블 중 하나에서 위쪽으로 드래그하여 원을 시계 방향으로 회전하고 아래쪽으로 드래그하여 시계 반대 방향으로 회전할 수도 있습니다. (\* 드래그는 모바일에서 불가능)
+ ![](/assets/img/wp-content/uploads/2022/07/UserGuide_ClickTable.gif)  
+ Circle은 `C Major`의 키를 선택한 상태에서 시작합니다. 다른 토닉(Tonic)을 선택하려면 마우스로 `Tonic` 테이블의 항목을 클릭하세요. 마찬가지로 다른 모드(Mode)를 선택하려면 `Mode` 테이블을 클릭합니다. 클릭 횟수를 줄이기 위해 테이블 중 하나에서 위쪽으로 드래그하여 원을 시계 방향으로 회전하고 아래쪽으로 드래그하여 시계 반대 방향으로 회전할 수도 있습니다. (\* 드래그는 모바일에서 불가능)
 
 Tonic 테이블의 흰색 셀은 C(7개의 샤프)에서 C(7개의 플랫)까지 음악 수업에서 배우는 15개의 조표(key signature)에 해당합니다. 회색 셀은 거의 사용되지 않으며 완전성을 위해 여기에 포함되었습니다. ( E♯   Phrygian의 곡을 마지막으로 들어본 것이 언제인가요?)
 
@@ -45,41 +46,52 @@ Tonic 테이블의 흰색 셀은 C(7개의 샤프)에서 C(7개의 플랫)까지
 
  
 
- ![](/assets/img/wp-content/uploads/2022/07/UserGuide_CircleParts.gif)보시다시피, Circle은 3개의 동심원으로 구성되어 있습니다. 큰 중간 링인 노트 링(`Note Ring`)은 모든 음표의 이름을 12음 반음계로 표시합니다. 선택한 키의 7개 음(즉, 키의 다이어토닉)은 배경이 흰색이고 나머지 5개 음은 배경이 회색입니다.
+ ![](/assets/img/wp-content/uploads/2022/07/UserGuide_CircleParts.gif)  
+ 보시다시피, Circle은 3개의 동심원으로 구성되어 있습니다. 큰 중간 링인 노트 링(`Note Ring`)은 모든 음표의 이름을 12음 반음계로 표시합니다. 선택한 키의 7개 음(즉, 키의 다이어토닉)은 배경이 흰색이고 나머지 5개 음은 배경이 회색입니다.
 
 가장 안쪽 링인 도수 링(`Degree Ring`)은 로마 숫자로 음표 링에서 강조 표시된 7개 음표의 스케일 정도를 나타냅니다. (음의 도수는 음계에서의 위치일 뿐이지만 코드 진행을 다룰 때 매우 중요합니다.) 또한 선택한 키의 음을 가리키는 검은색 화살표가 표시됩니다.
 
 가장 바깥쪽 고리인 코드 링(`Chord Ring`)은 선택한 키의 7개 음 각각에 어떤 유형의 3음 코드 또는 3화음이 뿌리를 두고 있는지 보여줍니다. 예를 들어, C 장조에서는 D에 근거한 3화음(즉, `D-F-A`)이 단조 화음이지만 G 장조에서는 D(`D-F♯-A`)에 근거한 3화음이 장조입니다.
 
+### **예 1**
+
+ ![](/assets/img/wp-content/uploads/2022/07/UserGuide_CMajor.gif)  
+ **예 1:** C 메이저가 선택된 상태에서 시작 위치에 있는 Circle로 시작합니다. 음표 링은 음표 F, C, G, D, A, E, B가 C 장조의 온음임을 나타냅니다. (즉, C 메이저는 조표에 샤프나 플랫이 없습니다.) 알파벳 순서로 배치하면 음계는 C, D, E, F, G, A, B입니다. 도수 링은 검은 화살표로 토닉 C를 나타냅니다. 그리고 또한, G는 이 키의 다섯 번째(5th; V) 또는 도미넌트(dominant) 키라는 것을 보여줍니다..
+
+ ### **예 2**
+
+ ![](/assets/img/wp-content/uploads/2022/07/UserGuide_GMajor.gif)  
+ **예 2:** 이제 C 바로 위에 있는 토닉 테이블에서 G를 클릭합니다. Circle이 시계 방향으로 한 칸 회전하고 도수 링이 이제 G를 토닉으로 가리킵니다. F는 음표 링의 한쪽 끝에서 떨어졌고 F♯이  다른 쪽 끝에서 강조 표시되었습니다. 이것은 Circle에 대한 중요한 정보입니다. Circle을 회전할 때(토닉 또는 모드로) 음표 링의 한쪽 끝의 노트를 선택하고 음을 높이거나(시계 방향 회전) 또는 낮춥(반시계 방향 회전) 니다. 나머지 6개 음표는 그대로 유지됩니다. 이것은 Tonic 테이블에 인접한 키들일수록 공통 노트가 더 많다는 것을 의미합니다. 또한 더 많은 샤프를 찾으려는 경우 시계 방향으로 이동하라고 알려줍니다. 더 많은 플랫을 찾고 있다면 시계 반대 방향으로 이동하세요. (토닉 및 모드 테이블을 사용하여 음악에서와 같이 플랫이 아래로, 샤프가 위로라는 것을 기억합니다.)
+
+### **예 3**
+
+ ![](/assets/img/wp-content/uploads/2022/07/UserGuide_CLydian.gif)  
+ **예 3:** 이제 Tonic 및 Mode 테이블을 사용하여 C Lydian을 선택합니다. Tonic 테이블에서 한 단계 아래로 이동하였고 (G -> C) Mode 테이블에서 한 단계 위로 이동했으며 (Major -> Lydian) Circle은 예제 2와 거의 동일하게 보입니다. 노트 링 및 코드 링은 동일하지만 도수 링은 변경되었습니다. C는 이제 토닉이고 다른 도수는 그에 따라 변경되었습니다. 이것으로부터 우리는 모드를 변경하는 것이 하나의 토닉에서 다른 토닉으로 변경하는 것과 매우 유사하다는 것을 알 수 있습니다. 실제로 모드의 반대 변경으로 토닉의 변경을 상쇄하면 새 키가 이전 키와 동일한 음표를 갖게 됩니다. (키들은 이명동음(enharmonic)입니다.)
+
  
 
- ![](/assets/img/wp-content/uploads/2022/07/UserGuide_CMajor.gif)**예 1:** C 메이저가 선택된 상태에서 시작 위치에 있는 Circle로 시작합니다. 음표 링은 음표 F, C, G, D, A, E, B가 C 장조의 온음임을 나타냅니다. (즉, C 메이저는 조표에 샤프나 플랫이 없습니다.) 알파벳 순서로 배치하면 음계는 C, D, E, F, G, A, B입니다. 도수 링은 검은 화살표로 토닉 C를 나타냅니다. 그리고 또한, G는 이 키의 다섯 번째(5th; V) 또는 도미넌트(dominant) 키라는 것을 보여줍니다..
-
- ![](/assets/img/wp-content/uploads/2022/07/UserGuide_GMajor.gif)**예 2:** 이제 C 바로 위에 있는 토닉 테이블에서 G를 클릭합니다. Circle이 시계 방향으로 한 칸 회전하고 도수 링이 이제 G를 토닉으로 가리킵니다. F는 음표 링의 한쪽 끝에서 떨어졌고 F♯이  다른 쪽 끝에서 강조 표시되었습니다. 이것은 Circle에 대한 중요한 정보입니다. Circle을 회전할 때(토닉 또는 모드로) 음표 링의 한쪽 끝의 노트를 선택하고 음을 높이거나(시계 방향 회전) 또는 낮춥(반시계 방향 회전) 니다. 나머지 6개 음표는 그대로 유지됩니다. 이것은 Tonic 테이블에 인접한 키들일수록 공통 노트가 더 많다는 것을 의미합니다. 또한 더 많은 샤프를 찾으려는 경우 시계 방향으로 이동하라고 알려줍니다. 더 많은 플랫을 찾고 있다면 시계 반대 방향으로 이동하세요. (토닉 및 모드 테이블을 사용하여 음악에서와 같이 플랫이 아래로, 샤프가 위로라는 것을 기억합니다.)
-
- ![](/assets/img/wp-content/uploads/2022/07/UserGuide_CLydian.gif)**예 3:** 이제 Tonic 및 Mode 테이블을 사용하여 C Lydian을 선택합니다. Tonic 테이블에서 한 단계 아래로 이동하였고 (G -> C) Mode 테이블에서 한 단계 위로 이동했으며 (Major -> Lydian) Circle은 예제 2와 거의 동일하게 보입니다. 노트 링 및 코드 링은 동일하지만 도수 링은 변경되었습니다. C는 이제 토닉이고 다른 도수는 그에 따라 변경되었습니다. 이것으로부터 우리는 모드를 변경하는 것이 하나의 토닉에서 다른 토닉으로 변경하는 것과 매우 유사하다는 것을 알 수 있습니다. 실제로 모드의 반대 변경으로 토닉의 변경을 상쇄하면 새 키가 이전 키와 동일한 음표를 갖게 됩니다. (키들은 이명동음(enharmonic)입니다.)
-
- 
-
-#### **코드 진행 분석**
+## **코드 진행 분석**
 
 코드 진행을 분석하는 데는 두 가지 기본 단계가 있습니다. 사용할 키를 파악한 다음 코드의 도수를 파악합니다.
 
-**예 1:** Eagles 곡 "Take It Easy"의 코드는 다음과 같습니다.
+### **예 1:** Eagles 곡 "Take It Easy"의 코드는 다음과 같습니다.
 
  ![](/assets/img/wp-content/uploads/2022/07/screenshot-2022-07-08-am-1.27.46.png)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s0ZZHNRHA2g?start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/s0ZZHNRHA2g?start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe> -->
+{% youtube "https://www.youtube.com/watch?v=s0ZZHNRHA2g" %}
 
 (간단함을 위해 이 예제는 전체 노래의 코드를 한 번에 보여주고 코드 진행과 노래의 리드미컬하고 역동적인 구조(마디, 버스, 코러스 등)의 관계를 생략합니다. 그렇다고 해서 스스로 분석할 때에도 해당 코드를 무시해야 한다는 의미는 아닙니다.)
 
- ![](/assets/img/wp-content/uploads/2022/07/UserGuide_GMajor.gif)첫 번째 단계는 키(조)를 파악하는 것입니다. 메이저 모드(Major Mode)를 선택하고 이 모든 음이 음표 링에서 흰색으로 강조 표시되고 코드 링에서 올바른 유형의 코드(장조 또는 단조)가 있는 위치를 찾을 때까지 원을 돌립니다. 특히 A와 E가 모두 코드 링의 파란색 단조(Minor) 섹션에 있는지 확인하세요. 당신은 딱 하나의 선택이 있다는 것을 알게 될 것입니다: G 메이저.
+#### 첫 번째 단계 - 키 파악
 
- 
+ ![](/assets/img/wp-content/uploads/2022/07/UserGuide_GMajor.gif)   
+ 첫 번째 단계는 키(조)를 파악하는 것입니다. 메이저 모드(Major Mode)를 선택하고 이 모든 음이 음표 링에서 흰색으로 강조 표시되고 코드 링에서 올바른 유형의 코드(장조 또는 단조)가 있는 위치를 찾을 때까지 원을 돌립니다. 특히 A와 E가 모두 코드 링의 파란색 단조(Minor) 섹션에 있는지 확인하세요. 당신은 딱 하나의 선택이 있다는 것을 알게 될 것입니다: G 메이저.
+
 
 > 참고: 처음에는 약간 속임수를 쓴 것처럼 보일 수 있습니다. 키를 아직 파악하지 못한 상태에서 메이저 모드를 선택하는 방법을 어떻게 알 수 있었습니까? 글쎄요, 우리는 실제로 어떤 모드로도 시작할 수 있었습니다. 첫 번째 단계의 요점은 노트 링과 코드 링을 올바른 위치에 두는 것입니다. 앞서 보았듯이 선택한 모드는 노트 링이나 코드 링이 아닌 도수 링에만 영향을 줍니다. 코드의 도수를 파악하는 두 번째 단계에서 해당 모드가 중요해집니다. (즉, 대부분의 대중 음악은 메이저 모드에 있으므로 우선 선택하는 것이 좋습니다.)
 
- 
+#### 두 번째 단계 - 코드 도수 파악
 
 두 번째 단계는 코드의 도수를 파악하는 것입니다. 도수 링을 보고 이 코드를 도수로 변환합니다. 결과는 다음과 같아야 합니다.
 
@@ -89,11 +101,12 @@ Tonic 테이블의 흰색 셀은 C(7개의 샤프)에서 C(7개의 플랫)까지
 
  
 
-**예 2:** 이제 R.E.M.의 노래 "Losing My Religion"의 코드를 살펴보겠습니다.
+### **예 2:** 이제 R.E.M.의 노래 "Losing My Religion"의 코드를 살펴보겠습니다.
 
  ![](/assets/img/wp-content/uploads/2022/07/screenshot-2022-07-08-am-3.01.08.png)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OKvCV8MFIaw?start=18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/OKvCV8MFIaw?start=18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe> -->
+{% youtube "https://www.youtube.com/watch?v=OKvCV8MFIaw" %}
 
 이 곡은 "Take It Easy"와 동일한 코드를 많이 사용하지만 F와 Dm의 두 가지 새로운 코드가 있습니다. Circle의 위치가 예 1 (G 장조)에 여전히 있는 경우 이 두 개의 새로운 코드를 제외하고는 모든 것이 좋아 보입니다.
 
@@ -107,7 +120,8 @@ F 대신에 현재 F♯가 있고 D는 단조가 아니라 장조입니다. 원�
 
 이제 메이저 모드를 제외하면 이 곡이 사용할 수 있는 6개의 다른 모드가 있습니다. 각 모드를 시도할 때 원 위치를 변경하지 않은 상태로 유지하기 위해 Tonic 테이블의 반대 변경으로 Mode 테이블의 변경을 상쇄할 수 있습니다. (즉, C 장조와 이명동음(enharmonic)을 이루는 키를 얻게 됩니다.) 예를 들어, Mixolydian 모드로 한 단계 아래로 내려가고 G로 한 단계 위로 올라갈 수 있습니다. 이것은 모두 좋은 방법이지만 각 모드를 차례로 시도하면서 시간을 허비하는 것보다는 우리는 대중 음악에 대한 지식을 사용하고 이 곡이 메이저 모드에 있지 않다면 마이너일 가능성이 가장 높다고 추측할 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2022/07/UserGuide_AMinor.gif)C 메이저에서 모드 테이블을 세 칸 아래로 이동하여 마이너 모드로 이동합니다. Circle의 위치를 유지하려면 Tonic 테이블을 C에서 A로 세 칸 위로 이동해야 합니다. 이것은 A 마이너가 C 메이저의 관계적 마이너(relative minor)임을 알려줍니다. 이 변경 후에도 모든 코드는 여전히 적합하지만 이제 진행 정도가 훨씬 좋아 보입니다.
+ ![](/assets/img/wp-content/uploads/2022/07/UserGuide_AMinor.gif)   
+ C 메이저에서 모드 테이블을 세 칸 아래로 이동하여 마이너 모드로 이동합니다. Circle의 위치를 유지하려면 Tonic 테이블을 C에서 A로 세 칸 위로 이동해야 합니다. 이것은 A 마이너가 C 메이저의 관계적 마이너(relative minor)임을 알려줍니다. 이 변경 후에도 모든 코드는 여전히 적합하지만 이제 진행 정도가 훨씬 좋아 보입니다.
 
  ![](/assets/img/wp-content/uploads/2022/07/screenshot-2022-07-08-am-3.01.22.png)
 
@@ -119,11 +133,12 @@ F 대신에 현재 F♯가 있고 D는 단조가 아니라 장조입니다. 원�
 
  
 
-**예 3:** 이 예는 처음 두 개보다 약간 더 복잡합니다. 비틀즈의 "She Loves You"의 구절은 다음 코드로 구성됩니다.
+### **예 3:** 이 예는 처음 두 개보다 약간 더 복잡합니다. 비틀즈의 "She Loves You"의 구절은 다음 코드로 구성됩니다.
 
  ![](/assets/img/wp-content/uploads/2022/07/screenshot-2022-07-08-am-3.01.29.png)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nGbWU8S3vzs?start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/nGbWU8S3vzs?start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe> -->
+{% youtube "https://www.youtube.com/watch?v=nGbWU8S3vzs" %}
 
 가장 먼저 주목해야 할 것은 단순한 3화음이 아닌 코드(Em7, Gmaj7, G6)를 처리해야 한다는 것입니다. 각각의 코드는 우리가 이미 접한 3화음에 기반을 두고 있기 때문에 이것은 키를 찾는 데 문제가 되지 않습니다. 우리의 목적을 위해 Em7을 Em인 것처럼 처리할 수 있고 Gmaj7과 G6을 모두 G와 동일하게 처리할 수 있습니다.
 
@@ -133,7 +148,8 @@ F 대신에 현재 F♯가 있고 D는 단조가 아니라 장조입니다. 원�
 
  
 
- ![](/assets/img/wp-content/uploads/2022/07/UserGuide_GMajor.gif)이 곡의 키를 찾으려면 Circle을 다시 Major 모드(항상 적절한 시작점)로 설정하고 모든 코드(또는 이 경우 기본 3화음)가 있는 토닉을 찾으십시오. G Major에는 Cm을 제외한 모든 코드가 있습니다. 이것은 우발적(accidental) (또는 non-diatonic) 화음의 첫 번째 예이며 위에서 언급한 바와 같이 이 우발적 화음은 우리가 G 장조를 선택하는 것을 막지는 않습니다. 모드가 올바른지 확인하기 위해 도수를 살펴보겠습니다.
+ ![](/assets/img/wp-content/uploads/2022/07/UserGuide_GMajor.gif)  
+ 이 곡의 키를 찾으려면 Circle을 다시 Major 모드(항상 적절한 시작점)로 설정하고 모든 코드(또는 이 경우 기본 3화음)가 있는 토닉을 찾으십시오. G Major에는 Cm을 제외한 모든 코드가 있습니다. 이것은 우발적(accidental) (또는 non-diatonic) 화음의 첫 번째 예이며 위에서 언급한 바와 같이 이 우발적 화음은 우리가 G 장조를 선택하는 것을 막지는 않습니다. 모드가 올바른지 확인하기 위해 도수를 살펴보겠습니다.
 
  ![](/assets/img/wp-content/uploads/2022/07/screenshot-2022-07-08-am-3.01.51.png)
 
@@ -159,17 +175,20 @@ Em7의 경우 vi7, Gmaj7의 경우 Imaj7과 같이 "특수" 코드를 작성하�
 
  
 
-#### **음악 조옮김**
+## **음악 조옮김**
 
 한 키로 음악을 조옮김해야 하는 경우가 많이 있습니다. 예를 들어, 보컬리스트가 특정 노래의 음역에 익숙하지 않거나 기타로 연주하기 너무 어려운 피아노로 작곡한 곡이 있을 수 있습니다. Circle은 이미 배운 분석 기술을 바탕으로 조옮김을 간단하게 만듭니다.
 
-**예:** 비틀즈의 "She Loves You" 구절을 분석한 이전 섹션의 예 3을 다시 참조하세요. 우리는 그것이 G 장조로 결정되었고 진행 상황은 다음과 같습니다.
+### **예:** 비틀즈의 "She Loves You" 
+
+비틀즈의 "She Loves You" 구절을 분석한 이전 섹션의 예 3을 다시 참조하세요. 우리는 그것이 G 장조로 결정되었고 진행 상황은 다음과 같습니다.
 
  ![](/assets/img/wp-content/uploads/2022/07/screenshot-2022-07-08-am-3.01.51.png)
 
  
 
- ![](/assets/img/wp-content/uploads/2022/07/UserGuide_AMajor.gif)이 노래를 G 메이저에서 A 메이저로 조옮김해야 한다고 가정해 보겠습니다. 간단히 Circle을 A Major로 설정하고 도수 링을 사용하여  도수들을 음표(note)로 변환하십시오. (이것은 분석 과정에서 도수 링을 사용하는 방식과 반대입니다.)
+ ![](/assets/img/wp-content/uploads/2022/07/UserGuide_AMajor.gif)  
+ 이 노래를 G 메이저에서 A 메이저로 조옮김해야 한다고 가정해 보겠습니다. 간단히 Circle을 A Major로 설정하고 도수 링을 사용하여  도수들을 음표(note)로 변환하십시오. (이것은 분석 과정에서 도수 링을 사용하는 방식과 반대입니다.)
 
 결과는 다음과 같습니다.
 
@@ -185,7 +204,7 @@ Em7의 경우 vi7, Gmaj7의 경우 Imaj7과 같이 "특수" 코드를 작성하�
 
  
 
-#### **작곡**
+## **작곡**
 
 새 노래에 대한 아이디어는 종종 잘 어울리는 몇 개의 코드로 시작됩니다. 어쩌면 멜로디의 라인이 형태를 갖추기 시작할지도 모릅니다. 이제 이 전도유망한 시작을 완전한 곡으로 바꾸고 싶습니다. 여기서 문제가 발생합니까? 좋은 코러스, 브리지 또는 인트로를 만들기 위해 무작위로 다른 코드를 시도하고 있습니까? 작동하는 코드를 찾으면 왜 그 코드가 "올바른" 코드인지 궁금한가요? 새 노래의 키를 파악하고 구조를 이해하면 이러한 어려움을 극복할 수 있습니다. Interactive Circle of Fifths가 이 과정을 도와줄 것입니다.
 
@@ -217,11 +236,12 @@ B 마이너와 E 마이너는 적합해 보이지 않습니다. 세 개의 코�
 
  
 
-#### **조표 읽기**
+## **조표 읽기**
 
 조표를 인식하는 것은 음악을 읽는 데 중요하며 Circle을 사용하면 쉽게 읽을 수 있습니다. 조표는 단순히 음악의 키를 나타내기 위해 악보에 표시되는 샤프 또는 플랫 패턴입니다.
 
-\[caption id="attachment\_4590" align="alignnone" width="124"\] ![](/assets/img/wp-content/uploads/2022/07/UserGuide_EbMajorKeySig.gif) 조표 읽기 예시\[/caption\]
+![조표 읽기 예시](/assets/img/wp-content/uploads/2022/07/UserGuide_EbMajorKeySig.gif)  
+*조표 읽기 예시*
 
  
 
@@ -231,7 +251,7 @@ B 마이너와 E 마이너는 적합해 보이지 않습니다. 세 개의 코�
 
  
 
-#### **스케일(음계) 이해하기**
+## **스케일(음계) 이해하기**
 
 우리는 건반, 음표 및 코드를 상당히 광범위하게 다루었지만 음계는 어떻습니까? 음계는 알파벳 순서로 특정 키의 7개 음표로 구성됩니다. 일반적으로 시작과 끝에서 토닉으로 연주하여 총 8음 또는 1옥타브를 만듭니다.
 

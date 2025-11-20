@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-#### **ObservableObject란?**
+## **ObservableObject란?**
 
 기본적으로 `ObservableObject`는 `@Published` 프로퍼티 래퍼가 붙은 값이 변경되기 전에, 변경된 값을 방출(emit)하는 `objectWillChange` 퍼블리셔를 사용할 수 있도록 하는 프로토콜입니다.
 
@@ -44,7 +44,7 @@ print(john.haveBirthday())
 
  
 
-#### **@Published 속성 래퍼(Property Wrapper)란?**
+## **@Published 속성 래퍼(Property Wrapper)란?**
 
 `@Published`는 SwiftUI에서 가장 유용한 속성 래퍼 중 하나이며 변경이 발생할 때 자동으로 알리는 관찰 가능한 오브젝트(observable object)를 만들 수 있습니다. SwiftUI는 이러한 변경 사항을 자동으로 모니터링하고 데이터에 의존하는 모든 View의 `body` 속성을 다시 호출합니다.
 
@@ -74,7 +74,7 @@ class Bag: ObservableObject {
 
  
 
-##### @Published 예제
+### @Published 예제
 
 `@Published` 속성이 있는 속성을 게시(publish)하면 이 유형의 퍼블리셔(publisher)가 생성됩니다. 다음과 같이 `$` 연산자를 사용하여 퍼블리셔에 액세스합니다.
 
@@ -116,15 +116,26 @@ DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
 
  
 
-#### **@ObservedObject와 @StateObject**
+## **@ObservedObject와 @StateObject**
 
-`ObservableObject` 프로토콜은 데이터를 저장할 수 있는 일종의 클래스와 함께 사용됩니다. `@ObservedObject` 는 관찰 가능한 오브젝트의 인스턴스를 저장하기 위해 View의 내부에서 사용되며 `@Published`는 뷰가 변경될 때 업데이트되도록 해야 하는 관찰 가능한 오브젝트의 내부의 모든 속성에 추가됩니다.
+<!-- `ObservableObject` 프로토콜은 데이터를 저장할 수 있는 일종의 클래스와 함께 사용됩니다. `@ObservedObject` 는 관찰 가능한 오브젝트의 인스턴스를 저장하기 위해 View의 내부에서 사용되며 `@Published`는 뷰가 변경될 때 업데이트되도록 해야 하는 관찰 가능한 오브젝트의 내부의 모든 속성에 추가됩니다.
 
-`@ObservedObject`를 다른 곳에서 전달된 View에만 사용하는 것이 정말 중요합니다. 왜냐하면 `@ObservedObject`는 값이 변경될 때 뷰를 무효화(invalidate-현재의 뷰를 없애고 새로 드로잉)하기 때문입니다.
+`@ObservedObject`를 **다른 곳에서 전달된 View에만 사용하는 것**이 정말 중요합니다. 왜냐하면 `@ObservedObject`는 값이 변경될 때 뷰를 무효화(invalidate-현재의 뷰를 없애고 새로 드로잉)하기 때문입니다.
 
 반면 이를 보완하기 위해 iOS14 에서 추가된 `@StateObject`는 단 한 번 인스턴스가 생성되며, View를 처음부터 새로 그리지 않고, `ObservableObject` 에서의 데이터가 변할 때, 그 `ObservableObject` 의 데이터가 들어간 부분만 View를 다시 그린다는 차이점이 있습니다.
 
-관찰 가능한 오브젝트의 초기 인스턴스를 생성할 때 `@ObservedObject`를 사용해서는 안 됩니다. 이것은 `@StateObject`로 지정해야 합니다.
+관찰 가능한 오브젝트의 초기 인스턴스를 생성할 때 `@ObservedObject`를 사용해서는 안 됩니다. 이것은 `@StateObject`로 지정해야 합니다. -->
+
+
+`ObservableObject` 프로토콜은 데이터를 저장하고 변경 사항을 알릴 수 있는 클래스와 함께 사용됩니다. `@ObservedObject` 는 외부에서 전달된 관찰 가능한 오브젝트를 View에서 관찰하기 위해 사용되며, `@Published`는 해당 오브젝트의 속성이 변경될 때 뷰가 업데이트되도록 하는 데 필요한 속성에만 추가됩니다.
+
+`@ObservedObject`는 부모나 다른 곳에서 전달된 객체를 관찰할 때만 사용해야 합니다. 왜냐하면 `@ObservedObject`를 사용해 뷰 내부에서 직접 객체를 생성하면, 뷰가 재생성될 때마다 인스턴스가 다시 만들어질 수 있기 때문입니다.
+
+이를 보완하기 위해 iOS 14에서 추가된 `@StateObject`는 뷰가 해당 객체의 소유자가 되어 한 번만 인스턴스를 생성하도록 보장합니다. 뷰가 재구성되어도 같은 인스턴스가 유지되며, `ObservableObject` 내부 데이터가 바뀌면 해당 데이터가 반영된 UI 부분만 다시 그려집니다.
+
+따라서 관찰 가능한 오브젝트의 초기 인스턴스를 생성할 때는 `@ObservedObject`가 아니라 `@StateObject`를 사용해야 합니다.
+
+
 
 ```swift
 import SwiftUI
@@ -178,11 +189,11 @@ struct ContentView_Previews: PreviewProvider {
 ```
 
 <!-- http://www.giphy.com/gifs/fxKmTvvJs2EmqSKpWV -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTZuZ281bzJsdTUyYTRnZzduYXZhZHYzbnV6eGQ4a204aGkzbGcydSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fxKmTvvJs2EmqSKpWV/giphy.gif)
 
  
 
-#### **출처**
+## **출처**
 
 - [https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-observedobject-to-manage-state-from-external-objects](https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-observedobject-to-manage-state-from-external-objects)
 - [https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-published-property-wrapper](https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-published-property-wrapper)

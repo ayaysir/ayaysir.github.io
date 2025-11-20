@@ -14,7 +14,7 @@ tags:
 
 또는 코드상에서 Delegate, DataSource 설정
 
-```
+```swift
 @IBOutlet weak var pkvKeyList: UIPickerView!
 
 override func viewDidLoad() {
