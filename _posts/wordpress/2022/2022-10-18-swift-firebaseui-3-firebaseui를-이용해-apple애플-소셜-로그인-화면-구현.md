@@ -8,11 +8,11 @@ categories:
 
 이 글의 작업을 진행하려면 아래 포스트의 작업을 먼저 진행해야 합니다.
 
-- [Swift + FirebaseUI: (1) FirebaseUI를 이용해 이메일 로그인 화면 구현](http://yoonbumtae.com/?p=4957)
+- [Swift + FirebaseUI: (1) FirebaseUI를 이용해 이메일 로그인 화면 구현](/posts/swift-firebaseui-1-firebaseui를-이용해-이메일-로그인-화면-구현/)
 
  
 
-### **FirebaseUI (2) – Apple(애플) 소셜 로그인 화면 구현**
+## **FirebaseUI (2) – Apple(애플) 소셜 로그인 화면 구현**
 
 2020년 4월 이후로 소셜 로그인을 지원하는 앱은 무조건 애플 로그인 (Sign in with Apple)을 추가해야 한다고 합니다. 저는 애플 소셜 로그인을 사용한 앱을 제출해본 경험은 아직 없지만 제가 사용하는 소셜 로그인을 지원하는 대부분의 앱이 애플 로그인 버튼이 있는 것으로 봐선 반드시 추가해야 할 사항으로 보입니다.
 
@@ -27,7 +27,7 @@ categories:
 
  
 
-#### **1) 인증 제공업체 목록에 애플(Apple) 추가**
+### **1) 인증 제공업체 목록에 애플(Apple) 추가**
 
 [Firebase 콘솔](https://console.firebase.google.com/)에 접속해서 좌측의 `빌드 > Authentication > Sigin-in Method` 페이지로 들어갑니다. `[새 제공업체 추가]` 버튼을 눌러서 _**Apple**_을 추가합니다.
 
@@ -41,7 +41,7 @@ categories:
 
  
 
-#### **2) 애플 개발자 센터에서 이메일 추가 설정**
+### **2) 애플 개발자 센터에서 이메일 추가 설정**
 
 애플 개발자 사이트의 [Certificates, Identifiers & Profiles(인증서, 식별자, 프로필)](https://developer.apple.com/account/resources)에 접속합니다 왼쪽 메뉴에서 `Services` 버튼을 클릭한 뒤 _**Sign in with Apple for Email Communication**_ 섹션에 있는 `Configure` 버튼을 클릭합니다.
 
@@ -64,7 +64,7 @@ categories:
 
  
 
-#### **3) Xcode 프로젝트 Signing & Capabilities에 Sign in with Apple 추가**
+### **3) Xcode 프로젝트 Signing & Capabilities에 Sign in with Apple 추가**
 
 프로젝트 설정을 클릭하고 `Signing & Capabilities` 탭에 있는 `+` 버튼을 클릭한 뒤 Sign in with Apple를 추가합니다.
 
@@ -72,9 +72,9 @@ categories:
 
  
 
-#### **4) 코드 작성**
+### **4) 코드 작성**
 
-```
+```swift
 import FirebaseOAuthUI
 
 // 뷰 컨트롤러 클래스 내에 추가 //
@@ -104,7 +104,8 @@ authUI.providers = providers
 
 앱을 실행하면 Sign in with Apple 버튼이 추가된 것을 볼 수 있습니다.
 
-\[caption id="attachment\_5004" align="alignnone" width="408"\] ![](/assets/img/wp-content/uploads/2022/10/IMG_A1F1CBDAD507-1.jpg) Sign in with Apple 버튼 추가됨\[/caption\]
+![Sign in with Apple 버튼 추가됨](/assets/img/wp-content/uploads/2022/10/IMG_A1F1CBDAD507-1.jpg)
+*Sign in with Apple 버튼 추가됨*
 
  
 
@@ -114,7 +115,7 @@ authUI.providers = providers
 
  
 
-##### **나의 이메일 가리기**
+#### **나의 이메일 가리기**
 
 먼저 이메일 가리기로 가입한 경우 임의로 생성된 문자열의 이름을 가진`***@privaterelay...com` 형식의 애플 이메일로 가입이 됩니다. 파이어베이스 콘솔의 인증된 사용자 목록에도 해당 애플 이메일이 표시됩니다.
 
@@ -124,7 +125,7 @@ authUI.providers = providers
 
  
 
-##### **나의 이메일 공유하기**
+#### **나의 이메일 공유하기**
 
 탈퇴 후 이메일을 공개하여 다시 가입한 경우 내가 공개한 이메일로 표시가 되며 파이어베이스 콘솔에서도 해당 이메일이 표시됩니다.
 
@@ -134,7 +135,7 @@ authUI.providers = providers
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
 (이메일 로그인 및 구글, 애플 소셜 로그인을 추가한 FirebaseUI 뷰 컨트롤러
 

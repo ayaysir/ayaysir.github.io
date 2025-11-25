@@ -6,7 +6,7 @@ categories:
   - "CI/CD"
 ---
 
-### **소개**
+## **소개**
 
 앱 스토어에 앱의 바이너리 파일 (ipa 등)을 업로드하고자 할 때 여러 방법이 있는데 이 중 Transporter 앱을 사용하는 방법을 소개하고자 합니다. Xcode에서도 바이너리 업로드 기능을 지원합니다만, 문제는 알 수 없는 버그가 너무 많고 앱 업로드 중 자주 먹통이 된다는 점입니다.
 
@@ -14,29 +14,34 @@ categories:
 
  
 
-### **방법**
+## **방법**
 
-##### **1) 앱을 arm64용으로 Archive합니다.**
+### **1) 앱을 arm64용으로 Archive합니다.**
 
- ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.47.18.jpg)    ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.52.55.jpg)
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.47.18.jpg)    
+ ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.52.55.jpg)
 
 아카이브가 완료되면 `Organizer` 창이 표시됩니다.
 
  
 
-##### **2) Distribute App 버튼을 클릭한 다음, Export를 진행합니다.**
+### **2) Distribute App 버튼을 클릭한 다음, Export를 진행합니다.**
 
 업로드가 아님에 유의하세요.
 
  
 
-\[caption id="attachment\_5099" align="alignnone" width="791"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.51.38.jpg) Organizer 창에서 Distribute App 클릭\[/caption\]
+![Organizer 창에서 Distribute App 클릭](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.51.38.jpg)
+<br>
+*Organizer 창에서 Distribute App 클릭*
 
  
 
  ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.52.00.jpg)
 
-\[caption id="attachment\_5101" align="alignnone" width="473"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.52.08.jpg) `Export` 선택\[/caption\]
+![`Export` 선택](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-6.52.08.jpg)
+<br>
+*`Export` 선택*
 
  
 
@@ -46,7 +51,7 @@ categories:
 
  
 
-##### **3) 앱 스토어에서 Transporter를 설치합니다.**
+### **3) 앱 스토어에서 Transporter를 설치합니다.**
 
 - [Transporter 앱 스토어 링크](https://apps.apple.com/us/app/transporter/id1450874784?mt=12)
 
@@ -54,7 +59,7 @@ categories:
 
  
 
-##### **4) ipa 파일 추가 후 업로드합니다.**
+### **4) ipa 파일 추가 후 업로드합니다.**
 
 `.ipa` 파일을 Transporter 창에 드래그 앤 드롭하면 목록에 추가됩니다. `업로드` 버튼을 눌러 업로드를 시작합니다.
 
@@ -62,9 +67,11 @@ categories:
 
  
 
-##### **5) 업로드가 완료될 때까지 기다린 뒤, 완료 메시지가 정상적으로 뜨는지 확인합니다.**
+### **5) 업로드가 완료될 때까지 기다린 뒤, 완료 메시지가 정상적으로 뜨는지 확인합니다.**
 
-\[caption id="attachment\_5094" align="alignnone" width="952"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-5.28.26.jpg) 업로드 중\[/caption\]
+![업로드 중](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-06-pm-5.28.26.jpg)
+<br>
+*업로드 중*
 
  
 
@@ -74,7 +81,7 @@ categories:
 
  
 
-##### **6) 업로드 파일의 처리가 완료되면 앱 스토어 커넥트에서 빌드를 추가합니다.**
+### **6) 업로드 파일의 처리가 완료되면 앱 스토어 커넥트에서 빌드를 추가합니다.**
 
 업로드 파일의 처리(processing)가 끝나면 메일로 알림이 옵니다.
 

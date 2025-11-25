@@ -130,7 +130,7 @@ tags:
 </head>
 ```
 
-```
+```html
 <body>
     <div class="container">
         <div th:replace="fragments/common :: header">-- thymeleaf header will be inserted here. --</div>

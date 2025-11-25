@@ -7,9 +7,9 @@ categories:
   - "Firebase"
 ---
 
-##### **참고**
+**참고**
 
-- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)](http://yoonbumtae.com/?p=4090)
+- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)](/posts/swift%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-firebase%ED%8C%8C%EC%9D%B4%EC%96%B4%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%9D%B8%EC%A6%9D-%EA%B8%B0%EB%8A%A5%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EA%B8%B0/)
 
  
 
@@ -17,13 +17,13 @@ categories:
 
  
 
-### **FirebaseUI (1) - 이메일 로그인 화면 구현**
+## **FirebaseUI (1) - 이메일 로그인 화면 구현**
 
 [**_FirebaseUI_**](https://github.com/firebase/FirebaseUI-iOS/ "https://github.com/firebase/FirebaseUI-iOS/")는 파이어베이스(Firebase)에서 자주 사용하는 작업들, 예를 들면 인증(로그인)이나 데이터베이스, 파일 저장 기능 등을 보일러플레이트 코드를 작성하지 않고도 편리하게(?) 사용할 수 있도록 해주는 라이브러리입니다.
 
 **_CocoaPods_** 디펜던시에 다음을 추가합니다. 파이어베이스가 이미 설치되어 있다면 FirebaseUI만 설치하고(하이라이트 부분), 파이어베이스가 없다면 파이어베이스도 같이 설치합니다. (하이라이트 외 부분)
 
-```
+```ruby
 # Add the Firebase pod for Google Analytics
 pod 'FirebaseAnalytics'
 
@@ -38,11 +38,11 @@ pod 'FirebaseFirestore'
 pod 'FirebaseUI'
 ```
 
-- [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](http://yoonbumtae.com/?p=4457)
+- [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](/posts/xcode-프로젝트에-코코아팟cocoapods-설치-및-디펜던시-추가-방/)
 
  
 
-#### **구현 방법**
+## **구현 방법**
 
 뷰 컨트롤러에 다음 코드를 추가합니다. 새로운 뷰 컨트롤러를 띄우는 부분이 있으므로 `viewDidAppear`에서 작성합니다.
 
@@ -110,7 +110,7 @@ override func viewDidAppear(_ animated: Bool) {
 
  
 
-#### **추가 구현 1: 로그인 여부 표시 및 현재 유저의 이메일 표시**
+### **추가 구현 1: 로그인 여부 표시 및 현재 유저의 이메일 표시**
 
  ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-am-3.07.28.jpg)
 
@@ -161,17 +161,19 @@ override func viewWillAppear(_ animated: Bool) {
 
  
 
-\[gallery size="full" columns="2" ids="4966,4967"\]
+<!-- \[gallery size="full" columns="2" ids="4966,4967"\] -->
+![](/assets/img/DevLog/firebase/ui-3.jpg)
 
 `Log In` 버튼을 클릭하면 로그인 창이 뜨며, `Log Out` 버튼을 누른 경우 로그아웃됩니다.
 
  
 
-#### **추가 구현 2: 로그인 창의 맨 첫 화면 커스터마이징하기**
+### **추가 구현 2: 로그인 창의 맨 첫 화면 커스터마이징하기**
 
 로그인 화면 첫 화면을 보면 하면이 너무 휑하다는 것을 알 수 있습니다.
 
-\[caption id="attachment\_4960" align="alignnone" width="305"\] ![](/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-02.53.26.png) 첫 화면\[/caption\]
+![첫 화면](/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-02.53.26.png)  
+*첫 화면*
 
 나중에 구글이나 애플 인증 버튼이 추가되면 약간 나아지지만, 아무 사진도 설명도 없는 화면은 혼란을 야기할 수 있습니다. 이 화면을 커스터마이징 해보겠습니다.
 
@@ -217,7 +219,7 @@ class LoginCustomViewController: FUIAuthPickerViewController {
 
 다음 기존 뷰 컨트롤러의 `authViewController` 관련 부분을 다음과 같이 변경합니다.
 
-```
+```swift
 // 삭제
 // let authViewController = authUI?.authViewController() // 기본 제공 뷰 컨트롤러
 // self.present(authViewController!, animated: true)

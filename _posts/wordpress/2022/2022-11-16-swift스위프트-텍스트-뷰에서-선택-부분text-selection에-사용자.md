@@ -6,7 +6,7 @@ categories:
   - "Swift UIKit"
 ---
 
-#### **소개**
+## **소개**
 
 텍스트 뷰 등에서 텍스트를 선택하면 아래와 같은 메뉴가 나옵니다.
 
@@ -20,9 +20,9 @@ categories:
 
  
 
-#### **방법**
+## **방법**
 
-##### **Step 1**
+### **Step 1**
 
 `addCustomMenu()`  함수를 추가하고, 뷰 컨트롤러의 `viewDidLoad(_:)`에 `addCustomMenu()`를 실행하도록 추가합니다.
 
@@ -48,7 +48,7 @@ private func addCustomMenu() {
 
  
 
-##### **Step 2**
+### **Step 2**
 
 셀렉터 함수(`@objc`)를 작성합니다.
 
@@ -72,13 +72,13 @@ private func addCustomMenu() {
 
  
 
-#### **출처**
+## **출처**
 
 - [How do I add a custom action to the text selection edit menu in iOS?](https://stackoverflow.com/questions/37870889/how-do-i-add-a-custom-action-to-the-text-selection-edit-menu-in-ios)
 
  
 
-#### **참고**
+## **참고**
 
 위의 예제는 순서를 지정할 수 없습니다. (사용자가 추가한 메뉴는 iOS 기본 메뉴 이후에 추가됨)
 

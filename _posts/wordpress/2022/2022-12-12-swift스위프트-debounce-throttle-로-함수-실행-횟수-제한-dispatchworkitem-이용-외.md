@@ -6,11 +6,11 @@ categories:
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
 먼저 Debounce, Throttle 이란 어떤 기능인지에 대해 알아보겠습니다.
 
-- [자바스크립트 lodash: debounce와 throttle을 이용하여 함수의 실행 횟수 제한](http://yoonbumtae.com/?p=2102)
+- [자바스크립트 lodash: debounce와 throttle을 이용하여 함수의 실행 횟수 제한](/posts/자바스크립트-lodash-debounce와-throttle을-이용하여-함수의-실행-횟/)
 
 > debounce, throttle은 생소한 기능인데요 간단히 요약하면 이벤트의 반복 실행시 콜백 함수의 불필요한 실행을 줄이는 역할을 합니다. 이로 인해 클라이언트가 혜택을 볼 수도 있거나 혹은 서버 측에 불필요한 리퀘스트를 줄일 수도 있습니다.
 > 
@@ -34,7 +34,7 @@ categories:
 
  
 
-#### **DispatchWorkItem**
+## **DispatchWorkItem**
 
 `DispatchWorkItem`이란 `DispatchQueue` 등 비동기 작업을 할 때 사용하는 클로저 함수를 클래스 형태로 한 번 더 캡슐화 한 것을 말합니다. 메인 스레드에서 비동기 작업을 실행할 때 자주 사용하는 아래와 같은 예제 코드를 보면 트레일링 클로저를 사용하여 비동기 작업을 실행하는 것을 알 수 있습니다.
 
@@ -48,7 +48,7 @@ categories:
 
  
 
-##### **cancel()**
+### **cancel()**
 
 `DispatchWorkItem`의 형태의 인스턴스는 여러 작업을 할 수 있는데, 그 중 `cancel()`이라는 작업이 있습니다.
 
@@ -64,7 +64,7 @@ categories:
 
 예제 코드를 보겠습니다.
 
-```
+```swift
 // 1 - 비동기 방식으로 실행
 DispatchQueue.global(qos: .userInteractive).async(execute: workItem)
 
@@ -93,9 +93,9 @@ Debounce와 Throttle은 `DispatchWorkItem`의 `cancel()` 작업을 이용해 �
 
  
 
-#### **구현**
+## **구현**
 
-##### **Abstract Class 만들기**
+### **Abstract Class 만들기**
 
 ```swift
 class DelayWork {
@@ -128,7 +128,7 @@ class DelayWork {
 
  
 
-##### **Debounce 구현**
+### **Debounce 구현**
 
 ```swift
 class Debounce: DelayWork {
@@ -159,7 +159,7 @@ class Debounce: DelayWork {
 
  
 
-##### **Throttle 구현**
+### **Throttle 구현**
 
 ```swift
 class Throttle: DelayWork {
@@ -195,7 +195,7 @@ class Throttle: DelayWork {
 
  
 
-#### **예제: 뷰 컨트롤러에 적용**
+## **예제: 뷰 컨트롤러에 적용**
 
 버튼을 빠르게 반복 클릭하면 Debounce 및 Throttle 이 적용되는 예제입니다.
 
@@ -240,12 +240,12 @@ class DelayWorkViewController: UIViewController {
 <!-- http://www.giphy.com/gifs/cLAlZNfkGHoWX39hRP -->
 ![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbG9pZXVwMGRwc2x0Zml0bHZ5cGZxMjFpMTN4ZTRlM3VxYWlxaG51OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cLAlZNfkGHoWX39hRP/giphy.gif)
 
-#### **전체 코드**
+## **전체 코드**
 
 https://gist.github.com/ayaysir/5075ee06cce25df9a14fb17360ebd0cb
 
  
 
-##### **참고**
+### **참고**
 
 - [\[Swift\]RxSwift 없이 debounce, throttle 구현해보기](https://velog.io/@okstring/SwiftRxSwift-%EC%97%86%EC%9D%B4-debounce-throttle-%EA%B5%AC%ED%98%84%ED%95%B4%EB%B3%B4%EA%B8%B0)

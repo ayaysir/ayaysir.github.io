@@ -6,13 +6,13 @@ categories:
   - "Swift"
 ---
 
-##### **이전 글**
+**이전 글**
 
-- [Swift(스위프트): 아이폰 진동(Vibration, Haptic) 구현하기 上 (기초)](http://yoonbumtae.com/?p=5073)
+- [Swift(스위프트): 아이폰 진동(Vibration, Haptic) 구현하기 上 (기초)](/posts/swift스위프트-아이폰-진동vibration-haptic-구현하기-上-기초/)
 
  
 
-### **Core Haptics를 사용하여 사용자 지정 진동을 재생하는 방법**
+## **Core Haptics를 사용하여 사용자 지정 진동을 재생하는 방법**
 
 _**Core Haptics**_는 아이폰의 Taptic Engine(탭틱 엔진)에서 발생하는 진동, 더 자세히 말하면 정밀한 타이밍과 동작(behaviors)에 의해 동작하는 다양한 진동과 음향 효과를 정의할 수 있게 해줍니다. 이러한 진동들은 말로 설명하기보다는 직접 느껴보는 것이 좋지만, 애플이 사용하는 단어들은
 
@@ -23,13 +23,13 @@ _**Core Haptics**_는 아이폰의 Taptic Engine(탭틱 엔진)에서 발생하�
 
  
 
-#### **사전 준비**
+## **사전 준비**
 
-##### **단계 1: import CoreHaptics 및 CustomHaptics 클래스 생성**
+### **단계 1: import CoreHaptics 및 CustomHaptics 클래스 생성**
 
 `CoreHaptics`를 `import`하고 `CustomHaptics` 클래스를 생성합니다.
 
-```
+```swift
 import CoreHaptics
 
 class CustomHaptics { 
@@ -39,17 +39,17 @@ class CustomHaptics {
 
  
 
-##### **단계 2: CHHapticEngine 타입의 멤버 변수 추가**
+### **단계 2: CHHapticEngine 타입의 멤버 변수 추가**
 
 클래스의 멤버 변수로 `CHHapticEngine` 타입의 인스턴스를 저장하는 `engine` 변수를 추가합니다.
 
-```
+```swift
 var engine: CHHapticEngine?
 ```
 
  
 
-##### **단계 3: 기기의 햅틱 지원 여부 확인**
+### **단계 3: 기기의 햅틱 지원 여부 확인**
 
 해당 엔진의 인스턴스를 생성하기 전에 다음과 같은 코드를 사용하여 현재 장치에서 햅틱이 지원되는지 확인해야 합니다.
 
@@ -59,11 +59,11 @@ guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
 
  
 
-##### **단계 4: 생성자(constructor) 추가**
+### **단계 4: 생성자(constructor) 추가**
 
 생성자 부분을 작성합니다.
 
-```
+```swift
 init?() {
     guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
         return nil
@@ -94,7 +94,7 @@ init?() {
 
  
 
-##### **단계 5: 추가 콜백 작성**
+### **단계 5: 추가 콜백 작성**
 
 엔진이 멈추거나(stop) 리셋할 필요가 있는 경우를 대비해 콜백 부분을 작성합니다.
 
@@ -122,7 +122,7 @@ private func prepareResetEngine() {
 
  
 
-#### **햅틱의 intensity, sharpness 조절하기**
+## **햅틱의 intensity, sharpness 조절하기**
 
 햅틱은 _**intensity(강도)**_와 _**sharpness(선명도)**_로 신호를 조절할 수 있습니다. `0.0`부터 `1.0`까지 조절할 수 있으며 기본값은 `1.0`입니다.
 
@@ -133,7 +133,7 @@ private func prepareResetEngine() {
 
 이러한 수치 조절은 `CHHapticEventParameter(...)`로 할 수 있습니다.
 
-```
+```swift
 let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: intensityValue)
 let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sharpnessValue)
 ```
@@ -144,7 +144,7 @@ let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sha
 > 
 > 아래 메서드를 통해 다양한 수치의 햅틱을 체험해볼 수 있습니다. UI 부분에 대한 설명은 분량상 생략합니다.
 > 
-> ```
+> ```swift
 > func generateHaptic(intensity intensityValue: Float, sharpness sharpnessValue: Float) {
 >     guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
 >         return
@@ -175,7 +175,7 @@ let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sha
 
  
 
-#### **햅틱 이벤트 생성**
+## **햅틱 이벤트 생성**
 
 햅틱의 종류는 크게 `hapticTransient`, `hapticContinuous`로 나눌 수 있습니다.
 
@@ -186,9 +186,9 @@ let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sha
 
  
 
-##### **.hapticTransient**
+### **.hapticTransient**
 
-```
+```swift
 CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0)
 
 // 파라미터 지정
@@ -208,9 +208,9 @@ CHHapticEvent(eventType: .hapticTransient, parameters: [
 
  
 
-##### **.hapticContinuous**
+### **.hapticContinuous**
 
-```
+```swift
 CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 0.6, duration: 0.5)
 ```
 
@@ -218,7 +218,7 @@ CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 0.6, d
 
  
 
-#### **햅틱 이벤트 발생**
+## **햅틱 이벤트 발생**
 
 이러한 `[CHHapticEvent]` 배열을 이용하여 복수의 이벤트를 발생시킬 수 있습니다. 클래스 안에 다음의 메서드를 추가합니다.
 
@@ -245,17 +245,17 @@ private func startEvents(_ events: [CHHapticEvent]) {
 
  
 
-#### **햅틱 이벤트 예제**
+## **햅틱 이벤트 예제**
 
 아래 함수들을 클래스 내부에 추가하면 나중에 편리하게 사용할 수 있습니다.
 
  
 
-##### **예제 1**
+### **예제 1**
 
 강하고 날카롭게 시작하여 3초에 걸쳐 약하고 둔하게 사라지는 일련의 진동(Haptic)이 생성됩니다.
 
-```
+```swift
 /// 강하고 날카롭게 시작하여 3초에 걸쳐 약하고 둔하게 사라지는 일련의 진동(Haptic)이 생성됩니다.
 func haptic1() {
     guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
@@ -280,11 +280,11 @@ func haptic1() {
 
  
 
-##### **예제 2 - SOS 신호**
+### **예제 2 - SOS 신호**
 
 구조 요청의 모스 부호인 [SOS](https://ko.wikipedia.org/wiki/SOS) `(...---...)` 신호를 햅틱으로 나타낼 수 있습니다.
 
-```
+```swift
 /// 일시적인 이벤트(짧은 탭)와 지속적인 이벤트(일정 기간에 걸친 긴 윙윙거림)를 혼합하여 Taptic 엔진에서
 /// SOS(...---...)에 대한 모스 부호를 진동시킵니다.
 func hapticSOS() {
@@ -308,11 +308,11 @@ func hapticSOS() {
 
  
 
-##### **예제 3 - 베토벤 5번 교향곡의 시작 부분**
+### **예제 3 - 베토벤 5번 교향곡의 시작 부분**
 
 짧은 햅틱과 지속 햅틱을 조합하여 음악 리듬을 재현할 수 있습니다. 유명한 베토벤 5번 교향곡의 시작 부분입니다.
 
-```
+```swift
 /// 베토벤 5번 교향곡의 시작부분 리듬을 진동시킵니다.
 func hapticBeethoven5() {
     guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
@@ -348,9 +348,9 @@ func hapticBeethoven5() {
 
  
 
-#### **뷰 컨트롤러 이벤트와 연동**
+## **뷰 컨트롤러 이벤트와 연동**
 
-##### **단계 1: 뷰 컨트롤러에 멤버 변수 추가**
+### **단계 1: 뷰 컨트롤러에 멤버 변수 추가**
 
 뷰 컨트롤러의 멤버 변수로 위에서 만든 `CustomHaptics`를 추가합니다.
 
@@ -360,7 +360,7 @@ private var customHaptics: CustomHaptics?
 
  
 
-##### **단계 2: 이벤트에서 메서드 실행**
+### **단계 2: 이벤트에서 메서드 실행**
 
 버튼 이벤트에 아래와 같이 예제 햅틱 메서드를 지정합니다.
 
@@ -390,6 +390,6 @@ private var customHaptics: CustomHaptics?
 
  
 
-##### **출처**
+### **출처**
 
 - [How to play custom vibrations using Core Haptics](https://www.hackingwithswift.com/example-code/core-haptics/how-to-play-custom-vibrations-using-core-haptics)

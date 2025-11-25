@@ -6,20 +6,20 @@ categories:
   - "Swift"
 ---
 
-##### **출처**
+**출처**
 
 - [Multipeer Connectivity](https://nshipster.com/multipeer-connectivity/)
 - [Getting Started with Multipeer Connectivity](https://www.kodeco.com/12689804-getting-started-with-multipeer-connectivity)
 
  
 
-### **소개**
+## **소개**
 
 멀티피어 통신 (Multipeer Connectivity)는 모바일 기기간에 Wi-Fi 네트워크, P2P Wi-Fi 및 Bluetooth 등의 개인 영역 네트워크를 통해 통신할 수 있도록 하는 프레임워크입니다. 연결된 피어는 중간 웹 서비스를 거치지 않고 메시지, 스트림 또는 파일 리소스를 다른 장치로 안전하게 전송할 수 있습니다.
 
  
 
-### **사전 작업**
+## **사전 작업**
 
 스토리보드(Interface Builder) 기준으로 설명합니다. iOS App 프로젝트를 생성합니다.
 
@@ -27,7 +27,7 @@ categories:
 
 뷰 컨트롤러 파일에서 `MultipeerConnectivity`를 `import` 합니다.
 
-```
+```swift
 import MultipeerConnectivity
 ```
 
@@ -64,7 +64,7 @@ info.plist에 아래 항목들을 추가합니다. 아래 두 항목은 필수�
 
  
 
-### **선전(Advertising) 및 발견(Discovering)**
+## **선전(Advertising) 및 발견(Discovering)**
 
 멀티피어 통신의 첫 번째 단계는 동료(기기)가 서로를 알게 하는 것입니다. 이는 선전(Advertising) 및 발견(Discovering) 서비스를 통해 이루어집니다.
 
@@ -94,7 +94,7 @@ private let localPeerID = MCPeerID(displayName: UIDevice.current.name)
 
  
 
-#### **선전 (Advertising)**
+## **선전 (Advertising)**
 
 서비스는 로컬 피어, 서비스 유형 및 서비스를 검색하는 피어와 통신할 선택적 정보로 초기화되는 `MCNearbyServiceAdvertiser`에 의해 선전(advertise)됩니다.
 
@@ -144,7 +144,7 @@ extension ViewController: MCNearbyServiceAdvertiserDelegate {
 
 아래 코드는 `AlertController` 경고창을 사용하여 수락 여부를 결정합니다. 위 `// ... 잠시 후 작성 ... //` 부분을 아래 코드로 대체합니다.
 
-```
+```swift
 let title = "Accept \(peerID.displayName)'s Request"
 let message = "Would you like to accept from: \(peerID.displayName)"
 
@@ -177,7 +177,7 @@ present(alertController, animated: true)
 
  
 
-#### **세션 생성**
+### **세션 생성**
 
 위의 예와 같이 선전하는 자(advertiser)가 세션을 생성하고 연결 초대를 수락하면 피어에게 전달됩니다. `MCSession` 개체는 로컬 피어 식별자 `peer`와 `securityIdentity` 및 `encryptionPreference` 매개 변수를 사용하여 초기화됩니다.
 
@@ -243,18 +243,18 @@ extension ViewController: MCSessionDelegate {
 
  
 
-#### **발견 (Discovery)**
+## **발견 (Discovery)**
 
 클라이언트는 `MCNearbyServiceAdvertiser`와 마찬가지로 로컬 피어 식별자 및 서비스 유형으로 초기화되는 `MCNearbyServiceBrowser`를 사용하여 선전된 서비스를 검색할 수 있습니다.
 
-```
+```swift
 let browser = MCNearbyServiceBrowser(peer: localPeerID, serviceType: ChatServiceType)
 browser.delegate = self
 ```
 
 > **\[참고\]** 이번 포스트에서는 브라우징 기능을 편리하게 이용할 수 있는 `MCBrowserViewController`에 대해서만 다루며 `MCNearbyServiceBrowser`에 대해선 다루지 않습니다. 간략한 사용 예제는 아래 코드를 참조하세요.
 > 
-> ```
+> ```swift
 > class ViewController: UIViewController {
 >     // ... //
 > 
@@ -304,7 +304,7 @@ browser.delegate = self
 
 특정 서비스를 광고하는 많은 피어가 있을 수 있으므로 사용자(및 개발자)의 편의를 위해 `MCBrowserViewController`는 광고 피어를 표시하고 연결하는 기본 제공 표준 방법을 제공합니다.
 
-```
+```swift
 let browserViewController = MCBrowserViewController(
     serviceType: ChatServiceType,
     session: session)
@@ -331,7 +331,7 @@ extension ViewController: MCBrowserViewControllerDelegate {
 
  
 
-##### **실제 UI에 적용**
+### **실제 UI에 적용**
 
 스토리보드에 버튼(`UIButton`)과 스위치(`UISwitch`)를 추가하고, `@IBAction`으로 연결한 뒤 아래 코드를 작성합니다.
 
@@ -363,11 +363,12 @@ extension ViewController: MCBrowserViewControllerDelegate {
 <!-- https://giphy.com/gifs/2DElddPef27Dd8zVWS -->
 ![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjhidGtlcHV5cWd2dzF0OWhtM3AydHM4OHE5aGs5bHg0Y3dsdHh4MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2DElddPef27Dd8zVWS/giphy.gif)
 
-\[caption id="attachment\_5200" align="alignnone" width="264"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-1.34.02.jpg) YES를 누르면 연결됩니다.\[/caption\]
+![YES를 누르면 연결됩니다.](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-1.34.02.jpg)   
+*YES를 누르면 연결됩니다.*
 
  
 
-#### **정보 송수신**
+## **정보 송수신**
 
 피어가 서로 연결되면 피어들 사이에 정보를 보낼 수 있습니다. Multipeer Connectivity 프레임워크는 세 가지 데이터 전송 형식을 구분합니다.
 
@@ -377,11 +378,11 @@ extension ViewController: MCBrowserViewControllerDelegate {
 
  
 
-##### **메시지**
+### **메시지**
 
 메시지는 `session.send(...)`로 전송합니다.
 
-```
+```swift
 let message = "Hello, World!"
 let data = message.data(using: .utf8)
 do {
@@ -418,7 +419,7 @@ func session(
 
 **\[심화\]** 또 다른 접근 방식은 `NSKeyedArchiver` 인코딩 객체를 보내는 것입니다.
 
-```
+```swift
 let object: NSSecureCoding = []
 var data: Data? = nil
 
@@ -440,7 +441,7 @@ do {
 
  
 
-##### **메시지를 실제 UI에 적용**
+#### **메시지를 실제 UI에 적용**
 
 아주 간단한 채팅 앱 예제를 만들어 보겠습니다.
 
@@ -541,11 +542,11 @@ func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPee
 
  
 
-##### **스트림**
+### **스트림**
 
 **\[심화\]** 스트림은 `-startStreamWithName:toPeer:`로 생성됩니다.
 
-```
+```swift
 let outputStream = session.startStream(
     withName: name,
     toPeer: peer)
@@ -581,11 +582,11 @@ func session(
 
  
 
-##### **리소스**
+### **리소스**
 
 리소스는 `session.sendResource(...)`를 통해 전송됩니다.
 
-```
+```swift
 let fileURL = URL(fileURLWithPath: "path/to/resource")
 let progress = session.sendResource(
     at: fileURL,
@@ -648,7 +649,7 @@ func session(
 
  
 
-##### **리소스를 실제 UI에 적용**
+#### **리소스를 실제 UI에 적용**
 
 _**메시지를 실제 UI에 적용** 섹션으로부터 이어집니다._
 
@@ -781,6 +782,7 @@ func session(_ session: MCSession, didFinishReceivingResourceWithName resourceNa
 
  
 
-##### **전체 코드**
+## **전체 코드**
 
-https://gist.github.com/ayaysir/e6c29a756cad1673cc90ce5ff3c67468
+<!-- https://gist.github.com/ayaysir/e6c29a756cad1673cc90ce5ff3c67468 -->
+{% gist "e6c29a756cad1673cc90ce5ff3c67468" %}

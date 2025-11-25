@@ -1,4 +1,5 @@
 ---
+published: false
 title: "PHP: CORS 에러를 회피하기 위한 API의 프록시(중계) 페이지 만들기 (cURL 이용)"
 date: 2022-10-01
 categories: 

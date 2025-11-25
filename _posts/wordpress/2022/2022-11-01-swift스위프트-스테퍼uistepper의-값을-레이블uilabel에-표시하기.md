@@ -21,7 +21,7 @@ InterfaceBuilder의 스토리보드에서 `UIStepper`는 아래 그림과 같이
 > 
 > 2) 프로그래밍 방식으로 설정
 > 
-> ```
+> ```swift
 > // IBOutlet 연결
 > @IBOutlet weak var stepperCount: UIStepper!
 > 
@@ -42,21 +42,23 @@ InterfaceBuilder의 스토리보드에서 `UIStepper`는 아래 그림과 같이
 
 먼저 일반적인 방법으로 구현하고, 다음엔 RxSwift(RxCocoa)를 사용하여 구현하도록 하겠습니다.
 
-#### **방법 1 - 일반**
+## **방법**
 
-**1)** 스토리보드에 레이블과 스테퍼를 배치한 후 각각 `@IBOutlet`으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.
+### **방법 1 - 일반**
+
+#### **1)** 스토리보드에 레이블과 스테퍼를 배치한 후 각각 `@IBOutlet`으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.
 
  ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg)
 
  
 
-**2)** 스토리보드에 스테퍼를 `@IBAction`으로 뷰 컨트롤러 코드와 연결합니다. `stepperActCount` 메서드는 버튼이 눌렸을 때 실행됩니다.
+#### **2)** 스토리보드에 스테퍼를 `@IBAction`으로 뷰 컨트롤러 코드와 연결합니다. `stepperActCount` 메서드는 버튼이 눌렸을 때 실행됩니다.
 
  ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.04.38.jpg)
 
  
 
-**3)** 초기값을 레이블에 표시하도록 설정합니다. `viewDidLoad(_:)`에 아래 코드를 추가합니다.
+#### **3)** 초기값을 레이블에 표시하도록 설정합니다. `viewDidLoad(_:)`에 아래 코드를 추가합니다.
 
 ```swift
 override func viewDidLoad() {
@@ -68,7 +70,7 @@ override func viewDidLoad() {
 
  
 
-**4)** 값이 증감될때마다(=>스테퍼 버튼을 누를때마다) 레이블에 표시되는 값이 업데이트되도록 합니다. @IBAction 함수인 `stepperActCount` 내에 다음과 같이 작성합니다.
+#### **4)** 값이 증감될때마다(=>스테퍼 버튼을 누를때마다) 레이블에 표시되는 값이 업데이트되도록 합니다. @IBAction 함수인 `stepperActCount` 내에 다음과 같이 작성합니다.
 
 ```swift
 @IBAction  func stepperActCount(_ sender: UIStepper) {
@@ -82,19 +84,19 @@ override func viewDidLoad() {
 
  
 
-#### **방법 2 - RxSwift(RxCocoa) 사용하여 구현하기**
+### **방법 2 - RxSwift(RxCocoa) 사용하여 구현하기**
 
-##### **참고**
+**참고**
 
 - [RxSwift(ReactiveX + Swift): 기본 개념 및 스토리보드 예제 (요약)](http://yoonbumtae.com/?p=4474)
 
  
 
-**0)** CocoaPods 프로젝트로 초기화하고, RxSwift를 설치합니다.
+#### **0)** CocoaPods 프로젝트로 초기화하고, RxSwift를 설치합니다.
 
-- [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](http://yoonbumtae.com/?p=4457)
+- [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](/posts/xcode-프로젝트에-코코아팟cocoapods-설치-및-디펜던시-추가-방/)
 
-```
+```ruby
 # RxSwift
 pod 'RxSwift'
 pod 'RxCocoa'
@@ -108,15 +110,15 @@ pod 'RxCocoa'
 
  
 
-**1)** 스토리보드에 레이블과 스테퍼를 배치한 후 각각 `@IBOutlet`으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.
+#### **1)** 스토리보드에 레이블과 스테퍼를 배치한 후 각각 `@IBOutlet`으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.
 
  ![](/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg)
 
  
 
-**2)** @IBAction은 추가하지 않으며, 대신 `viewDidLoad(_:)`에 아래 코드를 추가합니다.
+#### **2)** @IBAction은 추가하지 않으며, 대신 `viewDidLoad(_:)`에 아래 코드를 추가합니다.
 
-```
+```swift
 _ = stepperCount.rx.value.subscribe(onNext: { [unowned self] value in
     lblCount.text = "\(value)"
 })
@@ -136,7 +138,7 @@ _ = stepperCount.rx.value.subscribe(onNext: { [unowned self] value in
 
 또는
 
-```
+```swift
 _ = stepperCount.rx.value.map { String($0) }.bind(to: lblCount.rx.text)
 ```
 

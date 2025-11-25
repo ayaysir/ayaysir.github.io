@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
 아래와 같이 홈 스크린에서 앱 아이콘을 길게 누르거나 혹은 포스 터치(세게 누름; 일부 모델만 지원)를 한 경우 메뉴가 뜨는데 이걸 **퀵 액션(Quick Action)**이라고 합니다.
 
@@ -21,17 +21,17 @@ categories:
 
 아래는 모 음악 앱의 퀵 액션 메뉴인데 첫 번째 `[검색하기]`는 어느 상황에서도 검색 메뉴로 이동하므로 Static 퀵 액션이며, 그 아래 3개 메뉴는 최근 감상한 음악에 따라 키워드에 따라 이름과 이동 페이지가 달라지므로 Dynamic 퀵 액션입니다.
 
-\[caption id="attachment\_5172" align="alignnone" width="407"\] ![](/assets/img/wp-content/uploads/2022/12/IMG_9678.jpg) 퀵 액션 (홈 스크린 바로가기 메뉴)\[/caption\]
+![퀵 액션 (홈 스크린 바로가기 메뉴)](/assets/img/wp-content/uploads/2022/12/IMG_9678.jpg)  
+*퀵 액션 (홈 스크린 바로가기 메뉴)*
 
- 
-
-\[caption id="attachment\_5171" align="alignnone" width="413"\] ![](/assets/img/wp-content/uploads/2022/12/IMG_9679.jpg) 최근 감상 이력이 있는 \[Johan de Meij: ...\] 메뉴를 클릭한 경우 해당 앨범의 페이지로 이동 (Dynamic Quick Action)\[/caption\] 
+![최근 감상 이력이 있는 [Johan de Meij: ...] 메뉴를 클릭한 경우 해당 앨범의 페이지로 이동 (Dynamic Quick Action)](/assets/img/wp-content/uploads/2022/12/IMG_9679.jpg)  
+*최근 감상 이력이 있는 [Johan de Meij: ...] 메뉴를 클릭한 경우 해당 앨범의 페이지로 이동 (Dynamic Quick Action)*
 
 퀵 액션은 Static과 Dynamic을 합쳐 **최대 4개까지 추가**할 수 있습니다.
 
  
 
-### **구현**
+## **구현**
 
 새로운 iOS App 프로젝트를 생성합니다. 이 포스트는 스토리보드(Interface Builder)를 기준으로 설명합니다.
 
@@ -39,7 +39,7 @@ categories:
 
  
 
-#### **Static 퀵 액션**
+### **Static 퀵 액션**
 
 Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, `info.plist` 파일에 메뉴 정보를 추가하는 방식입니다.
 
@@ -80,7 +80,7 @@ Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, `inf
 > 
 >  ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.21.34.jpg)
 > 
-> ```
+> ```xml
 > <key>UIApplicationShortcutItems</key>
 > <array>
 >   <dict>
@@ -133,7 +133,7 @@ Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, `inf
 
  
 
-#### **Dynamic 퀵 액션**
+### **Dynamic 퀵 액션**
 
 Dynamic 퀵 액션은 앱 내부에서 코드로 작성하여 추가할 수 있는 퀵 액션입니다. 예를 들면 검색 결과, 조회 결과가 갱신되었거나 하는 등의 상황에서 메뉴가 갱신되도록 해야 합니다. Swift 코드로 작성합니다.
 
@@ -201,7 +201,7 @@ func setDynamicQuickActions(_ value: Int) {
 
  
 
-#### **퀵 액션을 클릭하면 특정 작업이 실행되게 하기**
+### **퀵 액션을 클릭하면 특정 작업이 실행되게 하기**
 
 위의 퀵 액션을 클릭하면 앱이 열리긴 하지만 아무런 추가 작업이 실행되지 않습니다. 특정 작업을 하려면 _**SceneDelegate.swift**_에서 지정해야 합니다.
 
@@ -281,7 +281,7 @@ func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UI
 
  
 
-##### **참고**
+### **참고**
 
 - [Add Home Screen Quick Actions in Swift and iOS 13](https://blog.devgenius.io/add-home-screen-quick-actions-in-swift-and-ios-13-71615f805eff)
 - [애플 공식 문서 - UIApplicationShortcutItems](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW36)

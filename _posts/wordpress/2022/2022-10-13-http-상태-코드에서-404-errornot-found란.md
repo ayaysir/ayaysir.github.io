@@ -6,11 +6,8 @@ categories:
   - "Web"
 ---
 
-* * *
 
- 
-
-### **HTTP 404 에러 (Not Found)**
+ **HTTP 404 에러 (Not Found)**
 
  ![](/assets/img/wp-content/uploads/2022/10/1_hFwwQAW45673VGKrMPE2qQ.png)
 
@@ -20,7 +17,7 @@ categories:
 
  
 
-#### **개요**
+## **개요**
 
 HTTP를 사용하여 통신을 할 때, 브라우저에 의한 HTML 문서(웹 페이지)등의 요구에 대해서, 서버는 응답을 돌려달라고 요구됩니다. 응답에는 숫자에 따른 상태 코드와 이메일과 같은 헤더와 본문이 포함됩니다. 상태 코드(404)에서, 최초의 "`4`"는 클라이언트 측의 에러(URL의 미스 타입 등)를 나타내고, 다음의 "`04`"는 에러의 종류를 나타냅니다. 이러한 HTTP의 3자리 코드는 FTP나 NNTP와 같은 HTTP 이전부터 있는 프로토콜과 유사합니다.
 
@@ -46,8 +43,8 @@ WWW에서는 404의 표시가 자주 보이기 떄문에 404는 "사람이나 �
 
  
 
-#### **Soft 404**
+## **Soft 404**
 
 일부 웹 사이트는 "파일을 찾을 수 없음"을 나타내기 위해 성공을 나타내는 상태 코드 "`200 OK`"와 함께 웹 페이지를 보낼 수 있습니다. 이것은 "Soft 404"라고 불립니다. Soft 404의 문제는 링크가 끊어 졌는지 여부를 자동으로 조사 할 수 없다는 것입니다.
 
-<script>// alert(location.search) if(location.search.indexOf('from404Error=true') != -1) { document.getElementById('not-found').textContent = "해당 URL에 대한 파일을 찾을 수 없기 때문에 이 포스트로 리다이렉트 되었습니다 (HTTP 404 Not Found)."; document.getElementById('not-found-div').style.display = "block"; } else { document.getElementById('not-found-div').style.display = "none"; }</script>
+<!-- <script>// alert(location.search) if(location.search.indexOf('from404Error=true') != -1) { document.getElementById('not-found').textContent = "해당 URL에 대한 파일을 찾을 수 없기 때문에 이 포스트로 리다이렉트 되었습니다 (HTTP 404 Not Found)."; document.getElementById('not-found-div').style.display = "block"; } else { document.getElementById('not-found-div').style.display = "none"; }</script> -->

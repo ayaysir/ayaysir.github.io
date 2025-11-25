@@ -12,11 +12,13 @@ categories:
 
  
 
-#### **소식 1: 튜너 앱 Tuner XR 글로벌 다운로드 수 1000회 돌파**
+## **소식 1: 튜너 앱 Tuner XR 글로벌 다운로드 수 1000회 돌파**
 
-\[caption id="attachment\_4563" align="aligncenter" width="158"\][ ![](/assets/img/wp-content/uploads/2022/06/icon-TunerXR.png)](https://apps.apple.com/kr/app/tuner-xr/id1581803256) 앱 스토어에서 무료 다운로드\[/caption\]
+![](/assets/img/wp-content/uploads/2022/06/icon-TunerXR.png "앱 스토어에서 무료 다운로드")
 
-음악가들을 위한 튜너 앱 _**Tuner XR**_이
+*앱 스토어에서 무료 다운로드*
+
+음악가들을 위한 튜너 앱 **Tuner XR**이
 
 출시 이후 글로벌 다운로드 수 1000회를 돌파하였습니다~  🎉🎉🎉🎉
 
@@ -24,7 +26,7 @@ categories:
 
 이전에 500회 다운로드 기념으로 해당 앱에 대해 소개해드린 적이 있는데요
 
-[\[아이폰/아이패드 앱\] 전세계 다운로드수 500회를 돌파한 음악가들을 위한 튜너 앱 Tuner XR](http://yoonbumtae.com/?p=4567)
+[\[아이폰/아이패드 앱\] 전세계 다운로드수 500회를 돌파한 음악가들을 위한 튜너 앱 Tuner XR](/posts/아이폰-아이패드-앱-전세계-다운로드수-500회를-돌파한/)
 
 위의 링크로 들어가면 해당 앱의 기능에 대해 자세히 알 수 있습니다.
 
@@ -32,9 +34,11 @@ categories:
 
  
 
-#### **소식 2: 음악 스케일 학습 앱 UltimateScale 신규 기능 업데이트**
+## **소식 2: 음악 스케일 학습 앱 UltimateScale 신규 기능 업데이트**
 
-\[caption id="attachment\_4564" align="aligncenter" width="158"\][ ![](/assets/img/wp-content/uploads/2022/06/icon-UltimateScale.png)](https://apps.apple.com/kr/app/ultimatescale/id1631310626) 앱 스토어에서 무료 다운로드\[/caption\]
+![](/assets/img/wp-content/uploads/2022/06/icon-UltimateScale.png "앱 스토어에서 무료 다운로드")
+
+*앱 스토어에서 무료 다운로드*
 
 음악 스케일 학습 앱 _**UltimateScale**_이 1.3.1 버전으로 업데이트 되면서
 
@@ -42,7 +46,7 @@ categories:
 
  
 
-##### **스케일 비교**
+### **스케일 비교**
 
 스케일 메인 화면에서 `[비교]` 버튼을 누르면
 
@@ -60,7 +64,7 @@ categories:
 
  
 
-##### **스케일의 모든 음 동시에 재생**
+### **스케일의 모든 음 동시에 재생**
 
 스케일 상세 보기 화면에서
 
@@ -76,7 +80,7 @@ categories:
 
  
 
-##### **CSV 파일로 내보내기**
+### **CSV 파일로 내보내기**
 
 CSV(comma-separated values) 파일은
 
@@ -96,11 +100,13 @@ CSV 파일로 내보낼 수 있습니다.
 
  ![](/assets/img/wp-content/uploads/2022/12/IMG_3B5897304303-1.jpeg)
 
-\[caption id="attachment\_5111" align="aligncenter" width="750"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-08-pm-6.11.01-copy.jpg) CSV 파일\[/caption\]
+![](/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-08-pm-6.11.01-copy.jpg "CSV 파일")
+
+*CSV 파일*
 
  
 
-##### **앱 테마 모드(라이트 또는 다크) 고정 가능**
+### **앱 테마 모드(라이트 또는 다크) 고정 가능**
 
 기존에도 다크 모드는 이미 지원했었는데요
 

@@ -6,15 +6,15 @@ categories:
   - "Swift"
 ---
 
-### **Swift Package Manager와 CocoaPods를 동시에 대응하는 라이브러리 만들기 (1)**
+**Swift Package Manager와 CocoaPods를 동시에 대응하는 라이브러리 만들기 (1)**
 
-##### **전체 코드**
+## **전체 코드**
 
 - [https://github.com/ayaysir/BGSMM\_DevKit](https://github.com/ayaysir/BGSMM_DevKit)
 
  
 
-#### **과정**
+## **과정**
 
 1. Xcode에서 Swift Package Manager에 대응하는 Package를 만들고 코드를 구현합니다.
 2. 별도의 폴더에서 CocoaPods 프로젝트를 생성한 뒤 필요한 파일만 복사해 Swift Package Manager 폴더로 복사합니다.
@@ -29,9 +29,9 @@ SPM, CocoaPods 양 디펜던시 관리 시스템 간 통합 배포가 가능합�
 
  
 
-#### **상세**
+## **상세**
 
-##### **Step 1: Xcode에서 Swift Package Manager에 대응하는 Package를 만들고 코드를 구현합니다.**
+### **Step 1: Xcode에서 Swift Package Manager에 대응하는 Package를 만들고 코드를 구현합니다.**
 
  ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-25-am-12.33.25.jpg)
 
@@ -43,7 +43,7 @@ SPM, CocoaPods 양 디펜던시 관리 시스템 간 통합 배포가 가능합�
 
 `Package.swift`는 SPM의 핵심 파일로 여기서 각종 옵션을 지정합니다.
 
-```
+```swift
 // swift-tools-version: 5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
@@ -92,7 +92,7 @@ let package = Package(
 
 `Sources` 폴더에는 실제 코드를 입력하는 곳이며 프로젝트 설정 시 입력했던 이름과 동일한 `BGSMM_DevKit.swift` 파일이 기본으로 제공됩니다.
 
-```
+```swift
 #if os(iOS)
 
 public struct BGSMM_DevKit {
@@ -109,11 +109,11 @@ public struct BGSMM_DevKit {
 
  
 
-##### **Step 2: 별도의 폴더에서 CocoaPods 프로젝트를 생성한 뒤 필요한 파일만 복사해 Swift Package Manager 폴더로 복사합니다.**
+### **Step 2: 별도의 폴더에서 CocoaPods 프로젝트를 생성한 뒤 필요한 파일만 복사해 Swift Package Manager 폴더로 복사합니다.**
 
 이 부분을 진행하기 위해선 CocoaPods에 대한 사전 지식이 필요합니다.
 
-- [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](http://yoonbumtae.com/?p=4457)
+- [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](/posts/xcode-프로젝트에-코코아팟cocoapods-설치-및-디펜던시-추가-방/)
 
  
 
@@ -124,7 +124,7 @@ public struct BGSMM_DevKit {
 
 몇가지 사항을 물어보는데 아래와 같이 답한 후 프로젝트를 생성합니다.
 
-```
+```sh
 What platform do you want to use?? [ iOS / macOS ]
  > iOS
 What language do you want to use?? [ Swift / ObjC ]
@@ -156,7 +156,7 @@ Would you like to do view based testing? [ Yes / No ]
 
 `.podspec` 파일을 열고 소스 디렉토리 경로를 SPM의 `Source` 디렉토리로 수정합니다. (아래 코드에서 하이라이트 부분)
 
-```
+```ruby
 #
 # Be sure to run `pod lib lint BGSMM_DevKit.podspec' to ensure this is a
 # valid spec before submitting.
@@ -219,7 +219,7 @@ end
 
 터미널에서 Example 폴더로 이동한 후 Podfile의 내용을 참고하여 pod install을 실행합니다.
 
-```
+```ruby
 use_frameworks!
 
 platform :ios, '10.0'
@@ -242,7 +242,7 @@ end
 
 저는 `AlertController`를 간편하게 띄울 수 있는 `SimpleAlert`이라는 구조체 및 현재 앱에서 열려있는 뷰 컨트롤러 중 가장 위에 있는 것을 찾는 `extension` 추가했습니다. 분량상 코드에 대한 설명은 생략합니다.
 
-```
+```swift
 #if os(iOS)
 
 import UIKit
@@ -344,7 +344,7 @@ public struct SimpleAlert {
 
 ```
 
-```
+```swift
 #if os(iOS)
 import UIKit
 
@@ -389,7 +389,7 @@ extension UIWindow {
 
  
 
-##### **Step 3: GitHub 레퍼지토리에 푸시한 뒤 버전 태그를 생성하고 태그로부터 릴리즈를 생성합니다.**
+### **Step 3: GitHub 레퍼지토리에 푸시한 뒤 버전 태그를 생성하고 태그로부터 릴리즈를 생성합니다.**
 
 개발을 완료하였다면 새로운 원격 레퍼지토리를 만들고 SPM 프로젝트를 깃허브로 푸시합니다. 이 때 Xcode에 내장된 Git 도구를 사용하지 않고 터미널로 명령어를 입력하거나 별도의 GUI 툴을 사용합니다.
 
@@ -417,7 +417,7 @@ CocoaPods를 사용하지 않고 SPM 단계에서 코드도 작성하고 테스�
 
  
 
-##### **Step 4: CocoaPods에 대응하기 위한 추가 작업을 실행합니다.**
+### **Step 4: CocoaPods에 대응하기 위한 추가 작업을 실행합니다.**
 
 다음 CocoaPods에 이메일을 인증하고 사용자 등록을 할 차례입니다. 터미널에 아래 명령어를 입력합니다.
 
@@ -485,9 +485,9 @@ CocoaPods를 사용하지 않고 SPM 단계에서 코드도 작성하고 테스�
 
  
 
-#### **라이브러리가 동작하는지 테스트**
+## **라이브러리가 동작하는지 테스트**
 
-##### **Swift Package Manager**
+### **Swift Package Manager**
 
 다른 프로젝트를 열고 `Add Packages...`에서 깃허브 주소를 입력하여 등록합니다.
 
@@ -497,7 +497,7 @@ CocoaPods를 사용하지 않고 SPM 단계에서 코드도 작성하고 테스�
 
  ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-25-am-2.33.14.jpg)
 
-```
+```swift
 import BGSMM_DevKit
 
 // ... //
@@ -509,11 +509,11 @@ SimpleAlert.present(message: "..........", title: "Test From SPM")
 
  
 
-##### **CocoaPods**
+### **CocoaPods**
 
 `Podfile`에 디펜던시를 추가합니다. 참고로 CocoaPods 서버에 등록되기 까지 시간이 걸릴 수 있으므로 설치가 되지 않는다면 기다렸다 다시 설치하거나, `pod repo update`를 터미널에 입력하여 레퍼지토리 목록을 업데이트합니다.
 
-```
+```ruby
 target 'PodTest' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
@@ -538,6 +538,6 @@ SimpleAlert.present(message: ",,,,,", title: "Test from CocoaPods")
 
  
 
-##### **전체 코드**
+## **전체 코드**
 
 - [https://github.com/ayaysir/BGSMM\_DevKit](https://github.com/ayaysir/BGSMM_DevKit)

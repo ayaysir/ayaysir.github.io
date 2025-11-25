@@ -6,11 +6,11 @@ categories:
   - "Swift"
 ---
 
-##### **원문**
+**원문**
 
 - [How is it possible to create highly customised repeated local notification in iOS using UNCalendarNotificationTrigger + UNUserNotificationCenter?](https://stackoverflow.com/questions/70301857/how-is-it-possible-to-create-highly-customised-repeated-local-notification-in-io)
 
-### **질문**
+## **질문**
 
 **`UNCalendarNotificationTrigger` + `UNUserNotificationCenter`를 사용하여 iOS에서 고도로 사용자 정의된 반복 로컬 알림을 생성하는 것이 어떻게 가능합니까?**
 
@@ -20,9 +20,9 @@ categories:
 
  
 
-#### **연간 반복 (Repeat yearly)**
+### **연간 반복 (Repeat yearly)**
 
-```
+```swift
 var dateComponents = DateComponents()
 dateComponents.calendar = Calendar.current
 
@@ -44,9 +44,9 @@ let trigger = UNCalendarNotificationTrigger(
 
  
 
-#### **매월 반복 (Repeat monthly)**
+### **매월 반복 (Repeat monthly)**
 
-```
+```swift
 var dateComponents = DateComponents()
 dateComponents.calendar = Calendar.current
 
@@ -66,9 +66,9 @@ let trigger = UNCalendarNotificationTrigger(
 
  
 
-#### **매주 반복 (Repeat weekly)**
+### **매주 반복 (Repeat weekly)**
 
-```
+```swift
 var dateComponents = DateComponents()
 dateComponents.calendar = Calendar.current
 
@@ -88,9 +88,9 @@ let trigger = UNCalendarNotificationTrigger(
 
  
 
-#### **매일 반복 (Repeat daily)**
+### **매일 반복 (Repeat daily)**
 
-```
+```swift
 var dateComponents = DateComponents()
 dateComponents.calendar = Calendar.current
 
@@ -108,7 +108,7 @@ let trigger = UNCalendarNotificationTrigger(
 
  
 
-#### **한계점**
+### **한계점**
 
 하지만, 이것보다 더 복잡한 규칙으로 반복 알림을 만들고 싶다면 어떻게 해야 할까요?
 
@@ -119,7 +119,7 @@ let trigger = UNCalendarNotificationTrigger(
 
  
 
-##### **Google Keep의 알림 기능**
+### **Google Keep의 알림 기능**
 
 처음에는 불가능하다고 생각했습니다. 그러나 Google Keep과 같은 잘 알려진 일부 앱의 경우 이러한 기능을 사용자에게 제공할 수 있습니다.
 
@@ -138,7 +138,7 @@ _**iOS에서 고도로 사용자 정의된 반복 로컬 알림을 생성하는 
 
  
 
-##### **사이드 노트**
+### **사이드 노트**
 
 Android에서는 이러한 기능을 구현할 수 있습니다. 그 이유는 Android의 `AlarmManager`를 사용하면 개발자가 미리 알림의 날짜 + 시간이 맞을 때 맞춤형 앱 코드를 실행할 수 있기 때문입니다. 이를 통해 다음 전략을 구현할 수 있습니다.
 
@@ -147,7 +147,7 @@ Android에서는 이러한 기능을 구현할 수 있습니다. 그 이유는 A
 
  
 
-##### **이것이 Google Keep에서 어떻게 구현되는지에 대한 나의 추측**
+### **이것이 Google Keep에서 어떻게 구현되는지에 대한 나의 추측**
 
 1. 사용자가 Google Keep 앱을 실행할 때마다 앱은 모든 메모에 대해 가장 가까운 알림 활성화 시간을 계산합니다.
 2. 그런 다음 앱은 모든 알림 활성화 시간을 정렬하고 가장 최근 64개의 알림 활성화 시간을 선택합니다.
@@ -157,7 +157,7 @@ Android에서는 이러한 기능을 구현할 수 있습니다. 그 이유는 A
 
  
 
-##### **iOS에서 로컬 알림을 생성하는 기본 코드 스니펫**
+### **iOS에서 로컬 알림을 생성하는 기본 코드 스니펫**
 
 참고용으로 다음은 iOS에서 로컬 알림을 생성하는 데 사용하는 기본 코드 스니펫입니다.
 
@@ -308,7 +308,7 @@ class ViewController: UIViewController {
 
  
 
-### **답변(?)**
+## **답변(?)**
 
 > **참고**
 > 

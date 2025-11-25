@@ -6,21 +6,21 @@ categories:
   - "Swift"
 ---
 
-#### **上편 - [Swift(스위프트): Core ML + Create ML 기초 요약 上 (기계학습 모델 만들기)](http://yoonbumtae.com/?p=4889) 바로가기**
+**上편 - [Swift(스위프트): Core ML + Create ML 기초 요약 上 (기계학습 모델 만들기)](http://yoonbumtae.com/?p=4889) 바로가기**
 
-Create ML로 만든 모델 파일을 이용해 이미지 분류 앱을 제작합니다. (Interface Builder 스토리보드 이용)
+Create ML로 만든 모델 파일을 이용해 이미지 분류 앱을 제작합니다. (UIKit + Interface Builder 스토리보드 이용)
 
  
 
-### **이미지 분류 앱 만들기**
+## **이미지 분류 앱 만들기**
 
-##### **1: 모델 파일(\*.mlmodel)을 프로젝트에 추가합니다.**
+### **1: 모델 파일(\*.mlmodel)을 프로젝트에 추가합니다.**
 
  ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.56.12.jpg)
 
  
 
-##### **2: 메인 스토리보드에서 뷰 컨트롤러에 UI 요소를 추가합니다.**
+### **2: 메인 스토리보드에서 뷰 컨트롤러에 UI 요소를 추가합니다.**
 
  ![](/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-10-am-1.57.01.jpg)
 
@@ -28,7 +28,7 @@ Create ML로 만든 모델 파일을 이용해 이미지 분류 앱을 제작합
 
  
 
-##### **3: UI 요소를 `@IBOutlet` 또는 `@IBAction`으로 뷰 컨트롤러 코드와 연결합니다.**
+### **3: UI 요소를 `@IBOutlet` 또는 `@IBAction`으로 뷰 컨트롤러 코드와 연결합니다.**
 
 ```swift
 @IBOutlet weak var imageView: UIImageView!
@@ -53,7 +53,7 @@ Create ML로 만든 모델 파일을 이용해 이미지 분류 앱을 제작합
 
  
 
-##### **4: 카메라 및 사진 라이브러리 버튼을 눌렀을 때 이미지 피커 컨트롤러(`UIImagePickerController`)가 나타나도록 합니다.**
+### **4: 카메라 및 사진 라이브러리 버튼을 눌렀을 때 이미지 피커 컨트롤러(`UIImagePickerController`)가 나타나도록 합니다.**
 
 먼저 뷰 컨트롤러에 다음 import들을 추가합니다.
 
@@ -148,9 +148,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
  
 
-##### **5-1: 이미지를 바탕으로 처리 리퀘스트를 요청하는 `updateClassifications(image:)`를 작성합니다.**
+### **5-1: 이미지를 바탕으로 처리 리퀘스트를 요청하는 `updateClassifications(image:)`를 작성합니다.**
 
-```
+```swift
 /// - Tag: PerformRequests
 func updateClassifications(for image: UIImage) {
     classificationLabel.text = "Classifying..."
@@ -197,7 +197,7 @@ func updateClassifications(for image: UIImage) {
 
  
 
-**CGImagePropertyOrientation에 대한 extension**
+#### **CGImagePropertyOrientation에 대한 extension**
 
 ```swift
 import UIKit
@@ -229,11 +229,11 @@ extension CGImagePropertyOrientation {
 
  
 
-##### **5-2: 이미지 분류 리퀘스트 인스턴스인 classificationRequest 생성**
+### **5-2: 이미지 분류 리퀘스트 인스턴스인 classificationRequest 생성**
 
 뷰 컨트롤러의 멤버 변수로 다음을 추가합니다.
 
-```
+```swift
 /// - Tag: MLModelSetup
 lazy var classificationRequest: VNCoreMLRequest = {
     do {
@@ -282,9 +282,9 @@ lazy var classificationRequest: VNCoreMLRequest = {
 
  
 
-##### **5-3: 요청 처리에 따른 결과를 UI에 반영하는 `processClassifications(...)` 함수를 작성합니다.**
+### **5-3: 요청 처리에 따른 결과를 UI에 반영하는 `processClassifications(...)` 함수를 작성합니다.**
 
-```
+```swift
 /// 분류 결과를 바탕으로 UI를 업데이트합니다.
 /// - Tag: ProcessClassifications
 func processClassifications(for request: VNRequest, error: Error?) {
@@ -334,9 +334,9 @@ func processClassifications(for request: VNRequest, error: Error?) {
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
-**CGImagePropertyOrientation의 extension**
+### **CGImagePropertyOrientation의 extension**
 
 ```swift
 import UIKit
@@ -367,7 +367,7 @@ extension CGImagePropertyOrientation {
 
  
 
-**뷰 컨트롤러**
+### **뷰 컨트롤러**
 
 ```swift
 import UIKit
@@ -440,7 +440,6 @@ class ImageClassificationViewController: UIViewController {
 }
 
 extension ImageClassificationViewController {
-    
     // MARK: - Image Classification
     
     /// - Tag: PerformRequests
@@ -502,5 +501,4 @@ extension ImageClassificationViewController: UIImagePickerControllerDelegate, UI
         updateClassifications(for: image)
     }
 }
-
 ```

@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-### **Core ML**
+## **Core ML**
 
 기계학습(Machine Learning)에 의한 이미지 분석, 텍스트 처리 등의 작업을 네트워크를 통하지 않고 기기(아이폰, 아이패드, 맥 등) 내의 AP를 이용하여 수행할 수 있도록 하는 라이브러리입니다. [Core ML](https://developer.apple.com/kr/machine-learning/core-ml/)은 Apple 하드웨어를 활용하고 메모리 공간 및 전력 소비를 최소화하여 다양한 모델 유형의 기기 내 성능에 최적화되어 있습니다.
 
@@ -20,7 +20,7 @@ categories:
 
  
 
-> **참고: 기계학습**
+### **참고: 기계학습**
 > 
 > 기계 학습(機械學習) 또는 머신 러닝(영어: machine learning)은 경험을 통해 자동으로 개선하는 컴퓨터 알고리즘의 연구이다. 인공지능의 한 분야로 간주된다. 컴퓨터가 학습할 수 있도록 하는 알고리즘과 기술을 개발하는 분야이다. 가령, 기계 학습을 통해서 수신한 이메일이 스팸인지 아닌지를 구분할 수 있도록 훈련할 수 있다.
 > 
@@ -30,13 +30,13 @@ categories:
 
  
 
-### **Create ML**
+## **Create ML**
 
 [Create ML](https://developer.apple.com/kr/machine-learning/create-ml/)은 Core ML에 사용할 기계학습 모델을 비전문가도 Mac 하드웨어 상에서 쉽게 생성할 수 있게 하도록 지원하는 도구입니다. Create ML은 강력한 Core ML 모델을 생성하면서 모델 학습의 복잡성을 해소합니다.
 
  
 
-#### **기능**
+### **기능**
 
 - 다중 모델 학습
 - 학습 제어
@@ -47,7 +47,7 @@ categories:
 
  
 
-#### **모델 유형**
+### **모델 유형**
 
 - 이미지
     - 이미지 분류
@@ -69,14 +69,14 @@ categories:
 
  
 
-### **Core ML과 Create ML을 바탕으로 이미지 분류 앱 제작**
+## **Core ML과 Create ML을 바탕으로 이미지 분류 앱 제작**
 
 이 글에서는 이미지 분류(Image Classification)가 가능한 기계학습 모델을 만든 뒤 그 모델을 앱에 적용해 개, 고양이, 소, 말을 구분하는 앱을 제작합니다.
 
 <!-- \[gallery columns="4" size="full" ids="4902,4903,4904,4901"\] -->
 ![](/assets/img/DevLog/swift-coreml-gallery-1.jpg)
 
-#### **순서**
+### **순서**
 
 1. 각 동물의 사진을 수집 (최소 100장 이상)
 2. 수집한 사진을 Create ML을 이용해 기계학습을 시킨 뒤 모델 파일(\*.mlmodel)을 생성
@@ -85,11 +85,11 @@ categories:
 
  
 
-#### **Create ML 사용법**
+### **Create ML 사용법**
 
 먼저 Create ML을 사용해 기계학습 모델을 만듭니다.
 
-##### **Create ML 프로젝트 생성**
+#### **Create ML 프로젝트 생성**
 
 **1: Xcode를 열고 상단 `Xcode > Open Developer Tool > Create ML`을 클릭합니다.**
 
@@ -231,4 +231,4 @@ Precision과 Recall을 고려하여 선택된 모델을 파일로 추출합니�
 
  
 
-#### **이제 이 모델 파일을 바탕으로 앱을 제작합니다. (下편에 계속)**
+**이제 이 모델 파일을 바탕으로 앱을 제작합니다. (下편에 계속)**

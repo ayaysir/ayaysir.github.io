@@ -6,13 +6,13 @@ categories:
   - "Swift"
 ---
 
-### **소개**
+## **소개**
 
 Swift에서 진동(Vibration 또는 Haptic)을 구현하는 방법입니다. 진동은 아이폰에서만 지원하고 아이패드나 아이팟 터치에서는 사용할 수 없습니다. 테스트하려면 **실제 아이폰 기기가 필요**합니다.
 
  
 
-#### **기초**
+## **기초**
 
 아이폰에서 진동을 발생시키는 방법은 크게 3가지가 있습니다. 각 진동은 말로 설명하기는 어려우므로 실제로 체험해보세요(?)
 
@@ -36,7 +36,7 @@ Swift에서 진동(Vibration 또는 Haptic)을 구현하는 방법입니다. 진
 
  
 
-#### **편리하게 사용하기**
+## **편리하게 사용하기**
 
 아래 코드를 `Vibration.swift`라는 이름의 파일로 프로젝트에 추가합니다. ([출처](https://stackoverflow.com/questions/26455880/how-to-make-iphone-vibrate-using-swift))
 
@@ -45,7 +45,6 @@ import UIKit
 import AVFoundation
 
 enum Vibration: String, CaseIterable {
-    
     static var allCases: [Vibration] {
         let defaultList = [
             error,
@@ -119,13 +118,13 @@ enum Vibration: String, CaseIterable {
 
 사용하고자 하는 곳(예를 들어 버튼을 눌렀을 때 등)에서 다음과 같이 사용합니다.
 
-```
+```swift
 Vibration.warning.vibrate()
 ```
 
  
 
-##### **예제: 피커 뷰(Picker View)를 이용해 다양한 종류의 진동 발생시키기**
+## **예제: 피커 뷰(Picker View)를 이용해 다양한 종류의 진동 발생시키기**
 
 iOS 프로젝트를 생성한 뒤, 메인 화면에 피커 뷰(`UIPickerView`) 및 버튼을(`UIButton`)을 추가하고 다음과 같이 `IBOutlet` 및 `IBAction`을 뷰 컨트롤러에 연결합니다.
 
@@ -183,4 +182,4 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
  
 
-#### **[다음 글: 아이폰 진동(Vibration, Haptic) 구현하기 下 (커스터마이징)](http://yoonbumtae.com/?p=5155)**
+### **[다음 글: 아이폰 진동(Vibration, Haptic) 구현하기 下 (커스터마이징)](/posts/swift%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-%EC%95%84%EC%9D%B4%ED%8F%B0-%EC%A7%84%EB%8F%99vibration-haptic-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-%E4%B8%8B-%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88/)**

@@ -39,7 +39,7 @@ Firebase에서는 두 가지 형태의 데이터베이스를 제공합니다 이
 
 ## **Xcode 프로젝트에 Firebase 라이브러리 설치하기 (CocoaPods)**
 
-- [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](http://yoonbumtae.com/?p=4457)
+- [Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법](/posts/xcode-프로젝트에-코코아팟cocoapods-설치-및-디펜던시-추가-방/)
 
 ```ruby
 # add the Firebase pod for Google Analytics
