@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -548,6 +555,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -566,16 +638,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -677,6 +739,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -693,7 +765,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift + Firebase: 익명 계정을 영구 계정으로 전환 (이메일로 회원가입)</h1>
     
@@ -767,7 +839,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="653 words"
+  title="650 words"
 >
   <em>3 min</em> read</span>
 
@@ -777,9 +849,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift + Firebase: 익명 계정을 영구 계정으로 전환 (이메일로 회원가입)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift + Firebase: 익명 계정을 영구 계정으로 전환 (이메일로 회원가입)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://firebase.google.com/docs/auth/ios/anonymous-auth?hl=ko#swift_7">Apple 플랫폼에서 익명으로 Firebase에 인증</a></li>
@@ -789,9 +883,9 @@
 
 <p> </p>
 
-<h4 id="상황"><span class="me-2"><strong>상황</strong></span><a href="#상황" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="상황"><span class="me-2"><strong>상황</strong></span><a href="#상황" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="기존"><span class="me-2"><strong>기존</strong></span><a href="#기존" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="기존"><span class="me-2"><strong>기존</strong></span><a href="#기존" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>익명 로그인이 존재하지 않고, ‘좋아요’ 버튼을 누르려면 무조건 회원 가입이 되어 있어야 합니다.</p>
 
@@ -799,30 +893,30 @@
 
 <p> </p>
 
-<h5 id="변경"><span class="me-2"><strong>변경</strong></span><a href="#변경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="변경"><span class="me-2"><strong>변경</strong></span><a href="#변경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>익명 로그인을 추가하였고, 익명 유저 상태에서도 <code class="language-plaintext highlighter-rouge">좋아요</code> 버튼을 누를 수 있게 되었습니다. 이 상태에서 익명 로그인 상태에서 눌렀던 좋아요 정보가 새로 회원 가입을 해서 영구 계정이 되더라도 좋아요 정보가 유지되도록 하고 싶습니다.</p>
 
-<p>[gallery size=”full” ids=”4814,4817,4816”]</p>
+<!-- \[gallery size="full" ids="4814,4817,4816"\] -->
+<p><a href="/assets/img/DevLog/musicbox-sign-up.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/musicbox-sign-up.jpg" alt="" loading="lazy"></a>
+ </p>
 
 <p> </p>
 
-<p> </p>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="기존-코드-이메일로-회원가입"><span class="me-2"><strong>기존 코드 (이메일로 회원가입)</strong></span><a href="#기존-코드-이메일로-회원가입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="기존-코드-이메일로-회원가입"><span class="me-2"><strong>기존 코드 (이메일로 회원가입)</strong></span><a href="#기존-코드-이메일로-회원가입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] authResult, error in
+</pre></td><td class="rouge-code"><pre><span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="nf">createUser</span><span class="p">(</span><span class="nv">withEmail</span><span class="p">:</span> <span class="n">userEmail</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="n">userPassword</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">self</span><span class="p">]</span> <span class="n">authResult</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
  
-    // ... //
-}
+    <span class="c1">// ... //</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이메일(<code class="language-plaintext highlighter-rouge">userEmail</code>)과 비밀번호(<code class="language-plaintext highlighter-rouge">password</code>)로 새로 가입한 뒤, 해당 유저를 인증 상태로 만듭니다. 만약 익명 로그인 상태에서 이 작업을 실행하면, 기존 익명 유저는 로그아웃되고 새로 가입한 회원이 새로운 UID로 인증됩니다.</p>
@@ -834,24 +928,24 @@
 
 <p> </p>
 
-<h5 id="변경-코드"><span class="me-2"><strong>변경 코드</strong></span><a href="#변경-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="변경-코드"><span class="me-2"><strong>변경 코드</strong></span><a href="#변경-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>위 기존 코드를 지우고 아래 코드로 대체합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>if let user = Auth.auth().currentUser, user.isAnonymous {
-    let credential = EmailAuthProvider.credential(withEmail: userEmail, password: userPassword)
-    user.link(with: credential) { [self] authResult, error in
-        // ... //
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="k">let</span> <span class="nv">user</span> <span class="o">=</span> <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="n">currentUser</span><span class="p">,</span> <span class="n">user</span><span class="o">.</span><span class="n">isAnonymous</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">credential</span> <span class="o">=</span> <span class="kt">EmailAuthProvider</span><span class="o">.</span><span class="nf">credential</span><span class="p">(</span><span class="nv">withEmail</span><span class="p">:</span> <span class="n">userEmail</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="n">userPassword</span><span class="p">)</span>
+    <span class="n">user</span><span class="o">.</span><span class="nf">link</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">credential</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">self</span><span class="p">]</span> <span class="n">authResult</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="c1">// ... //</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1838,6 +1932,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

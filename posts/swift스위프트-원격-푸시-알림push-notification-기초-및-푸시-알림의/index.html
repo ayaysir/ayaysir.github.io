@@ -1436,21 +1436,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -1523,6 +1508,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -1618,7 +1608,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3141 words"
+  title="3138 words"
 >
   <em>17 min</em> read</span>
 
@@ -1750,7 +1740,7 @@
 <p>이를 단계별로 살펴보면 다음과 같습니다.</p>
 
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">[보기]</code> 버튼 및 <code class="language-plaintext highlighter-rouge">[보관]</code> 버튼을 사용하여 트리거될 때 앱을 포어그라운드(foreground)에서 여는 새 알림 작업을 만듭니다. 작업에는 iOS가 동일한 알림에서 다른 작업을 구별하는 데 사용하는 고유한 식별자(identifier)가 있습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">[보기]</code> 버튼 및 <code class="language-plaintext highlighter-rouge">[보관]</code> 버튼을 사용하여 트리거될 때 앱을 포그라운드(foreground)에서 여는 새 알림 작업을 만듭니다. 작업에는 iOS가 동일한 알림에서 다른 작업을 구별하는 데 사용하는 고유한 식별자(identifier)가 있습니다.</li>
   <li>해당 작업들을 포함할 뉴스 카테고리를 정의합니다. 여기에는 푸시 알림이 이 카테고리에 속하도록 지정하기 위해 페이로드에 포함해야 하는 고유 식별자도 있습니다.</li>
   <li>setNotificationCategories를 호출하여 실행 가능한 새 알림을 등록합니다.</li>
 </ol>
@@ -1795,7 +1785,7 @@
 
 <p> </p>
 
-<h4 id="알림-작업-처리"><span class="me-2"><strong>알림 작업 처리</strong></span><a href="#알림-작업-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="알림-작업-처리"><span class="me-2"><strong>알림 작업 처리</strong></span><a href="#알림-작업-처리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>알림 작업이 트리거될 때마다 <code class="language-plaintext highlighter-rouge">UNUserNotificationCenter</code>는 <code class="language-plaintext highlighter-rouge">delegate</code>에게 알려야 합니다.</p>
 
@@ -1918,8 +1908,8 @@
 
 <p>빌드 및 실행 후, 보낼 소식과 첨부 <code class="language-plaintext highlighter-rouge">url</code>을 갱신한 새로운 페이로드를 전송합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-json highlighter-rouge"><div class="code-header">
+        <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1931,18 +1921,18 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>{
-  "aps": {
-    "alert" : {
-         "title" : "긴급 속보!!",
-         "body" : "The content of the alert message."
-      },
-    "sound": "default",
-    "category": "NEWS_CATEGORY"
-  },
-  "link_url": "https://www.apple.com/kr"
-}
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"aps"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"alert"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+         </span><span class="nl">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"긴급 속보!!"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"body"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"The content of the alert message."</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"sound"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEWS_CATEGORY"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.apple.com/kr"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.52.43.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.52.43.jpg" alt="`[보기]` 버튼을 클릭하면" loading="lazy"></a><br />
 <em><code class="language-plaintext highlighter-rouge">[보기]</code> 버튼을 클릭하면</em></p>
@@ -1950,7 +1940,7 @@
 <p><a href="/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.53.29.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.53.29.jpg" alt="페이로드에 첨부한 `URL`로 접속됨 (`SFSafariViewController` 사용)" loading="lazy"></a><br />
 <em>페이로드에 첨부한 <code class="language-plaintext highlighter-rouge">URL</code>로 접속됨 (<code class="language-plaintext highlighter-rouge">SFSafariViewController</code> 사용)</em></p>
 
-<p> </p>
+<p><br /></p>
 
 <h3 id="실제-기기로-보내기"><span class="me-2"><strong>실제 기기로 보내기</strong></span><a href="#실제-기기로-보내기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -2035,9 +2025,9 @@
 
 <p><a href="/assets/img/wp-content/uploads/2022/09/IMG_9135.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/09/IMG_9135.jpg" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<p><br /> </p>
 
-<h4 id="일반적인-문제-해결"><span class="me-2"><strong>일반적인 문제 해결</strong></span><a href="#일반적인-문제-해결" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="일반적인-문제-해결"><span class="me-2"><strong>일반적인 문제 해결</strong></span><a href="#일반적인-문제-해결" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다음은 발생할 수 있는 몇 가지 문제입니다.</p>
 
@@ -2048,7 +2038,7 @@
 
 <p> </p>
 
-<h3 id="조용한-푸시-알림-silent-push-notifications-사용"><span class="me-2"><strong>조용한 푸시 알림 (Silent Push Notifications) 사용</strong></span><a href="#조용한-푸시-알림-silent-push-notifications-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="조용한-푸시-알림-silent-push-notifications-사용"><span class="me-2"><strong>조용한 푸시 알림 (Silent Push Notifications) 사용</strong></span><a href="#조용한-푸시-알림-silent-push-notifications-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>자동 푸시 알림은 백그라운드에서 일부 작업을 수행하기 위해 앱을 자동으로 깨울 수 있습니다.</p>
 
@@ -2120,29 +2110,29 @@
 
 <p>빌드 및 실행하고 PushNotifications 유틸리티를 통해 다음 페이로드를 푸시합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-json highlighter-rouge"><div class="code-header">
+        <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>{
-  "aps": {
-    "content-available": 1
-  },
-  "work": "refresh news list"
-}
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"aps"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"content-available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"work"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh news list"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></div></div>
 
-<p>포어그라운드/백그라운드/종료 상태 각각에서 테스트 해봅니다. 알림 메시지가 표시되지 않으면서 각종 작업을 수행하고 있습니다.</p>
+<p>포그라운드/백그라운드/종료 상태 각각에서 테스트 해봅니다. 알림 메시지가 표시되지 않으면서 각종 작업을 수행하고 있습니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2022/09/IMG_8D368DFDB571-1.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/09/IMG_8D368DFDB571-1.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h3 id="다음-뭘-해야-합니까"><span class="me-2"><strong>다음 뭘 해야 합니까?</strong></span><a href="#다음-뭘-해야-합니까" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="다음-뭘-해야-합니까"><span class="me-2"><strong>다음 뭘 해야 합니까?</strong></span><a href="#다음-뭘-해야-합니까" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>축하합니다! 이 튜토리얼을 완료하고 간단한 푸시 알림 앱을 만들었습니다.</p>
 

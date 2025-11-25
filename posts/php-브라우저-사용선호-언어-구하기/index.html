@@ -498,11 +498,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -521,6 +516,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -529,26 +535,10 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
   
@@ -644,7 +634,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="725 words"
+  title="726 words"
 >
   <em>4 min</em> read</span>
 
@@ -678,17 +668,17 @@
   
 
   <div class="content">
-    <h3 id="php에서-브라우저-사용선호-언어-구하는-방법"><span class="me-2"><strong>PHP에서 브라우저 사용(선호) 언어 구하는 방법</strong></span><a href="#php에서-브라우저-사용선호-언어-구하는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <p><strong>PHP에서 브라우저 사용(선호) 언어 구하는 방법</strong></p>
+
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>먼저 다음 코드를 입력해서 브라우저 선호 언어 스트링을 받아옵니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+</pre></td><td class="rouge-code"><pre><span class="k">echo</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT_LANGUAGE'</span><span class="p">];</span>
 </pre></td></tr></tbody></table></code></div></div>
-
-<p> </p>
 
 <p>위 코드를 실행하면 아래와 같은 형태의 스트링이 출력됩니다.</p>
 
@@ -734,22 +724,22 @@ ja;q=0.6
 
 <p>여기서 필요한 정보를 <code class="language-plaintext highlighter-rouge">subtr</code>으로 자릅니다. <code class="language-plaintext highlighter-rouge">0</code>은 시작 위치이며 0부터 시작합니다(zero-based). 다음 파라미터는 몇 글자를 자를건지 지정하며 2글자를 자릅니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+</pre></td><td class="rouge-code"><pre><span class="nv">$lang</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT_LANGUAGE'</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>한국어를 사용하는 브라우저에서 실행하면 <code class="language-plaintext highlighter-rouge">$lang</code> 변수에는 <code class="language-plaintext highlighter-rouge">ko</code> 라는 값이 담기게 됩니다.</p>
 
 <p> </p>
 
-<h4 id="예제-지역region-코드에-따라-해당-지역-웹페이지로-리다이렉트하는-if문-설정하기"><span class="me-2"><strong>예제: 지역(region) 코드에 따라 해당 지역 웹페이지로 리다이렉트하는 IF문 설정하기</strong></span><a href="#예제-지역region-코드에-따라-해당-지역-웹페이지로-리다이렉트하는-if문-설정하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제-지역region-코드에-따라-해당-지역-웹페이지로-리다이렉트하는-if문-설정하기"><span class="me-2"><strong>예제: 지역(region) 코드에 따라 해당 지역 웹페이지로 리다이렉트하는 IF문 설정하기</strong></span><a href="#예제-지역region-코드에-따라-해당-지역-웹페이지로-리다이렉트하는-if문-설정하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>참고에서 언급했듯이, 언어(<code class="language-plaintext highlighter-rouge">language</code>)와 지역(<code class="language-plaintext highlighter-rouge">region</code>)은 다르기 때문에 구분해서 사용합니다. 예제는 지역 구분에 따라 리다이렉트를 하는 예제인데, 해당 사이트 주소에 언어 대신 지역을 사용하므로 지역을 통해 구분하도록 하겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -760,16 +750,16 @@ ja;q=0.6
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>&lt;?php
-    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 3, 2);
-    $acceptLang = ['KR', 'JP'];
-    if(in_array($lang, $acceptLang)) {
-        $lang = strtolower($lang);
-        header("Location: "."https://apps.apple.com/{$lang}/developer/id1578285460");
-    } else {
-        header("Location: "."https://apps.apple.com/developer/id1578285460");
-    }
-?&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+    <span class="nv">$lang</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_ACCEPT_LANGUAGE'</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="nv">$acceptLang</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'KR'</span><span class="p">,</span> <span class="s1">'JP'</span><span class="p">];</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$lang</span><span class="p">,</span> <span class="nv">$acceptLang</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$lang</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nv">$lang</span><span class="p">);</span>
+        <span class="nb">header</span><span class="p">(</span><span class="s2">"Location: "</span><span class="mf">.</span><span class="s2">"https://apps.apple.com/</span><span class="si">{</span><span class="nv">$lang</span><span class="si">}</span><span class="s2">/developer/id1578285460"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nb">header</span><span class="p">(</span><span class="s2">"Location: "</span><span class="mf">.</span><span class="s2">"https://apps.apple.com/developer/id1578285460"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="cp">?&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

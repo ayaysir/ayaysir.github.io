@@ -916,21 +916,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -979,6 +964,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1060,8 +1056,35 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
   
 
 
@@ -1152,7 +1175,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2891 words"
+  title="2893 words"
 >
   <em>16 min</em> read</span>
 
@@ -1200,7 +1223,7 @@
 
 <p>두 가지 경우가 있는데, <strong>RootVC</strong>에서 <strong>ContainerVC</strong>로 보내는 경우는 비교적 간단하고, 그 반대의 경우는 대리자 패턴(Delegate pattern)을 사용해야 합니다.</p>
 
-<p> </p>
+<h2 id="케이스"><span class="me-2"><strong>케이스</strong></span><a href="#케이스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="case-1-rootvc부모에서-containervc자식으로-데이터-전송"><span class="me-2"><strong>Case 1: RootVC(부모)에서 ContainerVC(자식)으로 데이터 전송</strong></span><a href="#case-1-rootvc부모에서-containervc자식으로-데이터-전송" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1218,38 +1241,38 @@
 
 <p> </p>
 
-<h5 id="rootviewcontrollerswift-파일"><span class="me-2"><strong>RootViewController.swift 파일</strong></span><a href="#rootviewcontrollerswift-파일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="rootviewcontrollerswift-파일"><span class="me-2"><strong>RootViewController.swift 파일</strong></span><a href="#rootviewcontrollerswift-파일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p> </p>
 
 <p><strong>RootVC</strong>의 텍스트 필드를 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 연결합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>// 1-0: @IBOutlet 연결(루트 뷰 컨트롤러)
-@IBOutlet weak var txfSendValueToContainer: UITextField!
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1-0: @IBOutlet 연결(루트 뷰 컨트롤러)</span>
+<span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">txfSendValueToContainer</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>다음 <strong>ContainerVC</strong>를 참조할 수 있는 멤버 변수를 생성해야 합니다. 이 변수가 있어야 <code class="language-plaintext highlighter-rouge">RootVC</code> 내의 아무 곳에서 나중에 보낼 타깃(<code class="language-plaintext highlighter-rouge">ContainerVC</code>)을 가리킬 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>// 1-1: 컨테이너 뷰 컨트롤러를 참조하는 변수 생성
-private var containerVC: ContainerViewController?
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1-1: 컨테이너 뷰 컨트롤러를 참조하는 변수 생성</span>
+<span class="kd">private</span> <span class="k">var</span> <span class="nv">containerVC</span><span class="p">:</span> <span class="kt">ContainerViewController</span><span class="p">?</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p><code class="language-plaintext highlighter-rouge">override func prepare</code>에서 <code class="language-plaintext highlighter-rouge">segue</code>에 관련된 사항을 설정합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1260,16 +1283,16 @@ private var containerVC: ContainerViewController?
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>// 1-2: segue.identifer별 분기 설정
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    switch segue.identifier {
-    case "ContainerSegue":
-        // 1-3: segue.destination(컨테이너 뷰 컨트롤러)을 containerVC에 지정
-        containerVC = segue.destination as? ContainerViewController
-    default:
-        break
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1-2: segue.identifer별 분기 설정</span>
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">prepare</span><span class="p">(</span><span class="k">for</span> <span class="nv">segue</span><span class="p">:</span> <span class="kt">UIStoryboardSegue</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">segue</span><span class="o">.</span><span class="n">identifier</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s">"ContainerSegue"</span><span class="p">:</span>
+        <span class="c1">// 1-3: segue.destination(컨테이너 뷰 컨트롤러)을 containerVC에 지정</span>
+        <span class="n">containerVC</span> <span class="o">=</span> <span class="n">segue</span><span class="o">.</span><span class="n">destination</span> <span class="k">as?</span> <span class="kt">ContainerViewController</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1280,34 +1303,34 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 <p> </p>
 
-<h5 id="containerviewcontrollerswift-파일"><span class="me-2"><strong>ContainerViewController.swift 파일</strong></span><a href="#containerviewcontrollerswift-파일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="containerviewcontrollerswift-파일"><span class="me-2"><strong>ContainerViewController.swift 파일</strong></span><a href="#containerviewcontrollerswift-파일" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>부모 VC로부터 받은 값을 표시할 레이블을 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 연결합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>// 1-4: IBOutlet 연결(컨테이너 뷰 컨트롤러)
-@IBOutlet weak var lblReceivedValueFromRoot: UILabel!
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1-4: IBOutlet 연결(컨테이너 뷰 컨트롤러)</span>
+<span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">lblReceivedValueFromRoot</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>값을 받고 표시하는 메서드를 만듭니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>// 1-5: Root로부터 값을 전달받는 함수 생성
-func setLabel(_ value: String) {
-    // 1-6: Root로부터 받은 값을 레이블에 설정
-    lblReceivedValueFromRoot.text = value
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1-5: Root로부터 값을 전달받는 함수 생성</span>
+<span class="kd">func</span> <span class="nf">setLabel</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 1-6: Root로부터 받은 값을 레이블에 설정</span>
+    <span class="n">lblReceivedValueFromRoot</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">value</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>앞서 <code class="language-plaintext highlighter-rouge">RootViewController.swift</code>의 <code class="language-plaintext highlighter-rouge">containerVC</code> 변수를 통해 위 메서드에 접근할 수 있습니다. 부모 VC로부터 값을 받으면 레이블의 text를 받은 값으로 갱신합니다.</p>
@@ -1318,20 +1341,20 @@ func setLabel(_ value: String) {
 
 <p><a href="/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-11.22.12.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-11.22.12.jpg" alt="" loading="lazy"></a></p>
 
-<h5 id="rootviewcontrollerswift-파일-1"><span class="me-2"><strong>RootViewController.swift 파일</strong></span><a href="#rootviewcontrollerswift-파일-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="rootviewcontrollerswift-파일-1"><span class="me-2"><strong>RootViewController.swift 파일</strong></span><a href="#rootviewcontrollerswift-파일-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>전송 버튼을 <code class="language-plaintext highlighter-rouge">@IBAction</code>으로 연결해 이벤트를 설정합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>// 1-7: 전송 버튼 이벤트 설정
-@IBAction func btnActSubmitToContainer(_ sender: Any) {
-    containerVC?.setLabel(txfSendValueToContainer.text ?? "")
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1-7: 전송 버튼 이벤트 설정</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActSubmitToContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">containerVC</span><span class="p">?</span><span class="o">.</span><span class="nf">setLabel</span><span class="p">(</span><span class="n">txfSendValueToContainer</span><span class="o">.</span><span class="n">text</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">prepare</code> 단계에서 도착지와 연결된 <code class="language-plaintext highlighter-rouge">containerVC</code> 변수를 사용해 자식 VC의 값을 변경하는 메서드를 실행하면, 자식 VC의 메서드가 실행되어 값이 변경됩니다.</p>
@@ -1341,7 +1364,7 @@ func setLabel(_ value: String) {
 <p>빌드 및 실행하고 결과를 확인합니다.</p>
 
 <!-- http://www.giphy.com/gifs/hIVBwBGUyRP6v0DYLS -->
-<p><a href="https://" class="popup img-link shimmer"><img src="https://" alt="" loading="lazy"></a></p>
+<p><a href="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjQ0ZndjMzFwYm5kcW90cmRjOTFiZXl1N2sxejJxZWNncWtyYWZoZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hIVBwBGUyRP6v0DYLS/giphy.gif" class="popup img-link shimmer"><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjQ0ZndjMzFwYm5kcW90cmRjOTFiZXl1N2sxejJxZWNncWtyYWZoZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hIVBwBGUyRP6v0DYLS/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -1353,11 +1376,8 @@ func setLabel(_ value: String) {
 
 <p> </p>
 
+<h4 id="참고-대리자-패턴"><span class="me-2"><strong>참고: 대리자 패턴</strong></span><a href="#참고-대리자-패턴" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <blockquote>
-  <p><strong>참고: 대리자 패턴</strong></p>
-
-  <p> </p>
-
   <p><strong>delegation, delegation pattern</strong> <strong>위임, 위임 패턴, 대리자, 대리자 패턴</strong></p>
 
   <ul>
@@ -1374,35 +1394,35 @@ func setLabel(_ value: String) {
 
 <p> </p>
 
-<h5 id="rootviewcontrollerswift-파일-2"><span class="me-2"><strong>RootViewController.swift 파일</strong></span><a href="#rootviewcontrollerswift-파일-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="rootviewcontrollerswift-파일-2"><span class="me-2"><strong>RootViewController.swift 파일</strong></span><a href="#rootviewcontrollerswift-파일-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>자식 VC로부터 받은 값을 표시하는 레이블을 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 연결합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>// 2-0: @IBOutlet 연결(루트 뷰 컨트롤러)
-@IBOutlet weak var lblReceivedValueFromContainer: UILabel!
+</pre></td><td class="rouge-code"><pre><span class="c1">// 2-0: @IBOutlet 연결(루트 뷰 컨트롤러)</span>
+<span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">lblReceivedValueFromContainer</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="containerviewcontrollerswift-파일-1"><span class="me-2"><strong>ContainerViewController.swift 파일</strong></span><a href="#containerviewcontrollerswift-파일-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="containerviewcontrollerswift-파일-1"><span class="me-2"><strong>ContainerViewController.swift 파일</strong></span><a href="#containerviewcontrollerswift-파일-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>대리자 프로토콜을 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>// 2-1: 대리자 프로토콜 작성
-protocol ContainerVCDelegate: AnyObject {
-    func didReceivedValueFromContainer(_ controller: ContainerViewController, value: String)
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 2-1: 대리자 프로토콜 작성</span>
+<span class="kd">protocol</span> <span class="kt">ContainerVCDelegate</span><span class="p">:</span> <span class="kt">AnyObject</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">didReceivedValueFromContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">ContainerViewController</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1418,11 +1438,8 @@ protocol ContainerVCDelegate: AnyObject {
 
 <p> </p>
 
+<h4 id="참고-anyobject-프로토콜"><span class="me-2"><strong>참고: AnyObject 프로토콜</strong></span><a href="#참고-anyobject-프로토콜" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <blockquote>
-  <p><strong>참고: AnyObject 프로토콜</strong></p>
-
-  <p> </p>
-
   <p><em><strong>AnyObject프로토콜</strong>을 프로토콜의 상속목록에 추가하여 프로토콜 채택을 클래스 타입(구조체 또는 열거형이 아닌)을 제한할 수 있습니다.</em></p>
 
   <p><em>와 한번에 이해가 가네요. 더 간단하게 말하면 <strong>AnyObject를 상속한 프로토콜은 클래스만 채택할 수 있다!!!</strong></em></p>
@@ -1436,14 +1453,14 @@ protocol ContainerVCDelegate: AnyObject {
 
 <p>멤버 변수로 추가합니다. <code class="language-plaintext highlighter-rouge">ContainerVCDelegate</code>는 클래스 프로토콜이므로 엄밀히 말하면 구조체는 사용할 수 없습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>// 2-2: 딜리게이트 변수 설정
-// ContainerVCDelegate를 준수한다면 어느 클래스나 구조체도 여기에 할당될 수 있음
-weak var delegate: ContainerVCDelegate?
+</pre></td><td class="rouge-code"><pre><span class="c1">// 2-2: 딜리게이트 변수 설정</span>
+<span class="c1">// ContainerVCDelegate를 준수한다면 어느 클래스나 구조체도 여기에 할당될 수 있음</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">ContainerVCDelegate</span><span class="p">?</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">delegate</code>는 나중에 <strong>RootVC</strong>에서 연결된 변수의 대리자(delegate)로 자기 자신(<code class="language-plaintext highlighter-rouge">self</code>)를 설정하고, 그 인스턴스에서 <code class="language-plaintext highlighter-rouge">delegate</code>는 <strong>RootVC</strong>를 참조하는 변수가 됩니다.</p>
@@ -1458,30 +1475,30 @@ weak var delegate: ContainerVCDelegate?
 
 <p>텍스트필드를 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 연결합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>// 2-3: 텍스트필드 @IBOutlet 연결
-@IBOutlet weak var txfSendValueToRoot: UITextField!
+</pre></td><td class="rouge-code"><pre><span class="c1">// 2-3: 텍스트필드 @IBOutlet 연결</span>
+<span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">txfSendValueToRoot</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>전송 버튼을 <code class="language-plaintext highlighter-rouge">@IBAction</code>으로 연결해 해야 할 작업을 작성합니다. <strong>ContainerVC</strong>에서 값을 <strong>RootVC</strong>로 보내고, 보낸 후 해야 할 작업을 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>// 2-4: 컨테이너 뷰로 값 전송 기능 구현
-@IBAction func btnActSubmitToRoot(_ sender: Any) {
-    // 2-5: 딜리게이트를 통해
-    delegate?.didReceivedValueFromContainer(self, value: txfSendValueToRoot.text ?? "")
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 2-4: 컨테이너 뷰로 값 전송 기능 구현</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActSubmitToRoot</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 2-5: 딜리게이트를 통해</span>
+    <span class="n">delegate</span><span class="p">?</span><span class="o">.</span><span class="nf">didReceivedValueFromContainer</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">txfSendValueToRoot</span><span class="o">.</span><span class="n">text</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1500,12 +1517,12 @@ weak var delegate: ContainerVCDelegate?
 
 <p> </p>
 
-<h5 id="rootviewcontrollerswift-파일-3"><span class="me-2"><strong>RootViewController.swift 파일</strong></span><a href="#rootviewcontrollerswift-파일-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="rootviewcontrollerswift-파일-3"><span class="me-2"><strong>RootViewController.swift 파일</strong></span><a href="#rootviewcontrollerswift-파일-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>먼저 <code class="language-plaintext highlighter-rouge">containerVC</code>의 대리자로 자기 자신(<code class="language-plaintext highlighter-rouge">self</code>)을 지정합니다. <code class="language-plaintext highlighter-rouge">prepare</code> 함수 안에 하이라이트된 부분 위치에 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1520,20 +1537,20 @@ weak var delegate: ContainerVCDelegate?
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>// 1-2: segue.identifer별 분기 설정
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    switch segue.identifier {
-    case "ContainerSegue":
-        // 1-3: segue.destination(컨테이너 뷰 컨트롤러)을 containerVC에 지정
-        containerVC = segue.destination as? ContainerViewController
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1-2: segue.identifer별 분기 설정</span>
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">prepare</span><span class="p">(</span><span class="k">for</span> <span class="nv">segue</span><span class="p">:</span> <span class="kt">UIStoryboardSegue</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">segue</span><span class="o">.</span><span class="n">identifier</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s">"ContainerSegue"</span><span class="p">:</span>
+        <span class="c1">// 1-3: segue.destination(컨테이너 뷰 컨트롤러)을 containerVC에 지정</span>
+        <span class="n">containerVC</span> <span class="o">=</span> <span class="n">segue</span><span class="o">.</span><span class="n">destination</span> <span class="k">as?</span> <span class="kt">ContainerViewController</span>
         
-        // 2-6: containerVC의 delegate 변수를 RootVC 자신(self)으로 지정
-        containerVC?.delegate = self
+        <span class="c1">// 2-6: containerVC의 delegate 변수를 RootVC 자신(self)으로 지정</span>
+        <span class="n">containerVC</span><span class="p">?</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
         
-    default:
-        break
-    }
-}
+    <span class="k">default</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1552,20 +1569,20 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 <p>아래 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>// 2-7: ContainerVCDelegate를 준수(conform)하는 확장 구현
-extension RootViewController: ContainerVCDelegate {
-    func didReceivedValueFromContainer(_ controller: ContainerViewController, value: String) {
-        lblReceivedValueFromContainer.text = value
-    }
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 2-7: ContainerVCDelegate를 준수(conform)하는 확장 구현</span>
+<span class="kd">extension</span> <span class="kt">RootViewController</span><span class="p">:</span> <span class="kt">ContainerVCDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">didReceivedValueFromContainer</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">ContainerViewController</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">lblReceivedValueFromContainer</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1594,9 +1611,14 @@ extension RootViewController: ContainerVCDelegate {
 
 <p> </p>
 
-<h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>https://gist.github.com/ayaysir/0b4e2ab7ec5f77103dbf279989fffa23</p>
+<!-- https://gist.github.com/ayaysir/0b4e2ab7ec5f77103dbf279989fffa23 -->
+<noscript><pre>&lt;a href=&quot;/https:/gist.github.com/ayaysir/0b4e2ab7ec5f77103dbf279989fffa23/raw&quot;&gt;Moved Permanently&lt;/a&gt;.
+
+</pre></noscript>
+<script src="https://gist.github.com/https://gist.github.com/ayaysir/0b4e2ab7ec5f77103dbf279989fffa23.js"> </script>
+
 
   </div>
 
