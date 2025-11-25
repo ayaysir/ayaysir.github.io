@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -826,10 +833,26 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -891,8 +914,79 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
   
 
 
@@ -909,7 +1003,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): 스테퍼(UIStepper)의 값을 레이블(UILabel)에 표시하기 (일반 방법 및 RxSwift 사용 방법)</h1>
     
@@ -983,7 +1077,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="944 words"
+  title="946 words"
 >
   <em>5 min</em> read</span>
 
@@ -992,6 +1086,28 @@
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): 스테퍼(UIStepper)의 값을 레이블(UILabel)에 표시하기 (일반 방법 및 RxSwift 사용 방법)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): 스테퍼(UIStepper)의 값을 레이블(UILabel)에 표시하기 (일반 방법 및 RxSwift 사용 방법)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -1011,8 +1127,8 @@
 
   <p>2) 프로그래밍 방식으로 설정</p>
 
-  <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+  <div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1025,18 +1141,18 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>// IBOutlet 연결
-@IBOutlet weak var stepperCount: UIStepper!
+</pre></td><td class="rouge-code"><pre><span class="c1">// IBOutlet 연결</span>
+<span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">stepperCount</span><span class="p">:</span> <span class="kt">UIStepper</span><span class="o">!</span>
 
-// 현재값 설정
-stepperCount.value = 0
+<span class="c1">// 현재값 설정</span>
+<span class="n">stepperCount</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>
 
-// 증감값(stepValue) 설정
-stepperCount.stepValue = 5.0
+<span class="c1">// 증감값(stepValue) 설정</span>
+<span class="n">stepperCount</span><span class="o">.</span><span class="n">stepValue</span> <span class="o">=</span> <span class="mf">5.0</span>
 
-// 최소값 및 최대값 설정
-stepperCount.minimumValue = 0.0
-stepperCount.maximumValue = 10000.0
+<span class="c1">// 최소값 및 최대값 설정</span>
+<span class="n">stepperCount</span><span class="o">.</span><span class="n">minimumValue</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">stepperCount</span><span class="o">.</span><span class="n">maximumValue</span> <span class="o">=</span> <span class="mf">10000.0</span>
 </pre></td></tr></tbody></table></code></div>  </div>
 </blockquote>
 
@@ -1046,21 +1162,23 @@ stepperCount.maximumValue = 10000.0
 
 <p>먼저 일반적인 방법으로 구현하고, 다음엔 RxSwift(RxCocoa)를 사용하여 구현하도록 하겠습니다.</p>
 
-<h4 id="방법-1---일반"><span class="me-2"><strong>방법 1 - 일반</strong></span><a href="#방법-1---일반" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><strong>1)</strong> 스토리보드에 레이블과 스테퍼를 배치한 후 각각 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.</p>
+<h3 id="방법-1---일반"><span class="me-2"><strong>방법 1 - 일반</strong></span><a href="#방법-1---일반" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h4 id="1-스토리보드에-레이블과-스테퍼를-배치한-후-각각-iboutlet으로-뷰-컨트롤러-코드와-연결합니다-이-변수들은-각-컴포넌트를-참고하게-됩니다"><span class="me-2"><strong>1)</strong> 스토리보드에 레이블과 스테퍼를 배치한 후 각각 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.</span><a href="#1-스토리보드에-레이블과-스테퍼를-배치한-후-각각-iboutlet으로-뷰-컨트롤러-코드와-연결합니다-이-변수들은-각-컴포넌트를-참고하게-됩니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p><strong>2)</strong> 스토리보드에 스테퍼를 <code class="language-plaintext highlighter-rouge">@IBAction</code>으로 뷰 컨트롤러 코드와 연결합니다. <code class="language-plaintext highlighter-rouge">stepperActCount</code> 메서드는 버튼이 눌렸을 때 실행됩니다.</p>
+<h4 id="2-스토리보드에-스테퍼를-ibaction으로-뷰-컨트롤러-코드와-연결합니다-stepperactcount-메서드는-버튼이-눌렸을-때-실행됩니다"><span class="me-2"><strong>2)</strong> 스토리보드에 스테퍼를 <code class="language-plaintext highlighter-rouge">@IBAction</code>으로 뷰 컨트롤러 코드와 연결합니다. <code class="language-plaintext highlighter-rouge">stepperActCount</code> 메서드는 버튼이 눌렸을 때 실행됩니다.</span><a href="#2-스토리보드에-스테퍼를-ibaction으로-뷰-컨트롤러-코드와-연결합니다-stepperactcount-메서드는-버튼이-눌렸을-때-실행됩니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.04.38.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.04.38.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p><strong>3)</strong> 초기값을 레이블에 표시하도록 설정합니다. <code class="language-plaintext highlighter-rouge">viewDidLoad(_:)</code>에 아래 코드를 추가합니다.</p>
+<h4 id="3-초기값을-레이블에-표시하도록-설정합니다-viewdidload_에-아래-코드를-추가합니다"><span class="me-2"><strong>3)</strong> 초기값을 레이블에 표시하도록 설정합니다. <code class="language-plaintext highlighter-rouge">viewDidLoad(_:)</code>에 아래 코드를 추가합니다.</span><a href="#3-초기값을-레이블에-표시하도록-설정합니다-viewdidload_에-아래-코드를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1078,7 +1196,7 @@ stepperCount.maximumValue = 10000.0
 
 <p> </p>
 
-<p><strong>4)</strong> 값이 증감될때마다(=&gt;스테퍼 버튼을 누를때마다) 레이블에 표시되는 값이 업데이트되도록 합니다. @IBAction 함수인 <code class="language-plaintext highlighter-rouge">stepperActCount</code> 내에 다음과 같이 작성합니다.</p>
+<h4 id="4-값이-증감될때마다스테퍼-버튼을-누를때마다-레이블에-표시되는-값이-업데이트되도록-합니다-ibaction-함수인-stepperactcount-내에-다음과-같이-작성합니다"><span class="me-2"><strong>4)</strong> 값이 증감될때마다(=&gt;스테퍼 버튼을 누를때마다) 레이블에 표시되는 값이 업데이트되도록 합니다. @IBAction 함수인 <code class="language-plaintext highlighter-rouge">stepperActCount</code> 내에 다음과 같이 작성합니다.</span><a href="#4-값이-증감될때마다스테퍼-버튼을-누를때마다-레이블에-표시되는-값이-업데이트되도록-합니다-ibaction-함수인-stepperactcount-내에-다음과-같이-작성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1096,9 +1214,9 @@ stepperCount.maximumValue = 10000.0
 
 <p> </p>
 
-<h4 id="방법-2---rxswiftrxcocoa-사용하여-구현하기"><span class="me-2"><strong>방법 2 - RxSwift(RxCocoa) 사용하여 구현하기</strong></span><a href="#방법-2---rxswiftrxcocoa-사용하여-구현하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="방법-2---rxswiftrxcocoa-사용하여-구현하기"><span class="me-2"><strong>방법 2 - RxSwift(RxCocoa) 사용하여 구현하기</strong></span><a href="#방법-2---rxswiftrxcocoa-사용하여-구현하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p><strong>참고</strong></p>
 
 <ul>
   <li><a href="http://yoonbumtae.com/?p=4474">RxSwift(ReactiveX + Swift): 기본 개념 및 스토리보드 예제 (요약)</a></li>
@@ -1106,20 +1224,20 @@ stepperCount.maximumValue = 10000.0
 
 <p> </p>
 
-<p><strong>0)</strong> CocoaPods 프로젝트로 초기화하고, RxSwift를 설치합니다.</p>
+<h4 id="0-cocoapods-프로젝트로-초기화하고-rxswift를-설치합니다"><span class="me-2"><strong>0)</strong> CocoaPods 프로젝트로 초기화하고, RxSwift를 설치합니다.</span><a href="#0-cocoapods-프로젝트로-초기화하고-rxswift를-설치합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=4457">Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</a></li>
+  <li><a href="/posts/xcode-프로젝트에-코코아팟cocoapods-설치-및-디펜던시-추가-방/">Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</a></li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-ruby highlighter-rouge"><div class="code-header">
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre># RxSwift
-pod 'RxSwift'
-pod 'RxCocoa'
+</pre></td><td class="rouge-code"><pre><span class="c1"># RxSwift</span>
+<span class="n">pod</span> <span class="s1">'RxSwift'</span>
+<span class="n">pod</span> <span class="s1">'RxCocoa'</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1132,22 +1250,22 @@ pod 'RxCocoa'
 
 <p> </p>
 
-<p><strong>1)</strong> 스토리보드에 레이블과 스테퍼를 배치한 후 각각 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.</p>
+<h4 id="1-스토리보드에-레이블과-스테퍼를-배치한-후-각각-iboutlet으로-뷰-컨트롤러-코드와-연결합니다-이-변수들은-각-컴포넌트를-참고하게-됩니다-1"><span class="me-2"><strong>1)</strong> 스토리보드에 레이블과 스테퍼를 배치한 후 각각 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>으로 뷰 컨트롤러 코드와 연결합니다. 이 변수들은 각 컴포넌트를 참고하게 됩니다.</span><a href="#1-스토리보드에-레이블과-스테퍼를-배치한-후-각각-iboutlet으로-뷰-컨트롤러-코드와-연결합니다-이-변수들은-각-컴포넌트를-참고하게-됩니다-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p><a href="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/11/screenshot-2022-11-02-am-1.00.52.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p><strong>2)</strong> @IBAction은 추가하지 않으며, 대신 <code class="language-plaintext highlighter-rouge">viewDidLoad(_:)</code>에 아래 코드를 추가합니다.</p>
+<h4 id="2-ibaction은-추가하지-않으며-대신-viewdidload_에-아래-코드를-추가합니다"><span class="me-2"><strong>2)</strong> @IBAction은 추가하지 않으며, 대신 <code class="language-plaintext highlighter-rouge">viewDidLoad(_:)</code>에 아래 코드를 추가합니다.</span><a href="#2-ibaction은-추가하지-않으며-대신-viewdidload_에-아래-코드를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>_ = stepperCount.rx.value.subscribe(onNext: { [unowned self] value in
-    lblCount.text = "\(value)"
-})
+</pre></td><td class="rouge-code"><pre><span class="n">_</span> <span class="o">=</span> <span class="n">stepperCount</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="nf">subscribe</span><span class="p">(</span><span class="nv">onNext</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">unowned</span> <span class="k">self</span><span class="p">]</span> <span class="n">value</span> <span class="k">in</span>
+    <span class="n">lblCount</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">value</span><span class="se">)</span><span class="s">"</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1175,10 +1293,10 @@ pod 'RxCocoa'
 
 <p>또는</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>_ = stepperCount.rx.value.map { String($0) }.bind(to: lblCount.rx.text)
+</pre></td><td class="rouge-code"><pre><span class="n">_</span> <span class="o">=</span> <span class="n">stepperCount</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="nf">bind</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">lblCount</span><span class="o">.</span><span class="n">rx</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>로도 작성할 수 있습니다.</p>
@@ -2152,6 +2270,12 @@ pod 'RxCocoa'
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2185,18 +2309,6 @@ pod 'RxCocoa'
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

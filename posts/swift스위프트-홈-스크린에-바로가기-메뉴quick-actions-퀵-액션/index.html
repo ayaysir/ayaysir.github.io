@@ -1418,11 +1418,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -1500,6 +1495,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1508,26 +1514,10 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
 
@@ -1618,7 +1608,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2337 words"
+  title="2328 words"
 >
   <em>12 min</em> read</span>
 
@@ -1652,7 +1642,7 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래와 같이 홈 스크린에서 앱 아이콘을 길게 누르거나 혹은 포스 터치(세게 누름; 일부 모델만 지원)를 한 경우 메뉴가 뜨는데 이걸 <strong>퀵 액션(Quick Action)</strong>이라고 합니다.</p>
 
@@ -1675,17 +1665,17 @@
 
 <p>아래는 모 음악 앱의 퀵 액션 메뉴인데 첫 번째 <code class="language-plaintext highlighter-rouge">[검색하기]</code>는 어느 상황에서도 검색 메뉴로 이동하므로 Static 퀵 액션이며, 그 아래 3개 메뉴는 최근 감상한 음악에 따라 키워드에 따라 이름과 이동 페이지가 달라지므로 Dynamic 퀵 액션입니다.</p>
 
-<p>[caption id=”attachment_5172” align=”alignnone” width=”407”] <a href="/assets/img/wp-content/uploads/2022/12/IMG_9678.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/IMG_9678.jpg" alt="" loading="lazy"></a> 퀵 액션 (홈 스크린 바로가기 메뉴)[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/12/IMG_9678.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/IMG_9678.jpg" alt="퀵 액션 (홈 스크린 바로가기 메뉴)" loading="lazy"></a><br />
+<em>퀵 액션 (홈 스크린 바로가기 메뉴)</em></p>
 
-<p> </p>
-
-<p>[caption id=”attachment_5171” align=”alignnone” width=”413”] <a href="/assets/img/wp-content/uploads/2022/12/IMG_9679.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/IMG_9679.jpg" alt="" loading="lazy"></a> 최근 감상 이력이 있는 [Johan de Meij: …] 메뉴를 클릭한 경우 해당 앨범의 페이지로 이동 (Dynamic Quick Action)[/caption] </p>
+<p><a href="/assets/img/wp-content/uploads/2022/12/IMG_9679.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/IMG_9679.jpg" alt="최근 감상 이력이 있는 [Johan de Meij: ...] 메뉴를 클릭한 경우 해당 앨범의 페이지로 이동 (Dynamic Quick Action)" loading="lazy"></a><br />
+<em>최근 감상 이력이 있는 [Johan de Meij: …] 메뉴를 클릭한 경우 해당 앨범의 페이지로 이동 (Dynamic Quick Action)</em></p>
 
 <p>퀵 액션은 Static과 Dynamic을 합쳐 <strong>최대 4개까지 추가</strong>할 수 있습니다.</p>
 
 <p> </p>
 
-<h3 id="구현"><span class="me-2"><strong>구현</strong></span><a href="#구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="구현"><span class="me-2"><strong>구현</strong></span><a href="#구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>새로운 iOS App 프로젝트를 생성합니다. 이 포스트는 스토리보드(Interface Builder)를 기준으로 설명합니다.</p>
 
@@ -1693,7 +1683,7 @@
 
 <p> </p>
 
-<h4 id="static-퀵-액션"><span class="me-2"><strong>Static 퀵 액션</strong></span><a href="#static-퀵-액션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="static-퀵-액션"><span class="me-2"><strong>Static 퀵 액션</strong></span><a href="#static-퀵-액션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, <code class="language-plaintext highlighter-rouge">info.plist</code> 파일에 메뉴 정보를 추가하는 방식입니다.</p>
 
@@ -1755,8 +1745,8 @@
 
   <p><a href="/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.21.34.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/12/screenshot-2022-12-24-pm-10.21.34.jpg" alt="" loading="lazy"></a></p>
 
-  <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+  <div class="language-xml highlighter-rouge"><div class="code-header">
+        <span data-label-text="XML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1788,37 +1778,37 @@
 29
 30
 31
-</pre></td><td class="rouge-code"><pre>&lt;key&gt;UIApplicationShortcutItems&lt;/key&gt;
-&lt;array&gt;
-  &lt;dict&gt;
-    &lt;key&gt;UIApplicationShortcutItemIconFile&lt;/key&gt;
-    &lt;string&gt;Custom-Punched&lt;/string&gt;
-    &lt;key&gt;UIApplicationShortcutItemSubtitle&lt;/key&gt;
-    &lt;string&gt;아티스트 - 노래 제목&lt;/string&gt;
-    &lt;key&gt;UIApplicationShortcutItemTitle&lt;/key&gt;
-    &lt;string&gt;Favorites&lt;/string&gt;
-    &lt;key&gt;UIApplicationShortcutItemType&lt;/key&gt;
-    &lt;string&gt;com.mycompany.myapp.openfavorites&lt;/string&gt;
-    &lt;key&gt;UIApplicationShortcutItemUserInfo&lt;/key&gt;
-    &lt;dict&gt;
-      &lt;key&gt;key1&lt;/key&gt;
-      &lt;string&gt;value1&lt;/string&gt;
-    &lt;/dict&gt;
-  &lt;/dict&gt;
-  &lt;dict&gt;
-    &lt;key&gt;UIApplicationShortcutItemIconType&lt;/key&gt;
-    &lt;string&gt;UIApplicationShortcutIconTypeCompose&lt;/string&gt;
-    &lt;key&gt;UIApplicationShortcutItemTitle&lt;/key&gt;
-    &lt;string&gt;New Message&lt;/string&gt;
-    &lt;key&gt;UIApplicationShortcutItemType&lt;/key&gt;
-    &lt;string&gt;com.mycompany.myapp.newmessage&lt;/string&gt;
-    &lt;key&gt;UIApplicationShortcutItemUserInfo&lt;/key&gt;
-    &lt;dict&gt;
-      &lt;key&gt;key2&lt;/key&gt;
-      &lt;string&gt;value2&lt;/string&gt;
-    &lt;/dict&gt;
-  &lt;/dict&gt;
-&lt;/array&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;key&gt;</span>UIApplicationShortcutItems<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;array&gt;</span>
+  <span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>UIApplicationShortcutItemIconFile<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>Custom-Punched<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>UIApplicationShortcutItemSubtitle<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>아티스트 - 노래 제목<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>UIApplicationShortcutItemTitle<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>Favorites<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>UIApplicationShortcutItemType<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>com.mycompany.myapp.openfavorites<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>UIApplicationShortcutItemUserInfo<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;dict&gt;</span>
+      <span class="nt">&lt;key&gt;</span>key1<span class="nt">&lt;/key&gt;</span>
+      <span class="nt">&lt;string&gt;</span>value1<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/dict&gt;</span>
+  <span class="nt">&lt;/dict&gt;</span>
+  <span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>UIApplicationShortcutItemIconType<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>UIApplicationShortcutIconTypeCompose<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>UIApplicationShortcutItemTitle<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>New Message<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>UIApplicationShortcutItemType<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>com.mycompany.myapp.newmessage<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>UIApplicationShortcutItemUserInfo<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;dict&gt;</span>
+      <span class="nt">&lt;key&gt;</span>key2<span class="nt">&lt;/key&gt;</span>
+      <span class="nt">&lt;string&gt;</span>value2<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/dict&gt;</span>
+  <span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/array&gt;</span>
 </pre></td></tr></tbody></table></code></div>  </div>
 
   <p>아래와 같이 구성되었는지 확인합니다.</p>
@@ -1841,7 +1831,7 @@
 
 <p> </p>
 
-<h4 id="dynamic-퀵-액션"><span class="me-2"><strong>Dynamic 퀵 액션</strong></span><a href="#dynamic-퀵-액션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="dynamic-퀵-액션"><span class="me-2"><strong>Dynamic 퀵 액션</strong></span><a href="#dynamic-퀵-액션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Dynamic 퀵 액션은 앱 내부에서 코드로 작성하여 추가할 수 있는 퀵 액션입니다. 예를 들면 검색 결과, 조회 결과가 갱신되었거나 하는 등의 상황에서 메뉴가 갱신되도록 해야 합니다. Swift 코드로 작성합니다.</p>
 
@@ -1956,7 +1946,7 @@
 
 <p> </p>
 
-<h4 id="퀵-액션을-클릭하면-특정-작업이-실행되게-하기"><span class="me-2"><strong>퀵 액션을 클릭하면 특정 작업이 실행되게 하기</strong></span><a href="#퀵-액션을-클릭하면-특정-작업이-실행되게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="퀵-액션을-클릭하면-특정-작업이-실행되게-하기"><span class="me-2"><strong>퀵 액션을 클릭하면 특정 작업이 실행되게 하기</strong></span><a href="#퀵-액션을-클릭하면-특정-작업이-실행되게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>위의 퀵 액션을 클릭하면 앱이 열리긴 하지만 아무런 추가 작업이 실행되지 않습니다. 특정 작업을 하려면 _<strong>SceneDelegate.swift</strong>_에서 지정해야 합니다.</p>
 
@@ -2086,7 +2076,7 @@
 
 <p> </p>
 
-<h5 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><a href="https://blog.devgenius.io/add-home-screen-quick-actions-in-swift-and-ios-13-71615f805eff">Add Home Screen Quick Actions in Swift and iOS 13</a></li>
@@ -3097,18 +3087,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

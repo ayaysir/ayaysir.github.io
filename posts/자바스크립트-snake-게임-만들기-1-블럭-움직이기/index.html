@@ -861,14 +861,14 @@
 
 <p>먼저 캔버스를 만들어보도록 하겠습니다. 외부 라이브러리를 사용하지 않는 이상 자바에서 대부분의 게임용 애니메이션은 캔버스 위에서 진행된다고 봐도 무방합니다. 캔버스를 이용해 점, 선, 면 등을 다양하게 그릴 수 있습니다. HTML 부분을 만들고 <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> 부분에 <code class="language-plaintext highlighter-rouge">&lt;canvas&gt;</code> 태그를 삽입합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>&lt;body&gt;
-    &lt;canvas id="game-canvas" width="400" height="400"&gt;&lt;/canvas&gt;
-&lt;/body&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"game-canvas"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"400"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위의 코드는 아이디로 game-canvas 를 가지는 가로, 세로 400px(픽셀)의 캔버스를 만들겠다는 의미입니다. 이 단계에서는 아무것도 보이지 않으며 이 캔버스를 자바스크립트에서 조작해 캔버스에 각종 그림을 그립니다.</p>
@@ -879,8 +879,8 @@
 
 <p>캔버스는 자바스크립트에서 다룰 수 있습니다. <code class="language-plaintext highlighter-rouge">document.getElementById</code>를 이용해 캔버스 DOM을 변수에 저장합니다. 그리고 그 캔버스에서 ‘2d 컨텍스트’라는 것을 가져와 변수로 저장합니다. 2d 컨텐츠를 다루는 렌더링 컨텍스트를 다룰 수 있게 합니다.3d 등 다른 컨텍스트도 있다고 합니다만 여기서 만드는 스네이크 게임은 2차원 게임이므로 2d 컨텐츠를 가져옵니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -891,15 +891,15 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>&lt;body&gt;
-    &lt;canvas id="game-canvas" width="400" height="400"&gt;&lt;/canvas&gt;
-    &lt;script&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"game-canvas"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"400"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
         
-        const canvas = document.getElementById("game-canvas")
-        const ctx = canvas.getContext("2d")
+        <span class="kd">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">game-canvas</span><span class="dl">"</span><span class="p">)</span>
+        <span class="kd">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nf">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">)</span>
      
-    &lt;/script&gt;
-&lt;/body&gt;
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -4838,18 +4838,6 @@ if(positionY &gt; tileCount - 1) {
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

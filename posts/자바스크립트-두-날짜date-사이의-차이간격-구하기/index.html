@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,16 +638,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -753,6 +750,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -769,7 +776,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: 두 날짜(Date) 사이의 차이(간격) 구하기</h1>
     
@@ -853,15 +860,37 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: 두 날짜(Date) 사이의 차이(간격) 구하기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: 두 날짜(Date) 사이의 차이(간격) 구하기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>자바스크립트로 특정 두 날짜 사이의 간격을 시분초 또는 연일월 단위로 구하고 싶다면 어떻게 해아할까요? 방법은 아래와 같습니다.</p>
 
 <p> </p>
 
-<h4 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>날짜 비교를 위한 <code class="language-plaintext highlighter-rouge">Date</code> 인스턴스를 두 개 만듭니다.</li>
@@ -876,23 +905,23 @@
 
 <p> </p>
 
-<h5 id="단계-1-날짜-비교를-위한-date-인스턴스-생성"><span class="me-2"><strong>단계 1: 날짜 비교를 위한 Date 인스턴스 생성</strong></span><a href="#단계-1-날짜-비교를-위한-date-인스턴스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-1-날짜-비교를-위한-date-인스턴스-생성"><span class="me-2"><strong>단계 1: 날짜 비교를 위한 Date 인스턴스 생성</strong></span><a href="#단계-1-날짜-비교를-위한-date-인스턴스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>// new Date('월/일/연')
-const date1 = new Date('7/13/2010')
-const date2 = new Date('12/15/2022')
+</pre></td><td class="rouge-code"><pre><span class="c1">// new Date('월/일/연')</span>
+<span class="kd">const</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">7/13/2010</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">date2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span><span class="dl">'</span><span class="s1">12/15/2022</span><span class="dl">'</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>참고로 실행 시점의 현재 날짜를 구하려면 <code class="language-plaintext highlighter-rouge">new Date()</code>를 사용하면 됩니다.</p>
 
 <p> </p>
 
-<h5 id="단계-2-두-날짜-사이의-밀리초-간격-구하기"><span class="me-2"><strong>단계 2: 두 날짜 사이의 밀리초 간격 구하기</strong></span><a href="#단계-2-두-날짜-사이의-밀리초-간격-구하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-2-두-날짜-사이의-밀리초-간격-구하기"><span class="me-2"><strong>단계 2: 두 날짜 사이의 밀리초 간격 구하기</strong></span><a href="#단계-2-두-날짜-사이의-밀리초-간격-구하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -902,7 +931,7 @@ const date2 = new Date('12/15/2022')
 
 <p> </p>
 
-<h5 id="단계-3-밀리초를-일day-단위로-변환하기"><span class="me-2"><strong>단계 3: 밀리초를 일(day) 단위로 변환하기</strong></span><a href="#단계-3-밀리초를-일day-단위로-변환하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-3-밀리초를-일day-단위로-변환하기"><span class="me-2"><strong>단계 3: 밀리초를 일(day) 단위로 변환하기</strong></span><a href="#단계-3-밀리초를-일day-단위로-변환하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>예를 들어 차이가 <code class="language-plaintext highlighter-rouge">392083200000ms</code>인 경우 이 값을 <code class="language-plaintext highlighter-rouge">86,400,000ms(=1000*60*60*24)</code>로 나누면 <code class="language-plaintext highlighter-rouge">4538일</code>이 됩니다.</p>
 
@@ -914,11 +943,11 @@ const date2 = new Date('12/15/2022')
 
 <!-- \[the\_ad id="3513"\] -->
 
-<p>JavaScript 날짜 차이 days difference between two days 날짜간 간격 날짜간 차이 구하기</p>
+<p><span style="font-size: 2pt;">JavaScript 날짜 차이 days difference between two days 날짜간 간격 날짜간 차이 구하기</span></p>
 
 <p> </p>
 
-<h5 id="단계-4-다른-단위로-변환하기"><span class="me-2"><strong>단계 4: 다른 단위로 변환하기</strong></span><a href="#단계-4-다른-단위로-변환하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-4-다른-단위로-변환하기"><span class="me-2"><strong>단계 4: 다른 단위로 변환하기</strong></span><a href="#단계-4-다른-단위로-변환하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -958,7 +987,7 @@ const date2 = new Date('12/15/2022')
 
 <p> </p>
 
-<h4 id="연-단위-차이를-구하는-다른-방법"><span class="me-2"><strong>연 단위 차이를 구하는 다른 방법</strong></span><a href="#연-단위-차이를-구하는-다른-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="연-단위-차이를-구하는-다른-방법"><span class="me-2"><strong>연 단위 차이를 구하는 다른 방법</strong></span><a href="#연-단위-차이를-구하는-다른-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -978,7 +1007,7 @@ const date2 = new Date('12/15/2022')
 
 <p> </p>
 
-<h4 id="월-단위-차이를-구하는-다른-방법"><span class="me-2"><strong>월 단위 차이를 구하는 다른 방법</strong></span><a href="#월-단위-차이를-구하는-다른-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="월-단위-차이를-구하는-다른-방법"><span class="me-2"><strong>월 단위 차이를 구하는 다른 방법</strong></span><a href="#월-단위-차이를-구하는-다른-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1965,6 +1994,12 @@ const monthDiff = yearDiff * 12 + Math.abs(date1.getMonth() - date2.getMonth())
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1998,18 +2033,6 @@ const monthDiff = yearDiff * 12 + Math.abs(date1.getMonth() - date2.getMonth())
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

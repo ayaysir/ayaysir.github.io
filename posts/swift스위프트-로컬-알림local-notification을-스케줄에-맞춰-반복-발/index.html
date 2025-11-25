@@ -573,11 +573,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -677,78 +672,62 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
   
 
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
 
@@ -873,13 +852,13 @@
   
 
   <div class="content">
-    <h5 id="원문"><span class="me-2"><strong>원문</strong></span><a href="#원문" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p><strong>원문</strong></p>
 
 <ul>
   <li><a href="https://stackoverflow.com/questions/70301857/how-is-it-possible-to-create-highly-customised-repeated-local-notification-in-io">How is it possible to create highly customised repeated local notification in iOS using UNCalendarNotificationTrigger + UNUserNotificationCenter?</a></li>
 </ul>
 
-<h3 id="질문"><span class="me-2"><strong>질문</strong></span><a href="#질문" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="질문"><span class="me-2"><strong>질문</strong></span><a href="#질문" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><strong><code class="language-plaintext highlighter-rouge">UNCalendarNotificationTrigger</code> + <code class="language-plaintext highlighter-rouge">UNUserNotificationCenter</code>를 사용하여 iOS에서 고도로 사용자 정의된 반복 로컬 알림을 생성하는 것이 어떻게 가능합니까?</strong></p>
 
@@ -889,10 +868,10 @@
 
 <p> </p>
 
-<h4 id="연간-반복-repeat-yearly"><span class="me-2"><strong>연간 반복 (Repeat yearly)</strong></span><a href="#연간-반복-repeat-yearly" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="연간-반복-repeat-yearly"><span class="me-2"><strong>연간 반복 (Repeat yearly)</strong></span><a href="#연간-반복-repeat-yearly" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -910,31 +889,31 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>var dateComponents = DateComponents()
-dateComponents.calendar = Calendar.current
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">dateComponents</span> <span class="o">=</span> <span class="kt">DateComponents</span><span class="p">()</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span>
 
-//
-// 매년 10월 5일 오전 3시에 반복
-//
-dateComponents.month = 10
-dateComponents.day = 5
+<span class="c1">//</span>
+<span class="c1">// 매년 10월 5일 오전 3시에 반복</span>
+<span class="c1">//</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">month</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="mi">5</span>
 
-dateComponents.hour = 3
-dateComponents.minute = 0
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="mi">0</span>
 
-let trigger = UNCalendarNotificationTrigger(
-    dateMatching: dateComponents,
-    repeats: true
-)
+<span class="k">let</span> <span class="nv">trigger</span> <span class="o">=</span> <span class="kt">UNCalendarNotificationTrigger</span><span class="p">(</span>
+    <span class="nv">dateMatching</span><span class="p">:</span> <span class="n">dateComponents</span><span class="p">,</span>
+    <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">)</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="매월-반복-repeat-monthly"><span class="me-2"><strong>매월 반복 (Repeat monthly)</strong></span><a href="#매월-반복-repeat-monthly" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="매월-반복-repeat-monthly"><span class="me-2"><strong>매월 반복 (Repeat monthly)</strong></span><a href="#매월-반복-repeat-monthly" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -950,29 +929,29 @@ let trigger = UNCalendarNotificationTrigger(
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>var dateComponents = DateComponents()
-dateComponents.calendar = Calendar.current
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">dateComponents</span> <span class="o">=</span> <span class="kt">DateComponents</span><span class="p">()</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span>
 
-//
-// 매월 5일 오전 3시 반복
-//
-dateComponents.day = 5
+<span class="c1">//</span>
+<span class="c1">// 매월 5일 오전 3시 반복</span>
+<span class="c1">//</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">day</span> <span class="o">=</span> <span class="mi">5</span>
 
-dateComponents.hour = 3
-dateComponents.minute = 0
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="mi">0</span>
 
-let trigger = UNCalendarNotificationTrigger(
-    dateMatching: dateComponents,
-    repeats: true
-)
+<span class="k">let</span> <span class="nv">trigger</span> <span class="o">=</span> <span class="kt">UNCalendarNotificationTrigger</span><span class="p">(</span>
+    <span class="nv">dateMatching</span><span class="p">:</span> <span class="n">dateComponents</span><span class="p">,</span>
+    <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="매주-반복-repeat-weekly"><span class="me-2"><strong>매주 반복 (Repeat weekly)</strong></span><a href="#매주-반복-repeat-weekly" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="매주-반복-repeat-weekly"><span class="me-2"><strong>매주 반복 (Repeat weekly)</strong></span><a href="#매주-반복-repeat-weekly" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -988,29 +967,29 @@ let trigger = UNCalendarNotificationTrigger(
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>var dateComponents = DateComponents()
-dateComponents.calendar = Calendar.current
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">dateComponents</span> <span class="o">=</span> <span class="kt">DateComponents</span><span class="p">()</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span>
 
-//
-// 매주 월요일 오전 3시 반복
-//
-dateComponents.weekday = 2
+<span class="c1">//</span>
+<span class="c1">// 매주 월요일 오전 3시 반복</span>
+<span class="c1">//</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">weekday</span> <span class="o">=</span> <span class="mi">2</span>
 
-dateComponents.hour = 3
-dateComponents.minute = 0
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="mi">0</span>
 
-let trigger = UNCalendarNotificationTrigger(
-    dateMatching: dateComponents,
-    repeats: true
-)
+<span class="k">let</span> <span class="nv">trigger</span> <span class="o">=</span> <span class="kt">UNCalendarNotificationTrigger</span><span class="p">(</span>
+    <span class="nv">dateMatching</span><span class="p">:</span> <span class="n">dateComponents</span><span class="p">,</span>
+    <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="매일-반복-repeat-daily"><span class="me-2"><strong>매일 반복 (Repeat daily)</strong></span><a href="#매일-반복-repeat-daily" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="매일-반복-repeat-daily"><span class="me-2"><strong>매일 반복 (Repeat daily)</strong></span><a href="#매일-반복-repeat-daily" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1024,24 +1003,24 @@ let trigger = UNCalendarNotificationTrigger(
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>var dateComponents = DateComponents()
-dateComponents.calendar = Calendar.current
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">dateComponents</span> <span class="o">=</span> <span class="kt">DateComponents</span><span class="p">()</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span>
 
-//
-// 매일 반복, 오전 3시
-//
-dateComponents.hour = 3
-dateComponents.minute = 0
+<span class="c1">//</span>
+<span class="c1">// 매일 반복, 오전 3시</span>
+<span class="c1">//</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">hour</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">dateComponents</span><span class="o">.</span><span class="n">minute</span> <span class="o">=</span> <span class="mi">0</span>
 
-let trigger = UNCalendarNotificationTrigger(
-    dateMatching: dateComponents,
-    repeats: true
-)
+<span class="k">let</span> <span class="nv">trigger</span> <span class="o">=</span> <span class="kt">UNCalendarNotificationTrigger</span><span class="p">(</span>
+    <span class="nv">dateMatching</span><span class="p">:</span> <span class="n">dateComponents</span><span class="p">,</span>
+    <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="한계점"><span class="me-2"><strong>한계점</strong></span><a href="#한계점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="한계점"><span class="me-2"><strong>한계점</strong></span><a href="#한계점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>하지만, 이것보다 더 복잡한 규칙으로 반복 알림을 만들고 싶다면 어떻게 해야 할까요?</p>
 
@@ -1054,7 +1033,7 @@ let trigger = UNCalendarNotificationTrigger(
 
 <p> </p>
 
-<h5 id="google-keep의-알림-기능"><span class="me-2"><strong>Google Keep의 알림 기능</strong></span><a href="#google-keep의-알림-기능" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="google-keep의-알림-기능"><span class="me-2"><strong>Google Keep의 알림 기능</strong></span><a href="#google-keep의-알림-기능" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>처음에는 불가능하다고 생각했습니다. 그러나 Google Keep과 같은 잘 알려진 일부 앱의 경우 이러한 기능을 사용자에게 제공할 수 있습니다.</p>
 
@@ -1075,7 +1054,7 @@ let trigger = UNCalendarNotificationTrigger(
 
 <p> </p>
 
-<h5 id="사이드-노트"><span class="me-2"><strong>사이드 노트</strong></span><a href="#사이드-노트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="사이드-노트"><span class="me-2"><strong>사이드 노트</strong></span><a href="#사이드-노트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Android에서는 이러한 기능을 구현할 수 있습니다. 그 이유는 Android의 <code class="language-plaintext highlighter-rouge">AlarmManager</code>를 사용하면 개발자가 미리 알림의 날짜 + 시간이 맞을 때 맞춤형 앱 코드를 실행할 수 있기 때문입니다. 이를 통해 다음 전략을 구현할 수 있습니다.</p>
 
@@ -1086,7 +1065,7 @@ let trigger = UNCalendarNotificationTrigger(
 
 <p> </p>
 
-<h5 id="이것이-google-keep에서-어떻게-구현되는지에-대한-나의-추측"><span class="me-2"><strong>이것이 Google Keep에서 어떻게 구현되는지에 대한 나의 추측</strong></span><a href="#이것이-google-keep에서-어떻게-구현되는지에-대한-나의-추측" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="이것이-google-keep에서-어떻게-구현되는지에-대한-나의-추측"><span class="me-2"><strong>이것이 Google Keep에서 어떻게 구현되는지에 대한 나의 추측</strong></span><a href="#이것이-google-keep에서-어떻게-구현되는지에-대한-나의-추측" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ol>
   <li>사용자가 Google Keep 앱을 실행할 때마다 앱은 모든 메모에 대해 가장 가까운 알림 활성화 시간을 계산합니다.</li>
@@ -1098,7 +1077,7 @@ let trigger = UNCalendarNotificationTrigger(
 
 <p> </p>
 
-<h5 id="ios에서-로컬-알림을-생성하는-기본-코드-스니펫"><span class="me-2"><strong>iOS에서 로컬 알림을 생성하는 기본 코드 스니펫</strong></span><a href="#ios에서-로컬-알림을-생성하는-기본-코드-스니펫" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="ios에서-로컬-알림을-생성하는-기본-코드-스니펫"><span class="me-2"><strong>iOS에서 로컬 알림을 생성하는 기본 코드 스니펫</strong></span><a href="#ios에서-로컬-알림을-생성하는-기본-코드-스니펫" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>참고용으로 다음은 iOS에서 로컬 알림을 생성하는 데 사용하는 기본 코드 스니펫입니다.</p>
 
@@ -1392,7 +1371,7 @@ let trigger = UNCalendarNotificationTrigger(
 
 <p> </p>
 
-<h3 id="답변"><span class="me-2"><strong>답변(?)</strong></span><a href="#답변" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="답변"><span class="me-2"><strong>답변(?)</strong></span><a href="#답변" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
   <p><strong>참고</strong></p>
@@ -2427,18 +2406,6 @@ let trigger = UNCalendarNotificationTrigger(
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

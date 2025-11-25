@@ -1223,11 +1223,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -1294,6 +1289,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1302,26 +1308,10 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
   
 
 
@@ -1412,7 +1402,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="770 words"
+  title="735 words"
 >
   <em>4 min</em> read</span>
 
@@ -1449,14 +1439,14 @@
     <p>이 글의 작업을 진행하려면 아래 포스트의 작업을 먼저 진행해야 합니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=4957">Swift + FirebaseUI: (1) FirebaseUI를 이용해 이메일 로그인 화면 구현</a></li>
+  <li><a href="/posts/swift-firebaseui-1-firebaseui를-이용해-이메일-로그인-화면-구현/">Swift + FirebaseUI: (1) FirebaseUI를 이용해 이메일 로그인 화면 구현</a></li>
 </ul>
 
 <p> </p>
 
-<h3 id="firebaseui-2--google구글-소셜-로그인-화면-구현"><span class="me-2"><strong>FirebaseUI (2) – Google(구글) 소셜 로그인 화면 구현</strong></span><a href="#firebaseui-2--google구글-소셜-로그인-화면-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="firebaseui-2--google구글-소셜-로그인-화면-구현"><span class="me-2"><strong>FirebaseUI (2) – Google(구글) 소셜 로그인 화면 구현</strong></span><a href="#firebaseui-2--google구글-소셜-로그인-화면-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="1-인증-제공업체-목록에-구글-추가"><span class="me-2"><strong>1) 인증 제공업체 목록에 구글 추가</strong></span><a href="#1-인증-제공업체-목록에-구글-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="1-인증-제공업체-목록에-구글-추가"><span class="me-2"><strong>1) 인증 제공업체 목록에 구글 추가</strong></span><a href="#1-인증-제공업체-목록에-구글-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="https://console.firebase.google.com/">Firebase 콘솔</a>에 접속해서 좌측의 <code class="language-plaintext highlighter-rouge">빌드 &gt; Authentication &gt; Sigin-in Method</code> 페이지로 들어갑니다. <code class="language-plaintext highlighter-rouge">[새 제공업체 추가]</code> 버튼을 눌러서 _<strong>Google</strong>_을 추가합니다.</p>
 
@@ -1468,7 +1458,7 @@
 
 <p> </p>
 
-<h4 id="2-url-type-추가"><span class="me-2"><strong>2) URL Type 추가</strong></span><a href="#2-url-type-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="2-url-type-추가"><span class="me-2"><strong>2) URL Type 추가</strong></span><a href="#2-url-type-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><em><strong>GoogleService-Info.plist</strong></em> 파일에서 <code class="language-plaintext highlighter-rouge">REVERSED_CLIENT_ID</code> 값을 복사합니다.</p>
 
@@ -1480,12 +1470,12 @@
 
 <p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-pm-11.25.20.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-pm-11.25.20.jpg" alt="" loading="lazy"></a></p>
 
-<h4 id="3-코드-작성"><span class="me-2"><strong>3) 코드 작성</strong></span><a href="#3-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="3-코드-작성"><span class="me-2"><strong>3) 코드 작성</strong></span><a href="#3-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><em><strong>AppDelegate.swift</strong></em> 파일의 <code class="language-plaintext highlighter-rouge">AppDelegate</code> 클래스 안에 아래 함수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1500,20 +1490,20 @@
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>import FirebaseAuthUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">FirebaseAuthUI</span>
 
-// ... //
+<span class="c1">// ... //</span>
 
-func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -&gt; Bool {
-    let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">app</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="kd">open</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">OpenURLOptionsKey</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">sourceApplication</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">OpenURLOptionsKey</span><span class="o">.</span><span class="n">sourceApplication</span><span class="p">]</span> <span class="k">as!</span> <span class="kt">String</span><span class="p">?</span>
     
-    if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
-        return true
-    }
+    <span class="k">if</span> <span class="kt">FUIAuth</span><span class="o">.</span><span class="nf">defaultAuthUI</span><span class="p">()?</span><span class="o">.</span><span class="nf">handleOpen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">sourceApplication</span><span class="p">:</span> <span class="n">sourceApplication</span><span class="p">)</span> <span class="p">??</span> <span class="kc">false</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
     
-    // other URL handling goes here.
-    return false
-}
+    <span class="c1">// other URL handling goes here.</span>
+    <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1546,19 +1536,22 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 <p> </p>
 
-<p>[caption id=”attachment_4976” align=”alignnone” width=”406”] <a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-pm-11.47.27.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-pm-11.47.27.jpg" alt="" loading="lazy"></a> Sign In with Google 버튼 추가됨[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-pm-11.47.27.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-pm-11.47.27.jpg" alt="Sign In with Google 버튼 추가됨" loading="lazy"></a><br />
+<em>Sign In with Google 버튼 추가됨</em></p>
 
 <p> </p>
 
-<p>[caption id=”attachment_4977” align=”alignnone” width=”406”] <a href="/assets/img/wp-content/uploads/2022/10/mosaic-screenshot-2022-10-18-pm-11.47.44.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/mosaic-screenshot-2022-10-18-pm-11.47.44.jpg" alt="" loading="lazy"></a> 구글 계정 선택[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/mosaic-screenshot-2022-10-18-pm-11.47.44.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/mosaic-screenshot-2022-10-18-pm-11.47.44.jpg" alt="구글 계정 선택" loading="lazy"></a><br />
+<em>구글 계정 선택</em></p>
 
 <p> </p>
 
-<p>[caption id=”attachment_4974” align=”alignnone” width=”303”] <a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-pm-11.47.53.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-pm-11.47.53.jpg" alt="" loading="lazy"></a> 해당 구글 계정으로 로그인됨[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-pm-11.47.53.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-pm-11.47.53.jpg" alt="해당 구글 계정으로 로그인됨" loading="lazy"></a><br />
+<em>해당 구글 계정으로 로그인됨</em></p>
 
 <p> </p>
 
-<h5 id="실험-이미-이메일-계정이-있는-상태에서-구글로-로그인하면-어떻게-되는가-혹은-그-반대-케이스의-경우"><span class="me-2"><strong>실험: 이미 이메일 계정이 있는 상태에서 구글로 로그인하면 어떻게 되는가? 혹은 그 반대 케이스의 경우?</strong></span><a href="#실험-이미-이메일-계정이-있는-상태에서-구글로-로그인하면-어떻게-되는가-혹은-그-반대-케이스의-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="실험-이미-이메일-계정이-있는-상태에서-구글로-로그인하면-어떻게-되는가-혹은-그-반대-케이스의-경우"><span class="me-2"><strong>실험: 이미 이메일 계정이 있는 상태에서 구글로 로그인하면 어떻게 되는가? 혹은 그 반대 케이스의 경우?</strong></span><a href="#실험-이미-이메일-계정이-있는-상태에서-구글로-로그인하면-어떻게-되는가-혹은-그-반대-케이스의-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ol>
   <li>이미 이메일 계정으로 가입한 경우 동일한 이메일의 구글 계정으로 로그인하면 기존 이메일 계정은 구글 계정으로 대체됩니다.</li>
@@ -1567,19 +1560,23 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 <p> </p>
 
-<p>[caption id=”attachment_4984” align=”alignnone” width=”400”] <a href="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.53.38.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.53.38.jpg" alt="" loading="lazy"></a> 1. 이메일 계정으로 구글 지메일을 사용해 가입[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.53.38.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.53.38.jpg" alt="1. 이메일 계정으로 구글 지메일을 사용해 가입" loading="lazy"></a><br />
+<em>1. 이메일 계정으로 구글 지메일을 사용해 가입</em></p>
 
 <p> </p>
 
-<p>[caption id=”attachment_4983” align=”alignnone” width=”824”] <a href="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.55.30.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.55.30.jpg" alt="" loading="lazy"></a> 2. 가입한 후 계정 상태, 제공업체는 이메일[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.55.30.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.55.30.jpg" alt="2. 가입한 후 계정 상태, 제공업체는 이메일" loading="lazy"></a><br />
+<em>2. 가입한 후 계정 상태, 제공업체는 이메일</em></p>
 
 <p> </p>
 
-<p>[caption id=”attachment_4982” align=”alignnone” width=”855”] <a href="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.56.05.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.56.05.jpg" alt="" loading="lazy"></a> 3.동일한 구글 아이디의 계정으로 로그인하면 제공 업체가 구글로 바뀌며, UID는 그대로[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.56.05.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.56.05.jpg" alt="3.동일한 구글 아이디의 계정으로 로그인하면 제공 업체가 구글로 바뀌며, UID는 그대로" loading="lazy"></a><br />
+<em>3.동일한 구글 아이디의 계정으로 로그인하면 제공 업체가 구글로 바뀌며, UID는 그대로</em></p>
 
 <p> </p>
 
-<p>[caption id=”attachment_4985” align=”alignnone” width=”316”] <a href="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.56.24.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.56.24.jpg" alt="" loading="lazy"></a> 4. 제공업체가 구글인 상태에서 이메일 계정 로그인을 시도하면 구글로 로그인하라는 경고창이 뜸[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.56.24.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-18-pm-11.56.24.jpg" alt="4. 제공업체가 구글인 상태에서 이메일 계정 로그인을 시도하면 구글로 로그인하라는 경고창이 뜸" loading="lazy"></a><br />
+<em>4. 제공업체가 구글인 상태에서 이메일 계정 로그인을 시도하면 구글로 로그인하라는 경고창이 뜸</em></p>
 
   </div>
 
@@ -2585,18 +2582,6 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

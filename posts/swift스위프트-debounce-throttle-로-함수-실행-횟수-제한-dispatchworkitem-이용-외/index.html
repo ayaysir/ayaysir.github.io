@@ -1028,11 +1028,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -1051,21 +1046,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -1182,6 +1162,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1306,12 +1296,12 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>먼저 Debounce, Throttle 이란 어떤 기능인지에 대해 알아보겠습니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=2102">자바스크립트 lodash: debounce와 throttle을 이용하여 함수의 실행 횟수 제한</a></li>
+  <li><a href="/posts/자바스크립트-lodash-debounce와-throttle을-이용하여-함수의-실행-횟/">자바스크립트 lodash: debounce와 throttle을 이용하여 함수의 실행 횟수 제한</a></li>
 </ul>
 
 <blockquote>
@@ -1342,7 +1332,7 @@
 
 <p> </p>
 
-<h4 id="dispatchworkitem"><span class="me-2"><strong>DispatchWorkItem</strong></span><a href="#dispatchworkitem" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="dispatchworkitem"><span class="me-2"><strong>DispatchWorkItem</strong></span><a href="#dispatchworkitem" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">DispatchWorkItem</code>이란 <code class="language-plaintext highlighter-rouge">DispatchQueue</code> 등 비동기 작업을 할 때 사용하는 클로저 함수를 클래스 형태로 한 번 더 캡슐화 한 것을 말합니다. 메인 스레드에서 비동기 작업을 실행할 때 자주 사용하는 아래와 같은 예제 코드를 보면 트레일링 클로저를 사용하여 비동기 작업을 실행하는 것을 알 수 있습니다.</p>
 
@@ -1356,7 +1346,7 @@
 
 <p> </p>
 
-<h5 id="cancel"><span class="me-2"><strong>cancel()</strong></span><a href="#cancel" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="cancel"><span class="me-2"><strong>cancel()</strong></span><a href="#cancel" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">DispatchWorkItem</code>의 형태의 인스턴스는 여러 작업을 할 수 있는데, 그 중 <code class="language-plaintext highlighter-rouge">cancel()</code>이라는 작업이 있습니다.</p>
 
@@ -1374,8 +1364,8 @@
 
 <p>예제 코드를 보겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1392,22 +1382,22 @@
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>// 1 - 비동기 방식으로 실행
-DispatchQueue.global(qos: .userInteractive).async(execute: workItem)
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1 - 비동기 방식으로 실행</span>
+<span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">(</span><span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="n">userInteractive</span><span class="p">)</span><span class="o">.</span><span class="nf">async</span><span class="p">(</span><span class="nv">execute</span><span class="p">:</span> <span class="n">workItem</span><span class="p">)</span>
 
-// 2, 3 - 동기 방식으로 실행
-workItem.perform()
-workItem.perform()
-// 여기까지 3번 실행됨
+<span class="c1">// 2, 3 - 동기 방식으로 실행</span>
+<span class="n">workItem</span><span class="o">.</span><span class="nf">perform</span><span class="p">()</span>
+<span class="n">workItem</span><span class="o">.</span><span class="nf">perform</span><span class="p">()</span>
+<span class="c1">// 여기까지 3번 실행됨</span>
 
-// 취소
-workItem.cancel()
+<span class="c1">// 취소</span>
+<span class="n">workItem</span><span class="o">.</span><span class="nf">cancel</span><span class="p">()</span>
 
-// 4
-workItem.perform()
+<span class="c1">// 4</span>
+<span class="n">workItem</span><span class="o">.</span><span class="nf">perform</span><span class="p">()</span>
 
-// 5
-DispatchQueue.global(qos: .background).async(execute: workItem)
+<span class="c1">// 5</span>
+<span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">(</span><span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="n">background</span><span class="p">)</span><span class="o">.</span><span class="nf">async</span><span class="p">(</span><span class="nv">execute</span><span class="p">:</span> <span class="n">workItem</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1422,9 +1412,9 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 
 <p> </p>
 
-<h4 id="구현"><span class="me-2"><strong>구현</strong></span><a href="#구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="구현"><span class="me-2"><strong>구현</strong></span><a href="#구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="abstract-class-만들기"><span class="me-2"><strong>Abstract Class 만들기</strong></span><a href="#abstract-class-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="abstract-class-만들기"><span class="me-2"><strong>Abstract Class 만들기</strong></span><a href="#abstract-class-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1484,7 +1474,7 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 
 <p> </p>
 
-<h5 id="debounce-구현"><span class="me-2"><strong>Debounce 구현</strong></span><a href="#debounce-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="debounce-구현"><span class="me-2"><strong>Debounce 구현</strong></span><a href="#debounce-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1543,7 +1533,7 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 
 <p> </p>
 
-<h5 id="throttle-구현"><span class="me-2"><strong>Throttle 구현</strong></span><a href="#throttle-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="throttle-구현"><span class="me-2"><strong>Throttle 구현</strong></span><a href="#throttle-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1613,7 +1603,7 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 
 <p> </p>
 
-<h4 id="예제-뷰-컨트롤러에-적용"><span class="me-2"><strong>예제: 뷰 컨트롤러에 적용</strong></span><a href="#예제-뷰-컨트롤러에-적용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제-뷰-컨트롤러에-적용"><span class="me-2"><strong>예제: 뷰 컨트롤러에 적용</strong></span><a href="#예제-뷰-컨트롤러에-적용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>버튼을 빠르게 반복 클릭하면 Debounce 및 Throttle 이 적용되는 예제입니다.</p>
 
@@ -1690,13 +1680,13 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 <!-- http://www.giphy.com/gifs/cLAlZNfkGHoWX39hRP -->
 <p><a href="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbG9pZXVwMGRwc2x0Zml0bHZ5cGZxMjFpMTN4ZTRlM3VxYWlxaG51OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cLAlZNfkGHoWX39hRP/giphy.gif" class="popup img-link shimmer"><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbG9pZXVwMGRwc2x0Zml0bHZ5cGZxMjFpMTN4ZTRlM3VxYWlxaG51OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cLAlZNfkGHoWX39hRP/giphy.gif" alt="" loading="lazy"></a></p>
 
-<h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>https://gist.github.com/ayaysir/5075ee06cce25df9a14fb17360ebd0cb</p>
 
 <p> </p>
 
-<h5 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><a href="https://velog.io/@okstring/SwiftRxSwift-%EC%97%86%EC%9D%B4-debounce-throttle-%EA%B5%AC%ED%98%84%ED%95%B4%EB%B3%B4%EA%B8%B0">[Swift]RxSwift 없이 debounce, throttle 구현해보기</a></li>
@@ -2706,18 +2696,6 @@ DispatchQueue.global(qos: .background).async(execute: workItem)
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

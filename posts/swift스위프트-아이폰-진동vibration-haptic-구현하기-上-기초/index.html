@@ -638,37 +638,6 @@
   
 
   
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -709,6 +678,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -737,6 +717,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -827,7 +817,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1062 words"
+  title="1061 words"
 >
   <em>5 min</em> read</span>
 
@@ -861,13 +851,13 @@
   
 
   <div class="content">
-    <h3 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Swift에서 진동(Vibration 또는 Haptic)을 구현하는 방법입니다. 진동은 아이폰에서만 지원하고 아이패드나 아이팟 터치에서는 사용할 수 없습니다. 테스트하려면 <strong>실제 아이폰 기기가 필요</strong>합니다.</p>
 
 <p> </p>
 
-<h4 id="기초"><span class="me-2"><strong>기초</strong></span><a href="#기초" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="기초"><span class="me-2"><strong>기초</strong></span><a href="#기초" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아이폰에서 진동을 발생시키는 방법은 크게 3가지가 있습니다. 각 진동은 말로 설명하기는 어려우므로 실제로 체험해보세요(?)</p>
 
@@ -905,7 +895,7 @@
 
 <p> </p>
 
-<h4 id="편리하게-사용하기"><span class="me-2"><strong>편리하게 사용하기</strong></span><a href="#편리하게-사용하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="편리하게-사용하기"><span class="me-2"><strong>편리하게 사용하기</strong></span><a href="#편리하게-사용하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래 코드를 <code class="language-plaintext highlighter-rouge">Vibration.swift</code>라는 이름의 파일로 프로젝트에 추가합니다. (<a href="https://stackoverflow.com/questions/26455880/how-to-make-iphone-vibrate-using-swift">출처</a>)</p>
 
@@ -980,12 +970,10 @@
 67
 68
 69
-70
 </pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 <span class="kd">import</span> <span class="kt">AVFoundation</span>
 
 <span class="kd">enum</span> <span class="kt">Vibration</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span> <span class="p">{</span>
-    
     <span class="kd">static</span> <span class="k">var</span> <span class="nv">allCases</span><span class="p">:</span> <span class="p">[</span><span class="kt">Vibration</span><span class="p">]</span> <span class="p">{</span>
         <span class="k">let</span> <span class="nv">defaultList</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">error</span><span class="p">,</span>
@@ -1061,15 +1049,15 @@
 
 <p>사용하고자 하는 곳(예를 들어 버튼을 눌렀을 때 등)에서 다음과 같이 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>Vibration.warning.vibrate()
+</pre></td><td class="rouge-code"><pre><span class="kt">Vibration</span><span class="o">.</span><span class="n">warning</span><span class="o">.</span><span class="nf">vibrate</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="예제-피커-뷰picker-view를-이용해-다양한-종류의-진동-발생시키기"><span class="me-2"><strong>예제: 피커 뷰(Picker View)를 이용해 다양한 종류의 진동 발생시키기</strong></span><a href="#예제-피커-뷰picker-view를-이용해-다양한-종류의-진동-발생시키기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="예제-피커-뷰picker-view를-이용해-다양한-종류의-진동-발생시키기"><span class="me-2"><strong>예제: 피커 뷰(Picker View)를 이용해 다양한 종류의 진동 발생시키기</strong></span><a href="#예제-피커-뷰picker-view를-이용해-다양한-종류의-진동-발생시키기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>iOS 프로젝트를 생성한 뒤, 메인 화면에 피커 뷰(<code class="language-plaintext highlighter-rouge">UIPickerView</code>) 및 버튼을(<code class="language-plaintext highlighter-rouge">UIButton</code>)을 추가하고 다음과 같이 <code class="language-plaintext highlighter-rouge">IBOutlet</code> 및 <code class="language-plaintext highlighter-rouge">IBAction</code>을 뷰 컨트롤러에 연결합니다.</p>
 
@@ -1165,7 +1153,7 @@
 
 <p> </p>
 
-<h4 id="다음-글-아이폰-진동vibration-haptic-구현하기-下-커스터마이징"><span class="me-2"><strong><a href="http://yoonbumtae.com/?p=5155">다음 글: 아이폰 진동(Vibration, Haptic) 구현하기 下 (커스터마이징)</a></strong></span><a href="#다음-글-아이폰-진동vibration-haptic-구현하기-下-커스터마이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="다음-글-아이폰-진동vibration-haptic-구현하기-下-커스터마이징"><span class="me-2"><strong><a href="/posts/swift%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-%EC%95%84%EC%9D%B4%ED%8F%B0-%EC%A7%84%EB%8F%99vibration-haptic-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-%E4%B8%8B-%EC%BB%A4%EC%8A%A4%ED%84%B0%EB%A7%88/">다음 글: 아이폰 진동(Vibration, Haptic) 구현하기 下 (커스터마이징)</a></strong></span><a href="#다음-글-아이폰-진동vibration-haptic-구현하기-下-커스터마이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
   </div>
 
@@ -2171,18 +2159,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

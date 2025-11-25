@@ -638,11 +638,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -661,21 +656,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -900,19 +880,18 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1037,15 +1016,15 @@
   
 
   <div class="content">
-    <h5 id="이전-글"><span class="me-2"><strong>이전 글</strong></span><a href="#이전-글" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p><strong>이전 글</strong></p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=5073">Swift(스위프트): 아이폰 진동(Vibration, Haptic) 구현하기 上 (기초)</a></li>
+  <li><a href="/posts/swift스위프트-아이폰-진동vibration-haptic-구현하기-上-기초/">Swift(스위프트): 아이폰 진동(Vibration, Haptic) 구현하기 上 (기초)</a></li>
 </ul>
 
 <p> </p>
 
-<h3 id="core-haptics를-사용하여-사용자-지정-진동을-재생하는-방법"><span class="me-2"><strong>Core Haptics를 사용하여 사용자 지정 진동을 재생하는 방법</strong></span><a href="#core-haptics를-사용하여-사용자-지정-진동을-재생하는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="core-haptics를-사용하여-사용자-지정-진동을-재생하는-방법"><span class="me-2"><strong>Core Haptics를 사용하여 사용자 지정 진동을 재생하는 방법</strong></span><a href="#core-haptics를-사용하여-사용자-지정-진동을-재생하는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>_<strong>Core Haptics</strong>_는 아이폰의 Taptic Engine(탭틱 엔진)에서 발생하는 진동, 더 자세히 말하면 정밀한 타이밍과 동작(behaviors)에 의해 동작하는 다양한 진동과 음향 효과를 정의할 수 있게 해줍니다. 이러한 진동들은 말로 설명하기보다는 직접 느껴보는 것이 좋지만, 애플이 사용하는 단어들은</p>
 
@@ -1058,41 +1037,41 @@
 
 <p> </p>
 
-<h4 id="사전-준비"><span class="me-2"><strong>사전 준비</strong></span><a href="#사전-준비" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="사전-준비"><span class="me-2"><strong>사전 준비</strong></span><a href="#사전-준비" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="단계-1-import-corehaptics-및-customhaptics-클래스-생성"><span class="me-2"><strong>단계 1: import CoreHaptics 및 CustomHaptics 클래스 생성</strong></span><a href="#단계-1-import-corehaptics-및-customhaptics-클래스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-1-import-corehaptics-및-customhaptics-클래스-생성"><span class="me-2"><strong>단계 1: import CoreHaptics 및 CustomHaptics 클래스 생성</strong></span><a href="#단계-1-import-corehaptics-및-customhaptics-클래스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">CoreHaptics</code>를 <code class="language-plaintext highlighter-rouge">import</code>하고 <code class="language-plaintext highlighter-rouge">CustomHaptics</code> 클래스를 생성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>import CoreHaptics
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">CoreHaptics</span>
 
-class CustomHaptics { 
+<span class="kd">class</span> <span class="kt">CustomHaptics</span> <span class="p">{</span> 
 
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="단계-2-chhapticengine-타입의-멤버-변수-추가"><span class="me-2"><strong>단계 2: CHHapticEngine 타입의 멤버 변수 추가</strong></span><a href="#단계-2-chhapticengine-타입의-멤버-변수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-2-chhapticengine-타입의-멤버-변수-추가"><span class="me-2"><strong>단계 2: CHHapticEngine 타입의 멤버 변수 추가</strong></span><a href="#단계-2-chhapticengine-타입의-멤버-변수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>클래스의 멤버 변수로 <code class="language-plaintext highlighter-rouge">CHHapticEngine</code> 타입의 인스턴스를 저장하는 <code class="language-plaintext highlighter-rouge">engine</code> 변수를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>var engine: CHHapticEngine?
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">engine</span><span class="p">:</span> <span class="kt">CHHapticEngine</span><span class="p">?</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="단계-3-기기의-햅틱-지원-여부-확인"><span class="me-2"><strong>단계 3: 기기의 햅틱 지원 여부 확인</strong></span><a href="#단계-3-기기의-햅틱-지원-여부-확인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-3-기기의-햅틱-지원-여부-확인"><span class="me-2"><strong>단계 3: 기기의 햅틱 지원 여부 확인</strong></span><a href="#단계-3-기기의-햅틱-지원-여부-확인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>해당 엔진의 인스턴스를 생성하기 전에 다음과 같은 코드를 사용하여 현재 장치에서 햅틱이 지원되는지 확인해야 합니다.</p>
 
@@ -1104,12 +1083,12 @@ class CustomHaptics {
 
 <p> </p>
 
-<h5 id="단계-4-생성자constructor-추가"><span class="me-2"><strong>단계 4: 생성자(constructor) 추가</strong></span><a href="#단계-4-생성자constructor-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-4-생성자constructor-추가"><span class="me-2"><strong>단계 4: 생성자(constructor) 추가</strong></span><a href="#단계-4-생성자constructor-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>생성자 부분을 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1126,22 +1105,22 @@ class CustomHaptics {
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>init?() {
-    guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
-        return nil
-    }
+</pre></td><td class="rouge-code"><pre><span class="nf">init</span><span class="p">?()</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="kt">CHHapticEngine</span><span class="o">.</span><span class="nf">capabilitiesForHardware</span><span class="p">()</span><span class="o">.</span><span class="n">supportsHaptics</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">nil</span>
+    <span class="p">}</span>
     
-    do {
-        engine = try CHHapticEngine()
-        try engine?.start()
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">CHHapticEngine</span><span class="p">()</span>
+        <span class="k">try</span> <span class="n">engine</span><span class="p">?</span><span class="o">.</span><span class="nf">start</span><span class="p">()</span>
         
-        handleEngineStop()
-        prepareResetEngine()
-    } catch {
-        print("There was an error creating the engine: \(error.localizedDescription)")
-        return nil
-    }
-}
+        <span class="nf">handleEngineStop</span><span class="p">()</span>
+        <span class="nf">prepareResetEngine</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"There was an error creating the engine: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">nil</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1170,7 +1149,7 @@ class CustomHaptics {
 
 <p> </p>
 
-<h5 id="단계-5-추가-콜백-작성"><span class="me-2"><strong>단계 5: 추가 콜백 작성</strong></span><a href="#단계-5-추가-콜백-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-5-추가-콜백-작성"><span class="me-2"><strong>단계 5: 추가 콜백 작성</strong></span><a href="#단계-5-추가-콜백-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>엔진이 멈추거나(stop) 리셋할 필요가 있는 경우를 대비해 콜백 부분을 작성합니다.</p>
 
@@ -1218,7 +1197,7 @@ class CustomHaptics {
 
 <p> </p>
 
-<h4 id="햅틱의-intensity-sharpness조절하기"><span class="me-2"><strong>햅틱의 intensity, sharpness 조절하기</strong></span><a href="#햅틱의-intensity-sharpness조절하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="햅틱의-intensity-sharpness조절하기"><span class="me-2"><strong>햅틱의 intensity, sharpness 조절하기</strong></span><a href="#햅틱의-intensity-sharpness조절하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>햅틱은 _<strong>intensity(강도)</strong>_와 _<strong>sharpness(선명도)</strong>_로 신호를 조절할 수 있습니다. <code class="language-plaintext highlighter-rouge">0.0</code>부터 <code class="language-plaintext highlighter-rouge">1.0</code>까지 조절할 수 있으며 기본값은 <code class="language-plaintext highlighter-rouge">1.0</code>입니다.</p>
 
@@ -1231,12 +1210,12 @@ class CustomHaptics {
 
 <p>이러한 수치 조절은 <code class="language-plaintext highlighter-rouge">CHHapticEventParameter(...)</code>로 할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: intensityValue)
-let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sharpnessValue)
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">intensity</span> <span class="o">=</span> <span class="kt">CHHapticEventParameter</span><span class="p">(</span><span class="nv">parameterID</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticIntensity</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">intensityValue</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">sharpness</span> <span class="o">=</span> <span class="kt">CHHapticEventParameter</span><span class="p">(</span><span class="nv">parameterID</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticSharpness</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">sharpnessValue</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1246,8 +1225,8 @@ let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sha
 
   <p>아래 메서드를 통해 다양한 수치의 햅틱을 체험해볼 수 있습니다. UI 부분에 대한 설명은 분량상 생략합니다.</p>
 
-  <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+  <div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1262,20 +1241,20 @@ let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sha
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>func generateHaptic(intensity intensityValue: Float, sharpness sharpnessValue: Float) {
-    guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
-        return
-    }
+</pre></td><td class="rouge-code"><pre><span class="kd">func</span> <span class="nf">generateHaptic</span><span class="p">(</span><span class="n">intensity</span> <span class="nv">intensityValue</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="n">sharpness</span> <span class="nv">sharpnessValue</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="kt">CHHapticEngine</span><span class="o">.</span><span class="nf">capabilitiesForHardware</span><span class="p">()</span><span class="o">.</span><span class="n">supportsHaptics</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: intensityValue)
-    let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sharpnessValue)
+    <span class="k">let</span> <span class="nv">intensity</span> <span class="o">=</span> <span class="kt">CHHapticEventParameter</span><span class="p">(</span><span class="nv">parameterID</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticIntensity</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">intensityValue</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">sharpness</span> <span class="o">=</span> <span class="kt">CHHapticEventParameter</span><span class="p">(</span><span class="nv">parameterID</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticSharpness</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">sharpnessValue</span><span class="p">)</span>
     
-    let events = [
-        CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: 0),
-    ]
+    <span class="k">let</span> <span class="nv">events</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="n">intensity</span><span class="p">,</span> <span class="n">sharpness</span><span class="p">],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">]</span>
     
-    startEvents(events)
-}
+    <span class="nf">startEvents</span><span class="p">(</span><span class="n">events</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div>  </div>
 
   <p> </p>
@@ -1297,7 +1276,7 @@ let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sha
 
 <p> </p>
 
-<h4 id="햅틱-이벤트-생성"><span class="me-2"><strong>햅틱 이벤트 생성</strong></span><a href="#햅틱-이벤트-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="햅틱-이벤트-생성"><span class="me-2"><strong>햅틱 이벤트 생성</strong></span><a href="#햅틱-이벤트-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>햅틱의 종류는 크게 <code class="language-plaintext highlighter-rouge">hapticTransient</code>, <code class="language-plaintext highlighter-rouge">hapticContinuous</code>로 나눌 수 있습니다.</p>
 
@@ -1310,10 +1289,10 @@ let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sha
 
 <p> </p>
 
-<h5 id="haptictransient"><span class="me-2"><strong>.hapticTransient</strong></span><a href="#haptictransient" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="haptictransient"><span class="me-2"><strong>.hapticTransient</strong></span><a href="#haptictransient" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1321,13 +1300,13 @@ let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: sha
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0)
+</pre></td><td class="rouge-code"><pre><span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
 
-// 파라미터 지정
-CHHapticEvent(eventType: .hapticTransient, parameters: [
-    intensity,
-    sharpness,
-], relativeTime: 0.5)
+<span class="c1">// 파라미터 지정</span>
+<span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span>
+    <span class="n">intensity</span><span class="p">,</span>
+    <span class="n">sharpness</span><span class="p">,</span>
+<span class="p">],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1351,12 +1330,12 @@ CHHapticEvent(eventType: .hapticTransient, parameters: [
 
 <p> </p>
 
-<h5 id="hapticcontinuous"><span class="me-2"><strong>.hapticContinuous</strong></span><a href="#hapticcontinuous" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="hapticcontinuous"><span class="me-2"><strong>.hapticContinuous</strong></span><a href="#hapticcontinuous" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 0.6, duration: 0.5)
+</pre></td><td class="rouge-code"><pre><span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticContinuous</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1365,7 +1344,7 @@ CHHapticEvent(eventType: .hapticTransient, parameters: [
 
 <p> </p>
 
-<h4 id="햅틱-이벤트-발생"><span class="me-2"><strong>햅틱 이벤트 발생</strong></span><a href="#햅틱-이벤트-발생" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="햅틱-이벤트-발생"><span class="me-2"><strong>햅틱 이벤트 발생</strong></span><a href="#햅틱-이벤트-발생" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이러한 <code class="language-plaintext highlighter-rouge">[CHHapticEvent]</code> 배열을 이용하여 복수의 이벤트를 발생시킬 수 있습니다. 클래스 안에 다음의 메서드를 추가합니다.</p>
 
@@ -1416,18 +1395,18 @@ CHHapticEvent(eventType: .hapticTransient, parameters: [
 
 <p> </p>
 
-<h4 id="햅틱-이벤트-예제"><span class="me-2"><strong>햅틱 이벤트 예제</strong></span><a href="#햅틱-이벤트-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="햅틱-이벤트-예제"><span class="me-2"><strong>햅틱 이벤트 예제</strong></span><a href="#햅틱-이벤트-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래 함수들을 클래스 내부에 추가하면 나중에 편리하게 사용할 수 있습니다.</p>
 
 <p> </p>
 
-<h5 id="예제-1"><span class="me-2"><strong>예제 1</strong></span><a href="#예제-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="예제-1"><span class="me-2"><strong>예제 1</strong></span><a href="#예제-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>강하고 날카롭게 시작하여 3초에 걸쳐 약하고 둔하게 사라지는 일련의 진동(Haptic)이 생성됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1448,36 +1427,36 @@ CHHapticEvent(eventType: .hapticTransient, parameters: [
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>/// 강하고 날카롭게 시작하여 3초에 걸쳐 약하고 둔하게 사라지는 일련의 진동(Haptic)이 생성됩니다.
-func haptic1() {
-    guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
-        return
-    }
+</pre></td><td class="rouge-code"><pre><span class="c1">/// 강하고 날카롭게 시작하여 3초에 걸쳐 약하고 둔하게 사라지는 일련의 진동(Haptic)이 생성됩니다.</span>
+<span class="kd">func</span> <span class="nf">haptic1</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="kt">CHHapticEngine</span><span class="o">.</span><span class="nf">capabilitiesForHardware</span><span class="p">()</span><span class="o">.</span><span class="n">supportsHaptics</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    var events = [CHHapticEvent]()
+    <span class="k">var</span> <span class="nv">events</span> <span class="o">=</span> <span class="p">[</span><span class="kt">CHHapticEvent</span><span class="p">]()</span>
     
-    for i in stride(from: 0, to: 1, by: 0.1) {
-        let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(1 - i))
-        let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(1 - i))
-        let event = CHHapticEvent(eventType: .hapticTransient, parameters: [
-            intensity,
-            sharpness,
-        ], relativeTime: i * 3)
-        events.append(event)
-    }
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">intensity</span> <span class="o">=</span> <span class="kt">CHHapticEventParameter</span><span class="p">(</span><span class="nv">parameterID</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticIntensity</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Float</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+        <span class="k">let</span> <span class="nv">sharpness</span> <span class="o">=</span> <span class="kt">CHHapticEventParameter</span><span class="p">(</span><span class="nv">parameterID</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticSharpness</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Float</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+        <span class="k">let</span> <span class="nv">event</span> <span class="o">=</span> <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span>
+            <span class="n">intensity</span><span class="p">,</span>
+            <span class="n">sharpness</span><span class="p">,</span>
+        <span class="p">],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">events</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    startEvents(events)
-}
+    <span class="nf">startEvents</span><span class="p">(</span><span class="n">events</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="예제-2---sos-신호"><span class="me-2"><strong>예제 2 - SOS 신호</strong></span><a href="#예제-2---sos-신호" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="예제-2---sos-신호"><span class="me-2"><strong>예제 2 - SOS 신호</strong></span><a href="#예제-2---sos-신호" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>구조 요청의 모스 부호인 <a href="https://ko.wikipedia.org/wiki/SOS">SOS</a> <code class="language-plaintext highlighter-rouge">(...---...)</code> 신호를 햅틱으로 나타낼 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1497,35 +1476,35 @@ func haptic1() {
 17
 18
 19
-</pre></td><td class="rouge-code"><pre>/// 일시적인 이벤트(짧은 탭)와 지속적인 이벤트(일정 기간에 걸친 긴 윙윙거림)를 혼합하여 Taptic 엔진에서
-/// SOS(...---...)에 대한 모스 부호를 진동시킵니다.
-func hapticSOS() {
-    guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
-        return
-    }
+</pre></td><td class="rouge-code"><pre><span class="c1">/// 일시적인 이벤트(짧은 탭)와 지속적인 이벤트(일정 기간에 걸친 긴 윙윙거림)를 혼합하여 Taptic 엔진에서</span>
+<span class="c1">/// SOS(...---...)에 대한 모스 부호를 진동시킵니다.</span>
+<span class="kd">func</span> <span class="nf">hapticSOS</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="kt">CHHapticEngine</span><span class="o">.</span><span class="nf">capabilitiesForHardware</span><span class="p">()</span><span class="o">.</span><span class="n">supportsHaptics</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
 
-    let short1 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0)
-    let short2 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0.2)
-    let short3 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 0.4)
-    let long1 = CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 0.6, duration: 0.5)
-    let long2 = CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 1.2, duration: 0.5)
-    let long3 = CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: 1.8, duration: 0.5)
-    let short4 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 2.4)
-    let short5 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 2.6)
-    let short6 = CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: 2.8)
+    <span class="k">let</span> <span class="nv">short1</span> <span class="o">=</span> <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">short2</span> <span class="o">=</span> <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">short3</span> <span class="o">=</span> <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">long1</span> <span class="o">=</span> <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticContinuous</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">long2</span> <span class="o">=</span> <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticContinuous</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">long3</span> <span class="o">=</span> <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticContinuous</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mf">1.8</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">short4</span> <span class="o">=</span> <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mf">2.4</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">short5</span> <span class="o">=</span> <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mf">2.6</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">short6</span> <span class="o">=</span> <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mf">2.8</span><span class="p">)</span>
 
-    startEvents([short1, short2, short3, long1, long2, long3, short4, short5, short6])
-}
+    <span class="nf">startEvents</span><span class="p">([</span><span class="n">short1</span><span class="p">,</span> <span class="n">short2</span><span class="p">,</span> <span class="n">short3</span><span class="p">,</span> <span class="n">long1</span><span class="p">,</span> <span class="n">long2</span><span class="p">,</span> <span class="n">long3</span><span class="p">,</span> <span class="n">short4</span><span class="p">,</span> <span class="n">short5</span><span class="p">,</span> <span class="n">short6</span><span class="p">])</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="예제-3---베토벤-5번-교향곡의-시작-부분"><span class="me-2"><strong>예제 3 - 베토벤 5번 교향곡의 시작 부분</strong></span><a href="#예제-3---베토벤-5번-교향곡의-시작-부분" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="예제-3---베토벤-5번-교향곡의-시작-부분"><span class="me-2"><strong>예제 3 - 베토벤 5번 교향곡의 시작 부분</strong></span><a href="#예제-3---베토벤-5번-교향곡의-시작-부분" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>짧은 햅틱과 지속 햅틱을 조합하여 음악 리듬을 재현할 수 있습니다. 유명한 베토벤 5번 교향곡의 시작 부분입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1557,44 +1536,44 @@ func hapticSOS() {
 29
 30
 31
-</pre></td><td class="rouge-code"><pre>/// 베토벤 5번 교향곡의 시작부분 리듬을 진동시킵니다.
-func hapticBeethoven5() {
-    guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
-        return
-    }
+</pre></td><td class="rouge-code"><pre><span class="c1">/// 베토벤 5번 교향곡의 시작부분 리듬을 진동시킵니다.</span>
+<span class="kd">func</span> <span class="nf">hapticBeethoven5</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="kt">CHHapticEngine</span><span class="o">.</span><span class="nf">capabilitiesForHardware</span><span class="p">()</span><span class="o">.</span><span class="n">supportsHaptics</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
     
-    let startIntensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 0.3)
-    let startSharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0.3)
+    <span class="k">let</span> <span class="nv">startIntensity</span> <span class="o">=</span> <span class="kt">CHHapticEventParameter</span><span class="p">(</span><span class="nv">parameterID</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticIntensity</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">startSharpness</span> <span class="o">=</span> <span class="kt">CHHapticEventParameter</span><span class="p">(</span><span class="nv">parameterID</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticSharpness</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">)</span>
     
-    let beat = 0.156
-    let breath = 0.01
-    let secondPassage = (beat * 4) + breath + (beat * 4 * 2.3) + (beat * 5.1)
+    <span class="k">let</span> <span class="nv">beat</span> <span class="o">=</span> <span class="mf">0.156</span>
+    <span class="k">let</span> <span class="nv">breath</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="k">let</span> <span class="nv">secondPassage</span> <span class="o">=</span> <span class="p">(</span><span class="n">beat</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">breath</span> <span class="o">+</span> <span class="p">(</span><span class="n">beat</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="mf">2.3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">beat</span> <span class="o">*</span> <span class="mf">5.1</span><span class="p">)</span>
     
-    let events = [
-        CHHapticEvent(eventType: .hapticTransient, parameters: [startIntensity, startSharpness], relativeTime: 0),
-        CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: beat),
-        CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: beat * 2),
-        CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: beat * 3),
+    <span class="k">let</span> <span class="nv">events</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="n">startIntensity</span><span class="p">,</span> <span class="n">startSharpness</span><span class="p">],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="n">beat</span><span class="p">),</span>
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="n">beat</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="n">beat</span> <span class="o">*</span> <span class="mi">3</span><span class="p">),</span>
         
-        CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: beat * 4 + breath, duration: beat * 4 * 2.3),
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticContinuous</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="n">beat</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">breath</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="n">beat</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="mf">2.3</span><span class="p">),</span>
         
-        CHHapticEvent(eventType: .hapticTransient, parameters: [startIntensity, startSharpness], relativeTime: secondPassage),
-        CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: secondPassage + beat),
-        CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: secondPassage + beat * 2),
-        CHHapticEvent(eventType: .hapticTransient, parameters: [], relativeTime: secondPassage + beat * 3),
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="n">startIntensity</span><span class="p">,</span> <span class="n">startSharpness</span><span class="p">],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="n">secondPassage</span><span class="p">),</span>
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="n">secondPassage</span> <span class="o">+</span> <span class="n">beat</span><span class="p">),</span>
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="n">secondPassage</span> <span class="o">+</span> <span class="n">beat</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticTransient</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="n">secondPassage</span> <span class="o">+</span> <span class="n">beat</span> <span class="o">*</span> <span class="mi">3</span><span class="p">),</span>
         
-        CHHapticEvent(eventType: .hapticContinuous, parameters: [], relativeTime: secondPassage + beat * 4 + breath, duration: beat * 4 * 2.3),
-    ]
+        <span class="kt">CHHapticEvent</span><span class="p">(</span><span class="nv">eventType</span><span class="p">:</span> <span class="o">.</span><span class="n">hapticContinuous</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">relativeTime</span><span class="p">:</span> <span class="n">secondPassage</span> <span class="o">+</span> <span class="n">beat</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">breath</span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="n">beat</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="mf">2.3</span><span class="p">),</span>
+    <span class="p">]</span>
     
-    startEvents(events)
-}
+    <span class="nf">startEvents</span><span class="p">(</span><span class="n">events</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="뷰-컨트롤러-이벤트와-연동"><span class="me-2"><strong>뷰 컨트롤러 이벤트와 연동</strong></span><a href="#뷰-컨트롤러-이벤트와-연동" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="뷰-컨트롤러-이벤트와-연동"><span class="me-2"><strong>뷰 컨트롤러 이벤트와 연동</strong></span><a href="#뷰-컨트롤러-이벤트와-연동" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="단계-1-뷰-컨트롤러에-멤버-변수-추가"><span class="me-2"><strong>단계 1: 뷰 컨트롤러에 멤버 변수 추가</strong></span><a href="#단계-1-뷰-컨트롤러에-멤버-변수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-1-뷰-컨트롤러에-멤버-변수-추가"><span class="me-2"><strong>단계 1: 뷰 컨트롤러에 멤버 변수 추가</strong></span><a href="#단계-1-뷰-컨트롤러에-멤버-변수-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>뷰 컨트롤러의 멤버 변수로 위에서 만든 <code class="language-plaintext highlighter-rouge">CustomHaptics</code>를 추가합니다.</p>
 
@@ -1606,7 +1585,7 @@ func hapticBeethoven5() {
 
 <p> </p>
 
-<h5 id="단계-2-이벤트에서-메서드-실행"><span class="me-2"><strong>단계 2: 이벤트에서 메서드 실행</strong></span><a href="#단계-2-이벤트에서-메서드-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="단계-2-이벤트에서-메서드-실행"><span class="me-2"><strong>단계 2: 이벤트에서 메서드 실행</strong></span><a href="#단계-2-이벤트에서-메서드-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>버튼 이벤트에 아래와 같이 예제 햅틱 메서드를 지정합니다.</p>
 
@@ -1653,7 +1632,7 @@ func hapticBeethoven5() {
 
 <p> </p>
 
-<h5 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="출처"><span class="me-2"><strong>출처</strong></span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><a href="https://www.hackingwithswift.com/example-code/core-haptics/how-to-play-custom-vibrations-using-core-haptics">How to play custom vibrations using Core Haptics</a></li>
@@ -2663,18 +2642,6 @@ func hapticBeethoven5() {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

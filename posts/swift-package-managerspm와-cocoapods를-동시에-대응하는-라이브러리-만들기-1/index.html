@@ -1873,85 +1873,6 @@
   
 
   
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -2014,6 +1935,54 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -2049,6 +2018,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -2173,9 +2152,9 @@
   
 
   <div class="content">
-    <h3 id="swift-package-manager와-cocoapods를-동시에-대응하는-라이브러리-만들기-1"><span class="me-2"><strong>Swift Package Manager와 CocoaPods를 동시에 대응하는 라이브러리 만들기 (1)</strong></span><a href="#swift-package-manager와-cocoapods를-동시에-대응하는-라이브러리-만들기-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <p><strong>Swift Package Manager와 CocoaPods를 동시에 대응하는 라이브러리 만들기 (1)</strong></p>
 
-<h5 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://github.com/ayaysir/BGSMM_DevKit">https://github.com/ayaysir/BGSMM_DevKit</a></li>
@@ -2183,7 +2162,7 @@
 
 <p> </p>
 
-<h4 id="과정"><span class="me-2"><strong>과정</strong></span><a href="#과정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="과정"><span class="me-2"><strong>과정</strong></span><a href="#과정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>Xcode에서 Swift Package Manager에 대응하는 Package를 만들고 코드를 구현합니다.</li>
@@ -2200,9 +2179,9 @@
 
 <p> </p>
 
-<h4 id="상세"><span class="me-2"><strong>상세</strong></span><a href="#상세" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="상세"><span class="me-2"><strong>상세</strong></span><a href="#상세" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="step-1-xcode에서-swift-package-manager에-대응하는-package를-만들고-코드를-구현합니다"><span class="me-2"><strong>Step 1: Xcode에서 Swift Package Manager에 대응하는 Package를 만들고 코드를 구현합니다.</strong></span><a href="#step-1-xcode에서-swift-package-manager에-대응하는-package를-만들고-코드를-구현합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-1-xcode에서-swift-package-manager에-대응하는-package를-만들고-코드를-구현합니다"><span class="me-2"><strong>Step 1: Xcode에서 Swift Package Manager에 대응하는 Package를 만들고 코드를 구현합니다.</strong></span><a href="#step-1-xcode에서-swift-package-manager에-대응하는-package를-만들고-코드를-구현합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-25-am-12.33.25.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-25-am-12.33.25.jpg" alt="" loading="lazy"></a></p>
 
@@ -2214,8 +2193,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">Package.swift</code>는 SPM의 핵심 파일로 여기서 각종 옵션을 지정합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2255,44 +2234,44 @@
 37
 38
 39
-</pre></td><td class="rouge-code"><pre>// swift-tools-version: 5.6
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+</pre></td><td class="rouge-code"><pre><span class="c1">// swift-tools-version: 5.6</span>
+<span class="c1">// The swift-tools-version declares the minimum version of Swift required to build this package.</span>
 
-import PackageDescription
+<span class="kd">import</span> <span class="kt">PackageDescription</span>
 
-let package = Package(
-    name: "BGSMM_DevKit",
-    platforms: [
-        .iOS(.v11)
-    ],
-    products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "BGSMM_DevKit",
-            targets: ["BGSMM_DevKit"]),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
-    targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "BGSMM_DevKit",
-            dependencies: [],
-            resources: [.process("Resources")]
-        ),
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"BGSMM_DevKit"</span><span class="p">,</span>
+    <span class="nv">platforms</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">iOS</span><span class="p">(</span><span class="o">.</span><span class="n">v11</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="nv">products</span><span class="p">:</span> <span class="p">[</span>
+        <span class="c1">// Products define the executables and libraries a package produces, and make them visible to other packages.</span>
+        <span class="o">.</span><span class="nf">library</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="s">"BGSMM_DevKit"</span><span class="p">,</span>
+            <span class="nv">targets</span><span class="p">:</span> <span class="p">[</span><span class="s">"BGSMM_DevKit"</span><span class="p">]),</span>
+    <span class="p">],</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="c1">// Dependencies declare other packages that this package depends on.</span>
+        <span class="c1">// .package(url: /* package url */, from: "1.0.0"),</span>
+    <span class="p">],</span>
+    <span class="nv">targets</span><span class="p">:</span> <span class="p">[</span>
+        <span class="c1">// Targets are the basic building blocks of a package. A target can define a module or a test suite.</span>
+        <span class="c1">// Targets can depend on other targets in this package, and on products in packages this package depends on.</span>
+        <span class="o">.</span><span class="nf">target</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="s">"BGSMM_DevKit"</span><span class="p">,</span>
+            <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nv">resources</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nf">process</span><span class="p">(</span><span class="s">"Resources"</span><span class="p">)]</span>
+        <span class="p">),</span>
         
-        // 테스트를 사용하지 않는다면 .testTarget은 삭제
-        // .testTarget(
-        //     name: "BGSMM_DevKitTests",
-        //     dependencies: ["BGSMM_DevKit"]),
-    ],
-    swiftLanguageVersions: [
-        .v5
-    ]
-)
+        <span class="c1">// 테스트를 사용하지 않는다면 .testTarget은 삭제</span>
+        <span class="c1">// .testTarget(</span>
+        <span class="c1">//     name: "BGSMM_DevKitTests",</span>
+        <span class="c1">//     dependencies: ["BGSMM_DevKit"]),</span>
+    <span class="p">],</span>
+    <span class="nv">swiftLanguageVersions</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="n">v5</span>
+    <span class="p">]</span>
+<span class="p">)</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2305,8 +2284,8 @@ let package = Package(
 
 <p><code class="language-plaintext highlighter-rouge">Sources</code> 폴더에는 실제 코드를 입력하는 곳이며 프로젝트 설정 시 입력했던 이름과 동일한 <code class="language-plaintext highlighter-rouge">BGSMM_DevKit.swift</code> 파일이 기본으로 제공됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2317,28 +2296,28 @@ let package = Package(
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>#if os(iOS)
+</pre></td><td class="rouge-code"><pre><span class="cp">#if os(iOS)</span>
 
-public struct BGSMM_DevKit {
-    public private(set) var text = "Hello, World!"
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BGSMM_DevKit</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">text</span> <span class="o">=</span> <span class="s">"Hello, World!"</span>
 
-    public init() {
-    }
-}
+    <span class="kd">public</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-#endif
+<span class="cp">#endif</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 폴더 안에 Swift 파일 등을 추가하여 라이브러리 개발을 진행합니다. 또는 나중에 CocoaPods 프로젝트와 통합한 후 개발을 시작할 수도 있습니다. 여기서는 통합 후 개발을 시작하는 것으로 하겠습니다.</p>
 
 <p> </p>
 
-<h5 id="step-2-별도의-폴더에서-cocoapods-프로젝트를-생성한-뒤-필요한-파일만-복사해-swift-package-manager-폴더로-복사합니다"><span class="me-2"><strong>Step 2: 별도의 폴더에서 CocoaPods 프로젝트를 생성한 뒤 필요한 파일만 복사해 Swift Package Manager 폴더로 복사합니다.</strong></span><a href="#step-2-별도의-폴더에서-cocoapods-프로젝트를-생성한-뒤-필요한-파일만-복사해-swift-package-manager-폴더로-복사합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-2-별도의-폴더에서-cocoapods-프로젝트를-생성한-뒤-필요한-파일만-복사해-swift-package-manager-폴더로-복사합니다"><span class="me-2"><strong>Step 2: 별도의 폴더에서 CocoaPods 프로젝트를 생성한 뒤 필요한 파일만 복사해 Swift Package Manager 폴더로 복사합니다.</strong></span><a href="#step-2-별도의-폴더에서-cocoapods-프로젝트를-생성한-뒤-필요한-파일만-복사해-swift-package-manager-폴더로-복사합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>이 부분을 진행하기 위해선 CocoaPods에 대한 사전 지식이 필요합니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=4457">Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</a></li>
+  <li><a href="/posts/xcode-프로젝트에-코코아팟cocoapods-설치-및-디펜던시-추가-방/">Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</a></li>
 </ul>
 
 <p> </p>
@@ -2355,8 +2334,8 @@ public struct BGSMM_DevKit {
 
 <p>몇가지 사항을 물어보는데 아래와 같이 답한 후 프로젝트를 생성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2367,16 +2346,16 @@ public struct BGSMM_DevKit {
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>What platform do you want to use?? [ iOS / macOS ]
- &gt; iOS
-What language do you want to use?? [ Swift / ObjC ]
- &gt; Swift
-Would you like to include a demo application with your library? [ Yes / No ]
- &gt; Yes
-Which testing frameworks will you use? [ Quick / None ]
- &gt; None
-Would you like to do view based testing? [ Yes / No ]
- &gt; No
+</pre></td><td class="rouge-code"><pre>What platform <span class="k">do </span>you want to use?? <span class="o">[</span> iOS / macOS <span class="o">]</span>
+ <span class="o">&gt;</span> iOS
+What language <span class="k">do </span>you want to use?? <span class="o">[</span> Swift / ObjC <span class="o">]</span>
+ <span class="o">&gt;</span> Swift
+Would you like to include a demo application with your library? <span class="o">[</span> Yes / No <span class="o">]</span>
+ <span class="o">&gt;</span> Yes
+Which testing frameworks will you use? <span class="o">[</span> Quick / None <span class="o">]</span>
+ <span class="o">&gt;</span> None
+Would you like to <span class="k">do </span>view based testing? <span class="o">[</span> Yes / No <span class="o">]</span>
+ <span class="o">&gt;</span> No
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2400,8 +2379,8 @@ Would you like to do view based testing? [ Yes / No ]
 
 <p><code class="language-plaintext highlighter-rouge">.podspec</code> 파일을 열고 소스 디렉토리 경로를 SPM의 <code class="language-plaintext highlighter-rouge">Source</code> 디렉토리로 수정합니다. (아래 코드에서 하이라이트 부분)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-ruby highlighter-rouge"><div class="code-header">
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2458,61 +2437,61 @@ Would you like to do view based testing? [ Yes / No ]
 54
 55
 56
-</pre></td><td class="rouge-code"><pre>#
-# Be sure to run `pod lib lint BGSMM_DevKit.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
+</pre></td><td class="rouge-code"><pre><span class="c1">#</span>
+<span class="c1"># Be sure to run `pod lib lint BGSMM_DevKit.podspec' to ensure this is a</span>
+<span class="c1"># valid spec before submitting.</span>
+<span class="c1">#</span>
+<span class="c1"># Any lines starting with a # are optional, but their use is encouraged</span>
+<span class="c1"># To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html</span>
+<span class="c1">#</span>
 
-Pod::Spec.new do |s|
-  s.name             = 'BGSMM_DevKit'
-  s.version          = '1.0.2'
-  s.summary          = 'BGSMM_DevKit is a collection of various utilities that I will use when developing.'
+<span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="p">.</span><span class="nf">name</span>             <span class="o">=</span> <span class="s1">'BGSMM_DevKit'</span>
+  <span class="n">s</span><span class="p">.</span><span class="nf">version</span>          <span class="o">=</span> <span class="s1">'1.0.2'</span>
+  <span class="n">s</span><span class="p">.</span><span class="nf">summary</span>          <span class="o">=</span> <span class="s1">'BGSMM_DevKit is a collection of various utilities that I will use when developing.'</span>
 
-  # Set swift version
-  s.swift_version    = '5.0'
+  <span class="c1"># Set swift version</span>
+  <span class="n">s</span><span class="p">.</span><span class="nf">swift_version</span>    <span class="o">=</span> <span class="s1">'5.0'</span>
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+<span class="c1"># This description is used to generate tags and improve search results.</span>
+<span class="c1">#   * Think: What does it do? Why did you write it? What is the focus?</span>
+<span class="c1">#   * Try to keep it short, snappy and to the point.</span>
+<span class="c1">#   * Write the description between the DESC delimiters below.</span>
+<span class="c1">#   * Finally, don't worry about the indent, CocoaPods strips it!</span>
 
-  s.description      = &lt;&lt;-DESC
+  <span class="n">s</span><span class="p">.</span><span class="nf">description</span>      <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">DESC</span><span class="sh">
 BGSMM_DevKit is a collection of various utilities that I will use when developing.
 Include SimpleAlert, StringManipulator, and etc..
-                       DESC
+</span><span class="no">                       DESC</span>
 
-  # s.homepage         = 'https://github.com/40187546/BGSMM_DevKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  # s.source           = { :git =&gt; 'https://github.com/40187546/BGSMM_DevKit.git', :tag =&gt; s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/&lt;TWITTER_USERNAME&gt;'
+  <span class="c1"># s.homepage         = 'https://github.com/40187546/BGSMM_DevKit'</span>
+  <span class="c1"># s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'</span>
+  <span class="c1"># s.source           = { :git =&gt; 'https://github.com/40187546/BGSMM_DevKit.git', :tag =&gt; s.version.to_s }</span>
+  <span class="c1"># s.social_media_url = 'https://twitter.com/&lt;TWITTER_USERNAME&gt;'</span>
 
-  s.homepage         = 'https://github.com/ayaysir/BGSMM_DevKit'
-  s.source           = { :git =&gt; 'https://github.com/ayaysir/BGSMM_DevKit.git', :tag =&gt; s.version.to_s }	
-  s.license          = { :type =&gt; 'MIT', :file =&gt; 'LICENSE' }
-  s.author           = { '40187546' =&gt; 'yoonbumtae@gmail.com' }
+  <span class="n">s</span><span class="p">.</span><span class="nf">homepage</span>         <span class="o">=</span> <span class="s1">'https://github.com/ayaysir/BGSMM_DevKit'</span>
+  <span class="n">s</span><span class="p">.</span><span class="nf">source</span>           <span class="o">=</span> <span class="p">{</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/ayaysir/BGSMM_DevKit.git'</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="nf">version</span><span class="p">.</span><span class="nf">to_s</span> <span class="p">}</span>	
+  <span class="n">s</span><span class="p">.</span><span class="nf">license</span>          <span class="o">=</span> <span class="p">{</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s1">'MIT'</span><span class="p">,</span> <span class="ss">:file</span> <span class="o">=&gt;</span> <span class="s1">'LICENSE'</span> <span class="p">}</span>
+  <span class="n">s</span><span class="p">.</span><span class="nf">author</span>           <span class="o">=</span> <span class="p">{</span> <span class="s1">'40187546'</span> <span class="o">=&gt;</span> <span class="s1">'yoonbumtae@gmail.com'</span> <span class="p">}</span>
   
-  # Localization
-  s.resource_bundles = {
-    'BGSMM_DevKit' =&gt; ['Sources/BGSMM_DevKit/Resources/*.lproj']
-  }
+  <span class="c1"># Localization</span>
+  <span class="n">s</span><span class="p">.</span><span class="nf">resource_bundles</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'BGSMM_DevKit'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'Sources/BGSMM_DevKit/Resources/*.lproj'</span><span class="p">]</span>
+  <span class="p">}</span>
 
-  s.ios.deployment_target = '10.0'
+  <span class="n">s</span><span class="p">.</span><span class="nf">ios</span><span class="p">.</span><span class="nf">deployment_target</span> <span class="o">=</span> <span class="s1">'10.0'</span>
 
-  # 여기 변경 (소스 위치)
-  s.source_files = 'Sources/BGSMM_DevKit/**/*'
+  <span class="c1"># 여기 변경 (소스 위치)</span>
+  <span class="n">s</span><span class="p">.</span><span class="nf">source_files</span> <span class="o">=</span> <span class="s1">'Sources/BGSMM_DevKit/**/*'</span>
   
-  # s.resource_bundles = {
-  #   'BGSMM_DevKit' =&gt; ['BGSMM_DevKit/Assets/*.png']
-  # }
+  <span class="c1"># s.resource_bundles = {</span>
+  <span class="c1">#   'BGSMM_DevKit' =&gt; ['BGSMM_DevKit/Assets/*.png']</span>
+  <span class="c1"># }</span>
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~&gt; 2.3'
-end
+  <span class="c1"># s.public_header_files = 'Pod/Classes/**/*.h'</span>
+  <span class="c1"># s.frameworks = 'UIKit', 'MapKit'</span>
+  <span class="c1"># s.dependency 'AFNetworking', '~&gt; 2.3'</span>
+<span class="k">end</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2520,8 +2499,8 @@ end
 
 <p>터미널에서 Example 폴더로 이동한 후 Podfile의 내용을 참고하여 pod install을 실행합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-ruby highlighter-rouge"><div class="code-header">
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2530,13 +2509,13 @@ end
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>use_frameworks!
+</pre></td><td class="rouge-code"><pre><span class="n">use_frameworks!</span>
 
-platform :ios, '10.0'
+<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'10.0'</span>
 
-target 'BGSMM_DevKit_Example' do
-  pod 'BGSMM_DevKit', :path =&gt; '../'
-end
+<span class="n">target</span> <span class="s1">'BGSMM_DevKit_Example'</span> <span class="k">do</span>
+  <span class="n">pod</span> <span class="s1">'BGSMM_DevKit'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'../'</span>
+<span class="k">end</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2554,8 +2533,8 @@ end
 
 <p>저는 <code class="language-plaintext highlighter-rouge">AlertController</code>를 간편하게 띄울 수 있는 <code class="language-plaintext highlighter-rouge">SimpleAlert</code>이라는 구조체 및 현재 앱에서 열려있는 뷰 컨트롤러 중 가장 위에 있는 것을 찾는 <code class="language-plaintext highlighter-rouge">extension</code> 추가했습니다. 분량상 코드에 대한 설명은 생략합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2655,109 +2634,109 @@ end
 97
 98
 99
-</pre></td><td class="rouge-code"><pre>#if os(iOS)
+</pre></td><td class="rouge-code"><pre><span class="cp">#if os(iOS)</span>
 
-import UIKit
+<span class="kd">import</span> <span class="kt">UIKit</span>
 
-public struct AlertActionText {
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">AlertActionText</span> <span class="p">{</span>
     
-    public init(CAUTION: String = "ALERT_CAUTION", OK: String = "ALERT_OK", NO: String = "ALERT_NO", YES: String = "ALERT_YES", CANCEL: String = "ALERT_CANCEL") {
-        self.CAUTION = CAUTION
-        self.OK = OK
-        self.NO = NO
-        self.YES = YES
-        self.CANCEL = CANCEL
-    }
+    <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="kt">CAUTION</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"ALERT_CAUTION"</span><span class="p">,</span> <span class="kt">OK</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"ALERT_OK"</span><span class="p">,</span> <span class="kt">NO</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"ALERT_NO"</span><span class="p">,</span> <span class="kt">YES</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"ALERT_YES"</span><span class="p">,</span> <span class="kt">CANCEL</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"ALERT_CANCEL"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="kt">CAUTION</span> <span class="o">=</span> <span class="kt">CAUTION</span>
+        <span class="k">self</span><span class="o">.</span><span class="kt">OK</span> <span class="o">=</span> <span class="kt">OK</span>
+        <span class="k">self</span><span class="o">.</span><span class="kt">NO</span> <span class="o">=</span> <span class="kt">NO</span>
+        <span class="k">self</span><span class="o">.</span><span class="kt">YES</span> <span class="o">=</span> <span class="kt">YES</span>
+        <span class="k">self</span><span class="o">.</span><span class="kt">CANCEL</span> <span class="o">=</span> <span class="kt">CANCEL</span>
+    <span class="p">}</span>
     
-    public var CAUTION = "ALERT_CAUTION"
-    public var OK = "ALERT_OK"
-    public var NO = "ALERT_NO"
-    public var YES = "ALERT_YES"
-    public var CANCEL = "ALERT_CANCEL"
-}
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">CAUTION</span> <span class="o">=</span> <span class="s">"ALERT_CAUTION"</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">OK</span> <span class="o">=</span> <span class="s">"ALERT_OK"</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">NO</span> <span class="o">=</span> <span class="s">"ALERT_NO"</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">YES</span> <span class="o">=</span> <span class="s">"ALERT_YES"</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">CANCEL</span> <span class="o">=</span> <span class="s">"ALERT_CANCEL"</span>
+<span class="p">}</span>
 
-public struct SimpleAlert {
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SimpleAlert</span> <span class="p">{</span>
     
-    // MARK: - static
+    <span class="c1">// MARK: - static</span>
     
-    public typealias Handler = ((UIAlertAction) -&gt; Void)
+    <span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Handler</span> <span class="o">=</span> <span class="p">((</span><span class="kt">UIAlertAction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
     
-    public static var actionText = AlertActionText()
-    public static var targetVC: UIViewController? = nil
+    <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">actionText</span> <span class="o">=</span> <span class="kt">AlertActionText</span><span class="p">()</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">targetVC</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
     
-    public static func present(message: String? = nil,
-                               title: String? = nil,
-                               handler: Handler? = nil) {
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">present</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                               <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                               <span class="nv">handler</span><span class="p">:</span> <span class="kt">Handler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
         
-        guard let targetVC = targetVC ?? UIApplication.shared.topMostViewController() else {
-            fatalError("The Target View Controller could not be specified.")
-        }
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">targetVC</span> <span class="o">=</span> <span class="n">targetVC</span> <span class="p">??</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">topMostViewController</span><span class="p">()</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"The Target View Controller could not be specified."</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: actionText.OK, style: .default, handler: handler)
-        alertController.addAction(alertAction)
+        <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">alertAction</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">actionText</span><span class="o">.</span><span class="kt">OK</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="n">handler</span><span class="p">)</span>
+        <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">alertAction</span><span class="p">)</span>
 
-        targetVC.present(alertController, animated: true, completion: nil)
+        <span class="n">targetVC</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
         
-    }
+    <span class="p">}</span>
     
-    public static func presentCaution(message: String, handler: Handler? = nil) {
-        present(message: message, title: actionText.CAUTION, handler: handler)
-    }
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">presentCaution</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kt">Handler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">present</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="n">actionText</span><span class="o">.</span><span class="kt">CAUTION</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="n">handler</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // Type 2: Yes And No
-    public static func yesAndNo(message: String? = nil,
-                        title: String? = nil,
-                        btnYesStyle: UIAlertAction.Style = .default,
-                        yesHandler: Handler? = nil) {
+    <span class="c1">// Type 2: Yes And No</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">yesAndNo</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                        <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                        <span class="nv">btnYesStyle</span><span class="p">:</span> <span class="kt">UIAlertAction</span><span class="o">.</span><span class="kt">Style</span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span>
+                        <span class="nv">yesHandler</span><span class="p">:</span> <span class="kt">Handler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
         
-        guard let targetVC = targetVC ?? UIApplication.shared.topMostViewController() else {
-            fatalError("The Target View Controller could not be specified.")
-        }
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">targetVC</span> <span class="o">=</span> <span class="n">targetVC</span> <span class="p">??</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">topMostViewController</span><span class="p">()</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">fatalError</span><span class="p">(</span><span class="s">"The Target View Controller could not be specified."</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertActionNo = UIAlertAction(title: actionText.NO, style: .cancel, handler: nil)
-        let alertActionYes = UIAlertAction(title: actionText.YES, style: btnYesStyle, handler: yesHandler)
-        alertController.addAction(alertActionNo)
-        alertController.addAction(alertActionYes)
-        targetVC.present(alertController, animated: true, completion: nil)
-    }
+        <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">alertActionNo</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">actionText</span><span class="o">.</span><span class="kt">NO</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">alertActionYes</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">actionText</span><span class="o">.</span><span class="kt">YES</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="n">btnYesStyle</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="n">yesHandler</span><span class="p">)</span>
+        <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">alertActionNo</span><span class="p">)</span>
+        <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">alertActionYes</span><span class="p">)</span>
+        <span class="n">targetVC</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
     
-    // Type 3: ActionSheet
-    public static func actionSheets(_ controller: UIViewController,
-                            actionTitles: [String],
-                            actionStyles: [UIAlertAction.Style]? = nil,
-                            title: String,
-                            message: String = "",
-                            sourceView: UIView?,
-                            sourceRect: CGRect?,
-                            actionCompletion: @escaping (_ actionIndex: Int) -&gt; ()) {
+    <span class="c1">// Type 3: ActionSheet</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">actionSheets</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span>
+                            <span class="nv">actionTitles</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span>
+                            <span class="nv">actionStyles</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIAlertAction</span><span class="o">.</span><span class="kt">Style</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                            <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                            <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span>
+                            <span class="nv">sourceView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?,</span>
+                            <span class="nv">sourceRect</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">?,</span>
+                            <span class="nv">actionCompletion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">actionIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="p">{</span>
         
-        let alertController = UIAlertController(title: title, message: "", preferredStyle: .actionSheet)
-        alertController.modalPresentationStyle = .popover
+        <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">actionSheet</span><span class="p">)</span>
+        <span class="n">alertController</span><span class="o">.</span><span class="n">modalPresentationStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">popover</span>
         
-        for (index, actionTitle) in actionTitles.enumerated() {
-            let action = UIAlertAction(title: actionTitle, style: actionStyles?[index] ?? .default, handler: { action in
-                actionCompletion(index)
-            })
-            alertController.addAction(action)
-        }
+        <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">actionTitle</span><span class="p">)</span> <span class="k">in</span> <span class="n">actionTitles</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">action</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">actionTitle</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="n">actionStyles</span><span class="p">?[</span><span class="n">index</span><span class="p">]</span> <span class="p">??</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="n">action</span> <span class="k">in</span>
+                <span class="nf">actionCompletion</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+            <span class="p">})</span>
+            <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+        <span class="p">}</span>
         
-        alertController.addAction(UIAlertAction(title: actionText.CANCEL, style: .cancel, handler: nil))
-        if let presenter = alertController.popoverPresentationController {
-            presenter.sourceView = sourceView ?? controller.view.window
-            presenter.sourceRect = sourceRect ?? CGRect(x: 0, y: 0, width: 0, height: 0)
-        }
-        controller.present(alertController, animated: true, completion: nil)
-    }
-}
+        <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="n">actionText</span><span class="o">.</span><span class="kt">CANCEL</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">presenter</span> <span class="o">=</span> <span class="n">alertController</span><span class="o">.</span><span class="n">popoverPresentationController</span> <span class="p">{</span>
+            <span class="n">presenter</span><span class="o">.</span><span class="n">sourceView</span> <span class="o">=</span> <span class="n">sourceView</span> <span class="p">??</span> <span class="n">controller</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">window</span>
+            <span class="n">presenter</span><span class="o">.</span><span class="n">sourceRect</span> <span class="o">=</span> <span class="n">sourceRect</span> <span class="p">??</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">controller</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-#endif
+<span class="cp">#endif</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2798,51 +2777,51 @@ public struct SimpleAlert {
 38
 39
 40
-</pre></td><td class="rouge-code"><pre>#if os(iOS)
-import UIKit
+</pre></td><td class="rouge-code"><pre><span class="cp">#if os(iOS)</span>
+<span class="kd">import</span> <span class="kt">UIKit</span>
 
-// https://stackoverflow.com/a/64301729
-extension UIViewController {
-    public func topMostViewController() -&gt; UIViewController {
-        if self.presentedViewController == nil {
-            return self
-        }
-        if let navigation = self.presentedViewController as? UINavigationController {
-            return navigation.visibleViewController!.topMostViewController()
-        }
-        if let tab = self.presentedViewController as? UITabBarController {
-            if let selectedTab = tab.selectedViewController {
-                return selectedTab.topMostViewController()
-            }
-            return tab.topMostViewController()
-        }
-        return self.presentedViewController!.topMostViewController()
-    }
-}
+<span class="c1">// https://stackoverflow.com/a/64301729</span>
+<span class="kd">extension</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">func</span> <span class="nf">topMostViewController</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">presentedViewController</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">self</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">navigation</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">presentedViewController</span> <span class="k">as?</span> <span class="kt">UINavigationController</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">navigation</span><span class="o">.</span><span class="n">visibleViewController</span><span class="o">!.</span><span class="nf">topMostViewController</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">tab</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">presentedViewController</span> <span class="k">as?</span> <span class="kt">UITabBarController</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">selectedTab</span> <span class="o">=</span> <span class="n">tab</span><span class="o">.</span><span class="n">selectedViewController</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="n">selectedTab</span><span class="o">.</span><span class="nf">topMostViewController</span><span class="p">()</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">tab</span><span class="o">.</span><span class="nf">topMostViewController</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">presentedViewController</span><span class="o">!.</span><span class="nf">topMostViewController</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-extension UIApplication {
-    public func topMostViewController() -&gt; UIViewController? {
-        return UIWindow.key!.rootViewController?.topMostViewController()
-    }
-}
+<span class="kd">extension</span> <span class="kt">UIApplication</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">func</span> <span class="nf">topMostViewController</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">UIWindow</span><span class="o">.</span><span class="n">key</span><span class="o">!.</span><span class="n">rootViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">topMostViewController</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-extension UIWindow {
-    public static var key: UIWindow? {
-        if #available(iOS 13, *) {
-            return UIApplication.shared.windows.first { $0.isKeyWindow }
-        } else {
-            return UIApplication.shared.keyWindow
-        }
-    }
-}
+<span class="kd">extension</span> <span class="kt">UIWindow</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">UIWindow</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">#available</span><span class="p">(</span><span class="n">iOS</span> <span class="mi">13</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">windows</span><span class="o">.</span><span class="n">first</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">isKeyWindow</span> <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">keyWindow</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-#endif
+<span class="cp">#endif</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="step-3-github-레퍼지토리에-푸시한-뒤-버전-태그를-생성하고-태그로부터-릴리즈를-생성합니다"><span class="me-2"><strong>Step 3: GitHub 레퍼지토리에 푸시한 뒤 버전 태그를 생성하고 태그로부터 릴리즈를 생성합니다.</strong></span><a href="#step-3-github-레퍼지토리에-푸시한-뒤-버전-태그를-생성하고-태그로부터-릴리즈를-생성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-3-github-레퍼지토리에-푸시한-뒤-버전-태그를-생성하고-태그로부터-릴리즈를-생성합니다"><span class="me-2"><strong>Step 3: GitHub 레퍼지토리에 푸시한 뒤 버전 태그를 생성하고 태그로부터 릴리즈를 생성합니다.</strong></span><a href="#step-3-github-레퍼지토리에-푸시한-뒤-버전-태그를-생성하고-태그로부터-릴리즈를-생성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>개발을 완료하였다면 새로운 원격 레퍼지토리를 만들고 SPM 프로젝트를 깃허브로 푸시합니다. 이 때 Xcode에 내장된 Git 도구를 사용하지 않고 터미널로 명령어를 입력하거나 별도의 GUI 툴을 사용합니다.</p>
 
@@ -2870,7 +2849,7 @@ extension UIWindow {
 
 <p> </p>
 
-<h5 id="step-4-cocoapods에-대응하기-위한-추가-작업을-실행합니다"><span class="me-2"><strong>Step 4: CocoaPods에 대응하기 위한 추가 작업을 실행합니다.</strong></span><a href="#step-4-cocoapods에-대응하기-위한-추가-작업을-실행합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="step-4-cocoapods에-대응하기-위한-추가-작업을-실행합니다"><span class="me-2"><strong>Step 4: CocoaPods에 대응하기 위한 추가 작업을 실행합니다.</strong></span><a href="#step-4-cocoapods에-대응하기-위한-추가-작업을-실행합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>다음 CocoaPods에 이메일을 인증하고 사용자 등록을 할 차례입니다. 터미널에 아래 명령어를 입력합니다.</p>
 
@@ -2957,9 +2936,9 @@ extension UIWindow {
 
 <p> </p>
 
-<h4 id="라이브러리가-동작하는지-테스트"><span class="me-2"><strong>라이브러리가 동작하는지 테스트</strong></span><a href="#라이브러리가-동작하는지-테스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="라이브러리가-동작하는지-테스트"><span class="me-2"><strong>라이브러리가 동작하는지 테스트</strong></span><a href="#라이브러리가-동작하는지-테스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="swift-package-manager"><span class="me-2"><strong>Swift Package Manager</strong></span><a href="#swift-package-manager" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="swift-package-manager"><span class="me-2"><strong>Swift Package Manager</strong></span><a href="#swift-package-manager" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>다른 프로젝트를 열고 <code class="language-plaintext highlighter-rouge">Add Packages...</code>에서 깃허브 주소를 입력하여 등록합니다.</p>
 
@@ -2969,30 +2948,30 @@ extension UIWindow {
 
 <p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-25-am-2.33.14.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-25-am-2.33.14.jpg" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>import BGSMM_DevKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">BGSMM_DevKit</span>
 
-// ... //
+<span class="c1">// ... //</span>
 
-SimpleAlert.present(message: "..........", title: "Test From SPM")
+<span class="kt">SimpleAlert</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="s">".........."</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="s">"Test From SPM"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-25-am-2.36.17.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-25-am-2.36.17.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="cocoapods"><span class="me-2"><strong>CocoaPods</strong></span><a href="#cocoapods" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="cocoapods"><span class="me-2"><strong>CocoaPods</strong></span><a href="#cocoapods" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">Podfile</code>에 디펜던시를 추가합니다. 참고로 CocoaPods 서버에 등록되기 까지 시간이 걸릴 수 있으므로 설치가 되지 않는다면 기다렸다 다시 설치하거나, <code class="language-plaintext highlighter-rouge">pod repo update</code>를 터미널에 입력하여 레퍼지토리 목록을 업데이트합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-ruby highlighter-rouge"><div class="code-header">
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3001,13 +2980,13 @@ SimpleAlert.present(message: "..........", title: "Test From SPM")
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>target 'PodTest' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+</pre></td><td class="rouge-code"><pre><span class="n">target</span> <span class="s1">'PodTest'</span> <span class="k">do</span>
+  <span class="c1"># Comment the next line if you don't want to use dynamic frameworks</span>
+  <span class="n">use_frameworks!</span>
 
-  # Pods for PodTest
-  pod 'BGSMM_DevKit'
-end
+  <span class="c1"># Pods for PodTest</span>
+  <span class="n">pod</span> <span class="s1">'BGSMM_DevKit'</span>
+<span class="k">end</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -3027,7 +3006,7 @@ end
 
 <p> </p>
 
-<h5 id="전체-코드-1"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="전체-코드-1"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://github.com/ayaysir/BGSMM_DevKit">https://github.com/ayaysir/BGSMM_DevKit</a></li>
@@ -4037,18 +4016,6 @@ end
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

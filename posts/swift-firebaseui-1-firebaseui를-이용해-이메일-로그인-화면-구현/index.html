@@ -945,6 +945,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -963,11 +1028,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -975,43 +1035,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1060,8 +1083,29 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1152,7 +1196,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1893 words"
+  title="1884 words"
 >
   <em>10 min</em> read</span>
 
@@ -1186,10 +1230,10 @@
   
 
   <div class="content">
-    <h5 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p><strong>참고</strong></p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=4090">Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)</a></li>
+  <li><a href="/posts/swift%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-firebase%ED%8C%8C%EC%9D%B4%EC%96%B4%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%9D%B8%EC%A6%9D-%EA%B8%B0%EB%8A%A5%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EA%B8%B0/">Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)</a></li>
 </ul>
 
 <p> </p>
@@ -1198,14 +1242,14 @@
 
 <p> </p>
 
-<h3 id="firebaseui-1---이메일-로그인-화면-구현"><span class="me-2"><strong>FirebaseUI (1) - 이메일 로그인 화면 구현</strong></span><a href="#firebaseui-1---이메일-로그인-화면-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="firebaseui-1---이메일-로그인-화면-구현"><span class="me-2"><strong>FirebaseUI (1) - 이메일 로그인 화면 구현</strong></span><a href="#firebaseui-1---이메일-로그인-화면-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="https://github.com/firebase/FirebaseUI-iOS/" title="https://github.com/firebase/FirebaseUI-iOS/"><strong><em>FirebaseUI</em></strong></a>는 파이어베이스(Firebase)에서 자주 사용하는 작업들, 예를 들면 인증(로그인)이나 데이터베이스, 파일 저장 기능 등을 보일러플레이트 코드를 작성하지 않고도 편리하게(?) 사용할 수 있도록 해주는 라이브러리입니다.</p>
 
 <p><strong><em>CocoaPods</em></strong> 디펜던시에 다음을 추가합니다. 파이어베이스가 이미 설치되어 있다면 FirebaseUI만 설치하고(하이라이트 부분), 파이어베이스가 없다면 파이어베이스도 같이 설치합니다. (하이라이트 외 부분)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-ruby highlighter-rouge"><div class="code-header">
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1218,27 +1262,27 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre># Add the Firebase pod for Google Analytics
-pod 'FirebaseAnalytics'
+</pre></td><td class="rouge-code"><pre><span class="c1"># Add the Firebase pod for Google Analytics</span>
+<span class="n">pod</span> <span class="s1">'FirebaseAnalytics'</span>
 
-# For Analytics without IDFA collection capability, use this pod instead
-# pod ‘Firebase/AnalyticsWithoutAdIdSupport’
+<span class="c1"># For Analytics without IDFA collection capability, use this pod instead</span>
+<span class="c1"># pod ‘Firebase/AnalyticsWithoutAdIdSupport’</span>
 
-# Add the pods for any other Firebase products you want to use in your app
-# For example, to use Firebase Authentication and Cloud Firestore
-pod 'FirebaseAuth'
-pod 'FirebaseFirestore'
+<span class="c1"># Add the pods for any other Firebase products you want to use in your app</span>
+<span class="c1"># For example, to use Firebase Authentication and Cloud Firestore</span>
+<span class="n">pod</span> <span class="s1">'FirebaseAuth'</span>
+<span class="n">pod</span> <span class="s1">'FirebaseFirestore'</span>
 
-pod 'FirebaseUI'
+<span class="n">pod</span> <span class="s1">'FirebaseUI'</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=4457">Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</a></li>
+  <li><a href="/posts/xcode-프로젝트에-코코아팟cocoapods-설치-및-디펜던시-추가-방/">Xcode 프로젝트에 코코아팟(CocoaPods) 설치 및 디펜던시 추가 방법</a></li>
 </ul>
 
 <p> </p>
 
-<h4 id="구현-방법"><span class="me-2"><strong>구현 방법</strong></span><a href="#구현-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="구현-방법"><span class="me-2"><strong>구현 방법</strong></span><a href="#구현-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>뷰 컨트롤러에 다음 코드를 추가합니다. 새로운 뷰 컨트롤러를 띄우는 부분이 있으므로 <code class="language-plaintext highlighter-rouge">viewDidAppear</code>에서 작성합니다.</p>
 
@@ -1341,7 +1385,7 @@ pod 'FirebaseUI'
 
 <p> </p>
 
-<h4 id="추가-구현-1-로그인-여부-표시-및-현재-유저의-이메일-표시"><span class="me-2"><strong>추가 구현 1: 로그인 여부 표시 및 현재 유저의 이메일 표시</strong></span><a href="#추가-구현-1-로그인-여부-표시-및-현재-유저의-이메일-표시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="추가-구현-1-로그인-여부-표시-및-현재-유저의-이메일-표시"><span class="me-2"><strong>추가 구현 1: 로그인 여부 표시 및 현재 유저의 이메일 표시</strong></span><a href="#추가-구현-1-로그인-여부-표시-및-현재-유저의-이메일-표시" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-am-3.07.28.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/screenshot-2022-10-18-am-3.07.28.jpg" alt="" loading="lazy"></a></p>
 
@@ -1423,17 +1467,19 @@ pod 'FirebaseUI'
 
 <p> </p>
 
-<p>[gallery size=”full” columns=”2” ids=”4966,4967”]</p>
+<!-- \[gallery size="full" columns="2" ids="4966,4967"\] -->
+<p><a href="/assets/img/DevLog/firebase/ui-3.jpg" class="popup img-link shimmer"><img src="/assets/img/DevLog/firebase/ui-3.jpg" alt="" loading="lazy"></a></p>
 
 <p><code class="language-plaintext highlighter-rouge">Log In</code> 버튼을 클릭하면 로그인 창이 뜨며, <code class="language-plaintext highlighter-rouge">Log Out</code> 버튼을 누른 경우 로그아웃됩니다.</p>
 
 <p> </p>
 
-<h4 id="추가-구현-2-로그인-창의-맨-첫-화면-커스터마이징하기"><span class="me-2"><strong>추가 구현 2: 로그인 창의 맨 첫 화면 커스터마이징하기</strong></span><a href="#추가-구현-2-로그인-창의-맨-첫-화면-커스터마이징하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="추가-구현-2-로그인-창의-맨-첫-화면-커스터마이징하기"><span class="me-2"><strong>추가 구현 2: 로그인 창의 맨 첫 화면 커스터마이징하기</strong></span><a href="#추가-구현-2-로그인-창의-맨-첫-화면-커스터마이징하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>로그인 화면 첫 화면을 보면 하면이 너무 휑하다는 것을 알 수 있습니다.</p>
 
-<p>[caption id=”attachment_4960” align=”alignnone” width=”305”] <a href="/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-02.53.26.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-02.53.26.png" alt="" loading="lazy"></a> 첫 화면[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-02.53.26.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2022/10/Simulator-Screen-Shot-iPhone-11-2022-10-18-at-02.53.26.png" alt="첫 화면" loading="lazy"></a><br />
+<em>첫 화면</em></p>
 
 <p>나중에 구글이나 애플 인증 버튼이 추가되면 약간 나아지지만, 아무 사진도 설명도 없는 화면은 혼란을 야기할 수 있습니다. 이 화면을 커스터마이징 해보겠습니다.</p>
 
@@ -1513,8 +1559,8 @@ pod 'FirebaseUI'
 
 <p>다음 기존 뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">authViewController</code> 관련 부분을 다음과 같이 변경합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1524,15 +1570,15 @@ pod 'FirebaseUI'
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>// 삭제
-// let authViewController = authUI?.authViewController() // 기본 제공 뷰 컨트롤러
-// self.present(authViewController!, animated: true)
+</pre></td><td class="rouge-code"><pre><span class="c1">// 삭제</span>
+<span class="c1">// let authViewController = authUI?.authViewController() // 기본 제공 뷰 컨트롤러</span>
+<span class="c1">// self.present(authViewController!, animated: true)</span>
 
-let customLoginVC = LoginCustomViewController(authUI: authUI!)
-let naviVC = UINavigationController(rootViewController: customLoginVC)
-naviVC.presentationController?.delegate = self
+<span class="k">let</span> <span class="nv">customLoginVC</span> <span class="o">=</span> <span class="kt">LoginCustomViewController</span><span class="p">(</span><span class="nv">authUI</span><span class="p">:</span> <span class="n">authUI</span><span class="o">!</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">naviVC</span> <span class="o">=</span> <span class="kt">UINavigationController</span><span class="p">(</span><span class="nv">rootViewController</span><span class="p">:</span> <span class="n">customLoginVC</span><span class="p">)</span>
+<span class="n">naviVC</span><span class="o">.</span><span class="n">presentationController</span><span class="p">?</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
 
-self.present(naviVC, animated: true)
+<span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">naviVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2579,18 +2625,6 @@ self.present(naviVC, animated: true)
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
