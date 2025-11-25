@@ -73,7 +73,8 @@ categories:
 
 이 글에서는 이미지 분류(Image Classification)가 가능한 기계학습 모델을 만든 뒤 그 모델을 앱에 적용해 개, 고양이, 소, 말을 구분하는 앱을 제작합니다.
 
-\[gallery columns="4" size="full" ids="4902,4903,4904,4901"\]
+<!-- \[gallery columns="4" size="full" ids="4902,4903,4904,4901"\] -->
+![](/assets/img/DevLog/swift-coreml-gallery-1.jpg)
 
 #### **순서**
 

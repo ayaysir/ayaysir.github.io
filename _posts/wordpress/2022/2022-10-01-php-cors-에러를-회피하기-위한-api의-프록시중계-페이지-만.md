@@ -261,7 +261,7 @@ const proxyUrl = "http://[내_주소]/proxy/?certkey_no=4422&key=[API_KEY]&type_
 CORS 문제가 발생하지 않고 API 호출이 정상적으로 동작하는지 확인합니다.
 
 <!-- http://www.giphy.com/gifs/qVBeQOcfARbpjQEfKH -->
-![](https://)
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2pwejV4aGt0Y3EyZ2g3OGUwZnc3aW5kODJndGd2dWx2cnFoYmpzaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qVBeQOcfARbpjQEfKH/giphy.gif)
 
 \[caption id="attachment\_4874" align="alignnone" width="514"\] ![](/assets/img/wp-content/uploads/2022/10/mosaiced-screenshot-2022-10-02-am-12.55.53.jpg) 콘솔 표시 결과\[/caption\]
 

@@ -20,7 +20,7 @@ categories:
 
 두 가지 경우가 있는데, **RootVC**에서 **ContainerVC**로 보내는 경우는 비교적 간단하고, 그 반대의 경우는 대리자 패턴(Delegate pattern)을 사용해야 합니다.
 
- 
+## **케이스**
 
 ### **Case 1: RootVC(부모)에서 ContainerVC(자식)으로 데이터 전송**
 
@@ -38,13 +38,13 @@ categories:
 
  
 
-##### **RootViewController.swift 파일**
+#### **RootViewController.swift 파일**
 
  
 
 **RootVC**의 텍스트 필드를 `@IBOutlet`으로 연결합니다.
 
-```
+```swift
 // 1-0: @IBOutlet 연결(루트 뷰 컨트롤러)
 @IBOutlet weak var txfSendValueToContainer: UITextField!
 ```
@@ -53,7 +53,7 @@ categories:
 
 다음 **ContainerVC**를 참조할 수 있는 멤버 변수를 생성해야 합니다. 이 변수가 있어야 `RootVC` 내의 아무 곳에서 나중에 보낼 타깃(`ContainerVC`)을 가리킬 수 있습니다.
 
-```
+```swift
 // 1-1: 컨테이너 뷰 컨트롤러를 참조하는 변수 생성
 private var containerVC: ContainerViewController?
 ```
@@ -62,7 +62,7 @@ private var containerVC: ContainerViewController?
 
 `override func prepare`에서 `segue`에 관련된 사항을 설정합니다.
 
-```
+```swift
 // 1-2: segue.identifer별 분기 설정
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     switch segue.identifier {
@@ -81,11 +81,11 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
  
 
-##### **ContainerViewController.swift 파일**
+#### **ContainerViewController.swift 파일**
 
 부모 VC로부터 받은 값을 표시할 레이블을 `@IBOutlet`으로 연결합니다.
 
-```
+```swift
 // 1-4: IBOutlet 연결(컨테이너 뷰 컨트롤러)
 @IBOutlet weak var lblReceivedValueFromRoot: UILabel!
 ```
@@ -94,7 +94,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 값을 받고 표시하는 메서드를 만듭니다.
 
-```
+```swift
 // 1-5: Root로부터 값을 전달받는 함수 생성
 func setLabel(_ value: String) {
     // 1-6: Root로부터 받은 값을 레이블에 설정
@@ -110,11 +110,11 @@ func setLabel(_ value: String) {
 
  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-13-pm-11.22.12.jpg)
 
-##### **RootViewController.swift 파일**
+#### **RootViewController.swift 파일**
 
 전송 버튼을 `@IBAction`으로 연결해 이벤트를 설정합니다.
 
-```
+```swift
 // 1-7: 전송 버튼 이벤트 설정
 @IBAction func btnActSubmitToContainer(_ sender: Any) {
     containerVC?.setLabel(txfSendValueToContainer.text ?? "")
@@ -128,7 +128,7 @@ func setLabel(_ value: String) {
 빌드 및 실행하고 결과를 확인합니다.
 
 <!-- http://www.giphy.com/gifs/hIVBwBGUyRP6v0DYLS -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjQ0ZndjMzFwYm5kcW90cmRjOTFiZXl1N2sxejJxZWNncWtyYWZoZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hIVBwBGUyRP6v0DYLS/giphy.gif)
 
  
 
@@ -140,10 +140,7 @@ func setLabel(_ value: String) {
 
  
 
-> **참고: 대리자 패턴**
-> 
->  
-> 
+#### **참고: 대리자 패턴**
 > **delegation, delegation pattern** **위임, 위임 패턴, 대리자, 대리자 패턴**
 > 
 > - 어떤 객체의 조작 일부를 다른 객체에게 넘김
@@ -157,22 +154,22 @@ func setLabel(_ value: String) {
 
  
 
-##### **RootViewController.swift 파일**
+#### **RootViewController.swift 파일**
 
 자식 VC로부터 받은 값을 표시하는 레이블을 `@IBOutlet`으로 연결합니다.
 
-```
+```swift
 // 2-0: @IBOutlet 연결(루트 뷰 컨트롤러)
 @IBOutlet weak var lblReceivedValueFromContainer: UILabel!
 ```
 
  
 
-##### **ContainerViewController.swift 파일**
+#### **ContainerViewController.swift 파일**
 
 대리자 프로토콜을 작성합니다.
 
-```
+```swift
 // 2-1: 대리자 프로토콜 작성
 protocol ContainerVCDelegate: AnyObject {
     func didReceivedValueFromContainer(_ controller: ContainerViewController, value: String)
@@ -187,10 +184,7 @@ protocol ContainerVCDelegate: AnyObject {
 
  
 
-> **참고: AnyObject 프로토콜**
-> 
->  
-> 
+#### **참고: AnyObject 프로토콜**
 > _**AnyObject프로토콜**을 프로토콜의 상속목록에 추가하여 프로토콜 채택을 클래스 타입(구조체 또는 열거형이 아닌)을 제한할 수 있습니다._
 > 
 > _와 한번에 이해가 가네요. 더 간단하게 말하면 **AnyObject를 상속한 프로토콜은 클래스만 채택할 수 있다!!!**_
@@ -203,7 +197,7 @@ protocol ContainerVCDelegate: AnyObject {
 
 멤버 변수로 추가합니다. `ContainerVCDelegate`는 클래스 프로토콜이므로 엄밀히 말하면 구조체는 사용할 수 없습니다.
 
-```
+```swift
 // 2-2: 딜리게이트 변수 설정
 // ContainerVCDelegate를 준수한다면 어느 클래스나 구조체도 여기에 할당될 수 있음
 weak var delegate: ContainerVCDelegate?
@@ -219,7 +213,7 @@ weak var delegate: ContainerVCDelegate?
 
 텍스트필드를 `@IBOutlet`으로 연결합니다.
 
-```
+```swift
 // 2-3: 텍스트필드 @IBOutlet 연결
 @IBOutlet weak var txfSendValueToRoot: UITextField!
 ```
@@ -228,7 +222,7 @@ weak var delegate: ContainerVCDelegate?
 
 전송 버튼을 `@IBAction`으로 연결해 해야 할 작업을 작성합니다. **ContainerVC**에서 값을 **RootVC**로 보내고, 보낸 후 해야 할 작업을 작성합니다.
 
-```
+```swift
 // 2-4: 컨테이너 뷰로 값 전송 기능 구현
 @IBAction func btnActSubmitToRoot(_ sender: Any) {
     // 2-5: 딜리게이트를 통해
@@ -247,11 +241,11 @@ weak var delegate: ContainerVCDelegate?
 
  
 
-##### **RootViewController.swift 파일**
+#### **RootViewController.swift 파일**
 
 먼저 `containerVC`의 대리자로 자기 자신(`self`)을 지정합니다. `prepare` 함수 안에 하이라이트된 부분 위치에 추가합니다.
 
-```
+```swift
 // 1-2: segue.identifer별 분기 설정
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     switch segue.identifier {
@@ -282,7 +276,7 @@ _Cannot assign value of type 'RootViewController' to type 'ContainerVCDelegate?'
 
 아래 `extension`을 추가합니다.
 
-```
+```swift
 // 2-7: ContainerVCDelegate를 준수(conform)하는 확장 구현
 extension RootViewController: ContainerVCDelegate {
     func didReceivedValueFromContainer(_ controller: ContainerViewController, value: String) {
@@ -313,6 +307,7 @@ extension RootViewController: ContainerVCDelegate {
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
-https://gist.github.com/ayaysir/0b4e2ab7ec5f77103dbf279989fffa23
+<!-- https://gist.github.com/ayaysir/0b4e2ab7ec5f77103dbf279989fffa23 -->
+{% gist "https://gist.github.com/ayaysir/0b4e2ab7ec5f77103dbf279989fffa23" %}

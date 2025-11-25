@@ -52,7 +52,7 @@ categories:
 #### **예제 1) 클릭 이벤트**
 
 <!-- http://www.giphy.com/gifs/RN87K9Hk1i0glMwNui -->
-![](https://)
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDZzNmFuejlkaTZzbWk1dzJmMTExemZ5bzQwM2tuNmQxendra2JwYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RN87K9Hk1i0glMwNui/giphy.gif)
 
 이 예제는 `<div>` 영역을 클릭하면 배경색이 빨간색\-파란색으로 번갈아가며 바뀝니다.
 

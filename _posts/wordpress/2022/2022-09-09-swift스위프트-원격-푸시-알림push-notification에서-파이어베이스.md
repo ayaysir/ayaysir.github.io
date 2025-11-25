@@ -8,6 +8,9 @@ categories:
 
 <!-- \[rcblock id="4769"\] -->
 
+- 출처: [\[Swift\] SwiftUI Push Notifications(FCM) APN(APNS) 푸쉬알림 예제](https://pgnt.tistory.com/m/117)
+
+
 ## **이전 글**
  
 **이 글의 내용을 진행하려면 이전에 작성한 푸시 알림 관련 글을 먼저 읽어야 합니다.**
@@ -27,7 +30,9 @@ categories:
 
  
 
-이 중에서 2번의 서버를 실제로 만들고 서비스하려면 상당히 전문적인 지식이 필요합니다. 그래서 보통 직접 만들기보다 웹 서비스에서 제공하는 메시징 배포 서버를 사용하며 여기서도 구글의 [Firebase Messaging](https://firebase.google.com/docs/cloud-messaging) 이라는 서비스를 이용해서 푸시 알림을 보내도록 하겠습다.
+이 중에서 2번의 서버를 실제로 만들고 서비스하려면 상당히 전문적인 지식이 필요합니다. 그래서 보통 직접 만들기보다 웹 서비스에서 제공하는 메시징 배포 서버를 사용하며 여기서도 구글의 [Firebase Messaging](https://firebase.google.com/docs/cloud-messaging) 이라는 서비스를 이용해서 푸시 알림을 보내도록 하겠습니다.
+
+<br>
 
 ## **방법**
 
@@ -46,7 +51,7 @@ Firebase에서 프로젝트를 생성합니다. 프로젝트 생성 과정 중 `
  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-09-pm-10.11.11.jpg)
 
  
- #### **참고: Key ID 발급 및 Team ID 확인**
+#### **참고: Key ID 발급 및 Team ID 확인**
 
 >  
 > 
@@ -327,7 +332,7 @@ func receivePushNotiNews(title: String, body: String, linkURL: String) {
 
  
 
-#### **4: 파이어베이스 Messaging 콘솔에서 사전 테스트**
+### **4: 파이어베이스 Messaging 콘솔에서 사전 테스트**
 
 이제 [Firebase 콘솔 페이지](https://console.firebase.google.com/)로 이동하여 `제품 카테고리 > 빌드 > Cloud Messaging`을 선택합니다. `Send your first message` 버튼을 클릭합니다.
 
@@ -355,7 +360,7 @@ func receivePushNotiNews(title: String, body: String, linkURL: String) {
 
  
 
-#### **5: 파이어베이스 콘솔에서 실제 메시지 전송**
+### **5: 파이어베이스 콘솔에서 실제 메시지 전송**
 
 동일한 페이지에서 실제 메시지를 전송할 수 있습니다. 먼저 시간대를 설정합니다. 3번 메뉴의 `예약`을 클릭합니다.
 
@@ -383,7 +388,6 @@ func receivePushNotiNews(title: String, body: String, linkURL: String) {
 
  
 
-출처: [\[Swift\] SwiftUI Push Notifications(FCM) APN(APNS) 푸쉬알림 예제](https://pgnt.tistory.com/m/117)
 
  
 

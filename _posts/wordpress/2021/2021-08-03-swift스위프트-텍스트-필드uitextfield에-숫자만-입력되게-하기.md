@@ -95,4 +95,4 @@ extension String  {
 ```
 
 <!-- http://www.giphy.com/gifs/FoVAHgRYHDsKeTshNQ -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGpsZzBic204ZTdjcmM2Y3V5MzE2dDc3YXprNXd4dGR2NmppYnZxZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FoVAHgRYHDsKeTshNQ/giphy.gif)

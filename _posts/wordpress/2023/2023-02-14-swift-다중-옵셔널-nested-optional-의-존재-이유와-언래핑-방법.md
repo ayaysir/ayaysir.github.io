@@ -192,7 +192,7 @@ if let value = a ?? nil {
 
 #### **6\. flatMap을 사용하기**
 
-```
+```swift
 if let value = a.flatMap({ $0 }) {
     print(value)  // "hello\n"
 }

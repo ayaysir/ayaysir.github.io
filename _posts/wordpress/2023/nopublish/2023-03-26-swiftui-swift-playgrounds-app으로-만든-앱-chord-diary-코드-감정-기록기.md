@@ -76,8 +76,10 @@ CRUD의 모든 과정은 `UserDefaults`를 사용해 관리되며 실제로 동�
 
 ##### **Create**
 
-\[gallery link="none" size="full" ids="5400,5401,5402"\]
-
+<!-- \[gallery link="none" size="full" ids="5400,5401,5402"\] -->
+<!-- http://yoonbumtae.com/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-01.27.53-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB.jpg
+http://yoonbumtae.com/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-01.28.38-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB.jpg
+http://yoonbumtae.com/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-01.28.43-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB-473x1024.jpg -->
  
 
 ##### **Read**
@@ -94,7 +96,10 @@ CRUD의 모든 과정은 `UserDefaults`를 사용해 관리되며 실제로 동�
 
 #### **Update**
 
-\[gallery size="full" link="none" ids="5406,5405,5404"\]
+<!-- \[gallery size="full" link="none" ids="5406,5405,5404"\] -->
+<!-- http://yoonbumtae.com/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-01.30.15-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB-2.jpg
+http://yoonbumtae.com/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-01.30.32-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB-2.jpg
+http://yoonbumtae.com/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-01.31.20-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB-2.jpg -->
 
 - 재목이 `Reflux`인 글의 내용을 업데이트
     - 코드를 `Em`에서 `Em6`으로 변경
@@ -105,6 +110,8 @@ CRUD의 모든 과정은 `UserDefaults`를 사용해 관리되며 실제로 동�
 
 #### **Delete**
 
-\[gallery columns="2" link="none" size="full" ids="5407,5408"\]
+<!-- \[gallery columns="2" link="none" size="full" ids="5407,5408"\] -->
+<!-- http://yoonbumtae.com/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-01.31.35-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB.jpg
+http://yoonbumtae.com/wp-content/uploads/2023/03/Simulator-Screen-Shot-iPhone-14-2023-03-27-at-01.31.40-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB.jpg -->
 
 - 삭제(Delete)는 메인 화면 뿐만 아니라 `BodyView` 내에서도 가능

@@ -75,7 +75,7 @@ UNUserNotificationCenter.current().setNotificationCategories([newsCategory])
 
 이를 단계별로 살펴보면 다음과 같습니다.
 
-1. `[보기]` 버튼 및 `[보관]` 버튼을 사용하여 트리거될 때 앱을 포어그라운드(foreground)에서 여는 새 알림 작업을 만듭니다. 작업에는 iOS가 동일한 알림에서 다른 작업을 구별하는 데 사용하는 고유한 식별자(identifier)가 있습니다.
+1. `[보기]` 버튼 및 `[보관]` 버튼을 사용하여 트리거될 때 앱을 포그라운드(foreground)에서 여는 새 알림 작업을 만듭니다. 작업에는 iOS가 동일한 알림에서 다른 작업을 구별하는 데 사용하는 고유한 식별자(identifier)가 있습니다.
 2. 해당 작업들을 포함할 뉴스 카테고리를 정의합니다. 여기에는 푸시 알림이 이 카테고리에 속하도록 지정하기 위해 페이로드에 포함해야 하는 고유 식별자도 있습니다.
 3. setNotificationCategories를 호출하여 실행 가능한 새 알림을 등록합니다.
 
@@ -107,7 +107,7 @@ UNUserNotificationCenter.current().setNotificationCategories([newsCategory])
 
  
 
-#### **알림 작업 처리**
+### **알림 작업 처리**
 
 알림 작업이 트리거될 때마다 `UNUserNotificationCenter`는 `delegate`에게 알려야 합니다.
 
@@ -186,7 +186,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:))
 
 빌드 및 실행 후, 보낼 소식과 첨부 `url`을 갱신한 새로운 페이로드를 전송합니다.
 
-```
+```json
 {
   "aps": {
     "alert" : {
@@ -206,7 +206,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(openSafari(_:))
 ![페이로드에 첨부한 `URL`로 접속됨 (`SFSafariViewController` 사용)](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-am-12.53.29.jpg)  
 *페이로드에 첨부한 `URL`로 접속됨 (`SFSafariViewController` 사용)*
 
- 
+<br>
 
 ### **실제 기기로 보내기**
 
@@ -277,9 +277,9 @@ PushNotifications 유틸리티를 시작하고 다음 단계를 완료합니다.
 
  ![](/assets/img/wp-content/uploads/2022/09/IMG_9135.jpg)
 
- 
+<br> 
 
-#### **일반적인 문제 해결**
+## **일반적인 문제 해결**
 
 다음은 발생할 수 있는 몇 가지 문제입니다.
 
@@ -288,7 +288,7 @@ PushNotifications 유틸리티를 시작하고 다음 단계를 완료합니다.
 
  
 
-### **조용한 푸시 알림 (Silent Push Notifications) 사용**
+## **조용한 푸시 알림 (Silent Push Notifications) 사용**
 
 자동 푸시 알림은 백그라운드에서 일부 작업을 수행하기 위해 앱을 자동으로 깨울 수 있습니다.
 
@@ -338,7 +338,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 
 빌드 및 실행하고 PushNotifications 유틸리티를 통해 다음 페이로드를 푸시합니다.
 
-```
+```json
 {
   "aps": {
     "content-available": 1
@@ -347,13 +347,13 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 }
 ```
 
-포어그라운드/백그라운드/종료 상태 각각에서 테스트 해봅니다. 알림 메시지가 표시되지 않으면서 각종 작업을 수행하고 있습니다.
+포그라운드/백그라운드/종료 상태 각각에서 테스트 해봅니다. 알림 메시지가 표시되지 않으면서 각종 작업을 수행하고 있습니다.
 
  ![](/assets/img/wp-content/uploads/2022/09/IMG_8D368DFDB571-1.jpg)
 
  
 
-### **다음 뭘 해야 합니까?**
+## **다음 뭘 해야 합니까?**
 
 축하합니다! 이 튜토리얼을 완료하고 간단한 푸시 알림 앱을 만들었습니다.
 

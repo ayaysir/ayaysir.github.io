@@ -25,7 +25,7 @@ Push notification(푸시 노티피케이션) 흔히 푸시 알림, 푸시 메시
 
 이하 편의상 Push Notification을 _푸시 알림_이라고 부르겠습니다.
 
- 
+<br> 
 
 ## **푸시 알림 튜토리얼**
 
@@ -34,9 +34,11 @@ iOS 개발자는 사람들이 멋진 앱을 지속적으로 사용하는 것을 
 - 푸시 알림을 수신하도록 앱을 구성합니다.
 - 사용자에게 표시하거나 다른 작업을 수행합니다.
 
-참고: 이 자습서에서는 iOS용 푸시 알림을 사용하는 방법에 대한 기본 사항을 다룹니다. 자체 앱에서 푸시 알림을 사용하는 데 필요한 자세한 내용과 자세한 내용은 iOS 전문가 Scott Grosch의 튜토리얼이 작성한 푸시 알림 책([raywenderlinch 링크](https://www.raywenderlich.com/11395893-push-notifications-tutorial-getting-started#toc-anchor-013:~:text=see%20our%20book-,Push%20Notifications%20by%20Tutorials,-by%20iOS%20expert))을 참조하세요. 리치 미디어 알림, 알림 작업, 그룹화된 알림 등을 다룹니다.
+참고: 이 자습서에서는 iOS용 푸시 알림을 사용하는 방법에 대한 기본 사항을 다룹니다. 
 
- 
+<!-- 자체 앱에서 푸시 알림을 사용하는 데 필요한 자세한 내용과 자세한 내용은 iOS 전문가 Scott Grosch의 튜토리얼이 작성한 푸시 알림 책([raywenderlinch 링크](https://www.raywenderlich.com/11395893-push-notifications-tutorial-getting-started#toc-anchor-013:~:text=see%20our%20book-,Push%20Notifications%20by%20Tutorials,-by%20iOS%20expert))을 참조하세요. 리치 미디어 알림, 알림 작업, 그룹화된 알림 등을 다룹니다. -->
+
+<br> 
 
 ## **시작하기**
 
@@ -54,7 +56,6 @@ iOS 개발자는 사람들이 멋진 앱을 지속적으로 사용하는 것을 
 - 알림에 대한 맞춤형 대화형 UI를 표시합니다.
 - 기타 등등
 
- 
 
 이 자습서에서는 앱에서 푸시 알림 생성을 시작하는 데 도움이 되는 이러한 여러 용도를 다룹니다. 이 튜토리얼을 진행하려면 다음이 필요합니다.
 
@@ -63,7 +64,6 @@ iOS 개발자는 사람들이 멋진 앱을 지속적으로 사용하는 것을 
 - AppDelegate, SceneDelegate 기반의 스토리보드 iOS Single App 프로젝트
 
  
-
 > 참고: 튜토리얼 下편에서 실제 기기로 보내기에서 실제 기기로 푸시 알림을 보내는 방법을 배우게 됩니다.
 
  
@@ -85,11 +85,9 @@ UIKit 스토리보드 기반의 iOS SingleApp 프로젝트를 생성합니다.
  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-10.58.50.jpg) 
  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-10.59.20.jpg)
 
- 
+<br>  
 
- 
-
-## **푸시 알림 보내기 및 받기**
+## **푸시 알림 보내기 및 받기 절차**
 
 ### **앱 구성**
 
@@ -127,7 +125,7 @@ Xcode의 프로젝트 탐색기의 프로젝트 설정의 `General` 탭에서 �
 
 이것이 지금 구성해야 하는 전부입니다. 앱 구현을 위한 준비를 마쳤습니다.
 
- 
+<br> 
 
 ### **사용자 알림 권한 요청**
 
@@ -147,15 +145,18 @@ import UserNotifications
 
 ```swift
 func registerForPushNotifications() {
-    // 1 - UNUserNotificationCenter는 푸시 알림을 포함하여 앱의 모든 알림 관련 활동을 처리합니다.
+    // 1
     UNUserNotificationCenter.current()
-    // 2 -알림을 표시하기 위한 승인을 요청합니다. 전달된 옵션은 앱에서 사용하려는 알림 유형을 나타냅니다. 여기에서 알림(alert), 소리(sound) 및 배지(badge)를 요청합니다.
+    // 2
         .requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
-            // 3 - 완료 핸들러는 인증이 성공했는지 여부를 나타내는 Bool을 수신합니다. 인증 결과를 표시합니다.
+            // 3
             print("Permission granted: \(granted)")
         }
 }
 ```
+1. UNUserNotificationCenter는 푸시 알림을 포함하여 앱의 모든 알림 관련 활동을 처리합니다.
+2. 알림을 표시하기 위한 승인을 요청합니다. 전달된 옵션은 앱에서 사용하려는 알림 유형을 나타냅니다. 여기에서 알림(alert), 소리(sound) 및 배지(badge)를 요청합니다.
+3. 완료 핸들러는 인증이 성공했는지 여부를 나타내는 Bool을 수신합니다. 인증 결과를 표시합니다.
 
 `requestAuthorization(options:completionHandler:)`에 전달하는 `options`에는 `UNAuthorizationOptions`의 모든 조합이 포함될 수 있습니다.
 
@@ -214,7 +215,7 @@ func registerForPushNotifications() {
 
 완료 핸들러(completion handler)에서 `getNotificationSettings()`에 대한 호출을 추가했습니다. 이는 사용자가 언제든지 설정 앱으로 이동하여 알림 권한을 변경할 수 있기 때문에 중요합니다. `guard` 문은 권한이 부여되지 않은 경우 이 호출을 피합니다.
 
- 
+<br>  
 
 ### **APN 서비스에 등록**
 
@@ -263,7 +264,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
  ![](/assets/img/wp-content/uploads/2022/09/Device-Token.png)
 
- 
+<br>  
 
 ### **시뮬레이터에 푸시 알림 보내기**
 
@@ -284,7 +285,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
 이 JSON의 구조는 다음 섹션에서 설명합니다.
 
-시뮬레이터에서 앱을 다시 빌드하고 실행한 다음 앱을 백그라운드로 실행하거나 기기를 잠급니다. 앱은 포어그라운드(foreground)에 있는 동안 아직 푸시 알림을 처리할 수 없습니다.
+시뮬레이터에서 앱을 다시 빌드하고 실행한 다음 앱을 백그라운드로 실행하거나 기기를 잠급니다. 앱은 포그라운드(foreground)에 있는 동안 아직 푸시 알림을 처리할 수 없습니다.
 
 `simctl`을 사용하려면 앱을 실행하는 시뮬레이터의 장치 식별자(`Identifier`)를 알아야 합니다. 식별자를 얻으려면 Xcode에서 Windows ▸ Device and Simulators를 선택한 다음 상단의 Simulator 탭을 선택하고 왼쪽 목록에서 사용 중인 시뮬레이터를 선택합니다. 마우스를 사용하여 식별자를 복사합니다.
 
@@ -306,7 +307,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-03-pm-11.53.11.jpg)
 
- 
+<br>  
 
 ### **기본 푸시 알림 분석**
 
@@ -344,17 +345,15 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 
 페이로드가 `4096바이트`를 초과하지 않는 한 사용자 지정 데이터를 원하는 만큼 추가할 수 있습니다.
 
- 
+<br>  
 
 ## **푸시 알림 처리**
 
 이 섹션에서는 앱이 알림을 수신하고 사용자가 알림을 탭할 때 작업을 수행하는 방법을 배웁니다.
 
- 
-
 <!-- \[the\_ad id="3020"\] -->
 
- 
+<br>  
 
 ### **푸시 알림을 받으면 어떻게 되는지 이해하기**
 
@@ -363,7 +362,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 알림을 받았을 때 앱의 상태에 따라 알림을 다르게 처리해야 합니다.
 
 1. 앱이 실행되고 있지 않으며, 사용자가 푸시 알림을 눌러 앱을 실행하는 경우 (`Case 1`)
-2. 앱이 포어그라운드(foreground) 또는 백그라운드(background)에서 실행 중인 경우 (`Case 2`)
+2. 앱이 포그라운드(foreground) 또는 백그라운드(background)에서 실행 중인 경우 (`Case 2`)
 
  
 
@@ -383,7 +382,7 @@ func receivePushNotiNews(title: String, body: String, linkURL: String) {
 
 **다음** **`func application(...didFinishLaunchingWithOptions...)`** **함수 안에 아래 코드를 추가합니다.**
 
-```
+```swift
 UNUserNotificationCenter.current().delegate = self
 ```
 
@@ -467,7 +466,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 - `NotificationCenter`의 `post` 기능을 이용해 추가되었다면 텍스트 뷰를 새로고침합니다.
 
 <!-- http://www.giphy.com/gifs/WMgkmCgH9rpt3SuUAq -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2t3dnE2ZXUxOHBmdjl3NmlidjQ4enU5dzlzZ3JjYmQ5MG1hMG5ieSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WMgkmCgH9rpt3SuUAq/giphy.gif)
 
  
 
@@ -505,7 +504,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 
 > 참고: 푸시 알림의 도착은 보장되지 않습니다. 이 앱에서는 전체 뉴스 목록을 갖는 것이 그다지 중요하지 않기 때문에 그 점에서는 괜찮습니다. 하지만 일반적으로 푸시 알림을 콘텐츠를 전달하는 유일한 방법으로 사용해서는 안 됩니다. 대신 푸시 알림은 사용 가능한 새 콘텐츠가 있음을 알리고 앱이 소스(예: REST API)에서 콘텐츠를 다운로드할 수 있도록 해야 합니다.
 
- 
+<br>
 
 ## 다음 글
 

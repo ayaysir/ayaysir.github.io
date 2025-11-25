@@ -765,7 +765,7 @@ func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.Ed
  
 
 <!-- http://www.giphy.com/gifs/uIYXg99raC80l9uBv2 -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXpxdWc4bDg4cjNlcGx1bzlrb2xiOGxmMmthOTN1dHM0ZzI3NjZtYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uIYXg99raC80l9uBv2/giphy.gif)
 
  
 

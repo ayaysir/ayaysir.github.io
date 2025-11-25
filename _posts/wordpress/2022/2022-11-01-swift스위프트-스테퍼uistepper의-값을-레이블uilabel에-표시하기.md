@@ -9,7 +9,7 @@ categories:
 InterfaceBuilder의 스토리보드에서 `UIStepper`는 아래 그림과 같이 마이너스(`-`) 버튼과 플러스(`+`) 버튼이 있으며 버튼을 누를때마다 값이 증감하는 컴포넌트입니다. 스테퍼의 값은 `Double` 타입의 형태로 UIStepper 인스턴스에 자체적으로 저장됩니다만 화면에는 표시되지 않기 때문에 알 방법이 없습니다. 이를 레이블(`UILabel`)에 표시하는 예제입니다.
 
 <!-- http://www.giphy.com/gifs/hmAgG6wyg2ZCWAM29t -->
-![](https://)
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGxtOTU4ejE4ZzJqc2t3eHB1a3N1d2w0eXc5NTJ3bTg2MXRqZ3oxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hmAgG6wyg2ZCWAM29t/giphy.gif)
 
  
 

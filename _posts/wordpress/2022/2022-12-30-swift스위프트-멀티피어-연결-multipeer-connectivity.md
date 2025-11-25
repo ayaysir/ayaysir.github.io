@@ -361,7 +361,7 @@ extension ViewController: MCBrowserViewControllerDelegate {
 시뮬레이터와 실제 기기에서 각각 빌드 및 실행합니다. 아이패드(시뮬레이터)에서 선전 모드를 켠 뒤 아이폰(실제 기기)에서 피어를 발견하고 연결합니다.
 
 <!-- https://giphy.com/gifs/2DElddPef27Dd8zVWS -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjhidGtlcHV5cWd2dzF0OWhtM3AydHM4OHE5aGs5bHg0Y3dsdHh4MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2DElddPef27Dd8zVWS/giphy.gif)
 
 \[caption id="attachment\_5200" align="alignnone" width="264"\] ![](/assets/img/wp-content/uploads/2022/12/screenshot-2023-01-10-am-1.34.02.jpg) YES를 누르면 연결됩니다.\[/caption\]
 
@@ -537,7 +537,7 @@ func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPee
  
 
 <!-- http://www.giphy.com/gifs/AB0Uws0KJyyY6zNqoi -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzFwaXdmMG84eXB3d3R2dWNkbmNrdDYxajUydmQ1Zm1lNWZvc25sYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AB0Uws0KJyyY6zNqoi/giphy.gif)
 
  
 
@@ -773,7 +773,7 @@ func session(_ session: MCSession, didFinishReceivingResourceWithName resourceNa
 빌드 및 실행합니다. 채팅방에 새로운 유저(오른쪽 아이폰 화면)가 입장하면 이전의 대화 내용이 그대로 전달되는 것을 볼 수 있습니다.
 
 <!-- https://giphy.com/gifs/rfsG66neTdo4XGMsXB -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjJzZGQ1NDZ5azA1ZWVmbTNvcmk1bDRzNDRnMHdvN3p6Z2hja3hveCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rfsG66neTdo4XGMsXB/giphy.gif)
 
  
 

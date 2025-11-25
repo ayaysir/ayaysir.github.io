@@ -6,15 +6,15 @@ categories:
   - "포트폴리오"
 ---
 
-### **Swift 예제: iOS + WatchOS 연동 앱 LinkedCounter**
+**Swift 예제: iOS + WatchOS 연동 앱 LinkedCounter**
 
-#### **전체 코드**
+## **전체 코드**
 
 - [https://github.com/ayaysir/LinkedCounter](https://github.com/ayaysir/LinkedCounter)
 
  
 
-#### **개발 환경**
+## **개발 환경**
 
 - Xcode 13.3.1, Swift 5
 - iOS App with Watch App 템플릿
@@ -22,7 +22,7 @@ categories:
 
  
 
-#### **목적**
+## **목적**
 
 - 워치용 앱 기본 개발 학습
 - 아이폰 앱 워치 앱 간 데이터 연동 방법 학습
@@ -30,7 +30,7 @@ categories:
 
  
 
-#### **필수 참고 글**
+## **필수 참고 글**
 
 - **_워치 앱 개발의 기본 방법 및 아이폰 앱 - 워치 앱간 통신_**
     - [WatchOS 5 — Communication between iPhone and Apple Watch and vice versa on Swift](https://litoarias.medium.com/watchos-5-communication-between-iphone-and-apple-watch-and-vice-versa-63d4c8306fc0) (Part 1 ~ 3)
@@ -45,7 +45,7 @@ categories:
 
  
 
-#### **동작 내용**
+## **동작 내용**
 
 - 기본적으로 버튼을 누르면 숫자가 증감하는 카운터 앱입니다.
 - 모든 데이터는 아이폰 앱에서 `UserDefaults`로 관리됩니다.
@@ -57,7 +57,7 @@ categories:
 - 아이폰 앱에서 숫자를 증감시키면 애플 워치 앱에 실시간으로 반영됩니다.
 
 <!-- http://www.giphy.com/gifs/joWqzA74ih34OYPjN2 -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExazN0M3dwdzRxc3lsaDZ2YWlmaWszOWc0am0xYzBqYXUxbmp4Z2luOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/joWqzA74ih34OYPjN2/giphy.gif)
 
  
 
@@ -65,7 +65,7 @@ categories:
 - 이 때 통신상태 불량으로 인한 데이터 불일치를 방지하기 위해 싱크 검증 기능이 있습니다.
 
 <!-- http://www.giphy.com/gifs/Gay28hfApiqpELQ7Kk -->
-![](https://)
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnI2MTU2bjhueTJ2bjUxaG5tMjh6eDZsZXZzeTNoNGpjam1oMThreSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Gay28hfApiqpELQ7Kk/giphy.gif)
 
 _(시뮬레이터는 통신 속도가 느려 싱크 과정에서 딜레이가 있습니다.)_
 
@@ -74,29 +74,29 @@ _(시뮬레이터는 통신 속도가 느려 싱크 과정에서 딜레이가 �
 - 현재 카운트 수 및 `현재 카운트 수 / 목표 수치`의 진행율을 표시하는 컴플리케이션 기능(`CLKComplicationTemplateCircularSmallRingText`)이 있습니다.
 
 <!-- http://www.giphy.com/gifs/mgZnzfzjFvdZTpEZlz -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGdkbm9tbG94Z3VydjJ4eXg3ejB2MjVucWZkZnI4OTcwMmp4aDVvaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mgZnzfzjFvdZTpEZlz/giphy.gif)
 
 1000으로 목표 수치 설정
 
  
 
 <!-- http://www.giphy.com/gifs/4U2ZIdxnTkaPtPwWI7 -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExanBjZmVzdmtzczBjcnRjZjlydDluZTVqb3Bnd3BxZ3FiZGFxMDI3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4U2ZIdxnTkaPtPwWI7/giphy.gif)
 
 `현재 카운트 수 / 목표 수치 = 450 / 1000 = 45%` 분량의 진행율이 프로그레스 링으로 표시
 
  
 
 <!-- http://www.giphy.com/gifs/7Yb7hHjaeWGMVqvRrE -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXBzdThqd2p2dnd2NWZtM2swM3R3YmJkczA1dnowZnh5b2l6cm5uaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4U2ZIdxnTkaPtPwWI7/giphy.gif)
 
 _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCircularSmallRingText`의 표시 자리수 한계 방지를 위함)_
 
  
 
-#### **주요 과정 정리**
+## **주요 과정 정리**
 
-##### **1) 사전 작업**
+### **1) 사전 작업**
 
 - 시뮬레이터에서 아이폰 디바이스와 워치 모델을 연결시켜야 합니다.
 
@@ -104,7 +104,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
 
  
 
-##### **2) 아이폰 앱 개발**
+### **2) 아이폰 앱 개발**
 
 - 먼저 애플 워치를 고려하지 않고 아이폰 단독 앱을 개발합니다. 스토리보드 구조는 아래와 같습니다.
 
@@ -112,7 +112,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
 
  
 
-##### **3) 워치 앱 UI 디자인**
+### **3) 워치 앱 UI 디자인**
 
 - 다음, 워치 앱을 개발합니다.
 - 워치 앱은 개발 요소에 제약이 있습니다.
@@ -133,7 +133,7 @@ _카운트 수가 1000이 넘으면 `1K`로 표시_ _(`CLKComplicationTemplateCi
 
 - **_InterfaceController.swift_** 중 UI 관련된 부분 코드
 
-```
+```swift
 import WatchKit
 import Foundation
 import WatchConnectivity
@@ -226,17 +226,15 @@ class InterfaceController: WKInterfaceController {
 
  
 
-##### **4) 아이폰 앱 - 워치 앱 통신 구현**
+### **4) 아이폰 앱 - 워치 앱 통신 구현**
 
- 
-
-**애플 워치에서 아이폰으로 요청**
+#### **애플 워치에서 아이폰으로 요청**
 
 - **_InterfaceController.swift_**의 멤버 변수 및 `willActivate()`에 다음 코드를 추가합니다.
     - `WCSession`은 아이폰 워치가 통신할 수 있도록 하는 매개체입니다.
     - `willActivate()` 안에는 앱을 열었을 때 실행해야할 동작을 지정합니다.
 
-```
+```swift
 // 1: Session property
 private var session = WCSession.default
 
@@ -263,7 +261,7 @@ func sendMessage(_ message: [String : Any],
                    errorHandler: ((Error) -> Void)? = nil)
 ```
 
-```
+```swift
 session.sendMessage(makeRequest("totalCount_get")) { response in
     if let totalCount = response["response"] as? Double {
         self.totalCount = totalCount
@@ -399,7 +397,7 @@ class SessionHandler : NSObject, WCSessionDelegate {
 
  
 
-**아이폰에서 애플 워치로 요청**
+#### **아이폰에서 애플 워치로 요청**
 
 - 데이터는 전부 아이폰에서 관리하기 때문에 아이폰에서 애플워치르 보낼 때엔 request만 필요하고 response는 받을 필요가 없습니다.
 
@@ -407,7 +405,7 @@ class SessionHandler : NSObject, WCSessionDelegate {
 
 - 아이폰 프로젝트의 뷰 컨트롤러 클래스 안에 멤버변수로 다음을 추가합니다.
 
-```
+```swift
 // 1: Get singleton class whitch manage WCSession
 var connectivityHandler = SessionHandler.shared
 ```
@@ -417,7 +415,7 @@ var connectivityHandler = SessionHandler.shared
 - 요청이 필요한 순간에 session.sendMessage(...replyHandler...)를 사용합니다.
     - 예) 버튼을 눌렀을 때
 
-```
+```swift
 connectivityHandler.session.sendMessage(makeRequestForSendToWatch(totalCount: stepperTotalCount.value, plusCount: stepperPlusCount.value), replyHandler: nil) { error in
     print("Error sending message: \(error)")
 }
@@ -436,7 +434,6 @@ func makeRequestForSendToWatch(totalCount: Double, plusCount: Double, targetCoun
     
     return dict
 }
-
 ```
 
  
@@ -445,7 +442,7 @@ func makeRequestForSendToWatch(totalCount: Double, plusCount: Double, targetCoun
 - 요청값을 받으면, 그 값으로 레이블을 최신 정보로 업데이트합니다.
 - 만약 아이폰으로 응답을 보낼 필요가 있다면, `WCSessionDelegate.session(_:didReceiveMessage:replyHandler:)`.를 사용합니다.
 
-```
+```swift
 // Receive messages from iPhone
 func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
     // 1: We launch a sound and a vibration
@@ -475,9 +472,9 @@ func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
 
  
 
-##### **통신 과정이 추가된 _InterfaceController.swift_ 전체 코드**
+### **통신 과정이 추가된 _InterfaceController.swift_ 전체 코드**
 
-```
+```swift
 import WatchKit
 import Foundation
 import WatchConnectivity
@@ -741,7 +738,7 @@ extension InterfaceController: WCSessionDelegate {
 
  
 
-##### **5) 컴플리케이션 제작**
+### **5) 컴플리케이션 제작**
 
 - 컴플리케이션은 굉장히 많은 종류가 있는데, 시간 제한상 `CLKComplicationTemplateCircularSmallRingText` 한 가지만 제작합니다.
 - 컴플리케이션은 C**_omplicationController.swift_**에서 다루게 됩니다.
@@ -754,7 +751,8 @@ extension InterfaceController: WCSessionDelegate {
 
  
 
-\[caption id="attachment\_4851" align="alignnone" width="1038"\] ![](/assets/img/wp-content/uploads/2022/09/timeline-1.png) 컴플리케이션의 타임라인 예시. 5분 간격으로 업데이트할 정보를 미리 등록합니다.\[/caption\]
+![](/assets/img/wp-content/uploads/2022/09/timeline-1.png)  
+*컴플리케이션의 타임라인 예시. 5분 간격으로 업데이트할 정보를 미리 등록합니다.*
 
  
 
@@ -844,7 +842,7 @@ func getCurrentTimelineEntry(for complication: CLKComplication, withHandler hand
 - 이렇게 하면 앱을 닫은 후에도 컴플리케이션 정보가 업데이트됩니다.
 
 <!-- http://www.giphy.com/gifs/4U2ZIdxnTkaPtPwWI7 -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjF4a2xqcWQzMnE3NnMzcTY1MnUyb2F0em4xaDlubXdvZTM3OGM3ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4U2ZIdxnTkaPtPwWI7/giphy.gif)
 
 _버튼을 눌러 앱을 닫으면, 처음에는 기본 내용 별표(★)가 표시되었다가 잠시 뒤 정보가 업데이트되면 별표가 사라지고 해당 정보로 업데이트됩니다._
 
@@ -904,7 +902,7 @@ func getTimelineEndDate(for complication: CLKComplication, withHandler handler: 
 
  
 
-**앱을 닫을 때마다 타임라인 업데이트**
+#### **앱을 닫을 때마다 타임라인 업데이트**
 
 - 타임라인은 홈 버튼을 눌러 앱을 닫는 시점마다 갱신되어야 합니다. 인터페이스 컨트롤러 코드의 didDeactivate() 부분에 다음 내용을 추가합니다. (`reloadTimeline`은 WatchOS 9 이후 Deprecate 예정)
     - `CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)`

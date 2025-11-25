@@ -238,7 +238,7 @@ class DelayWorkViewController: UIViewController {
  
 
 <!-- http://www.giphy.com/gifs/cLAlZNfkGHoWX39hRP -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbG9pZXVwMGRwc2x0Zml0bHZ5cGZxMjFpMTN4ZTRlM3VxYWlxaG51OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cLAlZNfkGHoWX39hRP/giphy.gif)
 
 #### **전체 코드**
 

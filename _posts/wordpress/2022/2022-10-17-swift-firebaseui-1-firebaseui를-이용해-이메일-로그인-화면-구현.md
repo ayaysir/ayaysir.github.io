@@ -94,12 +94,12 @@ override func viewDidAppear(_ animated: Bool) {
 
 빌드 및 실행합니다. 이것만으로도 바로 이메일 인증을 진행할 수 있습니다.
 
-\[gallery size="full" ids="4960,4959,4958"\]
-
+<!-- \[gallery size="full" ids="4960,4959,4958"\] -->
+![](/assets/img/DevLog/firebase/ui-1.png)
  
 
-\[gallery size="full" ids="4962,4961"\]
-
+<!-- \[gallery size="full" ids="4962,4961"\] -->
+![](/assets/img/DevLog/firebase/ui-2.png)
  
 
 이렇게 하면 실제 로그인이 됩니다. 그리고 비밀번호가 틀렸거나 이메일 형식이 맞지 않는 경우 등 유효성 검사도 저절로 체크하도록 이미 기능이 구현되어 있습니다.
@@ -252,4 +252,4 @@ extension ViewController: UIAdaptivePresentationControllerDelegate {
 빌드 및 실행해서 새로운 커스터마이징 화면이 나타나는지 확인합니다.
 
 <!-- http://www.giphy.com/gifs/1JxlyaoJ9bDHA0w9cj -->
-![](https://)
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3lpM2I3ZGhua2V3cGN4eXZiczB0eXRkZXlxbHVpb3pjdGczbG96NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1JxlyaoJ9bDHA0w9cj/giphy.gif)

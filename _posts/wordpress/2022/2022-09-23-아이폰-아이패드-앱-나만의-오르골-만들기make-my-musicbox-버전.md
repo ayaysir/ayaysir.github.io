@@ -16,13 +16,15 @@ categories:
 
  
 
-#### [**나만의 오르골 만들기 앱 무료 다운로드(아이폰/아이패드)**](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920)
+## **앱 다운로드**
 
-\[caption id="attachment\_4562" align="alignnone" width="256"\][ ![](/assets/img/wp-content/uploads/2022/06/icon-MusicBox.png)](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920) 나만의 오르골 만들기 앱 아이콘\[/caption\]
+[**나만의 오르골 만들기 앱 무료 다운로드(아이폰/아이패드)**](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920)
 
+ [![](/assets/img/wp-content/uploads/2022/06/icon-MusicBox.png)](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920)    
+ *나만의 오르골 만들기 앱 아이콘*
  
 
-#### **유튜브 쇼츠로 만든 프로모션 영상**
+## **유튜브 쇼츠로 만든 프로모션 영상**
 
 {% youtube "https://www.youtube.com/watch?v=9v_IF9MCACA" %}
 
@@ -30,13 +32,13 @@ categories:
 
  
 
-#### **업데이트 내역**
+## **업데이트 내역**
 
 이번 버전 업데이트에 반영된 사항은 다음과 같습니다.
 
  
 
-##### **1\. 음악 재생 시 페이퍼(종이 악보)의 스크롤이 밀려나던 문제 수정**
+### **1\. 음악 재생 시 페이퍼(종이 악보)의 스크롤이 밀려나던 문제 수정**
 
 기존 버전에서는 악곡에 따라 플레이 시 음악과 페이퍼 스크롤이 미묘하게 맞지 않던 문제가 있었으나,
 
@@ -48,7 +50,7 @@ categories:
 
  
 
-##### **2\. 인터넷 자료실(아카이브) 비회원도 목록 조회, 다운로드 및 '좋아요' 가능**
+### **2\. 인터넷 자료실(아카이브) 비회원도 목록 조회, 다운로드 및 '좋아요' 가능**
 
  ![](/assets/img/wp-content/uploads/2022/09/Simulator-Screen-Shot-iPhone-13-Pro-2022-09-23-at-18.18.34.jpg)
 
@@ -78,7 +80,7 @@ categories:
 
 무료이므로 바로 이용해 볼 수 있어요~
 
-#### [**나만의 오르골 만들기 앱 무료 다운로드(아이폰/아이패드)**](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920)
+## [**나만의 오르골 만들기 앱 무료 다운로드(아이폰/아이패드)**](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920)
 
  
 

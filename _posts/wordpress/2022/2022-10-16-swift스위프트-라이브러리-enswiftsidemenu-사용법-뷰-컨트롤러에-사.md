@@ -150,7 +150,7 @@ toggleSideMenuView()
 빌드 및 실행 후 화면 오른쪽을 드래그해서 사이드 메뉴가 나오는지 확인합니다.
 
 <!-- http://www.giphy.com/gifs/VG5dyfTl3VLmqaTvmu -->
-![](https://)
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnN2cGV4NHF1dWRpcTkwNmR5a3FsYncxMm1jZmM3dGozNnBmbWF3MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VG5dyfTl3VLmqaTvmu/giphy.gif)
 
 아직 셀(버튼)을 눌렀을 떄 동작은 구현되지 않았습니다.
 
@@ -227,7 +227,7 @@ class SlideMenuViewController: UIViewController {
 ```
 
 <!-- http://www.giphy.com/gifs/IVFWF5hGNSplBUH8Py -->
-![](https://)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeW9kdDQ5amRxM3RvaWdwNHQ5Nmx3cDUwcXlocmFvY2R5eWllOHV0NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IVFWF5hGNSplBUH8Py/giphy.gif)
 
 _주파수 테이블 버튼을 클릭하면 뷰 컨트롤러가 새로운 것으로 교체됩니다. (`TunerViewController`에서 `FreqTableViewController`로 교체됨)_
 
@@ -260,6 +260,6 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 이렇게 하면 컨텐츠 뷰 컨트롤러는 교체되지 않고 특정 작업만 수행할 수 있습니다.
 
 <!-- http://www.giphy.com/gifs/fZjHIdYsCXPHD2knLn -->
-![](https://)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnRnNzk2b2lieWdwaTljeDR1MHM3cXN4ZHU1MHB1YTR3dHg3OGh6MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fZjHIdYsCXPHD2knLn/giphy.gif)
 
 _셀을 클릭하면 `vc.webView.load(request)`를 수행해서 웹 페이지만 교체하며 뷰 컨트롤러는 바뀌지 않습니다._

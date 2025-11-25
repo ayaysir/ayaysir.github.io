@@ -37,7 +37,8 @@ categories:
 
 ### **퀴즈로 음정 계산을 마스터**
 
-\[gallery link="file" columns="2" size="large" ids="6907,6908"\]
+<!-- \[gallery link="file" columns="2" size="large" ids="6907,6908"\] -->
+![](/assets/img/wp-content/uploads/2024/12/app-interval/master.jpg)
 
 음정 전용 키보드로 편리하게 정답을 입력하고 채점해요
 

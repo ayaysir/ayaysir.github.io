@@ -35,8 +35,8 @@ import AVFoundation
 
 ```swift
 class ViewController: UIViewController {
-    
     private var player: AVAudioPlayer?
+}
 ```
 
  

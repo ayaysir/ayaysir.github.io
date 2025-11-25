@@ -7,7 +7,7 @@ categories:
   - "Firebase"
 ---
 
-#### **참고**
+## **참고**
 
 - [Apple 플랫폼에서 익명으로 Firebase에 인증](https://firebase.google.com/docs/auth/ios/anonymous-auth?hl=ko#swift_7)
 
@@ -15,9 +15,9 @@ categories:
 
  
 
-#### **상황**
+## **상황**
 
-##### **기존**
+### **기존**
 
 익명 로그인이 존재하지 않고, '좋아요' 버튼을 누르려면 무조건 회원 가입이 되어 있어야 합니다.
 
@@ -25,21 +25,21 @@ categories:
 
  
 
-##### **변경**
+### **변경**
 
 익명 로그인을 추가하였고, 익명 유저 상태에서도 `좋아요` 버튼을 누를 수 있게 되었습니다. 이 상태에서 익명 로그인 상태에서 눌렀던 좋아요 정보가 새로 회원 가입을 해서 영구 계정이 되더라도 좋아요 정보가 유지되도록 하고 싶습니다.
 
-\[gallery size="full" ids="4814,4817,4816"\]
-
+<!-- \[gallery size="full" ids="4814,4817,4816"\] -->
+![](/assets/img/DevLog/musicbox-sign-up.jpg)
  
 
  
 
-#### **방법**
+## **방법**
 
-##### **기존 코드 (이메일로 회원가입)**
+### **기존 코드 (이메일로 회원가입)**
 
-```
+```swift
 Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] authResult, error in
  
     // ... //
@@ -53,11 +53,11 @@ Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] au
 
  
 
-##### **변경 코드**
+### **변경 코드**
 
 위 기존 코드를 지우고 아래 코드로 대체합니다.
 
-```
+```swift
 if let user = Auth.auth().currentUser, user.isAnonymous {
     let credential = EmailAuthProvider.credential(withEmail: userEmail, password: userPassword)
     user.link(with: credential) { [self] authResult, error in

@@ -140,7 +140,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 `updateClassifications(for: image)` 부분을 코멘트 처리한 후, 앱을 빌드 및 실행합니다. 이미지를 선택하면 화면에 이미지가 나오는지 확인합니다.
 
 <!-- http://www.giphy.com/gifs/l4v9WNRpDmEzclDMZy -->
-![](https://)
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExODNweDBuazBpMGUzdHUwcXA2dWpzbm55b210OWd4dGFycDlvdjVzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4v9WNRpDmEzclDMZy/giphy.gif)
 
 시뮬레이터에서는 카메라에서 사용 불가능하므로 disabled 처리되었고, 실제 기기에서는 카메라 기능도 동작해야 합니다.
 

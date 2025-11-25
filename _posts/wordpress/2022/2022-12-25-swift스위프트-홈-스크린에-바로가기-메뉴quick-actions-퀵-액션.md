@@ -129,7 +129,7 @@ Static 퀵 액션은 앱을 설치하자마자 바로 이용할 수 있고, `inf
 앱을 빌드 및 실행합니다. 홈 스크린으로 이동 후 Static 퀵 액션이 추가되었는지 확인합니다.
 
 <!-- http://www.giphy.com/gifs/Z5j8P0zLZbqa97Su5n -->
-![](https://)
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnAwZ2ZtOXJreXR6M3FzZXE2cjlkNHMzOTI5cnI4NzRnaXp1NXFlayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Z5j8P0zLZbqa97Su5n/giphy.gif)
 
  
 
@@ -140,7 +140,7 @@ Dynamic 퀵 액션은 앱 내부에서 코드로 작성하여 추가할 수 있�
 아래 예제는 `UIStepper`의 값이 바뀌면, 그 값의 배수를 메뉴 제목에 표시하고 계산 과정을 메뉴 부제에 표시하도록 갱신하는 예제입니다.
 
 <!-- http://www.giphy.com/gifs/4YHpN4pPN7iR07RGts -->
-![](https://)
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczMweXg3MTBycWV1MXVnMzZwMmdpOHlqZjkzMXIxNW0xcXlmdW4xNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4YHpN4pPN7iR07RGts/giphy.gif)
 
  
 
