@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,53 +573,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -666,6 +626,64 @@
     
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -682,7 +700,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>JWT(JSON Web Token) 란?</h1>
     
@@ -766,9 +784,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">JWT(JSON Web Token) 란?</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">JWT(JSON Web Token) 란?</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="jwt-란"><span class="me-2"><strong>JWT 란?</strong></span><a href="#jwt-란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="jwt-란"><span class="me-2"><strong>JWT 란?</strong></span><a href="#jwt-란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>JWT(JSON Web Token)는 공개 표준인 <a href="https://tools.ietf.org/html/rfc7519">RFC7519</a>로, JSON 객체 형태로 당사자 간 정보를 안전하게 전송하기 위한 소혀의 자체 포함 형식으로 정의됩니다.</p>
 
@@ -778,23 +818,23 @@
 
 <p> </p>
 
-<h4 id="jwt의-구조"><span class="me-2"><strong>JWT의 구조</strong></span><a href="#jwt의-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="jwt의-구조"><span class="me-2"><strong>JWT의 구조</strong></span><a href="#jwt의-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>JWT의 구조는 헤더, 페이로드 및 서명  세 가지를 포함하는 구조를 준수해야 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>[Base64Encoded(HEADER)].
-[Base64Encoded(PAYLOAD)].
-[Encoded(SIGNATURE)]
+</pre></td><td class="rouge-code"><pre><span class="p">[</span><span class="nc">Base64Encoded</span><span class="p">(</span><span class="nx">HEADER</span><span class="p">)].</span>
+<span class="p">[</span><span class="nc">Base64Encoded</span><span class="p">(</span><span class="nx">PAYLOAD</span><span class="p">)].</span>
+<span class="p">[</span><span class="nc">Encoded</span><span class="p">(</span><span class="nx">SIGNATURE</span><span class="p">)]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="encoded-jwt-예제"><span class="me-2"><strong>Encoded JWT 예제</strong></span><a href="#encoded-jwt-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="encoded-jwt-예제"><span class="me-2"><strong>Encoded JWT 예제</strong></span><a href="#encoded-jwt-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다음은 클라이언트 요청을 기반으로 반환되는 인코딩된 전체 <code class="language-plaintext highlighter-rouge">access_token</code> 입니다.</p>
 
@@ -802,27 +842,27 @@
 
 <p> </p>
 
-<h5 id="헤더-header"><span class="me-2"><strong>헤더 (HEADER)</strong></span><a href="#헤더-header" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="헤더-header"><span class="me-2"><strong>헤더 (HEADER)</strong></span><a href="#헤더-header" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>헤더는 일반적으로 토큰 유형(JWT; <code class="language-plaintext highlighter-rouge">typ</code>)과 사용중인 서명 알고리즘(<code class="language-plaintext highlighter-rouge">alg</code>) (예: HMAC SHA256 또는 RSA)의 두 부분으로 구성됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-json highlighter-rouge"><div class="code-header">
+        <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>{
-  "alg": "HS256",
-  "typ": "JWT"
-}
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"alg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HS256"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JWT"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <p>이 부분을 Base64로 인코딩합니다.</p>
 
 <p> </p>
 
-<h5 id="정보-payload"><span class="me-2"><strong>정보 (PAYLOAD)</strong></span><a href="#정보-payload" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="정보-payload"><span class="me-2"><strong>정보 (PAYLOAD)</strong></span><a href="#정보-payload" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>토큰에 담을 정보를 페이로드(<code class="language-plaintext highlighter-rouge">payload</code>)라고 합니다. 페이로드는 클레임을 포함합니다. 클레임은 페이로드의 1조각을 의미하며, 이는 name / value 의 한 쌍으로 이루어져 있습니다. 클레임에는 등록된(<code class="language-plaintext highlighter-rouge">reserved</code>), 공개(<code class="language-plaintext highlighter-rouge">public</code>) 및 비공개(<code class="language-plaintext highlighter-rouge">private</code>)의 세 가지 유형이 있습니다 .</p>
 
@@ -838,47 +878,47 @@
 
 <p>등록된 클레임의 예제는 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-json highlighter-rouge"><div class="code-header">
+        <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>{
-    "iss": "yoonbumtae.com",
-    "exp": "1485270000000",
-    "userId": "11028373727102",
-    "sub": "bgsmm"
-}
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+    </span><span class="nl">"iss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"website.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"exp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1485270000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11028373727102"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bgsmm"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="서명-signature"><span class="me-2"><strong>서명 (SIGNATURE)</strong> </span><a href="#서명-signature" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="서명-signature"><span class="me-2"><strong>서명 (SIGNATURE)</strong> </span><a href="#서명-signature" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>서명 부분을 만들려면 인코딩된 헤더, 인코딩된 페이로드, 비밀(<code class="language-plaintext highlighter-rouge">secret</code>), 헤더에 지정된 알고리즘을 가져와 야합니다.</p>
 
 <p>예를 들어 HMAC SHA256 알고리즘을 사용하려는 경우 서명은 다음과 같은 방식으로 생성됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>HMACSHA256(
-  base64UrlEncode(header) + "." +
-  base64UrlEncode(payload),
-  secret)
+</pre></td><td class="rouge-code"><pre><span class="nc">HMACSHA256</span><span class="p">(</span>
+  <span class="nf">base64UrlEncode</span><span class="p">(</span><span class="nx">header</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">.</span><span class="dl">"</span> <span class="o">+</span>
+  <span class="nf">base64UrlEncode</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
+  <span class="nx">secret</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>서명은 메시지가 변경되지 않았음을 확인하는 데 사용되며, 개인 키로 서명된 토큰의 경우 JWT의 발신자가 누구인지 확인할 수도 있습니다.</p>
 
 <p> </p>
 
-<p>출처</p>
+<h2 id="출처"><span class="me-2">출처</span><a href="#출처" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://jwt.io/introduction/">JWT Introduction</a></li>
@@ -1850,6 +1890,12 @@
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1883,18 +1929,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,16 +498,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -589,8 +586,40 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -607,7 +636,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>[프로그래머스/레벨2] 주식가격 (자바스크립트)</h1>
     
@@ -681,7 +710,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="679 words"
+  title="680 words"
 >
   <em>3 min</em> read</span>
 
@@ -691,19 +720,41 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">[프로그래머스/레벨2] 주식가격 (자바스크립트)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">[프로그래머스/레벨2] 주식가격 (자바스크립트)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p><a href="https://programmers.co.kr/learn/courses/30/lessons/42584">[프로그래머스/레벨2] 주식가격</a></p>
 
 <p>현재 자바스크립트는 풀이 가능 언어에 없습니다.</p>
 
-<h4 id="문제"><span class="me-2"><strong>문제</strong></span><a href="#문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="문제"><span class="me-2"><strong>문제</strong></span><a href="#문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>초 단위로 기록된 주식가격이 담긴 배열 prices가 매개변수로 주어질 때, 가격이 떨어지지 않은 기간은 몇 초인지를 return 하도록 solution 함수를 완성하세요.</p>
 
 <p> </p>
 
-<h5 id="제한사항"><span class="me-2"><strong>제한사항</strong></span><a href="#제한사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="제한사항"><span class="me-2"><strong>제한사항</strong></span><a href="#제한사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>prices의 각 가격은 1 이상 10,000 이하인 자연수입니다.</li>
@@ -712,7 +763,7 @@
 
 <p> </p>
 
-<h5 id="입출력-예"><span class="me-2"><strong>입출력 예</strong></span><a href="#입출력-예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="입출력-예"><span class="me-2"><strong>입출력 예</strong></span><a href="#입출력-예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>[1, 2, 3, 2, 3] -&gt; [4, 3, 1, 1, 0]</li>
@@ -721,7 +772,7 @@
 
 <p> </p>
 
-<h5 id="입출력-예-설명"><span class="me-2"><strong>입출력 예 설명</strong></span><a href="#입출력-예-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="입출력-예-설명"><span class="me-2"><strong>입출력 예 설명</strong></span><a href="#입출력-예-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>1초 시점의 ₩1은 끝까지 가격이 떨어지지 않았습니다.</li>
@@ -733,7 +784,7 @@
 
 <p> </p>
 
-<h4 id="문제-해결-방법"><span class="me-2"><strong>문제 해결 방법</strong></span><a href="#문제-해결-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="문제-해결-방법"><span class="me-2"><strong>문제 해결 방법</strong></span><a href="#문제-해결-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>문제의 취지는 스택을 통한 풀이이지만, 이중 <code class="language-plaintext highlighter-rouge">for</code>문으로도 정확성 및 효율성 통과되었습니다. (자바, 파이썬3)</li>
@@ -745,7 +796,9 @@
 
 <p> </p>
 
-<h4 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="javascript"><span class="me-2"><strong>JavaScript</strong></span><a href="#javascript" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -781,7 +834,7 @@
 
 <p> </p>
 
-<p><strong>참고 - Python3</strong></p>
+<h3 id="참고---python3"><span class="me-2"><strong>참고 - Python3</strong></span><a href="#참고---python3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1776,6 +1829,12 @@
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1809,18 +1868,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

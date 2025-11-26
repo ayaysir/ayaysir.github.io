@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -743,6 +750,136 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -761,16 +898,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -835,6 +962,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -856,7 +993,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트 예제: URL 라우팅 기능 (window.history.pushState, window.location.pathname 이용)</h1>
     
@@ -930,7 +1067,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1390 words"
+  title="1389 words"
 >
   <em>7 min</em> read</span>
 
@@ -939,6 +1076,28 @@
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트 예제: URL 라우팅 기능 (window.history.pushState, window.location.pathname 이용)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트 예제: URL 라우팅 기능 (window.history.pushState, window.location.pathname 이용)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -960,7 +1119,7 @@
 
 <p> </p>
 
-<h4 id="windowlocation-객체에서-정보-얻기"><span class="me-2"><strong>window.location 객체에서 정보 얻기</strong></span><a href="#windowlocation-객체에서-정보-얻기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="windowlocation-객체에서-정보-얻기"><span class="me-2"><strong>window.location 객체에서 정보 얻기</strong></span><a href="#windowlocation-객체에서-정보-얻기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 객체에서 URL과 관련된 다양한 정보를 얻을 수 있습니다.</p>
 
@@ -968,20 +1127,18 @@
 
 <p> </p>
 
-<h4 id="url에-포함된-pathname을-읽기"><span class="me-2"><strong>URL에 포함된 pathname을 읽기</strong></span><a href="#url에-포함된-pathname을-읽기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="url에-포함된-pathname을-읽기"><span class="me-2"><strong>URL에 포함된 pathname을 읽기</strong></span><a href="#url에-포함된-pathname을-읽기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>여기서 <code class="language-plaintext highlighter-rouge">pathname</code> 이란 <em>http://abc.com/user/1</em> 이라는 URL이 있다고 하면 <code class="language-plaintext highlighter-rouge">/user/1</code> 이부분이 pathname 입니다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">window.location.pathname</code>에서 값을 가져온 뒤 <code class="language-plaintext highlighter-rouge">split()</code>하면 배열로 여러 정보를 얻을 수 있습니다. 이 중 필요한 정보만 취합해서 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3
-</pre></td><td class="rouge-code"><pre>// URL로 주소 입력하기 예) /user/1
-let [, service, value] = window.location.pathname.split("/") // ["" ,"user", "1"]
-
+</pre></td><td class="rouge-code"><pre><span class="c1">// URL로 주소 입력하기 예) /user/1</span>
+<span class="kd">let</span> <span class="p">[,</span> <span class="nx">service</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// ["" ,"user", "1"]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -990,12 +1147,12 @@ let [, service, value] = window.location.pathname.split("/") // ["" ,"user", "1"
 
 <p> </p>
 
-<h4 id="url을-입력받기"><span class="me-2"><strong>URL을 입력받기</strong></span><a href="#url을-입력받기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="url을-입력받기"><span class="me-2"><strong>URL을 입력받기</strong></span><a href="#url을-입력받기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>인물 정보를 보내준는 외부 API가 있고 URL에 <code class="language-plaintext highlighter-rouge">/user/1</code> 을 입력하면 그 사람에 대한 정보를 보여주고 싶다고 할 때, 다음과 같이 <code class="language-plaintext highlighter-rouge">fetch</code> 정보에 아이디를 넘겨주면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1013,34 +1170,34 @@ let [, service, value] = window.location.pathname.split("/") // ["" ,"user", "1"
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>if (service === "user") {
-    fetchUser(value)
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if </span><span class="p">(</span><span class="nx">service</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">fetchUser</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">}</span>
 
-async function fetchUser(userId) {
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">fetchUser</span><span class="p">(</span><span class="nx">userId</span><span class="p">)</span> <span class="p">{</span>
     
-    try {
-        const response = await fetch(`https://reqres.in/api/users/${userId}?delay=1`)
-        const json = await response.json()
-        const data = json.data
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fetch</span><span class="p">(</span><span class="s2">`https://reqres.in/api/users/</span><span class="p">${</span><span class="nx">userId</span><span class="p">}</span><span class="s2">?delay=1`</span><span class="p">)</span>
+        <span class="kd">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
+        <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">data</span>
         
-        // ... 이하 생략 ... //
-    } catch(err) {
-        alert("오류가 발생했습니다.")
-    }        
+        <span class="c1">// ... 이하 생략 ... //</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">오류가 발생했습니다.</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">}</span>        
         
-}
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이렇게 하면 URL을 직접 입력했을 때, 그 사람에 대한 정보를 보여주게 됩니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/02/-2021-02-25-am-12.17.07-e1614179885348.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/-2021-02-25-am-12.17.07-e1614179885348.png" alt="" loading="lazy"></a></p>
 
-<iframe width="480" height="402" src="https://giphy.com/embed/RkH8KdMfhHlQeWKwn5" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="480" height="402" src="https://giphy.com/embed/RkH8KdMfhHlQeWKwn5" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+<p><a href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjh2dDE4cGU1ZWhpbGl2OHNyd2huNDVzNXk0b3JyOXdzenBzZHYyMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RkH8KdMfhHlQeWKwn5/giphy.gif" class="popup img-link shimmer"><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjh2dDE4cGU1ZWhpbGl2OHNyd2huNDVzNXk0b3JyOXdzenBzZHYyMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RkH8KdMfhHlQeWKwn5/giphy.gif" alt="" loading="lazy"></a>
+ </p>
 
-<p> </p>
-
-<h4 id="페이지는-이동하지-않고-url만-변경하기"><span class="me-2"><strong>페이지는 이동하지 않고 URL만 변경하기</strong></span><a href="#페이지는-이동하지-않고-url만-변경하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="페이지는-이동하지-않고-url만-변경하기"><span class="me-2"><strong>페이지는 이동하지 않고 URL만 변경하기</strong></span><a href="#페이지는-이동하지-않고-url만-변경하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">window.history.pushState()</code>를 이용합니다. 이 기능은 표면적인 URL 변경 뿐만 아니라 뒤로가기 기능도 작동하므로 실제 웹 페이지를 탐색하는 듯한 느낌을 주게 됩니다.</p>
 
@@ -1098,11 +1255,11 @@ btnPrev.addEventListener("click", e =&gt; {
 })
 </pre></td></tr></tbody></table></code></div></div>
 
-<iframe width="480" height="402" src="https://giphy.com/embed/8hATwDMedO1tZXerOf" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="480" height="402" src="https://giphy.com/embed/8hATwDMedO1tZXerOf" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+<p><a href="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTMzdHk5cHVpY2NmMGsxOXdpejV5anBkaHpoM3I0b283c21wazdheiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8hATwDMedO1tZXerOf/giphy.gif" class="popup img-link shimmer"><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTMzdHk5cHVpY2NmMGsxOXdpejV5anBkaHpoM3I0b283c21wazdheiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8hATwDMedO1tZXerOf/giphy.gif" alt="" loading="lazy"></a>
+ </p>
 
-<p> </p>
-
-<h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -2287,6 +2444,12 @@ btnPrev.addEventListener("click", e =&gt; {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2320,18 +2483,6 @@ btnPrev.addEventListener("click", e =&gt; {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

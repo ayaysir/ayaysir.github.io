@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,21 +638,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -677,6 +669,21 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -693,7 +700,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>구글 스프레드시트에서 GOOGLETRANSLATE 함수를 사용하여 문장/단어 자동 번역</h1>
     
@@ -777,13 +784,35 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">구글 스프레드시트에서 GOOGLETRANSLATE 함수를 사용하여 문장/단어 자동 번역</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">구글 스프레드시트에서 GOOGLETRANSLATE 함수를 사용하여 문장/단어 자동 번역</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>구글 스프레드시트에서는 잘 알려지지 않은 함수가 하나 있습니다. <code class="language-plaintext highlighter-rouge">GOOGLETRANSLATE</code> 라는 함수를 사용하면 구글 번역기를 이용하여 특정 셀에 있는 문장이나 단어를 자동으로 번역합니다. 다량의 외국어 데이터에 대한 초벌 번역이나 단어장 만들기용으로 활용도가 높습니다.</p>
 
 <p> </p>
 
-<h5 id="구문"><span class="me-2"><strong>구문</strong></span><a href="#구문" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="구문"><span class="me-2"><strong>구문</strong></span><a href="#구문" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -803,7 +832,7 @@
 
 <p> </p>
 
-<h5 id="참고-언어-코드"><span class="me-2"><strong>참고: 언어 코드</strong></span><a href="#참고-언어-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="참고-언어-코드"><span class="me-2"><strong>참고: 언어 코드</strong></span><a href="#참고-언어-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2021/03/-2021-03-10-am-12.16.26-e1615303022980.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/03/-2021-03-10-am-12.16.26-e1615303022980.png" alt="" loading="lazy"></a></p>
 
@@ -1772,6 +1801,12 @@
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1805,18 +1840,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

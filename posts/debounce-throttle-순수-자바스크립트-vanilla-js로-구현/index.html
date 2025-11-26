@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,16 +498,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -543,6 +540,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -564,7 +571,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: Debounce, Throttle 순수 자바스크립트 (Vanilla JS)로 구현</h1>
     
@@ -648,6 +655,28 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: Debounce, Throttle 순수 자바스크립트 (Vanilla JS)로 구현</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: Debounce, Throttle 순수 자바스크립트 (Vanilla JS)로 구현</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>참고 글: <a href="http://yoonbumtae.com/?p=2102">자바스크립트 lodash: debounce와 throttle을 이용하여 함수의 실행 횟수 제한</a></p>
@@ -665,7 +694,7 @@
 
 <p> </p>
 
-<h4 id="debounce"><span class="me-2"><strong>Debounce</strong></span><a href="#debounce" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="debounce"><span class="me-2"><strong>Debounce</strong></span><a href="#debounce" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -699,7 +728,7 @@
 
 <p> </p>
 
-<h4 id="throttle"><span class="me-2"><strong>Throttle</strong></span><a href="#throttle" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="throttle"><span class="me-2"><strong>Throttle</strong></span><a href="#throttle" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -740,10 +769,10 @@
 
 <p> </p>
 
-<h4 id="사용-방법"><span class="me-2"><strong>사용 방법</strong></span><a href="#사용-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="사용-방법"><span class="me-2"><strong>사용 방법</strong></span><a href="#사용-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -751,13 +780,13 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>inputDebounce.addEventListener("keyup", debounce(function() {
-    dispDebounce.textContent = ++debounceCount
-}, 100))
+</pre></td><td class="rouge-code"><pre><span class="nx">inputDebounce</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">keyup</span><span class="dl">"</span><span class="p">,</span> <span class="nf">debounce</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">dispDebounce</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="o">++</span><span class="nx">debounceCount</span>
+<span class="p">},</span> <span class="mi">100</span><span class="p">))</span>
 
-window.addEventListener("mousemove", throttle(() =&gt; {
-    dispThrottle.textContent = ++mouseThrottleCount
-}, 500))
+<span class="nb">window</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mousemove</span><span class="dl">"</span><span class="p">,</span> <span class="nf">throttle</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">dispThrottle</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="o">++</span><span class="nx">mouseThrottleCount</span>
+<span class="p">},</span> <span class="mi">500</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1731,6 +1760,12 @@ window.addEventListener("mousemove", throttle(() =&gt; {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1764,18 +1799,6 @@ window.addEventListener("mousemove", throttle(() =&gt; {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

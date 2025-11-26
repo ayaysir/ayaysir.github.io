@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,16 +638,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -716,6 +713,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -737,7 +744,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): URL 관련 기능 요약 (URL, URLComponents, URLSession)</h1>
     
@@ -821,66 +828,88 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): URL 관련 기능 요약 (URL, URLComponents, URLSession)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): URL 관련 기능 요약 (URL, URLComponents, URLSession)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="url-타입"><span class="me-2"><strong>URL 타입</strong></span><a href="#url-타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="url-타입"><span class="me-2"><strong>URL 타입</strong></span><a href="#url-타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>인코딩되지 않은 주소를 <code class="language-plaintext highlighter-rouge">URL</code>의 형태로 관리합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>let urlString = "https://itunes.apple.com/search?media=music&amp;entity=musicVideo&amp;term=collier"
-let url = URL(string: urlString)
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">urlString</span> <span class="o">=</span> <span class="s">"https://itunes.apple.com/search?media=music&amp;entity=musicVideo&amp;term=collier"</span>
+<span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">urlString</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">URL</code>의 <code class="language-plaintext highlighter-rouge">string:</code>은 영문, 숫자와 특정 문자만 인식 가능하며, 한글, 띄어쓰기 등은 인식하지 못합니다.</p>
 
 <p>아래 메소드를 통해 URL로부터 몇몇 정보를 가져올 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>url?.absoluteString // 절대주소 (urlString과 동일)
-url?.scheme // http? htttps?
-url?.host // "itunes.apple.com"
-url?.path // "/search"
-url?.query // "media=music&amp;entity=musicVideo&amp;term=collier"
+</pre></td><td class="rouge-code"><pre><span class="n">url</span><span class="p">?</span><span class="o">.</span><span class="n">absoluteString</span> <span class="c1">// 절대주소 (urlString과 동일)</span>
+<span class="n">url</span><span class="p">?</span><span class="o">.</span><span class="n">scheme</span> <span class="c1">// http? htttps?</span>
+<span class="n">url</span><span class="p">?</span><span class="o">.</span><span class="n">host</span> <span class="c1">// "itunes.apple.com"</span>
+<span class="n">url</span><span class="p">?</span><span class="o">.</span><span class="n">path</span> <span class="c1">// "/search"</span>
+<span class="n">url</span><span class="p">?</span><span class="o">.</span><span class="n">query</span> <span class="c1">// "media=music&amp;entity=musicVideo&amp;term=collier"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="url---relativeto"><span class="me-2"><strong>URL - relativeTo:</strong></span><a href="#url---relativeto" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="url---relativeto"><span class="me-2"><strong>URL - relativeTo:</strong></span><a href="#url---relativeto" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>상대 주소를 추가할 때 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>let baseURL = URL(string: "https://itunes.apple.com")
-let relativeURL = URL(string: "search", relativeTo: baseURL)
-relativeURL?.absoluteString // "https://itunes.apple.com/search"
-relativeURL?.baseURL // https://itunes.apple.com (URL? 타입)
-relativeURL?.path // "/search"
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">baseURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://itunes.apple.com"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">relativeURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"search"</span><span class="p">,</span> <span class="nv">relativeTo</span><span class="p">:</span> <span class="n">baseURL</span><span class="p">)</span>
+<span class="n">relativeURL</span><span class="p">?</span><span class="o">.</span><span class="n">absoluteString</span> <span class="c1">// "https://itunes.apple.com/search"</span>
+<span class="n">relativeURL</span><span class="p">?</span><span class="o">.</span><span class="n">baseURL</span> <span class="c1">// https://itunes.apple.com (URL? 타입)</span>
+<span class="n">relativeURL</span><span class="p">?</span><span class="o">.</span><span class="n">path</span> <span class="c1">// "/search"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="urlcomponents-타입"><span class="me-2"><strong>URLComponents 타입</strong></span><a href="#urlcomponents-타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="urlcomponents-타입"><span class="me-2"><strong>URLComponents 타입</strong></span><a href="#urlcomponents-타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">URL</code>에 포함되어 있는 한글, 띄어쓰기 등을 자동으로 인코딩하여 관리합니다. 쿼리 파라미터 등은 <code class="language-plaintext highlighter-rouge">URLQueryItem</code> 타입의 변수를 하여 별도로 관리합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -890,34 +919,34 @@ relativeURL?.path // "/search"
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>// URLComponents - 한글, 띄어쓰기 등 가능
-var urlComponents = URLComponents(string: "https://itunes.apple.com/search?")!
-let mediaQuery = URLQueryItem(name: "media", value: "music")
-let entityQuery = URLQueryItem(name: "entity", value: "song")
-let termQuery = URLQueryItem(name: "term", value: "jacob collier")
+</pre></td><td class="rouge-code"><pre><span class="c1">// URLComponents - 한글, 띄어쓰기 등 가능</span>
+<span class="k">var</span> <span class="nv">urlComponents</span> <span class="o">=</span> <span class="kt">URLComponents</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://itunes.apple.com/search?"</span><span class="p">)</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">mediaQuery</span> <span class="o">=</span> <span class="kt">URLQueryItem</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"media"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">"music"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">entityQuery</span> <span class="o">=</span> <span class="kt">URLQueryItem</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"entity"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">"song"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">termQuery</span> <span class="o">=</span> <span class="kt">URLQueryItem</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"term"</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="s">"jacob collier"</span><span class="p">)</span>
 
-urlComponents.queryItems?.append(mediaQuery)
-urlComponents.queryItems?.append(entityQuery)
-urlComponents.queryItems?.append(termQuery)
+<span class="n">urlComponents</span><span class="o">.</span><span class="n">queryItems</span><span class="p">?</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">mediaQuery</span><span class="p">)</span>
+<span class="n">urlComponents</span><span class="o">.</span><span class="n">queryItems</span><span class="p">?</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">entityQuery</span><span class="p">)</span>
+<span class="n">urlComponents</span><span class="o">.</span><span class="n">queryItems</span><span class="p">?</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">termQuery</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>urlComponents.url?.scheme // "https"
-urlComponents.string 
-// "https://itunes.apple.com/search?media=music&amp;entity=song&amp;term=jacob%20collier"
-urlComponents.queryItems // 밑에
+</pre></td><td class="rouge-code"><pre><span class="n">urlComponents</span><span class="o">.</span><span class="n">url</span><span class="p">?</span><span class="o">.</span><span class="n">scheme</span> <span class="c1">// "https"</span>
+<span class="n">urlComponents</span><span class="o">.</span><span class="n">string</span> 
+<span class="c1">// "https://itunes.apple.com/search?media=music&amp;entity=song&amp;term=jacob%20collier"</span>
+<span class="n">urlComponents</span><span class="o">.</span><span class="n">queryItems</span> <span class="c1">// 밑에</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-15-pm-8.36.48.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-15-pm-8.36.48.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h4 id="codable"><span class="me-2"><strong>Codable</strong></span><a href="#codable" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="codable"><span class="me-2"><strong>Codable</strong></span><a href="#codable" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Codable</code>이란 <code class="language-plaintext highlighter-rouge">Decodable</code>과 <code class="language-plaintext highlighter-rouge">Encodable</code> 이 합쳐진 것으로 Swift 4 버전부터 이용 가능한 프로토콜입니다.</li>
@@ -930,8 +959,8 @@ urlComponents.queryItems // 밑에
 
 <p>아래는 네트워크 상에 있는 원본 JSON입니다. 이것을 프로젝트에 가져와 사용하고 싶습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -970,44 +999,44 @@ urlComponents.queryItems // 밑에
 36
 37
 38
-</pre></td><td class="rouge-code"><pre>{
-  "resultCount": 50,
-  "results": [
-    {
-      "wrapperType": "track",
-      "kind": "song",
-      "artistId": 28223958,
-      "collectionId": 295286350,
-      "trackId": 295286499,
-      "artistName": "Collier",
-      "collectionName": "Collier - Ep",
-      "trackName": "No Matter What",
-      "collectionCensoredName": "Collier - Ep",
-      "trackCensoredName": "No Matter What",
-      "artistViewUrl": "https://music.apple.com/us/artist/collier/28223958?uo=4",
-      "collectionViewUrl": "https://music.apple.com/us/album/no-matter-what/295286350?i=295286499&amp;uo=4",
-      "trackViewUrl": "https://music.apple.com/us/album/no-matter-what/295286350?i=295286499&amp;uo=4",
-      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/Music/85/73/31/mzm.alxzrkgx.aac.p.m4a",
-      "artworkUrl30": "https://is2-ssl.mzstatic.com/image/thumb/Music/v4/1b/78/78/1b7878d3-7718-66b3-643b-600c4098c944/source/30x30bb.jpg",
-      "artworkUrl60": "https://is2-ssl.mzstatic.com/image/thumb/Music/v4/1b/78/78/1b7878d3-7718-66b3-643b-600c4098c944/source/60x60bb.jpg",
-      "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Music/v4/1b/78/78/1b7878d3-7718-66b3-643b-600c4098c944/source/100x100bb.jpg",
-      "collectionPrice": 5.94,
-      "trackPrice": 0.99,
-      "releaseDate": "2008-11-05T08:55:31Z",
-      "collectionExplicitness": "notExplicit",
-      "trackExplicitness": "notExplicit",
-      "discCount": 1,
-      "discNumber": 1,
-      "trackCount": 6,
-      "trackNumber": 5,
-      "trackTimeMillis": 304520,
-      "country": "USA",
-      "currency": "USD",
-      "primaryGenreName": "Pop",
-      "isStreamable": true
-    },
-  ]
-}
+</pre></td><td class="rouge-code"><pre><span class="p">{</span>
+  <span class="s">"resultCount"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+  <span class="s">"results"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s">"wrapperType"</span><span class="p">:</span> <span class="s">"track"</span><span class="p">,</span>
+      <span class="s">"kind"</span><span class="p">:</span> <span class="s">"song"</span><span class="p">,</span>
+      <span class="s">"artistId"</span><span class="p">:</span> <span class="mi">28223958</span><span class="p">,</span>
+      <span class="s">"collectionId"</span><span class="p">:</span> <span class="mi">295286350</span><span class="p">,</span>
+      <span class="s">"trackId"</span><span class="p">:</span> <span class="mi">295286499</span><span class="p">,</span>
+      <span class="s">"artistName"</span><span class="p">:</span> <span class="s">"Collier"</span><span class="p">,</span>
+      <span class="s">"collectionName"</span><span class="p">:</span> <span class="s">"Collier - Ep"</span><span class="p">,</span>
+      <span class="s">"trackName"</span><span class="p">:</span> <span class="s">"No Matter What"</span><span class="p">,</span>
+      <span class="s">"collectionCensoredName"</span><span class="p">:</span> <span class="s">"Collier - Ep"</span><span class="p">,</span>
+      <span class="s">"trackCensoredName"</span><span class="p">:</span> <span class="s">"No Matter What"</span><span class="p">,</span>
+      <span class="s">"artistViewUrl"</span><span class="p">:</span> <span class="s">"https://music.apple.com/us/artist/collier/28223958?uo=4"</span><span class="p">,</span>
+      <span class="s">"collectionViewUrl"</span><span class="p">:</span> <span class="s">"https://music.apple.com/us/album/no-matter-what/295286350?i=295286499&amp;uo=4"</span><span class="p">,</span>
+      <span class="s">"trackViewUrl"</span><span class="p">:</span> <span class="s">"https://music.apple.com/us/album/no-matter-what/295286350?i=295286499&amp;uo=4"</span><span class="p">,</span>
+      <span class="s">"previewUrl"</span><span class="p">:</span> <span class="s">"https://audio-ssl.itunes.apple.com/itunes-assets/Music/85/73/31/mzm.alxzrkgx.aac.p.m4a"</span><span class="p">,</span>
+      <span class="s">"artworkUrl30"</span><span class="p">:</span> <span class="s">"https://is2-ssl.mzstatic.com/image/thumb/Music/v4/1b/78/78/1b7878d3-7718-66b3-643b-600c4098c944/source/30x30bb.jpg"</span><span class="p">,</span>
+      <span class="s">"artworkUrl60"</span><span class="p">:</span> <span class="s">"https://is2-ssl.mzstatic.com/image/thumb/Music/v4/1b/78/78/1b7878d3-7718-66b3-643b-600c4098c944/source/60x60bb.jpg"</span><span class="p">,</span>
+      <span class="s">"artworkUrl100"</span><span class="p">:</span> <span class="s">"https://is2-ssl.mzstatic.com/image/thumb/Music/v4/1b/78/78/1b7878d3-7718-66b3-643b-600c4098c944/source/100x100bb.jpg"</span><span class="p">,</span>
+      <span class="s">"collectionPrice"</span><span class="p">:</span> <span class="mf">5.94</span><span class="p">,</span>
+      <span class="s">"trackPrice"</span><span class="p">:</span> <span class="mf">0.99</span><span class="p">,</span>
+      <span class="s">"releaseDate"</span><span class="p">:</span> <span class="s">"2008-11-05T08:55:31Z"</span><span class="p">,</span>
+      <span class="s">"collectionExplicitness"</span><span class="p">:</span> <span class="s">"notExplicit"</span><span class="p">,</span>
+      <span class="s">"trackExplicitness"</span><span class="p">:</span> <span class="s">"notExplicit"</span><span class="p">,</span>
+      <span class="s">"discCount"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s">"discNumber"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s">"trackCount"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+      <span class="s">"trackNumber"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s">"trackTimeMillis"</span><span class="p">:</span> <span class="mi">304520</span><span class="p">,</span>
+      <span class="s">"country"</span><span class="p">:</span> <span class="s">"USA"</span><span class="p">,</span>
+      <span class="s">"currency"</span><span class="p">:</span> <span class="s">"USD"</span><span class="p">,</span>
+      <span class="s">"primaryGenreName"</span><span class="p">:</span> <span class="s">"Pop"</span><span class="p">,</span>
+      <span class="s">"isStreamable"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+  <span class="p">]</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1066,27 +1095,27 @@ urlComponents.queryItems // 밑에
 
 <p> </p>
 
-<h4 id="urlsession"><span class="me-2"><strong>URLSession</strong></span><a href="#urlsession" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="urlsession"><span class="me-2"><strong>URLSession</strong></span><a href="#urlsession" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>HTTP의 데이터자료를 가져올 때 사용합니다. <code class="language-plaintext highlighter-rouge">URLSession</code>은 생성 전에 <code class="language-plaintext highlighter-rouge">configuraion</code>이 필요합니다. 이에 대한 정보는 <code class="language-plaintext highlighter-rouge">URLSessionConfiguration</code> 클래스 내에 있습니다. <code class="language-plaintext highlighter-rouge">default</code> 와 <code class="language-plaintext highlighter-rouge">ephemeral</code>(덧없는) 이 있는데 둘의 차이점이라면 <code class="language-plaintext highlighter-rouge">ephemeral</code> 설정은 로컬 스토어에 캐싱 또는 쿠키 저장 등의 작업을 하지 않습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>let requestURL = urlComponents.url!
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">requestURL</span> <span class="o">=</span> <span class="n">urlComponents</span><span class="o">.</span><span class="n">url</span><span class="o">!</span>
 
-// URLSession - configuration 먼저 필요
-let config = URLSessionConfiguration.default
-let session = URLSession(configuration: config)
+<span class="c1">// URLSession - configuration 먼저 필요</span>
+<span class="k">let</span> <span class="nv">config</span> <span class="o">=</span> <span class="kt">URLSessionConfiguration</span><span class="o">.</span><span class="k">default</span>
+<span class="k">let</span> <span class="nv">session</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="n">config</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="urlsession---datatask"><span class="me-2"><strong>URLSession - dataTask</strong></span><a href="#urlsession---datatask" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="urlsession---datatask"><span class="me-2"><strong>URLSession - dataTask</strong></span><a href="#urlsession---datatask" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>인터넷으로부터 데이터를 받아올 때 리퀘스트 URL과 받아온 이후 할 작업을 설정합니다.</p>
 
@@ -1111,8 +1140,8 @@ let session = URLSession(configuration: config)
 
 <p>위의 <code class="language-plaintext highlighter-rouge">Codable</code> 예제와 결합한 예제 코드입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1144,37 +1173,37 @@ let session = URLSession(configuration: config)
 29
 30
 31
-</pre></td><td class="rouge-code"><pre>let dataTask = session.dataTask(with: requestURL) { (data, response, error) in
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">dataTask</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">requestURL</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
     
-    guard error == nil else { return }
+    <span class="k">guard</span> <span class="n">error</span> <span class="o">==</span> <span class="kc">nil</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
     
-    guard let statusCode = (response as? HTTPURLResponse)?.statusCode else { return }
-    let successRange = 200..&lt;300
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">statusCode</span> <span class="o">=</span> <span class="p">(</span><span class="n">response</span> <span class="k">as?</span> <span class="kt">HTTPURLResponse</span><span class="p">)?</span><span class="o">.</span><span class="n">statusCode</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+    <span class="k">let</span> <span class="nv">successRange</span> <span class="o">=</span> <span class="mi">200</span><span class="o">..&lt;</span><span class="mi">300</span>
     
-    guard successRange.contains(statusCode) else { return }
+    <span class="k">guard</span> <span class="n">successRange</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">statusCode</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
     
-    guard let resultData = data else { return }
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">resultData</span> <span class="o">=</span> <span class="n">data</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
     
-    // 트랙 목록을 가져오기 -&gt; 트랙 오브젝트, struct로 파싱 (Codable)
-    // - JSON 파일, 데이터 -&gt; 오브젝트
-    // - Response, Track struct 생성
-    // - struct 프로퍼티 이름과 실제 데이터의 키 맞추기 (CodingKey)
-    // - 파싱(decoding)
+    <span class="c1">// 트랙 목록을 가져오기 -&gt; 트랙 오브젝트, struct로 파싱 (Codable)</span>
+    <span class="c1">// - JSON 파일, 데이터 -&gt; 오브젝트</span>
+    <span class="c1">// - Response, Track struct 생성</span>
+    <span class="c1">// - struct 프로퍼티 이름과 실제 데이터의 키 맞추기 (CodingKey)</span>
+    <span class="c1">// - 파싱(decoding)</span>
     
-    do {
-        let decoder = JSONDecoder()
-        let response = try decoder.decode(Response.self, from: resultData)
-        let tracks = response.tracks
-        tracks.count
-        tracks.first?.title
-        print(tracks.first?.thumbnailPath ?? "error")
-    } catch {
-        print("error: " + error.localizedDescription)
-    }
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">decoder</span> <span class="o">=</span> <span class="kt">JSONDecoder</span><span class="p">()</span>
+        <span class="k">let</span> <span class="nv">response</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Response</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">resultData</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">tracks</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">tracks</span>
+        <span class="n">tracks</span><span class="o">.</span><span class="n">count</span>
+        <span class="n">tracks</span><span class="o">.</span><span class="n">first</span><span class="p">?</span><span class="o">.</span><span class="n">title</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">tracks</span><span class="o">.</span><span class="n">first</span><span class="p">?</span><span class="o">.</span><span class="n">thumbnailPath</span> <span class="p">??</span> <span class="s">"error"</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"error: "</span> <span class="o">+</span> <span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+    <span class="p">}</span>
     
-}
+<span class="p">}</span>
 
-dataTask.resume()
+<span class="n">dataTask</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2156,6 +2185,12 @@ dataTask.resume()
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2189,18 +2224,6 @@ dataTask.resume()
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8079,11 +8102,11 @@ dataTask.resume()
 
   
     <a
-      href="/posts/%EC%9B%B9%ED%8C%A9webpack%EC%9C%BC%EB%A1%9C-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-html-loader-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/"
+      href="/posts/macos%EB%A7%A5-os-%EC%97%90%EC%84%9C-remote-invalid-username-or-password-fatal-authentication-failed-for-%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EC%83%9D%EC%8B%9C-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>웹팩(Webpack)으로 타입스크립트 & HTML Loader 환경 설정</p>
+      <p>macOS(맥 OS) 에서 remote: Invalid username or password. fatal: Authentication failed for 문제 발생시 해결 방법</p>
     </a>
   
 

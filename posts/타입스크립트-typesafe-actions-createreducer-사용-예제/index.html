@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="타입스크립트 + typesafe-actions: createReducer 사용 예제 (redux-actions의 handleActions 대체)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="1. redux-action의 handleActions 대용으로 typesafe-actions의 createReducer 를 사용합니다." />
-<meta property="og:description" content="1. redux-action의 handleActions 대용으로 typesafe-actions의 createReducer 를 사용합니다." />
+<meta name="description" content="방법" />
+<meta property="og:description" content="방법" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-typesafe-actions-createreducer-%EC%82%AC%EC%9A%A9-%EC%98%88%EC%A0%9C/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-typesafe-actions-createreducer-%EC%82%AC%EC%9A%A9-%EC%98%88%EC%A0%9C/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="타입스크립트 + typesafe-actions: createReducer 사용 예제 (redux-actions의 handleActions 대체)" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-01-27T00:00:00+09:00","datePublished":"2021-01-27T00:00:00+09:00","description":"1. redux-action의 handleActions 대용으로 typesafe-actions의 createReducer 를 사용합니다.","headline":"타입스크립트 + typesafe-actions: createReducer 사용 예제 (redux-actions의 handleActions 대체)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-typesafe-actions-createreducer-%EC%82%AC%EC%9A%A9-%EC%98%88%EC%A0%9C/"},"url":"https://ayaysir.github.io/posts/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-typesafe-actions-createreducer-%EC%82%AC%EC%9A%A9-%EC%98%88%EC%A0%9C/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-01-27T00:00:00+09:00","datePublished":"2021-01-27T00:00:00+09:00","description":"방법","headline":"타입스크립트 + typesafe-actions: createReducer 사용 예제 (redux-actions의 handleActions 대체)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-typesafe-actions-createreducer-%EC%82%AC%EC%9A%A9-%EC%98%88%EC%A0%9C/"},"url":"https://ayaysir.github.io/posts/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-typesafe-actions-createreducer-%EC%82%AC%EC%9A%A9-%EC%98%88%EC%A0%9C/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,10 +573,85 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -596,7 +678,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>타입스크립트 + typesafe-actions: createReducer 사용 예제 (redux-actions의 handleActions 대체)</h1>
     
@@ -670,7 +752,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="617 words"
+  title="644 words"
 >
   <em>3 min</em> read</span>
 
@@ -680,28 +762,56 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">타입스크립트 + typesafe-actions: createReducer 사용 예제 (redux-actions의 handleActions 대체)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">타입스크립트 + typesafe-actions: createReducer 사용 예제 (redux-actions의 handleActions 대체)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>1. redux-action의 <code class="language-plaintext highlighter-rouge">handleActions</code> 대용으로 <a href="https://github.com/piotrwitek/typesafe-actions#migrating-from-redux-actions-to-typesafe-actions">typesafe-actions의 createReducer</a> 를 사용합니다.</p>
+    <h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="1-typesafe-actions-도입"><span class="me-2">1. typesafe-actions 도입</span><a href="#1-typesafe-actions-도입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>redux-action의 <code class="language-plaintext highlighter-rouge">handleActions</code> 대용으로 <a href="https://github.com/piotrwitek/typesafe-actions#migrating-from-redux-actions-to-typesafe-actions">typesafe-actions의 createReducer</a> 를 사용합니다.</p>
+
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre># NPM
-npm install typesafe-actions
+</pre></td><td class="rouge-code"><pre><span class="c"># NPM</span>
+npm <span class="nb">install </span>typesafe-actions
 
-# YARN
+<span class="c"># YARN</span>
 yarn add typesafe-actions
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="참고-redux-action"><span class="me-2">참고: redux-action</span><a href="#참고-redux-action" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <p>참고로 redux-action은 리덕스에서 액션 생성 함수, 리듀서를 작성하기 편하게 하기 위한 목적으로 사용됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-tsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Tsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -736,48 +846,48 @@ yarn add typesafe-actions
 32
 33
 34
-</pre></td><td class="rouge-code"><pre>import { createAction } from "redux-actions"
-import { createReducer } from "typesafe-actions"
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">createAction</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux-actions</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createReducer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">typesafe-actions</span><span class="dl">"</span>
 
-// 액션 타입
-const START_LOADING = "loading/START_LOADING"
-const END_LOADING = "loading/END_LOADING"
+<span class="c1">// 액션 타입</span>
+<span class="kd">const</span> <span class="nx">START_LOADING</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">loading/START_LOADING</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="nx">END_LOADING</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">loading/END_LOADING</span><span class="dl">"</span>
 
-// 액션 생성 함수
-export const startLoading = createAction(
-    START_LOADING,
-    (actionType: any) =&gt; actionType
-)
+<span class="c1">// 액션 생성 함수</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">startLoading</span> <span class="o">=</span> <span class="nf">createAction</span><span class="p">(</span>
+    <span class="nx">START_LOADING</span><span class="p">,</span>
+    <span class="p">(</span><span class="nx">actionType</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">actionType</span>
+<span class="p">)</span>
 
-export const endLoading = createAction(
-    END_LOADING,
-    (actionType: any) =&gt; actionType
-)
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">endLoading</span> <span class="o">=</span> <span class="nf">createAction</span><span class="p">(</span>
+    <span class="nx">END_LOADING</span><span class="p">,</span>
+    <span class="p">(</span><span class="nx">actionType</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">actionType</span>
+<span class="p">)</span>
 
-// 초기 상태
-const initialState = {}
+<span class="c1">// 초기 상태</span>
+<span class="kd">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{}</span>
 
-// 리듀서 함수 정의
-const loading = createReducer(initialState, {
-    [START_LOADING]: (state, { payload }) =&gt; ({
-        ...state,
-        [payload]: true
-    }),
-    [END_LOADING]: (state, { payload }) =&gt; ({
-        ...state,
-        [payload]: false
-    })
-},)
+<span class="c1">// 리듀서 함수 정의</span>
+<span class="kd">const</span> <span class="nx">loading</span> <span class="o">=</span> <span class="nf">createReducer</span><span class="p">(</span><span class="nx">initialState</span><span class="p">,</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">START_LOADING</span><span class="p">]:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="p">{</span> <span class="nx">payload</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">({</span>
+        <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+        <span class="p">[</span><span class="nx">payload</span><span class="p">]:</span> <span class="kc">true</span>
+    <span class="p">}),</span>
+    <span class="p">[</span><span class="nx">END_LOADING</span><span class="p">]:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="p">{</span> <span class="nx">payload</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">({</span>
+        <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+        <span class="p">[</span><span class="nx">payload</span><span class="p">]:</span> <span class="kc">false</span>
+    <span class="p">})</span>
+<span class="p">},)</span>
 
-export default loading
+<span class="k">export</span> <span class="k">default</span> <span class="nx">loading</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="2-에러-방지를-위한-type-작성"><span class="me-2">2. 에러 방지를 위한 type 작성 </span><a href="#2-에러-방지를-위한-type-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>2. 루트 리듀서 근처에 타입 에러 방지를 위한 <code class="language-plaintext highlighter-rouge">type</code>을 작성합니다. (src/modules/index.ts)</p>
+<p>루트 리듀서 근처에 타입 에러 방지를 위한 <code class="language-plaintext highlighter-rouge">type</code>을 작성합니다. (src/modules/index.ts)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-tsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Tsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -804,40 +914,40 @@ export default loading
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>import { combineReducers } from "redux"
-import { all } from "redux-saga/effects"
-import auth, { authSaga } from "./auth"
-import loading from "./loading"
-import codeGroup, { codeGroupSaga } from "./codegroup"
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">combineReducers</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">all</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux-saga/effects</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">auth</span><span class="p">,</span> <span class="p">{</span> <span class="nx">authSaga</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./auth</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">loading</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./loading</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">codeGroup</span><span class="p">,</span> <span class="p">{</span> <span class="nx">codeGroupSaga</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./codegroup</span><span class="dl">"</span>
 
-// 루트 리듀서
-const rootReducer = combineReducers({
-    auth,
-    loading,
-    codeGroup
-})
+<span class="c1">// 루트 리듀서</span>
+<span class="kd">const</span> <span class="nx">rootReducer</span> <span class="o">=</span> <span class="nf">combineReducers</span><span class="p">({</span>
+    <span class="nx">auth</span><span class="p">,</span>
+    <span class="nx">loading</span><span class="p">,</span>
+    <span class="nx">codeGroup</span>
+<span class="p">})</span>
 
-// 루트 사가
-export function* rootSaga() {
-    yield all([
-        authSaga(),
-        codeGroupSaga()
-    ])
-}
+<span class="c1">// 루트 사가</span>
+<span class="k">export</span> <span class="kd">function</span><span class="o">*</span> <span class="nf">rootSaga</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">yield</span> <span class="nf">all</span><span class="p">([</span>
+        <span class="nf">authSaga</span><span class="p">(),</span>
+        <span class="nf">codeGroupSaga</span><span class="p">()</span>
+    <span class="p">])</span>
+<span class="p">}</span>
 
-export default rootReducer
+<span class="k">export</span> <span class="k">default</span> <span class="nx">rootReducer</span>
 
-// 루트 리듀서의 반환값을 유추
-// 추후 이 타입을 컨테이너 컴포넌트에서 불러와서 사용해야 하므로 내보내기
-export type RootState = ReturnType&lt;typeof rootReducer&gt;
+<span class="c1">// 루트 리듀서의 반환값을 유추</span>
+<span class="c1">// 추후 이 타입을 컨테이너 컴포넌트에서 불러와서 사용해야 하므로 내보내기</span>
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">RootState</span> <span class="o">=</span> <span class="nb">ReturnType</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">rootReducer</span><span class="o">&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="3-상태값-접근-방법-useselector"><span class="me-2">3. 상태값 접근 방법: useSelector</span><a href="#3-상태값-접근-방법-useselector" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>3. <code class="language-plaintext highlighter-rouge">createReducer</code>로 만든 <code class="language-plaintext highlighter-rouge">loading</code>의 상태값에 접근하고자 할 경우, react-redux의 <code class="language-plaintext highlighter-rouge">useSelector</code>를 사용하여 불러옵니다. 이 때 <code class="language-plaintext highlighter-rouge">state</code>의 타입은 위에서 정의한 <code class="language-plaintext highlighter-rouge">RootState</code> 타입이며 객체 프로퍼티에 접근하기 위해 변수 타입에 <code class="language-plaintext highlighter-rouge">any</code>를 지정합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">createReducer</code>로 만든 <code class="language-plaintext highlighter-rouge">loading</code>의 상태값에 접근하고자 할 경우, react-redux의 <code class="language-plaintext highlighter-rouge">useSelector</code>를 사용하여 불러옵니다. 이 때 <code class="language-plaintext highlighter-rouge">state</code>의 타입은 위에서 정의한 <code class="language-plaintext highlighter-rouge">RootState</code> 타입이며 객체 프로퍼티에 접근하기 위해 변수 타입에 <code class="language-plaintext highlighter-rouge">any</code>를 지정합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-tsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Tsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -859,35 +969,35 @@ export type RootState = ReturnType&lt;typeof rootReducer&gt;
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>import React, { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import CodeGroupList from "../../components/codegroup/CodeGroupList"
-import { RootState } from "../../modules"
-import { fetchList, FETCH_LIST } from "../../modules/codegroup"
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useDispatch</span><span class="p">,</span> <span class="nx">useSelector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">CodeGroupList</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../../components/codegroup/CodeGroupList</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">RootState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../../modules</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">fetchList</span><span class="p">,</span> <span class="nx">FETCH_LIST</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../../modules/codegroup</span><span class="dl">"</span>
 
-const CodeGroupListContainer = () =&gt; {
-    // 스토어 dispatch 사용 가능
-    const dispatch = useDispatch()
+<span class="kd">const</span> <span class="nx">CodeGroupListContainer</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 스토어 dispatch 사용 가능</span>
+    <span class="kd">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nf">useDispatch</span><span class="p">()</span>
 
-    // 스토어 상태 조회
-    const loading: any = useSelector((state: RootState) =&gt; { //...// })
+    <span class="c1">// 스토어 상태 조회</span>
+    <span class="kd">const</span> <span class="na">loading</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="nf">useSelector</span><span class="p">((</span><span class="na">state</span><span class="p">:</span> <span class="nx">RootState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="c1">//...// })</span>
 
-    // 마운트될 때 코드그룹 목록을 가져옴
-    useEffect(() =&gt; {
-        dispatch(fetchList())
-    }, [dispatch])
+    <span class="c1">// 마운트될 때 코드그룹 목록을 가져옴</span>
+    <span class="nf">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nf">dispatch</span><span class="p">(</span><span class="nf">fetchList</span><span class="p">())</span>
+    <span class="p">},</span> <span class="p">[</span><span class="nx">dispatch</span><span class="p">])</span>
 
-    return `&lt;CodeGroupList codeGroups={codeGroups} isLoading={isLoading} /&gt;`
-}
-export default CodeGroupListContainer
+    <span class="k">return</span> <span class="s2">`&lt;CodeGroupList codeGroups={codeGroups} isLoading={isLoading} /&gt;`</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">CodeGroupListContainer</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>참고로 <code class="language-plaintext highlighter-rouge">FETCH_LIST</code> 부분은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-tsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Tsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>export const FETCH_LIST = "codeGroup/FETCH_LIST"
+</pre></td><td class="rouge-code"><pre><span class="k">export</span> <span class="kd">const</span> <span class="nx">FETCH_LIST</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">codeGroup/FETCH_LIST</span><span class="dl">"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1863,6 +1973,12 @@ export default CodeGroupListContainer
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1896,18 +2012,6 @@ export default CodeGroupListContainer
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -7765,7 +7869,7 @@ export default CodeGroupListContainer
 
               <h4 class="pt-0 my-2">리액트(React): Redux-saga 기초 사용법 요약 (상태 관리시 부수효과 관리하는 미들웨어)</h4>
               <div class="text-muted">
-                <p>- [리액트(React): React Redux 요약 정리](http://yoonbumtae.com/?p=3257)  #### **[redux-saga 깃허브](https://github.com/redux-saga/redux-saga)**  ##### **역할**  > redux-saga는 애플리케이션에서 일어나는 사이드 이펙트(side effects...</p>
+                <p>- [리액트(React): React Redux 요약 정리](/posts/리액트react-react-redux-요약-정리/)  **[redux-saga 깃허브](https://github.com/redux-saga/redux-saga)**  ## **역할**  > redux-saga는 애플리케이션에서 일어나는 사이드 이펙트(side effects) (...</p>
               </div>
             </div>
           </a>

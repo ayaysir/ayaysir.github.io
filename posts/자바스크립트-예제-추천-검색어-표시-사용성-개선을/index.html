@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,42 +573,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -642,6 +613,54 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -677,6 +696,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -693,7 +722,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트 예제: 추천 검색어 표시 (사용성 개선을 위한 이벤트 처리)</h1>
     
@@ -767,7 +796,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1888 words"
+  title="1871 words"
 >
   <em>10 min</em> read</span>
 
@@ -777,9 +806,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트 예제: 추천 검색어 표시 (사용성 개선을 위한 이벤트 처리)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트 예제: 추천 검색어 표시 (사용성 개선을 위한 이벤트 처리)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="요구사항"><span class="me-2"><strong>요구사항</strong></span><a href="#요구사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="요구사항"><span class="me-2"><strong>요구사항</strong></span><a href="#요구사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>키보드와 마우스를 이용해서 추천 검색어를 선택할 수 있도록 합니다.</p>
 
@@ -790,9 +841,9 @@
   <li>마우스로 추천 검색어를 누르면 커서가 위치한 검색어가 입력창에 반영되어야 합니다.</li>
 </ol>
 
-<p> </p>
+<h2 id="기본-코드"><span class="me-2"><strong>기본 코드</strong></span><a href="#기본-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="기본-html은-다음과-같습니다"><span class="me-2"><strong>기본 HTML은 다음과 같습니다.</strong></span><a href="#기본-html은-다음과-같습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="기본-html"><span class="me-2"><strong>기본 HTML</strong></span><a href="#기본-html" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-html highlighter-rouge"><div class="code-header">
         <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
@@ -952,7 +1003,7 @@
 
 <p> </p>
 
-<h5 id="script의-전체-내용은-다음과-같습니다"><span class="me-2"><strong>script의 전체 내용은 다음과 같습니다.</strong></span><a href="#script의-전체-내용은-다음과-같습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="script"><span class="me-2"><strong>script</strong></span><a href="#script" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1116,9 +1167,9 @@
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="해결-방법"><span class="me-2"><strong>해결 방법</strong></span><a href="#해결-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="요구사항-1--esc를-누르면-추천-검색어-창이-닫여야-합니다"><span class="me-2"><strong>요구사항 1 - esc를 누르면 추천 검색어 창이 닫여야 합니다.</strong></span><a href="#요구사항-1--esc를-누르면-추천-검색어-창이-닫여야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="요구사항-1--esc를-누르면-추천-검색어-창이-닫여야-합니다"><span class="me-2"><strong>요구사항 1 - esc를 누르면 추천 검색어 창이 닫여야 합니다.</strong></span><a href="#요구사항-1--esc를-누르면-추천-검색어-창이-닫여야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>추천어 검색창이 닫힌다는 것은</p>
 
@@ -1143,21 +1194,21 @@
 
 <p>그 다음 검색어 입력창에 <code class="language-plaintext highlighter-rouge">keyup</code> 이벤트를 부여하고, 해당 키가 <code class="language-plaintext highlighter-rouge">ESC</code>인 경우 추천어 검색창을 닫도록 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>// 요구사항 1 - esc를 누르면 추천 검색어 창이 닫여야 합니다.
-if(e.key === "Escape") {
-    closeKeywords()
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 요구사항 1 - esc를 누르면 추천 검색어 창이 닫여야 합니다.</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Escape</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">closeKeywords</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="요구사항-2---키보드의-위-아래-키를-누르면-추천-검색어-하이라이트가-옮겨지고-엔터를-누르면-하이라이트가-위치한-검색어가-입력창에-반영되어야-합니다"><span class="me-2"><strong>요구사항 2 - 키보드의 위, 아래 키를 누르면 추천 검색어 하이라이트가 옮겨지고 엔터를 누르면 하이라이트가 위치한 검색어가 입력창에 반영되어야 합니다.</strong></span><a href="#요구사항-2---키보드의-위-아래-키를-누르면-추천-검색어-하이라이트가-옮겨지고-엔터를-누르면-하이라이트가-위치한-검색어가-입력창에-반영되어야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="요구사항-2---키보드의-위-아래-키를-누르면-추천-검색어-하이라이트가-옮겨지고-엔터를-누르면-하이라이트가-위치한-검색어가-입력창에-반영되어야-합니다"><span class="me-2"><strong>요구사항 2 - 키보드의 위, 아래 키를 누르면 추천 검색어 하이라이트가 옮겨지고 엔터를 누르면 하이라이트가 위치한 검색어가 입력창에 반영되어야 합니다.</strong></span><a href="#요구사항-2---키보드의-위-아래-키를-누르면-추천-검색어-하이라이트가-옮겨지고-엔터를-누르면-하이라이트가-위치한-검색어가-입력창에-반영되어야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>키보드 위 키가 눌린 경우</p>
 
@@ -1175,8 +1226,8 @@ if(e.key === "Escape") {
 
 <p>검색어 목록(<code class="language-plaintext highlighter-rouge">&lt;li&gt;</code>)에 <code class="language-plaintext highlighter-rouge">selected</code> 클래스 유무 여부에 따라 선택 여부가 결정됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1196,35 +1247,35 @@ if(e.key === "Escape") {
 17
 18
 19
-</pre></td><td class="rouge-code"><pre>// 요구사항 2 - 키보드의 위, 아래 키를 누르면 추천 검색어 하이라이트가 옮겨지고 엔터를 누르면 하이라이트가 위치한 검색어가 입력창에 반영되어야 합니다.
+</pre></td><td class="rouge-code"><pre><span class="c1">// 요구사항 2 - 키보드의 위, 아래 키를 누르면 추천 검색어 하이라이트가 옮겨지고 엔터를 누르면 하이라이트가 위치한 검색어가 입력창에 반영되어야 합니다.</span>
 
-const keywordsList = keywords.querySelectorAll("li")
+<span class="kd">const</span> <span class="nx">keywordsList</span> <span class="o">=</span> <span class="nx">keywords</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">li</span><span class="dl">"</span><span class="p">)</span>
 
-if((e.key === "ArrowUp" || e.key === "ArrowDown") &amp;&amp; keywords.style.display === "block") {
-    let target
-    const initIndex = e.key === "ArrowUp" ? keywordsList.length - 1 : 0
-    const adjacentSibling = selectedKeyword &amp;&amp; (e.key === "ArrowUp" ? selectedKeyword.previousElementSibling : selectedKeyword.nextElementSibling)
+<span class="k">if</span><span class="p">((</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">ArrowUp</span><span class="dl">"</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">ArrowDown</span><span class="dl">"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">keywords</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">target</span>
+    <span class="kd">const</span> <span class="nx">initIndex</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">ArrowUp</span><span class="dl">"</span> <span class="p">?</span> <span class="nx">keywordsList</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span>
+    <span class="kd">const</span> <span class="nx">adjacentSibling</span> <span class="o">=</span> <span class="nx">selectedKeyword</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">ArrowUp</span><span class="dl">"</span> <span class="p">?</span> <span class="nx">selectedKeyword</span><span class="p">.</span><span class="nx">previousElementSibling</span> <span class="p">:</span> <span class="nx">selectedKeyword</span><span class="p">.</span><span class="nx">nextElementSibling</span><span class="p">)</span>
     
-    if(adjacentSibling) {
-        target = adjacentSibling
-    } else {
-        target = keywordsList.item(initIndex)
-    } 
+    <span class="k">if</span><span class="p">(</span><span class="nx">adjacentSibling</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">target</span> <span class="o">=</span> <span class="nx">adjacentSibling</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">target</span> <span class="o">=</span> <span class="nx">keywordsList</span><span class="p">.</span><span class="nf">item</span><span class="p">(</span><span class="nx">initIndex</span><span class="p">)</span>
+    <span class="p">}</span> 
     
-    selectedKeyword &amp;&amp; selectedKeyword.classList.remove("selected")
-    target.classList.add("selected")
-    keyword.value = target.textContent
-}
+    <span class="nx">selectedKeyword</span> <span class="o">&amp;&amp;</span> <span class="nx">selectedKeyword</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="dl">"</span><span class="s2">selected</span><span class="dl">"</span><span class="p">)</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">selected</span><span class="dl">"</span><span class="p">)</span>
+    <span class="nx">keyword</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">target</span><span class="p">.</span><span class="nx">textContent</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="요구사항-3--마우스로-다른-곳을-클릭하여-input이-focus를-잃어버리는-경우-추천-검색어-창이-닫여야-합니다"><span class="me-2"><strong>요구사항 3 - 마우스로 다른 곳을 클릭하여 input이 focus를 잃어버리는 경우 추천 검색어 창이 닫여야 합니다.</strong></span><a href="#요구사항-3--마우스로-다른-곳을-클릭하여-input이-focus를-잃어버리는-경우-추천-검색어-창이-닫여야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="요구사항-3--마우스로-다른-곳을-클릭하여-input이-focus를-잃어버리는-경우-추천-검색어-창이-닫여야-합니다"><span class="me-2"><strong>요구사항 3 - 마우스로 다른 곳을 클릭하여 input이 focus를 잃어버리는 경우 추천 검색어 창이 닫여야 합니다.</strong></span><a href="#요구사항-3--마우스로-다른-곳을-클릭하여-input이-focus를-잃어버리는-경우-추천-검색어-창이-닫여야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">document</code>에 마우스 이벤트를 부여해서 추천 검색어 창이 켜진 상태이고, 클릭된 부분이 추천 검색어 창이 아닌 경우 추천 검색어 창을 닫히게 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1232,31 +1283,31 @@ if((e.key === "ArrowUp" || e.key === "ArrowDown") &amp;&amp; keywords.style.disp
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>document.addEventListener("click", e =&gt; {
-    // 요구사항 3 - 마우스로 다른 곳을 클릭하여 input이 focus를 잃어버리는 경우 추천 검색어 창이 닫여야 합니다.
-    const closestKeywords = e.target.closest(".keywords") // 부모 요소 중에 keywords 클래스를 가진 부모가 있는지 확인
-    if(!closestKeywords &amp;&amp; keywords.style.display === "block") {
-        closeKeywords()
-    }
-})
+</pre></td><td class="rouge-code"><pre><span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 요구사항 3 - 마우스로 다른 곳을 클릭하여 input이 focus를 잃어버리는 경우 추천 검색어 창이 닫여야 합니다.</span>
+    <span class="kd">const</span> <span class="nx">closestKeywords</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nf">closest</span><span class="p">(</span><span class="dl">"</span><span class="s2">.keywords</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// 부모 요소 중에 keywords 클래스를 가진 부모가 있는지 확인</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">closestKeywords</span> <span class="o">&amp;&amp;</span> <span class="nx">keywords</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">closeKeywords</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="요구사항-4--마우스로-추천-검색어를-누르면-커서가-위치한-검색어가-입력창에-반영되어야-합니다"><span class="me-2"><strong>요구사항 4 - 마우스로 추천 검색어를 누르면 커서가 위치한 검색어가 입력창에 반영되어야 합니다.</strong></span><a href="#요구사항-4--마우스로-추천-검색어를-누르면-커서가-위치한-검색어가-입력창에-반영되어야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="요구사항-4--마우스로-추천-검색어를-누르면-커서가-위치한-검색어가-입력창에-반영되어야-합니다"><span class="me-2"><strong>요구사항 4 - 마우스로 추천 검색어를 누르면 커서가 위치한 검색어가 입력창에 반영되어야 합니다.</strong></span><a href="#요구사항-4--마우스로-추천-검색어를-누르면-커서가-위치한-검색어가-입력창에-반영되어야-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>키워드 목록 창에 마우스 클릭 이벤트를 부여하고, 목록을 클릭하면 클릭된 목록의 <code class="language-plaintext highlighter-rouge">textContent</code>를 입력창에 반영하도록 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>keywords.addEventListener("click", e =&gt; {
-    // 요구사항 4 - 마우스로 추천 검색어를 누르면 커서가 위치한 검색어가 입력창에 반영되어야 합니다.
-    keyword.value = e.target.textContent
-})
+</pre></td><td class="rouge-code"><pre><span class="nx">keywords</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 요구사항 4 - 마우스로 추천 검색어를 누르면 커서가 위치한 검색어가 입력창에 반영되어야 합니다.</span>
+    <span class="nx">keyword</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">textContent</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2232,6 +2283,12 @@ if((e.key === "ArrowUp" || e.key === "ArrowDown") &amp;&amp; keywords.style.disp
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2265,18 +2322,6 @@ if((e.key === "ArrowUp" || e.key === "ArrowDown") &amp;&amp; keywords.style.disp
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

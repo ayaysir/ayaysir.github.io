@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,16 +638,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -731,6 +728,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -747,7 +754,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>[프로그래머스/레벨2] 위장 (자바스크립트)</h1>
     
@@ -831,13 +838,35 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">[프로그래머스/레벨2] 위장 (자바스크립트)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">[프로그래머스/레벨2] 위장 (자바스크립트)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p><a href="https://programmers.co.kr/learn/courses/30/lessons/42578">[프로그래머스/레벨2] 위장 (자바스크립트)</a></p>
 
 <p> </p>
 
-<h4 id="문제"><span class="me-2"><strong>문제</strong></span><a href="#문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="문제"><span class="me-2"><strong>문제</strong></span><a href="#문제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>스파이들은 매일 다른 옷을 조합하여 입어 자신을 위장합니다.</p>
 
@@ -849,7 +878,7 @@
 
 <p> </p>
 
-<h5 id="제한사항"><span class="me-2"><strong>제한사항</strong></span><a href="#제한사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="제한사항"><span class="me-2"><strong>제한사항</strong></span><a href="#제한사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>clothes의 각 행은 [의상의 이름, 의상의 종류]로 이루어져 있습니다.</li>
@@ -862,11 +891,11 @@
 
 <p> </p>
 
-<h5 id="입출력-예"><span class="me-2"><strong>입출력 예</strong></span><a href="#입출력-예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="입출력-예"><span class="me-2"><strong>입출력 예</strong></span><a href="#입출력-예" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-18-am-12.25.08.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-18-am-12.25.08.png" alt="" loading="lazy"></a></p>
 
-<h5 id="입출력-예-설명"><span class="me-2"><strong>입출력 예 설명</strong></span><a href="#입출력-예-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="입출력-예-설명"><span class="me-2"><strong>입출력 예 설명</strong></span><a href="#입출력-예-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>예제 #1 headgear에 해당하는 의상이 yellow_hat, green_turban이고 eyewear에 해당하는 의상이 blue_sunglasses이므로 아래와 같이 5개의 조합이 가능합니다.</p>
 
@@ -898,7 +927,7 @@
 
 <p> </p>
 
-<h4 id="문제-해결-방법"><span class="me-2"><strong>문제 해결 방법</strong></span><a href="#문제-해결-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="문제-해결-방법"><span class="me-2"><strong>문제 해결 방법</strong></span><a href="#문제-해결-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>객체 타입의 특성을 이용해 카테고리별 의상을 배열 형태로 모아둡니다.</li>
@@ -912,7 +941,7 @@
 
 <p> </p>
 
-<h4 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1919,6 +1948,12 @@
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1952,18 +1987,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

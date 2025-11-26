@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,42 +573,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -642,6 +613,21 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -719,8 +705,29 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -737,7 +744,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>리액트(React): Redux-saga 기초 사용법 요약 (상태 관리시 부수효과 관리하는 미들웨어)</h1>
     
@@ -811,7 +818,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2823 words"
+  title="2824 words"
 >
   <em>15 min</em> read</span>
 
@@ -821,15 +828,37 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">리액트(React): Redux-saga 기초 사용법 요약 (상태 관리시 부수효과 관리하는 미들웨어)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">리액트(React): Redux-saga 기초 사용법 요약 (상태 관리시 부수효과 관리하는 미들웨어)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <ul>
-  <li><a href="http://yoonbumtae.com/?p=3257">리액트(React): React Redux 요약 정리</a></li>
+  <li><a href="/posts/리액트react-react-redux-요약-정리/">리액트(React): React Redux 요약 정리</a></li>
 </ul>
 
-<h4 id="redux-saga-깃허브"><span class="me-2"><strong><a href="https://github.com/redux-saga/redux-saga">redux-saga 깃허브</a></strong></span><a href="#redux-saga-깃허브" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<p><strong><a href="https://github.com/redux-saga/redux-saga">redux-saga 깃허브</a></strong></p>
 
-<h5 id="역할"><span class="me-2"><strong>역할</strong></span><a href="#역할" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="역할"><span class="me-2"><strong>역할</strong></span><a href="#역할" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
   <p>redux-saga는 애플리케이션에서 일어나는 사이드 이펙트(side effects) (데이터를 불러오는 비동기 처리나 브라우저 캐쉬에 접근하는 행위들)을 쉽게 관리하며 효과적인 실행, 손쉬운 테스트 그리고 에러 핸들링을 쉽게 해준다.</p>
@@ -837,7 +866,7 @@
 
 <p> </p>
 
-<h5 id="특징"><span class="me-2"><strong>특징</strong></span><a href="#특징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="특징"><span class="me-2"><strong>특징</strong></span><a href="#특징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>saga 패턴을 차용 (<a href="https://uzihoon.com/post/181be130-63a7-11ea-a51b-d348fee141c4">참고 블로그</a>)</li>
@@ -851,16 +880,16 @@
 
 <p>전체 코드는 <a href="https://github.com/ayaysir/saga-board-1/">https://github.com/ayaysir/saga-board-1/</a> 에서 볼 수 있습니다.</p>
 
-<p> </p>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>리덕스 사가 기초 요약 리덕스 액션 리액트 리덕스</p>
 
-<h5 id="npm-라이브러리-설치"><span class="me-2"><strong>npm 라이브러리 설치</strong></span><a href="#npm-라이브러리-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="npm-라이브러리-설치"><span class="me-2"><strong>npm 라이브러리 설치</strong></span><a href="#npm-라이브러리-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>npm install redux react-redux redux-actions redux-devtools-extension redux-saga
+</pre></td><td class="rouge-code"><pre>npm <span class="nb">install </span>redux react-redux redux-actions redux-devtools-extension redux-saga
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -873,12 +902,12 @@
 
 <p> </p>
 
-<h5 id="srcindexjs"><span class="me-2"><strong>src/index.js</strong></span><a href="#srcindexjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="srcindexjs"><span class="me-2"><strong>src/index.js</strong></span><a href="#srcindexjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>최상단 인덱스 파일입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -921,48 +950,48 @@
 40
 41
 42
-</pre></td><td class="rouge-code"><pre>import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-dom</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./index.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">reportWebVitals</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./reportWebVitals</span><span class="dl">'</span><span class="p">;</span>
 
-import { BrowserRouter } from "react-router-dom";
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
 
-// 리덕스와 미들웨어 적용을 위해 필요한 모듈을 불러온다.
-import { createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
-import rootReducer, { rootSaga } from "./modules";
-import { composeWithDevTools } from "redux-devtools-extension";
-import createSagaMiddleware from "redux-saga";
+<span class="c1">// 리덕스와 미들웨어 적용을 위해 필요한 모듈을 불러온다.</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createStore</span><span class="p">,</span> <span class="nx">applyMiddleware</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Provider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">rootReducer</span><span class="p">,</span> <span class="p">{</span> <span class="nx">rootSaga</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./modules</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">composeWithDevTools</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux-devtools-extension</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">createSagaMiddleware</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux-saga</span><span class="dl">"</span><span class="p">;</span>
 
-const sagaMiddleware = createSagaMiddleware()
+<span class="kd">const</span> <span class="nx">sagaMiddleware</span> <span class="o">=</span> <span class="nf">createSagaMiddleware</span><span class="p">()</span>
 
-// 루트 리듀서를 전달받아 스토어를 생성한다. composeWithDevTools 함수는 Redux DevTools의 기능을
-// 사용할 수 있게 한다. applyMiddleware 함수를 통해 redux-saga 미들웨어를 적용한다.
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(sagaMiddleware))
-)
+<span class="c1">// 루트 리듀서를 전달받아 스토어를 생성한다. composeWithDevTools 함수는 Redux DevTools의 기능을</span>
+<span class="c1">// 사용할 수 있게 한다. applyMiddleware 함수를 통해 redux-saga 미들웨어를 적용한다.</span>
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nf">createStore</span><span class="p">(</span>
+  <span class="nx">rootReducer</span><span class="p">,</span>
+  <span class="nf">composeWithDevTools</span><span class="p">(</span><span class="nf">applyMiddleware</span><span class="p">(</span><span class="nx">sagaMiddleware</span><span class="p">))</span>
+<span class="p">)</span>
 
-// 주의 //
-sagaMiddleware.run(rootSaga) // 리덕스 사가 미들웨어 실행
+<span class="c1">// 주의 //</span>
+<span class="nx">sagaMiddleware</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="nx">rootSaga</span><span class="p">)</span> <span class="c1">// 리덕스 사가 미들웨어 실행</span>
 
-ReactDOM.render(
-  `&lt;React.StrictMode&gt;
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span>
+  <span class="s2">`&lt;React.StrictMode&gt;
     &lt;Provider store={store}&gt;
       &lt;BrowserRouter&gt;
         &lt;App /&gt;
       &lt;/BrowserRouter&gt;
     &lt;/Provider&gt;
   &lt;/React.StrictMode&gt;,
-  document.getElementById('root')`
-);
+  document.getElementById('root')`</span>
+<span class="p">);</span>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+<span class="c1">// If you want to start measuring performance in your app, pass a function</span>
+<span class="c1">// to log results (for example: reportWebVitals(console.log))</span>
+<span class="c1">// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals</span>
+<span class="nf">reportWebVitals</span><span class="p">();</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ol>
@@ -974,12 +1003,12 @@ reportWebVitals();
 
 <p> </p>
 
-<h5 id="srclibapijs"><span class="me-2"><strong>src/lib/api.js</strong></span><a href="#srclibapijs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="srclibapijs"><span class="me-2"><strong>src/lib/api.js</strong></span><a href="#srclibapijs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>axios를 사용해 외부 API 호출 함수를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -990,24 +1019,24 @@ reportWebVitals();
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>import axios from "axios"
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span>
 
-// 상품 상세 조회 API 호출 함수
-export const fetchItemApi = (itemId) =&gt; axios.get(`/items/${itemId}`)
+<span class="c1">// 상품 상세 조회 API 호출 함수</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchItemApi</span> <span class="o">=</span> <span class="p">(</span><span class="nx">itemId</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">axios</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">`/items/</span><span class="p">${</span><span class="nx">itemId</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
 
-// 상품 목록 조회 API 호출 함수
-export const fetchItemListApi = () =&gt; axios.get("/items")
+<span class="c1">// 상품 목록 조회 API 호출 함수</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchItemListApi</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">axios</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/items</span><span class="dl">"</span><span class="p">)</span>
 
-// 상품 삭제 API
-export const removeItemApi = (itemId) =&gt; axios.delete(`/items/${itemId}`)
+<span class="c1">// 상품 삭제 API</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">removeItemApi</span> <span class="o">=</span> <span class="p">(</span><span class="nx">itemId</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s2">`/items/</span><span class="p">${</span><span class="nx">itemId</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="srcmoduleindexjs"><span class="me-2"><strong>src/module/index.js</strong></span><a href="#srcmoduleindexjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="srcmoduleindexjs"><span class="me-2"><strong>src/module/index.js</strong></span><a href="#srcmoduleindexjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1027,25 +1056,25 @@ export const removeItemApi = (itemId) =&gt; axios.delete(`/items/${itemId}`)
 17
 18
 19
-</pre></td><td class="rouge-code"><pre>import { combineReducers } from "redux"
-import { all } from "redux-saga/effects"
-import item, { itemSaga } from "./item"
-import loading from "./loading"
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">combineReducers</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">all</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux-saga/effects</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">item</span><span class="p">,</span> <span class="p">{</span> <span class="nx">itemSaga</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./item</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">loading</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./loading</span><span class="dl">"</span>
 
-// 루트 리듀서와 다른 리듀서를 결합
-// item 리듀서와 loading 리듀서를 추가
-const rootReducer = combineReducers({
-    item,
-    loading
-})
+<span class="c1">// 루트 리듀서와 다른 리듀서를 결합</span>
+<span class="c1">// item 리듀서와 loading 리듀서를 추가</span>
+<span class="kd">const</span> <span class="nx">rootReducer</span> <span class="o">=</span> <span class="nf">combineReducers</span><span class="p">({</span>
+    <span class="nx">item</span><span class="p">,</span>
+    <span class="nx">loading</span>
+<span class="p">})</span>
 
-// 루트 사가
-// all 함수는 여러 사가를 합친다.
-export function* rootSaga() {
-    yield all([itemSaga()])
-}
+<span class="c1">// 루트 사가</span>
+<span class="c1">// all 함수는 여러 사가를 합친다.</span>
+<span class="k">export</span> <span class="kd">function</span><span class="o">*</span> <span class="nf">rootSaga</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">yield</span> <span class="nf">all</span><span class="p">([</span><span class="nf">itemSaga</span><span class="p">()])</span>
+<span class="p">}</span>
 
-export default rootReducer
+<span class="k">export</span> <span class="k">default</span> <span class="nx">rootReducer</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ol>
@@ -1055,12 +1084,12 @@ export default rootReducer
 
 <p> </p>
 
-<h5 id="srcmoduleloadingjs"><span class="me-2"><strong>src/module/loading.js</strong></span><a href="#srcmoduleloadingjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="srcmoduleloadingjs"><span class="me-2"><strong>src/module/loading.js</strong></span><a href="#srcmoduleloadingjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>로딩 상태를 관리하는 부분입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1092,37 +1121,37 @@ export default rootReducer
 29
 30
 31
-</pre></td><td class="rouge-code"><pre>import { createAction, handleActions } from "redux-actions"
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">createAction</span><span class="p">,</span> <span class="nx">handleActions</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux-actions</span><span class="dl">"</span>
 
-// action type (액션 상수 타입 정의)
-const START_LOADING = "loading/START_LOADING"
-const END_LOADING = "loading/END_LOADING"
+<span class="c1">// action type (액션 상수 타입 정의)</span>
+<span class="kd">const</span> <span class="nx">START_LOADING</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">loading/START_LOADING</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="nx">END_LOADING</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">loading/END_LOADING</span><span class="dl">"</span>
 
-// create action function
-// 로딩 시작/끝 액션 함수를 만들고 외부에서 사용할 수 있도록 공개한다.
-export const startLoading = createAction(START_LOADING, actionType =&gt; actionType)
-export const endLoading = createAction(END_LOADING, actionType =&gt; actionType)
+<span class="c1">// create action function</span>
+<span class="c1">// 로딩 시작/끝 액션 함수를 만들고 외부에서 사용할 수 있도록 공개한다.</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">startLoading</span> <span class="o">=</span> <span class="nf">createAction</span><span class="p">(</span><span class="nx">START_LOADING</span><span class="p">,</span> <span class="nx">actionType</span> <span class="o">=&gt;</span> <span class="nx">actionType</span><span class="p">)</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">endLoading</span> <span class="o">=</span> <span class="nf">createAction</span><span class="p">(</span><span class="nx">END_LOADING</span><span class="p">,</span> <span class="nx">actionType</span> <span class="o">=&gt;</span> <span class="nx">actionType</span><span class="p">)</span>
 
-// init states - 모듈의 초기 상태 설정
-const initialState = {}
+<span class="c1">// init states - 모듈의 초기 상태 설정</span>
+<span class="kd">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{}</span>
 
-// redux의 액션의 type에 따른 작업 - if문 또는 switch 문을 아래로 대체
-// 해당 액션별 로딩 시작/끝 상태를 설정한다.
-const loading = handleActions(
-    {
-        [START_LOADING]: (state, action) =&gt; ({
-            ...state,
-            [action.payload]: true
-        }),
-        [END_LOADING]: (state, action) =&gt; ({
-            ...state,
-            [action.payload]: false
-        })
-    },
-    initialState
-)
+<span class="c1">// redux의 액션의 type에 따른 작업 - if문 또는 switch 문을 아래로 대체</span>
+<span class="c1">// 해당 액션별 로딩 시작/끝 상태를 설정한다.</span>
+<span class="kd">const</span> <span class="nx">loading</span> <span class="o">=</span> <span class="nf">handleActions</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="p">[</span><span class="nx">START_LOADING</span><span class="p">]:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+            <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+            <span class="p">[</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">]:</span> <span class="kc">true</span>
+        <span class="p">}),</span>
+        <span class="p">[</span><span class="nx">END_LOADING</span><span class="p">]:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+            <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+            <span class="p">[</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">]:</span> <span class="kc">false</span>
+        <span class="p">})</span>
+    <span class="p">},</span>
+    <span class="nx">initialState</span>
+<span class="p">)</span>
 
-export default loading
+<span class="k">export</span> <span class="k">default</span> <span class="nx">loading</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1133,12 +1162,12 @@ export default loading
 
 <p> </p>
 
-<h5 id="srcmoduleitemjs"><span class="me-2"><strong>src/module/item.js</strong></span><a href="#srcmoduleitemjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="srcmoduleitemjs"><span class="me-2"><strong>src/module/item.js</strong></span><a href="#srcmoduleitemjs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>메인 컨텐츠에 대한 부분입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1238,105 +1267,105 @@ export default loading
 97
 98
 99
-</pre></td><td class="rouge-code"><pre>import { createAction, handleActions } from "redux-actions"
-import { takeLatest, call, put } from "redux-saga/effects"
-import { fetchItemApi, fetchItemListApi } from "../lib/api"
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">createAction</span><span class="p">,</span> <span class="nx">handleActions</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux-actions</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">takeLatest</span><span class="p">,</span> <span class="nx">call</span><span class="p">,</span> <span class="nx">put</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux-saga/effects</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">fetchItemApi</span><span class="p">,</span> <span class="nx">fetchItemListApi</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../lib/api</span><span class="dl">"</span>
 
-import { startLoading, endLoading } from "./loading"
+<span class="k">import</span> <span class="p">{</span> <span class="nx">startLoading</span><span class="p">,</span> <span class="nx">endLoading</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./loading</span><span class="dl">"</span>
 
-// 액션 타입 (상세)
-const FETCH_SUCCESS = "item/FETCH_SUCCESS"
-const FETCH_FAILURE = "item/FETCH_FAILURE"
+<span class="c1">// 액션 타입 (상세)</span>
+<span class="kd">const</span> <span class="nx">FETCH_SUCCESS</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">item/FETCH_SUCCESS</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="nx">FETCH_FAILURE</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">item/FETCH_FAILURE</span><span class="dl">"</span>
 
-// 상세 조회 액션 타입
-export const FETCH_ITEM = "item/FETCH_ITEM"
+<span class="c1">// 상세 조회 액션 타입</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">FETCH_ITEM</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">item/FETCH_ITEM</span><span class="dl">"</span>
 
-// 액션 타입 (목록)
-const FETCH_LIST_SUCCESS = "item/FETCH_LIST_SUCCESS"
-const FETCH_LIST_FAILURE = "item/FETCH_LIST_FAILURE"
+<span class="c1">// 액션 타입 (목록)</span>
+<span class="kd">const</span> <span class="nx">FETCH_LIST_SUCCESS</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">item/FETCH_LIST_SUCCESS</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="nx">FETCH_LIST_FAILURE</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">item/FETCH_LIST_FAILURE</span><span class="dl">"</span>
 
-// 목록 조회 액션 타입
-export const FETCH_ITEM_LIST = "item/FETCH_ITEM_LIST"
+<span class="c1">// 목록 조회 액션 타입</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">FETCH_ITEM_LIST</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">item/FETCH_ITEM_LIST</span><span class="dl">"</span>
 
-// 액션 생성 함수 (상세)
-export const fetchSuccess = createAction(FETCH_SUCCESS, data =&gt; data)
-export const fetchFailure = createAction(FETCH_FAILURE, e =&gt; e)
+<span class="c1">// 액션 생성 함수 (상세)</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchSuccess</span> <span class="o">=</span> <span class="nf">createAction</span><span class="p">(</span><span class="nx">FETCH_SUCCESS</span><span class="p">,</span> <span class="nx">data</span> <span class="o">=&gt;</span> <span class="nx">data</span><span class="p">)</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchFailure</span> <span class="o">=</span> <span class="nf">createAction</span><span class="p">(</span><span class="nx">FETCH_FAILURE</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">)</span>
 
-// 상세 조회 액션 생성 함수
-export const fetchItem = createAction(FETCH_ITEM, itemId =&gt; itemId)
+<span class="c1">// 상세 조회 액션 생성 함수</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchItem</span> <span class="o">=</span> <span class="nf">createAction</span><span class="p">(</span><span class="nx">FETCH_ITEM</span><span class="p">,</span> <span class="nx">itemId</span> <span class="o">=&gt;</span> <span class="nx">itemId</span><span class="p">)</span>
 
-// 액션 생성 함수 (목록)
-export const fetchListSuccess = createAction(FETCH_LIST_SUCCESS, data =&gt; data)
-export const fetchListFailure = createAction(FETCH_LIST_FAILURE, e =&gt; e)
+<span class="c1">// 액션 생성 함수 (목록)</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchListSuccess</span> <span class="o">=</span> <span class="nf">createAction</span><span class="p">(</span><span class="nx">FETCH_LIST_SUCCESS</span><span class="p">,</span> <span class="nx">data</span> <span class="o">=&gt;</span> <span class="nx">data</span><span class="p">)</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchListFailure</span> <span class="o">=</span> <span class="nf">createAction</span><span class="p">(</span><span class="nx">FETCH_LIST_FAILURE</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">)</span>
 
-// 목록 조회 액션 생성 함수
-export const fetchItemList = createAction(FETCH_ITEM_LIST)
+<span class="c1">// 목록 조회 액션 생성 함수</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchItemList</span> <span class="o">=</span> <span class="nf">createAction</span><span class="p">(</span><span class="nx">FETCH_ITEM_LIST</span><span class="p">)</span>
 
-// 상품 상세정보를 조회하는 태스크
-function* fetchItemSaga(action) {
-    yield put(startLoading(FETCH_ITEM))
-    try {
-        const response = yield call(fetchItemApi, action.payload)
-        yield put(fetchSuccess(response.data))
-    } catch(e) {
-        yield put(fetchFailure(e))
-    }
-    yield put(endLoading(FETCH_ITEM))
-}
+<span class="c1">// 상품 상세정보를 조회하는 태스크</span>
+<span class="kd">function</span><span class="o">*</span> <span class="nf">fetchItemSaga</span><span class="p">(</span><span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">yield</span> <span class="nf">put</span><span class="p">(</span><span class="nf">startLoading</span><span class="p">(</span><span class="nx">FETCH_ITEM</span><span class="p">))</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">yield</span> <span class="nf">call</span><span class="p">(</span><span class="nx">fetchItemApi</span><span class="p">,</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="nf">put</span><span class="p">(</span><span class="nf">fetchSuccess</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">yield</span> <span class="nf">put</span><span class="p">(</span><span class="nf">fetchFailure</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">yield</span> <span class="nf">put</span><span class="p">(</span><span class="nf">endLoading</span><span class="p">(</span><span class="nx">FETCH_ITEM</span><span class="p">))</span>
+<span class="p">}</span>
 
-// 상품 목록을 조회하는 태스크
-function* fetchItemListSaga() {
-    yield put(startLoading(FETCH_ITEM_LIST))
-    try {
-        const response = yield call(fetchItemListApi)
-        yield put(fetchListSuccess(response.data))
-    } catch(e) {
-        yield put(fetchListFailure(e))
-    }
-    yield put(endLoading(FETCH_ITEM_LIST))
-}
+<span class="c1">// 상품 목록을 조회하는 태스크</span>
+<span class="kd">function</span><span class="o">*</span> <span class="nf">fetchItemListSaga</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">yield</span> <span class="nf">put</span><span class="p">(</span><span class="nf">startLoading</span><span class="p">(</span><span class="nx">FETCH_ITEM_LIST</span><span class="p">))</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">yield</span> <span class="nf">call</span><span class="p">(</span><span class="nx">fetchItemListApi</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="nf">put</span><span class="p">(</span><span class="nf">fetchListSuccess</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">yield</span> <span class="nf">put</span><span class="p">(</span><span class="nf">fetchListFailure</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">yield</span> <span class="nf">put</span><span class="p">(</span><span class="nf">endLoading</span><span class="p">(</span><span class="nx">FETCH_ITEM_LIST</span><span class="p">))</span>
+<span class="p">}</span>
 
-// 상품 saga 함수 작성
-export function* itemSaga() {
-    // 상세조회 태스크
-    yield takeLatest(FETCH_ITEM, fetchItemSaga)
-    // 목록 조회 태스크 수행
-    yield takeLatest(FETCH_ITEM_LIST, fetchItemListSaga)
-}
+<span class="c1">// 상품 saga 함수 작성</span>
+<span class="k">export</span> <span class="kd">function</span><span class="o">*</span> <span class="nf">itemSaga</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 상세조회 태스크</span>
+    <span class="k">yield</span> <span class="nf">takeLatest</span><span class="p">(</span><span class="nx">FETCH_ITEM</span><span class="p">,</span> <span class="nx">fetchItemSaga</span><span class="p">)</span>
+    <span class="c1">// 목록 조회 태스크 수행</span>
+    <span class="k">yield</span> <span class="nf">takeLatest</span><span class="p">(</span><span class="nx">FETCH_ITEM_LIST</span><span class="p">,</span> <span class="nx">fetchItemListSaga</span><span class="p">)</span>
+<span class="p">}</span>
 
-// 모듈의 초기 상태
-const initialState = {
-    item: null, // 하나의 상품 정보
-    items: [],  // 상품 목록
-    error: null // 응답에러 정보
-}
+<span class="c1">// 모듈의 초기 상태</span>
+<span class="kd">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">item</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// 하나의 상품 정보</span>
+    <span class="na">items</span><span class="p">:</span> <span class="p">[],</span>  <span class="c1">// 상품 목록</span>
+    <span class="na">error</span><span class="p">:</span> <span class="kc">null</span> <span class="c1">// 응답에러 정보</span>
+<span class="p">}</span>
 
-// 리듀서 함수 정의
-// 리듀서는 상태변화를 일으키는 함수이다.
-const item = handleActions(
-    { // 상세 조회 상태 변경
-        [FETCH_SUCCESS]: (state, action) =&gt; ({
-            ...state,
-            item: action.payload
-        }),
-        [FETCH_FAILURE]: (state, action) =&gt; ({
-            ...state,
-            error: action.payload
-        }),
-        // 목록 조회 상태 변경
-        [FETCH_LIST_SUCCESS]: (state, action) =&gt; ({
-            ...state,
-            items: action.payload
-        }),
-        [FETCH_LIST_FAILURE]: (state, action) =&gt; ({
-            ...state,
-            error: action.payload
-        })
-    },
-    initialState
-)
+<span class="c1">// 리듀서 함수 정의</span>
+<span class="c1">// 리듀서는 상태변화를 일으키는 함수이다.</span>
+<span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="nf">handleActions</span><span class="p">(</span>
+    <span class="p">{</span> <span class="c1">// 상세 조회 상태 변경</span>
+        <span class="p">[</span><span class="nx">FETCH_SUCCESS</span><span class="p">]:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+            <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+            <span class="na">item</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span>
+        <span class="p">}),</span>
+        <span class="p">[</span><span class="nx">FETCH_FAILURE</span><span class="p">]:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+            <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+            <span class="na">error</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span>
+        <span class="p">}),</span>
+        <span class="c1">// 목록 조회 상태 변경</span>
+        <span class="p">[</span><span class="nx">FETCH_LIST_SUCCESS</span><span class="p">]:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+            <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+            <span class="na">items</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span>
+        <span class="p">}),</span>
+        <span class="p">[</span><span class="nx">FETCH_LIST_FAILURE</span><span class="p">]:</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+            <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+            <span class="na">error</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span>
+        <span class="p">})</span>
+    <span class="p">},</span>
+    <span class="nx">initialState</span>
+<span class="p">)</span>
 
-export default item
+<span class="k">export</span> <span class="k">default</span> <span class="nx">item</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1362,12 +1391,12 @@ export default item
 
 <p> </p>
 
-<h5 id="srccomponentsitemlistjsx-일부"><span class="me-2"><strong>src/components/ItemList.jsx (일부)</strong></span><a href="#srccomponentsitemlistjsx-일부" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="srccomponentsitemlistjsx-일부"><span class="me-2"><strong>src/components/ItemList.jsx (일부)</strong></span><a href="#srccomponentsitemlistjsx-일부" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>아이템을 표시하는 외부 영향이 없는 재사용 가능한 컴포넌트입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1382,30 +1411,30 @@ export default item
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>import { Link } from "react-router-dom"
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">Link</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span>
 
-export default function ItemList({ items, isLoading }) {
-    return (
-        `&lt;div align="center"&gt;
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nf">ItemList</span><span class="p">({</span> <span class="nx">items</span><span class="p">,</span> <span class="nx">isLoading</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="k">return </span><span class="p">(</span>
+        <span class="s2">`&lt;div align="center"&gt;
             &lt;h2 className="title"&gt;상품 목록&lt;/h2&gt;
             {isLoading &amp;&amp; "로딩중..."}
             {!isLoading &amp;&amp; items &amp;&amp; (
                 &lt;생략&gt;
                 &lt;/생략&gt;
             )}
-        &lt;/div&gt;`
-    )
-}
+        &lt;/div&gt;`</span>
+    <span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="srccontaineritemlistcontainerjsx"><span class="me-2"><strong>src/container/ItemListContainer.jsx</strong></span><a href="#srccontaineritemlistcontainerjsx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="srccontaineritemlistcontainerjsx"><span class="me-2"><strong>src/container/ItemListContainer.jsx</strong></span><a href="#srccontaineritemlistcontainerjsx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>ItemList 컴포넌트를 감싸 상태 정보를 관리하는 고차 컨테이너(HOC) 함수입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1431,31 +1460,31 @@ export default function ItemList({ items, isLoading }) {
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>import ItemList from "../components/ItemList"
-import { useDispatch, useSelector } from "react-redux"
-import React, { useEffect } from "react"
-import { fetchItemList, FETCH_ITEM_LIST } from "../modules/item"
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">ItemList</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../components/ItemList</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useDispatch</span><span class="p">,</span> <span class="nx">useSelector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">fetchItemList</span><span class="p">,</span> <span class="nx">FETCH_ITEM_LIST</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../modules/item</span><span class="dl">"</span>
 
-const ItemListContainer = () =&gt; {
+<span class="kd">const</span> <span class="nx">ItemListContainer</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
-    // useDispatch: 컴포넌트 내부에서 스토어의 내장 함수 dispatch를 사용할 수 있게 해주는 hook 이다.
-    // useSelector: connect 함수를 대신하여 스토어 상태를 조회
+    <span class="c1">// useDispatch: 컴포넌트 내부에서 스토어의 내장 함수 dispatch를 사용할 수 있게 해주는 hook 이다.</span>
+    <span class="c1">// useSelector: connect 함수를 대신하여 스토어 상태를 조회</span>
 
-    const dispatch = useDispatch()
-    const { items, isLoading } = useSelector(({ item, loading }) =&gt; ({
-        items: item.items,
-        isLoading: loading[FETCH_ITEM_LIST]
-    }))
+    <span class="kd">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nf">useDispatch</span><span class="p">()</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">items</span><span class="p">,</span> <span class="nx">isLoading</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">useSelector</span><span class="p">(({</span> <span class="nx">item</span><span class="p">,</span> <span class="nx">loading</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">({</span>
+        <span class="na">items</span><span class="p">:</span> <span class="nx">item</span><span class="p">.</span><span class="nx">items</span><span class="p">,</span>
+        <span class="na">isLoading</span><span class="p">:</span> <span class="nx">loading</span><span class="p">[</span><span class="nx">FETCH_ITEM_LIST</span><span class="p">]</span>
+    <span class="p">}))</span>
 
-    // 브라우저 상에 컴포넌트가 나타날 때 상품 목록을 조회하는 함수를 실행
-    useEffect(() =&gt; {
-        dispatch(fetchItemList())
-    }, [dispatch])
+    <span class="c1">// 브라우저 상에 컴포넌트가 나타날 때 상품 목록을 조회하는 함수를 실행</span>
+    <span class="nf">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nf">dispatch</span><span class="p">(</span><span class="nf">fetchItemList</span><span class="p">())</span>
+    <span class="p">},</span> <span class="p">[</span><span class="nx">dispatch</span><span class="p">])</span>
 
-    return `&lt;ItemList items={items} isLoading={isLoading} /&gt;`
-}
+    <span class="k">return</span> <span class="s2">`&lt;ItemList items={items} isLoading={isLoading} /&gt;`</span>
+<span class="p">}</span>
 
-export default ItemListContainer
+<span class="k">export</span> <span class="k">default</span> <span class="nx">ItemListContainer</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2437,6 +2466,12 @@ export default ItemListContainer
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2470,18 +2505,6 @@ export default ItemListContainer
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8339,7 +8362,7 @@ export default ItemListContainer
 
               <h4 class="pt-0 my-2">React: 리액트 공식 자습서 (틱택토 게임)의 '개선 사항' 구현해보기</h4>
               <div class="text-muted">
-                <p>자습서: React 시작하기  리액트 공식 자습서로 처음 제시하는 과제는 ‘틱택토’ 게임입니다. 자습서라는 이름에 맞지 않게 이해하기 어렵고 구현 난이도가 높은 편입니다.  이 자습서의 구성은 먼저 자습서가 제시하는 범위의 예제를 완성한 후에, 추가 구현사항 6가지를 스스로 풀어보도록 하고 있습니다.  기존 코드는 다음과 같습니다.  See the P...</p>
+                <p>자습서: React 시작하기  리액트 공식 자습서로 처음 제시하는 과제는 ‘틱택토’ 게임입니다. 자습서라는 이름에 맞지 않게 이해하기 어렵고 구현 난이도가 높은 편입니다.  이 자습서의 구성은 먼저 자습서가 제시하는 범위의 예제를 완성한 후에, 추가 구현사항 6가지를 스스로 풀어보도록 하고 있습니다.  기존 코드  기존 코드는 다음과 같습니다.  Se...</p>
               </div>
             </div>
           </a>

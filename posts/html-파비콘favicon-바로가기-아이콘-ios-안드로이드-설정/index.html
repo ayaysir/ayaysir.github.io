@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,16 +573,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -618,6 +615,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -639,7 +646,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>HTML: 파비콘(favicon), 바로가기 아이콘 (iOS, 안드로이드) 설정</h1>
     
@@ -723,14 +730,36 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">HTML: 파비콘(favicon), 바로가기 아이콘 (iOS, 안드로이드) 설정</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">HTML: 파비콘(favicon), 바로가기 아이콘 (iOS, 안드로이드) 설정</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="설정하기"><span class="me-2"><strong>설정하기</strong></span><a href="#설정하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="설정하기"><span class="me-2"><strong>설정하기</strong></span><a href="#설정하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이미지 또는 아이콘 파일을 준비한 다음, <code class="language-plaintext highlighter-rouge">header</code> 태그에 다음 부분을 설정합니다. <code class="language-plaintext highlighter-rouge">href</code> 부분에 파일 경로를 입력합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -742,17 +771,17 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre>&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-  &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width,initial-scale=1.0"</span><span class="nt">&gt;</span>
 
-  &lt;link rel="icon" href="&lt;%= BASE_URL %&gt;favicon.ico"&gt;
-  &lt;link rel="shortcut icon" href="&lt;%= BASE_URL %&gt;logo.png"&gt;
-  &lt;link rel="apple-touch-icon" href="&lt;%= BASE_URL %&gt;logo.png"&gt;
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"icon"</span> <span class="na">href=</span><span class="s">"&lt;%= BASE_URL %&gt;favicon.ico"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"shortcut icon"</span> <span class="na">href=</span><span class="s">"&lt;%= BASE_URL %&gt;logo.png"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"apple-touch-icon"</span> <span class="na">href=</span><span class="s">"&lt;%= BASE_URL %&gt;logo.png"</span><span class="nt">&gt;</span>
 
-  &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;
-&lt;/head&gt;
+  <span class="nt">&lt;title&gt;&lt;</span><span class="err">%=</span> <span class="na">htmlWebpackPlugin.options.title</span> <span class="err">%</span><span class="nt">&gt;&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-09-pm-11.21.31.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-09-pm-11.21.31.png" alt="" loading="lazy"></a></p>
@@ -774,7 +803,7 @@
 
 <p> </p>
 
-<h4 id="파비콘-크기별로-다르게-설정하기"><span class="me-2"><strong>파비콘 크기별로 다르게 설정하기</strong></span><a href="#파비콘-크기별로-다르게-설정하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="파비콘-크기별로-다르게-설정하기"><span class="me-2"><strong>파비콘 크기별로 다르게 설정하기</strong></span><a href="#파비콘-크기별로-다르게-설정하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -792,7 +821,7 @@
 
 <p> </p>
 
-<h4 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://stackoverflow.com/questions/20440512/why-use-link-rel-apple-touch-icon-image-src">Why use &lt;link rel=“apple-touch-icon image_src” …&gt;?</a></li>
@@ -1764,6 +1793,12 @@
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1797,18 +1832,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

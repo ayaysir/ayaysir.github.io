@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1086,10 +1093,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -1149,6 +1183,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -1170,7 +1209,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 2 - 커스텀 셀(custom cell) 추가</h1>
     
@@ -1244,7 +1283,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="704 words"
+  title="717 words"
 >
   <em>3 min</em> read</span>
 
@@ -1254,17 +1293,39 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 2 - 커스텀 셀(custom cell) 추가</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 2 - 커스텀 셀(custom cell) 추가</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p><a href="http://yoonbumtae.com/?p=3379">iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 1 - 테이블 뷰 추가</a></p>
 
-<p> </p>
+<h2 id="커스텀-셀이란"><span class="me-2"><strong>커스텀 셀이란?</strong></span><a href="#커스텀-셀이란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>커스텀 셀이란 Xcode에서 일반적으로 제공하는 테이블 셀이 아닌 사용자가 직접 새로운 형태의 셀을 만들어 테이블 뷰에 적용하는 것을 뜻합니다.</p>
 
-<p> </p>
+<h2 id="커스텀-셀-추가하기"><span class="me-2"><strong>커스텀 셀 추가하기</strong></span><a href="#커스텀-셀-추가하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="1-커스텀-셀-오브젝트-배치"><span class="me-2"><strong>1) 커스텀 셀 오브젝트 배치</strong></span><a href="#1-커스텀-셀-오브젝트-배치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="1-커스텀-셀-오브젝트-배치"><span class="me-2"><strong>1) 커스텀 셀 오브젝트 배치</strong></span><a href="#1-커스텀-셀-오브젝트-배치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>먼저, 메인 스토리보드에서 테이블 뷰의 셀 크기를 충분히 늘린 뒤, 이미지와 레이블 등을 자유자재로 배치합니다.</p>
 
@@ -1272,7 +1333,7 @@
 
 <p> </p>
 
-<h4 id="2-셀-크기-조정"><span class="me-2"><strong>2) 셀 크기 조정</strong></span><a href="#2-셀-크기-조정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="2-셀-크기-조정"><span class="me-2"><strong>2) 셀 크기 조정</strong></span><a href="#2-셀-크기-조정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>크기를 조절하려면 테이블 뷰 오브젝트와, 테이블 뷰 안의 셀을 각각 선택하고, 오른쪽 옵션창의 <code class="language-plaintext highlighter-rouge">Size Insepctor</code>에서 <code class="language-plaintext highlighter-rouge">Automatic</code> 을 체크 해제하고 <code class="language-plaintext highlighter-rouge">Height</code>를 조절하면 됩니다.</p>
 
@@ -1288,7 +1349,7 @@
 
 <p> </p>
 
-<h4 id="3-오브젝트-대응-변수-생성"><span class="me-2"><strong>3) 오브젝트 대응 변수 생성</strong></span><a href="#3-오브젝트-대응-변수-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="3-오브젝트-대응-변수-생성"><span class="me-2"><strong>3) 오브젝트 대응 변수 생성</strong></span><a href="#3-오브젝트-대응-변수-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>다음, <code class="language-plaintext highlighter-rouge">ViewController</code> 파일에 새로운 클래스를 방금 작성했던 <code class="language-plaintext highlighter-rouge">ListCell</code> 이라는 이름으로 생성합니다. 그리고 <code class="language-plaintext highlighter-rouge">@IBOutlet</code> 이라는 컴파일러에게 지정하는 특별 예약어를 붙인 다음, <code class="language-plaintext highlighter-rouge">weak</code> 키워드를 붙이고 (참고: <a href="https://soooprmx.com/archives/5123">weak와 strong의 차이점</a>) 앞서 제작했던 커스텀 셀의 요소대로 새로운 변수를 생성합니다. 앞에서는 이미지 뷰 하나와 레이블 2개를 만들었으므로 대응해서 추가합니다.</p>
 
@@ -1310,7 +1371,7 @@
 
 <p> </p>
 
-<h4 id="4-오브젝트-변수와-실제-오브젝트-연결"><span class="me-2"><strong>4) 오브젝트 변수와 실제 오브젝트 연결</strong></span><a href="#4-오브젝트-변수와-실제-오브젝트-연결" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="4-오브젝트-변수와-실제-오브젝트-연결"><span class="me-2"><strong>4) 오브젝트 변수와 실제 오브젝트 연결</strong></span><a href="#4-오브젝트-변수와-실제-오브젝트-연결" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>다음으로 위의 <code class="language-plaintext highlighter-rouge">@IBOutlet</code> 과 스토리보드의 오브젝트 간에 연결해야 합니다. 메인 스토리보드를 띄운 뒤, 오른쪽 빨간박스 아이콘을 클릭하면 <code class="language-plaintext highlighter-rouge">Assistant</code>라는 메뉴가 있습니다. 이것을 클릭하면 스토리보드와 연결된 뷰 컨트롤러 코드가 양쪽으로 표시됩니다.</p>
 
@@ -2290,6 +2351,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -5185,18 +5252,6 @@
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

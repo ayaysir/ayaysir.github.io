@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1671,15 +1678,26 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+
+    
   
 
   
@@ -1836,19 +1854,18 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1865,7 +1882,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Amazon Web Service(AWS) S3 서비스를 이용해 웹 호스팅 하기 (정적 웹 페이지 업로드)</h1>
     
@@ -1939,7 +1956,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="753 words"
+  title="770 words"
 >
   <em>4 min</em> read</span>
 
@@ -1949,61 +1966,83 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Amazon Web Service(AWS) S3 서비스를 이용해 웹 호스팅 하기 (정적 웹 페이지 업로드)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Amazon Web Service(AWS) S3 서비스를 이용해 웹 호스팅 하기 (정적 웹 페이지 업로드)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>AWS(Amazon Web Service) S3 서비스는 파일을 업로드/다운로드 하는 용도로 제공되는 서비스인데요, 이 서비스에서 제공하는 부가 기능을 정적(static) 웹 사이트에 대한 호스팅 서버 용도로도 사용할 수 있습니다.</p>
 
-<p> </p>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-로그인-후-aws-s3-management-console-페이지로-접속한-다음-버킷-만들기-버튼을-클릭해-새로운-버튼을-만듭니다"><span class="me-2"><strong>1) 로그인 후 <a href="https://s3.console.aws.amazon.com/s3/">AWS S3 Management Console</a> 페이지로 접속한 다음 <code class="language-plaintext highlighter-rouge">[버킷 만들기]</code> 버튼을 클릭해 새로운 버튼을 만듭니다.</strong></span><a href="#1-로그인-후-aws-s3-management-console-페이지로-접속한-다음-버킷-만들기-버튼을-클릭해-새로운-버튼을-만듭니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-로그인-후-aws-s3-management-console-페이지로-접속한-다음-버킷-만들기-버튼을-클릭해-새로운-버튼을-만듭니다"><span class="me-2"><strong>1) 로그인 후 <a href="https://s3.console.aws.amazon.com/s3/">AWS S3 Management Console</a> 페이지로 접속한 다음 <code class="language-plaintext highlighter-rouge">[버킷 만들기]</code> 버튼을 클릭해 새로운 버튼을 만듭니다.</strong></span><a href="#1-로그인-후-aws-s3-management-console-페이지로-접속한-다음-버킷-만들기-버튼을-클릭해-새로운-버튼을-만듭니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-1.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-1.jpg" alt="" loading="lazy"></a></p>
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-1.jpg" alt="" loading="lazy"></a></p>
+
+<!--  [](/assets/img/DevLog/aws-static-deploy/) -->
 
 <p> </p>
 
-<p> </p>
-
-<h5 id="2-버킷-이름-리전지역을-입력합니다"><span class="me-2"><strong>2) 버킷 이름, 리전(지역)을 입력합니다.</strong> <a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-2.jpg"
+<h3 id="2-버킷-이름-리전지역을-입력합니다"><span class="me-2"><strong>2) 버킷 이름, 리전(지역)을 입력합니다.</strong> <a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-2.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-2.jpg" alt="" loading="lazy"></a> </span><a href="#2-버킷-이름-리전지역을-입력합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-2.jpg" alt="" loading="lazy"></a> </span><a href="#2-버킷-이름-리전지역을-입력합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p> </p>
 
-<h5 id="3-스크롤을-밑으로-내리면-모든-퍼블릭-액세스-차단-란에-체크가-되어있는데-해제합니다-그리고-그-밑의-빨간색-세모-느낌표-란의-체크박스의-메시지를-읽고-클릭합니다"><span class="me-2"><strong>3) 스크롤을 밑으로 내리면 <code class="language-plaintext highlighter-rouge">모든 퍼블릭 액세스 차단</code> 란에 체크가 되어있는데, 해제합니다. 그리고 그 밑의 빨간색 세모 느낌표 란의 체크박스의 메시지를 읽고 클릭합니다.</strong></span><a href="#3-스크롤을-밑으로-내리면-모든-퍼블릭-액세스-차단-란에-체크가-되어있는데-해제합니다-그리고-그-밑의-빨간색-세모-느낌표-란의-체크박스의-메시지를-읽고-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-스크롤을-밑으로-내리면-모든-퍼블릭-액세스-차단-란에-체크가-되어있는데-해제합니다-그리고-그-밑의-빨간색-세모-느낌표-란의-체크박스의-메시지를-읽고-클릭합니다"><span class="me-2"><strong>3) 스크롤을 밑으로 내리면 <code class="language-plaintext highlighter-rouge">모든 퍼블릭 액세스 차단</code> 란에 체크가 되어있는데, 해제합니다. 그리고 그 밑의 빨간색 세모 느낌표 란의 체크박스의 메시지를 읽고 클릭합니다.</strong></span><a href="#3-스크롤을-밑으로-내리면-모든-퍼블릭-액세스-차단-란에-체크가-되어있는데-해제합니다-그리고-그-밑의-빨간색-세모-느낌표-란의-체크박스의-메시지를-읽고-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-3.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-3.jpg" alt="" loading="lazy"></a></p>
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-3.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p> </p>
 
-<h5 id="4-버킷-만들기-버튼을-클릭합니다"><span class="me-2"><strong>4) <code class="language-plaintext highlighter-rouge">[버킷 만들기]</code> 버튼을 클릭합니다.</strong> <a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-4.jpg"
+<h3 id="4-버킷-만들기-버튼을-클릭합니다"><span class="me-2"><strong>4) <code class="language-plaintext highlighter-rouge">[버킷 만들기]</code> 버튼을 클릭합니다.</strong> <a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-4.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-4.jpg" alt="" loading="lazy"></a> </span><a href="#4-버킷-만들기-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-4.jpg" alt="" loading="lazy"></a> </span><a href="#4-버킷-만들기-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p> </p>
 
-<h5 id="5-만들어진-버킷-페이지에서-권한-탭을-클릭한-다음-퍼블릭-액세스-차단-설정이-활성화되어있으면-해제하고-스크롤을-내리면-버킷-정책-란이-있는데-편집-버튼을-클릭합니다"><span class="me-2"><strong>5) 만들어진 버킷 페이지에서 <code class="language-plaintext highlighter-rouge">[권한]</code> 탭을 클릭한 다음 <code class="language-plaintext highlighter-rouge">퍼블릭 액세스 차단 설정</code>이 활성화되어있으면 해제하고, 스크롤을 내리면 <code class="language-plaintext highlighter-rouge">버킷 정책</code> 란이 있는데 <code class="language-plaintext highlighter-rouge">[편집]</code> 버튼을 클릭합니다.</strong> </span><a href="#5-만들어진-버킷-페이지에서-권한-탭을-클릭한-다음-퍼블릭-액세스-차단-설정이-활성화되어있으면-해제하고-스크롤을-내리면-버킷-정책-란이-있는데-편집-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-만들어진-버킷-페이지에서-권한-탭을-클릭한-다음-퍼블릭-액세스-차단-설정이-활성화되어있으면-해제하고-스크롤을-내리면-버킷-정책-란이-있는데-편집-버튼을-클릭합니다"><span class="me-2"><strong>5) 만들어진 버킷 페이지에서 <code class="language-plaintext highlighter-rouge">[권한]</code> 탭을 클릭한 다음 <code class="language-plaintext highlighter-rouge">퍼블릭 액세스 차단 설정</code>이 활성화되어있으면 해제하고, 스크롤을 내리면 <code class="language-plaintext highlighter-rouge">버킷 정책</code> 란이 있는데 <code class="language-plaintext highlighter-rouge">[편집]</code> 버튼을 클릭합니다.</strong> </span><a href="#5-만들어진-버킷-페이지에서-권한-탭을-클릭한-다음-퍼블릭-액세스-차단-설정이-활성화되어있으면-해제하고-스크롤을-내리면-버킷-정책-란이-있는데-편집-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-5.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-5.jpg" alt="" loading="lazy"></a> <a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-6.jpg"
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-5.jpg" alt="" loading="lazy"></a> <a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-6.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-6.jpg" alt="" loading="lazy"></a> </p>
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-6.jpg" alt="" loading="lazy"></a> </p>
 
 <p> </p>
 
 <p> </p>
 
-<h5 id="6-버킷의arn-주소를-복사한-다음-정책-생성기-버튼을-클릭합니다"><span class="me-2"><strong>6) 버킷의 <code class="language-plaintext highlighter-rouge">ARN 주소</code>를 복사한 다음, <code class="language-plaintext highlighter-rouge">[정책 생성기]</code> 버튼을 클릭합니다.</strong></span><a href="#6-버킷의arn-주소를-복사한-다음-정책-생성기-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="6-버킷의arn-주소를-복사한-다음-정책-생성기-버튼을-클릭합니다"><span class="me-2"><strong>6) 버킷의 <code class="language-plaintext highlighter-rouge">ARN 주소</code>를 복사한 다음, <code class="language-plaintext highlighter-rouge">[정책 생성기]</code> 버튼을 클릭합니다.</strong></span><a href="#6-버킷의arn-주소를-복사한-다음-정책-생성기-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-7.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-7.jpg" alt="" loading="lazy"></a></p>
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-7.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
@@ -2011,7 +2050,7 @@
 
 <p> </p>
 
-<h5 id="7-정책-설정기에서-다음과-같이-설정-후-add-statement-버튼을-클릭합니다"><span class="me-2"><strong>7) 정책 설정기에서 다음과 같이 설정 후, <code class="language-plaintext highlighter-rouge">[Add Statement]</code> 버튼을 클릭합니다.</strong></span><a href="#7-정책-설정기에서-다음과-같이-설정-후-add-statement-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="7-정책-설정기에서-다음과-같이-설정-후-add-statement-버튼을-클릭합니다"><span class="me-2"><strong>7) 정책 설정기에서 다음과 같이 설정 후, <code class="language-plaintext highlighter-rouge">[Add Statement]</code> 버튼을 클릭합니다.</strong></span><a href="#7-정책-설정기에서-다음과-같이-설정-후-add-statement-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-09-pm-11.56.53.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-09-pm-11.56.53.png" alt="" loading="lazy"></a></p>
 
@@ -2019,7 +2058,7 @@
 
 <p> </p>
 
-<h5 id="8-다음-generate-policy-버튼을-클릭한-다음-출력되는-json-을-복사합니다"><span class="me-2"><strong>8) 다음, <code class="language-plaintext highlighter-rouge">[Generate Policy]</code> 버튼을 클릭한 다음, 출력되는 JSON 을 복사합니다.</strong></span><a href="#8-다음-generate-policy-버튼을-클릭한-다음-출력되는-json-을-복사합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="8-다음-generate-policy-버튼을-클릭한-다음-출력되는-json-을-복사합니다"><span class="me-2"><strong>8) 다음, <code class="language-plaintext highlighter-rouge">[Generate Policy]</code> 버튼을 클릭한 다음, 출력되는 JSON 을 복사합니다.</strong></span><a href="#8-다음-generate-policy-버튼을-클릭한-다음-출력되는-json-을-복사합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-09-pm-11.59.41.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-09-pm-11.59.41.png" alt="" loading="lazy"></a> <a href="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.02.09.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.02.09.png" alt="" loading="lazy"></a></p>
 
@@ -2029,51 +2068,58 @@
 
 <p> </p>
 
-<h5 id="9-버킷-정책-편집-창으로-돌아온-뒤-json을-붙여넣기-하고-변경사항-저장-버튼을-클릭합니다"><span class="me-2"><strong>9) 버킷 정책 편집 창으로 돌아온 뒤, JSON을 붙여넣기 하고 <code class="language-plaintext highlighter-rouge">[변경사항 저장]</code> 버튼을 클릭합니다.</strong></span><a href="#9-버킷-정책-편집-창으로-돌아온-뒤-json을-붙여넣기-하고-변경사항-저장-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="9-버킷-정책-편집-창으로-돌아온-뒤-json을-붙여넣기-하고-변경사항-저장-버튼을-클릭합니다"><span class="me-2"><strong>9) 버킷 정책 편집 창으로 돌아온 뒤, JSON을 붙여넣기 하고 <code class="language-plaintext highlighter-rouge">[변경사항 저장]</code> 버튼을 클릭합니다.</strong></span><a href="#9-버킷-정책-편집-창으로-돌아온-뒤-json을-붙여넣기-하고-변경사항-저장-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-7.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-7.jpg" alt="" loading="lazy"></a></p>
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-7.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p> </p>
 
-<h5 id="10-속성-탭을-클릭한-다음-스크롤을-맨-밑으로-내리면-정적-웹-사이트-호스팅-란이-있습니다-편집-버튼을-클릭합니다"><span class="me-2"><strong>10) <code class="language-plaintext highlighter-rouge">[속성]</code> 탭을 클릭한 다음, 스크롤을 맨 밑으로 내리면 <code class="language-plaintext highlighter-rouge">[정적 웹 사이트 호스팅]</code> 란이 있습니다. <code class="language-plaintext highlighter-rouge">[편집]</code> 버튼을 클릭합니다.</strong> <a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-8.jpg"
+<h3 id="10-속성-탭을-클릭한-다음-스크롤을-맨-밑으로-내리면-정적-웹-사이트-호스팅-란이-있습니다-편집-버튼을-클릭합니다"><span class="me-2"><strong>10) <code class="language-plaintext highlighter-rouge">[속성]</code> 탭을 클릭한 다음, 스크롤을 맨 밑으로 내리면 <code class="language-plaintext highlighter-rouge">[정적 웹 사이트 호스팅]</code> 란이 있습니다. <code class="language-plaintext highlighter-rouge">[편집]</code> 버튼을 클릭합니다.</strong> <a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-8.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-8.jpg" alt="" loading="lazy"></a> <a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-9.jpg"
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-8.jpg" alt="" loading="lazy"></a> <a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-9.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-9.jpg" alt="" loading="lazy"></a></span><a href="#10-속성-탭을-클릭한-다음-스크롤을-맨-밑으로-내리면-정적-웹-사이트-호스팅-란이-있습니다-편집-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-9.jpg" alt="" loading="lazy"></a></span><a href="#10-속성-탭을-클릭한-다음-스크롤을-맨-밑으로-내리면-정적-웹-사이트-호스팅-란이-있습니다-편집-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p> </p>
 
 <p> </p>
 
-<h5 id="11-정적-웹-사이트-호스팅을-활성화하고-호스팅-유형으로-정적-웹-사이트-호스팅을-선택합니다-인덱스-문서에-indexhtml-등-url-을-입력하면-나올-홈-페이지-파일을-입력합니다"><span class="me-2"><strong>11) 정적 웹 사이트 호스팅을 활성화하고, 호스팅 유형으로 <code class="language-plaintext highlighter-rouge">[정적 웹 사이트 호스팅]</code>을 선택합니다. 인덱스 문서에 index.html 등 URL 을 입력하면 나올 홈 페이지 파일을 입력합니다.</strong></span><a href="#11-정적-웹-사이트-호스팅을-활성화하고-호스팅-유형으로-정적-웹-사이트-호스팅을-선택합니다-인덱스-문서에-indexhtml-등-url-을-입력하면-나올-홈-페이지-파일을-입력합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="11-정적-웹-사이트-호스팅을-활성화하고-호스팅-유형으로-정적-웹-사이트-호스팅을-선택합니다-인덱스-문서에-indexhtml-등-url-을-입력하면-나올-홈-페이지-파일을-입력합니다"><span class="me-2"><strong>11) 정적 웹 사이트 호스팅을 활성화하고, 호스팅 유형으로 <code class="language-plaintext highlighter-rouge">[정적 웹 사이트 호스팅]</code>을 선택합니다. 인덱스 문서에 index.html 등 URL 을 입력하면 나올 홈 페이지 파일을 입력합니다.</strong></span><a href="#11-정적-웹-사이트-호스팅을-활성화하고-호스팅-유형으로-정적-웹-사이트-호스팅을-선택합니다-인덱스-문서에-indexhtml-등-url-을-입력하면-나올-홈-페이지-파일을-입력합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="만약-웹-페이지가-자바스크립트를-이용한-라우팅-기능이-탑재된-spasingle-page-application-인-경우-오류-문서-란에도-인덱스-문서와-동일한-파일을-지정합니다-이렇게-하면-indexhtml-파일에-내장된-라우팅-기능을-사용할-수-있게-됩니다"><span class="me-2"><strong>만약 웹 페이지가 자바스크립트를 이용한 라우팅 기능이 탑재된 SPA(Single Page Application) 인 경우, 오류 문서 란에도 인덱스 문서와 동일한 파일을 지정합니다. 이렇게 하면 index.html 파일에 내장된 라우팅 기능을 사용할 수 있게 됩니다.</strong> </span><a href="#만약-웹-페이지가-자바스크립트를-이용한-라우팅-기능이-탑재된-spasingle-page-application-인-경우-오류-문서-란에도-인덱스-문서와-동일한-파일을-지정합니다-이렇게-하면-indexhtml-파일에-내장된-라우팅-기능을-사용할-수-있게-됩니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p>만약 웹 페이지가 자바스크립트를 이용한 라우팅 기능이 탑재된 SPA(Single Page Application) 인 경우, 오류 문서 란에도 인덱스 문서와 동일한 파일을 지정합니다. 이렇게 하면 index.html 파일에 내장된 라우팅 기능을 사용할 수 있게 됩니다.</p>
 
 <p><a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-10.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-10.jpg" alt="" loading="lazy"></a></p>
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-10.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
 <p> </p>
 
-<h5 id="12-웹-사이트-리소스-파일을-업로드합니다"><span class="me-2"><strong>12) 웹 사이트 리소스 파일을 업로드합니다.</strong></span><a href="#12-웹-사이트-리소스-파일을-업로드합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="12-웹-사이트-리소스-파일을-업로드합니다"><span class="me-2"><strong>12) 웹 사이트 리소스 파일을 업로드합니다.</strong></span><a href="#12-웹-사이트-리소스-파일을-업로드합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="https://github.com/ayaysir/js-ds-alg/blob/master/pictures/aws-s3-11.jpg"
           class="img-link shimmer"
-        ><img src="https://github.com/ayaysir/js-ds-alg/raw/master/pictures/aws-s3-11.jpg" alt="" loading="lazy"></a></p>
+        ><img src="/assets/img/DevLog/aws-static-deploy/aws-s3-11.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="13-다시-속성-탭의-정적-웹-사이트-호스팅-란으로-이동하면-url이-생성된-것을-볼-수-있습니다-이-url에-접속하여-인덱스-문서-및-라우팅-기능이-정상-동작하는지-확인합니다"><span class="me-2"><strong>13) 다시 속성 탭의 <code class="language-plaintext highlighter-rouge">정적 웹 사이트 호스팅</code> 란으로 이동하면, URL이 생성된 것을 볼 수 있습니다. 이 URL에 접속하여 인덱스 문서 및 라우팅 기능이 정상 동작하는지 확인합니다.</strong></span><a href="#13-다시-속성-탭의-정적-웹-사이트-호스팅-란으로-이동하면-url이-생성된-것을-볼-수-있습니다-이-url에-접속하여-인덱스-문서-및-라우팅-기능이-정상-동작하는지-확인합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="13-다시-속성-탭의-정적-웹-사이트-호스팅-란으로-이동하면-url이-생성된-것을-볼-수-있습니다"><span class="me-2"><strong>13) 다시 속성 탭의 <code class="language-plaintext highlighter-rouge">정적 웹 사이트 호스팅</code> 란으로 이동하면, URL이 생성된 것을 볼 수 있습니다.</strong></span><a href="#13-다시-속성-탭의-정적-웹-사이트-호스팅-란으로-이동하면-url이-생성된-것을-볼-수-있습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><a href="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.10.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.10.16.png" alt="" loading="lazy"></a></p>
+<p>이 URL에 접속하여 인덱스 문서 및 라우팅 기능이 정상 동작하는지 확인합니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.09.40.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.09.40.png" alt="" loading="lazy"></a>  <a href="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.09.55.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.09.55.png" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.10.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.10.16.png" alt="URL 확인" loading="lazy"></a> <br />
+ <em>URL 확인</em></p>
+
+<p><a href="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.09.40.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.09.40.png" alt="인덱스 문서 표시" loading="lazy"></a><br />
+ <em>인덱스 문서 표시</em></p>
+
+<p><a href="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.09.55.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/02/screenshot-2021-02-10-am-12.09.55.png" alt="라우팅 기능 확인" loading="lazy"></a>
+<em>라우팅 기능 확인</em></p>
 
   </div>
 
@@ -3040,6 +3086,12 @@
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -3073,18 +3125,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -613,6 +620,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -631,42 +703,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -718,8 +754,45 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -736,7 +809,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: 모달(modal window) 만들기</h1>
     
@@ -810,7 +883,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1491 words"
+  title="1482 words"
 >
   <em>8 min</em> read</span>
 
@@ -819,6 +892,28 @@
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: 모달(modal window) 만들기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: 모달(modal window) 만들기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -839,7 +934,7 @@
 
 <p> </p>
 
-<h4 id="html--css로-모달창-만들기"><span class="me-2"><strong>HTML + CSS로 모달창 만들기</strong></span><a href="#html--css로-모달창-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="html--css로-모달창-만들기"><span class="me-2"><strong>HTML + CSS로 모달창 만들기</strong></span><a href="#html--css로-모달창-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>일단 아무 기능이 없는 모달창을 만들어 보겠습니다.</p>
 
@@ -1061,22 +1156,22 @@
 
 <p> </p>
 
-<h5 id="특정-버튼을-누르면-모달창이-켜지게-하기"><span class="me-2"><strong>특정 버튼을 누르면 모달창이 켜지게 하기</strong></span><a href="#특정-버튼을-누르면-모달창이-켜지게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="특정-버튼을-누르면-모달창이-켜지게-하기"><span class="me-2"><strong>특정 버튼을 누르면 모달창이 켜지게 하기</strong></span><a href="#특정-버튼을-누르면-모달창이-켜지게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>모달의 초기 상태를 <code class="language-plaintext highlighter-rouge">display: none;</code>으로 했다가 특정 버튼을 클릭하면 <code class="language-plaintext highlighter-rouge">display: flex;</code> 으로 변하게 하면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-css highlighter-rouge"><div class="code-header">
+        <span data-label-text="CSS"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>#modal.modal-overlay {
-    ... 
-    display: none;
-    ...  
-}
+</pre></td><td class="rouge-code"><pre><span class="nf">#modal</span><span class="nc">.modal-overlay</span> <span class="p">{</span>
+    <span class="err">...</span> 
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="err">...</span>  
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
@@ -1095,9 +1190,9 @@
 
 <p> </p>
 
-<h5 id="모달창의-클로즈x-버튼을-누르면-모달창이-꺼지게-하기"><span class="me-2"><strong>모달창의 클로즈(x) 버튼을 누르면 모달창이 꺼지게 하기</strong></span><a href="#모달창의-클로즈x-버튼을-누르면-모달창이-꺼지게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="모달창의-클로즈x-버튼을-누르면-모달창이-꺼지게-하기"><span class="me-2"><strong>모달창의 클로즈(x) 버튼을 누르면 모달창이 꺼지게 하기</strong></span><a href="#모달창의-클로즈x-버튼을-누르면-모달창이-꺼지게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>X(클로즈) 버튼에 위 예제와 반대되는 이벤트를 부여합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">X</code>(클로즈) 버튼에 위 예제와 반대되는 이벤트를 부여합니다.</p>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1113,24 +1208,24 @@
 
 <p> </p>
 
-<h5 id="모달창-바깥-영역을-클릭하면-모달창이-꺼지게-하기"><span class="me-2"><strong>모달창 바깥 영역을 클릭하면 모달창이 꺼지게 하기</strong></span><a href="#모달창-바깥-영역을-클릭하면-모달창이-꺼지게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="모달창-바깥-영역을-클릭하면-모달창이-꺼지게-하기"><span class="me-2"><strong>모달창 바깥 영역을 클릭하면 모달창이 꺼지게 하기</strong></span><a href="#모달창-바깥-영역을-클릭하면-모달창이-꺼지게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>모달 영역 외의 오버레이를 클릭하면 꺼지는 이벤트를 만들면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>modal.addEventListener("click", e =&gt; {
-    const evTarget = e.target
-    if(evTarget.classList.contains("modal-overlay")) {
-        modal.style.display = "none"
-    }
-})
+</pre></td><td class="rouge-code"><pre><span class="nx">modal</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">evTarget</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">evTarget</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="dl">"</span><span class="s2">modal-overlay</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">modal</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+    <span class="p">}</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>모달 창 외의 영역을 클릭하면 이벤트 타깃 요소에 <code class="language-plaintext highlighter-rouge">modal-overlay</code> 클래스가 있으므로 종료하고, 모달 창을 클릭하면 이벤트 타깃 요소에 <code class="language-plaintext highlighter-rouge">modal-overlay</code>가 없기 때문에 종료하지 않습니다.</p>
@@ -1139,27 +1234,27 @@
 
 <p> </p>
 
-<h5 id="모달창이-켜진-상태에서-esc-버튼을-누르면-모달창이-꺼지게-하기"><span class="me-2"><strong>모달창이 켜진 상태에서 ESC 버튼을 누르면 모달창이 꺼지게 하기</strong></span><a href="#모달창이-켜진-상태에서-esc-버튼을-누르면-모달창이-꺼지게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="모달창이-켜진-상태에서-esc-버튼을-누르면-모달창이-꺼지게-하기"><span class="me-2"><strong>모달창이 켜진 상태에서 ESC 버튼을 누르면 모달창이 꺼지게 하기</strong></span><a href="#모달창이-켜진-상태에서-esc-버튼을-누르면-모달창이-꺼지게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>window.addEventListener("keyup", e =&gt; {
-    if(modal.style.display === "flex" &amp;&amp; e.key === "Escape") {
-        modal.style.display = "none"
-    }
-})
+</pre></td><td class="rouge-code"><pre><span class="nb">window</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">keyup</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">modal</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">flex</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">key</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">Escape</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">modal</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">none</span><span class="dl">"</span>
+    <span class="p">}</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>모달이 켜져 있는 상태에서, 그 키가 <code class="language-plaintext highlighter-rouge">ESC</code> 키라면 창을 닫습니다.</p>
 
 <p> </p>
 
-<p><strong>전체 자바스크립트 코드는 다음과 같습니다.</strong></p>
+<h2 id="전체-자바스크립트-코드"><span class="me-2"><strong>전체 자바스크립트 코드</strong></span><a href="#전체-자바스크립트-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1251,7 +1346,8 @@
 
 <p> </p>
 
-<iframe width="468" height="480" src="https://giphy.com/embed/eS1sAkXR09B8sBzLoS" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="468" height="480" src="https://giphy.com/embed/eS1sAkXR09B8sBzLoS" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+<p><a href="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWZlZnV5dTNzaHRqMW42Y2dpOXk1aDR2bmM0OWRnOGViMzBwZW5yMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eS1sAkXR09B8sBzLoS/giphy.gif" class="popup img-link shimmer"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWZlZnV5dTNzaHRqMW42Y2dpOXk1aDR2bmM0OWRnOGViMzBwZW5yMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eS1sAkXR09B8sBzLoS/giphy.gif" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -2218,6 +2314,12 @@
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2251,18 +2353,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 

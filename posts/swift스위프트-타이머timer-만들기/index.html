@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,16 +498,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -565,6 +562,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -586,7 +593,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): 타이머(Timer) 만들기</h1>
     
@@ -670,6 +677,28 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): 타이머(Timer) 만들기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): 타이머(Timer) 만들기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>타이머는 반복 작업 생성부터 지연 작업 예약까지 Swift에서 매우 편리하게 이용할 수 있습니다. 이 튜토리얼은 Swift에서 타이머를 만드는 방법을 설명합니다.</p>
@@ -682,24 +711,24 @@
 
 <p> </p>
 
-<h4 id="swift로-반복-타이머를-만드는-방법"><span class="me-2"><strong>Swift로 반복 타이머를 만드는 방법</strong></span><a href="#swift로-반복-타이머를-만드는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="swift로-반복-타이머를-만드는-방법"><span class="me-2"><strong>Swift로 반복 타이머를 만드는 방법</strong></span><a href="#swift로-반복-타이머를-만드는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Swift에서 반복 타이머를 만드는 것은 놀랍도록 간단합니다. <em>(??)</em> 방법은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">timer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="o">.</span><span class="nf">scheduledTimer</span><span class="p">(</span><span class="nv">timeInterval</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">fire</span><span class="p">),</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
 
-@objc func fire() 
-{
-    print("FIRE!!!")
-}
+<span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">fire</span><span class="p">()</span> 
+<span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"FIRE!!!"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -724,14 +753,14 @@
 
 <p>클로저를 사용하여 타이머를 만들 수도 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
-    print("FIRE!!!")
-})
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">timer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="o">.</span><span class="nf">scheduledTimer</span><span class="p">(</span><span class="nv">withTimeInterval</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">block</span><span class="p">:</span> <span class="p">{</span> <span class="n">timer</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"FIRE!!!"</span><span class="p">)</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위의 코드에서 마지막 매개 변수 <code class="language-plaintext highlighter-rouge">block</code>은 클로저를 가집니다. 클로저에는 하나의 매개변수 <code class="language-plaintext highlighter-rouge">timer</code>가 있습니다.</p>
@@ -740,8 +769,8 @@
 
 <p>_target-action_이 있는 타이머와 <code class="language-plaintext highlighter-rouge">self</code> 키워드는 클래스 또는 구조체를 생성하지 않는 한 Xcode playground에서 작동하지 않습니다. 다음은 Xcode playground에서 타이머를 만드는 데 사용할 수 있는 코드입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -752,15 +781,15 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>import PlaygroundSupport
-import UIKit
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">PlaygroundSupport</span>
+<span class="kd">import</span> <span class="kt">UIKit</span>
 
-PlaygroundPage.current.needsIndefiniteExecution = true
+<span class="kt">PlaygroundPage</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">needsIndefiniteExecution</span> <span class="o">=</span> <span class="kc">true</span>
 
-let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
-    print("FIRE!!!")
-    PlaygroundPage.current.finishExecution()
-})
+<span class="k">let</span> <span class="nv">timer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="o">.</span><span class="nf">scheduledTimer</span><span class="p">(</span><span class="nv">withTimeInterval</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">block</span><span class="p">:</span> <span class="p">{</span> <span class="n">timer</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"FIRE!!!"</span><span class="p">)</span>
+    <span class="kt">PlaygroundPage</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">finishExecution</span><span class="p">()</span>
+<span class="p">})</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -770,21 +799,21 @@ let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { 
 
 <p>트레일링 클로저(trailing closure) 구문 덕분에 클로저 기반 타이머를 더욱 간결하게 만들 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-    print("FIRE!!!")
-}
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">timer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="o">.</span><span class="nf">scheduledTimer</span><span class="p">(</span><span class="nv">withTimeInterval</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span> <span class="n">timer</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"FIRE!!!"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>마지막 인수 레이블이 어떻게 생략되는지 보이십니까? 매개 변수의 마지막이 클로저이기 때문입니다. 코드를 더 간결하게 만듭니다. 깔끔하네요!</p>
 
 <p> </p>
 
-<h4 id="타이머-및-비반복-타이머-관리"><span class="me-2"><strong>타이머 및 비반복 타이머 관리</strong></span><a href="#타이머-및-비반복-타이머-관리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="타이머-및-비반복-타이머-관리"><span class="me-2"><strong>타이머 및 비반복 타이머 관리</strong></span><a href="#타이머-및-비반복-타이머-관리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이전 예제에서는 5개의 매개변수를 사용하여 타이머를 생성했습니다.</p>
 
@@ -804,10 +833,10 @@ let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { 
 
 <p>그렇다면 반복 타이머를 어떻게 중지하나요? 방법은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>timer.invalidate()
+</pre></td><td class="rouge-code"><pre><span class="n">timer</span><span class="o">.</span><span class="nf">invalidate</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -816,8 +845,8 @@ let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { 
 
 <p><code class="language-plaintext highlighter-rouge">userInfo</code>를 사용하여 타이머에 추가 정보를 첨부할 수도 있습니다. 이 값은 <code class="language-plaintext highlighter-rouge">timer</code> 매개변수를 통해 실행되는 함수로 전송됩니다. 예를 들면 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -828,16 +857,16 @@ let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { 
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fire(timer:)), userInfo: ["score": 10], repeats: true)
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">timer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="o">.</span><span class="nf">scheduledTimer</span><span class="p">(</span><span class="nv">timeInterval</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">fire</span><span class="p">(</span><span class="nv">timer</span><span class="p">:)),</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="p">[</span><span class="s">"score"</span><span class="p">:</span> <span class="mi">10</span><span class="p">],</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
 
-@objc func fire(timer: Timer) 
-{
-    if  let userInfo = timer.userInfo as? [String: Int],
-        let score = userInfo["score"] {
+<span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">fire</span><span class="p">(</span><span class="nv">timer</span><span class="p">:</span> <span class="kt">Timer</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="k">if</span>  <span class="k">let</span> <span class="nv">userInfo</span> <span class="o">=</span> <span class="n">timer</span><span class="o">.</span><span class="n">userInfo</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Int</span><span class="p">],</span>
+        <span class="k">let</span> <span class="nv">score</span> <span class="o">=</span> <span class="n">userInfo</span><span class="p">[</span><span class="s">"score"</span><span class="p">]</span> <span class="p">{</span>
 
-        print("You scored \(score) points!")
-    }
-}
+        <span class="nf">print</span><span class="p">(</span><span class="s">"You scored </span><span class="se">\(</span><span class="n">score</span><span class="se">)</span><span class="s"> points!"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위의 코드에서 타이머에 사전(dictionary) <code class="language-plaintext highlighter-rouge">["score": 10]</code>을 추가했습니다. 실행되면 이 사전은 <code class="language-plaintext highlighter-rouge">timer.userInfo</code>로 <code class="language-plaintext highlighter-rouge">fire(timer:)</code> 함수에 전달됩니다. <code class="language-plaintext highlighter-rouge">fire(timer:)</code> 함수 내에서 <code class="language-plaintext highlighter-rouge">userInfo</code> 속성이 예상한 타입인지 확인하고 해당하는 값을 얻습니다.</p>
@@ -846,26 +875,26 @@ let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { 
 
 <p> </p>
 
-<h4 id="카운트다운-타이머-만들기"><span class="me-2"><strong>카운트다운 타이머 만들기</strong></span><a href="#카운트다운-타이머-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="카운트다운-타이머-만들기"><span class="me-2"><strong>카운트다운 타이머 만들기</strong></span><a href="#카운트다운-타이머-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>게임을 만들고 있다고 상상해보세요. 사용자는 60초 동안 퍼즐을 풀고 점수를 얻습니다. 카운트다운 타이머가 만료되면 남은 시간(초)을 추적합니다.</p>
 
 <p>먼저, 게임 클래스의 맨 위에 두 개의 속성을 만듭니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>var timer:Timer?
-var timeLeft = 60
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">timer</span><span class="p">:</span><span class="kt">Timer</span><span class="p">?</span>
+<span class="k">var</span> <span class="nv">timeLeft</span> <span class="o">=</span> <span class="mi">60</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>타이머는 즉시 시작되지 않습니다. 시작될 때까지 <code class="language-plaintext highlighter-rouge">timer</code> 속성은 <code class="language-plaintext highlighter-rouge">nil</code> 입니다. 어느 시점에서 게임이 시작될 때 타이머도 시작합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
+</pre></td><td class="rouge-code"><pre><span class="n">timer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="o">.</span><span class="nf">scheduledTimer</span><span class="p">(</span><span class="nv">timeInterval</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">onTimerFires</span><span class="p">),</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>타이머는 <code class="language-plaintext highlighter-rouge">onTimerFires()</code> 함수를 매 초마다 무기한으로 호출합니다. 해당 함수는 다음과 같습니다.</p>
@@ -900,7 +929,7 @@ var timeLeft = 60
 
 <p> </p>
 
-<h4 id="타이머-run-loop-및-허용-범위tolerance"><span class="me-2"><strong>타이머, Run Loop 및 허용 범위(Tolerance)</strong></span><a href="#타이머-run-loop-및-허용-범위tolerance" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="타이머-run-loop-및-허용-범위tolerance"><span class="me-2"><strong>타이머, Run Loop 및 허용 범위(Tolerance)</strong></span><a href="#타이머-run-loop-및-허용-범위tolerance" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>타이머는 run loop(실행 루프)와 함께 작동합니다. run loop는 스레드와 동시성(concurrency)의 토대입니다.</p>
 
@@ -912,12 +941,12 @@ var timeLeft = 60
 
 <p>또한 <code class="language-plaintext highlighter-rouge">tolerance</code> (허용 오차) 라는 타이머 속성을 사용하여 시스템의 전원 절약을 도움받을 수 있습니다. 이렇게 하면 스케줄링 시스템에 다음과 같이 통보할 수 있습니다. <em>“이것이 매초마다 실행되기를 원하지만 0.2초가 늦어도 상관은 없습니다.”</em>  물론 이것은 앱에 따라 다릅니다. Apple은 반복 타이머에 대해 최소 10%의 간격 시간으로 <code class="language-plaintext highlighter-rouge">tolerance</code>를 설정할 것을 권장합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
-timer.tolerance = 0.2
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">timer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="o">.</span><span class="nf">scheduledTimer</span><span class="p">(</span><span class="nv">timeInterval</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">fire</span><span class="p">),</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="n">timer</span><span class="o">.</span><span class="n">tolerance</span> <span class="o">=</span> <span class="mf">0.2</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -930,14 +959,14 @@ timer.tolerance = 0.2
 
 <p>직접 <code class="language-plaintext highlighter-rouge">RunLoop</code>에서 타이머를 수동으로 예약하여 이 문제를 해결할 수 있습니다. 방법은 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>let timer = Timer(timeInterval: 1.0, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">timer</span> <span class="o">=</span> <span class="kt">Timer</span><span class="p">(</span><span class="nv">timeInterval</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">selector</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">fire</span><span class="p">),</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">repeats</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
 
-RunLoop.current.add(timer, forMode: .commonModes)
+<span class="kt">RunLoop</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">timer</span><span class="p">,</span> <span class="nv">forMode</span><span class="p">:</span> <span class="o">.</span><span class="n">commonModes</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>첫 번째 코드 줄은 <code class="language-plaintext highlighter-rouge">Timer(...)</code> 이니셜라이저를 사용하여 <code class="language-plaintext highlighter-rouge">Timer</code> 인스턴스를 만듭니다. 코드의 두 번째 줄은 <code class="language-plaintext highlighter-rouge">.commonModes</code> 입력 모드(input mode)를 사용하여 현재 run loop에 타이머를 추가합니다. 요컨대, 이는 run loop에 모든 “공통(common)” 입력 모드에 대해 타이머를 확인해야 함을 알려주므로 UI와 상호작용하는 동안 타이머가 효과적으로 실행될 수 있습니다.</p>
@@ -946,20 +975,20 @@ RunLoop.current.add(timer, forMode: .commonModes)
 
 <p> </p>
 
-<h4 id="지연된-코드-실행"><span class="me-2"><strong>지연된 코드 실행</strong></span><a href="#지연된-코드-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="지연된-코드-실행"><span class="me-2"><strong>지연된 코드 실행</strong></span><a href="#지연된-코드-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>실제 iOS 개발의 일반적인 시나리오는 약간의 지연으로 일부 코드를 실행하는 것입니다. <code class="language-plaintext highlighter-rouge">Timer</code>를 사용하지 않고 _Grand Central Dispatch_를 사용하는 것이 가장 쉽습니다.</p>
 
 <p>다음 코드는 300밀리초 지연으로 메인 스레드에서 작업을 실행합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {  
-    print("BOOYAH!")
-}
+</pre></td><td class="rouge-code"><pre><span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="nf">milliseconds</span><span class="p">(</span><span class="mi">300</span><span class="p">))</span> <span class="p">{</span>  
+    <span class="nf">print</span><span class="p">(</span><span class="s">"BOOYAH!"</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>타이머를 사용하는 것보다 더 간결합니다. 한 번만 실행하기 때문에 타이머를 계속 추적할 필요가 없습니다.</p>
@@ -1932,6 +1961,12 @@ RunLoop.current.add(timer, forMode: .commonModes)
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -4887,18 +4922,6 @@ RunLoop.current.add(timer, forMode: .commonModes)
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
