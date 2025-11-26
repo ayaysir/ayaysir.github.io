@@ -6,6 +6,8 @@ categories:
   - "JavaScript"
 ---
 
+## **목표**
+
 "제출(submit)" 버튼(`button`)과 "취소(cancel)" 앵커(`a`)가 있는 폼이 있습니다. HTML은 다음과 같습니다.
 
 ```html
@@ -15,11 +17,11 @@ categories:
 
 이 두 태그의 스타일이 똑같이 보이게 하려면 어떻게 해야 할까요?
 
- 
+## **방법**
 
 간단하게 작성할 수 있는 최선의 방법은 다음과 같습니다. 위의 태그에 각각 클래스 `likeabutton` 을 추가한 뒤, 아래의 CSS 를 추가합니다. 경우에 따라 원하는 모양으로 커스터마이징 합니다.
 
-```
+```css
 .likeabutton {
     text-decoration: none; 
     font: menu;
@@ -54,7 +56,7 @@ categories:
 
 이러한 경우 브라우저의 기본 렌더링을 사용하도록 요청할 수 있습니다. 가장 좋은 방법은 다음과 같습니다.
 
-```
+```css
 .likeabutton {
     appearance: button;
     -moz-appearance: button;
@@ -70,7 +72,7 @@ categories:
 
 이를 위해 기본적으로 위와 같은 `appearance` 스타일을 사용하고, 필요에 따라 JavaScript로 보완 작업을 수행하는 것입니다.
 
-```
+```js
 <script type="text/javascript">
     var r = document.documentElement;
     if (!('appearance' in r || 'MozAppearance' in r || 'WebkitAppearance' in r)) {

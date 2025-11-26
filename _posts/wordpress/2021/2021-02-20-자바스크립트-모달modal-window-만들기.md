@@ -21,7 +21,7 @@ categories:
 
  
 
-#### **HTML + CSS로 모달창 만들기**
+## **HTML + CSS로 모달창 만들기**
 
 일단 아무 기능이 없는 모달창을 만들어 보겠습니다.
 
@@ -140,11 +140,11 @@ categories:
 
  
 
-##### **특정 버튼을 누르면 모달창이 켜지게 하기**
+## **특정 버튼을 누르면 모달창이 켜지게 하기**
 
 모달의 초기 상태를 `display: none;`으로 했다가 특정 버튼을 클릭하면 `display: flex;` 으로 변하게 하면 됩니다.
 
-```
+```css
 #modal.modal-overlay {
     ... 
     display: none;
@@ -162,9 +162,9 @@ btnModal.addEventListener("click", e => {
 
  
 
-##### **모달창의 클로즈(x) 버튼을 누르면 모달창이 꺼지게 하기**
+## **모달창의 클로즈(x) 버튼을 누르면 모달창이 꺼지게 하기**
 
-X(클로즈) 버튼에 위 예제와 반대되는 이벤트를 부여합니다.
+`X`(클로즈) 버튼에 위 예제와 반대되는 이벤트를 부여합니다.
 
 ```js
 const closeBtn = modal.querySelector(".close-area")
@@ -175,11 +175,11 @@ closeBtn.addEventListener("click", e => {
 
  
 
-##### **모달창 바깥 영역을 클릭하면 모달창이 꺼지게 하기**
+## **모달창 바깥 영역을 클릭하면 모달창이 꺼지게 하기**
 
 모달 영역 외의 오버레이를 클릭하면 꺼지는 이벤트를 만들면 됩니다.
 
-```
+```js
 modal.addEventListener("click", e => {
     const evTarget = e.target
     if(evTarget.classList.contains("modal-overlay")) {
@@ -194,9 +194,9 @@ modal.addEventListener("click", e => {
 
  
 
-##### **모달창이 켜진 상태에서 ESC 버튼을 누르면 모달창이 꺼지게 하기**
+## **모달창이 켜진 상태에서 ESC 버튼을 누르면 모달창이 꺼지게 하기**
 
-```
+```js
 window.addEventListener("keyup", e => {
     if(modal.style.display === "flex" && e.key === "Escape") {
         modal.style.display = "none"
@@ -208,7 +208,7 @@ window.addEventListener("keyup", e => {
 
  
 
-**전체 자바스크립트 코드는 다음과 같습니다.**
+## **전체 자바스크립트 코드**
 
 ```js
 const loremIpsum = document.getElementById("lorem-ipsum")
@@ -257,4 +257,5 @@ window.addEventListener("keyup", e => {
 
  
 
-<iframe width="468" height="480" src="https://giphy.com/embed/eS1sAkXR09B8sBzLoS" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="468" height="480" src="https://giphy.com/embed/eS1sAkXR09B8sBzLoS" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWZlZnV5dTNzaHRqMW42Y2dpOXk1aDR2bmM0OWRnOGViMzBwZW5yMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eS1sAkXR09B8sBzLoS/giphy.gif)

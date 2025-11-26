@@ -62,7 +62,7 @@ Xcode에서 새로운 플레이그라운드를 생성합니다.
 
 예를 들어 애완 동물을 입양하는 앱의 일부로 "Pet View"를 만들 것입니다. 빈 플레이그라운드 파일에 다음을 추가합니다.
 
-```
+```swift
 import PlaygroundSupport
 import UIKit
 
@@ -309,7 +309,7 @@ MVVM은 앱에 모델에서 뷰로의 변환이 많이 필요한 경우 적합�
 
 #### **전체 코드**
 
-```
+```swift
 import PlaygroundSupport
 import UIKit
 

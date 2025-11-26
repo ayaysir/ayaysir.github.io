@@ -12,7 +12,7 @@ categories:
 
 `IntersectionObserver`에 대한 내용은 이전 글에서 설명되어 있습니다.
 
-- [자바스크립트: IntersectionObserver (1) 이미지 lazy-loading 구현](http://yoonbumtae.com/?p=2847)
+- [자바스크립트: IntersectionObserver (1) 이미지 lazy-loading 구현](/posts/자바스크립트-intersectionobserver로-이미지-lazy-loading-구현/)
 
  
 

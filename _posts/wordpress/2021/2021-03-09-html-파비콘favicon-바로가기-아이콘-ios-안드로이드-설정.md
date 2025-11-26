@@ -6,11 +6,11 @@ categories:
   - "JavaScript"
 ---
 
-#### **설정하기**
+## **설정하기**
 
 이미지 또는 아이콘 파일을 준비한 다음, `header` 태그에 다음 부분을 설정합니다. `href` 부분에 파일 경로를 입력합니다.
 
-```
+```html
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,7 +35,7 @@ categories:
 
  
 
-#### **파비콘 크기별로 다르게 설정하기**
+## **파비콘 크기별로 다르게 설정하기**
 
 ```
 <link rel="icon" href="favicon-16.png" sizes="16x16"> 
@@ -47,7 +47,7 @@ categories:
 
  
 
-#### **참고**
+## **참고**
 
 - [Why use <link rel=“apple-touch-icon image\_src” …>?](https://stackoverflow.com/questions/20440512/why-use-link-rel-apple-touch-icon-image-src)
 - [파비콘(Favicon)의 모든 것](https://webdir.tistory.com/337)

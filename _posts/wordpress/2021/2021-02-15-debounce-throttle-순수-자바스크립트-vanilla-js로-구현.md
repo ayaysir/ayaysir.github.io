@@ -19,7 +19,7 @@ categories:
 
  
 
-#### **Debounce**
+## **Debounce**
 
 ```js
 function debounce(callback, limit = 100) {
@@ -41,7 +41,7 @@ function debounce(callback, limit = 100) {
 
  
 
-#### **Throttle**
+## **Throttle**
 
 ```js
 function throttle(callback, limit = 100) {
@@ -67,9 +67,9 @@ function throttle(callback, limit = 100) {
 
  
 
-#### **사용 방법**
+## **사용 방법**
 
-```
+```js
 inputDebounce.addEventListener("keyup", debounce(function() {
     dispDebounce.textContent = ++debounceCount
 }, 100))

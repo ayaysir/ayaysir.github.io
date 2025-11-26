@@ -6,17 +6,17 @@ categories:
   - "React.js"
 ---
 
-- [리액트(React): React Redux 요약 정리](http://yoonbumtae.com/?p=3257)
+- [리액트(React): React Redux 요약 정리](/posts/리액트react-react-redux-요약-정리/)
 
-#### **[redux-saga 깃허브](https://github.com/redux-saga/redux-saga)**
+**[redux-saga 깃허브](https://github.com/redux-saga/redux-saga)**
 
-##### **역할**
+## **역할**
 
 > redux-saga는 애플리케이션에서 일어나는 사이드 이펙트(side effects) (데이터를 불러오는 비동기 처리나 브라우저 캐쉬에 접근하는 행위들)을 쉽게 관리하며 효과적인 실행, 손쉬운 테스트 그리고 에러 핸들링을 쉽게 해준다.
 
  
 
-##### **특징**
+## **특징**
 
 - saga 패턴을 차용 ([참고 블로그](https://uzihoon.com/post/181be130-63a7-11ea-a51b-d348fee141c4))
 - 미들웨어로서 역할을 수행 (React는 Redux 액션을 수행하면 Redux-Saga에서 디스패치하여 Redux의 액션을 인터셉트합니다. Proxy와 유사한 개념입니다. 중간에 가로챈 액션의 역할을 수행 후 다시 액션을 발행하여 데이터를 저장하거나 다른 이벤트를 수행시킵니다.)
@@ -28,13 +28,13 @@ categories:
 
 전체 코드는 [https://github.com/ayaysir/saga-board-1/](https://github.com/ayaysir/saga-board-1/) 에서 볼 수 있습니다.
 
- 
+## **방법**
 
 리덕스 사가 기초 요약 리덕스 액션 리액트 리덕스
 
-##### **npm 라이브러리 설치**
+### **npm 라이브러리 설치**
 
-```
+```bash
 npm install redux react-redux redux-actions redux-devtools-extension redux-saga
 ```
 
@@ -46,11 +46,11 @@ npm install redux react-redux redux-actions redux-devtools-extension redux-saga
 
  
 
-##### **src/index.js**
+### **src/index.js**
 
 최상단 인덱스 파일입니다.
 
-```
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -102,11 +102,11 @@ reportWebVitals();
 
  
 
-##### **src/lib/api.js**
+### **src/lib/api.js**
 
 axios를 사용해 외부 API 호출 함수를 작성합니다.
 
-```
+```jsx
 import axios from "axios"
 
 // 상품 상세 조회 API 호출 함수
@@ -121,9 +121,9 @@ export const removeItemApi = (itemId) => axios.delete(`/items/${itemId}`)
 
  
 
-##### **src/module/index.js**
+### **src/module/index.js**
 
-```
+```jsx
 import { combineReducers } from "redux"
 import { all } from "redux-saga/effects"
 import item, { itemSaga } from "./item"
@@ -150,11 +150,11 @@ export default rootReducer
 
  
 
-##### **src/module/loading.js**
+### **src/module/loading.js**
 
 로딩 상태를 관리하는 부분입니다.
 
-```
+```jsx
 import { createAction, handleActions } from "redux-actions"
 
 // action type (액션 상수 타입 정의)
@@ -194,11 +194,11 @@ export default loading
 
  
 
-##### **src/module/item.js**
+### **src/module/item.js**
 
 메인 컨텐츠에 대한 부분입니다.
 
-```
+```jsx
 import { createAction, handleActions } from "redux-actions"
 import { takeLatest, call, put } from "redux-saga/effects"
 import { fetchItemApi, fetchItemListApi } from "../lib/api"
@@ -312,11 +312,11 @@ export default item
 
  
 
-##### **src/components/ItemList.jsx (일부)**
+### **src/components/ItemList.jsx (일부)**
 
 아이템을 표시하는 외부 영향이 없는 재사용 가능한 컴포넌트입니다.
 
-```
+```jsx
 import { Link } from "react-router-dom"
 
 export default function ItemList({ items, isLoading }) {
@@ -335,11 +335,11 @@ export default function ItemList({ items, isLoading }) {
 
  
 
-##### **src/container/ItemListContainer.jsx**
+### **src/container/ItemListContainer.jsx**
 
 ItemList 컴포넌트를 감싸 상태 정보를 관리하는 고차 컨테이너(HOC) 함수입니다.
 
-```
+```jsx
 import ItemList from "../components/ItemList"
 import { useDispatch, useSelector } from "react-redux"
 import React, { useEffect } from "react"

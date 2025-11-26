@@ -6,6 +6,8 @@ categories:
   - "JavaScript"
 ---
 
+## 글래스모피즘이란?
+
 [https://glassmorphism.com/](https://glassmorphism.com/)
 
 요즘 새롭게 부상할 디자인 트렌드로 글래스모피즘이 부상할 것이라는 이야기가 나오고 있습니다. 글래스모피즘 디자인은 표면이 반투명 유리 재질의 표면을 통해 배경이 흐릿하게 나오는 디자인 철학을 뜻합니다.
@@ -16,7 +18,7 @@ categories:
 
 이러한 디자인의 CSS를 직접 만들 수 있지만, 이런 스타일을 만들어주는 외부 사이트들이 굉장히 많습니다. 이런 사이트를 활용하는 것이 많이 도움이 됩니다.
 
- 
+## 파라미터 설명
 
  ![](/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-11-am-12.03.26.jpg)
 
@@ -26,6 +28,6 @@ categories:
 - `Show Outline` - 체크박스 선택시 희미한 경계선이 나타나며, 해제시엔 아무것도 표시되지 않습니다.
 - `CSS` - 해당 CSS를 원하는 곳에 가져다 사용하면 됩니다.
 
- 
+## Backdrop Filter
 
 [backdrop-filter](https://developer.mozilla.org/ko/docs/Web/CSS/backdrop-filter)는 요소 뒤에서 나타날 수 있는 효과를 적용하는 CSS 속성으로, 요소 뒤에서 효과가 적용되므로 반투명 효과가 같이 적용되어야 해당 효과가 나타날 수 있습니다. 이 속성이 유리 재질처럼 보이게 하는 핵심 원리입니다.

@@ -8,13 +8,13 @@ categories:
 
 현대음악가인 Steve Reich의 Clapping Music이라는 곡을 바탕으로 만들고 있는 리듬게임입니다.
 
-**원곡 동영상**
+## **원 작품 동영상**
 
 {% youtube "https://www.youtube.com/watch?v=lzkOFJMI5i8" %}
 
  
 
-**데모 동영상**
+## **데모 동영상**
 
 {% youtube "https://www.youtube.com/watch?v=CISrmq7jSbQ" %}
 
@@ -22,7 +22,7 @@ categories:
 
  
 
-#### **데모 사이트**
+## **데모 사이트**
 
 [https://clapping-music.netlify.app/](https://clapping-music.netlify.app/)
 
@@ -32,13 +32,13 @@ categories:
 
  
 
-#### **저장소**
+## **저장소**
 
 [https://github.com/ayaysir/TypeScript-ClappingMusic/](https://github.com/ayaysir/TypeScript-ClappingMusic/)
 
  
 
-#### **사용 기술**
+## **사용 기술**
 
 - TypeScript (JavaScript 포함)
 - Webpack
@@ -50,13 +50,13 @@ categories:
 
  
 
-#### **제작 일지**
+## **제작 일지**
 
 - 2020-01-21 : 1차 시연 데모 배포
 
  
 
-#### **구현 예정 기능**
+## **구현 예정 기능**
 
 - 판정 표시 기능 및 이펙트 효과 (Perfect Great 등)
 - 콤보 계산 기능

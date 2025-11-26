@@ -6,9 +6,13 @@ categories:
   - "React.js"
 ---
 
-1\. redux-action의 `handleActions` 대용으로 [typesafe-actions의 createReducer](https://github.com/piotrwitek/typesafe-actions#migrating-from-redux-actions-to-typesafe-actions) 를 사용합니다.
+## 방법
 
-```
+### 1. typesafe-actions 도입
+
+redux-action의 `handleActions` 대용으로 [typesafe-actions의 createReducer](https://github.com/piotrwitek/typesafe-actions#migrating-from-redux-actions-to-typesafe-actions) 를 사용합니다.
+
+```sh
 # NPM
 npm install typesafe-actions
 
@@ -16,9 +20,11 @@ npm install typesafe-actions
 yarn add typesafe-actions
 ```
 
+## 참고: redux-action
+
 참고로 redux-action은 리덕스에서 액션 생성 함수, 리듀서를 작성하기 편하게 하기 위한 목적으로 사용됩니다.
 
-```
+```tsx
 import { createAction } from "redux-actions"
 import { createReducer } from "typesafe-actions"
 
@@ -55,11 +61,12 @@ const loading = createReducer(initialState, {
 export default loading
 ```
 
- 
 
-2\. 루트 리듀서 근처에 타입 에러 방지를 위한 `type`을 작성합니다. (src/modules/index.ts)
+### 2. 에러 방지를 위한 type 작성 
 
-```
+루트 리듀서 근처에 타입 에러 방지를 위한 `type`을 작성합니다. (src/modules/index.ts)
+
+```tsx
 import { combineReducers } from "redux"
 import { all } from "redux-saga/effects"
 import auth, { authSaga } from "./auth"
@@ -88,11 +95,11 @@ export default rootReducer
 export type RootState = ReturnType<typeof rootReducer>
 ```
 
- 
+### 3. 상태값 접근 방법: useSelector
 
-3\. `createReducer`로 만든 `loading`의 상태값에 접근하고자 할 경우, react-redux의 `useSelector`를 사용하여 불러옵니다. 이 때 `state`의 타입은 위에서 정의한 `RootState` 타입이며 객체 프로퍼티에 접근하기 위해 변수 타입에 `any`를 지정합니다.
+`createReducer`로 만든 `loading`의 상태값에 접근하고자 할 경우, react-redux의 `useSelector`를 사용하여 불러옵니다. 이 때 `state`의 타입은 위에서 정의한 `RootState` 타입이며 객체 프로퍼티에 접근하기 위해 변수 타입에 `any`를 지정합니다.
 
-```
+```tsx
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import CodeGroupList from "../../components/codegroup/CodeGroupList"
@@ -118,7 +125,7 @@ export default CodeGroupListContainer
 
 참고로 `FETCH_LIST` 부분은 다음과 같습니다.
 
-```
+```tsx
 export const FETCH_LIST = "codeGroup/FETCH_LIST"
 ```
 

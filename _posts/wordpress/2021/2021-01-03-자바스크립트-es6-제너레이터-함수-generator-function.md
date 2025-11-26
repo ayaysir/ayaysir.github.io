@@ -6,13 +6,13 @@ categories:
   - "JavaScript"
 ---
 
-#### **제너레이터 함수**
+## **제너레이터 함수 선언 방법**
 
 제너레이터 함수(generator function)는 여러 값을 시간차를 두고 반환할 수 있는 함수의 한 형태입니다. 일반 함수와 달리 `function*` 키워드를 사용하여 선언합니다.
 
 예를 들어 1부터 3까지 시간차를 두고 반환하는 제너레이터 함수는 다음과 같습니다.
 
-```
+```js
 function* generator1() {
   yield 1
   yield 2
@@ -20,7 +20,13 @@ function* generator1() {
 }
 ```
 
-`yield` 키워드는 사용자가 명시적으로 다음 값을 호출할 때 반환할 값 앞에 붙이는 키워드입니다. 그러면 다음값을 호출하는 방법은 무엇일까요? `generator()` 함수를 실행한 형태에서 뒤에 `.next()`를 붙이면 `yield` 값이 순차적으로 반환이 됩니다.
+### yield
+
+`yield` 키워드는 사용자가 명시적으로 다음 값을 호출할 때 반환할 값 앞에 붙이는 키워드입니다. 
+
+### .next()
+
+그러면 다음값을 호출하는 방법은 무엇일까요? `generator()` 함수를 실행한 형태에서 뒤에 `.next()`를 붙이면 `yield` 값이 순차적으로 반환이 됩니다.
 
 ```js
 const gen1 = generator1()
@@ -33,7 +39,7 @@ console.log(gen1.next(), gen1.next(), gen1.next())
 
 제너레이터 객체의 `yield` 값들은 반복적으로 호출된다는 점에서 iterable한 특성을 지니며, 따라서 `for...of` 문을 사용할 수 있습니다.
 
-```
+```js
 for(let num of generator1()) {
   console.log(num)
 }
@@ -44,7 +50,7 @@ for(let num of generator1()) {
 
  
 
-#### **제너레이터 종료**
+## **제너레이터 종료**
 
 제너레이터 순회 종료를 하는 방법으로 `.return()`을 사용하는 방법이 있습니다.
 
@@ -61,11 +67,11 @@ console.log(gen1.next(), gen1.return(-Infinity), gen1.next())
 
  
 
-#### **무한한 제너레이터**
+## **무한한 제너레이터**
 
 다음은 숫자 아이디를 생성하는 제너레이터 함수입니다.
 
-```
+```js
 function* idMaker(){
     let index = 0;
     while(true)
@@ -82,11 +88,11 @@ console.log(idm.next(), idm.next()) // 1, 2
 
  
 
-#### **예외 발생**
+## **예외 발생**
 
 `..throw()`를 발생하면 제너레이터 함수 순회 중 강제로 예외를 발생시킬 수 있습니다.
 
-```
+```js
 function* generator2(startNum = 15) {
   try {
     while (true) {
@@ -112,7 +118,7 @@ console.log(gen2.throw("err"), gen2.next())
 
 `yield*` 키워드를 사용하면, iterable한 배열 등도 `yield` 목록에 포함시킬 수 있습니다.
 
-```
+```js
 function* generator3() {
   yield "A"
   yield "B"
@@ -121,7 +127,7 @@ function* generator3() {
 }
 ```
 
-```
+```js
 for(let chr of generator3()) {
   console.log(chr)
 }

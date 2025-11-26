@@ -14,11 +14,11 @@ categories:
 
  
 
-#### **Swift로 반복 타이머를 만드는 방법**
+## **Swift로 반복 타이머를 만드는 방법**
 
 Swift에서 반복 타이머를 만드는 것은 놀랍도록 간단합니다. _(??)_ 방법은 다음과 같습니다.
 
-```
+```swift
 let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
 
 @objc func fire() 
@@ -45,7 +45,7 @@ let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #sel
 
 클로저를 사용하여 타이머를 만들 수도 있습니다.
 
-```
+```swift
 let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
     print("FIRE!!!")
 })
@@ -57,7 +57,7 @@ let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { 
 
 _target-action_이 있는 타이머와 `self` 키워드는 클래스 또는 구조체를 생성하지 않는 한 Xcode playground에서 작동하지 않습니다. 다음은 Xcode playground에서 타이머를 만드는 데 사용할 수 있는 코드입니다.
 
-```
+```swift
 import PlaygroundSupport
 import UIKit
 
@@ -76,7 +76,7 @@ let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { 
 
 트레일링 클로저(trailing closure) 구문 덕분에 클로저 기반 타이머를 더욱 간결하게 만들 수 있습니다.
 
-```
+```swift
 let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
     print("FIRE!!!")
 }
@@ -86,7 +86,7 @@ let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer i
 
  
 
-#### **타이머 및 비반복 타이머 관리**
+## **타이머 및 비반복 타이머 관리**
 
 이전 예제에서는 5개의 매개변수를 사용하여 타이머를 생성했습니다.
 
@@ -104,7 +104,7 @@ let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer i
 
 그렇다면 반복 타이머를 어떻게 중지하나요? 방법은 다음과 같습니다.
 
-```
+```swift
 timer.invalidate()
 ```
 
@@ -114,7 +114,7 @@ timer.invalidate()
 
 `userInfo`를 사용하여 타이머에 추가 정보를 첨부할 수도 있습니다. 이 값은 `timer` 매개변수를 통해 실행되는 함수로 전송됩니다. 예를 들면 다음과 같습니다.
 
-```
+```swift
 let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fire(timer:)), userInfo: ["score": 10], repeats: true)
 
 @objc func fire(timer: Timer) 
@@ -133,20 +133,20 @@ let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #sel
 
  
 
-#### **카운트다운 타이머 만들기**
+## **카운트다운 타이머 만들기**
 
 게임을 만들고 있다고 상상해보세요. 사용자는 60초 동안 퍼즐을 풀고 점수를 얻습니다. 카운트다운 타이머가 만료되면 남은 시간(초)을 추적합니다.
 
 먼저, 게임 클래스의 맨 위에 두 개의 속성을 만듭니다.
 
-```
+```swift
 var timer:Timer?
 var timeLeft = 60
 ```
 
 타이머는 즉시 시작되지 않습니다. 시작될 때까지 `timer` 속성은 `nil` 입니다. 어느 시점에서 게임이 시작될 때 타이머도 시작합니다.
 
-```
+```swift
 timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
 ```
 
@@ -171,7 +171,7 @@ timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selecto
 
  
 
-#### **타이머, Run Loop 및 허용 범위(Tolerance)**
+## **타이머, Run Loop 및 허용 범위(Tolerance)**
 
 타이머는 run loop(실행 루프)와 함께 작동합니다. run loop는 스레드와 동시성(concurrency)의 토대입니다.
 
@@ -183,7 +183,7 @@ run loop와 타이머가 함께 작동하는 방식은 run loop가 타이머가 
 
 또한 `tolerance` (허용 오차) 라는 타이머 속성을 사용하여 시스템의 전원 절약을 도움받을 수 있습니다. 이렇게 하면 스케줄링 시스템에 다음과 같이 통보할 수 있습니다. _"이것이 매초마다 실행되기를 원하지만 0.2초가 늦어도 상관은 없습니다."_  물론 이것은 앱에 따라 다릅니다. Apple은 반복 타이머에 대해 최소 10%의 간격 시간으로 `tolerance`를 설정할 것을 권장합니다.
 
-```
+```swift
 let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
 timer.tolerance = 0.2
 ```
@@ -198,7 +198,7 @@ timer.tolerance = 0.2
 
 직접 `RunLoop`에서 타이머를 수동으로 예약하여 이 문제를 해결할 수 있습니다. 방법은 다음과 같습니다.
 
-```
+```swift
 let timer = Timer(timeInterval: 1.0, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
 
 RunLoop.current.add(timer, forMode: .commonModes)
@@ -210,13 +210,13 @@ RunLoop.current.add(timer, forMode: .commonModes)
 
  
 
-#### **지연된 코드 실행**
+## **지연된 코드 실행**
 
 실제 iOS 개발의 일반적인 시나리오는 약간의 지연으로 일부 코드를 실행하는 것입니다. `Timer`를 사용하지 않고 _Grand Central Dispatch_를 사용하는 것이 가장 쉽습니다.
 
 다음 코드는 300밀리초 지연으로 메인 스레드에서 작업을 실행합니다.
 
-```
+```swift
 DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {  
     print("BOOYAH!")
 }

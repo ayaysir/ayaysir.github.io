@@ -11,7 +11,7 @@ categories:
  ![](/assets/img/wp-content/uploads/2021/03/-2021-03-12-pm-4.15.46-e1615533376710.png)
 
  
-
+## **특징 및 장점**
  
 
 아래는 공식 홈페이지에 소개되어 있는 서비스의 특징 및 장점입니다.
@@ -21,7 +21,7 @@ categories:
 - 일정 요청(1개월당 1억건의 요청)까지 무료로 사용할 수 있습니다. 사실상 무료나 마찬가지입니다.
 - 사용자로부터 받은 데이터를 일절 저장하지 않고 폐기합니다.
 
- 
+## **제공 시나리오**
 
 Reqres 에서는 다양한 시나리오를 제공하는데, 목록은 다음과 같습니다.
 
@@ -47,10 +47,10 @@ Reqres 에서는 다양한 시나리오를 제공하는데, 목록은 다음과 
     - DELETE
 
  
-
+## **시나리오별 사용방법**
  
 
-##### **\[GET\] LIST USERS**
+### **\[GET\] LIST USERS**
 
 - `https://reqres.in/api/users?page=2`
 
@@ -58,7 +58,7 @@ Reqres 에서는 다양한 시나리오를 제공하는데, 목록은 다음과 
 
  
 
-##### **\[GET\] SINGLE USER**
+### **\[GET\] SINGLE USER**
 
 - `https://reqres.in/api/users/2`
 
@@ -66,7 +66,7 @@ Reqres 에서는 다양한 시나리오를 제공하는데, 목록은 다음과 
 
  
 
-##### **\[GET\] LIST <RESOURCE>**
+### **\[GET\] LIST <RESOURCE>**
 
 - `https://reqres.in/api/unknown?page=2`
 
@@ -76,7 +76,7 @@ Reqres 에서는 다양한 시나리오를 제공하는데, 목록은 다음과 
 
  
 
-##### **\[GET\] SINGLE <RESOURCE>**
+### **\[GET\] SINGLE <RESOURCE>**
 
 - `https://reqres.in/api/unknown/2`
 
@@ -84,7 +84,7 @@ Reqres 에서는 다양한 시나리오를 제공하는데, 목록은 다음과 
 
  
 
-##### **\[GET\] DELEYED RESPONSE**
+### **\[GET\] DELEYED RESPONSE**
 
 - `https://reqres.in/api/users?delay=3`
 
@@ -92,7 +92,7 @@ ReqRes에서 제공하는 모든 GET API의 주소 뒤에 `?delay=숫자` 을 �
 
  
 
-##### **\[POST\] CREATE**
+### **\[POST\] CREATE**
 
 - `https://reqres.in/api/users`
 
@@ -109,7 +109,7 @@ ReqRes에서 제공하는 모든 GET API의 주소 뒤에 `?delay=숫자` 을 �
 
  
 
-##### **\[POST\] REGISTER - SUCCESSFUL/UNSUCCESSFUL**
+### **\[POST\] REGISTER - SUCCESSFUL/UNSUCCESSFUL**
 
 - `https://reqres.in/api/register`
 
@@ -137,7 +137,7 @@ ReqRes에서 제공하는 모든 GET API의 주소 뒤에 `?delay=숫자` 을 �
 
  
 
-##### **\[POST\] LOGIN - SUCCESSFUL/UNSUCCESSFUL**
+### **\[POST\] LOGIN - SUCCESSFUL/UNSUCCESSFUL**
 
 - `https://reqres.in/api/login`
 
@@ -145,7 +145,7 @@ ReqRes에서 제공하는 모든 GET API의 주소 뒤에 `?delay=숫자` 을 �
 
  
 
-##### **\[PUT/PATCH\] UPDATE**
+### **\[PUT/PATCH\] UPDATE**
 
 - `https://reqres.in/api/users/2`
 
@@ -155,7 +155,7 @@ ReqRes에서 제공하는 모든 GET API의 주소 뒤에 `?delay=숫자` 을 �
 
  ![](/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-12-pm-4.47.21.png)
 
-##### **\[DELETE\] DELETE**
+### **\[DELETE\] DELETE**
 
 - `https://reqres.in/api/users/2`
 

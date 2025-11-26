@@ -24,7 +24,7 @@ React나 Vue 등의 SPA에서 볼 수 있는 SPA 라우팅을 흉내내는 예�
 
  
 
-#### **window.location 객체에서 정보 얻기**
+## **window.location 객체에서 정보 얻기**
 
 이 객체에서 URL과 관련된 다양한 정보를 얻을 수 있습니다.
 
@@ -32,16 +32,15 @@ React나 Vue 등의 SPA에서 볼 수 있는 SPA 라우팅을 흉내내는 예�
 
  
 
-#### **URL에 포함된 pathname을 읽기**
+## **URL에 포함된 pathname을 읽기**
 
 여기서 `pathname` 이란 _http://abc.com/user/1_ 이라는 URL이 있다고 하면 `/user/1` 이부분이 pathname 입니다.
 
 `window.location.pathname`에서 값을 가져온 뒤 `split()`하면 배열로 여러 정보를 얻을 수 있습니다. 이 중 필요한 정보만 취합해서 사용합니다.
 
-```
+```js
 // URL로 주소 입력하기 예) /user/1
 let [, service, value] = window.location.pathname.split("/") // ["" ,"user", "1"]
-
 ```
 
  
@@ -50,11 +49,11 @@ let [, service, value] = window.location.pathname.split("/") // ["" ,"user", "1"
 
  
 
-#### **URL을 입력받기**
+## **URL을 입력받기**
 
 인물 정보를 보내준는 외부 API가 있고 URL에 `/user/1` 을 입력하면 그 사람에 대한 정보를 보여주고 싶다고 할 때, 다음과 같이 `fetch` 정보에 아이디를 넘겨주면 됩니다.
 
-```
+```js
 if (service === "user") {
     fetchUser(value)
 }
@@ -78,11 +77,11 @@ async function fetchUser(userId) {
 
  ![](/assets/img/wp-content/uploads/2021/02/-2021-02-25-am-12.17.07-e1614179885348.png)
 
-<iframe width="480" height="402" src="https://giphy.com/embed/RkH8KdMfhHlQeWKwn5" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
-
+<!-- <iframe width="480" height="402" src="https://giphy.com/embed/RkH8KdMfhHlQeWKwn5" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjh2dDE4cGU1ZWhpbGl2OHNyd2huNDVzNXk0b3JyOXdzenBzZHYyMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RkH8KdMfhHlQeWKwn5/giphy.gif)
  
 
-#### **페이지는 이동하지 않고 URL만 변경하기**
+## **페이지는 이동하지 않고 URL만 변경하기**
 
 `window.history.pushState()`를 이용합니다. 이 기능은 표면적인 URL 변경 뿐만 아니라 뒤로가기 기능도 작동하므로 실제 웹 페이지를 탐색하는 듯한 느낌을 주게 됩니다.
 
@@ -120,11 +119,11 @@ btnPrev.addEventListener("click", e => {
 })
 ```
 
-<iframe width="480" height="402" src="https://giphy.com/embed/8hATwDMedO1tZXerOf" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
-
+<!-- <iframe width="480" height="402" src="https://giphy.com/embed/8hATwDMedO1tZXerOf" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTMzdHk5cHVpY2NmMGsxOXdpejV5anBkaHpoM3I0b283c21wazdheiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8hATwDMedO1tZXerOf/giphy.gif)
  
 
-#### **전체 코드**
+## **전체 코드**
 
 ```js
 function $(selector) {

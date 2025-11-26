@@ -10,7 +10,7 @@ input 태그에서 radio 타입은 checkbox와 다르게 특정 그룹 내 여�
 
  
 
-#### **기본 형태**
+## **기본 형태**
 
 ```html
 <input type="radio" value="1" name="score"> 1 
@@ -26,13 +26,13 @@ input 태그에서 radio 타입은 checkbox와 다르게 특정 그룹 내 여�
 
  
 
-#### **라디오 버튼 그룹화**
+## **라디오 버튼 그룹화**
 
 `name` 속성을 같은 이름으로 하면 그룹화가 됩니다. 위의 예제의 `name`이 `score`로 동일하므로 1 ~ 5 중 하나의 라디오만 클릭할 수 있고, 복수 선택은 불가능합니다.
 
  
 
-#### **기본값 지정하기**
+## **기본값 지정하기**
 
 `checked` 속성을 추가하면 해당 라디오에 기본으로 체크가 됩니다.
 
@@ -42,9 +42,9 @@ input 태그에서 radio 타입은 checkbox와 다르게 특정 그룹 내 여�
 
  
 
-#### **Form으로 전송**
+## **Form으로 전송**
 
-```
+```html
 <form method="get" action="example">
     <input type="radio" value="1" name="score"> 1
     <input type="radio" value="2" name="score"> 2
@@ -62,9 +62,9 @@ input 태그에서 radio 타입은 checkbox와 다르게 특정 그룹 내 여�
 
  
 
-#### **JQuery 에서 선택된 라디오 값(value) 가져오기**
+## **JQuery 에서 선택된 라디오 값(value) 가져오기**
 
-```
+```js
 $("input[name='score']:checked").val()
 ```
 
@@ -72,11 +72,11 @@ $("input[name='score']:checked").val()
 
  
 
-#### **자바스크립트(ES5)에서 선택된 라디오 값 가져오기**
+## **자바스크립트(ES5)에서 선택된 라디오 값 가져오기**
 
-**방법 1**
+### **방법 1**
 
-```
+```js
 // 확인 버튼의 이벤트
 
 var checkedScore = document.querySelector("input[name='score']:checked")
@@ -85,9 +85,9 @@ alert(checkedScore.value)
 
  
 
-**방법 2**
+### **방법 2**
 
-```
+```js
 var scores = document.getElementsByName("score")
 scores.forEach((node) => {
     if(node.checked) {

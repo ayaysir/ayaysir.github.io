@@ -59,4 +59,4 @@ $('.lazy').Lazy({
 
  ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-31-pm-8.42.08.png)
 
-참고: [자바스크립트: IntersectionObserver (1) 이미지 lazy-loading 구현](http://yoonbumtae.com/?p=2847)
+참고: [자바스크립트: IntersectionObserver (1) 이미지 lazy-loading 구현](/posts/자바스크립트-intersectionobserver로-이미지-lazy-loading-구현/)

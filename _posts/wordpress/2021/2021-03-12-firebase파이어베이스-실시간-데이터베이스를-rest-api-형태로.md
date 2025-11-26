@@ -19,7 +19,7 @@ Firebase(파이어베이스)에서 실시간 데이터베이스(Realtime Databas
 
  ![](/assets/img/wp-content/uploads/2021/03/screenshot-2021-03-12-pm-8.00.31.png)
 
-##### **GET - 리스트 가져오기**
+## **GET - 리스트 가져오기**
 
 ```
 https://[프로덕트_ID].firebaseio.com/messages.json
@@ -31,7 +31,7 @@ https://[프로덕트_ID].firebaseio.com/messages.json
 
  
 
-##### **GET - 단일 데이터 가져오기**
+## **GET - 단일 데이터 가져오기**
 
 ```
 https://[프로덕트_ID].firebaseio.com/messages/-MVa6Jf8slFiQclwT5wA.json
@@ -41,7 +41,7 @@ https://[프로덕트_ID].firebaseio.com/messages/-MVa6Jf8slFiQclwT5wA.json
 
  
 
-##### **POST - 객체 등록하기**
+## **POST - 객체 등록하기**
 
 ```
 https://[프로덕트_ID].firebaseio.com/messages.json
@@ -67,7 +67,7 @@ DB에 서버 시간 저장하기: 위의 입력 JSON에서 `"server_timestamp"`�
 
  
 
-#### **PUT - 업데이트 (객체 교체하기)**
+## **PUT - 업데이트 (객체 교체하기)**
 
 `PUT`은 객체 전체를 교체하므로 데이터가 삭제될 위험이 있어 추천하지 않습니다. `PATCH` 이용을 권장합니다.
 
@@ -75,7 +75,7 @@ DB에 서버 시간 저장하기: 위의 입력 JSON에서 `"server_timestamp"`�
 https://[프로덕트_ID].firebaseio.com/-MVa6Jf8slFiQclwT5wA.json
 ```
 
-```
+```json
 {
   "value": "put 되었음."
 }
@@ -87,13 +87,13 @@ https://[프로덕트_ID].firebaseio.com/-MVa6Jf8slFiQclwT5wA.json
 
  
 
-##### **PATCH - 업데이트 (일부 값만 업데이트)**
+## **PATCH - 업데이트 (일부 값만 업데이트)**
 
 ```
 https://[프로덕트_ID].firebaseio.com/-MVa6Jf8slFiQclwT5wA.json
 ```
 
-```
+```json
 {
   "value": "patch 되었음"
 }
@@ -105,7 +105,7 @@ https://[프로덕트_ID].firebaseio.com/-MVa6Jf8slFiQclwT5wA.json
 
  
 
-##### **DELETE - 객체 삭제**
+## **DELETE - 객체 삭제**
 
 ```
 https://[프로덕트_ID].firebaseio.com/messages/-MVaJ1kEJ1icQVOgjIQf.json

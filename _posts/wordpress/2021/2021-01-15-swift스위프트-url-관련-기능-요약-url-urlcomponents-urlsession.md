@@ -6,11 +6,11 @@ categories:
   - "Swift"
 ---
 
-#### **URL 타입**
+## **URL 타입**
 
 인코딩되지 않은 주소를 `URL`의 형태로 관리합니다.
 
-```
+```swift
 let urlString = "https://itunes.apple.com/search?media=music&entity=musicVideo&term=collier"
 let url = URL(string: urlString)
 ```
@@ -19,7 +19,7 @@ let url = URL(string: urlString)
 
 아래 메소드를 통해 URL로부터 몇몇 정보를 가져올 수 있습니다.
 
-```
+```swift
 url?.absoluteString // 절대주소 (urlString과 동일)
 url?.scheme // http? htttps?
 url?.host // "itunes.apple.com"
@@ -29,11 +29,11 @@ url?.query // "media=music&entity=musicVideo&term=collier"
 
  
 
-#### **URL - relativeTo:**
+## **URL - relativeTo:**
 
 상대 주소를 추가할 때 사용합니다.
 
-```
+```swift
 let baseURL = URL(string: "https://itunes.apple.com")
 let relativeURL = URL(string: "search", relativeTo: baseURL)
 relativeURL?.absoluteString // "https://itunes.apple.com/search"
@@ -43,11 +43,11 @@ relativeURL?.path // "/search"
 
  
 
-#### **URLComponents 타입**
+## **URLComponents 타입**
 
 `URL`에 포함되어 있는 한글, 띄어쓰기 등을 자동으로 인코딩하여 관리합니다. 쿼리 파라미터 등은 `URLQueryItem` 타입의 변수를 하여 별도로 관리합니다.
 
-```
+```swift
 // URLComponents - 한글, 띄어쓰기 등 가능
 var urlComponents = URLComponents(string: "https://itunes.apple.com/search?")!
 let mediaQuery = URLQueryItem(name: "media", value: "music")
@@ -59,7 +59,7 @@ urlComponents.queryItems?.append(entityQuery)
 urlComponents.queryItems?.append(termQuery)
 ```
 
-```
+```swift
 urlComponents.url?.scheme // "https"
 urlComponents.string 
 // "https://itunes.apple.com/search?media=music&entity=song&term=jacob%20collier"
@@ -70,7 +70,7 @@ urlComponents.queryItems // 밑에
 
  
 
-#### **Codable**
+## **Codable**
 
 - `Codable`이란 `Decodable`과 `Encodable` 이 합쳐진 것으로 Swift 4 버전부터 이용 가능한 프로토콜입니다.
 - 구조체(structure)에 이것을 추가하면 외부 표현(대표적으로 JSON)으로 인코딩 또는 디코딩이 가능하게 됩니다.
@@ -81,7 +81,7 @@ urlComponents.queryItems // 밑에
 
 아래는 네트워크 상에 있는 원본 JSON입니다. 이것을 프로젝트에 가져와 사용하고 싶습니다.
 
-```
+```swift
 {
   "resultCount": 50,
   "results": [
@@ -155,11 +155,11 @@ struct Track: Codable {
 
  
 
-#### **URLSession**
+## **URLSession**
 
 HTTP의 데이터자료를 가져올 때 사용합니다. `URLSession`은 생성 전에 `configuraion`이 필요합니다. 이에 대한 정보는 `URLSessionConfiguration` 클래스 내에 있습니다. `default` 와 `ephemeral`(덧없는) 이 있는데 둘의 차이점이라면 `ephemeral` 설정은 로컬 스토어에 캐싱 또는 쿠키 저장 등의 작업을 하지 않습니다.
 
-```
+```swift
 let requestURL = urlComponents.url!
 
 // URLSession - configuration 먼저 필요
@@ -169,7 +169,7 @@ let session = URLSession(configuration: config)
 
  
 
-#### **URLSession - dataTask**
+## **URLSession - dataTask**
 
 인터넷으로부터 데이터를 받아올 때 리퀘스트 URL과 받아온 이후 할 작업을 설정합니다.
 
@@ -187,7 +187,7 @@ session.dataTask(with: URLRequest, completionHandler: (Data?, URLResponse?, Erro
 
 위의 `Codable` 예제와 결합한 예제 코드입니다.
 
-```
+```swift
 let dataTask = session.dataTask(with: requestURL) { (data, response, error) in
     
     guard error == nil else { return }

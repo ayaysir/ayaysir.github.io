@@ -6,7 +6,7 @@ categories:
   - "Web"
 ---
 
-#### **JWT 란?**
+## **JWT 란?**
 
 JWT(JSON Web Token)는 공개 표준인 [RFC7519](https://tools.ietf.org/html/rfc7519)로, JSON 객체 형태로 당사자 간 정보를 안전하게 전송하기 위한 소혀의 자체 포함 형식으로 정의됩니다.
 
@@ -16,11 +16,11 @@ JWT의 장점으로는 수많은 프로그래밍 언어에서 지원되며, 자�
 
  
 
-#### **JWT의 구조**
+## **JWT의 구조**
 
 JWT의 구조는 헤더, 페이로드 및 서명  세 가지를 포함하는 구조를 준수해야 합니다.
 
-```
+```js
 [Base64Encoded(HEADER)].
 [Base64Encoded(PAYLOAD)].
 [Encoded(SIGNATURE)]
@@ -28,7 +28,7 @@ JWT의 구조는 헤더, 페이로드 및 서명  세 가지를 포함하는 �
 
  
 
-##### **Encoded JWT 예제**
+## **Encoded JWT 예제**
 
 다음은 클라이언트 요청을 기반으로 반환되는 인코딩된 전체 `access_token` 입니다.
 
@@ -36,11 +36,11 @@ JWT의 구조는 헤더, 페이로드 및 서명  세 가지를 포함하는 �
 
  
 
-##### **헤더 (HEADER)**
+### **헤더 (HEADER)**
 
 헤더는 일반적으로 토큰 유형(JWT; `typ`)과 사용중인 서명 알고리즘(`alg`) (예: HMAC SHA256 또는 RSA)의 두 부분으로 구성됩니다.
 
-```
+```json
 {
   "alg": "HS256",
   "typ": "JWT"
@@ -51,7 +51,7 @@ JWT의 구조는 헤더, 페이로드 및 서명  세 가지를 포함하는 �
 
  
 
-##### **정보 (PAYLOAD)**
+### **정보 (PAYLOAD)**
 
 토큰에 담을 정보를 페이로드(`payload`)라고 합니다. 페이로드는 클레임을 포함합니다. 클레임은 페이로드의 1조각을 의미하며, 이는 name / value 의 한 쌍으로 이루어져 있습니다. 클레임에는 등록된(`reserved`), 공개(`public`) 및 비공개(`private`)의 세 가지 유형이 있습니다 .
 
@@ -65,9 +65,9 @@ JWT의 구조는 헤더, 페이로드 및 서명  세 가지를 포함하는 �
 
 등록된 클레임의 예제는 다음과 같습니다.
 
-```
+```json
 {
-    "iss": "yoonbumtae.com",
+    "iss": "website.com",
     "exp": "1485270000000",
     "userId": "11028373727102",
     "sub": "bgsmm"
@@ -76,13 +76,13 @@ JWT의 구조는 헤더, 페이로드 및 서명  세 가지를 포함하는 �
 
  
 
-##### **서명 (SIGNATURE)** 
+### **서명 (SIGNATURE)** 
 
 서명 부분을 만들려면 인코딩된 헤더, 인코딩된 페이로드, 비밀(`secret`), 헤더에 지정된 알고리즘을 가져와 야합니다.
 
 예를 들어 HMAC SHA256 알고리즘을 사용하려는 경우 서명은 다음과 같은 방식으로 생성됩니다.
 
-```
+```js
 HMACSHA256(
   base64UrlEncode(header) + "." +
   base64UrlEncode(payload),
@@ -93,7 +93,7 @@ HMACSHA256(
 
  
 
-출처
+## 출처
 
 - [JWT Introduction](https://jwt.io/introduction/)
 - [\[JWT\] JSON Web Token 소개 및 구조](https://velopert.com/2389)

@@ -6,7 +6,9 @@ categories:
   - "Swift"
 ---
 
-### **클로저 (Closures)**
+> *Swift 5.3 기준 문서입니다.*
+
+## **클로저 (Closures)**
 
 클로저(closure)는 코드에서 전달 및 사용할 수 있는 독립된 기능 블록(blocks of functionality) 입니다. 다른 프로그램의 람다(lambda)와 유사합니다.
 
@@ -22,7 +24,7 @@ categories:
 
  
 
-### **클로저 표현식 (Closure Expressions)**
+## **클로저 표현식 (Closure Expressions)**
 
 클로저 표현식이란 간단하고 집약된 구문으로 인라인 클로저를 작성하는 방식입니다.
 
@@ -30,7 +32,7 @@ categories:
 
 다음 배열을 예제로 사용합니다.
 
-```
+```swift
 let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
 ```
 
@@ -53,13 +55,13 @@ var reversedNames = names.sorted(by: backward)
 
  
 
-#### **기본 형태**
+## **기본 형태**
 
  ![](/assets/img/wp-content/uploads/2021/01/screenshot-2021-01-02-pm-4.12.00.png)
 
 아래 예제 `backward(_:_:)`는 위 의 함수 의 클로저 표현식 버전을 보여줍니다 .
 
-```
+```swift
 reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in
     return s1 > s2
 })
@@ -69,11 +71,11 @@ reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in
 
  
 
-#### **컨텍스트에서 타입 추론 (Inferring Type From Context)**
+## **컨텍스트에서 타입 추론 (Inferring Type From Context)**
 
 클로저가 메서드에서 인수(argument)로 전달되기 때문에 Swift는 파라미터와 리턴값의 타입을 추론할 수 있습니다. 여기서 `sorted(by:)` 메소드는 스트링 배열에서 호출되기 때문에, 인수는 반드시 `(String, String) -> Bool` 이어야 합니다. 모든 타입이 유추 가능하므로 타입을 전부 생략하여 작성할 수 있습니다.
 
-```
+```swift
 reversedNames = names.sorted(by: { s1, s2 in return s1 > s2 } )
 ```
 
@@ -83,11 +85,11 @@ reversedNames = names.sorted(by: { s1, s2 in return s1 > s2 } )
 
  
 
-#### **단일 표현식 클로저에서 암시적 리턴 (Implicit Returns from Single-Expression Closures)**
+## **단일 표현식 클로저에서 암시적 리턴 (Implicit Returns from Single-Expression Closures)**
 
 단일 표현식으로 리턴값을 특정할 수 있다면 `return` 키워드를 생략할 수 있습니다.
 
-```
+```swift
 reversedNames = names.sorted(by: { s1, s2 in s1 > s2 } )
 ```
 
@@ -95,13 +97,13 @@ reversedNames = names.sorted(by: { s1, s2 in s1 > s2 } )
 
  
 
-#### **약칭 인수 이름 (Shorthand Argument Names)**
+## **약칭 인수 이름 (Shorthand Argument Names)**
 
 Swift는 자동으로 인라인 클로저에 약칭 인수 이름을 제공하며, 이는 인수의 순서에 따라 `$0`, `$1`, `$2`등의 이름으로 클로저의 인수 값을 참조하는 데 사용할 수 있습니다.
 
 클로저 표현식에서 약칭 인수 이름을 사용하는 경우, 인수 목록을 생략할 수 있으며 약칭 인수 이름이 타입을 추론하게 됩니다. `in` 키워드 또한 생략 가능하며, 따라서 클로저 바디 부분은 오로지 클로저 표현식만으로 구성됩니다.
 
-```
+```swift
 reversedNames = names.sorted(by: { $0 > $1 } )
 ```
 
@@ -109,17 +111,17 @@ reversedNames = names.sorted(by: { $0 > $1 } )
 
  
 
-#### **연산자 메소드 (Operator Methods)**
+## **연산자 메소드 (Operator Methods)**
 
 제일 간단하게 하는 방법은 클로저 자리에 '보다 큼'의 연산자(>)를 집어넣는 것입니다. `String` 타입은 `>` 연산자를 두 스트링을 비교한 뒤, `Bool` 값을 리턴하도록 정의하고 있습니다. 이것은 위의 식들과 동일한 결과를 가집니다. 따라서 `>` 연산자를 사용하는 것만으로 Swift는 사용자의 의도를 알아챕니다.
 
-```
+```swift
 reversedNames = names.sorted(by: >)
 ```
 
  
 
-### **트레일링 클로저 (Trailing Closures; 후행 클로저)**
+## **[중요] 트레일링 클로저 (Trailing Closures; 후행 클로저)**
 
 만약 함수의 마지막 인수가 클로저 표현식을 넘기는 경우라면, _트레일링 클로저_를 사용하는 것이 보다 유용할 수 있습니다. 트레일링 클로저는 함수 호출 괄호`()` 뒤에 중괄호 `{...}`를 사용하여 클로저를 작성하며, 인수 레이블(argument label)도 작성할 필요가 없습니다. 경우에 따라 함수는 여러 개의 트레일링 클로저를 가질 수도 있습니다.
 
@@ -145,7 +147,7 @@ someFunctionThatTakesAClosure() {
 
 위의 `reversedNames` 예제의 함수 호출을 트레일링 클로저를 이용해 작성하면 다음과 같습니다.
 
-```
+```swift
 reversedNames = names.sorted() { $0 > $1 }
 ```
 
@@ -153,7 +155,7 @@ reversedNames = names.sorted() { $0 > $1 }
 
 만약 클로저 표현식이 함수나 메소드의 한 개의 유일한 인수로 제공된다면, () 괄호조차 작성하지 않을 수 있습니다.
 
-```
+```swift
 reversedNames = names.sorted { $0 > $1 }
 ```
 
@@ -163,7 +165,7 @@ reversedNames = names.sorted { $0 > $1 }
 
 다음 `map(_:)`은 트레일링 클로저와 함께 메서드를 사용하여 `Int`값 배열을 `String`값 배열로 변환하는 방법입니다. `[16, 58, 510]` 배열은 새 배열 `["OneSix", "FiveEight", "FiveOneZero"]` 을 만드는 데 사용됩니다. `numbers` 배열을 사용하여 클로저 표현식을 배열의 `map(_:)` 메서드에 트레일링 클로저로 전달하여 `String`값 배열을 만들 수 있습니다.
 
-```
+```swift
 let digitNames = [
     0: "Zero", 1: "One", 2: "Two",   3: "Three", 4: "Four",
     5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine"
@@ -172,7 +174,7 @@ let numbers = [16, 58, 510]
 
 ```
 
-```
+```swift
 let strings = numbers.map { (number) -> String in
     var number = number
     var output = ""
@@ -206,7 +208,7 @@ func loadPicture(from server: Server, completion: (Picture) -> Void, onFailure: 
 
 이 함수는 `completion:`, `onFailure:` 두 개의 클로저를 요구합니다. 이 함수를 호출하는 방법은 다음과 같습니다.
 
-```
+```swift
 loadPicture(from: someServer) { picture in
     someView.currentPicture = picture
 } onFailure: {
@@ -216,6 +218,6 @@ loadPicture(from: someServer) { picture in
 
 이러한 방식으로 함수를 작성하면 두 상황을 모두 처리하는 하나의 클로저를 사용하는 대신에 다운로드 성공 후 사용자 인터페이스를 업데이트하는 코드와 네트워크 오류를 처리하는 코드를 명확하게 분리할 수 ​​있습니다.
 
- 
+## 출처
 
 출처: [Swift 5.3 공식문서 Clousures](https://docs.swift.org/swift-book/LanguageGuide/Closures.html)

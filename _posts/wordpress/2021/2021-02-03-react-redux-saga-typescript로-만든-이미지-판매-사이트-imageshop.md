@@ -6,15 +6,17 @@ categories:
   - "포트폴리오"
 ---
 
-# **이미지 판매 사이트 (ImageShop)**
+## **이미지 판매 사이트 (ImageShop)**
 
 React + Redux-saga + Typescript 로 제작한 이미지 판매 사이트입니다.
 
 - 저장소: [https://github.com/ayaysir/React-ImageSell](https://github.com/ayaysir/React-ImageSell)
 - 참고서적 및 API 서버 출처: 실전 리액트 (온노트)
-- 영상으로 보기
 
-https://www.youtube.com/watch?v=\_9WLfgwCz10
+
+### 영상으로 보기
+
+{% youtube "https://www.youtube.com/watch?v=_9WLfgwCz10" %}
 
 ## **특징**
 
@@ -33,4 +35,38 @@ https://www.youtube.com/watch?v=\_9WLfgwCz10
 
 ## **스크린샷**
 
-[![imageshop_7](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_7.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_7.jpg) [![imageshop_8](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_8.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_8.jpg) [![imageshop_9](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_9.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_9.jpg) [![imageshop_10](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_10.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_10.jpg) [![imageshop_1](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_1.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_1.jpg) [![imageshop_2](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_2.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_2.jpg) [![imageshop_3](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_3.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_3.jpg) [![imageshop_4](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_4.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_4.jpg) [![imageshop_5](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_5.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_5.jpg) [![imageshop_6](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_6.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_6.jpg) [![imageshop_11](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_11.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_11.jpg) [![imageshop_12](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_12.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_12.jpg) [![imageshop_13](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_13.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_13.jpg) [![imageshop_14](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_14.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_14.jpg) [![imageshop_15](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_15.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_15.jpg) [![imageshop_16](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_16.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_16.jpg) [![imageshop_17](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_17.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_17.jpg) [![imageshop_18](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_18.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_18.jpg)
+[![imageshop_7](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_7.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_7.jpg) 
+
+[![imageshop_8](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_8.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_8.jpg) 
+
+[![imageshop_9](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_9.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_9.jpg) 
+
+[![imageshop_10](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_10.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_10.jpg) 
+
+[![imageshop_1](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_1.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_1.jpg) 
+
+[![imageshop_2](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_2.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_2.jpg) 
+
+[![imageshop_3](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_3.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_3.jpg) 
+
+[![imageshop_4](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_4.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_4.jpg) 
+
+[![imageshop_5](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_5.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_5.jpg) 
+
+[![imageshop_6](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_6.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_6.jpg) 
+
+[![imageshop_11](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_11.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_11.jpg) 
+
+[![imageshop_12](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_12.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_12.jpg) 
+
+[![imageshop_13](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_13.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_13.jpg) 
+
+[![imageshop_14](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_14.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_14.jpg) 
+
+[![imageshop_15](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_15.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_15.jpg) 
+
+[![imageshop_16](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_16.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_16.jpg) 
+
+[![imageshop_17](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_17.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_17.jpg) 
+
+[![imageshop_18](https://github.com/ayaysir/React-ImageSell/raw/master/screenshots/imageshop_18.jpg)](https://github.com/ayaysir/React-ImageSell/blob/master/screenshots/imageshop_18.jpg)
