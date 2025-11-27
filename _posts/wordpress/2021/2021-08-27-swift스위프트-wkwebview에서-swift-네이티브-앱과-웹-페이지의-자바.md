@@ -8,12 +8,12 @@ categories:
 
 이전 글에서 이어집니다.
 
-- [Swift(스위프트): 오프라인 웹 페이지 표시하기 (스토리보드)](http://yoonbumtae.com/?p=3922)
-- [Swift(스위프트): 오프라인 웹 페이지에서 자바스크립트 실행 및 alert, confirm, prompt 띄우기 (스토리보드)](http://yoonbumtae.com/?p=3933)
+- [Swift(스위프트): 오프라인 웹 페이지 표시하기 (스토리보드)](/posts/swift스위프트-오프라인-웹-페이지-표시하기-스토리보/)
+- [Swift(스위프트): 오프라인 웹 페이지에서 자바스크립트 실행 및 alert, confirm, prompt 띄우기 (스토리보드)](/posts/swift스위프트-오프라인-웹-페이지에서-자바스크립트/)
 
  
 
-##### **자바스크립트에서 네이티브 앱(Swift)로 데이터 보내기**
+## **자바스크립트에서 네이티브 앱(Swift)로 데이터 보내기**
 
 웹 페이지의 자바스크립트 부분에 다음을 추가합니다.
 
@@ -125,7 +125,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 
  
 
-##### **네이티브 앱(Swift)에서 자바스크립트로 데이터 보내기**
+## **네이티브 앱(Swift)에서 자바스크립트로 데이터 보내기**
 
 예를 들어 네이티브 앱에서 아래 자바스크립트 함수를 실행하고 싶다고 한다면
 
@@ -139,7 +139,7 @@ function start(msg) {
 
 다음과 같은 코드를 네이티브 앱에 작성하면 됩니다.
 
-```
+```swift
 // 자바스크립트의 특정 함수 실행하기
 let msg = "Swift에서 JS로 값을 넘겼습니다."
 let injectionSource = "start('\(msg)')"
@@ -160,13 +160,13 @@ webView.configuration.userContentController.addUserScript(injectionScript)
 
  
 
-##### **추가: console.log 표시하기**
+## **추가: console.log 표시하기**
 
 위에 나온 두 방법들을 응용해서 웹 페이지 내부 자바스크립트의 `console.log`를 Xcode의 터미널에서 표시할 수 있습니다. ([stackoverflow](https://stackoverflow.com/questions/37159648/how-to-read-console-logs-of-wkwebview-programmatically))
 
 - 뷰컨트롤러에 `WKScriptMessageHandler` 프로토콜 추가
 
-```
+```swift
 // inject JS to capture console.log output and send to iOS
 let source = """
     function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); }
@@ -193,7 +193,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 }
 ```
 
-```
+```js
 // 자바스크립트
 console.log("success")
 ```

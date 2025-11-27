@@ -6,13 +6,13 @@ categories:
   - "Swift"
 ---
 
-출처: [Swift 5: How to read variables in plist files?](https://stackoverflow.com/questions/60803515/swift-5-how-to-read-variables-in-plist-files)
+- 출처: [Swift 5: How to read variables in plist files?](https://stackoverflow.com/questions/60803515/swift-5-how-to-read-variables-in-plist-files)
 
- 
+
 
 아래와 같은 `plist(property list)` 확장자의 파일이 있고 이 파일은 프로젝트의 루트 폴더에 있습니다.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -78,7 +78,7 @@ func parsePlistExample() throws -> [Animal] {
 
 함수를 호출하여 결과를 출력하거나 변수에 저장합니다.
 
-```
+```swift
 do {
     try print(parsePlistExample())
 } catch {
@@ -86,6 +86,6 @@ do {
 }
 ```
 
-```
+```swift
 [Project.Animal(name: "Tiger", picture: "tiger_running"), Project.Animal(name: "Jaguar", picture: "jaguar_sleeping")]
 ```

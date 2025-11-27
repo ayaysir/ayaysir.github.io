@@ -6,9 +6,11 @@ categories:
   - "Swift"
 ---
 
+## 상황
+
 예를 들어 데이터가 있고, 데이터를 바탕으로 다음과 같은 그래프를 그리고 싶다고 가정합니다.
 
-```
+```swift
 // Weekly sample data
 var graphPoints = [4, 2, 6, 4, 5, 8, 3]
 ```
@@ -17,11 +19,11 @@ var graphPoints = [4, 2, 6, 4, 5, 8, 3]
 
 이 그래프 디자인 특징으로는 그래프 선 아래에 새로운 그라데이션이 있고, 각 그래프의 일정 범위마다 수치가 큰 크기의 점(원)으로 그려져있다는 점입니다.
 
- 
+### 기존 뷰 
 
 이 디자인에 맞춰 코드를 작성하고 있고, 현재 아래 그림까지 완성된 `UIView`가 있습니다.
 
-```
+```swift
 @IBDesignable
 class GraphView: UIView {
     
@@ -166,11 +168,13 @@ class GraphView: UIView {
 
  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-29-pm-11.27.14.jpg)
 
- 
+## 변경
+
+### 기존 코드에 원형 추가하기 - 문제 발생
 
 이제 여기서 원으로 된 점을 넣을 차례이고, 다음 코드를 `draw` 함수의 최하단에 작성하였습니다. 그 후 결과를 보면 점이 제대로 표시되지 않는 문제가 발생합니다.
 
-```
+```swift
 // Draw the circles on top of the graph stroke
 for i in 0..<graphPoints.count {
   var point = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
@@ -197,6 +201,8 @@ for i in 0..<graphPoints.count {
 
 이 문제가 발생하는 이유는 무엇일까요?
 
+### 문제 발생 원인
+
 정답은 중간에 클리핑된 `path`가 존재하기 떄문입니다.
 
 - `clippingPath.addClip()`
@@ -219,13 +225,13 @@ for i in 0..<graphPoints.count {
 
 현재 상태에 클리핑 영역이 있기 때문에 컨텍스트는 클리핑 영역 내에서만 동작하는 것입니다.
 
- 
+### 문제 해결 방법 - saveGState(), restoreGState()
 
 그렇다면 클리핑 영역에 관계없이 점을 온전한 형태로 표시하려면 어떻게 해야 할까요? 컨텍스트에서 제공하는 두 개의 메소드를 이용하면 됩니다.
 
 현재 그래픽 상태의 복사본을 상태 스택에 푸시하는 `context.saveGState()`를 사용하여 상태를 저장할 수 있습니다. 그래프의 클리핑 단계 전에 `context.saveGState()`를 삽입합니다.
 
-```
+```swift
 // 1 - Save the state of the context
 context.saveGState()
     
@@ -249,7 +255,7 @@ clippingPath.addClip()
 
 다음, 점을 그리기 전에 `context.restoreGState()` 을 삽입합니다.
 
-```
+```swift
 context.restoreGState()
 
 // Draw the line on top of the clipped gradient

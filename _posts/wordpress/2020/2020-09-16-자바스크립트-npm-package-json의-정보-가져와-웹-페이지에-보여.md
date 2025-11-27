@@ -10,7 +10,7 @@ categories:
 
 `package.json`을 `import`문을 사용하여 불러오면 객체로 사용할 수 있습니다. 다른 json 파일도 마찬가지입니다.
 
-```
+```jsx
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import packageJson from './../../package.json'

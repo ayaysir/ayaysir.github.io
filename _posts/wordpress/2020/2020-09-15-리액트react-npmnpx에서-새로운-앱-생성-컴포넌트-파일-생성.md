@@ -60,7 +60,7 @@ cd [앱_이름]
 
 2) 함수 또는 클래스를 선택해서 렌더링할 컴포넌트를 JSX 형태로 작성합니다. 저는 함수를 선택하도록 하겠습니다.
 
-```
+```jsx
 import React from 'react';
 import pizzaImg from './../assets/pizza.png';
 
@@ -81,7 +81,7 @@ export default Pizza
 
 4) 컴포넌트를 삽입할 곳에 `import` 구문을 이용해 컴포넌트 `js` 파일을 불러오고, 삽입할 위치에 태그명을 작성합니다.
 
-```
+```jsx
 import React from 'react';
 import Pizza from './components/Pizza'
 import './App.css';

@@ -49,7 +49,7 @@ npm install react-redux
 
 #### **리액트의 index.js 에서 React Redux 설정**
 
-```
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -191,7 +191,7 @@ export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && windo
 
 모든 컴포넌트의 코드를 일일히 올리기엔 무리가 있고 작성된 글을 업데이트하는 기능을 가진 아래 예제만 올립니다.
 
-```
+```jsx
 import React, { Component } from 'react';
 
 class Update extends Component {

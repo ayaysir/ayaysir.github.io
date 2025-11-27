@@ -12,11 +12,11 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2021/06/screenshot-2021-06-04-pm-9.11.11.jpg)
 
- 
+## **절차**
 
-##### **1\. 텍스트에서 유튜브 URL을 가져오는 정규표현식을 작성합니다.**
+### **1\. 텍스트에서 유튜브 URL을 가져오는 정규표현식을 작성합니다.**
 
-```
+```js
 // 유튜브 URL 찾는 패턴
 const youtubeUrl = /(http:|https:)?(\/\/)?(www\.)?(youtube.com|youtu.be)\/(watch|embed)?(\?v=|\/)?(\S+)?/g
 ```
@@ -27,7 +27,7 @@ const youtubeUrl = /(http:|https:)?(\/\/)?(www\.)?(youtube.com|youtu.be)\/(watch
 
  
 
-##### **2\. 해당 텍스트를 DOM 으로부터 불러온 뒤, innerHTML을 replace 합니다.**
+### **2\. 해당 텍스트를 DOM 으로부터 불러온 뒤, innerHTML을 replace 합니다.**
 
 ```html
 <div id="content">
@@ -52,7 +52,7 @@ const wrappedContent = content.innerHTML.replace(youtubeUrlExp, youtubeParser)
 
  
 
-##### **3\. 텍스트를 대체하는 함수를 만듭니다. (youtubeParser)**
+### **3\. 텍스트를 대체하는 함수를 만듭니다. (youtubeParser)**
 
 ```js
 function youtubeParser(url, ...groups) {
@@ -82,9 +82,9 @@ function youtubeParser(url, ...groups) {
 
  
 
-##### **4\. 유튜브 태그가 적용된 코드를 innerHTML에 적용합니다.**
+### **4\. 유튜브 태그가 적용된 코드를 innerHTML에 적용합니다.**
 
-```
+```js
 content.innerHTML = wrappedContent
 ```
 

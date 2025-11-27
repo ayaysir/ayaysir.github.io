@@ -8,9 +8,11 @@ categories:
 
 텍스트 필드에서 숫자만 입력되게 하고, 특정 자리수 이상이 되면 키보드를 사라지게 하는 예제입니다.
 
- 
+## 방법
 
-1) 마우스 오른쪽 버튼을 누른채로, 또는 control 버튼을 누른채로 드래그하여 @IBOutlet 변수를 생성합니다.
+### 1) @IBOutlet 변수 생성 
+
+마우스 오른쪽 버튼을 누른채로, 또는 control 버튼을 누른채로 드래그하여 @IBOutlet 변수를 생성합니다.
 
  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-6.52.54.jpg)
 
@@ -20,9 +22,11 @@ categories:
 
  
 
-2) 뷰 컨트롤러의 `viewDidLoad()` 안에 컨트롤러와 딜리게이트를 연결합니다.
+### 2) 딜리게이트 연결
 
-```
+뷰 컨트롤러의 `viewDidLoad()` 안에 컨트롤러와 딜리게이트를 연결합니다.
+
+```swift
 textA4FreqOutlet.delegate = self
 ```
 
@@ -30,7 +34,9 @@ textA4FreqOutlet.delegate = self
 
  
 
-3) `UITextFieldDelegate`를 상속받는 뷰 컨트롤러의 `extension`을 생성하고 다음 코드를 작성합니다.
+### 3) 딜리게이트 함수 구현
+
+`UITextFieldDelegate`를 상속받는 뷰 컨트롤러의 `extension`을 생성하고 다음 코드를 작성합니다.
 
 ```swift
 extension ViewController: UITextFieldDelegate {
@@ -59,7 +65,7 @@ extension ViewController: UITextFieldDelegate {
 }
 ```
 
-##### **숫자만 입력되게 하기**
+#### **숫자만 입력되게 하기**
 
 - `shouldChangeCharactersIn` - 이것을 파라미터로 받는 `textField`를 오버라이딩합니다. 이것은 `Bool` 값을 리턴하며 키보드 버튼을 눌렀을 때 또는 붙여넣기 등의 기능을 이용해 스트링을 입력했을 때 그 키보드의 문자가 텍스트 필드에 입력되어야 하는 여부를 묻는 함수입니다. `true`라면 키보드에 누른대로 입력되고, `false`라면 해당 입력은 무시됩니다.
 - `charSetExceptNumber` - 캐릭터 세트입니다. `.invrerted`를 사용하여 숫자 `0123456789`를 제외한 나머지 문자 모두를 세트로 묶었습니다.
@@ -72,7 +78,7 @@ extension ViewController: UITextFieldDelegate {
 
  
 
-##### **일정 자리수까지만 입력되게 하고 자리수가 초과하면 키보드를 사라지게 하기**
+#### **일정 자리수까지만 입력되게 하고 자리수가 초과하면 키보드를 사라지게 하기**
 
 - `maxLength` - 최대 자리수입니다.
 - `currentString` - 텍스트 필드에 입력된 내용을 가져옵니다. 이 내용은 해당 `string`이 입력되기 전의 값이므로 새로 입력된 `string`을 더해야 합니다. 밑에 사용할 `replacingCharacter`가 `NSString` 타입에 있는 기능이기 때문에 타입캐스팅을 합니다.

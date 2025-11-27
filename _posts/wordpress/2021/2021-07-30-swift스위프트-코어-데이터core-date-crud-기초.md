@@ -6,25 +6,25 @@ categories:
   - "Swift"
 ---
 
-#### **Core Data란?**
+## **Core Data란?**
 
 Core Data를 통해 iOS, macOS 등의 애플리케이션 내에 오프라인으로 데이터를 저장할 수 있습니다. 다음은 Core Data의 소개글입니다.
 
 > Core Data는 macOS 및 iOS 운영 체제에서 Apple이 제공하는 객체 그래프 및 지속성(persistence) 프레임워크입니다. 관계형 엔터티 속성 모델로 구성된 데이터를 XML, 바이너리 또는 SQLite 저장소로 직렬화할 수 있습니다. 엔터티 및 해당 관계를 나타내는 상위 수준 개체를 사용하여 데이터를 조작할 수 있습니다. Core Data는 직렬화된 버전 관리를 통해 지속성을 포함한 객체 수명 주기 및 객체 그래프 관리를 제공합니다. Core Data는 SQLite와 직접 인터페이스하여 개발자를 기본 SQL로부터 격리합니다.
 
-다른 예를 들자면 스프링 프레임워크의 Hibernate, JPA(Java Persistence API)와 비슷한 개념이라고 보면 되겠습니다.
+<!-- 다른 예를 들자면 스프링 프레임워크의 Hibernate, JPA(Java Persistence API)와 비슷한 개념이라고 보면 되겠습니다. -->
 
-여기서는 iOS App, 스토리보드를 기준으로 설명합니다.
+여기서는 iOS App, UIKit 스토리보드를 기준으로 설명합니다.
 
- 
+## 절차
 
-1\. Core Data 포함된 프로젝트 생성 또는 기존 프로젝트에 Core Data 추가
+### 1\. Core Data 포함된 프로젝트 생성 또는 기존 프로젝트에 Core Data 추가
 
 아직 프로젝트를 생성하지 않았다면 App 생성시 아래 사항만 체크하면 Core Data 프로젝트를 만들 수 있습니다.
 
  ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.18.03.jpg)
 
- 
+#### 이미 Xcode 프로젝트가 생성된 경우
 
 이미 프로젝트가 생성된 경우, 다음 과정을 통해 Core Data 를 추가할 수 있습니다.
 
@@ -86,9 +86,11 @@ func saveContext () {
 
 여기서는 이름과 메일 주소를 저장하고 테이블 뷰를 통해 정보들을 표시하는 앱을 만든다고 가정합니다.
 
- 
 
-2\. 다음 `CoreDataExample.xcdatamodeld` 파일을 열면 에디터가 나타납니다. 하단에 있는 Add Entity 버튼을 눌러 `Entity`를 추가합니다. `Entity`는 데이터베이스의 테이블과 비슷한 개념입니다.
+
+### 2\. 엔티티 추가
+
+다음 `CoreDataExample.xcdatamodeld` 파일을 열면 에디터가 나타납니다. 하단에 있는 Add Entity 버튼을 눌러 `Entity`를 추가합니다. `Entity`는 데이터베이스의 테이블과 비슷한 개념입니다.
 
  ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.31.18.jpg)
 
@@ -96,7 +98,9 @@ func saveContext () {
 
  
 
-3\. 다음 `Attribute`를 추가합니다. `Attribute`는 데이터베이스의 컬럼, 필드와 비슷한 개념입니다. 이름과 메일 주소, 그리고 ID를 생성합니다. Core Data는 한 객체가 영속성(persistence)를 지니기 때문에 각 개체가 고유한 특성을 지닙니다. 따라서 원론적으로 ID를 특별히 만들 필요는 없지만, 저처럼 초보 단계에서는 ID를 만드는게 편하다고 생각했기 때문에 ID attribute를 추가하도록 하겠습니다.
+### 3\. 속성(Attribute) 추가 
+
+다음 `Attribute`를 추가합니다. `Attribute`는 데이터베이스의 컬럼, 필드와 비슷한 개념입니다. 이름과 메일 주소, 그리고 ID를 생성합니다. Core Data는 한 객체가 영속성(persistence)를 지니기 때문에 각 개체가 고유한 특성을 지닙니다. 따라서 원론적으로 ID를 특별히 만들 필요는 없지만, 저처럼 초보 단계에서는 ID를 만드는게 편하다고 생각했기 때문에 ID attribute를 추가하도록 하겠습니다.
 
  ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.35.04.jpg)
 
@@ -108,15 +112,18 @@ func saveContext () {
 
  
 
-4\. 위의 설정을 마쳤다면, App의 기본 UI를 생성합니다.
+### 4\. 앱 UI 생성
+
+위의 설정을 마쳤다면, App의 기본 UI를 생성합니다.
 
  ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.46.05.jpg)
 
 Navigation Bar, Bar Button Item, Table View, Table View Cell을 이용해 UI를 생성했습니다.
 
- 
 
-5\. 다음 Core Data와 관련된 코드를 작성합니다.
+## CRUD(Create, Read, Update, Delete) 
+
+다음 Core Data와 관련된 코드를 작성합니다.
 
 먼저 `CoreData`와 `UIKit`을 import 해야 합니다.
 
@@ -125,7 +132,7 @@ import UIKit
 import CoreData
 ```
 
- 
+### Create
 
 쓰기 기능을 먼저 작성하겠습니다.
 
@@ -166,7 +173,7 @@ func saveCoreData(name: String, email: String) -> Bool {
 - `entity` 객체를 생성하고 엔티티, 컨텍스를 지정합니다.
 - 객체의 값을 설정한 다음 `try managedContext.save()`로 변경사항을 저장합니다.
 
- 
+### Read
 
 다음으로 읽기 기능을 추가합니다.
 
@@ -221,7 +228,7 @@ override func viewDidLoad() {
 
  ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-7.22.14.jpg)
 
- 
+### Delete
 
 다음은 삭제입니다. 삭제 기준으로 `id`를 설정하겠습니다.
 
@@ -273,7 +280,7 @@ func deleteCoreData(object: NSManagedObject) -> Bool {
 
 코드가 첫번째에 비해 상당히 간결해졌습니다.
 
- 
+### Update
 
 마지막으로 업데이트 코드입니다. 업데이트도 아이디를 통해 업데이트 하는 것과, 객체 자체를 넘겨 업데이트 하는 방식 두 가지 모두 작성해 보겠습니다.
 
@@ -323,13 +330,15 @@ func updateCoreData(object: NSManagedObject, name: String, email: String) -> Boo
 
 업데이트할 객체에 접근하는 방법은 삭제 과정과 비슷합니다.
 
+
+## UI와 연동하여 입출력 프로그램 작성
  
 
 지금까지 작성한 코드를 사용해 입출력 프로그램을 작성하면 다음과 같습니다. 이 프로그램 작성 과정까지 들어가면 글이 너무 길어져서 `ViewConroller` 코드로 대신합니다. UI와 컨트롤러를 연결하는 방법은 아래 글들을 참고해주세요.
 
-- [iOS 프로그래밍: 컬렉션 뷰 (Swift, 스토리보드) – 컬렉션 뷰 추가, 커스텀 셀 작성](http://yoonbumtae.com/?p=3418)
-- [iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 1 &#8211; 테이블 뷰 추가](http://yoonbumtae.com/?p=3379)
-- [iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 2 &#8211; 커스텀 셀(custom cell) 추가](http://yoonbumtae.com/?p=3397)
+- [iOS 프로그래밍: 컬렉션 뷰 (Swift, 스토리보드) – 컬렉션 뷰 추가, 커스텀 셀 작성](/posts/ios-프로그래밍-컬렉션-뷰-swift-스토리보드-컬렉션-뷰/)
+- [iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 1 &#8211; 테이블 뷰 추가](/posts/ios-프로그래밍-테이블-뷰-swift-스토리보드-1-테이블-뷰-추/)
+- [iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 2 &#8211; 커스텀 셀(custom cell) 추가](/posts/ios-프로그래밍-테이블-뷰-swift-스토리보드-2-커스텀-셀custom-cell/)
 
  
 
@@ -444,6 +453,10 @@ class ListCell: UITableViewCell {
 
 ```
 
+## 동작화면
+
 여기서는 add 할 때 결과 배열을 다시 불러오는 작업을 하고 있지만 `saveCoreData()`에서 객체 자체를 리턴하도록 하고 그 객체를 배열에 더하는게 좋아보입니다.
 
- ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.36.jpg)  ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.41.jpg)  ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.48.jpg)
+ ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.36.jpg)  
+ ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.41.jpg)  
+ ![](/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.48.jpg)

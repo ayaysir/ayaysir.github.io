@@ -6,6 +6,8 @@ categories:
   - "Swift UIKit"
 ---
 
+## 문제점
+
 텍스트 필드 (UITextField)를 스토리보드에서 숫자 패드(Number Pad)만 나오게 설정할 수 있습니다.
 
  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-4.53.49.jpg)
@@ -16,6 +18,8 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-4.56.31.jpg)
 
+## 해결 방안
+
 해결 방안으로
 
 - 일정 자리수가 입력되면 숫자 패드를 사라지게 하기
@@ -23,7 +27,11 @@ categories:
 
  
 
-이 글에서는 아래 내용을 다룹니다.
+이 글에서는 아래 내용(숫자 패드 위에 \[완료\] 버튼 달기)을 다룹니다.
+
+## 방법
+
+### UITextField의 확장 추가
 
 먼저 `UITextField`의 `extension`을 생성하고 다음 변수(computed property)를 추가합니다.
 
@@ -50,11 +58,11 @@ extension UITextField {
 
  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-5.06.01.jpg)
 
- 
+### 확장 안에 addDoneButtonOnKeyboard 함수 추가
 
 다음으로 `extension` 안에 `addDoneButtonOnKeyboard` 함수를 추가합니다.
 
-```
+```swift
 // 넘버 패드에 리턴 기능 추가
 // https://stackoverflow.com/questions/28338981
 extension UITextField {
@@ -89,16 +97,16 @@ extension UITextField {
 - `doneToolbar.sizeToFite()` - 툴바를 기기 사이즈에 맞춰 표시합니다.
 - `@objc func doneButtonAction()` - `selector` 함수이므로 `@objc` 어트리뷰트를 추가합니다. `self.resignFirstReponder`는 키보드 패드를 사라지게 하는 명령입니다.
 
- 
+### Interface Builder 또는 코드에서 속성 설정 
 
 다음에 Attribute Inspector에서 Wanryo Accesory를 `On`로 설정하거나, 또는 컨트롤러의 `viewDidLoad()`에 코드를 추가하여 완료 버튼이 나타나게 할 수 있습니다.
 
  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-5.21.39.jpg)
 
-```
+```swift
 textFieldOutlet.addDoneButtonOnKeyboard()
 ```
 
- 
+## 동작 화면
 
  ![](/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-6.24.55.png)
