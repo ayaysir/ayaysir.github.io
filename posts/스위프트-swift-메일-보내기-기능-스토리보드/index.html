@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,10 +638,85 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -661,7 +743,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>스위프트 (Swift): 메일 보내기 기능 (스토리보드)</h1>
     
@@ -735,9 +817,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="522 words"
+  title="540 words"
 >
-  <em>2 min</em> read</span>
+  <em>3 min</em> read</span>
 
         </div>
       </div>
@@ -745,20 +827,45 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">스위프트 (Swift): 메일 보내기 기능 (스토리보드)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">스위프트 (Swift): 메일 보내기 기능 (스토리보드)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>Swift(스위프트) iOS 프로그래밍에서 버튼에 메일을 보내는 기능을 할당하는 예제입니다.</p>
 
-<p> </p>
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="1-impport-messageui"><span class="me-2">1. impport MessageUI</span><a href="#1-impport-messageui" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>추가하고자 하는 뷰 컨트롤러에 다음을 <code class="language-plaintext highlighter-rouge">import</code>합니다 (윗부분에 작성).</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>import MessageUI
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">MessageUI</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<h3 id="2-extnesion-추가"><span class="me-2">2. extnesion 추가</span><a href="#2-extnesion-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <p> </p>
 
 <p>아래 코드를 해당 뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">extension</code>으로 추가합니다.</p>
@@ -850,13 +957,13 @@
 
 <p>위에서 ‘디바이스 알아내는 기능’은 <a href="https://stackoverflow.com/questions/26028918">이 글</a>을 참조하세요.</p>
 
-<p> </p>
+<h3 id="3-버튼-액션과-연결"><span class="me-2">3. 버튼 액션과 연결</span><a href="#3-버튼-액션과-연결" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>위의 <code class="language-plaintext highlighter-rouge">@IBAction func launchEmail</code> 를 스토리보드의 버튼과 연결합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-19-pm-7.16.02.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-19-pm-7.16.02.jpg" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h2 id="동작-확인"><span class="me-2">동작 확인</span><a href="#동작-확인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>빨간 버튼을 클릭하면 (메일 계정이 설정된 경우) 아래와 같은 메일 작성 창이 뜹니다.</p>
 
@@ -1826,6 +1933,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

@@ -920,8 +920,8 @@ create-react-app [앱_이름]
 
 <p>2) 함수 또는 클래스를 선택해서 렌더링할 컴포넌트를 JSX 형태로 작성합니다. 저는 함수를 선택하도록 하겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -936,28 +936,28 @@ create-react-app [앱_이름]
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>import React from 'react';
-import pizzaImg from './../assets/pizza.png';
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">pizzaImg</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./../assets/pizza.png</span><span class="dl">'</span><span class="p">;</span>
 
-function Pizza() {
-    return (
-        &lt;nav&gt;
-            &lt;h3&gt;피자&lt;/h3&gt;
-            &lt;img src={pizzaImg} className="App-logo" alt="logo" /&gt;
-        &lt;/nav&gt;
-        );
+<span class="kd">function</span> <span class="nf">Pizza</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return </span><span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>피자<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="p">=</span><span class="si">{</span><span class="nx">pizzaImg</span><span class="si">}</span> <span class="na">className</span><span class="p">=</span><span class="s">"App-logo"</span> <span class="na">alt</span><span class="p">=</span><span class="s">"logo"</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+        <span class="p">);</span>
 
-}
+<span class="p">}</span>
 
-export default Pizza
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Pizza</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>3) <code class="language-plaintext highlighter-rouge">export default [함수명]</code> 구문을 맨 마지막 라인에 삽입합니다. (위의 코드 참고)</p>
 
 <p>4) 컴포넌트를 삽입할 곳에 <code class="language-plaintext highlighter-rouge">import</code> 구문을 이용해 컴포넌트 <code class="language-plaintext highlighter-rouge">js</code> 파일을 불러오고, 삽입할 위치에 태그명을 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -984,32 +984,32 @@ export default Pizza
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>import React from 'react';
-import Pizza from './components/Pizza'
-import './App.css';
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Pizza</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/Pizza</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span><span class="p">;</span>
 
-function App() {
-  return (
-    &lt;div className="App"&gt;
-      &lt;header className="App-header"&gt;
-        &lt;Pizza /&gt;
-        &lt;p&gt;
-           &lt;code&gt;src/App.js&lt;/code&gt; 
-        &lt;/p&gt;
-        &lt;a
-          className="App-link"
-          href="https://yoonbumtae.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        &gt;
+<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"App"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">header</span> <span class="na">className</span><span class="p">=</span><span class="s">"App-header"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Pizza</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>src/App.js<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span> 
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span>
+          <span class="na">className</span><span class="p">=</span><span class="s">"App-link"</span>
+          <span class="na">href</span><span class="p">=</span><span class="s">"https://yoonbumtae.com"</span>
+          <span class="na">target</span><span class="p">=</span><span class="s">"_blank"</span>
+          <span class="na">rel</span><span class="p">=</span><span class="s">"noopener noreferrer"</span>
+        <span class="p">&gt;</span>
           홈페이지 바로가기
-        &lt;/a&gt;
-      &lt;/header&gt;
-    &lt;/div&gt;
-  );
-}
+        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
 
-export default App;
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -7843,7 +7843,7 @@ export default App;
 
               <h4 class="pt-0 my-2">리액트(React): 모달 팝업시 뒷배경(오버레이) 스크롤 되지 않게 하기</h4>
               <div class="text-muted">
-                <p>`body` 태그의 css를 변경합니다. `position`을 `fixed`로 하고, `top`의 위치를 현재 스크롤 위치로 설정한 뒤 `overflow-y: scroll; width: 100%;` 을 추가 지정하면 스크롤바로 인해 배경의 위치가 움직이지 않고도 스크롤 방지를 할 수 있습니다.  `useEffect`를 사용해 css를 변경하며, 모달이...</p>
+                <p>## **본문**  `body` 태그의 css를 변경합니다. `position`을 `fixed`로 하고, `top`의 위치를 현재 스크롤 위치로 설정한 뒤 `overflow-y: scroll; width: 100%;` 을 추가 지정하면 스크롤바로 인해 배경의 위치가 움직이지 않고도 스크롤 방지를 할 수 있습니다.  `useEffect`를 사용해 css...</p>
               </div>
             </div>
           </a>

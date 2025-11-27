@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -891,10 +898,140 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -921,7 +1058,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): 오프라인 웹 페이지에서 자바스크립트 실행 및 alert, confirm, prompt 띄우기 (스토리보드)</h1>
     
@@ -995,7 +1132,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1227 words"
+  title="1250 words"
 >
   <em>6 min</em> read</span>
 
@@ -1005,17 +1142,43 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): 오프라인 웹 페이지에서 자바스크립트 실행 및 alert, confirm, prompt 띄우기 (스토리보드)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): 오프라인 웹 페이지에서 자바스크립트 실행 및 alert, confirm, prompt 띄우기 (스토리보드)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>이전 글에서 이어집니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=3922">Swift(스위프트): 오프라인 웹 페이지 표시하기 (스토리보드)</a></li>
+  <li><a href="/posts/swift스위프트-오프라인-웹-페이지-표시하기-스토리보/">Swift(스위프트): 오프라인 웹 페이지 표시하기 (스토리보드)</a></li>
 </ul>
 
-<p> </p>
+<h2 id="소개"><span class="me-2">소개</span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>웹킷뷰(WKWebView) 에서 자바스크립트를 실행하려면 자바스크립트 모드가 활성화되어야 합니다. 다음 코드를 뷰 컨트롤러에 추가합니다. iOS 14 버전과 이전 방식에 차이가 있습니다.</p>
+
+<h2 id="자바스크립트-실행-방법"><span class="me-2">자바스크립트 실행 방법</span><a href="#자바스크립트-실행-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="딜리게이트-구현-추가"><span class="me-2">딜리게이트 구현 추가</span><a href="#딜리게이트-구현-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>먼저 딜리게이트를 구현하는 뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">extension</code>을 추가합니다.</p>
 
@@ -1024,16 +1187,14 @@
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4
 </pre></td><td class="rouge-code"><pre><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">WKUIDelegate</span><span class="p">,</span> <span class="kt">WKNavigationDelegate</span> <span class="p">{</span>
     
 <span class="p">}</span>
-
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="wkwebview-초기화"><span class="me-2">WKWebView 초기화</span><a href="#wkwebview-초기화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>다음 웹킷뷰를 초기화하는 함수를 작성합니다. 하이라이트 부분이 자바스크립트를 활성화시키는 부분입니다.</p>
+<p>다음 웹킷뷰를 초기화하는 함수를 작성합니다.</p>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1077,6 +1238,7 @@
 
 </pre></td></tr></tbody></table></code></div></div>
 
+<h3 id="html-파일에-자바스크립트-작성"><span class="me-2">HTML 파일에 자바스크립트 작성</span><a href="#html-파일에-자바스크립트-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <p> </p>
 
 <p>다음 HTML 파일에 자바스크립트를 작성합니다.</p>
@@ -1110,6 +1272,7 @@
 <p>이렇게 하면 원래 제목은 <code class="language-plaintext highlighter-rouge">안녕하세요</code> 이지만 자바스크립트가 실행되면서 <code class="language-plaintext highlighter-rouge">Javascript</code> 로 변하는 것을 알 수 있습니다.</p>
 
 <p> </p>
+<h2 id="경고창은-어떻게-띄움"><span class="me-2">경고창은 어떻게 띄움?</span><a href="#경고창은-어떻게-띄움" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>하지만 일반 웹브라우저에서는 당연하게 되던 것들이 여기서는 작동하지 않는 경우가 많습니다. 그 중에는 alert, confirm 등의 경고창을 뜨게 하는 명령이 실행되지 않는 것 등이 있습니다.</p>
 
@@ -1117,6 +1280,7 @@
 
 <p>이러한 <code class="language-plaintext highlighter-rouge">alert</code> 등의 자바스크립트 코드가 작성되었을 때 해야할 동작은 네이티브 앱에서 수동으로 구현해야 합니다.</p>
 
+<h2 id="alert"><span class="me-2">Alert</span><a href="#alert" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p> </p>
 
 <p>먼저 <code class="language-plaintext highlighter-rouge">alert</code>을 구현하는 방법에 대해 알아보겠습니다.</p>
@@ -1155,10 +1319,10 @@
 
 <p>그리고 자바스크립트 부분에 다음 코드를 작성하면 얼럿창이 뜨는 것을 확인할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>alert("얼럿이 왜 안돼?")
+</pre></td><td class="rouge-code"><pre><span class="nf">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">얼럿이 왜 안돼?</span><span class="dl">"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-9.34.23.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-9.34.23.jpg" alt="" loading="lazy"></a></p>
@@ -1166,6 +1330,8 @@
 <p> </p>
 
 <p>자바스크립트의 경고창으로는 <code class="language-plaintext highlighter-rouge">alert</code>외에 <code class="language-plaintext highlighter-rouge">confirm</code>(확인/취소), <code class="language-plaintext highlighter-rouge">prompt</code>(필드에 값을 입력)이 있습니다. 이것들도 위의 방법으로 구현해보도록 하겠습니다.</p>
+
+<h2 id="confirm"><span class="me-2">Confirm</span><a href="#confirm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>confirm (<code class="language-plaintext highlighter-rouge">runJavaScriptConfirmPanelWithMessage</code>)</p>
 
@@ -1211,23 +1377,23 @@
 
 <p>자바스크립트를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>let isConfirm = confirm("승낙하시겠습니까?")
-if(isConfirm) {
-    document.getElementById("title").textContent = "Confirm YES"
-}
+</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">isConfirm</span> <span class="o">=</span> <span class="nf">confirm</span><span class="p">(</span><span class="dl">"</span><span class="s2">승낙하시겠습니까?</span><span class="dl">"</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">isConfirm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Confirm YES</span><span class="dl">"</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-9.42.30.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-9.42.30.jpg" alt="" loading="lazy"></a> <a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-9.42.55.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-9.42.55.jpg" alt="" loading="lazy"></a></p>
 
 <p><code class="language-plaintext highlighter-rouge">아니오</code> 버튼을 누르면 아무 변화가 없고, <code class="language-plaintext highlighter-rouge">예</code> 버튼을 누르면 위와 같이 제목이 바뀌는 것을 볼 수 있습니다.</p>
 
-<p> </p>
+<h3 id="prompt"><span class="me-2">Prompt</span><a href="#prompt" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>prompt (<code class="language-plaintext highlighter-rouge">runJavaScriptTextInputPanelWithPrompt</code>)</p>
 
@@ -1287,7 +1453,11 @@ if(isConfirm) {
 <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">promptStr</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-10.12.06.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-10.12.06.jpg" alt="" loading="lazy"></a> <a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-9.59.05.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-9.59.05.jpg" alt="" loading="lazy"></a></p>
+<h2 id="동작-화면"><span class="me-2">동작 화면</span><a href="#동작-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-10.12.06.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-10.12.06.jpg" alt="" loading="lazy"></a></p>
+
+<p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-9.59.05.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-9.59.05.jpg" alt="" loading="lazy"></a></p>
 
 <p>위와 같이 입력값에 따라 제목이 바뀌는 것을 볼 수 있습니다.</p>
 
@@ -2255,6 +2425,12 @@ if(isConfirm) {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1216,10 +1223,173 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -1267,7 +1437,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): 코어 데이터(Core Data) CRUD 기초 (UIKit에서)</h1>
     
@@ -1341,9 +1511,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3058 words"
+  title="3069 words"
 >
-  <em>16 min</em> read</span>
+  <em>17 min</em> read</span>
 
         </div>
       </div>
@@ -1351,9 +1521,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): 코어 데이터(Core Data) CRUD 기초 (UIKit에서)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): 코어 데이터(Core Data) CRUD 기초 (UIKit에서)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="core-data란"><span class="me-2"><strong>Core Data란?</strong></span><a href="#core-data란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="core-data란"><span class="me-2"><strong>Core Data란?</strong></span><a href="#core-data란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Core Data를 통해 iOS, macOS 등의 애플리케이션 내에 오프라인으로 데이터를 저장할 수 있습니다. 다음은 Core Data의 소개글입니다.</p>
 
@@ -1361,19 +1553,19 @@
   <p>Core Data는 macOS 및 iOS 운영 체제에서 Apple이 제공하는 객체 그래프 및 지속성(persistence) 프레임워크입니다. 관계형 엔터티 속성 모델로 구성된 데이터를 XML, 바이너리 또는 SQLite 저장소로 직렬화할 수 있습니다. 엔터티 및 해당 관계를 나타내는 상위 수준 개체를 사용하여 데이터를 조작할 수 있습니다. Core Data는 직렬화된 버전 관리를 통해 지속성을 포함한 객체 수명 주기 및 객체 그래프 관리를 제공합니다. Core Data는 SQLite와 직접 인터페이스하여 개발자를 기본 SQL로부터 격리합니다.</p>
 </blockquote>
 
-<p>다른 예를 들자면 스프링 프레임워크의 Hibernate, JPA(Java Persistence API)와 비슷한 개념이라고 보면 되겠습니다.</p>
+<!-- 다른 예를 들자면 스프링 프레임워크의 Hibernate, JPA(Java Persistence API)와 비슷한 개념이라고 보면 되겠습니다. -->
 
-<p>여기서는 iOS App, 스토리보드를 기준으로 설명합니다.</p>
+<p>여기서는 iOS App, UIKit 스토리보드를 기준으로 설명합니다.</p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2">절차</span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>1. Core Data 포함된 프로젝트 생성 또는 기존 프로젝트에 Core Data 추가</p>
+<h3 id="1-core-data-포함된-프로젝트-생성-또는-기존-프로젝트에-core-data-추가"><span class="me-2">1. Core Data 포함된 프로젝트 생성 또는 기존 프로젝트에 Core Data 추가</span><a href="#1-core-data-포함된-프로젝트-생성-또는-기존-프로젝트에-core-data-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>아직 프로젝트를 생성하지 않았다면 App 생성시 아래 사항만 체크하면 Core Data 프로젝트를 만들 수 있습니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.18.03.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.18.03.jpg" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h4 id="이미-xcode-프로젝트가-생성된-경우"><span class="me-2">이미 Xcode 프로젝트가 생성된 경우</span><a href="#이미-xcode-프로젝트가-생성된-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>이미 프로젝트가 생성된 경우, 다음 과정을 통해 Core Data 를 추가할 수 있습니다.</p>
 
@@ -1481,9 +1673,9 @@
 
 <p>여기서는 이름과 메일 주소를 저장하고 테이블 뷰를 통해 정보들을 표시하는 앱을 만든다고 가정합니다.</p>
 
-<p> </p>
+<h3 id="2-엔티티-추가"><span class="me-2">2. 엔티티 추가</span><a href="#2-엔티티-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>2. 다음 <code class="language-plaintext highlighter-rouge">CoreDataExample.xcdatamodeld</code> 파일을 열면 에디터가 나타납니다. 하단에 있는 Add Entity 버튼을 눌러 <code class="language-plaintext highlighter-rouge">Entity</code>를 추가합니다. <code class="language-plaintext highlighter-rouge">Entity</code>는 데이터베이스의 테이블과 비슷한 개념입니다.</p>
+<p>다음 <code class="language-plaintext highlighter-rouge">CoreDataExample.xcdatamodeld</code> 파일을 열면 에디터가 나타납니다. 하단에 있는 Add Entity 버튼을 눌러 <code class="language-plaintext highlighter-rouge">Entity</code>를 추가합니다. <code class="language-plaintext highlighter-rouge">Entity</code>는 데이터베이스의 테이블과 비슷한 개념입니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.31.18.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.31.18.jpg" alt="" loading="lazy"></a></p>
 
@@ -1491,7 +1683,9 @@
 
 <p> </p>
 
-<p>3. 다음 <code class="language-plaintext highlighter-rouge">Attribute</code>를 추가합니다. <code class="language-plaintext highlighter-rouge">Attribute</code>는 데이터베이스의 컬럼, 필드와 비슷한 개념입니다. 이름과 메일 주소, 그리고 ID를 생성합니다. Core Data는 한 객체가 영속성(persistence)를 지니기 때문에 각 개체가 고유한 특성을 지닙니다. 따라서 원론적으로 ID를 특별히 만들 필요는 없지만, 저처럼 초보 단계에서는 ID를 만드는게 편하다고 생각했기 때문에 ID attribute를 추가하도록 하겠습니다.</p>
+<h3 id="3-속성attribute-추가"><span class="me-2">3. 속성(Attribute) 추가</span><a href="#3-속성attribute-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>다음 <code class="language-plaintext highlighter-rouge">Attribute</code>를 추가합니다. <code class="language-plaintext highlighter-rouge">Attribute</code>는 데이터베이스의 컬럼, 필드와 비슷한 개념입니다. 이름과 메일 주소, 그리고 ID를 생성합니다. Core Data는 한 객체가 영속성(persistence)를 지니기 때문에 각 개체가 고유한 특성을 지닙니다. 따라서 원론적으로 ID를 특별히 만들 필요는 없지만, 저처럼 초보 단계에서는 ID를 만드는게 편하다고 생각했기 때문에 ID attribute를 추가하도록 하겠습니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.35.04.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.35.04.jpg" alt="" loading="lazy"></a></p>
 
@@ -1503,15 +1697,17 @@
 
 <p> </p>
 
-<p>4. 위의 설정을 마쳤다면, App의 기본 UI를 생성합니다.</p>
+<h3 id="4-앱-ui-생성"><span class="me-2">4. 앱 UI 생성</span><a href="#4-앱-ui-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>위의 설정을 마쳤다면, App의 기본 UI를 생성합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.46.05.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-6.46.05.jpg" alt="" loading="lazy"></a></p>
 
 <p>Navigation Bar, Bar Button Item, Table View, Table View Cell을 이용해 UI를 생성했습니다.</p>
 
-<p> </p>
+<h2 id="crudcreate-read-update-delete"><span class="me-2">CRUD(Create, Read, Update, Delete) </span><a href="#crudcreate-read-update-delete" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>5. 다음 Core Data와 관련된 코드를 작성합니다.</p>
+<p>다음 Core Data와 관련된 코드를 작성합니다.</p>
 
 <p>먼저 <code class="language-plaintext highlighter-rouge">CoreData</code>와 <code class="language-plaintext highlighter-rouge">UIKit</code>을 import 해야 합니다.</p>
 
@@ -1523,7 +1719,7 @@
 <span class="kd">import</span> <span class="kt">CoreData</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="create"><span class="me-2">Create</span><a href="#create" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>쓰기 기능을 먼저 작성하겠습니다.</p>
 
@@ -1596,7 +1792,7 @@
   <li>객체의 값을 설정한 다음 <code class="language-plaintext highlighter-rouge">try managedContext.save()</code>로 변경사항을 저장합니다.</li>
 </ul>
 
-<p> </p>
+<h3 id="read"><span class="me-2">Read</span><a href="#read" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>다음으로 읽기 기능을 추가합니다.</p>
 
@@ -1686,7 +1882,7 @@
 
 <p><a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-7.22.14.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-7.22.14.jpg" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h3 id="delete"><span class="me-2">Delete</span><a href="#delete" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>다음은 삭제입니다. 삭제 기준으로 <code class="language-plaintext highlighter-rouge">id</code>를 설정하겠습니다.</p>
 
@@ -1774,7 +1970,7 @@
 
 <p>코드가 첫번째에 비해 상당히 간결해졌습니다.</p>
 
-<p> </p>
+<h3 id="update"><span class="me-2">Update</span><a href="#update" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>마지막으로 업데이트 코드입니다. 업데이트도 아이디를 통해 업데이트 하는 것과, 객체 자체를 넘겨 업데이트 하는 방식 두 가지 모두 작성해 보겠습니다.</p>
 
@@ -1862,14 +2058,15 @@
 
 <p>업데이트할 객체에 접근하는 방법은 삭제 과정과 비슷합니다.</p>
 
+<h2 id="ui와-연동하여-입출력-프로그램-작성"><span class="me-2">UI와 연동하여 입출력 프로그램 작성</span><a href="#ui와-연동하여-입출력-프로그램-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p> </p>
 
 <p>지금까지 작성한 코드를 사용해 입출력 프로그램을 작성하면 다음과 같습니다. 이 프로그램 작성 과정까지 들어가면 글이 너무 길어져서 <code class="language-plaintext highlighter-rouge">ViewConroller</code> 코드로 대신합니다. UI와 컨트롤러를 연결하는 방법은 아래 글들을 참고해주세요.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=3418">iOS 프로그래밍: 컬렉션 뷰 (Swift, 스토리보드) – 컬렉션 뷰 추가, 커스텀 셀 작성</a></li>
-  <li><a href="http://yoonbumtae.com/?p=3379">iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 1 – 테이블 뷰 추가</a></li>
-  <li><a href="http://yoonbumtae.com/?p=3397">iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 2 – 커스텀 셀(custom cell) 추가</a></li>
+  <li><a href="/posts/ios-프로그래밍-컬렉션-뷰-swift-스토리보드-컬렉션-뷰/">iOS 프로그래밍: 컬렉션 뷰 (Swift, 스토리보드) – 컬렉션 뷰 추가, 커스텀 셀 작성</a></li>
+  <li><a href="/posts/ios-프로그래밍-테이블-뷰-swift-스토리보드-1-테이블-뷰-추/">iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 1 – 테이블 뷰 추가</a></li>
+  <li><a href="/posts/ios-프로그래밍-테이블-뷰-swift-스토리보드-2-커스텀-셀custom-cell/">iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 2 – 커스텀 셀(custom cell) 추가</a></li>
 </ul>
 
 <p> </p>
@@ -2094,9 +2291,13 @@
 
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="동작화면"><span class="me-2">동작화면</span><a href="#동작화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <p>여기서는 add 할 때 결과 배열을 다시 불러오는 작업을 하고 있지만 <code class="language-plaintext highlighter-rouge">saveCoreData()</code>에서 객체 자체를 리턴하도록 하고 그 객체를 배열에 더하는게 좋아보입니다.</p>
 
-<p><a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.36.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.36.jpg" alt="" loading="lazy"></a>  <a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.41.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.41.jpg" alt="" loading="lazy"></a>  <a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.48.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.48.jpg" alt="" loading="lazy"></a></p>
+<p><a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.36.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.36.jpg" alt="" loading="lazy"></a><br />
+ <a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.41.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.41.jpg" alt="" loading="lazy"></a><br />
+ <a href="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.48.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/07/screenshot-2021-07-30-pm-8.26.48.jpg" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -3062,6 +3263,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

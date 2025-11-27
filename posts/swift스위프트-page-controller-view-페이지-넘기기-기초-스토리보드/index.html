@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -938,6 +945,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -956,10 +1028,48 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -973,6 +1083,120 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1018,7 +1242,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): Page Controller View (페이지 넘기기) 기초 (스토리보드)</h1>
     
@@ -1092,7 +1316,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1645 words"
+  title="1753 words"
 >
   <em>9 min</em> read</span>
 
@@ -1102,6 +1326,28 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): Page Controller View (페이지 넘기기) 기초 (스토리보드)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): Page Controller View (페이지 넘기기) 기초 (스토리보드)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>출처 <a href="https://escape-anaemia.tistory.com/entry/UIPageViewController">블로그</a> - 찾아본 결과 여기에 나온 설명이 제일 이해하기 편했습니다.</p>
@@ -1110,7 +1356,9 @@
 
 <p> </p>
 
-<h4 id="스토리보드"><span class="me-2"><strong>스토리보드</strong></span><a href="#스토리보드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="스토리보드-작업"><span class="me-2"><strong>스토리보드 작업</strong></span><a href="#스토리보드-작업" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="페이지-뷰-컨트롤러-생성"><span class="me-2">페이지 뷰 컨트롤러 생성</span><a href="#페이지-뷰-컨트롤러-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>먼저 스토리보드에서 페이지 뷰 컨트롤러를 생성합니다.</p>
 
@@ -1120,21 +1368,24 @@
 
 <p>페이지 뷰 컨트롤러는 다른 뷰 컨트롤러를 배열에 담은 다음, 그 배열을 데이터소스가 탐색하면서 페이지가 이동하는 형식으로 되어있습니다. 따라서 페이지 뷰 컨트롤러에서 나타낼 뷰 컨트롤러(<code class="language-plaintext highlighter-rouge">UIViewController</code>)들을 생성해야 합니다.</p>
 
-<p>뷰 컨트롤러의 생성 방법에는 스토리보드에서 생성하는 방법과 뷰 컨트롤러 코드 내에서 동적으로 생성하는 방법이 있는데, 여기서는 이해하기 쉽게 뷰 컨트롤러에서 생성한 다음 각 컨트롤러에 스토리보드 아이디를 부여한 다음 페이지 뷰 컨트롤러에서 아이디를 통해 로딩하는 방식을 사용하겠습니다.</p>
+<h3 id="페이지-뷰-컨트롤러에서-나타낼-내용-뷰-컨트롤러-생성"><span class="me-2">페이지 뷰 컨트롤러에서 나타낼 내용 뷰 컨트롤러 생성</span><a href="#페이지-뷰-컨트롤러에서-나타낼-내용-뷰-컨트롤러-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>내용 뷰 컨트롤러의 생성 방법에는 스토리보드에서 생성하는 방법과 뷰 컨트롤러 코드 내에서 동적으로 생성하는 방법이 있는데, 여기서는 이해하기 쉽게 뷰 컨트롤러에서 생성한 다음 각 컨트롤러에 스토리보드 아이디를 부여한 다음 페이지 뷰 컨트롤러에서 아이디를 통해 로딩하는 방식을 사용하겠습니다.</p>
 
 <p> </p>
+<h4 id="내용-뷰-컨트롤러-스토리보드에-추가"><span class="me-2">내용 뷰 컨트롤러 스토리보드에 추가</span><a href="#내용-뷰-컨트롤러-스토리보드에-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>스토리보드에서 뷰 컨트롤러를 페이지 개수만큼 생성합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-11.29.50.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-11.29.50.jpg" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h4 id="각-뷰-컨트롤러에-스토리보드-아이디-설정"><span class="me-2">각 뷰 컨트롤러에 스토리보드 아이디 설정</span><a href="#각-뷰-컨트롤러에-스토리보드-아이디-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>각각 뷰 컨트롤러를 선택 후, <code class="language-plaintext highlighter-rouge">Identity Inspector</code>에서 스토리보드 아이디(<code class="language-plaintext highlighter-rouge">Storyboard ID</code>)를 설정합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-11.31.40.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-11.31.40.jpg" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h4 id="pageviewcontroller-클래스-생성"><span class="me-2">PageViewController 클래스 생성</span><a href="#pageviewcontroller-클래스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>UIPageViewController를 상속받는 페이지뷰 컨트롤러 소스코드를 생성합니다.</p>
 
@@ -1156,13 +1407,14 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h4 id="pageviewcontroller와-스토리보드-페이지-뷰-컨트롤러간-연결"><span class="me-2">PageViewController와 스토리보드 페이지 뷰 컨트롤러간 연결 </span><a href="#pageviewcontroller와-스토리보드-페이지-뷰-컨트롤러간-연결" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>이 소스코드를 아까 생성한 스토리뷰의 페이지 뷰 컨트롤러에 연결합니다. 마찬가지로 <code class="language-plaintext highlighter-rouge">Identity Inspector</code>를 사용합니다.</p>
+<p>이 소스코드를 아까 생성한 스토리보드의 페이지 뷰 컨트롤러에 연결합니다. 마찬가지로 <code class="language-plaintext highlighter-rouge">Identity Inspector</code>를 사용합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-11.36.26.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-11.36.26.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
+<h4 id="컨테이너-뷰-추가-및-설정"><span class="me-2">컨테이너 뷰 추가 및 설정</span><a href="#컨테이너-뷰-추가-및-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>그 다음에는 가장 첫 화면에 이 페이지 뷰 컨트롤러를 표시할 부분을 만들어야 합니다. 뷰 안에 다른 뷰 컨트롤러를 포함하여 표시하려면 <code class="language-plaintext highlighter-rouge">Container View</code>를 사용하면 됩니다.</p>
 
@@ -1176,18 +1428,22 @@
 
 <p> </p>
 
-<p>여기까지 마치면 메인 뷰 컨트롤러 안에 페이지 뷰 컨트롤러가 <code class="language-plaintext highlighter-rouge">embed</code>로 포함됩니다. 최종적으로 다음과 같은 형태로 스토리보드가 구성됩니다.</p>
+<p>여기까지 마치면 메인 뷰 컨트롤러 안에 페이지 뷰 컨트롤러가 <code class="language-plaintext highlighter-rouge">embed</code>로 포함됩니다.</p>
+
+<h4 id="최종-형태"><span class="me-2">최종 형태</span><a href="#최종-형태" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>최종적으로 다음과 같은 형태로 스토리보드가 구성됩니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-11.40.49.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-pm-11.40.49.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h4 id="코드-구현"><span class="me-2"><strong>코드 구현</strong></span><a href="#코드-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="코드-구현"><span class="me-2"><strong>코드 구현</strong></span><a href="#코드-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><code class="language-plaintext highlighter-rouge">PageViewController</code> 안에 배열과 유틸리티 함수를 작성합니다.</p>
+<h3 id="pageviewcontroller-안에-배열과-유틸리티-함수를-작성합니다"><span class="me-2"><code class="language-plaintext highlighter-rouge">PageViewController</code> 안에 배열과 유틸리티 함수를 작성합니다.</span><a href="#pageviewcontroller-안에-배열과-유틸리티-함수를-작성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1197,15 +1453,15 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>lazy var vcArray: [UIViewController] = {
-    return [self.vcInstance(name: "FirstPageVC"),
-            self.vcInstance(name: "SecondPageVC"),
-            self.vcInstance(name: "ThirdPageVC")]
-}()
+</pre></td><td class="rouge-code"><pre><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">vcArray</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIViewController</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="k">self</span><span class="o">.</span><span class="nf">vcInstance</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"FirstPageVC"</span><span class="p">),</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">vcInstance</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"SecondPageVC"</span><span class="p">),</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">vcInstance</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"ThirdPageVC"</span><span class="p">)]</span>
+<span class="p">}()</span>
 
-private func vcInstance(name: String) -&gt; UIViewController{
-    return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
-}
+<span class="kd">private</span> <span class="kd">func</span> <span class="nf">vcInstance</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span><span class="p">{</span>
+    <span class="k">return</span> <span class="kt">UIStoryboard</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Main"</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span><span class="o">.</span><span class="nf">instantiateViewController</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="n">name</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1215,7 +1471,7 @@ private func vcInstance(name: String) -&gt; UIViewController{
 
 <p> </p>
 
-<p><code class="language-plaintext highlighter-rouge">UIPageViewControllerDataSource</code>, <code class="language-plaintext highlighter-rouge">UIPageViewControllerDelegate</code>을 구현하는 페이지 뷰 컨트롤러의 extension을 생성합니다.</p>
+<h3 id="uipageviewcontrollerdatasource-uipageviewcontrollerdelegate을-구현하는-페이지-뷰-컨트롤러의-extension을-생성합니다"><span class="me-2"><code class="language-plaintext highlighter-rouge">UIPageViewControllerDataSource</code>, <code class="language-plaintext highlighter-rouge">UIPageViewControllerDelegate</code>을 구현하는 페이지 뷰 컨트롤러의 extension을 생성합니다.</span><a href="#uipageviewcontrollerdatasource-uipageviewcontrollerdelegate을-구현하는-페이지-뷰-컨트롤러의-extension을-생성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1249,10 +1505,10 @@ private func vcInstance(name: String) -&gt; UIViewController{
 
 <p> </p>
 
-<p><code class="language-plaintext highlighter-rouge">viewDidLoad</code> 안에 딜리게이트, 데이터소스를 연결하고 첫 번째 컨트롤러(페이지)를 기본으로 나타나도록 설정합니다.</p>
+<h3 id="viewdidload-안에-딜리게이트-데이터소스를-연결하고-첫-번째-컨트롤러페이지를-기본으로-나타나도록-설정합니다"><span class="me-2"><code class="language-plaintext highlighter-rouge">viewDidLoad</code> 안에 딜리게이트, 데이터소스를 연결하고 첫 번째 컨트롤러(페이지)를 기본으로 나타나도록 설정합니다.</span><a href="#viewdidload-안에-딜리게이트-데이터소스를-연결하고-첫-번째-컨트롤러페이지를-기본으로-나타나도록-설정합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1261,14 +1517,14 @@ private func vcInstance(name: String) -&gt; UIViewController{
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>// 딜리게이트, 데이터소스 연결
-self.dataSource = self
-self.delegate = self
+</pre></td><td class="rouge-code"><pre><span class="c1">// 딜리게이트, 데이터소스 연결</span>
+<span class="k">self</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span>
+<span class="k">self</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
 
-// 첫 번째 페이지를 기본 페이지로 설정
-if let firstVC = vcArray.first {
-    setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
-}
+<span class="c1">// 첫 번째 페이지를 기본 페이지로 설정</span>
+<span class="k">if</span> <span class="k">let</span> <span class="nv">firstVC</span> <span class="o">=</span> <span class="n">vcArray</span><span class="o">.</span><span class="n">first</span> <span class="p">{</span>
+    <span class="nf">setViewControllers</span><span class="p">([</span><span class="n">firstVC</span><span class="p">],</span> <span class="nv">direction</span><span class="p">:</span> <span class="o">.</span><span class="n">forward</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1375,9 +1631,10 @@ if let firstVC = vcArray.first {
 
 <p> </p>
 
-<p> </p>
+<h2 id="동작-화면"><span class="me-2"><strong>동작 화면</strong></span><a href="#동작-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<iframe width="480" height="387" src="https://giphy.com/embed/UwSJ2BRb75dTALuJ5Z" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="480" height="387" src="https://giphy.com/embed/UwSJ2BRb75dTALuJ5Z" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+<p><a href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW11dWwzaGV6MzVrOHJwMnA1cXE3dTBvdG1samZneGp3OWVudG5pMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UwSJ2BRb75dTALuJ5Z/giphy.gif" class="popup img-link shimmer"><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW11dWwzaGV6MzVrOHJwMnA1cXE3dTBvdG1samZneGp3OWVudG5pMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UwSJ2BRb75dTALuJ5Z/giphy.gif" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -2343,6 +2600,12 @@ if let firstVC = vcArray.first {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

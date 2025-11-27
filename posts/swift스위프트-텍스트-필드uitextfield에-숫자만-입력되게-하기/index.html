@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,15 +638,74 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -677,6 +743,11 @@
     
 
     
+  
+
+  
+  
+
   
 
 
@@ -693,7 +764,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): 텍스트 필드(UITextField)에 숫자만 입력되게 하기, 자리수 제한하기 (스토리보드)</h1>
     
@@ -767,7 +838,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1053 words"
+  title="1075 words"
 >
   <em>5 min</em> read</span>
 
@@ -777,13 +848,37 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): 텍스트 필드(UITextField)에 숫자만 입력되게 하기, 자리수 제한하기 (스토리보드)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): 텍스트 필드(UITextField)에 숫자만 입력되게 하기, 자리수 제한하기 (스토리보드)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>텍스트 필드에서 숫자만 입력되게 하고, 특정 자리수 이상이 되면 키보드를 사라지게 하는 예제입니다.</p>
 
-<p> </p>
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>1) 마우스 오른쪽 버튼을 누른채로, 또는 control 버튼을 누른채로 드래그하여 @IBOutlet 변수를 생성합니다.</p>
+<h3 id="1-iboutlet-변수-생성"><span class="me-2">1) @IBOutlet 변수 생성</span><a href="#1-iboutlet-변수-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>마우스 오른쪽 버튼을 누른채로, 또는 control 버튼을 누른채로 드래그하여 @IBOutlet 변수를 생성합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-6.52.54.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-03-pm-6.52.54.jpg" alt="" loading="lazy"></a></p>
 
@@ -795,19 +890,23 @@
 
 <p> </p>
 
-<p>2) 뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">viewDidLoad()</code> 안에 컨트롤러와 딜리게이트를 연결합니다.</p>
+<h3 id="2-딜리게이트-연결"><span class="me-2">2) 딜리게이트 연결</span><a href="#2-딜리게이트-연결" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<p>뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">viewDidLoad()</code> 안에 컨트롤러와 딜리게이트를 연결합니다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>textA4FreqOutlet.delegate = self
+</pre></td><td class="rouge-code"><pre><span class="n">textA4FreqOutlet</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>또는 위의 과정 대신 스토리보드에서 텍스트 필드를 마우스 오른쪽 또는 control 버튼 누른채로 드래그하여 연결할 수도 있습니다.</p>
 
 <p> </p>
 
-<p>3) <code class="language-plaintext highlighter-rouge">UITextFieldDelegate</code>를 상속받는 뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">extension</code>을 생성하고 다음 코드를 작성합니다.</p>
+<h3 id="3-딜리게이트-함수-구현"><span class="me-2">3) 딜리게이트 함수 구현</span><a href="#3-딜리게이트-함수-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">UITextFieldDelegate</code>를 상속받는 뷰 컨트롤러의 <code class="language-plaintext highlighter-rouge">extension</code>을 생성하고 다음 코드를 작성합니다.</p>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -861,7 +960,7 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="숫자만-입력되게-하기"><span class="me-2"><strong>숫자만 입력되게 하기</strong></span><a href="#숫자만-입력되게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="숫자만-입력되게-하기"><span class="me-2"><strong>숫자만 입력되게 하기</strong></span><a href="#숫자만-입력되게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">shouldChangeCharactersIn</code> - 이것을 파라미터로 받는 <code class="language-plaintext highlighter-rouge">textField</code>를 오버라이딩합니다. 이것은 <code class="language-plaintext highlighter-rouge">Bool</code> 값을 리턴하며 키보드 버튼을 눌렀을 때 또는 붙여넣기 등의 기능을 이용해 스트링을 입력했을 때 그 키보드의 문자가 텍스트 필드에 입력되어야 하는 여부를 묻는 함수입니다. <code class="language-plaintext highlighter-rouge">true</code>라면 키보드에 누른대로 입력되고, <code class="language-plaintext highlighter-rouge">false</code>라면 해당 입력은 무시됩니다.</li>
@@ -879,7 +978,7 @@
 
 <p> </p>
 
-<h5 id="일정-자리수까지만-입력되게-하고-자리수가-초과하면-키보드를-사라지게-하기"><span class="me-2"><strong>일정 자리수까지만 입력되게 하고 자리수가 초과하면 키보드를 사라지게 하기</strong></span><a href="#일정-자리수까지만-입력되게-하고-자리수가-초과하면-키보드를-사라지게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="일정-자리수까지만-입력되게-하고-자리수가-초과하면-키보드를-사라지게-하기"><span class="me-2"><strong>일정 자리수까지만 입력되게 하고 자리수가 초과하면 키보드를 사라지게 하기</strong></span><a href="#일정-자리수까지만-입력되게-하고-자리수가-초과하면-키보드를-사라지게-하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">maxLength</code> - 최대 자리수입니다.</li>
@@ -1882,6 +1981,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

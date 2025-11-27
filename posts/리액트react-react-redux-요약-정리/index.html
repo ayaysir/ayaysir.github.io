@@ -1088,8 +1088,8 @@ npm install react-redux
 
 <h4 id="리액트의-indexjs-에서-react-redux-설정"><span class="me-2"><strong>리액트의 index.js 에서 React Redux 설정</strong></span><a href="#리액트의-indexjs-에서-react-redux-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1105,21 +1105,21 @@ npm install react-redux
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { Provider } from 'react-redux';
-import store from './store';
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-dom</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">./index.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Provider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">store</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./store</span><span class="dl">'</span><span class="p">;</span>
 
-ReactDOM.render(
-  &lt;React.StrictMode&gt;
-    &lt;Provider store={store}&gt;
-      &lt;App /&gt;
-    &lt;/Provider&gt;
-  &lt;/React.StrictMode&gt;,
-  document.getElementById('root')
-);
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span>
+  <span class="p">&lt;</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nc">Provider</span> <span class="na">store</span><span class="p">=</span><span class="si">{</span><span class="nx">store</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Provider</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">&lt;App /&gt;</code> 컴포넌트를 <code class="language-plaintext highlighter-rouge">&lt;Provider /&gt;</code>로 감쌉니다. <code class="language-plaintext highlighter-rouge">&lt;Provider /&gt;</code> 에서 <code class="language-plaintext highlighter-rouge">store={저장소_변수명}</code> 이 부분에는 저장소 js 파일을 불러와 설정합니다. 여기서는 <code class="language-plaintext highlighter-rouge">store.js</code>에 redux 저장소가 정의되어 있기 때문에 <code class="language-plaintext highlighter-rouge">store</code>라는 이름으로 임포트하고 <code class="language-plaintext highlighter-rouge">store={store}</code>를 사용해 저장소를 지정하였습니다.</p>
@@ -1346,8 +1346,8 @@ export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&am
 
 <p>모든 컴포넌트의 코드를 일일히 올리기엔 무리가 있고 작성된 글을 업데이트하는 기능을 가진 아래 예제만 올립니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1398,56 +1398,56 @@ export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&am
 48
 49
 50
-</pre></td><td class="rouge-code"><pre>import React, { Component } from 'react';
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
 
-class Update extends Component {
-    state = {
-        title: this.props.title,
-        desc: this.props.desc,
-        id: this.props.id,
-    }
+<span class="kd">class</span> <span class="nc">Update</span> <span class="kd">extends</span> <span class="nc">Component</span> <span class="p">{</span>
+    <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">title</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
+        <span class="na">desc</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">desc</span><span class="p">,</span>
+        <span class="na">id</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+    <span class="p">}</span>
 
-    onChangeHandler(e) {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
+    <span class="nf">onChangeHandler</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">({</span>
+            <span class="p">[</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">]:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
 
-    render() {
-        if(this.state.id === 0) {
-            return null
-        }
-        return (
-            &lt;form onSubmit={e =&gt; {
-                e.preventDefault()
-                this.props.onSubmit(
-                    Number(e.target.id.value),
-                    e.target.title.value,
-                    e.target.desc.value
-                )
-            }}&gt;
-                &lt;input type="hidden" name="id" value={this.state.id} /&gt;
-                &lt;p&gt;&lt;input 
-                    type="text" 
-                    name="title" 
-                    onChange={this.onChangeHandler.bind(this)} 
-                    placeholder="title" 
-                    value={this.state.title} 
-                /&gt;&lt;/p&gt;
-                &lt;p&gt;&lt;input 
-                    type="text" 
-                    name="desc" 
-                    onChange={this.onChangeHandler.bind(this)} 
-                    placeholder="description" 
-                    value={this.state.desc} /&gt;&lt;/p&gt;
-                &lt;p&gt;&lt;button&gt;제출&lt;/button&gt;&lt;/p&gt;
-            &lt;/form&gt;
+    <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">null</span>
+        <span class="p">}</span>
+        <span class="k">return </span><span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">e</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">()</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nf">onSubmit</span><span class="p">(</span>
+                    <span class="nc">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">value</span><span class="p">),</span>
+                    <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+                    <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">desc</span><span class="p">.</span><span class="nx">value</span>
+                <span class="p">)</span>
+            <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="p">=</span><span class="s">"hidden"</span> <span class="na">name</span><span class="p">=</span><span class="s">"id"</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span> <span class="p">/&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">input</span> 
+                    <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> 
+                    <span class="na">name</span><span class="p">=</span><span class="s">"title"</span> 
+                    <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onChangeHandler</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="si">}</span> 
+                    <span class="na">placeholder</span><span class="p">=</span><span class="s">"title"</span> 
+                    <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span> 
+                <span class="p">/&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">input</span> 
+                    <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> 
+                    <span class="na">name</span><span class="p">=</span><span class="s">"desc"</span> 
+                    <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onChangeHandler</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="si">}</span> 
+                    <span class="na">placeholder</span><span class="p">=</span><span class="s">"description"</span> 
+                    <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">desc</span><span class="si">}</span> <span class="p">/&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">button</span><span class="p">&gt;</span>제출<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 
-        );
-    }
-}
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-export default Update;
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Update</span><span class="p">;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -8449,7 +8449,7 @@ export default connect(
 
               <h4 class="pt-0 my-2">리액트(React): 모달 팝업시 뒷배경(오버레이) 스크롤 되지 않게 하기</h4>
               <div class="text-muted">
-                <p>`body` 태그의 css를 변경합니다. `position`을 `fixed`로 하고, `top`의 위치를 현재 스크롤 위치로 설정한 뒤 `overflow-y: scroll; width: 100%;` 을 추가 지정하면 스크롤바로 인해 배경의 위치가 움직이지 않고도 스크롤 방지를 할 수 있습니다.  `useEffect`를 사용해 css를 변경하며, 모달이...</p>
+                <p>## **본문**  `body` 태그의 css를 변경합니다. `position`을 `fixed`로 하고, `top`의 위치를 현재 스크롤 위치로 설정한 뒤 `overflow-y: scroll; width: 100%;` 을 추가 지정하면 스크롤바로 인해 배경의 위치가 움직이지 않고도 스크롤 방지를 할 수 있습니다.  `useEffect`를 사용해 css...</p>
               </div>
             </div>
           </a>

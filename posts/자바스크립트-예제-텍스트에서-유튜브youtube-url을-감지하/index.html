@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -761,15 +768,26 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+
+    
   
 
   
@@ -829,6 +847,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -845,7 +873,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트 예제: 텍스트에서 유튜브(YouTube) URL을 감지하고 해당 URL을 자동으로 플레이어로 전환</h1>
     
@@ -919,7 +947,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="672 words"
+  title="673 words"
 >
   <em>3 min</em> read</span>
 
@@ -929,6 +957,28 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트 예제: 텍스트에서 유튜브(YouTube) URL을 감지하고 해당 URL을 자동으로 플레이어로 전환</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트 예제: 텍스트에서 유튜브(YouTube) URL을 감지하고 해당 URL을 자동으로 플레이어로 전환</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>이 예제는 아래와 같이 게시판 등에서 글을 작성할 때 유튜브 주소를 추가하면, 해당 주소에서 유튜브 동영상 ID를 추출한 후 <code class="language-plaintext highlighter-rouge">iframe</code> 플레이어 형태로 변환합니다.</p>
@@ -937,16 +987,16 @@
 
 <p><a href="/assets/img/wp-content/uploads/2021/06/screenshot-2021-06-04-pm-9.11.11.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/06/screenshot-2021-06-04-pm-9.11.11.jpg" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-텍스트에서-유튜브-url을-가져오는-정규표현식을-작성합니다"><span class="me-2"><strong>1. 텍스트에서 유튜브 URL을 가져오는 정규표현식을 작성합니다.</strong></span><a href="#1-텍스트에서-유튜브-url을-가져오는-정규표현식을-작성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-텍스트에서-유튜브-url을-가져오는-정규표현식을-작성합니다"><span class="me-2"><strong>1. 텍스트에서 유튜브 URL을 가져오는 정규표현식을 작성합니다.</strong></span><a href="#1-텍스트에서-유튜브-url을-가져오는-정규표현식을-작성합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>// 유튜브 URL 찾는 패턴
-const youtubeUrl = /(http:|https:)?(\/\/)?(www\.)?(youtube.com|youtu.be)\/(watch|embed)?(\?v=|\/)?(\S+)?/g
+</pre></td><td class="rouge-code"><pre><span class="c1">// 유튜브 URL 찾는 패턴</span>
+<span class="kd">const</span> <span class="nx">youtubeUrl</span> <span class="o">=</span> <span class="sr">/</span><span class="se">(</span><span class="sr">http:|https:</span><span class="se">)?(\/\/)?(</span><span class="sr">www</span><span class="se">\.)?(</span><span class="sr">youtube.com|youtu.be</span><span class="se">)\/(</span><span class="sr">watch|embed</span><span class="se">)?(\?</span><span class="sr">v=|</span><span class="se">\/)?(\S</span><span class="sr">+</span><span class="se">)?</span><span class="sr">/g</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이렇게 하면 아래와 같이 유튜브 주소를 찾을 수 있습니다.</p>
@@ -955,7 +1005,7 @@ const youtubeUrl = /(http:|https:)?(\/\/)?(www\.)?(youtube.com|youtu.be)\/(watch
 
 <p> </p>
 
-<h5 id="2-해당-텍스트를-dom-으로부터-불러온-뒤-innerhtml을-replace-합니다"><span class="me-2"><strong>2. 해당 텍스트를 DOM 으로부터 불러온 뒤, innerHTML을 replace 합니다.</strong></span><a href="#2-해당-텍스트를-dom-으로부터-불러온-뒤-innerhtml을-replace-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-해당-텍스트를-dom-으로부터-불러온-뒤-innerhtml을-replace-합니다"><span class="me-2"><strong>2. 해당 텍스트를 DOM 으로부터 불러온 뒤, innerHTML을 replace 합니다.</strong></span><a href="#2-해당-텍스트를-dom-으로부터-불러온-뒤-innerhtml을-replace-합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-html highlighter-rouge"><div class="code-header">
         <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
@@ -993,7 +1043,7 @@ https://yㅇutu.be/J0dHN1yC0NI
 
 <p> </p>
 
-<h5 id="3-텍스트를-대체하는-함수를-만듭니다-youtubeparser"><span class="me-2"><strong>3. 텍스트를 대체하는 함수를 만듭니다. (youtubeParser)</strong></span><a href="#3-텍스트를-대체하는-함수를-만듭니다-youtubeparser" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-텍스트를-대체하는-함수를-만듭니다-youtubeparser"><span class="me-2"><strong>3. 텍스트를 대체하는 함수를 만듭니다. (youtubeParser)</strong></span><a href="#3-텍스트를-대체하는-함수를-만듭니다-youtubeparser" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1037,12 +1087,12 @@ https://yㅇutu.be/J0dHN1yC0NI
 
 <p> </p>
 
-<h5 id="4-유튜브-태그가-적용된-코드를-innerhtml에-적용합니다"><span class="me-2"><strong>4. 유튜브 태그가 적용된 코드를 innerHTML에 적용합니다.</strong></span><a href="#4-유튜브-태그가-적용된-코드를-innerhtml에-적용합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-유튜브-태그가-적용된-코드를-innerhtml에-적용합니다"><span class="me-2"><strong>4. 유튜브 태그가 적용된 코드를 innerHTML에 적용합니다.</strong></span><a href="#4-유튜브-태그가-적용된-코드를-innerhtml에-적용합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>content.innerHTML = wrappedContent
+</pre></td><td class="rouge-code"><pre><span class="nx">content</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">wrappedContent</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2013,6 +2063,12 @@ https://yㅇutu.be/J0dHN1yC0NI
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

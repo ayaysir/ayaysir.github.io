@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="리액트(React): 모달 팝업시 뒷배경(오버레이) 스크롤 되지 않게 하기" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="body 태그의 css를 변경합니다. position을 fixed로 하고, top의 위치를 현재 스크롤 위치로 설정한 뒤 overflow-y: scroll; width: 100%; 을 추가 지정하면 스크롤바로 인해 배경의 위치가 움직이지 않고도 스크롤 방지를 할 수 있습니다." />
-<meta property="og:description" content="body 태그의 css를 변경합니다. position을 fixed로 하고, top의 위치를 현재 스크롤 위치로 설정한 뒤 overflow-y: scroll; width: 100%; 을 추가 지정하면 스크롤바로 인해 배경의 위치가 움직이지 않고도 스크롤 방지를 할 수 있습니다." />
+<meta name="description" content="본문" />
+<meta property="og:description" content="본문" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8react-%EB%AA%A8%EB%8B%AC-%ED%8C%9D%EC%97%85%EC%8B%9C-%EB%92%B7%EB%B0%B0%EA%B2%BD%EC%98%A4%EB%B2%84%EB%A0%88%EC%9D%B4-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EB%90%98%EC%A7%80/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8react-%EB%AA%A8%EB%8B%AC-%ED%8C%9D%EC%97%85%EC%8B%9C-%EB%92%B7%EB%B0%B0%EA%B2%BD%EC%98%A4%EB%B2%84%EB%A0%88%EC%9D%B4-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EB%90%98%EC%A7%80/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="리액트(React): 모달 팝업시 뒷배경(오버레이) 스크롤 되지 않게 하기" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-04-10T00:00:00+09:00","datePublished":"2021-04-10T00:00:00+09:00","description":"body 태그의 css를 변경합니다. position을 fixed로 하고, top의 위치를 현재 스크롤 위치로 설정한 뒤 overflow-y: scroll; width: 100%; 을 추가 지정하면 스크롤바로 인해 배경의 위치가 움직이지 않고도 스크롤 방지를 할 수 있습니다.","headline":"리액트(React): 모달 팝업시 뒷배경(오버레이) 스크롤 되지 않게 하기","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8react-%EB%AA%A8%EB%8B%AC-%ED%8C%9D%EC%97%85%EC%8B%9C-%EB%92%B7%EB%B0%B0%EA%B2%BD%EC%98%A4%EB%B2%84%EB%A0%88%EC%9D%B4-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EB%90%98%EC%A7%80/"},"url":"https://ayaysir.github.io/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8react-%EB%AA%A8%EB%8B%AC-%ED%8C%9D%EC%97%85%EC%8B%9C-%EB%92%B7%EB%B0%B0%EA%B2%BD%EC%98%A4%EB%B2%84%EB%A0%88%EC%9D%B4-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EB%90%98%EC%A7%80/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-04-10T00:00:00+09:00","datePublished":"2021-04-10T00:00:00+09:00","description":"본문","headline":"리액트(React): 모달 팝업시 뒷배경(오버레이) 스크롤 되지 않게 하기","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8react-%EB%AA%A8%EB%8B%AC-%ED%8C%9D%EC%97%85%EC%8B%9C-%EB%92%B7%EB%B0%B0%EA%B2%BD%EC%98%A4%EB%B2%84%EB%A0%88%EC%9D%B4-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EB%90%98%EC%A7%80/"},"url":"https://ayaysir.github.io/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8react-%EB%AA%A8%EB%8B%AC-%ED%8C%9D%EC%97%85%EC%8B%9C-%EB%92%B7%EB%B0%B0%EA%B2%BD%EC%98%A4%EB%B2%84%EB%A0%88%EC%9D%B4-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EB%90%98%EC%A7%80/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,21 +573,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -599,8 +591,56 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -617,7 +657,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>리액트(React): 모달 팝업시 뒷배경(오버레이) 스크롤 되지 않게 하기</h1>
     
@@ -691,7 +731,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="317 words"
+  title="324 words"
 >
   <em>1 min</em> read</span>
 
@@ -701,16 +741,42 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">리액트(React): 모달 팝업시 뒷배경(오버레이) 스크롤 되지 않게 하기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">리액트(React): 모달 팝업시 뒷배경(오버레이) 스크롤 되지 않게 하기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p><code class="language-plaintext highlighter-rouge">body</code> 태그의 css를 변경합니다. <code class="language-plaintext highlighter-rouge">position</code>을 <code class="language-plaintext highlighter-rouge">fixed</code>로 하고, <code class="language-plaintext highlighter-rouge">top</code>의 위치를 현재 스크롤 위치로 설정한 뒤 <code class="language-plaintext highlighter-rouge">overflow-y: scroll; width: 100%;</code> 을 추가 지정하면 스크롤바로 인해 배경의 위치가 움직이지 않고도 스크롤 방지를 할 수 있습니다.</p>
+    <h2 id="본문"><span class="me-2"><strong>본문</strong></span><a href="#본문" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><code class="language-plaintext highlighter-rouge">body</code> 태그의 css를 변경합니다. <code class="language-plaintext highlighter-rouge">position</code>을 <code class="language-plaintext highlighter-rouge">fixed</code>로 하고, <code class="language-plaintext highlighter-rouge">top</code>의 위치를 현재 스크롤 위치로 설정한 뒤 <code class="language-plaintext highlighter-rouge">overflow-y: scroll; width: 100%;</code> 을 추가 지정하면 스크롤바로 인해 배경의 위치가 움직이지 않고도 스크롤 방지를 할 수 있습니다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">useEffect</code>를 사용해 css를 변경하며, 모달이 사라질 때에는 <code class="language-plaintext highlighter-rouge">useEffect</code>의 <code class="language-plaintext highlighter-rouge">return</code>을 사용해 <code class="language-plaintext highlighter-rouge">body</code>의 <code class="language-plaintext highlighter-rouge">cssText</code>를 리셋시킨 다음 <code class="language-plaintext highlighter-rouge">window,scroll</code>을 이용해 현재 스크롤 위치로 강제 이동시킵니다. 참고로 <code class="language-plaintext highlighter-rouge">useEffect</code>의 <code class="language-plaintext highlighter-rouge">return</code> 절은 컴포넌트가 <code class="language-plaintext highlighter-rouge">unmount</code> 될 때 호출됩니다.</p>
 
-<p>스크롤 방지 모달 스크롤 방지 스크롤 안되게 리액트 모달 스크롤 안되게</p>
+<p><span style="font-size: 2pt;">스크롤 방지 모달 스크롤 방지 스크롤 안되게 리액트 모달 스크롤 안되게</span></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h2 id="코드"><span class="me-2"><strong>코드</strong></span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -741,45 +807,45 @@
 28
 29
 30
-</pre></td><td class="rouge-code"><pre>import React, { useEffect } from 'react';
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
 
-export const Modal = (props) =&gt; {
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Modal</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 
-  // 모달 오버레이에서 스크롤 방지
-  useEffect(() =&gt; {
-    document.body.style.cssText = `
+  <span class="c1">// 모달 오버레이에서 스크롤 방지</span>
+  <span class="nf">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">cssText</span> <span class="o">=</span> <span class="s2">`
       position: fixed; 
-      top: -${window.scrollY}px;
+      top: -</span><span class="p">${</span><span class="nb">window</span><span class="p">.</span><span class="nx">scrollY</span><span class="p">}</span><span class="s2">px;
       overflow-y: scroll;
-      width: 100%;`;
-    return () =&gt; {
-      const scrollY = document.body.style.top;
-      document.body.style.cssText = '';
-      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-    };
-  }, []);
+      width: 100%;`</span><span class="p">;</span>
+    <span class="k">return </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">scrollY</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span><span class="p">;</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">cssText</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nf">scrollTo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">parseInt</span><span class="p">(</span><span class="nx">scrollY</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">};</span>
+  <span class="p">},</span> <span class="p">[]);</span>
 
-  return (
-    &lt;&gt;
-      {isDisplay &amp;&amp; (
-        `&lt;Container&gt;
+  <span class="k">return </span><span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="si">{</span><span class="nx">isDisplay</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
+        <span class="s2">`&lt;Container&gt;
           &lt;ModalOverlay /&gt;
           &lt;ModalWindow /&gt;
-        &lt;/Container&gt;`
-      )}
-    &lt;/&gt;
-  );
-};
+        &lt;/Container&gt;`</span>
+      <span class="p">)</span><span class="si">}</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="동작화면"><span class="me-2"><strong>동작화면</strong></span><a href="#동작화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2021/04/screenshot-2021-04-10-pm-4.51.38.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/04/screenshot-2021-04-10-pm-4.51.38.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="참고"><span class="me-2"><strong>참고</strong></span><a href="#참고" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="https://medium.com/@bestseob93/%ED%9A%A8%EC%9C%A8%EC%A0%81%EC%9D%B8-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%AA%A8%EB%8B%AC-react-modal-%EB%A7%8C%EB%93%A4%EA%B8%B0-bd003458e9d">효율적인 리액트 모달 만들기</a></li>
@@ -1751,6 +1817,12 @@ export const Modal = (props) =&gt; {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

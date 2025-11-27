@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1021,10 +1028,118 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -1051,7 +1166,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): 오프라인 웹 페이지 표시하기 (스토리보드)</h1>
     
@@ -1125,7 +1240,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1088 words"
+  title="1118 words"
 >
   <em>6 min</em> read</span>
 
@@ -1135,53 +1250,83 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): 오프라인 웹 페이지 표시하기 (스토리보드)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): 오프라인 웹 페이지 표시하기 (스토리보드)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>뷰 위에 오프라인으로 저장된 HTML 페이지를 표시하는 예제입니다.</p>
 
-<p>1) <code class="language-plaintext highlighter-rouge">WebKit View</code>를 뷰 위에 추가합니다.</p>
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="1-webkit-view-추가"><span class="me-2">1) WebKit View 추가</span><a href="#1-webkit-view-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">WebKit View</code>를 뷰 위에 추가합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.31.36.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.31.36.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p>2) 뷰 컨트롤러 소스 파일에 웹킷 뷰를 연결한 <code class="language-plaintext highlighter-rouge">@IBOutlet</code> 변수를 추가합니다.</p>
+<h3 id="2-iboutlet-추가"><span class="me-2">2) @IBOutlet 추가</span><a href="#2-iboutlet-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>뷰 컨트롤러 소스 파일에 웹킷 뷰를 연결한 <code class="language-plaintext highlighter-rouge">@IBOutlet</code> 변수를 추가합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.35.30.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.35.30.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p>3) 다음 프로젝트 폴더에서 마우스 오른쪽 버튼을 누른 뒤 <code class="language-plaintext highlighter-rouge">Show in Finder</code> 메뉴를 선택해 파인더 탐색기를 엽니다.</p>
+<h3 id="3-오프라인-html-파일-추가"><span class="me-2">3) 오프라인 HTML 파일 추가</span><a href="#3-오프라인-html-파일-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>다음 프로젝트 폴더에서 마우스 오른쪽 버튼을 누른 뒤 <code class="language-plaintext highlighter-rouge">Show in Finder</code> 메뉴를 선택해 파인더 탐색기를 엽니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.37.06.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.37.06.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p>4) 웹페이지 파일을 담을 새로운 폴더를 생성합니다.</p>
+<p>웹페이지 파일을 담을 새로운 폴더를 생성합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.37.43.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.37.43.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p>5) 다음 이 폴더를 프로젝트 내부로 드래그합니다.</p>
+<p>다음 이 폴더를 프로젝트 내부로 드래그합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.38.30.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.38.30.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p>6) 그러면 다음 창이 뜨는데 여기서 <code class="language-plaintext highlighter-rouge">Create folder references</code>를 선택합니다. 이 옵션을 선택해야 이미지 파일 등의 <code class="language-plaintext highlighter-rouge">static</code> 파일을 표시할 수 있습니다.</p>
+<p>그러면 다음 창이 뜨는데 여기서 <code class="language-plaintext highlighter-rouge">Create folder references</code>를 선택합니다. 이 옵션을 선택해야 이미지 파일 등의 <code class="language-plaintext highlighter-rouge">static</code> 파일을 표시할 수 있습니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.39.03.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.39.03.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p>7) 완료하였다면 다음과 같은 파란색 폴더 모양의 폴더 레퍼런스가 생성되었습니다.</p>
+<p>완료하였다면 다음과 같은 파란색 폴더 모양의 폴더 레퍼런스가 생성되었습니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.39.30.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-26-am-12.39.30.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p>8) 위 폴더에 <code class="language-plaintext highlighter-rouge">index.html</code> 파일과 이미지 파일등을 생성한 뒤, 페이지를 작성합니다.</p>
+<p>위 폴더에 <code class="language-plaintext highlighter-rouge">index.html</code> 파일과 이미지 파일등을 생성한 뒤, 페이지를 작성합니다.</p>
 
 <div class="language-html highlighter-rouge"><div class="code-header">
         <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
@@ -1233,7 +1378,9 @@
 
 <p> </p>
 
-<p>9) 뷰 컨트롤러에서 해당 뷰 컨트롤러에 대한 <code class="language-plaintext highlighter-rouge">extension</code> 코드를 작성합니다.</p>
+<h3 id="4-loadhelppage-작성"><span class="me-2">4) loadHelpPage() 작성</span><a href="#4-loadhelppage-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>뷰 컨트롤러에서 해당 뷰 컨트롤러에 대한 <code class="language-plaintext highlighter-rouge">extension</code> 코드를 작성합니다.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1279,7 +1426,7 @@
   <li><code class="language-plaintext highlighter-rouge">loadFileURL</code>은 로컬 웹 페이지를 읽어옵니다. <code class="language-plaintext highlighter-rouge">URL</code>을 기입합니다. <code class="language-plaintext highlighter-rouge">allowingReadAccessTo</code> 부분은 동일한 <code class="language-plaintext highlighter-rouge">URL</code>을 지정하면 해당 파일만 접근할 수 있고, 다른 디렉토리를 지정하면 해당 디렉토리 내에 있는 파일에 접근할 수 있는 권한을 가지게 됩니다.</li>
 </ul>
 
-<p> </p>
+<h3 id="viewdidload에서-loadhelppage-실행"><span class="me-2">ViewDidLoad에서 loadHelpPage() 실행</span><a href="#viewdidload에서-loadhelppage-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">viewDidLoad()</code> 등에서 위 함수를 실행합니다.</p>
 
@@ -1298,6 +1445,7 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
+<h2 id="실행-결과"><span class="me-2">실행 결과</span><a href="#실행-결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>시뮬레이터를 실행하면 다음과 같이 웹 페이지가 열리게 됩니다.</p>
 
@@ -1305,14 +1453,14 @@
 
 <p>HTML과 CSS를 적용할 수 있습니다. 자바스크립트가 동작하려면 별도 허용 절차가 필요하며 꽤 복잡하기 때문에 여기서는 다루지 않겠습니다.</p>
 
-<p> </p>
+<h2 id="추가-고려-사항"><span class="me-2">추가 고려 사항</span><a href="#추가-고려-사항" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>추가 사항으로, 로컬 웹페이지에서 외부 링크는 해당 웹킷뷰 내에 표시하는 것보다 외부 브라우저에서 표시하는 것이 적당하다고 생각됩니다. 불편하기도 하고 앱스토어 심사 시 외부 웹에 대한 무제한 액세스 허용으로 인식할 수 있기 때문입니다.</p>
 
 <p>하지만 링크 태그에 <code class="language-plaintext highlighter-rouge">target="_blank"</code> 등을 적용해도 작동하지 않습니다. 하이퍼링크를 외부 브라우저에서 표시하려면 다음 코드를 추가해야 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1324,17 +1472,17 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre> // 링크 클릭시 외부 사파리 브라우저에서 열리게 하기
- func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -&gt; Void) {
-     guard case .linkActivated = navigationAction.navigationType,
-           let url = navigationAction.request.url
-     else {
-         decisionHandler(.allow)
-         return
-     }
-     decisionHandler(.cancel)
-     UIApplication.shared.open(url, options: [:], completionHandler: nil)
-}
+</pre></td><td class="rouge-code"><pre> <span class="c1">// 링크 클릭시 외부 사파리 브라우저에서 열리게 하기</span>
+ <span class="kd">func</span> <span class="nf">webView</span><span class="p">(</span><span class="n">_</span> <span class="nv">webView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="p">,</span> <span class="n">decidePolicyFor</span> <span class="nv">navigationAction</span><span class="p">:</span> <span class="kt">WKNavigationAction</span><span class="p">,</span> <span class="nv">decisionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">WKNavigationActionPolicy</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">guard</span> <span class="k">case</span> <span class="o">.</span><span class="n">linkActivated</span> <span class="o">=</span> <span class="n">navigationAction</span><span class="o">.</span><span class="n">navigationType</span><span class="p">,</span>
+           <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="n">navigationAction</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span>
+     <span class="k">else</span> <span class="p">{</span>
+         <span class="nf">decisionHandler</span><span class="p">(</span><span class="o">.</span><span class="n">allow</span><span class="p">)</span>
+         <span class="k">return</span>
+     <span class="p">}</span>
+     <span class="nf">decisionHandler</span><span class="p">(</span><span class="o">.</span><span class="n">cancel</span><span class="p">)</span>
+     <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[:],</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2310,6 +2458,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

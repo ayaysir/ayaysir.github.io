@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,10 +573,107 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -596,7 +700,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: 콘솔 로그(console.log)의 내용을 브라우저 HTML 내에 표시하기</h1>
     
@@ -670,7 +774,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="603 words"
+  title="614 words"
 >
   <em>3 min</em> read</span>
 
@@ -680,19 +784,45 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: 콘솔 로그(console.log)의 내용을 브라우저 HTML 내에 표시하기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: 콘솔 로그(console.log)의 내용을 브라우저 HTML 내에 표시하기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>자바스크립트는 아무 곳에서나 시스템의 변수, 함수, 객체들을 맘대로 덮어쓸 수 있다는 문제점이 있지만, 그 문제점을 역으로 이용하여 콘솔 로그를 브라우저 내에 표시하는 것이 가능합니다.</p>
 
+<h2 id="절차"><span class="me-2">절차</span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="1"><span class="me-2">1</span><a href="#1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <p>먼저 <code class="language-plaintext highlighter-rouge">body</code> 태그 내에 콘솔 로그를 표시할 영역을 생성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;pre id="console"&gt;&lt;/pre&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;pre</span> <span class="na">id=</span><span class="s">"console"</span><span class="nt">&gt;&lt;/pre&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h3 id="2"><span class="me-2">2 </span><a href="#2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>다음 자바스크립트에서 위의 <code class="language-plaintext highlighter-rouge">pre</code> 태그를 불러옵니다.</p>
 
@@ -701,6 +831,8 @@
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">consoleDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">console</span><span class="dl">"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="3"><span class="me-2">3</span><a href="#3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>아래의 <code class="language-plaintext highlighter-rouge">consoleToHtml</code> 함수를 작성합니다.</p>
 
@@ -734,34 +866,38 @@
   <li><code class="language-plaintext highlighter-rouge">"\n"</code> - 다음 줄로 줄바꿈합니다.</li>
 </ul>
 
-<p> </p>
+<h3 id="4"><span class="me-2">4</span><a href="#4" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>이 함수를 기존의 <code class="language-plaintext highlighter-rouge">console.log</code>에 덮어씌웁니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>window.console.log = consoleToHtml
+</pre></td><td class="rouge-code"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="o">=</span> <span class="nx">consoleToHtml</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">console.log</code>로만 적어도 작동하지만 경각심(?)을 위해 <code class="language-plaintext highlighter-rouge">window</code>의 내부 <code class="language-plaintext highlighter-rouge">console</code> 이라는 것을 명시했습니다.</li>
 </ul>
 
-<p> </p>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>코드를 종합하면 다음과 같습니다.</p>
 
-<p>https://gist.github.com/ayaysir/041784bd269ddb37b48a01dde5dc5e6c</p>
+<!-- https://gist.github.com/ayaysir/041784bd269ddb37b48a01dde5dc5e6c -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/041784bd269ddb37b48a01dde5dc5e6c.js"> </script>
 
 <p> </p>
+
+<h2 id="동작-화면"><span class="me-2">동작 화면</span><a href="#동작-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-pm-9.03.14.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/08/screenshot-2021-08-28-pm-9.03.14.jpg" alt="" loading="lazy"></a></p>
 
 <p>첫 번째 로그에서 알 수 있듯이 콘솔 로그에는 단순히 내용을 표시하는 기능뿐만 아니라 <code class="language-plaintext highlighter-rouge">printf</code>처럼 포맷을 지정할 수 있는 기능, css를 지정할 수 있는 고급 기능도 있지만 이 예제에는 반영되지 않았습니다. 실제 필요 여부에 따라 이러한 추가 기능을 구현할지 생략할지 결정할 수 있습니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=612">자바스크립트: 콘솔 로그(console.log) 사용법, 로그에 CSS 적용, 로그 그룹화 하기</a></li>
+  <li><a href="/posts/자바스크립트-콘솔-로그에-css-적용-그룹화-하기/">자바스크립트: 콘솔 로그(console.log) 사용법, 로그에 CSS 적용, 로그 그룹화 하기</a></li>
 </ul>
 
   </div>
@@ -1728,6 +1864,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
