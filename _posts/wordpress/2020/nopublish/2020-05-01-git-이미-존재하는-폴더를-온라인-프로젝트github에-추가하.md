@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Git(깃): 이미 존재하는 폴더를 온라인 프로젝트(GitHub)에 추가하기"
 date: 2020-05-01
 categories: 

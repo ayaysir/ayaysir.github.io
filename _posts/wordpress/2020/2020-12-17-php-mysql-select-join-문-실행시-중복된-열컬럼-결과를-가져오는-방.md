@@ -22,7 +22,7 @@ categories:
 
 이것에 대한 SQL을 실행하려고 합니다.
 
-```
+```sql
 SELECT * FROM news JOIN users ON news.user = user.id
 ```
 
@@ -34,7 +34,7 @@ PHP에서 결과를 얻을 때 컬럼 이름을 `$row['컬럼이름']`으로 가
 
 **(1) 첫 번째 방법: 별칭(alias)을 기입한 컬럼명을 일일히 지정**
 
-```
+```sql
 SELECT news.id AS newsId, user.id AS userId, [나머지_컬럼들] 
 FROM news JOIN users ON news.user = user.id
 ```
@@ -43,7 +43,7 @@ FROM news JOIN users ON news.user = user.id
 
 **(2) 두 번째 방법: `*` 을 통해 컬럼 전부를 가져온 뒤, 필요한 컬럼만 뒤에 별칭을 기입해 지정 (추천)**
 
-```
+```sql
 SELECT *, user.id AS user_id 
 FROM news JOIN users ON news.user = user.id
 ```

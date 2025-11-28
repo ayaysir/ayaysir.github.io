@@ -31,7 +31,7 @@ public class Throwable implements Serializable {
 
 다음과 같이 스택오버플로우 에러(error)를 무조건 발생시키는 코드를 예를 들면
 
-```
+```java
 package blog.exception;
 
 public class ThrowableTest1 {
@@ -76,7 +76,7 @@ try {
 
 **3\. Exception** (전통적인 `try ~ catch`문)
 
-```
+```java
 package blog.exception;
 
 import java.io.BufferedWriter;
@@ -132,7 +132,7 @@ finally 내 구문은 항상 실행되는 부분으로 try문이 정상적으로
 
 **4\. 예외 던지기** (throw, throws)
 
-```
+```java
 package blog.exception;
 
 import java.io.FileWriter;
@@ -164,7 +164,7 @@ public class ThrowsEx {
 
 위 코드를 보면(위 코드는 복잡한 프로그램을 가정한 것이다), in4에서 예외처리가 강제되는 부분이 나온다(FileWriter). 예외처리를 in4 에서 할 수도 있으나, main에서 예외처리를 하기를 원한다면 다음과 같이 예외를 전가할 수 있다. 이것을 전가 또는 말 그대로 던지기(`throws`)라 한다. 다음 코드는 폭탄돌리기 하듯이 예외를 떠넘기다가 main 메소드에서 예외처리를 하는 부분이다.
 
-```
+```java
 package blog.exception;
 
 import java.io.FileWriter;
@@ -208,7 +208,7 @@ public class ThrowsEx {
 
 throws 말고 `throw`도 있는데, 둘은 엄연히 다른 명령어이며 사용법은 다음과 같다.
 
-```
+```java
 package blog.exception;
 
 import java.util.Scanner;
@@ -283,7 +283,7 @@ public int insertMember(String id, String password, int gender, String address)
 
 throw를 이용해 예외를 직접 만들어 볼 수도 있으며, 이것까지 다루면 범위가 너무 나가서 예제만 올림
 
-```
+```java
 package blog.exception;
 
 public class MonsterException extends Exception {
@@ -331,7 +331,7 @@ blog.exception.MonsterException: MonsterException이 발샗하였다: #@%@#%
 
 위에서 close 관련 이야기가 나오기도 했고, 앞의 예제 다량이 컴파일 경고를 발생시키는데 `close` 처리를 하지 않았기 때문이다. 몇몇 I/O 관련 객체는 close가 필요한데 close를 안하면 자원 낭비 때문에 close는 꼭 해주는것이 좋다. 새로 나온 `try with resources` 구문은 try 구문이 끝나면 예외발생 여부에 관계없이 close가 필요한 객체를 **저절로 클로즈**시켜준다. 앞의 전통적인 Exception 예외를 바꾸면 다음과 같다.
 
-```
+```java
 package blog.exception;
 
 import java.io.BufferedWriter;

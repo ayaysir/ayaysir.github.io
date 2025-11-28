@@ -169,7 +169,7 @@ app:
 
 Spring Boot의 `@ConfigurationProperties` 기능을 사용하여 앱 접두사가 붙은 모든 구성을 POJO(Plain Old Java Object) 클래스에 바인딩해 보겠습니다.
 
-```
+```java
 package com.example.springsocial.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -232,7 +232,7 @@ public class AppProperties {
 
 `@EnableConfigurationProperties` 어노테이션을 추가하여 구성 속성을 활성화(enable)해야 합니다. 메인 애플리케이션 클래스 `SpringSocialApplication.java`를 열고 다음과 같은 어노테이션을 추가하세요.
 
-```
+```java
 package com.example.springsocial;
 
 import com.example.springsocial.config.AppProperties;
@@ -256,7 +256,7 @@ public class SpringSocialApplication {
 
 프론트엔드 클라이언트가 다른 출처의 API에 액세스 할 수 있도록 CORS를 활성화하겠습니다. 다음 구성에서 모든 origin을 활성화했습니다. 하지만 프로덕션 애플리케이션에서는 더 엄격하게 만들어야합니다.
 
-```
+```java
 package com.example.springsocial.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -286,7 +286,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 이제 애플리케이션의 Entity 클래스를 만들어 보겠습니다. 다음은 `User` 클래스의 정의입니다.
 
-```
+```java
 package com.example.springsocial.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -332,7 +332,7 @@ public class User {
 
 `User` 클래스에는 인증 공급자에 대한 정보가 포함되어 있습니다. 다음은 `AuthProvider` enum의 정의입니다.
 
-```
+```java
 package com.example.springsocial.model;
 
 public enum  AuthProvider {
@@ -353,7 +353,7 @@ public enum  AuthProvider {
 
 데이터베이스에서 데이터에 액세스하기 위한 리포지토리 계층을 만들어 보겠습니다. 다음 `UserRepository` 인터페이스는 사용자 엔티티에 대한 데이터베이스 기능을 제공합니다. [Spring-Data-JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/) 덕분에 여기에 많은 코드를 작성할 필요가 없습니다.
 
-```
+```java
 package com.example.springsocial.repository;
 
 import com.example.springsocial.model.User;
@@ -384,7 +384,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 먼저 모든 구성을 살펴본 다음, 각 구성에 대한 세부 정보를 하나씩 살펴 보겠습니다.
 
-```
+```java
 package com.example.springsocial.config;
 
 import com.example.springsocial.security.*;
@@ -554,7 +554,7 @@ OAuth2 프로토콜은 CSRF 공격을 방지하기 위해 `state` 매개 변수 
 
 단기(short-lived) 쿠키에 상태와 `redirect_uri`를 저장할 것입니다. 다음 클래스는 인증 요청을 쿠키에 저장하고 검색하는 기능을 제공합니다.
 
-```
+```java
 package com.example.springsocial.security.oauth2;
 
 import com.example.springsocial.util.CookieUtils;
@@ -618,7 +618,7 @@ public class HttpCookieOAuth2AuthorizationRequestRepository implements Authoriza
 
 이 방법에서는 먼저 OAuth2 제공 업체에서 사용자의 세부 정보를 가져옵니다. 동일한 이메일을 사용하는 사용자가 이미 데이터베이스에 있으면 세부 정보를 업데이트하고, 그렇지 않으면 새 사용자를 등록합니다.
 
-```
+```java
 package com.example.springsocial.security.oauth2;
 
 import com.example.springsocial.exception.OAuth2AuthenticationProcessingException;
@@ -715,7 +715,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
 **OAuth2UserInfo**
 
-```
+```java
 package com.example.springsocial.security.oauth2.user;
 
 import java.util.Map;
@@ -745,7 +745,7 @@ public abstract class OAuth2UserInfo {
 
 **FacebookOAuth2UserInfo**
 
-```
+```java
 package com.example.springsocial.security.oauth2.user;
 
 import java.util.Map;
@@ -790,7 +790,7 @@ public class FacebookOAuth2UserInfo extends OAuth2UserInfo {
 
 **GoogleOAuth2UserInfo**
 
-```
+```java
 package com.example.springsocial.security.oauth2.user;
 
 import java.util.Map;
@@ -828,7 +828,7 @@ public class GoogleOAuth2UserInfo extends OAuth2UserInfo {
 
 **GithubOAuth2UserInfo**
 
-```
+```java
 package com.example.springsocial.security.oauth2.user;
 
 import java.util.Map;
@@ -865,7 +865,7 @@ public class GithubOAuth2UserInfo extends OAuth2UserInfo {
 
 **OAuth2UserInfoFactory**
 
-```
+```java
 package com.example.springsocial.security.oauth2.user;
 
 import com.example.springsocial.exception.OAuth2AuthenticationProcessingException;
@@ -901,7 +901,7 @@ public class OAuth2UserInfoFactory {
 
 이 메서드에서는 몇 가지 유효성 검사를 수행하고, JWT 인증 토큰을 만들고, 쿼리 문자열에 추가 된 JWT 토큰을 사용하여 클라이언트가 지정한 `redirect_uri`로 사용자를 리디렉션합니다.
 
-```
+```java
 package com.example.springsocial.security.oauth2;
 
 import com.example.springsocial.config.AppProperties;
@@ -1001,7 +1001,7 @@ OAuth2 인증 중 오류가 발생하면 Spring Security는 `SecurityConfig`에�
 
 쿼리 문자열에 추가된 오류 메시지와 함께 사용자를 프론트엔드 클라이언트로 보냅니다.
 
-```
+```java
 package com.example.springsocial.security.oauth2;
 
 import com.example.springsocial.util.CookieUtils;
@@ -1056,7 +1056,7 @@ public class OAuth2AuthenticationFailureHandler extends SimpleUrlAuthenticationF
 
 ##### **1\. AuthController**
 
-```
+```java
 package com.example.springsocial.controller;
 
 import com.example.springsocial.exception.BadRequestException;
@@ -1146,7 +1146,7 @@ public class AuthController {
 
 ##### **2\. CustomUserDetailsService**
 
-```
+```java
 package com.example.springsocial.security;
 
 import com.example.springsocial.exception.ResourceNotFoundException;
@@ -1197,7 +1197,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 이 클래스에는 Json 웹 토큰을 생성하고 인증(verify)하는 코드가 포함되어 있습니다.
 
-```
+```java
 package com.example.springsocial.security;
 
 import com.example.springsocial.config.AppProperties;
@@ -1269,7 +1269,7 @@ public class TokenProvider {
 
 이 클래스는 리퀘스트에서 JWT 인증 토큰을 읽어 인증(verify)하고, 토큰이 유효한 경우 Spring Security의 `SecurityContext`를 설정하는 데 사용됩니다.
 
-```
+```java
 package com.example.springsocial.security;
 
 import org.slf4j.Logger;
@@ -1339,7 +1339,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
 이 클래스는 사용자가 인증없이 보안된 리소스에 액세스하려고 할 때 호출됩니다. 이 경우 `401 Unauthorized` 응답만 반환합니다.
 
-```
+```java
 package com.example.springsocial.security;
 
 import org.slf4j.Logger;
@@ -1373,7 +1373,7 @@ public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
 `UserPrincipal` 클래스는 인증된 스프링 시큐리티의 principal(본인의 정보)를 나타냅니다. 인증된 사용자의 세부 사항을 포함합니다.
 
-```
+```java
 package com.example.springsocial.security;
 
 import com.example.springsocial.model.User;
@@ -1484,7 +1484,7 @@ public class UserPrincipal implements OAuth2User, UserDetails {
 
 현재 인증된 사용자의 principald을 컨트롤러에 삽입하는 데 사용할 수있는 [메타 어노테이션](https://lng1982.tistory.com/89)입니다.
 
-```
+```java
 package com.example.springsocial.security;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -1505,7 +1505,7 @@ public @interface CurrentUser {
 
 `UserController` 클래스에는 현재 인증된 사용자의 세부 정보를 가져 오는 보호된(protected) API가 포함되어 있습니다.
 
-```
+```java
 package com.example.springsocial.controller;
 
 import com.example.springsocial.exception.ResourceNotFoundException;
@@ -1545,7 +1545,7 @@ public class UserController {
 
 ##### **CookieUtils**
 
-```
+```java
 package com.example.springsocial.util;
 
 import org.springframework.util.SerializationUtils;
@@ -1615,7 +1615,7 @@ public class CookieUtils {
 
 ##### **1\. LoginRequest**
 
-```
+```java
 package com.example.springsocial.payload;
 
 import javax.validation.constraints.Email;
@@ -1637,7 +1637,7 @@ public class LoginRequest {
 
 ##### **2. SignUpRequest**
 
-```
+```java
 package com.example.springsocial.payload;
 
 import javax.validation.constraints.Email;
@@ -1663,7 +1663,7 @@ public class SignUpRequest {
 
 ##### **3\. AuthResponse**
 
-```
+```java
 package com.example.springsocial.payload;
 
 public class AuthResponse {
@@ -1682,7 +1682,7 @@ public class AuthResponse {
 
 ##### **4.ApiResponse**
 
-```
+```java
 package com.example.springsocial.payload;
 
 public class ApiResponse {
@@ -1708,7 +1708,7 @@ public class ApiResponse {
 
 ##### **1\. BadRequestExceotion**
 
-```
+```java
 package com.example.springsocial.exception;
 
 import org.springframework.http.HttpStatus;
@@ -1730,7 +1730,7 @@ public class BadRequestException extends RuntimeException {
 
 ##### **2. ResourceNotFoundException**
 
-```
+```java
 package com.example.springsocial.exception;
 
 import org.springframework.http.HttpStatus;
@@ -1767,7 +1767,7 @@ public class ResourceNotFoundException extends RuntimeException {
 
 ##### **3. OAuth2AuthenticationProcessingException**
 
-```
+```java
 package com.example.springsocial.exception;
 
 import org.springframework.security.core.AuthenticationException;

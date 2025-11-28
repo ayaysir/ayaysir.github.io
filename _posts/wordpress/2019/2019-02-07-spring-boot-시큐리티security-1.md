@@ -269,7 +269,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 메인 스프링 애플리케이션인 **SecurityApplication**은 따로 변경하지 않고, **SecurityConfig** 클래스를 생성합니다.
 
-```
+```java
 package com.example.security;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -290,7 +290,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 컨트롤러인 **TestController** 도 작성합니다.
 
-```
+```java
 package com.example.security;
 
 import org.springframework.stereotype.Controller;
@@ -329,7 +329,7 @@ public class TestController {
 
 **SecurityConfig**: `withUser` 부분은 사용자를 추가하는 부분이고 `roles`는 그 이름으로 된 역할을 부여합니다. **WebSecurityConfigurerAdapter**를 상속받았으므로 `configure` 메소드를 반드시 오버라이딩 해야 합니다. 주의할 점은 암호를 인코딩하는 부분인 `passwordEncoder`를 사용하지 않으면 에러를 유발합니다. (`{noop}`을 쓰는 다른 방법도 있는데 여기서는 다루지 않습니다.)
 
-```
+```java
 package com.example.security;
 
 import org.springframework.context.annotation.Bean;

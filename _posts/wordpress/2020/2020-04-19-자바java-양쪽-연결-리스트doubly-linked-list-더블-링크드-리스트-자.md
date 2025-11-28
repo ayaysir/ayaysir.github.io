@@ -10,11 +10,11 @@ tags:
   - "자바"
 ---
 
-#### **연결 리스트 (자바 공식 제공)**
+## **연결 리스트 (자바 공식 제공)**
 
 `ArrayList()`와 사용법은 거의 같습니다. 다만 내부 동작 방식이 다릅니다.
 
-```
+```java
 package blog.dblinkedlist;
 
 import java.util.LinkedList;
@@ -51,9 +51,10 @@ public class LinkedListTest {
 
  
 
-#### **양쪽 연결 리스트 (알고리즘 학습용 예제)**
+## **양쪽 연결 리스트 (알고리즘 학습용 예제)**
 
-https://gist.github.com/ayaysir/c0f3e067fea9ec47d255f5fa1f116dc7
+<!-- https://gist.github.com/ayaysir/c0f3e067fea9ec47d255f5fa1f116dc7 -->
+{% gist "c0f3e067fea9ec47d255f5fa1f116dc7" %}
 
  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-19-pm-5.09.40.png)
 

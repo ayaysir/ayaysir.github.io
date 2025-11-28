@@ -8,11 +8,14 @@ tags:
   - "swift"
 ---
 
-출처: [바로가기](https://blog.naver.com/go4693/221401549375)
+> 출처: [바로가기](https://blog.naver.com/go4693/221401549375)
 
-##### **Swift에서 GET, POST 로 HTTP 네트워크 정보 주고받기**
+**Swift에서 GET, POST 로 HTTP 네트워크 정보 주고받기**
 
-GET으로 받아오기는 `String(contentsOf: url!)`, POST로 전송은 `URLSession.shared.dataTask(with: request){...}`. 아래 코드는 Swift Playground에서 테스트 되었습니다.
+- GET으로 받아오기는 `String(contentsOf: url!)`, 
+- POST로 전송은 `URLSession.shared.dataTask(with: request){...}`. 
+
+아래 코드는 Swift Playground에서 테스트 되었습니다.
 
 ```swift
 import UIKit

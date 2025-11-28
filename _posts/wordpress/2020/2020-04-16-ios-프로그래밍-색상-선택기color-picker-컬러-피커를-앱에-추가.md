@@ -8,15 +8,14 @@ tags:
   - "swift"
 ---
 
-원문 [바로가기](https://stackoverflow.com/questions/21981640/add-a-color-picker-to-an-ios-app)
+> 원문 [바로가기](https://stackoverflow.com/questions/21981640/add-a-color-picker-to-an-ios-app)
 
-* * *
 
 안타깝게도 iOS용 색상 선택기는 내장되어 있지 않습니다. 주로 타사 라이브러리 또는 프로젝트를 사용합니다만, 가능한 경우 다른 라이브러리를 피하는 것이 좋습니다.
 
  
 
-#### **나만의 색상 선택기(Color Picker; 컬러 피커) 만들기**
+## **나만의 색상 선택기(Color Picker; 컬러 피커) 만들기**
 
 컬러 파커를 만들 수 있는 많은 방법이 있지만, 여기에 개요를 보여주는 단순한 예제가 있습니다. 스토리 보드를 다음과 같이 설정했습니다.
 
@@ -66,7 +65,7 @@ class ViewController: UIViewController {
 
  
 
-#### **변화 (Variations)**
+## **변화 (Variations)**
 
 이미지 위에 슬라이더를 놓고 트랙 색조(track tints)를 투명하게 설정하십시오. 이것으로 서브클래스를 만들지 않고도 커스텀 UI의 느낌을 얻을 수 있습니다.
 

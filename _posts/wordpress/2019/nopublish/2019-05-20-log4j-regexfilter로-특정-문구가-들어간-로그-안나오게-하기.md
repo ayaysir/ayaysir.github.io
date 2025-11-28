@@ -21,7 +21,7 @@ Log4j.xml을 찾아서 `<Logger>` 밑에 다음을 추가한다.
 
 `<RegexFilter regex=".*[안보이게 할 문구].*" onMatch="DENY" onMismatch="NEUTRAL" />`
 
-```
+```php
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
     <Appenders>

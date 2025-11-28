@@ -9,7 +9,9 @@ categories:
 - 스프링 부트 버전: 2.3.1
 - Gradle 버전: 6.4.1
 
-##### **1\. Gradle 버전 확인**
+## 절차
+
+### **1\. Gradle 버전 확인**
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-6.10.03.png)
 
@@ -17,9 +19,9 @@ Gradle 버전이 5 이상인 경우 아래와 같이 진행하고, 4 이하라�
 
  
 
-##### **2\. build.gradle에 롬복 부분 추가**
+### **2\. build.gradle에 롬복 부분 추가**
 
-```
+```java
 dependencies {
   ...
 
@@ -34,7 +36,7 @@ dependencies {
 
  
 
-##### **3\. 롬복 플러그인 설치 (인텔리제이 아이디어 기준)**
+### **3\. 롬복 플러그인 설치 (인텔리제이 아이디어 기준)**
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-7.06.48.png)
 
@@ -42,9 +44,9 @@ dependencies {
 
  
 
-##### **4\. DTO 예제 작성**
+### **4\. DTO 예제 작성**
 
-```
+```java
 package com.example.awsboard.web.dto;
 
 import lombok.Getter;
@@ -65,15 +67,14 @@ public class BasicControllerDTO {
 
  
 
-##### **5\. 테스트 코드 작성**
+### **5\. 테스트 코드 작성**
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-6.14.29.png)
 
-```
+```java
 package com.example.awsboard.web.dto;
 
 import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BasicControllerDTOTest {
@@ -94,7 +95,7 @@ public class BasicControllerDTOTest {
 
 `asserThat`이 없는 경우 build.gradle에 아래 부분을 추가합니다.
 
-```
+```java
 dependencies {
   ...
 
@@ -106,7 +107,7 @@ dependencies {
 
  
 
-##### **6\. 테스트**
+### **6\. 테스트**
 
 위 스크린샷에서 `롬복_기능_테스트()` 옆에 있는 재생버튼(`Run Test`) 클릭
 
@@ -114,4 +115,4 @@ dependencies {
 
  
 
-출처: [스프링 부트와 AWS로 혼자 구현하는 웹 서비스](https://github.com/jojoldu/freelec-springboot2-webservice)
+> 출처: [스프링 부트와 AWS로 혼자 구현하는 웹 서비스](https://github.com/jojoldu/freelec-springboot2-webservice)

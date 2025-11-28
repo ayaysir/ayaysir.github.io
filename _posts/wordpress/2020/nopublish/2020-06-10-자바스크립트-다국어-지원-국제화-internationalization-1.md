@@ -1,4 +1,5 @@
 ---
+published: false
 title: "자바스크립트: 다국어 지원 (국제화 Internationalization) 1"
 date: 2020-06-10
 categories: 

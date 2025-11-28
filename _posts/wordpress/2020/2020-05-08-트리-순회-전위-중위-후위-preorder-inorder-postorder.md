@@ -8,11 +8,13 @@ tags:
   - "자바스크립트"
 ---
 
+## 트리 순회 방법
+
 트리 자료구조의 순회 방법으로 전위 순회(preorder), 중위 순회(inorder), 후위 순회(postorder)가 있습니다.
 
-출처 [링크](https://www.acmicpc.net/problem/1991)
+> 출처 [링크](https://www.acmicpc.net/problem/1991)
 
- ![](/assets/img/wp-content/uploads/2020/05/trtr.png)
+![](/assets/img/wp-content/uploads/2020/05/trtr.png)
 
 예를 들어 위와 같은 이진 트리가 입력되면,
 
@@ -24,16 +26,16 @@ tags:
 
  
 
-#### **예제 (자바스크립트)**
+## **예제 (자바스크립트)**
 
 입력은 첫 줄에는 노드 개수, 둘째줄 부터는 공백을 기준으로 제일 왼쪽이 부모 노드, 그 오른쪽부터 왼쪽 자식 노드, 오른쪽 자식 노드 입니다.
 
 참고로 트리를 구현하고자 할 때 객체를 사용해 키(key)로 부모 노드, 값(value)을 자식 노드들의 배열(또는 기타 자료형)로 하면 구현이 편리하다고 합니다.
 
-[재귀함수](http://yoonbumtae.com/?p=2350)를 사용하며, 출력 부분의 위치만 바꾸면 전위, 중위, 후위 출력을 결정할 수 있다는 신기한 점(?) 이 있습니다.
+[재귀함수(Java)](/posts/%EC%9E%90%EB%B0%94java-%EC%98%88%EC%A0%9C-%EC%9E%AC%EA%B7%80-%ED%98%B8%EC%B6%9Crecursive-call-%EC%9E%AC%EA%B7%80-%ED%95%A8%EC%88%98-%EC%9E%AC%EA%B7%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/)를 사용하며, 출력 부분의 위치만 바꾸면 전위, 중위, 후위 출력을 결정할 수 있다는 신기한 점(?) 이 있습니다.
 
-```
-        const input1 = `7
+```js
+const input1 = `7
 A B C
 B D .
 C E F

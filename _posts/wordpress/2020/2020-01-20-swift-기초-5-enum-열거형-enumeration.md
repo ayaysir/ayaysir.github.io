@@ -8,11 +8,9 @@ tags:
   - "swift"
 ---
 
-\[rcblock id="3441"\]
+<!-- \[rcblock id="3441"\] -->
 
-* * *
-
-#### **Enum (열거형; Enumeration)**
+## **Enum (열거형; Enumeration)**
 
 **`Enum`** 은 고유 타입으로 상수를 이용할 수 있게 하는 특수한 기능입니다. 아래는 `Enum`의 선언입니다.
 
@@ -51,7 +49,9 @@ print(Rank.eight.rawValue)
 
  
 
-퀴즈. 두 개의 `Rank` 값의 원본값을 비교하는 함수를 만들어보시오.
+### 퀴즈 1. 
+
+두 개의 `Rank` 값의 원본값을 비교하는 함수를 만들어보시오.
 
 ```swift
 func compareOfTwoRanks(_ num1: Rank, _ num2: Rank){
@@ -107,9 +107,9 @@ print(jack.simpleDescription())
 
  
 
- 
+## **Enum의 예제**
 
-##### **Enum 예제 1: Suit**
+### **Enum 예제 1: Suit**
 
 ```swift
 enum Suit {
@@ -144,7 +144,7 @@ print(heartsDesc, heartsColor)
 
  
 
-##### **Enum 예제 2: ServerResponse**
+### **Enum 예제 2: ServerResponse**
 
 ```swift
 enum ServerResponse {
@@ -171,4 +171,4 @@ case let .failure(message):
 
  
 
-\[rcblock id="3441"\]
+<!-- \[rcblock id="3441"\] -->

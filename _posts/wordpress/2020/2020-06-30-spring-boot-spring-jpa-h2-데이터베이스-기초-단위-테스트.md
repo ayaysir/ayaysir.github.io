@@ -6,18 +6,18 @@ categories:
   - "Spring/JSP"
 ---
 
-[롬복(Lombok)이 설치되어 있는것](http://yoonbumtae.com/?p=2540)을 전제로 합니다.
+[롬복(Lombok)이 설치되어 있는것](/posts/spring-boot-gradle-버전-5-이상에서-롬복-설치-테스트)을 전제로 합니다.
 
 - 스프링 부트 버전: 2.3.1
 - Gradle 버전: 6.4.1
 
 스프링 부트 Spring Boot: Spring JPA + H2 데이터베이스 기초 + 단위 테스트
 
- 
+## 절차
 
-##### **1\. build.gradle에 디펜던시 추가**
+### **1\. build.gradle에 디펜던시 추가**
 
-```
+```java
 dependencies {
   ...
 
@@ -36,9 +36,9 @@ dependencies {
 
  
 
-##### **2\. application.properties 파일에 설정 추가**
+### **2\. application.properties 파일에 설정 추가**
 
-```
+```conf
 # H2 설정
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2
@@ -54,7 +54,7 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 
  
 
-##### **3\. 도메인 패키지를 생성하고 안에 데이터베이스 테이블과 연결되는 특수한 Getter 생성**
+### **3\. 도메인 패키지를 생성하고 안에 데이터베이스 테이블과 연결되는 특수한 Getter 생성**
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-9.43.04.png)
 
@@ -64,9 +64,9 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 
  
 
-**Posts 클래스**
+#### **Posts 클래스**
 
-```
+```java
 package com.example.awsboard.domain.posts;
 
 import lombok.Builder;
@@ -105,9 +105,9 @@ public class Posts {
 
  
 
-**PostsRepository 인터페이스**
+#### **PostsRepository 인터페이스**
 
-```
+```java
 package com.example.awsboard.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -125,9 +125,9 @@ public interface PostsRepository extends JpaRepository<Posts, Long> {
 
  
 
-##### **4\. 단위 테스트 코드 작성**
+### **4\. 단위 테스트 코드 작성**
 
-```
+```java
 package com.example.awsboard.domain.posts;
 
 import org.junit.jupiter.api.AfterEach;
@@ -183,4 +183,4 @@ JpaRepository를 상속받은 PostRepository에서 사용 가능한 메소드
 
  
 
-출처: [스프링 부트와 AWS로 혼자 구현하는 웹 서비스](https://github.com/jojoldu/freelec-springboot2-webservice)
+> 출처: [스프링 부트와 AWS로 혼자 구현하는 웹 서비스](https://github.com/jojoldu/freelec-springboot2-webservice)

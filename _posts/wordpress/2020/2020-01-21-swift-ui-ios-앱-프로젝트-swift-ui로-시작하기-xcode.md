@@ -8,11 +8,11 @@ tags:
   - "swift"
 ---
 
- Swift Swift UI
+Swift의 Swift UI의 기초에 대해 설명합니다. (2020년 기준)
 
  
 
-#### 새 프로젝트 만들기
+## 새 프로젝트 만들기
 
 - File > New > Project > iOS > Single App View
 
@@ -33,39 +33,41 @@ ContentView.swift에서 아래 부분에 주요 내용이 들어갑니다.
 ```swift
 struct ContentView: View {
     var body: some View {
-        
          Text("Hell, World!")
-        
     }
 }
 ```
 
  
 
-**Control + 마우스 왼쪽**을 누르면 각종 메뉴를 볼 수 있습니다. (VStack, HStack 등)
+> **Control + 마우스 왼쪽**을 누르면 각종 메뉴를 볼 수 있습니다. (VStack, HStack 등)
 
  
 
-#### 텍스트
+## 텍스트
 
 ```swift
 Text("Turtle rock")
-                .font(.largeTitle)
-                .fontWeight(.light)
-                .foregroundColor(Color.red)
+  .font(.largeTitle)
+  .fontWeight(.light)
+  .foregroundColor(Color.red)
 ```
 
 Inspector에서 조정 가능합니다.
 
  
 
-#### VStack
+## VStack: 세로로 쌓기
 
 세로로 쌓는 기능입니다.
 
- 
+## HStack: 가로로 쌓기
 
-#### 새로운 Swift UI 파일 생성
+가로로 쌓는 기능입니다.
+
+## 예제 만들기
+
+### 새로운 Swift UI 파일 생성
 
  ![](/assets/img/wp-content/uploads/2020/01/screenshot-2020-01-21-pm-9.49.39.png)
 
@@ -73,7 +75,7 @@ Inspector에서 조정 가능합니다.
 
  
 
-#### 이미지 추가
+### 이미지 추가
 
 Assets.xcassets에 드래그해서 추가합니다.
 
@@ -81,7 +83,7 @@ Assets.xcassets에 드래그해서 추가합니다.
 
  
 
-#### CircleImage.swift
+### CircleImage.swift
 
 ```swift
 import SwiftUI
@@ -93,8 +95,6 @@ struct CircleImage: View {
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.gray, lineWidth: 2))
             .shadow(radius: 10)
-        
-        
     }
 }
 
@@ -107,7 +107,7 @@ struct CircleImage_Previews: PreviewProvider {
 
  
 
-#### MapView.swift
+### MapView.swift
 
 ```swift
 import SwiftUI
@@ -115,7 +115,6 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext) -> MKMapView {
-        
         MKMapView()
     }
     
@@ -137,7 +136,7 @@ struct MapView_Previews: PreviewProvider {
 
  
 
-#### 최종 ContentView.swift
+### 최종 ContentView.swift
 
 앞에 만든 서클뷰, 맵뷰를 포함시킴
 

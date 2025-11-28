@@ -54,7 +54,7 @@ lang.ko=韓国語
 
 ##### 1\. 부트 메인 애플리케이션에 `LocaleResolver`, `LocaleChangeInterceptor`, `addInterceptors` 메소드 추가
 
-```
+```java
 package com.example.thymeleaf;
 
 import org.springframework.boot.SpringApplication;
@@ -103,7 +103,7 @@ public class ThymeleafApplication implements WebMvcConfigurer{
 
 ##### 2\. 컨트롤러 추가
 
-```
+```java
 package com.example.thymeleaf;
 
 import javax.servlet.http.HttpSession;

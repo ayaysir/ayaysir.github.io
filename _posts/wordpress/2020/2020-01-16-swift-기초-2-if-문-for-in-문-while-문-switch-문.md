@@ -8,15 +8,13 @@ tags:
   - "swift"
 ---
 
-\[rcblock id="3441"\]
+<!-- \[rcblock id="3441"\] -->
 
-* * *
-
-#### **if 문 (if...else, if...else i...else)**
+## **if 문 (if...else, if...else i...else)**
 
 `if`문은 조건에 따라 해야 될 작업을 분기할 때 사용합니다. 참고로 조건문에 괄호를 붙이지 않습니다.
 
-```
+```swift
 var myScore = 56
 
 if myScore >= 50 {
@@ -30,7 +28,7 @@ if myScore >= 50 {
 
 복수의 조건에 따라 분기하고자 할 때는 `else if` 문을 추가합니다.
 
-```
+```swift
 if myScore >= 80 {
     print("\(myScore)점: 우수합격")
 } else if myScore >= 50 {
@@ -42,7 +40,7 @@ if myScore >= 80 {
 
  
 
-#### **for ~ in 문**
+## **for ~ in 문**
 
 `for`문은 반복되는 작업을 수행할 때 사용합니다. 앞서 언급한 배열, 사전과 궁합이 잘 맞습니다. 참고로 조건문에 괄호를 붙이지 않습니다.
 
@@ -52,7 +50,7 @@ if myScore >= 80 {
 
 95, 65, 70, 54, 77의 원소가 들어 있는 ‘`성적`‘ 이라는 이름의 상수 배열을 생성하고, 원소들의 총합을 `for...in` 문을 이용해 계산하는 방법은 다음과 같습니다.
 
-```
+```swift
 let 성적 = [95, 65, 70, 54, 77]
 var sumOf성적 = 0
 for score in 성적 {
@@ -64,7 +62,7 @@ for score in 성적 {
 
 `for...in` 문의 범위에는 사전이나 배열이 들어갈 수도 있지만, 일반 숫자가 들어갈 수도 있습니다. 1에서 12까지 총 12번을 반복하고 싶다면 범위에 `1...12`를 입력합니다. (또는 `1..<13`)
 
-```
+```swift
 var sum = 0
 
 for i in 1...100 {
@@ -76,9 +74,11 @@ print(sum) // 5050
 
  
 
-**퀴즈 1**. if문을 이용해 위 '성적' 배열의 각 점수의 합불 여부를 표시하시오. 단, 70점 이상이어야 합격 처리한다.
+### **퀴즈 1** 
 
-```
+if문을 이용해 위 '성적' 배열의 각 점수의 합불 여부를 표시하시오. 단, 70점 이상이어야 합격 처리한다.
+
+```swift
 for score in 성적 {
     if score >= 70 {
         print("\(score)점: 합격")
@@ -92,11 +92,11 @@ for score in 성적 {
 
  
 
-#### **while 문 (while, repeat...while)**
+## **while 문 (while, repeat...while)**
 
 `while`문은 일반적으로 `for`문의 하위 호환격인 문법으로 알려져 있으나, `while`문에서만 독자적으로 처리할 수 있는 케이스도 있으므로 알아두는 것이 좋습니다. `repeat...while`문은 다른 프로그래밍 언어의 `do...while`문에 해당하는 구문입니다.
 
-```
+```swift
 ===== while 문 =====
 
 var n = 2
@@ -112,17 +112,15 @@ repeat {
     m *= 2
 } while m < 100
 print(m)    // 128
- 
-
 ```
 
  
 
-#### **switch 문**
+## **switch 문**
 
 `break`에 해당하는 기능이 기본 내장되어 있기 때문에 별도 명시할 필요가 없으며, `default` 문이 반드시 들어가야 합니다.
 
-```
+```swift
 let vegetable = "red pepper"
 var vegetableComment = ""
 
@@ -143,4 +141,4 @@ print(vegetableComment)
 
  
 
-\[rcblock id="3441"\]
+<!-- \[rcblock id="3441"\] -->

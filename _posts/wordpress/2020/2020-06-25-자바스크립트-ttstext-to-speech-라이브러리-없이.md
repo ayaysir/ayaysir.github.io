@@ -12,8 +12,9 @@ tags:
 
 음성합성으로 읽을 내용, 언어, 음성의 속도 높낮이 등을 `new SpeechSynthesisUtterance(``)` 로 설정하고 재생은 `speechSynthesis.speak()`를 사용합니다. `speechSynthesis`는 `window` 객체 내에 있기 때문에 그냥 사용하면 됩니다. 재생중인 음성합성을 중지할때는 `speechSynthesis.cancel()`을 사용합니다.
 
-https://gist.github.com/ayaysir/eea1ec360901b26a8251b1d5388a052b
+<!-- https://gist.github.com/ayaysir/eea1ec360901b26a8251b1d5388a052b -->
+{% gist "eea1ec360901b26a8251b1d5388a052b" %}
 
- 
+
 
 https://codepen.io/ayaysir/pen/pogwaQQ?editors=1010

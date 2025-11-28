@@ -14,15 +14,15 @@ tags:
 
  
 
-#### **프로젝트 구조**
+## 프로젝트 구조
 
  ![](/assets/img/wp-content/uploads/2020/07/-2020-07-12-pm-7.58.56-e1594551583295.png)
 
- 
+## 조각 만들기
 
 먼저 HTML 파일을 만든 뒤(**fragments/common.html**) 조각(fragment)로 만들고 싶은 요소의 태그에 `th:fragment="[이름]"` 을 삽입합니다.
 
-```
+```html
 <head th:fragment="html-head">
     ........
 </head>
@@ -120,11 +120,11 @@ tags:
 
  
 
-#### **조각을 페이지에 넣기(replace 이용)**
+## 조각을 페이지에 넣기(replace 이용)
 
 이렇게 해서 조각이 만들어졌습니다. 이것을 삽입하고자 하는 대상 HTML 파일에서 `th:replace="[파일 경로 :: 조각 이름]"` 을 통해 삽입합니다.
 
-```
+```html
 <head th:replace="fragments/common :: html-head">
     ...........
 </head>

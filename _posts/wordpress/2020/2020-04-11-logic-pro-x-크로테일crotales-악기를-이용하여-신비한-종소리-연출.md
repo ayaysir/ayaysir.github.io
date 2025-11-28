@@ -8,6 +8,8 @@ tags:
   - "logic-pro-x"
 ---
 
+## 소개
+
 {% youtube "https://youtu.be/iXm0CAjUzmM" %}
 
  
@@ -15,44 +17,55 @@ tags:
 로직 프로 X(Logic Pro X)에서 기본으로 제공하는 Crotales 라는 악기를 이용하여 위와 같은 머나먼 곳에서 들려오는 것 같은 신비한 종소리를 연출할 수 있습니다.
 
  
+## 방법
 
-##### 1\. 소프트웨어 인스트러먼트(Software Instruments) 트랙을 추가한 다음 Orchestral > Percussion 경로로 이동하여 Crotales 악기로 변경합니다.
+### 1\. 악기를 Crotales로 변경
+
+소프트웨어 인스트러먼트(Software Instruments) 트랙을 추가한 다음 Orchestral > Percussion 경로로 이동하여 Crotales 악기로 변경합니다.
 
  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-am-11.53.06.png)
 
  
 
-##### 2\. 이 악기 트랙에서 마우스 오른쪽 버튼을 클릭한 다음 Summing 트랙 스택을 생성합니다.
+### 2\. Summing 트랙 스택 생성
+
+이 악기 트랙에서 마우스 오른쪽 버튼을 클릭한 다음 Summing 트랙 스택을 생성합니다.
 
  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-am-11.52.35.png) ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-am-11.57.13.png)
 
  
 
-##### 3\. Summing 스택 안에 Crotales 트랙을 하나 더 생성합니다.
+### 3\. 추가 Crotales 트랙 생성
+
+Summing 스택 안에 Crotales 트랙을 하나 더 생성합니다.
 
  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-am-11.58.57.png)
 
  
 
-##### 4\. 각각의 Crotales 트랙은 좌우로 패닝을 주기 위한 것입니다. 각각 트랙의 볼륨과 패닝을 적절하게 설정합니다. 지금 이 프로젝트에서는 좌우의 볼륨과 패닝 값이 약간 다르게 되어 있는데 양쪽의 값을 똑같이 맞추는게 좋을 것 같습니다.
+### 4\. 트랙의 볼륨과 패닝 설정
 
-**왼쪽 크로테일의 설정값**
+각각의 Crotales 트랙은 좌우로 패닝을 주기 위한 것입니다. 각각 트랙의 볼륨과 패닝을 적절하게 설정합니다. 지금 이 프로젝트에서는 좌우의 볼륨과 패닝 값이 약간 다르게 되어 있는데 양쪽의 값을 똑같이 맞추는게 좋을 것 같습니다.
+
+#### **왼쪽 크로테일의 설정값**
 
  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-pm-12.00.11.png)
 
-**오른쪽 크로테일의 설정값**
+#### **오른쪽 크로테일의 설정값**
 
  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-pm-12.02.35.png)
 
  
 
-##### 5\. 각 트랙에 미디 레지언(region)을 생성한 다음 임의로 아무 노트나 입력합니다. 마스터 키보드를 사용하든, 마우스로 찍든 하여 입력하며, 미디 노트의 범위는 F4 ~ C6 부근에서 자유롭게 입력합니다. BPM이나 악곡 분위기에 맞춰 입력하면 될 것 같습니다. 단, 좌우 트랙은 노트 배치가 서로 완전히 달라야 합니다. 저는 마스터 키보드가 있어서 그것으로 레코딩 하였습니다.
+### 5\. 랜덤 노트 입력
 
-**왼쪽 트랙의 피아노 롤 예시**
+각 트랙에 미디 레지언(region)을 생성한 다음 임의로 아무 노트나 입력합니다. 마스터 키보드를 사용하든, 마우스로 찍든 하여 입력하며, 미디 노트의 범위는 F4 ~ C6 부근에서 자유롭게 입력합니다. BPM이나 악곡 분위기에 맞춰 입력하면 될 것 같습니다. 단, 좌우 트랙은 노트 배치가 서로 완전히 달라야 합니다. 저는 마스터 키보드가 있어서 그것으로 레코딩 하였습니다.
+
+#### **왼쪽 트랙의 피아노 롤 예시**
 
  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-pm-12.06.07.png)
 
-**오른쪽 트랙의 피아노 롤 예시**
+#### **오른쪽 트랙의 피아노 롤 예시**
 
  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-pm-12.06.57.png)
 
@@ -60,7 +73,9 @@ tags:
 
  
 
-##### 6\. 크로테일을 모은 Summing 트랙에 리버브 효과(ChromaVerb)를 입힙니다.
+### 6\. 리버브 효과 적용
+
+크로테일을 모은 Summing 트랙에 리버브 효과(ChromaVerb)를 입힙니다.
 
  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-11-pm-12.09.49.png)
 

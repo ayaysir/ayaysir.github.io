@@ -8,19 +8,22 @@ tags:
   - "자바스크립트"
 ---
 
-만약 **JQuery**  등의 외부 라이브러리 없이 AJAX를 사용하려고 한다면 예전에는(혹은 지금도) `XMLHttpRequest`([MDN 링크](https://developer.mozilla.org/ko/docs/Web/API/XMLHttpRequest))라는 것을 사용해야 했습니다. 이것은 약간 사용하기 복잡했었는데요, **ES6(2015)**부터 `fetch`([MDN 링크](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API))라는 기능이 도입되어서 약간 편하게 사용할 수 있게 되었습니다. `Promise`를 기반으로 하기 때문에 지원하지 않는 웹 브라우저에서는 사용할 수 없습니다. 인터넷 익스플로러에서 사용 가능하게 하려면 **Babel** 등을 이용해서 변환해야 합니다.
+만약 **JQuery**  등의 외부 라이브러리 없이 AJAX를 사용하려고 한다면 예전에는(혹은 지금도) `XMLHttpRequest`([MDN 링크](https://developer.mozilla.org/ko/docs/Web/API/XMLHttpRequest))라는 것을 사용해야 했습니다. 이것은 약간 사용하기 복잡했었는데요, ES6(2015)부터 `fetch`([MDN 링크](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API))라는 기능이 도입되어서 약간 편하게 사용할 수 있게 되었습니다. 
 
-관련 글
+`Promise`를 기반으로 하기 때문에 지원하지 않는 웹 브라우저에서는 사용할 수 없습니다. 인터넷 익스플로러에서 사용 가능하게 하려면 **Babel** 등을 이용해서 변환해야 합니다.
 
-- [자바스크립트: AJAX로 blob 타입의 리스폰스 가져오기(파일 다운로드)](http://yoonbumtae.com/?p=1170) - XMLHttpRequest 예제
+<!-- 관련 글
+
+- [자바스크립트: AJAX로 blob 타입의 리스폰스 가져오기(파일 다운로드)](/posts/자바스크립트-ajax로-blob-타입의-리스폰스-가져오기파일/) - XMLHttpRequest 예제
 - [자바스크립트: 콜백, Promise, async - await 기초](http://yoonbumtae.com/?p=1071) - Promise 예제
-- [Node.js: Webpack + Babel과 Babel/polyfill을 이용하여 ES6으로 작성된 코드를 ES5 이하에서도 호환되게 하기](http://yoonbumtae.com/?p=1140)
+- [Node.js: Webpack + Babel과 Babel/polyfill을 이용하여 ES6으로 작성된 코드를 ES5 이하에서도 호환되게 하기](http://yoonbumtae.com/?p=1140) -->
 
+## **Promise**
  
 
-#### **GET 예제**
+### **GET 예제**
 
-```
+```js
 fetch("https://reqres.in/api/users?page=2", {
     method: "get"
 }).then(resp => {
@@ -42,7 +45,7 @@ fetch("https://reqres.in/api/users?page=2", {
 
  
 
-#### **POST 예제**
+### **POST 예제**
 
 ```js
 const postTest = (name, job) => {
@@ -70,16 +73,13 @@ const postTest = (name, job) => {
 `GET`과 사용방법이 비슷합니다. 속성 객체의 `body` 부분에 서버로 전송할 객체를 입력하며 `JSON.stringify`로 스트링 변환한 뒤 보내는 것이 좋습니다. 참고로 `header` 부분을 설정하지 않으면 리퀘스트가 안될 수도 있습니다.
 
  
-
-* * *
-
- 
+## **Async - Await 구문**
 
 위의 코드를 `async` - `await` [(ECMAScript 2017에 등장)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function)를 사용하면 보다 간결하게 작성할 수 있습니다.
 
-#### **GET 예제 (async - await)**
+### **GET 예제 (async - await)**
 
-```
+```js
 (async function() {
     try {
         const init = await fetch("https://reqres.in/api/users?page=2", {
@@ -96,7 +96,7 @@ const postTest = (name, job) => {
 
  
 
-#### **POST 예제** **(async - await)**
+### **POST 예제** **(async - await)**
 
 ```js
 const postTest = async (name, job) => {

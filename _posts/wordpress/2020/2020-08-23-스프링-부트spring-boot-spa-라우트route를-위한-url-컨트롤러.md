@@ -21,7 +21,7 @@ categories:
 
 예제에서는 `http://server.url/` 에 `index.html`이 배정되어 있으며, `http://server.url/v/**` 로 구성된 모든 URL은 SPA 라우팅을 이용하였다고 가정합니다.
 
-```
+```java
 import java.io.IOException;
 
 import org.springframework.context.annotation.Configuration;

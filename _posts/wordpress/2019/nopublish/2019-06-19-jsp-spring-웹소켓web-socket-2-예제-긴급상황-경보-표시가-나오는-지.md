@@ -20,7 +20,7 @@ tags:
 
 #### 1\. 이전 웹소켓 클래스를 참조해 새로운 웹소캣 클래스를 작성한다.
 
-```
+```java
 package com.example.thymeleaf.websocket;
 
 import java.io.IOException;
@@ -121,7 +121,7 @@ public class AlertWebSocket {
 @Bean public AlertWebSocket alertWebSocket() { return new AlertWebSocket(); }
 ```
 
-```
+```java
 package com.example.thymeleaf.websocket;
 
 import org.springframework.context.annotation.Bean;

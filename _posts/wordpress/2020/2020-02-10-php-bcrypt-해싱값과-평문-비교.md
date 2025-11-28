@@ -8,7 +8,7 @@ tags:
   - "php"
 ---
 
-```
+```php
 password_verify($plain_text, $hashed_text)
 ```
 
@@ -16,8 +16,9 @@ $plain\_text에는 평문값을 입력하며, $hashed\_text에는 **BCrypt** 형
 
  
 
-#### 예제
+## 예제
 
 logic\_proc.php 18번 라인에 있습니다.
 
-https://gist.github.com/ayaysir/59c7e34a71cb90b569b9f09f870c8a62
+<!-- https://gist.github.com/ayaysir/59c7e34a71cb90b569b9f09f870c8a62 -->
+{% gist "59c7e34a71cb90b569b9f09f870c8a62" %}

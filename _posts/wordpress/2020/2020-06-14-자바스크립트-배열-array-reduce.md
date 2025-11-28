@@ -6,13 +6,15 @@ categories:
   - "JavaScript"
 ---
 
-MDN 문서 [바로가기](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+## Reduce 란?
+
+> MDN 문서 [바로가기](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 
 자바스크립트에서 배열의 `reduce` 기능은 배열을 순회하면서 누산기(`accumulator`)에 값을 계속 쌓아놓고 최종적으로 누산기의 값을 반환하는 reducer의 기능을 수행합니다. reducer의 사전적 의미와 매칭이 잘 안되는데 어떤 물질에서 원액(누산기의 값)만 추출한다는 의미로 생각하면 될 것 같습니다.
 
 누산기의 값은 줄어들지 않으며 리턴식은 누산기에 합산됩니다. 그리고 마지막까지 순회한 후 최종적으로 누산기의 값만을 반환한다는 특성을 기억하면 됩니다.
 
-```
+```js
 arr.reduce((accumulator, currentValue, opt_currentIndex, opt_array) => {
     ....
 }, opt_initialValue)
@@ -25,8 +27,9 @@ arr.reduce((accumulator, currentValue, opt_currentIndex, opt_array) => {
 - `initialValue` (옵셔널): `callback`의 최초 호출에서 첫 번째 인수에 제공하는 값. 초기값을 제공하지 않으면 배열의 첫 번째 요소를 사용합니다. 빈 배열에서 초기값 없이 `reduce()`를 호출하면 오류가 발생합니다.
 
  
+## 예제
 
-#### **예제 1: 배열의 숫자 더하기**
+### **예제 1: 배열의 숫자 더하기**
 
 ```js
 const arr = [0, 1, 4, 6, 8, 10]
@@ -37,7 +40,7 @@ const output = arr.reduce((accumulator, curretnValue) => accumulator + curretnVa
 
  
 
-#### **예제 2: 배열 내 객체의 숫자 더하기**
+### **예제 2: 배열 내 객체의 숫자 더하기**
 
 반드시 `initialValue`를 지정해야 합니다. `initialValue`는 반드시 숫자여야 할 필요는 없으며, 필요에 따라 다양한 자료형으로 선언 가능합니다.
 
@@ -73,7 +76,7 @@ console.log(sum2) // 16
 
  
 
-#### **예제 3: 배열 펼치기**
+### **예제 3: 배열 펼치기**
 
 ```js
 const flattend = [[0, 4], ["x", "y"], ["zz"]].reduce((acc, v) => {
@@ -102,7 +105,7 @@ const count = names.reduce((allNames, name) => {
 
  
 
-#### **예제 4: 속성으로 객체 분류하기**
+### **예제 4: 속성으로 객체 분류하기**
 
 ```js
 const people = [{
@@ -136,7 +139,7 @@ console.log(groupBy(people, "age"))
 
  
 
-#### **예제 5: 객체에서 배열을 뽑아 연결하기 (초기값과 획장 연산자 `...` 이용)**
+### **예제 5: 객체에서 배열을 뽑아 연결하기 (초기값과 획장 연산자 `...` 이용)**
 
 ```js
 const friends = [{
@@ -162,7 +165,7 @@ const books = friends.reduce((acc, v) => {
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-14-pm-11.17.19.png)
 
-#### **예제 6: 배열의 중복 제거**
+### **예제 6: 배열의 중복 제거**
 
 사전에 배열을 미리 정렬합니다.
 
@@ -181,7 +184,7 @@ console.log(result)
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-14-pm-11.08.12.png)
 
-##### 참고: `Array.from` 과 `Set`을 이용한 중복제거
+#### 참고: `Array.from` 과 `Set`을 이용한 중복제거
 
 ```js
 const result = Array.from(new Set(dArr))

@@ -15,23 +15,23 @@ Vue.js에서 무한 스크롤(무한 페이징, 스크롤 페이징)을 적용�
 
 이 예제는 별도의 예외 상황에 대한 고려 없이 단순하게 목록을 30개씩 가져오는 것으로 가정하고 있습니다.
 
- 
+## 방법
 
-#### **1) Vue-infinite-loading npm 설치**
+### **1) Vue-infinite-loading npm 설치**
 
 터미널을 열고 프로젝트 루트 디렉토리에서 다음 명령어를 입력하세요.
 
-```
+```sh
 npm install vue-infinite-loading -S
 ```
 
  
 
-#### **2) 백엔드 서버에서 글 목록을 n개씩 끊어서 보내도록 페이징 지정하기**
+### **2) 백엔드 서버에서 글 목록을 n개씩 끊어서 보내도록 페이징 지정하기**
 
 이 부분은 프레임워크, 사용 라이브러리에 따라 천차만별이며 저는 Spring JPA를 사용했습니다. 이 부분의 자세한 내용은 맨 밑 참고 부분에 있습니다.
 
-```
+```java
 @GetMapping("/api/idol/uwasa/pages/{pageNum}")
 public List<UwasaEntityDTO> getUwasaByPageRequest(@PathVariable Integer pageNum) {
     PageRequest pageRequest = PageRequest.of(pageNum, 30);
@@ -43,11 +43,11 @@ public List<UwasaEntityDTO> getUwasaByPageRequest(@PathVariable Integer pageNum)
 
  
 
-#### **3) Vue.js 컴포넌트에 태그 넣기**
+### **3) Vue.js 컴포넌트에 태그 넣기**
 
 먼저 글 목록이 나오는 부분의 제일 밑에 다음 태그를 넣습니다.
 
-```
+```html
 <infinite-loading @infinite="infiniteHandler" spinner="waveDots">
   <div slot="no-more" style="color: rgb(102, 102, 102); font-size: 14px; padding: 10px 0px;">목록의 끝입니다 :)</div>
 </infinite-loading>
@@ -59,7 +59,7 @@ public List<UwasaEntityDTO> getUwasaByPageRequest(@PathVariable Integer pageNum)
 
 
 
-```
+```html
 <template>
   <div class="topic">
         <audio id="tts-audio-main"></audio>
@@ -75,7 +75,7 @@ public List<UwasaEntityDTO> getUwasaByPageRequest(@PathVariable Integer pageNum)
 
  
 
-#### **4) 라이브러리 import 후 컴포넌트에 추가**
+### **4) 라이브러리 import 후 컴포넌트에 추가**
 
 ```
 import InfiniteLoading from 'vue-infinite-loading';
@@ -93,11 +93,10 @@ export default {
 
  
 
-#### **5) data에 limit 선언, created에 초기 데이터 로딩 구현**
+### **5) data에 limit 선언, created에 초기 데이터 로딩 구현**
 
-```
+```js
 export default {
-
   name: 'Topic',
   data() {
       return {
@@ -106,7 +105,6 @@ export default {
       }
   },
   created() {
-
       async function getTopicFromApi() {
           try {
               const init = await fetch(`/api/idol/uwasa/pages/0`, {method: "GET"})
@@ -122,8 +120,6 @@ export default {
           console.log("fromAPI", data)
           this.topicData = data
       })
-  
-    
   }
 }
 ```
@@ -138,13 +134,12 @@ export default {
 
 
 
-#### **6) methods에 infiniteHandler 구현**
+### **6) methods에 infiniteHandler 구현**
 
-```
+```js
 import InfiniteLoading from 'vue-infinite-loading';
 
 export default {
-
   name: 'Topic',
   methods: {
     infiniteHandler($state) {
@@ -186,7 +181,7 @@ export default {
 
  
 
-#### **결과**
+## **결과**
 
 {% youtube "https://www.youtube.com/watch?v=0rgryiHlwjk" %}
 
@@ -194,11 +189,10 @@ export default {
 
  
 
-* * *
 
-#### **참고: 백엔드(스프링 부트 -JPA) 코드**
+## **참고: 백엔드(스프링 부트 -JPA) 코드**
 
-```
+```java
 @Getter
 @NoArgsConstructor
 @Entity
@@ -228,7 +222,7 @@ public class UwasaEntity {
 }
 ```
 
-```
+```java
 package com.example.deretopic.domain.uwasa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -238,7 +232,7 @@ public interface UwasaRepository extends JpaRepository<UwasaEntity, Long> {
 
 ```
 
-```
+```java
 package com.example.deretopic.service;
 
 import com.example.deretopic.domain.uwasa.UwasaRepository;
@@ -279,7 +273,7 @@ public class UwasaEntityService {
 
 ```
 
-```
+```java
 package com.example.deretopic.web;
 
 import com.example.deretopic.service.IdolEntityService;

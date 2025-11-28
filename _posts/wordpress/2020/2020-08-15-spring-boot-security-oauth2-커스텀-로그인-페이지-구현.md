@@ -8,7 +8,7 @@ tags:
   - "스프링시큐리티"
 ---
 
-\[rcblock id="2655"\]
+<!-- \[rcblock id="2655"\] -->
 
 스프링 부트 시큐리티 Spring Boot Security OAuth2: 커스텀 로그인 페이지 구현
 
@@ -32,7 +32,7 @@ OAuth 2.0으로 외부 로그인을 구현한 상태에서 아무 설정도 하�
 
 ##### **1) SecurityConfig 설정 변경**
 
-```
+```java
 package com.example.awsboard.config.auth;
 
 import com.example.awsboard.domain.user.Role;
@@ -89,7 +89,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 컨트롤러는 단순히 위 링크와 뷰 페이지만 리턴하도록 하고 이 주소를 바탕으로 HTML에 이미지 링크만 걸어 사용할 수도  있습니다.
 
-```
+```java
 package com.example.awsboard.web;
 
 import lombok.RequiredArgsConstructor;

@@ -6,15 +6,17 @@ categories:
   - "Spring/JSP"
 ---
 
-###### 스프링 부트(Spring Boot) 버전 2.3.1, Gradle 6.4.1 기준입니다.
+> 스프링 부트(Spring Boot) 버전 2.3.1, Gradle 6.4.1 기준입니다.
 
-##### **1\. 패키지를 생성 (예: `com.example.awsboard.web`)**
+## 절차
 
-##### **2\. 컨트롤러 및 `GetMapping` 예제 작성**
+### **1\. 패키지를 생성 (예: `com.example.awsboard.web`)**
+
+### **2\. 컨트롤러 및 `GetMapping` 예제 작성**
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.25.17.png)
 
-```
+```java
 package com.example.awsboard.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,17 +34,17 @@ public class BasicController {
 
  
 
-##### **3\. 동일한 패키지를 `src > test > java` 에 패키지 생성**
+### **3\. 동일한 패키지를 `src > test > java` 에 패키지 생성**
 
-##### **4\. 패키지 내에 `BasicControllerTest` 클래스 생성**
+### **4\. 패키지 내에 `BasicControllerTest` 클래스 생성**
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.30.39.png)
 
-##### **5\. 테스트 코드 작성**
+### **5\. 테스트 코드 작성**
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.32.13.png)
 
-```
+```java
 package com.example.awsboard.web;
 
 import org.junit.jupiter.api.Test;
@@ -76,25 +78,23 @@ public class BasicControllerTest {
 
  
 
-##### **6\. 메소드 코드 옆의 재생 버튼(`Run Test`) 클릭**
+### **6\. 메소드 코드 옆의 재생 버튼(`Run Test`) 클릭**
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.36.35.png)
 
  
 
-##### **7\. 테스트 결과 확인**
+### **7\. 테스트 결과 확인**
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.37.13.png)
 
  
 
-* * *
-
  
 
-#### **테스트 예제: DTO를 JSON으로 리턴하는 페이지**
+## **테스트 예제: DTO를 JSON으로 리턴하는 페이지**
 
-```
+```java
 package com.example.awsboard.web;
 
 import com.example.awsboard.web.dto.BasicControllerDTO;
@@ -114,7 +114,7 @@ public class BasicController {
 }
 ```
 
-```
+```java
 package com.example.awsboard.web;
 
 import org.junit.jupiter.api.Test;
@@ -152,4 +152,4 @@ JSON으로 된 내용 검증은
 
  
 
-출처: [스프링 부트와 AWS로 혼자 구현하는 웹 서비스](https://github.com/jojoldu/freelec-springboot2-webservice)
+> 출처: [스프링 부트와 AWS로 혼자 구현하는 웹 서비스](https://github.com/jojoldu/freelec-springboot2-webservice)

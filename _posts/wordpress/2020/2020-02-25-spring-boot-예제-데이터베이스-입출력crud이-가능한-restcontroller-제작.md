@@ -9,25 +9,27 @@ categories:
 
 [전체 소스 보기](https://github.com/ayaysir/simple-todo-server)
 
-#### **프로젝트 구조**
+## **프로젝트 구조**
 
  ![](/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-25-pm-7.14.53.png)
 
-#### **1\. Spring Boot 프로젝트 생성**
+## **설명**
+
+### **1\. Spring Boot 프로젝트 생성**
 
 - [Spring Boot: 설치 및 기본 설정 (macOS 및 Eclipse 기준)](http://yoonbumtae.com/?p=1018)
 
  
 
-#### **2\. application.properties에 데이터베이스 연결 (mariadb)**
+### **2\. application.properties에 데이터베이스 연결 (mariadb)**
 
 - [Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)](http://yoonbumtae.com/?p=658)
 
  
 
-#### **3\. VO(Value Object; DTO) 작성 (Todo.java)**
+### **3\. VO(Value Object; DTO) 작성 (Todo.java)**
 
-```
+```java
 package com.springboot.simpletodo.vo;
 
 public class Todo {
@@ -108,9 +110,9 @@ public class Todo {
 
  
 
-#### **4\. DAO 작성 (SimpleTodoDAO.java)**
+### **4\. DAO 작성 (SimpleTodoDAO.java)**
 
-```
+```java
 package com.springboot.simpletodo.dao;
 
 import java.util.List;
@@ -162,9 +164,9 @@ public class SimpleTodoDAO {
 
  
 
-#### **5\. 서비스 인터페이스 작성 (SimpleTodoService.java)**
+### **5\. 서비스 인터페이스 작성 (SimpleTodoService.java)**
 
-```
+```java
 package com.springboot.simpletodo.service;
 
 import java.util.List;
@@ -184,9 +186,9 @@ public interface SimpleTodoService {
 
  
 
-#### **6\. 서비스 인터페이스 구현 (SimpleTodoServiceImpl.java)**
+### **6\. 서비스 인터페이스 구현 (SimpleTodoServiceImpl.java)**
 
-```
+```java
 package com.springboot.simpletodo.impl;
 
 import java.util.List;
@@ -228,9 +230,9 @@ public class SimpleTodoServiceImpl implements SimpleTodoService{
 
  
 
-#### **7\. RestController 작성 (SimpleTodoController.java)**
+### **7\. RestController 작성 (SimpleTodoController.java)**
 
-```
+```java
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -277,9 +279,9 @@ public class SimpleTodoController {
 
  
 
-#### **8\. RestController의 정상 동작 여부를 점검하는 테스트 페이지 작성**
+### **8\. RestController의 정상 동작 여부를 점검하는 테스트 페이지 작성**
 
-```
+```java
 package com.springboot.simpletodo.controller;
 
 import org.springframework.stereotype.Controller;

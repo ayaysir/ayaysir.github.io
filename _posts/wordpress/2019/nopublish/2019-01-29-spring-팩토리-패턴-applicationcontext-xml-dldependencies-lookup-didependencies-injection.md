@@ -38,7 +38,7 @@ public class VTFactory {
 
 \- 팩토리 패턴을 스프링에서 applicationContext.xml(src/main/resource)로 대체할 수 있다.
 
-```
+```php
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

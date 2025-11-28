@@ -8,7 +8,10 @@ tags:
   - "swift"
 ---
 
-출처: [바로가기](https://stackoverflow.com/questions/49856167/how-to-parse-a-json-with-array-of-dictionaries-ios-swift)
+> 출처: [바로가기](https://stackoverflow.com/questions/49856167/how-to-parse-a-json-with-array-of-dictionaries-ios-swift)
+ 
+
+## 변환 방법
 
 변환 방법은 다음과 같습니다.
 
@@ -17,7 +20,7 @@ tags:
 3. JSON 디코더를 이용하여 사전(`dictionary`)으로 이루어진 배열로 변환
 4. `for`문을 이용하여 정보 순회
 
- 
+## 코드 
 
 ```swift
 import UIKit

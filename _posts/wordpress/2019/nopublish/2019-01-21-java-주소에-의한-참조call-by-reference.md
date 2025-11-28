@@ -18,7 +18,7 @@ tags:
 
 다음 예제를 보면 그냥 `Shop`과 `BeginnerShop`이 있는데, `shop`은 `reference` 호출을 하며, `BeginnerShop`은 `value` 호출을 합니다. 결과를 보면 차이를 알 수 있을 것입니다.
 
-```
+```java
 import java.util.Scanner;
  
 public class CallByReference {

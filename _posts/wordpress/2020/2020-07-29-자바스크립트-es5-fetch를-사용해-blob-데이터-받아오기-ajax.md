@@ -10,12 +10,12 @@ categories:
 
 파일을 전송하는 백엔드 서버(자바 스프링) 만드는 방법은 아래 글을 참고하세요. 그리고 구버전 자바스크립트에서도 사용 가능한 `XMLHttpRequest`를 사용해 `Blob` 데이터를 받아오는 방법도 첨부합니다.
 
-- [JSP, Spring: URL을 입력하면 파일이 바로 다운로드되게 하기](http://yoonbumtae.com/?p=684)
-- [자바스크립트: AJAX로 blob 타입의 리스폰스 가져오기(파일 다운로드)](http://yoonbumtae.com/?p=1170)
+- [JSP, Spring: URL을 입력하면 파일이 바로 다운로드되게 하기](/posts/jsp-spring-url을-입력하면-파일이-바로-다운로드되게-하기/)
+- [자바스크립트: AJAX로 blob 타입의 리스폰스 가져오기(파일 다운로드)](/posts/자바스크립트-ajax로-blob-타입의-리스폰스-가져오기파일/)
 
  
 
-```
+```js
 async function get() {
   const init = await fetch(`/api/file/download-url`, {method: "get"})
   const blob = await init.blob()

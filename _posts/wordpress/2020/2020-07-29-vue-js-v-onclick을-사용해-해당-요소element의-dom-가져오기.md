@@ -8,9 +8,9 @@ tags:
   - "vue-js"
 ---
 
-[출처 바로가기(영문)](https://stackoverflow.com/questions/36968153/vue-js-reference-div-id-on-v-onclick)
+> [출처 바로가기(영문)](https://stackoverflow.com/questions/36968153/vue-js-reference-div-id-on-v-onclick)
 
-#### **Vue.js: v-on:click을 사용해 해당 요소(element)의 DOM 가져오기**
+<!-- **Vue.js: v-on:click을 사용해 해당 요소(element)의 DOM 가져오기** -->
 
  
 
@@ -51,7 +51,7 @@ export default {
 <div id="foo" @click="select(bar, $event)">...</div>
 ```
 
-```
+```js
 export default {
     methods: {
         select: function(bar, event) {

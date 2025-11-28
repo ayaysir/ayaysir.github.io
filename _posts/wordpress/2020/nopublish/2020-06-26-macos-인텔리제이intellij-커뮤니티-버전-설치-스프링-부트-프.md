@@ -1,4 +1,5 @@
 ---
+published: false
 title: "macOS 인텔리제이(IntelliJ) 커뮤니티 버전 설치 + 스프링 부트 프로젝트 생성"
 date: 2020-06-26
 categories: 

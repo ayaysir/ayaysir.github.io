@@ -10,19 +10,18 @@ tags:
   - "자바"
 ---
 
-#### **재귀호출 설명**
+## **재귀호출 설명**
 
 재귀(Recursion) 알고리즘이란 어떠한 문제를 자기 자신을 호출하여 해결하는 과정을 말합니다.
 
 [링크](https://terms.naver.com/entry.nhn?docId=3579438&cid=59086&categoryId=59093)
 
-* * *
 
-#### **예제 1: 코드 실행 추적**
+## **예제 1: 코드 실행 추적**
 
 다음은 정보처리산업기사에서 출제된 문제입니다. 다음 코드의 실행 결과는?
 
-```
+```java
 public class RecursiveExample {
     
     public static int recursive(int n) {
@@ -43,8 +42,14 @@ public class RecursiveExample {
 ```
 
 ```
-답:
-
+5
+11
+23
+47
+95
+191
+383
+767
 ```
 
 `recursive(n-1)` 부분이 계속 호출되면서 값을 반환합니다. 최후의 입력값(`0`)부터 recursive 함수(메소드) 자체에 반환된 값을 대입해 결과를 연쇄적으로 나열하면 됩니다.
@@ -53,9 +58,9 @@ public class RecursiveExample {
 
  ![](/assets/img/wp-content/uploads/2019/01/recursive.png)
 
-#### **예제 2: 팩토리얼**
+## **예제 2: 팩토리얼**
 
-```
+```java
 package blog.recursive;
 
 public class FactorialExample {
@@ -73,18 +78,16 @@ public class FactorialExample {
       System.out.printf("%d! = %d\n", i, factorial(i));
     }
   }
-
 }
-
 ```
 
  ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-4.08.34.png)
 
  
 
-#### **예제 3: 배열의 합 계산 (`Arrays.copyOfRange` 이용)**
+## **예제 3: 배열의 합 계산 (`Arrays.copyOfRange` 이용)**
 
-```
+```java
 package blog.recursive;
 
 import java.util.Arrays;
@@ -123,17 +126,16 @@ public class SumOfArray {
 
  
 
-#### **예제 4: 회문 판별 (스트링 자르기 이용)**
+## **예제 4: 회문 판별 (스트링 자르기 이용)**
 
 회문(palindrome; 回文: madam이나 nurses run처럼 앞에서부터 읽으나 뒤에서부터 읽으나 동일한 단어나 구)을 판별할 수 있는 프로그램입니다.
 
  ![](/assets/img/wp-content/uploads/2020/04/palindrome.png)
 
-```
+```java
 package blog.recursive;
 
 public class Palindrome {
-  
   private static boolean checkPalindrome(String word) {
     
     if(word.length() <= 1) {
@@ -160,13 +162,12 @@ public class Palindrome {
 
  
 
-##### **예제 5: 패턴으로 결과 찾기**
+### **예제 5: 패턴으로 결과 찾기**
 
 `f(n) = f(n-1) + f(n-2) + f(n-3)` 이고, `f(1) = 1`, `f(2) = 2`, `f(3) = 4` 인 것이 알려진 경우 `f(n)`을 구하는 프로그램 작성
 
  
-
-```
+```java
 package blog.recursive;
 
 public class Pattern {

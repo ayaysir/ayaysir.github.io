@@ -81,7 +81,7 @@ public class RecursiveDream {
 
 일반적인 작업들은 거의 반복문으로 다 커버가 가능하고, 성능 상에서도 반복문이 훨씬 낫기 때문에 거의 쓰이지 않지만 가끔 재귀호출이 코드 작성에 더 나은 경우도 있고, 특히 파일 구조나 XML 등의 트리 구조를 파싱할 때에는 재귀적 방법 아니고선 답이 없는 경우도 있으므로 알아두면 좋을 것이다.
 
-```
+```java
 import java.util.Scanner;
  
 public class Factorial1 {
@@ -175,7 +175,7 @@ n이 0인 경우 2를 리턴하고 재귀함수가 없으므로 0 밑으로는 �
 
 다음은 관련 예제들이다.
 
-```
+```java
 import java.util.Scanner;
  
 public class P63_GCD {
@@ -200,7 +200,7 @@ y? 36
 18
 ```
 
-```
+```java
 package blog.info;
 
 public class FactorialSum {
@@ -295,7 +295,7 @@ After: 14 17 20 22 26 48 50 90 95 100
 
 퀵소트는 나중에 다시 글 올릴 예정..
 
-```
+```java
 package blog.info;
 
 import java.io.File;

@@ -8,9 +8,9 @@ tags:
   - "swift"
 ---
 
-\[rcblock id="3441"\]
+<!-- \[rcblock id="3441"\] -->
 
-#### **프로토콜**
+## **프로토콜**
 
 프로토콜은 메소드, 속성 그리고 다른 특정 작업 또는 기능의 부분에 맞는 요구 사항의 청사진을 정의합니다. 자바의 `Interface`와 유사한 개념이며, 클래스, 열거형(`Enumeration`), 구조체(`Structure`) 모두에 프로토콜을 사용할 수 있습니다.
 
@@ -123,7 +123,9 @@ print(num)
 
  
 
-**퀴즈.** `extension`을 사용해 `Double` 타입에서 절대값을 구하는 `absoluteValue`를 추가하시오.
+### **퀴즈.** 
+
+`extension`을 사용해 `Double` 타입에서 절대값을 구하는 `absoluteValue`를 추가하시오.
 
 ```swift
 protocol NumberProtocol {
@@ -146,4 +148,4 @@ print((-225.111).absoluteValue)
 
  
 
-\[rcblock id="3441"\]
+<!-- \[rcblock id="3441"\] -->

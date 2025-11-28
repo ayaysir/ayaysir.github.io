@@ -15,9 +15,9 @@ categories:
 
  
 
-#### **1\. forEach: for 문과 비슷한 기능**
+## **1\. forEach: for 문과 비슷한 기능**
 
-**자바스크립트**
+### **자바스크립트**
 
 ```js
 const names = ["James", "Thomas", "Joseph", "Jacob"]
@@ -28,14 +28,13 @@ names.filter(x => console.log(x))
 
  
 
-**자바**
+### **자바**
 
-```
+```java
 import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class StreamTest {
-
     public static void main(String[] args) {
         // names 배열 생성
         String[] names = {"James", "Thomas", "Joseph", "Jacob"};
@@ -53,11 +52,11 @@ public class StreamTest {
 
  
 
-#### **2\. filter: 스트림에서 특정 조건을 만족하는 요소만 반환**
+## **2\. filter: 스트림에서 특정 조건을 만족하는 요소만 반환**
 
 이름 배열 중에서 `"J"`를 포함하는 요소만 반환 후 새로운 스트림에 저장합니다.
 
-**자바스크립트**
+### **자바스크립트**
 
 ```js
 const names = ["James", "Thomas", "Joseph", "Jacob"]
@@ -67,9 +66,10 @@ console.log(filtered)
 
  ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-22-pm-5.55.54.png)
 
- 
 
-```
+### **자바**
+
+```java
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -93,7 +93,7 @@ public class StreamTest {
 
 스트림을 `List`형으로 변환하려면 `collect()`를 사용하며 방법은 다음과 같습니다.
 
-```
+```java
 List<String> filtered1 = stream.collect(Collectors.toList());
 List<String> filtered2 = stream.collect(Collectors.toCollection(LinkedList::new));
 ```
@@ -102,9 +102,9 @@ List<String> filtered2 = stream.collect(Collectors.toCollection(LinkedList::new)
 
  
 
-#### **3\. Sorted: 스트림 내부를 정렬**
+## **3\. Sorted: 스트림 내부를 정렬**
 
-**자바스크립트**
+### **자바스크립트**
 
 ```js
 const numArr1 = [3, 7, 23, 9, 11, 4]
@@ -117,29 +117,27 @@ numArr1.slice().sort((a, b) => b - a).forEach(e => console.log(e)) // 23, 11, 9,
 
  
 
-**자바**
+### **자바**
 
-```
+```java
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamTest {
-
         Integer[] numArr1 = {3, 7, 23, 9, 11, 4};
         Arrays.stream(numArr1).sorted().forEach(System.out::println); 
         // 3, 4, 7, 9, 11, 23
         Arrays.stream(numArr1).sorted(Comparator.reverseOrder()).forEach(System.out::println); 
         // 23, 11, 9, 7, 4, 3
-
     }
 }
 ```
 
  
 
-#### **4\. map: 컬렉션 내부를 순회하면서 내부 요소를 가공한 새로운 요소들의 스트림을 생성**
+## **4\. map: 컬렉션 내부를 순회하면서 내부 요소를 가공한 새로운 요소들의 스트림을 생성**
 
 **자바스크립트**
 
@@ -155,21 +153,19 @@ names.map(x => x + " Simpson").forEach(e => console.log(e))
 
 **자바**
 
-```
+```java
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamTest {
-
     public static void main(String[] args) {
         // names 배열 생성
         String[] names = {"James", "Thomas", "Joseph", "Jacob"};
 
         // 기존 이름 뒤에 " Simpson" 을 추가
         Arrays.stream(names).map(x -> x + " Simpson").forEach(System.out::println);
-
     }
 }
 
@@ -179,11 +175,11 @@ public class StreamTest {
 
  
 
-##### **4\. reduce: 누산 작업을 수행해 찾고자 하는 결과를 획득**
+### **4\. reduce: 누산 작업을 수행해 찾고자 하는 결과를 획득**
 
 배열 내에서 최대값을 찾는 방법입니다.
 
-**자바스크립트**
+### **자바스크립트**
 
 ```js
 const nums = [1, 7, 49, 3, 93, 68, 10, 33, 12]
@@ -195,9 +191,9 @@ console.log(max) // 93
 
  
 
-**자바**
+### **자바**
 
-```
+```java
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -205,18 +201,15 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamTest {
-
         List<Integer> intList = Arrays.asList(1, 7, 49, 3, 93, 68, 10, 33, 12);
         Integer max = intList.stream().reduce((a, b) -> Integer.max(a, b)).get();
         System.out.println(max); // 93
-
     }
 }
 ```
 
-위의 10번 라인은 주고 받는 파라미터 형식, 개수가 같으므로 다음과 같이 [메소드 참고 표현식](http://yoonbumtae.com/?p=2776)을 사용할 수 있습니다.
+위의 10번 라인은 주고 받는 파라미터 형식, 개수가 같으므로 다음과 같이 [메소드 참고 표현식](/posts/자바java-8-람다식에서-콜론-두개-이중-콜론-연산자-메/)을 사용할 수 있습니다.
 
-```
+```java
 Integer max = intList.stream().reduce(Integer::max).get();
-
 ```

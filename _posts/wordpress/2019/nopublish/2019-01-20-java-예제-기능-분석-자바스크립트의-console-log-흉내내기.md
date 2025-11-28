@@ -35,7 +35,7 @@ categories:
 
 여기서는 자바의 `printf()`를 빌려 쓰기로 한다.
 
-```
+```java
 import java.util.ArrayList;
 import java.util.List;
 

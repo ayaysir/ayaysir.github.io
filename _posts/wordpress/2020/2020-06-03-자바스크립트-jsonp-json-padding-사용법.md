@@ -8,17 +8,17 @@ tags:
   - "자바스크립트"
 ---
 
-##### **JSONP(JavaScript Object Notation Padding)이란?**
+## **JSONP(JavaScript Object Notation Padding)이란?**
 
 웹 브라우저에서 CORS 문제를 회피하기 위해 `<script>` 태그를 이용한 꼼수를 사용하여 JSON을 가져오기 위한 방법입니다.
 
-##### **참고: CORS(Cross-Origin Resource Sharing, 교차 출처 리소스 공유)**
+### **참고: CORS(Cross-Origin Resource Sharing, 교차 출처 리소스 공유)**
 
 > 추가 HTTP 헤더를 사용하여, 한 출처에서 실행 중인 웹 애플리케이션이 다른 출처의 선택한 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제입니다. CORS의 예시로 https://domain-a.com의 프론트 엔드 JavaScript 코드가 XMLHttpRequest를 사용하여 https://domain-b.com/data.json을 요청하는 경우가 있습니다. 보안 상의 이유로, 브라우저는 스크립트에서 시작한 교차 출처 HTTP 요청을 제한합니다. XMLHttpRequest와 Fetch API는 동일 출처 정책을 따릅니다.
 
- 
+## **CORS 위반 예제**
 
-```
+```php
 <?
 
 $arr = array("google" => "http//google.com", "yahoo"=> "http://yahoo.com");
@@ -37,7 +37,7 @@ if($_GET['callback']) {
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-03-pm-10.49.30.png)
 
- 
+## **JSONP로 CORS 우회하기**
 
 JSONP는 JSON을 `함수명({...JSON...})` 함수의 실행형으로 리스폰스를 받아 실행하는 방법입니다. `<script>`에서 가져오는 코드는 CORS가 적용되지 않는다는 점을 이용한 것입니다. 당장 스크립트부터 CORS가 적용된다고 한다면 인터넷에 있는 제이쿼리를 비롯한 수많은 CDN들은 무용지물이 될 것입니다.
 
@@ -50,11 +50,11 @@ JSONP는 JSON을 `함수명({...JSON...})` 함수의 실행형으로 리스폰�
 
 JSONP를 지원한다는 가정하에 계속 진행하면, 일반 JSON과 JSONP의 차이는 다음과 같습니다.
 
-```
+```json
 {"google":"http\/\/google.com","yahoo":"http:\/\/yahoo.com"}
 ```
 
-```
+```js
 jsonpProc({"google":"http\/\/google.com","yahoo":"http:\/\/yahoo.com"});
 ```
 
@@ -62,18 +62,17 @@ jsonpProc({"google":"http\/\/google.com","yahoo":"http:\/\/yahoo.com"});
 
 서버로 보내는 파라미터는 특별한 명칭이 정해지지는 않았지만 `callback`이라는 이름을 사용해 리퀘스트하면 JSONP를 지원하는 서버에서는 JSONP를 요청하는 것이라고 통용되고 있습니다.
 
- 
+## **JSONP 구현 방법**
 
 먼저 순수 자바스크립트(바닐라 자바스크립트라 함)만으로 가져오는 법과 JQuery를 이용해 가져오는 법이 있습니다.
 
- 
+### **자바스크립트**
 
 **자바스크립트**는 다음과 같이 불러옵니다.
 
-```
+```js
 // src의 콜백 함수 이름은 밑에서 정의할 함수 이름과 동일하게
 function getJsonUsePureJS() {
-    
     const script = document.createElement("script");
     script.src = "http://yoonbumtae.com/util/misc/jsonp-example/?callback=getJsonUsePureJSCallback"
 
@@ -90,7 +89,8 @@ function getJsonUsePureJSCallback(obj) {
 
 이론상으로는 `<script>`에 url을 지정한 뒤 밑에서 함수 선언만 하면 잘 실행될 것 같은데 최신 크롬 브라우저에서는 진행이 안되서 자바스크립트에서 DOM을 만든 뒤 강제 추가하는 형식으로 JSONP를 실행하였습니다.
 
- 
+
+### **JQuery**
 
 **JQuery**를 이용한 방법은 다음과 같습니다. JQuery는 JSONP를 잘 지원합니다.
 

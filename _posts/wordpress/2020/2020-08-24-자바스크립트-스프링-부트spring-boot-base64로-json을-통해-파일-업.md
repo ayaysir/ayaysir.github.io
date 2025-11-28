@@ -24,7 +24,7 @@ categories:
 
 클라이언트로부터 인코딩된 BASE64 텍스트를 받은 뒤, 그것을 바이트 배열로 디코딩하여 `FileOutputStream`을 통해 파일을 생성합니다.
 
-```
+```java
 import javax.swing.filechooser.FileSystemView;
 import java.io.File;
 import java.io.FileOutputStream;

@@ -6,7 +6,7 @@ categories:
   - "Spring/JSP"
 ---
 
-\[rcblock id="2655"\]
+<!-- \[rcblock id="2655"\] -->
 
 Spring JPA는 Repository의 메소드 이름으로 쿼리를 지정할 수 있습니다.
 
@@ -16,7 +16,7 @@ Spring JPA는 Repository의 메소드 이름으로 쿼리를 지정할 수 있�
 
 ##### **참고: `Entity` 클래스의 구조는 다음과 같습니다.**
 
-```
+```java
 package com.example.awsboard.domain.posts;
 
 import com.example.awsboard.domain.BaseTimeEntity;
@@ -70,7 +70,7 @@ public class Posts extends BaseTimeEntity {
 
 ##### **다음은 레퍼지토리 인터페이스 코드입니다.**
 
-```
+```java
 package com.example.awsboard.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -98,8 +98,8 @@ public interface PostsRepository extends JpaRepository<Posts, Long> {
 
 이 메소드를 SQL 문으로 바꾸면 대략 다음과 같습니다. 이해를 돕기 위한 쿼리문으로 실제 사용 방법은 다를 수 있습니다.
 
-```
-select * from posts 
+```sql
+SELECT * from posts 
 where upper(title) like '%' || upper([?2]) || '%' 
 or upper(content) like '%' || upper([?2]) || '%'
 ```
@@ -127,7 +127,7 @@ public List<PostsListResponseDTO> searchTitleAndContent(String keyword) {
 
 ##### **참고: Repository 단위 테스트**
 
-```
+```java
 package com.example.awsboard.domain.posts;
 
 import org.junit.jupiter.api.AfterEach;

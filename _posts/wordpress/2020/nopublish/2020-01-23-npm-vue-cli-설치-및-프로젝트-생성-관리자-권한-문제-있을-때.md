@@ -6,19 +6,19 @@ categories:
   - "none"
 ---
 
-#### **맥 터미널 관리자 권한으로 실행**
+## **맥 터미널 관리자 권한으로 실행**
 
-명령어 앞에 sudo 키워드
-
+명령어 앞에 `sudo` 키워드  
+예> `sudo chmod +x name.sh`
  
 
-#### **폴더에서 터미널 열기**
+## **폴더에서 터미널 열기**
 
 [https://elsainmac.tistory.com/519](https://elsainmac.tistory.com/519)
 
  
 
-#### **npm 설치된 글로벌 요소 삭제**
+## **npm 설치된 글로벌 요소 삭제**
 
 [https://stackoverflow.com/questions/54268008/vue-command-not-found-on-mac](https://stackoverflow.com/questions/54268008/vue-command-not-found-on-mac)
 
@@ -27,20 +27,20 @@ categories:
 
  
 
-#### **npm-cli 설치**
+## **npm-cli 설치**
 
 - `npm install -g @vue/cli@latest`
 - `npm install -g @vue/cli-init@latest`
 
  
 
-#### **vue project 생성**
+## **vue project 생성**
 
 - `vue init webpack-simple vue-todo`
 
  
 
-#### **파일 권한 수정**
+## **파일 권한 수정**
 
 - `sudo chmod -R 777 [타겟 디렉토리 경로]`
 

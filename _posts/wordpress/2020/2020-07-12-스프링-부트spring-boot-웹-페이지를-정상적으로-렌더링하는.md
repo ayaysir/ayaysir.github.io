@@ -13,13 +13,13 @@ categories:
 
  
 
-#### **참고: 프로젝트 구조, View 파일, 컨트롤러**
+## **참고: 프로젝트 구조, View 파일, 컨트롤러**
 
  ![](/assets/img/wp-content/uploads/2020/07/-2020-07-12-pm-1.54.15-e1594529695675.png)
 
-##### **IndexController.java**
+### **IndexController.java**
 
-```
+```java
 package com.example.awsboard.web;
 
 import org.springframework.stereotype.Controller;
@@ -37,7 +37,7 @@ public class IndexController {
 
  
 
-##### **resources/templates/index.html**
+### **resources/templates/index.html**
 
 ```html
 <!DOCTYPE html>
@@ -54,15 +54,15 @@ public class IndexController {
 
  
 
-#### **단위 테스트 코드**
+## **단위 테스트 코드**
 
-참고: [Spring Boot: JUnit 단위 테스트 기초 (GetMapping 테스트, 인텔리제이 기준)](http://yoonbumtae.com/?p=2532)
+참고: [Spring Boot: JUnit 단위 테스트 기초 (GetMapping 테스트, 인텔리제이 기준)](/posts/spring-boot-junit-테스트-기초-getmapping-테스트-인텔리제이-기준)
 
  ![](/assets/img/wp-content/uploads/2020/07/-2020-07-12-pm-1.58.23-e1594529998974.png)
 
-##### **IndexControllerTest.java**
+### **IndexControllerTest.java**
 
-```
+```java
 package com.example.awsboard.web;
 
 import org.junit.jupiter.api.Test;
@@ -97,7 +97,7 @@ public class IndexControllerTest {
 
  
 
-##### **케이스 1: contains("AWS Board");**
+### **케이스 1: contains("AWS Board");**
 
  ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-12-pm-2.17.28.png)
 
@@ -105,7 +105,7 @@ index.html에 `"AWS Board"`라는 문구가 있으므로 정상 통과합니다.
 
  
 
-##### **케이스 2: contains("SWA Board");**
+### **케이스 2: contains("SWA Board");**
 
  ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-12-pm-2.19.12.png)
 

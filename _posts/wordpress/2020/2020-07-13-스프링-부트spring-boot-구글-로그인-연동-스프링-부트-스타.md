@@ -6,15 +6,15 @@ categories:
   - "Spring/JSP"
 ---
 
-\[rcblock id="2655"\]
+<!-- \[rcblock id="2655"\] -->
 
  
 
 이 방법은 JSTL, Thymeleaf, Mustache 등 서버 사이드 템플릿 엔진을 사용하는 로그인 방법입니다. SPA에서 사용할 수 있는 소셜 로그인 연동 방법은 아래 글을 참고하세요,
 
-- [스프링 부트(Spring Boot): SPA에서 사용할 수 있는 OAuth2 소셜 로그인 (구글, 페이스북, 깃허브)](http://yoonbumtae.com/?p=3000)
+- [스프링 부트(Spring Boot): SPA에서 사용할 수 있는 OAuth2 소셜 로그인 (구글, 페이스북, 깃허브)](/posts/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8spring-boot-spa%EC%97%90%EC%84%9C-%EC%82%AC%EC%9A%A9%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-oauth2-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8/)
 
-#### **순서**
+## **순서**
 
 1. `build.gradle`에 디펜던시 추가
 2. `application-oauth.properties` 작성 + `.gitignore` 등록
@@ -34,23 +34,24 @@ categories:
 
  
 
-#### **프로젝트 구조**
+## **프로젝트 구조**
 
  ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-13-pm-5.55.34.png)
 
  ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-13-pm-6.42.36.png)
 
- 
+
+## **절차**
 
 먼저 구글로부터 **클라이언트 아이디와 비밀번호**를 받아야 합니다.
 
-- 관련 글: [구글 OAuth2 연동용 클라이언트 아이디 및 비밀번호 발급받는 방법](http://yoonbumtae.com/?p=2631)
+- 관련 글: [구글 OAuth2 연동용 클라이언트 아이디 및 비밀번호 발급받는 방법](/posts/구글-oauth2-연동용-클라이언트-아이디-및-비밀번호-발급)
 
  
 
-##### **1) build.gradle에 디펜던시 추가**
+### **1) build.gradle에 디펜던시 추가**
 
-```
+```java
 // security + oauth2
 implementation 'org.springframework.boot:spring-boot-starter-security'
 implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
@@ -62,7 +63,7 @@ implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
  
 
-##### **2) application-oauth.properties 작성 + .gitignore 등록**
+### **2) application-oauth.properties 작성 + .gitignore 등록**
 
 위치는 _**application.properties**_가 있는 위치와 동일한 곳에 작성합니다. **_application-oauth.properties_** 작성 후, **_application.properties_** 파일에 등록해야 합니다.
 
@@ -70,18 +71,18 @@ implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
  
 
-**application-oauth.properties**
+#### **application-oauth.properties**
 
-```
+```conf
 spring.security.oauth2.client.registration.google.client-id=[클라이언트 아이디]
 spring.security.oauth2.client.registration.google.client-secret=[클라이언트 비밀번호]
 spring.security.oauth2.client.registration.google.scope=profile,email
 
 ```
 
-**application.properties**
+#### **application.properties**
 
-```
+```conf
 #application-oauth.properties 로딩
 spring.profiles.include=oauth
 ```
@@ -92,11 +93,11 @@ spring.profiles.include=oauth
 
  
 
-##### **3) Role enum 클래스 작성**
+### **3) Role enum 클래스 작성**
 
 사용자의 권한을 `enum` 클래스로 만들어 관리합니다.
 
-```
+```java
 package com.example.awsboard.domain.user;
 
 import lombok.Getter;
@@ -120,11 +121,11 @@ public enum Role {
 
  
 
-##### **4) User 클래스 작성**
+### **4) User 클래스 작성**
 
 엔티티(`@Entity`) 클래스는 JPA를 통해 SQL을 사용하지 않고도 자바 코드 내에서 테이블을 생성할 수 있습니다.
 
-```
+```java
 package com.example.awsboard.domain.user;
 
 import com.example.awsboard.domain.BaseTimeEntity;
@@ -178,31 +179,29 @@ public class User extends BaseTimeEntity {
 
 ```
 
-\[caption id="attachment\_2660" align="alignnone" width="465"\] ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-13-pm-6.27.12.png) User 엔티티 클래스를 통해 테이블을 만들었습니다.\[/caption\]
+![User 엔티티 클래스를 통해 테이블을 만들었습니다.](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-13-pm-6.27.12.png)   
+*User 엔티티 클래스를 통해 테이블을 만들었습니다.*
 
  
 
-**2021-10-17 추가: `UserRepository.java` 작성 (`findByEmail`은 나중에 사용됩니다.)**
+#### **2021-10-17 추가: `UserRepository.java` 작성 (`findByEmail`은 나중에 사용됩니다.)**
 
-```
+```java
 package com.example.awsboard.domain.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-
     Optional<User> findByEmail(String email);
-
 }
 ```
 
  
 
-**참고: `BaseTimeEntity` 클래스 (JpaAuditing - 글 작성 시점 자동 추가)**
+#### **참고: `BaseTimeEntity` 클래스 (JpaAuditing - 글 작성 시점 자동 추가)**
 
-```
+```java
 package com.example.awsboard.domain;
 
 import lombok.Getter;
@@ -229,7 +228,7 @@ public class BaseTimeEntity {
 
 메인 애플리케이션에서 `@EnableJpaAuditing` 어노테이션을 추가해 활성화합니다.
 
-```
+```java
 package com.example.awsboard;
 
 import org.springframework.boot.SpringApplication;
@@ -249,11 +248,11 @@ public class AwsboardApplication {
 
  
 
-##### **5) OAuthAttributes 클래스 작성**
+### **5) OAuthAttributes 클래스 작성**
 
 구글 로그인 이후 가져온 사용자의 이메일, 이름, 프로필 사진 주소를 저장하는 DTO
 
-```
+```java
 package com.example.awsboard.config.auth;
 
 import com.example.awsboard.domain.user.Role;
@@ -314,11 +313,11 @@ public class OAuthAttributes {
 
  
 
-##### **6) CustomOAuth2UserService 클래스 작성**
+### **6) CustomOAuth2UserService 클래스 작성**
 
 `OAuthAttributes`을 기반으로 가입 및 정보수정, 세션 저장 등 기능 수행합니다.
 
-```
+```java
 package com.example.awsboard.config.auth;
 
 import com.example.awsboard.config.auth.dto.SessionUser;
@@ -391,13 +390,13 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
  
 
-##### **7) SecurityConfig 클래스 작성 - 스프링 시큐리티 설정**
+### **7) SecurityConfig 클래스 작성 - 스프링 시큐리티 설정**
 
 - `.oauth2Login().userInfoEndpoint().userService(customOAuth2UserService);`
 
  
 
-```
+```java
 package com.example.awsboard.config.auth;
 
 import com.example.awsboard.domain.user.Role;
@@ -438,11 +437,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
  
 
-##### **8) SessionUser 클래스 작성**
+### **8) SessionUser 클래스 작성**
 
 `User` 엔티티 클래스에서 직렬화가 필요한 경우 별도로 사용하기 위한 클래스를 작성합니다.
 
-```
+```java
 package com.example.awsboard.config.auth.dto;
 
 import com.example.awsboard.domain.user.User;
@@ -476,11 +475,11 @@ public class SessionUser implements Serializable {
 
  
 
-##### **9) IndexController 작성, Thymeleaf 뷰 페이지 작성**
+### **9) IndexController 작성, Thymeleaf 뷰 페이지 작성**
 
 일부 내용은 생략합니다.
 
-```
+```java
 package com.example.awsboard.web;
 
 import com.example.awsboard.config.auth.LoginUser;
@@ -545,27 +544,21 @@ public class IndexController {
 
  
 
-#### **결과**
+## **결과**
 
-\[caption id="attachment\_2657" align="alignnone" width="1864"\] ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-13-pm-6.20.24.png) 로그인 전 화면\[/caption\]
+![로그인 전 화면](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-13-pm-6.20.24.png)  
+*로그인 전 화면*
 
- 
+![Google Login 버튼을 클릭하면 위와 같은 화면이 나옵니다.](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-13-pm-6.21.15.png)  
+*Google Login 버튼을 클릭하면 위와 같은 화면이 나옵니다.*
 
-\[caption id="attachment\_2658" align="alignnone" width="408"\] ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-13-pm-6.21.15.png) Google Login 버튼을 클릭하면 위와 같은 화면이 나옵니다.\[/caption\]
-
- 
-
-\[caption id="attachment\_2659" align="alignnone" width="1890"\] ![](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-13-pm-6.23.36.png) 로그인이 정상적으로 되었습니다.\[/caption\]
-
- 
-
-
-
+![로그인이 정상적으로 되었습니다.](/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-13-pm-6.23.36.png)  
+*로그인이 정상적으로 되었습니다.*
  
 
 * * *
 
-#### **참고: 네이버 연동하기**
+## **참고: 네이버 연동하기**
 
 위의 작업 내용에 다음 부분을 추가하여 네이버도 연동할 수 있습니다.
 
@@ -573,9 +566,9 @@ public class IndexController {
 
  
 
-**1) application-oauth.properties 에 다음 내용 추가**
+### **1) application-oauth.properties 에 다음 내용 추가**
 
-```
+```conf
 ## 네이버 ##
 
 # registration
@@ -596,9 +589,9 @@ spring.security.oauth2.client.provider.naver.user_name_attribute=response
 
  
 
-**2) OAuthAttributes.java에 다음 내용 추가**
+### **2) OAuthAttributes.java에 다음 내용 추가**
 
-```
+```java
 package com.example.awsboard.config.auth;
 
 .........
@@ -645,9 +638,9 @@ public class OAuthAttributes {
 
  
 
-**3) index.html 뷰 페이지에 구글 로그인 버튼 옆에 다음 추가**
+### **3) index.html 뷰 페이지에 구글 로그인 버튼 옆에 다음 추가**
 
-```
+```html
 <a href="/oauth2/authorization/naver" class="btn btn-sm btn-secondary active" role="button">Naver Login</a>
 ```
 

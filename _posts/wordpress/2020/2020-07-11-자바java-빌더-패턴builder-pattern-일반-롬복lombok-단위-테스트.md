@@ -7,17 +7,17 @@ categories:
 
 ---
 
-참고 [블로그](https://johngrib.github.io/wiki/builder-pattern/)
+> 참고 [블로그](https://johngrib.github.io/wiki/builder-pattern/)
 
  
 
-자바(Java)에서 객체를 생성할 때 사용하는 패턴이 여러 가지가 있습니다. 그 중 가장 대표적안 **생성자 패턴(constructor pattern)**은 지금 채워야 할 필드가 무엇인지 명확히 지정할 수 없습니다. 하지만 **빌더 패턴(builder pattern)**을 사용하면 어느 필드에 어떤 값을 채워야 할지 명확하게 지정할 수 있습니다.
+자바(Java)에서 객체를 생성할 때 사용하는 패턴이 여러 가지가 있습니다. 그 중 가장 대표적안 생성자 패턴(constructor pattern)은 지금 채워야 할 필드가 무엇인지 명확히 지정할 수 없습니다. 하지만 **빌더 패턴**(builder pattern)을 사용하면 어느 필드에 어떤 값을 채워야 할지 명확하게 지정할 수 있습니다.
 
- 
+## 생성자 패턴
 
 일반적인 생성자 패턴의 예시는 다음과 같습니다.
 
-```
+```java
 package com.example.awsboard.web.dto;
 
 public class Car {
@@ -52,11 +52,11 @@ Car car2 = new Car(name, car) // ??
 
 일반적인 생성자 패턴은 위와 같이 같은 스트링 타입 변수의 위치가 뒤바뀐 채로 생성되어도 문제점을 찾지 못하고 넘어갈 수도 있다는 점을 알 수 있습니다.
 
- 
+## 빌더 패턴
 
 이것을 **빌더 패턴**으로 바꾸면 다음과 같습니다.
 
-```
+```java
 package com.example.awsboard.web.dto;
 
 public class Car {
@@ -125,7 +125,7 @@ Car car1 = Car.builder()
 
 위의 빌더 패턴으로 만든 `Car`에 대한 **단위 테스트**는 다음과 같습니다.
 
-```
+```java
 package com.example.awsboard.web.dto;
 
 import org.junit.jupiter.api.Test;
@@ -155,11 +155,11 @@ public class CarTest {
 
  
 
-##### **롬복(Lombok)으로 빌더 패턴 적용**
+## **롬복(Lombok)으로 빌더 패턴 적용**
 
-참고: [Spring Boot: Gradle 버전 5 이상에서 롬복 설치 + 단위 테스트](http://yoonbumtae.com/?p=2540)
+> 참고: [Spring Boot: Gradle 버전 5 이상에서 롬복 설치 + 단위 테스트](/posts/spring-boot-gradle-버전-5-이상에서-롬복-설치-테스트)
 
-```
+```java
 package com.example.awsboard.web.dto;
 
 import lombok.Builder;
@@ -184,7 +184,7 @@ public class LombokCar {
 
  
 
-```
+```java
 package com.example.awsboard.web.dto;
 
 import org.junit.jupiter.api.Test;

@@ -10,24 +10,26 @@ tags:
 
  ![](/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-pm-4.22.05.png)
 
-Main(`전`)에서 Edit(`후`)로 정보를 넘기는 방법은 `segue.destination`을 이용, `후`에서 `전`으로 넘기는 방법은 프로토콜을 정의한 다음 `전` 컨트롤러에서 그것을 상속받고, `전` 컨트롤러가 `후` 컨트롤러로 정보를 넘기는 시점에 `self`를 `후` 컨트롤러의 `delegate` 변수에 담은 다음 거기서 `delegate` 관련 작업을 처리하도록 한다.
+## 정보를 넘기는 방법
+
+### Main(`전`)에서 Edit(`후`)로 정보를 넘기는 방법
+
+- `segue.destination`을 이용
+
+### Edit(`후`)에서 Main(`전`)으로 넘기는 방법
+  - 위임 프로토콜을 정의
+  - Main(`전`) 컨트롤러에서 위임 프로토콜을 준수(conform)함
+  - `전` 컨트롤러가 `후` 컨트롤러로 정보를 넘기는 시점에 `self`를 `후` 컨트롤러의 `delegate` 변수에 담음
+    - 예) `editVC.delegate = self (=MainVC)`
+  - Main 컨트롤러에서 `delegate` 관련 작업을 처리하도록 한다.
 
  
 
 ```swift
-//
-//  ViewController.swift
-//  Navigation
-//
-//  Created by yoonbumtae on 2020/02/14.
-//  Copyright © 2020 BGSMM. All rights reserved.
-//
-
 import UIKit
 
 // EditDelegate 프로토콜 구현
 class ViewController: UIViewController, EditDelegate {
-
     @IBOutlet weak var txtMessage: UITextField!
     @IBOutlet weak var imgView: UIImageView!
     
@@ -47,7 +49,6 @@ class ViewController: UIViewController, EditDelegate {
     // 다음 장면으로 전환하는 시점
     // 이 함수에서 준비(prepare)한 다음 EditViewController 컨트롤러로 전환
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         // 다음 연결지점(segue.destination)을 EditViewController로 캐스팅해서 editViewController에 할당
         let editViewController = segue.destination as! EditViewController
         
@@ -98,24 +99,12 @@ class ViewController: UIViewController, EditDelegate {
             imgView.frame.size = CGSize(width: imgView.frame.width / scale, height: imgView.frame.height / scale)
             self.isZoom = false
         }
-        
     }
-
 }
-
 ```
 
- 
 
 ```swift
-//
-//  EditViewController.swift
-//  Navigation
-//
-//  Created by yoonbumtae on 2020/02/14.
-//  Copyright © 2020 BGSMM. All rights reserved.
-//
-
 import UIKit
 
 // 여기서 처리하고 이전 장면으로 넘기는 것에 대한 프로토콜 작성
@@ -127,7 +116,6 @@ protocol EditDelegate {
 }
 
 class EditViewController: UIViewController {
-    
     var textWayValue: String = ""
     var strMessage: String = ""
     
@@ -186,16 +174,5 @@ class EditViewController: UIViewController {
             btnZoom.setTitle("확대", for: .normal)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 ```

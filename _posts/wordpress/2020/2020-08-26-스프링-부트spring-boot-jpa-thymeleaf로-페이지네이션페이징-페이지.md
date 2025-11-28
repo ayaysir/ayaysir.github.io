@@ -6,7 +6,7 @@ categories:
   - "Spring/JSP"
 ---
 
-\[rcblock id="2655"\]
+<!-- \[rcblock id="2655"\] -->
 
 스프링 부트 + JPA + Thymeleaf를 이용해 게시판에 페이지네이션(페이징, 페이지 내비게이션) 기능을 추가해 보겠습니다.
 
@@ -20,7 +20,7 @@ categories:
 
 #### **1) 엔티티에 대한 서비스 클래스 작성**
 
-```
+```java
 package com.example.awsboard.service.posts;
 
 import com.example.awsboard.domain.posts.Posts;

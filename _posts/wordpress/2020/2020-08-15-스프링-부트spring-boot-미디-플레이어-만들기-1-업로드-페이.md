@@ -6,7 +6,7 @@ categories:
   - "Spring/JSP"
 ---
 
-\[rcblock id="2655"\]
+<!-- \[rcblock id="2655"\] -->
 
 이전 글: [스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기](http://yoonbumtae.com/?p=2819)
 
@@ -22,7 +22,7 @@ categories:
 
 ##### **현재 버전에서의 TimidityRunner**
 
-```
+```java
 package com.example.awsboard.util;
 
 import java.io.*;
@@ -132,7 +132,7 @@ public class TimidityRunner {
 
 그러면 midi 파일과 mp3 파일의 경로, 원래 이름, 해시값 등을 저장하는 테이블(엔티티)가 새로 필요합니다. 참고로 재생 정보로 _카테고리_와 _사용자 지정 제목_이 있습니다. _카테고리_는 폴더와 비슷한 의미이고 _사용자 지정 제목_은 원래 파일명과 다른 이름을 사용자가 지정할 수 있다는 의미입니다.
 
-```
+```java
 package com.example.awsboard.domain.midi;
 
 import com.example.awsboard.domain.BaseTimeEntity;
@@ -194,7 +194,7 @@ public class Midi extends BaseTimeEntity {
 
 ```
 
-```
+```java
 package com.example.awsboard.domain.midi;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -210,7 +210,7 @@ public interface MidiRepository extends JpaRepository<Midi, Long> {
 
 ##### **Midi 엔티티의 서비스 클래스 작성**
 
-```
+```java
 package com.example.awsboard.service.posts;
 
 import com.example.awsboard.domain.midi.Midi;
@@ -280,7 +280,7 @@ CRUD에 대응할 수 있는 서비스를 작성하였습니다. 현재는 업�
 
 컨트롤러 내의 `PostMapping` 부분입니다.
 
-```
+```java
 package com.example.awsboard.web;
 
 import com.example.awsboard.config.auth.LoginUser;

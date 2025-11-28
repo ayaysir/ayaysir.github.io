@@ -8,9 +8,11 @@ tags:
   - "swift"
 ---
 
-\[rcblock id="3441"\]
+<!-- \[rcblock id="3441"\] -->
 
-#### **제네릭 타입 (Generic Type)**
+## **제네릭 타입 (Generic Type)**
+
+> [Swift(스위프트): 제네릭(Generics) - 제네릭 타입, 제네릭 함수, 연관 타입(Associated Type), where 조건절](/posts/swift스위프트-제네릭generics/)
 
 제네릭 타입이란 "_타입을 파라미터화해서 컴파일시 구체적인 타입이 결정되도록 하는 것_"이란 뜻으로 Swift에서도 제네릭 타입을 지원합니다. 주로 배열 같은 콜렉션 타입에서 사용됩니다.
 
@@ -78,7 +80,7 @@ print(possibleString)   // some("Strings")
 
  
 
-##### **제네릭 타입의 Where 절**
+### **제네릭 타입의 Where 절**
 
 프로토콜 구현의 위한 타입을 요구하거나 똑같은 타입을 요구하는 경우, 혹은 특정 상위 클래스를 요구하는 경우 등 제네릭 타입에서 사용할 타입을 한정시키고 싶을 때 `Where` 절을 사용합니다.
 
@@ -134,4 +136,4 @@ print (anyCommonElements([1, 2, 3], [1, 3]))
 
  
 
-\[rcblock id="3441"\]
+<!-- \[rcblock id="3441"\] -->
