@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Spring JPA: 테이블(엔티티) 검색 기능 만들기 + 단위 테스트" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="[rcblock id=”2655”]" />
-<meta property="og:description" content="[rcblock id=”2655”]" />
+<meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
+<meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/spring-jpa-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%94%ED%8B%B0%ED%8B%B0-%EA%B2%80%EC%83%89-%EA%B8%B0%EB%8A%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/spring-jpa-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%94%ED%8B%B0%ED%8B%B0-%EA%B2%80%EC%83%89-%EA%B8%B0%EB%8A%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="Spring JPA: 테이블(엔티티) 검색 기능 만들기 + 단위 테스트" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-08-14T00:00:00+09:00","datePublished":"2020-08-14T00:00:00+09:00","description":"[rcblock id=”2655”]","headline":"Spring JPA: 테이블(엔티티) 검색 기능 만들기 + 단위 테스트","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/spring-jpa-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%94%ED%8B%B0%ED%8B%B0-%EA%B2%80%EC%83%89-%EA%B8%B0%EB%8A%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8/"},"url":"https://ayaysir.github.io/posts/spring-jpa-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%94%ED%8B%B0%ED%8B%B0-%EA%B2%80%EC%83%89-%EA%B8%B0%EB%8A%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-08-14T00:00:00+09:00","datePublished":"2020-08-14T00:00:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Spring JPA: 테이블(엔티티) 검색 기능 만들기 + 단위 테스트","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/spring-jpa-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%94%ED%8B%B0%ED%8B%B0-%EA%B2%80%EC%83%89-%EA%B8%B0%EB%8A%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8/"},"url":"https://ayaysir.github.io/posts/spring-jpa-%ED%85%8C%EC%9D%B4%EB%B8%94%EC%97%94%ED%8B%B0%ED%8B%B0-%EA%B2%80%EC%83%89-%EA%B8%B0%EB%8A%A5-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EB%8B%A8%EC%9C%84-%ED%85%8C%EC%8A%A4%ED%8A%B8/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -724,7 +724,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1014 words"
+  title="1012 words"
 >
   <em>5 min</em> read</span>
 
@@ -736,7 +736,7 @@
   
 
   <div class="content">
-    <p>[rcblock id=”2655”]</p>
+    <!-- \[rcblock id="2655"\] -->
 
 <p>Spring JPA는 Repository의 메소드 이름으로 쿼리를 지정할 수 있습니다.</p>
 
@@ -746,8 +746,8 @@
 
 <h5 id="참고-entity-클래스의-구조는-다음과-같습니다"><span class="me-2"><strong>참고: <code class="language-plaintext highlighter-rouge">Entity</code> 클래스의 구조는 다음과 같습니다.</strong></span><a href="#참고-entity-클래스의-구조는-다음과-같습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -795,52 +795,52 @@
 45
 46
 47
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.domain.posts;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.domain.posts</span><span class="o">;</span>
 
-import com.example.awsboard.domain.BaseTimeEntity;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+<span class="kn">import</span> <span class="nn">com.example.awsboard.domain.BaseTimeEntity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.Builder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.Getter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.NoArgsConstructor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.ToString</span><span class="o">;</span>
 
-import javax.persistence.*;
+<span class="kn">import</span> <span class="nn">javax.persistence.*</span><span class="o">;</span>
 
-@Getter
-@NoArgsConstructor
-@ToString
-@Entity // 테이블과 링크될 클래스
-public class Posts extends BaseTimeEntity {
+<span class="nd">@Getter</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="nd">@ToString</span>
+<span class="nd">@Entity</span> <span class="c1">// 테이블과 링크될 클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Posts</span> <span class="kd">extends</span> <span class="nc">BaseTimeEntity</span> <span class="o">{</span>
 
-    @Id // PK 필드
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // PK 생성규칙
-    private Long id;
+    <span class="nd">@Id</span> <span class="c1">// PK 필드</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span> <span class="c1">// PK 생성규칙</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
 
-    // @Column: 선언하지 않더라도 클래스의 필드는 모두 컬럼이 됨
-    // 추가 변경 옵션이 필요한 경우 지정
-    @Column(length = 450, nullable = false)
-    private String title;
+    <span class="c1">// @Column: 선언하지 않더라도 클래스의 필드는 모두 컬럼이 됨</span>
+    <span class="c1">// 추가 변경 옵션이 필요한 경우 지정</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span> <span class="o">=</span> <span class="mi">450</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String content;
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">columnDefinition</span> <span class="o">=</span> <span class="s">"TEXT"</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">content</span><span class="o">;</span>
 
-    private String author;
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
 
-    private Long authorId;
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">authorId</span><span class="o">;</span>
 
-    @Builder // 빌더 패턴 클래스 생성, 생성자에 포함된 필드만 포함
-    public Posts(String title, String content, String author, Long authorId) {
-        this.title = title;
-        this.content = content;
-        this.author = author;
-        this.authorId = authorId;
-    }
+    <span class="nd">@Builder</span> <span class="c1">// 빌더 패턴 클래스 생성, 생성자에 포함된 필드만 포함</span>
+    <span class="kd">public</span> <span class="nf">Posts</span><span class="o">(</span><span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">content</span><span class="o">,</span> <span class="nc">String</span> <span class="n">author</span><span class="o">,</span> <span class="nc">Long</span> <span class="n">authorId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">author</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">authorId</span> <span class="o">=</span> <span class="n">authorId</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    public void update(String title, String content) {
-        this.title = title;
-        this.content = content;
-    }
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">content</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">;</span>
+    <span class="o">}</span>
 
-}
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -848,8 +848,8 @@ public class Posts extends BaseTimeEntity {
 
 <h5 id="다음은-레퍼지토리-인터페이스-코드입니다"><span class="me-2"><strong>다음은 레퍼지토리 인터페이스 코드입니다.</strong></span><a href="#다음은-레퍼지토리-인터페이스-코드입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -864,20 +864,20 @@ public class Posts extends BaseTimeEntity {
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.domain.posts;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.domain.posts</span><span class="o">;</span>
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+<span class="kn">import</span> <span class="nn">org.springframework.data.jpa.repository.JpaRepository</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.data.jpa.repository.Query</span><span class="o">;</span>
 
-import java.util.List;
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-public interface PostsRepository extends JpaRepository&lt;Posts, Long&gt; {
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PostsRepository</span> <span class="kd">extends</span> <span class="nc">JpaRepository</span><span class="o">&lt;</span><span class="nc">Posts</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="o">{</span>
 
-    // findByXXX: XXX 컬럼을 키워드로 검색
-    // Containing: 특정 키워드 포함 여부
-    List&lt;Posts&gt; findByContentContainingIgnoreCaseOrTitleContainingIgnoreCase(String title, String content);
+    <span class="c1">// findByXXX: XXX 컬럼을 키워드로 검색</span>
+    <span class="c1">// Containing: 특정 키워드 포함 여부</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Posts</span><span class="o">&gt;</span> <span class="nf">findByContentContainingIgnoreCaseOrTitleContainingIgnoreCase</span><span class="o">(</span><span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">content</span><span class="o">);</span>
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -893,14 +893,14 @@ public interface PostsRepository extends JpaRepository&lt;Posts, Long&gt; {
 
 <p>이 메소드를 SQL 문으로 바꾸면 대략 다음과 같습니다. 이해를 돕기 위한 쿼리문으로 실제 사용 방법은 다를 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span data-label-text="Sql"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>select * from posts 
-where upper(title) like '%' || upper([?2]) || '%' 
-or upper(content) like '%' || upper([?2]) || '%'
+</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">posts</span> 
+<span class="k">where</span> <span class="k">upper</span><span class="p">(</span><span class="n">title</span><span class="p">)</span> <span class="k">like</span> <span class="s1">'%'</span> <span class="o">||</span> <span class="k">upper</span><span class="p">([</span><span class="o">?</span><span class="mi">2</span><span class="p">])</span> <span class="o">||</span> <span class="s1">'%'</span> 
+<span class="k">or</span> <span class="k">upper</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="k">like</span> <span class="s1">'%'</span> <span class="o">||</span> <span class="k">upper</span><span class="p">([</span><span class="o">?</span><span class="mi">2</span><span class="p">])</span> <span class="o">||</span> <span class="s1">'%'</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -935,8 +935,8 @@ public List&lt;PostsListResponseDTO&gt; searchTitleAndContent(String keyword) {
 
 <h5 id="참고-repository-단위-테스트"><span class="me-2"><strong>참고: Repository 단위 테스트</strong></span><a href="#참고-repository-단위-테스트" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -996,64 +996,64 @@ public List&lt;PostsListResponseDTO&gt; searchTitleAndContent(String keyword) {
 57
 58
 59
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.domain.posts;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.domain.posts</span><span class="o">;</span>
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.AfterEach</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="o">;</span>
 
-import java.time.LocalDateTime;
-import java.util.List;
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-import static org.assertj.core.api.Assertions.assertThat;
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">assertj</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertThat</span><span class="o">;</span>
 
-@SpringBootTest
-public class PostsRepositoryTest {
+<span class="nd">@SpringBootTest</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostsRepositoryTest</span> <span class="o">{</span>
 
-    // ...............
+    <span class="c1">// ...............</span>
 
-    @Test
-    public void Search_동작여부() {
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">Search_동작여부</span><span class="o">()</span> <span class="o">{</span>
 
-        // Given
-        String title = "Dog water";
-        String content = "Cat water";
+        <span class="c1">// Given</span>
+        <span class="nc">String</span> <span class="n">title</span> <span class="o">=</span> <span class="s">"Dog water"</span><span class="o">;</span>
+        <span class="nc">String</span> <span class="n">content</span> <span class="o">=</span> <span class="s">"Cat water"</span><span class="o">;</span>
 
-        postsRepository.save(Posts.builder()
-                .title(title)
-                .content(content)
-                .author("kim")
-                .build());
-        postsRepository.save(Posts.builder()
-                .title(content)
-                .content(title)
-                .author("park")
-                .build());
-        postsRepository.save(Posts.builder()
-                .title("fire")
-                .content("fire")
-                .author("lee")
-                .build());
+        <span class="n">postsRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nc">Posts</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="n">title</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">content</span><span class="o">(</span><span class="n">content</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">author</span><span class="o">(</span><span class="s">"kim"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+        <span class="n">postsRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nc">Posts</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="n">content</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">content</span><span class="o">(</span><span class="n">title</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">author</span><span class="o">(</span><span class="s">"park"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
+        <span class="n">postsRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nc">Posts</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="s">"fire"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">content</span><span class="o">(</span><span class="s">"fire"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">author</span><span class="o">(</span><span class="s">"lee"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
 
-        // when
-        String toFindKeyword ="Cat";
+        <span class="c1">// when</span>
+        <span class="nc">String</span> <span class="n">toFindKeyword</span> <span class="o">=</span><span class="s">"Cat"</span><span class="o">;</span>
 
-        List&lt;Posts&gt; postsList = postsRepository
-                .findByContentContainingIgnoreCaseOrTitleContainingIgnoreCase(toFindKeyword, toFindKeyword);
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Posts</span><span class="o">&gt;</span> <span class="n">postsList</span> <span class="o">=</span> <span class="n">postsRepository</span>
+                <span class="o">.</span><span class="na">findByContentContainingIgnoreCaseOrTitleContainingIgnoreCase</span><span class="o">(</span><span class="n">toFindKeyword</span><span class="o">,</span> <span class="n">toFindKeyword</span><span class="o">);</span>
 
-        // then
-        Posts posts0 = (Posts) postsList.get(0);
-        Posts posts1 = (Posts) postsList.get(1);
+        <span class="c1">// then</span>
+        <span class="nc">Posts</span> <span class="n">posts0</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Posts</span><span class="o">)</span> <span class="n">postsList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+        <span class="nc">Posts</span> <span class="n">posts1</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Posts</span><span class="o">)</span> <span class="n">postsList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
 
-        System.out.println(postsList);
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">postsList</span><span class="o">);</span>
 
-        assertThat(posts0.getContent()).contains(toFindKeyword);
-        assertThat(posts1.getTitle()).contains(toFindKeyword);
+        <span class="n">assertThat</span><span class="o">(</span><span class="n">posts0</span><span class="o">.</span><span class="na">getContent</span><span class="o">()).</span><span class="na">contains</span><span class="o">(</span><span class="n">toFindKeyword</span><span class="o">);</span>
+        <span class="n">assertThat</span><span class="o">(</span><span class="n">posts1</span><span class="o">.</span><span class="na">getTitle</span><span class="o">()).</span><span class="na">contains</span><span class="o">(</span><span class="n">toFindKeyword</span><span class="o">);</span>
 
-    }
+    <span class="o">}</span>
 
-}
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1321,190 +1321,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1584,46 +1404,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1635,9 +1419,52 @@ public class PostsRepositoryTest {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1782,6 +1609,144 @@ public class PostsRepositoryTest {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1908,20 +1873,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2057,78 +2012,6 @@ public class PostsRepositoryTest {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8110,190 +7993,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8373,46 +8076,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8424,9 +8091,52 @@ public class PostsRepositoryTest {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8571,6 +8281,144 @@ public class PostsRepositoryTest {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8697,20 +8545,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

@@ -611,8 +611,8 @@
 
 <p>파일의 무결성 검사를 할 때 해시값을 이용한 비교를 많이 사용합니다. 이 예제는 단순히 파일이 같은지 여부 체크에만 사용할 것이기 때문에 복잡한 알고리즘은 필요하지 않고 MD5 정도의 해시 알고리즘이면 충분합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -649,42 +649,42 @@
 34
 35
 36
-</pre></td><td class="rouge-code"><pre>import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.security.MessageDigest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.NoSuchAlgorithmException</span><span class="o">;</span>
 
-public FileManager {
+<span class="kd">public</span> <span class="nc">FileManager</span> <span class="o">{</span>
 
-    public static String getHash(String path) throws IOException, NoSuchAlgorithmException {
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">getHash</span><span class="o">(</span><span class="nc">String</span> <span class="n">path</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">,</span> <span class="nc">NoSuchAlgorithmException</span> <span class="o">{</span>
 
-        MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-        FileInputStream fileInputStream = new FileInputStream(path);
+        <span class="nc">MessageDigest</span> <span class="n">messageDigest</span> <span class="o">=</span> <span class="nc">MessageDigest</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">"MD5"</span><span class="o">);</span>
+        <span class="nc">FileInputStream</span> <span class="n">fileInputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
 
-        byte[] dataBytes = new byte[1024];
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">dataBytes</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
 
-        Integer nRead = 0;
-        while((nRead = fileInputStream.read(dataBytes)) != -1) {
-            messageDigest.update(dataBytes, 0, nRead);
-        }
+        <span class="nc">Integer</span> <span class="n">nRead</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">while</span><span class="o">((</span><span class="n">nRead</span> <span class="o">=</span> <span class="n">fileInputStream</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">dataBytes</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">messageDigest</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">dataBytes</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">nRead</span><span class="o">);</span>
+        <span class="o">}</span>
 
-        byte[] mdBytes = messageDigest.digest();
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">mdBytes</span> <span class="o">=</span> <span class="n">messageDigest</span><span class="o">.</span><span class="na">digest</span><span class="o">();</span>
 
-        StringBuffer stringBuffer = new StringBuffer();
-        for(Integer i = 0; i &lt; mdBytes.length; i++) {
-            stringBuffer.append(Integer.toString((mdBytes[i] &amp; 0xff) + 0x100, 16)).substring(1);
-        }
+        <span class="nc">StringBuffer</span> <span class="n">stringBuffer</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
+        <span class="k">for</span><span class="o">(</span><span class="nc">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mdBytes</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">stringBuffer</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="nc">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">((</span><span class="n">mdBytes</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="o">)</span> <span class="o">+</span> <span class="mh">0x100</span><span class="o">,</span> <span class="mi">16</span><span class="o">)).</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="o">}</span>
 
-        return stringBuffer.toString();
+        <span class="k">return</span> <span class="n">stringBuffer</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
 
-    }
+    <span class="o">}</span>
 
-    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">,</span> <span class="nc">NoSuchAlgorithmException</span> <span class="o">{</span>
 
-        String filePath = "/Users/example/Documents/midi/canyon.mid";
+        <span class="nc">String</span> <span class="n">filePath</span> <span class="o">=</span> <span class="s">"/Users/example/Documents/midi/canyon.mid"</span><span class="o">;</span>
 
-        System.out.println(FileManager.getHash(filePath));
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">FileManager</span><span class="o">.</span><span class="na">getHash</span><span class="o">(</span><span class="n">filePath</span><span class="o">));</span>
 
-    }
-}
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -949,190 +949,10 @@ public FileManager {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1212,46 +1032,10 @@ public FileManager {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1263,9 +1047,52 @@ public FileManager {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1410,6 +1237,144 @@ public FileManager {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1536,20 +1501,10 @@ public FileManager {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1685,78 +1640,6 @@ public FileManager {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -7738,190 +7621,10 @@ public FileManager {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8001,46 +7704,10 @@ public FileManager {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8052,9 +7719,52 @@ public FileManager {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8199,6 +7909,144 @@ public FileManager {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8325,20 +8173,10 @@ public FileManager {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

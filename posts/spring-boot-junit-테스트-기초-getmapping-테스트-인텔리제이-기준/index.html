@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -826,42 +833,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
-
-  
-  
-
-  
     
     
 
@@ -891,6 +862,21 @@
 
       
     
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -946,8 +932,40 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -964,7 +982,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Spring Boot: JUnit 단위 테스트 기초 (GetMapping 테스트, 인텔리제이 기준)</h1>
     
@@ -1038,7 +1056,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="454 words"
+  title="456 words"
 >
   <em>2 min</em> read</span>
 
@@ -1048,18 +1066,44 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Spring Boot: JUnit 단위 테스트 기초 (GetMapping 테스트, 인텔리제이 기준)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Spring Boot: JUnit 단위 테스트 기초 (GetMapping 테스트, 인텔리제이 기준)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h6 id="스프링-부트spring-boot-버전-231-gradle-641-기준입니다">스프링 부트(Spring Boot) 버전 2.3.1, Gradle 6.4.1 기준입니다.</h6>
+    <blockquote>
+  <p>스프링 부트(Spring Boot) 버전 2.3.1, Gradle 6.4.1 기준입니다.</p>
+</blockquote>
 
-<h5 id="1-패키지를-생성-예-comexampleawsboardweb"><span class="me-2"><strong>1. 패키지를 생성 (예: <code class="language-plaintext highlighter-rouge">com.example.awsboard.web</code>)</strong></span><a href="#1-패키지를-생성-예-comexampleawsboardweb" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="절차"><span class="me-2">절차</span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="2-컨트롤러-및-getmapping-예제-작성"><span class="me-2"><strong>2. 컨트롤러 및 <code class="language-plaintext highlighter-rouge">GetMapping</code> 예제 작성</strong></span><a href="#2-컨트롤러-및-getmapping-예제-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-패키지를-생성-예-comexampleawsboardweb"><span class="me-2"><strong>1. 패키지를 생성 (예: <code class="language-plaintext highlighter-rouge">com.example.awsboard.web</code>)</strong></span><a href="#1-패키지를-생성-예-comexampleawsboardweb" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h3 id="2-컨트롤러-및-getmapping-예제-작성"><span class="me-2"><strong>2. 컨트롤러 및 <code class="language-plaintext highlighter-rouge">GetMapping</code> 예제 작성</strong></span><a href="#2-컨트롤러-및-getmapping-예제-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.25.17.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.25.17.png" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1073,35 +1117,35 @@
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.web;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.web</span><span class="o">;</span>
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
 
-@RestController
-public class BasicController {
+<span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BasicController</span> <span class="o">{</span>
 
-    @GetMapping("/hell")
-    public String hello() {
-        return "Hell";
-    }
-}
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/hell"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">hello</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Hell"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="3-동일한-패키지를-src--test--java-에-패키지-생성"><span class="me-2"><strong>3. 동일한 패키지를 <code class="language-plaintext highlighter-rouge">src &gt; test &gt; java</code> 에 패키지 생성</strong></span><a href="#3-동일한-패키지를-src--test--java-에-패키지-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-동일한-패키지를-src--test--java-에-패키지-생성"><span class="me-2"><strong>3. 동일한 패키지를 <code class="language-plaintext highlighter-rouge">src &gt; test &gt; java</code> 에 패키지 생성</strong></span><a href="#3-동일한-패키지를-src--test--java-에-패키지-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="4-패키지-내에-basiccontrollertest-클래스-생성"><span class="me-2"><strong>4. 패키지 내에 <code class="language-plaintext highlighter-rouge">BasicControllerTest</code> 클래스 생성</strong></span><a href="#4-패키지-내에-basiccontrollertest-클래스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-패키지-내에-basiccontrollertest-클래스-생성"><span class="me-2"><strong>4. 패키지 내에 <code class="language-plaintext highlighter-rouge">BasicControllerTest</code> 클래스 생성</strong></span><a href="#4-패키지-내에-basiccontrollertest-클래스-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.30.39.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.30.39.png" alt="" loading="lazy"></a></p>
 
-<h5 id="5-테스트-코드-작성"><span class="me-2"><strong>5. 테스트 코드 작성</strong></span><a href="#5-테스트-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-테스트-코드-작성"><span class="me-2"><strong>5. 테스트 코드 작성</strong></span><a href="#5-테스트-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.32.13.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.32.13.png" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1126,30 +1170,30 @@ public class BasicController {
 22
 23
 24
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.web;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.web</span><span class="o">;</span>
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.web.servlet.MockMvc;
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.test.web.servlet.MockMvc</span><span class="o">;</span>
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">web</span><span class="o">.</span><span class="na">servlet</span><span class="o">.</span><span class="na">request</span><span class="o">.</span><span class="na">MockMvcRequestBuilders</span><span class="o">.</span><span class="na">get</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">web</span><span class="o">.</span><span class="na">servlet</span><span class="o">.</span><span class="na">result</span><span class="o">.</span><span class="na">MockMvcResultMatchers</span><span class="o">.</span><span class="na">content</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">web</span><span class="o">.</span><span class="na">servlet</span><span class="o">.</span><span class="na">result</span><span class="o">.</span><span class="na">MockMvcResultMatchers</span><span class="o">.</span><span class="na">status</span><span class="o">;</span>
 
-public class BasicControllerTest {
-    @Autowired private MockMvc mvc;
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BasicControllerTest</span> <span class="o">{</span>
+    <span class="nd">@Autowired</span> <span class="kd">private</span> <span class="nc">MockMvc</span> <span class="n">mvc</span><span class="o">;</span>
 
-    @Test
-    public void hell이_리턴된다() throws Exception {
-        String hell = "Hell";
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">hell이_리턴된다</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">hell</span> <span class="o">=</span> <span class="s">"Hell"</span><span class="o">;</span>
 
-        mvc.perform(get("/hell"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(hell));
+        <span class="n">mvc</span><span class="o">.</span><span class="na">perform</span><span class="o">(</span><span class="n">get</span><span class="o">(</span><span class="s">"/hell"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">andExpect</span><span class="o">(</span><span class="n">status</span><span class="o">().</span><span class="na">isOk</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">andExpect</span><span class="o">(</span><span class="n">content</span><span class="o">().</span><span class="na">string</span><span class="o">(</span><span class="n">hell</span><span class="o">));</span>
 
-    }
+    <span class="o">}</span>
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1161,26 +1205,24 @@ public class BasicControllerTest {
 
 <p> </p>
 
-<h5 id="6-메소드-코드-옆의-재생-버튼run-test-클릭"><span class="me-2"><strong>6. 메소드 코드 옆의 재생 버튼(<code class="language-plaintext highlighter-rouge">Run Test</code>) 클릭</strong></span><a href="#6-메소드-코드-옆의-재생-버튼run-test-클릭" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="6-메소드-코드-옆의-재생-버튼run-test-클릭"><span class="me-2"><strong>6. 메소드 코드 옆의 재생 버튼(<code class="language-plaintext highlighter-rouge">Run Test</code>) 클릭</strong></span><a href="#6-메소드-코드-옆의-재생-버튼run-test-클릭" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.36.35.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.36.35.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="7-테스트-결과-확인"><span class="me-2"><strong>7. 테스트 결과 확인</strong></span><a href="#7-테스트-결과-확인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="7-테스트-결과-확인"><span class="me-2"><strong>7. 테스트 결과 확인</strong></span><a href="#7-테스트-결과-확인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.37.13.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-5.37.13.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<hr />
-
 <p> </p>
 
-<h4 id="테스트-예제-dto를-json으로-리턴하는-페이지"><span class="me-2"><strong>테스트 예제: DTO를 JSON으로 리턴하는 페이지</strong></span><a href="#테스트-예제-dto를-json으로-리턴하는-페이지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="테스트-예제-dto를-json으로-리턴하는-페이지"><span class="me-2"><strong>테스트 예제: DTO를 JSON으로 리턴하는 페이지</strong></span><a href="#테스트-예제-dto를-json으로-리턴하는-페이지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1198,27 +1240,27 @@ public class BasicControllerTest {
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.web;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.web</span><span class="o">;</span>
 
-import com.example.awsboard.web.dto.BasicControllerDTO;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+<span class="kn">import</span> <span class="nn">com.example.awsboard.web.dto.BasicControllerDTO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestParam</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
 
-@RestController
-public class BasicController {
+<span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BasicController</span> <span class="o">{</span>
 
-    ...
+    <span class="o">...</span>
 
-    @GetMapping("/hell/dto")
-    public BasicControllerDTO hellDto(@RequestParam("name") String name, @RequestParam("amount") int amount) {
-        return new BasicControllerDTO(name, amount);
-    }
-}
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/hell/dto"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">BasicControllerDTO</span> <span class="nf">hellDto</span><span class="o">(</span><span class="nd">@RequestParam</span><span class="o">(</span><span class="s">"name"</span><span class="o">)</span> <span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="nd">@RequestParam</span><span class="o">(</span><span class="s">"amount"</span><span class="o">)</span> <span class="kt">int</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">BasicControllerDTO</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">amount</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1247,34 +1289,34 @@ public class BasicController {
 26
 27
 28
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.web;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.web</span><span class="o">;</span>
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.web.servlet.MockMvc;
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.test.web.servlet.MockMvc</span><span class="o">;</span>
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">web</span><span class="o">.</span><span class="na">servlet</span><span class="o">.</span><span class="na">request</span><span class="o">.</span><span class="na">MockMvcRequestBuilders</span><span class="o">.</span><span class="na">get</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">web</span><span class="o">.</span><span class="na">servlet</span><span class="o">.</span><span class="na">result</span><span class="o">.</span><span class="na">MockMvcResultMatchers</span><span class="o">.*;</span>
 
-@WebMvcTest
-public class BasicControllerTest {
-    @Autowired private MockMvc mvc;
+<span class="nd">@WebMvcTest</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BasicControllerTest</span> <span class="o">{</span>
+    <span class="nd">@Autowired</span> <span class="kd">private</span> <span class="nc">MockMvc</span> <span class="n">mvc</span><span class="o">;</span>
 
-    ...
+    <span class="o">...</span>
 
-    @Test
-    public void basicControllerDTO가_리턴된다() throws Exception {
-        String name = "Hell";
-        int amount = 1000;
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">basicControllerDTO가_리턴된다</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">"Hell"</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">amount</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">;</span>
 
-        mvc.perform(get("/hell/dto").param("name", name).param("amount", String.valueOf(amount)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value(name))
-                .andExpect(jsonPath("$.amount").value(amount));
-    }
+        <span class="n">mvc</span><span class="o">.</span><span class="na">perform</span><span class="o">(</span><span class="n">get</span><span class="o">(</span><span class="s">"/hell/dto"</span><span class="o">).</span><span class="na">param</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="n">name</span><span class="o">).</span><span class="na">param</span><span class="o">(</span><span class="s">"amount"</span><span class="o">,</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">amount</span><span class="o">)))</span>
+                <span class="o">.</span><span class="na">andExpect</span><span class="o">(</span><span class="n">status</span><span class="o">().</span><span class="na">isOk</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">andExpect</span><span class="o">(</span><span class="n">jsonPath</span><span class="o">(</span><span class="s">"$.name"</span><span class="o">).</span><span class="na">value</span><span class="o">(</span><span class="n">name</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">andExpect</span><span class="o">(</span><span class="n">jsonPath</span><span class="o">(</span><span class="s">"$.amount"</span><span class="o">).</span><span class="na">value</span><span class="o">(</span><span class="n">amount</span><span class="o">));</span>
+    <span class="o">}</span>
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>JSON으로 된 내용 검증은</p>
@@ -1286,7 +1328,9 @@ public class BasicControllerTest {
 
 <p> </p>
 
-<p>출처: <a href="https://github.com/jojoldu/freelec-springboot2-webservice">스프링 부트와 AWS로 혼자 구현하는 웹 서비스</a></p>
+<blockquote>
+  <p>출처: <a href="https://github.com/jojoldu/freelec-springboot2-webservice">스프링 부트와 AWS로 혼자 구현하는 웹 서비스</a></p>
+</blockquote>
 
   </div>
 
@@ -1550,190 +1594,10 @@ public class BasicControllerTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1813,46 +1677,10 @@ public class BasicControllerTest {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1864,9 +1692,52 @@ public class BasicControllerTest {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2011,6 +1882,144 @@ public class BasicControllerTest {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2137,20 +2146,10 @@ public class BasicControllerTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2253,6 +2252,12 @@ public class BasicControllerTest {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2286,78 +2291,6 @@ public class BasicControllerTest {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8339,190 +8272,10 @@ public class BasicControllerTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8602,46 +8355,10 @@ public class BasicControllerTest {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8653,9 +8370,52 @@ public class BasicControllerTest {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8800,6 +8560,144 @@ public class BasicControllerTest {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8926,20 +8824,10 @@ public class BasicControllerTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

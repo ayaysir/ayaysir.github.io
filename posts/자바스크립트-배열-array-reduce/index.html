@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="자바스크립트: 배열 Array.reduce" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="MDN 문서 바로가기" />
-<meta property="og:description" content="MDN 문서 바로가기" />
+<meta name="description" content="Reduce 란?" />
+<meta property="og:description" content="Reduce 란?" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4-array-reduce/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4-array-reduce/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="자바스크립트: 배열 Array.reduce" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-06-14T00:00:00+09:00","datePublished":"2020-06-14T00:00:00+09:00","description":"MDN 문서 바로가기","headline":"자바스크립트: 배열 Array.reduce","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4-array-reduce/"},"url":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4-array-reduce/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-06-14T00:00:00+09:00","datePublished":"2020-06-14T00:00:00+09:00","description":"Reduce 란?","headline":"자바스크립트: 배열 Array.reduce","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4-array-reduce/"},"url":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4-array-reduce/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -891,10 +898,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -1002,6 +1036,11 @@
     
 
     
+  
+
+  
+  
+
   
 
 
@@ -1018,7 +1057,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: 배열 Array.reduce</h1>
     
@@ -1092,7 +1131,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1053 words"
+  title="1058 words"
 >
   <em>5 min</em> read</span>
 
@@ -1102,22 +1141,48 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: 배열 Array.reduce</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: 배열 Array.reduce</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>MDN 문서 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">바로가기</a></p>
+    <h2 id="reduce-란"><span class="me-2">Reduce 란?</span><a href="#reduce-란" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<blockquote>
+  <p>MDN 문서 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">바로가기</a></p>
+</blockquote>
 
 <p>자바스크립트에서 배열의 <code class="language-plaintext highlighter-rouge">reduce</code> 기능은 배열을 순회하면서 누산기(<code class="language-plaintext highlighter-rouge">accumulator</code>)에 값을 계속 쌓아놓고 최종적으로 누산기의 값을 반환하는 reducer의 기능을 수행합니다. reducer의 사전적 의미와 매칭이 잘 안되는데 어떤 물질에서 원액(누산기의 값)만 추출한다는 의미로 생각하면 될 것 같습니다.</p>
 
 <p>누산기의 값은 줄어들지 않으며 리턴식은 누산기에 합산됩니다. 그리고 마지막까지 순회한 후 최종적으로 누산기의 값만을 반환한다는 특성을 기억하면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>arr.reduce((accumulator, currentValue, opt_currentIndex, opt_array) =&gt; {
-    ....
-}, opt_initialValue)
+</pre></td><td class="rouge-code"><pre><span class="nx">arr</span><span class="p">.</span><span class="nf">reduce</span><span class="p">((</span><span class="nx">accumulator</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">,</span> <span class="nx">opt_currentIndex</span><span class="p">,</span> <span class="nx">opt_array</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="p">....</span>
+<span class="p">},</span> <span class="nx">opt_initialValue</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1129,8 +1194,9 @@
 </ul>
 
 <p> </p>
+<h2 id="예제"><span class="me-2">예제</span><a href="#예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="예제-1-배열의-숫자-더하기"><span class="me-2"><strong>예제 1: 배열의 숫자 더하기</strong></span><a href="#예제-1-배열의-숫자-더하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="예제-1-배열의-숫자-더하기"><span class="me-2"><strong>예제 1: 배열의 숫자 더하기</strong></span><a href="#예제-1-배열의-숫자-더하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1144,7 +1210,7 @@
 
 <p> </p>
 
-<h4 id="예제-2-배열-내-객체의-숫자-더하기"><span class="me-2"><strong>예제 2: 배열 내 객체의 숫자 더하기</strong></span><a href="#예제-2-배열-내-객체의-숫자-더하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="예제-2-배열-내-객체의-숫자-더하기"><span class="me-2"><strong>예제 2: 배열 내 객체의 숫자 더하기</strong></span><a href="#예제-2-배열-내-객체의-숫자-더하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>반드시 <code class="language-plaintext highlighter-rouge">initialValue</code>를 지정해야 합니다. <code class="language-plaintext highlighter-rouge">initialValue</code>는 반드시 숫자여야 할 필요는 없으며, 필요에 따라 다양한 자료형으로 선언 가능합니다.</p>
 
@@ -1206,7 +1272,7 @@
 
 <p> </p>
 
-<h4 id="예제-3-배열-펼치기"><span class="me-2"><strong>예제 3: 배열 펼치기</strong></span><a href="#예제-3-배열-펼치기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="예제-3-배열-펼치기"><span class="me-2"><strong>예제 3: 배열 펼치기</strong></span><a href="#예제-3-배열-펼치기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1250,7 +1316,7 @@
 
 <p> </p>
 
-<h4 id="예제-4-속성으로-객체-분류하기"><span class="me-2"><strong>예제 4: 속성으로 객체 분류하기</strong></span><a href="#예제-4-속성으로-객체-분류하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="예제-4-속성으로-객체-분류하기"><span class="me-2"><strong>예제 4: 속성으로 객체 분류하기</strong></span><a href="#예제-4-속성으로-객체-분류하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1310,7 +1376,7 @@
 
 <p> </p>
 
-<h4 id="예제-5-객체에서-배열을-뽑아-연결하기-초기값과-획장-연산자--이용"><span class="me-2"><strong>예제 5: 객체에서 배열을 뽑아 연결하기 (초기값과 획장 연산자 <code class="language-plaintext highlighter-rouge">...</code> 이용)</strong></span><a href="#예제-5-객체에서-배열을-뽑아-연결하기-초기값과-획장-연산자--이용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="예제-5-객체에서-배열을-뽑아-연결하기-초기값과-획장-연산자--이용"><span class="me-2"><strong>예제 5: 객체에서 배열을 뽑아 연결하기 (초기값과 획장 연산자 <code class="language-plaintext highlighter-rouge">...</code> 이용)</strong></span><a href="#예제-5-객체에서-배열을-뽑아-연결하기-초기값과-획장-연산자--이용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1354,7 +1420,7 @@
 
 <p><a href="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-14-pm-11.17.19.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-14-pm-11.17.19.png" alt="" loading="lazy"></a></p>
 
-<h4 id="예제-6-배열의-중복-제거"><span class="me-2"><strong>예제 6: 배열의 중복 제거</strong></span><a href="#예제-6-배열의-중복-제거" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="예제-6-배열의-중복-제거"><span class="me-2"><strong>예제 6: 배열의 중복 제거</strong></span><a href="#예제-6-배열의-중복-제거" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>사전에 배열을 미리 정렬합니다.</p>
 
@@ -1384,7 +1450,7 @@
 
 <p><a href="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-14-pm-11.08.12.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-14-pm-11.08.12.png" alt="" loading="lazy"></a></p>
 
-<h5 id="참고-arrayfrom-과-set을-이용한-중복제거"><span class="me-2">참고: <code class="language-plaintext highlighter-rouge">Array.from</code> 과 <code class="language-plaintext highlighter-rouge">Set</code>을 이용한 중복제거</span><a href="#참고-arrayfrom-과-set을-이용한-중복제거" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="참고-arrayfrom-과-set을-이용한-중복제거"><span class="me-2">참고: <code class="language-plaintext highlighter-rouge">Array.from</code> 과 <code class="language-plaintext highlighter-rouge">Set</code>을 이용한 중복제거</span><a href="#참고-arrayfrom-과-set을-이용한-중복제거" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1654,190 +1720,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1917,46 +1803,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1968,9 +1818,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2115,6 +2008,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2241,20 +2272,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2356,6 +2377,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -4230,79 +4257,7 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8268,11 +8223,11 @@
 
   
     <a
-      href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%8B%A4%EA%B5%AD%EC%96%B4-%EC%A7%80%EC%9B%90-%EA%B5%AD%EC%A0%9C%ED%99%94-internationalization-1/"
+      href="/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-jsonp-json-padding-%EC%82%AC%EC%9A%A9%EB%B2%95/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>자바스크립트: 다국어 지원 (국제화 Internationalization) 1</p>
+      <p>자바스크립트: JSONP (JSON Padding) 사용법</p>
     </a>
   
 
@@ -8443,190 +8398,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8706,46 +8481,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8757,9 +8496,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8904,6 +8686,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -9030,20 +8950,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

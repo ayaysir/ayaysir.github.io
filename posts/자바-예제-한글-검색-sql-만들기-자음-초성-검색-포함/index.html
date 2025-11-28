@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -826,21 +833,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -872,6 +864,21 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -888,7 +895,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바 예제: 한글 검색 SQL 만들기 (자음 초성 검색 포함)</h1>
     
@@ -962,7 +969,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="615 words"
+  title="599 words"
 >
   <em>3 min</em> read</span>
 
@@ -972,18 +979,40 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바 예제: 한글 검색 SQL 만들기 (자음 초성 검색 포함)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바 예제: 한글 검색 SQL 만들기 (자음 초성 검색 포함)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>한글 유니코드와 관련된 내용은 이 글을 참고하세요: <a href="http://yoonbumtae.com/?p=745">Java 예제: 한글 초성 중성 종성 분리 (자모분리)</a></p>
+    <p>한글 유니코드와 관련된 내용은 이 글을 참고하세요: <a href="/posts/java-예제-한글-초성-중성-종성-분리-자모분리/">Java 예제: 한글 초성 중성 종성 분리 (자모분리)</a></p>
 
 <p> </p>
 
-<h5 id="만들고자-하는-sqlmariadb은-다음과-같습니다"><span class="me-2">만들고자 하는 SQL(mariadb)은 다음과 같습니다.</span><a href="#만들고자-하는-sqlmariadb은-다음과-같습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="만들고자-하는-sqlmariadb"><span class="me-2">만들고자 하는 SQL(mariadb)</span><a href="#만들고자-하는-sqlmariadb" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span data-label-text="Sql"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>SELECT `id`, `keyword`, `date`, count(keyword) as kcount FROM `recent_search_keyword` WHERE keyword &gt;= '가' and keyword &lt;= '깋' group by keyword order by keyword
+</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="nv">`id`</span><span class="p">,</span> <span class="nv">`keyword`</span><span class="p">,</span> <span class="nv">`date`</span><span class="p">,</span> <span class="k">count</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span> <span class="k">as</span> <span class="n">kcount</span> <span class="k">FROM</span> <span class="nv">`recent_search_keyword`</span> <span class="k">WHERE</span> <span class="n">keyword</span> <span class="o">&gt;=</span> <span class="s1">'가'</span> <span class="k">and</span> <span class="n">keyword</span> <span class="o">&lt;=</span> <span class="s1">'깋'</span> <span class="k">group</span> <span class="k">by</span> <span class="n">keyword</span> <span class="k">order</span> <span class="k">by</span> <span class="n">keyword</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/01/screenshot-2020-01-15-am-1.53.47.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/01/screenshot-2020-01-15-am-1.53.47.png" alt="" loading="lazy"></a></p>
@@ -999,8 +1028,8 @@
   <li>지나가는ㅁ을 입력한 경우 범위는 지나가는ㅁ … 지나가는밓</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1056,66 +1085,66 @@
 53
 54
 55
-</pre></td><td class="rouge-code"><pre>package blog;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">blog</span><span class="o">;</span>
 
-import java.util.Scanner;
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 
-public class SearchHangeul {
-  public static void main(String[] args) {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SearchHangeul</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
   
-    String text = "가깋낗닣딯띻맇밓빟삫싷잏짛찧칳킿팋핗힣";
-    String jamoRef = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅇㅈㅉㅊㅋㅌㅍㅎ";
+    <span class="nc">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">"가깋낗닣딯띻맇밓빟삫싷잏짛찧칳킿팋핗힣"</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">jamoRef</span> <span class="o">=</span> <span class="s">"ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅇㅈㅉㅊㅋㅌㅍㅎ"</span><span class="o">;</span>
     
-    char[] textArr = text.toCharArray();
-    char[] jamoArr = jamoRef.toCharArray();
+    <span class="kt">char</span><span class="o">[]</span> <span class="n">textArr</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
+    <span class="kt">char</span><span class="o">[]</span> <span class="n">jamoArr</span> <span class="o">=</span> <span class="n">jamoRef</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
     
-    try(Scanner s = new Scanner(System.in);) {
+    <span class="k">try</span><span class="o">(</span><span class="nc">Scanner</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);)</span> <span class="o">{</span>
       
-      System.out.print("입력하세요 &gt;&gt; ");
-      String keyword = s.nextLine();
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"입력하세요 &gt;&gt; "</span><span class="o">);</span>
+      <span class="nc">String</span> <span class="n">keyword</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
 
-      char targetChar = keyword.charAt(keyword.length() - 1);
-      // System.out.println((int) targetChar);
+      <span class="kt">char</span> <span class="n">targetChar</span> <span class="o">=</span> <span class="n">keyword</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">keyword</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+      <span class="c1">// System.out.println((int) targetChar);</span>
 
-      char endChar = '0';
+      <span class="kt">char</span> <span class="n">endChar</span> <span class="o">=</span> <span class="sc">'0'</span><span class="o">;</span>
       
-      // 입력값의 끝 문자가 ㄱ...ㅎ 인 경우
-      if(targetChar &lt;= 12622) {
-        for(int i = 0; i &lt; jamoArr.length; i++) {
-          if(targetChar == jamoArr[i]) {
-            System.out.println(targetChar + " to the end: " + textArr[i + 1]);
-            endChar = textArr[i + 1];
-          }
-        }
-      } else {
-        // 입력값의 끝 문자가 가...힣 인 경우
-        for(int i = 0; i &lt; text.length(); i++) {
-          System.out.println(textArr[i] + " : " + (int) textArr[i]);
-          if(targetChar &gt;= textArr[i] &amp;&amp; targetChar &lt; textArr[i + 1]) {
-            System.out.println(targetChar + " to the end: " + textArr[i + 1]);
-            endChar = textArr[i + 1];
-          }
-        }
-      }
-      // SQL 끝 단어
-      String endKeyword = keyword.substring(0, keyword.length() - 1) + endChar;
-      String outSql = "SELECT `id`, `keyword`, `date`, count(keyword) as kcount "
-          + "FROM `recent_search_keyword` "
-          + "\n\t\t"
-          + "WHERE keyword &gt;= '{start}' and keyword &lt;= '{end}' "
-          + "group by keyword order by keyword";
-      outSql = outSql.replace("{start}", keyword).replace("{end}", endKeyword);
-      System.out.println("**final SQL : " + outSql);
+      <span class="c1">// 입력값의 끝 문자가 ㄱ...ㅎ 인 경우</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">targetChar</span> <span class="o">&lt;=</span> <span class="mi">12622</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">jamoArr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">targetChar</span> <span class="o">==</span> <span class="n">jamoArr</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">targetChar</span> <span class="o">+</span> <span class="s">" to the end: "</span> <span class="o">+</span> <span class="n">textArr</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]);</span>
+            <span class="n">endChar</span> <span class="o">=</span> <span class="n">textArr</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+          <span class="o">}</span>
+        <span class="o">}</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="c1">// 입력값의 끝 문자가 가...힣 인 경우</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">text</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">textArr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">" : "</span> <span class="o">+</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">textArr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">targetChar</span> <span class="o">&gt;=</span> <span class="n">textArr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">targetChar</span> <span class="o">&lt;</span> <span class="n">textArr</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">])</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">targetChar</span> <span class="o">+</span> <span class="s">" to the end: "</span> <span class="o">+</span> <span class="n">textArr</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]);</span>
+            <span class="n">endChar</span> <span class="o">=</span> <span class="n">textArr</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+          <span class="o">}</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="c1">// SQL 끝 단어</span>
+      <span class="nc">String</span> <span class="n">endKeyword</span> <span class="o">=</span> <span class="n">keyword</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">keyword</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">endChar</span><span class="o">;</span>
+      <span class="nc">String</span> <span class="n">outSql</span> <span class="o">=</span> <span class="s">"SELECT `id`, `keyword`, `date`, count(keyword) as kcount "</span>
+          <span class="o">+</span> <span class="s">"FROM `recent_search_keyword` "</span>
+          <span class="o">+</span> <span class="s">"\n\t\t"</span>
+          <span class="o">+</span> <span class="s">"WHERE keyword &gt;= '{start}' and keyword &lt;= '{end}' "</span>
+          <span class="o">+</span> <span class="s">"group by keyword order by keyword"</span><span class="o">;</span>
+      <span class="n">outSql</span> <span class="o">=</span> <span class="n">outSql</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">"{start}"</span><span class="o">,</span> <span class="n">keyword</span><span class="o">).</span><span class="na">replace</span><span class="o">(</span><span class="s">"{end}"</span><span class="o">,</span> <span class="n">endKeyword</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"**final SQL : "</span> <span class="o">+</span> <span class="n">outSql</span><span class="o">);</span>
 
-    }
+    <span class="o">}</span>
 
-  }
-}
+  <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="아래는-테스트-결과입니다"><span class="me-2">아래는 테스트 결과입니다.</span><a href="#아래는-테스트-결과입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="테스트-결과"><span class="me-2">테스트 결과</span><a href="#테스트-결과" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2020/01/screenshot-2020-01-15-am-2.02.03.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/01/screenshot-2020-01-15-am-2.02.03.png" alt="" loading="lazy"></a></p>
 
@@ -1387,190 +1416,10 @@ public class SearchHangeul {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1650,46 +1499,10 @@ public class SearchHangeul {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1701,9 +1514,52 @@ public class SearchHangeul {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1848,6 +1704,144 @@ public class SearchHangeul {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1974,20 +1968,10 @@ public class SearchHangeul {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2089,6 +2073,12 @@ public class SearchHangeul {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7816,78 +7806,6 @@ public class SearchHangeul {
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -8176,190 +8094,10 @@ public class SearchHangeul {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8439,46 +8177,10 @@ public class SearchHangeul {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8490,9 +8192,52 @@ public class SearchHangeul {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8637,6 +8382,144 @@ public class SearchHangeul {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8763,20 +8646,10 @@ public class SearchHangeul {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

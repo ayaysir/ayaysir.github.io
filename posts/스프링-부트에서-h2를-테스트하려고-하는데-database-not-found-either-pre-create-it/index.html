@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -891,15 +898,26 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+
+    
   
 
   
@@ -981,6 +999,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -997,7 +1025,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>스프링 부트에서 H2를 테스트하려고 하는데 Database not found, either pre-create it ... 에러가 발생할 때</h1>
     
@@ -1071,7 +1099,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="428 words"
+  title="429 words"
 >
   <em>2 min</em> read</span>
 
@@ -1080,6 +1108,28 @@
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">스프링 부트에서 H2를 테스트하려고 하는데 Database not found, either pre-create it ... 에러가 발생할 때</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">스프링 부트에서 H2를 테스트하려고 하는데 Database not found, either pre-create it ... 에러가 발생할 때</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -1101,26 +1151,26 @@
 
 <p>서버의 포트를 주의하세요. <code class="language-plaintext highlighter-rouge">8080</code>은 스프링 부트의 서버 포트이며, <code class="language-plaintext highlighter-rouge">8082</code>는 홈브루를 통해 설치한 H2의 서버 포트입니다.</p>
 
-<p> </p>
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-홈브루를-통해-h2-설치"><span class="me-2"><strong>1) 홈브루를 통해 H2 설치</strong></span><a href="#1-홈브루를-통해-h2-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-홈브루를-통해-h2-설치"><span class="me-2"><strong>1) 홈브루를 통해 H2 설치</strong></span><a href="#1-홈브루를-통해-h2-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>터미널에 아래 명령어를 입력하세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>brew install h2
+</pre></td><td class="rouge-code"><pre>brew <span class="nb">install </span>h2
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="2-h2-실행"><span class="me-2"><strong>2) H2 실행</strong></span><a href="#2-h2-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-h2-실행"><span class="me-2"><strong>2) H2 실행</strong></span><a href="#2-h2-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>터미널에 아래 명령어를 입력하세요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>H2
 </pre></td></tr></tbody></table></code></div></div>
@@ -1131,25 +1181,25 @@
 
 <p> </p>
 
-<h5 id="3-localhost8082에-접속한-후-연결-버튼을-클릭합니다"><span class="me-2"><strong>3) localhost:8082에 접속한 후 <code class="language-plaintext highlighter-rouge">[연결]</code> 버튼을 클릭합니다.</strong></span><a href="#3-localhost8082에-접속한-후-연결-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-localhost8082에-접속한-후-연결-버튼을-클릭합니다"><span class="me-2"><strong>3) localhost:8082에 접속한 후 <code class="language-plaintext highlighter-rouge">[연결]</code> 버튼을 클릭합니다.</strong></span><a href="#3-localhost8082에-접속한-후-연결-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.07.42.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.07.42.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="4-콘솔에-정상-접속되었으면-disconnect아래-그림의-빨간-네모-부분-버튼을-클릭해-데이터베이스를-종료합니다"><span class="me-2"><strong>4) 콘솔에 정상 접속되었으면, <code class="language-plaintext highlighter-rouge">Disconnect</code>(아래 그림의 빨간 네모 부분) 버튼을 클릭해 데이터베이스를 종료합니다.</strong></span><a href="#4-콘솔에-정상-접속되었으면-disconnect아래-그림의-빨간-네모-부분-버튼을-클릭해-데이터베이스를-종료합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-콘솔에-정상-접속되었으면-disconnect아래-그림의-빨간-네모-부분-버튼을-클릭해-데이터베이스를-종료합니다"><span class="me-2"><strong>4) 콘솔에 정상 접속되었으면, <code class="language-plaintext highlighter-rouge">Disconnect</code>(아래 그림의 빨간 네모 부분) 버튼을 클릭해 데이터베이스를 종료합니다.</strong></span><a href="#4-콘솔에-정상-접속되었으면-disconnect아래-그림의-빨간-네모-부분-버튼을-클릭해-데이터베이스를-종료합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.08.34.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.08.34.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="5터미널에서-control--z-버튼을-눌러-h2에서-빠져나온-후-ps-명령과-kill-명령을-이용해-실행중인-h2-프로세스를-종료합니다-혹은-터미널-창을-닫습니다"><span class="me-2"><strong>5) 터미널에서 <code class="language-plaintext highlighter-rouge">control + z</code> 버튼을 눌러 H2에서 빠져나온 후, <code class="language-plaintext highlighter-rouge">ps</code> 명령과 <code class="language-plaintext highlighter-rouge">kill</code> 명령을 이용해 실행중인 H2 프로세스를 종료합니다. (혹은 터미널 창을 닫습니다.)</strong></span><a href="#5터미널에서-control--z-버튼을-눌러-h2에서-빠져나온-후-ps-명령과-kill-명령을-이용해-실행중인-h2-프로세스를-종료합니다-혹은-터미널-창을-닫습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5터미널에서-control--z-버튼을-눌러-h2에서-빠져나온-후-ps-명령과-kill-명령을-이용해-실행중인-h2-프로세스를-종료합니다-혹은-터미널-창을-닫습니다"><span class="me-2"><strong>5) 터미널에서 <code class="language-plaintext highlighter-rouge">control + z</code> 버튼을 눌러 H2에서 빠져나온 후, <code class="language-plaintext highlighter-rouge">ps</code> 명령과 <code class="language-plaintext highlighter-rouge">kill</code> 명령을 이용해 실행중인 H2 프로세스를 종료합니다. (혹은 터미널 창을 닫습니다.)</strong></span><a href="#5터미널에서-control--z-버튼을-눌러-h2에서-빠져나온-후-ps-명령과-kill-명령을-이용해-실행중인-h2-프로세스를-종료합니다-혹은-터미널-창을-닫습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.29.27.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.29.27.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="6-8080-포트스프링-부트로-돌아간-후-오류가-나지-않고-데이터베이스-접속이-정상적으로-되는지-확인합니다"><span class="me-2"><strong>6) 8080 포트(스프링 부트)로 돌아간 후 오류가 나지 않고 데이터베이스 접속이 정상적으로 되는지 확인합니다.</strong></span><a href="#6-8080-포트스프링-부트로-돌아간-후-오류가-나지-않고-데이터베이스-접속이-정상적으로-되는지-확인합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="6-8080-포트스프링-부트로-돌아간-후-오류가-나지-않고-데이터베이스-접속이-정상적으로-되는지-확인합니다"><span class="me-2"><strong>6) 8080 포트(스프링 부트)로 돌아간 후 오류가 나지 않고 데이터베이스 접속이 정상적으로 되는지 확인합니다.</strong></span><a href="#6-8080-포트스프링-부트로-돌아간-후-오류가-나지-않고-데이터베이스-접속이-정상적으로-되는지-확인합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.32.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.32.16.png" alt="" loading="lazy"></a></p>
 
@@ -1415,190 +1465,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1678,46 +1548,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1729,9 +1563,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1876,6 +1753,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2002,20 +2017,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2118,6 +2123,12 @@
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2151,78 +2162,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8204,190 +8143,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8467,46 +8226,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8518,9 +8241,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8665,6 +8431,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8791,20 +8695,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

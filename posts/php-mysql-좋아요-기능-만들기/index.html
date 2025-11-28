@@ -1383,10 +1383,10 @@
 
 <p>좋아요 숫자를 별도로 기록하는 컬럼을 게시판 테이블에 생성합니다. 빨간 박스는 새로 생성한 컬럼입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span data-label-text="Sql"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>SELECT count(*) FROM like_table WHERE service_code = 'XXX'
+</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">like_table</span> <span class="k">WHERE</span> <span class="n">service_code</span> <span class="o">=</span> <span class="s1">'XXX'</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>사실 좋아요 카운트 컬럼을 별도로 기록하지 않고 위의 좋아요 테이블에서 <code class="language-plaintext highlighter-rouge">count(*)</code> 문을 사용하여 갯수를 셀 수도 있습니다만, 굳이 별도의 컬럼을 추가한 이유는 다음과 같습니다.</p>
@@ -1406,8 +1406,8 @@
 
 <p>하트 기호가 들어갈 부분에 하이라이트된 코드를 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1420,18 +1420,18 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>&lt;?php while($row = mysqli_fetch_array($res)) { ?&gt;
-&lt;tr&gt;
-    &lt;?php 
-        $seq = $row['seq'];
-        echo "&lt;th scope='row'&gt;"; 
-        // ...
-        echo '&lt;td class="like-container"&gt;&lt;button type="button" class="btn-like" data-article-id="'.$seq.'"&gt;'
-            .'&lt;span class="heart-shape"&gt;♡&lt;/span&gt; &lt;span class="like-count"&gt;'.$row['like_count'].'&lt;/span&gt;&lt;/button&gt;&lt;/td&gt;'
-    ?&gt;
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span> <span class="k">while</span><span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nf">mysqli_fetch_array</span><span class="p">(</span><span class="nv">$res</span><span class="p">))</span> <span class="p">{</span> <span class="cp">?&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+    <span class="cp">&lt;?php</span> 
+        <span class="nv">$seq</span> <span class="o">=</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">'seq'</span><span class="p">];</span>
+        <span class="k">echo</span> <span class="s2">"&lt;th scope='row'&gt;"</span><span class="p">;</span> 
+        <span class="c1">// ...</span>
+        <span class="k">echo</span> <span class="s1">'&lt;td class="like-container"&gt;&lt;button type="button" class="btn-like" data-article-id="'</span><span class="mf">.</span><span class="nv">$seq</span><span class="mf">.</span><span class="s1">'"&gt;'</span>
+            <span class="mf">.</span><span class="s1">'&lt;span class="heart-shape"&gt;♡&lt;/span&gt; &lt;span class="like-count"&gt;'</span><span class="mf">.</span><span class="nv">$row</span><span class="p">[</span><span class="s1">'like_count'</span><span class="p">]</span><span class="mf">.</span><span class="s1">'&lt;/span&gt;&lt;/button&gt;&lt;/td&gt;'</span>
+    <span class="cp">?&gt;</span>
   
-&lt;/tr&gt;
-&lt;?php }?&gt;
+<span class="nt">&lt;/tr&gt;</span>
+<span class="cp">&lt;?php</span> <span class="p">}</span><span class="cp">?&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1524,8 +1524,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">POST</code> 로 처리하도록 하겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1559,39 +1559,39 @@
 31
 32
 33
-</pre></td><td class="rouge-code"><pre>&lt;?php
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
 
-include 'initializeDB.php'; // $mysqli 변수 포함
+<span class="k">include</span> <span class="s1">'initializeDB.php'</span><span class="p">;</span> <span class="c1">// $mysqli 변수 포함</span>
 
-$ip = $ip = $_SERVER['REMOTE_ADDR']; // 사용자의 IP주소 가져오기
-$article_id = $_POST['articleId']; // 게시글 아이디
+<span class="nv">$ip</span> <span class="o">=</span> <span class="nv">$ip</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">];</span> <span class="c1">// 사용자의 IP주소 가져오기</span>
+<span class="nv">$article_id</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'articleId'</span><span class="p">];</span> <span class="c1">// 게시글 아이디</span>
 
-if(!empty($article_id)) {
-    $sql1 = "SELECT * from dere_like WHERE service_code = 'phpex-$article_id' AND liked_ip = '$ip'";
-    $res1 = mysqli_num_rows($mysqli-&gt;query($sql1)); // sql 의 행 갯수를 가져옴 
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$article_id</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$sql1</span> <span class="o">=</span> <span class="s2">"SELECT * from dere_like WHERE service_code = 'phpex-</span><span class="nv">$article_id</span><span class="s2">' AND liked_ip = '</span><span class="nv">$ip</span><span class="s2">'"</span><span class="p">;</span>
+    <span class="nv">$res1</span> <span class="o">=</span> <span class="nf">mysqli_num_rows</span><span class="p">(</span><span class="nv">$mysqli</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="nv">$sql1</span><span class="p">));</span> <span class="c1">// sql 의 행 갯수를 가져옴 </span>
 
-    if($res1 == 0) {
-        // 좋아요 기록이 없는 경우 -&gt; 좋아요 등록
-        $sql2 = "INSERT into dere_like VALUES(0, 'phpex-$article_id', '$ip', 1, sysdate())";
-        $res2 = $mysqli-&gt;query($sql2);
+    <span class="k">if</span><span class="p">(</span><span class="nv">$res1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 좋아요 기록이 없는 경우 -&gt; 좋아요 등록</span>
+        <span class="nv">$sql2</span> <span class="o">=</span> <span class="s2">"INSERT into dere_like VALUES(0, 'phpex-</span><span class="nv">$article_id</span><span class="s2">', '</span><span class="nv">$ip</span><span class="s2">', 1, sysdate())"</span><span class="p">;</span>
+        <span class="nv">$res2</span> <span class="o">=</span> <span class="nv">$mysqli</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="nv">$sql2</span><span class="p">);</span>
 
-        // 게시판 테이블 업데이트
-        $sql3 = "UPDATE messages SET like_count = like_count + 1 WHERE seq = $article_id";
-        $res3 = $mysqli-&gt;query($sql3);
-        echo $res2 &amp;&amp; $res3 ? "like" : "failed";
-    } else {
-        // 이미 좋아요를 누른 경우 -&gt; 좋아요 취소
-        $sql2 = "DELETE from dere_like WHERE service_code = 'phpex-$article_id' AND liked_ip = '$ip'";
-        $res2 = $mysqli-&gt;query($sql2);
+        <span class="c1">// 게시판 테이블 업데이트</span>
+        <span class="nv">$sql3</span> <span class="o">=</span> <span class="s2">"UPDATE messages SET like_count = like_count + 1 WHERE seq = </span><span class="nv">$article_id</span><span class="s2">"</span><span class="p">;</span>
+        <span class="nv">$res3</span> <span class="o">=</span> <span class="nv">$mysqli</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="nv">$sql3</span><span class="p">);</span>
+        <span class="k">echo</span> <span class="nv">$res2</span> <span class="o">&amp;&amp;</span> <span class="nv">$res3</span> <span class="o">?</span> <span class="s2">"like"</span> <span class="o">:</span> <span class="s2">"failed"</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// 이미 좋아요를 누른 경우 -&gt; 좋아요 취소</span>
+        <span class="nv">$sql2</span> <span class="o">=</span> <span class="s2">"DELETE from dere_like WHERE service_code = 'phpex-</span><span class="nv">$article_id</span><span class="s2">' AND liked_ip = '</span><span class="nv">$ip</span><span class="s2">'"</span><span class="p">;</span>
+        <span class="nv">$res2</span> <span class="o">=</span> <span class="nv">$mysqli</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="nv">$sql2</span><span class="p">);</span>
         
-        // 게시판 테이블 업데이트
-        $sql3 = "UPDATE messages SET like_count = like_count - 1 WHERE seq = $article_id";
-        $res3 = $mysqli-&gt;query($sql3);
-        echo $res2 &amp;&amp; $res3 ? "unlike" : "failed";
-    }
-}
+        <span class="c1">// 게시판 테이블 업데이트</span>
+        <span class="nv">$sql3</span> <span class="o">=</span> <span class="s2">"UPDATE messages SET like_count = like_count - 1 WHERE seq = </span><span class="nv">$article_id</span><span class="s2">"</span><span class="p">;</span>
+        <span class="nv">$res3</span> <span class="o">=</span> <span class="nv">$mysqli</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="nv">$sql3</span><span class="p">);</span>
+        <span class="k">echo</span> <span class="nv">$res2</span> <span class="o">&amp;&amp;</span> <span class="nv">$res3</span> <span class="o">?</span> <span class="s2">"unlike"</span> <span class="o">:</span> <span class="s2">"failed"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-?&gt;
+<span class="cp">?&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>없어보이는 코드이지만 프로세스를 요약하자면</p>
@@ -1623,8 +1623,8 @@ if(!empty($article_id)) {
 
 <p>먼저 내가 좋아요를 눌렀는지 여부를 알려주는 php를 작성하도록 하겠습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1643,24 +1643,24 @@ if(!empty($article_id)) {
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>&lt;?php
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
 
-include 'initializeDB.php'; //$mysqli 변수 포함
+<span class="k">include</span> <span class="s1">'initializeDB.php'</span><span class="p">;</span> <span class="c1">//$mysqli 변수 포함</span>
 
-$ip = $ip = $_SERVER['REMOTE_ADDR']; // 사용자의 IP주소 가져오기
-$article_id = $_POST['articleId']; // 게시글 아이디
-$service_code = $_GET['getLikedByCode']; 
+<span class="nv">$ip</span> <span class="o">=</span> <span class="nv">$ip</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'REMOTE_ADDR'</span><span class="p">];</span> <span class="c1">// 사용자의 IP주소 가져오기</span>
+<span class="nv">$article_id</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'articleId'</span><span class="p">];</span> <span class="c1">// 게시글 아이디</span>
+<span class="nv">$service_code</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'getLikedByCode'</span><span class="p">];</span> 
 
-if(!empty($article_id)) {
-    // ....
-} else if(!empty($service_code)) {
-    $sql1 = "SELECT * from dere_like WHERE service_code = 'phpex-$service_code' AND liked_ip = '$ip'";
-    $res1 = mysqli_num_rows($mysqli-&gt;query($sql1)); // sql 의 행 갯수를 가져옴 
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$article_id</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// ....</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$service_code</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$sql1</span> <span class="o">=</span> <span class="s2">"SELECT * from dere_like WHERE service_code = 'phpex-</span><span class="nv">$service_code</span><span class="s2">' AND liked_ip = '</span><span class="nv">$ip</span><span class="s2">'"</span><span class="p">;</span>
+    <span class="nv">$res1</span> <span class="o">=</span> <span class="nf">mysqli_num_rows</span><span class="p">(</span><span class="nv">$mysqli</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="nv">$sql1</span><span class="p">));</span> <span class="c1">// sql 의 행 갯수를 가져옴 </span>
     
-    echo $res1 != 0 ? "liked" : "unliked";
-}
+    <span class="k">echo</span> <span class="nv">$res1</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">?</span> <span class="s2">"liked"</span> <span class="o">:</span> <span class="s2">"unliked"</span><span class="p">;</span>
+<span class="p">}</span>
 
-?&gt;
+<span class="cp">?&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>좋아요 기록이 있다면 <code class="language-plaintext highlighter-rouge">liked</code>를, 없다면 <code class="language-plaintext highlighter-rouge">unliked</code>를 반환합니다.</p>
@@ -1984,190 +1984,10 @@ if(!empty($article_id)) {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2247,46 +2067,10 @@ if(!empty($article_id)) {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -2298,9 +2082,52 @@ if(!empty($article_id)) {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2445,6 +2272,144 @@ if(!empty($article_id)) {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2571,20 +2536,10 @@ if(!empty($article_id)) {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2720,78 +2675,6 @@ if(!empty($article_id)) {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8773,190 +8656,10 @@ if(!empty($article_id)) {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -9036,46 +8739,10 @@ if(!empty($article_id)) {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -9087,9 +8754,52 @@ if(!empty($article_id)) {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -9234,6 +8944,144 @@ if(!empty($article_id)) {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -9360,20 +9208,10 @@ if(!empty($article_id)) {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

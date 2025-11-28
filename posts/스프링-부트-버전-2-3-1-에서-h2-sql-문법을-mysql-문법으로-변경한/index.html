@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,15 +638,26 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+
+    
   
 
   
@@ -677,6 +695,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -693,7 +721,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>스프링 부트 버전 2.3.1 에서 H2 SQL 문법을 MySQL 문법으로 변경한 후 H2 콘솔 사용하는 방법</h1>
     
@@ -767,7 +795,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="144 words"
+  title="146 words"
 >
   <em>1 min</em> read</span>
 
@@ -776,6 +804,28 @@
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">스프링 부트 버전 2.3.1 에서 H2 SQL 문법을 MySQL 문법으로 변경한 후 H2 콘솔 사용하는 방법</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">스프링 부트 버전 2.3.1 에서 H2 SQL 문법을 MySQL 문법으로 변경한 후 H2 콘솔 사용하는 방법</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -786,10 +836,12 @@
 
 <p>스프링 부트 버전 2.3.1 에서 H2 SQL 문법을 MySQL 문법으로 변경한 후 H2 콘솔 사용하기 위해 Datasource를 설정해야 합니다.</p>
 
-<h5 id="1-applicationproperties-파일에-다음-내용을-추가합니다"><span class="me-2"><strong>1) application.properties 파일에 다음 내용을 추가합니다.</strong></span><a href="#1-applicationproperties-파일에-다음-내용을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="1-applicationproperties-파일에-다음-내용을-추가합니다"><span class="me-2"><strong>1) application.properties 파일에 다음 내용을 추가합니다.</strong></span><a href="#1-applicationproperties-파일에-다음-내용을-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-conf highlighter-rouge"><div class="code-header">
+        <span data-label-text="Conf"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -807,28 +859,28 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre># H2 설정
-spring.h2.console.enabled=true
-spring.h2.console.path=/h2
+</pre></td><td class="rouge-code"><pre><span class="c"># H2 설정
+</span><span class="n">spring</span>.<span class="n">h2</span>.<span class="n">console</span>.<span class="n">enabled</span>=<span class="n">true</span>
+<span class="n">spring</span>.<span class="n">h2</span>.<span class="n">console</span>.<span class="n">path</span>=/<span class="n">h2</span>
 
-# Datasource 설정
-spring.datasource.driver-class-name=org.h2.Driver
-spring.datasource.url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
-spring.datasource.username=sa
-spring.datasource.password=
+<span class="c"># Datasource 설정
+</span><span class="n">spring</span>.<span class="n">datasource</span>.<span class="n">driver</span>-<span class="n">class</span>-<span class="n">name</span>=<span class="n">org</span>.<span class="n">h2</span>.<span class="n">Driver</span>
+<span class="n">spring</span>.<span class="n">datasource</span>.<span class="n">url</span>=<span class="n">jdbc</span>:<span class="n">h2</span>:<span class="n">mem</span>://<span class="n">localhost</span>/~/<span class="n">testdb</span>;<span class="n">MODE</span>=<span class="n">MYSQL</span>
+<span class="n">spring</span>.<span class="n">datasource</span>.<span class="n">username</span>=<span class="n">sa</span>
+<span class="n">spring</span>.<span class="n">datasource</span>.<span class="n">password</span>=
 
-# sql 보기
-spring.jpa.show_sql = true
+<span class="c"># sql 보기
+</span><span class="n">spring</span>.<span class="n">jpa</span>.<span class="n">show_sql</span> = <span class="n">true</span>
 
-# h2 문법을 mysql로 변경
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
-spring.jpa.properties.hibernate.dialect.storage_engine=innodb
-spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
+<span class="c"># h2 문법을 mysql로 변경
+</span><span class="n">spring</span>.<span class="n">jpa</span>.<span class="n">properties</span>.<span class="n">hibernate</span>.<span class="n">dialect</span>=<span class="n">org</span>.<span class="n">hibernate</span>.<span class="n">dialect</span>.<span class="n">MySQL5InnoDBDialect</span>
+<span class="n">spring</span>.<span class="n">jpa</span>.<span class="n">properties</span>.<span class="n">hibernate</span>.<span class="n">dialect</span>.<span class="n">storage_engine</span>=<span class="n">innodb</span>
+<span class="n">spring</span>.<span class="n">datasource</span>.<span class="n">hikari</span>.<span class="n">jdbc</span>-<span class="n">url</span>=<span class="n">jdbc</span>:<span class="n">h2</span>:<span class="n">mem</span>://<span class="n">localhost</span>/~/<span class="n">testdb</span>;<span class="n">MODE</span>=<span class="n">MYSQL</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.49.24.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.49.24.png" alt="" loading="lazy"></a></p>
 
-<h5 id="2-콘솔-주소localhost8080h2에-접속한-후-connect-버튼을-클릭합니다"><span class="me-2"><strong>2) 콘솔 주소(localhost:8080/h2)에 접속한 후 <code class="language-plaintext highlighter-rouge">[Connect]</code> 버튼을 클릭합니다.</strong></span><a href="#2-콘솔-주소localhost8080h2에-접속한-후-connect-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-콘솔-주소localhost8080h2에-접속한-후-connect-버튼을-클릭합니다"><span class="me-2"><strong>2) 콘솔 주소(localhost:8080/h2)에 접속한 후 <code class="language-plaintext highlighter-rouge">[Connect]</code> 버튼을 클릭합니다.</strong></span><a href="#2-콘솔-주소localhost8080h2에-접속한-후-connect-버튼을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.55.01.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.55.01.png" alt="" loading="lazy"></a></p>
 
@@ -1094,190 +1146,10 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1357,46 +1229,10 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1408,9 +1244,52 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1555,6 +1434,144 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1681,20 +1698,10 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1797,6 +1804,12 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1830,78 +1843,6 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -7883,190 +7824,10 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8146,46 +7907,10 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8197,9 +7922,52 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8344,6 +8112,144 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8470,20 +8376,10 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -826,16 +833,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -900,6 +897,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -921,7 +928,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: 배열 자르기 및 합치기 (예제: 퀵 정렬, 병합 정렬)</h1>
     
@@ -1005,44 +1012,66 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: 배열 자르기 및 합치기 (예제: 퀵 정렬, 병합 정렬)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: 배열 자르기 및 합치기 (예제: 퀵 정렬, 병합 정렬)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="배열-자르기"><span class="me-2"><strong>배열 자르기</strong></span><a href="#배열-자르기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="배열-자르기"><span class="me-2"><strong>배열 자르기</strong></span><a href="#배열-자르기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>Array.slice(시작인덱스, 끝인덱스)
+</pre></td><td class="rouge-code"><pre><span class="nb">Array</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="nx">시작인덱스</span><span class="p">,</span> <span class="nx">끝인덱스</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>시작인덱스를 포함하여, 끝인덱스 바로 직전까지 요소를 배열로 반환합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>var arr = [4, 1, 2, 11, 5, 7, 3]
-console.log(arr.slice(0, 4))
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>결과는 <code class="language-plaintext highlighter-rouge">[4, 1, 2, 11]</code> 로 인덱스 <code class="language-plaintext highlighter-rouge">0</code>부터 4의 <strong>바로 직전</strong>까지인 <code class="language-plaintext highlighter-rouge">3</code>번까지를 배열로 반환합니다.</p>
 
 <p> </p>
 
-<h4 id="배열-합치기"><span class="me-2"><strong>배열 합치기</strong></span><a href="#배열-합치기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="배열-합치기"><span class="me-2"><strong>배열 합치기</strong></span><a href="#배열-합치기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>Array.concat(배열1, 배열2, 배열3, ...)
+</pre></td><td class="rouge-code"><pre><span class="nb">Array</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="nx">배열1</span><span class="p">,</span> <span class="nx">배열2</span><span class="p">,</span> <span class="nx">배열3</span><span class="p">,</span> <span class="p">...)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>파라미터는 1개 또는 그 이상 가능합니다. 또한 맨 앞의 배열 뒤에 파라미터 순서대로 정렬됩니다.</p>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1053,23 +1082,23 @@ console.log(arr.slice(0, 4))
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>var arr1 = [1, 6]
-var arr2 = ["C", "E"]
-var arr3 = [65, 31.2, "A"]
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">E</span><span class="dl">"</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nx">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65</span><span class="p">,</span> <span class="mf">31.2</span><span class="p">,</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">]</span>
 
-console.log(
-    arr1.concat(arr2),
-    arr2.concat(arr3),
-    arr1.concat(arr2, arr3),
-    arr1.concat(arr2, ["FX"], arr3)
-)
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span>
+    <span class="nx">arr1</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">),</span>
+    <span class="nx">arr2</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="nx">arr3</span><span class="p">),</span>
+    <span class="nx">arr1</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">,</span> <span class="nx">arr3</span><span class="p">),</span>
+    <span class="nx">arr1</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">,</span> <span class="p">[</span><span class="dl">"</span><span class="s2">FX</span><span class="dl">"</span><span class="p">],</span> <span class="nx">arr3</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-30-pm-3.30.57.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-30-pm-3.30.57.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h4 id="예제-0-중복을-허용하지-않는-임의의-숫자-추출기-셔플링-기법-이용"><span class="me-2"><strong>예제 0: 중복을 허용하지 않는 임의의 숫자 추출기 (셔플링 기법 이용)</strong></span><a href="#예제-0-중복을-허용하지-않는-임의의-숫자-추출기-셔플링-기법-이용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제-0-중복을-허용하지-않는-임의의-숫자-추출기-셔플링-기법-이용"><span class="me-2"><strong>예제 0: 중복을 허용하지 않는 임의의 숫자 추출기 (셔플링 기법 이용)</strong></span><a href="#예제-0-중복을-허용하지-않는-임의의-숫자-추출기-셔플링-기법-이용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -1125,7 +1154,7 @@ console.log(
 
 <p> </p>
 
-<h4 id="예제-1-퀵-정렬quick-sort"><span class="me-2"><strong>예제 1: 퀵 정렬(Quick Sort)</strong></span><a href="#예제-1-퀵-정렬quick-sort" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제-1-퀵-정렬quick-sort"><span class="me-2"><strong>예제 1: 퀵 정렬(Quick Sort)</strong></span><a href="#예제-1-퀵-정렬quick-sort" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>퀵 정렬에 대한 설명은 <a href="https://ko.wikipedia.org/wiki/%ED%80%B5_%EC%A0%95%EB%A0%AC">위키백과 링크</a>를 참고하세요.</p>
 
@@ -1175,19 +1204,19 @@ console.log(
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>var unsortedArr = numberSampler(100, 20)
-console.log(unsortedArr, quickSort(unsortedArr))
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">unsortedArr</span> <span class="o">=</span> <span class="nf">numberSampler</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">unsortedArr</span><span class="p">,</span> <span class="nf">quickSort</span><span class="p">(</span><span class="nx">unsortedArr</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-30-pm-3.38.04.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-30-pm-3.38.04.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h4 id="예제-2-병합-정렬merge-sort"><span class="me-2"><strong>예제 2: 병합 정렬(Merge Sort)</strong></span><a href="#예제-2-병합-정렬merge-sort" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제-2-병합-정렬merge-sort"><span class="me-2"><strong>예제 2: 병합 정렬(Merge Sort)</strong></span><a href="#예제-2-병합-정렬merge-sort" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>병합 정렬에 대한 설명은 <a href="https://ko.wikipedia.org/wiki/%ED%95%A9%EB%B3%91_%EC%A0%95%EB%A0%AC">위키백과 링크</a>를 참고하세요.</p>
 
@@ -1295,19 +1324,19 @@ console.log(unsortedArr, quickSort(unsortedArr))
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>var unsortedArr = numberSampler(100, 20)
-console.log(unsortedArr, mergeSort(unsortedArr))
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">unsortedArr</span> <span class="o">=</span> <span class="nf">numberSampler</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">unsortedArr</span><span class="p">,</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="nx">unsortedArr</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-30-pm-4.04.35.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-30-pm-4.04.35.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<p>자바스크립트 JavaScript 배열 자르기 배열 합치기 배열 합치는 방법 배열 자르는 방법</p>
+<p><span style="font-size: 2pt;">자바스크립트 JavaScript 배열 자르기 배열 합치기 배열 합치는 방법 배열 자르는 방법</span></p>
 
   </div>
 
@@ -1572,190 +1601,10 @@ console.log(unsortedArr, mergeSort(unsortedArr))
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1835,46 +1684,10 @@ console.log(unsortedArr, mergeSort(unsortedArr))
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1886,9 +1699,52 @@ console.log(unsortedArr, mergeSort(unsortedArr))
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2033,6 +1889,144 @@ console.log(unsortedArr, mergeSort(unsortedArr))
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2159,20 +2153,10 @@ console.log(unsortedArr, mergeSort(unsortedArr))
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2274,6 +2258,12 @@ console.log(unsortedArr, mergeSort(unsortedArr))
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -4040,79 +4030,7 @@ console.log(unsortedArr, mergeSort(unsortedArr))
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8196,11 +8114,11 @@ console.log(unsortedArr, mergeSort(unsortedArr))
 
   
     <a
-      href="/posts/git-%EC%9D%B4%EB%AF%B8-%EC%A1%B4%EC%9E%AC%ED%95%98%EB%8A%94-%ED%8F%B4%EB%8D%94%EB%A5%BC-%EC%98%A8%EB%9D%BC%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8github%EC%97%90-%EC%B6%94%EA%B0%80%ED%95%98/"
+      href="/posts/%ED%8A%B8%EB%A6%AC-%EC%88%9C%ED%9A%8C-%EC%A0%84%EC%9C%84-%EC%A4%91%EC%9C%84-%ED%9B%84%EC%9C%84-preorder-inorder-postorder/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Git(깃): 이미 존재하는 폴더를 온라인 프로젝트(GitHub)에 추가하기</p>
+      <p>트리 순회: 전위, 중위, 후위 (preorder, inorder, postorder)</p>
     </a>
   
 </nav>
@@ -8361,190 +8279,10 @@ console.log(unsortedArr, mergeSort(unsortedArr))
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8624,46 +8362,10 @@ console.log(unsortedArr, mergeSort(unsortedArr))
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8675,9 +8377,52 @@ console.log(unsortedArr, mergeSort(unsortedArr))
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8822,6 +8567,144 @@ console.log(unsortedArr, mergeSort(unsortedArr))
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8948,20 +8831,10 @@ console.log(unsortedArr, mergeSort(unsortedArr))
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -761,16 +768,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -813,6 +810,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -834,7 +841,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>iOS 프로그래밍: 간단한 웹뷰 앱 만들기</h1>
     
@@ -908,7 +915,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="187 words"
+  title="180 words"
 >
   <em>1 min</em> read</span>
 
@@ -918,17 +925,39 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">iOS 프로그래밍: 간단한 웹뷰 앱 만들기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">iOS 프로그래밍: 간단한 웹뷰 앱 만들기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="infoplist-편집"><span class="me-2"><strong>info.plist 편집</strong></span><a href="#infoplist-편집" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="infoplist-편집"><span class="me-2"><strong>info.plist 편집</strong></span><a href="#infoplist-편집" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-am-1.26.01.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-am-1.26.01.png" alt="" loading="lazy"></a></p>
 
-<p>이 설정을 하지 않으면 웹사이트가 앱에 나타나지 않습니다.</p>
+<p>기본적으로 HTTPS 웹 사이트만 지원합니다. HTTP의 경우 위의 설정을 하지 않으면 웹사이트가 앱에 나타나지 않습니다.</p>
 
 <p> </p>
 
-<h4 id="스토리보드-작성-및-viewcontrollerswift-편집"><span class="me-2"><strong>스토리보드 작성 및 ViewController.swift 편집</strong></span><a href="#스토리보드-작성-및-viewcontrollerswift-편집" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="스토리보드-작성-및-viewcontrollerswift-편집"><span class="me-2"><strong>스토리보드 작성 및 ViewController.swift 편집</strong></span><a href="#스토리보드-작성-및-viewcontrollerswift-편집" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-am-1.32.06.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-am-1.32.06.png" alt="" loading="lazy"></a></p>
 
@@ -962,23 +991,7 @@
 26
 27
 28
-29
-30
-31
-32
-33
-34
-35
-36
-</pre></td><td class="rouge-code"><pre><span class="c1">//</span>
-<span class="c1">//  ViewController.swift</span>
-<span class="c1">//  WebMusic</span>
-<span class="c1">//</span>
-<span class="c1">//  Created by yoonbumtae on 2020/02/14.</span>
-<span class="c1">//  Copyright © 2020 BGSMM. All rights reserved.</span>
-<span class="c1">//</span>
-
-<span class="kd">import</span> <span class="kt">UIKit</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 <span class="kd">import</span> <span class="kt">WebKit</span>
 
 <span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
@@ -1010,11 +1023,11 @@
 
 <p> </p>
 
-<h4 id="결과-확인"><span class="me-2"><strong>결과 확인</strong></span><a href="#결과-확인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="결과-확인"><span class="me-2"><strong>결과 확인</strong></span><a href="#결과-확인" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-am-1.30.21.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-am-1.30.21.png" alt="" loading="lazy"></a>  <a href="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-am-1.30.43.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-am-1.30.43.png" alt="" loading="lazy"></a></p>
 
-<p>웹뷰앱만들기 아이오에스 iOS 웹뷰 만들기 WebView</p>
+<p><span style="font-size: 2pt;">웹뷰앱만들기 아이오에스 iOS 웹뷰 만들기 WebView</span></p>
 
   </div>
 
@@ -1288,190 +1301,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1551,46 +1384,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1602,9 +1399,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1749,6 +1589,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1875,20 +1853,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1990,6 +1958,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7717,78 +7691,6 @@
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -7825,7 +7727,7 @@
 
               <h4 class="pt-0 my-2">iOS 프로그래밍: 색상 선택기(Color Picker; 컬러 피커)를 앱에 추가하기</h4>
               <div class="text-muted">
-                <p>원문 [바로가기](https://stackoverflow.com/questions/21981640/add-a-color-picker-to-an-ios-app)  * * *  안타깝게도 iOS용 색상 선택기는 내장되어 있지 않습니다. 주로 타사 라이브러리 또는 프로젝트를 사용합니다만, 가능한 경우 다른 라이브러리를 피하는 것이 좋습니다.     ####...</p>
+                <p>> 원문 [바로가기](https://stackoverflow.com/questions/21981640/add-a-color-picker-to-an-ios-app)   안타깝게도 iOS용 색상 선택기는 내장되어 있지 않습니다. 주로 타사 라이브러리 또는 프로젝트를 사용합니다만, 가능한 경우 다른 라이브러리를 피하는 것이 좋습니다.     ## **나만의...</p>
               </div>
             </div>
           </a>
@@ -7853,7 +7755,7 @@
 
               <h4 class="pt-0 my-2">iOS 프로그래밍: Navigation에서 전후간 정보교환 방법</h4>
               <div class="text-muted">
-                <p>![](/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-pm-4.22.05.png)  Main(`전`)에서 Edit(`후`)로 정보를 넘기는 방법은 `segue.destination`을 이용, `후`에서 `전`으로 넘기는 방법은 프로토콜을 정의한 다음 `전` 컨트롤러에서 그것을 상속받고, `...</p>
+                <p>![](/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-pm-4.22.05.png)  ## 정보를 넘기는 방법  ### Main(`전`)에서 Edit(`후`)로 정보를 넘기는 방법  - `segue.destination`을 이용  ### Edit(`후`)에서 Main(`전`)으로 넘기는 방법...</p>
               </div>
             </div>
           </a>
@@ -7881,7 +7783,7 @@
 
               <h4 class="pt-0 my-2">iOS 프로그래밍: PickerView 위임(delegate) 및 데이터소스(DataSource)</h4>
               <div class="text-muted">
-                <p>스토리보드 상에서 Delegate, DataSource 설정    또는 코드상에서 Delegate, DataSource 설정  @IBOutlet weak var pkvKeyList: UIPickerView!  override func viewDidLoad() {     pkvKeyList.delegate = self     pkvKeyList.data...</p>
+                <p>위임 및 데이터소스 설정하기  스토리보드 상에서 Delegate, DataSource 설정    또는 코드상에서 Delegate, DataSource 설정  @IBOutlet weak var pkvKeyList: UIPickerView!  override func viewDidLoad() {     pkvKeyList.delegate = self   ...</p>
               </div>
             </div>
           </a>
@@ -8077,190 +7979,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8340,46 +8062,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8391,9 +8077,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8538,6 +8267,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8664,20 +8531,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

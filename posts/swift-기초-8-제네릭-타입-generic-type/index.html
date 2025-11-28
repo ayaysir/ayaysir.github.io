@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Swift 기초 (8): 제네릭 타입 (Generic Type)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="[rcblock id=”3441”]" />
-<meta property="og:description" content="[rcblock id=”3441”]" />
+<meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
+<meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/swift-%EA%B8%B0%EC%B4%88-8-%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%83%80%EC%9E%85-generic-type/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/swift-%EA%B8%B0%EC%B4%88-8-%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%83%80%EC%9E%85-generic-type/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="Swift 기초 (8): 제네릭 타입 (Generic Type)" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-01-20T00:00:00+09:00","datePublished":"2020-01-20T00:00:00+09:00","description":"[rcblock id=”3441”]","headline":"Swift 기초 (8): 제네릭 타입 (Generic Type)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/swift-%EA%B8%B0%EC%B4%88-8-%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%83%80%EC%9E%85-generic-type/"},"url":"https://ayaysir.github.io/posts/swift-%EA%B8%B0%EC%B4%88-8-%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%83%80%EC%9E%85-generic-type/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-01-20T00:00:00+09:00","datePublished":"2020-01-20T00:00:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Swift 기초 (8): 제네릭 타입 (Generic Type)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/swift-%EA%B8%B0%EC%B4%88-8-%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%83%80%EC%9E%85-generic-type/"},"url":"https://ayaysir.github.io/posts/swift-%EA%B8%B0%EC%B4%88-8-%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%83%80%EC%9E%85-generic-type/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,16 +498,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -547,6 +544,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -563,7 +570,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift 기초 (8): 제네릭 타입 (Generic Type)</h1>
     
@@ -637,9 +644,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1077 words"
+  title="1106 words"
 >
-  <em>5 min</em> read</span>
+  <em>6 min</em> read</span>
 
         </div>
       </div>
@@ -647,11 +654,37 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift 기초 (8): 제네릭 타입 (Generic Type)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift 기초 (8): 제네릭 타입 (Generic Type)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>[rcblock id=”3441”]</p>
+    <!-- \[rcblock id="3441"\] -->
 
-<h4 id="제네릭-타입-generic-type"><span class="me-2"><strong>제네릭 타입 (Generic Type)</strong></span><a href="#제네릭-타입-generic-type" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="제네릭-타입-generic-type"><span class="me-2"><strong>제네릭 타입 (Generic Type)</strong></span><a href="#제네릭-타입-generic-type" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<blockquote>
+  <p><a href="/posts/swift스위프트-제네릭generics/">Swift(스위프트): 제네릭(Generics) - 제네릭 타입, 제네릭 함수, 연관 타입(Associated Type), where 조건절</a></p>
+</blockquote>
 
 <p>제네릭 타입이란 “<em>타입을 파라미터화해서 컴파일시 구체적인 타입이 결정되도록 하는 것</em>“이란 뜻으로 Swift에서도 제네릭 타입을 지원합니다. 주로 배열 같은 콜렉션 타입에서 사용됩니다.</p>
 
@@ -755,7 +788,7 @@
 
 <p> </p>
 
-<h5 id="제네릭-타입의-where-절"><span class="me-2"><strong>제네릭 타입의 Where 절</strong></span><a href="#제네릭-타입의-where-절" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="제네릭-타입의-where-절"><span class="me-2"><strong>제네릭 타입의 Where 절</strong></span><a href="#제네릭-타입의-where-절" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>프로토콜 구현의 위한 타입을 요구하거나 똑같은 타입을 요구하는 경우, 혹은 특정 상위 클래스를 요구하는 경우 등 제네릭 타입에서 사용할 타입을 한정시키고 싶을 때 <code class="language-plaintext highlighter-rouge">Where</code> 절을 사용합니다.</p>
 
@@ -847,7 +880,7 @@
 
 <p> </p>
 
-<p>[rcblock id=”3441”]</p>
+<!-- \[rcblock id="3441"\] -->
 
   </div>
 
@@ -1121,190 +1154,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1384,46 +1237,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1435,9 +1252,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1582,6 +1442,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1708,20 +1706,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1823,6 +1811,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7550,78 +7544,6 @@
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -7714,7 +7636,7 @@
 
               <h4 class="pt-0 my-2">Swift: JSON 스트링을 Swift 배열로 변환 (객체로 이루어진 배열의 JSON)</h4>
               <div class="text-muted">
-                <p>출처: [바로가기](https://stackoverflow.com/questions/49856167/how-to-parse-a-json-with-array-of-dictionaries-ios-swift)  변환 방법은 다음과 같습니다.  1. JSON 스트링을 Swift 데이터로 변환 2. `Codable`을 상속받는 VO(DTO) 형태의 구조체(`s...</p>
+                <p>> 출처: [바로가기](https://stackoverflow.com/questions/49856167/how-to-parse-a-json-with-array-of-dictionaries-ios-swift)    ## 변환 방법  변환 방법은 다음과 같습니다.  1. JSON 스트링을 Swift 데이터로 변환 2. `Codable`을 상속받는 VO(D...</p>
               </div>
             </div>
           </a>
@@ -7910,190 +7832,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8173,46 +7915,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8224,9 +7930,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8371,6 +8120,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8497,20 +8384,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

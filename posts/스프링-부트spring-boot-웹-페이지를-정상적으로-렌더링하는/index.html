@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -761,16 +768,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -872,6 +869,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -888,7 +895,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>스프링 부트(Spring Boot): 웹 페이지를 정상적으로 렌더링하는지 단위 테스트</h1>
     
@@ -972,6 +979,28 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">스프링 부트(Spring Boot): 웹 페이지를 정상적으로 렌더링하는지 단위 테스트</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">스프링 부트(Spring Boot): 웹 페이지를 정상적으로 렌더링하는지 단위 테스트</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <ul>
@@ -983,14 +1012,14 @@
 
 <p> </p>
 
-<h4 id="참고-프로젝트-구조-view-파일-컨트롤러"><span class="me-2"><strong>참고: 프로젝트 구조, View 파일, 컨트롤러</strong></span><a href="#참고-프로젝트-구조-view-파일-컨트롤러" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="참고-프로젝트-구조-view-파일-컨트롤러"><span class="me-2"><strong>참고: 프로젝트 구조, View 파일, 컨트롤러</strong></span><a href="#참고-프로젝트-구조-view-파일-컨트롤러" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/-2020-07-12-pm-1.54.15-e1594529695675.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/-2020-07-12-pm-1.54.15-e1594529695675.png" alt="" loading="lazy"></a></p>
 
-<h5 id="indexcontrollerjava"><span class="me-2"><strong>IndexController.java</strong></span><a href="#indexcontrollerjava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="indexcontrollerjava"><span class="me-2"><strong>IndexController.java</strong></span><a href="#indexcontrollerjava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1004,24 +1033,24 @@
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.web;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.web</span><span class="o">;</span>
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
 
-@Controller
-public class IndexController {
+<span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IndexController</span> <span class="o">{</span>
 
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
-}
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">index</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"index"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="resourcestemplatesindexhtml"><span class="me-2"><strong>resources/templates/index.html</strong></span><a href="#resourcestemplatesindexhtml" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="resourcestemplatesindexhtml"><span class="me-2"><strong>resources/templates/index.html</strong></span><a href="#resourcestemplatesindexhtml" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-html highlighter-rouge"><div class="code-header">
         <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
@@ -1049,16 +1078,16 @@ public class IndexController {
 
 <p> </p>
 
-<h4 id="단위-테스트-코드"><span class="me-2"><strong>단위 테스트 코드</strong></span><a href="#단위-테스트-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="단위-테스트-코드"><span class="me-2"><strong>단위 테스트 코드</strong></span><a href="#단위-테스트-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>참고: <a href="http://yoonbumtae.com/?p=2532">Spring Boot: JUnit 단위 테스트 기초 (GetMapping 테스트, 인텔리제이 기준)</a></p>
+<p>참고: <a href="/posts/spring-boot-junit-테스트-기초-getmapping-테스트-인텔리제이-기준">Spring Boot: JUnit 단위 테스트 기초 (GetMapping 테스트, 인텔리제이 기준)</a></p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/-2020-07-12-pm-1.58.23-e1594529998974.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/-2020-07-12-pm-1.58.23-e1594529998974.png" alt="" loading="lazy"></a></p>
 
-<h5 id="indexcontrollertestjava"><span class="me-2"><strong>IndexControllerTest.java</strong></span><a href="#indexcontrollertestjava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="indexcontrollertestjava"><span class="me-2"><strong>IndexControllerTest.java</strong></span><a href="#indexcontrollertestjava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1084,31 +1113,31 @@ public class IndexController {
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.web;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.web</span><span class="o">;</span>
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.test.web.client.TestRestTemplate</span><span class="o">;</span>
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">assertj</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertThat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">boot</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">context</span><span class="o">.</span><span class="na">SpringBootTest</span><span class="o">.</span><span class="na">WebEnvironment</span><span class="o">.</span><span class="na">RANDOM_PORT</span><span class="o">;</span>
 
-@SpringBootTest(webEnvironment = RANDOM_PORT)
-public class IndexControllerTest {
+<span class="nd">@SpringBootTest</span><span class="o">(</span><span class="n">webEnvironment</span> <span class="o">=</span> <span class="no">RANDOM_PORT</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IndexControllerTest</span> <span class="o">{</span>
 
-    @Autowired
-    private TestRestTemplate restTemplate;
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="nc">TestRestTemplate</span> <span class="n">restTemplate</span><span class="o">;</span>
 
-    @Test
-    public void 메인페이지_로딩() {
-        // when
-        String body = restTemplate.getForObject("/", String.class);
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">메인페이지_로딩</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// when</span>
+        <span class="nc">String</span> <span class="n">body</span> <span class="o">=</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="s">"/"</span><span class="o">,</span> <span class="nc">String</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
-        // then
-        assertThat(body).contains("AWS Board");
-    }
-}
+        <span class="c1">// then</span>
+        <span class="n">assertThat</span><span class="o">(</span><span class="n">body</span><span class="o">).</span><span class="na">contains</span><span class="o">(</span><span class="s">"AWS Board"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1120,7 +1149,7 @@ public class IndexControllerTest {
 
 <p> </p>
 
-<h5 id="케이스-1-containsaws-board"><span class="me-2"><strong>케이스 1: contains(“AWS Board”);</strong></span><a href="#케이스-1-containsaws-board" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="케이스-1-containsaws-board"><span class="me-2"><strong>케이스 1: contains(“AWS Board”);</strong></span><a href="#케이스-1-containsaws-board" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-12-pm-2.17.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-12-pm-2.17.28.png" alt="" loading="lazy"></a></p>
 
@@ -1128,7 +1157,7 @@ public class IndexControllerTest {
 
 <p> </p>
 
-<h5 id="케이스-2-containsswa-board"><span class="me-2"><strong>케이스 2: contains(“SWA Board”);</strong></span><a href="#케이스-2-containsswa-board" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="케이스-2-containsswa-board"><span class="me-2"><strong>케이스 2: contains(“SWA Board”);</strong></span><a href="#케이스-2-containsswa-board" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-12-pm-2.19.12.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-12-pm-2.19.12.png" alt="" loading="lazy"></a></p>
 
@@ -1396,190 +1425,10 @@ public class IndexControllerTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1659,46 +1508,10 @@ public class IndexControllerTest {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1710,9 +1523,52 @@ public class IndexControllerTest {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1857,6 +1713,144 @@ public class IndexControllerTest {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1983,20 +1977,10 @@ public class IndexControllerTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2099,6 +2083,12 @@ public class IndexControllerTest {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2132,78 +2122,6 @@ public class IndexControllerTest {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8185,190 +8103,10 @@ public class IndexControllerTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8448,46 +8186,10 @@ public class IndexControllerTest {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8499,9 +8201,52 @@ public class IndexControllerTest {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8646,6 +8391,144 @@ public class IndexControllerTest {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8772,20 +8655,10 @@ public class IndexControllerTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

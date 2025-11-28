@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,15 +638,26 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+
+    
   
 
   
@@ -699,6 +717,48 @@
     
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
 
 
@@ -715,7 +775,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Spring Boot: Spring JPA + H2 데이터베이스 기초 + 단위 테스트</h1>
     
@@ -789,7 +849,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="859 words"
+  title="860 words"
 >
   <em>4 min</em> read</span>
 
@@ -799,9 +859,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Spring Boot: Spring JPA + H2 데이터베이스 기초 + 단위 테스트</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Spring Boot: Spring JPA + H2 데이터베이스 기초 + 단위 테스트</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p><a href="http://yoonbumtae.com/?p=2540">롬복(Lombok)이 설치되어 있는것</a>을 전제로 합니다.</p>
+    <p><a href="/posts/spring-boot-gradle-버전-5-이상에서-롬복-설치-테스트">롬복(Lombok)이 설치되어 있는것</a>을 전제로 합니다.</p>
 
 <ul>
   <li>스프링 부트 버전: 2.3.1</li>
@@ -810,12 +892,12 @@
 
 <p>스프링 부트 Spring Boot: Spring JPA + H2 데이터베이스 기초 + 단위 테스트</p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2">절차</span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-buildgradle에-디펜던시-추가"><span class="me-2"><strong>1. build.gradle에 디펜던시 추가</strong></span><a href="#1-buildgradle에-디펜던시-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-buildgradle에-디펜던시-추가"><span class="me-2"><strong>1. build.gradle에 디펜던시 추가</strong></span><a href="#1-buildgradle에-디펜던시-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -828,28 +910,28 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>dependencies {
-  ...
+</pre></td><td class="rouge-code"><pre><span class="n">dependencies</span> <span class="o">{</span>
+  <span class="o">...</span>
 
-  // Spring JPA
-  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-  runtimeOnly 'com.h2database:h2'
+  <span class="c1">// Spring JPA</span>
+  <span class="n">implementation</span> <span class="err">'</span><span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">boot</span><span class="o">:</span><span class="n">spring</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">starter</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">jpa</span><span class="err">'</span>
+  <span class="n">runtimeOnly</span> <span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">h2database</span><span class="o">:</span><span class="n">h2</span><span class="err">'</span>
 
-  // https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api
-  // 프로젝트에 javax.persistence 가 없는 경우 설치
-  compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+  <span class="c1">// https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api</span>
+  <span class="c1">// 프로젝트에 javax.persistence 가 없는 경우 설치</span>
+  <span class="n">compile</span> <span class="nl">group:</span> <span class="err">'</span><span class="n">javax</span><span class="o">.</span><span class="na">persistence</span><span class="err">'</span><span class="o">,</span> <span class="nl">name:</span> <span class="err">'</span><span class="n">javax</span><span class="o">.</span><span class="na">persistence</span><span class="o">-</span><span class="n">api</span><span class="err">'</span><span class="o">,</span> <span class="nl">version:</span> <span class="err">'</span><span class="mf">2.2</span><span class="err">'</span>
   
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>위의 디펜던시만 추가합니다.</p>
 
 <p> </p>
 
-<h5 id="2-applicationproperties-파일에-설정-추가"><span class="me-2"><strong>2. application.properties 파일에 설정 추가</strong></span><a href="#2-applicationproperties-파일에-설정-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-applicationproperties-파일에-설정-추가"><span class="me-2"><strong>2. application.properties 파일에 설정 추가</strong></span><a href="#2-applicationproperties-파일에-설정-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-conf highlighter-rouge"><div class="code-header">
+        <span data-label-text="Conf"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -861,22 +943,22 @@
 9
 10
 11
-</pre></td><td class="rouge-code"><pre># H2 설정
-spring.h2.console.enabled=true
-spring.h2.console.path=/h2
+</pre></td><td class="rouge-code"><pre><span class="c"># H2 설정
+</span><span class="n">spring</span>.<span class="n">h2</span>.<span class="n">console</span>.<span class="n">enabled</span>=<span class="n">true</span>
+<span class="n">spring</span>.<span class="n">h2</span>.<span class="n">console</span>.<span class="n">path</span>=/<span class="n">h2</span>
 
-# sql 보기
-spring.jpa.show_sql = true
+<span class="c"># sql 보기
+</span><span class="n">spring</span>.<span class="n">jpa</span>.<span class="n">show_sql</span> = <span class="n">true</span>
 
-# h2 문법을 mysql로 변경
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
-spring.jpa.properties.hibernate.dialect.storage_engine=innodb
-spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
+<span class="c"># h2 문법을 mysql로 변경
+</span><span class="n">spring</span>.<span class="n">jpa</span>.<span class="n">properties</span>.<span class="n">hibernate</span>.<span class="n">dialect</span>=<span class="n">org</span>.<span class="n">hibernate</span>.<span class="n">dialect</span>.<span class="n">MySQL5InnoDBDialect</span>
+<span class="n">spring</span>.<span class="n">jpa</span>.<span class="n">properties</span>.<span class="n">hibernate</span>.<span class="n">dialect</span>.<span class="n">storage_engine</span>=<span class="n">innodb</span>
+<span class="n">spring</span>.<span class="n">datasource</span>.<span class="n">hikari</span>.<span class="n">jdbc</span>-<span class="n">url</span>=<span class="n">jdbc</span>:<span class="n">h2</span>:<span class="n">mem</span>://<span class="n">localhost</span>/~/<span class="n">testdb</span>;<span class="n">MODE</span>=<span class="n">MYSQL</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="3-도메인-패키지를-생성하고-안에-데이터베이스-테이블과-연결되는-특수한-getter-생성"><span class="me-2"><strong>3. 도메인 패키지를 생성하고 안에 데이터베이스 테이블과 연결되는 특수한 Getter 생성</strong></span><a href="#3-도메인-패키지를-생성하고-안에-데이터베이스-테이블과-연결되는-특수한-getter-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-도메인-패키지를-생성하고-안에-데이터베이스-테이블과-연결되는-특수한-getter-생성"><span class="me-2"><strong>3. 도메인 패키지를 생성하고 안에 데이터베이스 테이블과 연결되는 특수한 Getter 생성</strong></span><a href="#3-도메인-패키지를-생성하고-안에-데이터베이스-테이블과-연결되는-특수한-getter-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-9.43.04.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-9.43.04.png" alt="" loading="lazy"></a></p>
 
@@ -886,10 +968,10 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 
 <p> </p>
 
-<p><strong>Posts 클래스</strong></p>
+<h4 id="posts-클래스"><span class="me-2"><strong>Posts 클래스</strong></span><a href="#posts-클래스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -924,48 +1006,48 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 32
 33
 34
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.domain.posts;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.domain.posts</span><span class="o">;</span>
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+<span class="kn">import</span> <span class="nn">lombok.Builder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.Getter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.NoArgsConstructor</span><span class="o">;</span>
 
-import javax.persistence.*;
+<span class="kn">import</span> <span class="nn">javax.persistence.*</span><span class="o">;</span>
 
-@Getter
-@NoArgsConstructor
-@Entity // 테이블과 링크될 클래스
-public class Posts {
+<span class="nd">@Getter</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="nd">@Entity</span> <span class="c1">// 테이블과 링크될 클래스</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Posts</span> <span class="o">{</span>
 
-    @Id // PK 필드
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // PK 생성규칙
-    private Long id;
+    <span class="nd">@Id</span> <span class="c1">// PK 필드</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span> <span class="c1">// PK 생성규칙</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
 
-    // @Column: 선언하지 않더라도 클래스의 필드는 모두 컬럼이 됨
-    // 추가 변경 옵션이 필요한 경우 지정
-    @Column(length = 450, nullable = false)
-    private String title;
+    <span class="c1">// @Column: 선언하지 않더라도 클래스의 필드는 모두 컬럼이 됨</span>
+    <span class="c1">// 추가 변경 옵션이 필요한 경우 지정</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span> <span class="o">=</span> <span class="mi">450</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String content;
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">columnDefinition</span> <span class="o">=</span> <span class="s">"TEXT"</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">content</span><span class="o">;</span>
 
-    private String author;
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
 
-    @Builder // 빌더 패턴 클래스 생성, 생성자에 포함된 필드만 포함
-    public Posts(String title, String content, String author) {
-        this.title = title;
-        this.content = content;
-        this.author = author;
-    }
-}
+    <span class="nd">@Builder</span> <span class="c1">// 빌더 패턴 클래스 생성, 생성자에 포함된 필드만 포함</span>
+    <span class="kd">public</span> <span class="nf">Posts</span><span class="o">(</span><span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">content</span><span class="o">,</span> <span class="nc">String</span> <span class="n">author</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">author</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<p><strong>PostsRepository 인터페이스</strong></p>
+<h4 id="postsrepository-인터페이스"><span class="me-2"><strong>PostsRepository 인터페이스</strong></span><a href="#postsrepository-인터페이스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -973,13 +1055,13 @@ public class Posts {
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.domain.posts;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.domain.posts</span><span class="o">;</span>
 
-import org.springframework.data.jpa.repository.JpaRepository;
+<span class="kn">import</span> <span class="nn">org.springframework.data.jpa.repository.JpaRepository</span><span class="o">;</span>
 
-public interface PostsRepository extends JpaRepository&lt;Posts, Long&gt; {
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PostsRepository</span> <span class="kd">extends</span> <span class="nc">JpaRepository</span><span class="o">&lt;</span><span class="nc">Posts</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="o">{</span>
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>동일한 패키지 내에 생성합니다. 인터페이스 이름을 엔티티 클래스의 이름을 따와 <code class="language-plaintext highlighter-rouge">***Repository</code> 로 생성하고 <code class="language-plaintext highlighter-rouge">JpaRepository&lt;T, id&gt;</code>를 상속받습니다.</p>
@@ -990,10 +1072,10 @@ public interface PostsRepository extends JpaRepository&lt;Posts, Long&gt; {
 
 <p> </p>
 
-<h5 id="4-단위-테스트-코드-작성"><span class="me-2"><strong>4. 단위 테스트 코드 작성</strong></span><a href="#4-단위-테스트-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-단위-테스트-코드-작성"><span class="me-2"><strong>4. 단위 테스트 코드 작성</strong></span><a href="#4-단위-테스트-코드-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1037,49 +1119,49 @@ public interface PostsRepository extends JpaRepository&lt;Posts, Long&gt; {
 41
 42
 43
-</pre></td><td class="rouge-code"><pre>package com.example.awsboard.domain.posts;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.domain.posts</span><span class="o">;</span>
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.AfterEach</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="o">;</span>
 
-import java.util.List;
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-import static org.assertj.core.api.Assertions.assertThat;
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">assertj</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertThat</span><span class="o">;</span>
 
-@SpringBootTest
-public class PostsRepositoryTest {
+<span class="nd">@SpringBootTest</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostsRepositoryTest</span> <span class="o">{</span>
 
-    @Autowired
-    PostsRepository postsRepository;
+    <span class="nd">@Autowired</span>
+    <span class="nc">PostsRepository</span> <span class="n">postsRepository</span><span class="o">;</span>
 
-    @AfterEach
-    public void cleanup() { // 데이터 섞임 방지
-        postsRepository.deleteAll();
-    }
+    <span class="nd">@AfterEach</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">cleanup</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// 데이터 섞임 방지</span>
+        <span class="n">postsRepository</span><span class="o">.</span><span class="na">deleteAll</span><span class="o">();</span>
+    <span class="o">}</span>
 
-    @Test
-    public void 게시글저장_불러오기() {
-        // given
-        String title = "Test title";
-        String content = "Test content";
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">게시글저장_불러오기</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// given</span>
+        <span class="nc">String</span> <span class="n">title</span> <span class="o">=</span> <span class="s">"Test title"</span><span class="o">;</span>
+        <span class="nc">String</span> <span class="n">content</span> <span class="o">=</span> <span class="s">"Test content"</span><span class="o">;</span>
 
-        postsRepository.save(Posts.builder()
-                .title(title)
-                .content(content)
-                .author("kim")
-                .build());
+        <span class="n">postsRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="nc">Posts</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="n">title</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">content</span><span class="o">(</span><span class="n">content</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">author</span><span class="o">(</span><span class="s">"kim"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">());</span>
 
-        // when
-        List&lt;Posts&gt; postsList = postsRepository.findAll();
+        <span class="c1">// when</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Posts</span><span class="o">&gt;</span> <span class="n">postsList</span> <span class="o">=</span> <span class="n">postsRepository</span><span class="o">.</span><span class="na">findAll</span><span class="o">();</span>
 
-        // then
-        Posts posts = postsList.get(0);
-        assertThat(posts.getTitle()).isEqualTo(title);
-        assertThat(posts.getContent()).isEqualTo(content);
-    }
-}
+        <span class="c1">// then</span>
+        <span class="nc">Posts</span> <span class="n">posts</span> <span class="o">=</span> <span class="n">postsList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+        <span class="n">assertThat</span><span class="o">(</span><span class="n">posts</span><span class="o">.</span><span class="na">getTitle</span><span class="o">()).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="n">title</span><span class="o">);</span>
+        <span class="n">assertThat</span><span class="o">(</span><span class="n">posts</span><span class="o">.</span><span class="na">getContent</span><span class="o">()).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="n">content</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-9.48.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-30-pm-9.48.28.png" alt="" loading="lazy"></a></p>
@@ -1094,7 +1176,9 @@ public class PostsRepositoryTest {
 
 <p> </p>
 
-<p>출처: <a href="https://github.com/jojoldu/freelec-springboot2-webservice">스프링 부트와 AWS로 혼자 구현하는 웹 서비스</a></p>
+<blockquote>
+  <p>출처: <a href="https://github.com/jojoldu/freelec-springboot2-webservice">스프링 부트와 AWS로 혼자 구현하는 웹 서비스</a></p>
+</blockquote>
 
   </div>
 
@@ -1358,190 +1442,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1621,46 +1525,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1672,9 +1540,52 @@ public class PostsRepositoryTest {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1819,6 +1730,144 @@ public class PostsRepositoryTest {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1945,20 +1994,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2061,6 +2100,12 @@ public class PostsRepositoryTest {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2094,78 +2139,6 @@ public class PostsRepositoryTest {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8147,190 +8120,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8410,46 +8203,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8461,9 +8218,52 @@ public class PostsRepositoryTest {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8608,6 +8408,144 @@ public class PostsRepositoryTest {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8734,20 +8672,10 @@ public class PostsRepositoryTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

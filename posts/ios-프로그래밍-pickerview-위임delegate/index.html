@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="iOS 프로그래밍: PickerView 위임(delegate) 및 데이터소스(DataSource)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="스토리보드 상에서 Delegate, DataSource 설정" />
-<meta property="og:description" content="스토리보드 상에서 Delegate, DataSource 설정" />
+<meta name="description" content="위임 및 데이터소스 설정하기" />
+<meta property="og:description" content="위임 및 데이터소스 설정하기" />
 <link rel="canonical" href="https://ayaysir.github.io/posts/ios-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-pickerview-%EC%9C%84%EC%9E%84delegate/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/ios-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-pickerview-%EC%9C%84%EC%9E%84delegate/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="iOS 프로그래밍: PickerView 위임(delegate) 및 데이터소스(DataSource)" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-02-11T00:00:00+09:00","datePublished":"2020-02-11T00:00:00+09:00","description":"스토리보드 상에서 Delegate, DataSource 설정","headline":"iOS 프로그래밍: PickerView 위임(delegate) 및 데이터소스(DataSource)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/ios-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-pickerview-%EC%9C%84%EC%9E%84delegate/"},"url":"https://ayaysir.github.io/posts/ios-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-pickerview-%EC%9C%84%EC%9E%84delegate/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-02-11T00:00:00+09:00","datePublished":"2020-02-11T00:00:00+09:00","description":"위임 및 데이터소스 설정하기","headline":"iOS 프로그래밍: PickerView 위임(delegate) 및 데이터소스(DataSource)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/ios-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-pickerview-%EC%9C%84%EC%9E%84delegate/"},"url":"https://ayaysir.github.io/posts/ios-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-pickerview-%EC%9C%84%EC%9E%84delegate/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -696,10 +703,85 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -726,7 +808,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>iOS 프로그래밍: PickerView 위임(delegate) 및 데이터소스(DataSource)</h1>
     
@@ -800,7 +882,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="320 words"
+  title="340 words"
 >
   <em>1 min</em> read</span>
 
@@ -810,13 +892,37 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">iOS 프로그래밍: PickerView 위임(delegate) 및 데이터소스(DataSource)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">iOS 프로그래밍: PickerView 위임(delegate) 및 데이터소스(DataSource)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>스토리보드 상에서 Delegate, DataSource 설정</p>
+    <h2 id="위임-및-데이터소스-설정하기"><span class="me-2">위임 및 데이터소스 설정하기</span><a href="#위임-및-데이터소스-설정하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="스토리보드-상에서-delegate-datasource-설정"><span class="me-2">스토리보드 상에서 Delegate, DataSource 설정</span><a href="#스토리보드-상에서-delegate-datasource-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-15-am-12.17.34.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-15-am-12.17.34.png" alt="" loading="lazy"></a></p>
 
-<p>또는 코드상에서 Delegate, DataSource 설정</p>
+<h3 id="또는-코드상에서-delegate-datasource-설정"><span class="me-2">또는 코드상에서 Delegate, DataSource 설정</span><a href="#또는-코드상에서-delegate-datasource-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -834,7 +940,7 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="딜리게이트-구현"><span class="me-2">딜리게이트 구현 </span><a href="#딜리게이트-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -859,27 +965,27 @@
 19
 20
 21
-</pre></td><td class="rouge-code"><pre>    <span class="c1">// PickerView Delegate</span>
-    
-    <span class="c1">// 열 개수를 설정</span>
-    <span class="kd">func</span> <span class="nf">numberOfComponents</span><span class="p">(</span><span class="k">in</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="p">}</span>
-    
-    <span class="c1">// 행의 개수 전달</span>
-    <span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">numberOfRowsInComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">arrray</span><span class="o">.</span><span class="n">count</span>
-    <span class="p">}</span>
-    
-    <span class="c1">// 각 행의 제목 설정</span>
-    <span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">titleForRow</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">forComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">array</span><span class="p">[</span><span class="n">row</span><span class="p">]</span>
-    <span class="p">}</span>
-    
-    <span class="c1">// 선택되었을 때 무엇을 할 것인지?</span>
-    <span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">didSelectRow</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">inComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">lblISomething</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">row</span><span class="p">]</span>
-    <span class="p">}</span>
+</pre></td><td class="rouge-code"><pre><span class="c1">// PickerView Delegate</span>
+
+<span class="c1">// 열 개수를 설정</span>
+<span class="kd">func</span> <span class="nf">numberOfComponents</span><span class="p">(</span><span class="k">in</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// 행의 개수 전달</span>
+<span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">numberOfRowsInComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">arrray</span><span class="o">.</span><span class="n">count</span>
+<span class="p">}</span>
+
+<span class="c1">// 각 행의 제목 설정</span>
+<span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">titleForRow</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">forComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">array</span><span class="p">[</span><span class="n">row</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1">// 선택되었을 때 무엇을 할 것인지?</span>
+<span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">pickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">didSelectRow</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">inComponent</span> <span class="nv">component</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lblISomething</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">row</span><span class="p">]</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -890,9 +996,11 @@
 
 <p> </p>
 
-<p><code class="language-plaintext highlighter-rouge">ViewController</code> 클래스에서 <code class="language-plaintext highlighter-rouge">UIPickerViewDelegate</code>, <code class="language-plaintext highlighter-rouge">UIPickerViewDataSource</code>를 상속받고, 위 코드의 위치는 액션 함수 밑에 위치시킨다.</p>
+<p><code class="language-plaintext highlighter-rouge">ViewController</code> 클래스에서 <code class="language-plaintext highlighter-rouge">UIPickerViewDelegate</code>, <code class="language-plaintext highlighter-rouge">UIPickerViewDataSource</code>를 상속받고, 위 코드의 위치는 액션 함수 밑에 위치시킵니다.</p>
 
-<p>피커뷰에서 각 행을 문자 대신 그림으로 만드는 방법, 위의 예에서 ‘각 행의 제목 설정 부분’을 다음으로 대체한다.</p>
+<h3 id="피커뷰에서-각-행을-문자-대신-그림으로-만드는-방법"><span class="me-2">피커뷰에서 각 행을 문자 대신 그림으로 만드는 방법</span><a href="#피커뷰에서-각-행을-문자-대신-그림으로-만드는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>위의 예에서 ‘각 행의 제목 설정 부분’을 다음으로 대체합니다.</p>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1196,190 +1304,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1459,46 +1387,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1510,9 +1402,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1657,6 +1592,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1783,20 +1856,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1898,6 +1961,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7625,78 +7694,6 @@
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -7733,7 +7730,7 @@
 
               <h4 class="pt-0 my-2">iOS 프로그래밍: 색상 선택기(Color Picker; 컬러 피커)를 앱에 추가하기</h4>
               <div class="text-muted">
-                <p>원문 [바로가기](https://stackoverflow.com/questions/21981640/add-a-color-picker-to-an-ios-app)  * * *  안타깝게도 iOS용 색상 선택기는 내장되어 있지 않습니다. 주로 타사 라이브러리 또는 프로젝트를 사용합니다만, 가능한 경우 다른 라이브러리를 피하는 것이 좋습니다.     ####...</p>
+                <p>> 원문 [바로가기](https://stackoverflow.com/questions/21981640/add-a-color-picker-to-an-ios-app)   안타깝게도 iOS용 색상 선택기는 내장되어 있지 않습니다. 주로 타사 라이브러리 또는 프로젝트를 사용합니다만, 가능한 경우 다른 라이브러리를 피하는 것이 좋습니다.     ## **나만의...</p>
               </div>
             </div>
           </a>
@@ -7761,7 +7758,7 @@
 
               <h4 class="pt-0 my-2">iOS 프로그래밍: Navigation에서 전후간 정보교환 방법</h4>
               <div class="text-muted">
-                <p>![](/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-pm-4.22.05.png)  Main(`전`)에서 Edit(`후`)로 정보를 넘기는 방법은 `segue.destination`을 이용, `후`에서 `전`으로 넘기는 방법은 프로토콜을 정의한 다음 `전` 컨트롤러에서 그것을 상속받고, `...</p>
+                <p>![](/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-pm-4.22.05.png)  ## 정보를 넘기는 방법  ### Main(`전`)에서 Edit(`후`)로 정보를 넘기는 방법  - `segue.destination`을 이용  ### Edit(`후`)에서 Main(`전`)으로 넘기는 방법...</p>
               </div>
             </div>
           </a>
@@ -7789,7 +7786,7 @@
 
               <h4 class="pt-0 my-2">iOS 프로그래밍: 간단한 웹뷰 앱 만들기</h4>
               <div class="text-muted">
-                <p>#### **info.plist 편집**   ![](/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-am-1.26.01.png)  이 설정을 하지 않으면 웹사이트가 앱에 나타나지 않습니다.     #### **스토리보드 작성 및 ViewController.swift 편집**   ![](/as...</p>
+                <p>## **info.plist 편집**   ![](/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-14-am-1.26.01.png)  기본적으로 HTTPS 웹 사이트만 지원합니다. HTTP의 경우 위의 설정을 하지 않으면 웹사이트가 앱에 나타나지 않습니다.     ## **스토리보드 작성 및 Vie...</p>
               </div>
             </div>
           </a>
@@ -7985,190 +7982,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8248,46 +8065,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8299,9 +8080,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8446,6 +8270,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8572,20 +8534,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

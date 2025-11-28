@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,16 +638,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -681,6 +678,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -689,26 +697,15 @@
   
 
   
-    
-    
 
-    
-      
-        
-        
-      
+  
+  
 
-      
-      
+  
 
-      
-      
-      
+  
+  
 
-      
-    
-
-    
   
 
 
@@ -725,7 +722,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>[수학] 최대공약수 구하기, 두 비율의 곱셈</h1>
     
@@ -809,11 +806,33 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">[수학] 최대공약수 구하기, 두 비율의 곱셈</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">[수학] 최대공약수 구하기, 두 비율의 곱셈</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>참고: <a href="https://mathbang.net/202">https://mathbang.net/202</a></p>
 
-<h5 id="용어-정리"><span class="me-2">용어 정리</span><a href="#용어-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="용어-정리"><span class="me-2">용어 정리</span><a href="#용어-정리" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>약수: 어떤 정수를 나머지 없이 나눌 수 있는 정수를 원래의 수에 대하여 이르는 말. 예를 들어 3은 6의 약수이다.</li>
@@ -824,7 +843,7 @@
 
 <p> </p>
 
-<h4 id="최대공약수-구하기"><span class="me-2"><strong>최대공약수 구하기</strong></span><a href="#최대공약수-구하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="최대공약수-구하기"><span class="me-2"><strong>최대공약수 구하기</strong></span><a href="#최대공약수-구하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>예를 들어 60과 48의 최대공약수를 구하고 싶다면, 아래와 같이 구하면 됩니다. 두 숫자를 더 이상 나눌 수 없을때 그 숫자들을 서로소 관계라 합니다.</p>
 
@@ -832,7 +851,7 @@
 
 <p> </p>
 
-<h4 id="두-비율의-곱셈"><span class="me-2"><strong>두 비율의 곱셈</strong></span><a href="#두-비율의-곱셈" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="두-비율의-곱셈"><span class="me-2"><strong>두 비율의 곱셈</strong></span><a href="#두-비율의-곱셈" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>두 비율을 곱하고자 할 때는, 왼쪽끼리 곱하고, 오른쪽끼리 곱한 비율을 구한 뒤 두 수를 최대공약수로 나누면 됩니다. 최대공약수를 모르는 경우 위에 설명된 최대공약수를 구하는 방식을 이용합니다.</p>
 
@@ -842,7 +861,7 @@
 
 <p> </p>
 
-<h4 id="참고-최소공배수"><span class="me-2"><strong>참고: 최소공배수</strong></span><a href="#참고-최소공배수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="참고-최소공배수"><span class="me-2"><strong>참고: 최소공배수</strong></span><a href="#참고-최소공배수" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>바로 위의 예제에서  <code class="language-plaintext highlighter-rouge">4 * 3 * 2</code> 에 * <code class="language-plaintext highlighter-rouge">6 * 5</code> 를 수행하면 최소공배수가 됩니다. (<code class="language-plaintext highlighter-rouge">4 * 3 * 2 * 6 * 5 = 720</code>)</p>
 
@@ -1109,190 +1128,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1372,46 +1211,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1423,9 +1226,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1570,6 +1416,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1696,20 +1680,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1811,6 +1785,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -2945,11 +2925,11 @@
 
   
     <a
-      href="/posts/%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8swift%EB%A1%9C-%EB%A7%8C%EB%93%A0-ios%EC%9A%A9-%EC%8A%A4%ED%83%91%EC%9B%8C%EC%B9%98stopwatch-%EC%95%B1-%EC%98%88%EC%A0%9C/"
+      href="/posts/%EC%9E%90%EB%B0%94java-%EC%96%91%EC%AA%BD-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8doubly-linked-list-%EB%8D%94%EB%B8%94-%EB%A7%81%ED%81%AC%EB%93%9C-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%9E%90/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>스위프트(Swift)로 만든 iOS용 스탑워치(StopWatch) 앱 예제</p>
+      <p>자바(Java): 양쪽 연결 리스트(Doubly Linked List; 더블 링크드 리스트) [자바 공식 제공 & 알고리즘 학습용 예제]</p>
     </a>
   
 </nav>
@@ -3110,190 +3090,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3373,46 +3173,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -3424,9 +3188,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3571,6 +3378,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3697,20 +3642,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

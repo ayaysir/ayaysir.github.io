@@ -699,8 +699,8 @@
 
 <p>예제에서는 <code class="language-plaintext highlighter-rouge">http://server.url/</code> 에 <code class="language-plaintext highlighter-rouge">index.html</code>이 배정되어 있으며, <code class="language-plaintext highlighter-rouge">http://server.url/v/**</code> 로 구성된 모든 URL은 SPA 라우팅을 이용하였다고 가정합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -730,35 +730,35 @@
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>import java.io.IOException;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.resource.PathResourceResolver;
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.core.io.ClassPathResource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.core.io.Resource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.WebMvcConfigurer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.resource.PathResourceResolver</span><span class="o">;</span>
 
-@Configuration
-public class WebMvcConfig implements WebMvcConfigurer {
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebMvcConfig</span> <span class="kd">implements</span> <span class="nc">WebMvcConfigurer</span> <span class="o">{</span>
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addResourceHandlers</span><span class="o">(</span><span class="nc">ResourceHandlerRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
 
-      registry.addResourceHandler("/v/**/*")
-        .addResourceLocations("classpath:/static/")
-        .resourceChain(true)
-        .addResolver(new PathResourceResolver() {
-            @Override
-            protected Resource getResource(String resourcePath,
-                Resource location) throws IOException {
-                Resource requestedResource = location.createRelative(resourcePath);
-                return requestedResource.exists() &amp;&amp; requestedResource.isReadable() ? requestedResource
-                : new ClassPathResource("/static/index.html");
-            }
-        });
-    }
-}
+      <span class="n">registry</span><span class="o">.</span><span class="na">addResourceHandler</span><span class="o">(</span><span class="s">"/v/**/*"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">addResourceLocations</span><span class="o">(</span><span class="s">"classpath:/static/"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">resourceChain</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">addResolver</span><span class="o">(</span><span class="k">new</span> <span class="nc">PathResourceResolver</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">protected</span> <span class="nc">Resource</span> <span class="nf">getResource</span><span class="o">(</span><span class="nc">String</span> <span class="n">resourcePath</span><span class="o">,</span>
+                <span class="nc">Resource</span> <span class="n">location</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+                <span class="nc">Resource</span> <span class="n">requestedResource</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="na">createRelative</span><span class="o">(</span><span class="n">resourcePath</span><span class="o">);</span>
+                <span class="k">return</span> <span class="n">requestedResource</span><span class="o">.</span><span class="na">exists</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">requestedResource</span><span class="o">.</span><span class="na">isReadable</span><span class="o">()</span> <span class="o">?</span> <span class="n">requestedResource</span>
+                <span class="o">:</span> <span class="k">new</span> <span class="nc">ClassPathResource</span><span class="o">(</span><span class="s">"/static/index.html"</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1031,190 +1031,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1294,46 +1114,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1345,9 +1129,52 @@ public class WebMvcConfig implements WebMvcConfigurer {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1492,6 +1319,144 @@ public class WebMvcConfig implements WebMvcConfigurer {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1618,20 +1583,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1767,78 +1722,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -7820,190 +7703,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8083,46 +7786,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8134,9 +7801,52 @@ public class WebMvcConfig implements WebMvcConfigurer {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8281,6 +7991,144 @@ public class WebMvcConfig implements WebMvcConfigurer {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8407,20 +8255,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

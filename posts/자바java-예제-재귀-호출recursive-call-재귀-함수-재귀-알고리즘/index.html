@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -891,16 +898,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -991,6 +988,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1007,7 +1014,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바(Java) 예제: 재귀 호출(Recursive Call, 재귀 함수, 재귀 알고리즘)</h1>
     
@@ -1081,7 +1088,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="780 words"
+  title="789 words"
 >
   <em>4 min</em> read</span>
 
@@ -1091,22 +1098,42 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바(Java) 예제: 재귀 호출(Recursive Call, 재귀 함수, 재귀 알고리즘)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바(Java) 예제: 재귀 호출(Recursive Call, 재귀 함수, 재귀 알고리즘)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="재귀호출-설명"><span class="me-2"><strong>재귀호출 설명</strong></span><a href="#재귀호출-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="재귀호출-설명"><span class="me-2"><strong>재귀호출 설명</strong></span><a href="#재귀호출-설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>재귀(Recursion) 알고리즘이란 어떠한 문제를 자기 자신을 호출하여 해결하는 과정을 말합니다.</p>
 
 <p><a href="https://terms.naver.com/entry.nhn?docId=3579438&amp;cid=59086&amp;categoryId=59093">링크</a></p>
 
-<hr />
-
-<h4 id="예제-1-코드-실행-추적"><span class="me-2"><strong>예제 1: 코드 실행 추적</strong></span><a href="#예제-1-코드-실행-추적" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제-1-코드-실행-추적"><span class="me-2"><strong>예제 1: 코드 실행 추적</strong></span><a href="#예제-1-코드-실행-추적" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다음은 정보처리산업기사에서 출제된 문제입니다. 다음 코드의 실행 결과는?</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1124,31 +1151,43 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>public class RecursiveExample {
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RecursiveExample</span> <span class="o">{</span>
     
-    public static int recursive(int n) {
-        int i;
-        if (n &lt; 1)    return 2;
-        else {
-            i = (2 * recursive(n - 1)) + 1;
-            System.out.printf("%d\n", i);
-            return i;
-        }
-    }
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">recursive</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="o">)</span>    <span class="k">return</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="k">else</span> <span class="o">{</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">recursive</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">))</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d\n"</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+            <span class="k">return</span> <span class="n">i</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
     
-    public static void main(String[] args) {
-        recursive(8);
-    }
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">recursive</span><span class="o">(</span><span class="mi">8</span><span class="o">);</span>
+    <span class="o">}</span>
  
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>답:
-
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>5
+11
+23
+47
+95
+191
+383
+767
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">recursive(n-1)</code> 부분이 계속 호출되면서 값을 반환합니다. 최후의 입력값(<code class="language-plaintext highlighter-rouge">0</code>)부터 recursive 함수(메소드) 자체에 반환된 값을 대입해 결과를 연쇄적으로 나열하면 됩니다.</p>
@@ -1157,10 +1196,10 @@
 
 <p><a href="/assets/img/wp-content/uploads/2019/01/recursive.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2019/01/recursive.png" alt="" loading="lazy"></a></p>
 
-<h4 id="예제-2-팩토리얼"><span class="me-2"><strong>예제 2: 팩토리얼</strong></span><a href="#예제-2-팩토리얼" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제-2-팩토리얼"><span class="me-2"><strong>예제 2: 팩토리얼</strong></span><a href="#예제-2-팩토리얼" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1179,38 +1218,34 @@
 16
 17
 18
-19
-20
-</pre></td><td class="rouge-code"><pre>package blog.recursive;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">blog.recursive</span><span class="o">;</span>
 
-public class FactorialExample {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FactorialExample</span> <span class="o">{</span>
   
-  private static int factorial(int n) {
-    if(n &lt;= 1) {
-      return 1;
-    }
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">factorial</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
     
-    return n * factorial(n - 1);
-  }
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+  <span class="o">}</span>
   
-  public static void main(String[] args) {
-    for(int i = 1; i &lt;= 10; i++) {
-      System.out.printf("%d! = %d\n", i, factorial(i));
-    }
-  }
-
-}
-
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d! = %d\n"</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">factorial</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-4.08.34.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-4.08.34.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h4 id="예제-3-배열의-합-계산-arrayscopyofrange-이용"><span class="me-2"><strong>예제 3: 배열의 합 계산 (<code class="language-plaintext highlighter-rouge">Arrays.copyOfRange</code> 이용)</strong></span><a href="#예제-3-배열의-합-계산-arrayscopyofrange-이용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제-3-배열의-합-계산-arrayscopyofrange-이용"><span class="me-2"><strong>예제 3: 배열의 합 계산 (<code class="language-plaintext highlighter-rouge">Arrays.copyOfRange</code> 이용)</strong></span><a href="#예제-3-배열의-합-계산-arrayscopyofrange-이용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1243,37 +1278,37 @@ public class FactorialExample {
 30
 31
 32
-</pre></td><td class="rouge-code"><pre>package blog.recursive;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">blog.recursive</span><span class="o">;</span>
 
-import java.util.Arrays;
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
 
-public class SumOfArray {
-  private static int doSum(int[] array) {
-    if(array.length &lt;= 1) {
-      return array[0]; 
-    }
-    // Arrays.copyOfRange(array, 시작 인덱스, 끝 인덱스);
-    // 시작 인덱스는 포함, 끝 인덱스는 포함하지 않음
-    int[] nextTarget = Arrays.copyOfRange(array, 1, array.length);
-    return array[0] + doSum(nextTarget) ;
-  }
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SumOfArray</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">doSum</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">array</span><span class="o">.</span><span class="na">length</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span> 
+    <span class="o">}</span>
+    <span class="c1">// Arrays.copyOfRange(array, 시작 인덱스, 끝 인덱스);</span>
+    <span class="c1">// 시작 인덱스는 포함, 끝 인덱스는 포함하지 않음</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">nextTarget</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">array</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">+</span> <span class="n">doSum</span><span class="o">(</span><span class="n">nextTarget</span><span class="o">)</span> <span class="o">;</span>
+  <span class="o">}</span>
 
   
-  public static void main(String[] args) {
-    int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; 
-    System.out.println(doSum(array));
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span> 
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">doSum</span><span class="o">(</span><span class="n">array</span><span class="o">));</span>
     
-    int[] array2 = new int[10];
-    for(int i = 0; i &lt; array2.length; i++) {
-      int rndNum = (int) (Math.random() * 100 + 1);
-      array2[i] = rndNum;
-    }
-    // for문 없이 배열 출력
-    System.out.println(Arrays.toString(array2));
-    System.out.println(doSum(array2));
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">array2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array2</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">rndNum</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+      <span class="n">array2</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">rndNum</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">// for문 없이 배열 출력</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">array2</span><span class="o">));</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">doSum</span><span class="o">(</span><span class="n">array2</span><span class="o">));</span>
     
-  }
-}
+  <span class="o">}</span>
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1281,14 +1316,14 @@ public class SumOfArray {
 
 <p> </p>
 
-<h4 id="예제-4-회문-판별-스트링-자르기-이용"><span class="me-2"><strong>예제 4: 회문 판별 (스트링 자르기 이용)</strong></span><a href="#예제-4-회문-판별-스트링-자르기-이용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제-4-회문-판별-스트링-자르기-이용"><span class="me-2"><strong>예제 4: 회문 판별 (스트링 자르기 이용)</strong></span><a href="#예제-4-회문-판별-스트링-자르기-이용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>회문(palindrome; 回文: madam이나 nurses run처럼 앞에서부터 읽으나 뒤에서부터 읽으나 동일한 단어나 구)을 판별할 수 있는 프로그램입니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/palindrome.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/palindrome.png" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1312,45 +1347,42 @@ public class SumOfArray {
 21
 22
 23
-24
-</pre></td><td class="rouge-code"><pre>package blog.recursive;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">blog.recursive</span><span class="o">;</span>
 
-public class Palindrome {
-  
-  private static boolean checkPalindrome(String word) {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Palindrome</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">checkPalindrome</span><span class="o">(</span><span class="nc">String</span> <span class="n">word</span><span class="o">)</span> <span class="o">{</span>
     
-    if(word.length() &lt;= 1) {
-      return true;
-    }
+    <span class="k">if</span><span class="o">(</span><span class="n">word</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
     
-    if(word.charAt(0) == word.charAt(word.length() - 1)) {
-      // substring(beginIndex, endIndex) -&gt; endIndex는 포함하지 않음
-      return checkPalindrome(word.substring(1, word.length() - 1));
-    } else {
-      return false;
-    }
-  }
+    <span class="k">if</span><span class="o">(</span><span class="n">word</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">==</span> <span class="n">word</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">word</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">))</span> <span class="o">{</span>
+      <span class="c1">// substring(beginIndex, endIndex) -&gt; endIndex는 포함하지 않음</span>
+      <span class="k">return</span> <span class="nf">checkPalindrome</span><span class="o">(</span><span class="n">word</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">word</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">));</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
   
-  public static void main(String[] args) {
-    System.out.println(checkPalindrome("level"));
-    System.out.println(checkPalindrome("poop"));
-    System.out.println(checkPalindrome("leval"));
-  }
-}
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">checkPalindrome</span><span class="o">(</span><span class="s">"level"</span><span class="o">));</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">checkPalindrome</span><span class="o">(</span><span class="s">"poop"</span><span class="o">));</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">checkPalindrome</span><span class="o">(</span><span class="s">"leval"</span><span class="o">));</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-4.54.56.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-4.54.56.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="예제-5-패턴으로-결과-찾기"><span class="me-2"><strong>예제 5: 패턴으로 결과 찾기</strong></span><a href="#예제-5-패턴으로-결과-찾기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="예제-5-패턴으로-결과-찾기"><span class="me-2"><strong>예제 5: 패턴으로 결과 찾기</strong></span><a href="#예제-5-패턴으로-결과-찾기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">f(n) = f(n-1) + f(n-2) + f(n-3)</code> 이고, <code class="language-plaintext highlighter-rouge">f(1) = 1</code>, <code class="language-plaintext highlighter-rouge">f(2) = 2</code>, <code class="language-plaintext highlighter-rouge">f(3) = 4</code> 인 것이 알려진 경우 <code class="language-plaintext highlighter-rouge">f(n)</code>을 구하는 프로그램 작성</p>
 
 <p> </p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1373,28 +1405,28 @@ public class Palindrome {
 20
 21
 22
-</pre></td><td class="rouge-code"><pre>package blog.recursive;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">blog.recursive</span><span class="o">;</span>
 
-public class Pattern {
-  private static int doCalc(int n) {
-    switch(n) {
-    case 1: 
-      return 1;
-    case 2:
-      return 2;
-    case 3:
-      return 4;
-    default:
-      return doCalc(n - 1) + doCalc(n - 2) + doCalc(n - 3);
-    }
-  }
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pattern</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">doCalc</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">switch</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span> 
+      <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+      <span class="k">return</span> <span class="mi">2</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+      <span class="k">return</span> <span class="mi">4</span><span class="o">;</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="k">return</span> <span class="nf">doCalc</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">doCalc</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">)</span> <span class="o">+</span> <span class="n">doCalc</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">3</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
 
-  public static void main(String[] args) {
-    for(int i = 1; i &lt;= 10; i++) {
-      System.out.printf("f(%d) = %d\n", i, doCalc(i));
-    }
-  }
-}
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"f(%d) = %d\n"</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">doCalc</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-5.04.57.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-27-pm-5.04.57.png" alt="" loading="lazy"></a></p>
@@ -1677,190 +1709,10 @@ public class Pattern {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1940,46 +1792,10 @@ public class Pattern {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1991,9 +1807,52 @@ public class Pattern {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2138,6 +1997,144 @@ public class Pattern {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2264,20 +2261,10 @@ public class Pattern {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2379,6 +2366,12 @@ public class Pattern {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -4133,79 +4126,7 @@ public class Pattern {
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8242,7 +8163,7 @@ public class Pattern {
 
               <h4 class="pt-0 my-2">자바(Java) 예제: 최대 힙 (Max Heap)</h4>
               <div class="text-muted">
-                <p>자료구조 학습용 예제입니다.  힙과 배열     힙(Heap): 데이터에서 최대값과 최소값을 빠르게 찾기 위해 고안된 완전 이진 트리(Complete Binary Tree)   완전 이진 트리: 노드를 삽입할 때 최하단 왼쪽 노드부터 차례대로 삽입하는 트리   일반적으로 힙 구현시 배열 자료구조를 활용함   배열은 인덱스가 0번부터 시작하지만, 힙 구...</p>
+                <p>자료구조 학습용 예제입니다.  힙과 배열     힙(Heap): 데이터에서 최대값과 최소값을 빠르게 찾기 위해 고안된 완전 이진 트리(Complete Binary Tree)   완전 이진 트리: 노드를 삽입할 때 최하단 왼쪽 노드부터 차례대로 삽입하는 트리   일반적으로 힙 구현시 배열 자료구조를 활용함   힙의 인덱스 구하기     배열은 인덱스가 ...</p>
               </div>
             </div>
           </a>
@@ -8466,190 +8387,10 @@ public class Pattern {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8729,46 +8470,10 @@ public class Pattern {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8780,9 +8485,52 @@ public class Pattern {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8927,6 +8675,144 @@ public class Pattern {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -9053,20 +8939,10 @@ public class Pattern {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

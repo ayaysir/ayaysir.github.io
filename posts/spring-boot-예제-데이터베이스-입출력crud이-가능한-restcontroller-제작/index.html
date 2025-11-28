@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -631,10 +638,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -736,19 +770,13 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
   
 
   
@@ -770,7 +798,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Spring Boot 예제: 데이터베이스 입출력(CRUD)이 가능한 RestController 제작</h1>
     
@@ -844,7 +872,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="846 words"
+  title="848 words"
 >
   <em>4 min</em> read</span>
 
@@ -854,15 +882,39 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Spring Boot 예제: 데이터베이스 입출력(CRUD)이 가능한 RestController 제작</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Spring Boot 예제: 데이터베이스 입출력(CRUD)이 가능한 RestController 제작</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p><a href="https://github.com/ayaysir/simple-todo-server">전체 소스 보기</a></p>
 
-<h4 id="프로젝트-구조"><span class="me-2"><strong>프로젝트 구조</strong></span><a href="#프로젝트-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="프로젝트-구조"><span class="me-2"><strong>프로젝트 구조</strong></span><a href="#프로젝트-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-25-pm-7.14.53.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/02/screenshot-2020-02-25-pm-7.14.53.png" alt="" loading="lazy"></a></p>
 
-<h4 id="1-spring-boot-프로젝트-생성"><span class="me-2"><strong>1. Spring Boot 프로젝트 생성</strong></span><a href="#1-spring-boot-프로젝트-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="설명"><span class="me-2"><strong>설명</strong></span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="1-spring-boot-프로젝트-생성"><span class="me-2"><strong>1. Spring Boot 프로젝트 생성</strong></span><a href="#1-spring-boot-프로젝트-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><a href="http://yoonbumtae.com/?p=1018">Spring Boot: 설치 및 기본 설정 (macOS 및 Eclipse 기준)</a></li>
@@ -870,7 +922,7 @@
 
 <p> </p>
 
-<h4 id="2-applicationproperties에-데이터베이스-연결-mariadb"><span class="me-2"><strong>2. application.properties에 데이터베이스 연결 (mariadb)</strong></span><a href="#2-applicationproperties에-데이터베이스-연결-mariadb" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="2-applicationproperties에-데이터베이스-연결-mariadb"><span class="me-2"><strong>2. application.properties에 데이터베이스 연결 (mariadb)</strong></span><a href="#2-applicationproperties에-데이터베이스-연결-mariadb" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><a href="http://yoonbumtae.com/?p=658">Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)</a></li>
@@ -878,10 +930,10 @@
 
 <p> </p>
 
-<h4 id="3-vovalue-object-dto-작성-todojava"><span class="me-2"><strong>3. VO(Value Object; DTO) 작성 (Todo.java)</strong></span><a href="#3-vovalue-object-dto-작성-todojava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="3-vovalue-object-dto-작성-todojava"><span class="me-2"><strong>3. VO(Value Object; DTO) 작성 (Todo.java)</strong></span><a href="#3-vovalue-object-dto-작성-todojava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -958,90 +1010,90 @@
 74
 75
 76
-</pre></td><td class="rouge-code"><pre>package com.springboot.simpletodo.vo;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.springboot.simpletodo.vo</span><span class="o">;</span>
 
-public class Todo {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Todo</span> <span class="o">{</span>
   
-  private int id;
-  private String icon, title, detail, regDate, modDate;
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">id</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="nc">String</span> <span class="n">icon</span><span class="o">,</span> <span class="n">title</span><span class="o">,</span> <span class="n">detail</span><span class="o">,</span> <span class="n">regDate</span><span class="o">,</span> <span class="n">modDate</span><span class="o">;</span>
   
-  public Todo() {
-    super();
-  }
+  <span class="kd">public</span> <span class="nf">Todo</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">();</span>
+  <span class="o">}</span>
 
-  public Todo(int id, String icon, String title, String detail, String regDate, String modDate) {
-    super();
-    this.id = id;
-    this.icon = icon;
-    this.title = title;
-    this.detail = detail;
-    this.regDate = regDate;
-    this.modDate = modDate;
-  }
+  <span class="kd">public</span> <span class="nf">Todo</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">,</span> <span class="nc">String</span> <span class="n">icon</span><span class="o">,</span> <span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">detail</span><span class="o">,</span> <span class="nc">String</span> <span class="n">regDate</span><span class="o">,</span> <span class="nc">String</span> <span class="n">modDate</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">();</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">icon</span> <span class="o">=</span> <span class="n">icon</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">detail</span> <span class="o">=</span> <span class="n">detail</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">regDate</span> <span class="o">=</span> <span class="n">regDate</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">modDate</span> <span class="o">=</span> <span class="n">modDate</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public int getId() {
-    return id;
-  }
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public void setId(int id) {
-    this.id = id;
-  }
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public String getIcon() {
-    return icon;
-  }
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getIcon</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">icon</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public void setIcon(String icon) {
-    this.icon = icon;
-  }
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setIcon</span><span class="o">(</span><span class="nc">String</span> <span class="n">icon</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">icon</span> <span class="o">=</span> <span class="n">icon</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public String getTitle() {
-    return title;
-  }
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getTitle</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">title</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTitle</span><span class="o">(</span><span class="nc">String</span> <span class="n">title</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public String getDetail() {
-    return detail;
-  }
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getDetail</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">detail</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public void setDetail(String detail) {
-    this.detail = detail;
-  }
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDetail</span><span class="o">(</span><span class="nc">String</span> <span class="n">detail</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">detail</span> <span class="o">=</span> <span class="n">detail</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public String getRegDate() {
-    return regDate;
-  }
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getRegDate</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">regDate</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public void setRegDate(String regDate) {
-    this.regDate = regDate;
-  }
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRegDate</span><span class="o">(</span><span class="nc">String</span> <span class="n">regDate</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">regDate</span> <span class="o">=</span> <span class="n">regDate</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public String getModDate() {
-    return modDate;
-  }
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getModDate</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">modDate</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  public void setModDate(String modDate) {
-    this.modDate = modDate;
-  }
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setModDate</span><span class="o">(</span><span class="nc">String</span> <span class="n">modDate</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">modDate</span> <span class="o">=</span> <span class="n">modDate</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  @Override
-  public String toString() {
-    return "Todo [id=" + id + ", icon=" + icon + ", title=" + title + ", detail=" + detail + ", regDate=" + regDate
-        + ", modDate=" + modDate + "]";
-  }
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="s">"Todo [id="</span> <span class="o">+</span> <span class="n">id</span> <span class="o">+</span> <span class="s">", icon="</span> <span class="o">+</span> <span class="n">icon</span> <span class="o">+</span> <span class="s">", title="</span> <span class="o">+</span> <span class="n">title</span> <span class="o">+</span> <span class="s">", detail="</span> <span class="o">+</span> <span class="n">detail</span> <span class="o">+</span> <span class="s">", regDate="</span> <span class="o">+</span> <span class="n">regDate</span>
+        <span class="o">+</span> <span class="s">", modDate="</span> <span class="o">+</span> <span class="n">modDate</span> <span class="o">+</span> <span class="s">"]"</span><span class="o">;</span>
+  <span class="o">}</span>
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="4-dao-작성-simpletododaojava"><span class="me-2"><strong>4. DAO 작성 (SimpleTodoDAO.java)</strong></span><a href="#4-dao-작성-simpletododaojava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="4-dao-작성-simpletododaojava"><span class="me-2"><strong>4. DAO 작성 (SimpleTodoDAO.java)</strong></span><a href="#4-dao-작성-simpletododaojava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1089,61 +1141,61 @@ public class Todo {
 45
 46
 47
-</pre></td><td class="rouge-code"><pre>package com.springboot.simpletodo.dao;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.springboot.simpletodo.dao</span><span class="o">;</span>
 
-import java.util.List;
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.jdbc.core.JdbcTemplate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Repository</span><span class="o">;</span>
 
-import com.springboot.simpletodo.vo.Todo;
+<span class="kn">import</span> <span class="nn">com.springboot.simpletodo.vo.Todo</span><span class="o">;</span>
 
-@Repository
-public class SimpleTodoDAO {
-  @Autowired JdbcTemplate jt;
+<span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleTodoDAO</span> <span class="o">{</span>
+  <span class="nd">@Autowired</span> <span class="nc">JdbcTemplate</span> <span class="n">jt</span><span class="o">;</span>
   
-  public List&lt;Todo&gt; selectAll() {
+  <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Todo</span><span class="o">&gt;</span> <span class="nf">selectAll</span><span class="o">()</span> <span class="o">{</span>
     
-    return jt.query("select * from simple_todo", (rs, rowNum) -&gt; {
-      Todo aTodo = new Todo();
-      aTodo.setId(rs.getInt("id"));
-      aTodo.setIcon(rs.getString("icon"));
-      aTodo.setTitle(rs.getString("title"));
-      aTodo.setDetail(rs.getString("detail"));
-      aTodo.setRegDate(rs.getString("reg_date"));
-      aTodo.setModDate(rs.getString("mod_date"));
+    <span class="k">return</span> <span class="n">jt</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="s">"select * from simple_todo"</span><span class="o">,</span> <span class="o">(</span><span class="n">rs</span><span class="o">,</span> <span class="n">rowNum</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+      <span class="nc">Todo</span> <span class="n">aTodo</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Todo</span><span class="o">();</span>
+      <span class="n">aTodo</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"id"</span><span class="o">));</span>
+      <span class="n">aTodo</span><span class="o">.</span><span class="na">setIcon</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"icon"</span><span class="o">));</span>
+      <span class="n">aTodo</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"title"</span><span class="o">));</span>
+      <span class="n">aTodo</span><span class="o">.</span><span class="na">setDetail</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"detail"</span><span class="o">));</span>
+      <span class="n">aTodo</span><span class="o">.</span><span class="na">setRegDate</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"reg_date"</span><span class="o">));</span>
+      <span class="n">aTodo</span><span class="o">.</span><span class="na">setModDate</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"mod_date"</span><span class="o">));</span>
       
-      return aTodo;
-    });
-  }
+      <span class="k">return</span> <span class="n">aTodo</span><span class="o">;</span>
+    <span class="o">});</span>
+  <span class="o">}</span>
   
-  public int insertTodo(Todo aTodo) {
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">insertTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">)</span> <span class="o">{</span>
     
-    return jt.update("insert into simple_todo(id, icon, title, detail, reg_date, mod_date) "
-        + "values (0, ?, ?, ?, sysdate(), sysdate())", aTodo.getIcon(), aTodo.getTitle(), aTodo.getDetail());
+    <span class="k">return</span> <span class="n">jt</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="s">"insert into simple_todo(id, icon, title, detail, reg_date, mod_date) "</span>
+        <span class="o">+</span> <span class="s">"values (0, ?, ?, ?, sysdate(), sysdate())"</span><span class="o">,</span> <span class="n">aTodo</span><span class="o">.</span><span class="na">getIcon</span><span class="o">(),</span> <span class="n">aTodo</span><span class="o">.</span><span class="na">getTitle</span><span class="o">(),</span> <span class="n">aTodo</span><span class="o">.</span><span class="na">getDetail</span><span class="o">());</span>
     
-  }
+  <span class="o">}</span>
   
-  public int updateTodo(Todo aTodo) {
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">updateTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">)</span> <span class="o">{</span>
     
-    return jt.update("update simple_todo set icon = ?, title = ?, detail = ?, mod_date = sysdate() where id = ?",
-        aTodo.getIcon(), aTodo.getTitle(), aTodo.getDetail(), aTodo.getId());
-  }
+    <span class="k">return</span> <span class="n">jt</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="s">"update simple_todo set icon = ?, title = ?, detail = ?, mod_date = sysdate() where id = ?"</span><span class="o">,</span>
+        <span class="n">aTodo</span><span class="o">.</span><span class="na">getIcon</span><span class="o">(),</span> <span class="n">aTodo</span><span class="o">.</span><span class="na">getTitle</span><span class="o">(),</span> <span class="n">aTodo</span><span class="o">.</span><span class="na">getDetail</span><span class="o">(),</span> <span class="n">aTodo</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+  <span class="o">}</span>
   
-  public int deleteTodo(Todo aTodo) {
-    return jt.update("delete from simple_todo where id = ?", aTodo.getId());
-  }
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">deleteTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">jt</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="s">"delete from simple_todo where id = ?"</span><span class="o">,</span> <span class="n">aTodo</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+  <span class="o">}</span>
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="5-서비스-인터페이스-작성-simpletodoservicejava"><span class="me-2"><strong>5. 서비스 인터페이스 작성 (SimpleTodoService.java)</strong></span><a href="#5-서비스-인터페이스-작성-simpletodoservicejava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="5-서비스-인터페이스-작성-simpletodoservicejava"><span class="me-2"><strong>5. 서비스 인터페이스 작성 (SimpleTodoService.java)</strong></span><a href="#5-서비스-인터페이스-작성-simpletodoservicejava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1159,29 +1211,29 @@ public class SimpleTodoDAO {
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>package com.springboot.simpletodo.service;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.springboot.simpletodo.service</span><span class="o">;</span>
 
-import java.util.List;
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-import com.springboot.simpletodo.vo.Todo;
+<span class="kn">import</span> <span class="nn">com.springboot.simpletodo.vo.Todo</span><span class="o">;</span>
 
-public interface SimpleTodoService {
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">SimpleTodoService</span> <span class="o">{</span>
   
-  public List&lt;Todo&gt; selectTodo();
-  public int insertTodo(Todo aTodo);
-  public int updateTodo(Todo aTodo);
-  public int deleteTodo(Todo aTodo);
+  <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Todo</span><span class="o">&gt;</span> <span class="nf">selectTodo</span><span class="o">();</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">insertTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">updateTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">deleteTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">);</span>
   
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="6-서비스-인터페이스-구현-simpletodoserviceimpljava"><span class="me-2"><strong>6. 서비스 인터페이스 구현 (SimpleTodoServiceImpl.java)</strong></span><a href="#6-서비스-인터페이스-구현-simpletodoserviceimpljava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="6-서비스-인터페이스-구현-simpletodoserviceimpljava"><span class="me-2"><strong>6. 서비스 인터페이스 구현 (SimpleTodoServiceImpl.java)</strong></span><a href="#6-서비스-인터페이스-구현-simpletodoserviceimpljava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1219,51 +1271,51 @@ public interface SimpleTodoService {
 35
 36
 37
-</pre></td><td class="rouge-code"><pre>package com.springboot.simpletodo.impl;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.springboot.simpletodo.impl</span><span class="o">;</span>
 
-import java.util.List;
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Service</span><span class="o">;</span>
 
-import com.springboot.simpletodo.dao.SimpleTodoDAO;
-import com.springboot.simpletodo.service.SimpleTodoService;
-import com.springboot.simpletodo.vo.Todo;
+<span class="kn">import</span> <span class="nn">com.springboot.simpletodo.dao.SimpleTodoDAO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springboot.simpletodo.service.SimpleTodoService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springboot.simpletodo.vo.Todo</span><span class="o">;</span>
 
-@Service
-public class SimpleTodoServiceImpl implements SimpleTodoService{
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleTodoServiceImpl</span> <span class="kd">implements</span> <span class="nc">SimpleTodoService</span><span class="o">{</span>
   
-  @Autowired SimpleTodoDAO std;
+  <span class="nd">@Autowired</span> <span class="nc">SimpleTodoDAO</span> <span class="n">std</span><span class="o">;</span>
   
-  @Override
-  public List&lt;Todo&gt; selectTodo() {
-    return std.selectAll();
-  }
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Todo</span><span class="o">&gt;</span> <span class="nf">selectTodo</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">.</span><span class="na">selectAll</span><span class="o">();</span>
+  <span class="o">}</span>
   
-  @Override
-  public int insertTodo(Todo aTodo) {
-    return std.insertTodo(aTodo);
-  }
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">insertTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">.</span><span class="na">insertTodo</span><span class="o">(</span><span class="n">aTodo</span><span class="o">);</span>
+  <span class="o">}</span>
   
-  @Override
-  public int updateTodo(Todo aTodo) {
-    return std.updateTodo(aTodo);
-  }
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">updateTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">.</span><span class="na">updateTodo</span><span class="o">(</span><span class="n">aTodo</span><span class="o">);</span>
+  <span class="o">}</span>
   
-  @Override
-  public int deleteTodo(Todo aTodo) {
-    return std.deleteTodo(aTodo);
-  }
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">deleteTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">.</span><span class="na">deleteTodo</span><span class="o">(</span><span class="n">aTodo</span><span class="o">);</span>
+  <span class="o">}</span>
 
-}
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="7-restcontroller-작성-simpletodocontrollerjava"><span class="me-2"><strong>7. RestController 작성 (SimpleTodoController.java)</strong></span><a href="#7-restcontroller-작성-simpletodocontrollerjava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="7-restcontroller-작성-simpletodocontrollerjava"><span class="me-2"><strong>7. RestController 작성 (SimpleTodoController.java)</strong></span><a href="#7-restcontroller-작성-simpletodocontrollerjava" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1306,56 +1358,56 @@ public class SimpleTodoServiceImpl implements SimpleTodoService{
 40
 41
 42
-</pre></td><td class="rouge-code"><pre>import java.util.List;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.PostMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
 
-import com.springboot.simpletodo.service.SimpleTodoService;
-import com.springboot.simpletodo.vo.Todo;
+<span class="kn">import</span> <span class="nn">com.springboot.simpletodo.service.SimpleTodoService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springboot.simpletodo.vo.Todo</span><span class="o">;</span>
 
-@RestController
-public class SimpleTodoController {
+<span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleTodoController</span> <span class="o">{</span>
   
-  @Autowired SimpleTodoService stc;
+  <span class="nd">@Autowired</span> <span class="nc">SimpleTodoService</span> <span class="n">stc</span><span class="o">;</span>
   
-  @GetMapping("/get-test")
-  public String getTest() {
-    return "get test";
-  }
+  <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/get-test"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getTest</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="s">"get test"</span><span class="o">;</span>
+  <span class="o">}</span>
   
-  @GetMapping("/todo/get")
-  public List&lt;Todo&gt; getList() {
-    return stc.selectTodo();
-  }
+  <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/todo/get"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Todo</span><span class="o">&gt;</span> <span class="nf">getList</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">stc</span><span class="o">.</span><span class="na">selectTodo</span><span class="o">();</span>
+  <span class="o">}</span>
   
-  @PostMapping("/todo/insert")
-  public int insertTodo(Todo aTodo) {
-    return stc.insertTodo(aTodo);
-  }
+  <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">"/todo/insert"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">insertTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">stc</span><span class="o">.</span><span class="na">insertTodo</span><span class="o">(</span><span class="n">aTodo</span><span class="o">);</span>
+  <span class="o">}</span>
   
-  @PostMapping("/todo/update")
-  public int updateTodo(Todo aTodo) {
-    return stc.updateTodo(aTodo);
-  }
+  <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">"/todo/update"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">updateTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">stc</span><span class="o">.</span><span class="na">updateTodo</span><span class="o">(</span><span class="n">aTodo</span><span class="o">);</span>
+  <span class="o">}</span>
   
-  @PostMapping("/todo/delete")
-  public int deleteTodo(Todo aTodo) {
-    return stc.deleteTodo(aTodo);
-  }
+  <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">"/todo/delete"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">deleteTodo</span><span class="o">(</span><span class="nc">Todo</span> <span class="n">aTodo</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">stc</span><span class="o">.</span><span class="na">deleteTodo</span><span class="o">(</span><span class="n">aTodo</span><span class="o">);</span>
+  <span class="o">}</span>
   
-}
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="8-restcontroller의-정상-동작-여부를-점검하는-테스트-페이지-작성"><span class="me-2"><strong>8. RestController의 정상 동작 여부를 점검하는 테스트 페이지 작성</strong></span><a href="#8-restcontroller의-정상-동작-여부를-점검하는-테스트-페이지-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="8-restcontroller의-정상-동작-여부를-점검하는-테스트-페이지-작성"><span class="me-2"><strong>8. RestController의 정상 동작 여부를 점검하는 테스트 페이지 작성</strong></span><a href="#8-restcontroller의-정상-동작-여부를-점검하는-테스트-페이지-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1369,19 +1421,19 @@ public class SimpleTodoController {
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>package com.springboot.simpletodo.controller;
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.springboot.simpletodo.controller</span><span class="o">;</span>
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="o">;</span>
 
-@Controller
-public class WebController {
+<span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebController</span> <span class="o">{</span>
   
-  @RequestMapping("/")
-  public String mainPage() {
-    return "main-web";
-  }
-}
+  <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">"/"</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="nc">String</span> <span class="nf">mainPage</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="s">"main-web"</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="https://github.com/ayaysir/simple-todo-server/blob/master/src/main/resources/templates/main-web.html">main-web.html 보기</a></p>
@@ -1653,190 +1705,10 @@ public class WebController {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1916,46 +1788,10 @@ public class WebController {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1967,9 +1803,52 @@ public class WebController {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2114,6 +1993,144 @@ public class WebController {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2240,20 +2257,10 @@ public class WebController {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2355,6 +2362,12 @@ public class WebController {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -4061,79 +4074,7 @@ public class WebController {
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -8277,11 +8218,11 @@ public class WebController {
 
   
     <a
-      href="/posts/%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8%EB%A1%9C-%EB%A7%8C%EB%93%A0-todo-%EC%95%B1-%EC%98%88%EC%A0%9C/"
+      href="/posts/%EC%84%B1%EA%B3%B5%ED%95%9C-%EC%82%B6%EC%9D%B4%EB%9E%80/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>스위프트(Swift)로 만든 iOS용 Todo 앱 예제</p>
+      <p>성공한 삶이란...</p>
     </a>
   
 </nav>
@@ -8442,190 +8383,10 @@ public class WebController {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8705,46 +8466,10 @@ public class WebController {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8756,9 +8481,52 @@ public class WebController {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8903,6 +8671,144 @@ public class WebController {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -9029,20 +8935,10 @@ public class WebController {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,6 +573,49 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -596,7 +646,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트 예제: 마이크 테스트</h1>
     
@@ -670,9 +720,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="352 words"
+  title="382 words"
 >
-  <em>1 min</em> read</span>
+  <em>2 min</em> read</span>
 
         </div>
       </div>
@@ -680,9 +730,35 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트 예제: 마이크 테스트</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트 예제: 마이크 테스트</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>출처 <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder">바로가기</a></p>
+    <blockquote>
+  <p>출처 <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder">바로가기</a></p>
+</blockquote>
+
+<h2 id="시스템에서-녹음-권환-획득하기"><span class="me-2">시스템에서 녹음 권환 획득하기</span><a href="#시스템에서-녹음-권환-획득하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>자바스크립트에서 마이크를 사용하려면 먼저 사용자로부터 마이크 사용 권한을 획득해야 합니다.</p>
 
@@ -692,8 +768,8 @@
 
 <p>이 부분은 <code class="language-plaintext highlighter-rouge">navigator.mediaDevices.getUserMedia(constraints).then(...)</code>을 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -707,22 +783,22 @@
 11
 12
 13
-</pre></td><td class="rouge-code"><pre>if (navigator.mediaDevices) {
-    const constraints = {
-        audio: true
-    }
-    navigator.mediaDevices.getUserMedia(constraints)
-        .then(stream =&gt; {
-                .................
+</pre></td><td class="rouge-code"><pre><span class="k">if </span><span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">mediaDevices</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">constraints</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">audio</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+    <span class="nb">navigator</span><span class="p">.</span><span class="nx">mediaDevices</span><span class="p">.</span><span class="nf">getUserMedia</span><span class="p">(</span><span class="nx">constraints</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">stream</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="p">.................</span>
            
-        })
-        .catch(err =&gt; {
-            console.log('The following error occurred: ' + err)
-        })
-}
+        <span class="p">})</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The following error occurred: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">)</span>
+        <span class="p">})</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="마이크-소리-녹음하기"><span class="me-2">마이크 소리 녹음하기</span><a href="#마이크-소리-녹음하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>마이크 소리를 실시간으로 들으려는 경우 오디오 컨텍스트를 사용하며, 마이크 소리를 녹음한 경우 저장하려는 경우 <code class="language-plaintext highlighter-rouge">new MediaRecorder(stream</code><code class="language-plaintext highlighter-rouge">)</code> 을 사용합니다.</p>
 
@@ -730,14 +806,14 @@
 
 <p>아래 코드는 녹음이 진행되는 동안 데이터를 배열에 저장하는 작업입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>mediaRecorder.ondataavailable = e =&gt; {
-    chunks.push(e.data)
-}
+</pre></td><td class="rouge-code"><pre><span class="nx">mediaRecorder</span><span class="p">.</span><span class="nx">ondataavailable</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">chunks</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 배열을 블롭 데이터로 변환한 후 <code class="language-plaintext highlighter-rouge">&lt;audio&gt;</code> 의 <code class="language-plaintext highlighter-rouge">src</code>에 적용하면 녹음 파일이 재생됩니다.</p>
@@ -766,16 +842,21 @@
 <span class="nx">audio</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">audioURL</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="종합-예제-코드"><span class="me-2">종합 예제 코드</span><a href="#종합-예제-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이것을 종합한 예제 코드는 아래와 같습니다.</p>
 
-<p>https://gist.github.com/ayaysir/4e54cd20776d3ce125e31a7e8dafc225</p>
-
-<p>https://gist.github.com/ayaysir/12c367a9f699f88ad59fbd47d794f745</p>
-
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/zFMU60Xhexg" frameborder="0" allowfullscreen=""></iframe></div>
+
+<!-- https://gist.github.com/ayaysir/4e54cd20776d3ce125e31a7e8dafc225 -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/4e54cd20776d3ce125e31a7e8dafc225.js"> </script>
+
+<!-- https://gist.github.com/ayaysir/12c367a9f699f88ad59fbd47d794f745 -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/12c367a9f699f88ad59fbd47d794f745.js"> </script>
+
 
   </div>
 
@@ -1039,190 +1120,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1302,46 +1203,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1353,9 +1218,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1500,6 +1408,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1626,20 +1672,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1741,6 +1777,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -3627,79 +3669,7 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -7828,190 +7798,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8091,46 +7881,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8142,9 +7896,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8289,6 +8086,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8415,20 +8350,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,21 +573,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -612,6 +604,21 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -628,7 +635,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>macOS 홈브루(brew)에서 Updating Homebrew... 멈춤현상 해결방법 및 권한 설정 방법</h1>
     
@@ -712,13 +719,37 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">macOS 홈브루(brew)에서 Updating Homebrew... 멈춤현상 해결방법 및 권한 설정 방법</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">macOS 홈브루(brew)에서 Updating Homebrew... 멈춤현상 해결방법 및 권한 설정 방법</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>macOS 홈브루(brew)에서</p>
 
-<h5 id="updating-homebrew-멈춤현상-해결방법"><span class="me-2"><strong>Updating Homebrew… 멈춤현상 해결방법</strong></span><a href="#updating-homebrew-멈춤현상-해결방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="updating-homebrew-멈춤현상-해결방법"><span class="me-2"><strong>Updating Homebrew… 멈춤현상 해결방법</strong></span><a href="#updating-homebrew-멈춤현상-해결방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>(<a href="https://stackoverflow.com/questions/41030429/brew-upgrade-hangs-on-el-capitan">스택오버플로 링크</a>)</p>
+<blockquote>
+  <p>(<a href="https://stackoverflow.com/questions/41030429/brew-upgrade-hangs-on-el-capitan">스택오버플로 링크</a>)</p>
+</blockquote>
 
 <ol>
   <li><code class="language-plaintext highlighter-rouge">control + z</code> 버튼을 눌러 업그레이드 작업 중단</li>
@@ -730,7 +761,7 @@
 
 <p> </p>
 
-<h5 id="권한-오류-해결방법"><span class="me-2"><strong>권한 오류 해결방법</strong></span><a href="#권한-오류-해결방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="권한-오류-해결방법"><span class="me-2"><strong>권한 오류 해결방법</strong></span><a href="#권한-오류-해결방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다음과 같은 에러가 나오면서 brew 프로그램 설치가 안될 때</p>
 
@@ -748,16 +779,16 @@
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.00.13.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-11-pm-6.00.13.png" alt="" loading="lazy"></a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>sudo chown -R $(whoami) /usr/local/share/man/man5 /usr/local/share/man/man7
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="si">$(</span><span class="nb">whoami</span><span class="si">)</span> /usr/local/share/man/man5 /usr/local/share/man/man7
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>chmod u+w /usr/local/share/man/man5 /usr/local/share/man/man7
+</pre></td><td class="rouge-code"><pre><span class="nb">chmod </span>u+w /usr/local/share/man/man5 /usr/local/share/man/man7
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -1022,190 +1053,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1285,46 +1136,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1336,9 +1151,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1483,6 +1341,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1609,20 +1605,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1725,6 +1711,12 @@
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -1758,78 +1750,6 @@
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -7566,34 +7486,6 @@
         </article>
       
         <article class="col">
-          <a href="/posts/%ED%8E%8C-%EB%B2%88%EC%97%AD-apple%EC%9D%98-liquid-glass-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%B2%A0%ED%83%80%EC%97%90-%EB%8C%80%ED%95%9C-%ED%94%BC%EB%93%9C%EB%B0%B1/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1749567600"
-  data-df="ll"
-  
->
-  Jun 11, 2025
-</time>
-
-              <h4 class="pt-0 my-2">[펌/번역] 어느 유저의 Apple의 Liquid Glass 디자인 베타에 대한 피드백</h4>
-              <div class="text-muted">
-                <p>## **소개**  이번 WWDC25에서 새로운 컨셉의 Liquid Glass 디자인이 발표되었지만, 저는 아무래도 나이가 들어서인지 새로운 디자인이 잘 눈에 들어오지 않고 좋은 디자인이 아닌것 같다고 느꼈습니다. 여러 곳의 반응을 보니, 이렇게 생각하는건 저뿐만은 아니었던것 같습니다. 이번 새로운 디자인 컨셉에 대한 비판글이 여럿 있었고, 그 중 공...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/%EC%9C%A0%EB%8B%89%EC%8A%A4-%EB%A6%AC%EB%88%85%EC%8A%A4-%EA%B8%B0%EC%B4%88-%EB%AA%85%EB%A0%B9%EC%96%B4-dir-cd-pwd-tar-sh-mv-ps/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -7616,6 +7508,34 @@
               <h4 class="pt-0 my-2">유닉스/리눅스 기초 명령어 (dir, cd, pwd, tar, sh, mv, ps)</h4>
               <div class="text-muted">
                 <p>dir 디렉토리/파일 목록 표시  cd .. 이전 디렉토리로 이동 (cd 다음에 [공백] .. 이므로 주의. 공백 없는 cd..는 작동하지 않음. 윈도우 cmd와의 차이점이므로 주의.)  pwd 현재 어디에 있는지 전체 경로로 표시  mv [이동 대상 파일] [이동할 디렉토리] 파일 이동: mv [원래 파일/디렉토리명] [바꿀 파일/디렉토리명]  ta...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/%ED%8E%8C-%EB%B2%88%EC%97%AD-apple%EC%9D%98-liquid-glass-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%B2%A0%ED%83%80%EC%97%90-%EB%8C%80%ED%95%9C-%ED%94%BC%EB%93%9C%EB%B0%B1/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1749567600"
+  data-df="ll"
+  
+>
+  Jun 11, 2025
+</time>
+
+              <h4 class="pt-0 my-2">[펌/번역] 어느 유저의 Apple의 Liquid Glass 디자인 베타에 대한 피드백</h4>
+              <div class="text-muted">
+                <p>## **소개**  이번 WWDC25에서 새로운 컨셉의 Liquid Glass 디자인이 발표되었지만, 저는 아무래도 나이가 들어서인지 새로운 디자인이 잘 눈에 들어오지 않고 좋은 디자인이 아닌것 같다고 느꼈습니다. 여러 곳의 반응을 보니, 이렇게 생각하는건 저뿐만은 아니었던것 같습니다. 이번 새로운 디자인 컨셉에 대한 비판글이 여럿 있었고, 그 중 공...</p>
               </div>
             </div>
           </a>
@@ -7811,190 +7731,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8074,46 +7814,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8125,9 +7829,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8272,6 +8019,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8398,20 +8283,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

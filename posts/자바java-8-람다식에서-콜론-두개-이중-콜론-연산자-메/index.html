@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -696,21 +703,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -764,6 +756,42 @@
     
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -780,7 +808,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바(Java) 8: 람다식에서 콜론 두개 (:: - 이중 콜론 연산자, 메소드 참조 표현식)의 용도와 사용법</h1>
     
@@ -864,6 +892,28 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바(Java) 8: 람다식에서 콜론 두개 (:: - 이중 콜론 연산자, 메소드 참조 표현식)의 용도와 사용법</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바(Java) 8: 람다식에서 콜론 두개 (:: - 이중 콜론 연산자, 메소드 참조 표현식)의 용도와 사용법</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>자바8 람다식: <a href="http://yoonbumtae.com/?p=516">자바(Java): 람다식 (Lambda Expression) 기초 (Java 8 이상)</a></p>
@@ -876,10 +926,10 @@
 
 <p> </p>
 
-<h5 id="예1-리스트를-순회하면서-println을-하고자-할-때"><span class="me-2"><strong>예1) 리스트를 순회하면서 println을 하고자 할 때</strong></span><a href="#예1-리스트를-순회하면서-println을-하고자-할-때" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="예1-리스트를-순회하면서-println을-하고자-할-때"><span class="me-2"><strong>예1) 리스트를 순회하면서 println을 하고자 할 때</strong></span><a href="#예1-리스트를-순회하면서-println을-하고자-할-때" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -895,20 +945,20 @@
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>import java.util.Arrays;
-import java.util.List;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-public class DoubleColonTest {
-    public static void main(String[] args) {
-        List&lt;String&gt; names = Arrays.asList("김갑순", "김갑돌");
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DoubleColonTest</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"김갑순"</span><span class="o">,</span> <span class="s">"김갑돌"</span><span class="o">);</span>
 
-        // x를 건네고 받는 과정에서 x를 두 번 적게 된다.
-        names.forEach(x -&gt; System.out.println(x));
+        <span class="c1">// x를 건네고 받는 과정에서 x를 두 번 적게 된다.</span>
+        <span class="n">names</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">));</span>
 
-        // 아예 x들을 빼버리고 아래와 같이 작성할 수 있다.
-        names.forEach(System.out::println);
-    }
-}
+        <span class="c1">// 아예 x들을 빼버리고 아래와 같이 작성할 수 있다.</span>
+        <span class="n">names</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -920,10 +970,10 @@ public class DoubleColonTest {
 
 <p> </p>
 
-<h5 id="예2-stream의-map을-사용해-새로운-스트림을-생성하고자-할-때"><span class="me-2"><strong>예2) Stream의 map()을 사용해 새로운 스트림을 생성하고자 할 때</strong></span><a href="#예2-stream의-map을-사용해-새로운-스트림을-생성하고자-할-때" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="예2-stream의-map을-사용해-새로운-스트림을-생성하고자-할-때"><span class="me-2"><strong>예2) Stream의 map()을 사용해 새로운 스트림을 생성하고자 할 때</strong></span><a href="#예2-stream의-map을-사용해-새로운-스트림을-생성하고자-할-때" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -944,25 +994,25 @@ public class DoubleColonTest {
 18
 19
 20
-</pre></td><td class="rouge-code"><pre>import java.util.Arrays;
-import java.util.List;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
-public class DoubleColonTest {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DoubleColonTest</span> <span class="o">{</span>
 
-    public String addNim(String s) {
-        return s + "님";
-    }
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">addNim</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">s</span> <span class="o">+</span> <span class="s">"님"</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    public static void main(String[] args) {
-        List&lt;String&gt; names = Arrays.asList("김갑순", "김갑돌");;
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"김갑순"</span><span class="o">,</span> <span class="s">"김갑돌"</span><span class="o">);;</span>
 
-        DoubleColonTest dct = new DoubleColonTest();
+        <span class="nc">DoubleColonTest</span> <span class="n">dct</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DoubleColonTest</span><span class="o">();</span>
 
-        names.stream().map(x -&gt; dct.addNim(x)).forEach(System.out::println); // 적용 전
-        names.stream().map(dct::addNim).forEach(System.out::println); // 적용 후
+        <span class="n">names</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">dct</span><span class="o">.</span><span class="na">addNim</span><span class="o">(</span><span class="n">x</span><span class="o">)).</span><span class="na">forEach</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">// 적용 전</span>
+        <span class="n">names</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="nl">dct:</span><span class="o">:</span><span class="n">addNim</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">// 적용 후</span>
 
-    }
-}
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -980,10 +1030,10 @@ public class DoubleColonTest {
 
 <p> </p>
 
-<h5 id="예3-생성자가-파라미터-한-개로-이루어진-dto의-배열을-생성하고자-할-때"><span class="me-2"><strong>예3) 생성자가 파라미터 한 개로 이루어진 DTO의 배열을 생성하고자 할 때</strong></span><a href="#예3-생성자가-파라미터-한-개로-이루어진-dto의-배열을-생성하고자-할-때" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="예3-생성자가-파라미터-한-개로-이루어진-dto의-배열을-생성하고자-할-때"><span class="me-2"><strong>예3) 생성자가 파라미터 한 개로 이루어진 DTO의 배열을 생성하고자 할 때</strong></span><a href="#예3-생성자가-파라미터-한-개로-이루어진-dto의-배열을-생성하고자-할-때" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1000,26 +1050,26 @@ public class DoubleColonTest {
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>public class Dog {
-    private String name;
-    private String species;
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">species</span><span class="o">;</span>
 
-    // ...setter
-    // ...getter
+    <span class="c1">// ...setter</span>
+    <span class="c1">// ...getter</span>
 
-    @Override
-    public String toString() {
-        return "Dog{" +
-                "name='" + name + '\'' +
-                ", species='" + species + '\'' +
-                '}';
-    }
-}
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Dog{"</span> <span class="o">+</span>
+                <span class="s">"name='"</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
+                <span class="s">", species='"</span> <span class="o">+</span> <span class="n">species</span> <span class="o">+</span> <span class="sc">'\''</span> <span class="o">+</span>
+                <span class="sc">'}'</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1047,33 +1097,33 @@ public class DoubleColonTest {
 25
 26
 27
-</pre></td><td class="rouge-code"><pre>import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.stream.Collectors</span><span class="o">;</span>
 
-public class DoubleColonTest {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DoubleColonTest</span> <span class="o">{</span>
 
-    public static String addNim(String s) {
-        return s + "님";
-    }
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">addNim</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">s</span> <span class="o">+</span> <span class="s">"님"</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    public static void main(String[] args) {
-        List&lt;String&gt; names = Arrays.asList("김갑순", "김갑돌");
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"김갑순"</span><span class="o">,</span> <span class="s">"김갑돌"</span><span class="o">);</span>
 
-        List&lt;Dog&gt; dogs1 = names.stream()
-                .map(x -&gt; new Dog(x)) // 적용 전
-                .collect(Collectors.toList());
-        List&lt;Dog&gt; dogs2 = names.stream()
-                .map(Dog::new) // 적용 후
-                .collect(Collectors.toList());
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Dog</span><span class="o">&gt;</span> <span class="n">dogs1</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="n">x</span><span class="o">))</span> <span class="c1">// 적용 전</span>
+                <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Dog</span><span class="o">&gt;</span> <span class="n">dogs2</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">Dog:</span><span class="o">:</span><span class="k">new</span><span class="o">)</span> <span class="c1">// 적용 후</span>
+                <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
 
-        dogs2.forEach(x -&gt; x.setSpecies("이탈리안 그레이 하운드"));
+        <span class="n">dogs2</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">setSpecies</span><span class="o">(</span><span class="s">"이탈리안 그레이 하운드"</span><span class="o">));</span>
 
-        System.out.println(dogs1);
-        System.out.println(dogs2);
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dogs1</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dogs2</span><span class="o">);</span>
 
-    }
-}
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-22-pm-4.46.01.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-22-pm-4.46.01.png" alt="" loading="lazy"></a></p>
@@ -1082,7 +1132,7 @@ public class DoubleColonTest {
 
 <p> </p>
 
-<p><strong>게터를 참조 표현식으로 변환: 스트림을 해시맵으로 그룹화하는 예제</strong></p>
+<h3 id="게터를-참조-표현식으로-변환-스트림을-해시맵으로-그룹화하는-예제"><span class="me-2"><strong>게터를 참조 표현식으로 변환: 스트림을 해시맵으로 그룹화하는 예제</strong></span><a href="#게터를-참조-표현식으로-변환-스트림을-해시맵으로-그룹화하는-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1100,22 +1150,22 @@ public class DoubleColonTest {
 
 <p> </p>
 
-<h5 id="예4-함수형-인터페이스를-구현할-때-파라미터의-종류와-개수가-같으면-사용-가능"><span class="me-2"><strong>예4) 함수형 인터페이스를 구현할 때 파라미터의 종류와 개수가 같으면 사용 가능</strong> </span><a href="#예4-함수형-인터페이스를-구현할-때-파라미터의-종류와-개수가-같으면-사용-가능" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="예4-함수형-인터페이스를-구현할-때-파라미터의-종류와-개수가-같으면-사용-가능"><span class="me-2"><strong>예4) 함수형 인터페이스를 구현할 때 파라미터의 종류와 개수가 같으면 사용 가능</strong> </span><a href="#예4-함수형-인터페이스를-구현할-때-파라미터의-종류와-개수가-같으면-사용-가능" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>@FunctionalInterface
-public interface StringToDog {
-    public String convert(String name, String species, int price);
-}
+</pre></td><td class="rouge-code"><pre><span class="nd">@FunctionalInterface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">StringToDog</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">convert</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="nc">String</span> <span class="n">species</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">);</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1128,22 +1178,22 @@ public interface StringToDog {
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>public class Dog {
-    private String name;
-    private String species;
-    private int price;
+</pre></td><td class="rouge-code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">species</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
 
-    public static String introduce(String name, String species, int price) {
-        return name + " : " + species + " : " + price;
-    }
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">introduce</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="nc">String</span> <span class="n">species</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span> <span class="o">+</span> <span class="s">" : "</span> <span class="o">+</span> <span class="n">species</span> <span class="o">+</span> <span class="s">" : "</span> <span class="o">+</span> <span class="n">price</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    // ............
-}
+    <span class="c1">// ............</span>
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1161,22 +1211,22 @@ public interface StringToDog {
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.stream.Collectors</span><span class="o">;</span>
 
-public class DoubleColonTest {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DoubleColonTest</span> <span class="o">{</span>
 
-    public static void main(String[] args) {
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
-        // 파라미터의 개수와 타입이 같다면 메소드 참고 표현식이 적용된다.
-        StringToDog stringToDog1 = (name, species, price) -&gt; Dog.introduce(name, species, price);
-        StringToDog stringToDog2 = Dog::introduce;
+        <span class="c1">// 파라미터의 개수와 타입이 같다면 메소드 참고 표현식이 적용된다.</span>
+        <span class="nc">StringToDog</span> <span class="n">stringToDog1</span> <span class="o">=</span> <span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">species</span><span class="o">,</span> <span class="n">price</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="nc">Dog</span><span class="o">.</span><span class="na">introduce</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">species</span><span class="o">,</span> <span class="n">price</span><span class="o">);</span>
+        <span class="nc">StringToDog</span> <span class="n">stringToDog2</span> <span class="o">=</span> <span class="nl">Dog:</span><span class="o">:</span><span class="n">introduce</span><span class="o">;</span>
 
-        System.out.println(stringToDog1.convert("개똥이", "믹스", 100));
-        System.out.println(stringToDog2.convert("누렁이", "믹스", 1000));
-    }
-}
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">stringToDog1</span><span class="o">.</span><span class="na">convert</span><span class="o">(</span><span class="s">"개똥이"</span><span class="o">,</span> <span class="s">"믹스"</span><span class="o">,</span> <span class="mi">100</span><span class="o">));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">stringToDog2</span><span class="o">.</span><span class="na">convert</span><span class="o">(</span><span class="s">"누렁이"</span><span class="o">,</span> <span class="s">"믹스"</span><span class="o">,</span> <span class="mi">1000</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1446,190 +1496,10 @@ public class DoubleColonTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1709,46 +1579,10 @@ public class DoubleColonTest {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -1760,9 +1594,52 @@ public class DoubleColonTest {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1907,6 +1784,144 @@ public class DoubleColonTest {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2033,20 +2048,10 @@ public class DoubleColonTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2149,6 +2154,12 @@ public class DoubleColonTest {
 
 
 
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
 
             
           </aside>
@@ -2182,78 +2193,6 @@ public class DoubleColonTest {
 
 
 
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -8235,190 +8174,10 @@ public class DoubleColonTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -8498,46 +8257,10 @@ public class DoubleColonTest {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -8549,9 +8272,52 @@ public class DoubleColonTest {
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8696,6 +8462,144 @@ public class DoubleColonTest {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -8822,20 +8726,10 @@ public class DoubleColonTest {
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     

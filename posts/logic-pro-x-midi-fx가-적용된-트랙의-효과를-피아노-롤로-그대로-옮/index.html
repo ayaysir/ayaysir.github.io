@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1346,15 +1353,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -1469,6 +1498,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1485,7 +1524,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Logic Pro X: MIDI FX가 적용된 트랙의 효과를 피아노 롤로 그대로 옮기기(복사하기) - IAC 드라이버 이용</h1>
     
@@ -1559,15 +1598,37 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="641 words"
+  title="737 words"
 >
-  <em>3 min</em> read</span>
+  <em>4 min</em> read</span>
 
         </div>
       </div>
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Logic Pro X: MIDI FX가 적용된 트랙의 효과를 피아노 롤로 그대로 옮기기(복사하기) - IAC 드라이버 이용</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Logic Pro X: MIDI FX가 적용된 트랙의 효과를 피아노 롤로 그대로 옮기기(복사하기) - IAC 드라이버 이용</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -1578,7 +1639,7 @@
 
 <p>참고 동영상 (영어)</p>
 
-<p> </p>
+<h2 id="소개"><span class="me-2">소개 </span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아래의 단순한 코드에 MIDI FX를 적용하면 아래 피아노 롤에 나와있는 내용과는 다른 음이 들립니다.</p>
 
@@ -1590,35 +1651,45 @@
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.21.02.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.21.02.png" alt="" loading="lazy"></a></p>
 
-<p>방법은 다음과 같습니다.</p>
+<p>이럴 떄 macOS에서 제공하는 미디 캡처를 이용할 수 있습니다. 방법은 다음과 같습니다.</p>
 
-<p> </p>
+<h2 id="방법"><span class="me-2">방법</span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-먼저-finder에서-응용-프로그램--기타-런치패드에도-있습니다-폴더로-들어가면-오디오-midi-설정-이라는-프로그램이-있습니다-이것을-실행합니다"><span class="me-2">1. 먼저 Finder에서 [응용 프로그램] &gt; [기타] (런치패드에도 있습니다.) 폴더로 들어가면 [오디오 MIDI 설정] 이라는 프로그램이 있습니다. 이것을 실행합니다.</span><a href="#1-먼저-finder에서-응용-프로그램--기타-런치패드에도-있습니다-폴더로-들어가면-오디오-midi-설정-이라는-프로그램이-있습니다-이것을-실행합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-오디오-midi-설정-프로그램-열기"><span class="me-2">1. 오디오 MIDI 설정 프로그램 열기</span><a href="#1-오디오-midi-설정-프로그램-열기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>먼저 Finder에서 [응용 프로그램] &gt; [기타] (런치패드에도 있습니다.) 폴더로 들어가면 [오디오 MIDI 설정] 이라는 프로그램이 있습니다. 이것을 실행합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.23.34.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.23.34.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="2-프로그램을-실행하면-맨-위에-윈도우--midi-스튜디오-보기-라는-메뉴를-실행합니다-단축키-command--2"><span class="me-2">2. 프로그램을 실행하면 맨 위에 [윈도우] &gt; [MIDI 스튜디오 보기] 라는 메뉴를 실행합니다. (단축키: <code class="language-plaintext highlighter-rouge">command + 2</code>)</span><a href="#2-프로그램을-실행하면-맨-위에-윈도우--midi-스튜디오-보기-라는-메뉴를-실행합니다-단축키-command--2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-midi-스튜디오-보기"><span class="me-2">2. MIDI 스튜디오 보기</span><a href="#2-midi-스튜디오-보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>프로그램을 실행하면 맨 위에 [윈도우] &gt; [MIDI 스튜디오 보기] 라는 메뉴를 실행합니다. (단축키: <code class="language-plaintext highlighter-rouge">command + 2</code>)</p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.25.47.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.25.47.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="3-미디-스튜디오-메뉴를-열면-iac-드라이버라는-네모-상자가-있습니다-이것을-더블-클릭합니다"><span class="me-2">3. 미디 스튜디오 메뉴를 열면 [IAC 드라이버]라는 네모 상자가 있습니다. 이것을 더블 클릭합니다.</span><a href="#3-미디-스튜디오-메뉴를-열면-iac-드라이버라는-네모-상자가-있습니다-이것을-더블-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-iac-드라이버-열기"><span class="me-2">3. IAC 드라이버 열기</span><a href="#3-iac-드라이버-열기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>미디 스튜디오 메뉴를 열면 [IAC 드라이버]라는 네모 상자가 있습니다. 이것을 더블 클릭합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.29.11.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.29.11.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="4-여기서-기기가-온라인-상태임-체크박스에-체크합니다-사양이-낮은-컴퓨터에서는-성능-저하가-발생할-수-있으므로-필요할-때에만-사용하는-것이-좋습니다"><span class="me-2">4. 여기서 [기기가 온라인 상태임] 체크박스에 체크합니다. 사양이 낮은 컴퓨터에서는 성능 저하가 발생할 수 있으므로 필요할 때에만 사용하는 것이 좋습니다.</span><a href="#4-여기서-기기가-온라인-상태임-체크박스에-체크합니다-사양이-낮은-컴퓨터에서는-성능-저하가-발생할-수-있으므로-필요할-때에만-사용하는-것이-좋습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-기기가-온라인-상태임을-알리기"><span class="me-2">4. 기기가 온라인 상태임을 알리기</span><a href="#4-기기가-온라인-상태임을-알리기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>여기서 [기기가 온라인 상태임] 체크박스에 체크합니다. 사양이 낮은 컴퓨터에서는 성능 저하가 발생할 수 있으므로 필요할 때에만 사용하는 것이 좋습니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.30.32.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.30.32.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="5-로직으로-돌아온-다음-원래-트랙을-new-track-with-duplicate-settings-기능을-이용해-복사합니다-단축키-command--d"><span class="me-2">5. 로직으로 돌아온 다음 원래 트랙을 [New Track with Duplicate Settings] 기능을 이용해 복사합니다. (단축키 <code class="language-plaintext highlighter-rouge">command + D</code>)</span><a href="#5-로직으로-돌아온-다음-원래-트랙을-new-track-with-duplicate-settings-기능을-이용해-복사합니다-단축키-command--d" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-logic-pro-에서-복사"><span class="me-2">5. Logic Pro 에서 복사</span><a href="#5-logic-pro-에서-복사" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>로직으로 돌아온 다음 원래 트랙을 [New Track with Duplicate Settings] 기능을 이용해 복사합니다. (단축키 <code class="language-plaintext highlighter-rouge">command + D</code>)</p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.33.27.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.33.27.png" alt="" loading="lazy"></a></p>
 
@@ -1626,25 +1697,33 @@
 
 <p> </p>
 
-<h5 id="6-원본-트랙을-클릭한-상태에서-왼쪽의-인스펙터inspector-창을-보면-가상악기를-설정하는-부분이-있는데-주황색-박스-이-부분을-클릭하고-악기를-utility--external-instrumentstereo-로-변경합니다"><span class="me-2">6. 원본 트랙을 클릭한 상태에서 왼쪽의 인스펙터(Inspector) 창을 보면 가상악기를 설정하는 부분이 있는데 (주황색 박스) 이 부분을 클릭하고 악기를 [Utility] &gt; [External Instrument(Stereo)]  로 변경합니다.</span><a href="#6-원본-트랙을-클릭한-상태에서-왼쪽의-인스펙터inspector-창을-보면-가상악기를-설정하는-부분이-있는데-주황색-박스-이-부분을-클릭하고-악기를-utility--external-instrumentstereo-로-변경합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="6-악기-설정"><span class="me-2">6. 악기 설정</span><a href="#6-악기-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>원본 트랙을 클릭한 상태에서 왼쪽의 인스펙터(Inspector) 창을 보면 가상악기를 설정하는 부분이 있는데 (주황색 박스) 이 부분을 클릭하고 악기를 [Utility] &gt; [External Instrument(Stereo)]  로 변경합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.39.31.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.39.31.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="7-external-instrument-설정창에서-midi-destination을-온라인-상태인-iac-드라이버-버스로-변경합니다"><span class="me-2">7. External Instrument 설정창에서 [MIDI Destination]을 온라인 상태인 [IAC 드라이버 버스]로 변경합니다.</span><a href="#7-external-instrument-설정창에서-midi-destination을-온라인-상태인-iac-드라이버-버스로-변경합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="7-midi-destination-변경"><span class="me-2">7. MIDI Destination 변경</span><a href="#7-midi-destination-변경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>External Instrument 설정창에서 [MIDI Destination]을 온라인 상태인 [IAC 드라이버 버스]로 변경합니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.45.22.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.45.22.png" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="8-복사된-트랙을-선택하고-레코딩-기능단축키-r을-실행합니다-midi-fx가-적용된-상태로-레코딩이-되는-것을-볼-수-있습니다"><span class="me-2">8. 복사된 트랙을 선택하고 레코딩 기능(단축키 R)을 실행합니다. MIDI FX가 적용된 상태로 레코딩이 되는 것을 볼 수 있습니다.</span><a href="#8-복사된-트랙을-선택하고-레코딩-기능단축키-r을-실행합니다-midi-fx가-적용된-상태로-레코딩이-되는-것을-볼-수-있습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="8-레코딩-기능-실행"><span class="me-2">8. 레코딩 기능 실행</span><a href="#8-레코딩-기능-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>복사된 트랙을 선택하고 레코딩 기능(단축키 R)을 실행합니다. MIDI FX가 적용된 상태로 레코딩이 되는 것을 볼 수 있습니다.</p>
 
 <p>[caption id=”attachment_2286” align=”alignnone” width=”2784”] <a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.48.47.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.48.47.png" alt="" loading="lazy"></a> MIDI FX가 적용된 음들이 실시간으로 레코딩되는 중입니다.[/caption]</p>
 
 <p> </p>
 
-<h5 id="9-레코딩이-완료되면-원본-트랙은-뮤트하거나-삭제합니다-트랙을-삭제하지-않으면-추후-문제가-될-수-있으므로-가상악기-부분을-꺼두시거나-midi-destination을-리셋하는-것이-좋습니다"><span class="me-2">9. 레코딩이 완료되면 원본 트랙은 뮤트하거나 삭제합니다. 트랙을 삭제하지 않으면 추후 문제가 될 수 있으므로 가상악기 부분을 꺼두시거나 MIDI Destination을 리셋하는 것이 좋습니다.</span><a href="#9-레코딩이-완료되면-원본-트랙은-뮤트하거나-삭제합니다-트랙을-삭제하지-않으면-추후-문제가-될-수-있으므로-가상악기-부분을-꺼두시거나-midi-destination을-리셋하는-것이-좋습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="9-원본-트랙-뮤트삭제"><span class="me-2">9. 원본 트랙 뮤트/삭제</span><a href="#9-원본-트랙-뮤트삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>레코딩이 완료되면 원본 트랙은 뮤트하거나 삭제합니다. 트랙을 삭제하지 않으면 추후 문제가 될 수 있으므로 가상악기 부분을 꺼두시거나 MIDI Destination을 리셋하는 것이 좋습니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.52.36.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.52.36.png" alt="" loading="lazy"></a></p>
 
@@ -1920,190 +1999,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2183,46 +2082,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -2234,9 +2097,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2381,6 +2287,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2507,20 +2551,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2622,6 +2656,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -3669,7 +3709,7 @@
 
               <h4 class="pt-0 my-2">Logic Pro X: 역위상(Phase Inverting; 페이즈 인버팅) 기능을 이용하여 보컬+코러스만 추출</h4>
               <div class="text-muted">
-                <p>역위상(Phase Invertring)은 노이즈 캔슬링에 이용되는 기술인데 이것을 이용해서 특정 음원에서 보컬과 코러스만 추출한 음원을 생성할 수 있습니다.  조건  - 음원 제작사에서 공식적으로 제공하는 Instrumental(MR) 트랙이 존재해야 합니다. - Instrumental(MR) 트랙은 역위상 방지를 위한 특수 가공 처리가 되어있지 않아...</p>
+                <p>## 소개  역위상(Phase Invertring)은 노이즈 캔슬링에 이용되는 기술인데 이것을 이용해서 특정 음원에서 보컬과 코러스만 추출한 음원을 생성할 수 있습니다.  ## 조건  - 음원 제작사에서 공식적으로 제공하는 Instrumental(MR) 트랙이 존재해야 합니다. - Instrumental(MR) 트랙은 역위상 방지를 위한 특수 가공 처...</p>
               </div>
             </div>
           </a>
@@ -3697,7 +3737,7 @@
 
               <h4 class="pt-0 my-2">Logic Pro X: 크로테일(Crotales) 악기를 이용하여 신비한 종소리 연출</h4>
               <div class="text-muted">
-                <p>   로직 프로 X(Logic Pro X)에서 기본으로 제공하는 Crotales 라는 악기를 이용하여 위와 같은 머나먼 곳에서 들려오는 것 같은 신비한 종소리를 연출할 수 있습니다.     1. 소프트웨어 인스트러먼트(Software Instruments) 트랙을 추가한 다음 Orchestral &gt; Percussion 경로로 이동하여 Crotal...</p>
+                <p>소개            로직 프로 X(Logic Pro X)에서 기본으로 제공하는 Crotales 라는 악기를 이용하여 위와 같은 머나먼 곳에서 들려오는 것 같은 신비한 종소리를 연출할 수 있습니다.    방법  1. 악기를 Crotales로 변경  소프트웨어 인스트러먼트(Software Instruments) 트랙을 추가한 다음 Orchestral...</p>
               </div>
             </div>
           </a>
@@ -3921,190 +3961,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4184,46 +4044,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -4235,9 +4059,52 @@
     
     
       
-        
-        
-
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4382,6 +4249,144 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4508,20 +4513,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
