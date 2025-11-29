@@ -10,9 +10,9 @@ categories:
 
 JPA 엔티티에 생성 날짜(createdDate), 변경 날짜(modifiedDate) 필드를 자동으로 추가하는 방법입니다.
 
- 
+## **절차**
 
-#### **1) BaseTimeEntity 추상 클래스 작성**
+### **1) BaseTimeEntity 추상 클래스 작성**
 
 ```java
 package com.example.awsboard.domain;
@@ -42,7 +42,7 @@ public abstract class BaseTimeEntity {
 
  
 
-#### **2) 추가하고자 하는 엔티티에 BaseTimeEntity를 상속받도록 extends 추가**
+### **2) 추가하고자 하는 엔티티에 BaseTimeEntity를 상속받도록 extends 추가**
 
 ```java
 package com.example.awsboard.domain.posts;
@@ -72,7 +72,7 @@ public class Posts extends BaseTimeEntity {
 
  
 
-#### **3) @Configuration 어노테이션을 갖는 JpaConfig 클래스 추가**
+### **3) @Configuration 어노테이션을 갖는 JpaConfig 클래스 추가**
 
 ```java
 package com.example.awsboard.config;

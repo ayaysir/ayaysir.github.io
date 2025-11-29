@@ -12,7 +12,7 @@ categories:
 
 예전에 스프링 부트에서 `MultipartFile`을 이용해 파일 업로드를 하는 방법에 대한 글을 쓴 적이 있습니다.
 
-- [스프링 부트(Spring Boot): 파일 업로드 처리하기 (한 개, 여러 개)](http://yoonbumtae.com/?p=2834)
+- [스프링 부트(Spring Boot): 파일 업로드 처리하기 (한 개, 여러 개)](/posts/스프링-부트spring-boot-파일-업로드-처리하기-한-개-여러-개/)
 
  
 
@@ -20,7 +20,7 @@ categories:
 
  
 
-#### **스프링 부트 컨트롤러**
+## **스프링 부트 컨트롤러**
 
 클라이언트로부터 인코딩된 BASE64 텍스트를 받은 뒤, 그것을 바이트 배열로 디코딩하여 `FileOutputStream`을 통해 파일을 생성합니다.
 
@@ -35,7 +35,7 @@ import java.util.Base64;
 
  
 
-```
+```java
 @PostMapping("/api/upload")
 public Map<String, Object> addData(@RequestBody DataDTO data) {
 
@@ -87,7 +87,7 @@ public Map<String, Object> addData(@RequestBody DataDTO data) {
 
 참고로 `DataDTO` 구조는 다음과 같습니다.
 
-```
+```java
 public class DataDTO {
 
     private Long id;
@@ -99,11 +99,11 @@ public class DataDTO {
 
  
 
-#### **자바스크립트**
+## **자바스크립트**
 
 파일을 보내는 쪽에서 BASE64로 인코딩 한 다음 보내야 합니다.
 
-```
+```js
 let encodedFile, originalFileName
 
 function handleFile(e) {
@@ -142,7 +142,7 @@ function handleFile(e) {
 
  
 
-```
+```js
 async function sendData() {
 
     if(!encodedFile) {
@@ -171,7 +171,7 @@ async function sendData() {
 
  
 
-#### **JSON 업로드 예제**
+## **JSON 업로드 예제**
 
 Request JSON 일부
 

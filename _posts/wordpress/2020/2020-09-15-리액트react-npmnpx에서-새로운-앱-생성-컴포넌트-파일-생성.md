@@ -6,13 +6,13 @@ categories:
   - "React.js"
 ---
 
-리액트(React) 새로운 앱 생성하는 방법입니다.
+리액트(React)에서 npx를 사용해 새로운 앱을 생성하는 방법입니다.
 
  
 
-#### **리액트 앱 생성**
+## **리액트 앱 생성**
 
-```
+```bash
 npx create-react-app [앱_이름]
 ```
 
@@ -20,7 +20,7 @@ npx create-react-app [앱_이름]
 
 또는 다음 명령어를 입력해 생성할 수 있습니다.
 
-```
+```bash
 npm install -g create-react-app
 create-react-app [앱_이름]
 ```
@@ -38,9 +38,9 @@ create-react-app [앱_이름]
 
  
 
-#### **만들어진 프로젝트 실행하기**
+## **만들어진 프로젝트 실행하기**
 
-```
+```bash
 cd [앱_이름]
 ```
 
@@ -52,7 +52,7 @@ cd [앱_이름]
 
  
 
-#### **컴포넌트 생성**
+## **컴포넌트 생성**
 
 1) 적당한 위치에 js 파일을 하나 생성하고 `import React from 'react'` 를 파일 최상단에 삽입합니다.
 

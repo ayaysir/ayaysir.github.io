@@ -6,19 +6,19 @@ categories:
   - "Swift"
 ---
 
-#### **원문**
+## **원문**
 
 - [iOS Unit Testing and UI Testing Tutorial](https://www.raywenderlich.com/21020457-ios-unit-testing-and-ui-testing-tutorial)
 
  
 
-#### **버전**
+## **버전**
 
 - Swift 5, iOS 14, Xcode 12
 
  
 
-### **iOS 단위 테스트(Unit test) 및 UI 테스트 튜토리얼**
+## **iOS 단위 테스트(Unit test) 및 UI 테스트 튜토리얼**
 
 iOS 단위 테스트는 거창하지 않지만 테스트를 통해 앱이 버그투성이 쓰레기 조각이 되는것을 방지할 수 있으므로 필요합니다. 이 튜토리얼을 읽고 있다면 코드와 UI에 대한 테스트를 작성해야 한다는 것을 이미 알고 있지만 방법을 모를 수도 있습니다.
 
@@ -33,7 +33,7 @@ iOS 단위 테스트는 거창하지 않지만 테스트를 통해 앱이 버그
 
  
 
-#### **시작하기**
+## **시작하기**
 
 [프로젝트 자료(구글 드라이브)](https://drive.google.com/file/d/1BL97B3HpompHuXZS7Tq4hdOujVXpwqWW/view?usp=sharing)를 다운로드하세요. 여기에는 [UIKit Apprentice](https://store.raywenderlich.com/products/ios-apprentice)의 샘플 앱을 기반으로 하는 프로젝트 BullsEye가 포함됩니다. 이것은 간단한 운빨 게임입니다. 게임의 로직은 이 튜토리얼에서 테스트할 BullsEyeGame 클래스에 있습니다.
 
@@ -43,11 +43,12 @@ iOS 단위 테스트는 거창하지 않지만 테스트를 통해 앱이 버그
 
 기술적인 특이사항으로는 랜덤 숫자를 인터넷 API를 통해 받아온다는 점입니다.
 
- 
+
+## **앱의 주요 코드**
 
 다음은 이 앱의 주요 코드입니다.
 
-##### **BullsEyeGame.swift**
+### **BullsEyeGame.swift**
 
 ```swift
 import Foundation
@@ -112,14 +113,13 @@ class BullsEyeGame {
     task.resume()
   }
 }
-
 ```
 
 - 이 코드에서는 의도적으로 틀린 부분이 있으며 해당 부분에 대해선 후술됩니다.
 
  
 
-#### **테스트할 대상 파악**
+## **테스트할 대상 파악**
 
 테스트를 작성하기 전에 기본 사항을 아는 것이 중요합니다. 테스트하려면 무엇이 필요할까요?
 
@@ -134,7 +134,7 @@ class BullsEyeGame {
 
  
 
-##### **테스트를 위한 모범 사례 이해**
+### **테스트를 위한 모범 사례 이해**
 
 `FIRST`라는 약어는 효과적인 단위 테스트를 위한 간결한 기준 세트를 설명합니다. 해당 기준은 다음과 같습니다.
 
@@ -152,13 +152,13 @@ FIRST 원칙을 따르면 테스트가 앱의 장애물이 되는 것이 아니�
 
  
 
-#### **Xcode의 단위 테스트**
+## **Xcode의 단위 테스트**
 
 테스트 내비게이터는 테스트 작업을 위한 가장 쉬운 방법을 제공합니다. 이를 사용하여 테스트 대상을 만들고 앱에 대해 테스트를 실행합니다.
 
  
 
-##### **단위 테스트 대상 만들기**
+### **단위 테스트 대상 만들기**
 
 `BullsEye` 프로젝트를 열고 `command-6`을 눌러 테스트 내비게이터(test navigator)를 엽니다.
 
@@ -204,13 +204,13 @@ FIRST 원칙을 따르면 테스트가 앱의 장애물이 되는 것이 아니�
 
  
 
-##### **`XCTAssert`를 사용하여 모델 테스트**
+### **`XCTAssert`를 사용하여 모델 테스트**
 
 먼저 `XCTAssert` 함수를 사용하여 `BullsEye` 모델의 핵심 기능을 테스트할 것입니다. `BullsEyeGame`이 라운드의 점수를 올바르게 계산하고 있을까요?
 
 `BullsEyeTest.swift`에서 `import XCTest` 아래에 다음 줄을 추가합니다.
 
-```
+```swift
 @testable import BullsEye
 ```
 
@@ -220,7 +220,7 @@ FIRST 원칙을 따르면 테스트가 앱의 장애물이 되는 것이 아니�
 
 `BullsEyeTests` 상단에 다음 속성을 추가합니다.
 
-```
+```swift
 var sut: BullsEyeGame!
 ```
 
@@ -228,7 +228,7 @@ var sut: BullsEyeGame!
 
 다음으로 `setUpWithError()`의 내용을 다음과 같이 바꿉니다.
 
-```
+```swift
 try super.setUpWithError()
 sut = BullsEyeGame()
 ```
@@ -237,7 +237,7 @@ sut = BullsEyeGame()
 
 테스트가 끝나면 반드시 `SUT` 객체를 해제해야 합니다. `tearDownWithError()`의 내용을 다음으로 바꿉니다.
 
-```
+```swift
 sut = nil
 try super.tearDownWithError()
 
@@ -247,7 +247,7 @@ try super.tearDownWithError()
 
  
 
-#### **첫 번째 테스트 작성**
+## **첫 번째 테스트 작성**
 
 이제 첫 번째 테스트를 작성할 준비가 되었습니다!
 
@@ -284,7 +284,7 @@ func testScoreIsComputedWhenGuessIsHigherThanTarget() throws {
 
  
 
-##### **테스트 디버깅**
+### **테스트 디버깅**
 
 의도적으로 `BullsEyeGame`에 내장된 버그가 있으며, 지금 그것을 찾는 연습을 할 것입니다. 버그가 작동하는지 확인하기 위해 주어진 섹션의 `targetValue`에서 `5`를 빼고 나머지는 모두 그대로 두는 테스트를 생성합니다.
 
@@ -326,7 +326,7 @@ Breakpoint navigator(단축키 `command-8`)에서 테스트 실패 중단점(bre
 
 두 개의 중단점을 제거하고 테스트를 다시 실행하여 이제 성공했는지 확인합니다.
 
-```
+```swift
 let difference = abs(targetValue - guess)
 ```
 
@@ -336,7 +336,7 @@ let difference = abs(targetValue - guess)
 
  
 
-##### **`XCTestExpectation`을 사용하여 비동기 작업(Asynchronous Operations) 테스트**
+### **`XCTestExpectation`을 사용하여 비동기 작업(Asynchronous Operations) 테스트**
 
 모델을 테스트하고 테스트 실패를 디버그하는 방법을 배웠으므로 이제 비동기 코드 테스트로 넘어갈 차례입니다.
 
@@ -346,13 +346,13 @@ let difference = abs(targetValue - guess)
 
 `BullsEyeSlowTests`라는 새 단위 테스트 대상을 만듭니다. 새로운 테스트 클래스 `BullsEyeSlowTests`를 열고 기존 `import` 문 바로 아래에 `BullsEye` 앱 모듈을 가져옵니다.
 
-```
+```swift
 @testable import BullsEye
 ```
 
 이 클래스의 모든 테스트는 기본 `URLSession`을 사용하여 요청을 전송하므로 `sut`를 선언하고 `setUpWithError()`에서 생성하고 `tearDownWithError()`에서 해제합니다. 이렇게 하려면 `BullsEyeSlowTests`의 내용을 다음으로 바꾸세요.
 
-```
+```swift
 var sut: URLSession!
 
 override func setUpWithError() throws {
@@ -370,7 +370,7 @@ override func tearDownWithError() throws {
 
 다음으로 이 비동기 테스트를 추가합니다.
 
-```
+```swift
 // Asynchronous test: success fast, failure slow
 func testValidApiCallGetsHTTPStatusCode200() throws {
   // given
@@ -411,13 +411,12 @@ func testValidApiCallGetsHTTPStatusCode200() throws {
 
  
 
-##### **빠른 실패**
+### **빠른 실패**
 
 테스트 실패를 경험하려면 `testValidApiCallGetsHTTPStatusCode200()`의 `URL`을 잘못된 URL로 변경하기만 하면 됩니다.
 
-```
+```swift
 let url = URL(string: "http://www.notexistrandomnumberapi.con/test")!
-
 ```
 
 테스트를 실행합니다. 실패하지만 전체 `timeout`만큼 시간이 걸립니다! 이는 요청(request)이 항상 성공할 것이라고 가정했기 때문입니다. 그 부분에서 `promise.fulfill()`을 호출했습니다. 요청이 실패했기 때문에 제한 시간이 만료되었을 때만 테스트가 완료되었습니다.
@@ -460,13 +459,13 @@ url을 수정한 다음 테스트를 다시 실행하여 이제 성공하는지 
 
  
 
-##### **조건부 실패**
+### **조건부 실패**
 
 어떤 상황에서는 테스트를 실행하는 것이 별로 의미가 없습니다. 예를 들어 `testValidApiCallGetsHTTPStatusCode200()`이 네트워크 연결 없이 실행되면 어떻게 될까요? 물론 200 상태 코드를 받지 못하기 때문에 통과해서는 안 됩니다. 그러나 아무 것도 테스트하지 않았기 때문에 실패해서는 안됩니다.
 
 다행히 Apple은 전제 조건이 실패할 때 테스트를 건너뛰기 위해 `XCTSkip`을 도입했습니다. `sut` 선언 아래에 다음 라인을 추가합니다.
 
-```
+```swift
 let networkMonitor = NetworkMonitor.shared
 ```
 
@@ -474,7 +473,7 @@ let networkMonitor = NetworkMonitor.shared
 
 `testValidApiCallGetsHTTPStatusCode200()`에서 테스트 시작 부분에 `XCTskipUnless`를 추가합니다.
 
-```
+```swift
 try XCTSkipUnless(
   networkMonitor.isReachable, 
   "Network connectivity needed for this test.")
@@ -492,7 +491,7 @@ try XCTSkipUnless(
 
  
 
-#### **가짜 객체(Faking object)와 상호 작용**
+## **가짜 객체(Faking object)와 상호 작용**
 
 비동기 테스트는 코드가 비동기 API에 대한 올바른 입력을 생성한다는 확신을 줍니다. 또한 `URLSession`에서 입력을 수신할 때 코드가 올바르게 작동하는지 또는 `UserDefaults` 데이터베이스 또는 iCloud 컨테이너를 올바르게 업데이트하는지 테스트할 수도 있습니다.
 
@@ -502,7 +501,7 @@ try XCTSkipUnless(
 
  
 
-##### **스텁에서 가짜 입력**
+### **스텁에서 가짜 입력**
 
 이제 앱의 `getRandomNumber(completion:)`가 세션에서 다운로드한 데이터를 올바르게 구문 분석하는지 확인합니다. 스텁 데이터로 `BullsEyeGame` 세션을 가짜로 만들 것입니다.
 
@@ -512,7 +511,7 @@ try XCTSkipUnless(
 
 `import` 문 바로 아래에 있는 `BullsEye` 앱 모듈을 가져옵니다.
 
-```
+```swift
 @testable import BullsEye
 ```
 
@@ -520,7 +519,7 @@ try XCTSkipUnless(
 
 이제 `BullsEyeFakeTests`의 내용을 다음으로 바꿉니다.
 
-```
+```swift
 var sut: BullsEyeGame!
 
 override func setUpWithError() throws {
@@ -584,7 +583,7 @@ func testStartNewRoundUsesRandomValueFromApiRequest() {
 
  
 
-##### **모의 객체(mock object)로 가짜 업데이트**
+### **모의 객체(mock object)로 가짜 업데이트**
 
 이전 테스트에서는 스텁을 사용하여 가짜 개체의 입력을 제공했습니다. 다음으로 모의 객체를 사용하여 코드가 `UserDefaults`를 올바르게 업데이트하는지 테스트합니다.
 
@@ -599,7 +598,7 @@ func testStartNewRoundUsesRandomValueFromApiRequest() {
 
 대상 `BullsEyeTests`에 새 테스트 클래스를 추가하고 이름을 `BullsEyeMockTests`로 지정합니다. `import` 문 아래에 다음을 추가합니다.
 
-```
+```swift
 @testable import BullsEye
 
 class MockUserDefaults: UserDefaults {
@@ -616,7 +615,7 @@ class MockUserDefaults: UserDefaults {
 
 다음으로 `BullsEyeMockTests`에서 `SUT`와 모의 객체를 선언합니다.
 
-```
+```swift
 var sut: ViewController!
 var mockUserDefaults: MockUserDefaults!
 
@@ -683,7 +682,7 @@ func testGameStyleCanBeChanged() {
 
  
 
-#### **Xcode에서 UI 테스트**
+## **Xcode에서 UI 테스트**
 
 UI 테스트를 통해 사용자 인터페이스와의 상호 작용을 테스트할 수 있습니다. UI 테스트는 쿼리로 앱의 UI 개체를 찾고 이벤트를 합성한 다음 해당 개체에 이벤트를 보내는 방식으로 작동합니다. API를 사용하면 UI 개체의 속성 및 상태를 검사하여 예상 상태와 비교할 수 있습니다.
 
@@ -695,7 +694,7 @@ UI 테스트를 통해 사용자 인터페이스와의 상호 작용을 테스�
 
 `BullsEyeUITests.swift`를 열고 `BullsEyeUITests` 클래스의 맨 위에 이 속성을 추가하세요.
 
-```
+```swift
 var app: XCUIApplication!
 
 ```
@@ -704,7 +703,7 @@ var app: XCUIApplication!
 
 `tearDownWithError()`를 제거하고 `setUpWithError()`의 내용을 다음으로 바꿉니다.
 
-```
+```swift
 try super.setUpWithError()
 continueAfterFailure = false
 app = XCUIApplication()
@@ -732,7 +731,7 @@ func testGameStyleSwitch() {
 
 이제 `testGameStyleSwitch()`에 다음 세 줄이 있습니다.
 
-```
+```swift
 let app = XCUIApplication()
 app.buttons["Slide"].tap()
 app.staticTexts["Get as close as you can to: "].tap()
@@ -751,7 +750,7 @@ app.staticTexts["Get as close as you can to: "].tap()
 
 레코더가 테스트에서 액세스할 수 있는 코드를 찾는 데 도움이 되도록 다른 객체를 탭합니다. 이제 해당 줄을 다음 코드로 교체하여 지정된 섹션을 만듭니다.
 
-```
+```swift
 // given
 let slideButton = app.segmentedControls.buttons["Slide"]
 let typeButton = app.segmentedControls.buttons["Type"]
@@ -764,7 +763,7 @@ let typeLabel = app.staticTexts["Guess where the slider is: "]
 
 이제 세그먼티드 컨트롤의 두 버튼에 대한 이름과 두 개의 가능한 상단 레이블이 있으므로 아래에 다음 코드를 추가합니다.
 
-```
+```swift
 // then
 if slideButton.isSelected {
   XCTAssertTrue(slideLabel.exists)
@@ -788,7 +787,7 @@ if slideButton.isSelected {
 
  
 
-#### **성능 테스트**
+## **성능 테스트**
 
 - [Apple 문서](https://developer.apple.com/library/prerelease/content/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/04-writing_tests.html#//apple_ref/doc/uid/TP40014132-CH4-SW8)
 
@@ -840,7 +839,7 @@ func testScoreIsComputedPerformance() {
 
  
 
-#### **코드 커버리지(Code Coverage) 활성화**
+## **코드 커버리지(Code Coverage) 활성화**
 
 코드 커버리지 도구는 테스트가 실제로 실행 중인 앱 코드를 알려 주기 때문에 앱의 어떤 부분이 아직 테스트되지 않았는지 알 수 있습니다.
 
@@ -874,13 +873,13 @@ func testScoreIsComputedPerformance() {
 
  
 
-##### **100% 커버리지 달성?**
+### **100% 커버리지 달성?**
 
 100% 코드 커버리지를 위해 얼마나 노력해야 할까요?  "100% unit test coverage"를 구글에 검색하면  "100% unit test coverage"의 정의에 대한 토론과 함께 이에 대한 다양한 주장을 찾을 수 있습니다. 반대 쪽은 마지막 10~15%는 노력할 가치가 없다고 말합니다. 찬성 쪽은 테스트하기가 너무 어렵기 _때문에_ 마지막 10%-15%가 가장 중요하다고 말합니다. [테스트할 수 없는 코드가 더 깊은 디자인 문제의 신호](https://www.toptal.com/qa/how-to-write-testable-code-and-why-it-matters)라는 설득력 있는 주장을 찾으려면 "hard to unit test bad design"을 구글링하세요.
 
  
 
-#### **이제 뭘 해야 하나요?**
+## **이제 뭘 해야 하나요?**
 
 이제 프로젝트에 대한 테스트를 작성하는 데 사용할 수 있는 몇 가지 훌륭한 도구를 습득하였습니다. 이 iOS 단위 테스팅 및 UI 테스팅 튜토리얼이 모든 것을 테스트할 수 있는 자신감을 드렸길 바랍니다!
 

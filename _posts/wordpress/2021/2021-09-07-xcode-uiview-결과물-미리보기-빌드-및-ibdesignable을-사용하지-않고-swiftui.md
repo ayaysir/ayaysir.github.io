@@ -8,7 +8,8 @@ categories:
 
 일반적인 스토리보드(Storyboard) 하의 개발환경에서 UI 작업에 대한 결과물을 보려면 매번 빌드하는 과정을 거쳐야 하는 불편함이 있었습니다. 보완책으로 스토리보드에서 미리보기가 가능한 `@IBDesignable`이라는 어노테이션이 있지만 아래와 같이 없는것만 못한 쓰레기 기능입니다.
 
-\[caption id="attachment\_4046" align="alignnone" width="409"\] ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.12.15.jpg) 오류가 잦아 사용이 불가능한 `@IBDesignable`\[/caption\]
+![오류가 잦아 사용이 불가능한 `@IBDesignable`](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.12.15.jpg)  
+*오류가 잦아 사용이 불가능한 `@IBDesignable`*
 
  
 
@@ -16,9 +17,11 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.40.39.jpg)
 
+원리는 SwiftUI에서 UIView를 보여줄 수 있는 UIHostingView(UIView)라는 기능이 있는데 UIView를 여기에 씌워 실시간 프리뷰에서 보이도록 하는 것입니다.
  
+## **방법**
 
-##### **1, 아래 코드를 프로젝트에 추가합니다.**
+### **1, 아래 코드를 프로젝트에 추가합니다.**
 
 ```swift
 import UIKit
@@ -67,7 +70,7 @@ struct UIViewControllerPreview<ViewController: UIViewController>: UIViewControll
 
  
 
-##### **2\. 커스텀 `UIView` 클래스를 작성합니다. 간단한 선과 원을 그리는 그리는 예제입니다.**
+### **2\. 커스텀 `UIView` 클래스를 작성합니다. 간단한 선과 원을 그리는 그리는 예제입니다.**
 
 ```swift
 import UIKit
@@ -100,9 +103,9 @@ class ExampleView: UIView {
 
  
 
-##### **3\. ExampleView 클래스 바로 밑에 아래 코드를 추가합니다.**
+### **3\. ExampleView 클래스 바로 밑에 아래 코드를 추가합니다.**
 
-```
+```swift
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
@@ -125,19 +128,19 @@ struct ExampleView_Preview: PreviewProvider {
 
  
 
-##### **4\. `Editor` 메뉴 > `Canvas`를 체크합니다.**
+### **4\. `Editor` 메뉴 > `Canvas`를 체크합니다.**
 
  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.20.46.jpg)
 
  
 
-##### **5\. `Canvas`가 실행되면 코드 창 오른쪽에 프리뷰 창이 나타나는데 만약 업데이트가 paused된 상태라면 `resume`을 클릭합니다.**
+### **5\. `Canvas`가 실행되면 코드 창 오른쪽에 프리뷰 창이 나타나는데 만약 업데이트가 paused된 상태라면 `resume`을 클릭합니다.**
 
  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.21.40.jpg)
 
  
 
-##### **6\. 일반적인 환경에서 버전 오류가 발생하지 않지만 만약 실행이 되지 않는다면 프로젝트 세팅 창의 애플리케이션 `TARGETS`에서 `Deployment Info`의 버전을 iOS 13 이상으로 설정합니다.**
+### **6\. 일반적인 환경에서 버전 오류가 발생하지 않지만 만약 실행이 되지 않는다면 프로젝트 세팅 창의 애플리케이션 `TARGETS`에서 `Deployment Info`의 버전을 iOS 13 이상으로 설정합니다.**
 
  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.11.04.jpg)
 
@@ -147,17 +150,17 @@ struct ExampleView_Preview: PreviewProvider {
 
  
 
-<iframe width="480" height="408" src="https://giphy.com/embed/0q9PhiCuBN0osci7Y5" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
-
+<!-- <iframe width="480" height="408" src="https://giphy.com/embed/0q9PhiCuBN0osci7Y5" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjAyd2p3bm56dnhqZjN5czd1anFmM2oyZTdhb2xqNnAzMmJiN20wYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0q9PhiCuBN0osci7Y5/giphy.gif)
  
 
  
 
-##### **참고: `UIViewController` 미리보기**
+## **참고: `UIViewController` 미리보기**
 
 `예제ViewController`(임의로 만든 뷰 컨트롤러) 밑에 아래 코드를 추가합니다.
 
-```
+```swift
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 

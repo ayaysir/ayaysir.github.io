@@ -8,9 +8,11 @@ categories:
 
 _Imagick_이 PHP 서버에 설치된 경우, 아래 코드를 이용하여 이미지 섬네일을 만들 수 있습니다. 저는 이용하는 호스팅 서버에 해당 프로그램이 설치가 되어 있어 별도 작업을 하지 않고 바로 사용하지만, 설치가 안된 경우에는 [링크](https://www.itopening.com/5245/)를 참고하여 설치하세요.
 
-##### **다음 함수를 추가합니다.**
+## **방법**
 
-```
+### **다음 함수를 추가합니다.**
+
+```php
 /**
  * 
  * Generate Thumbnail using Imagick class
@@ -55,11 +57,11 @@ function generateThumbnail($img, $width, $height, $quality = 90)
 
  
 
-참고: 경로 및 파일 이름, 확장자 가져오기 ([PHP, get file name without file extension](https://stackoverflow.com/questions/2183486/php-get-file-name-without-file-extension))
+> 참고: 경로 및 파일 이름, 확장자 가져오기 ([PHP, get file name without file extension](https://stackoverflow.com/questions/2183486/php-get-file-name-without-file-extension))
 
-##### **사용 예시입니다.**
+## **사용 예시입니다.**
 
-```
+```php
 try {
     generateThumbnail('example.jpeg', 240, 134, 65);
 }
@@ -77,4 +79,4 @@ catch (Exception $e) {
 
  
 
-출처: [Creating a thumbnail from an uploaded image](https://stackoverflow.com/questions/11376315/creating-a-thumbnail-from-an-uploaded-image)
+> 출처: [Creating a thumbnail from an uploaded image](https://stackoverflow.com/questions/11376315/creating-a-thumbnail-from-an-uploaded-image)

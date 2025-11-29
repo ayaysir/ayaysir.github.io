@@ -6,11 +6,11 @@ categories:
   - "PHP"
 ---
 
-#### **시간 포맷 사용 - date() 함수**
+## **시간 포맷 사용 - date() 함수**
 
 두 번째 파라미터는 `nullable`이며, 특정 타임스탬프를 지정하면 해당 타임스탬프의 날짜를 반환하고, 아니라면 `time()` 현재 시각을 반환합니다.
 
-```
+```php
 // set the default timezone to use. Available since PHP 5.1
 date_default_timezone_set('UTC');
 
@@ -33,32 +33,32 @@ echo date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000));
 
  
 
-#### **현재 날짜의 연도 얻기**
+## **현재 날짜의 연도 얻기**
 
-```
+```php
 echo date("Y");
 ```
 
  
 
-#### **현재 날짜가 속한 주(week)의 범위 구하기**
+## **현재 날짜가 속한 주(week)의 범위 구하기**
 
 예를 들어 오늘이 12월 24일인 경우, 주(week)의 범위는 12월 21일 월요일(`$monday`)부터 12월 27일 일요일(`$sunday`)까지입니다.
 
  ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-24-pm-8.24.29.png)
 
-```
+```php
 $monday = strtotime('last monday', strtotime('tomorrow'));
 $sunday = strtotime('+6 days', $monday);
 ```
 
  
 
-#### **텍스트를 날짜로 변환 - strtotime()**
+## **텍스트를 날짜로 변환 - strtotime()**
 
 영어 텍스트로 된 날짜/시간 설명을 Unix 타임스탬프로 변환합니다. 두 개의 파라미터를 가지며 하나는 필수 파라미터로 변환할 영어 텍스트를 입력하고, 나머지 하나는 `nullable`로써 기준 시간을 입력합니다.
 
-```
+```php
 echo strtotime("now"), "\n";
 echo strtotime("10 September 2000"), "\n";
 echo strtotime("+1 day"), "\n";
@@ -70,21 +70,21 @@ echo strtotime("last Monday"), "\n";
 
  
 
-#### **특정 날짜 생성 - mktime()**
+## **특정 날짜 생성 - mktime()**
 
 월(month)의 범위는 1 ~ 12입니다. 또한 월과 일의 위치에 주의하세요.
 
-```
+```php
 $date = mktime(0, 0, 0, 12, 12, 20); // (시, 분, 초, 월, 일, 년)
 ```
 
  
 
-#### **특정 날짜가 어느 범위의 날짜 사이에 속해있는지 확인하기**
+## **특정 날짜가 어느 범위의 날짜 사이에 속해있는지 확인하기**
 
 예를 들어 어느 범위의 날짜 두 구간이 주어져 있고, 특정 날짜가 이 범위에 속해 있는지 여부를 알아내는 방법입니다.
 
-```
+```php
 $date = mktime(0, 0, 0, 12, 12, 20); // (시, 분, 초, 월, 일, 년)
 $monday = strtotime('last monday', strtotime('tomorrow'));
 $sunday = strtotime('+6 days', $monday);

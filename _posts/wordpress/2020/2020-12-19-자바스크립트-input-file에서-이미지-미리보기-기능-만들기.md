@@ -6,7 +6,7 @@ categories:
   - "JavaScript"
 ---
 
-#### **1) 이미지가 1개인 경우**
+## **1) 이미지가 1개인 경우**
 
 미리보기 이미지가 표시될 이미지 태그를 생성하고, `input file` 태그를 생성하고, 자바스크립트의 `FileReader()`를 통해 이미지가 로딩되면 이미지 태그의 `src` 속성이 교체되도록 합니다.
 
@@ -46,21 +46,22 @@ inputImage.addEventListener("change", e => {
 })
 ```
 
-\[caption id="attachment\_3305" align="alignnone" width="479"\] ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.09.58.png) 초기 화면\[/caption\]
+![초기 화면](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.09.58.png)  
+*초기 화면*
 
  
 
-\[caption id="attachment\_3306" align="alignnone" width="534"\] ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.10.31.png) 이미지 파일을 선택한 경우\[/caption\]
-
+![이미지 파일을 선택한 경우](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.10.31.png)  
+*이미지 파일을 선택한 경우*
  
 
  
 
-#### **2) 이미지가 여러 개인 경우**
+## **2) 이미지가 여러 개인 경우**
 
 먼저 `iput file` 태그에 `multiple` 속성을 추가해 여러 이미지가 추가될 수 있도록 합니다. 다음 파일 배열(`FileList`)을 반복문을 돌려서 이미지 요소를 추가합니다. 이 때, `reader.onload`의 콜백 함수 안에 HTML 요소를 생성하거나 `appendChild` 하는 코드를 추가하지 않아야 합니다. 왜냐하면 이 콜백 함수는 비동기로 실행되므로 여기 안에서 HTML 처리를 하면 `FileList` 배열에 저장된 파일 순서와 렌더링되는 파일 순서가 같다는 것을 보장할 수 없기 때문입니다. 이미지 요소를 반복문에서 설정하고, 이미지가 로딩되면 그 콜백 함수에서 `src`를 바꾸는 방식으로 작성합니다.
 
-```
+```css
 #multiple-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -79,7 +80,7 @@ inputImage.addEventListener("change", e => {
 }
 ```
 
-참고: [html - CSS 그리드, 이미지 삽입시 아래쪽 여백](https://www.python2.net/questions-17934.htm)
+> 참고: [html - CSS 그리드, 이미지 삽입시 아래쪽 여백](https://www.python2.net/questions-17934.htm)
 
  
 

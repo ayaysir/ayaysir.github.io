@@ -14,7 +14,7 @@ Spring JPA는 Repository의 메소드 이름으로 쿼리를 지정할 수 있�
 
  
 
-##### **참고: `Entity` 클래스의 구조는 다음과 같습니다.**
+## **`Entity` 클래스의 구조는 다음과 같습니다.**
 
 ```java
 package com.example.awsboard.domain.posts;
@@ -61,14 +61,12 @@ public class Posts extends BaseTimeEntity {
         this.title = title;
         this.content = content;
     }
-
 }
-
 ```
 
  
 
-##### **다음은 레퍼지토리 인터페이스 코드입니다.**
+## **다음은 레퍼지토리 인터페이스 코드입니다.**
 
 ```java
 package com.example.awsboard.domain.posts;
@@ -108,11 +106,12 @@ or upper(content) like '%' || upper([?2]) || '%'
 
 메소드를 이용한 쿼리의 장점으로 메소드의 이름이 일관성이 있으며 별도의 SQL을 작성하지 않아도 된다는 점이 있습니다. 단점으로는 쿼리가 바뀔 때마다 메소드의 이름 자체를 변경해야 하고, 그러면 관련된 모든 서비스, 테스트 코드 등을 바꿔야 하므로 관리가 어려워집니다. 또 비교적 간단한 쿼리라도 메소드 이름으로 지으면 장황해지므로 위의 예제처럼 민폐가 될 수 있습니다.
 
- 
 
-##### **참고: 서비스 메소드**
+## **참고**
 
-```
+### **서비스 메소드**
+
+```java
 @Transactional(readOnly = true)
 public List<PostsListResponseDTO> searchTitleAndContent(String keyword) {
     return postsRepository
@@ -125,7 +124,7 @@ public List<PostsListResponseDTO> searchTitleAndContent(String keyword) {
 
  
 
-##### **참고: Repository 단위 테스트**
+### **Repository 단위 테스트**
 
 ```java
 package com.example.awsboard.domain.posts;

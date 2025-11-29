@@ -14,17 +14,17 @@ categories:
 
  
 
-#### **코드**
+## **코드**
 
-https://gist.github.com/ayaysir/3d3534dedcb8795dca80da7255f2abd7
-
+<!-- https://gist.github.com/ayaysir/3d3534dedcb8795dca80da7255f2abd7 -->
+{% gist "3d3534dedcb8795dca80da7255f2abd7" %}
  
 
 위의 예제 코드는 스프링 등 웹 서비스 프레임워크에서 사용할 수 있으며, 아래는 컨트롤러에서 사용한 간략한 예제입니다. (Lombok 사용됨)
 
-#### **예제 (일부)**
+## **예제 (일부)**
 
-```
+```java
 import com.example.awsboard.service.posts.PostsService;
 import com.example.awsboard.util.Paginator;
 import com.example.awsboard.web.dto.PostsListResponseDTO;

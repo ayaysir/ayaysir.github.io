@@ -10,13 +10,13 @@ tags:
 
 먼저 상위(부모) 컴포넌트의 이름은 `Topic`, 하위(자식) 컴포넌트의 이름은 `TopicSearch`라고 가정합니다.
 
- 
+## **절차**
 
-##### **먼저, 상위 클래스에서 컴포넌트를 삽입할 때 `v-on:xxx`(약어 `@xxx`)를 사용해 커스텀 이벤트를 만듭니다.**
+### **먼저, 상위 클래스에서 컴포넌트를 삽입할 때 `v-on:xxx`(약어 `@xxx`)를 사용해 커스텀 이벤트를 만듭니다.**
 
 **Topic.vue (일부)**
 
-```
+```html
 <template>
   <div class="topic">
         <TopicSearch v-on:search="doSearch" v-on:allOrder="doAllOrder"/>
@@ -30,26 +30,24 @@ tags:
 
 **Topic.vue (일부)**
 
-```
+```js
 methods: {
-   
     doSearch(category, keyword) {
       // 해야될 작업
     },
     doAllOrder(order) {
       // 해야될 작업
     }
-
   }
 ```
 
  
 
-##### **다음 하위 컴포넌트에서 `this.$emit`을 사용합니다. 이 구문이 실행되면 상위 컴포넌트로 올라가 `v-on`으로 작성한 커스텀 이벤트가 실행됩니다.**
+### **다음 하위 컴포넌트에서 `this.$emit`을 사용합니다. 이 구문이 실행되면 상위 컴포넌트로 올라가 `v-on`으로 작성한 커스텀 이벤트가 실행됩니다.**
 
-**TopicSearch.vue (일부)**
+#### **TopicSearch.vue (일부)**
 
-```
+```js
 methods: {
     search() {
         this.$emit("search", this.searchCategory, this.searchKeyword)

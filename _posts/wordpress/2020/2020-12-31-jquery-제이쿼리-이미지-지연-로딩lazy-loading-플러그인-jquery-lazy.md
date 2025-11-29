@@ -14,38 +14,49 @@ categories:
 
 이 플러그인을 사용하면 스크롤을 해서 이미지 영역이 화면에 표시될 때에만 이미지를 로딩하므로 트래픽도 절약할 수 있습니다.
 
-##### **1\. 제이쿼리 스크립트 밑에 다음의 스크립트를 추가합니다.**
+## **방법**
 
-```
+### **1\. HTML 제이쿼리 스크립트 밑에 jQuery Lazy 스크립트를 추가**
+
+HTML의 제이쿼리 스크립트 밑에 jQuery Lazy 스크립트를 추가합니다. 최신 버전이 있다면 해당 cdn 주소를 사용합니다.
+
+```html
 <!-- cdnjs -->
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
 ```
 
+
  
 
-##### **2\. 이미지 태그에서 `data-src` 속성을 추가한 뒤 실제 로딩할 이미지 주소를 입력합니다. 만약 이미 태그가 있다면, 기존의 `src`를 `data-src`로 변경합니다. 그리고 src에는 로딩 이미지를 넣습니다.**
+### **2\. 속성에 이미지 주소 입력**
 
-##### **3\. 다음 클래스에 고유의 레이지 로딩 식별자 (예: `lazy-img`)를 추가합니다.**
+이미지 태그에서 `data-src` 속성을 추가한 뒤 실제 로딩할 이미지 주소를 입력합니다. 만약 이미 태그가 있다면, 기존의 `src`를 `data-src`로 변경합니다. 그리고 src에는 로딩 이미지를 넣습니다.**
 
-```
+### **3\. 클래스에 식별자 추가**
+
+다음 클래스에 고유의 레이지 로딩 식별자 (예: `lazy-img`)를 추가합니다.
+
+```html
 <img class="lazy-img" data-src="https://website.con/resources/actual-image.jpg" src="./img/loading.gif">
 ```
 
  
 
-##### **4\. 스크립트 실행 부분의 처음에 다음 코드를 추가합니다. 주의할 점은 실행함수의 L은 대문자 `L` 입니다.**
-
-```
+### **4\. 레이지 로딩 시작**
+스크립트 실행 부분의 처음에 다음 코드를 추가합니다. 주의할 점은 실행함수의 L은 대문자 `L` 입니다.
+```js
 $(document).ready(function() {
     $(".lazy-img").Lazy()
 });
 ```
 
-기본 코드만으로도  대부분의 상황을 커버할 수 있습니다.
+기본 코드만으로도 대부분의 상황을 커버할 수 있습니다.
+
+### **추가 옵션**
 
 추가 옵션을 설정하려면 다음과 같이 사용합니다.
 
-```
+```js
 $('.lazy').Lazy({
     // 설정 부분 입력
     scrollDirection: 'vertical',
@@ -59,4 +70,4 @@ $('.lazy').Lazy({
 
  ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-31-pm-8.42.08.png)
 
-참고: [자바스크립트: IntersectionObserver (1) 이미지 lazy-loading 구현](/posts/자바스크립트-intersectionobserver로-이미지-lazy-loading-구현/)
+> 참고: [자바스크립트: IntersectionObserver (1) 이미지 lazy-loading 구현](/posts/자바스크립트-intersectionobserver로-이미지-lazy-loading-구현/)

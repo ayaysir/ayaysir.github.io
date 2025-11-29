@@ -160,7 +160,7 @@ func registerForPushNotifications() {
 
 `requestAuthorization(options:completionHandler:)`에 전달하는 `options`에는 `UNAuthorizationOptions`의 모든 조합이 포함될 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2022/08/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-08-10-%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE-10.11.59.jpg)
+ ![](/assets/img/wp-content/uploads/2022/08/screenshot-2022-08-10-pm-10.11.59.jpg)
 
 <!-- \[the\_ad id="3513"\] -->
 

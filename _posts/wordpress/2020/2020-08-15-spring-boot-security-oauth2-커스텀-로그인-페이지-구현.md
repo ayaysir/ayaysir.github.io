@@ -15,7 +15,7 @@ tags:
 **출처 및 참고글**
 
 - [Baeldung - 스프링 부트 OAuth 커스텀 로그인 페이지 만들기](https://www.baeldung.com/spring-security-5-oauth2-login#1-custom-login-page) (영문)
-- [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버](http://yoonbumtae.com/?p=2652)
+- [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버](/posts/스프링-부트spring-boot-구글-로그인-연동-스프링-부트-스타/)
 - [Spring Boot: 시큐리티(Security) – 2 – 커스텀 로그인 페이지 만들기](http://yoonbumtae.com/?p=1184)
 
  
@@ -28,9 +28,9 @@ OAuth 2.0으로 외부 로그인을 구현한 상태에서 아무 설정도 하�
 
 이 페이지를 커스터마이징 해보겠습니다.
 
- 
+## **절차**
 
-##### **1) SecurityConfig 설정 변경**
+### **1) SecurityConfig 설정 변경**
 
 ```java
 package com.example.awsboard.config.auth;
@@ -80,7 +80,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
  
 
-##### **2) LoginController 및 GetMapping 구현**
+### **2) LoginController 및 GetMapping 구현**
 
 여기서는 모든 인증 서비스 정보(이름과 URL)를 스프링 시큐리티에서 가져와 모델에 담아 전송합니다, 하지만 이런 방법으로 구현하지 않더라도 서비스별 인증 URL을 미리 알고 있다면 자유롭게 만드는 것이 가능합니다. 예를 들어 기본적인 네이버 인증 URL과 구글 인증 URL은 다음과 같습니다.
 
@@ -145,7 +145,7 @@ public class LoginController {
 
  
 
-##### **3) 뷰 페이지 구현 (oauth-login.html)**
+### **3) 뷰 페이지 구현 (oauth-login.html)**
 
 ```html
 <!DOCTYPE html>

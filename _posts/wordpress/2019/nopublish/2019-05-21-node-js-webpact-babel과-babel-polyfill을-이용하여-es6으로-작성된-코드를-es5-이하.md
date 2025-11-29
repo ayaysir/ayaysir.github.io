@@ -47,7 +47,7 @@ ES6 문법의 두 가지가 있는데 위에 있는 화살표 문법은 **Babel*
 
 ##### 1\. npm에서 다음 명령어를 입력하여 Babel을 설치합니다.
 
-```
+```bash
 npm install --save-dev @babel/core @babel/cli
 npm install --save-dev @babel/preset-env
 npm install --save-dev babel-loader
@@ -118,7 +118,7 @@ rules 배열의 첫 번째 원소는 지난번에 다루었던 css 관련 부분
 
 ##### 4\. npm에서 polyfill을 전역으로 설치합니다.
 
-```
+```bash
 npm install @babel/polyfill
 ```
 

@@ -8,11 +8,11 @@ categories:
 
 URL의 쿼리 파라미터란 아래 빨간색 박스처럼 `?` 뒤에 지정하는 파라미터를 뜻합니다. 여러 개를 연결할 때는 `&` 를 씁니다. 쿼리 스트링(query string)이라고도 합니다.
 
- ![](/assets/img/wp-content/uploads/2020/11/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2020-11-05-%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE-10.32.15.png)
+ ![](/assets/img/wp-content/uploads/2020/11/screenshot-2020-11-05-pm-10.32.15.png)
 
  
 
-#### **ES6 이상인 경우**
+## **ES6 이상인 경우**
 
 ```js
 const urlParams = new URLSearchParams(window.location.search);
@@ -23,7 +23,7 @@ const uwasaKeyword = urlParams.get('uwasaKeyword');
 
  
 
-#### **ES5 이하인 경우**
+## **ES5 이하인 경우**
 
 호환성을 고려할 때는 이 방법을 사용해야 합니다. 다음과 같은 함수를 생성합니다.
 
@@ -42,7 +42,7 @@ function getParameterByName(name, url = window.location.href) {
 
 사용하고자 하는 곳에 다음과 같이 사용하면 됩니다.
 
-```
+```js
 // query string: ?foo=lorem&bar=&baz
 
 var foo = getParameterByName('foo'); // "lorem"
@@ -53,4 +53,4 @@ var qux = getParameterByName('qux'); // null (아예 없는 파라미터)
 
  
 
-출처: [How can I get query string values in JavaScript?](https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript)
+> 출처: [How can I get query string values in JavaScript?](https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript)

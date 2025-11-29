@@ -22,13 +22,14 @@ categories:
 
  
 
-#### **작동 화면**
+## **작동 화면**
 
-<iframe width="480" height="277" src="https://giphy.com/embed/xp6iFyJLEeMV4p8mlr" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="480" height="277" src="https://giphy.com/embed/xp6iFyJLEeMV4p8mlr" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWJkejAxbXVmdHFoNDlrc2xma2UzZm5rNThvNzkwZ3MybDFidmw5eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xp6iFyJLEeMV4p8mlr/giphy.gif)
 
- 
+## **절차**
 
-#### **1) 메인 html을 작성합니다. (index.html)**
+### **1) 메인 html을 작성합니다. (index.html)**
 
 ```html
 <!DOCTYPE html>
@@ -55,9 +56,9 @@ categories:
 
  
 
-#### **2) main.js 작성**
+### **2) main.js 작성**
 
-```
+```js
 import {render} from './util.js'
 
 import App from './App.js'
@@ -69,7 +70,7 @@ render(document.querySelector("#app"), App())
 
  
 
-#### **3) util.js 작성**
+### **3) util.js 작성**
 
 ```js
 const stateArr = []
@@ -104,11 +105,11 @@ export {render, useState}
 
  
 
-#### **4) App.js 작성**
+### **4) App.js 작성**
 
 App 컴포넌트는 최상위 컴포넌트입니다.
 
-```
+```js
 import {render} from './util.js'
 
 import HeadTitle from './HeadTitle.js'
@@ -134,9 +135,9 @@ export default function App() {
 
  
 
-#### **5) HeadTitle.js , Content.js 작성**
+### **5) HeadTitle.js , Content.js 작성**
 
-```
+```js
 export default function HeadTitle() { 
     const $h2 = document.createElement('h2')
     
@@ -147,7 +148,7 @@ export default function HeadTitle() {
 
 ```
 
-```
+```js
 export default function Content() { 
     const $div = document.createElement('div')
     
@@ -164,11 +165,11 @@ export default function Content() {
 
  
 
-#### **6) Counter.js 작성**
+### **6) Counter.js 작성**
 
 여기에는 숫자를 표시하는 부분과, 숫자를 증가시키는 버튼으로 나뉘어져 있습니다.
 
-```
+```js
 import {useState} from './util.js'
 
 export default function Counter() { 

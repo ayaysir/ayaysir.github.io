@@ -6,15 +6,17 @@ categories:
   - "React.js"
 ---
 
-##### **1) 터미널에서 프로젝트 폴더로 이동한 뒤 npm에서 react-router-dom을 설치합니다.**
+## **절차**
 
-```
+### **1) 터미널에서 프로젝트 폴더로 이동한 뒤 npm에서 react-router-dom을 설치합니다.**
+
+```bash
 npm i react-router-dom --save
 ```
 
  
 
-##### **2) App.jsx 에서 `<BrowserRouter>` 태그쌍을 작성한 뒤 안에 라우팅 관련 정보를 작성합니다.**
+### **2) App.jsx 에서 `<BrowserRouter>` 태그쌍을 작성한 뒤 안에 라우팅 관련 정보를 작성합니다.**
 
  ![](/assets/img/wp-content/uploads/2020/10/carbon.png)
 
@@ -25,7 +27,7 @@ npm i react-router-dom --save
 
  
 
-##### **3) Menu 컴포넌트를 만든 뒤 라우팅 링크를 생성합니다.**
+### **3) Menu 컴포넌트를 만든 뒤 라우팅 링크를 생성합니다.**
 
  ![](/assets/img/wp-content/uploads/2020/10/carbon-1.png)
 

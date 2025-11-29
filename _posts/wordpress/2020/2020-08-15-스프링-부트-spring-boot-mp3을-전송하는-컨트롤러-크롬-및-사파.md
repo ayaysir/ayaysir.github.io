@@ -6,34 +6,37 @@ categories:
   - "Spring/JSP"
 ---
 
-주소를 입력하면 MP3 파일을 다운받을 수 있는 컨트롤러를 만들고 있었습니다. 먼저 아래 글을 먼저 참고하세요. 그리고 글에 사족이 많습니다. 전체 코드는 맨 밑에 있습니다.
+주소를 입력하면 MP3 파일을 다운받을 수 있는 컨트롤러를 만들고 있었습니다. 먼저 아래 글을 먼저 참고하세요. 전체 코드는 맨 밑에 있습니다.
 
 - 참고:[JSP, Spring: URL을 입력하면 파일이 바로 다운로드되게 하기](/posts/jsp-spring-url을-입력하면-파일이-바로-다운로드되게-하기/)
 
- 
+## 문제 상황
 
 파일 다운로드도 잘 되고 재생도 되었습니다만, 크롬과 사파리(맥, iOS)에서 `<audio>` 태그에 넣으면 구간 탐색이 안되는 문제가 있었습니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-10.48.58.png)위는 사파리 스샷입니다. MP3 파일을 소스에 배정했는데 "`라이브 방송(live broadcast)`"이라면서 재생만 되고 일시정지조차 제대로 되지 않는 문제가 있었습니다. 게다가 파일도 끝부분을 제대로 읽어들이지 못하고 있었습니다.
+ ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-10.48.58.png)
+ 
+ 위는 사파리 스샷입니다. MP3 파일을 소스에 배정했는데 "`라이브 방송(live broadcast)`"이라면서 재생만 되고 일시정지조차 제대로 되지 않는 문제가 있었습니다. 게다가 파일도 끝부분을 제대로 읽어들이지 못하고 있었습니다.
+
+## 해결 방법: Chrome
 
 먼저 크롬에서는, 헤더를 추가하는 것으로 간단하게 해결됩니다. 컨트롤러에 아래 헤더들을 추가하면 구간 탐색이 정상적으로 됩니다. (전체 코드는 밑에 있습니다.)
 
-```
+```java
 response.setHeader("Accept-Ranges", "bytes");
 response.setHeader("Content-Length", initFile.length() + "");
 ```
 
 `“Accept-ranges”`를 `“bytes”`로 설정하고, `“Content-Length”`에 바이트 단위로 파일 길이를 넣어주면 됩니다. ([MDN 링크](https://developer.mozilla.org/ko/docs/Web/HTTP/Range_requests))
 
- 
+## 해결 방법: Safari
 
-문제는 사파리입니다. 사파리에서는 `<audio>` 태그에서 욕이 나올 만큼 황당한 문제가 있었습니다. 사파리에서는 mp3를 불러올 때 0-1 바이트 범위의 처음 2바이트의 의미 없는 리퀘스트를 보냅니다. 그 리퀘스트에서 제대로 된 응답이 없으면, 이 파일은 제대로된 파일이 아니라고 간주하고 멋대로 "`라이브 방송`"이라는 메시지를 띄우며 구간 탐색은 물론 일시정지도 제대로 못하게 합니다. 맨 처음 스샷 리퀘스트의 `Range: byte=0-1` 부분입니다.
+문제는 사파리입니다. 사파리에서는 `<audio>` 태그에서 황당한 문제가 있었습니다. 사파리에서는 mp3를 불러올 때 0-1 바이트 범위의 처음 2바이트의 의미 없는 리퀘스트를 보냅니다. 그 리퀘스트에서 제대로 된 응답이 없으면, 이 파일은 제대로된 파일이 아니라고 간주하고 멋대로 "`라이브 방송`"이라는 메시지를 띄우며 구간 탐색은 물론 일시정지도 제대로 못하게 합니다. 맨 처음 스샷 리퀘스트의 `Range: byte=0-1` 부분입니다.
 
- 
 
 해외에서도 이 문제는 오래 전부터 존재했던 것 같습니다. 스택오버플로에서 관련 글 하나를 링크합니다.
 
-- [HTML5 <audio> Safari live broadcast vs not](https://stackoverflow.com/questions/1995589/html5-audio-safari-live-broadcast-vs-not)
+> [HTML5 \<audio\> Safari live broadcast vs not](https://stackoverflow.com/questions/1995589/html5-audio-safari-live-broadcast-vs-not)
 
 이 글에서 자세한 해결 방법을 알려주지 않았으나, 사파리 리퀘스트 과정이 독특하며 Range에 대응하라는 답변이 나왔습니다. "Safari는 미디어를 다운로드하는 데 완전히 뇌손상을 입은(braindamaged) 접근 방식을 가지고 있습니다."라는 평까지 나왔습니다. (전적으로 동감하는 바입니다.)
 
@@ -43,7 +46,7 @@ response.setHeader("Content-Length", initFile.length() + "");
 
  
 
-```
+```java
 try(RandomAccessFile randomAccessFile = new RandomAccessFile(initFile, "r");
     ServletOutputStream sos = response.getOutputStream();	){
 
@@ -83,7 +86,7 @@ try(RandomAccessFile randomAccessFile = new RandomAccessFile(initFile, "r");
 
  
 
-```
+```java
 if(requestSize < bufferSize) {
     // Range byte 0-1은 아래 의미가 아님.
     // data = randomAccessFile.read(b, 0, requestSize.intValue());
@@ -108,6 +111,7 @@ if(requestSize < bufferSize) {
 
  
 
-#### **소스 코드**
+## **소스 코드**
 
-https://gist.github.com/ayaysir/dea411fa31e7d638f1e637e8fcc131f1
+<!-- https://gist.github.com/ayaysir/dea411fa31e7d638f1e637e8fcc131f1 -->
+{% gist "dea411fa31e7d638f1e637e8fcc131f1" %}

@@ -24,7 +24,7 @@ tags:
 
 `$event`는 자바스크립트에서 다음과 같이 처리할 수 있습니다. 참고로 `event` 자체는 클릭 이벤트이고, 어떤 요소를 클릭했는지 가져오는 것이 `event.currentTarget`(또는 `event.target`)입니다.
 
-```
+```js
 export default {
     methods: {
         select: function(event) {

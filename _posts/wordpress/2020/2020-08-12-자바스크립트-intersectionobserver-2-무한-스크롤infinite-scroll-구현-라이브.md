@@ -6,15 +6,11 @@ categories:
   - "JavaScript"
 ---
 
-먼저 무한스크롤은 JQuery에서도 다양한 플러그인이 있고, 그 외에도 검색하면 많은 라이브러리들이 있기 때문에 무한스크롤을 직접 구현하기보다는 이러한 외부 라이브러리를 사용하는 것을 우선 추천드립니다.
-
- 
-
 `IntersectionObserver`에 대한 내용은 이전 글에서 설명되어 있습니다.
 
 - [자바스크립트: IntersectionObserver (1) 이미지 lazy-loading 구현](/posts/자바스크립트-intersectionobserver로-이미지-lazy-loading-구현/)
 
- 
+## 설명
 
 `IntersectionObserver`을 이용한 무한 스크롤은 [MDN 문서](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#)에서도 공식적으로 권장하고 있는 사항입니다.
 
@@ -41,9 +37,16 @@ categories:
 5. 더 이상 가져올 데이터가 없다면 모든 관측대상을 `disconnect` 하고 종료하기.
 
  
+## 코드
 
-https://gist.github.com/ayaysir/3f36a4fe9066b8c8917382766501e106
-
+<!-- https://gist.github.com/ayaysir/3f36a4fe9066b8c8917382766501e106 -->
+{% gist "3f36a4fe9066b8c8917382766501e106" %}
  
 
-https://codepen.io/ayaysir/pen/zYqvbea
+<!-- https://codepen.io/ayaysir/pen/zYqvbea -->
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="zYqvbea" data-pen-title="IntersectionObserver infinite scroll 1" data-user="ayaysir" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/ayaysir/pen/zYqvbea">
+  IntersectionObserver infinite scroll 1</a> by ayaysir (<a href="https://codepen.io/ayaysir">@ayaysir</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://public.codepenassets.com/embed/index.js"></script>

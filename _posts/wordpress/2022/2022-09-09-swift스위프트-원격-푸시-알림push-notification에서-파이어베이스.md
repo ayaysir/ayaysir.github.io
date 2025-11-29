@@ -59,27 +59,27 @@ Firebase에서 프로젝트를 생성합니다. 프로젝트 생성 과정 중 `
 > 
 > **Certificates, Identifiers & Profiles**을 선택한 다음 왼쪽 창에서`Key`를 찾습니다. 키 제목의 오른쪽에는`+`버튼을 클릭합니다.
 > 
->  ![](/assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.05.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.05.jpg)
 > 
 > 적절한 키 이름을 지정합니다. Key Service에서`Apple Push Notifications service(APNs)`을 선택합니다.
 > 
->  ![](/assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.28.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.28.jpg)
 > 
 >  
 > 
 > `Continue`를 클릭하고 다음 화면에서`Register`를 클릭하여 새 키를 만듭니다.
 > 
->  ![](/assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.47.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.47.jpg)
 > 
 > `Download`를 클릭합니다. 다운로드한 파일의 이름은`AuthKey_4SVKWF966R.p8`의 형태와 같습니다. 이 파일을 보관하세요. 알림을 보내려면 이 파일이 필요합니다. 파일 이름의`4SVKWF966R`부분은 Key ID입니다. 이것도 필요합니다.
 > 
->  ![](/assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.58.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.07.58.jpg)
 > 
 > 회원 센터의[Membership 페이지](https://developer.apple.com/account/#!/membership)로 이동합니다. Team ID를 메모합니다.
 > 
 >  
 > 
->  ![](/assets/img/wp-content/uploads/2022/09/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.17.38.jpg)
+>  ![](/assets/img/wp-content/uploads/2022/09/screenshot-2022-09-06-%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB-1.17.38.jpg)
 
  
 

@@ -19,7 +19,7 @@ categories:
 
 HTML + 자바스크립트를 이용해 웹 페이지를 만들 때 외부 API를 사용하는 과정에서 흔히 **_CORS 위반_**이라 불리는 에러를 많이 접할 수 있습니다.
 
- ![](/assets/img/wp-content/uploads/2020/06/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2020-06-03-%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE-10.49.30.png)
+ ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-03-pm-10.49.30.png)
 
  
 

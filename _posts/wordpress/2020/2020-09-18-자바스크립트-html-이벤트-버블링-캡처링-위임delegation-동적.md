@@ -8,7 +8,7 @@ categories:
 
  ![](/assets/img/wp-content/uploads/2020/09/Cap-2013-08-20-12-01-21-955.jpg)
 
-#### **이벤트 버블링**
+## **이벤트 버블링**
 
 하위 요소의 이벤트가 상위까지 전달되는 현상입니다. 예를 들어 위의 그림에서 `<a>` 태그를 클릭했는데 `<a>` 태그에 걸려있는 이벤트가 실행되는 것에 더해 상위 요소 `<li>`, `<ul>` 에 걸려있는 이벤트까지 같이 실행되는 현상을 말합니다.
 
@@ -55,11 +55,11 @@ vacation.addEventListener("click", event => {
 
  ![](/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-2.27.12.png)
 
-#### **이벤트 캡처링**
+## **이벤트 캡처링**
 
 이벤트 캡처링은 버블링과 반대로 상위 요소의 이벤트가 하위 요소로 전달되는 현상을 말합니다. 이벤트 캡처링은 일반적인 상황에서는 발생하지 않습니다. `addEventListener`에서 캡처링 옵션에 대한 파라미터가 있는데 기본값은(입력하지 않으면) `false`이기 때문에 캡처링이 발생하지 않습니다.
 
-```
+```html
 <ul style="background-color: blueviolet">
     <li class="vacation" style="background-color: antiquewhite">
         <a href="#" class="expand">Show comments</a>
@@ -92,7 +92,7 @@ $ul.addEventListener("click", event => {
 
 이벤트 캡처링을 사용하려면 `$ul`에 할당된 이벤트의 옵션을 다음과 같이 변경합니다.
 
-```
+```js
 $ul.addEventListener("click", event => {
     console.log("ul")
 }, true) // capturing option: 기본값 false
@@ -106,13 +106,13 @@ $ul.addEventListener("click", event => {
 
  
 
-#### **이벤트 위임(Event Delegation)** 
+## **이벤트 위임(Event Delegation)** 
 
 이벤트 위임은 위의 이벤트 현상을 이용한 기법으로 동적으로 생성한 요소들에 이벤트를 부여할 때 도움이 됩니다.
 
 아래 코드는 초기에 자바스크립트를 학습할 때 자주 하던 실수 중 하나로, 아래처럼 코드를 작성하면 초기 요소에만 이벤트가 작동하며, 동적으로 추가된 요소에서는 이벤트가 작동하지 않습니다.
 
-```
+```html
 <ul id="item-box">
     <li class="item">초기 요소 1</li>
     <li class="item">초기 요소 2</li>
@@ -163,7 +163,7 @@ items.forEach(el => {
 
 이러한 기법을 이용해 바로 위 예제의 코드를 고치면 다음과 같습니다.
 
-```
+```js
 // 이벤트 위임을 사용하여 동적 요소에도 이벤트가 할당되도록 한 코드
 itemBox.addEventListener("click", event => {
     const evTarget = event.target

@@ -10,15 +10,15 @@ categories:
 
 스프링 부트 + JPA + Thymeleaf를 이용해 게시판에 페이지네이션(페이징, 페이지 내비게이션) 기능을 추가해 보겠습니다.
 
- 
+## **절차**
 
-#### **0) 엔티티 클래스, 레퍼지토리 인터페이스 작성**
+### **0) 엔티티 클래스, 레퍼지토리 인터페이스 작성**
 
 - [Spring Boot: Spring JPA + H2 데이터베이스 기초 + 단위 테스트](http://yoonbumtae.com/?p=2555)
 
  
 
-#### **1) 엔티티에 대한 서비스 클래스 작성**
+### **1) 엔티티에 대한 서비스 클래스 작성**
 
 ```java
 package com.example.awsboard.service.posts;
@@ -83,15 +83,15 @@ public class PostsService {
 
  
 
-#### **2) 페이지 글을 가져오고 페이지 블럭을 생성하는 컨트롤러 작성**
+### **2) 페이지 글을 가져오고 페이지 블럭을 생성하는 컨트롤러 작성**
 
 페이지 블럭을 생성하는 부분은 너무 복잡해서 별도로 분리했습니다. 여기서 페이지 블럭이란 링크를 클릭하면 페이지로 이동할 수 있는 내비게이션 부분을 지칭합니다.
 
-- [자바(Java) 예제: 페이지네이션(Pagination, 페이징, 페이지 내비게이션) 도와주는 프로그램](http://yoonbumtae.com/?p=2957)
+- [자바(Java) 예제: 페이지네이션(Pagination, 페이징, 페이지 내비게이션) 도와주는 프로그램](/posts/자바java-예제-페이지네이션pagination-페이징-페이지-내비게/)
 
  
 
-```
+```java
 import com.example.awsboard.service.posts.PostsService;
 import com.example.awsboard.util.Paginator;
 import com.example.awsboard.web.dto.PostsListResponseDTO;
@@ -109,7 +109,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
-
     private final PostsService postsService;
 
     private static final Integer POSTS_PER_PAGE = 10;
@@ -147,7 +146,7 @@ public class IndexController {
 
 
 
-#### **3) 뷰 페이지(index.html) 의 페이지 블록 부분 작성**
+### **3) 뷰 페이지(index.html) 의 페이지 블록 부분 작성**
 
 페이지별 게시물 목록은 JPA에서 처리했기 때문에 알아서 잘 내려올 것이지만, 페이지 블럭 부분은 별도로 만들어줘야 합니다. Thymeleaf와 [부트스트랩](https://getbootstrap.com/docs/4.0/components/pagination/)이 사용되었습니다.
 
@@ -172,7 +171,7 @@ public class IndexController {
 
  
 
-#### **결과 화면**
+## **결과 화면**
 
  ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-26-pm-6.47.43.png)
 

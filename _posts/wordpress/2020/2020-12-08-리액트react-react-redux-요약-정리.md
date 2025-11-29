@@ -14,7 +14,7 @@ categories:
 
  
 
-#### **Redux와 React Redux는 같은 의미인가요?**
+## **Redux와 React Redux는 같은 의미인가요?**
 
 아닙니다. Redux는 상태 관리 라이브러리로, 상태관리 패턴인 Flux의 일부를 변형하여 간단하게 상태 관리가 가능하도록 만들었습니다. 이것은 제이쿼리, 일반 자바스크립트, 다른 SPA 프레임워크 등 다양한 환경에서 사용가능하도록 제작되었으며 리액트 전용으로 만들어진 것은 아닙니다.
 
@@ -24,11 +24,12 @@ Redux의 상태관리 기법을 리액트 컴포넌트에 그대로 사용하게
 
 React Redux는 이러한 상황에서 컨테이너와 컴포넌트의 분리를 편리하게 해주는 리액트 커뮤니티에서 개발된 라이브러리입니다. 컨테이너 작성 부분을 간단하게 해주며, `props`의 구성 변경에 대해서도 신경쓸 필요가 없게 됩니다.
 
-\[caption id="attachment\_3263" align="alignnone" width="2396"\] ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-08-pm-9.36.23.png) 왼쪽은 Redux만 있고 React Redux 없을 때 구현한 컨테이너 코드입니다.\[/caption\]
+![왼쪽은 Redux만 있고 React Redux 없을 때 구현한 컨테이너 코드입니다.](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-08-pm-9.36.23.png)  
+*왼쪽은 Redux만 있고 React Redux 없을 때 구현한 컨테이너 코드입니다.*
 
  
 
-#### **Redux를 사용하는 이유는 무엇인가요?**
+## **Redux를 사용하는 이유는 무엇인가요?**
 
 대규모 애플리케이션에서 상태 관리를 편하게 하기 위해서입니다. 리액트에서 컴포넌트간 `props`를 통해 데이터를 주고받는 패턴은 애플리케이션의 규모가 켜지면 커질수록 상태 관리가 매우 복잡해지게 됩니다. 예를 들어 루트 컴포넌트 밑에 만 개의 하위 컴포넌트가 있다고 할 때, 이 중 루트 컴포넌트에 영향을 줄 수 있는 하나의 값이 바뀌었는데 그 값을 루트 컴포넌트를 통해 다른 컴포넌트도 사용하고 있다면 기존 패턴에서는 이러한 변경 내용에 일일히 대응하는 코드를 작성하기가 어렵습니다.
 
@@ -38,16 +39,16 @@ React Redux는 이러한 상황에서 컨테이너와 컴포넌트의 분리를 
 
  
 
-#### **Redux와 React Redux 설치 (npm)**
+## **Redux와 React Redux 설치 (npm)**
 
-```
+```bash
 npm install redux
 npm install react-redux
 ```
 
  
 
-#### **리액트의 index.js 에서 React Redux 설정**
+## **리액트의 index.js 에서 React Redux 설정**
 
 ```jsx
 import React from 'react';
@@ -71,11 +72,11 @@ ReactDOM.render(
 
  
 
-#### **store.js 작성**
+## **store.js 작성**
 
 `reducer` 함수를 작성한 다음 `export default createStore(reducer)`를 사용하여 다른 컴포넌트에서 저장소를 사용할 수 있도록 합니다. `createStore`의 두 번째 파라미터(`window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()`)는 개발자용 옵션으로, [Redux DevTools 크롬 확장 프로그램](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)을 통해 이 확장이 깔려 있다면 개발자 도구에서 리덕스 상태변화를 실시간으로 추적할 수 있습니다.
 
-```
+```json
 {
     "mode": "WELCOME",
     "welcome_content": {
@@ -104,7 +105,7 @@ ReactDOM.render(
 }
 ```
 
-```
+```jsx
 import { createStore } from 'redux'
 import initState from './init.json'
 
@@ -185,7 +186,7 @@ export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && windo
 
  
 
-#### **Redux에 의존하지 않는 컴포넌트를 작성 (예: /components/Update.jsx)**
+## **Redux에 의존하지 않는 컴포넌트를 작성 (예: /components/Update.jsx)**
 
 여기서 리덕스에 의존하지 않는 컴포넌트를 작성하는 방법은 간단합니다. `store.js`를 `import`하지 않고, `props`와 `state`를 이용해 컴포넌트간 통신을 하는 전통적인 형태의 리액트 컴포넌트를 작성하면 됩니다.
 
@@ -250,11 +251,11 @@ export default Update;
 
  
 
-#### **컨테이너 컴포넌트 작성 (/containers/UpdateContainer.jsx)**
+## **컨테이너 컴포넌트 작성 (/containers/UpdateContainer.jsx)**
 
 리덕스와 관련된 작업은 컨테이너 컴포넌트에서 전적으로 담당하도록 분리하여 작성합니다. 원래 React Redux가 없다면 아래 코드보다 더 복잡한 코드를 작성하여야 합니다만, 여기서는 생략하고 바로 React Redux를 사용한 코드를 올립니다.
 
-```
+```jsx
 import { connect } from "react-redux"
 import Update from "../components/Update"
 
@@ -293,9 +294,9 @@ export default connect(state => {
 
  
 
-#### **App 에서 컨테이너를 로딩하여 사용**
+## **App 에서 컨테이너를 로딩하여 사용**
 
-```
+```jsx
 import './App.css';
 import NavContainer from './containers/NavContainer';
 import HeaderContainer from './containers/HeaderContainer';

@@ -59,4 +59,4 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 이 컨트롤러를 추가하면. `http://server.url/v/`로 시작하는 모든 요청은 서버에서 `index.html`을 반환하기 때문에 해당 페이지에 내장된 SPA 라우팅 기능을 이용할 수 있게 됩니다.
 
-출처: [https://stackoverflow.com/questions/38516667/springboot-angular2-how-to-handle-html5-urls](https://stackoverflow.com/questions/38516667/springboot-angular2-how-to-handle-html5-urls)
+> 출처: [https://stackoverflow.com/questions/38516667/springboot-angular2-how-to-handle-html5-urls](https://stackoverflow.com/questions/38516667/springboot-angular2-how-to-handle-html5-urls)

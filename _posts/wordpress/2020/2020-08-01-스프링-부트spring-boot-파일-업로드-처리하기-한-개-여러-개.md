@@ -10,9 +10,9 @@ categories:
 
  
 
-#### **HTML**
+## **HTML**
 
-```
+```html
 <form method="post" action="/[업로드할_컨트롤러_주소]" enctype="multipart/form-data">
     <input multiple type="file" name="files">
     <button>submit</button>
@@ -23,9 +23,9 @@ categories:
 
  
 
-#### **단일 파일 업로드**
+## **단일 파일 업로드**
 
-```
+```java
 import org.springframework.web.multipart.MultipartFile; 
 
 import javax.swing.filechooser.FileSystemView; 
@@ -51,9 +51,9 @@ public String uploadSingle(@RequestParam("files") MultipartFile file) throws Exc
 
  
 
-#### **여러 파일 업로드**
+## **여러 파일 업로드**
 
-```
+```java
 import org.springframework.web.multipart.MultipartFile; 
 
 import javax.swing.filechooser.FileSystemView; 

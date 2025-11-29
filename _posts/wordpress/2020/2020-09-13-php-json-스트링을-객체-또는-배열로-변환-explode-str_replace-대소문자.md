@@ -6,11 +6,11 @@ categories:
   - "PHP"
 ---
 
-#### **1) JSON을 배열로 변환**
+## **1) JSON을 배열로 변환**
 
-**객체(`stdClass`)로 변환하는 방법**
+### **객체(`stdClass`)로 변환하는 방법**
 
-```
+```php
 $array_data = json_decode($str, false);
 
 // 또는
@@ -18,19 +18,19 @@ $array_data = json_decode($str, false);
 $array_data = json_decode($str);
 ```
 
-**배열로 변환하는 방법**
+### **배열로 변환하는 방법**
 
-```
+```php
 $array_data = json_decode($str, true);
 ```
 
  
 
-#### **2) explode**
+## **2) explode**
 
 다른 언어의 `String.split`과 기능이 비슷합니다. 스트링의 경계기호(`delimiter`) 문자를 기준으로 배열을 생성합니다.
 
-```
+```php
 $date = "2020-08-25";
 
 // explode(delimiter, string)
@@ -44,11 +44,11 @@ echo $exploded[2]; // 25
 
  
 
-#### **3) str\_replace**
+## **3) str\_replace**
 
 다른 언어의 `String.replace`와 기능이 비슷합니다. 특정 문자를 치환합니다.
 
-```
+```php
 $value = "가나다라가나다라마";
 
 echo str_replace("마", "Z", $value); // 가나다라가나다라Z
@@ -57,16 +57,16 @@ echo str_replace("라", "-", $value); // 가나다-가나다-마
 
  
 
-#### **4)  ucfirst, lcfist, ucwords**
+## **4)  ucfirst, lcfist, ucwords**
 
 `ucfirst`는 스트링의 첫 문자를 대문자로 바꿉니다. 단어를 구별하지 않고 스트링의 제일 첫 문자만 변환합니다.
 
-```
+```php
 $foo = 'hello world!';
 $foo = ucfirst($foo);  // Hello world!
 ```
 
-유사 기능
+### 비슷한 기능
 
 - `lcfirst(string $str)` - 스트링의 첫 문자를 소문자로 변경
 - `strtolower(string $str)` - 스트링 전체를 소문자로 변경

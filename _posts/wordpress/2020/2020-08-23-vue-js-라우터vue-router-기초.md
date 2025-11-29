@@ -10,17 +10,17 @@ tags:
 
 이 방법은 npm의 Vue CLI를 통해 개발하는 경우 및 처음에 Vue.js 프로젝트를 생성할 때 Vue Router가 포함되지 않은 경우를 기준으로 작성되었습니다.
 
- 
+## **절차**
 
-#### **1) npm에서 Vue Router 설치**
+### **1) npm에서 Vue Router 설치**
 
-```
+```bash
 npm install vue-router --save
 ```
 
  
 
-#### **2) router 관련 설정 js 파일 생성**
+### **2) router 관련 설정 js 파일 생성**
 
 이름 및 경로는 자유롭게 지정할 수 있습니다.
 
@@ -28,9 +28,9 @@ npm install vue-router --save
 
  
 
-#### **3) 라우터 설정 js 파일 작성**
+### **3) 라우터 설정 js 파일 작성**
 
-```
+```js
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -85,11 +85,11 @@ export default new Router({
 
  
 
-#### **4) main.js에 route 관련 설정 추가**
+### **4) main.js에 route 관련 설정 추가**
 
 루트 디렉토리에 있는 `main.js`에 `router`를 추가합니다.
 
-```
+```js
 import Vue from 'vue'
 import App from './App.vue'
 
@@ -109,9 +109,9 @@ new Vue({
 
  
 
-#### **5) App.js 에 <router-view />를 추가**
+### **5) App.js 에 <router-view />를 추가**
 
-```
+```html
 <template>
     <div id="app">
         <Header :msg="welcomeMessage"></Header>
@@ -132,9 +132,9 @@ new Vue({
 
  
 
-#### **6) 내비게이션(<nav>) 부분에 라우터 기반 링크 추가**
+### **6) 내비게이션(<nav>) 부분에 라우터 기반 링크 추가**
 
-```
+```html
 <template>
     <nav class="nav">
         <div class="nav-header">
@@ -158,12 +158,12 @@ new Vue({
 
 `<router-link to="[라우트_주소]">` 를 사용하여 라우트 링크를 만듭니다. 이것은 렌더링 시에 `<a>` 태그로 대체됩니다. `to` 속성에 주소를 적으면 되고, `:to` 속성을 사용한 경우 라우트 이름을 사용하는 등의 작업을 수행할 수 있습니다. ([참고](https://router.vuejs.org/kr/guide/essentials/named-routes.html))
 
-서버에서 URL 매핑이 SPA 페이지에 적절하게 이루어진 경우, URL을 브라우저 창에 직접 입력하여 접속하는 것도 가능합니다. ([스프링 부트(Spring Boot): SPA 라우트(route)를 위한 URL 컨트롤러](http://yoonbumtae.com/?p=2940))
+서버에서 URL 매핑이 SPA 페이지에 적절하게 이루어진 경우, URL을 브라우저 창에 직접 입력하여 접속하는 것도 가능합니다. ([스프링 부트(Spring Boot): SPA 라우트(route)를 위한 URL 컨트롤러](/스프링-부트spring-boot-spa-라우트route를-위한-url-컨트롤러/))
 
  
 
-\[caption id="attachment\_2949" align="alignnone" width="583"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.26.09.png) 기본 URL에 접속했을 때, `"/"` 에 해당하는 컴포넌트(`Topic`)를 띄움\[/caption\]
+![기본 URL에 접속했을 때, `"/"` 에 해당하는 컴포넌트(`Topic`)를 띄움](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.26.09.png)  
+*기본 URL에 접속했을 때, `"/"` 에 해당하는 컴포넌트(`Topic`)를 띄움*
 
- 
-
-\[caption id="attachment\_2948" align="alignnone" width="586"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.24.16.png) 다른 URL을 입력하거나 내비게이션 바의 메뉴를 클릭했을 때, 해당 URL의 컴포넌트가 표시됨\[/caption\]
+![다른 URL을 입력하거나 내비게이션 바의 메뉴를 클릭했을 때, 해당 URL의 컴포넌트가 표시됨](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.24.16.png)  
+*다른 URL을 입력하거나 내비게이션 바의 메뉴를 클릭했을 때, 해당 URL의 컴포넌트가 표시됨*

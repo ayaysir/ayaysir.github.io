@@ -6,17 +6,19 @@ categories:
   - "Spring/JSP"
 ---
 
-원문 [바로가기1](https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-1/) [바로가기2](https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-2/)
+**원문** 
+- [바로가기1](https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-1/) 
+- [바로가기2](https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-2/)
 
 원문에서는 프론트엔드 부분을 리액트로 설명하고 있는데, 저는 리액트를 사용하지 않아서 다음 글에서 Vue.js 로 대체해서 올리고, 이 글은 백엔드만 다루겠습니다.
 
 일반 서버 사이드 렌더링에서 구글 로그인 연동하는 방법은 아래를 참조하세요.
 
-- [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버](http://yoonbumtae.com/?p=2652)
+- [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버](/posts/스프링-부트spring-boot-구글-로그인-연동-스프링-부트-스타/)
 
 * * *
 
- 
+## **소개**
 
 안녕하세요, Spring Boot 소셜 로그인 튜토리얼 시리즈에 오신 것을 환영합니다. 이 튜토리얼에서는 Spring Security에서 제공하는 새로운 OAuth2 기능을 사용하여 Spring Boot 애플리케이션에 소셜 및 이메일 및 비밀번호 기반 로그인을 연동하는는 방법을 배우겠습니다.
 
@@ -28,7 +30,7 @@ MySQL 데이터베이스를 사용하여 사용자 정보를 저장하겠습니�
 
  
 
-#### **프로젝트 생성**
+## **프로젝트 생성**
 
 Spring Initializr를 사용하여 프로젝트를 생성해 보겠습니다. [http://start.spring.io](http://start.spring.io)로 이동하여 다음과 같이 세부 정보를 입력하세요.
 
@@ -39,7 +41,7 @@ Spring Initializr를 사용하여 프로젝트를 생성해 보겠습니다. [ht
 
  
 
-#### **전체 프로젝트의 디렉토리 구조**
+## **전체 프로젝트의 디렉토리 구조**
 
 다음은 참고용으로 전체 프로젝트의 디렉토리 구조입니다. 모든 클래스와 인터페이스를 하나씩 만들고 세부 사항을 알아봅니다.
 
@@ -47,11 +49,11 @@ Spring Initializr를 사용하여 프로젝트를 생성해 보겠습니다. [ht
 
  
 
-#### **추가 디펜던시**
+## **추가 디펜던시**
 
 Spring Initializr 웹 도구에 없는 애플리케이션에 몇 가지 추가 디펜던시 추가해야합니다. 프로젝트의 루트 디렉터리에있는 `pom.xml` 파일을 열고 다음 디펜던시를 추가합니다. (`<dependencies>` 태그쌍 내에)
 
-```
+```xml
 <!-- OAuth2 Client -->
 <dependency>
     <groupId>org.springframework.security</groupId>
@@ -69,7 +71,7 @@ Spring Initializr 웹 도구에 없는 애플리케이션에 몇 가지 추가 �
 
  
 
-#### **소셜 로그인을 위한 OAuth2 앱 만들기**
+## **소셜 로그인을 위한 OAuth2 앱 만들기**
 
 OAuth2 로그인을 지원하는 서비스를 통해 소셜 로그인을 사용하려면 OAuth2 제공 업체의 콘솔에서 앱을 만들고, 클라이언트 아이디(ClientId) 및 클라이언트 시크릿(ClientSecret) (AppId 및 AppSecret이라고도 함) 을 가져와야합니다.
 
@@ -92,11 +94,11 @@ OAuth2 공급자(provider)는 ClientId 및 ClientSecret을 사용하여 앱을 �
 
  
 
-#### **Spring Boot 애플리케이션 구성**
+## **Spring Boot 애플리케이션 구성**
 
 스프링 부트의 `src/main/resource/application.properties` 파일 기본적인 구성을 가져오빈다. 또한 `.yaml` 구성을 지원합니다. 이 프로젝트에서는 계층적 데이터를 보다 명확하게 나타내기 때문에 yaml 구성을 사용합니다.
 
-```
+```yaml
 spring:
     datasource:
         url: jdbc:mysql://localhost:3306/spring_social?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
@@ -165,7 +167,7 @@ app:
 
  
 
-#### **AppProperties 바인딩**
+## **AppProperties 바인딩**
 
 Spring Boot의 `@ConfigurationProperties` 기능을 사용하여 앱 접두사가 붙은 모든 구성을 POJO(Plain Old Java Object) 클래스에 바인딩해 보겠습니다.
 
@@ -228,7 +230,7 @@ public class AppProperties {
 
  
 
-#### **AppProperties 활성화**
+## **AppProperties 활성화**
 
 `@EnableConfigurationProperties` 어노테이션을 추가하여 구성 속성을 활성화(enable)해야 합니다. 메인 애플리케이션 클래스 `SpringSocialApplication.java`를 열고 다음과 같은 어노테이션을 추가하세요.
 
@@ -252,7 +254,7 @@ public class SpringSocialApplication {
 
  
 
-#### **CORS 활성화**
+## **CORS 활성화**
 
 프론트엔드 클라이언트가 다른 출처의 API에 액세스 할 수 있도록 CORS를 활성화하겠습니다. 다음 구성에서 모든 origin을 활성화했습니다. 하지만 프로덕션 애플리케이션에서는 더 엄격하게 만들어야합니다.
 
@@ -282,7 +284,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
  
 
-#### **데이터베이스 Entity 만들기**
+## **데이터베이스 Entity 만들기**
 
 이제 애플리케이션의 Entity 클래스를 만들어 보겠습니다. 다음은 `User` 클래스의 정의입니다.
 
@@ -349,7 +351,7 @@ public enum  AuthProvider {
 
  
 
-#### **DB에서 데이터에 액세스하기 위한 리포지토리(Repository) 만들기**
+## **DB에서 데이터에 액세스하기 위한 리포지토리(Repository) 만들기**
 
 데이터베이스에서 데이터에 액세스하기 위한 리포지토리 계층을 만들어 보겠습니다. 다음 `UserRepository` 인터페이스는 사용자 엔티티에 대한 데이터베이스 기능을 제공합니다. [Spring-Data-JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/) 덕분에 여기에 많은 코드를 작성할 필요가 없습니다.
 
@@ -374,13 +376,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
  
 
-* * *
+## **SecurityConfig**
 
- 
-
-#### **SecurityConfig**
-
-\]SecurityConfig 클래스는 스프링 부트에서 보안 구현의 핵심입니다. 여기에는 OAuth2 소셜 로그인과 이메일 및 비밀번호 기반 로그인에 대한 구성이 포함되어 있습니다.
+`SecurityConfig` 클래스는 스프링 부트에서 보안 구현의 핵심입니다. 여기에는 OAuth2 소셜 로그인과 이메일 및 비밀번호 기반 로그인에 대한 구성이 포함되어 있습니다.
 
 먼저 모든 구성을 살펴본 다음, 각 구성에 대한 세부 정보를 하나씩 살펴 보겠습니다.
 
@@ -528,7 +526,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
  
 
-#### **OAuth2 로그인 흐름**
+## **OAuth2 로그인 흐름**
 
 - OAuth2 로그인 흐름은 사용자 측의 브라우저에서 엔드포인트 `http://localhost:8080/oauth2/authorize/{provider}?redirect_uri=<redirect_uri_after_login>` 로 접속하는 것으로 프론트엔드 클라이언트에서 시작됩니다.
 - `provider` 경로 매개 변수는 `google`, `facebook` 또는 `github` 중 하나입니다. `redirect_uri`는 OAuth2  인증이 성공하면 사용자 측에서 리디렉션되는 URI입니다. 이것은 OAuth2 redirectUri와 다릅니다.
@@ -542,9 +540,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
  
 
-#### **OAuth2 인증을위한 사용자 정의 클래스**
+## **OAuth2 인증을위한 사용자 정의 클래스**
 
-##### **1\. HttpCookieOAuth2AuthorizationRequestRepository**
+### **1\. HttpCookieOAuth2AuthorizationRequestRepository**
 
 OAuth2 프로토콜은 CSRF 공격을 방지하기 위해 `state` 매개 변수 사용을 권장합니다. 인증 중에 애플리케이션은 인증 요청에서 이 매개 변수를 전송하고, OAuth2 공급자는 OAuth2 콜백에서 변경되지 않은 이 매개 변수를 리턴합니다.
 
@@ -612,7 +610,7 @@ public class HttpCookieOAuth2AuthorizationRequestRepository implements Authoriza
 
  
 
-##### **2\. CustomOAuth2UserService**
+### **2\. CustomOAuth2UserService**
 
 `CustomOAuth2UserService`는 Spring Security의 `DefaultOAuth2UserService`를 상속받고 `loadUser()` 메소드를 구현합니다. 이 메서드는 OAuth2 공급자로부터 액세스 토큰을 얻은 후에 호출됩니다.
 
@@ -705,7 +703,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
  
 
-##### **3\. OAuth2UserInfo mapping**
+### **3\. OAuth2UserInfo mapping**
 
 모든 OAuth2 공급자는 인증된 사용자의 세부 정보를 가져올 때 다른 JSON 응답을 반환합니다. 스프링 시큐리니튼 키-값 쌍의 일반 `Map` 형식으로 응답을 구문 분석합니다.
 
@@ -713,7 +711,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
  
 
-**OAuth2UserInfo**
+#### **OAuth2UserInfo**
 
 ```java
 package com.example.springsocial.security.oauth2.user;
@@ -743,7 +741,7 @@ public abstract class OAuth2UserInfo {
 
  
 
-**FacebookOAuth2UserInfo**
+#### **FacebookOAuth2UserInfo**
 
 ```java
 package com.example.springsocial.security.oauth2.user;
@@ -788,7 +786,7 @@ public class FacebookOAuth2UserInfo extends OAuth2UserInfo {
 
  
 
-**GoogleOAuth2UserInfo**
+#### **GoogleOAuth2UserInfo**
 
 ```java
 package com.example.springsocial.security.oauth2.user;
@@ -863,7 +861,7 @@ public class GithubOAuth2UserInfo extends OAuth2UserInfo {
 
  
 
-**OAuth2UserInfoFactory**
+#### **OAuth2UserInfoFactory**
 
 ```java
 package com.example.springsocial.security.oauth2.user;
@@ -895,7 +893,7 @@ public class OAuth2UserInfoFactory {
 
  
 
-##### **4\. OAuth2AuthenticationSuccessHandler**
+### **4\. OAuth2AuthenticationSuccessHandler**
 
 인증이 성공하면 스프링 시큐리티는 `SecurityConfig`에 구성된 `OAuth2AuthenticationSuccessHandler`의 `onAuthenticationSuccess()` 메소드를 호출합니다.
 
@@ -995,7 +993,7 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
 
  
 
-##### **5\. OAuth2AuthenticationFailureHandler**
+### **5\. OAuth2AuthenticationFailureHandler**
 
 OAuth2 인증 중 오류가 발생하면 Spring Security는 `SecurityConfig`에서 구성한 `OAuth2AuthenticationFailureHandler`의 `onAuthenticationFailure()` 메서드를 호출합니다.
 
@@ -1048,13 +1046,13 @@ public class OAuth2AuthenticationFailureHandler extends SimpleUrlAuthenticationF
 
  
 
-#### **이메일 기반 인증을 위한 컨트롤러 및 서비스**
+## **이메일 기반 인증을 위한 컨트롤러 및 서비스**
 
 이제 이메일 및 비밀번호 기반의 로그인을 처리하기위한 컨트롤러와 서비스를 살펴 보겠습니다.
 
  
 
-##### **1\. AuthController**
+### **1\. AuthController**
 
 ```java
 package com.example.springsocial.controller;
@@ -1144,7 +1142,7 @@ public class AuthController {
 
  
 
-##### **2\. CustomUserDetailsService**
+### **2\. CustomUserDetailsService**
 
 ```java
 package com.example.springsocial.security;
@@ -1191,9 +1189,9 @@ public class CustomUserDetailsService implements UserDetailsService {
 
  
 
-#### **JWT Token provider, Authentication Filter, Authentication error handler, and UserPrincipal**
+## **JWT Token provider, Authentication Filter, Authentication error handler, and UserPrincipal**
 
-##### **TokenProvider**
+### **TokenProvider**
 
 이 클래스에는 Json 웹 토큰을 생성하고 인증(verify)하는 코드가 포함되어 있습니다.
 
@@ -1265,7 +1263,7 @@ public class TokenProvider {
 
  
 
-##### **TokenAuthenticationFilter**
+### **TokenAuthenticationFilter**
 
 이 클래스는 리퀘스트에서 JWT 인증 토큰을 읽어 인증(verify)하고, 토큰이 유효한 경우 Spring Security의 `SecurityContext`를 설정하는 데 사용됩니다.
 
@@ -1335,7 +1333,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
  
 
-##### **RestAuthenticationEntryPoint**
+### **RestAuthenticationEntryPoint**
 
 이 클래스는 사용자가 인증없이 보안된 리소스에 액세스하려고 할 때 호출됩니다. 이 경우 `401 Unauthorized` 응답만 반환합니다.
 
@@ -1369,7 +1367,7 @@ public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
  
 
-##### **UserPrincipal**
+### **UserPrincipal**
 
 `UserPrincipal` 클래스는 인증된 스프링 시큐리티의 principal(본인의 정보)를 나타냅니다. 인증된 사용자의 세부 사항을 포함합니다.
 
@@ -1480,7 +1478,7 @@ public class UserPrincipal implements OAuth2User, UserDetails {
 
  
 
-##### **CurrentUser 메타 어노테이션**
+### **CurrentUser 메타 어노테이션**
 
 현재 인증된 사용자의 principald을 컨트롤러에 삽입하는 데 사용할 수있는 [메타 어노테이션](https://lng1982.tistory.com/89)입니다.
 
@@ -1501,7 +1499,7 @@ public @interface CurrentUser {
 
  
 
-#### **UserController - User APIs**
+## **UserController - User APIs**
 
 `UserController` 클래스에는 현재 인증된 사용자의 세부 정보를 가져 오는 보호된(protected) API가 포함되어 있습니다.
 
@@ -1539,11 +1537,11 @@ public class UserController {
 
  
 
-#### **유틸리티 클래스**
+## **유틸리티 클래스**
 
 이 프로젝트는 일부 유틸리티 클래스를 사용하여 다양한 작업을 수행합니다.
 
-##### **CookieUtils**
+### **CookieUtils**
 
 ```java
 package com.example.springsocial.util;
@@ -1607,13 +1605,13 @@ public class CookieUtils {
 
  
 
-#### **리퀘스트/리스폰스 Payload(전송되는 데이터)**
+## **리퀘스트/리스폰스 Payload(전송되는 데이터)**
 
 다음 리퀘스트/리스폰스 [페이로드](https://ko.wikipedia.org/wiki/%ED%8E%98%EC%9D%B4%EB%A1%9C%EB%93%9C_\(%EC%BB%B4%ED%93%A8%ED%8C%85\))는 컨트롤러 API에서 사용됩니다.
 
  
 
-##### **1\. LoginRequest**
+### **1\. LoginRequest**
 
 ```java
 package com.example.springsocial.payload;
@@ -1635,7 +1633,7 @@ public class LoginRequest {
 
  
 
-##### **2. SignUpRequest**
+### **2. SignUpRequest**
 
 ```java
 package com.example.springsocial.payload;
@@ -1661,7 +1659,7 @@ public class SignUpRequest {
 
  
 
-##### **3\. AuthResponse**
+### **3\. AuthResponse**
 
 ```java
 package com.example.springsocial.payload;
@@ -1680,7 +1678,7 @@ public class AuthResponse {
 
  
 
-##### **4.ApiResponse**
+### **4.ApiResponse**
 
 ```java
 package com.example.springsocial.payload;
@@ -1700,13 +1698,13 @@ public class ApiResponse {
 
  
 
-#### **예외 클래스**
+## **예외 클래스**
 
 다음 예외 클래스는 다양한 오류 사례에 대해 애플리케이션 전체에서 사용됩니다.
 
  
 
-##### **1\. BadRequestExceotion**
+### **1\. BadRequestExceotion**
 
 ```java
 package com.example.springsocial.exception;
@@ -1728,7 +1726,7 @@ public class BadRequestException extends RuntimeException {
 
  
 
-##### **2. ResourceNotFoundException**
+### **2. ResourceNotFoundException**
 
 ```java
 package com.example.springsocial.exception;
@@ -1765,7 +1763,7 @@ public class ResourceNotFoundException extends RuntimeException {
 
  
 
-##### **3. OAuth2AuthenticationProcessingException**
+### **3. OAuth2AuthenticationProcessingException**
 
 ```java
 package com.example.springsocial.exception;

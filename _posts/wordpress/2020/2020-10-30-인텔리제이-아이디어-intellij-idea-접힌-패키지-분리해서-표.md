@@ -12,15 +12,15 @@ categories:
 
 이것을 펼쳐서 표시하려면 다음과 같이 합니다.
 
- 
+## **방법**
 
-##### **1) 프로젝트 바 상단 오른쪽에 있는 옵션 버튼 (Show Options Menu) 을 클릭합니다.**
+### **1) 프로젝트 바 상단 오른쪽에 있는 옵션 버튼 (Show Options Menu) 을 클릭합니다.**
 
  ![](/assets/img/wp-content/uploads/2020/10/screenshot-2020-10-30-pm-5.36.54.png)
 
  
 
-##### **2) Compact Middle Packages 란 체크를 해제하거나 선택합니다.**
+### **2) Compact Middle Packages 란 체크를 해제하거나 선택합니다.**
 
  ![](/assets/img/wp-content/uploads/2020/10/screenshot-2020-10-30-pm-5.38.28.png)
 
@@ -36,13 +36,13 @@ categories:
 
  
 
-##### **1) 해당 패키지의 상위 패키지나 폴더 (여기서는 `blog`의 상위 단계에 있는 `src`)를 선택합니다.**
+### **1) 해당 패키지의 상위 패키지나 폴더 (여기서는 `blog`의 상위 단계에 있는 `src`)를 선택합니다.**
 
  ![](/assets/img/wp-content/uploads/2020/10/screenshot-2020-10-30-pm-5.43.34.png)
 
  
 
-##### **2) New Package 입력란에 `blog.[패키지명]`을 입력합니다. 클래스 생성도 동일하게 적용됩니다.**
+### **2) New Package 입력란에 `blog.[패키지명]`을 입력합니다. 클래스 생성도 동일하게 적용됩니다.**
 
  ![](/assets/img/wp-content/uploads/2020/10/screenshot-2020-10-30-pm-5.47.08.png)
 

@@ -12,17 +12,17 @@ MIDI란 컴퓨터 음악을 위한 규격화된 포맷으로 미디 표준을 �
 
  
 
-#### **개발 일지**
+## **개발 일지**
 
-- [스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기](http://yoonbumtae.com/?p=2819)
+- [스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기](/posts/스프링-부트spring-boot-미디-플레이어-만들기-1-timidity-lame을-이용해/)
 - [스프링 부트(Spring Boot) 미디 플레이어 만들기 (2): 업로드 페이지, 임시 재생 플레이어 만들기](http://yoonbumtae.com/?p=2878)
 - [스프링 부트(Spring Boot) 미디 플레이어 만들기 (3): 다음 곡 연속 재생 기능 - 미디 정보 업데이트 및 삭제](http://yoonbumtae.com/?p=2900)
 
  
 
-#### **웹사이트 주소**
+## **웹사이트 주소**
 
-http://awsboard.yoonbumtae.com:9090/midi
+~~http://awsboard.yoonbumtae.com:9090/midi~~
 
 사이트는 AWS 프리티어 기간이 만료되어 폐쇄했습니다. 영상 기록으로 대신 확인 가능합니다.
 
@@ -30,7 +30,7 @@ http://awsboard.yoonbumtae.com:9090/midi
 
  
 
-#### **깃허브 주소**
+## **깃허브 주소**
 
 [https://github.com/ayaysir/awsboard](https://github.com/ayaysir/awsboard)
 
@@ -38,13 +38,13 @@ http://awsboard.yoonbumtae.com:9090/midi
 
  
 
-#### **사용 기술** 
+## **사용 기술** 
 
  ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-19-pm-5.47.28.png)
 
  
 
-#### **주요 기능**
+## **주요 기능**
 
 - 파일 업로드: 미디 파일을 업로드하면 Timidity++, LAME 인코더를 Shell Script로 작성된 스크립트를 이용해 실행하여 mp3 파일로 변환합니다. 업로드는 홈페이지 회원만 할 수 있습니다. 일반 회원은 한 번에 5개까지 업로드, 운영자는 무제한 업로드 가능합니다.
 - 재생, 일시정지, 멈춤 기능: 업로드되어 변환된 음악을 재생할 수 있습니다.
@@ -56,43 +56,35 @@ http://awsboard.yoonbumtae.com:9090/midi
 
  
 
-#### **앞으로 구현할 기능**
+## **앞으로 구현할 기능**
 
 - 검색, 정렬 및 필터링 기능: 파일 목록에 대한 검색, 정렬 및 필터링 기능을 구현할 예정입니다.
 - 개인별 플레이리스트: 회원 개인별 플레이리스트를 생성/업데이트/삭제할 수 있는 기능을 구현할 예정입니다.
 
  
 
-#### **스크린샷**
+## **스크린샷**
 
-\[caption id="attachment\_2934" align="alignnone" width="2784"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-19-pm-5.50.41.png) 메인 화면\[/caption\]
+![메인 화면](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-19-pm-5.50.41.png)
+*메인 화면*
 
-\[caption id="attachment\_3963" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2021-08-29-pm-7.29.59-scaled.jpg) 새로운 디자인 적용\[/caption\]
+![새로운 디자인 적용](/assets/img/wp-content/uploads/2020/08/screenshot-2021-08-29-pm-7.29.59-scaled.jpg)
+*새로운 디자인 적용*
 
- 
+![파일 업로드 화면](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-19-pm-5.56.38.png)
+*파일 업로드 화면*
 
-\[caption id="attachment\_2937" align="alignnone" width="2784"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-19-pm-5.56.38.png) 파일 업로드 화면\[/caption\]
+![정보 업데이트 화면](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-19-pm-5.53.50.png)
+*정보 업데이트 화면*
 
- 
+![스마트폰에서의 메인 화면](/assets/img/wp-content/uploads/2020/08/IMG_11462A79DFCE-1.jpeg)
+*스마트폰에서의 메인 화면*
 
-\[caption id="attachment\_2936" align="alignnone" width="2784"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-19-pm-5.53.50.png) 정보 업데이트 화면\[/caption\]
+![검색 기능](/assets/img/wp-content/uploads/2020/08/screenshot-2021-08-29-pm-7.30.24-scaled.jpg)
+*검색 기능*
 
- 
+![퍼가기 기능](/assets/img/wp-content/uploads/2020/08/screenshot-2021-08-29-pm-7.30.33-scaled.jpg)
+*퍼가기 기능*
 
-\[caption id="attachment\_2938" align="alignnone" width="422"\] ![](/assets/img/wp-content/uploads/2020/08/IMG_11462A79DFCE-1.jpeg) 스마트폰에서의 메인 화면\[/caption\]
-
- 
-
-\[caption id="attachment\_3964" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2021-08-29-pm-7.30.24-scaled.jpg) 검색 기능\[/caption\]
-
- 
-
- 
-
-\[caption id="attachment\_3965" align="alignnone" width="2560"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2021-08-29-pm-7.30.33-scaled.jpg) 퍼가기 기능\[/caption\]
-
- 
-
- 
-
-\[caption id="attachment\_3966" align="alignnone" width="470"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2021-08-29-pm-7.32.10.jpg) 퍼가기 기능으로 블로그, 게시판 등에 플레이어 붙여넣기\[/caption\]
+![퍼가기 기능으로 블로그, 게시판 등에 플레이어 붙여넣기](/assets/img/wp-content/uploads/2020/08/screenshot-2021-08-29-pm-7.32.10.jpg)
+*퍼가기 기능으로 블로그, 게시판 등에 플레이어 붙여넣기*

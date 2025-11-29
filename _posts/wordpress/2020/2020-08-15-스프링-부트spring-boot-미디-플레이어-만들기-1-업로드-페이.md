@@ -8,11 +8,11 @@ categories:
 
 <!-- \[rcblock id="2655"\] -->
 
-이전 글: [스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기](http://yoonbumtae.com/?p=2819)
+이전 글: [스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기](/posts/스프링-부트spring-boot-미디-플레이어-만들기-1-timidity-lame을-이용해/)
 
  
 
-##### **현재까지 완성된 미디 플레이어 (임시) 바로 가기**
+## **미디 플레이어 보기**
 
 이 서비스는 AWS 프리티어 기간 만료로 인해 폐쇄하였습니다.서비스 당시 모습을 영상 기록으로 확인할 수 있습니다.
 
@@ -20,7 +20,7 @@ categories:
 
  
 
-##### **현재 버전에서의 TimidityRunner**
+## **현재 버전에서의 TimidityRunner**
 
 ```java
 package com.example.awsboard.util;
@@ -30,7 +30,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class TimidityRunner {
-
     // 여기로 보낼 때 루트 패스 포함해서 보냄.
     public static Boolean convertMidiToMp3(String midiPath, String mp3Path) throws IOException {
 
@@ -119,14 +118,13 @@ public class TimidityRunner {
 
         System.out.println(TimidityRunner.getHash(midiPath));
         TimidityRunner.convertMidiToMp3(midiPath, mp3Path);
-
     }
 }
 ```
 
  
 
-##### **미디 정보 저장 테이블(엔티티) 생성**
+## **미디 정보 저장 테이블(엔티티) 생성**
 
 이전에 만들었던 `TimidityRunner`를 바탕으로 미디 플레이어를 만들기로 하였습니다. 미디 파일이 업로드되면 재생할 때마다 실시간 변환을 택할지, 아니면 mp3를 변환해둔 파일을 서버에 저장한 뒤 재생하는 방식을 택할지 둘 중 선택하다가 제가 현재 AWS EC2 프리티어 서비스를 이용하고 있고 지금 상황에서 실시간 변환은 서버에 부하가 많이 가기 때문에 사용자가 미디 파일을 업로드하면 서버에서 mp3를 저장하고, 나중에 플레이어에서 재생할 때 mp3 파일을 가져와 재생하는 방식을 택했습니다.
 
@@ -208,7 +206,7 @@ public interface MidiRepository extends JpaRepository<Midi, Long> {
 
  
 
-##### **Midi 엔티티의 서비스 클래스 작성**
+## **Midi 엔티티의 서비스 클래스 작성**
 
 ```java
 package com.example.awsboard.service.posts;
@@ -272,9 +270,9 @@ CRUD에 대응할 수 있는 서비스를 작성하였습니다. 현재는 업�
 
  
 
-##### **미디파일 업로드 API 구현**
+## **미디파일 업로드 API 구현**
 
-미디파일을 여러 개 업로드할 수 있는 기능을 구현하였습니다. [스프링 부트(Spring Boot): 파일 업로드 처리하기 (한 개, 여러 개)](http://yoonbumtae.com/?p=2834) 이 글을 참고해 미디파일을 `MultipartFile` 리스트로 여러 개 받을 수 있도록 하였습니다. 카테고리 및 사용자 지정 제목 정보도 받을 수 있게 제작하였습니다.
+미디파일을 여러 개 업로드할 수 있는 기능을 구현하였습니다. [스프링 부트(Spring Boot): 파일 업로드 처리하기 (한 개, 여러 개)](/posts/스프링-부트spring-boot-파일-업로드-처리하기-한-개-여러-개/) 이 글을 참고해 미디파일을 `MultipartFile` 리스트로 여러 개 받을 수 있도록 하였습니다. 카테고리 및 사용자 지정 제목 정보도 받을 수 있게 제작하였습니다.
 
 현재는 `MultipartFile`로 되어있지만 미디 파일은 대부분 파일 크기가 매우 작기(수십 KB 단위가 대부분입니다.) 때문에 나중에 BASE64 포맷을 이용해 업로드 방식을 변경할지 고려하고 있습니다. 원래 파일 크기가 작아서 BASE64로 변환해도 오버헤드가 적고 JSON 에 포함해서 보낼 수 있기 때문에 이점이 있습니다.
 
@@ -435,7 +433,7 @@ HTML 뷰에서도 처리하였지만 업로드된 파일이 0개이면 작업을
 
  
 
-##### **다음은 업로드 뷰 페이지(Thymeleaf) 입니다.**
+## **업로드 뷰 페이지(Thymeleaf)**
 
 ```html
 <!DOCTYPE html>
@@ -676,17 +674,18 @@ JS, CSS는 추후 기능 보강이 되고 안정화되면 분리할 예정입니
 
  
 
- ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.08.23.png)
+![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.08.23.png)
 
 업로드에서 미디 파일을 여러 개 선택하면 위 그림처럼 리스트가 뜹니다. 워크래프트 2 배경음악 파일이라서 카테고리를 "Warcraft II" 로 일괄 변경하였습니다. 업로드 버튼을 누르면 버튼에 로딩 이미지가 추가됩니다. 업로드가 완료되면 결과창이 나옵니다.
 
- ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.10.09.png)
+![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.10.09.png)
 
-\[caption id="attachment\_2881" align="alignnone" width="588"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.10.28.png) 업로드 결과를 JSON 으로 반환\[/caption\]
+![업로드 결과를 JSON 으로 반환](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.10.28.png)  
+*업로드 결과를 JSON 으로 반환*
 
  
 
-##### **변환된 MP3 파일을 클라이언트로 보내는 API 만들기**
+## **변환된 MP3 파일을 클라이언트로 보내는 API 만들기**
 
 크롬에서 구간 탐색(seeking)이 가능하게 하려면 response header 설정을 해야 합니다. "Accept-ranges"를 "bytes"로 설정하고, "Content-Length"에 바이트 단위로 파일 길이를 넣어주면 됩니다. ([MDN 링크](https://developer.mozilla.org/ko/docs/Web/HTTP/Range_requests))
 
@@ -696,9 +695,9 @@ JS, CSS는 추후 기능 보강이 되고 안정화되면 분리할 예정입니
 
  
 
-##### **미디 재생 플레이어 페이지(임시) 만들기**
+## **미디 재생 플레이어 페이지(임시) 만들기**
 
-```
+```html
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -741,17 +740,6 @@ JS, CSS는 추후 기능 보강이 되고 안정화되면 분리할 예정입니
                 </tr>
             </thead>
             <tbody id="table-info-tbody">
-                <!-- <tr id="info-tr-proto">-->
-                <!-- <th scope="row" class="file-name">Default</th>-->
-                <!-- <td class="category">-->
-                <!-- <input type="text" placeholder="카테고리명을 입력하세요." class="form-control form-control-sm">-->
-                <!-- </td>-->
-                <!-- <td class="custom-title">-->
-                <!-- <input type="text" placeholder="제목을 입력하세요." class="form-control form-control-sm">-->
-                <!-- </td>-->
-                <!-- <td class="file-size">Column content</td>-->
-                <!-- </tr>-->
-
             </tbody>
         </table>
 
@@ -827,7 +815,7 @@ JS, CSS는 추후 기능 보강이 되고 안정화되면 분리할 예정입니
 - 구간 반복 재생 기능
 - 사용자별 플레이리스트 기능(추가, 변경, 삭제)
 
- 
+## **가능한 추가 작업**
 
 여유가 된다면 언젠가는 다음 기능도 시도해볼 예정입니다.
 

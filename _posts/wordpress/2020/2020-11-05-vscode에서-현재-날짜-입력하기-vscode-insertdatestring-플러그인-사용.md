@@ -12,13 +12,13 @@ categories:
 
  
 
-### **설치**
+## **설치**
 
 `F1`을 눌러 명령 팔레트를 열고 `ext install`을 입력 한 다음 Insert Date String 확장을 찾으세요.
 
  
 
-### **사용법**
+## **사용법**
 
 다음 명령을 사용할 수 있습니다. 단축키를 사용하거나 명령어를 명령 팔레트에 입력해 사용합니다.
 
@@ -34,11 +34,12 @@ categories:
 
  
 
-\[caption id="attachment\_3165" align="alignnone" width="310"\] ![](/assets/img/wp-content/uploads/2020/11/screenshot-2020-11-05-pm-8.18.48.png) 주석 입력 등의 용도로 사용할 수 있습니다.\[/caption\]
+![주석 입력 등의 용도로 사용할 수 있습니다.](/assets/img/wp-content/uploads/2020/11/screenshot-2020-11-05-pm-8.18.48.png)  
+*주석 입력 등의 용도로 사용할 수 있습니다.*
 
  
 
-#### **이용 가능한 확장 설정**
+### **이용 가능한 확장 설정**
 
 - `Date and time format string` (_이는 `Insert DateTime`의 아웃풋에 영향을 미침_):
 - `Date format string` (_이는_ _`Insert Date`의 아웃풋에 영향을 미침_):
@@ -53,7 +54,7 @@ categories:
 
  
 
-#### **구문**
+### **구문**
 
 - `Y` - 앞에 0이 없는 연도의 두 자리 표현입니다. 예) 99 또는 3
 - `YY` - 연도를 나타내는 두 자리 숫자입니다. 예) 99 또는 03
@@ -82,14 +83,14 @@ categories:
 
  
 
-#### **시간대 지정자(designator)**
+### **시간대 지정자(designator)**
 
 - `Z` - `± hh[:mm]` 형식의 UTC 시간 오프셋. 예) +02, +02:30
 - `ZZ` - `±hh[mm]` 형식의 UTC 시간 오프셋. 예) +02, +0230
 - `ZZZ` - `±hh:mm` 형식의 UTC 시간 오프셋. 예) +02:00, +02:30
 - `ZZZZ` - `±hhmm` 형식의 UTC 시간 오프셋. 예) +0200, +0230
 
-#### **ISO-8601**
+### **ISO-8601**
 
 - `iso` - 밀리초가없는 단순화된 확장 ISO 형식 (ISO 8601). 시간대는 접미사 "Z"로 표시되는 것처럼 항상 0(zero) UTC 오프셋입니다.
 - `w` - 요일. 1 (월요일) ~ 7 (일요일)
@@ -98,7 +99,7 @@ categories:
 
  
 
-#### **예**
+### **예**
 
 - UTC date and time: `iso` (2013-07-16T20:13:31Z)
 - Year and month: `YYYY-MM` (2013-07)
@@ -107,6 +108,6 @@ categories:
 
  
 
-#### **라이선스**
+### **라이선스**
 
 [MIT License](https://github.com/jsynowiec/vscode-insertdatestring/blob/master/LICENSE)에 의해 출시되었습니다.

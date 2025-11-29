@@ -6,7 +6,7 @@ categories:
   - "JavaScript"
 ---
 
-출처 [바로가기](http://blog.hyeyoonjung.com/2019/01/09/intersectionobserver-tutorial/)
+> 출처 [바로가기](http://blog.hyeyoonjung.com/2019/01/09/intersectionobserver-tutorial/)
 
 일반적인 HTML 문서에서 `<img src="...">`를 사용하면 브라우저는 일괄적으로 이미지 로딩을 시도하게 됩니다.
 
@@ -38,13 +38,13 @@ categories:
 
  
 
-#### **IntersectionObserver**
+## **IntersectionObserver**
 
 IntersectionObserver API는 상위 요소 또는 최상위 문서의 뷰포트와 대상 요소의 교차 영역(intersection)에서 발생하는 변경 사항을 비동기식으로 관찰하는 방법을 제공하는 API 입니다.
 
 사용 방법은 다음과 같습니다,
 
-```
+```js
 let options = {
   root: document.querySelector('#scrollArea'),
   rootMargin: '0px',
@@ -87,7 +87,7 @@ const callback = (entries, observer) => {
 
  
 
-#### **Lazy-loading 예제**
+## **Lazy-loading 예제**
 
 첫 HTML 예제를 lazy-loading을 적용하면 다음과 같습니다.
 
@@ -115,10 +115,9 @@ const callback = (entries, observer) => {
 </body></html>
 ```
 
-```
+```js
 // onload는 페이지의 모든 리소스가 로드 완료되었을 때 실행된다.
 window.onload = () => {
-
     const observerOption = {
         root: null,
         rootMargin: "0px 0px 30px 0px",
@@ -157,7 +156,7 @@ window.onload = () => {
 
  ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-12-pm-1.59.45.png)
 
-#### **고려 사항**
+## **고려 사항**
 
 lazy-loading 적용 시 몇 가지 고려할 사항이 있습니다. 먼저 화면에서 상당 비중을 차지하는 기존 컨텐츠가 있어야 합니다. 만약 기본 컨텐츠가 부족하다면, 개별적으로 로딩 이미지를 부여하거나, 이미지의 대략적인 크기라도 알아서 `div` 컨테이너에 `height`값을 미리 배정하는 등 사전 준비가 되어 있어야 합니다.
 

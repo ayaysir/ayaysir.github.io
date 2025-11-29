@@ -8,7 +8,7 @@ categories:
 
 먼저 아래 코드는 일단 동작하는 코드입니다. 표면적인 문제는 없지만 [SQL Injection](https://ko.wikipedia.org/wiki/SQL_%EC%82%BD%EC%9E%85)(이하 인젝션)의 문제점에 노출되어 있습니다.
 
-```
+```java
 public List<Product> findByTitleAndLocale(String keyword, String locale) {
     String sql = "select * " 
             "from product_list " +
@@ -26,7 +26,7 @@ public List<Product> findByTitleAndLocale(String keyword, String locale) {
 
 `?`는 기본적으로 스트링 양 끝에 따옴표 (`' '`) 를 붙이기 때문에 이러한 특성을 이용해서 `'%xxx%'`를 `?`로 치환한 뒤 아래 예제와 같이 포장하면 됩니다.
 
-```
+```java
 public List<Product> findByTitleAndLocale(String keyword, String locale) {
     String sql = "select * " +
             "from product_list " +
@@ -47,4 +47,4 @@ public List<Product> findByTitleAndLocale(String keyword, String locale) {
 
  
 
-참고: [Spring JdbcTemplate 사용 시 주의 사항](https://github.com/HomoEfficio/dev-tips/blob/master/Spring%20JdbcTemplate%20%EC%82%AC%EC%9A%A9%20%EC%8B%9C%20%EC%A3%BC%EC%9D%98%20%EC%82%AC%ED%95%AD.md)
+> 참고: [Spring JdbcTemplate 사용 시 주의 사항](https://github.com/HomoEfficio/dev-tips/blob/master/Spring%20JdbcTemplate%20%EC%82%AC%EC%9A%A9%20%EC%8B%9C%20%EC%A3%BC%EC%9D%98%20%EC%82%AC%ED%95%AD.md)

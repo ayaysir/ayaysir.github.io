@@ -10,22 +10,22 @@ categories:
 
 이전 글
 
-- [스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기](http://yoonbumtae.com/?p=2819)
-- [스프링 부트(Spring Boot) 미디 플레이어 만들기 (2): 업로드 페이지, 임시 재생 플레이어 만들기](http://yoonbumtae.com/?p=2878)
+- [스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기](/posts/스프링-부트spring-boot-미디-플레이어-만들기-1-timidity-lame을-이용해/)
+- [스프링 부트(Spring Boot) 미디 플레이어 만들기 (2): 업로드 페이지, 임시 재생 플레이어 만들기](/posts/스프링-부트spring-boot-미디-플레이어-만들기-1-업로드-페이/)
 
  
 
-##### **현재까지 완성된 미디 플레이어 (임시) 바로 가기**
+## **미디 플레이어 보기**
 
 이 서비스는 AWS 프리티어 기간 만료로 인해 폐쇄하였습니다.서비스 당시 모습을 영상 기록으로 확인할 수 있습니다.
 
 {% youtube "https://www.youtube.com/watch?v=ZqUtpc7yEYQ" %}
 
-##### **다음 곡 연속 재생 기능**
+## **다음 곡 연속 재생 기능**
 
 이전 버전에서는 한 곡만 재생하고 끝이었는데, 곡이 끝나면 다음 곡을 자동으로 재생하도록 바꾸었습니다.
 
-```
+```html
 <table class="table table-hover" id="table-info">
     <thead>
         <tr class="head-title">
@@ -40,7 +40,7 @@ categories:
 </table>
 ```
 
-```
+```js
 // 현재 재생중인 곡 정보를 담는 객체
 const currentPlay = {
     trEl: null
@@ -66,12 +66,10 @@ fetch("/api/v1/midi", {
 
 // 아이디를 정보로 받아 오디오를 재생하는 함수
 function loadAudio(audioCtx, id) {
-
     audioCtx.loop = false
     audioCtx.src = "/api/v1/midi/mp3/" + id
     audioCtx.load()
     audioCtx.play()
-
 }
 
 // 제목을 클릭하면 노래가 재생
@@ -99,13 +97,13 @@ document.getElementById("audio-player").addEventListener("ended", e => {
 
  
 
-##### **목록 오름차순 / 내림차순 토글 기능**
+## **목록 오름차순 / 내림차순 토글 기능**
 
 - [자바스크립트: 테이블의 tbody 내용 뒤집기(reverse)](http://yoonbumtae.com/?p=2901)
 
  
 
-##### **업로드된 미디 파일 정보 업데이트 기능 (수정/삭제)**
+## **업로드된 미디 파일 정보 업데이트 기능 (수정/삭제)**
 
 단순한 CRUD 과정이므로 코드는 깃허브 링크로 대체합니다.
 
@@ -113,7 +111,7 @@ document.getElementById("audio-player").addEventListener("ended", e => {
 
 파일 정보를 삭제한 후에는 원본 미디 파일과 변환된 mp3 파일도 같이 처리를 해야 하기 때문에 이 부분을 반영했습니다. 저는 파일을 삭제하기보다 특정 폴더에 이동시키는 방법을 택했습니다. 파일을 이동하는 방법은 `file.renameTo(newFile)` 을 이용해 새로운 경로로 이동시킬 수 있습니다.
 
-```
+```java
 @DeleteMapping(DEFAULT_URI + "/{id}")
 public Long deleteMidi(@PathVariable Long id,
                        @LoginUser SessionUser user) {
@@ -154,30 +152,25 @@ public Long deleteMidi(@PathVariable Long id,
 
 ```
 
- 
+## **동작 화면**
 
-\[caption id="attachment\_2909" align="alignnone" width="2232"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.16.png) 지오디 노래 정보를 지오디 - 거짓말로 변경합니다. 업데이트 아이콘을 누르면\[/caption\]
+![지오디 노래 정보를 지오디 - 거짓말로 변경합니다. 업데이트 아이콘을 누르면](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.16.png)  
+*지오디 노래 정보를 지오디 - 거짓말로 변경합니다. 업데이트 아이콘을 누르면*
 
- 
+![정보가 변경됩니다.](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.32.png)  
+*정보가 변경됩니다.*
 
-\[caption id="attachment\_2910" align="alignnone" width="476"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.32.png) 정보가 변경됩니다.\[/caption\]
+![목록에 정상적으로 반영되었습니다.](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.06.png)  
+*목록에 정상적으로 반영되었습니다.*
 
- 
+![236번부터 239 까지 파일을 삭제하려고 합니다.](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.58.png)  
+*236번부터 239 까지 파일을 삭제하려고 합니다.*
 
-\[caption id="attachment\_2911" align="alignnone" width="2238"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.06.png) 목록에 정상적으로 반영되었습니다.\[/caption\]
+![삭제가 완료되면 삭제 완료 메시지가 표시됩니다.](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.07.31.png)  
+*삭제가 완료되면 삭제 완료 메시지가 표시됩니다.*
 
- 
+![삭제 내역이 반영되었습니다.](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.08.04.png)  
+*삭제 내역이 반영되었습니다.*
 
-\[caption id="attachment\_2912" align="alignnone" width="713"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.58.png) 236번부터 239 까지 파일을 삭제하려고 합니다.\[/caption\]
-
- 
-
-\[caption id="attachment\_2913" align="alignnone" width="465"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.07.31.png) 삭제가 완료되면 삭제 완료 메시지가 표시됩니다.\[/caption\]
-
- 
-
-\[caption id="attachment\_2914" align="alignnone" width="2030"\] ![](/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.08.04.png) 삭제 내역이 반영되었습니다.\[/caption\]
-
- 
-
-\[caption id="attachment\_2915" align="alignnone" width="2420"\] ![](/assets/img/wp-content/uploads/2020/08/-2020-08-18-pm-11.32.01-e1597761384907.png) 운영자는 모든 파일에 대한 정보를 수정/삭제할 수 있고, 일반 회원은 자신의 업로드 내역만 업데이트 할 수 있습니다. 4번 아이디로 로그인하면 4번이 업로드한 미디 파일만 변경할 수 잇습니다.\[/caption\]
+![운영자는 모든 파일에 대한 정보를 수정/삭제할 수 있고, 일반 회원은 자신의 업로드 내역만 업데이트 할 수 있습니다. 4번 아이디로 로그인하면 4번이 업로드한 미디 파일만 변경할 수 잇습니다.](/assets/img/wp-content/uploads/2020/08/-2020-08-18-pm-11.32.01-e1597761384907.png)  
+*운영자는 모든 파일에 대한 정보를 수정/삭제할 수 있고, 일반 회원은 자신의 업로드 내역만 업데이트 할 수 있습니다. 4번 아이디로 로그인하면 4번이 업로드한 미디 파일만 변경할 수 잇습니다.*

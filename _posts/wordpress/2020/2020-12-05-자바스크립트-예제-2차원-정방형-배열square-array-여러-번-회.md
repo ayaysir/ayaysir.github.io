@@ -1,5 +1,5 @@
 ---
-title: "자바스크립트 예제: 2차원 정방형 배열(square array) 여러 번 회전"
+title: "자바스크립트 예제: 2차원 정방형 배열(square array) 여러 번 회전 (공식 이용)"
 date: 2020-12-05
 categories: 
   - "DevLog"
@@ -8,6 +8,8 @@ categories:
 ---
 
 알고리즘에 대한 설명은 [여기](https://shoark7.github.io/programming/algorithm/rotate-2d-array)에 나와 있습니다. 여기에서는 공식만 설명합니다.
+
+## 정방형 배열
 
 정방형 배열은 행과 열의 수가 같은 2차원 배열을 뜻합니다. 이러한 정방형 배열은 회전할 수 있는 경우는 4가지 밖에 없습니다.
 
@@ -20,7 +22,7 @@ categories:
 
 아래는 알파벳 A 부터 Y 까지 25자로 이루어진 `(5 * 5)` 크기의 2차원 배열을 만드는 과정입니다.
 
- 
+### 기초 정방형 만들기 코드
 
 ```js
 const N = 5
@@ -35,7 +37,6 @@ for(let i = 0; i < N; i++) {
 }
 
 function rotateArr(originalArr) {
-    
     const rotatedArr = Array.from(Array(N), () => new Array(5).fill(null))
     
     for(let row = 0; row < N; row++) {
@@ -46,6 +47,8 @@ function rotateArr(originalArr) {
     
 }
 ```
+
+### 회전 공식
 
 여기서 공식 삽입 부분에 아래 공식을 사용하면 됩니다. 1번 회전은 정방형 배열이므로 왼쪽 또는 오른쪽으로 90도 회전하게 됩니다. 예를 들어 오른쪽으로 1번 회전하는 작업을 원하는 경우 `90 * 1 = 90` 이므로 오른쪽으로 90도 회전하게 되는 것입니다. 그러면 아래 90도 회전시 사용하는 공식을 사용하면 아래의 코드와 같이 됩니다.
 
@@ -60,7 +63,8 @@ function rotateArr(originalArr) {
 | 270° | 3 | \-1 | rotatedArr\[N - 1 - col\]\[row\] = originalArr\[row\]\[col\] |
 | 360° | 0 | 0 | \-- Do Nothing -- |
 
- 
+
+### 회전 공식이 포함된 코드
 
 ```js
 const rotatedArr = Array.from(Array(N), () => new Array(5).fill(null))
@@ -144,7 +148,16 @@ viewArr(rotateArr(originalArr, rotateCount),
         `${rotateCount < 0 ? '왼쪽' : '오른쪽'}으로 ${rotateCount} 번 회전`)
 ```
 
- ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-06-am-12.32.27.png) ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-06-am-12.32.49.png) ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-06-am-12.33.27.png)
+## 동작 화면
+
+ ![오른쪽으로 37번 회전](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-06-am-12.32.27.png)  
+ *오른쪽으로 37번 회전*
+ 
+ ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-06-am-12.32.49.png)   
+ *왼쪽으로 -4253번 회전*
+ 
+ ![](/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-06-am-12.33.27.png)  
+ *오른쪽으로 360번 회전*
 
  
 

@@ -20,7 +20,7 @@ Webpack으로 타입스크립트를 이용한 HTML 개발환경을 구축하는 
 
 생성하고자 하는 디렉토리에서 터미널을 연 뒤 아래 명령어를 입력합니다.
 
-```
+```bash
 npm init -y
 ```
 
@@ -36,7 +36,7 @@ npm init -y
 
 아래 요소들을 추가합니다.
 
-```
+```bash
 npm i @babel/cli @babel/core @babel/polyfill @babel/preset-env @types/react @types/react-dom  awesome-typescript-loader babel-loader css-loader file-loader html-webpack-plugin mini-css-extract-plugin style-loader typescript url-loader webpack webpack-cli webpack-dev-server --save-dev
 ```
 
@@ -195,7 +195,7 @@ document.getElementById("app")!.appendChild(App())
 
 **App.ts**
 
-```
+```js
 export default function App() {
     const canvas: HTMLCanvasElement = document.createElement("canvas")
     canvas.width = window.innerWidth
