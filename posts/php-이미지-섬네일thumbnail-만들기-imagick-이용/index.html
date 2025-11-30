@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,21 +573,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -612,6 +604,42 @@
     
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -628,7 +656,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>PHP: 이미지 섬네일(Thumbnail) 만들기 (Imagick 이용)</h1>
     
@@ -702,7 +730,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="469 words"
+  title="471 words"
 >
   <em>2 min</em> read</span>
 
@@ -712,14 +740,38 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">PHP: 이미지 섬네일(Thumbnail) 만들기 (Imagick 이용)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">PHP: 이미지 섬네일(Thumbnail) 만들기 (Imagick 이용)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>_Imagick_이 PHP 서버에 설치된 경우, 아래 코드를 이용하여 이미지 섬네일을 만들 수 있습니다. 저는 이용하는 호스팅 서버에 해당 프로그램이 설치가 되어 있어 별도 작업을 하지 않고 바로 사용하지만, 설치가 안된 경우에는 <a href="https://www.itopening.com/5245/">링크</a>를 참고하여 설치하세요.</p>
 
-<h5 id="다음-함수를-추가합니다"><span class="me-2"><strong>다음 함수를 추가합니다.</strong></span><a href="#다음-함수를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="다음-함수를-추가합니다"><span class="me-2"><strong>다음 함수를 추가합니다.</strong></span><a href="#다음-함수를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -755,7 +807,7 @@
 33
 34
 35
-</pre></td><td class="rouge-code"><pre>/**
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
  * 
  * Generate Thumbnail using Imagick class
  *  
@@ -766,30 +818,30 @@
  * @return boolean on true
  * @throws Exception
  * @throws ImagickException
- */
-function generateThumbnail($img, $width, $height, $quality = 90)
-{
-    if (is_file($img)) {
-        $imagick = new Imagick(realpath($img));
-        $imagick-&gt;setImageFormat('jpeg');
-        $imagick-&gt;setImageCompression(Imagick::COMPRESSION_JPEG);
-        $imagick-&gt;setImageCompressionQuality($quality);
-        $imagick-&gt;thumbnailImage($width, $height, false, false);
-        $path_parts = pathinfo($img);
+ */</span>
+<span class="k">function</span> <span class="n">generateThumbnail</span><span class="p">(</span><span class="nv">$img</span><span class="p">,</span> <span class="nv">$width</span><span class="p">,</span> <span class="nv">$height</span><span class="p">,</span> <span class="nv">$quality</span> <span class="o">=</span> <span class="mi">90</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">is_file</span><span class="p">(</span><span class="nv">$img</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$imagick</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Imagick</span><span class="p">(</span><span class="nb">realpath</span><span class="p">(</span><span class="nv">$img</span><span class="p">));</span>
+        <span class="nv">$imagick</span><span class="o">-&gt;</span><span class="nf">setImageFormat</span><span class="p">(</span><span class="s1">'jpeg'</span><span class="p">);</span>
+        <span class="nv">$imagick</span><span class="o">-&gt;</span><span class="nf">setImageCompression</span><span class="p">(</span><span class="nc">Imagick</span><span class="o">::</span><span class="no">COMPRESSION_JPEG</span><span class="p">);</span>
+        <span class="nv">$imagick</span><span class="o">-&gt;</span><span class="nf">setImageCompressionQuality</span><span class="p">(</span><span class="nv">$quality</span><span class="p">);</span>
+        <span class="nv">$imagick</span><span class="o">-&gt;</span><span class="nf">thumbnailImage</span><span class="p">(</span><span class="nv">$width</span><span class="p">,</span> <span class="nv">$height</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+        <span class="nv">$path_parts</span> <span class="o">=</span> <span class="nb">pathinfo</span><span class="p">(</span><span class="nv">$img</span><span class="p">);</span>
 
-        // echo $path_parts['dirname'], "\n";// 디렉토리 경로 - 파일이름만 사용하는 경우 ['dirname']은 사용하지 않음
-        // echo $path_parts['filename'], "\n"; // 파일이름(확장자 제외)
-        $filename_no_ext = $path_parts['dirname']."/".$path_parts['filename'];
+        <span class="c1">// echo $path_parts['dirname'], "\n";// 디렉토리 경로 - 파일이름만 사용하는 경우 ['dirname']은 사용하지 않음</span>
+        <span class="c1">// echo $path_parts['filename'], "\n"; // 파일이름(확장자 제외)</span>
+        <span class="nv">$filename_no_ext</span> <span class="o">=</span> <span class="nv">$path_parts</span><span class="p">[</span><span class="s1">'dirname'</span><span class="p">]</span><span class="mf">.</span><span class="s2">"/"</span><span class="mf">.</span><span class="nv">$path_parts</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">];</span>
         
-        if (file_put_contents($filename_no_ext . '_thumb' . '.jpg', $imagick) === false) {
-            throw new Exception("Could not put contents.");
-        }
-        return true;
-    }
-    else {
-        throw new Exception("No valid image provided with {$img}.");
-    }
-}
+        <span class="k">if</span> <span class="p">(</span><span class="nb">file_put_contents</span><span class="p">(</span><span class="nv">$filename_no_ext</span> <span class="mf">.</span> <span class="s1">'_thumb'</span> <span class="mf">.</span> <span class="s1">'.jpg'</span><span class="p">,</span> <span class="nv">$imagick</span><span class="p">)</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="p">(</span><span class="s2">"Could not put contents."</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="p">(</span><span class="s2">"No valid image provided with </span><span class="si">{</span><span class="nv">$img</span><span class="si">}</span><span class="s2">."</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -801,12 +853,14 @@ function generateThumbnail($img, $width, $height, $quality = 90)
 
 <p> </p>
 
-<p>참고: 경로 및 파일 이름, 확장자 가져오기 (<a href="https://stackoverflow.com/questions/2183486/php-get-file-name-without-file-extension">PHP, get file name without file extension</a>)</p>
+<blockquote>
+  <p>참고: 경로 및 파일 이름, 확장자 가져오기 (<a href="https://stackoverflow.com/questions/2183486/php-get-file-name-without-file-extension">PHP, get file name without file extension</a>)</p>
+</blockquote>
 
-<h5 id="사용-예시입니다"><span class="me-2"><strong>사용 예시입니다.</strong></span><a href="#사용-예시입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="사용-예시입니다"><span class="me-2"><strong>사용 예시입니다.</strong></span><a href="#사용-예시입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -816,15 +870,15 @@ function generateThumbnail($img, $width, $height, $quality = 90)
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>try {
-    generateThumbnail('example.jpeg', 240, 134, 65);
-}
-catch (ImagickException $e) {
-    echo $e-&gt;getMessage();
-}
-catch (Exception $e) {
-    echo $e-&gt;getMessage();
-}
+</pre></td><td class="rouge-code"><pre><span class="k">try</span> <span class="p">{</span>
+    <span class="nf">generateThumbnail</span><span class="p">(</span><span class="s1">'example.jpeg'</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">134</span><span class="p">,</span> <span class="mi">65</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="nc">ImagickException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="nc">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>이 코드가 실행되면 원본 파일과 동일한 위치에 섬네일 파일이 생성됩니다.</p>
@@ -833,7 +887,9 @@ catch (Exception $e) {
 
 <p> </p>
 
-<p>출처: <a href="https://stackoverflow.com/questions/11376315/creating-a-thumbnail-from-an-uploaded-image">Creating a thumbnail from an uploaded image</a></p>
+<blockquote>
+  <p>출처: <a href="https://stackoverflow.com/questions/11376315/creating-a-thumbnail-from-an-uploaded-image">Creating a thumbnail from an uploaded image</a></p>
+</blockquote>
 
   </div>
 
@@ -1754,6 +1810,12 @@ catch (Exception $e) {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

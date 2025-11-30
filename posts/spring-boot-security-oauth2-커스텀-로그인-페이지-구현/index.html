@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -696,15 +703,26 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+
+    
   
 
   
@@ -753,6 +771,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -769,7 +797,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Spring Boot Security OAuth2: 커스텀 로그인 페이지 구현</h1>
     
@@ -843,7 +871,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="986 words"
+  title="987 words"
 >
   <em>5 min</em> read</span>
 
@@ -852,6 +880,28 @@
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Spring Boot Security OAuth2: 커스텀 로그인 페이지 구현</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Spring Boot Security OAuth2: 커스텀 로그인 페이지 구현</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -863,8 +913,8 @@
 
 <ul>
   <li><a href="https://www.baeldung.com/spring-security-5-oauth2-login#1-custom-login-page">Baeldung - 스프링 부트 OAuth 커스텀 로그인 페이지 만들기</a> (영문)</li>
-  <li><a href="http://yoonbumtae.com/?p=2652">스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버</a></li>
-  <li><a href="http://yoonbumtae.com/?p=1184">Spring Boot: 시큐리티(Security) – 2 – 커스텀 로그인 페이지 만들기</a></li>
+  <li><a href="/posts/스프링-부트spring-boot-구글-로그인-연동-스프링-부트-스타/">스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버</a></li>
+  <li><a href="/posts/spring-boot-시큐리티security-2-커스텀-로그인-페이지-만들기/">Spring Boot: 시큐리티(Security) – 2 – 커스텀 로그인 페이지 만들기</a></li>
 </ul>
 
 <p> </p>
@@ -877,9 +927,9 @@
 
 <p>이 페이지를 커스터마이징 해보겠습니다.</p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-securityconfig-설정-변경"><span class="me-2"><strong>1) SecurityConfig 설정 변경</strong></span><a href="#1-securityconfig-설정-변경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-securityconfig-설정-변경"><span class="me-2"><strong>1) SecurityConfig 설정 변경</strong></span><a href="#1-securityconfig-설정-변경" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-java highlighter-rouge"><div class="code-header">
         <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
@@ -972,7 +1022,7 @@
 
 <p> </p>
 
-<h5 id="2-logincontroller-및-getmapping-구현"><span class="me-2"><strong>2) LoginController 및 GetMapping 구현</strong></span><a href="#2-logincontroller-및-getmapping-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-logincontroller-및-getmapping-구현"><span class="me-2"><strong>2) LoginController 및 GetMapping 구현</strong></span><a href="#2-logincontroller-및-getmapping-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>여기서는 모든 인증 서비스 정보(이름과 URL)를 스프링 시큐리티에서 가져와 모델에 담아 전송합니다, 하지만 이런 방법으로 구현하지 않더라도 서비스별 인증 URL을 미리 알고 있다면 자유롭게 만드는 것이 가능합니다. 예를 들어 기본적인 네이버 인증 URL과 구글 인증 URL은 다음과 같습니다.</p>
 
@@ -1085,7 +1135,7 @@
 
 <p> </p>
 
-<h5 id="3-뷰-페이지-구현-oauth-loginhtml"><span class="me-2"><strong>3) 뷰 페이지 구현 (oauth-login.html)</strong></span><a href="#3-뷰-페이지-구현-oauth-loginhtml" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-뷰-페이지-구현-oauth-loginhtml"><span class="me-2"><strong>3) 뷰 페이지 구현 (oauth-login.html)</strong></span><a href="#3-뷰-페이지-구현-oauth-loginhtml" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-html highlighter-rouge"><div class="code-header">
         <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
@@ -2078,6 +2128,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

@@ -969,7 +969,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1248 words"
+  title="1249 words"
 >
   <em>6 min</em> read</span>
 
@@ -1043,7 +1043,8 @@
 <span class="cp">?&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>간단한 JSON을 리턴하는 PHP 페이지를 만들었습니다.  <a href="http://yoonbumtae.com/util/misc/jsonp-example/">JSON 링크</a>를 브라우저 링크에서 열면 잘 열립니다. 하지만 이것을 자바스크립트 내에서 AJAX로 가져오려고 하면 CORS 위반이 됩니다.</p>
+<!-- 간단한 JSON을 리턴하는 PHP 페이지를 만들었습니다.  [JSON 링크](http://y1oonbumtae.com/util/misc/jsonp-example/)를 브라우저 링크에서 열면 잘 열립니다. 하지만 이것을 자바스크립트 내에서 AJAX로 가져오려고 하면 CORS 위반이 됩니다. -->
+<p>간단한 JSON을 리턴하는 PHP 페이지를 만들었습니다. 해당 JSON를 브라우저 링크에서 열면 잘 열립니다. 하지만 이것을 자바스크립트 내에서 AJAX로 가져오려고 하면 CORS 위반이 됩니다.</p>
 
 <p><a href="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-03-pm-10.49.30.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-03-pm-10.49.30.png" alt="" loading="lazy"></a></p>
 
@@ -1103,7 +1104,7 @@
 </pre></td><td class="rouge-code"><pre><span class="c1">// src의 콜백 함수 이름은 밑에서 정의할 함수 이름과 동일하게</span>
 <span class="kd">function</span> <span class="nf">getJsonUsePureJS</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">script</span><span class="dl">"</span><span class="p">);</span>
-    <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://yoonbumtae.com/util/misc/jsonp-example/?callback=getJsonUsePureJSCallback</span><span class="dl">"</span>
+    <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://examplewebsite.con/jsonp-example/?callback=getJsonUsePureJSCallback</span><span class="dl">"</span>
 
     <span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">head</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1135,7 +1136,7 @@
 9
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">getJsonpUseJQuery1</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">.</span><span class="nf">ajax</span><span class="p">({</span>
-        <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://yoonbumtae.com/util/misc/jsonp-example/</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">examplewebsite.con/jsonp-example/</span><span class="dl">"</span><span class="p">,</span>
         <span class="na">dataType</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jsonp</span><span class="dl">"</span><span class="p">,</span>
         <span class="na">jsonpCallback</span><span class="p">:</span> <span class="dl">"</span><span class="s2">sendMeJsonp</span><span class="dl">"</span>
     <span class="p">}).</span><span class="nf">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1158,7 +1159,7 @@
 4
 5
 </pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">getJsonpUseJQuery2</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">.</span><span class="nf">getJSON</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://yoonbumtae.com/util/misc/jsonp-example/?callback=?</span><span class="dl">"</span><span class="p">,</span> <span class="nx">res</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nf">getJSON</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://examplewebsite.con/jsonp-example/?callback=?</span><span class="dl">"</span><span class="p">,</span> <span class="nx">res</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">JQuery 2</span><span class="dl">"</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span>
     <span class="p">})</span>
 <span class="p">}</span>

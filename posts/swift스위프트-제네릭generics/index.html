@@ -1359,20 +1359,20 @@
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>var intStack = IntStack(items: [3, 6, 2, 7])
-intStack.push(199848)
-intStack.items // [3, 6, 2, 7, 199848]
-intStack.pop()
-intStack.pop()
-intStack.items // [3, 6, 2]
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">intStack</span> <span class="o">=</span> <span class="kt">IntStack</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="n">intStack</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">199848</span><span class="p">)</span>
+<span class="n">intStack</span><span class="o">.</span><span class="n">items</span> <span class="c1">// [3, 6, 2, 7, 199848]</span>
+<span class="n">intStack</span><span class="o">.</span><span class="nf">pop</span><span class="p">()</span>
+<span class="n">intStack</span><span class="o">.</span><span class="nf">pop</span><span class="p">()</span>
+<span class="n">intStack</span><span class="o">.</span><span class="n">items</span> <span class="c1">// [3, 6, 2]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">Int</code>값들 한정이라면 문제될 것이 없지만, 스택이 할 수 있는 내용은 <code class="language-plaintext highlighter-rouge">Int</code>에 한정되지 않고 다른 타입들에도 똑같이 적용할 수 있습니다. 타입 딱 하나만 제외하면 내부 로직을 변경할 필요도 없습니다. 제네릭이 없다면 앞서 <code class="language-plaintext highlighter-rouge">swap</code>과 마찬가지로 해당 타입에 대해 전부 대응하기 위해 복붙을 하면서 코드를 작성할 수 밖에 없습니다.</p>

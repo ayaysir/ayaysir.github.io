@@ -888,8 +888,6 @@
 
 <p>이른바 ‘콜백 지옥’을 해결하기 위해 Swift 5.5 버전부터 등장한 키워드입니다. 자바스크립트 ES6에서 도입된 <code class="language-plaintext highlighter-rouge">async</code>및 <code class="language-plaintext highlighter-rouge">await</code>와 목적이 거의 같습니다.</p>
 
-<!-- - [자바스크립트: 콜백, Promise, async - await 기초](http://yoonbumtae.com/?p=1071) -->
-
 <blockquote>
   <p><strong>콜백 지옥(Callback Hell)</strong></p>
 
@@ -1053,20 +1051,20 @@
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>Task {
-    print("====== Async/Await Start ======")
-    print("page 1:", try await fetchDataAsync("https://reqres.in/api/users?delay=2")["support"]!)
-    print("page 2:", try await fetchDataAsync("https://reqres.in/api/users?delay=2")["support"]!)
-    print("page 3:", try await fetchDataAsync("https://reqres.in/api/users?delay=2")["support"]!)
-}
+</pre></td><td class="rouge-code"><pre><span class="kt">Task</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"====== Async/Await Start ======"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"page 1:"</span><span class="p">,</span> <span class="k">try</span> <span class="k">await</span> <span class="nf">fetchDataAsync</span><span class="p">(</span><span class="s">"https://reqres.in/api/users?delay=2"</span><span class="p">)[</span><span class="s">"support"</span><span class="p">]</span><span class="o">!</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"page 2:"</span><span class="p">,</span> <span class="k">try</span> <span class="k">await</span> <span class="nf">fetchDataAsync</span><span class="p">(</span><span class="s">"https://reqres.in/api/users?delay=2"</span><span class="p">)[</span><span class="s">"support"</span><span class="p">]</span><span class="o">!</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"page 3:"</span><span class="p">,</span> <span class="k">try</span> <span class="k">await</span> <span class="nf">fetchDataAsync</span><span class="p">(</span><span class="s">"https://reqres.in/api/users?delay=2"</span><span class="p">)[</span><span class="s">"support"</span><span class="p">]</span><span class="o">!</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>

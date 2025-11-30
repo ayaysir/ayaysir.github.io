@@ -1043,8 +1043,8 @@
 
 <h3 id="2-draw-메소드"><span class="me-2"><strong>2. draw() 메소드</strong></span><a href="#2-draw-메소드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1074,35 +1074,35 @@
 27
 28
 29
-</pre></td><td class="rouge-code"><pre>// 전역 변수 선언float yPos = 0.0;int pressCount = 0;
+</pre></td><td class="rouge-code"><pre><span class="c1">// 전역 변수 선언float yPos = 0.0;int pressCount = 0;</span>
  
-void setup() { 
-  size(200, 200);
-  frameRate(30);
-}
+<span class="kt">void</span> <span class="nf">setup</span><span class="o">()</span> <span class="o">{</span> 
+  <span class="n">size</span><span class="o">(</span><span class="mi">200</span><span class="o">,</span> <span class="mi">200</span><span class="o">);</span>
+  <span class="n">frameRate</span><span class="o">(</span><span class="mi">30</span><span class="o">);</span>
+<span class="o">}</span>
  
-void draw() { 
-  background(204);
-  yPos = yPos - 1.0;
-  if (yPos &lt; 0) {
-    yPos = height;
-  }
-  line(0, yPos, width, yPos);  // (점1의x, 점1의y , 점2의x, 점2의y)
+<span class="kt">void</span> <span class="nf">draw</span><span class="o">()</span> <span class="o">{</span> 
+  <span class="n">background</span><span class="o">(</span><span class="mi">204</span><span class="o">);</span>
+  <span class="n">yPos</span> <span class="o">=</span> <span class="n">yPos</span> <span class="o">-</span> <span class="mf">1.0</span><span class="o">;</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">yPos</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">yPos</span> <span class="o">=</span> <span class="n">height</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="n">line</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">yPos</span><span class="o">,</span> <span class="n">width</span><span class="o">,</span> <span class="n">yPos</span><span class="o">);</span>  <span class="c1">// (점1의x, 점1의y , 점2의x, 점2의y)</span>
   
-  // 10번 클릭하면 종료
-  if(pressCount &gt;= 10){
-    exit();
-  }
+  <span class="c1">// 10번 클릭하면 종료</span>
+  <span class="k">if</span><span class="o">(</span><span class="n">pressCount</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="o">){</span>
+    <span class="n">exit</span><span class="o">();</span>
+  <span class="o">}</span>
   
-  saveFrame("line-######.png");
-}
+  <span class="n">saveFrame</span><span class="o">(</span><span class="s">"line-######.png"</span><span class="o">);</span>
+<span class="o">}</span>
  
  
-// 마우스 왼쪽 버튼을 눌렀을 경우 실행 
-void mousePressed() {
-  line(mouseX, 10, mouseX, 150);
-  pressCount++;
-}
+<span class="c1">// 마우스 왼쪽 버튼을 눌렀을 경우 실행 </span>
+<span class="kt">void</span> <span class="nf">mousePressed</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">line</span><span class="o">(</span><span class="n">mouseX</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="n">mouseX</span><span class="o">,</span> <span class="mi">150</span><span class="o">);</span>
+  <span class="n">pressCount</span><span class="o">++;</span>
+<span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">setup</code> 메소드에서 <code class="language-plaintext highlighter-rouge">frameRate(30)</code>은 fps를 30으로 바꾸는 부분입니다. <code class="language-plaintext highlighter-rouge">line</code> 메소드는 점 1에서 점 2까지 직선으로 이어주는 역할을 합니다. <code class="language-plaintext highlighter-rouge">width</code>, <code class="language-plaintext highlighter-rouge">height</code>는 기본으로 제공되는 전역 변수로 전체 캔버스의 너비, 높이를 반환합니다. 직선의 가로 위치는 0에서 <code class="language-plaintext highlighter-rouge">width</code>까지 고정되어 있으며, <code class="language-plaintext highlighter-rouge">draw</code>가 실행될 때 전역 변수인 <code class="language-plaintext highlighter-rouge">yPos</code>는 0이하일 경우 <code class="language-plaintext highlighter-rouge">height</code> 값으로 치환되고, 이후 1씩 감소하므로 결과적으로 직선의 <code class="language-plaintext highlighter-rouge">yPos</code>값은 1초에 30씩 줄어들게 됩니다. 한편 <code class="language-plaintext highlighter-rouge">mouseX</code>도 프로세싱에서 기본적으로 제공하는 변수이며, 클릭한 곳의 x좌표값을 반환합니다.</p>

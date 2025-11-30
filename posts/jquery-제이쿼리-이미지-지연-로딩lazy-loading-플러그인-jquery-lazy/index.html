@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,15 +573,26 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+
+    
   
 
   
@@ -632,8 +650,29 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -650,7 +689,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>jQuery: 제이쿼리 이미지 지연 로딩(lazy loading) 플러그인 (jQuery Lazy)</h1>
     
@@ -724,15 +763,37 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="489 words"
+  title="561 words"
 >
-  <em>2 min</em> read</span>
+  <em>3 min</em> read</span>
 
         </div>
       </div>
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">jQuery: 제이쿼리 이미지 지연 로딩(lazy loading) 플러그인 (jQuery Lazy)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">jQuery: 제이쿼리 이미지 지연 로딩(lazy loading) 플러그인 (jQuery Lazy)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -744,48 +805,58 @@
 
 <p>이 플러그인을 사용하면 스크롤을 해서 이미지 영역이 화면에 표시될 때에만 이미지를 로딩하므로 트래픽도 절약할 수 있습니다.</p>
 
-<h5 id="1-제이쿼리-스크립트-밑에-다음의-스크립트를-추가합니다"><span class="me-2"><strong>1. 제이쿼리 스크립트 밑에 다음의 스크립트를 추가합니다.</strong></span><a href="#1-제이쿼리-스크립트-밑에-다음의-스크립트를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="1-html-제이쿼리-스크립트-밑에-jquery-lazy-스크립트를-추가"><span class="me-2"><strong>1. HTML 제이쿼리 스크립트 밑에 jQuery Lazy 스크립트를 추가</strong></span><a href="#1-html-제이쿼리-스크립트-밑에-jquery-lazy-스크립트를-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>HTML의 제이쿼리 스크립트 밑에 jQuery Lazy 스크립트를 추가합니다. 최신 버전이 있다면 해당 cdn 주소를 사용합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>&lt;!-- cdnjs --&gt;
-&lt;script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"&gt;&lt;/script&gt;
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- cdnjs --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="2-이미지-태그에서-data-src-속성을-추가한-뒤-실제-로딩할-이미지-주소를-입력합니다-만약-이미-태그가-있다면-기존의-src를-data-src로-변경합니다-그리고-src에는-로딩-이미지를-넣습니다"><span class="me-2"><strong>2. 이미지 태그에서 <code class="language-plaintext highlighter-rouge">data-src</code> 속성을 추가한 뒤 실제 로딩할 이미지 주소를 입력합니다. 만약 이미 태그가 있다면, 기존의 <code class="language-plaintext highlighter-rouge">src</code>를 <code class="language-plaintext highlighter-rouge">data-src</code>로 변경합니다. 그리고 src에는 로딩 이미지를 넣습니다.</strong></span><a href="#2-이미지-태그에서-data-src-속성을-추가한-뒤-실제-로딩할-이미지-주소를-입력합니다-만약-이미-태그가-있다면-기존의-src를-data-src로-변경합니다-그리고-src에는-로딩-이미지를-넣습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-속성에-이미지-주소-입력"><span class="me-2"><strong>2. 속성에 이미지 주소 입력</strong></span><a href="#2-속성에-이미지-주소-입력" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="3-다음-클래스에-고유의-레이지-로딩-식별자-예-lazy-img를-추가합니다"><span class="me-2"><strong>3. 다음 클래스에 고유의 레이지 로딩 식별자 (예: <code class="language-plaintext highlighter-rouge">lazy-img</code>)를 추가합니다.</strong></span><a href="#3-다음-클래스에-고유의-레이지-로딩-식별자-예-lazy-img를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<p>이미지 태그에서 <code class="language-plaintext highlighter-rouge">data-src</code> 속성을 추가한 뒤 실제 로딩할 이미지 주소를 입력합니다. 만약 이미 태그가 있다면, 기존의 <code class="language-plaintext highlighter-rouge">src</code>를 <code class="language-plaintext highlighter-rouge">data-src</code>로 변경합니다. 그리고 src에는 로딩 이미지를 넣습니다.**</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="3-클래스에-식별자-추가"><span class="me-2"><strong>3. 클래스에 식별자 추가</strong></span><a href="#3-클래스에-식별자-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>다음 클래스에 고유의 레이지 로딩 식별자 (예: <code class="language-plaintext highlighter-rouge">lazy-img</code>)를 추가합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;img class="lazy-img" data-src="https://website.con/resources/actual-image.jpg" src="./img/loading.gif"&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"lazy-img"</span> <span class="na">data-src=</span><span class="s">"https://website.con/resources/actual-image.jpg"</span> <span class="na">src=</span><span class="s">"./img/loading.gif"</span><span class="nt">&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="4-스크립트-실행-부분의-처음에-다음-코드를-추가합니다-주의할-점은-실행함수의-l은-대문자-l-입니다"><span class="me-2"><strong>4. 스크립트 실행 부분의 처음에 다음 코드를 추가합니다. 주의할 점은 실행함수의 L은 대문자 <code class="language-plaintext highlighter-rouge">L</code> 입니다.</strong></span><a href="#4-스크립트-실행-부분의-처음에-다음-코드를-추가합니다-주의할-점은-실행함수의-l은-대문자-l-입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="4-레이지-로딩-시작"><span class="me-2"><strong>4. 레이지 로딩 시작</strong></span><a href="#4-레이지-로딩-시작" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>스크립트 실행 부분의 처음에 다음 코드를 추가합니다. 주의할 점은 실행함수의 L은 대문자 <code class="language-plaintext highlighter-rouge">L</code> 입니다.</p>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>$(document).ready(function() {
-    $(".lazy-img").Lazy()
-});
+</pre></td><td class="rouge-code"><pre><span class="nf">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nf">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.lazy-img</span><span class="dl">"</span><span class="p">).</span><span class="nc">Lazy</span><span class="p">()</span>
+<span class="p">});</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>기본 코드만으로도  대부분의 상황을 커버할 수 있습니다.</p>
+<p>기본 코드만으로도 대부분의 상황을 커버할 수 있습니다.</p>
+
+<h3 id="추가-옵션"><span class="me-2"><strong>추가 옵션</strong></span><a href="#추가-옵션" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>추가 옵션을 설정하려면 다음과 같이 사용합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -795,20 +866,22 @@
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>$('.lazy').Lazy({
-    // 설정 부분 입력
-    scrollDirection: 'vertical',
-    effect: 'fadeIn',
-    visibleOnly: true,
-    onError: function(element) {
-        console.log('error loading ' + element.data('src'));
-    }
-});
+</pre></td><td class="rouge-code"><pre><span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.lazy</span><span class="dl">'</span><span class="p">).</span><span class="nc">Lazy</span><span class="p">({</span>
+    <span class="c1">// 설정 부분 입력</span>
+    <span class="na">scrollDirection</span><span class="p">:</span> <span class="dl">'</span><span class="s1">vertical</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">effect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">fadeIn</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">visibleOnly</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">onError</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error loading </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">element</span><span class="p">.</span><span class="nf">data</span><span class="p">(</span><span class="dl">'</span><span class="s1">src</span><span class="dl">'</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">});</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-31-pm-8.42.08.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-31-pm-8.42.08.png" alt="" loading="lazy"></a></p>
 
-<p>참고: <a href="/posts/자바스크립트-intersectionobserver로-이미지-lazy-loading-구현/">자바스크립트: IntersectionObserver (1) 이미지 lazy-loading 구현</a></p>
+<blockquote>
+  <p>참고: <a href="/posts/자바스크립트-intersectionobserver로-이미지-lazy-loading-구현/">자바스크립트: IntersectionObserver (1) 이미지 lazy-loading 구현</a></p>
+</blockquote>
 
   </div>
 
@@ -1729,6 +1802,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

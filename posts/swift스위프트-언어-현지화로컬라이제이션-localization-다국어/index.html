@@ -1483,11 +1483,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -1552,6 +1547,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -1698,7 +1698,7 @@
 
 <p> </p>
 
-<h3 id="1-프로젝트-세팅"><span class="me-2"><strong>1. 프로젝트 세팅</strong></span><a href="#1-프로젝트-세팅" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="1-프로젝트-세팅"><span class="me-2"><strong>1. 프로젝트 세팅</strong></span><a href="#1-프로젝트-세팅" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>프로젝트 세팅의 <code class="language-plaintext highlighter-rouge">PROJECT</code> &gt; <code class="language-plaintext highlighter-rouge">Info</code> 에서 <code class="language-plaintext highlighter-rouge">Localizations</code> 아래에 있는 <code class="language-plaintext highlighter-rouge">+</code> 버튼을 클릭합니다.</p>
 
@@ -1716,7 +1716,7 @@
 
 <p> </p>
 
-<h3 id="2-스토리보드-로컬라이징"><span class="me-2"><strong>2. 스토리보드 로컬라이징</strong></span><a href="#2-스토리보드-로컬라이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="2-스토리보드-로컬라이징"><span class="me-2"><strong>2. 스토리보드 로컬라이징</strong></span><a href="#2-스토리보드-로컬라이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-29-pm-11.46.52.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-29-pm-11.46.52.jpg" alt="" loading="lazy"></a></p>
 
@@ -1750,7 +1750,7 @@
 
 <p> </p>
 
-<h3 id="3-코드-내-텍스트의-로컬라이징"><span class="me-2"><strong>3. 코드 내 텍스트의 로컬라이징</strong></span><a href="#3-코드-내-텍스트의-로컬라이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="3-코드-내-텍스트의-로컬라이징"><span class="me-2"><strong>3. 코드 내 텍스트의 로컬라이징</strong></span><a href="#3-코드-내-텍스트의-로컬라이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>스토리보드 외에 컨트롤러 등의 코드에서 텍스트를 다룰 일이 있습니다.</p>
 
@@ -1831,8 +1831,8 @@
 
 <p>먼저 코드에서 번역이 필요한 텍스트 옆에 <code class="language-plaintext highlighter-rouge">.localized</code> 를 추가합니다. 아래는 <code class="language-plaintext highlighter-rouge">.localized</code> 를 사용하는 예제의 일부입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1848,21 +1848,21 @@
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>let alertTitle = "Unable to Create".localized
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">alertTitle</span> <span class="o">=</span> <span class="s">"Unable to Create"</span><span class="o">.</span><span class="n">localized</span>
 
-guard selectedDocument != nil else {
-    simpleAlert(self, message: "You must select a file to upload.".localized, title: alertTitle) { action in
-        self.scrollView.setContentOffset(.zero, animated: true)
-    }
-    return false
-}
+<span class="k">guard</span> <span class="n">selectedDocument</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nf">simpleAlert</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"You must select a file to upload."</span><span class="o">.</span><span class="n">localized</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="n">alertTitle</span><span class="p">)</span> <span class="p">{</span> <span class="n">action</span> <span class="k">in</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">scrollView</span><span class="o">.</span><span class="nf">setContentOffset</span><span class="p">(</span><span class="o">.</span><span class="n">zero</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span>
 
-guard txfPostTitle.text! != "" else {
-    simpleAlert(self, message: "Please enter the title.".localized, title: alertTitle) { action in
-        self.txfPostTitle.becomeFirstResponder()
-    }
-    return false
-}
+<span class="k">guard</span> <span class="n">txfPostTitle</span><span class="o">.</span><span class="n">text</span><span class="o">!</span> <span class="o">!=</span> <span class="s">""</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nf">simpleAlert</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"Please enter the title."</span><span class="o">.</span><span class="n">localized</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="n">alertTitle</span><span class="p">)</span> <span class="p">{</span> <span class="n">action</span> <span class="k">in</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">txfPostTitle</span><span class="o">.</span><span class="nf">becomeFirstResponder</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1891,7 +1891,7 @@ guard txfPostTitle.text! != "" else {
 
 <p> </p>
 
-<h3 id="4-변수값을-사용하는-어순이-바뀌는-언어의-로컬라이징"><span class="me-2"><strong>4. 변수값을 사용하는 어순이 바뀌는 언어의 로컬라이징</strong></span><a href="#4-변수값을-사용하는-어순이-바뀌는-언어의-로컬라이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="4-변수값을-사용하는-어순이-바뀌는-언어의-로컬라이징"><span class="me-2"><strong>4. 변수값을 사용하는 어순이 바뀌는 언어의 로컬라이징</strong></span><a href="#4-변수값을-사용하는-어순이-바뀌는-언어의-로컬라이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>로컬라이징된 문자열에서 <strong>arguments의 순서가 번역에 따라 달라질 경우</strong>, <strong>포맷 지정자에 인덱스를 추가</strong>하여 순서를 제어할 수 있습니다.</p>
 
@@ -1925,7 +1925,7 @@ guard txfPostTitle.text! != "" else {
 
 <p> </p>
 
-<h3 id="5-infoplist-로컬라이징"><span class="me-2"><strong>5. info.plist 로컬라이징</strong></span><a href="#5-infoplist-로컬라이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="5-infoplist-로컬라이징"><span class="me-2"><strong>5. info.plist 로컬라이징</strong></span><a href="#5-infoplist-로컬라이징" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-1.21.56.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-1.21.56.jpg" alt="" loading="lazy"></a></p>
 
@@ -1971,12 +1971,12 @@ guard txfPostTitle.text! != "" else {
 
 <p>위의 키를 사용하여 아래와 같이 <code class="language-plaintext highlighter-rouge">InfoPlist.strings</code> 파일을 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-conf highlighter-rouge"><div class="code-header">
+        <span data-label-text="Conf"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>NSCameraUsageDescription = "사용자 프로필 사진을 촬영하기 위한 카메라 권한 허용이 필요합니다.";
-NSPhotoLibraryUsageDescription = "사용자 프로필 사진을 가져오기 위한 사진 라이브러리 권한 허용이 필요합니다.";
+</pre></td><td class="rouge-code"><pre><span class="n">NSCameraUsageDescription</span> = <span class="s2">"사용자 프로필 사진을 촬영하기 위한 카메라 권한 허용이 필요합니다."</span>;
+<span class="n">NSPhotoLibraryUsageDescription</span> = <span class="s2">"사용자 프로필 사진을 가져오기 위한 사진 라이브러리 권한 허용이 필요합니다."</span>;
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>컴파일러 에러 방지를 위해 라인 끝마다 세미콜론(<code class="language-plaintext highlighter-rouge">;</code>)을 반드시 입력해야 합니다.</p>

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -566,16 +573,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -594,8 +591,29 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -617,7 +635,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>macOS: 아마존 EC2에서 내 PC로 다운로드 (scp 이용)</h1>
     
@@ -691,7 +709,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="281 words"
+  title="284 words"
 >
   <em>1 min</em> read</span>
 
@@ -701,17 +719,45 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">macOS: 아마존 EC2에서 내 PC로 다운로드 (scp 이용)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">macOS: 아마존 EC2에서 내 PC로 다운로드 (scp 이용)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p><a href="http://yoonbumtae.com/?p=2799">macOS: 내 컴퓨터에서 아마존 EC2로 파일 업로드 (scp 사용)</a></p>
+    <p><a href="posts/macos-아마존-ec2에서-내-pc로-다운로드-scp-이용/">macOS: 내 컴퓨터에서 아마존 EC2로 파일 업로드 (scp 사용)</a></p>
+
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>내 PC의 로컬 터미널에서 scp 명령어를 실행합니다.</p>
 
-<p>scp -i [pem_file] [EC2에 있는 다운로드할 파일 경로와 이름] [user_id]@[<code class="language-plaintext highlighter-rouge">ec2_public_ip</code>]:[로컬 PC 경로]</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>scp <span class="nt">-i</span> <span class="o">[</span>pem_file] <span class="o">[</span>EC2에 있는 다운로드할 파일 경로와 이름] <span class="o">[</span>user_id]@[<span class="sb">`</span>ec2_public_ip<span class="sb">`</span><span class="o">]</span>:[로컬 PC 경로]
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">pem_file</code> – 아마존 EC2 인스턴스를 만들 때 발급받은 pem키 파일의 경로를 입력합니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">user_id</code> – 터미널에 접속하면 보이는 빨간색 부분 (또는 루트 디렉토리에서 <code class="language-plaintext highlighter-rouge">pwd</code>를 누르면 <code class="language-plaintext highlighter-rouge">home/</code> 뒤에 나오는 정보)이 유저 아이디입니다. <a href="/assets/img/wp-content/uploads/2020/07/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2020-07-29-%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE-4.47.40.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA-2020-07-29-%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE-4.47.40.png" alt="" loading="lazy"></a></li>
+  <li><code class="language-plaintext highlighter-rouge">user_id</code> – 터미널에 접속하면 보이는 빨간색 부분 (또는 루트 디렉토리에서 <code class="language-plaintext highlighter-rouge">pwd</code>를 누르면 <code class="language-plaintext highlighter-rouge">home/</code> 뒤에 나오는 정보)이 유저 아이디입니다. <a href="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-29-pm-4.47.40.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/07/screenshot-2020-07-29-pm-4.47.40.png" alt="" loading="lazy"></a></li>
   <li><code class="language-plaintext highlighter-rouge">ec2_public_ip</code> – 퍼블릭 DNS나 퍼블릭 IP(v4) 중 하나를 사용합니다.</li>
   <li><code class="language-plaintext highlighter-rouge">[EC2에 있는 다운로드할 파일 경로와 이름]</code> - 내 PC로 다운로드하고자 하는 EC2에 있는 파일의 경로와 이름을 입력합니다.</li>
   <li><code class="language-plaintext highlighter-rouge">[로컬 PC 경로]</code> - 다운로드할 폴더 위치를 입력합니다. 참고로 사용자 루트 폴더에 저장하려면 <code class="language-plaintext highlighter-rouge">~/</code> 을 입력합니다.</li>
@@ -719,12 +765,12 @@
 
 <p> </p>
 
-<h4 id="예제"><span class="me-2"><strong>예제</strong></span><a href="#예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="예제"><span class="me-2"><strong>예제</strong></span><a href="#예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>scp -i "~/..경로../key.pem" userid@ec-a-b-c-d-e.amazonaws.com:~/resources/sound.tar.gz ~/destiny_folder/
+</pre></td><td class="rouge-code"><pre>scp <span class="nt">-i</span> <span class="s2">"~/..경로../key.pem"</span> userid@ec-a-b-c-d-e.amazonaws.com:~/resources/sound.tar.gz ~/destiny_folder/
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -1646,6 +1692,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

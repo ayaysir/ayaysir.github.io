@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -1021,16 +1028,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -1073,6 +1070,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -1094,7 +1101,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트, HTML: 이벤트 버블링, 캡처링, 위임(delegation) - 동적 요소에 이벤트 할당</h1>
     
@@ -1178,11 +1185,33 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트, HTML: 이벤트 버블링, 캡처링, 위임(delegation) - 동적 요소에 이벤트 할당</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트, HTML: 이벤트 버블링, 캡처링, 위임(delegation) - 동적 요소에 이벤트 할당</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p><a href="/assets/img/wp-content/uploads/2020/09/Cap-2013-08-20-12-01-21-955.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/09/Cap-2013-08-20-12-01-21-955.jpg" alt="" loading="lazy"></a></p>
 
-<h4 id="이벤트-버블링"><span class="me-2"><strong>이벤트 버블링</strong></span><a href="#이벤트-버블링" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="이벤트-버블링"><span class="me-2"><strong>이벤트 버블링</strong></span><a href="#이벤트-버블링" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>하위 요소의 이벤트가 상위까지 전달되는 현상입니다. 예를 들어 위의 그림에서 <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> 태그를 클릭했는데 <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> 태그에 걸려있는 이벤트가 실행되는 것에 더해 상위 요소 <code class="language-plaintext highlighter-rouge">&lt;li&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;ul&gt;</code> 에 걸려있는 이벤트까지 같이 실행되는 현상을 말합니다.</p>
 
@@ -1252,22 +1281,22 @@
 
 <p><a href="/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-2.27.12.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-2.27.12.png" alt="" loading="lazy"></a></p>
 
-<h4 id="이벤트-캡처링"><span class="me-2"><strong>이벤트 캡처링</strong></span><a href="#이벤트-캡처링" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="이벤트-캡처링"><span class="me-2"><strong>이벤트 캡처링</strong></span><a href="#이벤트-캡처링" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이벤트 캡처링은 버블링과 반대로 상위 요소의 이벤트가 하위 요소로 전달되는 현상을 말합니다. 이벤트 캡처링은 일반적인 상황에서는 발생하지 않습니다. <code class="language-plaintext highlighter-rouge">addEventListener</code>에서 캡처링 옵션에 대한 파라미터가 있는데 기본값은(입력하지 않으면) <code class="language-plaintext highlighter-rouge">false</code>이기 때문에 캡처링이 발생하지 않습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>&lt;ul style="background-color: blueviolet"&gt;
-    &lt;li class="vacation" style="background-color: antiquewhite"&gt;
-        &lt;a href="#" class="expand"&gt;Show comments&lt;/a&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;ul</span> <span class="na">style=</span><span class="s">"background-color: blueviolet"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"vacation"</span> <span class="na">style=</span><span class="s">"background-color: antiquewhite"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"expand"</span><span class="nt">&gt;</span>Show comments<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
@@ -1312,14 +1341,14 @@
 
 <p>이벤트 캡처링을 사용하려면 <code class="language-plaintext highlighter-rouge">$ul</code>에 할당된 이벤트의 옵션을 다음과 같이 변경합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>$ul.addEventListener("click", event =&gt; {
-    console.log("ul")
-}, true) // capturing option: 기본값 false
+</pre></td><td class="rouge-code"><pre><span class="nx">$ul</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">ul</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">},</span> <span class="kc">true</span><span class="p">)</span> <span class="c1">// capturing option: 기본값 false</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1330,24 +1359,24 @@
 
 <p> </p>
 
-<h4 id="이벤트-위임event-delegation"><span class="me-2"><strong>이벤트 위임(Event Delegation)</strong> </span><a href="#이벤트-위임event-delegation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="이벤트-위임event-delegation"><span class="me-2"><strong>이벤트 위임(Event Delegation)</strong> </span><a href="#이벤트-위임event-delegation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이벤트 위임은 위의 이벤트 현상을 이용한 기법으로 동적으로 생성한 요소들에 이벤트를 부여할 때 도움이 됩니다.</p>
 
 <p>아래 코드는 초기에 자바스크립트를 학습할 때 자주 하던 실수 중 하나로, 아래처럼 코드를 작성하면 초기 요소에만 이벤트가 작동하며, 동적으로 추가된 요소에서는 이벤트가 작동하지 않습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>&lt;ul id="item-box"&gt;
-    &lt;li class="item"&gt;초기 요소 1&lt;/li&gt;
-    &lt;li class="item"&gt;초기 요소 2&lt;/li&gt;
-    &lt;li class="item"&gt;초기 요소 3&lt;/li&gt;
-&lt;/ul&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"item-box"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>초기 요소 1<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>초기 요소 2<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>초기 요소 3<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
@@ -1416,8 +1445,8 @@
 
 <p>이러한 기법을 이용해 바로 위 예제의 코드를 고치면 다음과 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1425,13 +1454,13 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>// 이벤트 위임을 사용하여 동적 요소에도 이벤트가 할당되도록 한 코드
-itemBox.addEventListener("click", event =&gt; {
-    const evTarget = event.target
-    if(evTarget.classList.contains("item")) {
-        console.log(evTarget.textContent)
-    }
-})
+</pre></td><td class="rouge-code"><pre><span class="c1">// 이벤트 위임을 사용하여 동적 요소에도 이벤트가 할당되도록 한 코드</span>
+<span class="nx">itemBox</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">evTarget</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">evTarget</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="dl">"</span><span class="s2">item</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">evTarget</span><span class="p">.</span><span class="nx">textContent</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><a href="/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-3.24.21.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/09/screenshot-2020-09-18-pm-3.24.21.png" alt="" loading="lazy"></a></p>
@@ -2357,6 +2386,12 @@ itemBox.addEventListener("click", event =&gt; {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -8201,7 +8236,7 @@ itemBox.addEventListener("click", event =&gt; {
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>자바스크립트 npm: package.json의 정보 가져와 웹 페이지에 보여주기</p>
+      <p>자바스크립트 npm: package.json의 정보를 가져와 웹 페이지에 보여주기</p>
     </a>
   
 

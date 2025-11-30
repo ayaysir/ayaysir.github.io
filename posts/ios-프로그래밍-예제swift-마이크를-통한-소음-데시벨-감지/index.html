@@ -620,6 +620,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1104,12 +1169,13 @@
   <li><code class="language-plaintext highlighter-rouge">undetermined</code> 는 앱을 최초로 실행한 상태라 마이크 허용 여부가 결정되지 않은 상태로, 이 때 허용이 되었다면 별도의 부분에 작성을 해야 합니다.</li>
   <li><code class="language-plaintext highlighter-rouge">undetermined</code> 부분에서 주의할 점은 <code class="language-plaintext highlighter-rouge">record</code> 함수의 <code class="language-plaintext highlighter-rouge">timer</code> 부분인데 이 부분은 메인 스레드에서만 동작됩니다. 그러나 <code class="language-plaintext highlighter-rouge">requestRecordPermission</code> 의 클로저 함수는 별도의 스레드에서 실행되므로 스레드를 정해주지 않는 경우 <code class="language-plaintext highlighter-rouge">timer</code>가 실행이 되지 않습니다.</li>
   <li>따라서 위의 <code class="language-plaintext highlighter-rouge">requestRecordPermission</code>에서 <code class="language-plaintext highlighter-rouge">granted</code> 된 경우에는 강제적으로 <code class="language-plaintext highlighter-rouge">record</code> 함수를 <code class="language-plaintext highlighter-rouge">main</code> 스레드에서 실행시켜줘야 할 필요가 있습니다. (<code class="language-plaintext highlighter-rouge">DispatchQueue.main.sync</code>) - <a href="https://developer.apple.com/documentation/avfaudio/avaudiosession/1616601-requestrecordpermission">참고</a></li>
-  <li><code class="language-plaintext highlighter-rouge">levelTimerCallback</code> 에서 일정 인터벌마다 dBFS를 측정합니다. (참고: <a href="http://yoonbumtae.com/?p=3439">Swift(스위프트): 타이머(Timer) 만들기</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">levelTimerCallback</code> 에서 일정 인터벌마다 dBFS를 측정합니다. (참고: <a href="/posts/swift스위프트-타이머timer-만들기/">Swift(스위프트): 타이머(Timer) 만들기</a>)</li>
 </ul>
 
 <p> </p>
 
-<iframe width="480" height="388" src="https://giphy.com/embed/tXtJ8r4biyybQQpzNl" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="480" height="388" src="https://giphy.com/embed/tXtJ8r4biyybQQpzNl" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+<p><a href="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGVva3RvbG43Zm5nazFwMm1odHl6bWNxZWlyY2JjdXdia213OWxvaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tXtJ8r4biyybQQpzNl/giphy.gif" class="popup img-link shimmer"><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGVva3RvbG43Zm5nazFwMm1odHl6bWNxZWlyY2JjdXdia213OWxvaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tXtJ8r4biyybQQpzNl/giphy.gif" alt="" loading="lazy"></a></p>
 
   </div>
 

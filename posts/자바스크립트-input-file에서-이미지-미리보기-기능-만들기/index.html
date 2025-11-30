@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -696,16 +703,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -737,6 +734,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -758,7 +765,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: input file에서 이미지 미리보기 기능 만들기 (한 개, 여러 개)</h1>
     
@@ -832,7 +839,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="770 words"
+  title="760 words"
 >
   <em>4 min</em> read</span>
 
@@ -842,9 +849,31 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: input file에서 이미지 미리보기 기능 만들기 (한 개, 여러 개)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: input file에서 이미지 미리보기 기능 만들기 (한 개, 여러 개)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="1-이미지가-1개인-경우"><span class="me-2"><strong>1) 이미지가 1개인 경우</strong></span><a href="#1-이미지가-1개인-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="1-이미지가-1개인-경우"><span class="me-2"><strong>1) 이미지가 1개인 경우</strong></span><a href="#1-이미지가-1개인-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>미리보기 이미지가 표시될 이미지 태그를 생성하고, <code class="language-plaintext highlighter-rouge">input file</code> 태그를 생성하고, 자바스크립트의 <code class="language-plaintext highlighter-rouge">FileReader()</code>를 통해 이미지가 로딩되면 이미지 태그의 <code class="language-plaintext highlighter-rouge">src</code> 속성이 교체되도록 합니다.</p>
 
@@ -916,22 +945,23 @@
 <span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>[caption id=”attachment_3305” align=”alignnone” width=”479”] <a href="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.09.58.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.09.58.png" alt="" loading="lazy"></a> 초기 화면[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.09.58.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.09.58.png" alt="초기 화면" loading="lazy"></a><br />
+<em>초기 화면</em></p>
 
 <p> </p>
 
-<p>[caption id=”attachment_3306” align=”alignnone” width=”534”] <a href="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.10.31.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.10.31.png" alt="" loading="lazy"></a> 이미지 파일을 선택한 경우[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.10.31.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-19-pm-1.10.31.png" alt="이미지 파일을 선택한 경우" loading="lazy"></a><br />
+<em>이미지 파일을 선택한 경우</em>
+ </p>
 
 <p> </p>
 
-<p> </p>
-
-<h4 id="2-이미지가-여러-개인-경우"><span class="me-2"><strong>2) 이미지가 여러 개인 경우</strong></span><a href="#2-이미지가-여러-개인-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="2-이미지가-여러-개인-경우"><span class="me-2"><strong>2) 이미지가 여러 개인 경우</strong></span><a href="#2-이미지가-여러-개인-경우" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>먼저 <code class="language-plaintext highlighter-rouge">iput file</code> 태그에 <code class="language-plaintext highlighter-rouge">multiple</code> 속성을 추가해 여러 이미지가 추가될 수 있도록 합니다. 다음 파일 배열(<code class="language-plaintext highlighter-rouge">FileList</code>)을 반복문을 돌려서 이미지 요소를 추가합니다. 이 때, <code class="language-plaintext highlighter-rouge">reader.onload</code>의 콜백 함수 안에 HTML 요소를 생성하거나 <code class="language-plaintext highlighter-rouge">appendChild</code> 하는 코드를 추가하지 않아야 합니다. 왜냐하면 이 콜백 함수는 비동기로 실행되므로 여기 안에서 HTML 처리를 하면 <code class="language-plaintext highlighter-rouge">FileList</code> 배열에 저장된 파일 순서와 렌더링되는 파일 순서가 같다는 것을 보장할 수 없기 때문입니다. 이미지 요소를 반복문에서 설정하고, 이미지가 로딩되면 그 콜백 함수에서 <code class="language-plaintext highlighter-rouge">src</code>를 바꾸는 방식으로 작성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-css highlighter-rouge"><div class="code-header">
+        <span data-label-text="CSS"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -948,25 +978,27 @@
 14
 15
 16
-</pre></td><td class="rouge-code"><pre>#multiple-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
+</pre></td><td class="rouge-code"><pre><span class="nf">#multiple-container</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">grid</span><span class="p">;</span>
+    <span class="nl">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span> <span class="m">1fr</span> <span class="m">1fr</span><span class="p">;</span>
+<span class="p">}</span>
 
-.image {
-    display: block;
-    width: 100%;
-}
-.image-label {
-    position: relative;
-    bottom: 22px;
-    left: 5px;
-    color: white;
-    text-shadow: 2px 2px 2px black;
-}
+<span class="nc">.image</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.image-label</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">22px</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nx">white</span><span class="p">;</span>
+    <span class="nl">text-shadow</span><span class="p">:</span> <span class="m">2px</span> <span class="m">2px</span> <span class="m">2px</span> <span class="nx">black</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>참고: <a href="https://www.python2.net/questions-17934.htm">html - CSS 그리드, 이미지 삽입시 아래쪽 여백</a></p>
+<blockquote>
+  <p>참고: <a href="https://www.python2.net/questions-17934.htm">html - CSS 그리드, 이미지 삽입시 아래쪽 여백</a></p>
+</blockquote>
 
 <p> </p>
 
@@ -2023,6 +2055,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

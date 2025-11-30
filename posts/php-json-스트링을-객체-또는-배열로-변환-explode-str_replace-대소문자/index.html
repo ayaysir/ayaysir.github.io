@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,16 +498,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -554,6 +551,59 @@
     
 
     
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
   
 
   
@@ -575,7 +625,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>PHP: JSON 스트링을 객체 또는 배열로 변환, explode, str_replace, 대소문자 변경방법</h1>
     
@@ -649,7 +699,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="337 words"
+  title="338 words"
 >
   <em>1 min</em> read</span>
 
@@ -659,42 +709,64 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">PHP: JSON 스트링을 객체 또는 배열로 변환, explode, str_replace, 대소문자 변경방법</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">PHP: JSON 스트링을 객체 또는 배열로 변환, explode, str_replace, 대소문자 변경방법</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="1-json을-배열로-변환"><span class="me-2"><strong>1) JSON을 배열로 변환</strong></span><a href="#1-json을-배열로-변환" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="1-json을-배열로-변환"><span class="me-2"><strong>1) JSON을 배열로 변환</strong></span><a href="#1-json을-배열로-변환" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><strong>객체(<code class="language-plaintext highlighter-rouge">stdClass</code>)로 변환하는 방법</strong></p>
+<h3 id="객체stdclass로-변환하는-방법"><span class="me-2"><strong>객체(<code class="language-plaintext highlighter-rouge">stdClass</code>)로 변환하는 방법</strong></span><a href="#객체stdclass로-변환하는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>$array_data = json_decode($str, false);
+</pre></td><td class="rouge-code"><pre><span class="nv">$array_data</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-// 또는
+<span class="c1">// 또는</span>
 
-$array_data = json_decode($str);
+<span class="nv">$array_data</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><strong>배열로 변환하는 방법</strong></p>
+<h3 id="배열로-변환하는-방법"><span class="me-2"><strong>배열로 변환하는 방법</strong></span><a href="#배열로-변환하는-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>$array_data = json_decode($str, true);
+</pre></td><td class="rouge-code"><pre><span class="nv">$array_data</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="2-explode"><span class="me-2"><strong>2) explode</strong></span><a href="#2-explode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="2-explode"><span class="me-2"><strong>2) explode</strong></span><a href="#2-explode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다른 언어의 <code class="language-plaintext highlighter-rouge">String.split</code>과 기능이 비슷합니다. 스트링의 경계기호(<code class="language-plaintext highlighter-rouge">delimiter</code>) 문자를 기준으로 배열을 생성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -704,50 +776,50 @@ $array_data = json_decode($str);
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>$date = "2020-08-25";
+</pre></td><td class="rouge-code"><pre><span class="nv">$date</span> <span class="o">=</span> <span class="s2">"2020-08-25"</span><span class="p">;</span>
 
-// explode(delimiter, string)
+<span class="c1">// explode(delimiter, string)</span>
 
-$exploded = explode('-', $date);
+<span class="nv">$exploded</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">'-'</span><span class="p">,</span> <span class="nv">$date</span><span class="p">);</span>
 
-echo $exploded[0]; // 2020
-echo $exploded[1]; // 08
-echo $exploded[2]; // 25
+<span class="k">echo</span> <span class="nv">$exploded</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// 2020</span>
+<span class="k">echo</span> <span class="nv">$exploded</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// 08</span>
+<span class="k">echo</span> <span class="nv">$exploded</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// 25</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="3-str_replace"><span class="me-2"><strong>3) str_replace</strong></span><a href="#3-str_replace" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="3-str_replace"><span class="me-2"><strong>3) str_replace</strong></span><a href="#3-str_replace" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>다른 언어의 <code class="language-plaintext highlighter-rouge">String.replace</code>와 기능이 비슷합니다. 특정 문자를 치환합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>$value = "가나다라가나다라마";
+</pre></td><td class="rouge-code"><pre><span class="nv">$value</span> <span class="o">=</span> <span class="s2">"가나다라가나다라마"</span><span class="p">;</span>
 
-echo str_replace("마", "Z", $value); // 가나다라가나다라Z
-echo str_replace("라", "-", $value); // 가나다-가나다-마
+<span class="k">echo</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">"마"</span><span class="p">,</span> <span class="s2">"Z"</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">// 가나다라가나다라Z</span>
+<span class="k">echo</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">"라"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span> <span class="c1">// 가나다-가나다-마</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="4-ucfirst-lcfist-ucwords"><span class="me-2"><strong>4)  ucfirst, lcfist, ucwords</strong></span><a href="#4-ucfirst-lcfist-ucwords" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="4-ucfirst-lcfist-ucwords"><span class="me-2"><strong>4)  ucfirst, lcfist, ucwords</strong></span><a href="#4-ucfirst-lcfist-ucwords" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">ucfirst</code>는 스트링의 첫 문자를 대문자로 바꿉니다. 단어를 구별하지 않고 스트링의 제일 첫 문자만 변환합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>$foo = 'hello world!';
-$foo = ucfirst($foo);  // Hello world!
+</pre></td><td class="rouge-code"><pre><span class="nv">$foo</span> <span class="o">=</span> <span class="s1">'hello world!'</span><span class="p">;</span>
+<span class="nv">$foo</span> <span class="o">=</span> <span class="nb">ucfirst</span><span class="p">(</span><span class="nv">$foo</span><span class="p">);</span>  <span class="c1">// Hello world!</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>유사 기능</p>
+<h3 id="비슷한-기능"><span class="me-2">비슷한 기능</span><a href="#비슷한-기능" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">lcfirst(string $str)</code> - 스트링의 첫 문자를 소문자로 변경</li>
@@ -1675,6 +1747,12 @@ $foo = ucfirst($foo);  // Hello world!
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

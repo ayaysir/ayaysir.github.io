@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -808,6 +815,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -826,15 +898,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
-  
+      
+      
 
-  
-  
+      
+      
+      
 
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -914,19 +1008,18 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -943,7 +1036,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Xcode: UIView 결과물 미리보기 (빌드 및 @IBDesignable을 사용하지 않고 SwiftUI의 프리뷰 기능을 이용)</h1>
     
@@ -1017,9 +1110,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="871 words"
+  title="918 words"
 >
-  <em>4 min</em> read</span>
+  <em>5 min</em> read</span>
 
         </div>
       </div>
@@ -1027,11 +1120,34 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Xcode: UIView 결과물 미리보기 (빌드 및 @IBDesignable을 사용하지 않고 SwiftUI의 프리뷰 기능을 이용)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Xcode: UIView 결과물 미리보기 (빌드 및 @IBDesignable을 사용하지 않고 SwiftUI의 프리뷰 기능을 이용)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>일반적인 스토리보드(Storyboard) 하의 개발환경에서 UI 작업에 대한 결과물을 보려면 매번 빌드하는 과정을 거쳐야 하는 불편함이 있었습니다. 보완책으로 스토리보드에서 미리보기가 가능한 <code class="language-plaintext highlighter-rouge">@IBDesignable</code>이라는 어노테이션이 있지만 아래와 같이 없는것만 못한 쓰레기 기능입니다.</p>
 
-<p>[caption id=”attachment_4046” align=”alignnone” width=”409”] <a href="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.12.15.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.12.15.jpg" alt="" loading="lazy"></a> 오류가 잦아 사용이 불가능한 <code class="language-plaintext highlighter-rouge">@IBDesignable</code>[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.12.15.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.12.15.jpg" alt="오류가 잦아 사용이 불가능한 `@IBDesignable`" loading="lazy"></a><br />
+<em>오류가 잦아 사용이 불가능한 <code class="language-plaintext highlighter-rouge">@IBDesignable</code></em></p>
 
 <p> </p>
 
@@ -1039,9 +1155,11 @@
 
 <p><a href="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.40.39.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.40.39.jpg" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<p>원리는 SwiftUI에서 UIView를 보여줄 수 있는 UIHostingView(UIView)라는 기능이 있는데 UIView를 여기에 씌워 실시간 프리뷰에서 보이도록 하는 것입니다.
+ </p>
+<h2 id="방법"><span class="me-2"><strong>방법</strong></span><a href="#방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-아래-코드를-프로젝트에-추가합니다"><span class="me-2"><strong>1, 아래 코드를 프로젝트에 추가합니다.</strong></span><a href="#1-아래-코드를-프로젝트에-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="1-아래-코드를-프로젝트에-추가합니다"><span class="me-2"><strong>1, 아래 코드를 프로젝트에 추가합니다.</strong></span><a href="#1-아래-코드를-프로젝트에-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1133,7 +1251,7 @@
 
 <p> </p>
 
-<h5 id="2-커스텀-uiview-클래스를-작성합니다-간단한-선과-원을-그리는-그리는-예제입니다"><span class="me-2"><strong>2. 커스텀 <code class="language-plaintext highlighter-rouge">UIView</code> 클래스를 작성합니다. 간단한 선과 원을 그리는 그리는 예제입니다.</strong></span><a href="#2-커스텀-uiview-클래스를-작성합니다-간단한-선과-원을-그리는-그리는-예제입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="2-커스텀-uiview-클래스를-작성합니다-간단한-선과-원을-그리는-그리는-예제입니다"><span class="me-2"><strong>2. 커스텀 <code class="language-plaintext highlighter-rouge">UIView</code> 클래스를 작성합니다. 간단한 선과 원을 그리는 그리는 예제입니다.</strong></span><a href="#2-커스텀-uiview-클래스를-작성합니다-간단한-선과-원을-그리는-그리는-예제입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -1193,10 +1311,10 @@
 
 <p> </p>
 
-<h5 id="3-exampleview-클래스-바로-밑에-아래-코드를-추가합니다"><span class="me-2"><strong>3. ExampleView 클래스 바로 밑에 아래 코드를 추가합니다.</strong></span><a href="#3-exampleview-클래스-바로-밑에-아래-코드를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="3-exampleview-클래스-바로-밑에-아래-코드를-추가합니다"><span class="me-2"><strong>3. ExampleView 클래스 바로 밑에 아래 코드를 추가합니다.</strong></span><a href="#3-exampleview-클래스-바로-밑에-아래-코드를-추가합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1212,20 +1330,20 @@
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>#if canImport(SwiftUI) &amp;&amp; DEBUG
-import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="cp">#if canImport(SwiftUI) &amp;&amp; DEBUG</span>
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-@available(iOS 13.0, *)
-struct ExampleView_Preview: PreviewProvider {
-    static var previews: some View {
-        UIViewPreview {
-            let view = ExampleView()
-            return view
-        }.previewLayout(.sizeThatFits)
-        .padding(10)
-    }
-}
-#endif
+<span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">struct</span> <span class="kt">ExampleView_Preview</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">UIViewPreview</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">ExampleView</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">view</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">previewLayout</span><span class="p">(</span><span class="o">.</span><span class="n">sizeThatFits</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1236,19 +1354,19 @@ struct ExampleView_Preview: PreviewProvider {
 
 <p> </p>
 
-<h5 id="4-editor-메뉴--canvas를-체크합니다"><span class="me-2"><strong>4. <code class="language-plaintext highlighter-rouge">Editor</code> 메뉴 &gt; <code class="language-plaintext highlighter-rouge">Canvas</code>를 체크합니다.</strong></span><a href="#4-editor-메뉴--canvas를-체크합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="4-editor-메뉴--canvas를-체크합니다"><span class="me-2"><strong>4. <code class="language-plaintext highlighter-rouge">Editor</code> 메뉴 &gt; <code class="language-plaintext highlighter-rouge">Canvas</code>를 체크합니다.</strong></span><a href="#4-editor-메뉴--canvas를-체크합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.20.46.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.20.46.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="5-canvas가-실행되면-코드-창-오른쪽에-프리뷰-창이-나타나는데-만약-업데이트가-paused된-상태라면-resume을-클릭합니다"><span class="me-2"><strong>5. <code class="language-plaintext highlighter-rouge">Canvas</code>가 실행되면 코드 창 오른쪽에 프리뷰 창이 나타나는데 만약 업데이트가 paused된 상태라면 <code class="language-plaintext highlighter-rouge">resume</code>을 클릭합니다.</strong></span><a href="#5-canvas가-실행되면-코드-창-오른쪽에-프리뷰-창이-나타나는데-만약-업데이트가-paused된-상태라면-resume을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="5-canvas가-실행되면-코드-창-오른쪽에-프리뷰-창이-나타나는데-만약-업데이트가-paused된-상태라면-resume을-클릭합니다"><span class="me-2"><strong>5. <code class="language-plaintext highlighter-rouge">Canvas</code>가 실행되면 코드 창 오른쪽에 프리뷰 창이 나타나는데 만약 업데이트가 paused된 상태라면 <code class="language-plaintext highlighter-rouge">resume</code>을 클릭합니다.</strong></span><a href="#5-canvas가-실행되면-코드-창-오른쪽에-프리뷰-창이-나타나는데-만약-업데이트가-paused된-상태라면-resume을-클릭합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.21.40.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.21.40.jpg" alt="" loading="lazy"></a></p>
 
 <p> </p>
 
-<h5 id="6-일반적인-환경에서-버전-오류가-발생하지-않지만-만약-실행이-되지-않는다면-프로젝트-세팅-창의-애플리케이션-targets에서-deployment-info의-버전을-ios-13-이상으로-설정합니다"><span class="me-2"><strong>6. 일반적인 환경에서 버전 오류가 발생하지 않지만 만약 실행이 되지 않는다면 프로젝트 세팅 창의 애플리케이션 <code class="language-plaintext highlighter-rouge">TARGETS</code>에서 <code class="language-plaintext highlighter-rouge">Deployment Info</code>의 버전을 iOS 13 이상으로 설정합니다.</strong></span><a href="#6-일반적인-환경에서-버전-오류가-발생하지-않지만-만약-실행이-되지-않는다면-프로젝트-세팅-창의-애플리케이션-targets에서-deployment-info의-버전을-ios-13-이상으로-설정합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h3 id="6-일반적인-환경에서-버전-오류가-발생하지-않지만-만약-실행이-되지-않는다면-프로젝트-세팅-창의-애플리케이션-targets에서-deployment-info의-버전을-ios-13-이상으로-설정합니다"><span class="me-2"><strong>6. 일반적인 환경에서 버전 오류가 발생하지 않지만 만약 실행이 되지 않는다면 프로젝트 세팅 창의 애플리케이션 <code class="language-plaintext highlighter-rouge">TARGETS</code>에서 <code class="language-plaintext highlighter-rouge">Deployment Info</code>의 버전을 iOS 13 이상으로 설정합니다.</strong></span><a href="#6-일반적인-환경에서-버전-오류가-발생하지-않지만-만약-실행이-되지-않는다면-프로젝트-세팅-창의-애플리케이션-targets에서-deployment-info의-버전을-ios-13-이상으로-설정합니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><a href="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.11.04.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-07-pm-9.11.04.jpg" alt="" loading="lazy"></a></p>
 
@@ -1258,18 +1376,18 @@ struct ExampleView_Preview: PreviewProvider {
 
 <p> </p>
 
-<iframe width="480" height="408" src="https://giphy.com/embed/0q9PhiCuBN0osci7Y5" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="480" height="408" src="https://giphy.com/embed/0q9PhiCuBN0osci7Y5" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+<p><a href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjAyd2p3bm56dnhqZjN5czd1anFmM2oyZTdhb2xqNnAzMmJiN20wYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0q9PhiCuBN0osci7Y5/giphy.gif" class="popup img-link shimmer"><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjAyd2p3bm56dnhqZjN5czd1anFmM2oyZTdhb2xqNnAzMmJiN20wYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0q9PhiCuBN0osci7Y5/giphy.gif" alt="" loading="lazy"></a>
+ </p>
 
 <p> </p>
 
-<p> </p>
-
-<h5 id="참고-uiviewcontroller-미리보기"><span class="me-2"><strong>참고: <code class="language-plaintext highlighter-rouge">UIViewController</code> 미리보기</strong></span><a href="#참고-uiviewcontroller-미리보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="참고-uiviewcontroller-미리보기"><span class="me-2"><strong>참고: <code class="language-plaintext highlighter-rouge">UIViewController</code> 미리보기</strong></span><a href="#참고-uiviewcontroller-미리보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">예제ViewController</code>(임의로 만든 뷰 컨트롤러) 밑에 아래 코드를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1294,30 +1412,30 @@ struct ExampleView_Preview: PreviewProvider {
 22
 23
 24
-</pre></td><td class="rouge-code"><pre>#if canImport(SwiftUI) &amp;&amp; DEBUG
-import SwiftUI
+</pre></td><td class="rouge-code"><pre><span class="cp">#if canImport(SwiftUI) &amp;&amp; DEBUG</span>
+<span class="kd">import</span> <span class="kt">SwiftUI</span>
 
-let deviceNames: [String] = [
-    "iPhone SE",
-    "iPad 11 Pro Max",
-    "iPad Pro (11-inch)"
-]
+<span class="k">let</span> <span class="nv">deviceNames</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">"iPhone SE"</span><span class="p">,</span>
+    <span class="s">"iPad 11 Pro Max"</span><span class="p">,</span>
+    <span class="s">"iPad Pro (11-inch)"</span>
+<span class="p">]</span>
 
-@available(iOS 13.0, *)
-struct 예제ViewController_Preview: PreviewProvider {
-  static var previews: some View {
-    ForEach(deviceNames, id: \.self) { deviceName in
-      UIViewControllerPreview {
-        UIStoryboard(name: "Main", bundle: nil)
-            .instantiateInitialViewController { coder in
-            예제ViewController(coder: coder)
-        }!
-      }.previewDevice(PreviewDevice(rawValue: deviceName))
-        .previewDisplayName(deviceName)
-    }
-  }
-}
-#endif
+<span class="kd">@available</span><span class="p">(</span><span class="n">iOS</span> <span class="mf">13.0</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+<span class="kd">struct</span> <span class="nv">예제ViewController_Preview</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kt">ForEach</span><span class="p">(</span><span class="n">deviceNames</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">deviceName</span> <span class="k">in</span>
+      <span class="kt">UIViewControllerPreview</span> <span class="p">{</span>
+        <span class="kt">UIStoryboard</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Main"</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">instantiateInitialViewController</span> <span class="p">{</span> <span class="n">coder</span> <span class="k">in</span>
+            <span class="nf">예제ViewController</span><span class="p">(</span><span class="nv">coder</span><span class="p">:</span> <span class="n">coder</span><span class="p">)</span>
+        <span class="p">}</span><span class="o">!</span>
+      <span class="p">}</span><span class="o">.</span><span class="nf">previewDevice</span><span class="p">(</span><span class="kt">PreviewDevice</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="n">deviceName</span><span class="p">))</span>
+        <span class="o">.</span><span class="nf">previewDisplayName</span><span class="p">(</span><span class="n">deviceName</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2246,6 +2364,12 @@ struct 예제ViewController_Preview: PreviewProvider {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

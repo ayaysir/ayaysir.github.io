@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -761,10 +768,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -822,19 +856,13 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
   
 
   
@@ -856,7 +884,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>스프링 부트(Spring Boot): JPA + Thymeleaf로 페이지네이션(페이징, 페이지 내비게이션) 구현</h1>
     
@@ -940,23 +968,45 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">스프링 부트(Spring Boot): JPA + Thymeleaf로 페이지네이션(페이징, 페이지 내비게이션) 구현</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">스프링 부트(Spring Boot): JPA + Thymeleaf로 페이지네이션(페이징, 페이지 내비게이션) 구현</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <!-- \[rcblock id="2655"\] -->
 
 <p>스프링 부트 + JPA + Thymeleaf를 이용해 게시판에 페이지네이션(페이징, 페이지 내비게이션) 기능을 추가해 보겠습니다.</p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="0-엔티티-클래스-레퍼지토리-인터페이스-작성"><span class="me-2"><strong>0) 엔티티 클래스, 레퍼지토리 인터페이스 작성</strong></span><a href="#0-엔티티-클래스-레퍼지토리-인터페이스-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="0-엔티티-클래스-레퍼지토리-인터페이스-작성"><span class="me-2"><strong>0) 엔티티 클래스, 레퍼지토리 인터페이스 작성</strong></span><a href="#0-엔티티-클래스-레퍼지토리-인터페이스-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=2555">Spring Boot: Spring JPA + H2 데이터베이스 기초 + 단위 테스트</a></li>
+  <li><a href="/posts/spring-boot-spring-jpa-h2-데이터베이스-기초-단위-테스트/">Spring Boot: Spring JPA + H2 데이터베이스 기초 + 단위 테스트</a></li>
 </ul>
 
 <p> </p>
 
-<h4 id="1-엔티티에-대한-서비스-클래스-작성"><span class="me-2"><strong>1) 엔티티에 대한 서비스 클래스 작성</strong></span><a href="#1-엔티티에-대한-서비스-클래스-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="1-엔티티에-대한-서비스-클래스-작성"><span class="me-2"><strong>1) 엔티티에 대한 서비스 클래스 작성</strong></span><a href="#1-엔티티에-대한-서비스-클래스-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-java highlighter-rouge"><div class="code-header">
         <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
@@ -1072,18 +1122,18 @@
 
 <p> </p>
 
-<h4 id="2-페이지-글을-가져오고-페이지-블럭을-생성하는-컨트롤러-작성"><span class="me-2"><strong>2) 페이지 글을 가져오고 페이지 블럭을 생성하는 컨트롤러 작성</strong></span><a href="#2-페이지-글을-가져오고-페이지-블럭을-생성하는-컨트롤러-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="2-페이지-글을-가져오고-페이지-블럭을-생성하는-컨트롤러-작성"><span class="me-2"><strong>2) 페이지 글을 가져오고 페이지 블럭을 생성하는 컨트롤러 작성</strong></span><a href="#2-페이지-글을-가져오고-페이지-블럭을-생성하는-컨트롤러-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>페이지 블럭을 생성하는 부분은 너무 복잡해서 별도로 분리했습니다. 여기서 페이지 블럭이란 링크를 클릭하면 페이지로 이동할 수 있는 내비게이션 부분을 지칭합니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=2957">자바(Java) 예제: 페이지네이션(Pagination, 페이징, 페이지 내비게이션) 도와주는 프로그램</a></li>
+  <li><a href="/posts/자바java-예제-페이지네이션pagination-페이징-페이지-내비게/">자바(Java) 예제: 페이지네이션(Pagination, 페이징, 페이지 내비게이션) 도와주는 프로그램</a></li>
 </ul>
 
 <p> </p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1128,52 +1178,50 @@
 42
 43
 44
-45
-</pre></td><td class="rouge-code"><pre>import com.example.awsboard.service.posts.PostsService;
-import com.example.awsboard.util.Paginator;
-import com.example.awsboard.web.dto.PostsListResponseDTO;
-import com.example.awsboard.web.dto.PostsResponseDTO;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">com.example.awsboard.service.posts.PostsService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.example.awsboard.util.Paginator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.example.awsboard.web.dto.PostsListResponseDTO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.example.awsboard.web.dto.PostsResponseDTO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.RequiredArgsConstructor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.ui.Model</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.PathVariable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestParam</span><span class="o">;</span>
 
-import java.util.List;
-import java.util.Map;
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
 
-@RequiredArgsConstructor
-@Controller
-public class IndexController {
+<span class="nd">@RequiredArgsConstructor</span>
+<span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IndexController</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">PostsService</span> <span class="n">postsService</span><span class="o">;</span>
 
-    private final PostsService postsService;
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Integer</span> <span class="no">POSTS_PER_PAGE</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Integer</span> <span class="no">PAGES_PER_BLOCK</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
 
-    private static final Integer POSTS_PER_PAGE = 10;
-    private static final Integer PAGES_PER_BLOCK = 5;
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">index</span><span class="o">(</span><span class="nc">Model</span> <span class="n">model</span><span class="o">,</span> <span class="nd">@LoginUser</span> <span class="nc">SessionUser</span> <span class="n">user</span><span class="o">,</span>
+                        <span class="nd">@RequestParam</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"page"</span><span class="o">,</span> <span class="n">defaultValue</span> <span class="o">=</span> <span class="s">"1"</span><span class="o">)</span> <span class="nc">Integer</span> <span class="n">page</span><span class="o">)</span> <span class="o">{</span>
 
-    @GetMapping("/")
-    public String index(Model model, @LoginUser SessionUser user,
-                        @RequestParam(value = "page", defaultValue = "1") Integer page) {
+        <span class="c1">// 글 목록 전송</span>
+        <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"boardTitle"</span><span class="o">,</span> <span class="s">"자유게시판"</span><span class="o">);</span>
+        <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"requestFrom"</span><span class="o">,</span> <span class="s">"posts"</span><span class="o">);</span>
 
-        // 글 목록 전송
-        model.addAttribute("boardTitle", "자유게시판");
-        model.addAttribute("requestFrom", "posts");
+        <span class="c1">// 페이지네이션</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">Paginator</span> <span class="n">paginator</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Paginator</span><span class="o">(</span><span class="no">PAGES_PER_BLOCK</span><span class="o">,</span> <span class="no">POSTS_PER_PAGE</span><span class="o">,</span> <span class="n">postsService</span><span class="o">.</span><span class="na">count</span><span class="o">());</span>
+            <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="n">pageInfo</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="na">getFixedBlock</span><span class="o">(</span><span class="n">page</span><span class="o">);</span>
 
-        // 페이지네이션
-        try {
-            Paginator paginator = new Paginator(PAGES_PER_BLOCK, POSTS_PER_PAGE, postsService.count());
-            Map&lt;String, Object&gt; pageInfo = paginator.getFixedBlock(page);
+            <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"pageInfo"</span><span class="o">,</span> <span class="n">pageInfo</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">IllegalStateException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"pageInfo"</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
 
-            model.addAttribute("pageInfo", pageInfo);
-        } catch(IllegalStateException e) {
-            model.addAttribute("pageInfo", null);
-            System.err.println(e);
-        }
+        <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"posts"</span><span class="o">,</span> <span class="n">postsService</span><span class="o">.</span><span class="na">findAllByOrderByIdDesc</span><span class="o">(</span><span class="n">page</span><span class="o">,</span> <span class="no">POSTS_PER_PAGE</span><span class="o">));</span>
 
-        model.addAttribute("posts", postsService.findAllByOrderByIdDesc(page, POSTS_PER_PAGE));
-
-// .... 이하 생략 .... //
+<span class="c1">// .... 이하 생략 .... //</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1184,7 +1232,7 @@ public class IndexController {
 
 <p> </p>
 
-<h4 id="3-뷰-페이지indexhtml-의-페이지-블록-부분-작성"><span class="me-2"><strong>3) 뷰 페이지(index.html) 의 페이지 블록 부분 작성</strong></span><a href="#3-뷰-페이지indexhtml-의-페이지-블록-부분-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="3-뷰-페이지indexhtml-의-페이지-블록-부분-작성"><span class="me-2"><strong>3) 뷰 페이지(index.html) 의 페이지 블록 부분 작성</strong></span><a href="#3-뷰-페이지indexhtml-의-페이지-블록-부분-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>페이지별 게시물 목록은 JPA에서 처리했기 때문에 알아서 잘 내려올 것이지만, 페이지 블럭 부분은 별도로 만들어줘야 합니다. Thymeleaf와 <a href="https://getbootstrap.com/docs/4.0/components/pagination/">부트스트랩</a>이 사용되었습니다.</p>
 
@@ -1226,7 +1274,7 @@ public class IndexController {
 
 <p> </p>
 
-<h4 id="결과-화면"><span class="me-2"><strong>결과 화면</strong></span><a href="#결과-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="결과-화면"><span class="me-2"><strong>결과 화면</strong></span><a href="#결과-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-26-pm-6.47.43.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-26-pm-6.47.43.png" alt="" loading="lazy"></a></p>
 
@@ -2155,6 +2203,12 @@ public class IndexController {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

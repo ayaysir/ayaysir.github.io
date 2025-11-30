@@ -1288,11 +1288,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -1425,8 +1420,24 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
   
 
   
@@ -1522,7 +1533,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="5254 words"
+  title="5255 words"
 >
   <em>29 min</em> read</span>
 
@@ -1562,6 +1573,8 @@
 
 <hr />
 
+<h2 id="소개"><span class="me-2">소개</span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <p>많은 분들이 멋진 새 iPad Pro를 구입하고 함께 사용하기 위해 Apple Pencil을 가지고 있다는 것을 알고 있습니다.</p>
 
 <p>Apple Pencil로 그림을 그리는 것이 얼마나 멋진지 경험했다면 당신은 모든 앱에 Apple Pencil 지원을 포함하고 싶을 것입니다.</p>
@@ -1582,7 +1595,7 @@
 
 <p> </p>
 
-<h4 id="전제-조건"><span class="me-2"><strong>전제 조건</strong></span><a href="#전제-조건" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="전제-조건"><span class="me-2"><strong>전제 조건</strong></span><a href="#전제-조건" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 튜토리얼을 따라 하려면 다음이 필요합니다.</p>
 
@@ -1593,7 +1606,7 @@
 
 <p> </p>
 
-<h3 id="시작하기"><span class="me-2"><strong>시작하기</strong></span><a href="#시작하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="시작하기"><span class="me-2"><strong>시작하기</strong></span><a href="#시작하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 Apple Pencil 튜토리얼 전체에서 Scribble이라는 앱을 구축하게 됩니다. 반응형 UI(예를 들면 압력 감도 및 음영 등)로 그림을 그릴 수 있는 간단한 앱입니다.</p>
 
@@ -1621,7 +1634,7 @@
 
 <p> </p>
 
-<h3 id="apple-pencil로-그리는-첫-그림"><span class="me-2"><strong>Apple Pencil로 그리는 첫 그림</strong></span><a href="#apple-pencil로-그리는-첫-그림" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="apple-pencil로-그리는-첫-그림"><span class="me-2"><strong>Apple Pencil로 그리는 첫 그림</strong></span><a href="#apple-pencil로-그리는-첫-그림" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이제 펜슬의 첫 번째 기능인 힘을 사용할 준비가 되었습니다. 화면을 더 세게 누르면 획(스트로크)이 더 넓어집니다. 나중에 배우게 될 약간의 치트가 있지만 이 기능은 손가락으로 작동하지 않습니다.</p>
 
@@ -1643,14 +1656,14 @@
 
 <p><code class="language-plaintext highlighter-rouge">return</code> 문 바로 앞에 다음을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>if touch.force &gt; 0 {
-  lineWidth = touch.force * forceSensitivity
-}
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">force</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+  <span class="n">lineWidth</span> <span class="o">=</span> <span class="n">touch</span><span class="o">.</span><span class="n">force</span> <span class="o">*</span> <span class="n">forceSensitivity</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1681,14 +1694,14 @@
 
 <p><code class="language-plaintext highlighter-rouge">CanvasView.swift</code>에서 <code class="language-plaintext highlighter-rouge">touchMoved(_:with:)</code> 안에서 아래의 코드를 찾은 뒤 그 다음 코드로 치환합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>drawStroke(context, touch: touch)
+</pre></td><td class="rouge-code"><pre><span class="nf">drawStroke</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="nv">touch</span><span class="p">:</span> <span class="n">touch</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1706,23 +1719,23 @@
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>// 1
-var touches = [UITouch]()
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1</span>
+<span class="k">var</span> <span class="nv">touches</span> <span class="o">=</span> <span class="p">[</span><span class="kt">UITouch</span><span class="p">]()</span>
     
-// 2
-if let coalescedTouches = event?.coalescedTouches(for: touch) {
-  touches = coalescedTouches
-} else {
-  touches.append(touch)
-}
+<span class="c1">// 2</span>
+<span class="k">if</span> <span class="k">let</span> <span class="nv">coalescedTouches</span> <span class="o">=</span> <span class="n">event</span><span class="p">?</span><span class="o">.</span><span class="nf">coalescedTouches</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">touch</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">touches</span> <span class="o">=</span> <span class="n">coalescedTouches</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="n">touches</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">touch</span><span class="p">)</span>
+<span class="p">}</span>
     
-// 3
-print(touches.count)
+<span class="c1">// 3</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">touches</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
 
-// 4
-for touch in touches {
-    drawStroke(context, touch: touch)
-}
+<span class="c1">// 4</span>
+<span class="k">for</span> <span class="n">touch</span> <span class="k">in</span> <span class="n">touches</span> <span class="p">{</span>
+    <span class="nf">drawStroke</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="nv">touch</span><span class="p">:</span> <span class="n">touch</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1750,13 +1763,13 @@ for touch in touches {
 
 <p> </p>
 
-<h3 id="펜슬-기울이기"><span class="me-2"><strong>펜슬 기울이기</strong></span><a href="#펜슬-기울이기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="펜슬-기울이기"><span class="me-2"><strong>펜슬 기울이기</strong></span><a href="#펜슬-기울이기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이제 앱에 멋진 유창한 그림이 생겼습니다. 그러나 Apple Pencil에 대한 리뷰를 읽거나 본 적이 있다면 연필과 같은 음영 기능에 대한 이야기가 있다는 것을 기억할 것입니다. 사용자는 기울이기만 하면 되지만 음영이 자동적으로 발생하지 않는다는 사실은 거의 깨닫지 못합니다. 예상대로 작동하도록 코드를 작성하는 것은 모두 똑똑한 앱 개발자에게 달려 있습니다. :]</p>
 
 <p> </p>
 
-<h4 id="고도-방위각-및-단위-벡터-altitude-azimuth-and-unit-vectors"><span class="me-2"><strong>고도, 방위각 및 단위 벡터 (Altitude, Azimuth and Unit Vectors)</strong></span><a href="#고도-방위각-및-단위-벡터-altitude-azimuth-and-unit-vectors" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="고도-방위각-및-단위-벡터-altitude-azimuth-and-unit-vectors"><span class="me-2"><strong>고도, 방위각 및 단위 벡터 (Altitude, Azimuth and Unit Vectors)</strong></span><a href="#고도-방위각-및-단위-벡터-altitude-azimuth-and-unit-vectors" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>이 섹션에서는 기울기를 측정하는 방법을 설명합니다. 다음 섹션에서 간단한 음영 처리에 대한 지원을 추가하게 될 것입니다.</p>
 
@@ -1820,7 +1833,7 @@ for touch in touches {
 
 <p> </p>
 
-<h4 id="텍스처-작업"><span class="me-2"><strong>텍스처 작업</strong></span><a href="#텍스처-작업" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="텍스처-작업"><span class="me-2"><strong>텍스처 작업</strong></span><a href="#텍스처-작업" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>첫 번째 순서는 실제 연필로 음영 처리 된 것처럼 보이도록 선의 질감을 변경하는 것입니다. 시작 앱에는 이를 위해 사용할 <code class="language-plaintext highlighter-rouge">PencilTexture</code>라는 Assets 카탈로그의 이미지가 포함되어 있습니다.</p>
 
@@ -1838,18 +1851,18 @@ for touch in touches {
 
 <p><code class="language-plaintext highlighter-rouge">drawStroke(_:touch:)</code>에서 다음 라인을 찾은 뒤 변경합니다..</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>drawColor.setStroke()
+</pre></td><td class="rouge-code"><pre><span class="n">drawColor</span><span class="o">.</span><span class="nf">setStroke</span><span class="p">()</span>
 
-// 를 다음으로 변경
+<span class="c1">// 를 다음으로 변경</span>
 
-pencilTexture.setStroke()
+<span class="n">pencilTexture</span><span class="o">.</span><span class="nf">setStroke</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1890,20 +1903,18 @@ pencilTexture.setStroke()
 
 <p>그런 다음 <code class="language-plaintext highlighter-rouge">drawStroke(_:touch:)</code>에서 다음 줄을 찾습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>let lineWidth = lineWidthForDrawing(context, touch: touch)
-
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">lineWidth</span> <span class="o">=</span> <span class="nf">lineWidthForDrawing</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="nv">touch</span><span class="p">:</span> <span class="n">touch</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>이것을 다음으로 변경합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1911,13 +1922,13 @@ pencilTexture.setStroke()
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>var lineWidth: CGFloat
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">lineWidth</span><span class="p">:</span> <span class="kt">CGFloat</span>
 
-if touch.altitudeAngle &lt; tiltThreshold {
-  lineWidth = lineWidthForShading(context, touch: touch)
-} else {
-  lineWidth = lineWidthForDrawing(context, touch: touch)
-}
+<span class="k">if</span> <span class="n">touch</span><span class="o">.</span><span class="n">altitudeAngle</span> <span class="o">&lt;</span> <span class="n">tiltThreshold</span> <span class="p">{</span>
+  <span class="n">lineWidth</span> <span class="o">=</span> <span class="nf">lineWidthForShading</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="nv">touch</span><span class="p">:</span> <span class="n">touch</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="n">lineWidth</span> <span class="o">=</span> <span class="nf">lineWidthForDrawing</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="nv">touch</span><span class="p">:</span> <span class="n">touch</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2028,7 +2039,7 @@ if touch.altitudeAngle &lt; tiltThreshold {
 
 <p> </p>
 
-<h4 id="방위각azimuth을-사용하여-폭-조정"><span class="me-2"><strong>방위각(azimuth)을 사용하여 폭 조정</strong></span><a href="#방위각azimuth을-사용하여-폭-조정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="방위각azimuth을-사용하여-폭-조정"><span class="me-2"><strong>방위각(azimuth)을 사용하여 폭 조정</strong></span><a href="#방위각azimuth을-사용하여-폭-조정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>실제 연필로 90도로 그리면 연필의 기울기 각도를 변경함에 따라 선이 좁아집니다. 그러나 Apple Pencil로 시도하면 선 너비가 동일하게 유지됩니다.</p>
 
@@ -2048,8 +2059,8 @@ if touch.altitudeAngle &lt; tiltThreshold {
 
 <p><code class="language-plaintext highlighter-rouge">lineWidthForShading(_:touch:)</code> 하단의 <code class="language-plaintext highlighter-rouge">return</code> 문 바로 직전에 다음을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2062,18 +2073,18 @@ if touch.altitudeAngle &lt; tiltThreshold {
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>// 1
-let minAltitudeAngle: CGFloat = 0.25
-let maxAltitudeAngle = tiltThreshold
+</pre></td><td class="rouge-code"><pre><span class="c1">// 1</span>
+<span class="k">let</span> <span class="nv">minAltitudeAngle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="k">let</span> <span class="nv">maxAltitudeAngle</span> <span class="o">=</span> <span class="n">tiltThreshold</span>
     
-// 2
-let altitudeAngle = touch.altitudeAngle &lt; minAltitudeAngle ? minAltitudeAngle : touch.altitudeAngle
+<span class="c1">// 2</span>
+<span class="k">let</span> <span class="nv">altitudeAngle</span> <span class="o">=</span> <span class="n">touch</span><span class="o">.</span><span class="n">altitudeAngle</span> <span class="o">&lt;</span> <span class="n">minAltitudeAngle</span> <span class="p">?</span> <span class="nv">minAltitudeAngle</span> <span class="p">:</span> <span class="n">touch</span><span class="o">.</span><span class="n">altitudeAngle</span>
     
-// 3
-let normalizedAltitude = 1 - ((altitudeAngle - minAltitudeAngle) / (maxAltitudeAngle - minAltitudeAngle))
+<span class="c1">// 3</span>
+<span class="k">let</span> <span class="nv">normalizedAltitude</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">((</span><span class="n">altitudeAngle</span> <span class="o">-</span> <span class="n">minAltitudeAngle</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">maxAltitudeAngle</span> <span class="o">-</span> <span class="n">minAltitudeAngle</span><span class="p">))</span>
 
-// 4
-lineWidth = lineWidth * normalizedAltitude + minLineWidth
+<span class="c1">// 4</span>
+<span class="n">lineWidth</span> <span class="o">=</span> <span class="n">lineWidth</span> <span class="o">*</span> <span class="n">normalizedAltitude</span> <span class="o">+</span> <span class="n">minLineWidth</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
@@ -2101,22 +2112,22 @@ lineWidth = lineWidth * normalizedAltitude + minLineWidth
 
 <p> </p>
 
-<h4 id="불투명도-표현"><span class="me-2"><strong>불투명도 표현</strong></span><a href="#불투명도-표현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="불투명도-표현"><span class="me-2"><strong>불투명도 표현</strong></span><a href="#불투명도-표현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>이 섹션의 마지막 작업은 힘으로 계산할 텍스처의 불투명도를 낮추어 음영을 좀 더 사실적으로 보이게 하는 것입니다.</p>
 
 <p><code class="language-plaintext highlighter-rouge">lineWidthForShading(_:touch:)</code>의 <code class="language-plaintext highlighter-rouge">return</code> 문 바로 직전에 다음을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>let minForce: CGFloat = 0.0 
-let maxForce: CGFloat = 5 
-let normalizedAlpha = (touch.force - minForce) / (maxForce - minForce) 
-context?.setAlpha(normalizedAlpha)
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">minForce</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mf">0.0</span> 
+<span class="k">let</span> <span class="nv">maxForce</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">5</span> 
+<span class="k">let</span> <span class="nv">normalizedAlpha</span> <span class="o">=</span> <span class="p">(</span><span class="n">touch</span><span class="o">.</span><span class="n">force</span> <span class="o">-</span> <span class="n">minForce</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">maxForce</span> <span class="o">-</span> <span class="n">minForce</span><span class="p">)</span> 
+<span class="n">context</span><span class="p">?</span><span class="o">.</span><span class="nf">setAlpha</span><span class="p">(</span><span class="n">normalizedAlpha</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -2132,7 +2143,7 @@ context?.setAlpha(normalizedAlpha)
 <p>(하편에서 계속됩니다.)</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=4009">Swift(스위프트): 애플 펜슬 튜토리얼 – 下 (스토리보드)</a></li>
+  <li><a href="/posts/swift스위프트-애플-펜슬-튜토리얼-下-스토리보드/">Swift(스위프트): 애플 펜슬 튜토리얼 – 下 (스토리보드)</a></li>
 </ul>
 
   </div>

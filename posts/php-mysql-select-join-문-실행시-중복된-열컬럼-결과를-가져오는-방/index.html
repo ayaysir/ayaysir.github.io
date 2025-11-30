@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,10 +498,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -532,6 +566,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -553,7 +592,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>PHP, Mysql: SELECT JOIN 문 실행시 중복된 이름의 열(컬럼) 결과를 가져오는 방법</h1>
     
@@ -627,7 +666,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="325 words"
+  title="323 words"
 >
   <em>1 min</em> read</span>
 
@@ -637,20 +676,42 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">PHP, Mysql: SELECT JOIN 문 실행시 중복된 이름의 열(컬럼) 결과를 가져오는 방법</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">PHP, Mysql: SELECT JOIN 문 실행시 중복된 이름의 열(컬럼) 결과를 가져오는 방법</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <h4 id="q"><span class="me-2"><strong>Q.</strong></span><a href="#q" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h2 id="q"><span class="me-2"><strong>Q.</strong></span><a href="#q" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>내 데이터베이스에 두 개의 테이블이 있습니다.</p>
 
-<p>컬럼이 있는 NEWS 테이블:</p>
+<p>컬럼이 있는 <code class="language-plaintext highlighter-rouge">NEWS</code> 테이블:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">id</code> - 뉴스 ID</li>
   <li><code class="language-plaintext highlighter-rouge">user</code> - 작성자의 사용자 ID</li>
 </ul>
 
-<p>컬럼이 있는 USERS 테이블 :</p>
+<p>컬럼이 있는 <code class="language-plaintext highlighter-rouge">USERS</code> 테이블 :</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">id</code> -사용자 ID</li>
@@ -664,13 +725,17 @@
 </pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">news</span> <span class="k">JOIN</span> <span class="n">users</span> <span class="k">ON</span> <span class="n">news</span><span class="p">.</span><span class="k">user</span> <span class="o">=</span> <span class="k">user</span><span class="p">.</span><span class="n">id</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>PHP에서 결과를 얻을 때 컬럼 이름을 <code class="language-plaintext highlighter-rouge">$row['컬럼이름']</code>으로 가져오는 경우, 동일한 컬럼 이름을 가진 뉴스 ID(<code class="language-plaintext highlighter-rouge">id</code>)와 사용자 ID(<code class="language-plaintext highlighter-rouge">id</code>)를 얻으려면 어떻게해야 합니까? (참고: PHP에서 JOIN된 SQL을 배열 형태로 가져올 때 중복되는 컬럼명이 있으면 나중에 조인된 쪽의 컬럼만 가져오며 나머지 중복된 이름의 컬럼명은 가져오지 않음)</p>
+<p>PHP에서 결과를 얻을 때 컬럼 이름을 <code class="language-plaintext highlighter-rouge">$row['컬럼이름']</code>으로 가져오는 경우, 동일한 컬럼 이름을 가진 뉴스 ID(<code class="language-plaintext highlighter-rouge">id</code>)와 사용자 ID(<code class="language-plaintext highlighter-rouge">id</code>)를 얻으려면 어떻게해야 합니까?</p>
+<blockquote>
+  <p>(참고: PHP에서 JOIN된 SQL을 배열 형태로 가져올 때 중복되는 컬럼명이 있으면 나중에 조인된 쪽의 컬럼만 가져오며 나머지 중복된 이름의 컬럼명은 가져오지 않음)</p>
+</blockquote>
 
 <p> </p>
 
-<h4 id="a"><span class="me-2"><strong>A.</strong></span><a href="#a" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="a"><span class="me-2"><strong>A.</strong></span><a href="#a" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><strong>(1) 첫 번째 방법: 별칭(alias)을 기입한 컬럼명을 일일히 지정</strong></p>
+<h3 id="1-첫-번째-방법"><span class="me-2"><strong>(1) 첫 번째 방법</strong></span><a href="#1-첫-번째-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>별칭(alias)을 기입한 컬럼명을 일일히 지정</p>
 
 <div class="language-sql highlighter-rouge"><div class="code-header">
         <span data-label-text="Sql"><i class="fas fa-code fa-fw small"></i></span>
@@ -682,7 +747,8 @@
 
 <p> </p>
 
-<p><strong>(2) 두 번째 방법: <code class="language-plaintext highlighter-rouge">*</code> 을 통해 컬럼 전부를 가져온 뒤, 필요한 컬럼만 뒤에 별칭을 기입해 지정 (추천)</strong></p>
+<h3 id="2-두-번째-방법"><span class="me-2"><strong>(2) 두 번째 방법</strong></span><a href="#2-두-번째-방법" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p><code class="language-plaintext highlighter-rouge">*</code> 을 통해 컬럼 전부를 가져온 뒤, 필요한 컬럼만 뒤에 별칭을 기입해 지정 (추천)</p>
 
 <div class="language-sql highlighter-rouge"><div class="code-header">
         <span data-label-text="Sql"><i class="fas fa-code fa-fw small"></i></span>
@@ -694,7 +760,9 @@
 
 <p> </p>
 
-<p>출처: <a href="https://stackoverflow.com/questions/431391/how-to-resolve-ambiguous-column-names-when-retrieving-results">https://stackoverflow.com/questions/431391/how-to-resolve-ambiguous-column-names-when-retrieving-results</a></p>
+<blockquote>
+  <p>출처: <a href="https://stackoverflow.com/questions/431391/how-to-resolve-ambiguous-column-names-when-retrieving-results">https://stackoverflow.com/questions/431391/how-to-resolve-ambiguous-column-names-when-retrieving-results</a></p>
+</blockquote>
 
   </div>
 
@@ -1616,6 +1684,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7379,7 +7453,7 @@
 
               <h4 class="pt-0 my-2">PHP, Mysql: 좋아요 기능 만들기</h4>
               <div class="text-muted">
-                <p>예전에 PHP로 만들었던 간단한 [CRUD 게시판](http://yoonbumtae.com/phpex)에 '좋아요 기능'을 추가해보도록 하겠습니다. '좋아요 기능'은 빈 하트(♡)를 누르면 하트가 채워지면서(♥) 숫자 카운트가 올라가는 기능입니다.  - [PHP: 데이터베이스 접근 기초(SELECT, INSERT, UPDATE, DELETE)](htt...</p>
+                <p>## **소개**    '좋아요 기능'은 빈 하트(♡)를 누르면 하트가 채워지면서(♥) 숫자 카운트가 올라가는 기능입니다.  > 참고: [PHP: 데이터베이스 접근 기초(SELECT, INSERT, UPDATE, DELETE)](/posts/php-데이터베이스-접근-기초select-insert-update-delete/)   ![](/assets/im...</p>
               </div>
             </div>
           </a>

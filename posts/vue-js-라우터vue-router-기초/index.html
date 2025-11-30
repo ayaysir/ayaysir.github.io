@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -696,10 +703,26 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -781,6 +804,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -802,7 +830,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Vue.js: 라우터(Vue Router) 기초</h1>
     
@@ -876,7 +904,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1043 words"
+  title="1033 words"
 >
   <em>5 min</em> read</span>
 
@@ -886,23 +914,45 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Vue.js: 라우터(Vue Router) 기초</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Vue.js: 라우터(Vue Router) 기초</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p>이 방법은 npm의 Vue CLI를 통해 개발하는 경우 및 처음에 Vue.js 프로젝트를 생성할 때 Vue Router가 포함되지 않은 경우를 기준으로 작성되었습니다.</p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="1-npm에서-vue-router-설치"><span class="me-2"><strong>1) npm에서 Vue Router 설치</strong></span><a href="#1-npm에서-vue-router-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="1-npm에서-vue-router-설치"><span class="me-2"><strong>1) npm에서 Vue Router 설치</strong></span><a href="#1-npm에서-vue-router-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>npm install vue-router --save
+</pre></td><td class="rouge-code"><pre>npm <span class="nb">install </span>vue-router <span class="nt">--save</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="2-router-관련-설정-js-파일-생성"><span class="me-2"><strong>2) router 관련 설정 js 파일 생성</strong></span><a href="#2-router-관련-설정-js-파일-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="2-router-관련-설정-js-파일-생성"><span class="me-2"><strong>2) router 관련 설정 js 파일 생성</strong></span><a href="#2-router-관련-설정-js-파일-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>이름 및 경로는 자유롭게 지정할 수 있습니다.</p>
 
@@ -910,10 +960,10 @@
 
 <p> </p>
 
-<h4 id="3-라우터-설정-js-파일-작성"><span class="me-2"><strong>3) 라우터 설정 js 파일 작성</strong></span><a href="#3-라우터-설정-js-파일-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="3-라우터-설정-js-파일-작성"><span class="me-2"><strong>3) 라우터 설정 js 파일 작성</strong></span><a href="#3-라우터-설정-js-파일-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -957,49 +1007,49 @@
 41
 42
 43
-</pre></td><td class="rouge-code"><pre>import Vue from 'vue'
-import Router from 'vue-router'
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Router</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue-router</span><span class="dl">'</span>
 
-// 연결할 컴포넌트 import
-import Topic from "./../components/Topic.vue"
-import HelloWorld from "@/components/HelloWorld.vue"
-import IdolList from "@/components/IdolList.vue"
-import WriteUwasa from "@/components/WriteUwasa.vue"
+<span class="c1">// 연결할 컴포넌트 import</span>
+<span class="k">import</span> <span class="nx">Topic</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./../components/Topic.vue</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">HelloWorld</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/components/HelloWorld.vue</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">IdolList</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/components/IdolList.vue</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">WriteUwasa</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@/components/WriteUwasa.vue</span><span class="dl">"</span>
 
-// 필수
-Vue.use(Router)
+<span class="c1">// 필수</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="nx">Router</span><span class="p">)</span>
 
-export default new Router({
-    mode: 'history', // history 모드는 자연스러운 url 가능, 지정하지 않으면 해시(#)기호로 url 사용
-    routes: [
-        {
-            path: "/", // 경로
-            name: "Topic", // 해당 경로의 이름 
-            component: Topic // 이동할 컴포넌트
-        },
-        {
-            path: "/foo",
-            name: "Foo",
-            component: HelloWorld
-        },
-        {
-            path: "/bar",
-            name: "Bar",
-            component: HelloWorld
-        },
-        {
-            path: "/v/simple-list",
-            name: "Idol Simple List",
-            component: IdolList
-        },
-        {
-            path: "/v/write-uwasa",
-            name: "Write Uwasa",
-            component: WriteUwasa
-        },
+<span class="k">export</span> <span class="k">default</span> <span class="k">new</span> <span class="nc">Router</span><span class="p">({</span>
+    <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">history</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// history 모드는 자연스러운 url 가능, 지정하지 않으면 해시(#)기호로 url 사용</span>
+    <span class="na">routes</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 경로</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Topic</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// 해당 경로의 이름 </span>
+            <span class="na">component</span><span class="p">:</span> <span class="nx">Topic</span> <span class="c1">// 이동할 컴포넌트</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/foo</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Foo</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">component</span><span class="p">:</span> <span class="nx">HelloWorld</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/bar</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Bar</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">component</span><span class="p">:</span> <span class="nx">HelloWorld</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/v/simple-list</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Idol Simple List</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">component</span><span class="p">:</span> <span class="nx">IdolList</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/v/write-uwasa</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Write Uwasa</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">component</span><span class="p">:</span> <span class="nx">WriteUwasa</span>
+        <span class="p">},</span>
 
-    ]
-})
+    <span class="p">]</span>
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1013,12 +1063,12 @@ export default new Router({
 
 <p> </p>
 
-<h4 id="4-mainjs에-route-관련-설정-추가"><span class="me-2"><strong>4) main.js에 route 관련 설정 추가</strong></span><a href="#4-mainjs에-route-관련-설정-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="4-mainjs에-route-관련-설정-추가"><span class="me-2"><strong>4) main.js에 route 관련 설정 추가</strong></span><a href="#4-mainjs에-route-관련-설정-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>루트 디렉토리에 있는 <code class="language-plaintext highlighter-rouge">main.js</code>에 <code class="language-plaintext highlighter-rouge">router</code>를 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1031,17 +1081,17 @@ export default new Router({
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>import Vue from 'vue'
-import App from './App.vue'
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App.vue</span><span class="dl">'</span>
 
-import router from "./router/router";
+<span class="k">import</span> <span class="nx">router</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./router/router</span><span class="dl">"</span><span class="p">;</span>
 
-Vue.config.productionTip = false
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">productionTip</span> <span class="o">=</span> <span class="kc">false</span>
 
-new Vue({
-  router,
-  render: h =&gt; h(App),
-}).$mount('#app')
+<span class="k">new</span> <span class="nc">Vue</span><span class="p">({</span>
+  <span class="nx">router</span><span class="p">,</span>
+  <span class="na">render</span><span class="p">:</span> <span class="nx">h</span> <span class="o">=&gt;</span> <span class="nf">h</span><span class="p">(</span><span class="nx">App</span><span class="p">),</span>
+<span class="p">}).</span><span class="nf">$mount</span><span class="p">(</span><span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">)</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1052,10 +1102,10 @@ new Vue({
 
 <p> </p>
 
-<h4 id="5-appjs-에-를-추가"><span class="me-2"><strong>5) App.js 에 <router-view></router-view>를 추가</strong></span><a href="#5-appjs-에-를-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="5-appjs-에-를-추가"><span class="me-2"><strong>5) App.js 에 <router-view></router-view>를 추가</strong></span><a href="#5-appjs-에-를-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1070,30 +1120,30 @@ new Vue({
 12
 13
 14
-</pre></td><td class="rouge-code"><pre>&lt;template&gt;
-    &lt;div id="app"&gt;
-        &lt;Header :msg="welcomeMessage"&gt;&lt;/Header&gt;
-        &lt;router-view /&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;Header</span> <span class="na">:msg=</span><span class="s">"welcomeMessage"</span><span class="nt">&gt;&lt;/Header&gt;</span>
+        <span class="nt">&lt;router-view</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
 
-&lt;script&gt;
-    // ... 생략 ... //
-&lt;/script&gt;
+<span class="nt">&lt;script&gt;</span>
+    <span class="c1">// ... 생략 ... //</span>
+<span class="nt">&lt;/script&gt;</span>
 
-&lt;style&gt;
-    /* ... 생략 ... */
-&lt;/style&gt;
+<span class="nt">&lt;style&gt;</span>
+    <span class="c">/* ... 생략 ... */</span>
+<span class="nt">&lt;/style&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>4라인에 추가된 <code class="language-plaintext highlighter-rouge">&lt;router-view /&gt;</code> 부분에서 라우터 설정 js 파일에서 지정된 컴포넌트들이 표시될 예정입니다. 예를 들어 <code class="language-plaintext highlighter-rouge">/v/simple-list</code>로 접속한 경우, <code class="language-plaintext highlighter-rouge">IdolList</code> 컴포넌트가 <code class="language-plaintext highlighter-rouge">&lt;router-view /&gt;</code> 부분에서 대체되어 표시됩니다.</p>
 
 <p> </p>
 
-<h4 id="6-내비게이션nav-부분에-라우터-기반-링크-추가"><span class="me-2"><strong>6) 내비게이션(&lt;nav&gt;) 부분에 라우터 기반 링크 추가</strong></span><a href="#6-내비게이션nav-부분에-라우터-기반-링크-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="6-내비게이션nav-부분에-라우터-기반-링크-추가"><span class="me-2"><strong>6) 내비게이션(&lt;nav&gt;) 부분에 라우터 기반 링크 추가</strong></span><a href="#6-내비게이션nav-부분에-라우터-기반-링크-추가" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1113,38 +1163,38 @@ new Vue({
 17
 18
 19
-</pre></td><td class="rouge-code"><pre>&lt;template&gt;
-    &lt;nav class="nav"&gt;
-        &lt;div class="nav-header"&gt;
-            &lt;img src="./../assets/logo.png"&gt; &lt;h2&gt;&lt;/h2&gt;
-        &lt;/div&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;template&gt;</span>
+    <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"nav"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"nav-header"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"./../assets/logo.png"</span><span class="nt">&gt;</span> <span class="nt">&lt;h2&gt;&lt;/h2&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
         
-        &lt;ul&gt;
-            &lt;li&gt;&lt;router-link to="/"&gt;소문 목록&lt;/router-link&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;router-link to="/v/simple-list"&gt;아이돌 리스트&lt;/router-link&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;router-link to="/v/write-uwasa"&gt;소문 등록&lt;/router-link&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-&lt;/template&gt;
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;router-link</span> <span class="na">to=</span><span class="s">"/"</span><span class="nt">&gt;</span>소문 목록<span class="nt">&lt;/router-link&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;router-link</span> <span class="na">to=</span><span class="s">"/v/simple-list"</span><span class="nt">&gt;</span>아이돌 리스트<span class="nt">&lt;/router-link&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;router-link</span> <span class="na">to=</span><span class="s">"/v/write-uwasa"</span><span class="nt">&gt;</span>소문 등록<span class="nt">&lt;/router-link&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/nav&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
 
-&lt;script&gt;
-&lt;/scirpt&gt;
-
-&lt;style scoped&gt;
-&lt;/style&gt;
-</pre></td></tr></tbody></table></code></div></div>
+<span class="nt">&lt;script&gt;</span>
+<span class="o">&lt;</span><span class="sr">/scirpt</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">style</span> <span class="nx">scoped</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">&lt;router-link to="[라우트_주소]"&gt;</code> 를 사용하여 라우트 링크를 만듭니다. 이것은 렌더링 시에 <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> 태그로 대체됩니다. <code class="language-plaintext highlighter-rouge">to</code> 속성에 주소를 적으면 되고, <code class="language-plaintext highlighter-rouge">:to</code> 속성을 사용한 경우 라우트 이름을 사용하는 등의 작업을 수행할 수 있습니다. (<a href="https://router.vuejs.org/kr/guide/essentials/named-routes.html">참고</a>)</p>
 
-<p>서버에서 URL 매핑이 SPA 페이지에 적절하게 이루어진 경우, URL을 브라우저 창에 직접 입력하여 접속하는 것도 가능합니다. (<a href="http://yoonbumtae.com/?p=2940">스프링 부트(Spring Boot): SPA 라우트(route)를 위한 URL 컨트롤러</a>)</p>
+<p>서버에서 URL 매핑이 SPA 페이지에 적절하게 이루어진 경우, URL을 브라우저 창에 직접 입력하여 접속하는 것도 가능합니다. (<a href="/스프링-부트spring-boot-spa-라우트route를-위한-url-컨트롤러/">스프링 부트(Spring Boot): SPA 라우트(route)를 위한 URL 컨트롤러</a>)</p>
 
 <p> </p>
 
-<p>[caption id=”attachment_2949” align=”alignnone” width=”583”] <a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.26.09.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.26.09.png" alt="" loading="lazy"></a> 기본 URL에 접속했을 때, <code class="language-plaintext highlighter-rouge">"/"</code> 에 해당하는 컴포넌트(<code class="language-plaintext highlighter-rouge">Topic</code>)를 띄움[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.26.09.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.26.09.png" alt="기본 URL에 접속했을 때, `&quot;/&quot;` 에 해당하는 컴포넌트(`Topic`)를 띄움" loading="lazy"></a><br />
+<em>기본 URL에 접속했을 때, <code class="language-plaintext highlighter-rouge">"/"</code> 에 해당하는 컴포넌트(<code class="language-plaintext highlighter-rouge">Topic</code>)를 띄움</em></p>
 
-<p> </p>
-
-<p>[caption id=”attachment_2948” align=”alignnone” width=”586”] <a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.24.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.24.16.png" alt="" loading="lazy"></a> 다른 URL을 입력하거나 내비게이션 바의 메뉴를 클릭했을 때, 해당 URL의 컴포넌트가 표시됨[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.24.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-24-am-12.24.16.png" alt="다른 URL을 입력하거나 내비게이션 바의 메뉴를 클릭했을 때, 해당 URL의 컴포넌트가 표시됨" loading="lazy"></a><br />
+<em>다른 URL을 입력하거나 내비게이션 바의 메뉴를 클릭했을 때, 해당 URL의 컴포넌트가 표시됨</em></p>
 
   </div>
 
@@ -2075,6 +2125,12 @@ new Vue({
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7894,7 +7950,7 @@ new Vue({
 
               <h4 class="pt-0 my-2">Vue.js: this.$emit으로 하위 컴포넌트에서 상위 컴포넌트로 정보 전달</h4>
               <div class="text-muted">
-                <p>먼저 상위(부모) 컴포넌트의 이름은 `Topic`, 하위(자식) 컴포넌트의 이름은 `TopicSearch`라고 가정합니다.     ##### **먼저, 상위 클래스에서 컴포넌트를 삽입할 때 `v-on:xxx`(약어 `@xxx`)를 사용해 커스텀 이벤트를 만듭니다.**  **Topic.vue (일부)**  ```                  ```  ...</p>
+                <p>먼저 상위(부모) 컴포넌트의 이름은 `Topic`, 하위(자식) 컴포넌트의 이름은 `TopicSearch`라고 가정합니다.  ## **절차**  ### **먼저, 상위 클래스에서 컴포넌트를 삽입할 때 `v-on:xxx`(약어 `@xxx`)를 사용해 커스텀 이벤트를 만듭니다.**  **Topic.vue (일부)**  ```html             ...</p>
               </div>
             </div>
           </a>

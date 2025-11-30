@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -761,21 +768,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -871,8 +863,34 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -889,7 +907,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>스프링 부트(Spring Boot) 미디 플레이어 만들기 (2): 업로드 페이지, 임시 재생 플레이어 만들기</h1>
     
@@ -963,9 +981,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4517 words"
+  title="4378 words"
 >
-  <em>25 min</em> read</span>
+  <em>24 min</em> read</span>
 
         </div>
       </div>
@@ -973,15 +991,37 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">스프링 부트(Spring Boot) 미디 플레이어 만들기 (2): 업로드 페이지, 임시 재생 플레이어 만들기</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">스프링 부트(Spring Boot) 미디 플레이어 만들기 (2): 업로드 페이지, 임시 재생 플레이어 만들기</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <!-- \[rcblock id="2655"\] -->
 
-<p>이전 글: <a href="http://yoonbumtae.com/?p=2819">스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기</a></p>
+<p>이전 글: <a href="/posts/스프링-부트spring-boot-미디-플레이어-만들기-1-timidity-lame을-이용해/">스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기</a></p>
 
 <p> </p>
 
-<h5 id="현재까지-완성된-미디-플레이어-임시-바로-가기"><span class="me-2"><strong>현재까지 완성된 미디 플레이어 (임시) 바로 가기</strong></span><a href="#현재까지-완성된-미디-플레이어-임시-바로-가기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="미디-플레이어-보기"><span class="me-2"><strong>미디 플레이어 보기</strong></span><a href="#미디-플레이어-보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 서비스는 AWS 프리티어 기간 만료로 인해 폐쇄하였습니다.서비스 당시 모습을 영상 기록으로 확인할 수 있습니다.</p>
 
@@ -990,7 +1030,7 @@
 
 <p> </p>
 
-<h5 id="현재-버전에서의-timidityrunner"><span class="me-2"><strong>현재 버전에서의 TimidityRunner</strong></span><a href="#현재-버전에서의-timidityrunner" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="현재-버전에서의-timidityrunner"><span class="me-2"><strong>현재 버전에서의 TimidityRunner</strong></span><a href="#현재-버전에서의-timidityrunner" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-java highlighter-rouge"><div class="code-header">
         <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
@@ -1091,8 +1131,6 @@
 95
 96
 97
-98
-99
 </pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">com.example.awsboard.util</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
@@ -1100,7 +1138,6 @@
 <span class="kn">import</span> <span class="nn">java.security.NoSuchAlgorithmException</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TimidityRunner</span> <span class="o">{</span>
-
     <span class="c1">// 여기로 보낼 때 루트 패스 포함해서 보냄.</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Boolean</span> <span class="nf">convertMidiToMp3</span><span class="o">(</span><span class="nc">String</span> <span class="n">midiPath</span><span class="o">,</span> <span class="nc">String</span> <span class="n">mp3Path</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
 
@@ -1189,14 +1226,13 @@
 
         <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="nc">TimidityRunner</span><span class="o">.</span><span class="na">getHash</span><span class="o">(</span><span class="n">midiPath</span><span class="o">));</span>
         <span class="nc">TimidityRunner</span><span class="o">.</span><span class="na">convertMidiToMp3</span><span class="o">(</span><span class="n">midiPath</span><span class="o">,</span> <span class="n">mp3Path</span><span class="o">);</span>
-
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h5 id="미디-정보-저장-테이블엔티티-생성"><span class="me-2"><strong>미디 정보 저장 테이블(엔티티) 생성</strong></span><a href="#미디-정보-저장-테이블엔티티-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="미디-정보-저장-테이블엔티티-생성"><span class="me-2"><strong>미디 정보 저장 테이블(엔티티) 생성</strong></span><a href="#미디-정보-저장-테이블엔티티-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이전에 만들었던 <code class="language-plaintext highlighter-rouge">TimidityRunner</code>를 바탕으로 미디 플레이어를 만들기로 하였습니다. 미디 파일이 업로드되면 재생할 때마다 실시간 변환을 택할지, 아니면 mp3를 변환해둔 파일을 서버에 저장한 뒤 재생하는 방식을 택할지 둘 중 선택하다가 제가 현재 AWS EC2 프리티어 서비스를 이용하고 있고 지금 상황에서 실시간 변환은 서버에 부하가 많이 가기 때문에 사용자가 미디 파일을 업로드하면 서버에서 mp3를 저장하고, 나중에 플레이어에서 재생할 때 mp3 파일을 가져와 재생하는 방식을 택했습니다.</p>
 
@@ -1348,7 +1384,7 @@
 
 <p> </p>
 
-<h5 id="midi-엔티티의-서비스-클래스-작성"><span class="me-2"><strong>Midi 엔티티의 서비스 클래스 작성</strong></span><a href="#midi-엔티티의-서비스-클래스-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="midi-엔티티의-서비스-클래스-작성"><span class="me-2"><strong>Midi 엔티티의 서비스 클래스 작성</strong></span><a href="#midi-엔티티의-서비스-클래스-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-java highlighter-rouge"><div class="code-header">
         <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
@@ -1468,9 +1504,9 @@
 
 <p> </p>
 
-<h5 id="미디파일-업로드-api-구현"><span class="me-2"><strong>미디파일 업로드 API 구현</strong></span><a href="#미디파일-업로드-api-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="미디파일-업로드-api-구현"><span class="me-2"><strong>미디파일 업로드 API 구현</strong></span><a href="#미디파일-업로드-api-구현" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>미디파일을 여러 개 업로드할 수 있는 기능을 구현하였습니다. <a href="http://yoonbumtae.com/?p=2834">스프링 부트(Spring Boot): 파일 업로드 처리하기 (한 개, 여러 개)</a> 이 글을 참고해 미디파일을 <code class="language-plaintext highlighter-rouge">MultipartFile</code> 리스트로 여러 개 받을 수 있도록 하였습니다. 카테고리 및 사용자 지정 제목 정보도 받을 수 있게 제작하였습니다.</p>
+<p>미디파일을 여러 개 업로드할 수 있는 기능을 구현하였습니다. <a href="/posts/스프링-부트spring-boot-파일-업로드-처리하기-한-개-여러-개/">스프링 부트(Spring Boot): 파일 업로드 처리하기 (한 개, 여러 개)</a> 이 글을 참고해 미디파일을 <code class="language-plaintext highlighter-rouge">MultipartFile</code> 리스트로 여러 개 받을 수 있도록 하였습니다. 카테고리 및 사용자 지정 제목 정보도 받을 수 있게 제작하였습니다.</p>
 
 <p>현재는 <code class="language-plaintext highlighter-rouge">MultipartFile</code>로 되어있지만 미디 파일은 대부분 파일 크기가 매우 작기(수십 KB 단위가 대부분입니다.) 때문에 나중에 BASE64 포맷을 이용해 업로드 방식을 변경할지 고려하고 있습니다. 원래 파일 크기가 작아서 BASE64로 변환해도 오버헤드가 적고 JSON 에 포함해서 보낼 수 있기 때문에 이점이 있습니다.</p>
 
@@ -1772,7 +1808,7 @@
 
 <p> </p>
 
-<h5 id="다음은-업로드-뷰-페이지thymeleaf-입니다"><span class="me-2"><strong>다음은 업로드 뷰 페이지(Thymeleaf) 입니다.</strong></span><a href="#다음은-업로드-뷰-페이지thymeleaf-입니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="업로드-뷰-페이지thymeleaf"><span class="me-2"><strong>업로드 뷰 페이지(Thymeleaf)</strong></span><a href="#업로드-뷰-페이지thymeleaf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-html highlighter-rouge"><div class="code-header">
         <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
@@ -2248,26 +2284,27 @@
 
 <p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.10.09.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.10.09.png" alt="" loading="lazy"></a></p>
 
-<p>[caption id=”attachment_2881” align=”alignnone” width=”588”] <a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.10.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.10.28.png" alt="" loading="lazy"></a> 업로드 결과를 JSON 으로 반환[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.10.28.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-15-pm-1.10.28.png" alt="업로드 결과를 JSON 으로 반환" loading="lazy"></a><br />
+<em>업로드 결과를 JSON 으로 반환</em></p>
 
 <p> </p>
 
-<h5 id="변환된-mp3-파일을-클라이언트로-보내는-api-만들기"><span class="me-2"><strong>변환된 MP3 파일을 클라이언트로 보내는 API 만들기</strong></span><a href="#변환된-mp3-파일을-클라이언트로-보내는-api-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="변환된-mp3-파일을-클라이언트로-보내는-api-만들기"><span class="me-2"><strong>변환된 MP3 파일을 클라이언트로 보내는 API 만들기</strong></span><a href="#변환된-mp3-파일을-클라이언트로-보내는-api-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>크롬에서 구간 탐색(seeking)이 가능하게 하려면 response header 설정을 해야 합니다. ”Accept-ranges”를 ”bytes”로 설정하고, ”Content-Length”에 바이트 단위로 파일 길이를 넣어주면 됩니다. (<a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Range_requests">MDN 링크</a>)</p>
 
 <p>ㅂㅅ같은 사파리 브라우저때문에 이 부분은 문제가 많이 복잡해서 설명 및 코드는 별도의 글에서 설명하겠습니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=2891">스프링 부트 (Spring Boot): mp3을 전송하는 컨트롤러 – 크롬 및 사파리(Safari) 브라우저에서 구간 탐색이 안되는 문제 해결 방법</a></li>
+  <li><a href="/posts/스프링-부트-spring-boot-mp3을-전송하는-컨트롤러-크롬-및-사파/">스프링 부트 (Spring Boot): mp3을 전송하는 컨트롤러 – 크롬 및 사파리(Safari) 브라우저에서 구간 탐색이 안되는 문제 해결 방법</a></li>
 </ul>
 
 <p> </p>
 
-<h5 id="미디-재생-플레이어-페이지임시-만들기"><span class="me-2"><strong>미디 재생 플레이어 페이지(임시) 만들기</strong></span><a href="#미디-재생-플레이어-페이지임시-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="미디-재생-플레이어-페이지임시-만들기"><span class="me-2"><strong>미디 재생 플레이어 페이지(임시) 만들기</strong></span><a href="#미디-재생-플레이어-페이지임시-만들기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2368,127 +2405,105 @@
 98
 99
 100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-</pre></td><td class="rouge-code"><pre>&lt;html lang="ko" xmlns:th="http://www.thymeleaf.org"&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"ko"</span> <span class="na">xmlns:th=</span><span class="s">"http://www.thymeleaf.org"</span><span class="nt">&gt;</span>
 
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;미디파일 업로드&lt;/title&gt;
-    &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"&gt;
-    &lt;style&gt;
-        .song-title {
-            cursor: pointer;
-        }
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>미디파일 업로드<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"</span> <span class="na">integrity=</span><span class="s">"sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+        <span class="nc">.song-title</span> <span class="p">{</span>
+            <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        #audio-player {
-            width: 100%;
-        }
-    &lt;/style&gt;
+        <span class="nf">#audio-player</span> <span class="p">{</span>
+            <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="nt">&lt;/style&gt;</span>
 
-&lt;/head&gt;
+<span class="nt">&lt;/head&gt;</span>
 
-&lt;body&gt;
+<span class="nt">&lt;body&gt;</span>
 
-    &lt;div class="container"&gt;
-        &lt;div class="row mt-3"&gt;
-            &lt;div class="col-7"&gt;
-                &lt;h2&gt;미디파일 목록 (임시)&lt;/h2&gt;
-                &lt;p&gt;제목을 클릭하면 재생됩니다. &lt;a th:href="@{/midi/upload}" href="#" class="btn btn-primary btn-sm"&gt;업로드&lt;/a&gt;&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class="col-5"&gt;
-                &lt;div&gt;
-                    &lt;audio id="audio-player" controls&gt;&lt;/audio&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;table class="table table-hover" id="table-info"&gt;
-            &lt;thead&gt;
-                &lt;tr&gt;
-                    &lt;th scope="col"&gt;ID&lt;/th&gt;
-                    &lt;th scope="col"&gt;제목&lt;/th&gt;
-                    &lt;th scope="col"&gt;업로더&lt;/th&gt;
-                &lt;/tr&gt;
-            &lt;/thead&gt;
-            &lt;tbody id="table-info-tbody"&gt;
-                &lt;!-- &lt;tr id="info-tr-proto"&gt;--&gt;
-                &lt;!-- &lt;th scope="row" class="file-name"&gt;Default&lt;/th&gt;--&gt;
-                &lt;!-- &lt;td class="category"&gt;--&gt;
-                &lt;!-- &lt;input type="text" placeholder="카테고리명을 입력하세요." class="form-control form-control-sm"&gt;--&gt;
-                &lt;!-- &lt;/td&gt;--&gt;
-                &lt;!-- &lt;td class="custom-title"&gt;--&gt;
-                &lt;!-- &lt;input type="text" placeholder="제목을 입력하세요." class="form-control form-control-sm"&gt;--&gt;
-                &lt;!-- &lt;/td&gt;--&gt;
-                &lt;!-- &lt;td class="file-size"&gt;Column content&lt;/td&gt;--&gt;
-                &lt;!-- &lt;/tr&gt;--&gt;
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row mt-3"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-7"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>미디파일 목록 (임시)<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;p&gt;</span>제목을 클릭하면 재생됩니다. <span class="nt">&lt;a</span> <span class="na">th:href=</span><span class="s">"@{/midi/upload}"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-sm"</span><span class="nt">&gt;</span>업로드<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-5"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div&gt;</span>
+                    <span class="nt">&lt;audio</span> <span class="na">id=</span><span class="s">"audio-player"</span> <span class="na">controls</span><span class="nt">&gt;&lt;/audio&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-hover"</span> <span class="na">id=</span><span class="s">"table-info"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;thead&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>ID<span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>제목<span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>업로더<span class="nt">&lt;/th&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+            <span class="nt">&lt;/thead&gt;</span>
+            <span class="nt">&lt;tbody</span> <span class="na">id=</span><span class="s">"table-info-tbody"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/tbody&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
 
-            &lt;/tbody&gt;
-        &lt;/table&gt;
+    <span class="nt">&lt;/div&gt;</span>
 
-    &lt;/div&gt;
+    <span class="nt">&lt;script&gt;</span>
+        <span class="kd">const</span> <span class="nx">example</span> <span class="o">=</span> <span class="p">[{</span>
+                <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">userId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">category</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Uploaded</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">customTitle</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">amazonia</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">originalFileName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">amazonia.mid</span><span class="dl">"</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">userId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">category</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Uploaded</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">customTitle</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ample</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">originalFileName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ample.mid</span><span class="dl">"</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">userId</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">category</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Uploaded</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">customTitle</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">arsenal-mixed-4bell-mid0</span><span class="dl">"</span><span class="p">,</span>
+                <span class="dl">"</span><span class="s2">originalFileName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">arsenal-mixed-4bell-mid0.mid</span><span class="dl">"</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
 
-    &lt;script&gt;
-        const example = [{
-                "id": 1,
-                "userId": 1,
-                "category": "Uploaded",
-                "customTitle": "amazonia",
-                "originalFileName": "amazonia.mid"
-            },
-            {
-                "id": 2,
-                "userId": 1,
-                "category": "Uploaded",
-                "customTitle": "ample",
-                "originalFileName": "ample.mid"
-            },
-            {
-                "id": 3,
-                "userId": 1,
-                "category": "Uploaded",
-                "customTitle": "arsenal-mixed-4bell-mid0",
-                "originalFileName": "arsenal-mixed-4bell-mid0.mid"
-            }
-        ]
+        <span class="nf">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">/api/v1/midi</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+                <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
+            <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nx">song</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="kd">const</span> <span class="nx">$tr</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">tr</span><span class="dl">"</span><span class="p">);</span>
+                    <span class="nx">$tr</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&lt;th scope="row"&gt;</span><span class="p">${</span><span class="nx">song</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">&lt;/th&gt;
+                    &lt;td class="song-title" data-id=</span><span class="p">${</span><span class="nx">song</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">&gt;&lt;span class="text-muted"&gt;[</span><span class="p">${</span><span class="nx">song</span><span class="p">.</span><span class="nx">category</span><span class="p">}</span><span class="s2">]&lt;/span&gt; </span><span class="p">${</span><span class="nx">song</span><span class="p">.</span><span class="nx">customTitle</span><span class="p">}</span><span class="s2">&lt;/td&gt;
+                    &lt;td&gt;</span><span class="p">${</span><span class="nx">song</span><span class="p">.</span><span class="nx">userId</span><span class="p">}</span><span class="s2">&lt;/td&gt;`</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">table-info-tbody</span><span class="dl">"</span><span class="p">).</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">$tr</span><span class="p">)</span>
 
-        fetch("/api/v1/midi", {
-                method: "GET"
-            })
-            .then(res =&gt; res.json())
-            .then(data =&gt; {
-                data.forEach(song =&gt; {
-                    const $tr = document.createElement("tr");
-                    $tr.innerHTML = `&lt;th scope="row"&gt;${song.id}&lt;/th&gt;
-                    &lt;td class="song-title" data-id=${song.id}&gt;&lt;span class="text-muted"&gt;[${song.category}]&lt;/span&gt; ${song.customTitle}&lt;/td&gt;
-                    &lt;td&gt;${song.userId}&lt;/td&gt;`
-                    document.getElementById("table-info-tbody").appendChild($tr)
+                <span class="p">})</span>
+            <span class="p">})</span>
 
-                })
-            })
+        <span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">if </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="dl">"</span><span class="s2">song-title</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+                <span class="kd">const</span> <span class="nx">audio</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">audio-player</span><span class="dl">"</span><span class="p">)</span>
+                <span class="nx">audio</span><span class="p">.</span><span class="nf">pause</span><span class="p">()</span>
+                <span class="nx">audio</span><span class="p">.</span><span class="nx">loop</span> <span class="o">=</span> <span class="kc">false</span>
+                <span class="nx">audio</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/api/v1/midi/mp3/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">id</span>
+                <span class="c1">// audio.src = "http://cld3097web.audiovideoweb.com/va90web25003/companions/Foundations%20of%20Rock/13.01.mp3"</span>
+                <span class="nx">audio</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+    <span class="nt">&lt;/script&gt;</span>
 
-        document.addEventListener("click", e =&gt; {
-            if (e.target &amp;&amp; e.target.classList.contains("song-title")) {
-                const audio = document.getElementById("audio-player")
-                audio.pause()
-                audio.loop = false
-                audio.src = "/api/v1/midi/mp3/" + e.target.dataset.id
-                // audio.src = "http://cld3097web.audiovideoweb.com/va90web25003/companions/Foundations%20of%20Rock/13.01.mp3"
-                audio.play()
-            }
-        })
-    &lt;/script&gt;
-
-&lt;/body&gt;&lt;/html&gt;
+<span class="nt">&lt;/body&gt;&lt;/html&gt;</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2499,7 +2514,9 @@
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/xUl4sOQkBno" frameborder="0" allowfullscreen=""></iframe></div>
 
-<p>아이폰에서도 정상 재생되며 백그라운드에서도 정상 동작 합니다. 제가 예전에 만들었던 라이브러리를 사용한 <a href="http://yoonbumtae.com/music/midi/">미디 플레이어</a>는 백그라운드 재생이 안되었는데, 이 점은 해결된 것 같습니다.</p>
+<p>아이폰에서도 정상 재생되며 백그라운드에서도 정상 동작 합니다.</p>
+
+<!-- 제가 예전에 만들었던 라이브러리를 사용한 [미디 플레이어](http://y1oonbumtae.com/music/midi/)는 백그라운드 재생이 안되었는데, 이 점은 해결된 것 같습니다. -->
 
 <p>앞으로 구현할 내용은 다음과 같습니다.</p>
 
@@ -2510,7 +2527,7 @@
   <li>사용자별 플레이리스트 기능(추가, 변경, 삭제)</li>
 </ul>
 
-<p> </p>
+<h2 id="가능한-추가-작업"><span class="me-2"><strong>가능한 추가 작업</strong></span><a href="#가능한-추가-작업" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>여유가 된다면 언젠가는 다음 기능도 시도해볼 예정입니다.</p>
 
@@ -3441,6 +3458,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

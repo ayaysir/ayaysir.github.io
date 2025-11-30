@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -938,6 +945,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -956,16 +1028,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -1019,6 +1081,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -1040,7 +1112,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)</h1>
     
@@ -1124,6 +1196,28 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <p><a href="https://firebase.google.com/?hl=ko">Firebase</a>(파이어베이스)를 이용한 iOS 로그인 구현 방법입니다.</p>
@@ -1132,7 +1226,7 @@
 
 <p> </p>
 
-<h4 id="파이어베이스-프로젝트에서-authentification-생성"><span class="me-2"><strong>파이어베이스 프로젝트에서 Authentification 생성</strong></span><a href="#파이어베이스-프로젝트에서-authentification-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="파이어베이스-프로젝트에서-authentification-생성"><span class="me-2"><strong>파이어베이스 프로젝트에서 Authentification 생성</strong></span><a href="#파이어베이스-프로젝트에서-authentification-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>1. 파이어베이스 콘솔에서 프로젝트를 생성한 후, <code class="language-plaintext highlighter-rouge">빌드</code> &gt; <code class="language-plaintext highlighter-rouge">Authentification</code> 메뉴를 클릭합니다.</p>
 
@@ -1174,7 +1268,7 @@
 
 <p> </p>
 
-<h4 id="프로젝트에-firebase-cocoapods-설치"><span class="me-2"><strong>프로젝트에 Firebase CocoaPods 설치</strong></span><a href="#프로젝트에-firebase-cocoapods-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="프로젝트에-firebase-cocoapods-설치"><span class="me-2"><strong>프로젝트에 Firebase CocoaPods 설치</strong></span><a href="#프로젝트에-firebase-cocoapods-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Firebase는 <code class="language-plaintext highlighter-rouge">CocoaPods</code>라는 디펜던시 관리자를 이용해 프로젝트 내에 설치해야 합니다.</p>
 
@@ -1202,8 +1296,8 @@
 
 <p>3. 초기화가 완료되면, 프로젝트 루트 폴더에 <code class="language-plaintext highlighter-rouge">Podfile</code>이라는 파일이 생성됩니다. 텍스트 편집기로 해당 파일을 연 뒤, 아래 하이라이트 부분을 추가합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-ruby highlighter-rouge"><div class="code-header">
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1236,48 +1330,48 @@
 30
 31
 32
-</pre></td><td class="rouge-code"><pre># Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+</pre></td><td class="rouge-code"><pre><span class="c1"># Uncomment the next line to define a global platform for your project</span>
+<span class="c1"># platform :ios, '9.0'</span>
 
-target 'ExampleProject' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+<span class="n">target</span> <span class="s1">'ExampleProject'</span> <span class="k">do</span>
+  <span class="c1"># Comment the next line if you don't want to use dynamic frameworks</span>
+  <span class="n">use_frameworks!</span>
 
-  # Pods for ExampleProject
-  # add the Firebase pod for Google Analytics
-  pod 'Firebase/Analytics'
-  # or pod ‘Firebase/AnalyticsWithoutAdIdSupport’
-  # for Analytics without IDFA collection capability
+  <span class="c1"># Pods for ExampleProject</span>
+  <span class="c1"># add the Firebase pod for Google Analytics</span>
+  <span class="n">pod</span> <span class="s1">'Firebase/Analytics'</span>
+  <span class="c1"># or pod ‘Firebase/AnalyticsWithoutAdIdSupport’</span>
+  <span class="c1"># for Analytics without IDFA collection capability</span>
 
-  # add pods for any other desired Firebase products
-  # https://firebase.google.com/docs/ios/setup#available-pods
+  <span class="c1"># add pods for any other desired Firebase products</span>
+  <span class="c1"># https://firebase.google.com/docs/ios/setup#available-pods</span>
 
-  # Add the pods for any other Firebase products you want to use in your app
-  # For example, to use Firebase Authentication and Cloud Firestore
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
-  pod 'Firebase/Database'
+  <span class="c1"># Add the pods for any other Firebase products you want to use in your app</span>
+  <span class="c1"># For example, to use Firebase Authentication and Cloud Firestore</span>
+  <span class="n">pod</span> <span class="s1">'Firebase/Auth'</span>
+  <span class="n">pod</span> <span class="s1">'Firebase/Firestore'</span>
+  <span class="n">pod</span> <span class="s1">'Firebase/Database'</span>
 
-  target 'ExampleProjectTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  <span class="n">target</span> <span class="s1">'ExampleProjectTests'</span> <span class="k">do</span>
+    <span class="n">inherit!</span> <span class="ss">:search_paths</span>
+    <span class="c1"># Pods for testing</span>
+  <span class="k">end</span>
 
-  target 'ExampleProjectUITests' do
-    # Pods for testing
-  end
+  <span class="n">target</span> <span class="s1">'ExampleProjectUITests'</span> <span class="k">do</span>
+    <span class="c1"># Pods for testing</span>
+  <span class="k">end</span>
 
-end
+<span class="k">end</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>4. 터미널로 돌아간 뒤, 프로젝트 루트 위치에서 아래 명령을 실행합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>$ pod install
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>pod <span class="nb">install</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1300,13 +1394,11 @@ end
 8
 9
 10
-11
 </pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">UIKit</span>
 <span class="kd">import</span> <span class="kt">Firebase</span>
 
 <span class="kd">@main</span>
 <span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
-
     <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
         <span class="c1">// Override point for customization after application launch.</span>
         <span class="kt">FirebaseApp</span><span class="o">.</span><span class="nf">configure</span><span class="p">()</span>
@@ -1316,7 +1408,7 @@ end
 
 <p> </p>
 
-<h4 id="로그인로그아웃-구현-swift-storyboard"><span class="me-2"><strong>로그인/로그아웃 구현 (Swift, Storyboard)</strong></span><a href="#로그인로그아웃-구현-swift-storyboard" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="로그인로그아웃-구현-swift-uikit-storyboard"><span class="me-2"><strong>로그인/로그아웃 구현 (Swift, UIKit Storyboard)</strong></span><a href="#로그인로그아웃-구현-swift-uikit-storyboard" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>1. 스토리보드에서 이메일과 패스워드 입력을 받는 간단한 로그인 폼을 구현합니다.</p>
 
@@ -1325,7 +1417,7 @@ end
 <p>오브젝트 배치 및 <code class="language-plaintext highlighter-rouge">@IBOutlet</code>, <code class="language-plaintext highlighter-rouge">@IBAction</code> 연결에 대한 내용은 너무 길어 생략합니다.</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=2160">iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기</a></li>
+  <li><a href="/posts/ios-프로그래밍-스토리보드에서-요소를-추가한-뒤-아웃/">iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기</a></li>
 </ul>
 
 <p><a href="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-18-pm-8.16.06.jpg" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-18-pm-8.16.06.jpg" alt="" loading="lazy"></a></p>
@@ -1334,10 +1426,10 @@ end
 
 <p>2. 뷰 컨트롤러에 <code class="language-plaintext highlighter-rouge">Firebase</code>를 <code class="language-plaintext highlighter-rouge">import</code> 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>import Firebase
+</pre></td><td class="rouge-code"><pre><span class="kd">import</span> <span class="kt">Firebase</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1394,22 +1486,22 @@ end
 
 <p>먼저 하위 뷰 2개를 모두 <code class="language-plaintext highlighter-rouge">isHidden</code> 처리하여 숨깁니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>viewSignUpForm.isHidden = true
-viewUserInfo.isHidden = true
+</pre></td><td class="rouge-code"><pre><span class="n">viewSignUpForm</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="n">viewUserInfo</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
 <p>뷰 컨트롤러의 멤버 변수 <code class="language-plaintext highlighter-rouge">handle</code>을 생성합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>var handle: AuthStateDidChangeListenerHandle!
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="nv">handle</span><span class="p">:</span> <span class="kt">AuthStateDidChangeListenerHandle</span><span class="o">!</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
@@ -1485,7 +1577,7 @@ viewUserInfo.isHidden = true
 5
 6
 7
-</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span>  <span class="kd">func</span> <span class="nf">btnActSignOut</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">btnActSignOut</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">do</span> <span class="p">{</span>
         <span class="k">try</span> <span class="kt">Auth</span><span class="o">.</span><span class="nf">auth</span><span class="p">()</span><span class="o">.</span><span class="nf">signOut</span><span class="p">()</span>
     <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
@@ -1496,13 +1588,14 @@ viewUserInfo.isHidden = true
 
 <p>로그아웃이 완료되면 위의 인증 상태 리스너에 의해 사용자 정보 창이 가려지고 로그인 폼이 다시 나타나게 됩니다.</p>
 
-<iframe width="466" height="480" src="https://giphy.com/embed/h18T9GiACvF6glf3z3" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="466" height="480" src="https://giphy.com/embed/h18T9GiACvF6glf3z3" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+<p><a href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmk4aHB6ZnJpanBjM3FhYjcxbTF6NHVnMTBwejhsZG41ZzA3NW1kaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h18T9GiACvF6glf3z3/giphy.gif" class="popup img-link shimmer"><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmk4aHB6ZnJpanBjM3FhYjcxbTF6NHVnMTBwejhsZG41ZzA3NW1kaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h18T9GiACvF6glf3z3/giphy.gif" alt="" loading="lazy"></a></p>
 
 <p>참고로 한 번 로그인이 되면 앱을 삭제하기 전까지는 계속 로그인 상태가 유지됩니다.</p>
 
 <p> </p>
 
-<h4 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="전체-코드"><span class="me-2"><strong>전체 코드</strong></span><a href="#전체-코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
         <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
@@ -2554,6 +2647,12 @@ viewUserInfo.isHidden = true
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -8385,7 +8484,7 @@ viewUserInfo.isHidden = true
 
               <h4 class="pt-0 my-2">Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 회원 가입 기능 구현 2 - 프로필 사진 올리기 (스토리보드)</h4>
               <div class="text-muted">
-                <p>- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)](http://yoonbumtae.com/?p=4090) - [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 회원 가입 기능 구현 1 (스토리보드)](http://yoonbumtae.com/?p=4099) ...</p>
+                <p>- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)](/posts/swift스위프트-firebase파이어베이스-인증-기능을-이용한-기/) - [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 회원 가입 기능 구현 1 (스토리보드)](/posts/swift스위프...</p>
               </div>
             </div>
           </a>

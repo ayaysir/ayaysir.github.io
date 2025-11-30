@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -548,6 +555,71 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -566,10 +638,37 @@
   
 
   
+    
+    
 
-  
-  
+    
+      
+        
+        
+      
 
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -649,19 +748,13 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
+  
+
+  
+  
+
   
 
   
@@ -683,7 +776,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트 ES6+: 모듈(module) 기능을 이용하여 리액트의 hook 흉내내기 (reactify)</h1>
     
@@ -757,7 +850,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1378 words"
+  title="1379 words"
 >
   <em>7 min</em> read</span>
 
@@ -766,6 +859,28 @@
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트 ES6+: 모듈(module) 기능을 이용하여 리액트의 hook 흉내내기 (reactify)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트 ES6+: 모듈(module) 기능을 이용하여 리액트의 hook 흉내내기 (reactify)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -785,13 +900,14 @@
 
 <p> </p>
 
-<h4 id="작동-화면"><span class="me-2"><strong>작동 화면</strong></span><a href="#작동-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="작동-화면"><span class="me-2"><strong>작동 화면</strong></span><a href="#작동-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<iframe width="480" height="277" src="https://giphy.com/embed/xp6iFyJLEeMV4p8mlr" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="480" height="277" src="https://giphy.com/embed/xp6iFyJLEeMV4p8mlr" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+<p><a href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWJkejAxbXVmdHFoNDlrc2xma2UzZm5rNThvNzkwZ3MybDFidmw5eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xp6iFyJLEeMV4p8mlr/giphy.gif" class="popup img-link shimmer"><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWJkejAxbXVmdHFoNDlrc2xma2UzZm5rNThvNzkwZ3MybDFidmw5eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xp6iFyJLEeMV4p8mlr/giphy.gif" alt="" loading="lazy"></a></p>
 
-<p> </p>
+<h2 id="절차"><span class="me-2"><strong>절차</strong></span><a href="#절차" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="1-메인-html을-작성합니다-indexhtml"><span class="me-2"><strong>1) 메인 html을 작성합니다. (index.html)</strong></span><a href="#1-메인-html을-작성합니다-indexhtml" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="1-메인-html을-작성합니다-indexhtml"><span class="me-2"><strong>1) 메인 html을 작성합니다. (index.html)</strong></span><a href="#1-메인-html을-작성합니다-indexhtml" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-html highlighter-rouge"><div class="code-header">
         <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
@@ -836,27 +952,27 @@
 
 <p> </p>
 
-<h4 id="2-mainjs-작성"><span class="me-2"><strong>2) main.js 작성</strong></span><a href="#2-mainjs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="2-mainjs-작성"><span class="me-2"><strong>2) main.js 작성</strong></span><a href="#2-mainjs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre>import {render} from './util.js'
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span><span class="nx">render</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./util.js</span><span class="dl">'</span>
 
-import App from './App.js'
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App.js</span><span class="dl">'</span>
 
-render(document.querySelector("#app"), App())
+<span class="nf">render</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">),</span> <span class="nc">App</span><span class="p">())</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">render</code> 함수는 컴포넌트 요소를 렌더링하는 함수로 밑에서 설명합니다. 아이디가 <code class="language-plaintext highlighter-rouge">app</code>인 요소를 가져와서 <code class="language-plaintext highlighter-rouge">App.js</code> 의 함수를 하위 자식으로 추가해 렌더링합니다.</p>
 
 <p> </p>
 
-<h4 id="3-utiljs-작성"><span class="me-2"><strong>3) util.js 작성</strong></span><a href="#3-utiljs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="3-utiljs-작성"><span class="me-2"><strong>3) util.js 작성</strong></span><a href="#3-utiljs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-js highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
@@ -917,12 +1033,12 @@ render(document.querySelector("#app"), App())
 
 <p> </p>
 
-<h4 id="4-appjs-작성"><span class="me-2"><strong>4) App.js 작성</strong></span><a href="#4-appjs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="4-appjs-작성"><span class="me-2"><strong>4) App.js 작성</strong></span><a href="#4-appjs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>App 컴포넌트는 최상위 컴포넌트입니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -940,22 +1056,22 @@ render(document.querySelector("#app"), App())
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>import {render} from './util.js'
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span><span class="nx">render</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./util.js</span><span class="dl">'</span>
 
-import HeadTitle from './HeadTitle.js'
-import Content from './Content.js'
-import Counter from './Counter.js'
+<span class="k">import</span> <span class="nx">HeadTitle</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./HeadTitle.js</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Content</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Content.js</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Counter</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./Counter.js</span><span class="dl">'</span>
 
-export default function App() {
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
     
-    const $div = document.createElement('div')
+    <span class="kd">const</span> <span class="nx">$div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">)</span>
     
-    render($div, HeadTitle())
-    render($div, Content())
-    render($div, Counter())
+    <span class="nf">render</span><span class="p">(</span><span class="nx">$div</span><span class="p">,</span> <span class="nc">HeadTitle</span><span class="p">())</span>
+    <span class="nf">render</span><span class="p">(</span><span class="nx">$div</span><span class="p">,</span> <span class="nc">Content</span><span class="p">())</span>
+    <span class="nf">render</span><span class="p">(</span><span class="nx">$div</span><span class="p">,</span> <span class="nc">Counter</span><span class="p">())</span>
     
-    return $div
-}
+    <span class="k">return</span> <span class="nx">$div</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -967,10 +1083,10 @@ export default function App() {
 
 <p> </p>
 
-<h4 id="5-headtitlejs--contentjs-작성"><span class="me-2"><strong>5) HeadTitle.js , Content.js 작성</strong></span><a href="#5-headtitlejs--contentjs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="5-headtitlejs--contentjs-작성"><span class="me-2"><strong>5) HeadTitle.js , Content.js 작성</strong></span><a href="#5-headtitlejs--contentjs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -979,18 +1095,18 @@ export default function App() {
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>export default function HeadTitle() { 
-    const $h2 = document.createElement('h2')
+</pre></td><td class="rouge-code"><pre><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nf">HeadTitle</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="kd">const</span> <span class="nx">$h2</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">h2</span><span class="dl">'</span><span class="p">)</span>
     
-    $h2.textContent = "카운터 예제"
+    <span class="nx">$h2</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">카운터 예제</span><span class="dl">"</span>
     
-    return $h2
-}
+    <span class="k">return</span> <span class="nx">$h2</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -999,13 +1115,13 @@ export default function App() {
 6
 7
 8
-</pre></td><td class="rouge-code"><pre>export default function Content() { 
-    const $div = document.createElement('div')
+</pre></td><td class="rouge-code"><pre><span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nf">Content</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="kd">const</span> <span class="nx">$div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">)</span>
     
-    $div.textContent = "사용법: [증가] 버튼을 누르면 숫자가 증가합니다."
+    <span class="nx">$div</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">사용법: [증가] 버튼을 누르면 숫자가 증가합니다.</span><span class="dl">"</span>
     
-    return $div
-}
+    <span class="k">return</span> <span class="nx">$div</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1015,12 +1131,12 @@ export default function App() {
 
 <p> </p>
 
-<h4 id="6-counterjs-작성"><span class="me-2"><strong>6) Counter.js 작성</strong></span><a href="#6-counterjs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="6-counterjs-작성"><span class="me-2"><strong>6) Counter.js 작성</strong></span><a href="#6-counterjs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>여기에는 숫자를 표시하는 부분과, 숫자를 증가시키는 버튼으로 나뉘어져 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1047,31 +1163,31 @@ export default function App() {
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>import {useState} from './util.js'
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./util.js</span><span class="dl">'</span>
 
-export default function Counter() { 
-    const $div = document.createElement('div')
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nf">Counter</span><span class="p">()</span> <span class="p">{</span> 
+    <span class="kd">const</span> <span class="nx">$div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">)</span>
     
-    // 초기값 설정
-    const [count, setCount] = useState(0)
+    <span class="c1">// 초기값 설정</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     
-    const $p = document.createElement('p')
-    $p.textContent = count.value
+    <span class="kd">const</span> <span class="nx">$p</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">p</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">$p</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">count</span><span class="p">.</span><span class="nx">value</span>
     
-    const $button = document.createElement("button")
-    $button.textContent = "증가"
+    <span class="kd">const</span> <span class="nx">$button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span><span class="p">)</span>
+    <span class="nx">$button</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">증가</span><span class="dl">"</span>
     
-    $button.addEventListener('click', () =&gt; {
-        setCount(count.value + 1)   // 카운터 값 증가
-        console.log(count)
-        $p.textContent = count.value    // (!) 값이 바뀔 때 DOM에 직접 접근
-    })
+    <span class="nx">$button</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nf">setCount</span><span class="p">(</span><span class="nx">count</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1">// 카운터 값 증가</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
+        <span class="nx">$p</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">count</span><span class="p">.</span><span class="nx">value</span>    <span class="c1">// (!) 값이 바뀔 때 DOM에 직접 접근</span>
+    <span class="p">})</span>
     
-    $div.appendChild($p)
-    $div.appendChild($button)
+    <span class="nx">$div</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">$p</span><span class="p">)</span>
+    <span class="nx">$div</span><span class="p">.</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">$button</span><span class="p">)</span>
      
-    return $div
-}
+    <span class="k">return</span> <span class="nx">$div</span>
+<span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -2005,6 +2121,12 @@ export default function Counter() {
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -7859,7 +7981,7 @@ export default function Counter() {
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>자바스크립트 예제: 2차원 정방형 배열(square array) 여러 번 회전</p>
+      <p>자바스크립트 예제: 2차원 정방형 배열(square array) 여러 번 회전 (공식 이용)</p>
     </a>
   
 </nav>

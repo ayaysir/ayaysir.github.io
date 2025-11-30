@@ -1187,7 +1187,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1924 words"
+  title="1972 words"
 >
   <em>10 min</em> read</span>
 
@@ -1223,9 +1223,11 @@
   <div class="content">
     <h2 id="소개"><span class="me-2"><strong>소개</strong></span><a href="#소개" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<!-- - [SwiftUI: Representable을 이용해서 UIViewController 띄우기](http://yoonbumtae.com/?p=5349)
-- [SwiftUI: 하드웨어 키보드 입력 받기 (Representable 사용)](http://yoonbumtae.com/?p=5430)
-- [SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)](http://yoonbumtae.com/?p=5436) -->
+<ul>
+  <li><a href="/posts/swiftui-representable을-이용해서-uiviewcontroller-띄우기/">SwiftUI: Representable을 이용해서 UIViewController 띄우기</a></li>
+  <li><a href="/posts/swiftui-하드웨어-키보드-입력-받기-representable-사용/">SwiftUI: 하드웨어 키보드 입력 받기 (Representable 사용)</a></li>
+  <li><a href="/posts/swiftui-웹-뷰wkwebview-추가하기-및-자바스크립트-실행-representable-사용/">SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)</a></li>
+</ul>
 
 <p> </p>
 
@@ -1451,7 +1453,7 @@
 <ul>
   <li>뷰 모델을 통해 <code class="language-plaintext highlighter-rouge">@Published</code> 변수의 값이 변경될 때마다 해당 변수를 참고하는 SwiftUI View의 값이 변경됩니다.
     <ul>
-      <li><strong>참고)</strong> <a href="http://yoonbumtae.com/?p=4668">SwiftUI: ObservableObject 프로토콜과 @Published, @ObsevedObejct, @StateObject 프로퍼티 래퍼</a></li>
+      <li><strong>참고)</strong> <a href="/posts/swift스위프트-obsevableobject-프로토콜과-published-obsevedobejct-stateobject-프로퍼티-래/">SwiftUI: ObservableObject 프로토콜과 @Published, @ObsevedObejct, @StateObject 프로퍼티 래퍼</a></li>
     </ul>
   </li>
   <li>핵심은 <strong>@Published 변수를 통해 뷰 컨트롤러에서 상태를 변경할 수 있다</strong>는 것입니다.
@@ -1573,12 +1575,12 @@
 
 <p>2번에서 <code class="language-plaintext highlighter-rouge">@StateObejct</code>인 <code class="language-plaintext highlighter-rouge">viewModel</code>이 추가되었으므로 <code class="language-plaintext highlighter-rouge">UIHostingController</code>를초기화할 때의 <code class="language-plaintext highlighter-rouge">rootView</code>에도 반영해야 합니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>// UIHostingController
-let sliderVC = UIHostingController(rootView: CustomMusicSliderView(viewModel: self.viewModel))
+</pre></td><td class="rouge-code"><pre><span class="c1">// UIHostingController</span>
+<span class="k">let</span> <span class="nv">sliderVC</span> <span class="o">=</span> <span class="kt">UIHostingController</span><span class="p">(</span><span class="nv">rootView</span><span class="p">:</span> <span class="kt">CustomMusicSliderView</span><span class="p">(</span><span class="nv">viewModel</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">viewModel</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

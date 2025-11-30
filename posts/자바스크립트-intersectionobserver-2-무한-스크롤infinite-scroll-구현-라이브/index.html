@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="자바스크립트: IntersectionObserver (2) 무한 스크롤(Infinite Scroll) 구현 (라이브러리 없이)" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="먼저 무한스크롤은 JQuery에서도 다양한 플러그인이 있고, 그 외에도 검색하면 많은 라이브러리들이 있기 때문에 무한스크롤을 직접 구현하기보다는 이러한 외부 라이브러리를 사용하는 것을 우선 추천드립니다." />
-<meta property="og:description" content="먼저 무한스크롤은 JQuery에서도 다양한 플러그인이 있고, 그 외에도 검색하면 많은 라이브러리들이 있기 때문에 무한스크롤을 직접 구현하기보다는 이러한 외부 라이브러리를 사용하는 것을 우선 추천드립니다." />
+<meta name="description" content="IntersectionObserver에 대한 내용은 이전 글에서 설명되어 있습니다." />
+<meta property="og:description" content="IntersectionObserver에 대한 내용은 이전 글에서 설명되어 있습니다." />
 <link rel="canonical" href="https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-intersectionobserver-2-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4infinite-scroll-%EA%B5%AC%ED%98%84-%EB%9D%BC%EC%9D%B4%EB%B8%8C/" />
 <meta property="og:url" content="https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-intersectionobserver-2-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4infinite-scroll-%EA%B5%AC%ED%98%84-%EB%9D%BC%EC%9D%B4%EB%B8%8C/" />
 <meta property="og:site_name" content="BGSMM" />
@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="자바스크립트: IntersectionObserver (2) 무한 스크롤(Infinite Scroll) 구현 (라이브러리 없이)" />
 <meta name="google-site-verification" content="pvY2wZTkfhJgJGUCvK9k0h-YX3Be3V-u1J4pE6FriWA" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-08-12T00:00:00+09:00","datePublished":"2020-08-12T00:00:00+09:00","description":"먼저 무한스크롤은 JQuery에서도 다양한 플러그인이 있고, 그 외에도 검색하면 많은 라이브러리들이 있기 때문에 무한스크롤을 직접 구현하기보다는 이러한 외부 라이브러리를 사용하는 것을 우선 추천드립니다.","headline":"자바스크립트: IntersectionObserver (2) 무한 스크롤(Infinite Scroll) 구현 (라이브러리 없이)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-intersectionobserver-2-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4infinite-scroll-%EA%B5%AC%ED%98%84-%EB%9D%BC%EC%9D%B4%EB%B8%8C/"},"url":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-intersectionobserver-2-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4infinite-scroll-%EA%B5%AC%ED%98%84-%EB%9D%BC%EC%9D%B4%EB%B8%8C/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-08-12T00:00:00+09:00","datePublished":"2020-08-12T00:00:00+09:00","description":"IntersectionObserver에 대한 내용은 이전 글에서 설명되어 있습니다.","headline":"자바스크립트: IntersectionObserver (2) 무한 스크롤(Infinite Scroll) 구현 (라이브러리 없이)","mainEntityOfPage":{"@type":"WebPage","@id":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-intersectionobserver-2-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4infinite-scroll-%EA%B5%AC%ED%98%84-%EB%9D%BC%EC%9D%B4%EB%B8%8C/"},"url":"https://ayaysir.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-intersectionobserver-2-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4infinite-scroll-%EA%B5%AC%ED%98%84-%EB%9D%BC%EC%9D%B4%EB%B8%8C/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -491,6 +498,38 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -521,7 +560,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>자바스크립트: IntersectionObserver (2) 무한 스크롤(Infinite Scroll) 구현 (라이브러리 없이)</h1>
     
@@ -595,9 +634,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="754 words"
+  title="687 words"
 >
-  <em>4 min</em> read</span>
+  <em>3 min</em> read</span>
 
         </div>
       </div>
@@ -605,19 +644,37 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">자바스크립트: IntersectionObserver (2) 무한 스크롤(Infinite Scroll) 구현 (라이브러리 없이)</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">자바스크립트: IntersectionObserver (2) 무한 스크롤(Infinite Scroll) 구현 (라이브러리 없이)</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
-    <p>먼저 무한스크롤은 JQuery에서도 다양한 플러그인이 있고, 그 외에도 검색하면 많은 라이브러리들이 있기 때문에 무한스크롤을 직접 구현하기보다는 이러한 외부 라이브러리를 사용하는 것을 우선 추천드립니다.</p>
-
-<p> </p>
-
-<p><code class="language-plaintext highlighter-rouge">IntersectionObserver</code>에 대한 내용은 이전 글에서 설명되어 있습니다.</p>
+    <p><code class="language-plaintext highlighter-rouge">IntersectionObserver</code>에 대한 내용은 이전 글에서 설명되어 있습니다.</p>
 
 <ul>
   <li><a href="/posts/자바스크립트-intersectionobserver로-이미지-lazy-loading-구현/">자바스크립트: IntersectionObserver (1) 이미지 lazy-loading 구현</a></li>
 </ul>
 
-<p> </p>
+<h2 id="설명"><span class="me-2">설명</span><a href="#설명" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">IntersectionObserver</code>을 이용한 무한 스크롤은 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#">MDN 문서</a>에서도 공식적으로 권장하고 있는 사항입니다.</p>
 
@@ -633,7 +690,7 @@
 
 <ol>
   <li>비교적 이해가 쉽습니다. - ‘<em>리스트의 마지막 요소가 화면에 보이면 다음 데이터를 준비한다</em>’ 라는 비교적 간단한 로직으로 구현 가능합니다.</li>
-  <li><a href="http://yoonbumtae.com/?p=2102">throttle, debounce 관련 문제</a>를 따로 처리하지 않아도 됩니다. - 스크롤 이벤트는 뷰포트, 스크롤의 위치 좌표를 계산하는 과정에서 trottle이나 debounce와 관련된 문제가 있으며, 이에 대한 별도의 처리 과정이 필요하나 <code class="language-plaintext highlighter-rouge">IntersectionObserver</code>는 계산 과정이 매우 단축되기 때문에 이러한 처리 과정이 필요 없습니다.</li>
+  <li><a href="/posts/자바스크립트-lodash-debounce와-throttle을-이용하여-함수의-실행-횟/">throttle, debounce 관련 문제</a>를 따로 처리하지 않아도 됩니다. - 스크롤 이벤트는 뷰포트, 스크롤의 위치 좌표를 계산하는 과정에서 trottle이나 debounce와 관련된 문제가 있으며, 이에 대한 별도의 처리 과정이 필요하나 <code class="language-plaintext highlighter-rouge">IntersectionObserver</code>는 계산 과정이 매우 단축되기 때문에 이러한 처리 과정이 필요 없습니다.</li>
   <li>reflow가 많이 줄어듭니다. - 스크롤 이벤트는 좌표 계산 과정에서 DOM의 재 렌더링(reflow)가 유발되지만 <code class="language-plaintext highlighter-rouge">IntersectionObserver</code>는 이러한 문제로부터 자유롭습니다.</li>
 </ol>
 
@@ -650,12 +707,25 @@
 </ol>
 
 <p> </p>
+<h2 id="코드"><span class="me-2">코드</span><a href="#코드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>https://gist.github.com/ayaysir/3f36a4fe9066b8c8917382766501e106</p>
+<!-- https://gist.github.com/ayaysir/3f36a4fe9066b8c8917382766501e106 -->
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/3f36a4fe9066b8c8917382766501e106.js"> </script>
 
 <p> </p>
 
-<p>https://codepen.io/ayaysir/pen/zYqvbea</p>
+<!-- https://codepen.io/ayaysir/pen/zYqvbea -->
+<p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="zYqvbea" data-pen-title="IntersectionObserver infinite scroll 1" data-user="ayaysir" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/ayaysir/pen/zYqvbea">
+  IntersectionObserver infinite scroll 1</a> by ayaysir (<a href="https://codepen.io/ayaysir">@ayaysir</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  &lt;script async src="https://public.codepenassets.com/embed/index.js"&gt;&lt;/script&gt;
+</pre></td></tr></tbody></table></code></div></div>
 
   </div>
 
@@ -1576,6 +1646,12 @@
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

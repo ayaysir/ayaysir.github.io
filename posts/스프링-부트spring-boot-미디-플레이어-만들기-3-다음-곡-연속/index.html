@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -956,21 +963,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -1022,8 +1014,34 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
 
@@ -1040,7 +1058,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>스프링 부트(Spring Boot) 미디 플레이어 만들기 (3): 다음 곡 연속 재생 기능 & 미디 정보 업데이트 및 삭제</h1>
     
@@ -1114,7 +1132,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1147 words"
+  title="1100 words"
 >
   <em>6 min</em> read</span>
 
@@ -1124,6 +1142,28 @@
   </header>
 
   
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">스프링 부트(Spring Boot) 미디 플레이어 만들기 (3): 다음 곡 연속 재생 기능 & 미디 정보 업데이트 및 삭제</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">스프링 부트(Spring Boot) 미디 플레이어 만들기 (3): 다음 곡 연속 재생 기능 & 미디 정보 업데이트 및 삭제</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <!-- \[rcblock id="2655"\] -->
@@ -1131,25 +1171,25 @@
 <p>이전 글</p>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=2819">스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기</a></li>
-  <li><a href="http://yoonbumtae.com/?p=2878">스프링 부트(Spring Boot) 미디 플레이어 만들기 (2): 업로드 페이지, 임시 재생 플레이어 만들기</a></li>
+  <li><a href="/posts/스프링-부트spring-boot-미디-플레이어-만들기-1-timidity-lame을-이용해/">스프링 부트(Spring Boot) 미디 플레이어 만들기 (1): Timidity++, LAME을 이용해 미디(midi) 파일을 mp3로 변환하는 메소드 만들기</a></li>
+  <li><a href="/posts/스프링-부트spring-boot-미디-플레이어-만들기-1-업로드-페이/">스프링 부트(Spring Boot) 미디 플레이어 만들기 (2): 업로드 페이지, 임시 재생 플레이어 만들기</a></li>
 </ul>
 
 <p> </p>
 
-<h5 id="현재까지-완성된-미디-플레이어-임시-바로-가기"><span class="me-2"><strong>현재까지 완성된 미디 플레이어 (임시) 바로 가기</strong></span><a href="#현재까지-완성된-미디-플레이어-임시-바로-가기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="미디-플레이어-보기"><span class="me-2"><strong>미디 플레이어 보기</strong></span><a href="#미디-플레이어-보기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이 서비스는 AWS 프리티어 기간 만료로 인해 폐쇄하였습니다.서비스 당시 모습을 영상 기록으로 확인할 수 있습니다.</p>
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 <div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/ZqUtpc7yEYQ" frameborder="0" allowfullscreen=""></iframe></div>
 
-<h5 id="다음-곡-연속-재생-기능"><span class="me-2"><strong>다음 곡 연속 재생 기능</strong></span><a href="#다음-곡-연속-재생-기능" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="다음-곡-연속-재생-기능"><span class="me-2"><strong>다음 곡 연속 재생 기능</strong></span><a href="#다음-곡-연속-재생-기능" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>이전 버전에서는 한 곡만 재생하고 끝이었는데, 곡이 끝나면 다음 곡을 자동으로 재생하도록 바꾸었습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-html highlighter-rouge"><div class="code-header">
+        <span data-label-text="HTML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1162,22 +1202,22 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>&lt;table class="table table-hover" id="table-info"&gt;
-    &lt;thead&gt;
-        &lt;tr class="head-title"&gt;
-            &lt;th scope="col" style="width: 60px"&gt;ID&lt;/th&gt;
-            &lt;th scope="col" &gt;제목&lt;/th&gt;
-            &lt;th scope="col" style="width: 20%"&gt;업로더&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody id="table-info-tbody"&gt;
-        &lt;tr&gt;......&lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-hover"</span> <span class="na">id=</span><span class="s">"table-info"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"head-title"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span> <span class="na">style=</span><span class="s">"width: 60px"</span><span class="nt">&gt;</span>ID<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span> <span class="nt">&gt;</span>제목<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span> <span class="na">style=</span><span class="s">"width: 20%"</span><span class="nt">&gt;</span>업로더<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody</span> <span class="na">id=</span><span class="s">"table-info-tbody"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>......<span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1228,75 +1268,71 @@
 48
 49
 50
-51
-52
-</pre></td><td class="rouge-code"><pre>// 현재 재생중인 곡 정보를 담는 객체
-const currentPlay = {
-    trEl: null
-}
+</pre></td><td class="rouge-code"><pre><span class="c1">// 현재 재생중인 곡 정보를 담는 객체</span>
+<span class="kd">const</span> <span class="nx">currentPlay</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">trEl</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
 
-// ajax로 곡 목록을 가져와 새로운 $tr을 테이블에 append
-fetch("/api/v1/midi", {
-        method: "GET"
-    })
-    .then(res =&gt; res.json())
-    .then(data =&gt; {
-        data.forEach(song =&gt; {
-            const $tr = document.createElement("tr")
-            $tr.setAttribute("title", song.originalFileName + ` | 업로드 일자: [${song.createdDate}]`)
-            $tr.setAttribute("data-id", song.id)
-            $tr.innerHTML = `&lt;th scope="row"&gt;${song.id}&lt;/th&gt;
-            &lt;td class="song-title"&gt;&lt;span class="text-muted"&gt;[${song.category}]&lt;/span&gt; ${song.customTitle}&lt;/td&gt;
-            &lt;td&gt;${song.userId}&lt;/td&gt;`
-            document.getElementById("table-info-tbody").appendChild($tr)
+<span class="c1">// ajax로 곡 목록을 가져와 새로운 $tr을 테이블에 append</span>
+<span class="nf">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">/api/v1/midi</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
+    <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">data</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nx">song</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">$tr</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">tr</span><span class="dl">"</span><span class="p">)</span>
+            <span class="nx">$tr</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">,</span> <span class="nx">song</span><span class="p">.</span><span class="nx">originalFileName</span> <span class="o">+</span> <span class="s2">` | 업로드 일자: [</span><span class="p">${</span><span class="nx">song</span><span class="p">.</span><span class="nx">createdDate</span><span class="p">}</span><span class="s2">]`</span><span class="p">)</span>
+            <span class="nx">$tr</span><span class="p">.</span><span class="nf">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">data-id</span><span class="dl">"</span><span class="p">,</span> <span class="nx">song</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+            <span class="nx">$tr</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`&lt;th scope="row"&gt;</span><span class="p">${</span><span class="nx">song</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="s2">&lt;/th&gt;
+            &lt;td class="song-title"&gt;&lt;span class="text-muted"&gt;[</span><span class="p">${</span><span class="nx">song</span><span class="p">.</span><span class="nx">category</span><span class="p">}</span><span class="s2">]&lt;/span&gt; </span><span class="p">${</span><span class="nx">song</span><span class="p">.</span><span class="nx">customTitle</span><span class="p">}</span><span class="s2">&lt;/td&gt;
+            &lt;td&gt;</span><span class="p">${</span><span class="nx">song</span><span class="p">.</span><span class="nx">userId</span><span class="p">}</span><span class="s2">&lt;/td&gt;`</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">table-info-tbody</span><span class="dl">"</span><span class="p">).</span><span class="nf">appendChild</span><span class="p">(</span><span class="nx">$tr</span><span class="p">)</span>
 
-        })
-    })
+        <span class="p">})</span>
+    <span class="p">})</span>
 
-// 아이디를 정보로 받아 오디오를 재생하는 함수
-function loadAudio(audioCtx, id) {
+<span class="c1">// 아이디를 정보로 받아 오디오를 재생하는 함수</span>
+<span class="kd">function</span> <span class="nf">loadAudio</span><span class="p">(</span><span class="nx">audioCtx</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">audioCtx</span><span class="p">.</span><span class="nx">loop</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="nx">audioCtx</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/api/v1/midi/mp3/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">id</span>
+    <span class="nx">audioCtx</span><span class="p">.</span><span class="nf">load</span><span class="p">()</span>
+    <span class="nx">audioCtx</span><span class="p">.</span><span class="nf">play</span><span class="p">()</span>
+<span class="p">}</span>
 
-    audioCtx.loop = false
-    audioCtx.src = "/api/v1/midi/mp3/" + id
-    audioCtx.load()
-    audioCtx.play()
+<span class="c1">// 제목을 클릭하면 노래가 재생</span>
+<span class="nb">document</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="dl">"</span><span class="s2">song-title</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">audio</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">audio-player</span><span class="dl">"</span><span class="p">)</span>
+        <span class="kd">const</span> <span class="nx">parentEl</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">parentElement</span>
+        <span class="nf">loadAudio</span><span class="p">(</span><span class="nx">audio</span><span class="p">,</span> <span class="nx">parentEl</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+        <span class="nx">currentPlay</span><span class="p">.</span><span class="nx">trEl</span> <span class="o">=</span> <span class="nx">parentEl</span> <span class="c1">// 현재 재생중인 곡의 tr을 currentPlay.trEl에 저장</span>
+        <span class="c1">// audio.src = "http://cld3097web.audiovideoweb.com/va90web25003/companions/Foundations%20of%20Rock/13.01.mp3"</span>
+    <span class="p">}</span>
+<span class="p">})</span>
 
-}
+<span class="c1">// 곡이 끝나면 (ended) tr.nextSibling으로 다음 곡을 찾아 재생</span>
+<span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">audio-player</span><span class="dl">"</span><span class="p">).</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">ended</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">audio</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span>
+    <span class="kd">const</span> <span class="nx">nextEl</span> <span class="o">=</span> <span class="nx">currentPlay</span><span class="p">.</span><span class="nx">trEl</span><span class="p">.</span><span class="nx">nextSibling</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">#table-info tbody tr</span><span class="dl">"</span><span class="p">)</span>
+    <span class="nf">loadAudio</span><span class="p">(</span><span class="nx">audio</span><span class="p">,</span> <span class="nx">nextEl</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+    <span class="nx">currentPlay</span><span class="p">.</span><span class="nx">trEl</span> <span class="o">=</span> <span class="nx">nextEl</span> <span class="c1">// 현재 재생중인 곡의 tr을 currentPlay.trEl에 저장</span>
 
-// 제목을 클릭하면 노래가 재생
-document.addEventListener("click", e =&gt; {
-    if (e.target &amp;&amp; e.target.classList.contains("song-title")) {
-        const audio = document.getElementById("audio-player")
-        const parentEl = e.target.parentElement
-        loadAudio(audio, parentEl.dataset.id)
-        currentPlay.trEl = parentEl // 현재 재생중인 곡의 tr을 currentPlay.trEl에 저장
-        // audio.src = "http://cld3097web.audiovideoweb.com/va90web25003/companions/Foundations%20of%20Rock/13.01.mp3"
-    }
-})
-
-// 곡이 끝나면 (ended) tr.nextSibling으로 다음 곡을 찾아 재생
-document.getElementById("audio-player").addEventListener("ended", e =&gt; {
-    const audio = e.target
-    const nextEl = currentPlay.trEl.nextSibling || document.querySelector("#table-info tbody tr")
-    loadAudio(audio, nextEl.dataset.id)
-    currentPlay.trEl = nextEl // 현재 재생중인 곡의 tr을 currentPlay.trEl에 저장
-
-})
+<span class="p">})</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>아이폰에서도 정상 작동하며, 백그라운드 상태라도 다음곡으로 잘 이동합니다.</p>
 
 <p> </p>
 
-<h5 id="목록-오름차순--내림차순-토글-기능"><span class="me-2"><strong>목록 오름차순 / 내림차순 토글 기능</strong></span><a href="#목록-오름차순--내림차순-토글-기능" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="목록-오름차순--내림차순-토글-기능"><span class="me-2"><strong>목록 오름차순 / 내림차순 토글 기능</strong></span><a href="#목록-오름차순--내림차순-토글-기능" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li><a href="http://yoonbumtae.com/?p=2901">자바스크립트: 테이블의 tbody 내용 뒤집기(reverse)</a></li>
+  <li><a href="/posts/자바스크립트-테이블의-tbody-내용-뒤집기reverse/">자바스크립트: 테이블의 tbody 내용 뒤집기(reverse)</a></li>
 </ul>
 
 <p> </p>
 
-<h5 id="업로드된-미디-파일-정보-업데이트-기능-수정삭제"><span class="me-2"><strong>업로드된 미디 파일 정보 업데이트 기능 (수정/삭제)</strong></span><a href="#업로드된-미디-파일-정보-업데이트-기능-수정삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h2 id="업로드된-미디-파일-정보-업데이트-기능-수정삭제"><span class="me-2"><strong>업로드된 미디 파일 정보 업데이트 기능 (수정/삭제)</strong></span><a href="#업로드된-미디-파일-정보-업데이트-기능-수정삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>단순한 CRUD 과정이므로 코드는 깃허브 링크로 대체합니다.</p>
 
@@ -1306,8 +1342,8 @@ document.getElementById("audio-player").addEventListener("ended", e =&gt; {
 
 <p>파일 정보를 삭제한 후에는 원본 미디 파일과 변환된 mp3 파일도 같이 처리를 해야 하기 때문에 이 부분을 반영했습니다. 저는 파일을 삭제하기보다 특정 폴더에 이동시키는 방법을 택했습니다. 파일을 이동하는 방법은 <code class="language-plaintext highlighter-rouge">file.renameTo(newFile)</code> 을 이용해 새로운 경로로 이동시킬 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-java highlighter-rouge"><div class="code-header">
+        <span data-label-text="Java"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1346,73 +1382,68 @@ document.getElementById("audio-player").addEventListener("ended", e =&gt; {
 36
 37
 38
-</pre></td><td class="rouge-code"><pre>@DeleteMapping(DEFAULT_URI + "/{id}")
-public Long deleteMidi(@PathVariable Long id,
-                       @LoginUser SessionUser user) {
+</pre></td><td class="rouge-code"><pre><span class="nd">@DeleteMapping</span><span class="o">(</span><span class="no">DEFAULT_URI</span> <span class="o">+</span> <span class="s">"/{id}"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">Long</span> <span class="nf">deleteMidi</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">,</span>
+                       <span class="nd">@LoginUser</span> <span class="nc">SessionUser</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
 
-    if(user != null) {
-        MidiResponseDTO midi = midiService.findById(id);
-        if(user.getRole().equalsIgnoreCase("ADMIN")
-                ||  midi.getUserId().equals(user.getId())) {
-            midiService.delete(id);
+    <span class="k">if</span><span class="o">(</span><span class="n">user</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">MidiResponseDTO</span> <span class="n">midi</span> <span class="o">=</span> <span class="n">midiService</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getRole</span><span class="o">().</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">"ADMIN"</span><span class="o">)</span>
+                <span class="o">||</span>  <span class="n">midi</span><span class="o">.</span><span class="na">getUserId</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getId</span><span class="o">()))</span> <span class="o">{</span>
+            <span class="n">midiService</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
 
-            // 파일 삭제
-            // mp3 파일 경로 지정
-            String rootPath = FileSystemView.getFileSystemView().getHomeDirectory().toString();
-            String basePath = rootPath + "/" + "app/midi";
-            String midiPath = basePath + midi.getOriginalMidiPath();
-            String mp3Path = basePath + midi.getOriginalMp3Path();
+            <span class="c1">// 파일 삭제</span>
+            <span class="c1">// mp3 파일 경로 지정</span>
+            <span class="nc">String</span> <span class="n">rootPath</span> <span class="o">=</span> <span class="nc">FileSystemView</span><span class="o">.</span><span class="na">getFileSystemView</span><span class="o">().</span><span class="na">getHomeDirectory</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+            <span class="nc">String</span> <span class="n">basePath</span> <span class="o">=</span> <span class="n">rootPath</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="s">"app/midi"</span><span class="o">;</span>
+            <span class="nc">String</span> <span class="n">midiPath</span> <span class="o">=</span> <span class="n">basePath</span> <span class="o">+</span> <span class="n">midi</span><span class="o">.</span><span class="na">getOriginalMidiPath</span><span class="o">();</span>
+            <span class="nc">String</span> <span class="n">mp3Path</span> <span class="o">=</span> <span class="n">basePath</span> <span class="o">+</span> <span class="n">midi</span><span class="o">.</span><span class="na">getOriginalMp3Path</span><span class="o">();</span>
 
-            File midiFile = new File(midiPath);
-            File mp3File = new File(mp3Path);
-            File toDeleteDir = new File(basePath + "/to_delete");
+            <span class="nc">File</span> <span class="n">midiFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">midiPath</span><span class="o">);</span>
+            <span class="nc">File</span> <span class="n">mp3File</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">mp3Path</span><span class="o">);</span>
+            <span class="nc">File</span> <span class="n">toDeleteDir</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">basePath</span> <span class="o">+</span> <span class="s">"/to_delete"</span><span class="o">);</span>
 
-            if(!toDeleteDir.exists()) {
-                toDeleteDir.mkdirs();
-                System.out.println("mkdirs: /to_delete");
-            }
+            <span class="k">if</span><span class="o">(!</span><span class="n">toDeleteDir</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">toDeleteDir</span><span class="o">.</span><span class="na">mkdirs</span><span class="o">();</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"mkdirs: /to_delete"</span><span class="o">);</span>
+            <span class="o">}</span>
 
-            // 파일 to_delete 디렉토리로 이동
-            midiFile.renameTo(new File(basePath + "/to_delete/" + midiFile.getName()));
-            mp3File.renameTo(new File(basePath + "/to_delete/" + mp3File.getName()));
+            <span class="c1">// 파일 to_delete 디렉토리로 이동</span>
+            <span class="n">midiFile</span><span class="o">.</span><span class="na">renameTo</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">basePath</span> <span class="o">+</span> <span class="s">"/to_delete/"</span> <span class="o">+</span> <span class="n">midiFile</span><span class="o">.</span><span class="na">getName</span><span class="o">()));</span>
+            <span class="n">mp3File</span><span class="o">.</span><span class="na">renameTo</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">basePath</span> <span class="o">+</span> <span class="s">"/to_delete/"</span> <span class="o">+</span> <span class="n">mp3File</span><span class="o">.</span><span class="na">getName</span><span class="o">()));</span>
 
-            return id;
-        }
+            <span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+        <span class="o">}</span>
 
-    }
+    <span class="o">}</span>
 
-    return -99L;
-}
+    <span class="k">return</span> <span class="o">-</span><span class="mi">99L</span><span class="o">;</span>
+<span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p> </p>
+<h2 id="동작-화면"><span class="me-2"><strong>동작 화면</strong></span><a href="#동작-화면" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>[caption id=”attachment_2909” align=”alignnone” width=”2232”] <a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.16.png" alt="" loading="lazy"></a> 지오디 노래 정보를 지오디 - 거짓말로 변경합니다. 업데이트 아이콘을 누르면[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.16.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.16.png" alt="지오디 노래 정보를 지오디 - 거짓말로 변경합니다. 업데이트 아이콘을 누르면" loading="lazy"></a><br />
+<em>지오디 노래 정보를 지오디 - 거짓말로 변경합니다. 업데이트 아이콘을 누르면</em></p>
 
-<p> </p>
+<p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.32.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.32.png" alt="정보가 변경됩니다." loading="lazy"></a><br />
+<em>정보가 변경됩니다.</em></p>
 
-<p>[caption id=”attachment_2910” align=”alignnone” width=”476”] <a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.32.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.05.32.png" alt="" loading="lazy"></a> 정보가 변경됩니다.[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.06.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.06.png" alt="목록에 정상적으로 반영되었습니다." loading="lazy"></a><br />
+<em>목록에 정상적으로 반영되었습니다.</em></p>
 
-<p> </p>
+<p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.58.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.58.png" alt="236번부터 239 까지 파일을 삭제하려고 합니다." loading="lazy"></a><br />
+<em>236번부터 239 까지 파일을 삭제하려고 합니다.</em></p>
 
-<p>[caption id=”attachment_2911” align=”alignnone” width=”2238”] <a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.06.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.06.png" alt="" loading="lazy"></a> 목록에 정상적으로 반영되었습니다.[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.07.31.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.07.31.png" alt="삭제가 완료되면 삭제 완료 메시지가 표시됩니다." loading="lazy"></a><br />
+<em>삭제가 완료되면 삭제 완료 메시지가 표시됩니다.</em></p>
 
-<p> </p>
+<p><a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.08.04.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.08.04.png" alt="삭제 내역이 반영되었습니다." loading="lazy"></a><br />
+<em>삭제 내역이 반영되었습니다.</em></p>
 
-<p>[caption id=”attachment_2912” align=”alignnone” width=”713”] <a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.58.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.06.58.png" alt="" loading="lazy"></a> 236번부터 239 까지 파일을 삭제하려고 합니다.[/caption]</p>
-
-<p> </p>
-
-<p>[caption id=”attachment_2913” align=”alignnone” width=”465”] <a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.07.31.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.07.31.png" alt="" loading="lazy"></a> 삭제가 완료되면 삭제 완료 메시지가 표시됩니다.[/caption]</p>
-
-<p> </p>
-
-<p>[caption id=”attachment_2914” align=”alignnone” width=”2030”] <a href="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.08.04.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/screenshot-2020-08-18-pm-11.08.04.png" alt="" loading="lazy"></a> 삭제 내역이 반영되었습니다.[/caption]</p>
-
-<p> </p>
-
-<p>[caption id=”attachment_2915” align=”alignnone” width=”2420”] <a href="/assets/img/wp-content/uploads/2020/08/-2020-08-18-pm-11.32.01-e1597761384907.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/-2020-08-18-pm-11.32.01-e1597761384907.png" alt="" loading="lazy"></a> 운영자는 모든 파일에 대한 정보를 수정/삭제할 수 있고, 일반 회원은 자신의 업로드 내역만 업데이트 할 수 있습니다. 4번 아이디로 로그인하면 4번이 업로드한 미디 파일만 변경할 수 잇습니다.[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2020/08/-2020-08-18-pm-11.32.01-e1597761384907.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/08/-2020-08-18-pm-11.32.01-e1597761384907.png" alt="운영자는 모든 파일에 대한 정보를 수정/삭제할 수 있고, 일반 회원은 자신의 업로드 내역만 업데이트 할 수 있습니다. 4번 아이디로 로그인하면 4번이 업로드한 미디 파일만 변경할 수 잇습니다." loading="lazy"></a><br />
+<em>운영자는 모든 파일에 대한 정보를 수정/삭제할 수 있고, 일반 회원은 자신의 업로드 내역만 업데이트 할 수 있습니다. 4번 아이디로 로그인하면 4번이 업로드한 미디 파일만 변경할 수 잇습니다.</em></p>
 
   </div>
 
@@ -2333,6 +2364,12 @@ public Long deleteMidi(@PathVariable Long id,
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             

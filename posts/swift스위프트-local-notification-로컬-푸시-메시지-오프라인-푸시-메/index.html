@@ -1392,14 +1392,14 @@
 
 <h3 id="배지badge-등록하기"><span class="me-2"><strong>배지(badge) 등록하기</strong></span><a href="#배지badge-등록하기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>let newNumber = UserDefaults.standard.integer(forKey: "AppBadgeNumber") + 1
-UserDefaults.standard.set(newNumber, forKey: "AppBadgeNumber")
-notiContent.badge = (newNumber) as NSNumber
+</pre></td><td class="rouge-code"><pre><span class="k">let</span> <span class="nv">newNumber</span> <span class="o">=</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">integer</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="s">"AppBadgeNumber"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="n">newNumber</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="s">"AppBadgeNumber"</span><span class="p">)</span>
+<span class="n">notiContent</span><span class="o">.</span><span class="n">badge</span> <span class="o">=</span> <span class="p">(</span><span class="n">newNumber</span><span class="p">)</span> <span class="k">as</span> <span class="kt">NSNumber</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">0</code> 이하의 숫자를 등록하면 배지가 표시되지 않으며, <code class="language-plaintext highlighter-rouge">1</code> 이상의 값을 등록할 경우 아래와 같이 표시됩니다.</p>
@@ -1408,10 +1408,10 @@ notiContent.badge = (newNumber) as NSNumber
 
 <p>참고로 앱 아무곳에서 배지 숫자를 설정하는 방법은 다음과 같습니다. (<code class="language-plaintext highlighter-rouge">0</code> 이하는 배지 표시 안함, <code class="language-plaintext highlighter-rouge">1</code> 이상은 배지 표시함)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-swift highlighter-rouge"><div class="code-header">
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>UIApplication.shared.applicationIconBadgeNumber = 0
+</pre></td><td class="rouge-code"><pre><span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">applicationIconBadgeNumber</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>

@@ -213,9 +213,16 @@
 
   
 
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -826,16 +833,6 @@
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
     
     
 
@@ -933,6 +930,16 @@
     
 
     
+  
+
+  
+  
+
+  
+
+  
+  
+
   
 
   
@@ -954,7 +961,7 @@
 
 
 
-<article class="px-1" data-toc="false">
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>리액트(React): React Redux 요약 정리</h1>
     
@@ -1028,7 +1035,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3413 words"
+  title="3409 words"
 >
   <em>18 min</em> read</span>
 
@@ -1037,6 +1044,28 @@
     </div>
   </header>
 
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">리액트(React): React Redux 요약 정리</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">Contents</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">리액트(React): React Redux 요약 정리</div>
+        <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
+          <i class="fas fa-close"></i>
+        </button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
   
 
   <div class="content">
@@ -1050,7 +1079,7 @@
 
 <p> </p>
 
-<h4 id="redux와-react-redux는-같은-의미인가요"><span class="me-2"><strong>Redux와 React Redux는 같은 의미인가요?</strong></span><a href="#redux와-react-redux는-같은-의미인가요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="redux와-react-redux는-같은-의미인가요"><span class="me-2"><strong>Redux와 React Redux는 같은 의미인가요?</strong></span><a href="#redux와-react-redux는-같은-의미인가요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>아닙니다. Redux는 상태 관리 라이브러리로, 상태관리 패턴인 Flux의 일부를 변형하여 간단하게 상태 관리가 가능하도록 만들었습니다. 이것은 제이쿼리, 일반 자바스크립트, 다른 SPA 프레임워크 등 다양한 환경에서 사용가능하도록 제작되었으며 리액트 전용으로 만들어진 것은 아닙니다.</p>
 
@@ -1060,11 +1089,12 @@
 
 <p>React Redux는 이러한 상황에서 컨테이너와 컴포넌트의 분리를 편리하게 해주는 리액트 커뮤니티에서 개발된 라이브러리입니다. 컨테이너 작성 부분을 간단하게 해주며, <code class="language-plaintext highlighter-rouge">props</code>의 구성 변경에 대해서도 신경쓸 필요가 없게 됩니다.</p>
 
-<p>[caption id=”attachment_3263” align=”alignnone” width=”2396”] <a href="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-08-pm-9.36.23.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-08-pm-9.36.23.png" alt="" loading="lazy"></a> 왼쪽은 Redux만 있고 React Redux 없을 때 구현한 컨테이너 코드입니다.[/caption]</p>
+<p><a href="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-08-pm-9.36.23.png" class="popup img-link shimmer"><img src="/assets/img/wp-content/uploads/2020/12/screenshot-2020-12-08-pm-9.36.23.png" alt="왼쪽은 Redux만 있고 React Redux 없을 때 구현한 컨테이너 코드입니다." loading="lazy"></a><br />
+<em>왼쪽은 Redux만 있고 React Redux 없을 때 구현한 컨테이너 코드입니다.</em></p>
 
 <p> </p>
 
-<h4 id="redux를-사용하는-이유는-무엇인가요"><span class="me-2"><strong>Redux를 사용하는 이유는 무엇인가요?</strong></span><a href="#redux를-사용하는-이유는-무엇인가요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="redux를-사용하는-이유는-무엇인가요"><span class="me-2"><strong>Redux를 사용하는 이유는 무엇인가요?</strong></span><a href="#redux를-사용하는-이유는-무엇인가요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>대규모 애플리케이션에서 상태 관리를 편하게 하기 위해서입니다. 리액트에서 컴포넌트간 <code class="language-plaintext highlighter-rouge">props</code>를 통해 데이터를 주고받는 패턴은 애플리케이션의 규모가 켜지면 커질수록 상태 관리가 매우 복잡해지게 됩니다. 예를 들어 루트 컴포넌트 밑에 만 개의 하위 컴포넌트가 있다고 할 때, 이 중 루트 컴포넌트에 영향을 줄 수 있는 하나의 값이 바뀌었는데 그 값을 루트 컴포넌트를 통해 다른 컴포넌트도 사용하고 있다면 기존 패턴에서는 이러한 변경 내용에 일일히 대응하는 코드를 작성하기가 어렵습니다.</p>
 
@@ -1074,19 +1104,19 @@
 
 <p> </p>
 
-<h4 id="redux와-react-redux-설치-npm"><span class="me-2"><strong>Redux와 React Redux 설치 (npm)</strong></span><a href="#redux와-react-redux-설치-npm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="redux와-react-redux-설치-npm"><span class="me-2"><strong>Redux와 React Redux 설치 (npm)</strong></span><a href="#redux와-react-redux-설치-npm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>npm install redux
-npm install react-redux
+</pre></td><td class="rouge-code"><pre>npm <span class="nb">install </span>redux
+npm <span class="nb">install </span>react-redux
 </pre></td></tr></tbody></table></code></div></div>
 
 <p> </p>
 
-<h4 id="리액트의-indexjs-에서-react-redux-설정"><span class="me-2"><strong>리액트의 index.js 에서 React Redux 설정</strong></span><a href="#리액트의-indexjs-에서-react-redux-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="리액트의-indexjs-에서-react-redux-설정"><span class="me-2"><strong>리액트의 index.js 에서 React Redux 설정</strong></span><a href="#리액트의-indexjs-에서-react-redux-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-jsx highlighter-rouge"><div class="code-header">
         <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
@@ -1126,12 +1156,12 @@ npm install react-redux
 
 <p> </p>
 
-<h4 id="storejs-작성"><span class="me-2"><strong>store.js 작성</strong></span><a href="#storejs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="storejs-작성"><span class="me-2"><strong>store.js 작성</strong></span><a href="#storejs-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">reducer</code> 함수를 작성한 다음 <code class="language-plaintext highlighter-rouge">export default createStore(reducer)</code>를 사용하여 다른 컴포넌트에서 저장소를 사용할 수 있도록 합니다. <code class="language-plaintext highlighter-rouge">createStore</code>의 두 번째 파라미터(<code class="language-plaintext highlighter-rouge">window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; window.__REDUX_DEVTOOLS_EXTENSION__()</code>)는 개발자용 옵션으로, <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd">Redux DevTools 크롬 확장 프로그램</a>을 통해 이 확장이 깔려 있다면 개발자 도구에서 리덕스 상태변화를 실시간으로 추적할 수 있습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-json highlighter-rouge"><div class="code-header">
+        <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1158,36 +1188,36 @@ npm install react-redux
 24
 25
 26
-</pre></td><td class="rouge-code"><pre>{
-    "mode": "WELCOME",
-    "welcome_content": {
-        "title": "Welcome.",
-        "desc": "World-Wide Web(WWW)이란 다양하고도 광범위한 문서들로의 편리한 접근 방법을 제공해주는 분산 하이퍼미디어 정보 검색 시스템입니다. "
-    },
-    "selected_content_id": 0,
-    "max_content_id": 3,
-    "contents": [
-        { 
-            "id": 1, 
-            "title": "HTML", 
-            "desc": "HTML은 Hyper Text Markup Language의 약어로 HyperText(웹 페이지에서 다른 페이지로 이동할 수 있도록 하는 것) 기능을 가진 문서를 만드는 언어입니다."
-        },
-        { 
-            "id": 2, 
-            "title": "CSS", 
-            "desc": "CSS는 Cascading Style Sheets의 약어로 documents가 사용자에게 어떻게 보여질까를 기술하는 언어입니다." 
-        },
-        { 
-            "id": 3, 
-            "title": "JavaScript", 
-            "desc": "자바스크립트는 ‘웹페이지에 생동감을 불어넣기 위해’ 만들어진 프로그래밍 언어입니다." 
-        }
-    ]
-}
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+    </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WELCOME"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"welcome_content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Welcome."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World-Wide Web(WWW)이란 다양하고도 광범위한 문서들로의 편리한 접근 방법을 제공해주는 분산 하이퍼미디어 정보 검색 시스템입니다. "</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"selected_content_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"max_content_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> 
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HTML"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HTML은 Hyper Text Markup Language의 약어로 HyperText(웹 페이지에서 다른 페이지로 이동할 수 있도록 하는 것) 기능을 가진 문서를 만드는 언어입니다."</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> 
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CSS"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CSS는 Cascading Style Sheets의 약어로 documents가 사용자에게 어떻게 보여질까를 기술하는 언어입니다."</span><span class="w"> 
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> 
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JavaScript"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"자바스크립트는 ‘웹페이지에 생동감을 불어넣기 위해’ 만들어진 프로그래밍 언어입니다."</span><span class="w"> 
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1258,76 +1288,76 @@ npm install react-redux
 68
 69
 70
-</pre></td><td class="rouge-code"><pre>import { createStore } from 'redux'
-import initState from './init.json'
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">createStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">redux</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">initState</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./init.json</span><span class="dl">'</span>
 
-function reducer(state = initState, action) {
+<span class="kd">function</span> <span class="nf">reducer</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">initState</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
 
-    // 상태 관리시 action으로 넘어오는 값을 state에 반영
-    // if문은 switch문으로 대체 가능
-    if (action.type === 'WELCOME') {
-        return { ...state, mode: 'WELCOME', selected_content_id: 0 }
-    }
-    if (action.type === 'READ') {
-        return {
-            ...state,
-            mode: 'READ',
-            selected_content_id: action.id
-        }
-    }
-    if (action.type === 'CREATE') {
-        return { ...state, mode: 'CREATE' }
-    }
-    if (action.type === 'CREATE_PROCESS') {
+    <span class="c1">// 상태 관리시 action으로 넘어오는 값을 state에 반영</span>
+    <span class="c1">// if문은 switch문으로 대체 가능</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">WELCOME</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">state</span><span class="p">,</span> <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">WELCOME</span><span class="dl">'</span><span class="p">,</span> <span class="na">selected_content_id</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">READ</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+            <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">READ</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">selected_content_id</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">id</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">CREATE</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">state</span><span class="p">,</span> <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CREATE</span><span class="dl">'</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">CREATE_PROCESS</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
 
-        const newId = state.max_content_id + 1
-        const contents = [...state.contents, {
-            id: newId,
-            title: action.title,
-            desc: action.desc
-        }]
-        return {
-            ...state,
-            contents,
-            max_content_id: newId,
-            mode: 'READ',
-            selected_content_id: newId
-        }
-    }
-    if (action.type === 'UPDATE') {
-        return { ...state, mode: 'UPDATE' }
-    }
-    if (action.type === 'UPDATE_PROCESS') {
+        <span class="kd">const</span> <span class="nx">newId</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">max_content_id</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="kd">const</span> <span class="nx">contents</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">state</span><span class="p">.</span><span class="nx">contents</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">id</span><span class="p">:</span> <span class="nx">newId</span><span class="p">,</span>
+            <span class="na">title</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
+            <span class="na">desc</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">desc</span>
+        <span class="p">}]</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+            <span class="nx">contents</span><span class="p">,</span>
+            <span class="na">max_content_id</span><span class="p">:</span> <span class="nx">newId</span><span class="p">,</span>
+            <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">READ</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">selected_content_id</span><span class="p">:</span> <span class="nx">newId</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">UPDATE</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">state</span><span class="p">,</span> <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">UPDATE</span><span class="dl">'</span> <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">UPDATE_PROCESS</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
 
-        const contents = [...state.contents]
-        for (let content of contents) {
-            if (content.id === action.id) {
-                // 이렇게 해도 배열에 있는 객체의 값이 바뀜
-                content.title = action.title
-                content.desc = action.desc
-            }
-        }
-        return {
-            ...state,
-            contents,
-            mode: 'READ',
-            selected_content_id: action.id
-        }
-    }
-    if (action.type === 'DELETE_PROCESS') {
-        const contents = state.contents.filter(el =&gt; el.id !== state.selected_content_id)
-        return {
-            ...state,
-            contents,
-            mode: 'WELCOME',
-            selected_content_id: 0
-        }
-    }
+        <span class="kd">const</span> <span class="nx">contents</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">state</span><span class="p">.</span><span class="nx">contents</span><span class="p">]</span>
+        <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">content</span> <span class="k">of</span> <span class="nx">contents</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if </span><span class="p">(</span><span class="nx">content</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">action</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// 이렇게 해도 배열에 있는 객체의 값이 바뀜</span>
+                <span class="nx">content</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">title</span>
+                <span class="nx">content</span><span class="p">.</span><span class="nx">desc</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">desc</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+            <span class="nx">contents</span><span class="p">,</span>
+            <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">READ</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">selected_content_id</span><span class="p">:</span> <span class="nx">action</span><span class="p">.</span><span class="nx">id</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">DELETE_PROCESS</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">contents</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">contents</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="nx">el</span> <span class="o">=&gt;</span> <span class="nx">el</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">state</span><span class="p">.</span><span class="nx">selected_content_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
+            <span class="nx">contents</span><span class="p">,</span>
+            <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">WELCOME</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">selected_content_id</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    return state
-}
+    <span class="k">return</span> <span class="nx">state</span>
+<span class="p">}</span>
 
-export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; window.__REDUX_DEVTOOLS_EXTENSION__())
+<span class="k">export</span> <span class="k">default</span> <span class="nf">createStore</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">__REDUX_DEVTOOLS_EXTENSION__</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nc">__REDUX_DEVTOOLS_EXTENSION__</span><span class="p">())</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">reducer</code> 함수는 두 개의 파라미터를 가지는데,</p>
@@ -1340,7 +1370,7 @@ export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&am
 
 <p> </p>
 
-<h4 id="redux에-의존하지-않는-컴포넌트를-작성-예-componentsupdatejsx"><span class="me-2"><strong>Redux에 의존하지 않는 컴포넌트를 작성 (예: /components/Update.jsx)</strong></span><a href="#redux에-의존하지-않는-컴포넌트를-작성-예-componentsupdatejsx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="redux에-의존하지-않는-컴포넌트를-작성-예-componentsupdatejsx"><span class="me-2"><strong>Redux에 의존하지 않는 컴포넌트를 작성 (예: /components/Update.jsx)</strong></span><a href="#redux에-의존하지-않는-컴포넌트를-작성-예-componentsupdatejsx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>여기서 리덕스에 의존하지 않는 컴포넌트를 작성하는 방법은 간단합니다. <code class="language-plaintext highlighter-rouge">store.js</code>를 <code class="language-plaintext highlighter-rouge">import</code>하지 않고, <code class="language-plaintext highlighter-rouge">props</code>와 <code class="language-plaintext highlighter-rouge">state</code>를 이용해 컴포넌트간 통신을 하는 전통적인 형태의 리액트 컴포넌트를 작성하면 됩니다.</p>
 
@@ -1458,12 +1488,12 @@ export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&am
 
 <p> </p>
 
-<h4 id="컨테이너-컴포넌트-작성-containersupdatecontainerjsx"><span class="me-2"><strong>컨테이너 컴포넌트 작성 (/containers/UpdateContainer.jsx)</strong></span><a href="#컨테이너-컴포넌트-작성-containersupdatecontainerjsx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="컨테이너-컴포넌트-작성-containersupdatecontainerjsx"><span class="me-2"><strong>컨테이너 컴포넌트 작성 (/containers/UpdateContainer.jsx)</strong></span><a href="#컨테이너-컴포넌트-작성-containersupdatecontainerjsx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>리덕스와 관련된 작업은 컨테이너 컴포넌트에서 전적으로 담당하도록 분리하여 작성합니다. 원래 React Redux가 없다면 아래 코드보다 더 복잡한 코드를 작성하여야 합니다만, 여기서는 생략하고 바로 React Redux를 사용한 코드를 올립니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1489,31 +1519,31 @@ export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&am
 23
 24
 25
-</pre></td><td class="rouge-code"><pre>import { connect } from "react-redux"
-import Update from "../components/Update"
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span>
+<span class="k">import</span> <span class="nx">Update</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../components/Update</span><span class="dl">"</span>
 
-export default connect(state =&gt; {
-    const targetContent = {}
-    for(let content of state.contents) {
-        if(content.id === state.selected_content_id) {
-            targetContent.title = content.title
-            targetContent.desc = content.desc
-            targetContent.id = content.id
-            break
-        }
-    }
-    return {
-        title: targetContent.title,
-        desc: targetContent.desc,
-        id: targetContent.id
-    }
-}, dispatch =&gt; {
-    return{
-        onSubmit: (id, title, desc) =&gt; {
-            dispatch({type: 'UPDATE_PROCESS', id, title, desc})
-        }
-    }
-})(Update)
+<span class="k">export</span> <span class="k">default</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">targetContent</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">content</span> <span class="k">of</span> <span class="nx">state</span><span class="p">.</span><span class="nx">contents</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">content</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">state</span><span class="p">.</span><span class="nx">selected_content_id</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">targetContent</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">content</span><span class="p">.</span><span class="nx">title</span>
+            <span class="nx">targetContent</span><span class="p">.</span><span class="nx">desc</span> <span class="o">=</span> <span class="nx">content</span><span class="p">.</span><span class="nx">desc</span>
+            <span class="nx">targetContent</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">content</span><span class="p">.</span><span class="nx">id</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">title</span><span class="p">:</span> <span class="nx">targetContent</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
+        <span class="na">desc</span><span class="p">:</span> <span class="nx">targetContent</span><span class="p">.</span><span class="nx">desc</span><span class="p">,</span>
+        <span class="na">id</span><span class="p">:</span> <span class="nx">targetContent</span><span class="p">.</span><span class="nx">id</span>
+    <span class="p">}</span>
+<span class="p">},</span> <span class="nx">dispatch</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">{</span>
+        <span class="na">onSubmit</span><span class="p">:</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">desc</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nf">dispatch</span><span class="p">({</span><span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">UPDATE_PROCESS</span><span class="dl">'</span><span class="p">,</span> <span class="nx">id</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">desc</span><span class="p">})</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">})(</span><span class="nx">Update</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1529,10 +1559,10 @@ export default connect(state =&gt; {
 
 <p> </p>
 
-<h4 id="app-에서-컨테이너를-로딩하여-사용"><span class="me-2"><strong>App 에서 컨테이너를 로딩하여 사용</strong></span><a href="#app-에서-컨테이너를-로딩하여-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h2 id="app-에서-컨테이너를-로딩하여-사용"><span class="me-2"><strong>App 에서 컨테이너를 로딩하여 사용</strong></span><a href="#app-에서-컨테이너를-로딩하여-사용" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-jsx highlighter-rouge"><div class="code-header">
+        <span data-label-text="Jsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1571,44 +1601,44 @@ export default connect(state =&gt; {
 36
 37
 38
-</pre></td><td class="rouge-code"><pre>import './App.css';
-import NavContainer from './containers/NavContainer';
-import HeaderContainer from './containers/HeaderContainer';
-import ControlContainer from './containers/ControlContainer';
-import ReadContainer from './containers/ReadContainer';
-import { connect } from 'react-redux';
-import { Component } from 'react';
-import CreateContainer from './containers/CreateContainer';
-import UpdateContainer from './containers/UpdateContainer';
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">NavContainer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./containers/NavContainer</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">HeaderContainer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./containers/HeaderContainer</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ControlContainer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./containers/ControlContainer</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReadContainer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./containers/ReadContainer</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-redux</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">CreateContainer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./containers/CreateContainer</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">UpdateContainer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./containers/UpdateContainer</span><span class="dl">'</span><span class="p">;</span>
 
-class App extends Component {
+<span class="kd">class</span> <span class="nc">App</span> <span class="kd">extends</span> <span class="nc">Component</span> <span class="p">{</span>
 
-  render() {
-    return (
-      &lt;div className="App"&gt;
+  <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return </span><span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"App"</span><span class="p">&gt;</span>
 
-        &lt;HeaderContainer /&gt;
+        <span class="p">&lt;</span><span class="nc">HeaderContainer</span> <span class="p">/&gt;</span>
 
-        &lt;NavContainer /&gt;
+        <span class="p">&lt;</span><span class="nc">NavContainer</span> <span class="p">/&gt;</span>
 
-        &lt;ControlContainer /&gt;
+        <span class="p">&lt;</span><span class="nc">ControlContainer</span> <span class="p">/&gt;</span>
 
-        {(this.props.mode === 'READ' || this.props.mode === 'WELCOME') &amp;&amp; &lt;ReadContainer /&gt;}
-        {this.props.mode === 'CREATE' &amp;&amp; &lt;CreateContainer /&gt;}
-        {this.props.mode === 'UPDATE' &amp;&amp; &lt;UpdateContainer /&gt;}
-      &lt;/div&gt;
-    )
-  }
+        <span class="si">{</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">mode</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">READ</span><span class="dl">'</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">mode</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">WELCOME</span><span class="dl">'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nc">ReadContainer</span> <span class="p">/&gt;</span><span class="si">}</span>
+        <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">mode</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">CREATE</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nc">CreateContainer</span> <span class="p">/&gt;</span><span class="si">}</span>
+        <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">mode</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">UPDATE</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nc">UpdateContainer</span> <span class="p">/&gt;</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+  <span class="p">}</span>
 
-}
+<span class="p">}</span>
 
-// export default App;
+<span class="c1">// export default App;</span>
 
-export default connect(
-  state =&gt; ({
-    mode: state.mode
-  })
-)(App);
+<span class="k">export</span> <span class="k">default</span> <span class="nf">connect</span><span class="p">(</span>
+  <span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">({</span>
+    <span class="na">mode</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">mode</span>
+  <span class="p">})</span>
+<span class="p">)(</span><span class="nx">App</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -2541,6 +2571,12 @@ export default connect(
 
 
 
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
 
 
             
@@ -8385,7 +8421,7 @@ export default connect(
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>자바스크립트 예제: 2차원 정방형 배열(square array) 여러 번 회전</p>
+      <p>자바스크립트 예제: 2차원 정방형 배열(square array) 여러 번 회전 (공식 이용)</p>
     </a>
   
 
