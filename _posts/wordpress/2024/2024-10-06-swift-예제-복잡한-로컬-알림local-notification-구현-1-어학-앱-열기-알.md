@@ -8,9 +8,9 @@ categories:
 
 **참고**
 
-- [Swift(스위프트): 로컬 알림(Local Notification)을 스케줄에 맞춰 반복 발신하기 (및 한계점)](http://yoonbumtae.com/?p=5064)
-- [Swift: \[ChatGPT가 말하는\] 로컬 알림(로컬 노티피케이션) 기능의 한계점과 극복 방안](http://yoonbumtae.com/?p=6854)
-- [Swift(스위프트): 백그라운드 작업 (Background Tasks)](http://yoonbumtae.com/?p=5329)
+- [Swift(스위프트): 로컬 알림(Local Notification)을 스케줄에 맞춰 반복 발신하기 (및 한계점)](/posts/swift스위프트-로컬-알림local-notification을-스케줄에-맞춰-반복-발/)
+- [Swift: 김생성씨의 로컬 알림(로컬 노티피케이션) 기능의 한계점과 극복 방안](/posts/swift-chatgpt가-말하는-로컬-알림로컬-노티피케이션-기능의/)
+- [Swift(스위프트): 백그라운드 작업 (Background Tasks)](posts/swift스위프트-백그라운드-작업-background-tasks/)
 
 * * *
 

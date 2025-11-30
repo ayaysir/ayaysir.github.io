@@ -56,5 +56,5 @@ categories:
 ![로그인 후 게시판](/assets/img/wp-content/uploads/2019/12/screenshot-2019-12-10-am-2.13.20.png) 
 *로그인 후 게시판*
 
-<!-- ([Spring Boot 예제: 초간단 게시판](http://yoonbumtae.com/?p=1853))에 글 작성 -->
+<!-- ([Spring Boot 예제: 초간단 게시판](http://y1oonbumtae.com/?p=1853))에 글 작성 -->
 

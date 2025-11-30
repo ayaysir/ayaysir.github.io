@@ -32,7 +32,7 @@ categories:
 
 이 예제에서는 [Reqres](https://resreq.in) 사이트에서 JSON 정보를 가져오겠습니다. 프로필 사진과 이름, 이메일 주소를 표시하는 간단한 예제입니다. 아래 스크린샷의 레이아웃을 기반으로 스켈레톤 로딩을 적용할 것입니다.
 
-- [ResReq.api 사이트로 빠르고 편리하게 Restful API 테스트하기](http://yoonbumtae.com/?p=3725)
+- [ResReq.api 사이트로 빠르고 편리하게 Restful API 테스트하기](/posts/resreq-api-사이트로-빠르고-편리하게-restful-api-테스트하기/)
 
  ![](/assets/img/wp-content/uploads/2022/04/screenshot-2022-04-29-am-1.39.34.jpg)
 

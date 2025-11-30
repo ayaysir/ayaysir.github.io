@@ -125,7 +125,7 @@ notiContent.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue:
 
 ### **배지(badge) 등록하기**
 
-```
+```swift
 let newNumber = UserDefaults.standard.integer(forKey: "AppBadgeNumber") + 1
 UserDefaults.standard.set(newNumber, forKey: "AppBadgeNumber")
 notiContent.badge = (newNumber) as NSNumber
@@ -137,7 +137,7 @@ notiContent.badge = (newNumber) as NSNumber
 
 참고로 앱 아무곳에서 배지 숫자를 설정하는 방법은 다음과 같습니다. (`0` 이하는 배지 표시 안함, `1` 이상은 배지 표시함)
 
-```
+```swift
 UIApplication.shared.applicationIconBadgeNumber = 0
 ```
 

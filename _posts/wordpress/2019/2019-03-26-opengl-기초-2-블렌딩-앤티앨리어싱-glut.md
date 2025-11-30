@@ -272,7 +272,7 @@ void DoDisplay()
 }
 ```
 
-[ ![](/assets/img/wp-content/uploads/2019/03/gl9-e1578999778372.png)](http://yoonbumtae.com/?attachment_id=923)
+![](/assets/img/wp-content/uploads/2019/03/gl9-e1578999778372.png)
 
 ## 13\. GLUT
 

@@ -6,7 +6,7 @@ categories:
   - "Swift"
 ---
 
-**上편 - [Swift(스위프트): Core ML + Create ML 기초 요약 上 (기계학습 모델 만들기)](http://yoonbumtae.com/?p=4889) 바로가기**
+**上편 - [Swift(스위프트): Core ML + Create ML 기초 요약 上 (기계학습 모델 만들기)](/posts/swift스위프트-core-ml-create-ml-기초-요약-上-기계학습-모델-만들기/) 바로가기**
 
 Create ML로 만든 모델 파일을 이용해 이미지 분류 앱을 제작합니다. (UIKit + Interface Builder 스토리보드 이용)
 

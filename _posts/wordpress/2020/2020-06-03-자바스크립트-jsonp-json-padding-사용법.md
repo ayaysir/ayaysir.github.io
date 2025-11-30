@@ -33,7 +33,8 @@ if($_GET['callback']) {
 ?>
 ```
 
-간단한 JSON을 리턴하는 PHP 페이지를 만들었습니다.  [JSON 링크](http://yoonbumtae.com/util/misc/jsonp-example/)를 브라우저 링크에서 열면 잘 열립니다. 하지만 이것을 자바스크립트 내에서 AJAX로 가져오려고 하면 CORS 위반이 됩니다.
+<!-- 간단한 JSON을 리턴하는 PHP 페이지를 만들었습니다.  [JSON 링크](http://y1oonbumtae.com/util/misc/jsonp-example/)를 브라우저 링크에서 열면 잘 열립니다. 하지만 이것을 자바스크립트 내에서 AJAX로 가져오려고 하면 CORS 위반이 됩니다. -->
+간단한 JSON을 리턴하는 PHP 페이지를 만들었습니다. 해당 JSON를 브라우저 링크에서 열면 잘 열립니다. 하지만 이것을 자바스크립트 내에서 AJAX로 가져오려고 하면 CORS 위반이 됩니다. 
 
  ![](/assets/img/wp-content/uploads/2020/06/screenshot-2020-06-03-pm-10.49.30.png)
 
@@ -74,7 +75,7 @@ jsonpProc({"google":"http\/\/google.com","yahoo":"http:\/\/yahoo.com"});
 // src의 콜백 함수 이름은 밑에서 정의할 함수 이름과 동일하게
 function getJsonUsePureJS() {
     const script = document.createElement("script");
-    script.src = "http://yoonbumtae.com/util/misc/jsonp-example/?callback=getJsonUsePureJSCallback"
+    script.src = "http://examplewebsite.con/jsonp-example/?callback=getJsonUsePureJSCallback"
 
     document.getElementsByTagName('head')[0].appendChild(script);
 }
@@ -97,7 +98,7 @@ function getJsonUsePureJSCallback(obj) {
 ```js
 function getJsonpUseJQuery1() {
     $.ajax({
-        url: "http://yoonbumtae.com/util/misc/jsonp-example/",
+        url: "examplewebsite.con/jsonp-example/",
         dataType: "jsonp",
         jsonpCallback: "sendMeJsonp"
     }).then(res => {
@@ -114,7 +115,7 @@ function getJsonpUseJQuery1() {
 
 ```js
 function getJsonpUseJQuery2() {
-    $.getJSON("http://yoonbumtae.com/util/misc/jsonp-example/?callback=?", res => {
+    $.getJSON("http://examplewebsite.con/jsonp-example/?callback=?", res => {
         console.log("JQuery 2", res)
     })
 }

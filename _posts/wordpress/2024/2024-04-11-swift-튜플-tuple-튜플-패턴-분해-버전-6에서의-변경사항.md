@@ -177,7 +177,7 @@ polePairs.first! // (l: 50, r: 60)
 
 예를 들어 지도 등에서 두 지점 간 최소 거리를 찾아야 할 때 사용하는 [Dijkstra Algorithm](https://ko.wikipedia.org/wiki/%EB%8D%B0%EC%9D%B4%ED%81%AC%EC%8A%A4%ED%8A%B8%EB%9D%BC_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)은 우선순위 큐라는 자료구조가 필요로 합니다. 그런데 Swift에서 우선순위 큐는 기본적으로 제공되지 않습니다.
 
-- [Swift: 우선 순위 큐 Priority Queue (설명 + 구현)](http://yoonbumtae.com/?p=5974)
+- [Swift: 우선 순위 큐 Priority Queue (설명 + 구현)](/posts/swift-우선-순위-큐-priority-queue-설명-구현/)
 
 따라서 누군가가 우선순위 큐 구조체 `PriorityQueue<T: Comparable>`를 아래와 같이 만들었고 그것을 사용하고 싶다고 가정합니다.
 

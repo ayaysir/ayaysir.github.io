@@ -24,7 +24,7 @@ categories:
 
 그러면 먼저 `console.log()`의 기능을 분석해보고 자바에 옮겨 적용해보기로 한다.
 
-[http://yoonbumtae.com/?p=612](http://yoonbumtae.com/?p=612) 이 글에서 약간 분석이 되어있다.
+[http://y1oonbumtae.com/?p=612](http://y1oonbumtae.com/?p=612) 이 글에서 약간 분석이 되어있다.
 
 1. 매개변수가 하나인 경우 한 개의 변수를 표시한다.
 2. 매개변수가 둘 이상이며 맨 첫번째 매개변수가 printf 포맷이 아니라면 여러 개의 변수를 구분지어 나열한다.

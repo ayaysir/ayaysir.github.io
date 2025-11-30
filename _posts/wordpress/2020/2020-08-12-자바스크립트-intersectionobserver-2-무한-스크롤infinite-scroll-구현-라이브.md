@@ -23,7 +23,7 @@ categories:
 이러한 기존의 스크롤 이벤트를 이용한 무한 스크롤 대비 `IntersectionObserver`를 사용한 무한 스크롤의 장점은 다음과 같습니다.
 
 1. 비교적 이해가 쉽습니다. - '_리스트의 마지막 요소가 화면에 보이면 다음 데이터를 준비한다_' 라는 비교적 간단한 로직으로 구현 가능합니다.
-2. [throttle, debounce 관련 문제](http://yoonbumtae.com/?p=2102)를 따로 처리하지 않아도 됩니다. - 스크롤 이벤트는 뷰포트, 스크롤의 위치 좌표를 계산하는 과정에서 trottle이나 debounce와 관련된 문제가 있으며, 이에 대한 별도의 처리 과정이 필요하나 `IntersectionObserver`는 계산 과정이 매우 단축되기 때문에 이러한 처리 과정이 필요 없습니다.
+2. [throttle, debounce 관련 문제](/posts/자바스크립트-lodash-debounce와-throttle을-이용하여-함수의-실행-횟/)를 따로 처리하지 않아도 됩니다. - 스크롤 이벤트는 뷰포트, 스크롤의 위치 좌표를 계산하는 과정에서 trottle이나 debounce와 관련된 문제가 있으며, 이에 대한 별도의 처리 과정이 필요하나 `IntersectionObserver`는 계산 과정이 매우 단축되기 때문에 이러한 처리 과정이 필요 없습니다.
 3. reflow가 많이 줄어듭니다. - 스크롤 이벤트는 좌표 계산 과정에서 DOM의 재 렌더링(reflow)가 유발되지만 `IntersectionObserver`는 이러한 문제로부터 자유롭습니다.
 
  

@@ -16,7 +16,7 @@ tags:
 
 - [Baeldung - 스프링 부트 OAuth 커스텀 로그인 페이지 만들기](https://www.baeldung.com/spring-security-5-oauth2-login#1-custom-login-page) (영문)
 - [스프링 부트(Spring Boot): 구글 로그인 연동 (스프링 부트 스타터의 oauth2-client) 이용 + 네이버](/posts/스프링-부트spring-boot-구글-로그인-연동-스프링-부트-스타/)
-- [Spring Boot: 시큐리티(Security) – 2 – 커스텀 로그인 페이지 만들기](http://yoonbumtae.com/?p=1184)
+- [Spring Boot: 시큐리티(Security) – 2 – 커스텀 로그인 페이지 만들기](/posts/spring-boot-시큐리티security-2-커스텀-로그인-페이지-만들기/)
 
  
 

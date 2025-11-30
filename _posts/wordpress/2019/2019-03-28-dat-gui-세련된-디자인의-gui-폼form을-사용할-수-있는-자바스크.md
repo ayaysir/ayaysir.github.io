@@ -141,7 +141,7 @@ window.onload = function() {
 
 dat.GUI는 초기 값으로 정의 된 형식으로 색상을 수정합니다. (참고: "red", "green" 같은 색상명을 사용하면 오류가 발생합니다.)
 
-[ ![](/assets/img/wp-content/uploads/2019/03/dg4.png)](http://yoonbumtae.com/?attachment_id=947)
+![](/assets/img/wp-content/uploads/2019/03/dg4.png)
 
  
 
@@ -149,7 +149,7 @@ dat.GUI는 초기 값으로 정의 된 형식으로 색상을 수정합니다. (
 
 GUI에 추가 한 모든 오브젝트에 대해 `gui.remember`를 호출하여 GUI 인터페이스에 저장 메뉴를 추가할 수 있다.
 
-```
+```js
 var fizzyText = new FizzyText();
 var gui = new dat.GUI();
 
@@ -160,7 +160,7 @@ gui.remember(fizzyText);
 
 저장 설정을 변경하려면 톱니바퀴 모양의 아이콘을 클릭하십시오. 다음과 같이 GUI 값을 `localStorage`에 저장하거나 `JSON 객체`를 복사하여 소스 코드에 붙여 넣을 수 있습니다.
 
-```
+```js
 var fizzyText = new FizzyText();
 var gui = new dat.GUI({ load: JSON });
 
@@ -169,7 +169,7 @@ gui.remember(fizzyText);
 // Add controllers ...
 ```
 
-[ ![](/assets/img/wp-content/uploads/2019/03/dg5.png)](http://yoonbumtae.com/?attachment_id=946)
+![](/assets/img/wp-content/uploads/2019/03/dg5.png)
 
  
 
@@ -179,7 +179,7 @@ gui.remember(fizzyText);
 
 저장 메뉴의 드롭 다운을 사용하여 사전 설정간에 전환합니다. 다음과 같이 기본 사전 설정을 지정할 수 있습니다.
 
-```
+```js
 var gui = new dat.GUI({
   load: JSON,
   preset: 'Flow'

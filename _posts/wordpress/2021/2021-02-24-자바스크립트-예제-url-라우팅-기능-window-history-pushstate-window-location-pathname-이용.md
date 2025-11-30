@@ -104,7 +104,7 @@ function setURL(value) {
 }
 ```
 
-```
+```js
 // 참고: 버튼 이벤트 코드
 const btnNext = $(".btn-next")
 const btnPrev = $(".btn-prev")

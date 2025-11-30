@@ -303,7 +303,7 @@ extension RootViewController: ContainerVCDelegate {
 
 이 글에서는 Container View에 있는 VC라는 특수한 상황 하에 작성되었지만, 여기 있는 내용은 일반적인 뷰 컨트롤러간의 통신에서도 적용될 수 있습니다. 아래 글을 참고하세요.
 
-- [iOS 프로그래밍: Navigation에서 전후간 정보교환 방법](http://yoonbumtae.com/?p=2203)
+- [iOS 프로그래밍: Navigation에서 전후간 정보교환 방법](/posts/ios-프로그래밍-navigation에서-전후간-정보교환-방법/)
 
  
 

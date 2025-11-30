@@ -12,11 +12,11 @@ tags:
 
 `Promise`를 기반으로 하기 때문에 지원하지 않는 웹 브라우저에서는 사용할 수 없습니다. 인터넷 익스플로러에서 사용 가능하게 하려면 **Babel** 등을 이용해서 변환해야 합니다.
 
-<!-- 관련 글
+**관련 글**
 
 - [자바스크립트: AJAX로 blob 타입의 리스폰스 가져오기(파일 다운로드)](/posts/자바스크립트-ajax로-blob-타입의-리스폰스-가져오기파일/) - XMLHttpRequest 예제
-- [자바스크립트: 콜백, Promise, async - await 기초](http://yoonbumtae.com/?p=1071) - Promise 예제
-- [Node.js: Webpack + Babel과 Babel/polyfill을 이용하여 ES6으로 작성된 코드를 ES5 이하에서도 호환되게 하기](http://yoonbumtae.com/?p=1140) -->
+- [자바스크립트: 콜백, Promise, async - await 기초](/posts/자바스크립트-콜백-promise-async-await-기초/) - Promise 예제
+<!-- - [Node.js: Webpack + Babel과 Babel/polyfill을 이용하여 ES6으로 작성된 코드를 ES5 이하에서도 호환되게 하기](http://y1oonbumtae.com/?p=1140) -->
 
 ## **Promise**
  

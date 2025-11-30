@@ -74,7 +74,7 @@ func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subv
 
 레이아웃 크기(`bounds`)의 `1/3`을 사용해 해당 값으로 `y` 위치를 이동시킬 것입니다.
 
-```
+```swift
 // Before for loop
 let radius = bounds.width / 3.0
 ```
@@ -83,7 +83,7 @@ let radius = bounds.width / 3.0
 
 반경을 사용하여 사용하여 `x` 및 `y` 값을 변경합니다.
 
-```
+```swift
 var point = CGPoint(x: 0, y: -radius)
 ```
 

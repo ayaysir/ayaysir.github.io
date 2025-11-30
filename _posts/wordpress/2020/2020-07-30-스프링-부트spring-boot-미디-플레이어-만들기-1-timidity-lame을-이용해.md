@@ -8,7 +8,7 @@ categories:
 
 제가 예전에 자바스크립트의 [MIDIjs](http://www.midijs.net/)라는 라이브러리를 이용해 미디 플레이어를 만든 적이 있습니다. 
 
-<!-- [미디 플레이어](http://yoonbumtae.com/music/midi/)를 만든 적이 있습니다. -->
+<!-- [미디 플레이어](http://y1oonbumtae.com/music/midi/)를 만든 적이 있습니다. -->
 
 - [자바스크립트: 인터넷에서 미디(MIDI) 파일을 바로 재생하는 라이브러리(http://www.midijs.net/) + 예제: 미디 플레이어](/posts/자바스크립트-인터넷에서-미디midi-파일을-바로-재생/)
 

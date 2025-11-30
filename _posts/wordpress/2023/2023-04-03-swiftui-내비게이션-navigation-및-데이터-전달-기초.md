@@ -108,7 +108,7 @@ List {
 - `destination` (트레일링 클로저)
     - `ColorDetail` 뷰(후술)로 이동합니다.
     - `color` 파라미터와 `message` 파라미터가 있으며 `color`에는 `NavigationLink`에서 지정한 `value`값, `message`는 파발 메시지에 대한 바인딩(Binding) 값을 입력합니다.
-    - **참고)** [SwiftUI: @State와 @Binding의 의미 / 뷰 간의 데이터 전송 (앞→뒤, 뒤→앞)](http://yoonbumtae.com/?p=5371)
+    - **참고)** [SwiftUI: @State와 @Binding의 의미 / 뷰 간의 데이터 전송 (앞→뒤, 뒤→앞)](/posts/swiftui-state와-binding의-의미-뷰-간의-데이터-전송-앞-뒤-뒤-앞/)
 
 `[동대문]` 버튼을 누르면 `Color.mint` 값이 전달되며 다음 뷰로 넘어갑니다.
 

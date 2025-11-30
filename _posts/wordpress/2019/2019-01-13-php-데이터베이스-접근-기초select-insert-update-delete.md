@@ -181,10 +181,10 @@ $seq = $_POST['seq'];
 ### 동작화면
  
 
-<!-- [ ](http://www.yoonbumtae.com/phpex) -->
+<!-- [ ](http://www.y1oonbumtae.com/phpex) -->
 ![](/assets/img/wp-content/uploads/2019/01/php-example-1.png)
 
-<!-- [사이트에서 직접 보기](http://yoonbumtae.com/phpex) -->
+<!-- [사이트에서 직접 보기](http://y1oonbumtae.com/phpex) -->
 
  
 ### 참고: sql 에러 표시

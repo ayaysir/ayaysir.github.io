@@ -12,7 +12,7 @@ tags:
 
 재귀 함수는 예를 들면 '꿈 속의 꿈' 같은 것이다. 꿈에서 꿈을 꿔서 깨어났더니 또 꿈 꾸는 중이다 같은 그런 경우..
 
-```
+```java
 public class RecursiveDream {
   
   private static int dreamCount = 1;
@@ -46,7 +46,7 @@ at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
 
 그러므로 재귀호출 사용시에는 적당한 선에서 재귀 호출이 중단될 수 있도록 종료 조건을 넣어야만 한다.
 
-```
+```java
 public class RecursiveDream {
   
   public static void doDream(int dreamCount) {
@@ -132,7 +132,7 @@ public class Factorial1 {
 
 다음은 정보처리산업기사에서 출제된 문제이다. 다음 코드의 실행 결과는?
 
-```
+```java
 public class RecursiveExample {
     
     public static int recursive(int n) {
@@ -226,7 +226,7 @@ public class FactorialSum {
 
 ```
 
-```
+```java
 public class QuickSort {
     
     // 배열의 i1번째 값과 i2번째 값을 교환.

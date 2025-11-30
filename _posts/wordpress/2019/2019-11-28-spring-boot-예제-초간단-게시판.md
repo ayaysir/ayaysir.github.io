@@ -43,7 +43,7 @@ Spring Boot의 기본 기능(Thymeleaf, 시큐리티 포함)을 이용해서 전
 
  ![](/assets/img/wp-content/uploads/2019/11/screenshot-2019-11-28-pm-9.31.56.png)
 
-데이터베이스 설정하는 방법은 [Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)](http://yoonbumtae.com/?p=658)를 참고하세요.
+데이터베이스 설정하는 방법은 [Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)](/posts/spring-boot-mariadb-연결하기-jdbc-maven-기준/)를 참고하세요.
 
  
 

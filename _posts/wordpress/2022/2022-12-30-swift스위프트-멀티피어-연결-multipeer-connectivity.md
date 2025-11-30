@@ -657,7 +657,7 @@ _**메시지를 실제 UI에 적용** 섹션으로부터 이어집니다._
 
 뷰 컨트롤러의 멤버 변수로 `isHosting`을 추가합니다.
 
-```
+```swift
 /// 내가 방장(host)인지 여부 판별
 private var isHosting = false
 ```

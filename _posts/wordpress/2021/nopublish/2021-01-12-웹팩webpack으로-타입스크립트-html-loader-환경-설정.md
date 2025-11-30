@@ -11,8 +11,8 @@ Webpack으로 타입스크립트를 이용한 HTML 개발환경을 구축하는 
 
 일반 자바스크립트는 아래 글들을 참고하세요.
 
-- [Node.js: Webpack 설치하기 (Webpack 4 버전 기준)](http://yoonbumtae.com/?p=784)
-- [Node.js: Webpack 4 추가 설정 (CSS, HTML, dev-server) 빌드 및 배포](http://yoonbumtae.com/?p=790)
+- [Node.js: Webpack 설치하기 (Webpack 4 버전 기준)](http://y1oonbumtae.com/?p=784)
+- [Node.js: Webpack 4 추가 설정 (CSS, HTML, dev-server) 빌드 및 배포](http://y1oonbumtae.com/?p=790)
 
  
 
@@ -28,7 +28,7 @@ npm init -y
 
 #### **1\. 타입스크립트 설치**
 
-- [Node.js를 이용한 타입스크립트(Typescript) 프로젝트 생성과 기초 이론 알아보기](http://yoonbumtae.com/?p=3150)
+- [Node.js를 이용한 타입스크립트(Typescript) 프로젝트 생성과 기초 이론 알아보기](https://)
 
  
 
@@ -186,7 +186,7 @@ module.exports = {
 
 **index.ts**
 
-```
+```swift
 import App from "./App"
 document.getElementById("app")!.appendChild(App())
 ```

@@ -9,7 +9,7 @@ categories:
 
 국제화(Internationalization)는 홈페이지의 내용을 다국어로 지원하는 것을 뜻합니다.
 
-백엔드 측에서 하는 방법이 있고 프론트엔드 측에서 하는 방법이 있는데 백엔드에 대한 국제화 작업은 스프링 부트, Thymeleaf 기준으로 한 다음 글을 참조해주세요. [Spring Boot: 국제화(Internationalization)](http://yoonbumtae.com/?p=754)
+백엔드 측에서 하는 방법이 있고 프론트엔드 측에서 하는 방법이 있는데 백엔드에 대한 국제화 작업은 스프링 부트, Thymeleaf 기준으로 한 다음 글을 참조해주세요. [Spring Boot: 국제화(Internationalization)](http://y1oonbumtae.com/?p=754)
 
 제이쿼리에서도 국제화 지원을 위한 기능이 있고 이러한 라이브러리([i18n](https://www.i18next.com/))도 있는데 처음에는 라이브러리 없이 진행해보도록 하겠습니다.
 

@@ -272,7 +272,7 @@ struct AlphabetNavigator: View {
 - `.background(dragObserver(title: letter))` : 배경으로 현재 위치에 있는 알파벳을 `dragObserver`로 넘깁니다.
     - `GeometryReader`를 배경에 배치한 것과 동일합니다.
 - `onChange`: 현재 선택된 알파벳에 따라 진동을 울리고, 2초 뒤에 선택을 해제해서 계속 투명하게 보이지 않도록 합니다.
-    - 참고: [Swift(스위프트): 아이폰 진동(Vibration, Haptic) 구현하기 上 (기초)](http://yoonbumtae.com/?p=5073)
+    - 참고: [Swift(스위프트): 아이폰 진동(Vibration, Haptic) 구현하기 上 (기초)](/posts/swift스위프트-아이폰-진동vibration-haptic-구현하기-上-기초/)
 
  
 

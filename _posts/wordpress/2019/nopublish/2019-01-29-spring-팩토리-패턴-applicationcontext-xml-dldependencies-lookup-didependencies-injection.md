@@ -13,7 +13,7 @@ _여기에 나오는 내용은 현 시점에서 굉장히 오래된 내용들이
 
 \- 팩토리 패턴: 팩토리 패턴에서 팩토리 클래스는 단순히 특정 인스턴스를 반환하는 역할만 한다. 싱글턴 패턴과 결합될 수 있다.
 
-```
+```java
 public class VTFactory {
     
     // Factory: 인스턴스를 리턴시키는 기능만 담당하는 클래스
@@ -54,7 +54,7 @@ public class VTFactory {
 
 ```
 
-```
+```java
 public class Spring1 {
  
     public static void main(String[] args) {
@@ -130,7 +130,7 @@ prototype을 지정하지 않으면 서비스 시작 시 무조건 인스턴스�
 
 `<bean id="vt" class="exp.spring.vt.Weatheroid" **init-method="init" destroy-method="destroy"**> ...`
 
-```
+```java
 public void init() {
     System.out.println("**Weatheroid Type A Airi**\nBattery: " + remainingBatteryQuantity);
 }

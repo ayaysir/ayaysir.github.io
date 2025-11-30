@@ -48,8 +48,8 @@ Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] au
 
 이메일(`userEmail`)과 비밀번호(`password`)로 새로 가입한 뒤, 해당 유저를 인증 상태로 만듭니다. 만약 익명 로그인 상태에서 이 작업을 실행하면, 기존 익명 유저는 로그아웃되고 새로 가입한 회원이 새로운 UID로 인증됩니다.
 
-- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)](http://yoonbumtae.com/?p=4090)
-- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 회원 가입 기능 구현 1 (스토리보드)](http://yoonbumtae.com/?p=4099)
+- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)](/posts/swift스위프트-firebase파이어베이스-인증-기능을-이용한-기/)
+- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 회원 가입 기능 구현 1 (스토리보드)](/posts/swift스위프트-firebase파이어베이스-인증-기능을-이용한-회/)
 
  
 

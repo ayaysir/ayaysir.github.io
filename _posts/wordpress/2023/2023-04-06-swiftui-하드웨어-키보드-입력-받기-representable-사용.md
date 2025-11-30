@@ -135,7 +135,7 @@ struct KeyboardView: UIViewControllerRepresentable {
 }
 ```
 
-- `Representable`에 대한 자세한 내용은 [SwiftUI: Representable을 이용해서 UIViewController 띄우기](http://yoonbumtae.com/?p=5349) 포스트를 참고해주세요.
+- `Representable`에 대한 자세한 내용은 [SwiftUI: Representable을 이용해서 UIViewController 띄우기](/posts/swiftui-representable을-이용해서-uiviewcontroller-띄우기/) 포스트를 참고해주세요.
 - `Coordinator`가 필요하기 때문에 `makeCoordinator()`와 이너 클래스 `Coordinator`를 추가합니다.
 
  
@@ -164,7 +164,7 @@ class Coordinator: KeyEventVCDelegate {
 
 앞에서 언급했던 대리자 함수 `didKeyPressBegan(key:)`를 실행하려면 코디네이터(Coordinator)가 필요합니다.
 
-- `Coordinator`에 대한 자세한 내용은 [SwiftUI: Representable을 이용해서 UIViewController 띄우기](http://yoonbumtae.com/?p=5349) 포스트를 참고해주세요.
+- `Coordinator`에 대한 자세한 내용은 [SwiftUI: Representable을 이용해서 UIViewController 띄우기](/posts/swiftui-representable을-이용해서-uiviewcontroller-띄우기/) 포스트를 참고해주세요.
 - **keyboardHandler**
     - 키보드를 입력했을 때 처리해야 할 작업을 외부에서 지정할 수 있도록 `(String) -> ()` 타입의 클로저(콜백)를 값으로 받는 변수입니다.
 - **viewController.delegate = self**

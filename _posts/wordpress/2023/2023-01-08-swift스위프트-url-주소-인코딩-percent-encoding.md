@@ -103,7 +103,7 @@ print(escaped!)
     public static var urlFragmentAllowed: CharacterSet { get }
     ```
     
-### 출력 결과     
+## 출력 결과     
 
 출력 결과는 다음과 같습니다.
 
@@ -111,7 +111,7 @@ print(escaped!)
 https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%84%BC%ED%8A%B8_%EC%9D%B8%EC%BD%94%EB%94%A9
 ```
 
-### extension으로 추가
+## extension으로 추가
 
 자주 사용하는 경우 `extension`으로 추가할 수도 있습니다.
 
@@ -129,7 +129,7 @@ extension String {
 
  
 
-### 참고
+## 참고
 
 - [Swift - encoded URL](https://stackoverflow.com/questions/24551816/swift-encode-url)
-- [Swift(스위프트): URL 관련 기능 요약 (URL, URLComponents, URLSession)](http://yoonbumtae.com/?p=3499)
+- [Swift(스위프트): URL 관련 기능 요약 (URL, URLComponents, URLSession)](/posts/swift스위프트-url-관련-기능-요약-url-urlcomponents-urlsession/)

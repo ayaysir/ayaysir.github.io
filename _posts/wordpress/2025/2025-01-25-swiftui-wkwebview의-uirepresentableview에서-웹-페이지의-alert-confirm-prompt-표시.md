@@ -8,7 +8,7 @@ categories:
 
 **관련 글**
 
-- [SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)](http://yoonbumtae.com/?p=5436)
+- [SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)](/posts/swiftui-웹-뷰wkwebview-추가하기-및-자바스크립트-실행-representable-사용/)
 
 ## 소개
 

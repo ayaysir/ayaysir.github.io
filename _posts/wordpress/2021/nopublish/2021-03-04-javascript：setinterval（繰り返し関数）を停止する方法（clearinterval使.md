@@ -16,7 +16,7 @@ JavaScriptで `setInterval(function, millisecond)`は一定時間（ms）ごと
 
 #### **例1**
 
-```
+```js
 var interval = setInterval(function() {
   console.log("await..")
 }, 500)
@@ -31,7 +31,7 @@ function stop(){
 
 #### **例2**
 
-```
+```js
 var isStop = false
 var interval = setInterval(function() {
   if (!isStop) {

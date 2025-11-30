@@ -16,7 +16,7 @@ categories:
 
  
 
-### **1\. 프로젝트 세팅**
+## **1\. 프로젝트 세팅**
 
 프로젝트 세팅의 `PROJECT` > `Info` 에서 `Localizations` 아래에 있는 `+` 버튼을 클릭합니다.
 
@@ -34,7 +34,7 @@ categories:
 
  
 
-### **2\. 스토리보드 로컬라이징**
+## **2\. 스토리보드 로컬라이징**
 
  ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-11-29-pm-11.46.52.jpg)
 
@@ -68,7 +68,7 @@ Main 스토리보드에 펼치기 버튼이 새로 생기며, 하위 메뉴에 `
 
  
 
-### **3\. 코드 내 텍스트의 로컬라이징**
+## **3\. 코드 내 텍스트의 로컬라이징**
 
 스토리보드 외에 컨트롤러 등의 코드에서 텍스트를 다룰 일이 있습니다.
 
@@ -132,7 +132,7 @@ File Inspector으로 다시 돌아가서 번역 대상 언어를 선택합니다
 
 먼저 코드에서 번역이 필요한 텍스트 옆에 `.localized` 를 추가합니다. 아래는 `.localized` 를 사용하는 예제의 일부입니다.
 
-```
+```swift
 let alertTitle = "Unable to Create".localized
 
 guard selectedDocument != nil else {
@@ -171,7 +171,7 @@ guard txfPostTitle.text! != "" else {
 
  
 
-### **4\. 변수값을 사용하는 어순이 바뀌는 언어의 로컬라이징**
+## **4\. 변수값을 사용하는 어순이 바뀌는 언어의 로컬라이징**
 
 로컬라이징된 문자열에서 **arguments의 순서가 번역에 따라 달라질 경우**, **포맷 지정자에 인덱스를 추가**하여 순서를 제어할 수 있습니다.
 
@@ -201,7 +201,7 @@ Swift의 String(format:) 스타일을 활용하여 `%1$@`, `%2$d`처럼 **인덱
 
  
 
-### **5\. info.plist 로컬라이징**
+## **5\. info.plist 로컬라이징**
 
  ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-02-am-1.21.56.jpg)
 
@@ -241,7 +241,7 @@ XML 형태의 프로퍼티 리스트가 표시됩니다.
 
 위의 키를 사용하여 아래와 같이 `InfoPlist.strings` 파일을 작성합니다.
 
-```
+```conf
 NSCameraUsageDescription = "사용자 프로필 사진을 촬영하기 위한 카메라 권한 허용이 필요합니다.";
 NSPhotoLibraryUsageDescription = "사용자 프로필 사진을 가져오기 위한 사진 라이브러리 권한 허용이 필요합니다.";
 ```

@@ -6,7 +6,7 @@ categories:
   - "Swift UIKit"
 ---
 
-[iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 1 - 테이블 뷰 추가](http://yoonbumtae.com/?p=3379)
+[iOS 프로그래밍: 테이블 뷰 (Swift, 스토리보드) 1 - 테이블 뷰 추가](/posts/ios-프로그래밍-테이블-뷰-swift-스토리보드-1-테이블-뷰-추/)
 
 ## **커스텀 셀이란?**
 

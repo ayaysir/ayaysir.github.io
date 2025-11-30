@@ -209,4 +209,4 @@ categories:
 
 ## (계속 이어집니다.) 
 
-[Adobe After Effect 기초 (2) - 로토브러시, 키프레임, 모양 레이어, 영상 파일 출력](http://yoonbumtae.com/?p=5547)
+[Adobe After Effect 기초 (2) - 로토브러시, 키프레임, 모양 레이어, 영상 파일 출력](/posts/adobe-after-effect-기초-2-로토브러시-키프레임-모양-레이어-영상/)

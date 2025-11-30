@@ -7,8 +7,8 @@ categories:
   - "Firebase"
 ---
 
-- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)](http://yoonbumtae.com/?p=4090)
-- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 회원 가입 기능 구현 1 (스토리보드)](http://yoonbumtae.com/?p=4099)
+- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)](/posts/swift스위프트-firebase파이어베이스-인증-기능을-이용한-기/)
+- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 회원 가입 기능 구현 1 (스토리보드)](/posts/swift스위프트-firebase파이어베이스-인증-기능을-이용한-회/)
 
  
 
@@ -24,7 +24,7 @@ categories:
 
  
 
-### **섬네일 생성 함수 추가**
+## **섬네일 생성 함수 추가**
 
 아래 함수는 `UIImage`를 받아 가로 또는 세로의 최대 사이즈가 `maxSize`인 섬네일을 생성합니다.
 
@@ -57,24 +57,24 @@ func makeImageThumbnail(image: UIImage, maxSize: Int = 100) -> UIImage? {
 
 ```
 
-참고글
-
-- [\[번역\]언세이프 스위프트: 포인터를 사용해보고, C와함께 상호작용하기](https://blog.canapio.com/110)
-- [Swift가 제공하는 여러 포인터 타입들과 동작 방식](https://academy.realm.io/kr/posts/nate-cook-tryswift-tokyo-unsafe-swift-and-pointer-types/)
+> 참고글
+>
+> - [\[번역\]언세이프 스위프트: 포인터를 사용해보고, C와함께 상호작용하기](https://blog.canapio.com/110)
+> - [Swift가 제공하는 여러 포인터 타입들과 동작 방식](https://academy.realm.io/kr/posts/nate-cook-tryswift-tokyo-unsafe-swift-and-pointer-types/)
 
  
 
-### **스토리보드에서 사진 업로드 부분 만들기**
+## **스토리보드에서 사진 업로드 부분 만들기**
 
 먼저 뷰 컨트롤러에서 `Photos`를 불러옵니다.
 
-```
+```swift
 import Photos
 ```
 
-.
 
-##### **1\. 스토리보드 UI 만들기**
+
+### **1\. 스토리보드 UI 만들기**
 
 아래 사진과 같이 이미지 뷰(`UIImageView`), 버튼(`UIButton`) 두 개를 회원가입 폼에 추가합니다.
 
@@ -100,11 +100,11 @@ import Photos
 
  
 
-#### **2   멤버 변수 추가**
+### **2.  멤버 변수 추가**
 
 사진 보관함에서 사진을 불러올 때, 또는 카메라에서 사진을 찍을 때 사용하는 뷰 컨트롤러인 이미지 피커 뷰 컨트롤러(`UIImageViewController`)와 섬네일 이미지를 저장할 변수인 `imgProfilePicture` 멤버 변수를 추가합니다.
 
-```
+```swift
 let imagePickerController = UIImagePickerController()
 var userProfileThumbnail: UIImage!
 
@@ -112,11 +112,11 @@ var userProfileThumbnail: UIImage!
 
  
 
-##### **3\. 이미지 관련 딜리게이트 코드 추가**
+### **3\. 이미지 관련 딜리게이트 코드 추가**
 
 `viewDidLoad(_:)`에 아래 부분을 추가합니다.
 
-```
+```swift
 // 사진: 이미지 피커에 딜리게이트 생성
 imagePickerController.delegate = self
 
@@ -206,13 +206,13 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
     - `userProfileThumbnail = makeImageThumbnail(image: image, maxSize: 200)` - 최대 크기가 200인 섬네일을 생성합니다.
 - `openSetting` - 카메라 또는 사진 보관함의 권한이 거부되었을 때, 앱 사용자에게 권한 허용을 유도하기 위해 사용합니다. 이 함수가 실행되면 디바이스의 앱 설정 메뉴로 이동합니다.
 - `doTaskByPhotoAuthorization(), doTaskByCameraAuthorization()` - 사진 보관함과 카메라의 현재 권한 레벨에 따라 해야할 동작들을 swtch 문을 이용해 지정합니다.
-    - [Swift (스위프트): 사진 라이브러리, 카메라 사용 (스토리보드)](http://yoonbumtae.com/?p=3831)
+    - [Swift (스위프트): 사진 라이브러리, 카메라 사용 (스토리보드)](/posts/swift-스위프트-사진-라이브러리-카메라-사용-스토리보/)
 
 `simpleAlert` 함수는 경고 창을 띄우는 과정을 간소화한 커스터마이징 함수입니다. ([바로가기](https://github.com/ayaysir/iOS-DiffuserStick/blob/main/DiffuserStick/util/AlertUtil.swift))
 
  
 
-##### **4\. 카메라, 라이브러리 버튼에 이벤트 할당**
+### **4\. 카메라, 라이브러리 버튼에 이벤트 할당**
 
 ```swift
 @IBAction  func btnActTakePhoto(_ sender: UIButton) {
@@ -235,7 +235,7 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
 
  
 
-### **Firebase에서 Storage 생성**
+## **Firebase에서 Storage 생성**
 
 파이어베이스 웹 콘솔 왼쪽에 `Storage`라는 메뉴가 있습니다. Storage가 생성되지 않았다면 먼저 시작하기 버튼을 눌러 새로 생성해야 합니다.
 
@@ -255,7 +255,7 @@ Storage는 기본적으로 인증된 경우에만 쓰기, 읽기를 허락하고
 
  
 
-### **사진 업로드 기능 구현**
+## **사진 업로드 기능 구현**
 
 [코드 출처](https://stackoverflow.com/questions/49934195/how-to-upload-multiple-image-on-firebase-using-swift)
 
@@ -263,9 +263,9 @@ Storage는 기본적으로 인증된 경우에만 쓰기, 읽기를 허락하고
 
  
 
-##### **1\. 뷰 컨트롤러의 멤버 변수 추가**
+### **1\. 뷰 컨트롤러의 멤버 변수 추가**
 
-```
+```swift
 /// Here is the completion block
 typealias FileCompletionBlock = () -> Void
 var block: FileCompletionBlock?
@@ -276,7 +276,7 @@ var block: FileCompletionBlock?
 
  
 
-##### **2\. 커스텀 타입 ImageWithName 생성**
+### **2\. 커스텀 타입 ImageWithName 생성**
 
 ```swift
 import UIKit
@@ -293,7 +293,7 @@ struct ImageWithName {
 
  
 
-##### **3\. 클래스 FirebaseFileManager 추가 - 핵심 업로드 로직**
+### **3\. 클래스 FirebaseFileManager 추가 - 핵심 업로드 로직**
 
 ```swift
 import UIKit
@@ -384,7 +384,7 @@ class FirebaseFileManager: NSObject {
 
 파이어베이스 공식 매뉴얼([출처](https://firebase.google.com/docs/storage/ios/upload-files?authuser=0#upload_files))에 있는 핵심 기본 코드는 아래와 같습니다. 파이어베이스 스토리지에 루트 폴더의 `image` 폴더 안에 `rivers.jpg`라는 이름으로 메모리상의 `data`를 업로드합니다.
 
-```
+```swift
 // Create a root reference
 let storageRef = storage.reference()
 
@@ -416,7 +416,7 @@ let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
 
  
 
-##### **4\. 뷰 컨트롤러에 Firebase 이미지 업로드 함수 추가**
+### **4\. 뷰 컨트롤러에 Firebase 이미지 업로드 함수 추가**
 
 ```swift
 private func uploadImage(forIndex index:Int, images: [ImageWithName]) {
@@ -459,7 +459,7 @@ private func uploadImage(forIndex index:Int, images: [ImageWithName]) {
 
  
 
-##### **5\. 뷰 컨트롤러에 시작 함수 startUploading 추가**
+### **5\. 뷰 컨트롤러에 시작 함수 startUploading 추가**
 
 ```swift
 func startUploading(images: [ImageWithName], completion: @escaping FileCompletionBlock) {
@@ -478,7 +478,7 @@ func startUploading(images: [ImageWithName], completion: @escaping FileCompletio
 
  
 
-##### **6\. 회원가입 제출 버튼에 업로드 관련 부분 추가**
+### **6\. 회원가입 제출 버튼에 업로드 관련 부분 추가**
 
 ```swift
 @IBAction  func btnActSubmit(_ sender: UIButton) {
@@ -507,23 +507,24 @@ func startUploading(images: [ImageWithName], completion: @escaping FileCompletio
 
  
 
-\[caption id="attachment\_4116" align="alignnone" width="428"\] ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-20-pm-10.39.49.jpg) 라이브러리 버튼을 눌렀을 때\[/caption\]
+![라이브러리 버튼을 눌렀을 때](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-20-pm-10.39.49.jpg)  
+*라이브러리 버튼을 눌렀을 때*
+
+![사진 미리보기](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-20-pm-10.40.10.jpg)  
+*사진 미리보기*
+
+![회원가입 완료](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-20-pm-10.43.17.jpg)  
+*회원가입 완료*
 
  
 
-\[caption id="attachment\_4117" align="alignnone" width="401"\] ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-20-pm-10.40.10.jpg) 사진 미리보기\[/caption\]
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-20-pm-10.44.50.jpg)  
+ 
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-20-pm-10.45.45.jpg)
 
  
 
-\[caption id="attachment\_4118" align="alignnone" width="416"\] ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-20-pm-10.43.17.jpg) 회원가입 완료\[/caption\]
-
- 
-
- ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-20-pm-10.44.50.jpg)  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-20-pm-10.45.45.jpg)
-
- 
-
-#### **전체 코드 (이전 내용 포함)**
+## **전체 코드 (이전 내용 포함)**
 
 ```swift
 import UIKit

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="1024" height="768" style="float:left"></canvas>
+  <div id="wrapper" style="width:200px;float:left">
+    <div id=color></div>
+    <button id=grayBtn data-next-state="grayscale">그레이스케일</button>
+    <button id=invertBtn>색 반전</button>
+    <hr><input type=checkbox id=aaBtn checked><label for=aaBtn>부드럽게 하기</label>
+    <canvas id="zoom" width="300" height="227"></canvas>
+  </div>
+
+  <script>
+    // 컨텍스트 생성 및 받아오기
+    var img = new Image();
+    img.src = './Hydrangeas.jpg';
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    img.onload = draw;
+    var color = document.getElementById('color');
+    var originalDataArray = []  // 그레이스케일 기능에서 원래 이미지를 저장하기 위한 배열
+
+    // 이미지 로딩 완료시 실행될 부분
+    function draw() {
+      ctx.drawImage(img, 0, 0);
+      img.style.display = 'none';
+      
+      // ctx.getImageData(sx, sy, sw, sh);
+      var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      var data = imageData.data;
+
+      var invertColor = function() {
+        for (var i = 0; i < data.length; i += 4) {
+          data[i] = 255 - data[i]
+          data[i + 1] = 255 - data[i + 1]
+          data[i + 2] = 255 - data[i + 2]
+        }
+        // ctx.putImageData(imageData, dx, dy, dirtyX, dirtyY, dirtyWidth, dirtyHeight);
+        ctx.putImageData(imageData, 0, 0)
+      }
+
+      var grayscale = function(e) {
+        var nextState = e.target.getAttribute("data-next-state")
+        console.log(nextState)
+
+        if (nextState == "grayscale") {
+          for (var i = 0; i < data.length; i += 4) {
+            var avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+
+            // 되돌리기 위해 원래 이미지를 백업
+            originalDataArray[i] = data[i]
+            originalDataArray[i + 1] = data[i + 1]
+            originalDataArray[i + 2] = data[i + 2]
+
+            data[i] = avg; // red
+            data[i + 1] = avg; // green
+            data[i + 2] = avg; // blue
+          }
+          e.target.setAttribute("data-next-state", "normal")
+          
+        } else {
+          for (var i = 0; i < data.length; i += 4) {
+
+            data[i] = originalDataArray[i]
+            data[i + 1] = originalDataArray[i + 1]
+            data[i + 2] = originalDataArray[i + 2]
+
+          }
+          e.target.setAttribute("data-next-state", "grayscale")
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+      };
+
+      // 돋보기 기
+      var zoomctx = document.getElementById('zoom').getContext('2d');
+
+      var zoom = function(event) {
+        var x = event.layerX;
+        var y = event.layerY;
+
+        // ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+        var SPX = 20
+        var DPX = 200
+        zoomctx.drawImage(canvas,
+          Math.min(Math.max(0, x - SPX / 2), img.width - SPX),
+          Math.min(Math.max(0, y - SPX / 2), img.height - SPX),
+          SPX, SPX,
+          0, 0,
+          DPX, DPX);
+      };
+
+      var smoothbtn = document.getElementById('aaBtn');
+      // 기본 옵션은 앤티앨리어싱 적용 상태이므로 해제하기 위한 부분
+      var toggleSmoothing = function(event) {
+        zoomctx.imageSmoothingEnabled = this.checked;
+        zoomctx.mozImageSmoothingEnabled = this.checked;
+        zoomctx.webkitImageSmoothingEnabled = this.checked;
+        zoomctx.msImageSmoothingEnabled = this.checked;
+      };
+
+      // 이벤트 적용
+      var invertbtn = document.getElementById('invertBtn');
+      invertbtn.addEventListener('click', invertColor);
+
+      var invertbtn = document.getElementById('grayBtn');
+      invertbtn.addEventListener('click', grayscale);
+
+      canvas.addEventListener('mousemove', zoom);
+      
+      smoothbtn.addEventListener('change', toggleSmoothing);
+    }
+
+
+    // 픽셀별 컬러 추출
+    function pick(event) {
+      var x = event.layerX;
+      var y = event.layerY;
+      var pixel = ctx.getImageData(x, y, 1, 1);
+      var data = pixel.data;
+      var rgba = 'rgba(' + data[0] + ', ' + data[1] +
+        ', ' + data[2] + ', ' + (data[3] / 255) + ')';
+      color.style.background = rgba;
+      color.textContent = rgba;
+      if (data[0] + data[1] + data[2] < 480) {
+        color.style.color = "white";
+      } else {
+        color.style.color = "black";
+      }
+    }
+
+    canvas.addEventListener('mousemove', pick);
+
+  </script>
+</body>
+
+</html>

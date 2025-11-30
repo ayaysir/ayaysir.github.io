@@ -9,9 +9,9 @@ categories:
 
 ##### **참고**
 
-- [자바스크립트: JSONP (JSON Padding) 사용법](http://yoonbumtae.com/?p=2452)
-- [PHP: cURL 기초 (정적 웹 페이지에서 정보 가져오기)](http://yoonbumtae.com/?p=637)
-- [자바스크립트(JavaScript)에서 쿼리 파라미터(query parameter) 값을 알아내는 방법](http://yoonbumtae.com/?p=3318)
+- [자바스크립트: JSONP (JSON Padding) 사용법](/posts/자바스크립트-jsonp-json-padding-사용법/)
+- [PHP: cURL 기초 (정적 웹 페이지에서 정보 가져오기)](/posts/php-curl-기초-웹-페이지에서-정보-가져오기-텍스트-분할-explode/)
+- [자바스크립트(JavaScript)에서 쿼리 파라미터(query parameter) 값을 알아내는 방법](/posts/자바스크립트javascript에서-쿼리-파라미터query-parameter-값을-알아/)
 
  
 
@@ -40,7 +40,7 @@ HTML + 자바스크립트를 이용해 웹 페이지를 만들 때 외부 API를
 
 CORS 문제를 해결하는 대표적인 방법은 아래 3가지가 있습니다.
 
-1. JSONP 이용 - [자바스크립트: JSONP (JSON Padding) 사용법](http://yoonbumtae.com/?p=2452)
+1. JSONP 이용 - [자바스크립트: JSONP (JSON Padding) 사용법](/posts/자바스크립트-jsonp-json-padding-사용법/)
 2. **백엔드 서버에 프록시(중계) 페이지를 만들어 경유**
 3. 서버 측에 요청해서 CORS 권한 획득
 
@@ -97,7 +97,7 @@ PHP에서 **_cURL_**이라는 기능이 있는데 리퀘스트-리스폰스를 �
 
 다음 쿼리 파라미터를 URL로 변환하는 함수를 추가합니다.
 
-```
+```php
 // 쿼리 파라미터 텍스트 만들기 함수
 function makeQueryParameters($get_parameters) {
     $query_text = "?";
@@ -124,7 +124,7 @@ echo makeQueryParameters($_GET);
 
 다음 PHP 헤더 부분을 지정합니다.
 
-```
+```php
 // 헤더 설정: 컨텐츠 타입 JSON, CORS 허용 권한 설정
 header('Content-Type: text/json');
 header('Access-Control-Allow-Origin: *');

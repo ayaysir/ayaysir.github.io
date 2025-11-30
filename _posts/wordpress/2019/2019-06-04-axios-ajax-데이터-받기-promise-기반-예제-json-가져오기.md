@@ -124,4 +124,4 @@ axios.get('/user', {
 
 ### 실행 화면
 
-[ ![](/assets/img/wp-content/uploads/2019/06/quiz.png)](http://yoonbumtae.com/?attachment_id=1165)
+![](/assets/img/wp-content/uploads/2019/06/quiz.png)

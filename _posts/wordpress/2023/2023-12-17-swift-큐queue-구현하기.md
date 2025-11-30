@@ -86,7 +86,7 @@ struct Queue<T> {
 ```
 
 - **제네릭 타입**을 이용해 모든 타입에 대응할 수 있도록 되어 있습니다.
-    - [Swift(스위프트): 제네릭(Generics) - 제네릭 타입, 제네릭 함수, 연관 타입(Associated Type), where 조건절](http://yoonbumtae.com/?p=4505)
+    - [Swift(스위프트): 제네릭(Generics) - 제네릭 타입, 제네릭 함수, 연관 타입(Associated Type), where 조건절](/posts/swift스위프트-제네릭generics/)
 - `Node`라는 클래스 타입이 있으며, 이 타입은 값과 다음 노드가 위치할 포인터를 가지고 있습니다.
     - 클래스이기 때문에 주소값을 참조하게 됩니다.
 - 시작 노드인 `head`와 끝 노드인 `tail`이 있습니다.
@@ -106,7 +106,7 @@ struct Queue<T> {
 
 기존 `Array` 방식과 동일하게 동작하는 것을 볼 수 있습니다.
 
-```
+```swift
 var gptQueue = Queue<Int>()
 
 gptQueue.enqueue(1)

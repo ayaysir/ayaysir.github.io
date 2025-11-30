@@ -16,7 +16,7 @@ categories:
 
  
 
-#### **버전**
+## **버전**
 
 - Swift 4
 - iOS 11
@@ -24,7 +24,7 @@ categories:
 
  
 
-### **튜토리얼을 통한 디자인 패턴: MVVM (Model-View-ViewModel) 上**
+## **튜토리얼을 통한 디자인 패턴: MVVM (Model-View-ViewModel) 上**
 
 MVVM(Model-View-ViewModel)은 오브젝트를 세 개의 개별 그룹으로 분리하는 구조적인 디자인 패턴입니다.
 
@@ -40,7 +40,7 @@ MVVM(Model-View-ViewModel)은 오브젝트를 세 개의 개별 그룹으로 분
 
  
 
-#### **언제 사용해야 합니까?**
+## **언제 사용해야 합니까?**
 
 뷰에 정보를 표시할 때 모델에 있는 정보를 다른 표현 방식으로 변환해야 할 때 이 패턴을 사용하십시오. 예를 들어 보기 모델을 사용하여 날짜를 날짜 형식의 `String`으로, `Decimal`(10진수)를 통화 형식의 `String`로 변환하거나 기타 여러 유용한 변환 방법을 사용할 수 있습니다.
 
@@ -52,7 +52,7 @@ MVVM(Model-View-ViewModel)은 오브젝트를 세 개의 개별 그룹으로 분
 
  
 
-#### **플레이그라운드(Playground) 예시**
+## **플레이그라운드(Playground) 예시**
 
 Xcode에서 새로운 플레이그라운드를 생성합니다.
 
@@ -271,7 +271,7 @@ extension PetViewModel {
 
 이전에 입력한 다음 코드를 찾습니다.
 
-```
+```swift
 // 4 
 view.nameLabel.text = viewModel.name
 view.imageView.image = viewModel.image
@@ -283,7 +283,7 @@ view.adoptionFeeLabel.text = viewModel.adoptionFeeText
 
 해당 코드를 다음으로 교체합니다.
 
-```
+```swift
 viewModel.configure(view)
 ```
 
@@ -297,7 +297,7 @@ viewModel.configure(view)
 
  
 
-#### **주의해야 할 사항은 무엇입니까?**
+## **주의해야 할 사항은 무엇입니까?**
 
 MVVM은 앱에 모델에서 뷰로의 변환이 많이 필요한 경우 적합한 방법입니다. 그러나 모든 오브젝트가 MVVM에 깔끔하게 들어맞지는 않습니다. 대신 다른 디자인 패턴과 함께 MVVM을 사용해야 합니다.
 
@@ -307,7 +307,7 @@ MVVM은 앱에 모델에서 뷰로의 변환이 많이 필요한 경우 적합�
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
 ```swift
 import PlaygroundSupport

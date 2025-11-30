@@ -20,7 +20,7 @@ categories:
 
 - saga 패턴을 차용 ([참고 블로그](https://uzihoon.com/post/181be130-63a7-11ea-a51b-d348fee141c4))
 - 미들웨어로서 역할을 수행 (React는 Redux 액션을 수행하면 Redux-Saga에서 디스패치하여 Redux의 액션을 인터셉트합니다. Proxy와 유사한 개념입니다. 중간에 가로챈 액션의 역할을 수행 후 다시 액션을 발행하여 데이터를 저장하거나 다른 이벤트를 수행시킵니다.)
-- 코드 작성 시 제너레이터 함수 사용 - [자바스크립트 ES6+: 제너레이터 함수 (generator function)](http://yoonbumtae.com/?p=3372)
+- 코드 작성 시 제너레이터 함수 사용 - [자바스크립트 ES6+: 제너레이터 함수 (generator function)](/posts/자바스크립트-es6-제너레이터-함수-generator-function/)
 
  
 
@@ -375,4 +375,4 @@ export default ItemListContainer
 
 타입스크립트에서 작업하는 경우 handleAction 대신 다른 함수를 사용해야 합니다.
 
-- [타입스크립트 + typesafe-actions: createReducer 사용 예제 (redux-actions의 handleActions 대체)](http://yoonbumtae.com/?p=3548)
+- [타입스크립트 + typesafe-actions: createReducer 사용 예제 (redux-actions의 handleActions 대체)](/posts/타입스크립트-typesafe-actions-createreducer-사용-예제/)

@@ -131,7 +131,7 @@ if let name = optionalName {
 print (greeting)    // Hello, Anonymous
 ```
 
-```
+```swift
 let interestingNumbers = [
   "Prime": [2, 3, 5, 7, 11, 13],
   "Fibonacci": [1, 1, 2, 3, 5, 8],
@@ -159,7 +159,7 @@ print(largest)  // 25
 
 ```
 
-```
+```swift
 var n = 2
 while n < 100 {
     n = n * 2
@@ -183,7 +183,7 @@ print(total)    // 6 (=1+2+3)
 
 **switch**: `break`에 해당하는 기능이 기본 적용되어 있어 `break` 를 명시하지 않아도 됩니다.
 
-```
+```swift
 let vegetable = "red pepper"
 var vegetableComment = ""
 switch vegetable {

@@ -17,13 +17,13 @@ categories:
 
 ### **1\. Spring Boot 프로젝트 생성**
 
-- [Spring Boot: 설치 및 기본 설정 (macOS 및 Eclipse 기준)](http://yoonbumtae.com/?p=1018)
+- [Spring Boot: 설치 및 기본 설정 (macOS 및 Eclipse 기준)](/posts/spring-boot-설치-및-기본-설정-macos-및-eclipse-기준/)
 
  
 
 ### **2\. application.properties에 데이터베이스 연결 (mariadb)**
 
-- [Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)](http://yoonbumtae.com/?p=658)
+- [Spring Boot: mariadb 연결하기 (JDBC-Maven 기준)](/posts/spring-boot-mariadb-연결하기-jdbc-maven-기준/)
 
  
 

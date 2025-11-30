@@ -8,9 +8,9 @@ categories:
 
 ## **소개**
 
-<!-- - [SwiftUI: Representable을 이용해서 UIViewController 띄우기](http://yoonbumtae.com/?p=5349)
-- [SwiftUI: 하드웨어 키보드 입력 받기 (Representable 사용)](http://yoonbumtae.com/?p=5430)
-- [SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)](http://yoonbumtae.com/?p=5436) -->
+- [SwiftUI: Representable을 이용해서 UIViewController 띄우기](/posts/swiftui-representable을-이용해서-uiviewcontroller-띄우기/)
+- [SwiftUI: 하드웨어 키보드 입력 받기 (Representable 사용)](/posts/swiftui-하드웨어-키보드-입력-받기-representable-사용/)
+- [SwiftUI: 웹 뷰(WKWebView) 추가하기 및 자바스크립트 실행 (Representable 사용)](/posts/swiftui-웹-뷰wkwebview-추가하기-및-자바스크립트-실행-representable-사용/)
 
  
 
@@ -166,7 +166,7 @@ class CustomMusicSliderViewModel: ObservableObject {
 ```
 
 - 뷰 모델을 통해 `@Published` 변수의 값이 변경될 때마다 해당 변수를 참고하는 SwiftUI View의 값이 변경됩니다.
-    - **참고)** [SwiftUI: ObservableObject 프로토콜과 @Published, @ObsevedObejct, @StateObject 프로퍼티 래퍼](http://yoonbumtae.com/?p=4668)
+    - **참고)** [SwiftUI: ObservableObject 프로토콜과 @Published, @ObsevedObejct, @StateObject 프로퍼티 래퍼](/posts/swift스위프트-obsevableobject-프로토콜과-published-obsevedobejct-stateobject-프로퍼티-래/)
 - 핵심은 **@Published 변수를 통해 뷰 컨트롤러에서 상태를 변경할 수 있다**는 것입니다.
     - 이것만 알면 이후의 지엽적인 내용은 무시해도 됩니다.
 - 각 `@Published` 변수의 역할은 분량상 간략하게만 언급하면
@@ -240,7 +240,7 @@ override func viewDidLoad() {
 
 2번에서 `@StateObejct`인 `viewModel`이 추가되었으므로 `UIHostingController`를초기화할 때의 `rootView`에도 반영해야 합니다.
 
-```
+```swift
 // UIHostingController
 let sliderVC = UIHostingController(rootView: CustomMusicSliderView(viewModel: self.viewModel))
 ```

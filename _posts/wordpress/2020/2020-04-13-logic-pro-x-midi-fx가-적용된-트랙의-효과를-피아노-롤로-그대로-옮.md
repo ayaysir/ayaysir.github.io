@@ -92,7 +92,8 @@ External Instrument 설정창에서 \[MIDI Destination\]을 온라인 상태인 
 
 복사된 트랙을 선택하고 레코딩 기능(단축키 R)을 실행합니다. MIDI FX가 적용된 상태로 레코딩이 되는 것을 볼 수 있습니다.
 
-\[caption id="attachment\_2286" align="alignnone" width="2784"\] ![](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.48.47.png) MIDI FX가 적용된 음들이 실시간으로 레코딩되는 중입니다.\[/caption\]
+![MIDI FX가 적용된 음들이 실시간으로 레코딩되는 중입니다.](/assets/img/wp-content/uploads/2020/04/screenshot-2020-04-13-pm-1.48.47.png)   
+*MIDI FX가 적용된 음들이 실시간으로 레코딩되는 중입니다.*
 
  
 

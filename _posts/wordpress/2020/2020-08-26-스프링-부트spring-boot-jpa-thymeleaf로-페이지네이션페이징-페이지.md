@@ -14,7 +14,7 @@ categories:
 
 ### **0) 엔티티 클래스, 레퍼지토리 인터페이스 작성**
 
-- [Spring Boot: Spring JPA + H2 데이터베이스 기초 + 단위 테스트](http://yoonbumtae.com/?p=2555)
+- [Spring Boot: Spring JPA + H2 데이터베이스 기초 + 단위 테스트](/posts/spring-boot-spring-jpa-h2-데이터베이스-기초-단위-테스트/)
 
  
 

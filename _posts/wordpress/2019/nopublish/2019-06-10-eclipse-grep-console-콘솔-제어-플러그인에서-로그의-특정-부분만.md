@@ -8,7 +8,7 @@ categories:
 
 이클립스의 콘솔 기능은 자바 콘솔을 그냥 붙여다 놓은 수준이라 쓰기 여간 불편한게 아니다. 아래 그림처럼 어떤 프레임워크는 `DEBUG`로 설정된 로그를 그냥 여과없이 보여주는데.. 문제는 디버그 로그 **몇 백개**가 리퀘스트 하나마다 한꺼번에 뛰쳐나온다. 코드 짜다 테스트용으로 `printout`을 넣었는데 DEBUG에 묻혀 찾기가 어렵다.
 
-[ ![](/assets/img/wp-content/uploads/2019/06/grepr1.png)](http://yoonbumtae.com/?attachment_id=1199)
+![](/assets/img/wp-content/uploads/2019/06/grepr1.png)
 
 `Log4j`에서 설정을 변경해보라고 할 수 있는데 지금 상황은 내가 함부로 바꿀 권한이 없으므로, 내 이클립스에서 로그만 필터링해보도록 한다. 내가 원하는 것은 `DEBUG`, `WARN`, `FATAL` 등 프레임워크에서 내보내는 로그를 일단 제외하고 나머지 로그(`println` 등)만 보는 것이다.
 
@@ -34,7 +34,7 @@ categories:
 
 4\. 표현식 추가에서 `Expression`은 정규표현식(자바 호환용)을 넣는다. `(.+)`은 한 글자 이상 있는 모든 라인이 참이라는 것이다. `Unless`에서는 제외할 정규표현식을 넣는다. 라인에서 대문자로 DEBUG 또는 기타 등등의 단어가 있으면 그 라인은 제외한다. 그리고 `Show in Grep View`란에 체크한다.
 
-[ ![](/assets/img/wp-content/uploads/2019/06/grep4.png)](http://yoonbumtae.com/?attachment_id=1197)
+![](/assets/img/wp-content/uploads/2019/06/grep4.png)
 
 5\. `Grep View`가 하단 윈도우에 등록되어 있지 않으므로, Quick Access에서 `grep`을 입력해 `Grep View`를 하단 윈도우에 추가한다.
 

@@ -88,7 +88,7 @@ override func viewDidLoad() {
 
 **참고**
 
-- [RxSwift(ReactiveX + Swift): 기본 개념 및 스토리보드 예제 (요약)](http://yoonbumtae.com/?p=4474)
+- [RxSwift(ReactiveX + Swift): 기본 개념 및 스토리보드 예제 (요약)](/posts/rxswiftreactivex-swift-기본-개념-및-스토리보드-예제-요약/)
 
  
 

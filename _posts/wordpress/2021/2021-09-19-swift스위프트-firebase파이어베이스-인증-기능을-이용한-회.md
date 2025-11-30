@@ -7,9 +7,9 @@ categories:
   - "Firebase"
 ---
 
-#### **이전 글**
+**이전 글**
 
-- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)](http://yoonbumtae.com/?p=4090)
+- [Swift(스위프트): Firebase(파이어베이스) 인증 기능을 이용한 기초 로그인 로그아웃 구현 (스토리보드)](/posts/swift스위프트-firebase파이어베이스-인증-기능을-이용한-기/)
 
  
 
@@ -21,9 +21,9 @@ categories:
 
  
 
-### **회원가입 폼 작성**
+## **회원가입 폼 작성**
 
-##### **1\. 스토리보드에 뷰 컨트롤러 추가**
+### **1\. 스토리보드에 뷰 컨트롤러 추가**
 
 아래 그림과 같이 새로운 `UIViewController`(뷰 컨트롤러)를 추가하고 회원가입 폼을 작성합니다.
 
@@ -31,13 +31,13 @@ categories:
 
  
 
-##### **2\. 뷰 컨트롤러 클래스와 연동**
+### **2\. 뷰 컨트롤러 클래스와 연동**
 
 Identity Inspector에서 뷰 컨트롤러(`SignUpViewController`)를 커스텀 클래스로 지정한 뒤, 스토리보드의 오브젝트와 뷰 컨트롤러 코드 사이를 `@IBOutlet` 및 `@IBAction`을 사용하여 연결합니다.
 
 오브젝트 배치 및 `@IBOutlet`, `@IBAction` 연결에 대한 내용은 너무 길어 생략합니다.
 
-- [iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기](http://yoonbumtae.com/?p=2160)
+- [iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기](/posts/ios-프로그래밍-스토리보드에서-요소를-추가한-뒤-아웃/)
 
 ```swift
 @IBOutlet weak var txtUserEmail: UITextField!
@@ -61,7 +61,7 @@ Identity Inspector에서 뷰 컨트롤러(`SignUpViewController`)를 커스텀 �
 
  
 
-##### **3\. Action Segue 버튼 추가**
+### **3\. Action Segue 버튼 추가**
 
 메인 뷰 컨트롤러에 회원가입 뷰 컨트롤러로 이동하는 버튼을 추가합니다.
 
@@ -73,11 +73,11 @@ Identity Inspector에서 뷰 컨트롤러(`SignUpViewController`)를 커스텀 �
 
  
 
-##### **4\. 초기화**
+### **4\. 초기화**
 
 '회원가입 뷰 컨트롤러 코드에 관심 분야'에 대한 Picker View를 위한 멤버 변수를 설정합니다.
 
-```
+```swift
 let interestingList = ["치킨", "피자", "탕수육"]
 var selectedInteresting: String!
 ```
@@ -113,7 +113,7 @@ override func viewDidLoad() {
 
  
 
-##### **5\. 취소, 리셋 버튼 이벤트 작성**
+### **5\. 취소, 리셋 버튼 이벤트 작성**
 
 취소 버튼과 리셋 버튼에 대한 이벤트를 작성합니다. 취소 버튼을 누르면 회원 가입 창이 사라지고, 리셋 버튼을 누르면 모든 필드가 처음 상태로 돌아갑니다.
 
@@ -139,7 +139,7 @@ override func viewDidLoad() {
 
  
 
-##### **6\. 딜리게이트, 데이터소스에 대한 `extension` 작성**
+### **6\. 딜리게이트, 데이터소스에 대한 `extension` 작성**
 
 관심분야 Picker View에 목록을 추가하는 `extension`을 작성합니다.
 
@@ -238,7 +238,7 @@ extension SignUpViewController: UITextFieldDelegate {
 
  
 
-### **Firebase에 회원가입 정보 전송**
+## **Firebase에 회원가입 정보 전송**
 
 이 예제에서 이메일, 비밀번호, 관심분야, 프로필 사진을 Firebase에 보낼 예정입니다. 여기서 주의해야 할 부분은 Firebase의 인증(Authentification) 메뉴는 회원가입에 필요한 정보로 이메일과 비밀번호만을 받는다는 것입니다. 나머지 관심분야, 프로필 사진에 대한 내용은 개발자가 인증 메뉴가 아닌 별도의 데이터베이스 등에서 따로 다뤄야 합니다. 따라서 나머지 정보는 Firebase의 실시간 데이터베이스(Realtime Database)에 저장하도록 하겠습니다.
 
@@ -254,7 +254,7 @@ extension SignUpViewController: UITextFieldDelegate {
 
  
 
-##### **1\. 액션함수 작성**
+### **1\. 액션함수 작성**
 
 회원가입 정보를 Firebase로 전송하는 `@IBAction` 함수를 작성합니다.
 
@@ -279,33 +279,33 @@ extension SignUpViewController: UITextFieldDelegate {
 
  
 
-##### **2\. Firebase 불러오기**
+### **2\. Firebase 불러오기**
 
 회원가입 뷰 컨트롤러에 `Firebase`를 `import` 합니다.
 
-```
+```swift
 import Firebase
 ```
 
  
 
-##### **3\. 실시간 데이터베이스의 레퍼런스 변수 추가**
+### **3\. 실시간 데이터베이스의 레퍼런스 변수 추가**
 
 회원가입 정보 중 관심 분야는 실시간 데이터베이스로 보낼 예정이므로 실시간 데이터베이스에 대한 레퍼런스가 필요합니다. 아래 멤버 변수를 추가합니다.
 
-```
+```swift
 var ref: DatabaseReference!
 ```
 
  
 
-##### **4\. createUser 메소드로 정보 전송**
+### **4\. createUser 메소드로 정보 전송**
 
 이메일과 비밀번호는 인증 메뉴로 보내며, `Auth.auth().createUser(...)` 를 사용하여 전송하게 됩니다. 또한 추가 정보는 `ref.child...setValue([:])`를 통해 실시간 데이터베이스로 전송합니다.
 
 아래 코드를 액션 함수 내부에 작성합니다.
 
-```
+```swift
 Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] authResult, error in
     // 이메일, 비밀번호 전송
     guard let user = authResult?.user, error == nil else {
@@ -332,7 +332,8 @@ Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] au
 
  
 
-<iframe width="286" height="480" src="https://giphy.com/embed/X2Afs7dDfigs1cR424" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="286" height="480" src="https://giphy.com/embed/X2Afs7dDfigs1cR424" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjBkMWU2Z24yMGdhcnBxeTVneWdhODFpcTJqcm04ZXF5OHUzMXo2ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/X2Afs7dDfigs1cR424/giphy.gif)
 
  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-19-pm-7.07.15.jpg)
 
@@ -340,7 +341,7 @@ Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [self] au
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
 ```swift
 import UIKit

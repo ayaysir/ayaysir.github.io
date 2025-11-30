@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>루비 문자 변환기</title>
+<!--    <link rel="stylesheet" href="./bootstrap.min.css">-->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body {
+            width: 100%;
+        }
+
+        pre {
+            white-space: pre-wrap;
+        }
+
+        button[id^='copy-'] {
+            width: 100%;
+        }
+
+        #inst-title {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col">
+                <h3>루비 문자 변환기</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- freq1 -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-6364767349592629"
+                     data-ad-slot="5974401709"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <h6 id="inst-title" data-is-expanded="true">사용법 ▲</h6>
+                <div id="inst-area" class="rounded p-2 bg-light">
+                    <p>텍스트 입력란에 중괄호 <code>{ }</code>와 막대기 기호<code> | </code>를 사용하여 아래와 같이 작성합니다.<br> <span class="text-primary">[변환]</span> 버튼을 누르면 결과가 아래에 뜨며, 특정 영역을 마우스로 선택한 뒤 <span class="text-primary">[선택 영역을 {|}로 치환]</span> 버튼을 누르면 해당 부분을
+                        루비 문자 변환식으로 치환합니다.<br><span class="text-primary">[괄호]</span>는 루비 태그를 지원하지 않는 브라우저에서 표시할 때 사용하는 괄호를 지정합니다. 이 부분은 지정하지 않아도 무방합니다.</p>
+                    <p>(1) <code>{루비 아래 텍스트|루비 위 텍스트}</code>
+                        <br> (2) <code>{루비 아래 텍스트|루비 위 텍스트 1|루비 위 텍스트 2|...}</code> '루비 위 텍스트'의 갯수는 '루비 아래 텍스트'의 글자 수만큼 추가합니다. </p>
+                    <p>(예1) <code>{가나다|ganada}</code> <ruby>
+                            <rb>가</rb>
+                            <rt>ga</rt>
+                            <rb>나</rb>
+                            <rt>na</rt>
+                            <rb>다</rb>
+                            <rt>da</rt>
+                        </ruby>
+                        <br> (예2) <code>{振り仮名|ふ||が|な}</code>　<ruby>
+                            <rb>振</rb>
+                            <rt>ふ</rt>
+                            <rb>り</rb>
+                            <rt></rt>
+                            <rb>仮</rb>
+                            <rt>が</rt>
+                            <rb>名</rb>
+                            <rt>な</rt>
+                        </ruby>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label>괄호</label>
+            <select id="parenthesis">
+                <option value="0">-없음-</option>
+                <option value="1">《》</option>
+                <option value="2">()</option>
+                <option value="3">〔〕</option>
+                <option value="4">[]</option>
+            </select>
+            <button id="btn-change" class="btn-primary">변환</button>
+            <button id="btn-replace-selection" class="btn-secondary">선택 영역을 {|}로 치환</button>
+
+        </div>
+        <div class="form-group ">
+            <textarea id="input-raw" class="form-control" rows="5" style="width: 100%;"></textarea>
+        </div>
+        <div id="result-area" class="row">
+            <div class="col-12">
+
+                <div class="row">
+                    <div class="col-8">
+                        <h6>HTML 소스</h6>
+                    </div>
+                    <div class="col">
+                        <button id="copy-raw" class="btn-sm btn-link">&lt;&gt; 클립보드에 복사</button>
+                    </div>
+                </div>
+
+                <pre id="raw-result" class="border border-secondary p-2 rounded bg-light"></pre>
+                <div class="row">
+                    <div class="col-12">
+
+                        <h6>미리보기</h6>
+                    </div>
+                </div>
+                <div id="html-result" class="border border-secondary p-2 rounded"></div>
+            </div>
+        </div>
+        <div id="footer" class="row mt-2">
+            <div class="col-12">
+                &copy; 2019 <a href="http://yoonbumtae.com" target="_blank">BGSMM</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script src="./rangyinputs-jquery-src.js"></script>
+<!--    <script src="./bootstrap.min.js"></script>-->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+        const example = `가나다 {確認|かくにん}하겠습니까? {確認|かく|にん}하겠습니까? {確認|かく|に|ん}하겠습니까? {確認}하겠습니까?`
+        const regex = /{(.+?)}/g
+
+        const DEBUG = false
+
+        $("#result-area").hide()
+        $(".alert").hide()
+
+        const btnChange = document.getElementById('btn-change')
+        btnChange.onclick = e => {
+            const rawText = document.getElementById('input-raw').value
+            const select = document.getElementById('parenthesis')
+            const out = changeToRuby(rawText, select.options[select.selectedIndex].value)
+            DEBUG && alert(select.options[select.selectedIndex].value)
+            document.getElementById('raw-result').innerHTML = out.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            document.getElementById('html-result').innerHTML = out
+            $("#result-area").show()
+        }
+
+        // 마우스로 텍스트를 선택한 곳을 특정 문구로 치환하는 기능
+        // rangyinputs-jquery-src.js (https://github.com/timdown/rangyinputs) 플러그인 사용
+        const btnReplaceSelection = document.getElementById('btn-replace-selection')
+        btnReplaceSelection.onclick = e => {
+            const inputRaw = $("#input-raw")
+            const selection = inputRaw.getSelection()
+            DEBUG && alert(selection.start)
+            DEBUG && alert(selection.length)
+            // 치환 후 이동할 커서 위치를 지정
+            const caretPos = selection.start + selection.length + 2
+            if (selection.length != 0) {
+                inputRaw.replaceSelectedText(`{${selection.text}|}`)
+                inputRaw.setSelection(caretPos)
+            }
+        }
+
+        $("#inst-title").on("click", e => {
+            $("#inst-area").toggle(200)
+            if ($(e.target).data("isExpanded")) {
+                $(e.target).text("사용법 ▼")
+            } else {
+                $(e.target).text("사용법 ▲")
+            }
+            $(e.target).data("isExpanded", !$(e.target).data("isExpanded"))
+        })
+
+        $("#copy-raw").on("click", e => {
+            copyToClipboard($("#raw-result").text())
+        })
+
+        function changeToRuby(rawText, opt_parentheseValue) {
+            const wrongMsgs = []
+            const rubiedText = rawText.replace(regex, function(match, group) {
+                DEBUG && console.log(match, group)
+
+                const parenthesis = {
+                    left: "",
+                    right: ""
+                }
+                switch (opt_parentheseValue) {
+                    case "1":
+                        parenthesis.left = "<rp>《</rp>"
+                        parenthesis.right = "<rp>》</rp>"
+                        break;
+                    case "2":
+                        parenthesis.left = "<rp>(</rp>"
+                        parenthesis.right = "<rp>)</rp>"
+                        break;
+                    case "3":
+                        parenthesis.left = "<rp>〔</rp>"
+                        parenthesis.right = "<rp>〕</rp>"
+                        break;
+                    case "4":
+                        parenthesis.left = "<rp>[</rp>"
+                        parenthesis.right = "<rp>]</rp>"
+                        break;
+                    default:
+
+                }
+
+                let isError = false,
+                    base = ""
+                const arr = group.split("|")
+                if (arr.length == 2) {
+                    // 일반적인 경우 {밑|위}
+                    base += `<rb>${arr[0]}</rb>`
+                    base += `${parenthesis.left}<rt>${arr[1]}</rt>${parenthesis.right}`
+                } else if (arr.length > 2) {
+                    // 개별 문자별로 루비 지정 {밑|위1|위2|...}
+                    const charArr = arr[0].split('')
+                    // 루비 밑의 문자수와 파라미터 수(맨 앞 제외)가 일치하는지 확인
+                    if (charArr.length == arr.length - 1) {
+                        for (let i = 0; i < charArr.length; i++) {
+                            base += `<rb>${charArr[i]}</rb>`
+                            base += `${parenthesis.left}<rt>${arr[i + 1]}</rt>${parenthesis.right}`
+                        }
+                    } else {
+                        isError = true
+                        wrongMsgs.push(`${match} : 루비 아래 문자의 수와 위 문자의 개수가 일치하지 않습니다.`)
+                    }
+                } else {
+                    // 입력 형식에 맞지 않는 경우
+                    isError = true
+                    wrongMsgs.push(`${match} : 괄호 안의 파라미터는 최소 2개 이상이어야 합니다.`)
+                }
+                const out = !isError ? `<ruby>${base}</ruby>` : match
+
+                DEBUG && console.log("final", out)
+                return out
+            })
+            if (wrongMsgs.length > 0) {
+                alert(wrongMsgs.join("\n"))
+            }
+            return rubiedText
+        }
+
+        // 클립보드 복사
+        function copyToClipboard(val) {
+            var t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = val;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+            alert("복사되었습니다.")
+        }
+    </script>
+</body></html>

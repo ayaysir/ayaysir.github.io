@@ -21,7 +21,7 @@ tags:
 
 ### 1. 프로젝트 생성: 디펜더시에서 Security 선택
 
-처음 스타트 [프로젝트 생성](http://yoonbumtae.com/?p=1018) 시 디펜던시에서 **Security**를 선택합니다.
+처음 스타트 [프로젝트 생성](/posts/spring-boot-설치-및-기본-설정-macos-및-eclipse-기준/) 시 디펜던시에서 **Security**를 선택합니다.
 
 ![](/assets/img/wp-content/uploads/2019/02/spring-security-1-1.png)
 
@@ -240,7 +240,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 ### 1. 디펜더시에서 Security 선택
 
- 처음 스타트 [프로젝트 생성](http://yoonbumtae.com/?p=1018) 시 디펜던시에서 **Security**를 선택합니다.
+ 처음 스타트 [프로젝트 생성](/posts/spring-boot-설치-및-기본-설정-macos-및-eclipse-기준/) 시 디펜던시에서 **Security**를 선택합니다.
 
  ![](/assets/img/wp-content/uploads/2019/02/spring-security-1-1.png)
 

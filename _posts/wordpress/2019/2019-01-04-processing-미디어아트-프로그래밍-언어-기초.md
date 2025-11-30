@@ -62,7 +62,7 @@ void draw() {
 
 ### **2\. draw() 메소드**
 
-```
+```java
 // 전역 변수 선언float yPos = 0.0;int pressCount = 0;
  
 void setup() { 

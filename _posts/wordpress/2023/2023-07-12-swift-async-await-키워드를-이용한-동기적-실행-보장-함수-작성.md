@@ -10,7 +10,6 @@ categories:
 
 이른바 '콜백 지옥'을 해결하기 위해 Swift 5.5 버전부터 등장한 키워드입니다. 자바스크립트 ES6에서 도입된 `async`및 `await`와 목적이 거의 같습니다.
 
-<!-- - [자바스크립트: 콜백, Promise, async - await 기초](http://yoonbumtae.com/?p=1071) -->
 
 > **콜백 지옥(Callback Hell)**
 > 
@@ -110,7 +109,7 @@ func fetchDataAsync(_ urlString: String) async throws -> [String: Any] {
 
  
 
-```
+```swift
 Task {
     print("====== Async/Await Start ======")
     print("page 1:", try await fetchDataAsync("https://reqres.in/api/users?delay=2")["support"]!)

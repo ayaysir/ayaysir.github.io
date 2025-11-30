@@ -15,7 +15,7 @@ Spring: 데이터베이스 연동(Oracle-JDBC 기준) 방법입니다.
 
 ## **XML 선언**
 
-<!-- 이 부분은 데이터베이스의 종류, 사용하는 플랫폼에 따라 달라지므로 사용 환경에 맞는지 확인해봐야 합니다. Spring Boot의 마리아DB(mariadb)기준은 [이 글](http://yoonbumtae.com/?p=658)을 참고해주세요. -->
+<!-- 이 부분은 데이터베이스의 종류, 사용하는 플랫폼에 따라 달라지므로 사용 환경에 맞는지 확인해봐야 합니다. Spring Boot의 마리아DB(mariadb)기준은 [이 글](/posts/spring-boot-mariadb-연결하기-jdbc-maven-기준/)을 참고해주세요. -->
 
 이 부분은 `properties` 태그와 `dependencies` 태그 사이에 추가합니다.
 

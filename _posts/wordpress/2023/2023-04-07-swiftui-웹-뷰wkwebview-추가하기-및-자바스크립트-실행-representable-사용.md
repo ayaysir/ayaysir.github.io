@@ -54,7 +54,7 @@ struct WebView: UIViewRepresentable {
 }
 ```
 
-- `UIViewRepresentable`에 관한 자세한 내용은 [SwiftUI: Representable을 이용해서 UIViewController 띄우기](http://yoonbumtae.com/?p=5349)를 참고해주세요. (뷰 컨트롤러에 관한 글이지만 뷰(`UIView`)도 내용이 거의 같습니다.)
+- `UIViewRepresentable`에 관한 자세한 내용은 [SwiftUI: Representable을 이용해서 UIViewController 띄우기](/posts/swiftui-representable을-이용해서-uiviewcontroller-띄우기/)를 참고해주세요. (뷰 컨트롤러에 관한 글이지만 뷰(`UIView`)도 내용이 거의 같습니다.)
 - `makeUIView` 함수에서 `WKWebView` 인스턴스를 리턴합니다. 필요한 경우 함수 내부에서 각종 설정 등을 미리 지정합니다.
 - **var url**
     - 파라미터로 `URL`을 받습니다.
@@ -155,7 +155,7 @@ class Coordinator: NSObject, WKNavigationDelegate {
 }
 ```
 
-- 코디네이터에 관한 자세한 내용은 [SwiftUI: Representable을 이용해서 UIViewController 띄우기](http://yoonbumtae.com/?p=5349)를 참고해주세요.
+- 코디네이터에 관한 자세한 내용은 [SwiftUI: Representable을 이용해서 UIViewController 띄우기](/posts/swiftui-representable을-이용해서-uiviewcontroller-띄우기/)를 참고해주세요.
 - **parentWebView**
     - Representable View의 인스턴스를 담습니다.
 - **webView**

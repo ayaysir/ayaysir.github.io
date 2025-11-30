@@ -6,13 +6,13 @@ categories:
   - "Swift"
 ---
 
-이 예제는 Swift에서 메모리상에 있는 객체를 직렬화(정확하게는 바이너리 형태로 압축 인코딩)한 뒤 저장 장치에 파일 형태로 저장하고 다시 불러오는 예제입니다.
+## NSCoding 클래스
 
-이 예제는 인스턴스를 파일 형태로 주고받을 경우에 사용하고, 네트워크에서 주로 교환되며 JSON으로 사용 가능한 경우는 JSON을 사용하는 것이 좋습니다.
+이 예제는 Swift에서 메모리상에 있는 객체를 직렬화(정확하게는 바이너리 형태로 압축 인코딩)한 뒤 저장 장치에 파일 형태로 저장하고 다시 불러오는 예제입니다. 인스턴스를 파일 형태로 주고받을 경우에 사용하고, 네트워크에서 주로 교환되며 JSON으로 사용 가능한 경우는 JSON을 사용하는 것이 좋습니다.
 
 `NSCoding`은 원칙적으로 클래스(`NSObject`를 상속받는)에서만 가능하고, 구조체(`struct`)는 사용이 불가능합니다. 다만 별도의 트릭을 사용하면 구조체도 일단 사용은 가능하지만, 여러 시도를 해본 결과 구조체 내부가 간단한 경우에만 사용하는 것이 좋으며, 커스텀 타입이 많고 복잡한 경우에는 `struct`를 사용하면 너무 많은 버그가 발생하기 때문에 프로젝트 내부의 구조체들을 `class` 형태로 리팩토링하는 것이 좋습니다.
 
- 
+## 에제 기본 코드
 
 이 예제에는 `class Computer`, `struct CPU`, `class CPUCore`가 있으며 아래와 같은 관계를 가지고 있습니다..
 
@@ -22,7 +22,6 @@ categories:
 import Foundation
 
 class CPUCore: Codable {
-    
     var constant: Int = 1494
     var coreID = UUID().uuidString
 }
@@ -40,7 +39,6 @@ struct CPU: Codable {
 }
 
 class Computer: Codable {
-    
     var name: String?
     var cpu: CPU?
     
@@ -52,7 +50,9 @@ class Computer: Codable {
 
 ```
 
- 
+## NSCoding으로 오브젝트 직렬화 
+
+### 상속 및 프로토콜 준수
 
 먼저 `NSCoding`을 사용하려면 클래스가 `NSObject`를 상속받아야 하고, `NSCoding`, `NSSecureCoding` 프로토콜에 따라야 합니다.
 
@@ -88,7 +88,6 @@ class Computer: NSObject, NSCoding, NSSecureCoding, Codable {
 ```swift
 class Computer: NSObject, NSCoding, NSSecureCoding, Codable {
     
-    
     func encode(with coder: NSCoder) {
 
     }
@@ -106,7 +105,7 @@ class Computer: NSObject, NSCoding, NSSecureCoding, Codable {
 - `required init` 생성자에는 위에서 인코딩된 내용을 디코딩(복호화)하는 과정을 작성해야 합니다. 역시 `coder`를 이용해 디코딩한 뒤, 디코딩된 변수들을 인스턴스 내부에 수동으로 다시 할당해야 합니다.
 - `supportsSecureCoding`는 `secure coding` 사용 여부를 지정하는데, 최근에는 보안 처리를 사용하지 않는 객체를 다루는 메소드가 거의 `deprecated`되었기 때문에 원활한 사용을 위해 이 옵션을 `true`로 지정해야 합니다. `NSSecureCoding` 프로토콜을 추가한 것도 이러한 보안 처리 적용을 위한 것입니다.
 
- 
+### Computer 클래스에 필수 함수 encode 구현
 
 `encode` 함수에 다음과 같은 코드를 작성합니다.
 
@@ -125,11 +124,11 @@ func encode(with coder: NSCoder) {
 - `coder.encode(name, forKey: "cpu_name")` - 코더 내부에 인코딩된 데이터를 식별할 때 키(`key`)가 사용됩니다. `cpu_name`이라는 키를 지정하고 `name` 변수를 인코딩합니다.
 - 마찬가지로 `cpuCoder`를 `cpu_coder` 키에 인코딩합니다.
 
- 
+#### 초기화 init 작성 
 
 디코딩 `required init` 생성자에 다음을 작성합니다.
 
-```
+```swift
 init(name: String? = nil, cpu: CPU? = nil) {
     self.name = name
     self.cpu = cpu
@@ -153,7 +152,7 @@ required convenience init?(coder: NSCoder) {
 
 이 코드에서는 식별자를 다시 호출하는 방식을 사용했기 때문에 `convenience` 키워드를 추가합니다.
 
- 
+### 구조체 `CPU`를 NSObject 상속 받도록 래핑 
 
 다음은 `struct`인 `CPU` 구조체를 인코딩하려고 합니다. 그런데 구조체는 `NSObject` 상속이 불가능하기 때문에 `Computer` 클래스와 같은 방식을 사용할 수 없습니다.
 
@@ -234,7 +233,7 @@ self.init(name: (decodedName as? String), cpu: decodedCPUCoder?.cpu )
 
 디코딩 과정(`required init`)에서는 `CPUCoder`타입이 아닌 원래 `CPU` 구조체 타입을 사용해야 하기 때문에 숨겨두었던 `cpu` 인스턴스를 다시 꺼냅니다.
 
- 
+### CPUCoder 작성
 
 `CPUCore` 클래스도 위와 마찬가지로 `NSCoding`과 관련된 내용을 작성합니다.
 
@@ -279,9 +278,10 @@ class CPUCore: NSObject, NSCoding, NSSecureCoding, Codable {
 
 `CPU` 구조체에서 사용했던 방식을 이 클래스에서는 사용할 수 없었던 이유는 `var cores: [CPUCore]!` 와 같이 배열에 담겨 사용되었기 때문입니다. 제 생각에는 이 클래스(원래는 구조체)도 같은 방식으로 내부에 래핑 클래스를 만든 뒤, 코딩 과정에서 `map` 등을 사용해 변환하면 되지 않을까 생각했었습니다. 하지만 결국 배열에서는 이러한 방법을 사용하지 못했는데 인코딩 과정에서 참조 관계가 꼬이는 관계로 인코딩은 정상적으로 진행되었으나 디코딩 과정에서 특정 변수에 `nil`이 발생해 진행이 불가능했기 때문입니다.
 
-[Swift(스위프트) 기초: struct (구조체; structures)](http://yoonbumtae.com/?p=3890) 이 글에서도 나온 바와 같이 애플은 `objective-c`와 호환 가능해야 하는 경우에는 구조체보다 클래스를 사용하도록 권장하고 있는데, `NSCoding`이 바로 이러한 케이스입니다. 구조가 단순한 경우에는 구조체 사용도 가능하지만, 버그로 인한 스트레스를 겪지 않으려면 클래스를 사용하는 것이 좋다고 생각합니다.
+[Swift(스위프트) 기초: struct (구조체; structures)](/posts/swift스위프트-기초-struct-구조체-structures/) 이 글에서도 나온 바와 같이 애플은 `objective-c`와 호환 가능해야 하는 경우에는 구조체보다 클래스를 사용하도록 권장하고 있는데, `NSCoding`이 바로 이러한 케이스입니다. 구조가 단순한 경우에는 구조체 사용도 가능하지만, 버그로 인한 스트레스를 겪지 않으려면 클래스를 사용하는 것이 좋다고 생각합니다.
 
- 
+
+## 파일로 저장하고 불러오기
 
 다음은 이렇게 재정의된 클래스(+구조체)들을 이용해 저장 장치에 인코딩한 파일을 저장하고 불러오는 과정입니다.
 
@@ -337,9 +337,11 @@ override func viewDidLoad() {
 
  
 
- ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-29-pm-9.39.06.jpg)  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-29-pm-9.40.16.jpg)  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-29-pm-9.40.26.jpg)
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-29-pm-9.39.06.jpg)  
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-29-pm-9.40.16.jpg)  
+ ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-29-pm-9.40.26.jpg)
 
-#### **전체 코드**
+## **전체 코드**
 
 ```swift
 import Foundation

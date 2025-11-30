@@ -6,7 +6,7 @@ categories:
   - "Spring/JSP"
 ---
 
-**EL(Expression Language)**과 **JSTL(Java Standard Tag Library)**은 자바 서블릿 또는 스프링을 이용한 MVC 패턴에서 컨트롤러가 뷰(View) 페이지로 전송한 정보를 표시하는 방법입니다.
+**EL**(Expression Language)과 **JSTL**(Java Standard Tag Library)은 자바 서블릿 또는 스프링을 이용한 MVC 패턴에서 컨트롤러가 뷰(View) 페이지로 전송한 정보를 표시하는 방법입니다.
 
  
 
@@ -134,7 +134,8 @@ JSP(뷰 페이지)에서는 다음과 같이 사용합니다.
 ## 2\. JSTL
 
 JSP 상단에 임포트 선언을 해야합니다. 이름에 표준이 들어가 있는데 많이 쓰이는 것은 맞지만 엄밀히 말하면 표준도 아니고 옛날 기술이라서 스프링 부트에서는 기본 컴포넌트에 포함되지도 않았습니다. 스프링 부트에서는 maven에 jstl 라이브러리를 가져와야 하며 부트의 경우에는 처음부터 기본 내장된 **Thymeleaf**라는 렌더링 엔진을 사용하는 것을 추천합니다.
- <!-- [Thymeleaf 예제](http://yoonbumtae.com/?p=531) -->
+
+> [Thymeleaf 예제](/posts/thymeleaf-텍스트-표시하기/)
 
 JSTL은 얼핏 보면 html 태그와 비슷하게 생겼으며, 일반 HTML 태그와 결합하여 리스트, 배열 등에 있는 자료를 반복하여 표시하는 데 특화되어 있습니다.  JSTL `Core` 라이브러리의 주요 함수만 알아도 웹 프로그래밍의 대부분의 작업을 처리할 수 있습니다.
 

@@ -6,43 +6,44 @@ categories:
   - "포트폴리오"
 ---
 
+
+**나만의 오르골 만들기 Make My MusicBox**
+
 나만의 오르골(뮤직 박스) 악보를 만들고 재생, 공유할 수 있는 [나만의 오르골 만들기 Make My MusicBox](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920) 앱이 출시되었습니다.
 
  
 
-### **나만의 오르골 만들기 Make My MusicBox**
-
-#### **프로모션 영상**
+## **프로모션 영상**
 
 {% youtube "https://youtu.be/RzUoYL_RKKg" %}
 
  
 
-#### **사용 도구**
+## **사용 도구**
 
 Swift, Xcode
 
  
 
-#### **앱스토어 링크**
+## **앱스토어 링크**
 
 [나만의 오르골 만들기 Make My MusicBox](https://apps.apple.com/kr/app/%EB%82%98%EB%A7%8C%EC%9D%98-%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0-make-my-musicbox/id1596583920) (모든 국가 출시)
 
  
 
-#### **깃허브 링크**
+## **깃허브 링크**
 
 [https://github.com/ayaysir/MusicBox](https://github.com/ayaysir/MusicBox)
 
  
 
-#### **제작 시기**
+## **제작 시기**
 
 버전 1.01 - 2021.9,9 ~ 2021.11.25
 
  
 
-#### **특징 및 사용 기술**
+## **특징 및 사용 기술**
 
 - **애플 앱스토어의 검수에 통과하였습니다.**
 - Core Graphics를 통한 뷰 드로잉
@@ -55,10 +56,9 @@ Swift, Xcode
 
  
 
-#### **앱 소개**
+## **앱 소개**
 
-```
-Create your own music box sheet music, listen to it, and share it with others.
+> Create your own music box sheet music, listen to it, and share it with others.
 
 iPhone/iPad에서 뮤직박스가 다시 태어났습니다. 나만의 오르골과 악보를 만드십시오.
 
@@ -88,20 +88,23 @@ iPhone/iPad에서 뮤직박스가 다시 태어났습니다. 나만의 오르골
 - 앱은 자동 저장을 지원하므로 원하는 간격으로 저장하도록 설정할 수 있습니다.
 
 이 앱은 iPhone과 iPad를 동시에 지원하며 다크 모드도 지원합니다.
-```
-
  
 
-#### **스크린샷**
+## **스크린샷**
 
  ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-05-am-12.57.27.jpg)  ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-05-am-12.57.34.jpg)  ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-05-am-12.57.40.jpg)  ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-05-am-12.57.54.jpg)  ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-05-am-12.58.02.jpg)  ![](/assets/img/wp-content/uploads/2021/12/screenshot-2021-12-05-am-12.58.11.jpg)
 
  
+## **다른 앱**
+
+### Tuner XR
 
 제가 만든 다른 앱 [Tuner XR](https://apps.apple.com/kr/app/tuner-xr/id1581803256)도 많은 관심 부탁드립니다.
 
 - [iOS 앱 포트폴리오: Tuner XR 애플 앱스토어 출시 📱- 음악가들을 위한 튜너 앱](/posts/ios-앱-tuner-xr-애플-앱스토어-출시-음악가들을-위한-튜너/)
 
+### DiffuserStick - 디퓨저 스틱 교체주기 관리
+
 제가 만든 다른 앱 [DiffuserStick](https://apps.apple.com/kr/app/diffuserstick/id1578285458)도 많은 관심 부탁드립니다.
 
-- [iOS 앱: 디퓨저 스틱 (Diffuser Stick) 애플 앱스토어 출시 📱- 디퓨저 스틱 교체주기 관리 앱](http://yoonbumtae.com/?p=3842)
+- [iOS 앱: 디퓨저 스틱 (Diffuser Stick) 애플 앱스토어 출시 📱- 디퓨저 스틱 교체주기 관리 앱](/posts/ios-앱-디퓨저-스틱-diffuser-stick-애플-앱스토어-출시/)

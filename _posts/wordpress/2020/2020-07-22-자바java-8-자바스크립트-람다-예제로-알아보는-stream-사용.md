@@ -187,7 +187,7 @@ const max = nums.reduce((max, current) => Math.max(max, current))
 console.log(max) // 93
 ```
 
-참고: [자바스크립트: 배열 Array.reduce](http://yoonbumtae.com/?p=2496)
+참고: [자바스크립트: 배열 Array.reduce](/posts/자바스크립트-배열-array-reduce/)
 
  
 

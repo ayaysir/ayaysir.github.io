@@ -161,7 +161,7 @@ struct IntStack {
 
  
 
-```
+```swift
 var intStack = IntStack(items: [3, 6, 2, 7])
 intStack.push(199848)
 intStack.items // [3, 6, 2, 7, 199848]

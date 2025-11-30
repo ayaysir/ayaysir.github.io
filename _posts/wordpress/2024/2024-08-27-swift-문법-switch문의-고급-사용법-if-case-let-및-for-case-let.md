@@ -251,7 +251,7 @@ if case let .success(value) = result {
 
 `for case let`은 배열이나 컬렉션에서 특정 패턴과 일치하는 항목들만을 선택해 처리할 때 사용됩니다.
 
-```
+```swift
 let items: [Result] = [.success(100), .failure("Error"), .success(250), .failure("Failed")]
 
 for case let .success(value) in items {

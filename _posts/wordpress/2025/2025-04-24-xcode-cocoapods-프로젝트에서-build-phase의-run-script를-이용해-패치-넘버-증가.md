@@ -8,7 +8,7 @@ categories:
 
 **관련 글 Run Script**
 
-- [Swift Package Manager(SPM)와 CocoaPods를 동시에 대응하는 라이브러리 만들기 (1)](http://yoonbumtae.com/?p=5011)
+- [Swift Package Manager(SPM)와 CocoaPods를 동시에 대응하는 라이브러리 만들기 (1)](/posts/swift-package-managerspm와-cocoapods를-동시에-대응하는-라이브러리-만들기-1/)
 
  
 

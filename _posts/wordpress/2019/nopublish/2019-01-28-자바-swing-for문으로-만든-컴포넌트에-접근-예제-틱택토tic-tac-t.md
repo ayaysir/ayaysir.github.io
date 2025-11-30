@@ -8,7 +8,7 @@ categories:
 
 ---
 
-이전 글: [Java Swing 예제: 다차원 배열 표시하기 (기초 설정 방법, for문으로 swing 요소 반복 등)](http://yoonbumtae.com/?p=588)
+이전 글: [Java Swing 예제: 다차원 배열 표시하기 (기초 설정 방법, for문으로 swing 요소 반복 등)](http://y1oonbumtae.com/?p=588)
 
 for문으로 생성한 컴포넌트에 대한 접근 방법은 다음과 같습니다.
 

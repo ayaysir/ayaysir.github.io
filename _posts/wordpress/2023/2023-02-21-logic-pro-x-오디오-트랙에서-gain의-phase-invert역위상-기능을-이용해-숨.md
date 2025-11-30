@@ -16,7 +16,7 @@ categories:
 
 ### **참고**
 
-- [Logic Pro X: 역위상(Phase Inverting; 페이즈 인버팅) 기능을 이용하여 보컬+코러스만 추출](http://yoonbumtae.com/?p=2289)
+- [Logic Pro X: 역위상(Phase Inverting; 페이즈 인버팅) 기능을 이용하여 보컬+코러스만 추출](/posts/logic-pro-x-역위상phase-inverting-페이즈-인버팅-기능을-이용하여-보컬/)
 
  
 

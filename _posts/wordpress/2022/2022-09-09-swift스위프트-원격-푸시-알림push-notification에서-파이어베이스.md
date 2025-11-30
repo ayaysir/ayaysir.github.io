@@ -113,8 +113,8 @@ import FirebaseMessaging
 
 다음 `AppDelegate.swift` 내에 아래 하이라이트 부분들을 추가하거나 변경, 제거합니다. 분량상 자세한 설명은 생략하며 이 코드에 대한 자세한 내용 및 나머지 앱 구현 관련 내용은 아래 목록의 글을 참조하세요.
 
-- [Swift(스위프트): 원격 푸시 알림(Push Notification) 기초 및 푸시 알림의 모의 테스트 방법 上편 (스토리보드)](http://yoonbumtae.com/?p=4692)
-- [Swift(스위프트): 원격 푸시 알림(Push Notification) 기초 및 푸시 알림의 모의 테스트 방법 下편 (스토리보드)](http://yoonbumtae.com/?p=4719)
+- [Swift(스위프트): 원격 푸시 알림(Push Notification) 기초 및 푸시 알림의 모의 테스트 방법 上편 (스토리보드)](/posts/swift-push-notification/)
+- [Swift(스위프트): 원격 푸시 알림(Push Notification) 기초 및 푸시 알림의 모의 테스트 방법 下편 (스토리보드)](/swift스위프트-원격-푸시-알림push-notification-기초-및-푸시-알림의/)
 
  
 

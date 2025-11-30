@@ -18,7 +18,7 @@ categories:
 
 **2\. Throwable**: `Throwable`은 `Exception`의 상위 클래스로 에러와 예외를 모두 캐치할 수 있음
 
-```
+```java
 public class Exception extends Throwable {
     static final long serialVersionUID = -3387516993124229948L;
 (...)
@@ -258,7 +258,7 @@ in2에서 할일: %#$%$#@%
 
 뭐라 설명해야될지 모르겠다.. 다음은 데이터베이스 접근 예제의 일부인데 `throw`가 사용되고 있다.
 
-```
+```java
 public int insertMember(String id, String password, int gender, String address)
     throws SQLException, ClassNotFoundException
 {        

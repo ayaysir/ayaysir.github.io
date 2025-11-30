@@ -140,7 +140,7 @@ public final class MinimImpl {
 {% gist "30c05be68e9201bcf6a9c56d9231741c" %}
 
 #### **결과**: 
-<!-- [http://yoonbumtae.com/music/pastorale/](http://yoonbumtae.com/music/pastorale/) -->
+<!-- [http://y1oonbumtae.com/music/pastorale/](http://y1oonbumtae.com/music/pastorale/) -->
 
 <!-- https://gist.github.com/ayaysir/30c05be68e9201bcf6a9c56d9231741c -->
 

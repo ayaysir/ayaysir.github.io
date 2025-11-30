@@ -73,7 +73,7 @@ Tuner XR을 사용하면 바로크 시대와 현대를 아우르는 다양한 �
 
 제가 만든 다른 앱 [DiffuserStick](https://apps.apple.com/kr/app/diffuserstick/id1578285458)도 많은 관심 부탁드립니다.
 
-- [iOS 앱: 디퓨저 스틱 (Diffuser Stick) 애플 앱스토어 출시 📱- 디퓨저 스틱 교체주기 관리 앱](http://yoonbumtae.com/?p=3842)
+- [iOS 앱: 디퓨저 스틱 (Diffuser Stick) 애플 앱스토어 출시 📱- 디퓨저 스틱 교체주기 관리 앱](/posts/ios-앱-디퓨저-스틱-diffuser-stick-애플-앱스토어-출시/)
 
 ### 나만의 오르골 만들기
 

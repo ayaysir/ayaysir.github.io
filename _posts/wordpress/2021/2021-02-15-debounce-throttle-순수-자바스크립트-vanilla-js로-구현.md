@@ -6,7 +6,7 @@ categories:
   - "JavaScript"
 ---
 
-참고 글: [자바스크립트 lodash: debounce와 throttle을 이용하여 함수의 실행 횟수 제한](http://yoonbumtae.com/?p=2102)
+참고 글: [자바스크립트 lodash: debounce와 throttle을 이용하여 함수의 실행 횟수 제한](/posts/자바스크립트-lodash-debounce와-throttle을-이용하여-함수의-실행-횟/)
 
  
 

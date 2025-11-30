@@ -45,7 +45,7 @@ categories:
 - `Date format string` (_이는_ _`Insert Date`의 아웃풋에 영향을 미침_):
 - `Time format string` (_이는 `Insert Time`의 아웃풋에 영향을 미침)_:
 
-```
+```json
 // Date format to be used.
 "insertDateString.format": "YYYY-MM-DD hh:mm:ss",
 "insertDateString.formatDate": "YYYY-MM-DD",

@@ -141,8 +141,11 @@ Jacob의 작품에서 그도 마찬가지로 4개의 코드만 사용하고 어�
 
 반면 C의 하모닉에서 발견된 E는 약간 뒤로 떨어져 있습니다. 센트로 환산하면 이는 실제로 반음의 약 14/100, 약 14센트 정도 낮습니다.
 
-\[audio mp3="http://yoonbumtae.com/wp-content/uploads/2024/01/ET-vs-JI.mp3"\]\[/audio\]
-
+<!-- \[audio mp3="http://yoonbumtae.com/wp-content/uploads/2024/01/ET-vs-JI.mp3"\]\[/audio\] -->
+<audio controls>
+  <source src='/assets/img/wp-content/uploads/2024/01/ET-vs-JI.mp3' type='audio/mpeg'>
+  브라우저가 audio 태그를 지원하지 않습니다.
+</audio>
  
 
 5도도 마찬가지이지만 피아노의 5도는 실제 자연 5도에 훨씬 더 가깝기 때문에 여기서는 느끼기가 더 어렵습니다. 약 5센트밖에 차이나지 않습니다. (순정율의 5도가 평균율의 5도보다 5센트 낮음)

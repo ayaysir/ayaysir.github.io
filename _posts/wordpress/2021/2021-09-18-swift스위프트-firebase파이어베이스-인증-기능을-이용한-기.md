@@ -13,7 +13,7 @@ categories:
 
  
 
-#### **파이어베이스 프로젝트에서 Authentification 생성**
+## **파이어베이스 프로젝트에서 Authentification 생성**
 
 1\. 파이어베이스 콘솔에서 프로젝트를 생성한 후, `빌드` > `Authentification` 메뉴를 클릭합니다.
 
@@ -55,7 +55,7 @@ categories:
 
  
 
-#### **프로젝트에 Firebase CocoaPods 설치**
+## **프로젝트에 Firebase CocoaPods 설치**
 
 Firebase는 `CocoaPods`라는 디펜던시 관리자를 이용해 프로젝트 내에 설치해야 합니다.
 
@@ -79,7 +79,7 @@ $ pod init
 
 3\. 초기화가 완료되면, 프로젝트 루트 폴더에 `Podfile`이라는 파일이 생성됩니다. 텍스트 편집기로 해당 파일을 연 뒤, 아래 하이라이트 부분을 추가합니다.
 
-```
+```ruby
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
@@ -118,7 +118,7 @@ end
 
 4\. 터미널로 돌아간 뒤, 프로젝트 루트 위치에서 아래 명령을 실행합니다.
 
-```
+```bash
 $ pod install
 ```
 
@@ -136,7 +136,6 @@ import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
@@ -146,7 +145,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
  
 
-#### **로그인/로그아웃 구현 (Swift, Storyboard)**
+## **로그인/로그아웃 구현 (Swift, UIKit Storyboard)**
 
 1\. 스토리보드에서 이메일과 패스워드 입력을 받는 간단한 로그인 폼을 구현합니다.
 
@@ -154,7 +153,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 오브젝트 배치 및 `@IBOutlet`, `@IBAction` 연결에 대한 내용은 너무 길어 생략합니다.
 
-- [iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기](http://yoonbumtae.com/?p=2160)
+- [iOS 프로그래밍: 스토리보드에서 요소를 추가한 뒤 아웃렛 변수와 액션 함수로 연결하기](/posts/ios-프로그래밍-스토리보드에서-요소를-추가한-뒤-아웃/)
 
  ![](/assets/img/wp-content/uploads/2021/09/screenshot-2021-09-18-pm-8.16.06.jpg)
 
@@ -162,7 +161,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 2\. 뷰 컨트롤러에 `Firebase`를 `import` 합니다.
 
-```
+```swift
 import Firebase
 ```
 
@@ -203,7 +202,7 @@ import Firebase
 
 먼저 하위 뷰 2개를 모두 `isHidden` 처리하여 숨깁니다.
 
-```
+```swift
 viewSignUpForm.isHidden = true
 viewUserInfo.isHidden = true
 ```
@@ -212,7 +211,7 @@ viewUserInfo.isHidden = true
 
 뷰 컨트롤러의 멤버 변수 `handle`을 생성합니다.
 
-```
+```swift
 var handle: AuthStateDidChangeListenerHandle!
 ```
 
@@ -261,7 +260,7 @@ override func viewWillDisappear(_ animated: Bool) {
 5\. 로그아웃 버튼에 로그아웃 이벤트를 작성합니다.
 
 ```swift
-@IBAction  func btnActSignOut(_ sender: UIButton) {
+@IBAction func btnActSignOut(_ sender: UIButton) {
     do {
         try Auth.auth().signOut()
     } catch {
@@ -272,13 +271,14 @@ override func viewWillDisappear(_ animated: Bool) {
 
 로그아웃이 완료되면 위의 인증 상태 리스너에 의해 사용자 정보 창이 가려지고 로그인 폼이 다시 나타나게 됩니다.
 
-<iframe width="466" height="480" src="https://giphy.com/embed/h18T9GiACvF6glf3z3" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe>
+<!-- <iframe width="466" height="480" src="https://giphy.com/embed/h18T9GiACvF6glf3z3" frameborder="0" class="giphy-embed" allowfullscreen="allowfullscreen"></iframe> -->
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmk4aHB6ZnJpanBjM3FhYjcxbTF6NHVnMTBwejhsZG41ZzA3NW1kaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h18T9GiACvF6glf3z3/giphy.gif)
 
 참고로 한 번 로그인이 되면 앱을 삭제하기 전까지는 계속 로그인 상태가 유지됩니다.
 
  
 
-#### **전체 코드**
+## **전체 코드**
 
 ```swift
 import UIKit

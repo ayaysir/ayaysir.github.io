@@ -10,7 +10,7 @@ tags:
   - "spring-boot"
 ---
 
-이전 글: [JSP, Spring: 웹소켓(Web Socket) 1](http://yoonbumtae.com/?p=1068) 참조
+이전 글: [JSP, Spring: 웹소켓(Web Socket) 1](http://y1oonbumtae.com/?p=1068) 참조
 
 클라이언트 측에서는 계속 대기하고 있다가 서버에서 긴급 상황(?)이 일어났다는 신호와 지도 좌표를 보내면 즉시 해당 좌표에 경고 상황이 일어났다고 표시하는 웹 페이지를 만들어볼 것이다. 실제 시스템이 어떻게 동작하는지는 모르겠고 뇌내망상으로 진행함.
 
@@ -153,7 +153,7 @@ public class EndpointConfig
 
 #### 2\. 좌표 담당 클라이언트 측의 웹 페이지 작성
 
-```
+```html
 //<button onclick="sendCoords()">좌표전송</button>
 
    var webSocket = new WebSocket('ws://서버주소/ws-alert');
@@ -227,7 +227,7 @@ public class EndpointConfig
 
 ```
 
-```
+```js
 // radius will be START_RAD at start and END_RAD at end.
 var START_RAD = 5
 var END_RAD = 100

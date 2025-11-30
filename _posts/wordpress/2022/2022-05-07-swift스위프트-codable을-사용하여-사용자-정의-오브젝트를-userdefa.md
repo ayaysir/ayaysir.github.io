@@ -124,7 +124,7 @@ struct Book: Codable {
 
 `Book`의 오브젝트를 만들고 `setObject` 메서드에 키와 함께 전달합니다. 이 방법은 실패 시 에러가 발생할 수 있으므로 `do-catch` 문을 사용합니다.
 
-```
+```swift
 let playingItMyWay = Book(title: "Playing It My Way", authorName: "Sachin Tendulkar & Boria Mazumder", pageCount: 486)
 let userDefaults = UserDefaults.standard
 do {

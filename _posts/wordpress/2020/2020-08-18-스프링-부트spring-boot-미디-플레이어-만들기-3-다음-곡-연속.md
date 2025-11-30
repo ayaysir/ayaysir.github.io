@@ -99,7 +99,7 @@ document.getElementById("audio-player").addEventListener("ended", e => {
 
 ## **목록 오름차순 / 내림차순 토글 기능**
 
-- [자바스크립트: 테이블의 tbody 내용 뒤집기(reverse)](http://yoonbumtae.com/?p=2901)
+- [자바스크립트: 테이블의 tbody 내용 뒤집기(reverse)](/posts/자바스크립트-테이블의-tbody-내용-뒤집기reverse/)
 
  
 

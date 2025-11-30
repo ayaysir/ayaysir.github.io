@@ -14,7 +14,7 @@ categories:
 
 사실 작년까지는 이런 공모전이 있는지도 몰랐는데 올해 어떻게 정보를 알게되어 응모하게 되었습니다. Student Challenge에 대한 자세한 내용은 [https://developer.apple.com/kr/wwdc23/swift-student-challenge/](https://developer.apple.com/kr/wwdc23/swift-student-challenge/) 에서 볼 수 있습니다.
 
-이름은 _**Interval Fairy**_라는 앱으로, 제작기간은 약 10일 정도였고, Swift Playgrounds App 기반으로 제작되었습니다. [AudioKit](http://yoonbumtae.com/?p=5358)이라는 외부 라이브러리가 사용되었습니다.
+이름은 _**Interval Fairy**_라는 앱으로, 제작기간은 약 10일 정도였고, Swift Playgrounds App 기반으로 제작되었습니다. **AudioKit**이라는 외부 라이브러리가 사용되었습니다.
 
 - 깃허브: [https://github.com/ayaysir/Interval-Fairy](https://github.com/ayaysir/Interval-Fairy)
 

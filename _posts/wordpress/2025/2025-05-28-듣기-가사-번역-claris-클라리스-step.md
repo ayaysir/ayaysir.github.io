@@ -14,7 +14,7 @@ categories:
 
 - 노래: [ClariS](https://ko.wikipedia.org/wiki/ClariS)
 - 작사, 작곡, 편곡: [kz](https://ko.wikipedia.org/wiki/Livetune)
-    - 작곡가의 다른 곡: [\[듣기/가사\] Sweet Clapper - livetune+](http://yoonbumtae.com/?p=690)
+    - 작곡가의 다른 곡: [\[듣기/가사\] Sweet Clapper - livetune+](/posts/듣기-가사-sweet-clapper-livetune/)
 
 ## 가사
 

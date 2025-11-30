@@ -77,7 +77,7 @@ public List<UwasaEntityDTO> getUwasaByPageRequest(@PathVariable Integer pageNum)
 
 ### **4) 라이브러리 import 후 컴포넌트에 추가**
 
-```
+```js
 import InfiniteLoading from 'vue-infinite-loading';
 
 export default {

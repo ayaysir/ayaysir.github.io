@@ -95,7 +95,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
  
 @Controller
 public class DemoController {
- 
     @RequestMapping("/rb-demo")
     @ResponseBody  // 리턴 스트링을 그대로 출력
     public String demoResponseBody() {
@@ -106,7 +105,7 @@ public class DemoController {
 
 `@ResponseBody`는 다른 주소나 페이지로 포워딩을 하지 않고 리스폰스를 스트링 그대로 내보내는 기능입니다.
 
-[ ![](/assets/img/wp-content/uploads/2019/04/screenshot_2018-09-20_pm_4.55.53.png)](http://yoonbumtae.com/?attachment_id=1027)
+![](/assets/img/wp-content/uploads/2019/04/screenshot_2018-09-20_pm_4.55.53.png)
 
 ### 9\. JSP 뷰 사용하기
 

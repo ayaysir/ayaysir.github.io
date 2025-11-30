@@ -161,7 +161,7 @@ Android에서는 이러한 기능을 구현할 수 있습니다. 그 이유는 A
 
 참고용으로 다음은 iOS에서 로컬 알림을 생성하는 데 사용하는 기본 코드 스니펫입니다.
 
-- [Swift(스위프트): Local Notification (로컬 푸시 메시지, 오프라인 푸시 메시지)](http://yoonbumtae.com/?p=4642)
+- [Swift(스위프트): Local Notification (로컬 푸시 메시지, 오프라인 푸시 메시지)](/posts/swift스위프트-local-notification-로컬-푸시-메시지-오프라인-푸시-메/)
 
 ```swift
 import UIKit
